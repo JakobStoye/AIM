@@ -1,0 +1,734 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue,
+ pdftitle={Uniform Neumann control for strictly outward non-gradient flows},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\R}{\mathbb R}
+\newcommand{\divg}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\osc}{\operatorname{osc}}
+\newcommand{\dd}{\,dx\,dt}
+\newcommand{\ds}{\,dS\,dt}
+\allowdisplaybreaks[2]
+
+\title{Uniform Neumann control for strictly outward non-gradient flows}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 12, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove uniform null controllability of an advection--diffusion equation with
+Neumann boundary conditions as the diffusion coefficient tends to zero. The
+drift is autonomous, belongs to $W^{2,\infty}$, points strictly outward on the
+boundary, and its backward flow carries a neighborhood of every point into
+the interior control region within a bounded time. For every sufficiently
+large control time, an $L^2$ control drives any $L^2$ initial state to zero
+with a norm bound independent of the diffusion coefficient. No gradient
+representation of the drift is required. A scalar function prescribed only
+through its boundary normal derivative leaves a tangential drift and a
+positive Robin coefficient in the adjoint equation. Two Carleman weights
+then cancel the uncontrolled tangential boundary terms. Their fixed-time
+observation estimate combines with the known flushing dissipation estimate
+to give the uniform control bound.
+\end{abstract}
+
+\section{Introduction}
+
+Consider an interior control for an advection--diffusion equation on a bounded
+domain. Null controllability asks whether this control can drive every initial
+state to zero at a prescribed time. When the diffusion coefficient $\eps$ is
+small, the equation is close to transport, so the trajectories of the drift
+become relevant to the cost of control. The boundary condition is equally
+important: Neumann and mixed conditions can produce a cost growing
+exponentially in $1/\eps$, even at large times
+\cite[Theorems 2.8 and 2.9]{Barcena}. Thus controllability at each fixed $\eps>0$ does
+not by itself provide a uniform bound as $\eps\to0$.
+
+For Neumann equations, Et-Tahri, B\'arcena-Petisco, Boutaayamou and Maniar
+developed a Carleman calculation for tangential drifts
+\cite[Section 6]{Tangential}. Their uniform controllability statement
+\cite[Theorem 1.4]{Tangential} assumes backward flushing into an interior
+control region. A Lipschitz tangential flow preserves the boundary, however,
+so this hypothesis cannot hold for boundary trajectories
+\cite[Remark 1.6]{Outward}. Their subsequent work proves uniform large-time
+control for strictly outward gradient drifts \cite[Theorem 1.5]{Outward}.
+A gradient representation allows
+one to remove the first-order term by a scalar conjugation. For a general
+outward drift, the same direct Carleman calculation leaves boundary terms
+whose tangential part is not controlled by an interior observation
+\cite[Remark 1.6]{Outward}. The dissipation estimate under the trajectory
+condition, however, already holds for general drifts
+\cite[Proposition 4.7(1)]{Outward}.
+
+Here we retain that dissipation estimate and prove the missing fixed-time
+observation bound for an autonomous drift. We use a scalar conjugation to
+change its normal component on the boundary, while retaining its tangential
+component in the equation. This is sufficient for the boundary cancellation;
+the drift need not be a gradient.
+
+Let $\Omega\subset\R^d$, $d\ge2$, be a bounded connected smooth domain, let
+$\Gamma=\partial\Omega$, and let $\nu$ be the outward unit normal. Let
+$\varnothing\ne\omega\Subset\Omega$ be open and
+$B\in W^{2,\infty}(\R^d;\R^d)$. We use its $C^{1,1}$ representative and assume
+\begin{equation}\label{outward}
+ b:=B\cdot\nu\ge c_0>0\quad\hbox{on }\Gamma.
+\end{equation}
+The flow $F_s$ of $-B$ is globally defined. We assume that there are
+$T_0,r_0>0$ such that
+\begin{equation}\label{flushing}
+ \forall x\in\overline\Omega\quad\exists s_x\in(0,T_0):
+ \quad F_{s_x}\bigl(\mathbb B(x,r_0)\bigr)\subset\omega.
+\end{equation}
+Here $\mathbb B(x,r_0)$ is the open Euclidean ball. This condition means that a
+whole neighborhood of each point, rather than only one trajectory, enters
+the control region. It is the ball version of the flushing condition used in
+\cite{Outward}, with the autonomous backward flow written explicitly.
+
+We study
+\begin{equation}\label{state}
+ \begin{cases}
+ y_t-\eps\Delta y+B\cdot\nabla y=1_\omega h
+                  &\text{in }\Omega\times(0,T),\\
+ \partial_\nu y=0  &\text{on }\Gamma\times(0,T),\\
+ y(0)=y_0         &\text{in }\Omega.
+ \end{cases}
+\end{equation}
+The solution is understood in the variational sense specified in Section
+\ref{sec:adjoint}.
+
+\begin{theorem}\label{main}
+Under \eqref{outward}--\eqref{flushing}, there exist finite constants
+$T_*>0$ and $C>0$, depending on the fixed domain, control region and drift
+data, such that for every $T\ge T_*$, every $0<\eps<1$, and every
+$y_0\in L^2(\Omega)$, there is an $h\in L^2((0,T)\times\omega)$ for which the
+solution of \eqref{state} satisfies
+\[
+ y(T)=0\quad\text{in }L^2(\Omega),\qquad
+ \|h\|_{L^2((0,T)\times\omega)}\le C\|y_0\|_{L^2(\Omega)}.
+\]
+Neither $T_*$ nor $C$ depends on $\eps$, and $C$ can be chosen independently
+of $T\ge T_*$. No gradient condition on $B$ is imposed.
+\end{theorem}
+
+In particular, the theorem gives the entire sufficiently-small-viscosity
+assertion in AIM Problem 415, with $\eps_T=1$. The time threshold obtained
+below is sufficient; no optimality is asserted. The result concerns an
+autonomous field with a strictly positive normal component. The case of a
+merely nonnegative normal component, and the corresponding time-dependent
+problem, are outside the statement.
+
+The main choice is a solution of a Neumann Poisson problem with normal
+derivative $b/2$. Conjugating by its exponential leaves a drift tangent to
+$\Gamma$ and a positive Robin coefficient. The singular potential created by
+the conjugation is included in the second part of the Carleman operator.
+Its mixed product has the same admissible scale as the first-order terms.
+The two weights agree on the boundary, so their tangential-gradient boundary
+terms cancel, and the Robin substitution leaves a positive normal term. This
+gives an observation bound of order $\exp(K/\eps)$ on a fixed interval.
+Repeated flushing dissipation then dominates that exponential loss.
+
+Section \ref{sec:adjoint} constructs the conjugation. Section
+\ref{sec:observation} proves fixed-time observation, and Section
+\ref{sec:uniform} combines it with dissipation and constructs the control.
+The full mixed-product calculation and the justification for $L^2$ terminal
+data are given in Appendices \ref{app:products} and \ref{app:regularity}.
+All norms without a specified set are spatial $L^2(\Omega)$ norms. We work
+over the reals; applying the argument to real and imaginary parts gives the
+same bound for complex data.
+
+\section{The adjoint and a boundary conjugation}\label{sec:adjoint}
+
+Put $H=L^2(\Omega)$ and $V=H^1(\Omega)$, with $H$ identified as a subspace of
+$V'$ by its inner product. Define
+\[
+ \mathfrak a(p,q)=\eps\int_\Omega\nabla p\cdot\nabla q
+                        +\int_\Omega(B\cdot\nabla p)q.
+\]
+A weak solution of \eqref{state} belongs to
+$L^2(0,T;V)\cap H^1(0,T;V')$ and satisfies
+$\langle y_t,v\rangle+\mathfrak a(y,v)=(1_\omega h,v)$ for every $v\in V$.
+The form and its transpose are bounded. Moreover,
+\[
+ \mathfrak a(v,v)\ge\frac\eps2\|\nabla v\|_2^2
+                    -\frac{\|B\|_\infty^2}{2\eps}\|v\|_2^2.
+\]
+Adding a sufficiently large multiple $\kappa(v,v)$ makes both forms coercive.
+Lions' variational existence theorem, in the form stated in
+\cite[Theorem 1.1]{Dier}, gives existence, uniqueness and continuity in $H$.
+The shift is removed by $v(t)=e^{-\kappa t}y(t)$, with the forcing multiplied
+by $e^{-\kappa t}$. These are fixed-$\eps$ existence statements.
+
+The backward adjoint with arbitrary terminal value $f\in H$ satisfies
+$-\langle\phi_t,v\rangle+\mathfrak a(v,\phi)=0$. Its strong form is
+\begin{equation}\label{adjoint}
+ \begin{cases}
+ \phi_t+\eps\Delta\phi+B\cdot\nabla\phi+(\divg B)\phi=0,\\
+ \eps\partial_\nu\phi+b\phi=0,\\
+ \phi(T)=f.
+ \end{cases}
+\end{equation}
+Testing the variational equation and integrating the drift once gives
+\begin{equation}\label{energy}
+ \frac{d}{dt}\|\phi(t)\|_2^2
+ =2\eps\|\nabla\phi(t)\|_2^2+\int_\Gamma b\phi(t)^2
+                       -\int_\Omega(\divg B)\phi(t)^2
+ \ge-M\|\phi(t)\|_2^2,
+ \quad M=\|\divg B\|_\infty.
+\end{equation}
+Thus, for $t\le r$,
+\begin{equation}\label{energy-transfer}
+ \|\phi(t)\|_2^2\le e^{M(r-t)}\|\phi(r)\|_2^2.
+\end{equation}
+The time product rule in $L^2(V)\cap H^1(V')$ follows by time mollification;
+both resulting products converge in $L^1$. This justifies the energy identity
+for weak solutions.
+
+To make the drift tangent on the boundary, set
+\begin{equation}\label{poisson}
+ k=\frac1{2|\Omega|}\int_\Gamma b,\qquad
+ \Delta g=k,\qquad\partial_\nu g=b/2,\qquad\int_\Omega g=0.
+\end{equation}
+The data have the exact Neumann compatibility. Since $b\in C^{1,1}(\Gamma)$,
+Nardi's theorem \cite[Theorem 3.1]{Nardi}, with $\alpha=1/2$, gives
+$g\in C^{2,1/2}(\overline\Omega)$. Its boundary datum may be extended to the
+closure through a smooth collar, as in that theorem's notation.
+
+Define
+\begin{equation}\label{gauge-coefficients}
+ \begin{gathered}
+ u=e^{g/\eps}\phi,\qquad D=B-2\nabla g,\qquad \beta=b/2,\\
+ W=|\nabla g|^2-B\cdot\nabla g,\qquad c=\divg B-k.
+ \end{gathered}
+\end{equation}
+Differentiating this multiplier in \eqref{adjoint} yields
+\begin{equation}\label{gauged}
+ u_t+\eps\Delta u+D\cdot\nabla u+(W/\eps+c)u=0,
+ \qquad \eps\partial_\nu u+\beta u=0.
+\end{equation}
+We have $D\cdot\nu=0$, $D,W\in W^{1,\infty}(\Omega)$,
+$c\in L^\infty(\Omega)$, and $\beta\ge c_0/2$.
+Only the boundary normal derivative of $g$ was prescribed to cancel the normal
+component of $D$. The choice of a constant Laplacian keeps $c$ bounded
+without requiring third derivatives of $g$.
+
+\section{Observation on a fixed interval}\label{sec:observation}
+
+We first work on $Q=\Omega\times(0,1)$ and
+$\Sigma=\Gamma\times(0,1)$. Choose $\omega'\Subset\omega$ and
+$\eta\in C^2(\overline\Omega)$ such that
+\begin{equation}\label{eta}
+ \eta>0\ \text{in }\Omega,\quad \eta=0\ \text{on }\Gamma,
+ \quad\|\eta\|_\infty=1,\quad
+ |\nabla\eta|\ge\delta>0\ \text{on }\overline\Omega\setminus\omega'.
+\end{equation}
+The existence of this weight is the construction stated in
+\cite[equation (64)]{Outward}. Write
+$m=|\nabla\eta|^2$ and $a=\partial_\nu\eta$. On $\Gamma$,
+$\nabla\eta=a\nu$, $m=a^2$, and $a\le-\delta$.
+
+For $\sigma\in\{+1,-1\}$, define
+\begin{equation}\label{weights}
+ \xi_\sigma=\frac{e^{4\lambda+\sigma\lambda\eta}}{t(1-t)},\qquad
+ \alpha_\sigma=\frac{e^{6\lambda}-e^{4\lambda+\sigma\lambda\eta}}{t(1-t)},
+ \qquad w_\sigma=e^{-s\alpha_\sigma}u.
+\end{equation}
+Both weights agree on $\Sigma$, and so do $w_+$, $w_-$ and their time and
+tangential derivatives. We denote their common boundary values by
+$\xi,\alpha,w$. The opposite spatial derivatives of the two weights will
+remove the tangential boundary norm.
+
+\begin{proposition}\label{carleman}
+There are a fixed $\lambda\ge1$ and constants $K,C>0$, depending only on the
+fixed geometry and coefficients in \eqref{gauged}, such that every solution
+of \eqref{gauged} on $Q$ satisfies
+\begin{equation}\label{weighted-observation}
+ \int_Qe^{-2s\alpha_+}\xi_+^3u^2\dd
+ \le C\int_{\omega\times(0,1)}e^{-2s\alpha_+}\xi_+^3u^2\dd,
+ \qquad s=K/\eps,\quad 0<\eps<1.
+\end{equation}
+The constants are independent of $\eps$.
+\end{proposition}
+
+\begin{proof}
+We prove the estimate for the dense regular class described in Appendix
+\ref{app:regularity}. All unlabelled integrals in this proof are over $Q$.
+For a fixed $\sigma$, omit its subscript on $\xi,\alpha,w$, and put
+$q=D\cdot\nabla\eta$. Split the transformed equation as
+\begin{align}
+ L_1w&=-2\eps s\lambda^2m\xi w
+       -2\sigma\eps s\lambda\xi\nabla\eta\cdot\nabla w
+       +w_t+D\cdot\nabla w,\label{split1}\\
+ L_2w&=\eps s^2\lambda^2m\xi^2w+\eps\Delta w
+       +s\alpha_tw-\sigma s\lambda\xi q w+(W/\eps)w,\label{split2}\\
+ L_3w&=\sigma\eps s\lambda\Delta\eta\,\xi w
+       -\eps s\lambda^2m\xi w-cw.\label{split3}
+\end{align}
+Indeed, $\nabla\alpha=-\sigma\lambda\xi\nabla\eta$ and
+$\Delta\alpha=-\lambda^2m\xi-\sigma\lambda\Delta\eta\,\xi$ imply
+$L_1w+L_2w=L_3w$. Hence
+\begin{equation}\label{square-identity}
+ \|L_1w\|_{L^2(Q)}^2+\|L_2w\|_{L^2(Q)}^2+2(L_1w,L_2w)_{L^2(Q)}
+                  =\|L_3w\|_{L^2(Q)}^2.
+\end{equation}
+The two products generating the leading mass contribute coefficients
+$-2$ and $+3$, leaving
+\begin{equation}\label{leading}
+ \eps^2s^3\lambda^4\int m^2\xi^3w^2
+       +\eps^2s\lambda^2\int m\xi|\nabla w|^2,
+\end{equation}
+together with a nonnegative directional-gradient square. Appendix
+\ref{app:products} gives every mixed product. Before the boundary condition
+is imposed, their boundary contribution, apart from the potential, is
+\begin{align}
+ I_\sigma=\int_\Sigma\bigl[&-\sigma\eps^2s^3\lambda^3ma\xi^3w^2
+ -2\eps^2s\lambda^2m\xi w d_\sigma
+ -\sigma\eps^2s\lambda a\xi d_\sigma^2\notag\\
+ &+\sigma\eps^2s\lambda a\xi|\nabla_\Gamma w|^2
+ +\eps(w_t+D\cdot\nabla_\Gamma w)d_\sigma
+ -\sigma\eps s^2\lambda\alpha_t\xi a w^2\bigr]\ds,
+ \label{boundary-unsummed}
+\end{align}
+where $d_\sigma=\partial_\nu w_\sigma$.
+
+The singular potential was retained in $L_2$. Since $W$ is autonomous and
+$D\cdot\nu=0$, its mixed product is exactly
+\begin{align}
+ (L_1w,(W/\eps)w)=
+ \int\bigl[&-s\lambda^2Wm\xi
+ +\sigma s\lambda\xi(\nabla W\cdot\nabla\eta+W\Delta\eta)
+ -(2\eps)^{-1}\divg(WD)\bigr]w^2\dd\notag\\
+ &-\sigma s\lambda\int_\Sigma W\xi a w^2\ds.
+ \label{potential-product}
+\end{align}
+In particular, its bulk terms have absolute value at most
+$C\int(s\lambda^2\xi+1/\eps)w^2$. They do not create a squared potential
+on the right of \eqref{square-identity}. The boundary terms in
+\eqref{potential-product} cancel between the two signs.
+
+The Robin condition in \eqref{gauged} gives
+\begin{equation}\label{normal-weighted}
+ d_\sigma=(-\beta/\eps+\sigma s\lambda\xi a)w.
+\end{equation}
+Using $m=a^2$ on $\Gamma$, substitute this into
+\eqref{boundary-unsummed} and sum. Terms odd in $\sigma$ cancel. The scalar
+normal term gives $4\eps s\lambda^2\beta a^2\xi w^2$; the difference of
+the normal squares gives $4\eps s^2\lambda^2\beta a^2\xi^2w^2$.
+The time term is $-2\beta w_tw$, whose integral vanishes.
+The remaining drift term is $-\beta D\cdot\nabla_\Gamma(w^2)$, and
+integration on the closed boundary gives
+\begin{equation}\label{boundary-positive}
+ I_++I_-=
+ \int_\Sigma\left[4\eps s\lambda^2\beta a^2\xi
+       +4\eps s^2\lambda^2\beta a^2\xi^2
+       +\divg_\Gamma(\beta D)\right]w^2\ds.
+\end{equation}
+The divergence in this formula is bounded. Since $\beta\ge c_0/2$,
+$a^2\ge\delta^2$ and $\xi$ has a positive lower bound, increasing $K$
+makes \eqref{boundary-positive} nonnegative whenever $s\ge K/\eps$.
+There is no remaining tangential-gradient boundary integral.
+
+We give the bulk absorption explicitly. Apart from
+\eqref{potential-product}, the absolute values of the errors are bounded by
+\begin{align}
+ C\int\bigl[&\eps^2s^3\lambda^3\xi^3+
+ \eps^2s^2\lambda^4\xi^2+
+ \eps s^2\lambda^3\xi^2+
+ \eps s^2\lambda^2\xi^3\notag\\
+ &+s\xi^3+s\lambda\xi^2+s\lambda^2\xi\bigr]w^2
+ +C\int[\eps^2s\lambda\xi+\eps^2\lambda^2+\eps]|\nabla w|^2.
+ \label{errors}
+\end{align}
+The terms with $s^3\lambda^3$ and $s\lambda$ have constants independent of
+$\lambda$ and are absorbed outside $\omega'$ by first choosing $\lambda$
+large. Now fix $\lambda$. The estimates
+\[
+ |\xi_t|\le C\xi^2,\quad |\alpha_t|\le C\xi^2,
+ \quad |\alpha_{tt}|\le C\xi^3,\quad
+ |\nabla\alpha_t|\le C\lambda\xi^2
+\]
+and the positive lower bound on $\xi$ show that all the other ratios of
+\eqref{errors} to \eqref{leading} tend to zero as $K\to\infty$ when
+$s\ge K/\eps$. The terms $\eps s^2\xi^3$ and $s\xi^3$, for example, have
+ratios at most $C/K$ and $C/K^2$. The ratios from
+\eqref{potential-product} are at most $C/K^2+C/K^3$. Also
+\[
+ \|L_3w\|_{L^2(Q)}^2
+ \le C\int(\eps^2s^2\lambda^4\xi^2+\|c\|_\infty^2)w^2,
+\]
+which is absorbed at the same scale outside $\omega'$. The first-order
+cross term involving $\nabla(m\xi)$ is estimated after just one integration
+by parts, so only two derivatives of $\eta$ are needed.
+
+Set, with full-cylinder integrals,
+\begin{align*}
+ P_\sigma&=\eps^2s^3\lambda^4\int\xi_\sigma^3w_\sigma^2
+           +\eps^2s\lambda^2\int\xi_\sigma|\nabla w_\sigma|^2,\\
+ N_\sigma&=\|L_1w_\sigma\|_{L^2(Q)}^2+\|L_2w_\sigma\|_{L^2(Q)}^2.
+\end{align*}
+Since $m\ge\delta^2$ outside $\omega'$, the preceding calculations imply
+\begin{align}\label{local-gradient}
+ \sum_\sigma(N_\sigma+P_\sigma)
+ \le C\sum_\sigma\biggl[&\eps^2s^3\lambda^4
+        \int_{\omega'\times(0,1)}\xi_\sigma^3w_\sigma^2
+ +\eps^2s\lambda^2\int_{\omega'\times(0,1)}
+                         \xi_\sigma|\nabla w_\sigma|^2\biggr].
+\end{align}
+The added mass and gradient inside $\omega'$ are included on the right.
+
+To remove the local gradient, recover the Laplacian from $L_2$:
+\begin{equation}\label{laplacian}
+ H_\sigma:=\eps^2\int(s\xi_\sigma)^{-1}|\Delta w_\sigma|^2
+                \le C(N_\sigma+P_\sigma).
+\end{equation}
+Indeed, after squaring \eqref{split2} and dividing by $s\xi_\sigma$,
+the term with $s^2\xi_\sigma^2$ is bounded by the mass in $P_\sigma$;
+the $\alpha_t$ and $q$ terms have ratio at most $C/K^2$ to that mass.
+The potential term has ratio
+$C/(\eps^4s^4\xi_\sigma^4)\le C/K^4$.
+Take $\theta\in C_c^\infty(\omega)$ equal to one near
+$\overline{\omega'}$. The interior identity
+\[
+ \int\theta^2\xi_\sigma|\nabla w_\sigma|^2
+ =-\int\theta^2\xi_\sigma w_\sigma\Delta w_\sigma
+   -\int\nabla(\theta^2\xi_\sigma)\cdot\nabla w_\sigma\,w_\sigma
+\]
+and Young's inequality give, for every $\rho>0$,
+\begin{equation}\label{cutoff}
+ \eps^2s\lambda^2\int_{\omega'\times(0,1)}
+                       \xi_\sigma|\nabla w_\sigma|^2
+ \le\rho H_\sigma+C_\rho\eps^2s^3\lambda^4
+                  \int_{\omega\times(0,1)}\xi_\sigma^3w_\sigma^2.
+\end{equation}
+Here one first absorbs half the cutoff-gradient integral and then pairs
+$\Delta w_\sigma$ with $w_\sigma$ using weights
+$(s\xi_\sigma)^{-1}$ and $(s\xi_\sigma)^3$.
+Choose $\rho$ small in \eqref{cutoff}, use \eqref{laplacian}, and absorb
+into \eqref{local-gradient}. Retain the positive mass and use
+$\xi_-\le\xi_+$, $\alpha_-\ge\alpha_+$ to get
+\eqref{weighted-observation}. Appendix \ref{app:regularity} passes this
+estimate to every $L^2$ terminal datum.
+\end{proof}
+
+\begin{proposition}\label{coarse}
+There are constants $C_o,K_o>0$, independent of $\eps\in(0,1)$, such that
+every adjoint \eqref{adjoint} on a translated unit interval satisfies
+\begin{equation}\label{coarse-observation}
+ \|\phi(t)\|_2^2\le C_oe^{K_o/\eps}
+              \int_t^{t+1}\|\phi(r)\|_{L^2(\omega)}^2\,dr.
+\end{equation}
+\end{proposition}
+\begin{proof}
+On $[1/3,2/3]\times\overline\Omega$ the weight $\alpha_+$ is bounded
+above and $\xi_+$ bounded below. On all of $Q$, the weight
+$e^{-2s\alpha_+}\xi_+^3$ is bounded above independently of $s\ge K\ge1$:
+the exponential bounds every power of $[t(1-t)]^{-1}$. Thus
+Proposition \ref{carleman} gives
+\[
+ \int_{1/3}^{2/3}\|u(t)\|_2^2\,dt
+ \le C e^{C/\eps}\int_0^1\|u(t)\|_{L^2(\omega)}^2\,dt.
+\]
+Undoing $u=e^{g/\eps}\phi$ adds at most $2\osc(g)/\eps$ to the exponent.
+Equation \eqref{energy-transfer} transfers middle-time mass to the initial
+time. Finally, autonomy permits translation of the unit interval.
+\end{proof}
+
+\section{Uniform observation and the control}\label{sec:uniform}
+
+We return to the original adjoint \eqref{adjoint}. The general-drift
+dissipation estimate \cite[Proposition 4.7(1), equation (51)]{Outward} has the
+following form. If $B\in L^\infty_tW^{1,\infty}_x$ has nonnegative normal
+component and satisfies the source's flushing condition on an ambient
+interval $[0,L]$, with $T_0<L$, then
+\begin{equation}\label{dissipation}
+ \|\phi(t_0-T_0)\|_2^2\le C_d\left[
+ e^{-\delta_d/\eps}\|\phi(t_0)\|_2^2+
+ \int_{t_0-T_0}^{t_0}\|\phi(t)\|_{L^2(\omega)}^2\,dt\right],
+ \quad t_0\in[T_0,L].
+\end{equation}
+This applies to weak adjoints with arbitrary $L^2$ terminal data.
+$C_d$ is independent of $\eps$ and $t_0$. The decay exponent
+$\delta_d>0$, specified in \cite[Proposition 4.5]{Outward}, depends on the
+flushing radius, $T_0$ and the $L^\infty_tW^{1,\infty}_x$ drift norm.
+For the autonomous field this exponent can be fixed before choosing $L$.
+The prefactor $C_d$ is allowed to depend on the subsequently fixed $L$.
+
+To check the source condition, its flow $\Phi(t,t_0,x)$ solves the forward
+equation for $B$ with value $x$ at $t_0$. Autonomy gives
+\[
+ \Phi(t,t_0,x)=F_{t_0-t}(x).
+\]
+For any $x\in\overline\Omega$ and $t_0\ge T_0$, choose
+$t=t_0-s_x\in(t_0-T_0,t_0)$. Equation \eqref{flushing} implies
+\[
+ \Phi\bigl(t,t_0,\overline{\mathbb B}(x,r_0/2)\bigr)\subset\omega.
+\]
+This is its closed-ball flushing condition. The source's boundary assumption
+follows from \eqref{outward}. No gradient assumption occurs in
+\eqref{dissipation}.
+
+\begin{proof}[Proof of Theorem \ref{main}]
+Choose an integer $m\ge1$ such that $m\delta_d>K_o$, with $K_o$ from
+\eqref{coarse-observation}, and set $L=mT_0+1$. Fix the dissipation
+prefactor on this ambient interval and increase it to $C_d\ge1$.
+Iterating \eqref{dissipation} on the $m$ successive blocks gives
+\begin{equation}\label{iterated}
+ \|\phi(0)\|_2^2\le C_d^m\left[
+ e^{-m\delta_d/\eps}\|\phi(mT_0)\|_2^2+
+                     \int_0^{mT_0}\|\phi(t)\|_{L^2(\omega)}^2\,dt\right].
+\end{equation}
+Apply \eqref{coarse-observation} on $[mT_0,L]$. Since
+$m\delta_d-K_o>0$, \eqref{iterated} yields
+\[
+ \|\phi(0)\|_2^2\le C_*\int_0^L\|\phi(t)\|_{L^2(\omega)}^2\,dt,
+ \qquad C_*=C_d^m\max\{1,C_o\}.
+\]
+For $T\ge L$, restrict its adjoint to $[0,L]$ with terminal datum
+$\phi(L)$. Uniqueness identifies this restriction with the weak adjoint
+just used. Consequently
+\begin{equation}\label{uniform-observation}
+ \|\phi(0)\|_2^2\le C_*\int_0^T\|\phi(t)\|_{L^2(\omega)}^2\,dt,
+ \qquad T\ge L,\quad 0<\eps<1.
+\end{equation}
+
+Let $\mathcal M$ be the closure in $L^2((0,T)\times\omega)$ of these
+adjoint observations. Equation \eqref{uniform-observation} makes
+\[
+ \ell(\phi|_\omega)=-(y_0,\phi(0))
+\]
+a well-defined bounded functional, of norm at most
+$C_*^{1/2}\|y_0\|_2$. Extend it by continuity to $\mathcal M$.
+Its Hilbert representative $h\in\mathcal M$ has the same norm bound.
+One can construct it directly: if $\ell\ne0$, minimize the norm on
+$\{z\in\mathcal M:\ell(z)=1\}$. The parallelogram identity makes a
+minimizing sequence Cauchy. Its limit $z$ is orthogonal to $\ker\ell$,
+so $h=z/\|z\|^2$ represents $\ell$. If $\ell=0$, take $h=0$.
+
+For the state with this control, the weak time-product rule and the two
+transposed forms give
+\[
+ (y(T),f)-(y_0,\phi(0))=\int_0^T\int_\omega h\phi.
+\]
+The right side equals $-(y_0,\phi(0))$. Therefore $(y(T),f)=0$ for every
+$f\in L^2(\Omega)$, and $y(T)=0$. Taking $T_*=L$ and $C=C_*^{1/2}$ proves
+all the asserted quantifiers.
+\end{proof}
+
+\appendix
+\section{The mixed products}\label{app:products}
+
+Here all bulk integrals are over $Q$. Fix $\sigma$ and use its $\xi,\alpha,w$;
+write $v=\nabla\eta$, $m=|v|^2$, $q=D\cdot v$ and $d=\partial_\nu w$.
+To group the calculation, denote the four terms of $L_1$ in
+\eqref{split1} by
+\[
+ A=-2\eps s\lambda^2m\xi w,\quad
+ G=-2\sigma\eps s\lambda\xi v\cdot\nabla w,\quad
+ J=w_t,\quad Z=D\cdot\nabla w.
+\]
+Denote the first four terms of $L_2$ by
+\[
+ R=\eps s^2\lambda^2m\xi^2w,\quad H_0=\eps\Delta w,
+ \quad S=s\alpha_tw,\quad U=-\sigma s\lambda\xi q w.
+\]
+These letters are local to this appendix. Integration by parts gives
+\begin{align}
+ (A,R)&=-2\eps^2s^3\lambda^4\int m^2\xi^3w^2,\notag\\
+ (G,R)&=3\eps^2s^3\lambda^4\int m^2\xi^3w^2
+       +\sigma\eps^2s^3\lambda^3\int\divg(mv)\xi^3w^2\notag\\
+       &\hspace{1cm}-\sigma\eps^2s^3\lambda^3\int_\Sigma ma\xi^3w^2,\notag\\
+ (J,R)&=-\eps s^2\lambda^2\int m\xi\xi_t w^2,\notag\\
+ (Z,R)&=-\frac{\eps s^2\lambda^2}{2}\int\divg(m\xi^2D)w^2.
+ \label{products-R}
+\end{align}
+In the second line one uses $\nabla\xi=\sigma\lambda\xi v$, and the drift
+has no boundary term because $D\cdot\nu=0$.
+
+The products against the Laplacian are
+\begin{align}
+ (A,H_0)&=2\eps^2s\lambda^2\int m\xi|\nabla w|^2
+       +2\eps^2s\lambda^2\int\nabla(m\xi)\cdot\nabla w\,w\notag\\
+       &\hspace{1cm}-2\eps^2s\lambda^2\int_\Sigma m\xi wd,\notag\\
+ (G,H_0)&=2\sigma\eps^2s\lambda\int\xi D^2\eta(\nabla w,\nabla w)
+       -\sigma\eps^2s\lambda\int\xi\Delta\eta|\nabla w|^2\notag\\
+       &\quad-\eps^2s\lambda^2\int m\xi|\nabla w|^2
+       +2\eps^2s\lambda^2\int\xi(v\cdot\nabla w)^2\notag\\
+       &\quad-\sigma\eps^2s\lambda\int_\Sigma a\xi d^2
+       +\sigma\eps^2s\lambda\int_\Sigma a\xi|\nabla_\Gamma w|^2,\notag\\
+ (J,H_0)&=\eps\int_\Sigma w_t d,\notag\\
+ (Z,H_0)&=\eps\int_\Sigma(D\cdot\nabla_\Gamma w)d
+       +\frac\eps2\int(\divg D)|\nabla w|^2\notag\\
+       &\hspace{1cm}-\eps\int\sum_{i,j}(\partial_iD_j)(\partial_iw)(\partial_jw).
+ \label{products-H}
+\end{align}
+The cross term in the first line is bounded by
+\[
+ C\eps^2\lambda^2\int|\nabla w|^2+
+ C\eps^2s^2\lambda^4\int\xi^2w^2.
+\]
+For the second line, apply the divergence identity to
+$\xi v\cdot\nabla(|\nabla w|^2)$ after the first integration by parts.
+This avoids differentiating $\eta$ three times.
+
+The time-weight products are
+\begin{align}
+ (A,S)&=-2\eps s^2\lambda^2\int m\xi\alpha_tw^2,\notag\\
+ (G,S)&=\sigma\eps s^2\lambda\int\divg(\xi\alpha_tv)w^2
+       -\sigma\eps s^2\lambda\int_\Sigma\xi\alpha_ta w^2,\notag\\
+ (J,S)&=-\frac s2\int\alpha_{tt}w^2,\notag\\
+ (Z,S)&=-\frac s2\int\divg(\alpha_tD)w^2.
+ \label{products-S}
+\end{align}
+The remaining first-order products are
+\begin{align}
+ (A,U)&=2\sigma\eps s^2\lambda^3\int m\xi^2q w^2,\notag\\
+ (G,U)&=-\eps s^2\lambda^2\int\divg(\xi^2qv)w^2,\notag\\
+ (J,U)&=\frac{\sigma s\lambda}{2}\int\xi_tq w^2,\notag\\
+ (Z,U)&=\frac{\sigma s\lambda}{2}\int\divg(\xi qD)w^2.
+ \label{products-U}
+\end{align}
+Their boundary terms vanish because $q=0$ and $D\cdot\nu=0$ on $\Gamma$.
+The last four products, against $(W/\eps)w$, sum to
+\eqref{potential-product}. The time product is zero, while the other three
+are the integrations of the scalar term, of
+$-\sigma s\lambda W\xi v\cdot\nabla(w^2)$, and of
+$(2\eps)^{-1}WD\cdot\nabla(w^2)$. These are all twenty mixed products.
+The integration order is the tangential-drift calculation of
+\cite[Section 6]{Tangential}, with the potential retained and the Robin
+substitution performed in \eqref{normal-weighted}--\eqref{boundary-positive}.
+No Neumann cancellation from that source is assumed here.
+
+\section{Justification for rough terminal data}\label{app:regularity}
+
+We give the regularity and density argument at a fixed $\eps>0$. On a smooth
+bounded domain, normal collar coordinates and the fundamental theorem of
+calculus give, for $z\in H^1(\Omega)$ and every $\theta>0$,
+\begin{equation}\label{trace}
+ \|z\|_{L^2(\Gamma)}^2\le\theta\|\nabla z\|_2^2+C_\theta\|z\|_2^2.
+\end{equation}
+For smooth $z$, average its boundary squared value over a collar and estimate
+the integral of $2|z\partial_rz|$ by Cauchy--Schwarz and Young. The collar
+Jacobian is bounded above and below. Approximation in boundary graph charts
+passes the estimate to $H^1$.
+
+For a smooth Neumann function $z$, integrations by parts yield
+\[
+ \int_\Omega(\Delta z)^2-\int_\Omega|D^2z|^2
+       =\int_\Gamma\mathrm{II}(\nabla_\Gamma z,\nabla_\Gamma z),
+ \qquad\mathrm{II}(X,Y)=(\nabla_X\nu)\cdot Y.
+\]
+Before using $\partial_\nu z=0$, the boundary expression is
+$\Delta z\partial_\nu z-D^2z(\nabla z,\nu)$.
+Differentiating the normal condition tangentially gives the displayed
+curvature term. Bound its absolute value by
+$C\|\nabla z\|_{L^2(\Gamma)}^2$ and use \eqref{trace} on each derivative
+with $\theta$ small. This gives
+\begin{equation}\label{H2}
+ \|z\|_{H^2}\le C(\|\Delta z\|_2+\|z\|_{H^1}).
+\end{equation}
+It also holds for $C^{2,1/2}$ Neumann functions. Even extension in the normal
+coordinate and even mollification approximate them in $C^2$ while preserving
+the normal condition; a finite partition with zero normal derivative
+combines the local approximations.
+
+If $z\in H^1$ is a weak Neumann function with $\Delta z\in L^2$, put
+$f=-\Delta z+z$ and approximate $f$ by smooth $f_j$ in $L^2$.
+Nardi's theorem \cite[Theorem 5.2]{Nardi} provides $C^{2,1/2}$ solutions
+$z_j$ of $-\Delta z_j+z_j=f_j$, $\partial_\nu z_j=0$.
+Their variational identity gives
+$\|z_j-z_l\|_{H^1}\le\|f_j-f_l\|_2$; their Laplacians are Cauchy in $L^2$,
+so \eqref{H2} makes them Cauchy in $H^2$. The limit equals $z$, since
+testing the homogeneous $-\Delta+1$ equation proves uniqueness.
+Thus \eqref{H2} holds for weak Neumann functions.
+
+For a weak Robin function $v$ with $\Delta v\in L^2$ and
+$\eps\partial_\nu v+bv=0$, the multiplier $e^{2g/\eps}v$ is Neumann and
+has an $L^2$ Laplacian. Its multiplier and inverse preserve $H^2$. Hence
+\begin{equation}\label{Robin-H2}
+ \|v\|_{H^2}\le C_\eps(\|\Delta v\|_2+\|v\|_{H^1}).
+\end{equation}
+This constant is used only at fixed $\eps$.
+
+Let $S(r)f$ denote the original adjoint after reversing time. Weak uniqueness
+gives its semigroup property; \eqref{energy-transfer} gives
+$\|S(r)\|\le e^{Mr/2}$, and the continuous initial trace gives strong
+continuity. Choose nonnegative
+$\rho_n\in C_c^\infty((0,1/n))$, of integral one, and set
+$f_n=\int\rho_n(r)S(r)f\,dr$. Then $f_n\to f$ in $L^2$ and
+\begin{equation}\label{time-smoothing}
+ \partial_q^j S(q)f_n=(-1)^j\int\rho_n^{(j)}(r)S(q+r)f\,dr.
+\end{equation}
+This formula differentiates the translated compact test function, rather
+than presupposing differentiability of the orbit. Its initial values belong
+to $H^1$ because weak solutions are $L^2$ in time with values in $H^1$.
+The fixed-$\eps$ strong-solution and continuity results
+\cite[Propositions 3.6 and 3.9]{Outward} make each of these orbits continuous
+in $H^1$. The equation then makes its Laplacian continuous in $L^2$;
+\eqref{Robin-H2} makes it, and each of its time derivatives, continuous in
+$H^2$. Conjugation by $e^{g/\eps}$ preserves this regularity. The Sobolev
+Green identities and their boundary traces therefore justify every
+integration in Section \ref{sec:observation} and Appendix \ref{app:products}.
+The time endpoint weights vanish faster than every polynomial, so there
+are no temporal endpoint terms.
+
+Finally \eqref{energy-transfer} gives convergence of the approximating
+adjoints in $C([0,T];L^2)$ and hence in the observation norm. At each fixed
+$\eps$ the gauge is a bounded invertible multiplier. The weighted estimates
+and \eqref{coarse-observation} pass to the limit with their already obtained
+constants. This passage is made at fixed $\eps$ and does not interchange a
+data-density limit with the vanishing-viscosity limit.
+
+\section*{AI-use statement}
+OpenAI Codex provided substantial assistance in developing the argument,
+checking its calculations, locating and comparing the cited sources, writing
+the manuscript, and preparing the submission files. The argument and its
+conclusions are submitted for mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{Barcena}
+J.~A. B\'arcena-Petisco,
+\emph{Cost of null controllability for parabolic equations with vanishing
+diffusivity and a transport term}, ESAIM: Control, Optimisation and Calculus
+of Variations \textbf{27} (2021), article 106.
+\href{https://doi.org/10.1051/cocv/2021103}{doi:10.1051/cocv/2021103}.
+Source text: \href{https://hal.science/hal-02455632v4}{HAL hal-02455632v4}.
+
+\bibitem{Dier}
+D. Dier, \emph{Non-Autonomous Maximal Regularity for Forms of Bounded
+Variation}, preprint, \href{https://arxiv.org/abs/1406.2884v2}{arXiv:1406.2884v2}
+(2014).
+
+\bibitem{Tangential}
+F. Et-Tahri, J.~A. B\'arcena-Petisco, I. Boutaayamou and L. Maniar,
+\emph{On uniform null-controllability of tangential transport-diffusion
+equations with vanishing viscosity limit}, preprint,
+\href{https://arxiv.org/abs/2308.07497v1}{arXiv:2308.07497v1} (2023).
+
+\bibitem{Outward}
+F. Et-Tahri, J.~A. B\'arcena-Petisco, I. Boutaayamou and L. Maniar,
+\emph{On uniform null controllability of transport-diffusion equations with
+vanishing viscosity limit}, Mathematical Methods in the Applied Sciences
+\textbf{48} (2025), 6531--6552.
+\href{https://doi.org/10.1002/mma.10693}{doi:10.1002/mma.10693}.
+The theorem and equation locators in this paper refer to
+\href{https://arxiv.org/abs/2412.16660v1}{arXiv:2412.16660v1} (2024).
+
+\bibitem{Nardi}
+G. Nardi, \emph{Schauder estimate for solutions of Poisson's equation with
+Neumann boundary condition}, L'Enseignement Math\'ematique \textbf{60} (2014),
+421--435. \href{https://doi.org/10.4171/LEM/60-3/4-9}{doi:10.4171/LEM/60-3/4-9}.
+The theorem locators refer to
+\href{https://arxiv.org/abs/1302.4103v4}{arXiv:1302.4103v4} (2015).
+\end{thebibliography}
+\end{document}
