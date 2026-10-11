@@ -1,0 +1,414 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Reach}{\mathcal{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\title{Small-time controllability without polynomial reachable neighborhoods}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 12, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct a polynomial control-affine system in five dimensions, with two
+controls in $[-1,1]$, that is small-time locally controllable at the origin
+but admits no polynomial lower bound for its reachable neighborhoods.
+Every point on the negative fourth axis reachable in time at most $t$ has
+distance less than $t^{11}e^{-1/(6t)}/4$ from the origin.
+Nevertheless, exact positive and negative fourth-coordinate loops, followed
+by linear steering in the other coordinates, reach a full neighborhood for
+each $t>0$. The construction combines a critical quartic identity with a
+logarithmic estimate and concentration near its equality profile.
+It gives a negative answer to the polynomial-growth question for analytic
+systems with bounded measurable controls.
+\end{abstract}
+
+\section{The growth question and a counterexample}
+
+Consider a control-affine system near $0\in\R^n$,
+\[
+ \dot x=X_0(x)+\sum_{j=1}^m u_jX_j(x),\qquad x(0)=0,
+ \qquad u\in[-1,1]^m.
+\]
+Controls are measurable, and solutions are absolutely continuous and satisfy
+the equations almost everywhere. Write $\Reach_{\le t}(0)$ for the endpoints
+reached in a duration at most $t$. Small-time local controllability at the
+origin means that $0$ is an interior point of $\Reach_{\le t}(0)$ for every
+sufficiently small $t>0$. A stronger quantitative property is the existence
+of $C,T>0$ and an integer $N\ge1$ such that
+\begin{equation}\label{eq:polynomial-growth}
+ B(0,Ct^N)\subset\Reach_{\le t}(0),\qquad 0<t<T,
+\end{equation}
+where balls are Euclidean.
+
+Jafarpour's Conjecture~1.2 in the v7 preprint PDF of
+\cite{Jafarpour} asks whether analyticity and small-time local
+controllability imply this polynomial growth property. The question also
+appears as AIM Problem~417 for analytic systems with $n\ge3$ and $X_0(0)=0$
+\cite{AIM417}. The following example satisfies these assumptions and violates
+\eqref{eq:polynomial-growth}.
+
+\begin{theorem}\label{thm:counterexample}
+On $\R^5$, consider
+\begin{equation}\label{eq:system}
+\begin{aligned}
+ \dot x_1&=u, & \dot x_2&=x_1, & \dot x_3&=x_2,\\
+ \dot x_4&=x_1^2x_3^2-\left(\frac19+x_5^2\right)x_2^4,
+ &\dot x_5&=v,
+\end{aligned}
+\end{equation}
+with measurable controls $|u|,|v|\le1$. Its vector fields are polynomial and
+its drift vanishes at the origin. For every $t>0$ there is $\delta(t)>0$ such
+that
+\begin{equation}\label{eq:qualitative-ball}
+ B(0,\delta(t))\subset\Reach_{\le t}(0).
+\end{equation}
+On the other hand, every endpoint $-r e_4\in\Reach_{\le t}(0)$ with $r>0$
+satisfies
+\begin{equation}\label{eq:flat-bound}
+ r<\frac{t^{11}}4\exp\left(-\frac1{6t}\right).
+\end{equation}
+Consequently, for every $C,T>0$ and every integer $N\ge1$, there is a
+$t\in(0,T)$ for which \eqref{eq:polynomial-growth} fails.
+\end{theorem}
+
+The fourth equation is based on the quartic competition studied by
+Beauchard and Marbach \cite[Section~6]{BeauchardMarbach}, with a constant
+coefficient replaced by $1/9+x_5^2$. Their Lemma~6.1 proves that $1/9$ is a
+lower bound for the optimal constant in the associated quartic inequality;
+Remark~6.2 leaves its exact value open. We prove the critical identity and
+construct concentrating curves directly below. At the coefficient $1/9$,
+the fourth displacement of a closed triple-integrator trajectory is
+nonnegative. An arbitrarily small positive value of $x_5^2$ permits a
+negative displacement, but only after concentration on an extremely small
+scale. This produces controllability without a polynomial reachable ball.
+
+Section~\ref{sec:logarithmic} proves the bound for all admissible controls.
+Section~\ref{sec:controllability} constructs a full reachable neighborhood
+and completes the proof of Theorem~\ref{thm:counterexample}.
+
+\section{A logarithmic estimate for closed trajectories}
+\label{sec:logarithmic}
+
+For any finite time interval, the first, fifth, second and third coordinates
+of \eqref{eq:system} are obtained by successive integration. The fourth is
+then the integral of a bounded polynomial expression. This gives a unique
+global absolutely continuous solution for every admissible control and every
+initial condition. Changing the initial fourth coordinate simply translates
+that coordinate, since none of the equations depends on $x_4$.
+From the zero initial state, for $0\le s\le t$,
+\begin{equation}\label{eq:trajectory-bounds}
+ |x_1(s)|\le s,\qquad |x_2(s)|\le\frac{s^2}{2},\qquad
+ |x_3(s)|\le\frac{s^3}{6},\qquad |x_5(s)|\le s.
+\end{equation}
+In particular, $f=x_3$ is $C^2$, $f''$ is Lipschitz, and $f'''=u$ almost
+everywhere.
+
+The estimate needed for the fourth displacement concerns curves with zero
+endpoint jets. All integrals in this note are Lebesgue integrals. We use
+integration by parts for absolutely continuous functions
+\cite[Appendix~3.A, Theorems~3.60 and~3.62]{Hunter}.
+
+\begin{lemma}\label{lem:logarithmic}
+Let $t>0$ and let $f\in C^2([0,t])$ have Lipschitz second derivative,
+$\|f'''\|_{L^\infty}\le1$, and
+\[
+ f(0)=f'(0)=f''(0)=f(t)=f'(t)=f''(t)=0.
+\]
+Set
+\[
+ A=\int_0^t f'^4\dd s,\qquad
+ q=ff''+\frac13f'^2,\qquad E=\int_0^t q^2\dd s.
+\]
+Then
+\begin{equation}\label{eq:critical-identity}
+ E=\int_0^t (ff'')^2\dd s-\frac19 A.
+\end{equation}
+If $A>0$, then
+\begin{equation}\label{eq:logarithmic-estimate}
+ E\ge\frac{A}{36\log^2(t^9/(4A))}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Integration by parts gives
+\[
+ \int_0^t ff''f'^2\dd s
+ =\frac13\int_0^t f(f'^3)'\dd s=-\frac13 A.
+\]
+Expanding $q^2$ proves \eqref{eq:critical-identity}.
+The initial jets and the third-derivative bound give
+\[
+ |f''|\le B:=t,\qquad |f'|\le D:=\frac{t^2}{2},\qquad
+ |f|\le S:=\frac{t^3}{6}.
+\]
+Assume $A>0$ and put
+\[
+ \varepsilon=\frac{A}{6tBD^2}=\frac{2A}{3t^6}.
+\]
+Since $A\le tD^4=t^9/16$, we have $0<\varepsilon\le t^3/24<S$.
+Let $c(z)=\max(-\varepsilon,\min(z,\varepsilon))$.
+Integration by parts yields
+\begin{equation}\label{eq:low-part}
+ A_{\mathrm{lo}}:=\int_{\{|f|<\varepsilon\}}f'^4\dd s
+ =-3\int_0^t c(f)f'^2f''\dd s
+ \le3\varepsilon tBD^2=\frac A2.
+\end{equation}
+Here and below, the truncated compositions are Lipschitz and hence
+absolutely continuous. For a $C^1$ function $f$, its derivative is zero
+almost everywhere on each level set $\{f=a\}$: points on that set with
+$f'\ne0$ are isolated in the level set and form a countable set.
+At a threshold point with $f'=0$, the chain rule for a Lipschitz composition
+follows directly from its Lipschitz bound. Thus the usual chain rules hold
+almost everywhere for these finitely truncated functions, and no threshold
+level contributes to an integral containing $f'^4$.
+
+Define
+\[
+ w(z)=
+ \begin{cases}
+  \log(S/\varepsilon),& |z|\le\varepsilon,\\
+  \log(S/|z|),&\varepsilon<|z|<S,\\
+  0,&|z|\ge S.
+ \end{cases}
+\]
+This is a bounded Lipschitz function. On the range of $f$,
+\[
+ 0\le w(f)\le L:=\log(S/\varepsilon)=\log\frac{t^9}{4A}.
+\]
+A second integration by parts gives
+\begin{align}
+ \int_0^t qf'^2w(f)\dd s
+ &=\frac13\int_0^t fw(f)(f'^3)'\dd s
+     +\frac13\int_0^t f'^4w(f)\dd s\notag\\
+ &=-\frac13\int_0^t fw'(f)f'^4\dd s
+   =\frac13 A_{\mathrm{hi}},\label{eq:weighted-identity}
+\end{align}
+where $A_{\mathrm{hi}}=\int_{\{|f|>\varepsilon\}}f'^4\dd s$.
+The boundary terms vanish, and $zw'(z)=-1$ when
+$\varepsilon<|z|<S$. The level sets $|f|=\varepsilon$ and $|f|=S$
+give zero contributions as just explained.
+By \eqref{eq:low-part}, \eqref{eq:weighted-identity} and Cauchy--Schwarz,
+\[
+ \frac A2\le A_{\mathrm{hi}}
+ \le3\sqrt E\left(\int_0^t f'^4w(f)^2\dd s\right)^{1/2}
+ \le3\sqrt E\sqrt A L.
+\]
+Division is legitimate because $A>0$ and $L\ge\log4>0$.
+This proves \eqref{eq:logarithmic-estimate}.
+\end{proof}
+
+Suppose a control of duration $t>0$ reaches a negative fourth-axis point.
+Then $f=x_3$ has all six zero endpoint jets in
+Lemma~\ref{lem:logarithmic}. Equations \eqref{eq:system} and
+\eqref{eq:critical-identity} give
+\begin{equation}\label{eq:fourth-displacement}
+ x_4(t)=E-\int_0^t x_5^2f'^4\dd s.
+\end{equation}
+If $A=0$, continuity gives $f'=0$, and this displacement is zero.
+If $x_4(t)<0$, therefore, $A>0$ and $E<t^2A$ by
+\eqref{eq:trajectory-bounds}. The logarithmic estimate implies
+\[
+ \log\frac{t^9}{4A}>\frac1{6t},\qquad
+ A<\frac{t^9}{4}e^{-1/(6t)},\qquad
+ 0<-x_4(t)<\frac{t^{11}}4e^{-1/(6t)}.
+\]
+The last expression is strictly increasing in $t>0$, so the same bound
+holds for every negative fourth-axis point reached in any duration at most
+$t$. This proves \eqref{eq:flat-bound} for the entire measurable control
+cube, without a restriction on the number of switches.
+
+\section{Concentrating loops and a reachable neighborhood}
+\label{sec:controllability}
+
+The equation $ff''+f'^2/3=0$ has the profile $f(s)=s^{3/4}$ on
+$s>0$. Its critical energy vanishes, while $f'^4$ has a logarithmically
+divergent integral at zero. The following endpoint corrections turn that
+profile into admissible closed trajectories.
+
+\begin{lemma}\label{lem:concentration}
+There are $C^2$ functions $f_\eta$ on $[0,1]$, with Lipschitz second
+derivative and zero endpoint jets through order two, such that
+\begin{equation}\label{eq:concentration}
+ A_\eta:=\int_0^1 f_\eta'^4\dd s
+       =A_0+\frac{81}{256}\log\frac{c}{\eta},\qquad
+ E_\eta:=\int_0^1\left(f_\eta f_\eta''+\frac13f_\eta'^2\right)^2\dd s
+       =E_0,
+\end{equation}
+for $0<\eta<c=1/4$, where $A_0,E_0$ are finite positive constants.
+In particular, $E_\eta/A_\eta\to0$ as $\eta\downarrow0$.
+\end{lemma}
+
+\begin{proof}
+Set
+\begin{align*}
+ h(r)&=\frac{221}{32}r^3-\frac{153}{16}r^4+\frac{117}{32}r^5,\\
+ k(r)&=1+\frac34r-\frac3{32}r^2-\frac{455}{32}r^3
+             +\frac{663}{32}r^4-\frac{261}{32}r^5.
+\end{align*}
+Their endpoint jets are
+\begin{align*}
+ (h,h',h'')(0)&=(0,0,0),& (h,h',h'')(1)&=(1,3/4,-3/16),\\
+ (k,k',k'')(0)&=(1,3/4,-3/16),& (k,k',k'')(1)&=(0,0,0).
+\end{align*}
+For $0<\eta<c$, define
+\begin{equation}\label{eq:profile}
+ f_\eta(s)=
+ \begin{cases}
+  \eta^{3/4}h(s/\eta),&0\le s\le\eta,\\
+  s^{3/4},&\eta\le s\le c,\\
+  c^{3/4}k((s-c)/c),&c\le s\le2c,\\
+  0,&2c\le s\le1.
+ \end{cases}
+\end{equation}
+The jets match at all three junctions. Each third derivative is bounded on
+its piece for fixed $\eta>0$, and the second derivative is continuous at
+the junctions. Consequently $f_\eta''$ is Lipschitz and
+$M_\eta:=\|f_\eta'''\|_{L^\infty}<\infty$.
+
+On $[\eta,c]$, the critical expression is zero and
+$f_\eta'^4=(81/256)s^{-1}$. In the two polynomial pieces the changes of
+variables $r=s/\eta$ and $r=(s-c)/c$ cancel the scale factors exactly.
+Thus \eqref{eq:concentration} holds with
+\begin{align*}
+ A_0&=\int_0^1 h'^4\dd r+\int_0^1 k'^4\dd r,\\
+ E_0&=\int_0^1(hh''+h'^2/3)^2\dd r
+       +\int_0^1(kk''+k'^2/3)^2\dd r.
+\end{align*}
+These constants are finite. Also $A_0>0$ since $h'$ is not identically
+zero. If $a_0=221/32$, then
+$hh''+h'^2/3=9a_0^2r^4+O(r^5)$, so $E_0>0$.
+Finally, the logarithm in \eqref{eq:concentration} diverges as
+$\eta\downarrow0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:counterexample}]
+The polynomial vector fields, global solutions and negative-axis estimate
+were established in Section~\ref{sec:logarithmic}. We construct a full
+neighborhood, fixing an arbitrary $t>0$.
+Let $\sigma=t/4$ and $a=t/16$. By
+Lemma~\ref{lem:concentration}, choose $\eta_-\in(0,c)$ with
+$E_0<a^2A_{\eta_-}$, and set
+\[
+ \beta_-^{\max}=\frac{\sigma^3}{1+M_{\eta_-}}.
+\]
+First apply $u=0,v=1$ for a duration $a$.
+The first three coordinates remain zero and $x_5=a$; there is no fourth
+displacement. Keep $v=0$ during the next interval of length $\sigma$, and
+in its local time $s$ use
+\[
+ u(s)=\beta\sigma^{-3}f_{\eta_-}'''(s/\sigma),\qquad
+ 0\le\beta\le\beta_-^{\max}.
+\]
+This measurable control has absolute value at most one. The triple
+coordinates are
+\[
+ (x_1,x_2,x_3)(s)
+ =\bigl(\beta\sigma^{-2}f_{\eta_-}''(s/\sigma),
+        \beta\sigma^{-1}f_{\eta_-}'(s/\sigma),
+        \beta f_{\eta_-}(s/\sigma)\bigr),
+\]
+so they return to zero. The fourth displacement is exactly
+\begin{equation}\label{eq:negative-loop}
+ \beta^4\sigma^{-3}(E_0-a^2A_{\eta_-}).
+\end{equation}
+Apply $u=0,v=-1$ for another duration $a$ to return $x_5$ to zero.
+This also gives no fourth displacement. The total duration is $3t/8$,
+and varying $\beta$ fills an interval $[-d_-,0]$ with $d_->0$.
+
+For a positive loop take $\eta_+=c/2$ and keep $v=0$.
+The same triple trajectory, now with
+$0\le\beta\le\beta_+^{\max}:=\sigma^3/(1+M_{\eta_+})$, gives fourth
+displacement $\beta^4\sigma^{-3}E_0$ in time $\sigma$.
+It fills $[0,d_+]$ for some $d_+>0$.
+Both intervals are filled exactly, since every nonnegative real number has
+a nonnegative fourth root. The other four coordinates end at zero.
+These loops add the same fourth displacement from any initial $x_4$.
+
+It remains to steer the first three and fifth coordinates while compensating
+for their fourth displacement. Put $\ell=t/4$.
+For the triple integrator from zero, its endpoint under a control $u$ is
+\begin{equation}\label{eq:linear-endpoint}
+ \left(\int_0^\ell u\dd s,
+       \int_0^\ell(\ell-s)u\dd s,
+       \int_0^\ell\frac{(\ell-s)^2}{2}u\dd s\right).
+\end{equation}
+Let $p_0(s)=1$, $p_1(s)=\ell-s$, $p_2(s)=(\ell-s)^2/2$ and
+$G_{ij}=\int_0^\ell p_i p_j\dd s$ for $0\le i,j\le2$.
+The Gram matrix $G$ is positive definite because these polynomials are
+linearly independent. For $z=(z_1,z_2,z_3,z_5)$, choose
+\[
+ u_z(s)=\sum_{i=0}^2\bigl(G^{-1}(z_1,z_2,z_3)^\mathsf{T}\bigr)_i p_i(s),
+ \qquad v_z(s)=\frac{z_5}{\ell}.
+\]
+They give the endpoint $z$ in the four specified coordinates.
+For fixed $\ell$, their sup norms depend continuously on $z$ and vanish
+at zero. Thus the controls are admissible for all sufficiently small $z$.
+Their fourth displacement $F(z)$ is a polynomial in $z$, with terms of
+degrees four and six, because the first three coordinates and $x_5$ depend
+linearly on $z$. In particular, $F$ is continuous and $F(0)=0$.
+
+Set $d=\min(d_-,d_+)>0$. Choose $\delta>0$ so small that for
+$|y|<\delta$, the controls associated with
+$z=(y_1,y_2,y_3,y_5)$ are admissible and
+\[
+ |y_4-F(z)|<d.
+\]
+Such a choice follows from continuity at zero, for example by imposing
+$|y_4|<d/2$ and $|F(z)|<d/2$.
+Execute the scalar loop with displacement $y_4-F(z)$ first, and then
+apply $u_z,v_z$ for a duration $\ell$.
+The final point is exactly $y$: the second stage starts with the other
+four coordinates zero, and its fourth displacement is independent of the
+initial $x_4$. The total duration is at most
+$3t/8+t/4=5t/8<t$. This proves \eqref{eq:qualitative-ball}.
+
+Finally, write $b(t)=t^{11}e^{-1/(6t)}/4$. For every integer $N\ge1$,
+$b(t)/t^N\to0$ as $t\downarrow0$.
+Given $C,T>0$, choose $0<t<T$ with $b(t)<Ct^N/2$.
+The point $-(C/2)t^N e_4$ lies in $B(0,Ct^N)$ but is excluded from
+$\Reach_{\le t}(0)$ by \eqref{eq:flat-bound}.
+This proves the failure of every polynomial inner ball and completes the
+counterexample.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used for literature retrieval, mathematical development,
+exact arithmetic checks, and manuscript drafting. Independent mathematical
+review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{Jafarpour}
+S.~Jafarpour,
+\emph{On small-time local controllability},
+SIAM Journal on Control and Optimization \textbf{58} (2020), 425--446.
+\href{https://doi.org/10.1137/16M1068797}{doi:10.1137/16M1068797}.
+Preprint PDF cited for Conjecture~1.2 (p.~3):
+\href{https://arxiv.org/abs/1604.02432v7}{arXiv:1604.02432v7} (2019).
+
+\bibitem{AIM417}
+AIM problem repository,
+\emph{Polynomial growth of reachable neighborhoods for analytic control systems},
+AIM Problem~417,
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/417-analytic-reachable-set-polynomial-growth.md}{versioned statement}.
+
+\bibitem{BeauchardMarbach}
+K.~Beauchard and F.~Marbach,
+\emph{Some quartic control results for scalar-input systems},
+\href{https://arxiv.org/abs/2608.28582v1}{arXiv:2608.28582v1} (2026).
+
+\bibitem{Hunter}
+J.~K.~Hunter,
+\emph{Notes on Partial Differential Equations}, Appendix~3.A,
+\href{https://www.math.ucdavis.edu/~hunter/pdes/ch3A.pdf}{Absolutely continuous functions},
+Theorems~3.60 and~3.62, p.~79.
+\end{thebibliography}
+\end{document}
