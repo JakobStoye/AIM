@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "problem_id": 385,
+  "evidence_type": "analytic counterexample",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result scope, materials, build instructions and factual AI-use/review disclosure",
+      "sha256": "74b0431a54fae770afa154250133ddbc88414e38cc683fe6a33bb1845ac94743"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Comparison of the original annular problem with the complete manuscript",
+      "sha256": "d4595e92fbfd4514e10fcac84e2e2c7eb77e0d1680d080b7888a10e3fadc6676"
+    },
+    {
+      "path": "paper/equal_speed_observability.pdf",
+      "purpose": "Five-page complete analytic manuscript by Kaiwen Jin",
+      "sha256": "a84c371f4124dfb590da5f476b88b2e789d3e06a751f8dd541158ceea9684e72"
+    },
+    {
+      "path": "paper/equal_speed_observability.tex",
+      "purpose": "Editable complete analytic manuscript by Kaiwen Jin",
+      "sha256": "4a66f5f46c02377a8d0354f30a13171e44c72c23d5cc752b9c6d949a9c999ef4"
+    }
+  ]
+}
