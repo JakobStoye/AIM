@@ -1,0 +1,1024 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A constructive characterization of exactly trackable heat fluxes},
+ pdfauthor={Kaiwen Jin},pdfsubject={Exact range of separated boundary heat flux tracking}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Om}{\Omega}
+\newcommand{\dt}{\partial_t}
+\newcommand{\dn}{\partial_\nu}
+\newcommand{\calX}{\mathcal X}
+\newcommand{\calR}{\mathcal R}
+\newcommand{\calF}{\mathcal F}
+\newcommand{\calY}{\mathcal Y}
+\DeclareMathOperator{\dist}{dist}
+\title{A constructive characterization of exactly trackable heat fluxes}
+\author{Kaiwen Jin\\
+\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{12 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We characterize the normal heat fluxes that can be produced on an observation
+patch by square-integrable Dirichlet data on a disjoint control patch.
+The domain is any bounded connected smooth Euclidean domain in dimension
+at least two. The characterization consists of explicit conditions on the
+target: causal smoothness, weighted Taylor coefficients computed from a
+Gaussian surface potential, agreement of the resulting series, and
+volume, boundary-trace, support and observation compatibility tests.
+No control or caloric extension is an unknown in these tests.
+The reconstructed parallel boundary values define the exact causal
+control norm. In this norm the squared integral of the separated
+heat-flux kernel gives the exact norm of point evaluation at each positive
+time. Every fixed target is little-o of this scale at the initial time,
+and no prescribed further decay factor holds for all targets.
+\end{abstract}
+
+\section{Introduction}
+
+A boundary heater prescribes temperature on one part of a body, whereas a
+sensor measures heat flux on another. Exact tracking asks which complete
+time-dependent flux profiles can be produced by such a heater. Diffusion
+smooths a signal before it reaches a separated observation patch, but
+smoothness alone does not describe the attainable profiles: continuation
+through the body and support of the boundary input impose additional
+compatibility conditions.
+
+We consider a bounded connected $C^\infty$ domain $\Om\subset\R^d$,
+$d\geq2$, a time $T>0$, and nonempty relatively open sets
+$\Gamma,\Sigma\subset\partial\Om$ with
+$\overline\Gamma\cap\overline\Sigma=\varnothing$.
+The input is any $u\in L^2((0,T)\times\Gamma)$.
+Let $y_u$ be the zero-initial transposition solution of
+\begin{equation}\label{eq:state}
+ \dt y_u-\Delta y_u=0,\qquad y_u(0,\cdot)=0,\qquad
+ y_u|_{\partial\Om}=\mathbf1_\Gamma u.
+\end{equation}
+With the outward normal $\nu$, the tracking range is
+\begin{equation}\label{eq:range}
+ \calR_T=\{\dn y_u|_{(0,T)\times\Sigma}:
+                  u\in L^2((0,T)\times\Gamma)\}.
+\end{equation}
+The separation of the closures makes each output smooth locally on
+$[0,T]\times\Sigma$, including all one-sided derivatives at $T$,
+and flat at $t=0$.
+Throughout, a flux is identified with this smooth representative.
+No regularity of the edges of the two patches is assumed.
+
+B\'arcena-Petisco and Zuazua study tracking controllability for the heat
+equation \cite{BZ}. Their one-dimensional sufficient construction admits
+flat Gevrey targets of order below two; they also discuss approximation
+and the problem of finding a sharp tracking class.
+For interval geometry, Davron and Lissy give exact Gevrey-based tracking
+criteria, with a reachable-state compatibility condition at the finite-time
+endpoint. Their variants include Dirichlet input and Neumann output
+\cite[Theorems~1--2 and Section~3.1.2]{DL}.
+The related lateral Cauchy problem prescribes both temperature and normal
+flux on part of the boundary.
+Puzyrev and Shlapunov express its solvability through extension of a heat
+potential to a caloric function \cite[Theorem~2]{PS}.
+That criterion identifies the relevant continuation problem, but the
+extension remains an unknown.
+Here we retain the heat-potential construction and give explicit tests
+for its continuation, together with the conditions needed for the
+original $L^2$ input class.
+
+More precisely, for every geometry and every pair of patches just described,
+we define a class $\calX_T$ using only the target, known Gaussian integrals,
+fixed binomial translations and limits of explicitly computed functions.
+Theorem~\ref{thm:range} proves $\calR_T=\calX_T$.
+The tests use one small seed patch, yet enforce compatibility on all of
+$\Sigma$ and support on the exact original $\Gamma$.
+They give a unique recovered input and a concrete norm $N_f(T)$, with
+$N_f(t)$ equal to its $L^2$ size up to time $t$.
+Theorem~\ref{thm:sharp} then gives the exact geometry-dependent scale of
+point evaluation and its optimal initial-time restrictions.
+This is an infinite regularity and compatibility criterion; no
+finite decision procedure or universal Sobolev or Gevrey description is
+asserted.
+
+The main difficulty is to combine spatial continuation with rough boundary
+data. We cancel the measured flux source by subtracting the state extended
+by zero across the seed patch from a heat single-layer potential.
+The difference is causal and caloric on an enlarged domain.
+A separated-source Gaussian estimate supplies Taylor radii fixed by
+geometry, uniformly up to both time endpoints.
+The target therefore determines every continuation coefficient by
+translation. Absolute coefficient sums and overlap equalities test whether
+these local series form one caloric function.
+Parallel boundary values then distinguish precisely the original
+$L^2$ states, including inputs with no positive Sobolev regularity.
+Their convergence is proved directly from heat-Poisson mass and
+concentration estimates.
+
+Section~\ref{sec:class} defines the target class and states the range theorem.
+Section~\ref{sec:trace} proves the boundary trace facts,
+Section~\ref{sec:continuation} proves the continuation estimates,
+and Section~\ref{sec:rangeproof} establishes the equivalence and norm.
+Section~\ref{sec:sharp} proves the sharp quantitative assertions.
+We write $\N=\{0,1,\ldots\}$ and use the usual multi-index notation:
+$|\alpha|=\sum_i\alpha_i$, $\alpha!=\prod_i\alpha_i!$,
+$h^\alpha=\prod_i h_i^{\alpha_i}$, and $\alpha\geq\beta$ componentwise.
+All statements hold for real data; conjugation in the proofs also gives the
+complex version.
+
+\section{Explicit conditions on the target}\label{sec:class}
+
+We first fix auxiliary objects using the geometry alone.
+Choose a ball $B$ centered at a point of $\Sigma$, small enough that
+$\overline B\cap\partial\Om$ is a compact subset of $\Sigma$ and
+\[
+ E=B\setminus\overline\Om
+\]
+is connected. Choose $\chi\in C^\infty_c(\Sigma)$ equal to one on
+$\overline B\cap\partial\Om$, and set $D=\Om\cup B$.
+Thus $D$ is open, bounded and connected; its boundary need not be smooth.
+The ball permits cancellation of the boundary source, and $\chi$ makes
+the known potential use only a compact part of the observed flux.
+
+List all rational points of $D$ as $\{q_j:j\in\N\}$, with a root
+$q_0\in E$, and put
+\begin{equation}\label{eq:radii}
+ r_j=\frac{\dist(q_j,\partial D)}{128\sqrt d}.
+\end{equation}
+Fix a rooted tree on these centers with finite root-to-vertex paths and
+\begin{equation}\label{eq:edges}
+ |q_k-q_j|<r_j/4
+ \quad\text{whenever $q_j$ is the parent of $q_k$.}
+\end{equation}
+These balls cover $D$. Finally fix a tubular radius $\varepsilon_0>0$
+for $\partial\Om$ and set
+$\varepsilon_n=\varepsilon_0\,2^{-n-2}$, $n\in\N$.
+The existence of the geometric choices is justified below.
+
+Here are the five tests defining $\calX_T$.
+\begin{enumerate}[label=\textnormal{(\Alph*)},leftmargin=*]
+\item\label{test:A}
+The function $f$ belongs to $C^\infty_{\rm loc}([0,T]\times\Sigma)$
+and every mixed space-time derivative vanishes at $t=0$.
+Smoothness at $T$ means continuity of each derivative from the left on
+compact spatial subsets.
+\item\label{test:B}
+Form the known potential
+\begin{equation}\label{eq:potential}
+ V_f(x,t)=\int_0^t\int_\Sigma
+       \Phi(t-s,x-z)\chi(z)f(s,z)\,dS(z)\,ds,\qquad
+ \Phi(r,w)=(4\pi r)^{-d/2}e^{-|w|^2/(4r)}.
+\end{equation}
+At the root set
+$c^{(0)}_\alpha(t)=\partial_x^\alpha V_f(q_0,t)/\alpha!$.
+For each tree edge in \eqref{eq:edges} compute
+\begin{equation}\label{eq:translation}
+ c^{(k)}_\beta(t)=
+ \sum_{\alpha\geq\beta}\binom{\alpha}{\beta}
+ c^{(j)}_\alpha(t)(q_k-q_j)^{\alpha-\beta}.
+\end{equation}
+Require these sums, with every time derivative, to converge uniformly on
+$[0,T]$. The coefficients are computed recursively along the fixed finite
+paths; none is an unknown chosen to satisfy a condition.
+For every $j,m\in\N$ require
+\begin{equation}\label{eq:budget}
+ \sum_{\alpha\in\N^d}r_j^{|\alpha|}
+      \sup_{0\leq t\leq T}|\partial_t^m c^{(j)}_\alpha(t)|<\infty.
+\end{equation}
+Also require, for every $j,\alpha,m$,
+\begin{equation}\label{eq:recurrence}
+ \partial_t^m c^{(j)}_\alpha(0)=0,\qquad
+ \dt c^{(j)}_\alpha=
+ \sum_{i=1}^d(\alpha_i+2)(\alpha_i+1)c^{(j)}_{\alpha+2e_i}.
+\end{equation}
+On each overlap of $B(q_j,r_j)$ and $B(q_k,r_k)$ require equality of
+the two series at every rational space-time point in that overlap.
+The summability conditions imply continuity, so this countable test gives equality
+everywhere. If any sum diverges, the target fails this test.
+
+When this test passes, define the explicitly computed functions
+\begin{equation}\label{eq:FY}
+ \calF_f(x,t)=\sum_\alpha c^{(j)}_\alpha(t)(x-q_j)^\alpha
+       \quad(x\in B(q_j,r_j)),\qquad
+ \calY_f=V_f-\calF_f\quad\text{on $\Om$.}
+\end{equation}
+The first definition is independent of the covering ball.
+\item\label{test:C}
+Require $\calY_f\in L^2((0,T)\times\Om)$.
+Define its parallel boundary values, with the normal fixed at $p$,
+\begin{equation}\label{eq:Gn}
+ G_n(f)(t,p)=\calY_f(t,p-\varepsilon_n\nu(p)).
+\end{equation}
+Require the scalar Cauchy condition
+\begin{equation}\label{eq:cauchy}
+ \lim_{N\to\infty}\sup_{n,m\geq N}
+ \int_0^T\int_{\partial\Om}|G_n(f)-G_m(f)|^2\,dS\,dt=0.
+\end{equation}
+\item\label{test:D}
+Require exact control-patch compatibility:
+\begin{equation}\label{eq:support}
+ \lim_{n\to\infty}
+ \int_0^T\int_{\partial\Om\setminus\Gamma}|G_n(f)|^2\,dS\,dt=0.
+\end{equation}
+The complement is literal. In particular this condition includes patch
+edges of positive surface measure.
+\item\label{test:E}
+For every compact coordinate set $K\Subset\Sigma$ require
+\begin{equation}\label{eq:observation}
+ \nu(p)\cdot\nabla_x\calY_f(t,p-\varepsilon_n\nu(p))
+          \longrightarrow f(t,p)
+       \quad\text{in }C^\infty([0,T]\times K).
+\end{equation}
+This means uniform convergence of every derivative in time and local
+boundary coordinates. The test uses the entire observation patch,
+including components away from the seed ball.
+\end{enumerate}
+Let $\calX_T=\calX_T(\Om,\Gamma,\Sigma)$ be the space passing these tests.
+All functions in the tests are given by \eqref{eq:potential}--\eqref{eq:FY};
+the boundary limits are tests of those computed functions.
+
+\begin{theorem}[Exact range]\label{thm:range}
+For every $\Om,d,T,\Gamma,\Sigma$ satisfying the hypotheses of
+Section~1, and every admissible choice of the auxiliary geometry above,
+\[
+ \calR_T=\calX_T.
+\]
+Each target in this space is generated by a unique
+$u\in L^2((0,T)\times\Gamma)$. It is recovered by
+$u=\lim_n G_n(f)|_\Gamma$ in $L^2$.
+For $0\leq t\leq T$ the formula
+\begin{equation}\label{eq:N}
+ N_f(t)^2=\lim_{n\to\infty}
+              \int_0^t\int_\Gamma|G_n(f)(s,p)|^2\,dS(p)\,ds
+\end{equation}
+equals $\|u\|_{L^2((0,t)\times\Gamma)}^2$.
+The norm $\|f\|_{\calX_T}=N_f(T)$ makes the range a Hilbert space
+isometric to $L^2((0,T)\times\Gamma)$.
+The class and this norm do not depend on the auxiliary choices.
+\end{theorem}
+
+The theorem expresses membership without a singular system, a dual
+inequality, or an existential control or extension.
+The boundary limit yields the control after membership has been checked.
+Condition \eqref{eq:observation} is needed because the initial continuation
+uses only a small part of $\Sigma$; condition \eqref{eq:support} retains
+the actual control patch.
+
+\begin{lemma}[Geometric choices]\label{lem:geometry}
+The seed ball, covering balls, tree and tubular coordinates used above exist.
+For sufficiently small $\varepsilon>0$,
+$\Psi_\varepsilon(p)=p-\varepsilon\nu(p)$ parametrizes
+$\partial\Om_\varepsilon$, where
+$\Om_\varepsilon=\{x\in\Om:\dist(x,\partial\Om)>\varepsilon\}$.
+Its outward normal is $\nu(p)$ and its surface Jacobian
+$J_\varepsilon(p)$ tends smoothly and uniformly to one.
+There is a uniform interior and exterior tangent-ball radius.
+\end{lemma}
+\begin{proof}
+Finite smooth graph charts on the compact boundary give, uniformly in
+$p,z\in\partial\Om$,
+\begin{equation}\label{eq:quadratic}
+ |\nu(p)-\nu(z)|\leq C|p-z|,\qquad
+ |(p-z)\cdot\nu(p)|+|(p-z)\cdot\nu(z)|\leq C|p-z|^2.
+\end{equation}
+For distant pairs enlarge $C$ using compactness.
+The normal-coordinate derivative at distance zero is invertible.
+The local inverse follows, for example, by shrinking a chart until the
+equation has the form $v=b-H(v)$ with $\|DH\|<1/2$ and iterating;
+differentiation gives a smooth inverse.
+If $p-r\nu(p)=z-s\nu(z)$, taking the scalar product with $p-z$ in
+\eqref{eq:quadratic} gives
+$|p-z|^2\leq C(|r|+|s|)|p-z|^2$.
+Thus small normal coordinates are globally injective.
+A nearest boundary point exists; its displacement is normal and the graph
+fixes the inward sign. The normal distance is therefore the true distance.
+Tangential derivatives of $\nu$ are tangent, giving the asserted normal
+and $J_\varepsilon=\det(I-\varepsilon\,d\nu)$.
+The inner domain may have several components.
+For small $R>0$,
+\[
+ |p-z-R\nu(z)|^2-R^2\geq(1-2CR)|p-z|^2.
+\]
+The ball centered at $z+R\nu(z)$ has no boundary point inside, and its
+center is exterior by the normal chart. Connectedness of the ball makes
+it exterior. Reversing the sign gives an interior tangent ball.
+
+For the seed ball rotate a graph to $x_d=h(x')$, with
+$h(0)=Dh(0)=0$. On a radius-$a$ ball let
+$H(x')=(a^2-|x'|^2)^{1/2}$. Since $D^2H\leq-I/a$ and $D^2h$ is bounded,
+$H-h$ is strictly concave for small $a$.
+Its positive set is convex and each exterior vertical fiber is
+$(\max(h,-H),H)$. Their continuous midpoint section proves that $E$
+is connected. The same ball meets $\Om$, so $D$ is connected.
+
+An open connected set is polygonally connected: the set of points reachable
+from one point by interior polygonal paths is open and has open complement.
+A fixed path has positive clearance from $\partial D$.
+Dense rational points along a sufficiently fine subdivision therefore
+give a directed chain satisfying \eqref{eq:edges}.
+Every center is reachable. Choose a predecessor at the preceding minimal
+integer path length, resolving ties by the fixed listing; this gives the tree.
+If $\dist(x,\partial D)=a$, choose $q_j$ within $a/(512\sqrt d)$ of $x$.
+Then $r_j>a/(256\sqrt d)>|x-q_j|$, proving the covering assertion.
+\end{proof}
+
+\section{The original \texorpdfstring{$L^2$}{L2} boundary class}\label{sec:trace}
+
+For $g\in L^2((0,T)\times\partial\Om)$, the zero-initial transposition
+identity is
+\begin{equation}\label{eq:transposition}
+ \int_0^T\int_\Om y(-\dt\phi-\Delta\phi)\,dx\,dt
+       =-\int_0^T\int_{\partial\Om}g\,\dn\phi\,dS\,dt
+\end{equation}
+for every $\phi\in C^\infty([0,T]\times\overline\Om)$ with
+$\phi|_{\partial\Om}=0$ and $\phi(T)=0$.
+The state belongs to $L^2((0,T)\times\Om)$.
+We prove the needed representation and trace facts with this identity.
+We use monotone and dominated convergence, integrable Fubini,
+H\"older's inequality and $L^2$ completeness in their usual forms
+\cite[Theorems~4.6, 4.24, 5.18, 7.7, 7.10]{HM}.
+Smooth-chart mollification and the spatial Fourier transform on
+distributions use the conventions of
+\cite[Sections~1.9--1.12, 5.A--5.B]{HP}.
+
+\subsection{Heat-kernel mass and concentration}
+Let $p(r,x,y)$ be the Dirichlet heat kernel of $\Om$, and set
+\begin{equation}\label{eq:P}
+ P(r,x,z)=-\partial_{\nu_z}p(r,x,z),
+ \qquad r>0,\quad x\in\Om,\quad z\in\partial\Om.
+\end{equation}
+The kernel construction in \cite[Theorems~3.1, 3.12 and
+Definitions~2.1, 3.3]{G} applies to the compact smooth manifold
+$\overline\Om$ with its Euclidean metric.
+It supplies the heat equation, initial delta and zero Dirichlet value,
+smoothness up to both spatial boundaries for positive time, and
+flatness of every derivative at zero on separated spatial sets.
+In an interior chart it also supplies the form
+$r^{-d/2}A(\sqrt r,(x-y)/\sqrt r,y)$, where $A$ is smooth and rapidly
+decreasing, with every derivative, in its middle variable.
+We derive the remaining assertions here.
+
+Writing $S(r)h(x)=\int_\Om p(r,x,y)h(y)\,dy$, this local form and the initial
+delta imply $S(r)h\to h$ in $L^2$ for
+$h\in C^\infty_c(\Om)$.
+Indeed the initial delta forces $\int A(0,X,y)\,dX=1$;
+the substitution $y=x-\sqrt r X$ and rapid decay give convergence with all
+derivatives on compact interior sets. Off-diagonal flatness gives convergence
+to zero on a boundary collar separated from $\operatorname{supp}h$.
+A finite covering gives uniform convergence on $\overline\Om$.
+The energy identity and its negative-part version then give
+$p\geq0$ and $P\geq0$.
+The kernel is real by uniqueness of its real initial-value problem.
+Differentiating a pairing of forward and backward smooth evolutions gives
+symmetry; energy uniqueness gives the semigroup property.
+These statements extend by density to $L^2(\Om)$.
+
+Extend a zero-boundary smooth function to a containing cube of side
+$\ell$. Integration along one coordinate and Cauchy--Schwarz give
+$\|h\|_2^2\leq\ell^2\|\nabla h\|_2^2$.
+The heat energy identity consequently gives
+$\|S(r)\|_{2\to2}\leq e^{-r/\ell^2}$.
+Splitting $S(r)=S(1)S(r-2)S(1)$ for $r>2$ and using
+Cauchy--Schwarz against derivatives of the smooth time-one kernel gives
+\begin{equation}\label{eq:larger}
+ \sup_{x,y\in\overline\Om}
+ |\partial_x^\alpha\partial_y^\beta p(r,x,y)|
+          \leq C_{\alpha,\beta}e^{-(r-2)/\ell^2}.
+\end{equation}
+Time derivatives follow by the heat equation.
+
+\begin{lemma}[Mass and concentration]\label{lem:mass}
+For $x\in\Om$,
+\begin{equation}\label{eq:mass}
+ \int_0^\infty\int_{\partial\Om}P(r,x,z)\,dS(z)\,dr=1.
+\end{equation}
+For every fixed $\delta>0$ and all sufficiently small $\varepsilon>0$,
+\begin{equation}\label{eq:concentration}
+ \sup_{p\in\partial\Om}
+ \int_{\{r\geq\delta\ {\rm or}\ |z-p|\geq\delta\}}
+ P(r,\Psi_\varepsilon(p),z)\,dS(z)\,dr
+       \leq C_\delta\varepsilon .
+\end{equation}
+The latter integral is over $r>0,z\in\partial\Om$.
+Its constant depends only on $\Om,\delta$.
+\end{lemma}
+\begin{proof}
+Let $M(r,x)=\int_\Om p(r,x,y)\,dy$.
+An interior cutoff equal to one near $x$, the initial property and
+off-diagonal flatness give $M(0+,x)=1$;
+\eqref{eq:larger} gives $M(\infty,x)=0$.
+Symmetry and the divergence theorem give
+$\partial_rM=-\int_{\partial\Om}P(r,x,z)\,dS(z)$.
+Integration and positivity prove \eqref{eq:mass}.
+
+For $p,z\in\partial\Om$, $P(r,p,z)=0$: the kernel at the first boundary
+point is identically zero as a function of its source.
+The mean value formula along $p-a\nu(p)$ bounds the part $r\geq\delta$
+of \eqref{eq:concentration} by $\varepsilon$ times the integral of
+$\sup_{0\leq a\leq\varepsilon}|\nabla_xP(r,p-a\nu(p),z)|$.
+Positive-time smoothness and \eqref{eq:larger} make this integral uniformly
+finite. For $|z-p|\geq\delta$ and $\varepsilon<\delta/2$, the spatial
+separation is at least $\delta/2$.
+Off-diagonal flatness at zero and exponential decay at infinity make the
+same derivative integral finite over all $r>0$.
+Adding the two estimates proves \eqref{eq:concentration}.
+\end{proof}
+
+\subsection{Uniform \texorpdfstring{$L^2$}{L2} bounds and strong parallel traces}
+Define the Poisson integral directly by
+\begin{equation}\label{eq:Poisson}
+ Y_g(t,x)=\int_0^t\int_{\partial\Om}P(t-s,x,z)g(s,z)\,dS(z)\,ds.
+\end{equation}
+To prove a uniform bound for its parallel values we need a column estimate.
+Let $G(x,y)=\int_0^\infty p(r,x,y)\,dr$.
+This integral is locally integrable, since its volume row integral at small
+time is bounded by one and at large time decays exponentially.
+Integration of the heat equation gives
+$-\Delta_yG(x,y)=\delta_x(y)$, with zero boundary values.
+All boundary derivatives off the interior pole can be integrated using
+separation at zero and \eqref{eq:larger}. In particular
+\[
+ P^{\rm ell}(x,z):=-\partial_{\nu_z}G(x,z)
+             =\int_0^\infty P(r,x,z)\,dr.
+\]
+
+At the uniform exterior tangent ball with center $c_z=z+R\nu(z)$,
+put $a=|x-c_z|>R$ and $x^*=c_z+R^2(x-c_z)/a^2$.
+Writing $\omega_{d-1}=|\mathbb S^{d-1}|$, the comparison Green function is
+\begin{equation}\label{eq:ballGreen}
+ H(x,y)=
+ \begin{cases}
+ \displaystyle\frac{|x-y|^{2-d}-(R/a)^{d-2}|x^*-y|^{2-d}}
+                         {(d-2)\omega_{d-1}},&d>2,\\[5pt]
+ \displaystyle\frac1{2\pi}\log\frac{a|y-x^*|}{R|y-x|},&d=2 .
+ \end{cases}
+\end{equation}
+The identity
+$a^2|y-x^*|^2-R^2|y-x|^2
+=(a^2-R^2)(|y-c_z|^2-R^2)$ shows $H\geq0$ outside the ball,
+and $H=0$ on its sphere.
+Differentiation away from the pole and the unit radial flux of the
+fundamental solution give $-\Delta_yH(x,y)=\delta_x(y)$, the same
+distributional Laplacian as $G$.
+Thus $H-G$ is harmonic in the bounded domain $\Om$, with nonnegative
+boundary values.
+For completeness, distributional harmonic regularity follows by local
+radial mollification and the mean-value identity: each smooth mollification
+equals its convolution with a fixed smaller radial mass-one test function;
+passing to the distributional limit gives a smooth representative.
+Testing the negative part proves $H-G\geq0$.
+At the tangent point their common zero value and their inward derivatives,
+followed by differentiation of \eqref{eq:ballGreen}, give
+\begin{equation}\label{eq:ellbound}
+ 0\leq P^{\rm ell}(x,z)\leq
+          \frac{|x-c_z|^2-R^2}{\omega_{d-1}R|x-z|^d}.
+\end{equation}
+The logarithmic case gives the same formula; no comparison at infinity
+is needed.
+
+By \eqref{eq:quadratic},
+$|\Psi_\varepsilon(p)-z|^2\geq\frac12|p-z|^2+\varepsilon^2$
+and
+$|\Psi_\varepsilon(p)-c_z|^2-R^2\leq C(\varepsilon+|p-z|^2)$.
+Consequently
+\[
+ P^{\rm ell}(\Psi_\varepsilon(p),z)
+       \leq C\frac{\varepsilon+|p-z|^2}
+                          {(\varepsilon^2+|p-z|^2)^{d/2}}.
+\]
+Finite boundary charts bound its column integral by a constant times
+\[
+ \int_0^{C_0}
+   \frac{(\varepsilon+s^2)s^{d-2}}
+                         {(\varepsilon^2+s^2)^{d/2}}\,ds .
+\]
+The $\varepsilon$ term is uniformly bounded after $s=\varepsilon v$.
+The other term is $O(\varepsilon)$ below $\varepsilon$ and bounded above it.
+The far parts of the charts are uniformly bounded.
+Also \eqref{eq:ellbound} is at most $C|x-z|^{1-d}$ on bounded $\Om$,
+whose volume integral is uniformly finite.
+We have proved
+\begin{equation}\label{eq:columns}
+ \sup_{\varepsilon,z}\int_{\partial\Om}
+      P^{\rm ell}(\Psi_\varepsilon(p),z)\,dS(p)<\infty,\qquad
+ \sup_z\int_\Om P^{\rm ell}(x,z)\,dx<\infty .
+\end{equation}
+
+Let $T_\varepsilon g(t,p)=Y_g(t,\Psi_\varepsilon(p))$.
+The nonnegative time-space kernel has row integral at most one by
+\eqref{eq:mass} and uniformly bounded column integral by
+\eqref{eq:columns}.
+Cauchy--Schwarz with the kernel, followed by nonnegative Fubini, gives
+\begin{equation}\label{eq:Schur}
+ \|T_\varepsilon g\|_{L^2((0,T)\times\partial\Om)}
+       \leq C^{1/2}\|g\|_2,\qquad
+ \|Y_g\|_{L^2((0,T)\times\Om)}\leq C^{1/2}\|g\|_2 .
+\end{equation}
+Constants in these trace estimates may depend on the fixed domain and $T$
+but not on the data or small parallel distance.
+
+For $g\in C^\infty_c((0,T)\times\partial\Om)$, extend $g$ by zero in time.
+Formula \eqref{eq:Poisson} is then an integral over $r>0$ of
+$P(r,\Psi_\varepsilon(p),z)g(t-r,z)$.
+If $\omega_g$ is a uniform modulus of continuity, the mass and
+concentration estimates yield
+\[
+ |T_\varepsilon g(t,p)-g(t,p)|
+    \leq\omega_g(2\delta)+2\|g\|_\infty C_\delta\varepsilon .
+\]
+First taking $\varepsilon\downarrow0$, then $\delta\downarrow0$, gives
+uniform convergence.
+Smooth compact-time boundary functions are dense in full boundary $L^2$:
+use finitely many smooth charts and partitions, and ordinary mollification
+in the chart and time variables.
+Thus \eqref{eq:Schur} gives
+\begin{equation}\label{eq:strongtrace}
+ T_\varepsilon g\longrightarrow g
+            \quad\text{in }L^2((0,T)\times\partial\Om)
+ \quad\text{for every $g\in L^2$.}
+\end{equation}
+For example approximate by $g_k$ and bound the error by
+$(C^{1/2}+1)\|g-g_k\|_2+\|T_\varepsilon g_k-g_k\|_2$.
+No smoothness of a patch edge enters this density argument.
+
+\subsection{Identification with transposition}
+\begin{lemma}[Parallel trace criterion]\label{lem:trace}
+Suppose $Y\in L^2((0,T)\times\Om)$ is caloric, smooth on
+$[0,T]$ times each compact interior subset, and zero at $t=0$.
+If $Y(t,\Psi_{\varepsilon_n}(p))\to g(t,p)$ strongly in full boundary
+$L^2$ for one sequence $\varepsilon_n\downarrow0$, then $Y$ is the
+zero-initial transposition state for $g$.
+Conversely the state for every $g\in L^2$ is given by
+\eqref{eq:Poisson}, belongs to this class and satisfies
+\eqref{eq:strongtrace}.
+If $g$ is supported on $\Gamma$, the state and all its derivatives are
+smooth and flat at zero locally up to $\Sigma$.
+\end{lemma}
+\begin{proof}
+Take a test $\phi$ in \eqref{eq:transposition}.
+In the collar $x=p-r\nu(p)$ choose a fixed smooth cutoff $\eta(r)$
+equal to one near zero and zero before leaving the collar, and on
+$\Om_\varepsilon$ put
+\[
+ \phi_\varepsilon(t,x)=
+        \phi(t,x)-\eta(r)\phi(t,\Psi_\varepsilon(p)).
+\]
+Outside the collar leave $\phi$ unchanged.
+This test is zero on $\partial\Om_\varepsilon$ and at $T$.
+Since $\phi(t,p)=0$, its correction is $O(\varepsilon)$ in
+$C_x^2C_t^1$, uniformly on the closed cylinder, and
+$\partial_{\nu_\varepsilon}\phi_\varepsilon(t,\Psi_\varepsilon(p))
+\to\dn\phi(t,p)$ uniformly.
+Integration by parts on the smooth inner domain gives
+\[
+ \int_0^T\int_{\Om_\varepsilon}
+       Y(-\dt\phi_\varepsilon-\Delta\phi_\varepsilon)
+  =-\int_0^T\int_{\partial\Om}
+       Y(t,\Psi_\varepsilon(p))
+       \partial_{\nu_\varepsilon}\phi_\varepsilon(t,\Psi_\varepsilon(p))
+       J_\varepsilon(p)\,dS\,dt .
+\]
+The term involving $\partial_{\nu_\varepsilon}Y$ vanishes because the test
+has zero boundary value; the initial term vanishes because $Y(0)=0$.
+Strong boundary convergence and $J_\varepsilon\to1$ give the right-hand
+limit along the prescribed sequence.
+The disappearing collar has vanishing integral because $Y\in L^2$,
+and the correction tends uniformly to zero.
+This proves \eqref{eq:transposition}.
+
+Uniqueness in that identity can be verified directly.
+For $\psi\in C^\infty_c((0,T)\times\Om)$ use
+\[
+ \phi(t)=\int_0^{T-t}S(r)\psi(t+r)\,dr.
+\]
+The kernel's small-time interior convergence, separation near the boundary,
+and positive-time smoothness make this test smooth on the closed cylinder.
+Integrating the $r$ derivative gives $-\dt\phi-\Delta\phi=\psi$;
+its boundary and terminal values vanish.
+The difference of two identities therefore tests to zero against every
+such $\psi$.
+
+The directly defined $Y_g$ satisfies the volume bound and strong trace
+already proved. On compact interior sets the source boundary is separated:
+all differentiated kernels, extended by zero to negative time differences,
+are smooth and square-integrable in the source variables.
+Differentiating against $g\in L^2$ gives causal smoothness, flatness and
+the heat equation. The first part of the lemma now identifies $Y_g$ with
+the transposition state.
+For $g=\mathbf1_\Gamma u$, the same separation argument works in a collar
+of each compact subset of $\Sigma$, including the endpoints in time.
+It also gives smooth convergence of all parallel normal derivatives there.
+\end{proof}
+
+\section{Causal spatial continuation}\label{sec:continuation}
+
+All causal functions and distributions in this section are extended by zero
+for negative time. Smoothness at the terminal time always means left
+continuity of every derivative on compact spatial subsets.
+
+\begin{lemma}[Local smoothing and fixed Taylor radii]\label{lem:Taylor}
+Let $D$ be a bounded open set and let $F$ be a causal distributional
+solution of $(\dt-\Delta)F=0$ on $(-\infty,T)\times D$ such that
+$\int_0^T\int_U|F|^2\,dx\,dt<\infty$ for every $U\Subset D$.
+Then $F$ is smooth on $[0,T]$ times every compact interior subset and
+all its derivatives are zero at $t=0$.
+For $q\in D$ put $r=\dist(q,\partial D)/(128\sqrt d)$.
+Its Taylor coefficients satisfy, for every $m\in\N$,
+\begin{equation}\label{eq:localbudget}
+ \sum_\alpha r^{|\alpha|}
+ \sup_{0\leq t\leq T}
+       \left|\frac{\partial_x^\alpha\partial_t^mF(q,t)}{\alpha!}\right|
+       <\infty .
+\end{equation}
+The series equals $F$ on the real polydisc $|x_i-q_i|<4r$.
+Translation by $|\delta|<r/4$ gives its actual coefficients at $q+\delta$
+by \eqref{eq:translation}, with all time derivatives converging uniformly.
+\end{lemma}
+\begin{proof}
+For a compact spatial cutoff $\eta$ equal to one on a smaller ball,
+the distributional equation gives
+\[
+ (\dt-\Delta)(\eta F)
+       =-2\operatorname{div}(F\nabla\eta)+(\Delta\eta)F.
+\]
+The causal Gaussian fundamental solution consequently gives, on that ball,
+\begin{equation}\label{eq:cutoff}
+ F(x,t)=\int_0^t\int
+ \big[-2\nabla_x\Phi(t-s,x-y)\cdot\nabla\eta(y)
+              +\Phi(t-s,x-y)\Delta\eta(y)\big]F(y,s)\,dy\,ds.
+\end{equation}
+Here $(\dt-\Delta)\Phi=\delta_{(0,0)}$ follows by direct differentiation,
+Gaussian mass one, and its approximate-identity limit.
+To check uniqueness of this causal convolution identity, take the spatial
+Fourier transform of the homogeneous difference, which is tempered on
+each compact time interval. On a bounded frequency set multiplication
+by $e^{t|\xi|^2}$ changes its equation to zero temporal derivative.
+A distribution with zero temporal derivative is constant in time:
+every compact time test of integral zero has a compactly supported
+primitive. Zero past makes that constant zero.
+Exhausting frequency space proves uniqueness. This argument uses an
+exponential multiplier only on bounded frequency sets.
+
+The derivatives of $\eta$ are separated from $x$.
+Every derivative of the kernel in \eqref{eq:cutoff}, extended by zero at
+nonpositive time differences, is bounded, smooth and flat at zero there.
+Cauchy--Schwarz against local space-time $L^2$ justifies differentiation,
+continuity up to $T$, and flatness at zero.
+
+Now put $R=\dist(q,\partial D)/2$, choose $\eta$ supported in $B(q,R)$
+and equal to one on $B(q,R/2)$, and for each $m$ set
+\[
+ Z_m=\eta\partial_t^mF,\qquad
+ H_m=-2\nabla\eta\cdot\nabla\partial_t^mF
+                   -(\Delta\eta)\partial_t^mF.
+\]
+The smooth bounded source $H_m$ is supported in
+$R/2\leq|y-q|\leq R$ and
+$Z_m=\Phi*H_m$ by the same causal uniqueness argument.
+For $h=x-q$ the algebraic exponential series of the Gaussian has coefficients
+$A_\alpha$, with
+\[
+ \sum_\alpha|A_\alpha|\rho^{|\alpha|}
+ \leq(4\pi\tau)^{-d/2}
+ \exp\left(-\frac{|q-y|^2}{4\tau}
+       +\frac{\rho\sum_i|q_i-y_i|}{2\tau}
+       +\frac{d\rho^2}{4\tau}\right).
+\]
+Choose $\rho=4r=R/(16\sqrt d)$.
+On the source annulus the exponent is at most
+$-31R^2/(1024\tau)$.
+Absolute integration of this bound over $0<\tau<T$ gives
+\[
+ \sup_{0\leq t\leq T}
+ \sum_\alpha(4r)^{|\alpha|}
+  \left|\frac{\partial_x^\alpha\partial_t^mF(q,t)}{\alpha!}\right|
+ \leq M_m,\qquad
+ M_m=\frac{\|H_m\|_\infty|B(q,R)|}{(4\pi)^{d/2}}
+     \int_0^T\tau^{-d/2}e^{-31R^2/(1024\tau)}\,d\tau .
+\]
+The integral is finite. This also proves that the series is the actual
+function on the polydisc, which lies where $\eta=1$.
+Bounding each coefficient by $M_m(4r)^{-|\alpha|}$ and summing at radius
+$r$ proves \eqref{eq:localbudget}, with bound $M_m(4/3)^d$.
+Differentiating the actual series at $\delta$ proves the binomial formula.
+For fixed $\beta$ its binomial factors have polynomial growth in $\alpha$,
+while $|\delta_i|/(4r)<1/16$; the resulting series and every time
+derivative converge uniformly.
+\end{proof}
+
+\begin{lemma}[The continuation determined by the tests]\label{lem:gluing}
+If tests \ref{test:A} and \ref{test:B} pass, the function $\calF_f$
+in \eqref{eq:FY} is smooth and causal on $D$, caloric, and spatially
+analytic at each fixed time. It equals $V_f$ on $E$.
+Conversely, if $F$ satisfies the causal equation and full-interval local
+$L^2$ hypothesis of Lemma~\ref{lem:Taylor} and equals $V_f$ on $E$,
+the recursively computed coefficients satisfy test \ref{test:B}
+and reconstruct this $F$.
+\end{lemma}
+\begin{proof}
+On each strictly smaller covering ball a spatial derivative of the series
+introduces only a polynomial in $\alpha$, absorbed by the strict reduction
+in radius in \eqref{eq:budget}.
+Thus every space-time derivative converges uniformly.
+Flatness and the recurrence \eqref{eq:recurrence} give causality and the
+heat equation term by term.
+Equality on the dense rational space-time points gives equality on
+every overlap, so the series glue.
+
+The source of $V_f$ is outside $E$.
+It is smooth, causal and caloric there; spatial analyticity follows either
+from the separated Gaussian series or Lemma~\ref{lem:Taylor}.
+The root coefficients are its actual Taylor coefficients, so the
+root series agrees with $V_f$ on a neighborhood of $q_0$.
+At each fixed time the analytic identity principle on connected $E$
+gives equality throughout $E$.
+One can see this principle directly: the set of points with a zero
+neighborhood for the difference is open; at a limit point all derivatives
+vanish by continuity and the local convergent series gives a zero
+neighborhood, so that set is also closed.
+
+For the converse, Lemma~\ref{lem:Taylor} applies at every center.
+Along each finite tree path its translation formula recovers the actual
+coefficients. The prescribed summability, flatness, heat recurrence and
+overlap agreement therefore all hold.
+\end{proof}
+
+\begin{lemma}[Cancellation of the measured source]\label{lem:cancel}
+For an original input $u\in L^2((0,T)\times\Gamma)$, let
+$f=\dn y_u|_\Sigma$. Then
+\[
+ F=V_f-\mathbf1_\Om y_u
+\]
+is causal and caloric on $D$, equals $V_f$ on $E$, and satisfies
+$\int_0^T\int_U|F|^2\,dx\,dt<\infty$ for every $U\Subset D$.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{lem:trace} gives smoothness and flatness of $y_u$ locally up to
+the seed patch, where its Dirichlet value is zero.
+The surface Gaussian bound
+$\int_{\operatorname{supp}\chi}\Phi(r,x-z)\,dS(z)\leq Cr^{-1/2}$
+follows from finite graph charts: surface measure in a radius-$a$ ball
+is at most $Ca^{d-1}$; sum the Gaussian over dyadic rings of scale
+$\sqrt r$. The bound is integrable in time, so $V_f$ is locally bounded
+across its source surface and has zero initial value.
+The fundamental-solution identity gives
+$(\dt-\Delta)V_f=\chi f\,\delta_{\partial\Om}$.
+Inside $D$ the only original boundary lies in $B$, where $\chi=1$.
+Two integrations by parts there give
+$(\dt-\Delta)(\mathbf1_\Om y_u)=f\,\delta_{\partial\Om}$,
+since the zero Dirichlet value removes the derivative-of-surface term.
+Explicitly, for a compact local space-time test $\varphi$,
+\[
+ \int_0^T\int_\Om y_u(-\dt\varphi-\Delta\varphi)\,dx\,dt
+   =\int_0^T\int_{\partial\Om}
+           (\dn y_u\,\varphi-y_u\,\dn\varphi)\,dS\,dt.
+\]
+The source sign is positive.
+No initial delta occurs. Interior smoothness and flatness in the seed
+collar make the zero-extended state continuous at $t=0$ in local $L^2$,
+with value zero; the potential is also continuous with zero initial value.
+The two surface sources therefore cancel.
+Away from that boundary the assertion is immediate, and on $E$ the
+extended state is zero.
+\end{proof}
+
+\section{Proof of the range and norm statements}\label{sec:rangeproof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:range}]
+For necessity take any original $u\in L^2((0,T)\times\Gamma)$.
+The separated representation in Lemma~\ref{lem:trace} gives test
+\ref{test:A}.
+Lemma~\ref{lem:cancel} supplies the causal caloric $F$ on $D$ with the
+required exterior germ.
+Lemma~\ref{lem:gluing} proves test \ref{test:B} and identifies
+$\calY_f=y_u$.
+The volume bound and strong parallel trace in Lemma~\ref{lem:trace}
+give test \ref{test:C} and
+$G_n(f)\to\mathbf1_\Gamma u$ in full boundary $L^2$.
+This gives test \ref{test:D}.
+Separation of the input and observation closures gives smooth convergence
+of the parallel normal derivatives on every compact subset of $\Sigma$,
+which is test \ref{test:E}.
+
+For sufficiency let all five tests pass.
+Lemma~\ref{lem:gluing} makes $\calF_f$ smooth, causal and caloric on $D$.
+Since the source of $V_f$ lies on the boundary, $\calY_f$ is smooth and
+caloric inside $\Om$, with zero initial value.
+By test \ref{test:C}, it is in volume $L^2$ and its parallel traces
+converge strongly to some $g$ in full boundary $L^2$.
+Lemma~\ref{lem:trace} gives the original transposition identity for $\calY_f$.
+Test \ref{test:D} makes $g=0$ almost everywhere on
+$\partial\Om\setminus\Gamma$, so $u=g|_\Gamma$ is an admissible input.
+Uniqueness identifies $\calY_f=y_u$.
+This original state is smooth locally up to $\Sigma$ by separation.
+Its actual normal derivative is therefore the parallel limit in test
+\ref{test:E}, namely $f$ on the entire original observation patch.
+
+If two inputs give the same flux, their continued functions from
+Lemma~\ref{lem:cancel} agree on $E$.
+They are spatially analytic at each time by Lemma~\ref{lem:Taylor}.
+The identity principle on connected $D$ gives equality everywhere,
+then equality of states on $\Om$ and of their parallel $L^2$ traces.
+Thus the two inputs are equal.
+Strong trace convergence proves \eqref{eq:N}; absolute continuity of the
+integral makes $N_f(t)$ finite and continuous, with $N_f(0)=0$.
+The range map is linear, bijective and isometric in $N_f(T)$.
+Transporting the $L^2$ inner product gives completeness and the Hilbert
+structure.
+Finally the original range and the unique input do not refer to any
+auxiliary choices, proving invariance of the class and norm.
+\end{proof}
+
+\section{Sharp restrictions at the initial time}\label{sec:sharp}
+
+For an observation point $x\in\Sigma$ define the forward flux kernel and
+its evaluation scale by
+\begin{equation}\label{eq:KC}
+ K(r,x,z)=-\partial_{\nu_x}\partial_{\nu_z}p(r,x,z),\qquad
+ C_{\Gamma,x}(t)^2=\int_0^t\int_\Gamma|K(r,x,z)|^2\,dS(z)\,dr .
+\end{equation}
+These are computed from the Dirichlet heat kernel of the fixed domain,
+not from a tracking inverse. The derivatives are taken from the interior.
+Separation makes $C_{\Gamma,x}(t)$ finite; its square is smooth and
+flat at zero. Consequently $C_{\Gamma,x}(t)=O(t^M)$ for every $M>0$.
+We do not need any assertion about derivatives of the square root at zero.
+
+\begin{theorem}[Exact evaluation scale]\label{thm:sharp}
+Under the hypotheses of Theorem~\ref{thm:range}, fix $x\in\Sigma$.
+For every $0<t\leq T$, $C_{\Gamma,x}(t)>0$ and
+\begin{equation}\label{eq:sharpbound}
+ |f(t,x)|\leq C_{\Gamma,x}(t)N_f(t)
+                  \quad(f\in\calX_T),\qquad
+ \frac{|f(t,x)|}{C_{\Gamma,x}(t)}\longrightarrow0
+                         \quad(t\downarrow0).
+\end{equation}
+The scale $C_{\Gamma,x}(t)$ is exactly the norm of evaluation at $(t,x)$
+on the unit ball for $N_f(T)$; the constant one is optimal.
+For every function $\eta(t)>0$ with $\eta(t)\to0$ as $t\downarrow0$
+there is one fixed $f\in\calX_T$ such that
+\begin{equation}\label{eq:norate}
+ \sup_{0<t<T}\frac{|f(t,x)|}{C_{\Gamma,x}(t)\eta(t)}=\infty .
+\end{equation}
+Thus the fixed-target little-o assertion has no prescribed extra rate
+valid for all targets.
+\end{theorem}
+
+This gives an exact quantitative restriction including the full
+geometry-dependent scale at small times.
+The pointwise bound alone is not asserted to be sufficient for tracking;
+the continuation, trace and patch compatibility tests in
+Section~\ref{sec:class} give the necessary and sufficient class.
+
+\begin{lemma}[Strict kernel signs]\label{lem:sign}
+For $r>0$, $w,y\in\Om$ and distinct boundary points $x,z$,
+\[
+ p(r,w,y)>0,\qquad P(r,w,z)>0,\qquad K(r,x,z)<0 .
+\]
+\end{lemma}
+\begin{proof}
+We give elementary positivity propagation and a boundary barrier.
+In the cube $(-a,a)^d$ let
+$\varphi(X)=\prod_i\cos(\pi X_i/(2a))$ and
+$\lambda=d\pi^2/(4a^2)$.
+If its center moves as $c(s)=c_0+v(s-s_0)$, the function
+\[
+ b(s,w)=b_0e^{-v\cdot(w-c(s))/2}
+ e^{-(\lambda+|v|^2/4)(s-s_0)}\varphi(w-c(s))
+\]
+is caloric, positive inside and zero on the moving boundary.
+If a nonnegative caloric $h$ is positive near the initial closed cube,
+choose $b_0>0$ small enough that $b(s_0,\cdot)\leq h(s_0,\cdot)$.
+When the moving cube stays in $\Om$, comparison gives $h\geq b$:
+in moving coordinates the squared negative-part energy is nonincreasing,
+and the constant transport term integrates to zero because the negative
+part has zero boundary trace.
+A polygonal path compactly contained in $\Om$ can be traversed by small
+moving cubes in any prescribed positive time.
+At each junction shrink the next initial cube inside the previous
+terminal open cube. Thus positivity on one open set propagates to every
+interior point in any additional positive time.
+For fixed source $y$, the nonnegative kernel's initial delta implies a
+positive open set at an arbitrarily small positive time.
+Propagation proves strict interior positivity.
+
+At a boundary point take an interior tangent ball $B(c,R)$ and an interval
+$[r-\delta,r]$, $0<\delta<r$.
+In its shell $R/2<|w-c|<R$ put
+\[
+ b(w,s)=e^{-A(|w-c|^2+\mu(r-s))}-e^{-AR^2},
+                 \qquad \mu\delta\geq3R^2/4.
+\]
+This function is nonpositive initially and on the outer sphere.
+A positive caloric function has a positive minimum on the compact inner
+sphere over this time interval, so a small positive multiple of $b$
+lies below it there.
+For sufficiently large $A$,
+\[
+ (\partial_s-\Delta)b
+   =A(\mu+2d-4A|w-c|^2)e^{-A(|w-c|^2+\mu(r-s))}\leq0.
+\]
+Negative-part comparison in the fixed shell gives the lower bound.
+At the final tangency point the inward derivative is
+$2AR e^{-AR^2}>0$, so the outward derivative of a positive caloric
+function with zero boundary value is strictly negative.
+Apply this first to the kernel in its source variable, using symmetry,
+to obtain $P>0$.
+For fixed $z$, $P$ is positive and caloric in the interior variable,
+and zero on that boundary at every positive time.
+A second application gives $\partial_{\nu_x}P=K<0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sharp}]
+Since $\Gamma$ is nonempty and relatively open, it has positive surface
+measure; Lemma~\ref{lem:sign} proves $C_{\Gamma,x}(t)>0$.
+The separated Poisson representation and the recovered input give
+\[
+ f(t,x)=\int_0^t\int_\Gamma K(t-s,x,z)u(s,z)\,dS(z)\,ds .
+\]
+Cauchy--Schwarz and \eqref{eq:N} prove \eqref{eq:sharpbound}.
+For the second assertion $N_f(t)\to0$ by absolute continuity of the
+squared-input integral.
+At a fixed positive $t$, the allowed input
+$u_t(s,z)=\overline{K(t-s,x,z)}/C_{\Gamma,x}(t)$ on
+$(0,t)\times\Gamma$, zero afterwards, has total norm one and output
+$f_t(t,x)=C_{\Gamma,x}(t)$.
+The norm equality in Theorem~\ref{thm:range} proves exact optimality.
+
+It remains to show \eqref{eq:norate} for one fixed input.
+Write $C(t)=C_{\Gamma,x}(t)$ and choose $t_n\downarrow0$ recursively with
+$t_{n+1}<t_n/2$, $\eta(t_n)\leq n^{-2}$, and
+\[
+ \|\mathbf1_{(0,t_{n+1})}(s)K(t_n-s,x,z)\|_{L^2(ds\,dS)}
+                  \leq C(t_n)/(8n).
+\]
+After $t_n$ is fixed, absolute continuity of its squared kernel integral
+permits the next upper bound on $t_{n+1}$, and the limit of $\eta$ permits
+its next smallness condition.
+On disjoint intervals $I_n=(t_{n+1},t_n)$ let $e_n$ be the conjugated
+kernel $K(t_n-s,x,z)$ restricted to $I_n\times\Gamma$ and divided by its
+$L^2$ norm.
+This norm is at least $C(t_n)\sqrt{1-(8n)^{-2}}$, so $e_n$ is well defined
+with unit norm.
+The fixed input $u=\sum_{n\geq1}n^{-1}e_n$ has
+$\|u\|_2^2=\sum_{n\geq1}n^{-2}<4$.
+At $t_n$ earlier indices are in the future and contribute nothing.
+The self term contributes at least
+$C(t_n)n^{-1}\sqrt{1-(8n)^{-2}}$.
+All later terms have norm below two, are supported in $(0,t_{n+1})$,
+and contribute in absolute value at most $C(t_n)/(4n)$.
+Hence $|f(t_n,x)|\geq C(t_n)/(2n)$ and the quotient in
+\eqref{eq:norate} is at least $n/2$.
+Theorem~\ref{thm:range} makes this one output a member of the complete
+target class, proving the assertion.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted with literature retrieval, mathematical exploration,
+proof development, checking, and preparation of this manuscript.
+The submission is a mathematical claim for external review.
+
+\begin{thebibliography}{9}
+\bibitem{BZ}
+J. A. B\'arcena-Petisco and E. Zuazua,
+\emph{Tracking controllability for the heat equation},
+IEEE Transactions on Automatic Control \textbf{70}(3) (2025), 1935--1940.
+\href{https://doi.org/10.1109/TAC.2024.3476174}{doi:10.1109/TAC.2024.3476174}.
+Author manuscript:
+\href{https://arxiv.org/abs/2310.00314v3}{arXiv:2310.00314v3}.
+
+\bibitem{DL}
+L. Davron and P. Lissy,
+\emph{Exact output tracking for the one-dimensional heat equation and
+applications to the interpolation problem in Gevrey classes of order 2},
+preprint, 2025.
+\href{https://arxiv.org/abs/2511.07326v2}{arXiv:2511.07326v2}.
+
+\bibitem{PS}
+R. E. Puzyrev and A. A. Shlapunov,
+\emph{On an Ill-Posed Problem for the Heat Equation},
+Journal of Siberian Federal University. Mathematics \& Physics
+\textbf{5}(3) (2012), 337--348.
+\href{https://elib.sfu-kras.ru/bitstream/2311/2924/1/shlapunev.pdf}{Authoritative full text}.
+
+\bibitem{G}
+D. Grieser,
+\emph{Notes on Heat Kernel Asymptotics},
+13 August 2004.
+\href{https://web.math.ku.dk/grubb/notes/heat.pdf}{Full text}.
+
+\bibitem{HM}
+J. K. Hunter,
+\emph{Measure Theory}, 2011.
+\href{https://www.math.ucdavis.edu/~hunter/measure_theory/measure_notes.pdf}{Lecture notes}.
+
+\bibitem{HP}
+J. K. Hunter,
+\emph{Notes on Partial Differential Equations}, revised 18 June 2014.
+\href{https://www.math.ucdavis.edu/~hunter/pdes/pde_notes.pdf}{Lecture notes}.
+\end{thebibliography}
+\end{document}
