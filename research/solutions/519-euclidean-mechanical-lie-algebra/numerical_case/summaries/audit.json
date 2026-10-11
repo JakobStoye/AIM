@@ -1,0 +1,19 @@
+{
+  "max_order": 18,
+  "marker_leaves": 10,
+  "prime": 1000003,
+  "checks": {
+    "degree_one_action": 362,
+    "higher_degree_projection": 6249,
+    "retraction": 6249,
+    "pbw_purity": 6611,
+    "marker_word_decoding": 1019,
+    "jacobi_triples": 125
+  },
+  "total_dimension": 6705,
+  "total_positive_dimension": 6611,
+  "exact_integer_arithmetic": true,
+  "all_checks_passed": true,
+  "elapsed_seconds": 383.597,
+  "scope": "Finite audits only. The all-order argument is separate."
+}

@@ -1,0 +1,516 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[margin=28mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\g}{\mathfrak g}
+\newcommand{\Lie}{\operatorname{Lie}}
+\newcommand{\ad}{\operatorname{ad}}
+\title{Universal identities for Euclidean mechanical Lie brackets}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 11, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that Euclidean kinetic energy and arbitrary smooth potentials,
+considered in all dimensions, satisfy no universal Lie identities beyond
+those of the free polynomially graded Lie algebra of classical mechanics.
+Polynomial potentials already suffice to separate every nonzero element.
+The proof reduces positive momentum degree to degree zero: a sufficiently
+large binary-tree potential distinguishes words in degree one, while in
+higher degree a free Lie projection and a retraction recover a nonzero
+multiple of the original element. Symmetrization in a free pre-Lie algebra
+and finite Taylor jets then separate the potential part. This answers the
+Euclidean mechanical conjecture of McLachlan and Murua. Exact computations
+through order eighteen provide supporting finite verification.
+\end{abstract}
+
+\section{Introduction}
+
+For a mechanical Hamiltonian
+\[
+ H(q,p)=T(p)+V(q),\qquad T(p)=\tfrac12\lvert p\rvert^2,
+\]
+the Poisson brackets of kinetic and potential energy determine the
+order conditions of splitting integrators. Quadratic dependence on momentum
+forces identities absent from an unrestricted free Lie algebra. For example,
+three successive brackets with a potential annihilate the kinetic energy.
+The question is whether a constant Euclidean kinetic metric imposes further
+identities that hold for every potential and every dimension.
+
+McLachlan and Murua \cite{MM} formulated this question using the free
+polynomially graded Lie algebra of classical mechanics. Their structural
+theorem identifies its potential part with a free commutative
+nonassociative algebra, and its positive-degree part with a free Lie algebra
+on explicit generators. They also established faithfulness on the potential
+part by relating it to rooted trees and pre-Lie symmetrization. The
+corresponding assertion for all momentum degrees remained their
+Conjecture~1. The survey of Blanes, Casas and Murua \cite[\S3.1]{BCM} retains
+the conjectural equality of the Euclidean and general mechanical
+order-condition reductions and reports prior checks through order twenty.
+Finite-order rank calculations alone cannot establish this equality in all
+orders.
+
+Here is the precise free object and the statement we prove. Work over $\R$.
+Let $\mathfrak P$ be the class of Lie algebras $L=\bigoplus_{m\ge0}L_m$ with
+\begin{equation}\label{eq:grading}
+ [L_n,L_m]\subseteq L_{n+m-1}\quad(n+m>0),
+ \qquad [L_0,L_0]=0.
+\end{equation}
+Let $F$ be free in this class on $A$ of degree two and $B$ of degree zero;
+every degree-preserving assignment of these generators extends uniquely to
+a homomorphism. For $d\ge1$ and a smooth real potential $V$ on $\R^d$, write
+\[
+ \Phi_{d,V}:F\longrightarrow C^\infty_{\mathrm{pol}}(\R^{2d}),
+ \qquad A\longmapsto\tfrac12\lvert p\rvert^2,
+ \qquad B\longmapsto V(q).
+\]
+The target consists of smooth functions polynomial in $p$, graded by
+homogeneous momentum degree, with the convention
+\begin{equation}\label{eq:poisson}
+ \{f,h\}=\sum_{i=1}^d(f_{q_i}h_{p_i}-f_{p_i}h_{q_i}).
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+The Euclidean mechanical realizations have zero joint kernel:
+\begin{equation}\label{eq:main}
+ \bigcap_{d\ge1}\ \bigcap_{V\in C^\infty(\R^d;\R)}
+       \ker\Phi_{d,V}=\{0\}.
+\end{equation}
+The intersection is already zero when the potentials are restricted to real
+polynomials.
+\end{theorem}
+
+Thus every nonzero finite Lie expression is detected by some dimension and
+some polynomial potential. The quantifiers in \eqref{eq:main} are those of
+the Euclidean conjecture and AIM problem~519; injectivity for an individual
+fixed potential is not asserted.
+
+The new step is an algebraic degree-lowering argument. A putative universal
+identity belongs to a graded ideal. Bracketing with a suitable modified
+potential lowers its momentum degree without making it zero. The probe may
+have a much larger order than the expression being tested, which is permitted
+by the universal question. In degree one a large binary tree makes the
+ordered sequence of multiplications recoverable. In higher degree the probe
+acts, after discarding generators with larger tree labels, like replacing one
+independent kinetic letter by a fresh letter. Sending that letter back
+recovers the original expression multiplied by its kinetic-letter count.
+Every nonzero graded ideal must consequently meet the potential part, where
+faithfulness closes the proof.
+
+Section~\ref{sec:lowering} proves this reduction from the established free
+decomposition. Section~\ref{sec:potentials} gives explicit tree and Taylor-jet
+arguments for the potential part and completes the theorem.
+Appendix~\ref{sec:computations} describes the finite computations. All Lie
+elements and tree combinations in the paper are finite sums; no completed
+Lie algebra is used.
+
+\section{Lowering momentum degree}\label{sec:lowering}
+
+Put $X=F_0$ and define
+\begin{equation}\label{eq:star}
+ x*s=[s,[x,A]]\qquad(x,s\in X).
+\end{equation}
+Jacobi and $[X,X]=0$ show that this product is commutative. Theorem~1 of
+McLachlan and Murua \cite{MM}, together with its Hall-basis proof in
+\S2.3, gives the vector-space decomposition
+\begin{equation}\label{eq:decomposition}
+ F=X\oplus\g,\qquad
+ \g=\bigoplus_{m\ge1}F_m
+    =\Lie_{\mathrm{free}}(A,\{y_s:s\in\mathcal B\}),
+ \qquad y_s=[s,A].
+\end{equation}
+Here $\mathcal B$ is the basis of all unordered full binary products in $B$.
+With \eqref{eq:star}, $X$ is the free \emph{nonunital} commutative
+nonassociative algebra on $B$. The specified generators in
+\eqref{eq:decomposition}, rather than abstract freeness alone, will be used
+below. If $|s|$ denotes the number of leaves, then
+\[
+ |s|\ge1,\qquad |s*t|=|s|+|t|,
+ \qquad [x,A]=y_x,\quad [x,y_s]=x*s.
+\]
+For general $x\in X$, the notation $y_x=[x,A]$ is extended linearly.
+
+Count the occurrences of $A$ as an independent generator of $\g$;
+the letters inside a label $y_s$ are not counted. A Lie monomial with $k$
+such occurrences has momentum degree $k+1$, by
+\eqref{eq:grading}. Freeness makes this a second grading, and hence
+\begin{equation}\label{eq:Acount}
+ F_1=\Lie_{\mathrm{free}}(\{y_s\}),\qquad
+ F_m=\{\text{elements of $\g$ homogeneous of independent $A$ count $m-1$}\}.
+\end{equation}
+We use the injective associative realization of a free Lie algebra as
+commutator polynomials in its generators. An algebraic justification is given
+in Appendix~\ref{sec:associative}.
+
+\begin{lemma}\label{lem:degreeone}
+For every $0\ne u\in F_1$, there is $x\in\mathcal B$ such that
+$[x,u]\ne0$.
+\end{lemma}
+\begin{proof}
+Expand $u$ as a nonzero finite associative polynomial
+$\sum_w c_w w$ in words $w=y_{s_1}\cdots y_{s_r}$.
+Choose
+\[
+ M>\max_{c_w\ne0}\sum_{i=1}^r|s_i|,
+ \qquad x\in\mathcal B,\quad |x|=M.
+\]
+Such a tree exists for every positive $M$, for instance a comb.
+On $X$, $\ad_{y_s}=-L_s$, where $L_s(z)=s*z$. Thus the action of a word is
+\begin{equation}\label{eq:wordaction}
+ w(x)=(-1)^r s_1*(s_2*(\cdots*(s_r*x)\cdots)).
+\end{equation}
+These output trees distinguish the words. At the root, the branch containing
+$x$ has at least $M$ leaves and the other branch has fewer than $M$.
+Removing the latter recovers $s_1$. Repeat to recover $s_2,\ldots,s_r$, stopping
+when the remaining tree has exactly $M$ leaves. Every proper subtree of $x$
+has fewer leaves, so the stopping rule is unambiguous. Distinct associative
+words therefore have distinct outputs in the basis $\mathcal B$.
+Their coefficients, including the signs in \eqref{eq:wordaction}, cannot
+cancel. Hence $[u,x]\ne0$, and antisymmetry proves the lemma.
+\end{proof}
+
+For higher momentum degree we must control the additional potential terms
+created by this action. Fix $M\ge1$ and set
+\[
+ X_{>M}=\operatorname{span}\{s\in\mathcal B:|s|>M\},
+ \qquad
+ J_{>M}=\text{the Lie ideal of $\g$ generated by $y_s$ with $|s|>M$},
+\]
+and $N_{>M}=X_{>M}\oplus J_{>M}\subset F$.
+
+\begin{lemma}\label{lem:stability}
+The subspace $N_{>M}$ satisfies
+\[
+ [X_{>M},\g]\subseteq N_{>M},\qquad
+ [N_{>M},\g]\subseteq N_{>M}.
+\]
+\end{lemma}
+\begin{proof}
+Induct on the length of a bracket expression $w$ in the free generators of
+$\g$, uniformly for all $z\in X_{>M}$. For a generator,
+$[z,A]=y_z\in J_{>M}$ and $[z,y_s]=z*s\in X_{>M}$, since $|s|\ge1$.
+If $w=[v_1,v_2]$, Jacobi gives
+\[
+ [z,w]=[[z,v_1],v_2]+[v_1,[z,v_2]].
+\]
+The induction hypothesis splits each $[z,v_i]$ into an $X_{>M}$ term and a
+$J_{>M}$ term. The former can be bracketed with the shorter expression $v_j$
+using the same hypothesis; the latter remains in $J_{>M}$ by its ideal
+property inside $\g$. This proves the first inclusion. Adding
+$[J_{>M},\g]\subseteq J_{>M}$ gives the second.
+\end{proof}
+
+\begin{lemma}\label{lem:higher}
+For every $m\ge2$ and $0\ne u\in F_m$, there is $x\in\mathcal B$ with
+$0\ne[x,u]\in F_{m-1}$.
+\end{lemma}
+\begin{proof}
+Choose $M$ strictly larger than every tree label in a finite free Lie
+expression for $u$, and choose $|x|=M$. If there are no such labels take any
+$M\ge1$. In particular $y_x$ is absent from $u$.
+Define a free associative derivation, restricted to $\g$, by
+\[
+ \delta_x(A)=y_x,\qquad \delta_x(y_s)=0\quad(s\in\mathcal B).
+\]
+On a word it replaces one occurrence of $A$ by $y_x$ and sums over all such
+positions. The commutator derivation rule shows that it preserves the free
+Lie subalgebra.
+
+Regard both $\delta_x$ and $\ad_x$ as derivations $\g\to F$. Their difference
+is zero on $A$ and equals $x*s\in X_{>M}$ on $y_s$. Expanding a bracket by the
+derivation rule and applying Lemma~\ref{lem:stability} inductively yields
+\[
+ [x,u]-\delta_xu\in N_{>M}.
+\]
+Both terms have momentum degree $m-1\ge1$, so the difference actually lies
+in $N_{>M}\cap\g=J_{>M}$.
+
+Let $\pi_M$ be the free Lie homomorphism that kills all $y_s$ with $|s|>M$
+and retains $A$ and the other $y_s$. Its target is
+$\g_{\le M}=\Lie_{\mathrm{free}}(A,\{y_s:|s|\le M\})$, identified with the
+subalgebra on these generators. Its kernel is exactly $J_{>M}$: the quotient
+$\g/J_{>M}$ and $\g_{\le M}$ are isomorphic by inverse
+generator-preserving maps, by their universal properties. Consequently
+\begin{equation}\label{eq:projection}
+ \pi_M([x,u])=\delta_xu.
+\end{equation}
+The derivative uses only the old labels smaller than $M$ and the new label
+of size $M$, so its image is retained.
+
+Define $r_x:\g_{\le M}\to\g$ by sending $y_x$ to $A$ and fixing every other
+generator, including $A$. For a bracket monomial without $y_x$,
+$r_x\delta_x$ multiplies it by its independent $A$ count: this holds on each
+generator and the derivation rule adds the counts under a bracket.
+Equation~\eqref{eq:Acount} therefore gives
+\begin{equation}\label{eq:euler}
+ r_x\pi_M([x,u])=(m-1)u\ne0.
+\end{equation}
+Over $\R$ the scalar $m-1$ is nonzero, proving the claim. These auxiliary
+maps are maps of ordinary free Lie algebras; no extension of $r_x$ to $F$
+or grading preservation by $r_x$ is required.
+\end{proof}
+
+\begin{proposition}\label{prop:ideal}
+Every nonzero graded Lie ideal of $F$ has a nonzero intersection with $X$.
+\end{proposition}
+\begin{proof}
+If a nonzero graded ideal misses $X$, take its least occupied degree
+$m\ge1$ and a nonzero homogeneous element $u$ in that degree.
+Lemma~\ref{lem:degreeone} or Lemma~\ref{lem:higher} supplies a nonzero
+$[x,u]$ of degree $m-1$ in the same ideal, a contradiction.
+\end{proof}
+
+\section{Separating potentials and completing the proof}\label{sec:potentials}
+
+For completeness we make the degree-zero argument explicit, including the
+passage from formal trees to actual potentials. Let $\mathcal U$ be the
+vector space on finite nonempty unrooted simple trees. For two basis trees
+$t,v$, define $t\diamond v$ by joining one vertex of $t$ to one vertex of
+$v$ by a new edge and summing over all vertex pairs. Isomorphic outputs
+are counted with multiplicity. This product is commutative. Freeness of $X$
+defines a map
+\[
+ \psi:X\longrightarrow\mathcal U,\qquad
+ \psi(B)=\text{one-vertex tree},\qquad
+ \psi(x*s)=\psi(x)\diamond\psi(s).
+\]
+
+\begin{lemma}\label{lem:unrooted}
+The map $\psi$ is injective.
+\end{lemma}
+\begin{proof}
+Let $\mathcal R$ be the vector space on rooted trees, with
+$a\triangleright b$ obtained by attaching the root of $b$ to each vertex of
+$a$ and retaining the root of $a$. It is the free pre-Lie algebra on the
+rooted singleton, by Chapoton and Livernet \cite[Theorem~1.9 and
+Corollary~1.10]{CL}. Define $\rho:\mathcal U\to\mathcal R$ by summing over
+all choices of a root. Then
+\begin{equation}\label{eq:rooting}
+ \rho(t\diamond v)=\rho(t)\triangleright\rho(v)
+                         +\rho(v)\triangleright\rho(t).
+\end{equation}
+The first summand counts joined trees whose root lies in $t$, and the second
+those whose root lies in $v$; the choices of root and attachment vertex agree
+on both sides, including multiplicities from automorphisms.
+
+Bergeron and Loday \cite[Theorem~3.1]{BL} prove that the operad morphism
+$\mathrm{ComMag}\to\mathrm{preLie}$ induced by symmetrization is injective.
+This gives the one-generator injection used here. Indeed, over $\R$,
+coinvariants of a finite symmetric group are identified with invariants by
+averaging; the inverse is the quotient map. Passing an equivariant injection
+to coinvariants consequently remains injective. Tensoring each arity with
+the one-dimensional generator space and taking the direct sum proves that
+the symmetric-product map from $X$ to $\mathcal R$ is injective.
+By \eqref{eq:rooting}, $\rho\psi$ is precisely that map. Thus $\psi$ is
+injective as well.
+\end{proof}
+
+For a basis unrooted tree $t$ define the elementary potential
+\begin{equation}\label{eq:contraction}
+ H_t(V)(q)=\sum_{c:E(t)\to\{1,\ldots,d\}}
+               \prod_{a\in\operatorname{Vert}(t)}
+                      \partial^{\alpha_a(c)}V(q),
+\end{equation}
+where $E(t)$ is its edge set and $\alpha_a(c)$ is the multiindex of colors
+incident at vertex $a$. For the singleton this is $V$. Extend $H$ linearly
+to $\mathcal U$. Differentiation of the finite sum increments the jet at
+each possible vertex, giving
+\begin{equation}\label{eq:gradient}
+ \nabla H_t(V)\cdot\nabla H_v(V)=H_{t\diamond v}(V).
+\end{equation}
+For potentials $h,k$, our Poisson convention gives
+$\{h,T\}=\nabla h\cdot p$ and
+$\{k,\{h,T\}\}=\nabla k\cdot\nabla h$.
+Induction in \eqref{eq:star} therefore shows
+\begin{equation}\label{eq:realization}
+ \Phi_{d,V}(x)=H_{\psi(x)}(V)\qquad(x\in X).
+\end{equation}
+
+\begin{lemma}\label{lem:jets}
+Every nonzero finite linear combination $h\in\mathcal U$ is detected by
+$H_h(V)$ for some dimension $d\ge1$ and some polynomial potential $V$.
+\end{lemma}
+\begin{proof}
+Choose a tree $t$ with nonzero coefficient in $h$, and let $r$ be its number
+of vertices. As a polynomial in the independent symmetric jet variables
+$Z_\alpha=\partial^\alpha V(0)$, its contraction has total jet degree $r$,
+so trees with other vertex numbers cannot cancel a degree-$r$ monomial.
+For $r=1$, the singleton is the only tree and its monomial is $Z_0$; use $d=1$.
+
+If $r\ge2$, take $d=r-1$ and color its edges with distinct coordinate
+indices. Let $\alpha_a$ be the resulting incidence multiindices and set
+\[
+ M_t=\prod_{a\in\operatorname{Vert}(t)}Z_{\alpha_a}.
+\]
+Every coordinate index occurs exactly twice. A contraction of another
+$r$-vertex tree producing $M_t$ must therefore use each color on exactly one
+edge. Its endpoints are the two vertices whose incidence multiindices
+contain that color. The multiset of incidence multiindices reconstructs the
+colored graph, up to permutations of equal vertices, and hence its unrooted
+tree type. In the two-vertex case the two multiindices coincide; exchanging
+the endpoints still reconstructs the same tree. Thus only trees isomorphic
+to $t$ can contribute $M_t$. Its coefficient in $H_t$ is a positive integer,
+since the chosen coloring contributes and all terms have positive coefficients.
+Its coefficient in $H_h$ is consequently nonzero.
+
+The nonzero jet polynomial $H_h$ depends on finitely many variables and has
+a nonzero real evaluation. One may prove this by induction on the number
+of variables: make a nonzero coefficient polynomial nonzero, then avoid
+the finitely many roots in the remaining variable.
+Arbitrary prescribed jets up to a finite order $D$ are realized by
+\[
+ V(q)=\sum_{|\alpha|\le D} z_\alpha\frac{q^\alpha}{\alpha!},
+ \qquad\partial^\alpha V(0)=z_\alpha.
+\]
+Taking $D$ at least the largest derivative order needed gives the required
+polynomial potential.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $K$ be the joint kernel over all dimensions and polynomial potentials.
+Each realization preserves homogeneous momentum degree. Independence of the
+different polynomial degrees in $p$ makes $K$ a graded Lie ideal.
+Lemmas~\ref{lem:unrooted} and \ref{lem:jets}, with
+\eqref{eq:realization}, show that $K\cap X=0$.
+Proposition~\ref{prop:ideal} then gives $K=0$.
+Every polynomial potential is smooth, so the joint kernel over smooth
+potentials is contained in $K$ and is also zero.
+\end{proof}
+
+\appendix
+\section{The associative realization}\label{sec:associative}
+
+We recall a short algebraic proof of the fact used in
+Lemma~\ref{lem:degreeone}. For an ordinary Lie algebra $L$, choose an ordered
+vector-space basis $(e_i)$ and reduce tensor words by
+\[
+ e_je_i\longmapsto e_ie_j+[e_j,e_i]\qquad(j>i)
+\]
+in its enveloping algebra. These reductions terminate by tensor length and,
+at fixed length, inversion number. Disjoint reductions commute. The only
+overlap is a descending three-letter word; the difference of its two
+reductions, after reducing shorter terms, is the Jacobi expression and is
+zero. Induction on the same decreasing measure resolves every sequence of
+reductions. Nondecreasing basis monomials therefore form a basis of the
+enveloping algebra, and the length-one terms give an injection $L\to U(L)$.
+For the free Lie algebra $L(S)$, the enveloping algebra and the free
+associative algebra $\R\langle S\rangle$ have the same universal property:
+a map from $S$ to an associative algebra extends uniquely, first as a Lie
+map and then as an associative map. They are generator-preservingly
+isomorphic. Thus $L(S)$ embeds in $\R\langle S\rangle$.
+The argument also applies to infinite $S$, since every word and reduction
+is finite.
+
+\section{Exact finite computations}\label{sec:computations}
+
+The accompanying code reconstructs the mechanical-tree matrices and checks
+the degree-lowering formulas for every basis element through original-letter
+order $18$. A potential tree with $b$ leaves has order $2b-1$, its generator
+$y_s$ has order $2b$, and $A$ has order one. Weighted Lyndon words on these
+free generators, together with the binary-tree potential basis, provide the
+input columns. The marker is a comb with ten leaves. Sparse associative
+expansions and tree contractions use integer coefficients; no floating-point
+rank threshold is involved.
+
+\begin{center}
+\begin{tabular}{@{}rrrrrr@{}}\toprule
+Order & 6 & 10 & 14 & 16 & 18\\\midrule
+Source dimension & 5 & 39 & 320 & 938 & 2786\\
+Mechanical-tree rank & 5 & 39 & 320 & 938 & 2786\\\bottomrule
+\end{tabular}
+\end{center}
+Each rank is computed modulo the prime $1000003$. Full column rank modulo a
+prime implies full column rank of the integer matrix over $\mathbb Q$ and
+$\R$, since a full-size minor has determinant nonzero modulo that prime.
+The stored matrices have $6705$ columns in $91$ order/degree blocks; a
+separate elimination replay checks every stored pivot and its integrity hash.
+Rebuilding the columns and replaying them are distinct checks.
+
+Across the $6611$ positive-degree columns, the degree-one action is checked
+on $362$ elements and the projection/retraction formula
+\eqref{eq:euler} on $6249$ elements. All $1019$ associative $y$-words through
+the cutoff pass marker decoding. An additional direct sparse-polynomial
+implementation in dimension two, with degree-five potentials and seeds
+$519$ and $2026$, checks all $40$ columns through order eight for each
+potential at $q=0$ and $p=(1,2)$. Exact rational differentiation agrees with
+the tree contractions in all $80$ value comparisons. These are pointwise
+calibration checks of the implementation. Iterated lowering through order five comprises
+$8$ inputs and $17$ steps, all ending in a nonzero potential. These finite
+results support implementation correctness; the all-order theorem is proved
+in Sections~\ref{sec:lowering}--\ref{sec:potentials}.
+
+The following finite validation procedure takes a cutoff $2\le N\le18$ and a prime
+$p_0$; it chooses a marker with $\lfloor N/2\rfloor+1$ leaves and returns
+the dimension/rank table and replayable matrices and pivots.
+\begin{quote}
+\begin{enumerate}
+\item Enumerate binary potential trees and weighted Lyndon words of order
+$1,\ldots,N$; expand each Lyndon bracket by integer commutators.
+\item For every positive-degree column, compute its bracket with the marker.
+Check word decoding in degree one and projection followed by retraction in
+higher degree.
+\item Construct the integer mechanical-tree image of every column, group
+columns by order and momentum degree, and eliminate modulo $p_0$ using the
+lexicographically first available row as pivot. Reject a dependent column.
+Save the integer columns, pivots, labels and integrity hashes for replay.
+\end{enumerate}
+\end{quote}
+If a block
+has $C$ columns and $R$ possible rows, dense elimination uses at most
+$O(RC^2)$ field operations and $O(RC)$ storage; the implementation uses
+sparse dictionaries. These counts concern elimination of an already formed
+matrix. Tree generation, word expansion and coefficient bit growth are
+additional costs, and no polynomial bound in the order cutoff is asserted.
+Caches for sparse intermediate mappings retain at most $4096$ entries per
+function; eviction changes neither the arithmetic nor the result.
+
+Reproduction commands, the tested library, the complete order table and
+small validation summaries are supplied with the manuscript. The drivers
+save full local matrices, lowering traces and source/output hashes in fresh
+run directories. The raw matrices can be regenerated from the code.
+
+\begin{thebibliography}{9}
+\bibitem{MM}
+R.~I. McLachlan and A.~Murua,
+\emph{The Lie algebra of classical mechanics},
+Journal of Computational Dynamics \textbf{6}(2) (2019), 345--360.
+\href{https://doi.org/10.3934/jcd.2019017}{doi:10.3934/jcd.2019017}.
+Author preprint: \href{https://arxiv.org/abs/1905.07554}{arXiv:1905.07554}.
+
+\bibitem{BCM}
+S.~Blanes, F.~Casas and A.~Murua,
+\emph{Splitting methods for differential equations},
+Acta Numerica \textbf{33} (2024), 1--161.
+\href{https://doi.org/10.1017/S0962492923000077}{doi:10.1017/S0962492923000077}.
+Author preprint: \href{https://arxiv.org/abs/2401.01722}{arXiv:2401.01722}.
+
+\bibitem{CL}
+F.~Chapoton and M.~Livernet,
+\emph{Pre-Lie algebras and the rooted trees operad},
+International Mathematics Research Notices \textbf{2001}(8) (2001), 395--408.
+\href{https://doi.org/10.1155/S1073792801000198}{doi:10.1155/S1073792801000198}.
+
+\bibitem{BL}
+N.~Bergeron and J.-L.~Loday,
+\emph{The symmetric operation in a free pre-Lie algebra is magmatic},
+Proceedings of the American Mathematical Society \textbf{139}(5) (2011), 1585--1597.
+\href{https://doi.org/10.1090/S0002-9939-2010-10813-4}{doi:10.1090/S0002-9939-2010-10813-4}.
+Author preprint: \href{https://arxiv.org/abs/1004.1204}{arXiv:1004.1204}.
+\end{thebibliography}
+
+\section*{Statement on AI assistance}
+OpenAI ChatGPT assisted with literature exploration and the initial proof
+development. OpenAI Codex assisted with source verification, proof checking,
+manuscript preparation, and implementation and testing of the computational
+material. These activities are AI-assisted checks; they do not constitute
+independent human peer review. The manuscript is submitted under the author's
+name, and independent mathematical review is requested.
+
+\end{document}

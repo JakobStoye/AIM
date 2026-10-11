@@ -1,0 +1,173 @@
+{
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2732,
+      "sha256": "4dcef197d420ee2cb4adaafd04496482d771a9a5d6a260554217a462fbfc3491",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2515,
+      "sha256": "252712f15920fa44eae1b68d45c9637d06d6cc7ef955cc4c1a9b34a76e77ed93",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 454,
+      "sha256": "661588c23e2e98d4f12a24945d6017d869778a5b501191ea07613d6b5cb423ff",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 24487,
+      "sha256": "e1f42cfa10bdd970249408f62bb3877cc049f1f576951a44dbc5445dcc404d87",
+      "purpose": "manuscript"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 294745,
+      "sha256": "3e8ff720c56295b85929a7d09dcaf33919cf03dc6fb35d41f20052e7db0263e9",
+      "purpose": "manuscript"
+    },
+    {
+      "path": "paper/README.md",
+      "bytes": 800,
+      "sha256": "4181ac79d6f02aa8462f8c5f436c399905f495566f3745c8fe645c05d6302f9c",
+      "purpose": "manuscript"
+    },
+    {
+      "path": "src/README.md",
+      "bytes": 2848,
+      "sha256": "c2d88d7de725aa15a25d4b5516dcfb0db82243bbffd0f11cee75b7c3984b860a",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/README.md",
+      "bytes": 2798,
+      "sha256": "b472d72d08f2b9d68896de7722199a51b9539a8cfaab8b0034970c03d8999af2",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/__init__.py",
+      "bytes": 173,
+      "sha256": "ca4245bf115b09d5e398b0f64ca8cbdd13aa3056780829793cd9f3275c7b71a4",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/associative.py",
+      "bytes": 3982,
+      "sha256": "2e1c7dc31e347ef76598eedc966122803b301422e8a4686670267de9c661bd02",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/audit.py",
+      "bytes": 8822,
+      "sha256": "33a92147e3f91f32dce4201068f54c4383c4b4e955caf8fffcfc6747c96dfa65",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/certificates.py",
+      "bytes": 2127,
+      "sha256": "eb2061d13b3e2ff3fabde2ee7d0fbc8ab1ffa4b8a4fd3913e548ca4d336b76e8",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/core.py",
+      "bytes": 1213,
+      "sha256": "72c49ceb7cd7dbe12db1334efcaa5a5488497d4583b1684f03dc05d56f246d6a",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/errors.py",
+      "bytes": 569,
+      "sha256": "f3bcfa4d0854c43dfc811b16047f258d05fe08d9c506616ae722e5fb6feb314e",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/linear.py",
+      "bytes": 1160,
+      "sha256": "09a932e4b9df0acaa2f8601b195874e6469dfe2c613fed0af30b64a27ee9a5d1",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/magmatic.py",
+      "bytes": 968,
+      "sha256": "bc851e47d9f53a5bc6872d2c43085504f8c9cf721e1fffbbe34bbc1f391c7915",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/mechanical.py",
+      "bytes": 4238,
+      "sha256": "0034e1218d0857a6135ea28634761023dfaf264baea03046a2c29617291e015d",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "src/aim519/polynomial.py",
+      "bytes": 7713,
+      "sha256": "47d3159f570d2683867bceba57406becae789430b06ac511739c8fa642876392",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "test/test_algebra.py",
+      "bytes": 8086,
+      "sha256": "c484288e55742d8402016e8ab1581299ac2e656bba4b4ecc40f47ded04b01ef4",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/plot_dimensions.py",
+      "bytes": 2552,
+      "sha256": "e0c0f812dae511cf78ececa18cf78d5fe00a7fd0bdcb4ca491ae82e8024a50e8",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/run_cases.py",
+      "bytes": 5320,
+      "sha256": "3ac00408e8685c733bfac8245946597c3cf6ca7507be31e7332b2c826457a144",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/summaries/audit.json",
+      "bytes": 488,
+      "sha256": "34816843b9c0196664f016af7c722250c535bb13ca0f0bd7ccf5be94e3e7ac0d",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/summaries/crosscheck.json",
+      "bytes": 476,
+      "sha256": "d11799c4cdc6e698920d5ce4b3d1086b2910b1f8152caa3a7968423bf21ffe06",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/summaries/rank_summary.csv",
+      "bytes": 350,
+      "sha256": "341be7eda0e4640fbf5a89e73b600c8b7a03e3a835472a526b4d89781d527dfb",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/summaries/replay.json",
+      "bytes": 107,
+      "sha256": "0979552536d3a9e932ed0ca63be8d620c9984e9fdd0215d4cbd2df3f98603f33",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/summaries/reproduction.json",
+      "bytes": 6464,
+      "sha256": "d69135391cc2a4b00f0e6abc868acfbf86cf11335692e1145b2b111099dd2f55",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": "numerical_case/figures/dimensions.svg",
+      "bytes": 3272,
+      "sha256": "a7742a319e46dfeea4f8a4c722060997c8e2145b2a6ee3215d384ca47b2f4b3b",
+      "purpose": "code, reproduction or small published material"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 145,
+      "sha256": "99e9569071efc5faeaed6327da224e68a9738eb79e1072b664f917a4b9204f07",
+      "purpose": "local runtime and raw numerical output exclusions"
+    }
+  ]
+}

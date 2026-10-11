@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="430" viewBox="0 0 820 430">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" font-size="15" fill="#222">
+<text x="80" y="30" font-size="20">Exact dimensions and modular ranks through order 18</text>
+<text x="80" y="56">Blue line: source dimension; orange circles: rank mod 1000003</text>
+<text x="330" y="412">Original A,B letter count (order)</text>
+<text transform="translate(22,290) rotate(-90)">Dimension / rank (logarithmic scale)</text>
+<line x1="80" y1="365.00" x2="780" y2="365.00" stroke="#ddd"/>
+<text x="68" y="370.00" text-anchor="end">1</text>
+<line x1="80" y1="282.27" x2="780" y2="282.27" stroke="#ddd"/>
+<text x="68" y="287.27" text-anchor="end">10</text>
+<line x1="80" y1="199.54" x2="780" y2="199.54" stroke="#ddd"/>
+<text x="68" y="204.54" text-anchor="end">100</text>
+<line x1="80" y1="116.81" x2="780" y2="116.81" stroke="#ddd"/>
+<text x="68" y="121.81" text-anchor="end">1000</text>
+<path d="M 80 80 V 365 H 780" fill="none" stroke="#333"/>
+<text x="80.00" y="390" text-anchor="middle">1</text>
+<text x="203.53" y="390" text-anchor="middle">4</text>
+<text x="368.24" y="390" text-anchor="middle">8</text>
+<text x="532.94" y="390" text-anchor="middle">12</text>
+<text x="697.65" y="390" text-anchor="middle">16</text>
+<text x="780.00" y="390" text-anchor="middle">18</text>
+<polyline points="80.00,340.10 121.18,365.00 162.35,340.10 203.53,340.10 244.71,315.19 285.88,307.17 327.06,282.27 368.24,270.18 409.41,249.35 450.59,233.37 491.76,212.87 532.94,196.12 574.12,175.92 615.29,157.75 656.47,137.97 697.65,119.11 738.82,99.26 780.00,80.00" fill="none" stroke="#2166ac" stroke-width="2"/>
+<circle cx="80.00" cy="340.10" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="121.18" cy="365.00" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="162.35" cy="340.10" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="203.53" cy="340.10" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="244.71" cy="315.19" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="285.88" cy="307.17" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="327.06" cy="282.27" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="368.24" cy="270.18" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="409.41" cy="249.35" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="450.59" cy="233.37" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="491.76" cy="212.87" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="532.94" cy="196.12" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="574.12" cy="175.92" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="615.29" cy="157.75" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="656.47" cy="137.97" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="697.65" cy="119.11" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="738.82" cy="99.26" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+<circle cx="780.00" cy="80.00" r="4" fill="white" stroke="#d95f02" stroke-width="2"/>
+</g></svg>
