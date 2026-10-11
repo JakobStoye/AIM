@@ -1,0 +1,585 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Global null control of a two-phase Stefan interface with signed initial temperatures}
+\author{Kaiwen Jin\thanks{\texttt{yui.ui.siki@gmail.com}}}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that two Dirichlet boundary controls can drive a one-dimensional
+two-phase Stefan system to zero temperature and any prescribed interior
+interface position in every positive time. The initial temperatures may be
+arbitrary real smooth functions compactly supported in their phases, and the
+interface remains strictly inside the rod throughout. A short uncontrolled
+evolution gives analytic interface traces without a sign assumption. These
+traces are then extended by Gevrey interpolation and the flatness series of
+Colle, Loh\'eac and Takahashi, while a convex interpolation of the interface
+position prevents collision with the endpoints.
+\end{abstract}
+
+\section{The control problem}
+In the two-phase Stefan system, heat diffusion acts on both sides of a
+moving interface, and the difference of the interface heat fluxes determines
+its velocity. Boundary-temperature control asks whether the two exterior
+temperatures can be chosen to bring both phases to zero temperature and
+place the interface at a prescribed point. The geometric constraint is
+essential: neither phase may disappear during the control.
+
+Colle, Loh\'eac and Takahashi \cite[Theorem 1.1]{CLT} prove arbitrary-time
+boundary controllability by a flatness construction for initially
+phase-signed temperatures, with strict signs at the exterior endpoints.
+The coefficient estimates in their Proposition 3.4 and Corollary 3.6
+do not require these signs or a smallness condition. The signs enter their
+preparatory regularization argument. We instead prove short-time
+analyticity directly for arbitrary signed compactly supported profiles.
+This permits the same series reconstruction to start from the actual
+positive-time solution.
+
+The target here is the unconstrained-sign formulation in AIM Problem 258
+\cite{AIM258}. The temperature fields are treated as real solutions of the
+specified heat and Stefan equations; no phase-sign inequality is added.
+Let $L$ denote the rod length, $d_l,d_r$ the diffusivities and $\lambda$
+the latent-heat coefficient. All are positive. Let $L_0,L_T$ be the initial
+and desired interface positions. Time is the first argument of every
+temperature below.
+
+\begin{theorem}\label{thm:control}
+For every $L,d_l,d_r,\lambda,T>0$, every $L_0,L_T\in(0,L)$,
+and every real $y_0\in C_c^\infty(0,L_0)$ and
+$z_0\in C_c^\infty(L_0,L)$, there exist $v_l,v_r\in L^\infty(0,T)$,
+$\ell\in C^1([0,T])$ with $0<\ell<L$, and temperatures satisfying
+\[
+ y_t=d_l y_{xx}\quad(0<x<\ell(t)),\qquad
+ z_t=d_r z_{xx}\quad(\ell(t)<x<L),
+\]
+\[
+ y(t,0)=v_l(t),\quad z(t,L)=v_r(t),\quad
+ y(t,\ell(t))=z(t,\ell(t))=0,
+\]
+\[
+ d_l y_x(t,\ell(t)^-)-d_r z_x(t,\ell(t)^+)=-\lambda\ell'(t).
+\]
+The initial data and interface are $(y_0,z_0,L_0)$, the terminal
+temperatures vanish, and $\ell(T)=L_T$. Zero extensions of both
+temperatures must belong to $C([0,T];L^2(0,L))$. No temperature sign,
+smallness condition, or uniform control-cost bound is imposed.
+\end{theorem}
+
+The construction gives a classical solution for positive time, with continuous
+temperatures and spatial first derivatives in phase coordinates down to zero.
+All constants may depend on the entire parameter and initial-data tuple.
+
+
+The result allows arbitrarily large data and arbitrarily small control
+times; it supplies no common bound on the control amplitudes. The controlled
+temperatures need not retain phase signs. The initial class remains smooth
+and compactly supported, and no higher-dimensional statement is made.
+
+The proof first solves the system for a short time on two fixed intervals.
+Complex-time heat estimates give an analytic interface and analytic flux
+traces at positive time. The PDE then supplies spatial analyticity, so the
+actual solution agrees with its interface-centered flatness series. We
+keep this agreement on an open time interval and cut off the traces
+afterwards. The interface is a convex combination of its short-time path
+and the target position, which keeps both phases nonempty.
+
+The following sections give the normalization, the short-time construction,
+the series reconstruction, and the final control. Complex scalars occur only
+in the analyticity argument; the final solution and controls are real.
+
+\section{Normalization}
+Put $r=x/L$, $b=\ell/L$, $b_0=L_0/L$, $b_T=L_T/L$, and
+\[
+ c_-=d_l/L^2,\qquad c_+=d_r/L^2,
+ \qquad \theta_-(t,r)=-\frac{d_l}{\lambda L^2}y(t,Lr),\qquad
+ \theta_+(t,r)=-\frac{d_r}{\lambda L^2}z(t,Lr).
+\]
+Then $\theta_{\pm,t}=c_\pm\theta_{\pm,rr}$ in their phases,
+the interface values vanish, and
+\[
+ b'=\theta_{-,r}(t,b^-)-\theta_{+,r}(t,b^+). \tag{1}
+\]
+Indeed the right side is
+$[-d_l y_x+d_r z_x]/(\lambda L)=\ell'/L$.
+Conversely these identities recover exactly the physical equations and
+the controls by multiplying each phase by $-\lambda L^2/d_\pm$.
+It therefore suffices to work on $[0,1]$ with arbitrary $c_\pm>0$.
+
+\section{Short-time solutions and analyticity}
+\begin{lemma}[Spectral estimates]\label{lem:spectral}
+Let $e_n(s)=\sqrt2\sin(n\pi s)$ and $\mu_n=(n\pi)^2$.
+For $0\le\gamma$, set
+\[
+ E_\gamma=\{u=(u_n):\ \norm{u}_{E_\gamma}^2
+             =\sum_{n\ge1}\mu_n^{2\gamma}|u_n|^2<\infty\}.
+\]
+These are complex Banach spaces. Identify $E_0$ with the completion of
+the sine polynomials under the integral $L^2$ norm. Every continuous
+function on $[0,1]$ is represented in this completion by its sine
+coefficients. For $\alpha=7/8$, $E_\alpha$ embeds continuously into
+$C^1([0,1])$, with zero endpoint values. For $\Re z>0$, define
+\[
+ S(z)u=(e^{-\mu_n z}u_n)_{n\ge1},\qquad
+ Au=(\mu_nu_n)_{n\ge1},\quad D(A)=E_1.
+\]
+If $\Re z\ge k|z|$ for a fixed $k>0$, then
+\[
+ \norm{S(z)}_{E_\alpha\to E_\alpha}\le1,\quad
+ \norm{S(z)}_{E_0\to E_\alpha}\le C_k|z|^{-\alpha},\quad
+ \norm{S'(z)}_{E_0\to E_\alpha}\le C_k|z|^{-\alpha-1}. \tag{2}
+\]
+Moreover $S(z)$ is holomorphic away from zero, strongly continuous
+at zero within such a sector, and if $u\in E_{\alpha+1}$,
+$\norm{(S(z)-S(w))u}_{E_\alpha}\le |z-w|\norm{Au}_{E_\alpha}$
+whenever the segment from $z$ to $w$ lies in $\Re z\ge0$.
+\end{lemma}
+\begin{proof}
+Completeness of each weighted sequence space follows by taking coordinate
+limits of a Cauchy sequence: finite partial sums pass to the limit, and
+the Cauchy tail estimate bounds the full norm of each difference.
+Direct integration gives $\int_0^1e_me_n\dd s=\delta_{mn}$.
+For a continuous function, odd reflection about zero followed by
+$2$-periodic extension is bounded and piecewise continuous, hence
+Riemann integrable. Apply \cite[Theorem 11.8.13]{RA} after the change of variable $s\mapsto\pi s$:
+the cosine coefficients vanish and the sine partial sums converge in
+$L^2(0,1)$, with squared norm equal to the sum of squared coefficients.
+This proves the asserted representation and its isometry on continuous
+functions. No endpoint condition is required for this $L^2$ assertion.
+
+For $u\in E_\alpha$, Cauchy--Schwarz for finite sums, followed by the
+convergent numerical series $\sum n^{2-4\alpha}$, gives
+\[
+ \sum n|u_n|\le C\norm{u}_{E_\alpha}.
+\]
+Both the sine series and its derivative thus converge uniformly, proving
+the embedding and endpoint statement. Inequalities (2) follow from
+$\sup_{v\ge0}v^p e^{-kv}<\infty$ for $p=\alpha,\alpha+1$.
+Finite spectral sums are holomorphic; their operator derivatives converge
+locally uniformly away from zero by the same bounds. Strong continuity
+at zero follows by splitting the sequence into a finite initial segment
+and a uniformly small tail. Finally integrate
+$S'(\zeta)u=-S(\zeta)Au$ along the indicated segment.
+Compactly supported smooth functions belong to every $E_\gamma$,
+by repeated integration by parts in their sine coefficients.
+
+The scalar Cauchy formula and its Taylor, estimate and uniform-limit
+consequences \cite[Theorems 3.2.15, 3.3.1, 3.3.8 and 3.4.5]{CA}
+also hold for functions valued in these sequence spaces or
+their finite products. The vector Cauchy formula follows by Riemann
+integration on a circle and the scalar formula in each coordinate.
+The integral's norm is bounded by length times the supremum norm.
+Coordinate equality identifies the vectors. This proves the vector
+Cauchy estimate and power expansion. The same formula proves that a
+locally uniform vector limit of holomorphic functions is holomorphic.
+An improper vector integral dominated in norm by an integrable scalar
+function exists by the Cauchy criterion; if its truncated integrals are
+holomorphic, the preceding limit argument applies.
+\end{proof}
+
+\begin{lemma}[Local existence and time analyticity]\label{lem:local}
+For every $c_\pm>0$, $b_0\in(0,1)$ and real smooth compactly supported
+initial profiles in the two phases, there is $\delta>0$ and a solution
+with zero exterior controls on $[0,\delta]$. Its interface is $C^1$,
+stays in $(0,1)$, and in fixed phase coordinates the profiles are
+continuous into $E_\alpha$ down to zero and holomorphic in a complex
+time sector at every positive real time. The interface and both interface
+slopes are analytic in time on $(0,\delta)$.
+\end{lemma}
+\begin{proof}
+Write
+\[
+ Y(t,s)=\theta_-(t,b(t)s),\qquad
+ Z(t,s)=\theta_+(t,b(t)+(1-b(t))s).
+\]
+For $U=(Y,Z,b)$ define
+\[
+ F(U)=Y_s(1)/b-Z_s(0)/(1-b),\quad
+ a_-(b)=c_-/b^2,\quad a_+(b)=c_+/(1-b)^2,
+\]
+\[
+ G_-(U)=\frac{F(U)}b sY_s,\qquad
+ G_+(U)=\frac{F(U)}{1-b}(1-s)Z_s.
+\]
+The transformed system is
+\[
+ b'=F(U),\quad Y_t=-a_-(b)AY+G_-(U),\quad
+ Z_t=-a_+(b)AZ+G_+(U). \tag{3}
+\]
+The two signs of the drift follow by differentiating the two coordinate
+maps at fixed $s$. Let $U_0=(Y_0,Z_0,b_0)$.
+Lemma~\ref{lem:spectral} makes $F$ and $G_\pm$ holomorphic and locally Lipschitz, respectively
+into $\mathbb C$ and $E_0$, on $E_\alpha^2\times\mathbb C$ where
+$b\ne0,1$. Continuous spatial products use the isometry established in Lemma~\ref{lem:spectral}.
+
+Choose $\vartheta=\pi/6$. On the closed time sector
+$K_\delta=\{t:|t|\le\delta,\ |\arg t|\le\vartheta\}$, including its
+tip, use the supremum product norm. Consider continuous functions,
+holomorphic in the sector interior, with $U(0)=U_0$,
+$\norm{Y-Y_0}_{E_\alpha},\norm{Z-Z_0}_{E_\alpha}\le1$ and
+$|b-b_0|\le r$. Choose a positive $r$ sufficiently small that
+$b,1-b$ are nonzero and
+$|a_\pm(b)-a_\pm(b_0)|\le\varepsilon a_\pm(b_0)$ throughout this
+complex disk, with a fixed sufficiently small $\varepsilon>0$.
+This is a closed subset of a complete supremum space: completeness
+and closure of holomorphy follow from Lemma~\ref{lem:spectral}. The rational functions and
+their derivatives are uniformly bounded on this set.
+
+Set $\tau_\pm(t)=\int_0^t a_\pm(b(q))\dd q$, using straight segments.
+For $q=\rho t$, $0\le\rho<1$, one has
+\[
+ \tau_\pm(t)-\tau_\pm(q)
+ =t\int_\rho^1a_\pm(b(ut))\dd u.
+\]
+Consequently these differences lie in a fixed closed sector of the
+right half-plane and their modulus is comparable to $(1-\rho)|t|$.
+The same is true of the straight segment joining these increments
+for two inputs. Their difference is at most
+$C(1-\rho)|t|\norm{b-\widehat b}_\infty$.
+
+Define
+\[
+ \Phi_b(U)(t)=b_0+\int_0^tF(U(q))\dd q,
+\]
+\[
+ \Phi_Y(U)(t)=S(\tau_-(t))Y_0+
+ \int_0^t S(\tau_-(t)-\tau_-(q))G_-(U(q))\dd q, \tag{4}
+\]
+and the analogous expression for $\Phi_Z$.
+Lemma~\ref{lem:spectral} gives a bound $C\delta^{1-\alpha}$ for each integral in (4).
+It is continuous at the tip with value zero. Holomorphy follows by
+writing it as $t\int_0^1\cdots\dd\rho$: truncations away from $\rho=1$
+are holomorphic (Riemann sums and the vector Cauchy formula), and the
+tail is locally uniformly bounded by $C\int(1-\rho)^{-\alpha}\dd\rho$.
+The primitives starting at the tip can be justified by starting at
+$\rho=\epsilon$ and letting $\epsilon\downarrow0$, with bounded tails.
+
+For two inputs, integration of the $S'$ estimate in (2) on the straight
+segment joining their increments proves
+\[
+ \norm{S(\tau(t)-\tau(\rho t))-
+ S(\widehat\tau(t)-\widehat\tau(\rho t))}_{E_0\to E_\alpha}
+ \le C\norm{b-\widehat b}_\infty[(1-\rho)|t|]^{-\alpha}.
+\]
+The initial terms differ by at most
+$C\delta\norm{b-\widehat b}_\infty\norm{AY_0}_{E_\alpha}$,
+and similarly for $Z_0$. Thus
+\[
+ \norm{\Phi(U)-\Phi(\widehat U)}_\infty
+ \le C(\delta+\delta^{1-\alpha})\norm{U-\widehat U}_\infty. \tag{5}
+\]
+The same estimates against $U_0$ show that $\Phi$ maps the indicated
+closed set into itself for sufficiently small $\delta$: the scalar
+change is $O(\delta)$, and each profile change is
+$O(\delta\norm{AY_0}_{E_\alpha}+\delta^{1-\alpha})$.
+All constants are finite for these fixed, possibly large, data.
+Choose $\delta$ also making (5) less than one. Iteration converges,
+since successive differences are bounded by a summable geometric
+series in a complete space. Passing to the limit in (4) gives a fixed
+point; (5) gives uniqueness within this set. Conjugation preserves the
+map and the initial data, so the fixed point is real on the real axis.
+
+At positive real time, its $E_\alpha$ derivatives exist by holomorphy.
+Each sine coefficient in (4) solves
+$Y_n'=-\mu_n a_-Y_n+(G_-)_n$.
+It follows that $(\mu_nY_n)$ belongs to $E_0$, because
+$a_-AY=G_--Y_t\in E_0$; similarly for $Z$.
+The identity $AY=-Y_{ss}$ holds in distributions by testing against
+smooth compactly supported functions and passing in the sine partial
+sums. As $Y_t$ and $G_-$ are continuous in space, this second derivative
+is continuous. To see the classical conclusion directly, integrate
+the continuous right side twice; the difference from $Y$ has zero
+distributional second derivative and hence is affine. One elementary
+justification of this last assertion is to convolve on every smaller
+open interval with a smooth, compactly supported mollifier of integral
+one. The convolutions have zero ordinary second derivative and are
+affine there; they converge uniformly on compact intervals to the
+continuous difference. A uniform limit of affine functions is affine,
+as its values at two distinct points determine the coefficients.
+Differentiation of this convolution is legitimate because the
+mollifier and every derivative have compact support and bounded
+integrands. Therefore (3)
+is classical. The same reasoning applies to all time derivatives.
+Endpoint values are zero by Lemma~\ref{lem:spectral}. The scalar equation gives $b\in C^1$
+down to zero, with $b'(0)=0$ since both initial profiles vanish near
+the interface. The $E_\alpha$ traces and the rational factors show
+that $q_-=Y_s(1)/b$ and $q_+=Z_s(0)/(1-b)$ are analytic in time.
+Inverting the coordinate maps proves all claimed local properties.
+\end{proof}
+
+\begin{lemma}[Spatial analyticity]\label{lem:spatial}
+On every compact $J\subset(0,\delta)$, the local profiles of Lemma~\ref{lem:local}
+are analytic in space up to both phase endpoints. Their Taylor series
+at the interface represent the actual profiles in an interface
+neighborhood.
+\end{lemma}
+\begin{proof}
+Cauchy estimates in $E_\alpha$ and Lemma~\ref{lem:spectral} give, for $q=0,1$,
+$\sup_{J\times[0,1]}|\partial_t^n\partial_s^qY|\le C A_0^n n!$.
+Equation (3) rearranges as
+\[
+ Y_{ss}=a(t)Y_t+h(t)sY_s,
+ \quad a=b^2/c_-,\quad h=-bb'/c_-. \tag{6}
+\]
+For $Z$, replace $a$ by $(1-b)^2/c_+$ and $h s$ by
+$-(1-b)b'(1-s)/c_+$. On a slightly larger compact interval these
+coefficients have bounds $M_aA_0^n n!$, $M_hA_0^n n!$ by Lemma~\ref{lem:local} and \cite[Theorem 3.3.8]{CA}.
+Equation (6) and its time derivatives bootstrap continuous spatial
+derivatives of every order: at each step its right side is continuous,
+and the preceding twice-integration argument applies. Time
+differentiation is justified first in distributions, where Lemma~\ref{lem:local} provides
+all $E_\alpha$ time derivatives; the resulting continuous
+representatives coincide with the classical derivatives.
+
+Choose $A\ge2A_0$. Induction on $q$, simultaneously for all $n$,
+gives
+\[
+ \sup_{J\times[0,1]}|\partial_t^n\partial_s^qY|
+ \le C A^n B^q(n+q)! . \tag{7}
+\]
+For $q\ge2$, use
+$\partial_s^{q-2}(sY_s)=s\partial_s^{q-1}Y+(q-2)\partial_s^{q-2}Y$.
+In each Leibniz sum, for $m\ge n$,
+\[
+ \sum_{k=0}^n\binom nk k! (A_0/A)^k(m-k)!
+ \le 2m!,
+\]
+because $\binom nk k!(m-k)!/m!\le1$ and $A_0/A\le1/2$.
+The ratios of the three resulting bounds to the right side of (7)
+are bounded respectively by
+\[
+ \frac{2M_aA}{B^2(n+q)},\qquad
+ \frac{2M_h}{B(n+q)},\qquad
+ \frac{2M_h(q-2)}{B^2(n+q)(n+q-1)}.
+\]
+Their sum is at most one after increasing $B$, independently of $n,q$.
+The right-phase calculation has a minus sign in its last term and
+the same absolute bound. Setting $n=0$ in (7), Taylor's remainder
+is bounded by $C(B|s-s_0|)^{q+1}$, proving the assertion also at
+one-sided endpoints. The remainder formula follows by repeated
+integration of the $(q+1)$st derivative along the spatial segment.
+\end{proof}
+
+\section{Reconstruction from the interface traces}
+For $M,R>0$ and $\sigma\ge1$, write $G(M,R,\sigma)$ for the real
+$C^\infty(\mathbb R)$ functions satisfying
+\[\sup_t|g^{(n)}(t)|\le M(n!)^\sigma R^{-n}\qquad(n\ge0).\]
+A function is bounded Gevrey-$\sigma$ if it belongs to one such class.
+For $\sigma=1$ these derivative bounds imply analyticity; for
+$\sigma>1$ they allow smooth cutoffs that are flat at their endpoints.
+
+\begin{lemma}[Flatness reconstruction]\label{lem:flatness}
+Fix $c>0$, $1\le\sigma<2$ and globally bounded Gevrey-$\sigma$
+functions $f,p$ on $\mathbb R$. Set $\beta_0=0$, $\alpha_0=p$,
+and recursively
+\[
+ \beta_{i+1}=c^{-1}(\beta_i'-f\alpha_i),\qquad
+ \alpha_{i+1}=c^{-1}(\alpha_i'-f\beta_{i+1}). \tag{8}
+\]
+Then
+\[
+ S(t,X)=\sum_{i\ge0}\alpha_i(t)\frac{X^{2i+1}}{(2i+1)!}
+       +\sum_{i\ge0}\beta_i(t)\frac{X^{2i}}{(2i)!} \tag{9}
+\]
+converges on every bounded spatial set with all time and space
+derivatives. It is entire in $X$, smooth in $(t,X)$, and satisfies
+$S_t=cS_{XX}+fS_X$, $S(t,0)=0$, $S_X(t,0)=p(t)$.
+If $f,p$ and all their derivatives vanish at a time, then $S$ vanishes
+identically in space at that time.
+\end{lemma}
+\begin{proof}
+Choose a common $R>0$ and positive upper constants such that
+$f\in G(M_f,R,\sigma)$, $p\in G(M_\alpha,R,\sigma)$ and
+$\beta_0=0\in G(M_\beta,R,\sigma)$. Put
+$H=M_\beta/R+M_\alpha M_f$.
+With the source parameter $\chi=c^{-1}$,
+\cite[Proposition 3.4]{CLT} permits every $\rho>0$ satisfying
+\[
+ \rho\le \frac{2^{3-\sigma}R}{3},\qquad
+ \rho\le \frac{2M_\alpha c}{3H M_f}.
+\]
+Both upper bounds are strictly positive for any fixed input bounds.
+For all integers $k,i\ge0$, the proposition then gives
+\[
+\begin{aligned}
+ \norm{\alpha_i^{(k)}}_\infty
+ &\le \frac{M_\alpha c^{-i}}{R^k\rho^i}
+ \frac{((k+2i)!)^\sigma}
+ {(i!)^{2-\sigma}((2i)!)^{\sigma-1}},\\
+ \norm{\beta_{i+1}^{(k)}}_\infty
+ &\le \frac{Hc^{-(i+1)}}{R^k\rho^i}
+ \frac{((k+2i+1)!)^\sigma}
+ {(i!)^{2-\sigma}((2i+1)!)^{\sigma-1}}.
+\end{aligned}
+\]
+For fixed time derivative order, the coefficient estimates of
+Proposition 3.4 leave a factor $(i!)^{-(2-\sigma)}$ after division
+by the spatial factorial, up to a fixed power of $i$ and a geometric
+factor. This proves convergence even for complex $X$ on any disk,
+and the same bound applies to every fixed mixed derivative.
+\cite[Corollary 3.6]{CLT} permits termwise differentiation. Coefficients of
+$X^{2i}$ and $X^{2i+1}$ in $cS_{XX}+fS_X$ are
+$c\beta_{i+1}+f\alpha_i=\beta_i'$ and
+$c\alpha_{i+1}+f\beta_{i+1}=\alpha_i'$.
+This proves the PDE. The interface identities follow from $\beta_0=0$
+and $\alpha_0=p$. Each coefficient uses finitely many jets of $f,p$
+by (8), proving the final assertion. The cited coefficient estimates impose no input-sign condition.
+\end{proof}
+
+\begin{lemma}[Identification]\label{lem:identify}
+Suppose on an open time interval in $(0,\delta)$ that $f=b'$ and
+$p=q_\pm$, and use (9) with $c=c_\pm$. Then (9), translated by
+$X=r-b(t)$, equals the corresponding local temperature throughout
+its closed spatial phase.
+\end{lemma}
+\begin{proof}
+For the local temperature expressed in $X$, the equation is
+$S_t=cS_{XX}+b'S_X$. Its even and odd spatial derivatives at zero
+must therefore obey (8), starting with value zero and slope $q_\pm$.
+All mixed derivatives exist by Lemma~\ref{lem:local}--Lemma~\ref{lem:spatial}, so this coefficient calculation
+is legitimate. Lemma~\ref{lem:spatial} identifies the local profile with its Taylor series
+near zero, while Lemma~\ref{lem:flatness} gives the same Taylor coefficients. Both profiles
+are real analytic throughout the connected phase interval, hence
+coincide everywhere. For completeness, the latter identity principle
+needs no extra PDE theorem: the set of points with a zero neighborhood
+for their difference is nonempty and open; at a limit point all
+derivatives vanish by continuity, so its convergent Taylor expansion
+gives a zero neighborhood. It is thus also closed in a connected
+interval. Endpoints follow by continuity.
+\end{proof}
+
+\section{The global control}
+Products of bounded Gevrey-$\sigma$ functions, affine time rescalings,
+and their derivatives are again bounded Gevrey-$\sigma$.
+Indeed Leibniz gives
+$\binom nk(k!)^\sigma((n-k)!)^\sigma\le(n!)^\sigma$;
+the $(n+1)$ terms and geometric factors are absorbed by decreasing
+$R$. Differentiation uses $(n+1)^\sigma\le C^n$ after adjusting the
+constant for $n=0$. A real analytic function on a neighborhood of a
+compact interval has Cauchy bounds $MA^n n!$ there. Multiplying it
+by a Gevrey cutoff flat at the interval endpoints, then extending by
+zero, gives a globally bounded Gevrey-$\sigma$ function by the same
+product bound. These closure properties are used below.
+
+\begin{lemma}[Normalized control construction]\label{lem:global}
+For all normalized data above and every $T>0$, there are bounded
+Dirichlet controls driving both temperatures to zero and $b$ to
+$b_T\in(0,1)$, with a $C^1$ interface strictly inside the rod.
+\end{lemma}
+\begin{proof}
+Let $(\widetilde\theta_\pm,\widetilde b)$ be the solution of Lemma~\ref{lem:local}, with
+analytic slopes $\widetilde q_\pm$. Set
+$a=\min(\delta,T)/4$ and $t_*=a/2$. Fix $1<\sigma<2$.
+By \cite[Lemma 3.2]{CLT}, choose a globally bounded Gevrey-$\sigma$
+function $\phi_\sigma:\mathbb R\to[0,1]$, equal to $1$ for $t\le0$
+and $0$ for $t\ge1$. All its positive-order derivatives vanish at
+both $0$ and $1$. Define
+\[
+ \chi(t)=\phi_\sigma((t-a)/a),\qquad
+ \eta(t)=1-\phi_\sigma((t-a/4)/(a/4)).
+\]
+Thus $\chi=1$ for $t\le a$, $\chi=0$ for $t\ge2a$,
+and $\eta=0$ for $t\le a/4$, $\eta=1$ for $t\ge t_*$.
+Define on $[a/4,2a]$, and extend by zero outside,
+\[
+ f=\eta[\chi\widetilde b'+\chi'(\widetilde b-b_T)],\qquad
+ p_-=\eta\chi\widetilde q_-,\qquad p_+=p_--f. \tag{10}
+\]
+The local quantities are analytic on a neighborhood of this compact
+interval because $2a<\delta$. Flatness of the cutoff jets proves
+that these zero extensions are globally bounded Gevrey-$\sigma$
+functions. In particular there is no regularity claim at the original
+time zero for the uncontrolled solution.
+
+For $t\ge t_*$, prescribe
+\[
+ b(t)=\begin{cases}
+ \chi(t)\widetilde b(t)+(1-\chi(t))b_T,&t_*\le t\le2a,\\
+ b_T,&t\ge2a.
+ \end{cases} \tag{11}
+\]
+Use $\widetilde b$ for $0\le t\le t_*$.
+On $[t_*,a]$ these definitions agree, together with their derivatives.
+Both entries in the convex combination (11) lie strictly in $(0,1)$,
+and $0\le\chi\le1$; hence so does $b$ at every time.
+The flat jets at $2a$ give a smooth joining to the constant path.
+For $t\ge t_*$ one has $b'=f$. On the overlap $[t_*,a]$,
+$p_\pm=\widetilde q_\pm$, by (1).
+
+Apply Lemma~\ref{lem:flatness} separately with $c_-,p_-$ and $c_+,p_+$, using the same $f$,
+and define for $t\ge t_*$
+\[
+ \theta_-(t,r)=S_-(t,r-b(t)),\quad 0\le r\le b(t),
+ \qquad
+ \theta_+(t,r)=S_+(t,r-b(t)),\quad b(t)\le r\le1. \tag{12}
+\]
+Lemma~\ref{lem:flatness} and $b'=f$ give the heat equations after the chain rule.
+Their interface values are zero, their slopes are $p_-,p_+$,
+and their slope difference equals $f=b'$. Choose the joining time
+$t_j=3a/4$, strictly inside $(t_*,a)$, and use the local temperatures
+until $t_j$ and (12) afterwards. Lemma~\ref{lem:identify} identifies the two constructions
+on the open overlap $(t_*,a)$. The interface defined in (11) also
+equals the local interface there. Thus the combined solution satisfies the PDE
+across the join with its initial data unchanged.
+
+For $t\ge2a$, all jets of $f,p_-,p_+$ vanish, so both series (12)
+are identically zero by Lemma~\ref{lem:flatness}, while $b=b_T$. Since $2a<T$, this gives
+the required terminal state. The exterior boundary controls are
+the traces $\theta_-(t,0)$ and $\theta_+(t,1)$; they vanish initially
+and are continuous later, hence bounded on $[0,T]$.
+
+In the two fixed phase coordinates the combined temperatures are
+jointly continuous on compact time--space rectangles and vanish
+at the interface. Their zero extensions are therefore jointly
+continuous on $[0,T]\times[0,1]$: at a moving-interface crossing
+use continuity of the phase-coordinate profiles at their zero
+endpoint. The same argument at time zero uses the $E_\alpha$
+continuity from Lemma~\ref{lem:local} and the compact initial supports. Uniform
+continuity on this rectangle yields continuity into $L^2(0,1)$,
+since $\norm{u(t)-u(s)}_2\le\norm{u(t)-u(s)}_\infty$.
+Return to the physical variables by
+\[
+ \ell(t)=Lb(t),\qquad
+ y(t,x)=-\frac{\lambda L^2}{d_l}\theta_-(t,x/L),\qquad
+ z(t,x)=-\frac{\lambda L^2}{d_r}\theta_+(t,x/L).
+\]
+The boundary controls are
+$v_l(t)=-\lambda L^2\theta_-(t,0)/d_l$ and
+$v_r(t)=-\lambda L^2\theta_+(t,1)/d_r$.
+For every zero-extended normalized profile $w$,
+$\norm{w(\cdot/L)}_{L^2(0,L)}=\sqrt L\,\norm{w}_{L^2(0,1)}$.
+These fixed factors preserve boundedness and strong continuity, and
+the normalization calculation in (1) restores the physical Stefan law.
+This proves Theorem~\ref{thm:control}.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted in developing the argument, checking sources and
+preparing this manuscript. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{CLT} B. Colle, J. Loh\'eac and T. Takahashi,
+Controllability of the Stefan problem by the flatness approach,
+\emph{Systems \& Control Letters} 174 (2023), 105480.
+\href{https://doi.org/10.1016/j.sysconle.2023.105480}{doi:10.1016/j.sysconle.2023.105480}.
+Source consulted: \href{https://hal.science/hal-03721544v1}{HAL-03721544v1},
+submitted July 12, 2022, Lemma 3.2 and Proposition 3.4--Corollary 3.6.
+\bibitem{CA} J. Lebl, \emph{Guide to Cultivating Complex Analysis: Working the Complex Field},
+version 1.9, July 11, 2026,
+\url{https://www.jirka.org/ca/ca.pdf}.
+\bibitem{RA} J. Lebl, \emph{Basic Analysis II: Introduction to Real Analysis, Volume II},
+version 6.3, May 15, 2026,
+\url{https://www.jirka.org/ra/realanal2.pdf}.
+\bibitem{AIM258} M. Colbrook, AIM problem collection,
+Problem 258, Global constrained null control of a two-phase Stefan interface,
+revision c9929805cece044705abaaebe1cebddac1ba11a6.
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/258-global-two-phase-stefan-control.md}{Immutable problem statement}.
+\end{thebibliography}
+\end{document}
