@@ -1,0 +1,36 @@
+{
+  "manifest_version": 1,
+  "title": "Failure of local controllability at time 21/10 for a shallow-water tank",
+  "contribution": "Analytic counterexample claim",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, evidence and build instructions",
+      "sha256": "033d9ccc3dbc758bbfc412eb3af0cae58fe5cb2210c33a52aa72f05436069201"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Exact match to the universal original question",
+      "sha256": "09705733d7977ee831190f566fa079dfc309da4c12c29906f02e5f4bc872fe47"
+    },
+    {
+      "path": "build.sh",
+      "purpose": "Standalone manuscript build command",
+      "sha256": "e9bd563318044fe28a779550004d8857b3fe7d6e15056f26b12c4a4f5ad5b6c7"
+    },
+    {
+      "path": "paper/obstruction.pdf",
+      "purpose": "Complete seven-page mathematical manuscript",
+      "sha256": "bfa002128c7c79a5450e79ea0223663c0a86137379fcb641157584373dc9ffa1"
+    },
+    {
+      "path": "paper/obstruction.tex",
+      "purpose": "Complete editable mathematical manuscript",
+      "sha256": "5d5b7125b33ed736d98acad52a0856f26ace96803b84a1ad190cb45c4ee169c0"
+    }
+  ],
+  "inventory_exclusions": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ]
+}
