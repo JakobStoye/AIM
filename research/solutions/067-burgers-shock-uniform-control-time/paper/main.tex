@@ -1,0 +1,957 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\HH}{\mathcal H^2}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\title{Exact uniform control time for a centered viscous Burgers shock}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the minimal time for boundary null control of the Burgers
+equation linearized at the stationary shock
+$-\tanh(x/(2\eps))$ on $(-L,L)$, with a control at the left endpoint.
+For arbitrary $L^2$ initial data, the worst-case $L^2$ control cost remains
+bounded as the viscosity tends to zero at every time $T>4\sqrt2L$ and
+diverges at every time $0<T<4\sqrt2L$.
+Thus the exact uniform control time is $4\sqrt2L$.
+The upper bound separates the near-zero shock mode from the fast spectral
+modes and estimates their coefficient norms through the exact spectral
+determinant. The lower bound uses an inverse exponential Gram matrix:
+its alternating coefficients combine with the eigenfunctions' endpoint
+signs to prevent cancellation in a common boundary layer.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Consider disturbances around the centered stationary viscous Burgers shock
+\[
+ U^\eps(x)=-\tanh\!\left(\frac{x}{2\eps}\right),\qquad -L<x<L,
+\]
+where $L>0$ and $\eps>0$. Their linearized equation with one boundary
+actuator is
+\begin{equation}\label{eq:primal}
+ \begin{cases}
+  u_t-\eps u_{xx}+\partial_x(U^\eps u)=0,&0<t<T,\ -L<x<L,\\
+  u(t,-L)=h(t),\qquad u(t,L)=0,&0<t<T,\\
+  u(0,x)=u_0(x),&-L<x<L.
+ \end{cases}
+\end{equation}
+We use the usual transposition solution for real $u_0\in L^2(-L,L)$ and
+real $h\in L^2(0,T)$; Appendix~\ref{sec:duality} recalls its construction and
+the exact control--observation duality. No pointwise compatibility between
+the initial datum and the boundary values is imposed.
+
+The question is how long the actuator must act to drive every disturbance
+to zero with a cost that stays bounded in the vanishing-viscosity limit.
+For fixed $L$, define
+\begin{align}
+ C(T,\eps)
+ &=\sup_{\norm{u_0}_{L^2(-L,L)}=1}
+   \inf\{\norm h_{L^2(0,T)}:u(T)=0\},\label{eq:cost}\\
+ T_{\rm unif}
+ &=\inf\{T>0:\limsup_{\eps\downarrow0}C(T,\eps)<\infty\}.
+ \label{eq:time}
+\end{align}
+The infimum over an empty control set is $+\infty$.
+Although the limiting transport picture suggests a geometric time scale,
+the small-viscosity spectral structure also enters this uniform problem.
+Laheurte~\cite[Theorem 1.1 and Remark 1.2]{Laheurte} obtained
+\begin{equation}\label{eq:old}
+ (4\sqrt2-2)L\le T_{\rm unif}\le4\sqrt3L
+\end{equation}
+for the same centered shock and boundary conditions.
+The present result identifies the infimum in \eqref{eq:time} without
+restricting the initial data or changing the boundary control norm.
+
+\begin{theorem}\label{thm:main}
+For every $L>0$, the problem \eqref{eq:primal} satisfies
+\[
+ T_{\rm unif}=4\sqrt2L.
+\]
+More precisely:
+\begin{enumerate}
+ \item For every $T>4\sqrt2L$, there are $\eps_0>0$ and $M_{L,T}<\infty$
+ such that, for every $0<\eps<\eps_0$ and every $u_0\in L^2(-L,L)$,
+ there is a real null control $h\in L^2(0,T)$ with
+ $\norm h_{L^2(0,T)}\le M_{L,T}\norm{u_0}_{L^2(-L,L)}$.
+ \item For every $0<T<4\sqrt2L$, there are $\eps_0>0$ and $c_{L,T}>0$
+ such that
+ \begin{equation}\label{eq:lower-main}
+  C(T,\eps)\ge c_{L,T}\eps^{13/2}
+       \exp\!\left(\frac{4\sqrt2L-T}{4\eps}\right),
+       \qquad 0<\eps<\eps_0.
+ \end{equation}
+\end{enumerate}
+All constants depend only on the displayed fixed parameters.
+\end{theorem}
+
+The first assertion concerns every $L^2$ initial datum; in the second,
+the adverse datum may depend on $\eps$, as the supremum in \eqref{eq:cost}
+allows. These strict-side statements determine the exact infimum.
+They leave the control cost at $T=4\sqrt2L$ open.
+
+The main difficulty in the upper bound is that one eigenvalue approaches
+zero while all remaining eigenvalues grow on the scale $\eps^{-1}$.
+The slow mode therefore cannot be absorbed into an estimate for the fast
+modes. We separate its boundary observation from the fast exponential
+span by showing that bounded fast observations have weak limits supported
+in a fixed finite time interval. Hardy-space projections make this
+support statement precise. The exact spectral determinant then bounds
+all fast coefficient functionals, including arbitrarily large indices,
+with the exponent that gives the time $4\sqrt2L$.
+
+For the lower bound, cancellation between fast modes is the essential
+issue. A column of the inverse Gram matrix of their temporal exponentials
+has alternating signs. Centered reflection symmetry gives the opposite
+endpoint derivatives of the corresponding spatial eigenfunctions with
+exactly the complementary signs. Their products consequently have one
+sign in a common endpoint layer. A scalar separation product determines
+the matching exponential cost.
+The inverse-Gram and Hardy model-space approach is informed by
+Koike and Laheurte's work on constant-drift transport--diffusion
+\cite[Sections 3, 5 and 6.1]{KoikeLaheurte}.
+Here the determinant and the endpoint signs are those of the centered
+shock. The theorem concerns this linearized equation; it makes no claim
+for nonlinear Burgers dynamics or off-center shocks.
+
+Section~\ref{sec:spectral} derives the spectrum and boundary-normalized
+eigenfunctions. Section~\ref{sec:upper} proves uniform observability above
+the asserted time. Section~\ref{sec:lower} constructs the matching adverse
+tests. Appendix~\ref{sec:duality} passes between observability and controls.
+Throughout, $D=2L$ is the interval length. Spatial norms $\norm{\cdot}_2$
+use Lebesgue measure on $(-L,L)$, and $\norm f_J$ denotes the $L^2$
+norm on a time interval $J$. Complex inner products are linear in the
+first argument; the original data and controls are real. Constants may
+change from line to line but never depend on $\eps$, a spectral index,
+or a spectral truncation unless this dependence is stated explicitly.
+All small-viscosity estimates hold on an interval $(0,\eps_0)$.
+
+\section{Spectrum and normalized boundary observations}\label{sec:spectral}
+
+The adjoint realization and its domain are
+\begin{equation}\label{eq:adjoint}
+ A_\eps^*=-\eps\partial_x^2+
+          \tanh\!\left(\frac{x}{2\eps}\right)\partial_x,\qquad
+ X_\eps=D(A_\eps^*)=H^2(-L,L)\cap H_0^1(-L,L).
+\end{equation}
+For $z_t+A_\eps^*z=0$ with $z(0)=z_0\in X_\eps$, the observed flux is
+\begin{equation}\label{eq:flux}
+ q(t)=\eps z_x(t,-L).
+\end{equation}
+Integration by parts gives
+\begin{equation}\label{eq:duality}
+ \ip{u(T)}{z_0}
+  =\ip{u_0}{z(T)}+\int_0^T h(t)\overline{q(T-t)}\,dt.
+\end{equation}
+Thus an estimate $\norm{z(T)}_2\le M\norm q_{(0,T)}$ provides a null
+control of norm at most $M\norm{u_0}_2$, while every nonzero smooth
+adjoint test gives
+\begin{equation}\label{eq:ratio}
+ C(T,\eps)\ge\frac{\norm{z(T)}_2}{\norm q_{(0,T)}}.
+\end{equation}
+The extension to all $L^2$ data is proved in Appendix~\ref{sec:duality}.
+
+\subsection{A first-order reduction}
+
+Set
+\[
+ b=\frac{L}{2\eps},\qquad a=\frac{\tanh b}{2\eps},\qquad
+ c(x)=\cosh\!\left(\frac{x}{2\eps}\right).
+\]
+Direct conjugation gives the self-adjoint Dirichlet operator
+\begin{equation}\label{eq:H}
+ c^{-1}A_\eps^*c=H_\eps
+ =-\eps\partial_x^2+\frac1{4\eps}
+       -\frac1{2\eps}\sech^2\!\left(\frac{x}{2\eps}\right).
+\end{equation}
+With the formal first-order factors
+\[
+ B=\eps\partial_x+\tfrac12\tanh(x/(2\eps)),\qquad
+ B^\dagger=-\eps\partial_x+\tfrac12\tanh(x/(2\eps)),
+\]
+one has $\eps H_\eps=B^\dagger B$ and
+$BB^\dagger=-\eps^2\partial_x^2+1/4$.
+In particular, $H_\eps$ is positive: a Dirichlet solution of $Bv=0$
+would be a multiple of $\sech(x/(2\eps))$ and hence zero.
+
+If $H_\eps v=\lambda v$ with zero endpoint values, $f=Bv$ solves
+\begin{equation}\label{eq:robin}
+ -\eps^2f''+\tfrac14f=\eps\lambda f,\qquad
+ f'(-L)=-af(-L),\qquad f'(L)=af(L).
+\end{equation}
+Conversely, $B^\dagger f$ transfers every nonzero eigenvalue of
+\eqref{eq:robin} back to the Dirichlet problem.
+The Robin eigenfunction $f=c$ has eigenvalue zero and is annihilated by
+$B^\dagger$; it is not an eigenfunction of $H_\eps$.
+This reduction is the Darboux structure used in
+\cite[Section 2]{Laheurte}; the needed identities are derived here.
+
+For small enough $\eps$, there is exactly one Dirichlet eigenvalue below
+$1/(4\eps)$. Denote it by $\lambda_0$. It has the form
+\begin{equation}\label{eq:slow}
+ \lambda_0=\frac1{4\eps}-\eps\kappa^2,\qquad
+ \kappa\coth(\kappa L)=a,\qquad 0<\kappa<\frac1{2\eps}.
+\end{equation}
+Indeed, a general hyperbolic Robin solution is a combination of
+$\cosh(\kappa x)$ and $\sinh(\kappa x)$. Adding and subtracting the
+endpoint conditions gives respectively
+$\kappa\tanh(\kappa L)=a$ and $\kappa\coth(\kappa L)=a$.
+Both left sides are strictly increasing; for the odd equation the
+derivative has the sign of $\sinh(2\kappa L)-2\kappa L>0$.
+The even root is $1/(2\eps)$ and produces the annihilated mode.
+The odd root exists when $a>1/L$, is unique, and is smaller than that
+even root.
+
+All remaining eigenvalues are
+\begin{equation}\label{eq:fast}
+ \lambda_k=\frac1{4\eps}+\eps\xi_k^2,\qquad
+ D\xi_k-2\arctan(\xi_k/a)=k\pi,\qquad k\ge1.
+\end{equation}
+For $Da>2$ the phase on the left is strictly increasing from zero.
+The zero frequency is excluded because the limiting characteristic
+expression is $2a-a^2D\ne0$. Consequently
+\begin{equation}\label{eq:brackets}
+ \frac{k\pi}{D}<\xi_k<\frac{(k+1)\pi}{D},\qquad k\ge1.
+\end{equation}
+
+\subsection{Endpoint normalization and spatial bounds}
+
+For a general complex parameter $\lambda$ put
+\[
+ f_\lambda(x)=\cos(\xi(x+L))-\frac a\xi\sin(\xi(x+L)),\qquad
+ \xi^2=\frac\lambda\eps-\frac1{4\eps^2},
+\]
+and define
+\begin{equation}\label{eq:S}
+ S_\lambda(x)=
+ \frac{-\eps f_\lambda'(x)
+              +\frac12\tanh(x/(2\eps))f_\lambda(x)}{\lambda}.
+\end{equation}
+This is the entire fundamental solution of
+$(H_\eps-\lambda)S_\lambda=0$ with
+$S_\lambda(-L)=0$, $S_\lambda'(-L)=1$.
+To see the removability in \eqref{eq:S}, cosine and $\sin(\xi y)/\xi$
+are entire in $\xi^2$, and $f_0=c/c(L)$ is annihilated by $B^\dagger$.
+At $-L$ the derivative of the numerator equals $\lambda$, using
+$\eps a^2+(4\eps)^{-1}\sech^2 b=(4\eps)^{-1}$.
+The initial-value characterization also gives uniqueness.
+
+Normalize each adjoint eigenfunction by its left flux:
+\begin{equation}\label{eq:chi}
+ \chi_j(x)=\frac{c(x)}{\eps c(L)}S_{\lambda_j}(x),\qquad j\ge0.
+\end{equation}
+At a fast root in \eqref{eq:fast},
+$f_{\lambda_k}(L)=(-1)^{k+1}$.
+At either Dirichlet endpoint the derivative of
+$B^\dagger f_{\lambda_k}$ equals $\lambda_k f_{\lambda_k}$.
+Hence the normalization gives the exact identities
+\begin{equation}\label{eq:endpoint}
+ \eps\chi_j'(-L)=1\quad(j\ge0),\qquad
+ \eps\chi_k'(L)=(-1)^{k+1}\quad(k\ge1).
+\end{equation}
+
+\begin{lemma}\label{lem:norms}
+For all sufficiently small $\eps$, uniformly in $k\ge1$,
+\begin{equation}\label{eq:norms}
+ \norm{\chi_k}_2\le\frac{C_L}{k\sqrt\eps},\qquad
+ \norm{\chi_0}_2\le2\sqrt D,\qquad \lambda_0\longrightarrow0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For fast modes, \eqref{eq:S} and $|\tanh(x/(2\eps))|\le\tanh b$ yield
+\[
+ |\chi_k(x)|\le\frac{c(x)}{c(L)}
+       \frac{(\xi_k+a)^2}{\xi_k\lambda_k}
+ \le\frac{2}{\eps\xi_k}\frac{c(x)}{c(L)}.
+\]
+The last inequality uses $a\le1/(2\eps)$ and
+$(s+1/2)^2\le2(s^2+1/4)$.
+For small $\eps$,
+$\int_{-L}^L(c(x)/c(L))^2\,dx\le8\eps$.
+Together with \eqref{eq:brackets}, this proves the first bound.
+
+For the slow mode, set $\gamma=2\eps\kappa$,
+$\beta=(2\eps)^{-1}-\kappa$ and $A=(2\eps)^{-1}+\kappa$.
+Equation~\eqref{eq:slow} becomes
+$\gamma=\tanh b\,\tanh(\gamma b)$.
+Its positive root satisfies $\gamma\ge1/2$ for large $b$, and
+\[
+ 1-\gamma\le(1-\tanh b)+(1-\tanh(\gamma b))\le4e^{-b}.
+\]
+Thus $\lambda_0\le2\eps^{-1}e^{-b}\to0$ and
+$\beta\le2\eps^{-1}e^{-b}\to0$.
+The hyperbolic product identities and \eqref{eq:slow} give the positive
+adjoint ground function
+\[
+ w(x)=\frac{1+\gamma}{4}
+ \left(\cosh(\beta x)
+       -\frac{\cosh(\beta L)}{\cosh(AL)}\cosh(Ax)\right).
+\]
+Positivity in the interior follows because
+$\cosh(Ax)/\cosh(\beta x)$ increases for $0\le x\le L$.
+Normalizing $w$ by its left flux, and differentiating there, gives
+\[
+ 0\le\chi_0(x)=\frac{w(x)}{\eps w'(-L)}
+ \le\frac1{\eps[A\tanh(AL)-\beta\tanh(\beta L)]}\le2
+\]
+for small $\eps$; the denominator tends to one.
+This proves the remaining statements.
+\end{proof}
+
+\subsection{Spectral completeness and the derivative trace}\label{sec:density}
+
+Regular separated Sturm--Liouville theory applies to \eqref{eq:H}:
+the interval is finite, the leading coefficient $\eps$ is positive,
+the potential is real and smooth, and the boundary conditions are
+Dirichlet. Its self-adjoint realization has compact resolvent and a
+complete orthonormal eigenbasis $(\phi_j)_{j\ge0}$
+\cite[Theorems 9.6 and 9.10]{Teschl}.
+Its domain is precisely $H^2\cap H_0^1$.
+For fixed $\eps$, if $V$ is the potential in \eqref{eq:H},
+\[
+ \norm{v''}_2\le\eps^{-1}(\norm{H_\eps v}_2+\norm V_\infty\norm v_2),
+ \qquad \norm{v'}_2^2\le\norm{v''}_2\norm v_2.
+\]
+These estimates, with the reverse bound from the bounded coefficients,
+make the graph norm equivalent to the $H^2$ norm.
+
+Writing $v=\sum a_j\phi_j$, the domain condition is
+$\sum(1+\lambda_j^2)|a_j|^2<\infty$.
+One direction follows by taking the coefficients of $H_\eps v$;
+the other follows by closedness from finite spectral sums.
+The expansion $e^{-tH_\eps}v=\sum e^{-\lambda_jt}a_j\phi_j$ then
+converges in the graph norm uniformly for $0\le t\le T$, since the
+tail is bounded by its value at $t=0$.
+Multiplication by $c$ and $c^{-1}$ preserves $H^2\cap H_0^1$ at each
+fixed $\eps$. Thus finite sums of the $\chi_j$ approximate every
+adjoint initial test in $X_\eps$, and their solutions converge in
+$C([0,T];H^2)$.
+
+For $g\in H^1(-L,L)$, its absolutely continuous representative satisfies
+\[
+ |g(-L)|\le D^{-1/2}\norm g_2+\sqrt D\norm{g'}_2.
+\]
+This follows by averaging
+$|g(-L)|\le|g(x)|+\int_{-L}^x|g'(r)|\,dr$.
+Applying it to $g=v'$ proves continuity of the derivative trace on
+$H^2$. The approximating observed fluxes therefore converge in
+$L^2(0,T)$.
+Constants in this density argument may depend on the fixed $\eps$;
+we apply it only after proving estimates uniform in the spectral
+truncation and in small viscosity.
+
+\section{Uniform observability above the critical time}\label{sec:upper}
+
+\subsection{The determinant and spectral separation products}
+
+The coefficient estimates for a fast exponential sum depend on its
+spectral separation. We obtain an all-index bound from the exact
+Dirichlet determinant
+\begin{equation}\label{eq:Delta}
+ \Delta_\eps(\lambda)=S_\lambda(L)
+ =\frac\eps\lambda
+  \left[\left(\xi-\frac{a^2}{\xi}\right)\sin(D\xi)
+                  +2a\cos(D\xi)\right].
+\end{equation}
+It is entire, and the explicit formula bounds its growth by a polynomial
+times $\exp(C_\eps\sqrt{|\lambda|})$, so its order is at most $1/2$.
+Its zeros are exactly the positive Dirichlet eigenvalues.
+Differentiating the differential equation in $\lambda$ and integrating
+the Wronskian gives
+\[
+ \eps S_{\lambda_j}'(L)\Delta_\eps'(\lambda_j)
+       =\int_{-L}^L S_{\lambda_j}(x)^2\,dx>0.
+\]
+Here $S_{\lambda_j}'(L)\ne0$ by initial-value uniqueness, so every zero
+is simple. At zero the fundamental solution is explicitly
+\[
+ S_0(x)=\frac{\sech(x/(2\eps))}{c(L)}
+                      \int_{-L}^x c(r)^2\,dr,\qquad
+ \Delta_\eps(0)=c(L)^{-2}\int_{-L}^L c(r)^2\,dr>0.
+\]
+Hadamard factorization for an entire function of order below one
+\cite[Section 6.4.3]{Weikard} consequently gives
+\begin{equation}\label{eq:Hadamard}
+ \Delta_\eps(\lambda)=\Delta_\eps(0)
+                     \prod_{j\ge0}(1-\lambda/\lambda_j).
+\end{equation}
+There is no nonconstant exponential factor.
+
+For $k\ge1$ define the full and fast separation products
+\[
+ \widetilde d_k=\prod_{\substack{j\ge0\\j\ne k}}
+       \frac{|\lambda_j-\lambda_k|}{\lambda_j+\lambda_k},
+ \qquad
+ d_k=\prod_{\substack{j\ge1\\j\ne k}}
+       \frac{|\lambda_j-\lambda_k|}{\lambda_j+\lambda_k}.
+\]
+They converge to positive numbers because
+$\lambda_j\sim\eps\pi^2j^2/D^2$.
+The analytic product criterion used here and below is
+\cite[Section 1.10(ix)]{DLMF}: summable uniform deviations of the
+factors on compact sets give locally uniform convergence, with no
+additional zeros.
+Equation~\eqref{eq:Hadamard} implies
+\begin{equation}\label{eq:dk-full}
+ d_k\ge\widetilde d_k
+     =\frac{2\lambda_k|\Delta_\eps'(\lambda_k)|}
+                         {\Delta_\eps(-\lambda_k)}.
+\end{equation}
+
+\begin{lemma}\label{lem:dk}
+For all sufficiently small $\eps$ and every $k\ge1$,
+\begin{equation}\label{eq:dk}
+ d_k^{-1}\le C_L\eps e^{D\eta_k},\qquad
+ \eta_k=\sqrt{\xi_k^2+\frac1{2\eps^2}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The identity
+\[
+ \left(\xi-\frac{a^2}{\xi}\right)\sin(D\xi)+2a\cos(D\xi)
+ =-\frac{\xi^2+a^2}{\xi}
+                 \sin(D\xi-2\arctan(\xi/a))
+\]
+and \eqref{eq:fast} yield
+\begin{align}
+ 2\lambda_k|\Delta_\eps'(\lambda_k)|
+  &=\frac{D(\xi_k^2+a^2)-2a}{\xi_k^2},
+       \label{eq:Delta-derivative}\\
+ \Delta_\eps(-\lambda_k)
+  &=\frac\eps{\lambda_k}
+    \left[\left(\eta_k+\frac{a^2}{\eta_k}\right)\sinh(D\eta_k)
+                         -2a\cosh(D\eta_k)\right].
+       \label{eq:Delta-negative}
+\end{align}
+If $Da\ge4$, the first expression is at least
+$D(\xi_k^2+a^2)/(2\xi_k^2)$.
+The bracket in the second is positive by \eqref{eq:Hadamard}
+and at most $(\eta_k+a^2/\eta_k)e^{D\eta_k}/2$.
+Finally,
+\[
+ \frac{a^2}{\eta_k^2}\le\frac12,\qquad
+ \frac{\eps\eta_k}{\lambda_k}
+   =\eps\frac{\sqrt{\eps\lambda_k+1/4}}{\eps\lambda_k}
+   \le2\sqrt2\,\eps.
+\]
+Combining these bounds with \eqref{eq:dk-full} proves \eqref{eq:dk},
+uniformly in the index.
+\end{proof}
+
+\subsection{Exponential Gram matrices and the fast terminal estimate}
+
+For $N\ge1$ let
+\[
+ G_{mn}=\int_0^\infty e^{-(\lambda_m+\lambda_n)t}\,dt
+       =\frac1{\lambda_m+\lambda_n},\qquad 1\le m,n\le N,
+\]
+and let $d_{k,N}$ be the product defining $d_k$ restricted to
+$1\le j\le N$, $j\ne k$.
+The exponentials are linearly independent: a vanishing combination,
+being continuous, vanishes everywhere, and its first $N$ derivatives
+at zero give a Vandermonde system. Thus $G$ is positive definite.
+
+The signed Cauchy inverse is
+\begin{equation}\label{eq:Gram}
+ (G^{-1})_{mn}
+  =\frac{4(-1)^{m+n}\lambda_m\lambda_n}
+   {(\lambda_m+\lambda_n)d_{m,N}d_{n,N}},\qquad
+ (G^{-1})_{kk}=\frac{2\lambda_k}{d_{k,N}^2}.
+\end{equation}
+For a direct verification, put
+$p_i=2\lambda_i\prod_{j\ne i}(\lambda_i+\lambda_j)/
+(\lambda_i-\lambda_j)$.
+Partial fractions give
+\[
+ Q(s)=\prod_{j=1}^N\frac{s-\lambda_j}{s+\lambda_j}
+       =1-\sum_{j=1}^N\frac{p_j}{s+\lambda_j}.
+\]
+Its values at the roots and $Q'(\lambda_i)=1/p_i$ imply
+\[
+ G\operatorname{diag}(p)G=\operatorname{diag}(1/p),\qquad
+ G^{-1}=\operatorname{diag}(p)G\operatorname{diag}(p).
+\]
+This gives both magnitudes and signs in \eqref{eq:Gram}.
+
+If $f(t)=\sum_{k=1}^N c_ke^{-\lambda_kt}$, write
+$\boldsymbol c=(c_1,\ldots,c_N)^T$.
+Its norm squared is $\boldsymbol c^*G\boldsymbol c$.
+The coefficient functional has squared norm $(G^{-1})_{kk}$.
+Since $d_{k,N}\ge d_k$, we obtain
+\[
+ |c_k|\le\frac{\sqrt{2\lambda_k}}{d_k}\norm f_{(0,\infty)}.
+\]
+For the corresponding fast adjoint solution
+$z_{\rm f}(t)=\sum c_ke^{-\lambda_kt}\chi_k$, this implies
+\begin{equation}\label{eq:fast-terminal}
+ \norm{z_{\rm f}(T)}_2\le
+ \left(\sum_{k\ge1}e^{-\lambda_kT}
+              \frac{\sqrt{2\lambda_k}\norm{\chi_k}_2}{d_k}\right)
+                     \norm f_{(0,\infty)}.
+\end{equation}
+The sum over all indices bounds every finite truncation.
+Concavity of the square root gives
+\begin{equation}\label{eq:exponent}
+ D\eta_k-\lambda_kT
+ \le-\frac{T-2\sqrt2D}{4\eps}
+       -\eps(T-D/\sqrt2)\xi_k^2.
+\end{equation}
+Indeed, $\eta_k\le1/(\sqrt2\eps)+(\eps/\sqrt2)\xi_k^2$.
+Combining \eqref{eq:brackets}, \eqref{eq:norms}, \eqref{eq:dk}
+and \eqref{eq:exponent}, for $T>2\sqrt2D$ we find
+\begin{equation}\label{eq:fast-upper}
+ \norm{z_{\rm f}(T)}_2\le
+ C_{L,T}\eps^{-1/2}
+    e^{-(T-2\sqrt2D)/(4\eps)}\norm f_{(0,\infty)}.
+\end{equation}
+For clarity, the prefactor at index $k$ is bounded by
+$C_L(1/k+\eps)$, since
+$\sqrt{\eps\lambda_k}/k\le C_L(1/k+\eps)$.
+For $\eps\le1$ this prefactor is bounded by a constant, and the
+remaining Gaussian sum $\sum_{k\ge1}e^{-c_{L,T}\eps k^2}$
+is at most $C_{L,T}\eps^{-1/2}$.
+
+\subsection{Finite-time comparison and a limit of fast observations}
+\label{sec:Hardy}
+
+We now compare the half-line norm in \eqref{eq:fast-upper} with the
+measured norm on $(0,T)$, and identify the weak limits needed to separate
+the slow mode. Let $\HH$ be the Hardy space on $\Re s>0$ with norm
+\[
+ \norm F_{\HH}^2=\sup_{\sigma>0}\frac1{2\pi}
+                         \int_{\mathbb R}|F(\sigma+iy)|^2\,dy.
+\]
+The Laplace transform
+$\LL f(s)=\int_0^\infty e^{-st}f(t)\,dt$
+is unitary from $L^2(0,\infty)$ onto $\HH$.
+Boundary values are understood in $L^2(dy/(2\pi))$, and the inverse
+has the Fourier sign $+iyt$ and factor $1/(2\pi)$
+\cite[Propositions 3.4--3.5]{KoikeLaheurte}.
+
+An inner function $\Theta$ is bounded analytic on the right half-plane
+with unit boundary modulus almost everywhere.
+Its multiplier is an isometry, so $\Theta\HH$ is closed.
+The model space $K_\Theta=\HH\ominus\Theta\HH$ has orthogonal projection
+\begin{equation}\label{eq:projection}
+ P_\Theta F=F-\Theta P_+(\overline\Theta F),\qquad F\in\HH,
+\end{equation}
+where $P_+$ projects boundary $L^2$ onto $\HH$.
+This follows by taking the multiplier's adjoint:
+$M_\Theta^*F=P_+(\overline\Theta F)$.
+The evaluation kernel is $1/(s+\lambda)=\LL(e^{-\lambda t})$,
+because $\ip F{1/(s+\lambda)}=F(\lambda)$.
+When $\Theta(\lambda)=0$ this kernel belongs to $K_\Theta$.
+
+For the finite fast span use the rational inner function
+\[
+ \Theta_{\eps,N}(s)=\prod_{k=1}^N\frac{\lambda_k-s}{\lambda_k+s}.
+\]
+Every $\LL f$ for a finite fast observation with indices at most $N$
+belongs to its model space.
+The constant-one Bernstein inequality
+\cite[Theorem 5.2]{BaranovEtAl} states that, for an inner function
+with bounded boundary derivative and $F\in K_\Theta$,
+\[
+ \norm{F'}_{\HH}\le\norm{\Theta'}_\infty\norm F_{\HH}.
+\]
+The cited theorem is stated on the upper half-plane; the rotation
+$s=-iz$ has derivative modulus one. The boundary normalization multiplies
+both norms by the same factor and hence leaves the constant unchanged.
+Our finite products satisfy its hypotheses, and on the boundary
+\[
+ |\Theta_{\eps,N}'(iy)|
+    =2\sum_{k=1}^N\frac{\lambda_k}{\lambda_k^2+y^2}
+    \le2\sum_{k\ge1}\lambda_k^{-1}<2D.
+\]
+Here the spectral brackets and the decreasing integral comparison give
+\begin{equation}\label{eq:sum}
+ \sum_{k\ge1}\lambda_k^{-1}
+ <\int_0^\infty
+     \frac{dr}{1/(4\eps)+\eps\pi^2r^2/D^2}=D.
+\end{equation}
+As $-\LL^{-1}F'=tf$, Bernstein yields
+$\norm{tf}_{(0,\infty)}\le2D\norm f_{(0,\infty)}$.
+The tail beyond $T$ is therefore at most
+$4D^2T^{-2}\norm f_{(0,\infty)}^2$.
+For every $T>2D$,
+\begin{equation}\label{eq:comparison}
+ \norm f_{(0,\infty)}^2
+    \le\frac{T^2}{T^2-4D^2}\norm f_{(0,T)}^2
+\end{equation}
+uniformly in $\eps$ and in the finite fast sum.
+
+Consider next the infinite product
+\[
+ \Theta_\eps(s)=\prod_{k\ge1}\frac{\lambda_k-s}{\lambda_k+s}.
+\]
+For each fixed $\eps$, \eqref{eq:sum} gives locally uniform convergence
+both in the right half-plane and on compact boundary intervals.
+Indeed, the deviation of a large-index factor from one is
+$-2s/(\lambda_k+s)$, uniformly bounded by $C_K/\lambda_k$ on a
+compact set $K$. The product is bounded by one and has unit boundary
+modulus; hence it is inner. Every $\lambda_k$ remains a zero.
+
+The brackets \eqref{eq:brackets} also give the sharper information
+\begin{equation}\label{eq:sum-limit}
+ D-8\eps\le\sum_{k\ge1}\lambda_k^{-1}\le D,\qquad
+ \sum_{k\ge1}\lambda_k^{-3}\le16D\eps^2.
+\end{equation}
+To verify the first bound, compare the sums of
+$h_\eps(r)=4\eps/[1+(2\pi\eps r/D)^2]$ at $k$ and $k+1$.
+Its integral is $D$, the sum at $k\ge1$ differs from that integral
+by at most $4\eps$, and omitting its first term loses at most another
+$4\eps$. The second bound follows from $\lambda_k\ge1/(4\eps)$.
+For every fixed $y\in\mathbb R$,
+\begin{equation}\label{eq:Theta-limit}
+ \Theta_\eps(iy)
+ =\exp\!\left(-2i\sum_{k\ge1}\arctan(y/\lambda_k)\right)
+ \longrightarrow e^{-2iDy}.
+\end{equation}
+The phase error after replacing each arctangent by its argument is
+at most $(2/3)|y|^3\sum\lambda_k^{-3}$, since
+$|\arctan r-r|\le|r|^3/3$.
+Both multipliers have modulus one on the boundary.
+Dominated convergence therefore gives strong convergence of their
+boundary multiplication operators, and of their conjugates.
+Formula~\eqref{eq:projection} now proves
+\begin{equation}\label{eq:projection-limit}
+ P_{\Theta_\eps}\longrightarrow P_{e^{-2Ds}}
+       \quad\hbox{strongly on }\HH.
+\end{equation}
+
+Under inverse Laplace transformation, multiplication by $e^{-2Ds}$
+is the right shift by $2D$. Its model space is exactly the transform
+of $L^2(0,2D)$.
+In the following time-domain statement the projection means
+$\LL^{-1}P_\Theta\LL$.
+Every finite fast observation belongs to $K_{\Theta_\eps}$,
+since its transform is a combination of the kernels at the product's
+zeros.
+Consequently, any weak $L^2(0,\infty)$ limit of a bounded sequence of
+finite fast observations as $\eps\downarrow0$ is supported in $[0,2D]$.
+For a fixed test $g$ vanishing on $(0,2D)$,
+\[
+ \ip{f_\eps}g=\ip{f_\eps}{P_{\Theta_\eps}g}\longrightarrow0
+\]
+by \eqref{eq:projection-limit} and the uniform bound on $f_\eps$.
+This proves the support assertion without requiring norm convergence
+of the observations.
+
+\subsection{Separating the slow mode and closing the upper bound}
+
+\begin{lemma}\label{lem:distance}
+For every $T>2D$ there are $\delta_{L,T}>0$ and $\eps_0>0$ such that
+\begin{equation}\label{eq:distance}
+ \inf_{f\in\Span\{e^{-\lambda_kt}:k\ge1\}}
+       \norm{e^{-\lambda_0t}-f}_{(0,T)}\ge\delta_{L,T},
+       \qquad 0<\eps<\eps_0,
+\end{equation}
+where the span consists of finite linear combinations.
+\end{lemma}
+\begin{proof}
+If no such uniform distance existed, one could choose $\eps_j\to0$
+and finite fast observations $f_j$ converging to
+$e^{-\lambda_0(\eps_j)t}$ in $L^2(0,T)$.
+Since $\lambda_0(\eps_j)\to0$, they converge to one there.
+Estimate~\eqref{eq:comparison} bounds them in $L^2(0,\infty)$.
+A weakly convergent subsequence exists in this Hilbert space
+\cite[Lemma 1.13]{Teschl}.
+Its limit is supported in $[0,2D]$ by
+\eqref{eq:projection-limit}, but equals one on $(0,T)$.
+This is impossible because $T>2D$.
+\end{proof}
+
+A full finite adjoint sum has flux
+$q(t)=\alpha e^{-\lambda_0t}+f(t)$, with $f$ in the fast span.
+Equation~\eqref{eq:distance} and $\lambda_0>0$ give
+\[
+ |\alpha|\le\delta_{L,T}^{-1}\norm q_{(0,T)},\qquad
+ \norm f_{(0,T)}\le(1+\sqrt T/\delta_{L,T})\norm q_{(0,T)}.
+\]
+For $T>2\sqrt2D$, the mode bounds, \eqref{eq:fast-upper} and
+\eqref{eq:comparison} thus imply
+\begin{equation}\label{eq:observation}
+ \norm{z(T)}_2\le
+ \left(\frac{2\sqrt D}{\delta_{L,T}}+
+       C_{L,T}\eps^{-1/2}e^{-(T-2\sqrt2D)/(4\eps)}\right)
+                    \norm q_{(0,T)}.
+\end{equation}
+This estimate is uniform in the truncation and in all sufficiently small
+$\eps$. At each fixed $\eps$, the graph-norm approximation and trace
+convergence in Section~\ref{sec:density} extend it to every
+$z_0\in X_\eps$. Appendix~\ref{sec:duality} then supplies a real null
+control for every $L^2$ initial datum, with a uniform norm bound.
+Since $2\sqrt2D=4\sqrt2L$, this proves the first assertion of
+Theorem~\ref{thm:main}.
+
+\section{A matching lower bound}\label{sec:lower}
+
+\subsection{An inverse-Gram column with coherent spatial signs}
+
+Take $N=\lfloor\eps^{-2}\rfloor$ and the fast Gram matrix of
+\eqref{eq:Gram}. Choose the real coefficient vector $\boldsymbol c=G^{-1}e_1$,
+where $e_1$ is the first coordinate vector. Then
+\begin{equation}\label{eq:column}
+ c_k=\frac{4(-1)^{k+1}\lambda_k\lambda_1}
+ {(\lambda_k+\lambda_1)d_{k,N}d_{1,N}},\qquad
+ c_1=\frac{2\lambda_1}{d_{1,N}^2}>0.
+\end{equation}
+For the smooth adjoint test
+$z(t)=\sum_{k=1}^Nc_ke^{-\lambda_kt}\chi_k$,
+left normalization gives $q(t)=\sum c_ke^{-\lambda_kt}$ and
+\begin{equation}\label{eq:column-norm}
+ \norm q_{(0,\infty)}^2=\boldsymbol c^TG\boldsymbol c=c_1.
+\end{equation}
+
+We need a single spatial layer in which all the terms contributing to
+$z(T)$ have one sign. Put $x=L-s$ and normalize
+$S_{\lambda_k}(L-s)$ by $-S_{\lambda_k}'(L)$.
+The resulting function $y_k$ solves
+\[
+ y_k''+Q_k(s)y_k=0,\qquad y_k(0)=0,\quad y_k'(0)=1,\qquad
+ Q_k(s)=\xi_k^2+\frac{\sech^2((L-s)/(2\eps))}{2\eps^2}.
+\]
+By \eqref{eq:brackets}, for all $k\le N$ and small $\eps$,
+$0\le Q_k\le M_L^2\eps^{-4}$.
+Put $\iota(s)=s$. The Volterra equation is $y_k=\iota-K_ky_k$, where
+$(K_kg)(s)=\int_0^s(s-r)Q_k(r)g(r)\,dr$.
+Writing $m=M_L/\eps^2$, induction gives
+\[
+ |(K_k^n\iota)(s)|\le\frac{m^{2n}s^{2n+1}}{(2n+1)!},\qquad n\ge0.
+\]
+The convergent Volterra series
+$y_k=\sum_{n\ge0}(-1)^nK_k^n\iota$ therefore yields
+\[
+ |y_k(s)-s|\le s\left(\frac{\sinh(ms)}{ms}-1\right).
+\]
+Choose a fixed $\rho_L>0$ so that
+$\sinh(M_L\rho_L)/(M_L\rho_L)-1\le1/2$.
+For $0<s<\rho_L\eps^2$ we have $y_k(s)\ge s/2$
+simultaneously for every $k\le N$.
+In this layer
+$c(L-s)/c(L)\ge e^{-s/(2\eps)}\ge1/2$ for small $\eps$.
+The exact derivative signs in \eqref{eq:endpoint} now give
+\begin{equation}\label{eq:layer}
+ \operatorname{sgn}\chi_k(L-s)=(-1)^k,\qquad
+ |\chi_k(L-s)|\ge\frac{s}{4\eps},
+ \quad 1\le k\le N,\quad 0<s<\rho_L\eps^2.
+\end{equation}
+All products $c_k\chi_k(L-s)$ are negative.
+Keeping only the first term when bounding their sum from below gives
+\begin{equation}\label{eq:spatial-lower}
+ \norm{z(T)}_2^2
+ \ge\frac{\rho_L^3}{48}\eps^4c_1^2e^{-2\lambda_1T}.
+\end{equation}
+The common layer and the exact signs prevent cancellation; no
+orthogonality of the adjoint eigenfunctions is used.
+
+\subsection{The scalar product and the cost exponent}
+
+Set $a_0=\pi^2/D^2$ and $R_\eps^2=1+1/(2a_0\eps^2)$.
+For $v>u>0$, $(v-u)/(v+u)$ increases with $v$ and decreases with $u$.
+Applying \eqref{eq:brackets} to each factor gives
+\begin{equation}\label{eq:scalar-product}
+ d_{1,N}\le\prod_{j=3}^{N+1}\frac{j^2-1}{j^2+R_\eps^2}.
+\end{equation}
+The corresponding infinite product is
+\begin{equation}\label{eq:sinh-product}
+ \prod_{j=3}^\infty\frac{j^2-1}{j^2+R_\eps^2}
+ =\frac23\,\frac{\pi R_\eps(1+R_\eps^2)(1+R_\eps^2/4)}
+                              {\sinh(\pi R_\eps)}.
+\end{equation}
+Indeed, $\prod_{j=3}^M(1-1/j^2)=2(M+1)/(3M)\to2/3$,
+while $\sinh z=z\prod_{j\ge1}(1+z^2/(\pi^2j^2))$
+\cite[Equation 4.36.1]{DLMF} gives the denominator after removing
+its first two factors.
+The ratio between the finite product in \eqref{eq:scalar-product}
+and \eqref{eq:sinh-product} is at most
+\[
+ \exp\!\left((R_\eps^2+1)
+             \sum_{j>N+1}\frac1{j^2-1}\right)\le C_L,
+\]
+because $N\ge1/(2\eps^2)$ and the tail sum is at most $1/N$.
+Since $\pi R_\eps\ge D/(\sqrt2\eps)$ and $R_\eps\le C_L/\eps$,
+\begin{equation}\label{eq:d1-lower}
+ d_{1,N}\le C_L\eps^{-5}e^{-D/(\sqrt2\eps)}.
+\end{equation}
+Thus the truncation has a uniformly controlled omitted tail.
+
+Combining \eqref{eq:column-norm} and \eqref{eq:spatial-lower} gives
+\[
+ \frac{\norm{z(T)}_2^2}{\norm q_{(0,T)}^2}
+ \ge C_L\eps^4c_1e^{-2\lambda_1T}
+ =C_L\eps^4\frac{2\lambda_1}{d_{1,N}^2}e^{-2\lambda_1T}.
+\]
+The brackets imply
+$1/(4\eps)\le\lambda_1\le1/(4\eps)+4a_0\eps$.
+Using \eqref{eq:d1-lower} therefore yields
+\begin{equation}\label{eq:lower-ratio}
+ \frac{\norm{z(T)}_2^2}{\norm q_{(0,T)}^2}
+ \ge c_{L,T}\eps^{13}
+    \exp\!\left(\frac{2D/\sqrt2-T/2}{\eps}\right).
+\end{equation}
+The cost inequality \eqref{eq:ratio} proves \eqref{eq:lower-main}.
+Its right side diverges at every $0<T<2\sqrt2D=4\sqrt2L$.
+Together with \eqref{eq:observation}, this proves
+$T_{\rm unif}=4\sqrt2L$ and completes Theorem~\ref{thm:main}.
+
+\appendix
+\section{Transposition solutions and exact null controls}\label{sec:duality}
+
+We give the fixed-viscosity functional-analytic details to retain the
+full $L^2$ initial-data and boundary-control classes in \eqref{eq:cost}.
+The dual $X_\eps'$ is the real continuous dual, or the continuous
+anti-dual after complexification. The graph norm on $X_\eps$ is
+$\norm v_2+\norm{A_\eps^*v}_2$.
+
+For smooth data and a boundary control compactly supported in $(0,T)$,
+integration by parts gives \eqref{eq:duality}.
+The right boundary term vanishes, and the left term is
+$+\eps h(t)\overline{z_x(T-t,-L)}$.
+The spectral semigroup and trace estimate of
+Section~\ref{sec:density} show, at fixed $\eps$, that
+$\sup_{0\le t\le T}|q(t)|\le C_{\eps,L,T}\norm{z_0}_{X_\eps}$.
+Consequently \eqref{eq:duality} defines a bounded terminal functional
+in $X_\eps'$ for all $u_0\in L^2$ and $h\in L^2(0,T)$.
+The same formula at each intermediate time gives a family in
+$C([0,T];X_\eps')$.
+Smooth approximations converge uniformly in this space.
+Classical approximating solutions are obtained by lifting the boundary
+with $h(t)\ell(x)$, where $\ell(-L)=1$, $\ell(L)=0$, and solving the
+homogeneous-boundary forced equation by the spectral semigroup.
+The term containing $h'$ is removed by time integration by parts
+before taking the $L^2$ limit.
+
+This solution also lies in spatial-temporal $L^2$.
+For $F\in L^2((0,T)\times(-L,L))$ solve the backward test problem
+\[
+ -v_t+A_\eps^*v=F,\qquad v(T)=0,\qquad v(t,\pm L)=0.
+\]
+After the similarity by $c$, the orthonormal coefficients satisfy
+$v_j(t)=\int_t^T e^{-\lambda_j(s-t)}F_j(s)\,ds$.
+Weighted Cauchy--Schwarz and Tonelli give
+\[
+ \int_0^T|\lambda_jv_j(t)|^2\,dt
+ \le\int_0^T|F_j(t)|^2\,dt.
+\]
+For example, use the nonnegative weight
+$\lambda_je^{-\lambda_j(s-t)}$, whose integral in either variable
+is at most one. Parseval, the graph/$H^2$ equivalence, and the
+similarity then imply
+\[
+ \norm v_{L^2(0,T;H^2)}+\norm{v(0)}_2+
+     \norm{\eps v_x(\cdot,-L)}_{(0,T)}
+ \le C_{\eps,L,T}\norm F_{L^2((0,T)\times(-L,L))}.
+\]
+The $L^2$ bound on $v$ and its initial value follows also from
+the contraction of the transformed semigroup, giving respectively
+$T\norm F$ and $\sqrt T\norm F$ before the similarity.
+Riesz representation applied to
+\[
+ F\longmapsto
+ \ip{u_0}{v(0)}+\int_0^T h(t)\overline{\eps v_x(t,-L)}\,dt
+\]
+constructs a unique spacetime $L^2$ solution.
+For smooth data it is the lifted classical solution.
+The estimate just proved and the earlier terminal estimate show that
+the spacetime and $C([0,T];X_\eps')$ limits agree.
+They preserve the original initial datum and both boundary values in
+transposition. Zero terminal functional is therefore exactly the zero
+terminal distribution, and hence the zero terminal state.
+The standard Sobolev and Hilbert-space facts used here are recorded,
+for example, in \cite[Sections 0.3, 1.1--1.3 and 2.7]{Teschl}.
+
+Finally suppose
+\[
+ \norm{z(T)}_2\le M\norm q_{(0,T)}\qquad(z_0\in X_\eps).
+\]
+On the range of observed fluxes define the linear functional
+$\ell(q)=-\ip{z(T)}{u_0}$.
+It is well defined by this inequality and has norm at most
+$M\norm{u_0}_2$.
+Extend it by continuity to the range closure, then compose with the
+orthogonal projection onto that closed subspace.
+Riesz representation gives $g\in L^2(0,T)$ with
+$\ell(q)=\ip qg$ and $\norm g_{(0,T)}\le M\norm{u_0}_2$.
+Setting $h(t)=g(T-t)$ and conjugating this equality in
+\eqref{eq:duality} annihilates every terminal test.
+For real $u_0$, the observation range and functional respect complex
+conjugation; uniqueness of the Riesz representative makes $g$ real.
+No closedness of the original observation range is assumed.
+Conversely, for a real smooth adjoint test with $z(T)\ne0$, choose
+$u_0=z(T)/\norm{z(T)}_2$ in \eqref{eq:duality}.
+Every null control satisfies
+$\norm h_{(0,T)}\norm q_{(0,T)}\ge\norm{z(T)}_2$,
+which proves \eqref{eq:ratio}.
+
+For completeness, the exact scaling
+$y=x/L$, $s=t/L$, $\delta=\eps/L$,
+$v(s,y)=\sqrt L\,u(Ls,Ly)$ and $H(s)=\sqrt L\,h(Ls)$
+preserves both initial and control norms.
+Thus, writing the interval dependence explicitly,
+$C_L(T,\eps)=C_1(T/L,\eps/L)$.
+The proof above treats arbitrary fixed $L$ directly.
+
+\section*{Declaration of AI assistance}
+AI assistance was used in literature retrieval, developing and checking
+the argument, and preparing the manuscript. The mathematical claims
+and proofs are presented here for independent review.
+
+\begin{thebibliography}{9}
+\bibitem{Laheurte}
+V. Laheurte,
+\emph{Cost of controllability of the Burgers equation linearized at a
+steady shock in the vanishing viscosity limit},
+SIAM Journal on Mathematical Analysis \textbf{58} (2026), 2702--2737.
+\href{https://doi.org/10.1137/25M1723311}{doi:10.1137/25M1723311};
+\href{https://arxiv.org/abs/2411.12267v3}{arXiv:2411.12267v3}.
+
+\bibitem{KoikeLaheurte}
+K. Koike and V. Laheurte,
+\emph{Uniform null-controllability times for the Coron--Guerrero
+problems are $2$ and $2+2\sqrt2$},
+preprint (2026).
+\href{https://arxiv.org/abs/2609.35355v1}{arXiv:2609.35355v1}.
+
+\bibitem{BaranovEtAl}
+A. Baranov, P. Jaming, K. Kellay and M. Speckbacher,
+\emph{Oversampling and Donoho--Logan type theorems in model spaces},
+Annales Fennici Mathematici \textbf{49} (2024), 167--182.
+\url{https://afm.journal.fi/article/view/143957}.
+
+\bibitem{Teschl}
+G. Teschl,
+\emph{Mathematical Methods in Quantum Mechanics:
+With Applications to Schr\"odinger Operators},
+second edition, Graduate Studies in Mathematics 157,
+American Mathematical Society, 2014.
+\url{https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe2.pdf}.
+
+\bibitem{Weikard}
+R. Weikard, \emph{Complex Analysis}, MA 648 lecture notes,
+University of Alabama at Birmingham, December 8, 2016.
+\url{https://www.uab.edu/cas/mathematics/images/Documents/weikard-complex-analysis.pdf}.
+
+\bibitem{DLMF}
+\emph{NIST Digital Library of Mathematical Functions},
+version 1.2.8, September 15, 2026.
+Sections 1.10(ix) and 4.36.
+\url{https://dlmf.nist.gov/}.
+\end{thebibliography}
+\end{document}
