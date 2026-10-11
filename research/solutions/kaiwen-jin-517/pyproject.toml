@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elliptic-widths"
+version = "0.1.0"
+description = "Radial model calculations for local elliptic approximation widths"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+paper = ["matplotlib>=3.8"]
+test = ["mpmath>=1.3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
