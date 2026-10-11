@@ -1,0 +1,436 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Failure of exterior observability for a Schrodinger equation with slower surface dispersion},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+\title{Failure of exterior observability for a Schr\"odinger equation\\
+with slower surface dispersion}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}.}}
+\date{October 12, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consider a Schr\"odinger field on a planar annulus with a dynamic inner
+boundary and a Dirichlet outer boundary. When the surface dispersion
+coefficient is one half of the bulk coefficient, observation of the outer
+normal derivative fails to control the initial energy at every positive
+time. We construct smooth solutions with unit initial energy and
+exponentially small observation on each fixed time interval. High angular
+frequencies produce modes concentrated near the inner boundary. A
+variational construction on a short collar, followed by a comparison in
+the graph norm of the evolution operator, turns these localized modes into
+exact solutions on the full annulus.
+\end{abstract}
+
+\section{The observation problem}
+
+Dynamic boundary conditions allow the trace of a dispersive field to evolve
+along the boundary while remaining coupled to the bulk through the normal
+derivative. An exterior observability estimate asks whether the initial
+energy can be bounded by the flux measured on a separate boundary component.
+Such estimates are central to boundary control of the coupled system
+\cite{MM}.
+
+Let
+\[
+\Omega=\{x\in\RR^2:1<|x|<2\},\qquad
+\Gamma_1=\{|x|=1\},\qquad \Gamma_0=\{|x|=2\}.
+\]
+We study complex-valued solutions \(Z=(z,z_\Gamma)\) of
+\begin{equation}\label{eq:system}
+\begin{cases}
+i z_t+\Delta z=0 & \text{in }\Omega,\\
+z=0 & \text{on }\Gamma_0,\\
+z_\Gamma=z|_{\Gamma_1},\\
+i z_{\Gamma,t}+\frac12\Delta_\Gamma z_\Gamma-\partial_\nu z=0
+  & \text{on }\Gamma_1.
+\end{cases}
+\end{equation}
+Here \(\nu\) is outward from the annulus, so it points towards the origin
+on \(\Gamma_1\), and \(\Delta_\Gamma\) is the Laplace--Beltrami operator on
+the inner unit circle. The energy is
+\begin{equation}\label{eq:energy}
+\norm{Z}_{\EE}^{2}
+=\int_\Omega|\nabla z|^2\,dx
++\frac12\int_{\Gamma_1}|\nabla_\Gamma z_\Gamma|^2\,dS.
+\end{equation}
+The question in \cite{AIM} is whether, for every \(T>0\), a finite constant
+\(C_T\) satisfies
+\begin{equation}\label{eq:observation}
+\norm{Z(0)}_{\EE}^{2}
+\le C_T\int_0^T\int_{\Gamma_0}|\partial_\nu z|^2\,dS\,dt
+\end{equation}
+for every smooth compatible solution.
+
+Mercado and Morales \cite[author preprint, Theorem 1.9 and equation (3.20)]{MM} prove boundary
+controllability when the surface coefficient \(\delta\) is larger than
+the bulk coefficient \(d\). Their Carleman argument obtains a surface
+gradient term with coefficient \(d(\delta-d)\), and does not transfer
+unchanged to the present regime \(d=1\), \(\delta=1/2\).
+The slower-surface Schr\"odinger regime is identified as an open question
+in \cite[Section 5.1]{CMM}, separately from the corresponding negative
+result for waves.
+
+\begin{theorem}\label{thm:failure}
+There are constants \(c>0\) and \(N\in\mathbb N\), and smooth compatible
+solutions \(Z_n\) of \eqref{eq:system}, indexed by integers \(n\ge N\), such
+that
+\[
+\norm{Z_n(0)}_{\EE}^{2}=1,
+\qquad
+\int_0^T\int_{\Gamma_0}|\partial_\nu z_n|^2\,dS\,dt
+\le K_T n^6e^{-2cn}\quad\text{for every }T>0,
+\]
+where \(K_T<\infty\) is independent of \(n\). Consequently
+\eqref{eq:observation} fails for every \(T>0\).
+\end{theorem}
+
+For angular frequency \(n\), the surface energy level is \(n^2/2\), whereas
+the bulk angular potential near the inner circle is \(n^2/r^2\). The
+difference confines a low surface mode to a thin inner layer. We construct
+this mode on a collar where the whole bulk potential lies above the surface
+level, then cut it off before extending it to the full annulus. A graph
+norm estimate controls the outer derivative of the error in the exact
+evolution. This permits the construction without isolating an eigenvalue
+of the full annulus from its bulk spectrum.
+
+\section{Angular reduction and the outer trace}
+
+Write \(\phi_n(\theta)=(2\pi)^{-1/2}e^{in\theta}\). For \(1<R\le2\), use
+the Hilbert space
+\[
+\HH_R=L^2((1,R),r\,dr)\oplus\CC,\qquad
+\norm{(v,\alpha)}_{\HH_R}^{2}=\int_1^R r|v|^2\,dr+|\alpha|^2,
+\]
+with inner product linear in the second argument. On the form domain
+\[
+\mathcal V_R=\{(v,v(1)):v\in H^1(1,R),\ v(R)=0\}
+\]
+define
+\begin{equation}\label{eq:form}
+q_{n,R}(v)=
+\int_1^R\left(r|v'|^2+\frac{n^2}{r}|v|^2\right)dr
++\frac{n^2}{2}|v(1)|^2.
+\end{equation}
+All endpoint values use the absolutely continuous Sobolev representatives.
+The associated sesquilinear form is the polarization of
+\eqref{eq:form}. It is densely defined: approximate a bulk function by
+smooth functions supported in the interior, and approximate an arbitrary
+surface coordinate by a bump at \(1\) with shrinking bulk mass.
+For fixed \(n,R\), its form norm is equivalent to the \(H^1\) norm, and
+both trace constraints persist under convergence. Thus it is closed and
+nonnegative.
+
+The representation theorem for closed forms \cite[Theorem 2.14]{Teschl}
+gives a self-adjoint operator \(A_{n,R}\). Its domain and action are
+\begin{equation}\label{eq:operator}
+\begin{split}
+D(A_{n,R})&=\{(v,v(1)):v\in H^2(1,R),\ v(R)=0\},\\
+A_{n,R}(v,v(1))&=\left(L_nv,\frac{n^2}{2}v(1)-v'(1)\right),\\
+L_nv&=-v''-r^{-1}v'+n^2r^{-2}v.
+\end{split}
+\end{equation}
+Indeed, the weak bulk equation for a represented form functional gives
+\((rv')'\in L^2\), hence \(v\in H^2\). Integration by parts then identifies
+the surface component:
+\[
+\int_1^R r\overline{u'}v'\,dr
+=-\int_1^R\overline u\,(rv')'\,dr-\overline{u(1)}v'(1),
+\qquad u(R)=0.
+\]
+Conversely this identity shows that each state in the displayed \(H^2\)
+domain represents its form functional. There is no additional Robin
+condition in this operator domain.
+
+Put \(A_n=A_{n,2}\). Its unitary group \(e^{-itA_n}\) preserves \(D(A_n)\)
+and commutes with \(A_n\) \cite[Theorem 5.1]{Teschl}. If
+\(U(t)=(v(t),v(t,1))\) solves \(iU_t=A_nU\), then
+\(z(t,r,\theta)=v(t,r)\phi_n(\theta)\) solves \eqref{eq:system}. In
+particular the boundary equation is
+\[
+i v_t(t,1)=\frac{n^2}{2}v(t,1)-v_r(t,1),
+\]
+which has the sign prescribed by \(\partial_\nu=-\partial_r\) at \(1\).
+The angular normalization gives the exact identities
+\begin{equation}\label{eq:normalization}
+\norm{Z}_{\EE}^{2}=q_{n,2}(v),\qquad
+\int_{\Gamma_0}|\partial_\nu z|^2\,dS=2|v_r(2)|^2.
+\end{equation}
+The factor \(2\) comes from \(dS=2\,d\theta\) on the outer circle.
+
+\begin{lemma}\label{lem:trace}
+There is a constant \(C\), independent of \(n\ge1\), such that
+\[
+|v'(2)|\le C\left((1+n^2)\norm{V}_{\HH_2}
++\norm{A_nV}_{\HH_2}\right),\qquad V=(v,v(1))\in D(A_n).
+\]
+\end{lemma}
+\begin{proof}
+Positivity of the form and Cauchy--Schwarz give
+\[
+\norm{v'}_{L^2(1,2)}^2\le q_{n,2}(v)
+=\langle V,A_nV\rangle
+\le\norm{V}_{\HH_2}\norm{A_nV}_{\HH_2}.
+\]
+The bulk part of \eqref{eq:operator} implies
+\[
+\norm{v''}_{L^2(1,2)}
+\le C\left(n^2\norm{V}_{\HH_2}
++\norm{v'}_{L^2(1,2)}+\norm{A_nV}_{\HH_2}\right).
+\]
+For \(g\in H^1(1,2)\), integration yields
+\[
+g(2)=\int_1^2 g(r)\,dr+\int_1^2(r-1)g'(r)\,dr.
+\]
+Apply this identity to \(g=v'\), and use
+\(\sqrt{ab}\le(a+b)/2\), to obtain the claim.
+\end{proof}
+
+\section{A mode confined to an inner collar}
+
+Fix \(b=5/4\), so \(b^{-2}=16/25>1/2\).
+The constants below may depend on \(b\) and fixed cutoffs, but are independent
+of \(n\). Their values can increase from one estimate to the next.
+
+\begin{lemma}\label{lem:collar}
+For each \(n\ge1\), there are \(\lambda_n\in\RR\) and a real
+\(u_n\in C^\infty[1,b]\), positive on \([1,b)\), satisfying
+\begin{equation}\label{eq:collar}
+\begin{gathered}
+L_nu_n=\lambda_nu_n,\qquad u_n(b)=0,\qquad
+u_n'(1)=\left(\frac{n^2}{2}-\lambda_n\right)u_n(1),\\
+\int_1^b r u_n^2\,dr+u_n(1)^2=1,
+\end{gathered}
+\end{equation}
+and
+\begin{equation}\label{eq:eigenvalue}
+\frac{n^2}{2}\le\lambda_n\le\frac{n^2}{2}+Cn.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Minimize \(q_{n,b}\) over the unit sphere in \(\mathcal V_b\), with the
+\(\HH_b\) norm. A minimizing sequence has bounded derivative norm, bounded
+value at \(1\), and is uniformly bounded and equicontinuous. It has a
+uniformly convergent subsequence and a weakly convergent derivative
+subsequence. For the latter extraction and lower semicontinuity one may use
+\cite[Lemmas 1.12--1.13]{Teschl}. The identity
+\(v(r)-v(1)=\int_1^r v'\) identifies the limit derivative. Uniform
+convergence retains the trace at \(b\) and the unit mass; weak lower
+semicontinuity applies to \(\sqrt r\,v'\). The minimum is therefore attained.
+
+Replacing a minimizer by its modulus does not increase the derivative
+energy. One obtains \(|(|v|)'|\le|v'|\) by regularizing the modulus as
+\((|v|^2+\varepsilon^2)^{1/2}\) and passing to a weak derivative limit.
+We may choose a nonnegative real minimizer \(u_n\). Variation of
+\(q_{n,b}-\lambda_n\norm{\cdot}_{\HH_b}^2\) in real and imaginary
+directions gives its weak eigenvector equation, hence \eqref{eq:collar}.
+The scalar ODE gives smoothness. If \(u_n\) vanished at an interior point,
+its derivative there would vanish too; uniqueness for the linear ODE
+would force \(u_n=0\). If \(u_n(1)=0\), the boundary equation gives the same
+contradiction. Thus it is positive on \([1,b)\).
+
+Because \(r^{-2}\ge b^{-2}>1/2\), the form satisfies
+\(q_{n,b}(v)\ge(n^2/2)\norm{(v,v(1))}_{\HH_b}^2\), giving the lower bound
+in \eqref{eq:eigenvalue}. For the upper bound take a fixed smooth
+\(\eta\), with \(0\le\eta\le1\), equal to \(1\) near \(1\) and zero
+near \(b\). The trial function \(\eta(r)e^{-n(r-1)}\) has squared mass at
+least \(1\), and its form is at most
+\[
+\frac{n^2}{2}+bn+\frac{b\norm{\eta'}_\infty^2}{n}+\frac n2.
+\]
+Here \(\int_1^b e^{-2n(r-1)}dr\le(2n)^{-1}\) bounds both bulk terms.
+The variational characterization gives the upper bound.
+\end{proof}
+
+\begin{lemma}\label{lem:decay}
+For all sufficiently large \(n\),
+\[
+u_n(1)^2\ge\frac12.
+\]
+On \(I=[9/8,6/5]\) there is a fixed \(c>0\) such that
+\begin{equation}\label{eq:derivatives}
+|u_n|\le Ce^{-cn},\qquad
+|u_n'|+|u_n''|\le Cn^2e^{-cn},\qquad
+|u_n'''|\le Cn^4e^{-cn}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Set \(y_n(r)=r^{1/2}u_n(r)\). The radial equation becomes
+\begin{equation}\label{eq:potential}
+y_n''=Q_n y_n,\qquad
+Q_n(r)=\frac{n^2-1/4}{r^2}-\lambda_n.
+\end{equation}
+By \eqref{eq:eigenvalue} and \(b^{-2}-1/2=7/50\), for all large \(n\),
+\[
+Q_n(r)\ge\kappa^2n^2\quad(1\le r\le b),\qquad
+\kappa^2=\frac7{100}.
+\]
+Compare \(y_n\) with
+\[
+h_n(r)=y_n(1)\frac{\sinh(\kappa n(b-r))}
+{\sinh(\kappa n(b-1))}.
+\]
+The function \(y_n-h_n\) has zero endpoint values and
+\[
+(-\partial_r^2+\kappa^2n^2)(y_n-h_n)
+=(\kappa^2n^2-Q_n)y_n\le0.
+\]
+A positive interior maximum is impossible. Since \(y_n(1)=u_n(1)\le1\),
+we obtain
+\begin{equation}\label{eq:decay}
+0\le y_n(r)\le
+\frac{e^{-\kappa n(r-1)}}{1-e^{-2\kappa n(b-1)}}
+\le Ce^{-\kappa n(r-1)}.
+\end{equation}
+Consequently
+\[
+\int_1^b r u_n^2\,dr=\int_1^b y_n^2\,dr\le\frac Cn,
+\]
+and the normalization in \eqref{eq:collar} gives
+\(u_n(1)^2\ge1-C/n\ge1/2\).
+
+To estimate derivatives, take \(h=1/40\). For \(r\in I\), the interval
+\([r,r+h]\) lies inside \((1,b)\) and remains at distance at least \(1/8\)
+from \(1\). On these intervals \(Q_n,Q_n'=O(n^2)\), so
+\eqref{eq:potential} and \eqref{eq:decay} bound \(y_n''\). The identity
+\[
+y_n'(r)=\frac{y_n(r+h)-y_n(r)}h
+-\frac1h\int_r^{r+h}(r+h-s)y_n''(s)\,ds
+\]
+then bounds \(y_n'\) by \(Cn^2e^{-\kappa n/8}\).
+Finally \(y_n'''=Q_n'y_n+Q_ny_n'\) is bounded by
+\(Cn^4e^{-\kappa n/8}\). Differentiating \(u_n=r^{-1/2}y_n\) gives
+\eqref{eq:derivatives} with \(c=\kappa/8\).
+\end{proof}
+
+\section{Exact solutions with small exterior observation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:failure}]
+Choose a fixed smooth cutoff \(\chi\), with \(0\le\chi\le1\), equal to
+\(1\) on \([1,9/8]\) and zero on \([6/5,b]\). Define \(w_n=\chi u_n\)
+on \([1,b]\), extend it by zero to \([1,2]\), and set
+\[
+W_n=(w_n,u_n(1))\in\HH_2.
+\]
+The inner boundary equation is unchanged by this cutoff. From
+\eqref{eq:collar},
+\begin{equation}\label{eq:residual}
+F_n=(A_n-\lambda_n)W_n=(f_n,0),\qquad
+f_n=-2\chi'u_n'-(\chi''+r^{-1}\chi')u_n.
+\end{equation}
+The function \(f_n\) is smooth and supported in \(I\), away from both
+actual boundaries. Lemma~\ref{lem:decay} gives
+\begin{equation}\label{eq:residualbounds}
+\norm{F_n}_{\HH_2}\le Cn^2e^{-cn},\qquad
+\norm{A_nF_n}_{\HH_2}\le Cn^4e^{-cn}.
+\end{equation}
+For the second bound, two derivatives of \(f_n\) involve profile derivatives
+only up to \(u_n'''\). The potential term contributes \(n^2r^{-2}f_n\);
+the surface component of \(A_nF_n\) is zero.
+The retained surface mass also gives
+\begin{equation}\label{eq:initiallower}
+q_{n,2}(w_n)\ge\frac{n^2}{2}u_n(1)^2\ge\frac{n^2}{4}.
+\end{equation}
+
+Every successive operator image of \(F_n\) remains smooth and compactly
+supported in the interior. Thus \(F_n\) belongs to every \(D(A_n^k)\).
+Since \(W_n\in D(A_n)\), the identity
+\(A_nW_n=\lambda_nW_n+F_n\) proves inductively that \(W_n\) also belongs
+to every \(D(A_n^k)\).
+Define the exact evolution
+\[
+U_n(t)=e^{-itA_n}W_n=(v_n(t),v_n(t,1)).
+\]
+The unitary group preserves all power domains and gives arbitrary time
+regularity in their graph norms. The bulk differential equation in
+\eqref{eq:operator} successively gives \(H^{2k}\) spatial regularity from
+membership in \(D(A_n^k)\). Finite-interval Sobolev representatives then
+give a smooth radial function. The power-domain trace constraints supply
+all boundary compatibility identities. Multiplying by the normalized angular factor
+\(\phi_n(\theta)=(2\pi)^{-1/2}e^{in\theta}\) gives the smooth compatible
+solution \(\widetilde z_n(t,r,\theta)=v_n(t,r)\phi_n(\theta)\) of
+\eqref{eq:system}, together with its inner trace.
+
+Compare it with the approximate stationary evolution and write
+\[
+D_n(t)=U_n(t)-e^{-it\lambda_n}W_n.
+\]
+Differentiating
+\(e^{-i(t-s)A_n}e^{-is\lambda_n}W_n\) in the graph norm gives Duhamel's
+formula
+\[
+D_n(t)=-i\int_0^t e^{-i(t-s)A_n}e^{-is\lambda_n}F_n\,ds.
+\]
+Unitarity and commutation with \(A_n\) yield
+\[
+\norm{D_n(t)}_{\HH_2}\le t\norm{F_n}_{\HH_2},\qquad
+\norm{A_nD_n(t)}_{\HH_2}\le t\norm{A_nF_n}_{\HH_2}.
+\]
+As \(w_n\) vanishes near \(2\), its outer derivative is zero.
+Lemma~\ref{lem:trace} and \eqref{eq:residualbounds} therefore imply
+\[
+|\partial_r v_n(t,2)|\le Ct n^4e^{-cn}\qquad(t\ge0).
+\]
+Using the exact normalization \eqref{eq:normalization}, we find
+\[
+\int_0^T\int_{\Gamma_0}|\partial_\nu\widetilde z_n|^2\,dS\,dt
+=2\int_0^T|\partial_r v_n(t,2)|^2dt
+\le K_T n^8e^{-2cn}.
+\]
+Finally divide \(\widetilde z_n\) and its trace by
+\(\sqrt{q_{n,2}(w_n)}\), which is nonzero by \eqref{eq:initiallower}.
+The resulting solution \(Z_n\) has initial energy one and observation at
+most \(K_T n^6e^{-2cn}\). This tends to zero for every fixed \(T>0\),
+contradicting \eqref{eq:observation} for any solution-independent \(C_T\).
+\end{proof}
+
+\paragraph{AI use.}
+This manuscript was developed with OpenAI Codex (gpt-6.1-sol), including
+the proof construction, literature checks and writing. The checks performed
+during preparation were AI checks; independent mathematical review is
+requested.
+
+\begin{thebibliography}{9}
+\bibitem{MM}
+A. Mercado and R. Morales,
+\emph{Exact controllability for a Schr\"odinger equation with dynamic
+boundary conditions},
+SIAM J. Control Optim. \textbf{61} (2023), no.~6, 3501--3525.
+\href{https://doi.org/10.1137/21M1439407}{doi:10.1137/21M1439407}.
+\href{https://arxiv.org/abs/2301.02573v1}{Author preprint: arXiv:2301.02573v1}.
+
+\bibitem{CMM}
+S. E. Chorfi, L. Maniar and R. Morales,
+\emph{Controllability and inverse problems for hyperbolic and dispersive
+equations with dynamic boundary conditions},
+preprint (2025).
+\href{https://arxiv.org/abs/2505.14795v1}{arXiv:2505.14795v1}.
+
+\bibitem{Teschl}
+G. Teschl,
+\emph{Mathematical Methods in Quantum Mechanics: With Applications to
+Schr\"odinger Operators}, second edition,
+Graduate Studies in Mathematics \textbf{157},
+American Mathematical Society, 2014.
+\href{https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe2.pdf}{Author's online edition}.
+
+\bibitem{AIM}
+AIM problem collection,
+\emph{Boundary observation of a Schr\"odinger field with slower surface
+dispersion}, Problem 386 (2026).
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/386-slow-surface-schrodinger-observability.md}{Immutable problem statement}.
+\end{thebibliography}
+\end{document}
