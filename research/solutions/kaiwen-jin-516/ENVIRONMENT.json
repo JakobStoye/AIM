@@ -1,0 +1,19 @@
+{
+  "verification_language": "Python",
+  "verified_python_version": "3.13.3",
+  "runtime_dependencies": "standard library only",
+  "arithmetic": "exact integers and fractions.Fraction",
+  "finite_case_vertices": 4,
+  "randomness": "none in the executable enumeration; auxiliary random orders are integrated exactly",
+  "manuscript_toolchain": "pdfTeX 1.40.27, TeX Live 2025; latexmk 4.86a",
+  "manuscript_packages": [
+    "geometry",
+    "amsmath",
+    "amssymb",
+    "amsthm",
+    "fontenc",
+    "lmodern",
+    "hyperref"
+  ],
+  "proof_critical_computation": false
+}

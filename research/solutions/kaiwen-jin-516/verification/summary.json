@@ -1,0 +1,13 @@
+{
+  "vertices": 4,
+  "labeled_dags": 543,
+  "equivalence_classes": 185,
+  "graph_order_pairs": 1152,
+  "exact_prefix_identities": 58,
+  "layer_vector_identities": 8,
+  "component_member_checks": 496,
+  "maximum_class_size": 24,
+  "arithmetic": "exact integers and fractions",
+  "result": "PASS",
+  "scope": "Finite structural and counting checks only"
+}

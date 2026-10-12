@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+paper/build/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+verification/reproduced.json
