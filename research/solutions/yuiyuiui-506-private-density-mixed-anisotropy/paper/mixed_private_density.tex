@@ -1,0 +1,525 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Minimax private density estimation with mixed anisotropy},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\KL}{\operatorname{KL}}
+\newcommand{\ind}{\mathbf 1}
+\title{Minimax private density estimation with mixed anisotropy}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We determine the minimax density-estimation rate under sequentially interactive
+local differential privacy and an anisotropic negative Sobolev loss, when the
+density and discriminator smoothness vectors are proportional. The result
+covers coordinates whose discriminator smoothness lies on opposite sides of
+the ambient dimension. The harmonic mean of discriminator smoothness determines
+the rate, with a single logarithmic factor at the critical value. A weighted
+randomized response for individual Fourier coefficients gives the upper bound.
+The noncritical lower bounds follow from Albert, Chevallier, Laurent and Sacko;
+at the critical value, an orthogonal information bound for the full private
+history yields the matching logarithmic lower bound.
+\end{abstract}
+
+\section{The model and the rate}
+
+Local differential privacy requires each individual to release a randomized
+observation whose law changes by at most a prescribed likelihood ratio when
+that individual's data change. Density estimation under this constraint can
+be assessed through smooth test functions: the loss measures how well the
+estimated distribution reproduces their expectations. Different coordinates
+may require different degrees of smoothness.
+
+Albert, Chevallier, Laurent and Sacko~\cite{ACLS} study this problem with Fourier
+Sobolev density and discriminator classes. Their Theorem~10 gives an
+anisotropic lower bound when the two smoothness vectors are proportional.
+Their Theorem~11 gives upper bounds when all discriminator smoothness
+coordinates lie below the dimension, all lie above it, or all equal it.
+The paragraph following that theorem, on p.~15, leaves the mixed case open.
+Here we retain the sum of the anisotropic Fourier weights and sample
+coefficients with probabilities adapted to that sum. This supplies an upper
+bound in the mixed case and leads to a precise critical logarithm.
+The noncritical lower theorem is used with its original hypotheses and credit;
+the critical lower argument is given below.
+
+Fix an integer $d\ge2$, $R^2>d$, $A>0$, and vectors
+$\boldsymbol\beta,\boldsymbol\delta\in\N_{>0}^d$ such that
+$\beta_m/\delta_m=c>0$ is independent of $m$. Assume that some
+$\delta_m<d$ and some $\delta_k>d$. Other coordinates may equal $d$.
+On $[0,1]$, use the real Fourier basis
+\[
+ \phi_1(t)=1,\qquad
+ \phi_{2j}(t)=\sqrt2\cos(2\pi jt),\qquad
+ \phi_{2j+1}(t)=\sqrt2\sin(2\pi jt),\quad j\ge1.
+\]
+Its tensor products are $\phi_{\mathbf j}(x)=\prod_{m=1}^d\phi_{j_m}(x_m)$,
+with $\mathbf j\in\N_{>0}^d$. All integrals below use Lebesgue measure on
+$[0,1]^d$. Write $\theta_{\mathbf j}(h)=\int h\phi_{\mathbf j}$ and, for a
+positive smoothness vector $\mathbf s$, define
+\[
+ W^{\mathbf s}(r)=\left\{h\in L^2([0,1]^d):
+ \sum_{\mathbf j}\left(\sum_{m=1}^d j_m^{2s_m}\right)
+ |\theta_{\mathbf j}(h)|^2\le r^2\right\}.
+\]
+Let $\mathcal F_{\boldsymbol\beta,R}$ be the probability densities in
+$W^{\boldsymbol\beta}(R)$, and set
+\[
+ d_{\boldsymbol\delta}(h,f)=
+ \sup_{g\in W^{\boldsymbol\delta}(1)}\left|\int(h-f)g\right|.
+\]
+The data $X_1,\ldots,X_n$ are independent with common density $f$.
+A sequentially interactive mechanism releases $Z_i$ through a probability
+kernel $Q_i(\cdot\mid X_i,Z_{<i})$. Its $\alpha$-privacy requirement is
+\begin{equation}\label{eq:privacy}
+ Q_i(B\mid x,z_{<i})\le e^\alpha Q_i(B\mid x',z_{<i})
+\end{equation}
+for every measurable output event $B$, every $x,x'$, and every complete
+history $z_{<i}$. Denote the class of such mechanisms by $\mathcal Q_\alpha$.
+The risk of interest is
+\begin{equation}\label{eq:risk}
+ \mathcal R_{n,\alpha}(\boldsymbol\beta,\boldsymbol\delta)
+ =\inf_{Q\in\mathcal Q_\alpha}\inf_{\widehat f}
+  \sup_{f\in\mathcal F_{\boldsymbol\beta,R}}
+  \E_{f,Q}d_{\boldsymbol\delta}(\widehat f,f),
+\end{equation}
+where $\widehat f$ is a measurable $L^2$-valued function of the released
+data. The loss in~\eqref{eq:risk} is an expected norm, without squaring.
+
+\begin{theorem}\label{thm:main}
+Under the fixed parameter assumptions above, put
+\[
+ T=n\alpha^2,\qquad q=\sum_{m=1}^d\frac1{\delta_m},\qquad
+ c=\frac{\beta_m}{\delta_m}.
+\]
+There are constants $C_-,C_+>0$, depending only on
+$d,R,A,\boldsymbol\beta,\boldsymbol\delta$, such that for every integer
+$n\ge1$ and every $0<\alpha\le A$ with $T\ge1$,
+\begin{equation}\label{eq:mainrate}
+ C_-r(T)\le\mathcal R_{n,\alpha}(\boldsymbol\beta,\boldsymbol\delta)
+ \le C_+r(T),\qquad
+ r(T)=\begin{cases}
+ T^{-(c+1)/(2(c+q))},&q>1,\\[2pt]
+ T^{-1/2}\log(eT),&q=1,\\[2pt]
+ T^{-1/2},&q<1.
+ \end{cases}
+\end{equation}
+\end{theorem}
+
+Thus the three cases correspond to the harmonic mean
+$\bar\delta=d/q$ lying below, at, or above $d$. The power exponent can also
+be written $(\bar\beta+\bar\delta)/(2\bar\beta+2d)$, where
+$\bar\beta^{-1}=d^{-1}\sum_m\beta_m^{-1}$.
+The theorem concerns known, fixed smoothness parameters and pure local
+privacy. No adaptation to unknown smoothness is asserted.
+
+\section{Fourier weights and a private estimator}
+
+We suppress boldface on a Fourier multi-index $j$. Define
+\[
+ u_j=\sum_m j_m^{2\beta_m},\qquad v_j=\sum_m j_m^{2\delta_m}.
+\]
+The constant index is $\one=(1,\ldots,1)$. A density has
+$\theta_{\one}=1$ and $u_{\one}=v_{\one}=d$.
+For every $h,f\in L^2$ the exact dual norm is
+\begin{equation}\label{eq:dual}
+ d_{\boldsymbol\delta}(h,f)^2
+ =\sum_j\frac{|\theta_j(h-f)|^2}{v_j}.
+\end{equation}
+Weighted Cauchy--Schwarz gives one inequality. For a finite set $E$, the
+Fourier polynomial with coefficients proportional to
+$\theta_j(h-f)/v_j$, $j\in E$, attains the square root of the corresponding
+partial sum after normalization in $W^{\boldsymbol\delta}(1)$.
+Increasing finite sets proves the reverse inequality. The full sum is finite
+because $v_j\ge d$. Also, comparison with the largest summand gives
+\begin{equation}\label{eq:weights}
+ d^{-c}v_j^c\le u_j\le d v_j^c.
+\end{equation}
+
+The coefficient sampling probabilities will depend on the following sum.
+For $t>0$, let
+\[
+ E_t=\{j\ne\one:v_j\le t\},\qquad
+ N(t)=|E_t|,\qquad S(t)=\sum_{j\in E_t}v_j^{-1/2}.
+\]
+Throughout the proof, comparison constants depend only on the fixed
+parameters, never on $n$, $\alpha$, or the chosen mechanism.
+
+\begin{lemma}\label{lem:count}
+For all sufficiently large $t$,
+\[
+ N(t)\asymp t^{q/2},\qquad
+ S(t)\asymp\begin{cases}
+ t^{(q-1)/2},&q>1,\\
+ \log t,&q=1,\\
+ 1,&q<1.
+ \end{cases}
+\]
+\end{lemma}
+\begin{proof}
+The inequalities $j_m\le t^{1/(2\delta_m)}$ give the upper count.
+For the lower count, every point in the box
+\[
+ 1\le j_m\le\left\lfloor(t/d)^{1/(2\delta_m)}\right\rfloor,
+ \qquad 1\le m\le d,
+\]
+has $v_j\le t$. For large $t$, each floor is at least half its argument;
+removing the constant index leaves a count comparable to $t^{q/2}$.
+
+Dyadic shells and the upper count bound the contribution at weight scale $s$
+by a constant times $s^{(q-1)/2}$. Summing these bounds gives the three upper
+estimates. To obtain lower estimates, let $a_0t^{q/2}\le N(t)\le a_1t^{q/2}$
+for large $t$ and choose a fixed $H>1$ with
+$a_1H^{-q/2}\le a_0/2$. Then
+\[
+ N(t)-N(t/H)\ge (a_0/2)t^{q/2}
+\]
+once both arguments are large. The shell $(t/H,t]$ therefore contributes
+at least $(a_0/2)t^{(q-1)/2}$ to $S(t)$. For $q>1$ use the top shell.
+For $q=1$ use the disjoint shells down to a fixed threshold; their number is
+comparable to $\log t$. For $q<1$, one fixed nonconstant index gives the
+required positive lower bound.
+\end{proof}
+
+Choose a fixed $t_0$ large enough for Lemma~\ref{lem:count} and for
+$E_{t_0}\ne\varnothing$. On $E_t$, $t\ge t_0$, set
+\begin{equation}\label{eq:sampling}
+ p_j=\frac{v_j^{-1/2}}{S(t)},\qquad
+ B_0=2^{d/2},\qquad \kappa=\frac{e^\alpha-1}{e^\alpha+1}.
+\end{equation}
+An individual draws $J$ with law $(p_j)$, independently of $X$, and releases
+$(J,Y)$, where $Y\in\{-1,1\}$ has conditional law
+\begin{equation}\label{eq:channel}
+ \Pr(Y=y\mid X=x,J=j)=\frac12
+ \left(1+\frac{y\kappa\phi_j(x)}{B_0}\right).
+\end{equation}
+Use independent randomization for the $n$ individuals and define
+\begin{equation}\label{eq:estimator}
+ \widehat\theta_j=\frac{B_0}{n\kappa p_j}
+ \sum_{i=1}^n\ind_{\{J_i=j\}}Y_i,\qquad
+ \widehat f=1+\sum_{j\in E_t}\widehat\theta_j\phi_j.
+\end{equation}
+This estimator is a measurable finite Fourier polynomial.
+
+\begin{proposition}\label{prop:upper}
+The channel~\eqref{eq:channel} belongs to $\mathcal Q_\alpha$, and
+\begin{equation}\label{eq:upper}
+ \sup_{f\in\mathcal F_{\boldsymbol\beta,R}}
+ \E_{f,Q}d_{\boldsymbol\delta}(\widehat f,f)
+ \le C\left(t^{-(c+1)/2}+\frac{S(t)}{\sqrt T}\right).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Since $|\phi_j(x)|\le B_0$, the ratio of any output-atom probabilities for
+two input points is at most
+$(1+\kappa)/(1-\kappa)=e^\alpha$. Summing over atoms proves privacy for
+all events. The channel is independent of the preceding history, so this
+inequality holds for every history in~\eqref{eq:privacy}.
+
+Each coefficient in~\eqref{eq:estimator} is unbiased. The squared single
+observation contribution has expectation $B_0^2/(\kappa^2p_j)$, hence
+\[
+ \operatorname{Var}(\widehat\theta_j)\le\frac{B_0^2}{n\kappa^2p_j},
+ \qquad
+ \sum_{j\in E_t}\frac{\operatorname{Var}(\widehat\theta_j)}{v_j}
+ \le\frac{B_0^2 S(t)^2}{n\kappa^2}.
+\]
+The diagonal sum in~\eqref{eq:dual} requires no independence between the
+estimated coordinates. The omitted-coefficient bias, by~\eqref{eq:weights}, is
+\[
+ \sum_{v_j>t}\frac{\theta_j(f)^2}{v_j}
+ \le d^c t^{-(c+1)}\sum_j u_j\theta_j(f)^2
+ \le d^c R^2t^{-(c+1)}.
+\]
+Finally, $\kappa\ge\alpha/(e^A+1)$ because
+$e^\alpha-1\ge\alpha$ and $e^\alpha+1\le e^A+1$.
+Apply Cauchy--Schwarz to the expectation of the norm to obtain
+\eqref{eq:upper}.
+\end{proof}
+
+For $q>1$, take $t=t_0T^{1/(c+q)}$. For $q\le1$, take
+$t=t_0T^{1/(c+1)}$. Lemma~\ref{lem:count} and
+Proposition~\ref{prop:upper} give the upper bound in~\eqref{eq:mainrate},
+including $T=1$.
+
+\section{An information bound with the full private history}
+
+The critical lower bound needs one information estimate shared by all the
+coefficients. Bounding each neighboring pair separately without this shared
+sum would miss the logarithm. We prove the estimate on joint transcript
+spaces, which also handles arbitrary measurable output spaces.
+
+\begin{lemma}\label{lem:trace}
+Let $(\phi_j)_{j\in E}$ be a finite mean-zero orthonormal family on the
+Lebesgue probability space $[0,1]^d$. Suppose $a_j>0$ and every density
+\[
+ f_\varepsilon=1+\sum_{j\in E}\varepsilon_j a_j\phi_j,
+ \qquad \varepsilon\in\{-1,1\}^{E},
+\]
+lies between $1/2$ and $3/2$ almost everywhere. Fix any
+$Q\in\mathcal Q_\alpha$, and let $M_\varepsilon^n$ be its full transcript
+law under $f_\varepsilon$. If $\varepsilon^{(j)}$ denotes the vector with
+sign $j$ reversed, there are nonnegative numbers $\bar I_j$ such that
+\begin{equation}\label{eq:trace-test}
+ \sum_{j\in E}\bar I_j\le n(e^\alpha-1)^2,\qquad
+ \tau_j:=2^{-|E|}\sum_\varepsilon
+ \TV(M_\varepsilon^n,M_{\varepsilon^{(j)}}^n)
+ \le2a_j\sqrt{\bar I_j}.
+\end{equation}
+Here $\TV(P,Q)=\sup_B|P(B)-Q(B)|$.
+\end{lemma}
+\begin{proof}
+Write $M_0^i$ for the law of the first $i$ releases under the uniform density,
+and let $h=z_{<i}$ denote the full history. Its uniform-input next-step kernel
+is $K_{0,i}(\cdot\mid h)=\int Q_i(\cdot\mid x,h)\,dx$.
+Integrating~\eqref{eq:privacy} over a uniform second input gives, for every
+$x,h$,
+\begin{equation}\label{eq:kernel-dom}
+ e^{-\alpha}K_{0,i}(\cdot\mid h)\le Q_i(\cdot\mid x,h)
+ \le e^\alpha K_{0,i}(\cdot\mid h).
+\end{equation}
+
+Introduce two finite measures on the joint space of $(x,h,z)$:
+\[
+ \Gamma_i(dx,dh,dz)=dx\,M_0^{i-1}(dh)Q_i(dz\mid x,h),\qquad
+ \Lambda_i(dx,dh,dz)=dx\,M_0^i(dh,dz).
+\]
+Applying~\eqref{eq:kernel-dom} to measurable sections and integrating gives
+$e^{-\alpha}\Lambda_i\le\Gamma_i\le e^\alpha\Lambda_i$.
+The Radon--Nikodym theorem and Fubini's theorem for finite measures
+\cite[232F, 252C, 252H]{Fremlin} give a jointly measurable density
+$r_i=d\Gamma_i/d\Lambda_i$ satisfying
+\[
+ e^{-\alpha}\le r_i\le e^\alpha,\qquad
+ \int r_i(x,h,z)\,dx=1
+\]
+for $M_0^i$-almost every $(h,z)$. The last equality follows because the
+projection of $\Gamma_i$ onto $(h,z)$ is $M_0^i$.
+Set
+\[
+ s_{ij}(h,z)=\int\phi_j(x)r_i(x,h,z)\,dx,\qquad
+ m_{i,\varepsilon}(h,z)=1+\sum_j\varepsilon_j a_j s_{ij}(h,z).
+\]
+Then $m_{i,\varepsilon}=\int f_\varepsilon r_i\,dx\in[1/2,3/2]$.
+Expanding the integral of the nonnegative square
+$(r_i-1-\sum_j s_{ij}\phi_j)^2$, using the mean-zero orthonormal family,
+yields the pointwise joint bound
+\begin{equation}\label{eq:orth-trace}
+ \sum_j s_{ij}(h,z)^2\le\int(r_i-1)^2dx\le(e^\alpha-1)^2.
+\end{equation}
+For each bounded measurable function $F$ of the preceding history,
+\begin{equation}\label{eq:score-zero}
+ \int F(h)s_{ij}(h,z)\,dM_0^i(h,z)=0.
+\end{equation}
+Indeed, use $\Gamma_i$ for this integral and integrate $z$ first; the
+remaining integral of $\phi_j$ over $x$ vanishes. The identity extends to
+integrable history weights by truncation, since $s_{ij}$ is bounded.
+
+Let $L_\varepsilon^i=dM_\varepsilon^i/dM_0^i$.
+The fresh $X_i$ is independent of the preceding released history under each
+fixed density. Induction therefore gives
+\begin{equation}\label{eq:sequential-density}
+ L_\varepsilon^i(h,z)
+ =L_\varepsilon^{i-1}(h)m_{i,\varepsilon}(h,z),\qquad
+ L_\varepsilon^0=1.
+\end{equation}
+To check the identity, test its right-hand side against a bounded measurable
+function of $(h,z)$, replace $m_{i,\varepsilon}$ by
+$\int f_\varepsilon r_i dx$, and use $\Gamma_i$ and the preceding
+history density. This gives exactly the next-step law under $f_\varepsilon$.
+All $L_\varepsilon^i$ are positive. This argument does not require measurable
+versions of conditional Radon--Nikodym kernels on the output space.
+
+For neighboring signs,
+$m_{i,\varepsilon}-m_{i,\varepsilon^{(j)}}
+=2\varepsilon_j a_j s_{ij}$. By~\eqref{eq:sequential-density}, the logarithm
+of the full likelihood ratio is the sum of the corresponding logarithms of
+the $m$'s. For positive $a,b$,
+\[
+ a\log(a/b)\le\frac{(a-b)^2}{b}+(a-b).
+\]
+The last term has zero integral against the preceding history density by
+\eqref{eq:score-zero}. The denominator $m_{i,\varepsilon^{(j)}}$ is at
+least $1/2$, so
+\begin{equation}\label{eq:kl-bound}
+ \KL(M_\varepsilon^n,M_{\varepsilon^{(j)}}^n)
+ \le8a_j^2 I_j(\varepsilon),\qquad
+ I_j(\varepsilon)=\sum_{i=1}^n\int
+ L_\varepsilon^{i-1}(h)s_{ij}(h,z)^2\,dM_0^i(h,z).
+\end{equation}
+All logarithms are bounded at each step, and all these integrals are finite.
+Since $\int L_\varepsilon^{i-1}(h)dM_0^i=1$, summing
+\eqref{eq:orth-trace} gives
+\[
+ \sum_jI_j(\varepsilon)\le n(e^\alpha-1)^2.
+\]
+Define $\bar I_j$ as the uniform average of $I_j(\varepsilon)$.
+
+In our normalization, $\TV(P,Q)^2\le\KL(P,Q)/2$.
+Here this inequality can be seen directly by taking
+$B=\{dP/dQ\ge1\}$ and writing $p=P(B)$, $q_0=Q(B)$.
+The convex tangent inequality for $t\log t$ on $B$ and its complement gives
+\[
+ \KL(P,Q)\ge p\log\frac p{q_0}
+ +(1-p)\log\frac{1-p}{1-q_0}\ge2(p-q_0)^2.
+\]
+For the second inequality the expression as a function of $p$ has value and
+first derivative zero at $q_0$, and second derivative
+$1/[p(1-p)]\ge4$. Zero-mass endpoints are handled by continuity or infinite
+relative entropy. Also $p-q_0=\TV(P,Q)$.
+Apply this inequality to~\eqref{eq:kl-bound} and use Cauchy--Schwarz when
+averaging over signs. This proves~\eqref{eq:trace-test}.
+\end{proof}
+
+The joint measures in this proof keep every preceding release in the
+history. The private releases need not be independent. The argument refines
+the use of privacy contraction in local-private minimax bounds
+\cite{DJW}, by retaining a sum over orthogonal coefficients at each step.
+
+\section{The critical lower bound and completion of the proof}
+
+At $q=1$, Lemma~\ref{lem:count} supplies a logarithm in the weighted spectral
+sum. We put a finite family of densities on those coefficients, with
+amplitudes that make the testing bound spend the same shared information sum.
+The cutoff can grow slowly: the lower bound needs a number of scales
+proportional to $\log T$, rather than the largest admissible cutoff.
+
+Assume $q=1$ and set
+\[
+ \rho=\frac1{4(c+1)},\qquad t=T^\rho,\qquad E=E_t,\qquad S=S(t).
+\]
+For $T$ sufficiently large, define positive amplitudes by
+\begin{equation}\label{eq:amplitudes}
+ a_j^2=\frac{\eta^2 S\sqrt{v_j}}{T},\qquad j\in E,
+\end{equation}
+where $\eta>0$ is fixed below. Lemma~\ref{lem:count} gives
+$N(t)\lesssim t^{1/2}$ and $S\asymp\log t\asymp\log T$.
+Consequently,
+\begin{align}
+ B_0\sum_{j\in E}a_j&\lesssim
+ \eta\sqrt{S/T}\,t^{3/4}\longrightarrow0,\label{eq:positive}\\
+ \sum_{j\in E}u_ja_j^2&\lesssim
+ \eta^2(S/T)t^{c+1}
+ =\eta^2 S T^{-3/4}\longrightarrow0.\label{eq:smooth}
+\end{align}
+The first convergence uses $\rho<1/4$, and the second uses
+\eqref{eq:weights}. Since $R^2>d$, there is a fixed $T_*$ such that for
+every $T\ge T_*$ and every sign vector the Fourier polynomial
+\[
+ f_\varepsilon=1+\sum_{j\in E}\varepsilon_ja_j\phi_j
+\]
+lies between $1/2$ and $3/2$ and has Sobolev weight
+$d+\sum_j u_ja_j^2\le R^2$. Each nonconstant basis function has mean zero,
+so all these polynomials are probability densities in the original class.
+The positivity is uniform over every sign vector.
+
+Fix any mechanism $Q\in\mathcal Q_\alpha$ and any measurable $L^2$-valued
+estimator. Decode its $j$th Fourier coefficient as $+1$ when it is
+nonnegative and as $-1$ otherwise. This is measurable, and a wrong decoded
+sign causes coefficient error at least $a_j$. Write
+\[
+ w_j=v_j^{-1},\qquad b_j=w_ja_j^2,\qquad V=\sum_{j\in E}b_j.
+\]
+By~\eqref{eq:dual}, pointwise,
+\begin{equation}\label{eq:norm-hamming}
+ d_{\boldsymbol\delta}(\widehat f,f_\varepsilon)
+ \ge\sqrt{\sum_j b_j\ind_{\{\widehat\varepsilon_j\ne\varepsilon_j\}}}
+ \ge\frac1{\sqrt V}\sum_jb_j\ind_{\{\widehat\varepsilon_j\ne\varepsilon_j\}}.
+\end{equation}
+The second inequality uses $\sqrt x\ge x/\sqrt V$ for $0\le x\le V$.
+For a neighboring pair of transcript laws, the sum of the two decision
+error probabilities is at least $1-\TV$.
+Thus the sign-average risk is at least
+\begin{equation}\label{eq:average-risk}
+ \frac{V-\sum_j b_j\tau_j}{2\sqrt V},
+\end{equation}
+where $\tau_j$ is from Lemma~\ref{lem:trace}. This is a lower bound for the
+expected norm itself.
+
+For the amplitudes~\eqref{eq:amplitudes}, direct summation gives
+\[
+ V=\frac{\eta^2 S^2}{T},\qquad
+ \sum_j b_j^2a_j^2=\frac{\eta^6 S^4}{T^3}.
+\]
+Moreover $e^\alpha-1\le e^A\alpha$. Weighted Cauchy--Schwarz and
+\eqref{eq:trace-test} therefore yield
+\[
+ \sum_j b_j\tau_j
+ \le2\left(\sum_j b_j^2a_j^2\right)^{1/2}
+       \left(\sum_j\bar I_j\right)^{1/2}
+ \le\frac{2e^A\eta^3 S^2}{T}.
+\]
+Choose $0<\eta\le1/(4e^A)$. The last quantity is at most $V/2$.
+Equation~\eqref{eq:average-risk} now gives a lower bound
+$\eta S/(4\sqrt T)\gtrsim\log T/\sqrt T$ for every mechanism and estimator,
+uniformly for $T\ge T_*$. The finite density family and all constants were
+chosen independently of the mechanism.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The upper bound was established after Proposition~\ref{prop:upper}.
+For the remaining lower estimates, Theorem~10 of~\cite[p.~14]{ACLS} states,
+under the same positive integer smoothness, proportionality, radius and
+privacy assumptions,
+\[
+ \mathcal R_{n,\alpha}(\boldsymbol\beta,\boldsymbol\delta)
+ \ge C\max\left\{
+ T^{-(\bar\beta+\bar\delta)/(2\bar\beta+2d)},T^{-1/2}\right\}.
+\]
+Its mechanism class uses the full-history privacy condition
+\eqref{eq:privacy}; its minimax loss is the expected unsquared adversarial
+distance. The absolute value in our definition gives the same distance,
+since the discriminator ball is symmetric. The real Fourier indexing and
+sum weights are also the same.
+As $\bar\delta=d/q$ and $\bar\beta=cd/q$, the first exponent is
+$(c+1)/(2(c+q))$. This proves the required lower bound for $q>1$ and $q<1$.
+When $q=1$, the preceding construction proves the logarithmic lower bound
+for $T\ge T_*$. For $1\le T<T_*$, the cited bound is at least
+$C T^{-1/2}$, and $\log(eT)\le\log(eT_*)$; decreasing the fixed lower
+constant covers this interval as well. Both lower arguments hold for every
+$Q$ and every measurable $L^2$-valued estimator before taking the infima in
+\eqref{eq:risk}. This proves~\eqref{eq:mainrate} throughout the stated
+parameter range.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted with mathematical exploration, proof drafting,
+reference checks and manuscript preparation. Independent mathematical review
+is requested.
+
+\begin{thebibliography}{9}
+\bibitem{ACLS}
+M. Albert, J. Chevallier, B. Laurent and O. Sacko.
+\newblock Minimax density estimation in the adversarial framework under local
+differential privacy.
+\newblock \emph{Journal of Machine Learning Research} \textbf{27}(69)
+(2026), 1--43.
+\newblock \url{https://www.jmlr.org/papers/v27/24-0494.html}.
+
+\bibitem{DJW}
+J. C. Duchi, M. I. Jordan and M. J. Wainwright.
+\newblock Minimax optimal procedures for locally private estimation.
+\newblock \emph{Journal of the American Statistical Association}
+\textbf{113}(521) (2018), 182--201.
+\newblock \href{https://doi.org/10.1080/01621459.2017.1389735}{doi:10.1080/01621459.2017.1389735}.
+\newblock Author manuscript: \href{https://arxiv.org/abs/1604.02390v2}{arXiv:1604.02390v2},
+Theorem~1 and Section~5.1.
+
+\bibitem{Fremlin}
+D. H. Fremlin.
+\newblock \emph{Measure Theory}, volume 2, author-hosted abridged text,
+chapters 23 and 25; Sections 232F, 252C and 252H.
+\newblock \url{https://www1.essex.ac.uk/maths/people/fremlin/chap23.ro.pdf};
+\url{https://www1.essex.ac.uk/maths/people/fremlin/chap25.ro.pdf}.
+\end{thebibliography}
+\end{document}

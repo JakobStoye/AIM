@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "problem_id": "506",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "evidence_status": "Solution claimed",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package description and build instructions",
+      "sha256": "e13b38950e6e78f9a6ff22294e59dabf2a887e7e7420e3eb00e302d63e11b94e"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Exact public original-target correspondence",
+      "sha256": "db408a6f50a39ae1fd94dba5e066f0652d25e1dd13db9d9a7c28034976c0e0a7"
+    },
+    {
+      "path": "paper/mixed_private_density.tex",
+      "purpose": "Complete editable analytic manuscript",
+      "sha256": "a81c184183b545b55c6e163b38cc2b2659664fa9fdbc8fd9a546cf38047645f1"
+    },
+    {
+      "path": "paper/mixed_private_density.pdf",
+      "purpose": "Complete eight-page analytic manuscript",
+      "sha256": "c3898cda7c00baf17a03d65e7ba8f53976dd47399fd98bec1dd718c3ab27e196"
+    }
+  ]
+}
