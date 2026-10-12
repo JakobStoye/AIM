@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "problem_id": "051",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/051-potential-on-general-manifold.md",
+  "author": "Kaiwen Jin",
+  "contact_email": "yui.ui.siki@gmail.com",
+  "evidence_type": "Analytic solution claim awaiting independent mathematical review",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Exclude local TeX build output",
+      "sha256": "8684e5e018cfc6c86ffa46ad5561ba057e81ea2ec5e2865a5b310172ec451e00"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, attribution, materials and build instructions",
+      "sha256": "630d3dde4d390d3a16fdfd001bce9f8b28be78ff1fdf9af32598b886925e793c"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence with the exact public AIM051 target",
+      "sha256": "6bee54b1159e8ceb812d873a8a12a90b77a21d96f30bf010b78cd321211073df"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Compiled complete seventeen-page manuscript",
+      "sha256": "c29217f3d34566b6952575aaf16151f0d951e59d7237373684334eb8858997e5"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Standalone editable manuscript with complete proof and bibliography",
+      "sha256": "3758df6b10e77307b624a2a2cca05960c31c4dfcc586cc68f6e4b0c22fed12a0"
+    }
+  ]
+}

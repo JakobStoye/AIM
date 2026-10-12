@@ -1,0 +1,1218 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\vol}{\dd V}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Op}{\operatorname{Op}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\title{Uniqueness of a smooth real potential on a known Riemannian manifold}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove uniqueness of a smooth real scalar potential from its full
+Dirichlet-to-Neumann map at one energy on an arbitrary known compact,
+connected, smooth Riemannian manifold of dimension at least three with
+smooth nonempty boundary. The only spectral assumption is that this energy
+is not a Dirichlet eigenvalue; negative eigenvalues and sign-changing
+potentials are allowed. Equal boundary maps first give common exterior
+source solutions through a weak gluing argument that does not require a
+positive quadratic form. Near an interior frontier, a common source gives
+local positive conjugations of the two equations. We adapt the separately
+elliptic continuation and shrinking-sphere method of OpenAI to the resulting
+operators with the same principal metric. An angular coercivity estimate
+bounds the actual transfer densities jointly in center and direction. Their
+collapse gives equality on one neighborhood for every matching source pair.
+Finite source jets then recover the local conjugating solutions and the
+potentials, closing the frontier without a global positive solution.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Let $(M,g)$ be a known compact connected smooth Riemannian manifold of
+dimension $n\ge3$ with smooth nonempty boundary. For a real smooth
+potential $q$ such that zero is not a Dirichlet eigenvalue of
+$L_q=-\Delta_g+q$, define the ordinary Dirichlet-to-Neumann map by
+\begin{equation}\label{eq:DN}
+ \Lambda_{g,q}f=\partial_{\nu_g}u|_{\partial M},\qquad
+ L_qu=0\ \text{in }M,\qquad u|_{\partial M}=f,
+\end{equation}
+where $\nu_g$ is the outward unit normal. The map acts from
+$H^{1/2}(\partial M)$ to $H^{-1/2}(\partial M)$; equivalently, its
+values and pairings on all smooth boundary data determine the map.
+The boundary is labeled, and both potentials are compared on the same
+manifold with the same metric. We ask whether this single boundary
+response determines the interior scalar coefficient without a geometric
+restriction on $g$.
+
+The fixed-energy question must be distinguished from recovery using a
+family of energies or a sufficiently large frequency together with a ray
+transform hypothesis. For example, Ma, Sahoo and Salo
+\cite{MaSahooSalo} establish a large-fixed-frequency result on manifolds
+with an invertible ray transform. Such results do not give the assertion
+below on an arbitrary known smooth manifold at the prescribed energy zero.
+We do not assume simplicity, absence of conjugate points, a limiting
+Carleman weight, or injectivity of a geodesic ray transform.
+
+Our continuation construction adapts the mixed-kernel transfer, product
+continuation, shrinking-sphere construction, and uniform density and
+coercivity estimates of OpenAI \cite{OpenAIMetric}. A separately elliptic
+mixed Green kernel is continued along product hypersurfaces, and its
+transfer integrals on shrinking spheres are controlled through angular
+raising and lowering operators. The later metric and unitary-connection preprint
+\cite{OpenAIConnection} addresses an operator of the form $d_A^*d_A$;
+its theorem does not include an additional independent real scalar
+potential. We give the continuation and angular arguments needed here,
+with their overlap and parameter dependence specified, and adapt them to
+two locally conjugated scalar equations having the same principal metric.
+The core continuation method is credited to these sources.
+
+\begin{theorem}\label{thm:main}
+Let $(M,g)$ be any compact connected smooth Riemannian manifold of
+dimension $n\ge3$ with smooth nonempty boundary. Let
+$q_1,q_2\in C^\infty(M;\mathbb R)$, and suppose zero is not a Dirichlet
+eigenvalue of either $L_j=-\Delta_g+q_j$, with Dirichlet domain
+$H^2(M)\cap H^1_0(M)$. If
+\[
+ \Lambda_{g,q_1}=\Lambda_{g,q_2}
+\]
+as full ordinary boundary maps at energy zero, then $q_1=q_2$ on $M$.
+\end{theorem}
+
+No orientability or connectedness of the boundary is required. The metric
+is known throughout, and no diffeomorphism or coefficient gauge occurs in
+the conclusion. Both potentials are arbitrary real smooth functions
+subject to the stated nonresonance condition. In particular, either
+Dirichlet operator may have negative eigenvalues, and the difference of
+the potentials may be flat or change sign arbitrarily often.
+
+The spectral qualification matters for the proof. A global positive
+solution $s$ of $(-\Delta_g+q)s=0$ would give, for interior compactly
+supported $u$,
+\[
+ \int_M\bigl(|\dd u|_g^2+q|u|^2\bigr)\vol_g
+       =\int_M s^2|\dd(u/s)|_g^2\vol_g\ge0.
+\]
+By density this excludes negative Dirichlet eigenvalues. Thus a global
+positive conjugation would impose a stronger assumption than the theorem.
+Shifting the operator to obtain positivity would also change the measured
+energy. We instead use nonresonance for the signed weak inverse and select
+positive source solutions only in a small neighborhood of a frontier.
+
+Here is the structure of the argument. Equality of the boundary maps gives
+equal boundary jets of the potentials. A thin exterior cap can therefore
+be attached with common coefficients. Nonresonance persists for a small
+cap, and weak stationarity transfers every source supported in the cap
+between the two Dirichlet inverses. Point distributions and scalar unique
+continuation show that these sources have arbitrary local value and first
+jets subject only to their differential equation.
+
+At a point where all source families agree from one side, one matching
+source is positive nearby. Dividing each equation by its own positive
+solution removes the zeroth-order term locally. A compatible mixed kernel
+then defines a transfer density on small spheres. Strict product
+hypersurfaces continue this kernel at every positive radius; no uniform
+kernel bound at radius zero is asserted. The complete radial map, including
+its smooth remainder, gives an equation for the actual density. Concavity
+of a reference depth function supplies an angular coercivity estimate and
+a uniform joint $L^2$ bound in the center and sphere variables.
+
+The radii collapse on one fixed neighborhood. The joint bound makes every
+matching solution pair agree there, with that neighborhood chosen before
+the further source. A finite spanning set of source gradients then
+identifies the two local positive conjugations and the original potentials.
+This common-neighborhood conclusion advances the open set of agreement
+past any putative interior frontier and proves the theorem globally.
+
+Section~\ref{sec:cap} establishes the signed inverse, cap data and source
+jets. Sections~\ref{sec:local}--\ref{sec:spheres} construct the local
+conjugation and the continued mixed kernel. Sections~\ref{sec:trace}
+and~\ref{sec:coercivity} derive and bound the transfer density.
+Section~\ref{sec:global} closes the global frontier. We use
+$\Delta_g=\Div_g\nabla_g$, positive volume densities, and the outward
+normal convention in \eqref{eq:DN}. All coefficients are smooth up to
+any boundary on which they are used. The proof does not assert a partial
+boundary-data theorem, a complex-potential theorem, or a resonant case.
+
+
+\section{Signed Dirichlet inverses and common exterior data}\label{sec:cap}
+
+We first obtain interior source data from the boundary response. This step
+must allow an indefinite Dirichlet form. Throughout, $\Delta_g=\Div_g\nabla_g$,
+$L_j=-\Delta_g+q_j$, and all integrals on manifolds use positive densities.
+For real functions put
+\[
+ \mathfrak b_j(u,v)=\int_M(\ip{\dd u}{\dd v}_g+q_juv)\vol_g.
+\]
+The complex extension is sesquilinear, linear in its first variable. The
+Dirichlet realization has domain $H^2(M)\cap H^1_0(M)$, where $H^1_0$ is
+the closure of interior compactly supported smooth functions. Smooth data
+suffice for every boundary pairing below.
+
+\begin{lemma}\label{lem:inverse}
+If $0$ is not a Dirichlet eigenvalue of $L=-\Delta_g+q$ with real smooth
+$q$, its weak realization $H^1_0\to H^{-1}$ is a bounded isomorphism.
+This property persists under a sufficiently small smooth outward
+perturbation of the boundary and coefficients, pulled back to $M$.
+\end{lemma}
+\begin{proof}
+Add a constant $c>0$ so that $\mathfrak b_c$ is coercive on $H^1_0$.
+Lax--Milgram gives its inverse $R_c$ \cite[Theorem 4.20]{HunterPDE}.
+The inclusion $H^1_0\hookrightarrow L^2$ is compact: extend its defining
+approximants by zero in boundary charts, localize in finitely many cubes,
+and truncate Fourier frequencies. The $H^1$ bound makes the remaining
+$L^2$ norm $O(N^{-1})$. Thus $K=cR_cJ$, with $J$ the $L^2$ pairing, is
+compact and self-adjoint in the $\mathfrak b_c$ inner product.
+A weak vector in $\ker(I-K)$ gains $H^2$ by boundary elliptic regularity
+and is a zero Dirichlet eigenfunction; hence this kernel is zero.
+If $I-K$ were not bounded below, a unit sequence and compactness of $K$
+would produce a nonzero kernel vector. Its range is therefore closed;
+its orthogonal complement is $\ker(I-K)^*=0$, so it is onto.
+This proves the asserted inverse. Boundary regularity here is the
+pure divergence estimate of \cite[Theorems 4.30--4.31]{HunterPDE}; smooth
+lower terms enter the forcing and are bootstrapped in finite charts.
+
+After pullback, an outward perturbation changes the weak form in operator
+norm by a quantity tending to zero. If $R$ is the original inverse,
+$\norm{R(\mathfrak b_\epsilon-\mathfrak b_0)}<1$ gives the perturbed inverse
+by a Neumann series. Positivity of the original form is unnecessary.
+\end{proof}
+
+Equality of the DN maps determines the complete boundary jets of $q_1,q_2$.
+For the identical metric this is the scalar, zero-connection case of the
+last clause of \cite[Theorem 3.4]{Cekic}; the normal gauges are identity.
+To fix the sign, in inward boundary distance $s$ let
+$\rho=(g^{ab}\xi_a\xi_b)^{1/2}$. The factor symbol starts with $b_1=-\rho$,
+and $b_0$ depends only on $g$. Its scalar recursion gives
+\begin{equation}\label{eq:jets}
+ b_{-k-1,1}-b_{-k-1,2}
+ =-\frac{\partial_s^k(q_1-q_2)}{(2\rho)^{k+1}}
+   +\text{terms fixed by lower potential jets and metric jets},\qquad k\ge0.
+\end{equation}
+Equal complete DN symbols recover these jets inductively. The simultaneous
+metric normalization in the first clause of that theorem is not needed
+when the metric is already identical. Flatness at the boundary gives jets,
+not equality on an interior collar.
+
+Choose a boundary patch and a nonnegative smooth bump with connected
+positivity set. Attach a thin cap $E$ across that patch, obtaining a smooth
+compact manifold $N$. Extend the metric smoothly and use one common exterior
+extension for the two potentials. This is possible by \eqref{eq:jets}:
+their difference has a smooth zero extension. A smooth extension of either
+coefficient can be constructed from cutoff Taylor monomials, choosing the
+$j$th support small enough that its derivatives of order less than $j$
+are bounded by $2^{-j}$. The series converges in every fixed smooth norm.
+A collar diffeomorphism identifies $N$ with a small boundary perturbation
+of $M$. Lemma~\ref{lem:inverse} makes both extended Dirichlet problems
+invertible after the cap is made sufficiently thin.
+
+Write $R_j=L_{j,D}^{-1}$ on $N$, and normalize its kernel by
+\[
+ R_jF(x)=\int_N G_j(x,y)F(y)\vol_g(y).
+\]
+The kernels are real and symmetric. An interior order $-2$ parametrix $Q$
+with $L_jQ=I+S$ gives $G_j=Q-R_jS$ locally; $S$ and $R_jS$ have smooth
+kernels. The off-diagonal symbol-kernel estimate
+\cite[Lecture I, (1.21)--(1.24)]{Taylor} gives
+\begin{equation}\label{eq:kernelbound}
+ |\partial_x^a\partial_y^bG_j(x,y)|
+ \le C_{a,b}|x-y|^{2-n-|a|-|b|}
+\end{equation}
+on sufficiently small compact coordinate neighborhoods, with a smooth
+remainder absorbed into the constant. Its order condition is satisfied
+because $n\ge3$.
+
+\begin{lemma}\label{lem:cap}
+For every $F\in C_c^\infty(E)$, $R_1F=R_2F$ on $E$.
+Consequently $G_1=G_2$ on $E\times E$.
+\end{lemma}
+\begin{proof}
+Let $w_1=R_1F$, and replace its restriction to $M$ by the $L_2$ solution
+with the same boundary trace $h$. Leave it equal to $w_1$ on $E$.
+The replacement differs on $M$ by a member of $H^1_0(M)$; its zero
+extension gives a glued member of $H^1_0(N)$. In the weak equation,
+the difference of the interior boundary pairings is
+$\ip{(\Lambda_2-\Lambda_1)h}{\phi|_{\partial M}}=0$.
+The cap coefficients and forcing are common, so the glued function solves
+$L_2w=F$. Uniqueness identifies it with $R_2F$.
+This is a stationarity argument for the weak form, not minimization.
+Testing all cap sources and using smoothness off the pole gives the kernel
+identity; the equal delta singularities also cancel distributionally.
+\end{proof}
+
+Fix a nonempty source set $U_0\Subset E$.
+\begin{lemma}\label{lem:jets}
+At any $p\in N^\circ\setminus\overline{U_0}$, the second jets of
+$R_jF$, $F\in C_c^\infty(U_0;\mathbb R)$, fill exactly the hyperplane
+$L_jv(p)=0$. In particular, value and first derivatives are arbitrary.
+\end{lemma}
+\begin{proof}
+Let an order-at-most-two point distribution $T$ annihilate these jets.
+Define $R_jT$ by transposition. Then $R_jT=0$ on $U_0$ and
+$L_jR_jT=T$. Away from $p$ it is smooth by a local parametrix and vanishes
+by scalar unique continuation \cite{Aronszajn}. The punctured interior
+is connected in dimension at least two: paths can detour around a point
+in a coordinate ball. Thus $R_jT$ is supported at $p$.
+
+A point-supported distribution is a finite sum of delta derivatives.
+Indeed, a test whose derivatives through its finite order vanish at $p$
+can be cut off at radius $\epsilon$; Taylor's remainder makes its test
+seminorm $O(\epsilon)$ and its pairing vanish. For a nonzero such
+distribution of order $k$, an elliptic second-order operator has exact
+image order $k+2$: its top polynomial is multiplied by a nonzero
+quadratic principal symbol. Hence $R_jT=c\delta_p$ and $T=cL_j\delta_p$,
+where distribution transposes use $\vol_g$. This is precisely the
+annihilator of the equation hyperplane. Finite-dimensional duality proves
+surjectivity onto it. The Hessian trace can enforce the equation while
+value and first derivatives are prescribed. Real parts give real sources.
+\end{proof}
+
+\section{Local positive conjugation}\label{sec:local}
+
+At a point where the two source families agree from one side, choose a
+matching pair with common value one using Lemma~\ref{lem:jets}. On a fixed
+small neighborhood it gives positive solutions $s_j$ of $L_js_j=0$.
+For $u_j=s_jv_j$ the exact conjugation is
+\begin{equation}\label{eq:ground}
+ s_j^{-1}L_j(s_jv_j)
+ =-\Delta_gv_j-2\ip{\dd\log s_j}{\dd v_j}_g
+ =:A_jv_j=-s_j^{-2}\Div_g(s_j^2\nabla_gv_j).
+\end{equation}
+Thus $A_j1=0$ and both principal metrics are identical. Their local
+symmetric densities are $s_j^2\vol_g$, and
+\[
+ K_j(x,y)=\frac{G_j(x,y)}{s_j(x)s_j(y)}
+\]
+is the corresponding local Green kernel. Only local positivity is needed.
+
+The following statement is the local result used in the global proof.
+The kernels in it are the actual kernels just constructed on $N$.
+\begin{proposition}\label{prop:local}
+Suppose a neighborhood $\Omega$ of $0$ has a known open subset $W$ containing
+one side of a smooth hypersurface through $0$. Suppose $s_1,s_2>0$ solve
+$L_js_j=0$ on $\Omega$, agree on $W$, and $G_1=G_2$ on $W\times W$.
+There is one neighborhood $Z$ of $0$ such that every pair of smooth
+solutions $A_jv_j=0$ on $\Omega$ agreeing on $W$ satisfies $v_1=v_2$ on $Z$.
+\end{proposition}
+
+We prove this through a transfer integral on shrinking spheres. The
+neighborhood $Z$ and the integral density will depend on the fixed kernels,
+groundings and geometry, but not on a further solution pair.
+Choose coordinates with $g(0)=I$ and known side tangent to $x_n<0$.
+Under $x\mapsto\lambda x$, set
+\[
+ g_\lambda(x)=g(\lambda x),\quad s_{j,\lambda}(x)=s_j(\lambda x),\quad
+ K_{j,\lambda}(x,y)=\lambda^{n-2}K_j(\lambda x,\lambda y).
+\]
+On fixed bounded sets the principal metric tends smoothly to Euclidean,
+and the grounded drift tends to zero. Each compact subset strictly below
+the plane becomes known for small $\lambda$. Estimate~\eqref{eq:kernelbound}
+gives uniform smooth bounds on compact separated pairs. Initially use
+$K_1$ when $y$ is known and $K_2$ when $x$ is known. They agree on the
+intersection and satisfy $A_{1,x}K=A_{2,y}K=0$ off the diagonal.
+For the rest of the local proof subscripts $\lambda$ are suppressed.
+The small spatial scale will be fixed before any radius tends to zero.
+
+\section{Separately elliptic continuation}\label{sec:cross}
+
+We give the continuation argument since its domain and overlap properties
+are used below. Scalar local regularity, quantitative interior estimates,
+and the calculus used here follow from an elliptic parametrix
+\cite[Lecture I, Sections 3--4]{Taylor}. On compact buffers the required
+integer estimates have finite coefficient dependence. For example, testing
+$Pu=\partial_iF^i+h$ against $\eta^2\bar u$ gives
+\[
+ \norm{\nabla u}_{L^2(U)}\le
+ C(\norm{u}_{L^2(V)}+\norm{F}_{L^2(V)}+\norm{h}_{L^2(V)}),\qquad U\Subset V.
+\]
+Differentiating a homogeneous equation gives divergence forcing involving
+only already controlled derivatives, and finite nested buffers give every
+integer order. Initially distributional $L^2$ solutions gain local Sobolev
+regularity by the parametrix, so the weak tests are legitimate. Constants
+use only finitely many smooth coefficient bounds at each specified order.
+
+\subsection{Strict scalar weights}
+Let $\theta$ have nonzero differential and, with $Z=\nabla\theta/|\dd\theta|$,
+suppose
+\begin{equation}\label{eq:strictscalar}
+ \Hess\theta(Z,Z)+\Hess\theta(V,V)>0\quad(V\perp Z,\ |V|=1).
+\end{equation}
+On a small neighborhood choose $m$ strictly between minus the least
+tangential Hessian eigenvalue and the normal Hessian value. For
+$v=e^{\tau\theta}w$, the conjugated positive Laplacian is
+\[
+ A_\tau+B_\tau=-\Delta-\tau^2|\dd\theta|^2
+       +\tau(2\nabla\theta\cdot\nabla+\Delta\theta),
+\]
+where $A_\tau$ is self-adjoint and $B_\tau$ skew-adjoint on compact supports.
+Integration by parts gives
+\begin{align*}
+ \norm{(A_\tau+B_\tau)v}^2
+ &=\norm{A_\tau v}^2+\norm{B_\tau v}^2+\ip{[A_\tau,B_\tau]v}{v},\\
+ \ip{[A_\tau,B_\tau]v}{v}
+ &=4\tau\int\Hess\theta(\nabla v,\nabla\bar v)
+   +4\tau^3\int\Hess\theta(\nabla\theta,\nabla\theta)|v|^2
+   -\tau\int\Delta^2\theta|v|^2.
+\end{align*}
+Ricci terms from derivative commutation cancel those in
+$\Div\Hess\theta=\dd\Delta\theta+\operatorname{Ric}(\nabla\theta,\cdot)$.
+Add $4m\tau\operatorname{Re}(A_\tau v,v)$ to this form. It makes the
+tangential gradient and leading scalar terms positive. The remaining
+normal-gradient loss is controlled by
+$\norm{\nabla_Zv}^2\le C\tau^{-2}\norm{B_\tau v}^2+C\norm{v}^2$.
+The added form costs at most $\frac14\norm{A_\tau v}^2+C\tau^2\norm{v}^2$.
+For large $\tau$ these losses are absorbed. Smooth lower terms have
+conjugated norm squared at most $C(\norm{\nabla v}^2+\tau^2\norm{v}^2)$
+and are absorbed too. For the actual scalar operator $A$ this yields
+\begin{equation}\label{eq:carleman}
+ \tau\norm{e^{\tau\theta}\dd w}^2+\tau^3\norm{e^{\tau\theta}w}^2
+ \le C\norm{e^{\tau\theta}Aw}^2,\qquad \tau\ge\tau_0.
+\end{equation}
+The constants are uniform on fixed strict margins and finite coefficient bounds.
+
+Suppose a cutoff equals one on $O\Subset D$, its bottom derivative support
+has weight at most $a$, the remaining derivative support at most $b$, and
+$\theta\ge c$ on $O$, where $a<c<b$. Enlarge the latter support to a compact
+observed open set $S\Subset D$. Interior estimates on the enlarged collars
+and \eqref{eq:carleman} give, for $Au=0$,
+\[
+ \norm{u}_O\le C\{e^{-\tau(c-a)}\norm{u}_D+
+                       e^{\tau(b-c)}\norm{u}_S\}.
+\]
+Balancing the terms when the balancing $\tau$ exceeds $\tau_0$, and using
+the trivial bound otherwise, proves
+\begin{equation}\label{eq:interp}
+ \norm{u}_O\le C\norm{u}_S^\gamma\norm{u}_D^{1-\gamma},
+ \qquad\gamma=\frac{c-a}{b-a}.
+\end{equation}
+If the observed norm is zero, let $\tau\to\infty$.
+
+\subsection{Extension from a cross}
+\begin{lemma}\label{lem:cross}
+Let $D_i$ be bounded connected coordinate domains and $S_i,O_i\Subset D_i$
+open, with $S_i$ nonempty. Let $A_i$ be smooth real scalar elliptic
+operators with positive principal matrices. Suppose their $L^2$ solutions
+satisfy \eqref{eq:interp} with exponents $0<\gamma_i<1$ and
+$\alpha=\gamma_1+\gamma_2-1>0$.
+Compatible separately homogeneous $L^2$ functions on
+$(D_1\times S_2)\cup(S_1\times D_2)$ extend to a smooth separately
+homogeneous function on $O_1\times O_2$, agreeing on its actual
+intersections with both given pieces. On compact output subsets its
+smooth norms are bounded by the summed input $L^2$ norms.
+\end{lemma}
+\begin{proof}
+Let $\mathcal H=\{w\in L^2(D_1):A_1w=0\}$, a closed Hilbert subspace.
+Restriction $R:\mathcal H\to L^2(S_1)$ is compact by cutoff Fourier
+truncation and injective by unique continuation. On each fixed cutoff
+coordinate cube, identify opposite faces and use the torus Fourier basis
+\cite[Section 2, Theorem 21 and Corollary 22]{TaoFourier}.
+Parseval and the integer derivative multipliers give, for each integer $m$,
+a rank-$O(N^{n_1})$ approximation with norm error $O(N^{-m})$,
+where $n_1=\dim D_1$.
+
+Here the compact spectral construction can be made directly. Maximize
+$\norm{Rw}^2$ on the unit sphere using a weakly convergent maximizing
+sequence and compactness of $R$. The maximizing vector has norm one;
+variation in orthogonal directions makes its restriction orthogonal to
+all subsequent ones. Iterate on orthogonal complements. The resulting
+basis $w_j$ is complete: a vector perpendicular to all of it has image
+norm bounded by every decreasing singular value and hence zero.
+In the infinite case compactness forces these values to zero.
+Thus
+\[
+ \norm{w_j}_{D_1}=1,\quad (Rw_i,Rw_j)_{S_1}=\mu_j^2\delta_{ij},\quad
+ 0<\mu_j\le1.
+\]
+A vector in the span of the first $j$ basis vectors annihilated by a
+rank-less-than-$j$ approximation has image norm at least $\mu_j$.
+The Fourier error therefore gives $\mu_j\le C_mj^{-m/n_1}$, and in
+particular decay faster than any fixed power. No lower bound is used.
+The same argument covers finite-dimensional spaces.
+
+Write the first cross piece $F_1=\sum_jw_jb_j^0$ on $D_1\times S_2$.
+For the second piece define
+\[
+ b_j(y)=\mu_j^{-2}\int_{S_1}F_2(x,y)\overline{w_j(x)}\dd x.
+\]
+If the summed input norm is $M$, Cauchy--Schwarz gives
+$\norm{b_j}_{D_2}\le M/\mu_j$ and compatibility gives
+$b_j=b_j^0$ on $S_2$, $\norm{b_j}_{S_2}\le M$.
+Fubini and compact-test approximation in $x$ give $A_2b_j=0$.
+Interpolation then gives
+\[
+ \norm{w_j}_{O_1}\le C\mu_j^{\gamma_1},\quad
+ \norm{b_j}_{O_2}\le CM\mu_j^{\gamma_2-1},\quad
+ \norm{w_jb_j}_{O_1\times O_2}\le CM\mu_j^\alpha.
+\]
+The series converges absolutely in product $L^2$ and solves both equations.
+Their sum is elliptic on the product, giving smoothness and compact-subset
+estimates.
+
+To identify the second piece, put $V=\overline{R\mathcal H}$.
+For $z\perp V$, the $A_2$ solution
+$\int_{S_1}F_2(x,y)\bar z(x)\dd x$ vanishes on $S_2$ and hence on $D_2$.
+A countable dense set of such $z$ proves that almost every second-piece
+slice belongs to $V$. Parseval in the basis $Rw_j/\mu_j$ identifies its
+coefficients as $\mu_jb_j$. The same partial sums converge to $F_2$ on
+$S_1\times D_2$, and absolutely on $S_1\times O_2$ by the bound
+$CM\mu_j^{\gamma_2}$. They agree with the product limit on
+$(S_1\cap O_1)\times O_2$. Completeness in $\mathcal H$ similarly gives
+agreement with $F_1$ on $O_1\times(S_2\cap O_2)$.
+For a complete orthonormal basis, Pythagoras and the limit of orthogonal
+projections give Parseval. Its squared tails pass through the finite
+product integrals by dominated convergence, bounded by the original
+squared $L^2$ norm. The interchanges use dominated convergence and
+absolutely integrable Fubini
+\cite[Theorems 18 and 23]{HunterMeasure}.
+If $\mathcal H=0$, the first piece is zero and the same pairings plus
+unique continuation make the second piece zero.
+
+For uniform families choose a fixed positive lower bound for $\alpha$,
+fixed buffers, uniform interpolation constants and finite coefficient
+bounds. One Fourier decay order then makes $\sum_j\mu_j^\alpha$ uniformly
+bounded. Smooth output estimates are uniform under these same bounds.
+\end{proof}
+
+\subsection{Crossing a product hypersurface}
+Let $\rho=0$ be a smooth product hypersurface with both partial gradients
+nonzero. Put $a_i=\nabla_i\rho/|\dd_i\rho|^2$ and $H=\Hess\rho$ in the
+product principal metric. A sufficient strict condition is
+\begin{equation}\label{eq:productcriterion}
+ H((a_1,-a_2),(a_1,-a_2))+H((v_1,v_2),(v_1,v_2))>0,
+ \quad v_i\perp a_i,\quad |v_i|=|a_i|.
+\end{equation}
+\begin{lemma}\label{lem:surface}
+Under \eqref{eq:productcriterion}, a smooth separately homogeneous function
+on $\rho>0$ extends across the point to a product neighborhood, agreeing
+with its original germ on the positive side.
+\end{lemma}
+\begin{proof}
+Let $\mathcal C_i$ consist of symmetric forms $P_i$ with
+$P_i(a_i,a_i)+P_i(v_i,v_i)>0$ for every indicated $v_i$.
+Its dual consists of $d_ia_ia_i^T+S_i$, with $d_i\ge0$,
+$S_i\ge0$ tangential and $\tr S_i=d_i|a_i|^2$.
+The dual of $(\mathcal C_1\oplus\mathcal C_2)+\mathrm{PD}$ consists of
+positive semidefinite matrices with these diagonal blocks.
+Its trace-one slice is compact. If a dual matrix $Q$ annihilates
+$\dd\rho$, covariance decomposition makes the two normal components
+opposite, with common variance $d>0$ and no covariance with tangential
+components. The tangential covariance has two fixed traces.
+Every such covariance is a finite convex combination of rank-one ones:
+at rank $r\ge2$, a supported symmetric variation preserving the two traces
+exists since $r(r+1)/2>2$. Moving in both directions to the first singular
+endpoints lowers rank and expresses the original as their convex
+combination; repeat. The rank-one covariances are
+$d(v_1,v_2)(v_1,v_2)^T$. Thus \eqref{eq:productcriterion} is positivity of
+$\tr(QH)$ on all annihilating dual tests.
+
+Compactness gives a positive margin on those tests. Near them it persists;
+away from them $\tr(Q\dd\rho\otimes\dd\rho)$ has a positive lower bound.
+Choose $K$ large. Finite-dimensional convex separation then gives
+\[
+ H+K\dd\rho\otimes\dd\rho>P_1\oplus P_2,\qquad P_i\in\mathcal C_i.
+\]
+The separation used here follows from nearest-point projection onto a
+closed convex set, followed by a limit of supporting normals at a boundary
+point. Choose factor functions $\theta_i$ with first jets $\dd_i\rho$ and
+Hessians $P_i$, and value zero at contact. Taylor's formula gives
+\begin{equation}\label{eq:quadraticgap}
+ \theta_1+\theta_2\le\rho+K\rho^2/2-c(|x|^2+|y|^2)
+\end{equation}
+on a small product neighborhood.
+
+Take factor cylinders of lateral radius $R$ and height $(-l,l+4e)$,
+with $l\ll cR^2$ and $e\ll\kappa l^2$. A cutoff is one on the inner
+lateral cylinder for $-l+3e<\theta_i<l+2e$; its top derivatives lie in
+$l+2e<\theta_i<l+3e$. Observe the enlarged band
+$l+e<\theta_i<l+7e/2$ and an enlarged lateral collar.
+The top observed cross has height sum greater than $e$; the lateral
+cross has quadratic gap larger than the possible negative height sum.
+By \eqref{eq:quadraticgap} both crosses lie strictly on $\rho>0$.
+
+Use the strict scalar weights $\phi(\theta_i)=\theta_i-\kappa\theta_i^2$.
+Choose $\kappa>0$ small to preserve \eqref{eq:strictscalar}. The bottom,
+top derivative and target weights can be taken as
+\[
+ a=\phi(-l+3e),\quad b=\phi(l+3e),\quad c=\phi(-e).
+\]
+The output has inner lateral radius and $-e<\theta_i<l+2e$.
+Equation~\eqref{eq:interp} gives
+$\gamma_i=(c-a)/(b-a)>1/2$ for small $e>0$, since at $e=0$ it equals
+$1/2+\kappa l/2$. Lemma~\ref{lem:cross} therefore applies.
+The enlarged observed band intersects the output in the open band
+$l+e<\theta_i<l+2e$; its norm enlargement does not change the derivative
+weight $b$. Near contact, increasing the second height to $l+3e/2$
+with other coordinates fixed stays in the output and in $\rho>0$:
+$\partial_{\theta_2}\rho=1$ at contact and remains positive nearby.
+At the endpoint the new and old functions agree on their actual cross
+intersection. Second-variable unique continuation along this path
+identifies the near-contact positive-side germs. The factors can be
+exchanged. All choices have fixed positive margins and persist under
+small smooth coefficient perturbations.
+\end{proof}
+
+\subsection{A compatible kernel at fixed separation}\label{subsec:fixed}
+For a plane point $x_0$ and separation scale $s$, choose $\tau=1/100$.
+Use first domain $B(x_0-\tau se_n,3\tau s)$ and observed radius
+$(1-\alpha)\tau s$. In the second variable use
+$s/2<|y-x_0|<2s$ and a small observed ball about $x_0-se_n$.
+These domains are separated. Radial weights $|z-z_*|^{-1}$ have
+normal Hessian $2|z-z_*|^{-3}$ and tangential value $-|z-z_*|^{-3}$,
+so they are strict. A finite annular ball chain gives a fixed second
+exponent $\gamma_2>0$. In the first ball, as $\alpha$ and a positive
+output excess $cs$ decrease, $\gamma_1\to1$.
+Choose them so $\gamma_1+\gamma_2>1$.
+The cross lemma reaches the product of a ball about $x_0$ with a
+narrower annulus about radius $s$.
+
+Retain plane balls $|x-x_0|<cs/1000$ and smaller annuli, leaving
+comparison margins inside the larger output products.
+On overlaps the scales are comparable. Lowering the near-plane variable
+by a small multiple of $c$ times the smaller scale stays in both larger
+first balls and in their annular margins. Choose $\eta_0$ smaller than
+these margins and than $\alpha\tau s/4$ over the compact scale range.
+For each output, first compare with its own original prescription:
+first-variable unique continuation from its observed ball identifies it
+with $K_2$ on the connected lower part $x_n<-\eta_0$ of its output.
+Second-variable continuation similarly identifies it with $K_1$ on the
+lower part of its annulus. Those compact sublevels are known for small
+$\lambda$. In an overlap of the same orientation, lower its near-plane
+variable to this region. In an opposite-orientation overlap, lower both
+variables by $\max(x_n,y_n,0)+2\eta_0$. Their difference is unchanged,
+and the retained widths keep the paths inside both larger outputs.
+Both germs then equal the actual common kernel. Unique continuation
+identifies them on each overlap component. We have one kernel on the
+coarse region
+\begin{equation}\label{eq:seed}
+ \min(x_n,y_n)<c_0|x-y|
+\end{equation}
+for a fixed $c_0>0$ on every fixed compact range of locations and positive
+separations.
+
+To extend further, use tubes $x=y+r_a(y)\omega$, $|\omega|=1$, where
+\[
+ t=M+y_n+e_0|y'|^2,\qquad r_a=a t^{1+\sigma},\qquad
+ y_n\ge-B-1,\quad t\le T_0.
+\]
+Choose $M>B+3$ and small $\sigma>0$. Take $a_{\min}>0$ small enough to
+pass the desired separations and $a_{\max}$ large enough to put its level
+in \eqref{eq:seed}. Take $c_0a_{\min}T_0^\sigma>1$ and choose $e_0>0$
+last. The base is compact; its bottom and $t=T_0$ faces are prescribed.
+Every tube has positive minimum radius.
+
+In the Euclidean limit set $\rho=(|x-y|^2-r_a^2)/2$, $b=\nabla r_a$, and
+\[
+ U_1=\omega+iv,\ v\perp\omega,\ |v|=1,\qquad
+ U_2=\frac{\omega+b}{|\omega+b|^2}+iw,\quad
+ w\perp(\omega+b),\ |w|=|\omega+b|^{-1}.
+\]
+Multiplying \eqref{eq:productcriterion} by $r_a^2$ gives
+\begin{equation}\label{eq:tubetest}
+ |\pi_{\omega^\perp}(U_1-U_2)|^2
+       -(r_a\Hess r_a)(U_2,\overline{U_2}).
+\end{equation}
+Away from fixed neighborhoods of $b=-\omega,-2\omega$, the first term
+is at least $c|b|^2$ on bounded $b$ ranges. Indeed its real part is
+$-b_\perp/|\omega+b|^2$; if this vanishes, $b$ is parallel to $\omega$,
+and the imaginary projected length equals $1/|\omega+b|$. The only
+zeros are $b=0,-2\omega$. Near zero the real square controls
+$|b_\perp|^2+O(|b|^3)$, and the imaginary length difference controls
+$(\omega\cdot b)^2+O(|b|^3)$, uniformly over the permitted $v,w$.
+Compactness gives the remaining lower bound.
+Outside \eqref{eq:seed}, $r_a/t\le1/c_0$, so $b$ is bounded.
+The two excluded neighborhoods are already prescribed: with
+$\nabla t$ close to $e_n$,
+$y_n/r_a+\omega_n\le(1+\sigma)|\nabla t|/|b|+\omega_n$
+is small near $-\omega$ and negative near $-2\omega$.
+Finally
+\[
+ r_a|\Hess r_a|\le C(\sigma+T_0e_0)|b|^2.
+\]
+Choose the exclusion sizes, then $\sigma$, then $T_0$, and lastly $e_0$
+to absorb this error. Strictness persists for small spatial dilation.
+
+Here is the compatibility argument used in this and the next continuation.
+The prescribed region is upward closed in $a$. Let $a_*$ be a putative
+last reached level. Each local crossing there uses compact data strictly
+above $a_*+\eta_i$. A finite cover of the level gives outputs containing
+base boxes times intervals $(a_*-h_i,a_*+h_i)$.
+Every overlap has vertical segments to a common height above $a_*$,
+where both germs equal the preceding function. Unique continuation on
+neighborhoods of these segments identifies the germs on every component.
+The finite cover crosses $a_*$, a contradiction. This argument uses bounds
+on compact data above the last level, not a bound up to that level.
+It supplies a single compatible kernel on every desired compact separated
+region. To compare with the entire original cross, work in a larger region
+and remove a small interior closed ball about a known $y$ from the
+first-variable ball. The remaining domain is connected for $n\ge2$ and
+contains a lower open ball where the kernels agree. First-variable unique
+continuation identifies them; exchange variables for the other prescription.
+
+\section{Shrinking spheres in a concave reference metric}\label{sec:spheres}
+
+On the rescaled coordinate cylinder $Y=\{|y'|\le1,-1\le y_n\le1\}$ set
+$t_0=y_n+|y'|^2$. Choose $L$ large and put
+\[
+ \gamma=e^{-2Lt_0}g_\lambda,\qquad
+ t(y)=\int_{1/8}^{t_0(y)}e^{-2Ls}\dd s.
+\]
+The conformal connection formula gives
+\begin{equation}\label{eq:depth}
+ \Hess_\gamma t=e^{-2Lt_0}
+   \{\Hess_{g_\lambda}t_0-L|\dd t_0|_{g_\lambda}^2g_\lambda\}
+ \le-c\gamma
+\end{equation}
+after shortening the spatial range. In particular $\dd t\ne0$ and $t(0)<0$.
+Choose $p$ large, then $R_*>0$ small, and define for $0<\delta\le1$
+\begin{equation}\label{eq:radii}
+ \ell_\delta(t)=\delta\log(1+e^{t/\delta}),\quad
+ r_\delta=R_*\ell_\delta^p,\quad f_\delta=\log r_\delta,\quad
+ \beta_\delta=|\dd f_\delta|_\gamma.
+\end{equation}
+The function $a(s)=e^s/\{(1+e^s)\log(1+e^s)\}$ is positive and decreasing;
+it tends to one at $-\infty$ and is comparable to $(1+s)^{-1}$ at
+$+\infty$, with $|a^{(j)}|/a^{j+1}$ bounded for each fixed $j$.
+Thus \eqref{eq:depth} gives, uniformly in $\delta$,
+\begin{equation}\label{eq:profile}
+ \beta\ge\beta_0,\qquad\Hess_\gamma f\le-c\beta\gamma,\qquad
+ |\nabla^jf|\le C_j\beta^j,\qquad r\beta^2\le\varepsilon.
+\end{equation}
+Here $\beta_0$ is made large by $p$, and the last bound follows from
+$r\beta^2=R_*p^2\ell^{p-2}(\ell')^2|\dd t|^2$ for $p\ge2$.
+The radii strictly increase with $\delta$, since
+$\partial_\delta\ell_\delta=\log(1+e^s)-se^s/(1+e^s)>0$.
+They tend uniformly to zero on compact subsets of $t<0$.
+
+Multiplying the grounded equations by $e^{2Lt_0}$ gives
+\begin{equation}\label{eq:conformal}
+ \widetilde A_j=-\Delta_\gamma-2\ip{\dd\log\sigma_j}{\dd(\cdot)}_\gamma,
+ \qquad\sigma_j=e^{(n-2)Lt_0/2}s_j.
+\end{equation}
+The symmetric density is $\sigma_j^2\vol_\gamma=e^{-2Lt_0}s_j^2\vol_g$.
+Its reciprocal scalar change normalizes the delta exactly, so the kernels
+$K_j$ and physical weighted fluxes are unchanged. We use these normalized
+operators below and again denote them by $A_j$.
+
+For a sphere $d_\gamma(x,y)=r(y)$ use
+$\rho=(d_\gamma(x,y)^2-r(y)^2)/2$ and identify endpoints by parallel
+transport. Put $b=\nabla r=r\nabla f$. The criterion vectors are the
+$U_1,U_2$ above, and their denominators are bounded because
+$|b|\le\varepsilon/\beta$. The short-geodesic Jacobi equation has
+curvature coefficient $O(r^2)$ on parameter interval $[0,1]$.
+Integrating twice with fixed endpoint values and using its index form
+gives distance Hessian $|U_1-U_2|^2+O(r^2)$, with fixed geometric constants.
+Consequently the strict expression is
+\[
+ |\pi_{\omega^\perp}(U_1-U_2)|^2-|b\cdot U_2|^2
+             -r^2\Hess f(U_2,\overline{U_2})+O(r^2).
+\]
+The first term is at least $|b|^2-C|b|^3$. The orthogonal real and
+imaginary vectors in $U_2$ have equal length $|\omega+b|^{-1}$, so
+$|b\cdot U_2|^2\le |b|^2/|\omega+b|^2$. Concavity leaves
+\begin{equation}\label{eq:spherestrict}
+ cr^2\beta-Cr^2-Cr^3\beta^3>0
+\end{equation}
+for large $p$ and small $\varepsilon$. There is no principal-metric
+mismatch term.
+
+Fix any $\delta>0$. The spheres with $\delta\le\delta'\le1$ form a
+compact off-diagonal cylinder. The initial level has positive minimum
+radius. Choose $t_b>0$ with $3t_b<t(1/4)$. On $t>t_b$ all radii are
+at least $R_*t_b^p$, so the fixed-separation kernel prescribes them.
+On $y_n<-1/4$ the actual $K_1$ prescribes them. These regions cover
+the base faces and are upward closed in $\delta'$. The vertical-box
+compatibility argument in Section~\ref{subsec:fixed}, using
+Lemma~\ref{lem:surface} and \eqref{eq:spherestrict}, extends one kernel
+near the entire family. Distinct positive lower endpoints agree by the
+same continuation from the common upper region. Thus there is one
+compatible mixed kernel near every positive-radius sphere. This step
+asserts no kernel bound uniform at radius zero.
+
+Take a fixed cutoff $\chi$ compactly supported in $Y^\circ$, equal to
+one near $0$, whose derivatives are supported in
+\begin{equation}\label{eq:cutoffsupport}
+ \{y_n<-1/4\}\cup\{t>t_b\}.
+\end{equation}
+For example multiply a cutoff rising between $y_n=-3/4,-1/2$ by one
+falling between $t=2t_b,3t_b$. The depth bounds keep the lateral support
+inside $|y'|<1$.
+
+\section{The actual transfer density and its equation}\label{sec:trace}
+
+For a first-side solution near the closed ball, define
+\begin{equation}\label{eq:flux}
+ \mathcal T_yv=\int_{\partial B_\gamma(y,r(y))}\!
+ \sigma_1^2\{K(x,y)\partial_{\nu_\gamma}v(x)
+                   -v(x)\partial_{\nu_\gamma}K(x,y)\}\dd S_\gamma(x).
+\end{equation}
+The first Dirichlet radial operator on this small ball moves to the smooth
+kernel trace by sphere adjunction. Pulling back to the unit tangent sphere
+$S_y$ with probability measure $\dd\omega_y$ gives a smooth density
+\begin{equation}\label{eq:density}
+ \mathcal T_yv=\int_{S_y}\psi(y,\omega)
+            v(\exp_y^\gamma(r(y)\omega))\dd\omega_y.
+\end{equation}
+All surface Jacobians and weights are included in $\psi$.
+For $y$ near a fixed center replace the moving boundary by a fixed slightly
+larger surrounding surface lying in the kernel's open annulus. Green's
+identity preserves the flux. The second operator can then be applied
+under that fixed integral: $A_{2,y}\mathcal T_yv=0$.
+On the lower known set the actual Green formula makes $\mathcal T_yv=v(y)$.
+Unique continuation on connected $Y$ gives
+\begin{equation}\label{eq:transfer}
+ \mathcal T_y1=1,\qquad\mathcal T_yv_1=v_2(y)
+\end{equation}
+for every matching local pair. In particular $\psi-1$ has zero fiber mean.
+
+We need the complete smooth parameter dependence of the small-ball radial
+map, including its smoothing part. Here and below $\Psi^m$ means scalar
+classical pseudodifferential operators of order $m$ on the unit sphere,
+with local quantization
+$(2\pi)^{-(n-1)}\int e^{i(\omega-z)\xi}a(\omega,\xi)u(z)\dd z\dd\xi$.
+
+\begin{lemma}\label{lem:radial}
+In smooth orthonormal center frames, the fixed-unit-ball Schr\"odinger
+radial map is $D_{\rm Sch}(y,r)=B+r^2D_2(y,r)$, where $B$ is the Euclidean
+radial DN map and $D_2$ is bounded and smooth in the complete $\Psi^1$
+topology down to $r=0$. The grounded radial map is
+\begin{equation}\label{eq:radial}
+ D_{\rm gr}=B+r([B,m]-m)+r^2\widetilde D_2,
+ \qquad m=\dd\log\sigma_1(y)\cdot\omega,
+\end{equation}
+with the same smooth remainder property.
+\end{lemma}
+\begin{proof}
+The unit-ball metric is $g_{y,r}=r^{-2}\exp_y(r\cdot)^*\gamma=I+O(r^2)$.
+Conjugation by $\sigma_1$ gives
+$-\Delta_{g_{y,r}}+r^2Q(\exp_y(rz))$, with
+$Q=\Delta_\gamma\sigma_1/\sigma_1$. The Dirichlet form is uniformly
+coercive for small $r$ by the unit-ball Poincar\'e inequality.
+Boundary integer regularity and the identity
+$R_a-R_b=R_a(L_b-L_a)R_b$, followed by
+$\partial R=-R(\partial L)R$, give smooth inverse dependence in every
+integer norm on the fixed domain.
+
+The boundary factor recursion \cite[Lemma 3.2 and Proposition 3.3]{Cekic}
+has denominator twice the positive tangential root, uniformly bounded
+below by $c|\xi|$. Its recursive symbols and all fixed parameter derivatives
+therefore have uniform symbol bounds. To include the smoothing part,
+write inward distance $s=h\tau$, $h=|\xi|^{-1}$. The conjugated boundary
+operator times $h^2$ has expansion
+$-\partial_\tau^2+\lambda^2+\sum_{j\ge1}h^jQ_j$, where
+$\lambda\ge c$ and $Q_j$ have polynomial $\tau$ coefficients.
+Start with $a_0=e^{-\lambda\tau}$; recursively solve
+\[
+ (-\partial_\tau^2+\lambda^2)a_j
+       =-\sum_{l=1}^jQ_la_{j-l},\quad a_j(0)=0,\quad a_j\to0.
+\]
+Its forcing is a polynomial times $e^{-\lambda\tau}$.
+Writing $a_j=e^{-\lambda\tau}P_j$, solve
+$2\lambda P_j'-P_j''$ from highest polynomial degree downward and set
+$P_j(0)=0$. Exponential decay bounds all fixed normal and parameter
+seminorms. High-frequency cutoffs tending sufficiently rapidly to infinity
+sum these symbols with arbitrarily small tails in each remainder topology.
+Taylor remainders in $s=h\tau$ and cutoffs away from the boundary are
+smoothing, uniformly with parameter derivatives. Finite chart patches
+give a Poisson parametrix $H$ with exact trace after a smooth collar
+correction and with $LH$ a smooth-kernel error.
+The true Poisson operator is $H-RLH$. Integer estimates on $R$ give
+bounds from every negative boundary Sobolev order to every interior
+integer order for this correction and its parameter derivatives.
+These imply all smooth-kernel seminorms. For each fixed integer order
+$k\ge1$, extend in flattened charts by finite reflections with coefficients
+$c_\ell$ satisfying $\sum_{\ell=1}^{k+1}c_\ell(-\ell)^m=1$ for
+$0\le m<k$. The finite Vandermonde system matches the required normal
+derivatives and gives a bounded $H^k$ extension. Apply Fourier
+Cauchy--Schwarz to both kernel variables. Thus the true
+radial map is a complete smooth $\Psi^1$ family, not just a pointwise
+family modulo unspecified smoothing operators.
+
+At $r=0$ the map is $B$. Metric, potential and radial vector have zero
+first $r$ variation, so its first variation is zero. Taylor's integral
+remainder proves the first assertion. On the boundary
+$w=\sigma_1(\exp_y(r\omega))/\sigma_1(y)=1+rm+O(r^2)$ and
+$\partial_\rho w=rm+O(r^2)$. Hence
+$D_{\rm gr}=w^{-1}D_{\rm Sch}w-w^{-1}\partial_\rho w$ gives
+\eqref{eq:radial}. Its linear term has angular order zero.
+\end{proof}
+
+Let $\nabla_i$ denote horizontal Levi--Civita differentiation on the unit
+sphere bundle, preserving probability measure and acting covariantly on
+all displayed frame indices. We use orthonormal center frames for the
+fiber calculations; contracted formulas are independent of this choice. Let $A_i$ differentiate
+the Euclidean harmonic extension in direction $i$, and take its fiber
+adjoint $A_i^*$. On degree-$k$ harmonics $B=k$,
+$[B,A_i^*]=A_i^*$ and $\sum_iA_i^*A_i^*=0$.
+The center-variation Jacobi field with transported direction has value
+$e_i$ and initial derivative zero; its endpoint is parallel $e_i+O(r^2)$.
+Therefore the unit-ball velocity is $r^{-1}(e_i+O(r^2))+f_i\omega$.
+Using the radial map for its normal component and taking the fiber adjoint
+of the boundary differentiation gives
+\begin{equation}\label{eq:center}
+ C_i^*=r^{-1}A_i^*+f_iB+E_i+F_i,\qquad E_i\in r\Psi^1,\quad F_i\in\Psi^0.
+\end{equation}
+The order-zero terms include $\omega_i([B,m]-m)$ and
+$rf_i([B,m]-m)$. The latter is bounded because $r\beta$ is bounded.
+All fixed base derivatives of the normalized coefficients of order $j$
+cost at most $C_j\beta^j$ by \eqref{eq:profile} and the complete parameter
+bounds of Lemma~\ref{lem:radial}.
+
+Write the second normalized equation locally as
+$-\gamma^{ij}\nabla_i\nabla_j-b_2^i\nabla_i$; $b_2$ includes the fixed
+coordinate/connection terms. Differentiating the transfer pairing gives
+\begin{equation}\label{eq:Pequation}
+ P\psi=0,\qquad
+ P=r\{\gamma^{ij}(\nabla_i+C_i^*)(\nabla_j+C_j^*)
+                         +b_2^i(\nabla_i+C_i^*)\}.
+\end{equation}
+This tests every smooth boundary trace: solve the first Dirichlet problem
+on radius $r+\eta$ with a transported smooth trace $h$.
+Its restriction to the inner sphere tends to $h$ in every fixed smooth
+norm as $\eta\downarrow0$, by fixed-ball boundary regularity and smooth
+inverse dependence. These solutions are homogeneous near the closed
+inner ball. Thus the equation holds against every $h$, without imposing
+an ill-posed smooth Cauchy problem.
+
+Put $D_i=\nabla_i+f_iB$ and
+\begin{equation}\label{eq:T}
+ T=\sum_iA_i^*D_i,\qquad P=2T+U+J.
+\end{equation}
+The identities $D_i(r^{-1}A_j^*)=(r^{-1}A_j^*)D_i$ and
+$\sum_i(r^{-1}A_i^*)^2=0$ cancel the apparent $r^{-2}$ terms.
+Here $J$ is uniformly $\Psi^1$ with no base derivative, and $U$ has
+base order $a=0,1,2$ with coefficients
+\begin{equation}\label{eq:Uclass}
+ U_a\in\varepsilon\beta^{-a}\Psi^{2-a}.
+\end{equation}
+A base derivative of order $j$ has the extra allowance $\beta^j$.
+To see every term, put $R_i=r^{-1}A_i^*$ and $H_i=E_i+F_i$.
+The remaining products are $rDD$, $rRE$, $rER$, $rDE$, $rED$,
+$rRF$, $rFR$, $rDF$, $rFD$, $rHH$ and the smooth drift terms.
+The $rRF,rFR$ and $rb_2R$ terms have bounded angular order one and enter
+$J$. The others have respectively second-base coefficient $r\gamma^{ij}$,
+first-base sizes $r\beta\Psi^1,r\Psi^0,r^2\Psi^1$, or zeroth-base sizes
+$r\beta^2\Psi^2,r\Psi^2,r^2\beta\Psi^2,r\beta\Psi^1$ and lower orders.
+All fit \eqref{eq:Uclass} using $r\beta^2\le\varepsilon$.
+The second-base coefficient is real and independent of $\omega$.
+
+\section{Angular coercivity and the joint density bound}\label{sec:coercivity}
+
+For a fiber function use the harmonic decomposition
+$\phi=\sum_{k\ge0}\phi_k$ and the spectral norm
+$\norm{\phi}_s^2=\sum_k(1+k)^{2s}\norm{\phi_k}_{L^2(S_y)}^2$.
+Harmonic polynomials are complete: Fischer decomposition gives polynomial
+restrictions, and multivariate Bernstein approximation makes these dense
+in continuous sphere functions, then in $L^2$. The integer norms through
+order three agree with chart Sobolev norms by the sphere Laplacian
+parametrix; its eigenvalue on degree $k$ is $k(k+n-2)$.
+For a scalar angular $Q\in\Psi^m$, $m=1,2,3$, its two commutators with $B$
+still have order $m$. Integer mapping and adjoint bounds give
+\[
+ \norm{\Pi_kQ\Pi_l}\le
+ C\frac{\min((1+k)^m,(1+l)^m)}{(1+|k-l|)^2}.
+\]
+For $a,b\ge0$, $a+b=m$, the numerator is at most
+$(1+k)^a(1+l)^b$. Cauchy--Schwarz with the summable discrete kernel
+$(1+|k-l|)^{-2}$ therefore proves
+\begin{equation}\label{eq:forms}
+ |\ip{Qu}{v}|\le C\norm{u}_b\norm{v}_a.
+\end{equation}
+We use $(a,b)=(1/2,1/2),(1/2,3/2),(3/2,3/2)$; no fractional chart
+interpolation is required.
+
+For compact base support and zero fiber mean define
+\begin{equation}\label{eq:Nnorm}
+ \mathcal N(\phi)^2=\int_Y\{\norm{\nabla\phi}_0^2+
+ \beta^2\norm{\phi}_1^2+\beta^{-1}\norm{\nabla\phi}_{1/2}^2+
+ \beta\norm{\phi}_{3/2}^2\}\vol_\gamma.
+\end{equation}
+\begin{lemma}\label{lem:model}
+Under \eqref{eq:profile}, for large $\beta_0$ there is $c>0$ independent
+of the shrinking parameter such that
+\[
+ \norm{T\phi}^2-\norm{T^\flat\phi}^2\ge c\mathcal N(\phi)^2,
+ \qquad T^\flat=\sum_iA_i(-\nabla_i+f_iB).
+\]
+\end{lemma}
+\begin{proof}
+At degree $k\ge1$, represent $v$ by a harmonic homogeneous polynomial
+with Fischer norm $\norm{v}_F^2=\sum_\alpha\alpha!|v_\alpha|^2$.
+Its relation to probability sphere norm is
+$\norm{v}_F^2=N_k\norm{v}^2$,
+$N_k=n(n+2)\cdots(n+2k-2)$. This follows by Gaussian integration by parts:
+trace-free coefficient tensors eliminate pairings within either factor,
+leaving precisely the Fischer sum. The radial moment satisfies
+$\mathbb E|X|^{2k+2}=(n+2k)\mathbb E|X|^{2k}$.
+Put $d=k+n/2-1$ and $a_i=\partial_{z_i}$.
+For harmonic degree-$k$ polynomials $q_i$,
+\begin{align}\label{eq:projection}
+ \norm{\Pi_{k+1}\textstyle\sum_i z_iq_i}_F^2
+ &=\sum_i\norm{q_i}_F^2+\sum_{ij}(a_jq_i,a_iq_j)_F
+               -d^{-1}\norm{\textstyle\sum_i a_iq_i}_F^2,\\[-2pt]
+ \Pi_{k+1}\textstyle\sum_i z_iq_i
+ &=\sum_i z_iq_i-|z|^2\sum_i a_iq_i/(2d).\nonumber
+\end{align}
+Indeed $\Delta_z(|z|^2h)=4dh$ on degree $k-1$; multiplication and
+differentiation are Fischer adjoints. The probability-sphere adjoint is
+$A_i^*=(2d+2)\Pi_{k+1}z_i$ on degree $k$.
+
+Write $D_i^\pm=\pm\nabla_i+kf_i$ and $C_{ij}=2k(\Hess_\gamma f)_{ij}$.
+In the following calculation, $|\cdot|_F$ is the pointwise Fischer norm
+and $\norm{\cdot}_F^2$ includes integration against $\vol_\gamma$.
+Put
+\[
+ \begin{aligned}
+ s^\pm(y)&=\bigl|\textstyle\sum_i a_iD_i^\pm v(y)\bigr|_F^2,
+ &S^\pm&=\int_Ys^\pm\vol_\gamma,\\
+ X^+&=\int_Y\sum_{ij}(a_jD_i^+v,a_iD_j^+v)_F\vol_\gamma,
+ &C[av]&=\int_Y\sum_{ij}C_{ij}(a_iv,a_jv)_F\vol_\gamma.
+ \end{aligned}
+\]
+Covariant integration by parts gives
+\begin{align*}
+ X^+&=S^--C[av]+O(k^2)\norm{v}_F^2,\\
+ S^+&\le k\norm{D^-v}_F^2-C[av]+O(k^2)\norm{v}_F^2,\\
+ \norm{D^-v}_F^2&=\norm{D^+v}_F^2+\int\tr C\,|v|_F^2.
+\end{align*}
+Here $D_j^-D_i^+-D_i^+D_j^-=-C_{ij}$ plus curvature.
+A degree-$k$ rotation has norm $O(k)$, and contractions add one factor
+$k$, giving the displayed error. Keep the input degree $k$ fixed when
+commuting these base operators through polynomial derivatives.
+Substituting into \eqref{eq:projection} gives
+\begin{equation}\label{eq:raising}
+ N_k(\norm{Tv}^2-\norm{T^\flat v}^2)
+ =(2+2/d)\{d\norm{D^+v}_F^2-S^+-dC[av]\}
+                  +2S^-+O(k^3)\norm{v}_F^2.
+\end{equation}
+Use the integrated bound on fraction $1-\theta$ of $S^+$ and on the
+remaining fraction use the pointwise bound, with $\zeta=c_1/\beta$,
+\[
+ s^+\le(1-\zeta)(k+n-1)|D^+v|_F^2+
+           \zeta\{2s^-+8k^3\beta^2|v|_F^2\}.
+\]
+Integrate this pointwise bound with its displayed weights before combining
+with \eqref{eq:raising}. The first contraction bound is at most $k+n-1$;
+the second follows from
+$D^++D^-=2k\dd f$ and $\sum_i\norm{a_iv}_F^2=k\norm{v}_F^2$.
+The coefficient retained on $|D^+v|^2$ is
+\[
+ (2+2/d)\{(n-2)/2-\theta(n-1)+\theta\zeta(k+n-1)\}.
+\]
+Choose $\theta>0$ small in terms of $n$. This is bounded below by
+$c+c'k/\beta$. The $S^-$ coefficient is nonnegative for large $\beta_0$.
+The remaining Hessian form is
+\[
+ -(2+2/d)\{(d-1+\theta)C[av]+(1-\theta)k\int\tr C|v|_F^2\},
+\]
+which controls $k^3\int\beta|v|_F^2$ for $n\ge3$, $k\ge1$.
+Take $c_1$ small to absorb its loss and then $\beta_0$ large to absorb
+curvature.
+
+Both weighted cross terms have the needed sign. For $w\ge0$,
+\[
+ \int w|D^+v|^2=\int\{w|\nabla v|^2+wk^2\beta^2|v|^2
+                               -k\Div(w\nabla f)|v|^2\}.
+\]
+For $w=1$, $\Delta f<0$. For $w=\beta^{-1}$,
+$\Div(\nabla f/\beta)=\beta^{-1}\tr_{(\nabla f)^\perp}\Hess f\le-(n-1)c$.
+Thus the coefficient $c+c'k/\beta$ controls all four terms of
+\eqref{eq:Nnorm}. Divide by $N_k$ and sum. Horizontal derivatives preserve
+degree and $T,T^\flat$ change it by one, so their distinct outputs are
+orthogonal. First sum finitely many degrees. At each fixed $\delta>0$,
+smoothness and dominated convergence pass to the full norms; constants
+remain independent of $\delta$, without a uniform harmonic tail cutoff.
+\end{proof}
+
+\begin{lemma}\label{lem:Pcoercive}
+For sufficiently small $\varepsilon$ and large $\beta_0$,
+$\mathcal N(\phi)\le C\norm{P\phi}$ for every compact-base-supported
+smooth $\phi$ with zero fiber mean.
+\end{lemma}
+\begin{proof}
+Take full adjoints in $\vol_\gamma\dd\omega_y$. Direct degree adjunction
+and $[B,A_i]=-A_i$ give $Z=T^\flat-T^\dagger=\sum_i f_iA_i$.
+The exact squared-norm difference is
+\begin{align}\label{eq:error}
+ \norm{(2T+U)\phi}^2-\norm{(2T^\flat+U^\dagger)\phi}^2
+ &=4(\norm{T\phi}^2-\norm{T^\flat\phi}^2)+\ip{\mathcal E\phi}{\phi},\\
+ \mathcal E&=2[T^\dagger,U]+2[U^\dagger,T]+[U^\dagger,U]
+                            -2\{UZ+(UZ)^\dagger\}.\nonumber
+\end{align}
+$T$ has (base order, angular order, size) $(1,1,1)$ or $(0,2,\beta)$;
+$U$ has $(a,2-a,\varepsilon\beta^{-a})$, and $Z$ has $(0,1,\beta)$.
+A scalar angular commutator lowers angular order by one; a base coefficient
+derivative lowers base order by one and costs at most $\beta$.
+The possible third-base commutators vanish because $U_2=r\gamma^{ij}$
+is angular independent. For $[U^\dagger,U]$, write
+$[U^\dagger-U,U]$; the real $U_2$ makes the first difference have base
+order at most one, and its possible third-base coefficient also commutes
+with $U_2$. Fourth-base terms are absent. The resulting types are
+\[
+ \varepsilon\beta^{-1}\Psi^1\partial_y^2,\qquad
+ \varepsilon\Psi^2\partial_y,\qquad\varepsilon\beta\Psi^3.
+\]
+One base integration by parts in the first type and \eqref{eq:forms}
+bound their forms by respectively
+$C\varepsilon\int\beta^{-1}\norm{\nabla\phi}_{1/2}^2$,
+$C\varepsilon\int\norm{\nabla\phi}_{1/2}\norm{\phi}_{3/2}$, and
+$C\varepsilon\int\beta\norm{\phi}_{3/2}^2$.
+For the middle type insert $\beta^{-1/2}$ and $\beta^{1/2}$ and use
+Cauchy--Schwarz. Coordinate/horizontal derivative differences are fixed
+angular order one and have the same bound. Thus
+$|\ip{\mathcal E\phi}{\phi}|\le C\varepsilon\mathcal N(\phi)^2$.
+Absorb this into Lemma~\ref{lem:model} and discard the nonnegative
+comparison norm. Finally
+$\norm{J\phi}\le C\norm{\phi}_1\le C\beta_0^{-1}\mathcal N(\phi)$
+is absorbed after increasing $\beta_0$.
+\end{proof}
+
+Apply the last lemma to $\chi(\psi_\delta-1)$.
+On the lower derivative support in \eqref{eq:cutoffsupport}, the density is
+the ordinary small-ball Poisson evaluation density. Lemma~\ref{lem:radial}
+makes it smooth down to $r=0$, with uniformly bounded angular norms and
+first base derivative $O(1+r\beta)$. On $t>t_b$, radii have a positive
+lower bound and all profile derivatives are uniformly bounded; the
+fixed-separation kernel gives the same needed bounds. In particular,
+angular norms and $r\nabla\psi_\delta$ are bounded on these supports.
+Since $T1=0$, \eqref{eq:Uclass} gives a uniform bound for $P1$.
+The second-base term of $[P,\chi]$ is
+$r\gamma^{ij}(2\partial_i\chi\partial_j+\partial_i\partial_j\chi)$;
+the other terms have at most one base derivative, with coefficients
+$r\beta\Psi^1$, $r\Psi^0$, or bounded angular order one.
+The support bounds therefore give
+\[
+ \norm{P[\chi(\psi_\delta-1)]}
+ =\norm{-\chi P1+[P,\chi](\psi_\delta-1)}\le C.
+\]
+Coercivity proves the joint estimate
+\begin{equation}\label{eq:joint}
+ \sup_{0<\delta\le1}\norm{\chi\psi_\delta}_{L^2(Y\times S_y,
+                    \vol_\gamma\dd\omega_y)}<\infty.
+\end{equation}
+This is not a pointwise-in-$y$ density bound. On a fixed small $Z$ with
+$\chi=1$, $t<0$, \eqref{eq:transfer} gives for each matching pair
+\[
+ \norm{v_2-v_1}_{L^2(Z)}
+ \le C_{v_1}\sup_Zr_\delta
+          \norm{\psi_\delta}_{L^2(Z\times S_y)}\longrightarrow0.
+\]
+The left side is independent of $\delta$, so it is zero, and smoothness
+gives equality on $Z$. The same $Z$ works for every pair; only the finite
+constant $C_{v_1}$ changes. This completes Proposition~\ref{prop:local}.
+
+\section{Global equality from all cap sources}\label{sec:global}
+
+For real $F\in C_c^\infty(U_0)$ put $u_{j,F}=R_jF$. Define
+\[
+ \mathcal Q=\{p\in N^\circ:\ \text{there is an open }V\ni p
+         \text{ such that }u_{1,F}=u_{2,F}\text{ on }V\text{ for every }F\}.
+\]
+The neighborhood precedes the universal source quantifier, so $\mathcal Q$
+is open. Let $W$ be its component containing the connected cap $E$,
+which belongs to $\mathcal Q$ by Lemma~\ref{lem:cap}.
+Then $q_1=q_2$ on $W$: outside $\overline{U_0}$ choose a source with
+nonzero value by Lemma~\ref{lem:jets} and subtract its two equations;
+on $\overline{U_0}\Subset E$ the coefficients already agree.
+For fixed $x\in W$, all-source equality makes
+$G_1(x,\cdot)-G_2(x,\cdot)$ vanish against sources on $U_0$.
+On $W$ its delta singularities cancel because the local operators are now
+identical. Local regularity makes the difference a smooth homogeneous
+solution even at $y=x$. Unique continuation on connected $W$ gives
+$G_1=G_2$ on $W\times W$.
+
+If $W$ is proper in $N^\circ$, it has an interior frontier.
+In a compact coordinate neighborhood, choose a point of $W$ close enough
+to its complement that its Euclidean distance to that closed complement
+is smaller than its distance to the chart boundary. The inscribed ball
+is contained in $W$ and touches its frontier at $p$. Its smooth boundary
+is a known one-sided hypersurface near $p$; no regularity of the whole
+frontier is required. Since $\overline{U_0}\Subset E$, $p$ is outside it.
+
+Choose one real $F_0$ with $u_{1,F_0}(p)=1$. Equality from $W$ and
+continuity give $u_{2,F_0}(p)=1$. Set $s_j=u_{j,F_0}$ and choose one
+connected neighborhood $\Omega$ where they are positive, avoiding
+$\overline{U_0}$. For every $F$ define $v_{j,F}=u_{j,F}/s_j$ there.
+Their equations are \eqref{eq:ground} and their pairs match on the known
+ball. Choose a finite set of $n$ sources whose first-side ratio gradients
+span at $p$, using the arbitrary first jets; they remain spanning on a
+smaller $\Omega$.
+
+Proposition~\ref{prop:local} gives a single connected neighborhood $Z$
+of $p$, meeting $W$, on which every ratio pair agrees. Subtract their
+normalized equations. The principal parts cancel, leaving
+\[
+ \ip{\dd\log s_1-\dd\log s_2}{\dd v_{1,F}}_g=0.
+\]
+The spanning family gives $\dd\log(s_1/s_2)=0$ on $Z$.
+Matching on $Z\cap W$ makes its constant zero. Hence $s_1=s_2$,
+$q_1=\Delta_gs_1/s_1=\Delta_gs_2/s_2=q_2$, and all original source pairs
+agree on $Z$. Thus $W\cup Z$ is a connected subset of $\mathcal Q$,
+contradicting that $p$ is on the frontier of its component.
+
+The interior of a connected smooth manifold with boundary is connected:
+boundary half-balls meet only one interior component, so distinct interior
+components would give disjoint relatively open pieces partitioning $N$.
+Therefore $W=N^\circ$. The potentials agree on the original interior and
+on its boundary by smooth continuity. This proves Theorem~\ref{thm:main}.
+
+\section*{AI use}
+This manuscript was prepared with assistance from OpenAI Codex in developing
+and examining candidate arguments, checking source statements, and drafting
+the exposition. The core continuation method is credited separately to its
+mathematical source. The manuscript is submitted for independent mathematical
+review.
+
+\begin{thebibliography}{99}
+\bibitem{Aronszajn} N. Aronszajn,
+\emph{A unique continuation theorem for solutions of elliptic partial
+differential equations or inequalities of second order},
+Journ. de Math. \textbf{36} (1957), 235--249.
+\url{https://sites.math.washington.edu/~blwilson/Nodal/Aronszajn.pdf}.
+\bibitem{Cekic} M. Ceki\'c,
+\emph{Calder\'on problem for Yang--Mills connections},
+arXiv:1704.01362v2, revision 12 June 2018.
+\url{https://arxiv.org/abs/1704.01362v2}.
+\bibitem{HunterPDE} J. K. Hunter,
+\emph{Notes on Partial Differential Equations}, revision 18 June 2014.
+\url{https://www.math.ucdavis.edu/~hunter/pdes/pde_notes.pdf}.
+\bibitem{HunterMeasure} J. K. Hunter,
+\emph{Brief Notes on Measure Theory}, 27 January 2007.
+\url{https://www.math.ucdavis.edu/~hunter/m201b/measure.pdf}.
+\bibitem{MaSahooSalo} S. Ma, S. K. Sahoo and M. Salo,
+\emph{The anisotropic Calder\'on problem at large fixed frequency on
+manifolds with invertible ray transform},
+J. London Math. Soc. \textbf{110} (2024), e13006.
+\url{https://doi.org/10.1112/jlms.13006}.
+\bibitem{OpenAIMetric} OpenAI,
+\emph{Smooth anisotropic uniqueness in the Calder\'on problem from one
+boundary patch}, preprint, 24 September 2026.
+\href{https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026}{Pinned source and PDF (commit \texttt{adc7f1241b42}).}
+\bibitem{OpenAIConnection} OpenAI,
+\emph{Determination of a metric and a unitary connection from one boundary
+patch}, preprint, 5 October 2026.
+\href{https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026}{Pinned source and PDF (commit \texttt{fd4aeeb2ee4f}).}
+\bibitem{TaoFourier} T. Tao,
+\emph{245C, Notes 2: The Fourier transform}, 6 April 2009,
+Section 2, Theorem 21 and Corollary 22.
+\url{https://terrytao.wordpress.com/2009/04/06/the-fourier-transform/}.
+\bibitem{Taylor} M. Taylor,
+\emph{Short Course on Pseudodifferential Operators}, author-hosted notes.
+\url{https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2022/05/psidolect.pdf}.
+\end{thebibliography}
+\end{document}
