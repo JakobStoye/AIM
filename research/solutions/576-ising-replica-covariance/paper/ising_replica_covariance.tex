@@ -1,0 +1,401 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Uniform covariance bounds for constrained Ising replicas},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Uniform covariance bounds for constrained Ising replicas}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that the covariance of finitely many Ising replicas conditioned on
+fixed magnetizations has a bound independent of the number of replicas,
+the conserved totals and all replica-dependent external fields, for every
+fixed interaction matrix. The constraints may conserve the spin totals in
+each part of an arbitrary partition. This proves the covariance conjecture
+of Caputo and Morellini. The argument conditions two independent copies on
+their coordinatewise sum, which cancels the external fields. The remaining
+disagreements have finitely many symmetric block laws. Pairing identical
+laws gives a lower bound for the conditioning probability, and a Fourier
+estimate gives a second-moment numerator of the same order.
+\end{abstract}
+
+\section{The covariance question}
+Magnetization constraints couple otherwise independent replicas of a spin
+system. A covariance bound uniform in the replica count controls the variance
+of every linear spin statistic, including in the presence of arbitrary
+external fields. Such bounds arise in the study of spin-exchange dynamics
+with conserved magnetizations; see Caputo and Morellini~\cite[Sections 1.5
+and 4.5]{CM}.
+
+Fix an integer $n\geq1$, a real symmetric matrix $J\in\mathbb R^{n\times n}$,
+and a partition $\mathcal A$ of $[n]=\{1,\ldots,n\}$. A configuration of
+$N\geq2$ replicas is
+$\sigma=(\sigma(1),\ldots,\sigma(N))\in(\{-1,1\}^n)^N$.
+For integers $M_A$, $A\in\mathcal A$, suppose that
+\[
+ \Omega_{N,M}=\left\{\sigma:
+  \sum_{i=1}^N\sum_{j\in A}\sigma_j(i)=M_A
+  \text{ for every } A\in\mathcal A\right\}
+\]
+is nonempty. For any $v=(v_{ij})\in\mathbb R^{Nn}$, define
+\begin{equation}\label{eq:law}
+ \nu_{N,M,v}(\sigma)=\frac{\mathbf1_{\Omega_{N,M}}(\sigma)}{Z_{N,M,v}}
+ \exp\left\{\frac12\sum_{i=1}^N\sigma(i)^TJ\sigma(i)
+                  +\sum_{i,j}v_{ij}\sigma_j(i)\right\}.
+\end{equation}
+The normalizer $Z_{N,M,v}$ is a positive finite sum.
+This is the canonical replica measure of
+\cite[Definition~1.9, eqs.\ (1.15)--(1.16)]{CM}, with an arbitrary linear
+tilt and the conserved densities written as integer spin totals: $\rho(A)=(1+M_A/(N|A|))/2$.
+
+Caputo and Morellini ask in \cite[Section 4.5]{CM} whether its covariance
+admits a bound uniform in $N$, the feasible totals and every tilt $v$, for
+arbitrary fixed $J$. Their Proposition 3.6 gives the bound
+$2/(1-2\lambda_{\max}(J))$ for a single total constraint when $J$ is positive
+definite and $\lambda_{\max}(J)<1/2$; Section 3.4 treats the corresponding
+partitioned constraints at high temperature. We prove the uniform covariance
+bound without a spectral-smallness assumption.
+
+\begin{theorem}\label{thm:main}
+For every $n\geq1$, every real symmetric $J\in\mathbb R^{n\times n}$ and every
+partition $\mathcal A$ of $[n]$, there is a finite constant
+$C(J,\mathcal A)$ such that
+\begin{equation}\label{eq:main}
+ \bigl\|\operatorname{Cov}_{\nu_{N,M,v}}(\sigma)\bigr\|_{\mathrm{op}}
+ \leq C(J,\mathcal A)
+\end{equation}
+for every $N\geq2$, every feasible integer vector $M$, and every
+$v\in\mathbb R^{Nn}$. The covariance is that of all $Nn$ spins, and the
+operator norm is induced by the ordinary Euclidean norm. More explicitly,
+for every real array $a$,
+\begin{equation}\label{eq:variance}
+ \operatorname{Var}_{\nu_{N,M,v}}\left(\sum_{i,j}a_{ij}\sigma_j(i)\right)
+ \leq C(J,\mathcal A)\sum_{i,j}a_{ij}^2.
+\end{equation}
+\end{theorem}
+For fixed $n$, there are finitely many partitions, so taking their maximum
+also gives a bound depending only on $J$. The constant may grow with the fixed
+dimension and interaction; no optimal dependence is sought here. The result proves the covariance conjecture in
+\cite[Section 4.5]{CM}. We do not derive entropy-decay estimates in this note.
+
+The external fields can vary freely from one replica to another, so a
+conditioning estimate for one fixed tilted law does not provide the required
+uniformity. Instead, take two independent configurations and condition on
+their coordinatewise sum. Their difference then has no external field and
+zero conserved totals. Only the subset of differing sites in each replica
+matters, giving finitely many possible block laws. Pairing blocks with
+identical laws makes a Fourier integral nonnegative, which yields a uniform
+lower bound for the zero-total event. A centered second-moment expansion
+has the same dependence on the active counts, and the two bounds cancel
+upon conditioning.
+
+Section~\ref{sec:blocks} proves the required estimate for conditioned block
+sums. Section~\ref{sec:disagreement} applies it to the two-copy difference
+and completes the proof. Empty subsets and parts with no disagreements are
+included throughout.
+\section{Conditioned block sums}\label{sec:blocks}
+For a subset $D\subset[n]$, let $J_D$ be the principal submatrix of $J$ and
+put
+\begin{equation}\label{eq:masklaw}
+ \mu_D(s)=\frac{\exp(s^T J_D s)}
+ {\sum_{u\in\{-1,1\}^D}\exp(u^T J_D u)},
+ \qquad s\in\{-1,1\}^D.
+\end{equation}
+The empty cube has one element, so $\mu_\varnothing$ is a point mass.
+We extend its vectors by zero outside $D$. These measures are symmetric under
+$s\mapsto-s$. Set
+\begin{equation}\label{eq:delta}
+ d=|\mathcal A|,\qquad B=\sum_{j<k}|J_{jk}|,\qquad \delta=e^{-4B}.
+\end{equation}
+The diagonal part of $s^T J_Ds$ is constant. Its remaining part has
+oscillation at most $4B$, and hence
+\begin{equation}\label{eq:density}
+ \mu_D(s)\geq\delta\,2^{-|D|}\geq p_*:=\delta\,2^{-n}>0.
+\end{equation}
+
+Let $X_1,\ldots,X_N$ be independent with laws $\mu_{D_1},\ldots,\mu_{D_N}$,
+where the subsets $D_i$ are arbitrary. We condition their sum on the same
+conserved quantities as in the original problem. Write
+\[
+ m_{iA}=|D_i\cap A|,\qquad K_A=\sum_i m_{iA},\qquad
+ S_{i,A}=\sum_{j\in D_i\cap A}X_{ij},\qquad S=\sum_i S_i.
+\]
+The event $S=0$ is possible exactly when each $K_A$ is even. Necessity follows
+from parity. For sufficiency, assign half the active coordinates in each part
+sign $+1$ and half sign $-1$; every such assignment has positive probability
+by \eqref{eq:density}.
+
+\begin{proposition}\label{prop:moment}
+There is a finite $\kappa(J,\mathcal A)$ such that, for every $N\geq2$, every
+sequence of subsets $D_i$ for which all $K_A$ are even, and every real array
+$a=(a_{ij})$,
+\begin{equation}\label{eq:moment}
+ \mathbb E\left[\left(\sum_i\sum_{j\in D_i}a_{ij}X_{ij}\right)^2
+       \,\middle|\, S=0\right]
+ \leq \kappa(J,\mathcal A)\sum_i\sum_{j\in D_i}a_{ij}^2.
+\end{equation}
+\end{proposition}
+The conditioning probability can tend to zero with $N$. We will bound it
+from below and the corresponding second-moment numerator from above at the
+same scale, including parts with few active coordinates.
+
+For $t=(t_A)_{A\in\mathcal A}\in\mathbb R^d$, put
+$\phi_i(t)=\mathbb E e^{\mathrm i t\cdot S_i}$. Symmetry makes $\phi_i$ real.
+The uniform cube has characteristic function
+$\prod_A(\cos t_A)^{m_{iA}}$. Subtracting $\delta$ times the uniform law
+from $\mu_{D_i}$ leaves a nonnegative measure of mass $1-\delta$, so
+\[
+ |\phi_i(t)|\leq 1-\delta+
+             \delta\prod_A|\cos t_A|^{m_{iA}}.
+\]
+For $c_1,\ldots,c_m\in[0,1]$ with $m\leq n$, the product is at most each
+$c_\ell$, giving
+$\sum_\ell(1-c_\ell)\leq n(1-\prod_\ell c_\ell)$.
+Together with $1-|\cos t|\geq\frac12\sin^2t$ and $1-x\leq e^{-x}$,
+this proves
+\begin{equation}\label{eq:damping}
+ |\phi_i(t)|\leq
+ \exp\left(-h\sum_A m_{iA}\sin^2t_A\right),
+ \qquad h=\frac{\delta}{2n}.
+\end{equation}
+The formula also holds for an empty subset $D_i$.
+
+\begin{lemma}\label{lem:denominator}
+If all $K_A$ are even, then
+\begin{equation}\label{eq:denominator}
+ \mathbb P(S=0)\geq L\prod_A(1+K_A)^{-1/2},
+ \qquad
+ L=p_*^{\,2^n}(r/\pi)^d e^{-ndr^2},\quad r=\frac1{2n}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Pair blocks with identical subsets $D_i$, leaving at most one block of each type
+unpaired. There are at most $2^n$ unpaired blocks. Each pair contributes an
+even active count to each part. Thus the unpaired counts are even as well,
+and we can choose one unpaired spin assignment whose totals are all zero.
+Its probability is at least $p_*^{2^n}$, by \eqref{eq:density}.
+
+Let $S^{\mathrm p}$ be the sum of the paired blocks and $K_A^{\mathrm p}$
+their active counts. If $2r_D$ blocks of type $D$ are retained, finite Fourier
+inversion gives
+\begin{equation}\label{eq:paired}
+ \mathbb P(S^{\mathrm p}=0)=
+ (2\pi)^{-d}\int_{[-\pi,\pi]^d}
+       \prod_{D\subset[n]}\phi_D(t)^{2r_D}\,dt.
+\end{equation}
+Here $\phi_D$ is the common characteristic function of blocks of type $D$.
+The integrand is nonnegative everywhere, because these functions are real
+and their exponents are even. We may therefore retain only the box
+\[
+ |t_A|\leq\frac{r}{\sqrt{1+K_A^{\mathrm p}}},\qquad A\in\mathcal A.
+\]
+For each paired block, the pointwise Cauchy--Schwarz inequality gives
+\[
+ \mathbb E(t\cdot S_i)^2
+ \leq n\sum_A m_{iA}t_A^2\leq n^2r^2=\frac14.
+\]
+Using $\cos u\geq1-u^2/2$ and
+$\log(1-z)\geq-2z$ for $0\leq z\leq1/2$, we obtain on this box
+\[
+ \phi_i(t)\geq
+ 1-\frac n2\sum_A m_{iA}t_A^2
+ \geq\exp\left(-n\sum_A m_{iA}t_A^2\right).
+\]
+The product in \eqref{eq:paired} is consequently at least
+$e^{-n\sum_A K_A^{\mathrm p}t_A^2}\geq e^{-ndr^2}$ there. Its integral
+is bounded below by
+\[
+ (r/\pi)^d e^{-ndr^2}\prod_A(1+K_A^{\mathrm p})^{-1/2}.
+\]
+The chosen unpaired assignment is independent of the paired blocks.
+Multiplying its probability by this bound, then using
+$K_A^{\mathrm p}\leq K_A$, proves \eqref{eq:denominator}.
+Empty products are one, so the argument includes the case with no pairs.
+\end{proof}
+
+\begin{lemma}\label{lem:numerator}
+For all even counts $K_A$ and all real arrays $a$,
+\begin{equation}\label{eq:numerator}
+ \mathbb E\left[F^2\mathbf1_{\{S=0\}}\right]
+ \leq U E_a\prod_A(1+K_A)^{-1/2},
+\end{equation}
+where
+\[
+ F=\sum_i\sum_{j\in D_i}a_{ij}X_{ij},\qquad
+ E_a=\sum_i\sum_{j\in D_i}a_{ij}^2,
+\]
+and the following constants depend only on $J$ and $\mathcal A$:
+\begin{equation}\label{eq:upperconstants}
+ \gamma=\frac{2\delta}{n\pi^2},\qquad
+ H=4\sqrt{\frac{2n}{\delta}},\qquad
+ U=e^\delta\left(n+\frac{2n^2}{\gamma}\right)H^d.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $F_i=\sum_{j\in D_i}a_{ij}X_{ij}$,
+$E_i=\sum_{j\in D_i}a_{ij}^2$, and $Q(t)=\sum_A K_A t_A^2$.
+Symmetry gives $\mathbb EF_i=0$. Cauchy--Schwarz gives
+\[
+ \mathbb EF_i^2\leq nE_i,\qquad
+ \mathbb E(t\cdot S_i)^2\leq n\sum_A m_{iA}t_A^2.
+\]
+Define $B_i(t)=\mathbb E[F_i e^{\mathrm i t\cdot S_i}]$.
+The vanishing mean and $|e^{\mathrm iu}-1|\leq|u|$ yield
+\[
+ |B_i(t)|
+ =\left|\mathbb E[F_i(e^{\mathrm i t\cdot S_i}-1)]\right|
+ \leq n\sqrt{E_i}\left(\sum_A m_{iA}t_A^2\right)^{1/2}.
+\]
+Summing and applying Cauchy--Schwarz over blocks, we get
+\begin{equation}\label{eq:firstmoments}
+ \left(\sum_i|B_i(t)|\right)^2\leq n^2 E_a Q(t).
+\end{equation}
+
+Let $V_i(t)=\mathbb E[F_i^2 e^{\mathrm i t\cdot S_i}]$.
+Independence gives the exact expansion
+\begin{align}\label{eq:expansion}
+ \mathbb E[F^2e^{\mathrm i t\cdot S}]
+ &=\sum_i V_i(t)\prod_{k\ne i}\phi_k(t)\notag\\
+ &\quad+\sum_{i\ne j}B_i(t)B_j(t)
+                         \prod_{k\notin\{i,j\}}\phi_k(t).
+\end{align}
+Each term omits at most two characteristic factors. For any omitted index
+set $I$ with $|I|\leq2$, \eqref{eq:damping} implies
+\begin{align*}
+ \prod_{k\notin I}|\phi_k(t)|
+ &\leq\exp\left(-h\sum_AK_A\sin^2t_A
+       +h\sum_{i\in I,A}m_{iA}\sin^2t_A\right)\\
+ &\leq e^{2nh}\exp\left(-h\sum_AK_A\sin^2t_A\right).
+\end{align*}
+The omitted blocks contain at most $2n$ active coordinates. On
+$[-\pi/2,\pi/2]^d$ we have $\sin^2t_A\geq4t_A^2/\pi^2$ and $2nh=\delta$,
+so the last expression is at most $e^\delta e^{-\gamma Q(t)}$.
+Since $|V_i(t)|\leq nE_i$ and
+$\sum_{i\ne j}|B_iB_j|\leq(\sum_i|B_i|)^2$,
+\eqref{eq:expansion} and \eqref{eq:firstmoments} give
+\begin{equation}\label{eq:integrand}
+ \left|\mathbb E[F^2e^{\mathrm i t\cdot S}]\right|
+ \leq e^\delta E_a[n+n^2Q(t)]e^{-\gamma Q(t)}.
+\end{equation}
+
+Every $S_A$ is an even integer. Hence
+\begin{equation}\label{eq:smalltorus}
+ \mathbb E[F^2\mathbf1_{\{S=0\}}]
+ =\pi^{-d}\int_{[-\pi/2,\pi/2]^d}
+                    \mathbb E[F^2e^{\mathrm i t\cdot S}]\,dt.
+\end{equation}
+Both this formula and \eqref{eq:paired} follow by integrating each
+exponential monomial: the normalized integral is one for frequency zero
+and zero for any other allowed integer frequency. Only finite sums occur.
+
+For $q\geq0$,
+\[
+ [n+n^2q]e^{-\gamma q}
+ \leq\left(n+\frac{2n^2}{\gamma}\right)e^{-\gamma q/2}.
+\]
+Write $\alpha=\gamma/2=\delta/(n\pi^2)$ and recall
+$H=4\sqrt{2n/\delta}$. For an integer $k\geq1$, the substitution $u=\sqrt{\alpha k}\,t$ gives
+\[
+ \frac1\pi\int_{-\pi/2}^{\pi/2}e^{-\alpha k t^2}\,dt
+ \leq\frac4{\pi\sqrt{\alpha k}}
+ \leq\frac{H}{\sqrt{1+k}}.
+\]
+Indeed, the integral of $e^{-u^2}$ over any finite symmetric interval is
+at most $2+2e^{-1}<4$: use $e^{-u^2}\leq e^{-|u|}$ when $|u|\geq1$.
+For $k=0$ the normalized integral is one, which is also bounded by $H$.
+Applying these one-dimensional bounds in \eqref{eq:smalltorus}, with
+\eqref{eq:integrand}, proves \eqref{eq:numerator}.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:moment}]
+Divide \eqref{eq:numerator} by the positive lower bound
+\eqref{eq:denominator}. The factors
+$\prod_A(1+K_A)^{-1/2}$ cancel, and \eqref{eq:moment} follows with
+$\kappa(J,\mathcal A)=U/L$.
+\end{proof}
+
+\section{Disagreements of two independent copies}\label{sec:disagreement}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $\sigma,\tau$ be independent with law $\nu_{N,M,v}$, and set
+\[
+ c_{ij}=\frac{\sigma_j(i)+\tau_j(i)}2,\qquad
+ x_{ij}=\frac{\sigma_j(i)-\tau_j(i)}2.
+\]
+Fix a value of $c$ with positive probability. Where $c_{ij}\ne0$, the
+coordinate $x_{ij}$ is zero; where $c_{ij}=0$, it is $+1$ or $-1$.
+Put $D_i=\{j:c_{ij}=0\}$. Because both copies have total $M_A$,
+\[
+ \sum_i\sum_{j\in A}c_{ij}=M_A,\qquad
+ \sum_i\sum_{j\in A}x_{ij}=0 \quad(A\in\mathcal A).
+\]
+Conversely, for this fixed $c$, the zero totals of $x$ are precisely the
+conditions that $c+x$ and $c-x$ both belong to $\Omega_{N,M}$.
+
+The pair energy in a block is
+\begin{align*}
+ &\tfrac12(c_i+x_i)^T J(c_i+x_i)
+   +\tfrac12(c_i-x_i)^T J(c_i-x_i)\\
+ &\hspace{2em}+v_i^T(c_i+x_i)+v_i^T(c_i-x_i)
+   =c_i^T Jc_i+x_i^T Jx_i+2v_i^Tc_i.
+\end{align*}
+The terms involving $v$ and $c$ are constant under this conditioning.
+The map from an allowed orientation $x$ to the ordered pair
+$(c+x,c-x)$ is one-to-one. Thus the conditional law of $x$ is exactly the
+product of the laws \eqref{eq:masklaw} for the subsets $D_i$, conditioned on
+$S=0$. In particular, all its active counts $K_A$ are even.
+
+For $F_a(\sigma)=\sum_{i,j}a_{ij}\sigma_j(i)$, the independent-copy identity
+and Proposition~\ref{prop:moment} now give
+\begin{align*}
+ \operatorname{Var}_{\nu_{N,M,v}}F_a
+ &=\tfrac12\mathbb E\bigl(F_a(\sigma)-F_a(\tau)\bigr)^2
+   =2\mathbb E\left(\sum_{i,j}a_{ij}x_{ij}\right)^2\\
+ &\leq\frac{2U}{L}\,
+       \mathbb E\sum_i\sum_{j\in D_i}a_{ij}^2
+ \leq\frac{2U}{L}\sum_{i,j}a_{ij}^2.
+\end{align*}
+All conditional laws were taken only at supported values of $c$.
+The constants $L>0$ and $U<\infty$ depend on $n,J,\mathcal A$ alone.
+
+To obtain the operator bound, let $\Sigma=\operatorname{Cov}_{\nu_{N,M,v}}(\sigma)$.
+For arbitrary real $a,b$, Cauchy--Schwarz gives
+\[
+ |b^T\Sigma a|\leq\sqrt{\operatorname{Var}F_b\operatorname{Var}F_a}
+ \leq(2U/L)\|a\|_2\|b\|_2.
+\]
+For $\Sigma a\ne0$, take $b=\Sigma a/\|\Sigma a\|_2$; the case
+$\Sigma a=0$ is immediate. This proves \eqref{eq:main} with
+$C(J,\mathcal A)=2U/L$.
+\end{proof}
+In terms of $n$, $d=|\mathcal A|$ and
+$\delta=\exp(-4\sum_{j<k}|J_{jk}|)$, one explicit choice is
+\begin{align*}
+ C(J,\mathcal A)
+ &=2e^{\delta+d/(4n)}
+ \left(n+\frac{n^3\pi^2}{\delta}\right)
+ \left(\frac{2^n}{\delta}\right)^{2^n}\\
+ &\quad\times\left(8n\pi\sqrt{\frac{2n}{\delta}}\right)^d.
+\end{align*}
+It is finite for every fixed real symmetric $J$. Its large size reflects the
+rough estimates above, rather than an asserted sharp dependence on the
+interaction or dimension.
+\paragraph{AI assistance.}
+OpenAI Codex assisted with mathematical exploration, proof development and
+checking, literature search, and LaTeX drafting. Independent mathematical
+review is requested.
+
+\begin{thebibliography}{1}
+\bibitem{CM}
+P. Caputo and M. Morellini,
+\emph{Kac's Program and Relative Entropy Decay for Nonlinear Spin-Exchange
+Dynamics}, arXiv:2511.05223v1 (2025).
+\href{https://arxiv.org/abs/2511.05223v1}{arXiv:2511.05223v1}.
+\end{thebibliography}
+\end{document}

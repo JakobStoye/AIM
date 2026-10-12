@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "problem_id": "576",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "evidence_type": "analytic proof",
+  "submission_status": "complete solution claim; independent review requested",
+  "files": [
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI use and review limits",
+      "sha256": "44c64513a83df8033714be2cc46300c3cf49370d77cdac68d67caf58a34c8ee5",
+      "bytes": 716
+    },
+    {
+      "path": "README.md",
+      "purpose": "Package overview and reproduction instructions",
+      "sha256": "3fffafc56352ce5a1d8df120db87a4c704b53089437458d3f3654e175dd28091",
+      "bytes": 2124
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full-target correspondence to final manuscript",
+      "sha256": "006ae18e20417d69cf5bce407f1b115a477fd37ae3b00934e71dcfad4164cb31",
+      "bytes": 2767
+    },
+    {
+      "path": "paper/ising_replica_covariance.pdf",
+      "purpose": "Complete six-page manuscript PDF",
+      "sha256": "6b7a1168b71ad08d02d8ac91a1686a22728ffd28312a2891bb8f037ab9ac8190",
+      "bytes": 307530
+    },
+    {
+      "path": "paper/ising_replica_covariance.tex",
+      "purpose": "Complete standalone editable manuscript",
+      "sha256": "51dc6aa5421389946c3b7a1f135d473ba35e00338d16c220d275ddf384b20e0d",
+      "bytes": 16992
+    }
+  ]
+}
