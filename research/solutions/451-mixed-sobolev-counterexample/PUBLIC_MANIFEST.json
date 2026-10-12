@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "problem_id": "451",
+  "title": "Failure of a mixed Sobolev estimate for scalar potentials",
+  "evidence_type": "analytic_counterexample",
+  "target_repository": "MColbrook/AIM",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_path": "problems/451-bourgain-brezis-mixed-sobolev-gradient-estimate.md",
+  "files": {
+    "README.md": "870c1d92b7e1076daa01182dbd60a99487f3fa8c1ea128ddcb81dc928d7090d3",
+    "TARGET_COMPARISON.md": "0e0aafd26967eb3bc4a15780b6c411e53c79504f9892a34622988bd0387513a6",
+    "paper/main.tex": "c08b8d54e8ccb9d531a2b2e92426ec613856d95871e3ac60a37d4ba74d9b9169",
+    "paper/main.pdf": "0de035233a087b973ce46d7f271aafb03e733e2ff3a77c4c891c171480157252"
+  },
+  "scope": "Smooth real mean-zero inputs on the unit two-torus; failure already in d=2 refutes the universal family.",
+  "status": "Complete solution claim awaiting independent mathematical review",
+  "code_or_certificate": "Not applicable: the proof is analytic."
+}
