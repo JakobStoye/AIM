@@ -1,0 +1,454 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\osc}{\operatorname{osc}}
+\newcommand{\relint}{\operatorname{relint}}
+\newcommand{\Tan}{\operatorname{Tan}}
+\title{Interior smoothness of carrying simplices\protect\\
+for competitive population maps}
+\author{Kaiwen Jin\protect\\
+\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A carrying simplex reduces the nonzero long-term dynamics of a competitive
+population map to an invariant hypersurface. We prove that its positive
+interior is a $C^1$ embedded manifold under the standard $C^1$ per-capita
+competition and spectral-radius assumptions. Equivalently, its radial
+function is $C^1$ in the interior of the probability simplex.
+The proof uses logarithmic coordinates. Although inverse derivatives lose
+strict positivity at extinction faces, their weighted columns give a uniform
+contraction on a fixed cone of positive vectors. The resulting continuous
+covector annihilates every contingent direction of the logarithmic simplex
+and forces its Lipschitz graph to be $C^1$.
+No boundary smoothness, convexity or permanence assumption is imposed.
+\end{abstract}
+
+\section{The regularity question}
+
+Consider a discrete population model on $C=[0,\infty)^d$ of the form
+$F_i(x)=x_i f_i(x)$. The factor $f_i$ describes per-capita growth. Strict
+decrease of every $f_i$ with respect to every population density expresses
+both interspecific and intraspecific competition. A carrying simplex is a
+compact invariant set $\Sigma\subset C\setminus\{0\}$ which meets each
+nonzero ray once, is unordered for the coordinate order, and carries the
+asymptotic nonzero dynamics. Unordered means that distinct points cannot
+satisfy $x_i\leq y_i$ for all $i$. Write
+\begin{equation}\label{eq:radial}
+ \Sigma=\{R(u)u:u\in\Delta\},\qquad
+ \Delta=\{u\in C:\textstyle\sum_i u_i=1\},
+\end{equation}
+where $R$ is continuous and positive. This representation gives a geometric
+reduction by one dimension. Smoothness is needed to use differential
+geometric methods directly on the reduced dynamics.
+
+Baigent's existence theorem \cite[Theorem~1]{Baigent} applies under the
+hypotheses stated below. The smoothness of the entire positive interior is
+asked in \cite[Section~6]{Baigent}. Mierczy\'nski, Niu and Ruiz-Herrera
+\cite[Section~1, Corollaries~4.8--4.9 and Theorem~4.12]{MNR} study local
+linearization and invariant manifolds near interior fixed points. Their local
+conclusions do not assert smoothness at every interior point. Under additional
+assumptions, convexity yields a $C^1$ carrying simplex neatly embedded in the
+orthant \cite[Main Theorem]{Mierczynski}. That includes a boundary conclusion
+which is distinct from the question considered here. Logarithmic carrying
+simplices have also been studied for planar Leslie--Gower and Ricker maps,
+with conditions ensuring convexity \cite{NYB}.
+
+We answer the interior question for the full following class of maps.
+
+\begin{theorem}\label{thm:main}
+Let $d\geq3$ and $C=[0,\infty)^d$. Let $f$ be $C^1$ on an open
+neighborhood of $C$, and put $F_i(x)=x_i f_i(x)$. Suppose that
+\[
+ f_i(x)>0,\qquad \partial_j f_i(x)<0
+ \quad(x\in C,\ 1\leq i,j\leq d).
+\]
+For each $i$ suppose that $q_i e_i$ is a fixed point, with $q_i>0$.
+Put $q=(q_1,\ldots,q_d)$ and assume
+\begin{equation}\label{eq:spectral}
+ \rho(M(x))<1\quad(x\in[0,q]),\qquad
+ M_{ij}(x)=-\frac{x_i}{f_i(x)}\partial_j f_i(x),
+ \qquad [0,q]=\prod_i[0,q_i],
+\end{equation}
+where $\rho$ denotes spectral radius.
+Then the guaranteed carrying simplex has
+$\Sigma^\circ=\Sigma\cap(0,\infty)^d$ a $C^1$ embedded
+$(d-1)$-dimensional submanifold of $(0,\infty)^d$.
+In \eqref{eq:radial}, $R\in C^1(\relint\Delta)$.
+\end{theorem}
+
+The theorem imposes no assumption on regularity or transverse embedding at
+extinction faces. In particular, it does not assert neat embedding of the
+whole simplex. The constants used in its proof may depend on the fixed map
+and dimension.
+
+The main difficulty is that backward orbits of interior points may approach
+extinction faces. In physical coordinates some inverse derivative entries
+then vanish, so a lower bound on every population is unavailable. In
+logarithmic coordinates the inverse derivatives instead have the form
+$I+B(x)\diag(x)$, with all entries of $B$ bounded above and below by positive
+constants. Compactness separates the simplex from the origin, giving a lower
+bound on the \emph{sum} of the populations. These facts yield uniform
+contraction of ratios on a fixed positive cone. A second normalization gives
+a continuous covector whose kernel contains all contingent directions.
+Unorderedness then turns this constraint into differentiability of the
+logarithmic graph. The proof below gives both normalizations explicitly.
+
+\section{Proof of Theorem~\ref{thm:main}}
+
+All vector inequalities in this section are coordinatewise. Logarithms and
+exponentials are applied coordinatewise. For a vector $r$ write
+$\osc(r)=\max_i r_i-\min_i r_i$.
+
+\subsection{The logarithmic graph and its inverse derivatives}
+
+Each axial fixed point $q_i e_i$ belongs to $\Sigma$. Baigent's
+Theorem~1 \cite{Baigent} gives distance attraction:
+$\operatorname{dist}(F^n x,\Sigma)\to0$ for every $x\in C\setminus\{0\}$.
+For $x=q_i e_i$ this distance is constant, so it is zero; closedness of
+$\Sigma$ gives membership. If $x\in\Sigma$ had $x_i>q_i$, it would be
+comparable with $q_i e_i$. Therefore
+\begin{equation}\label{eq:mass}
+ \Sigma\subset[0,q],\qquad
+ s:=\min_{x\in\Sigma}\sum_i x_i>0,\qquad L:=\sum_i q_i.
+\end{equation}
+The minimum is positive because $\Sigma$ is compact and excludes zero.
+
+Under \eqref{eq:spectral} and the sign assumptions, Baigent's
+Lemma~16(1) \cite{Baigent} states that $F|_{[0,q]}$ is a homeomorphism
+onto its image. The source hypotheses AS3--AS4 are exactly the positivity,
+derivative signs and spectral condition here. The axial point on each axis
+is unique, since $t\mapsto f_i(t e_i)$ is strictly decreasing.
+Since $F(\Sigma)=\Sigma$, we may set
+\[
+ T=(F|_\Sigma)^{-1}.
+\]
+This is a continuous map on the compact physical simplex. Positivity of
+$f_i$ implies that $F$ preserves support, so $T$ preserves $\Sigma^\circ$.
+
+Put $\one=(1,\ldots,1)$ and
+\[
+ E=\{w\in\mathbb R^d:\textstyle\sum_i w_i=0\},\qquad
+ \pi z=z-\frac1d\Big(\sum_i z_i\Big)\one,
+ \qquad S=\log\Sigma^\circ.
+\]
+The line $w+\mathbb R\one$ exponentiates to a positive ray. By the radial
+representation it meets $S$ exactly once, so there is a function $h:E\to
+\mathbb R$ with
+\begin{equation}\label{eq:graph}
+ S=\{w+h(w)\one:w\in E\}.
+\end{equation}
+The exponential preserves order, and hence $S$ is unordered. For $w,v\in E$
+this gives
+\[
+ \min_i(w_i-v_i+h(w)-h(v))\leq0\leq
+ \max_i(w_i-v_i+h(w)-h(v)).
+\]
+Consequently
+\begin{equation}\label{eq:lipschitz}
+ |h(w)-h(v)|\leq\|w-v\|_\infty\leq\|w-v\|_2.
+\end{equation}
+
+We next record bounds for the logarithmic inverse derivative. Define on
+the closed box
+\begin{equation}\label{eq:matrices}
+ K_{ij}(x)=-\frac{\partial_j f_i(x)}{f_i(x)},\qquad
+ N(x)=K(x)\diag(x),\qquad A(x)=(I-N(x))^{-1}.
+\end{equation}
+All entries of $K$ are positive. The identity
+$\det(I-tUV)=\det(I-tVU)$, obtained by the two block eliminations of
+$\left(\begin{smallmatrix}I&tU\\V&I\end{smallmatrix}\right)$,
+shows that $N$ and $M=\diag(x)K$ have identical characteristic polynomials,
+including at the boundary. Thus $\rho(N)<1$ and $A$ is continuous on the
+box. The nonnegative matrix expansion in the proof of
+\cite[Lemma~15]{Baigent} gives $(I-M)^{-1}\geq I$.
+At a point with all coordinates positive,
+$N=\diag(x)^{-1}M\diag(x)$, so $A\geq I$ there. Approximating a boundary
+point by $(1-\varepsilon)x+\varepsilon q/2$ and using continuity gives
+$A\geq I$ everywhere on the box.
+Set $B=AK$. Then
+\begin{equation}\label{eq:columns}
+ A(x)=I+B(x)\diag(x),\qquad
+ 0<a\leq B_{ij}(x)\leq b<\infty
+ \quad(x\in[0,q],\ 1\leq i,j\leq d).
+\end{equation}
+Such $a,b$ exist because $B\geq K>0$ is continuous on a compact set.
+Choose
+\begin{equation}\label{eq:constants}
+ \kappa=\frac{a}{2b},\qquad
+ \eta=\frac{a\kappa s}{1+bL},\qquad \tau=1-\eta.
+\end{equation}
+Here $0<\kappa\leq1/2$ and $0<\eta<1$, so $0<\tau<1$.
+
+For the logarithmic map
+$H(z)=\log F(e^z)=z+\log f(e^z)$ we have
+$DH(\log x)=I-N(x)$. The inverse function theorem provides a local $C^1$
+inverse at every positive point of $\Sigma$. Continuity of $T$ identifies
+these branches, on nearby points of $S$, with
+$G(\log x)=\log Tx$. Thus, for every fixed positive integer $n$,
+\begin{equation}\label{eq:inverse-product}
+ DG(\log x)=A(Tx),\qquad
+ DG^n(\log x)=P_n(x):=A(T^nx)\cdots A(Tx).
+\end{equation}
+In this formula $G^n$ is a local composition along a finite orbit segment.
+
+\subsection{Uniform contraction of positive ratios}
+
+Consider the cone
+\[
+ \mathcal C_\kappa=\{v\in(0,\infty)^d:
+               \min_i v_i\geq\kappa\max_i v_i\}.
+\]
+It keeps coordinate ratios bounded. If $v\in\mathcal C_\kappa$ and
+$c=\sum_j x_jv_j$, \eqref{eq:columns} gives
+\[
+ \min_i(A(x)v)_i\geq\min_i v_i+ac,
+ \qquad
+ \max_i(A(x)v)_i\leq\max_i v_i+bc.
+\]
+Since $a-\kappa b\geq0$, $A(x)$ preserves this cone for every point of
+the box. On positive rays use the Hilbert distance
+\[
+ d_H(v,w)=\osc\big((\log(v_i/w_i))_{i=1}^d\big).
+\]
+It is unchanged by positive scalar multiples. Its diameter on
+$\mathcal C_\kappa$ is at most $D:=2\log(1/\kappa)$.
+
+\begin{lemma}\label{lem:contraction}
+For every $x\in\Sigma$ and $v,w\in\mathcal C_\kappa$,
+\begin{equation}\label{eq:contraction}
+ d_H(A(x)v,A(x)w)\leq\tau d_H(v,w).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The Jacobian of $r\mapsto\log(A(x)e^r)$ at $e^r=v$ has entries
+\[
+ J_{ij}=\frac{A_{ij}(x)v_j}{(A(x)v)_i}.
+\]
+It is row stochastic, meaning that its entries are nonnegative and each
+row sums to one. From \eqref{eq:columns} and $v\in\mathcal C_\kappa$,
+\begin{equation}\label{eq:common-row}
+ J_{ij}\geq\nu_j(x):=\frac{a\kappa x_j}{1+bL},\qquad
+ \sum_j\nu_j(x)\geq\eta.
+\end{equation}
+Indeed, $A_{ij}(x)\geq ax_j$, $v_j\geq\kappa\max_kv_k$, and
+$(A(x)v)_i\leq(1+bL)\max_kv_k$.
+If $m=\sum_j\nu_j(x)$, all rows of $J-\one\nu$ have nonnegative
+entries and mass $1-m$. Subtracting the common scalar $\nu r$ gives
+\begin{equation}\label{eq:osc}
+ \osc(Jr)\leq(1-m)\osc(r)\leq\tau\osc(r).
+\end{equation}
+Here $m\leq a\kappa L/(1+bL)<1$.
+
+For $v,w$ in the cone, the segment
+$r(t)=(1-t)\log w+t\log v$ has $e^{r(t)}\in\mathcal C_\kappa$:
+every coordinate difference is at least $\log\kappa$.
+The integral mean-value formula therefore gives
+\[
+ \log(A(x)v)-\log(A(x)w)
+ =\int_0^1 J(r(t))(\log v-\log w)\,dt.
+\]
+For each pair of components their difference is bounded by
+$\tau\osc(\log v-\log w)$, using \eqref{eq:osc}. Taking the largest
+pairwise difference after integration proves \eqref{eq:contraction}.
+\end{proof}
+
+Normalize positive vectors by their coordinate sum and write
+$\widehat v=v/(\sum_i v_i)$. The normalized cone section
+$V=\{v\in\mathcal C_\kappa:\sum_i v_i=1\}$ is compact and nonempty;
+every coordinate is at least $\kappa/d$. For $x\in\Sigma$ let
+\[
+ L_n(x)=A(x)A(Fx)\cdots A(F^{n-1}x),\qquad
+ V_n(x)=\{\widehat{L_n(x)v}:v\in V\}.
+\]
+These are nested nonempty compact subsets of $V$, since every factor preserves
+the cone. Lemma~\ref{lem:contraction} bounds their Hilbert diameters by
+$D\tau^n$. Their intersection is consequently a single point $v_*(x)$.
+To see this in an ordinary norm, if $v,w$ are normalized and
+$d_H(v,w)\leq\delta$, their coordinate ratios straddle one and lie in
+$[e^{-\delta},e^\delta]$. Hence
+\begin{equation}\label{eq:metric-conversion}
+ \|v-w\|_1\leq e^\delta-1.
+\end{equation}
+The continuous functions $\widehat{L_n(x)\one}$ converge uniformly to
+$v_*(x)$ with error at most $e^{D\tau^n}-1$ in this norm. Thus $v_*$
+is continuous on the compact physical $\Sigma$, and
+\begin{equation}\label{eq:covariance}
+ \sum_i v_{*,i}(x)=1,\qquad
+ v_*(x)\in\mathcal C_\kappa,\qquad
+ A(Tx)v_*(x)=\gamma(x)v_*(Tx),\quad \gamma(x)>0.
+\end{equation}
+The last identity follows from $L_{n+1}(Tx)=A(Tx)L_n(x)$ by normalization
+and passage to the limit. The fields at boundary points are auxiliary matrix
+constructions; no logarithm or tangent plane is assigned there.
+
+\subsection{A continuous covector from row products}
+
+We normalize the inverse derivatives using the positive direction just
+constructed. For $x\in\Sigma$ set
+\begin{equation}\label{eq:Q}
+ Q_{ij}(x)=
+ \frac{A_{ij}(Tx)v_{*,j}(x)}{(A(Tx)v_*(x))_i},\qquad
+ Q^{(n)}(x)=Q(T^{n-1}x)\cdots Q(Tx)Q(x).
+\end{equation}
+These matrices are row stochastic. Since $v_*(x)\in\mathcal C_\kappa$,
+\eqref{eq:common-row} applies at $Tx$ with input $v_*(x)$: every row of
+$Q(x)$ dominates $\nu(Tx)$, whose entries sum to at least $\eta$.
+Thus every $Q(x)$ contracts oscillation by $\tau=1-\eta$. Therefore
+\begin{equation}\label{eq:row-diameter}
+ \osc(Q^{(n)}(x)r)\leq\tau^n\osc(r).
+\end{equation}
+The convex hulls of the rows of $Q^{(n)}(x)$ are nested, since the next
+product is obtained by left multiplication by a row-stochastic matrix.
+For two rows $a_1,a_2$ and $\|r\|_\infty\leq1$,
+\eqref{eq:row-diameter} gives $|(a_1-a_2)r|\leq2\tau^n$.
+Using the elementary duality between the $\ell^1$ and $\ell^\infty$ norms,
+the entire row hull has $\ell^1$ diameter at most $2\tau^n$.
+It has a unique limiting probability row $p(x)$, and all rows converge
+uniformly to it. Finite products are continuous, so $p$ is continuous.
+
+Define a row covector by
+\begin{equation}\label{eq:ell}
+ \ell_j(x)=\frac{p_j(x)}{v_{*,j}(x)}.
+\end{equation}
+It is continuous and nonnegative, and
+$\ell(x)v_*(x)=1$, so $\ell(x)\one>0$. Individual entries of $p$ need
+not be positive at the boundary.
+
+For clarity, the product normalization can be written exactly. Put
+$v_k=v_*(T^kx)$ and $D_k=\diag(v_k)$, and write
+$A(T^kx)v_{k-1}=\gamma_k v_k$. By \eqref{eq:Q},
+\[
+ Q(T^{k-1}x)=\gamma_k^{-1}D_k^{-1}A(T^kx)D_{k-1}.
+\]
+The successive diagonal factors cancel, giving
+\[
+ Q^{(n)}(x)=(\gamma_1\cdots\gamma_n)^{-1}
+             D_n^{-1}P_n(x)D_0,
+ \qquad P_n(x)v_0=(\gamma_1\cdots\gamma_n)v_n.
+\]
+Thus, for every real vector $v$ and every component $i$,
+\begin{equation}\label{eq:sign-limit}
+ \frac{(P_n(x)v)_i}{(P_n(x)v_*(x))_i}
+ =\left[Q^{(n)}(x)
+       \left(\frac{v_j}{v_{*,j}(x)}\right)_{j=1}^d\right]_i
+ \longrightarrow\ell(x)v.
+\end{equation}
+All denominators are positive. If $\ell(x)v\ne0$, then every coordinate
+of $P_n(x)v$ has that same strict sign for all sufficiently large $n$.
+
+\subsection{Contingent directions and differentiability}
+
+For $z\in S$ let $\Tan_S(z)$ consist of limits
+\[
+ v=\lim_{k\to\infty}t_k(z_k-z),\qquad
+ z_k\in S,\quad z_k\to z,\quad t_k>0.
+\]
+Unorderedness excludes strictly positive and strictly negative vectors
+from this contingent cone. A sequence tending to such a vector would
+eventually give points strictly comparable with $z$.
+
+Fix $x\in\Sigma^\circ$ and $v\in\Tan_S(\log x)$. For each fixed $n$,
+the local $C^1$ map $G^n$ from \eqref{eq:inverse-product} sends nearby
+points of $S$ into $S$ and hence
+\[
+ P_n(x)v\in\Tan_S(\log T^nx).
+\]
+Indeed, its differentiability remainder is $o(\|z_k-\log x\|)$;
+multiplication by $t_k$ still makes it tend to zero, because
+$t_k\|z_k-\log x\|$ is bounded whenever the scaled increments have a
+finite limit. If $\ell(x)v\ne0$, \eqref{eq:sign-limit} would make this
+transported contingent vector strictly signed for some finite $n$, a
+contradiction. Consequently
+\begin{equation}\label{eq:tangent}
+ \Tan_S(\log x)\subset\ker\ell(x).
+\end{equation}
+Only finite local compositions were differentiated in this argument.
+
+Recall that $E=\{w:\sum_i w_i=0\}$ and $h:E\to\mathbb R$ is
+$1$-Lipschitz by \eqref{eq:lipschitz}.
+At $z=w+h(w)\one=\log x$ define the linear functional on $E$
+\begin{equation}\label{eq:Dh}
+ \Lambda_w(r)=-\frac{\ell(x)r}{\ell(x)\one}.
+\end{equation}
+Its denominator is positive. To prove that $Dh(w)=\Lambda_w$, take
+any sequence $r_k\in E\setminus\{0\}$ tending to zero. By
+\eqref{eq:lipschitz}, a subsequence has limits
+\[
+ \frac{r_k}{\|r_k\|_2}\longrightarrow r_\infty,\qquad
+ \frac{h(w+r_k)-h(w)}{\|r_k\|_2}\longrightarrow c.
+\]
+Then $r_\infty+c\one\in\Tan_S(z)$, so \eqref{eq:tangent} forces
+$c=\Lambda_w(r_\infty)$. Along this subsequence,
+\[
+ \frac{h(w+r_k)-h(w)-\Lambda_w(r_k)}{\|r_k\|_2}\longrightarrow0.
+\]
+If the full remainder limit were not zero, a sequence staying away from
+zero would have precisely such a subsequence, giving a contradiction.
+This proves Fr\'echet differentiability. The formula \eqref{eq:Dh},
+continuity of $\ell$ and of $x=\exp(w+h(w)\one)$ show that $Dh$ is
+continuous. Thus $h\in C^1(E)$.
+
+The graph map $w\mapsto w+h(w)\one$ is injective, has continuous inverse
+$\pi$ on its image, and has injective derivative because projecting that
+derivative gives the identity on $E$. It is therefore a $C^1$ embedding.
+Exponentiation is a $C^1$ diffeomorphism onto the positive orthant, so
+$\Sigma^\circ$ is a $C^1$ embedded hypersurface.
+
+Finally, for $u\in\relint\Delta$, \eqref{eq:graph} and the unique
+intersection with its ray give
+\begin{equation}\label{eq:R}
+ R(u)=\exp\left(h(\pi\log u)-\frac1d\sum_i\log u_i\right).
+\end{equation}
+This is $C^1$ on $\relint\Delta$, where all $u_i$ are positive. The map
+and dimension were arbitrary under the hypotheses of
+Theorem~\ref{thm:main}, which completes its proof.\hfill$\square$
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted with literature retrieval, development of the argument,
+proof checking, and preparation of the manuscript. AI review does not replace
+independent mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{Baigent}
+S. Baigent, \emph{Carrying Simplices for Competitive Maps}, in
+\emph{Difference Equations, Discrete Dynamical Systems and Applications:
+ICDEA 2017}, Springer, 2019, pp.\ 3--29.
+\href{https://doi.org/10.1007/978-3-030-20016-9_1}{doi:10.1007/978-3-030-20016-9\_1}.
+\href{https://homepages.ucl.ac.uk/~ucess29/resources/ICDEA_RPS.pdf}{Author manuscript}
+(Theorem~1, Lemmas~15--16, and Section~6; manuscript pp.\ 9, 18 and 24).
+
+\bibitem{MNR}
+J. Mierczy\'nski, L. Niu and A. Ruiz-Herrera,
+\emph{Linearization and invariant manifolds on the carrying simplex for
+competitive maps}, Journal of Differential Equations \textbf{267} (2019),
+7385--7410.
+\href{https://doi.org/10.1016/j.jde.2019.08.001}{doi:10.1016/j.jde.2019.08.001}.
+\href{https://arxiv.org/abs/1902.08914v2}{arXiv:1902.08914}.
+
+\bibitem{Mierczynski}
+J. Mierczy\'nski, \emph{The $C^1$ property of convex carrying simplices
+for competitive maps}, Ergodic Theory and Dynamical Systems
+\textbf{40} (2020), 1335--1350.
+\href{https://doi.org/10.1017/etds.2018.85}{doi:10.1017/etds.2018.85}.
+\href{https://arxiv.org/abs/1801.01032v2}{arXiv:1801.01032}.
+
+\bibitem{NYB}
+H. Naderi Yeganeh and S. Baigent,
+\emph{Convexity of non-compact carrying simplices in logarithmic coordinates},
+Journal of Difference Equations and Applications \textbf{30} (2024),
+1671--1691.
+\href{https://doi.org/10.1080/10236198.2024.2369215}{doi:10.1080/10236198.2024.2369215}.
+\end{thebibliography}
+\end{document}
