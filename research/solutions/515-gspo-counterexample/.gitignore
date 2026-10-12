@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+paper/build/
+numerical_case/raw/
