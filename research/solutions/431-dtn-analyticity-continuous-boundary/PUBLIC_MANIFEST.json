@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "problem_id": "431",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, claim and review status, standalone build instructions",
+      "sha256": "05bed400652b56850c6f3fcf4e045cbaae8405292056ffe98b24079a5bc6c145"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original target correspondence and cited public dependencies",
+      "sha256": "9ef92ac0fd55b4e50a8952e5bcbe0ca8f03d07e77b21583284d6af186edfdb51"
+    },
+    {
+      "path": "paper/dtn_analyticity.tex",
+      "purpose": "Complete editable LaTeX manuscript with analytic proof, contact and AI-use declaration",
+      "sha256": "7e05b99ff9dafcfd65c381b9d1e631cfc448469118c8183aa72e7bc9fbc755f9"
+    },
+    {
+      "path": "paper/dtn_analyticity.pdf",
+      "purpose": "Rendered nine-page manuscript",
+      "sha256": "997d9454c33e442100938f4f64e1cf0f3d7945497bc7133cf58e13f40a7a8104"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=29mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\Nc}{\mathcal N_c}
+\newcommand{\N}{\mathcal N}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\title{Holomorphy of the Dirichlet-to-Neumann semigroup\newline
+on continuous boundary functions for Lipschitz domains}
+\author{Kaiwen Jin\thanks{Contact: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $\Omega\subset\R^d$, $d\geq2$, be a bounded connected Lipschitz domain,
+and let $C$ be a real symmetric uniformly elliptic matrix with Lipschitz
+entries on $\overline\Omega$. We prove that the weak Dirichlet-to-Neumann
+semigroup on $C(\partial\Omega)$ is holomorphic of angle $\pi/2$ and bounded
+on every strictly smaller sector. This answers the continuous-function
+question in the real symmetric case of Question 4 of ter Elst and Ouhabaz.
+The proof obtains a supremum norm resolvent bound by boundary rescaling.
+A complex Robin uniqueness lemma on a half-space excludes the limiting
+solution; its proof uses vertical $L^2$ Dirichlet estimates and an iteration
+of boundary mass bounds.
+\end{abstract}
+
+\section{Introduction}
+
+The Dirichlet-to-Neumann operator describes diffusion on the boundary through
+harmonic extension into the domain. Its realization on $L^2$ is nonnegative
+and self-adjoint when the underlying elliptic coefficients are real and
+symmetric. Holomorphy on continuous boundary functions requires an estimate
+in the supremum norm, which does not follow from this Hilbert space fact.
+
+Throughout, $\Omega\subset\R^d$, $d\geq2$, is a bounded connected Lipschitz
+domain, $\Gamma=\partial\Omega$, and $\sigma$ is $(d-1)$-dimensional Hausdorff
+measure on $\Gamma$. The matrix $C=(c_{kl})$ is real symmetric, its entries
+are Lipschitz on $\overline\Omega$, and
+\begin{equation}\label{eq:elliptic}
+ \kappa\abs\xi^2\leq \xi\cdot C(x)\xi\leq K\abs\xi^2
+ \qquad(x\in\overline\Omega,\ \xi\in\R^d)
+\end{equation}
+for some $0<\kappa\leq K<\infty$. All function spaces below are complex.
+The weak Dirichlet-to-Neumann operator $\N$ on $L^2(\Gamma,\sigma)$ is defined
+by $\varphi\in D(\N)$ and $\N\varphi=h$ if there is $u\in H^1(\Omega)$ with
+$\Tr u=\varphi$ such that
+\begin{equation}\label{eq:dtn}
+ \int_\Omega C\nabla u\cdot\nabla\overline v\dd x
+   =\int_\Gamma h\,\overline{\Tr v}\dd\sigma
+ \qquad(v\in H^1(\Omega)).
+\end{equation}
+In particular, $u$ is harmonic for $-\diver(C\nabla)$, and is the unique
+harmonic extension of $\varphi$. The sign in \eqref{eq:dtn} is that of the
+outward conormal derivative. Write $\Nc$ for the part of $\N$ in
+$C(\Gamma)$:
+\[
+ D(\Nc)=\{\varphi\in D(\N)\cap C(\Gamma):\N\varphi\in C(\Gamma)\}.
+\]
+We equip $C(\Gamma)$ with its usual supremum norm.
+
+Arendt and ter Elst \cite{ArendtElst} proved that $-\Nc$ generates a positive
+contractive $C_0$-semigroup $T$ and that $T(t)$ has a continuous kernel for
+$t>0$. Their result identifies this semigroup with the restriction of the
+$L^2$ semigroup. On $C^{1+\alpha}$ domains, ter Elst and Ouhabaz
+\cite{ElstOuhabazAnalytic} established holomorphy of angle $\pi/2$ under
+H\"older regularity of real symmetric coefficients. The final paragraph of
+Question 4 in \cite{OpenProblems} asks about holomorphy on $C(\Gamma)$ when
+the boundary is only Lipschitz and the real coefficients are Lipschitz.
+We prove the following result for the symmetric class above.
+
+For $0<\theta\leq\pi/2$, put
+$\Sigma_\theta=\{z\in\C\setminus\{0\}:\abs{\arg z}<\theta\}$.
+
+\begin{theorem}\label{thm:main}
+Under \eqref{eq:elliptic} and the preceding hypotheses, $T$ extends to an
+operator norm holomorphic semigroup on $\Sigma_{\pi/2}$. For every
+$0<\theta<\pi/2$ there is a finite constant $M_\theta$, depending on
+$\Omega,C,\theta$, such that
+\begin{equation}\label{eq:sectorT}
+ \sup_{z\in\Sigma_\theta}\norm{T(z)}_{C(\Gamma)\to C(\Gamma)}\leq M_\theta.
+\end{equation}
+For every $\varphi\in C(\Gamma)$, $T(z)\varphi\to\varphi$ as $z\to0$ in any
+strictly smaller sector. No connectedness assumption on $\Gamma$ is needed.
+\end{theorem}
+
+For every $\varepsilon\in(0,\pi)$ there is a finite $M_\varepsilon$ such that
+\begin{equation}\label{eq:mainres}
+ \norm{\lambda(\lambda+\Nc)^{-1}}_{C(\Gamma)\to C(\Gamma)}
+ \leq M_\varepsilon
+ \qquad(\lambda\neq0,\ \abs{\arg\lambda}\leq\pi-\varepsilon).
+\end{equation}
+If this estimate fails at large $\abs\lambda$, rescaling at a point of
+maximum boundary value gives a bounded solution of a complex Robin problem
+on an unbounded Lipschitz graph. The original coefficient field becomes
+constant under rescaling. Flattening the limiting graph then gives a
+uniformly elliptic matrix independent of the normal variable. For that
+matrix, the half-space $L^2$ Dirichlet theorem of
+Auscher, Axelsson and McIntosh \cite{AAM} controls the mass of a bounded
+harmonic function above a large boundary ball. Combining this estimate with
+the Robin energy identity repeatedly improves the power of the boundary
+mass until the limiting solution vanishes.
+
+The graph area densities need not converge to the area density of the
+limiting graph. We keep their weak-$*$ limit as a separate positive bounded
+weight in the Robin condition. This is why the half-space uniqueness result
+below includes such a weight.
+
+\section{Half-space estimates and complex Robin uniqueness}
+
+Let $n\geq1$, $\HH=\R^n\times(0,\infty)$, and write its coordinates as
+$(x,t)$. In this section $A=A(x)$ is a bounded measurable real symmetric
+$(n+1)\times(n+1)$ matrix, independent of $t$, satisfying uniform ellipticity
+as in \eqref{eq:elliptic}. We use $B'(q,R)$ for a ball in $\R^n$ and
+\[
+ Q(q,R)=B'(q,R)\times(0,R).
+\]
+The phrase $H^1_{\mathrm{loc}}(\overline\HH)$ means $H^1$ on every bounded
+half-space patch, including its flat boundary. Compactly supported tests in
+this space are allowed to have a nonzero boundary trace.
+
+\subsection{Dirichlet solutions of finite energy}
+
+Let $\dot H^1_0(\HH)$ be the completion of $C_c^\infty(\HH)$ for the
+gradient norm. Hardy's inequality
+\begin{equation}\label{eq:Hardy}
+ \norm{W/t}_{L^2(\HH)}\leq2\norm{\partial_t W}_{L^2(\HH)}
+\end{equation}
+identifies its elements as local Sobolev functions and fixes their additive
+constant. A local Sobolev function with zero trace and finite gradient norm
+belongs to this space. Indeed, vertical integration by parts on $(0,R)$,
+with a nonpositive upper boundary term, proves \eqref{eq:Hardy}; radial
+cutoffs and then cutoffs near $t=0$ have errors controlled by the tails of
+$\abs{\nabla W}^2+\abs{W/t}^2$. Mollification of the remaining compact
+interior functions gives the assertion.
+
+For compactly supported $f\in H^{1/2}(\R^n)$, its usual Poisson extension
+$P_t f$ has finite gradient norm. With the unitary Fourier transform,
+\begin{equation}\label{eq:Poissonenergy}
+ \int_\HH\abs{\nabla P_t f}^2\dd x\dd t
+     =\int_{\R^n}\abs\xi\abs{\widehat f(\xi)}^2\dd\xi.
+\end{equation}
+This follows by integrating the multiplier $e^{-t\abs\xi}$ in $t$ and using
+Plancherel \cite[Chapter 9]{RudinRCA}. The Poisson kernel is nonnegative,
+has total mass one, and contracts $L^2$ and $L^\infty$.
+Lax--Milgram on $\dot H^1_0(\HH)$ supplies a unique $A$-harmonic function
+$H_Af$ such that $H_Af-P_tf\in\dot H^1_0(\HH)$. We use this notation only
+for the variational solution just defined.
+
+\begin{lemma}\label{lem:Dirichlet}
+There is a finite constant $K_A$ such that, for every compactly supported
+$f\in H^{1/2}(\R^n)$,
+\begin{equation}\label{eq:vertical}
+ \sup_{t>0}\norm{H_Af(\cdot,t)}_{L^2(\R^n)}\leq K_A\norm f_{L^2(\R^n)}.
+\end{equation}
+If also $f\in L^\infty$, then
+\begin{equation}\label{eq:maxhalf}
+ \norm{H_Af}_{L^\infty(\HH)}\leq\norm f_{L^\infty(\R^n)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For smooth compactly supported $f$, the solution agrees with the $L^2$
+Dirichlet solution of \cite{AAM}, by Theorem 5.3 there. Its
+connected-component hypothesis holds because $(1-s)I+sA$, $0\leq s\leq1$,
+stays in the real symmetric uniformly elliptic class; this class is
+well posed by their Theorem 2.2(i). Their Corollary 2.4 gives
+\eqref{eq:vertical}. The homogeneous zero-trace space in their Definition 5.1
+agrees with the completion above by \eqref{eq:Hardy} and the cutoff argument.
+Their ordering $(t,x)$ is changed to $(x,t)$ by an orthogonal permutation.
+
+Approximate general $f$ by smooth compactly supported $f_k$ in $H^{1/2}$.
+Formula \eqref{eq:Poissonenergy} and the variational equation give convergence
+of the gradients. Hardy's inequality for the zero-trace differences then
+gives local $H^1$ convergence up to $t=0$. Applied to differences, the
+$L^2$ Dirichlet bound also gives convergence in $\sup_t L^2$ norm. These
+limits agree locally, proving \eqref{eq:vertical} for the variational
+solution.
+
+For the maximum principle, first take real $f$ and set
+$M=\norm f_\infty$. If $U=H_Af$, then
+$w=(U-M)^+$ has finite gradient norm, zero trace, and
+$w\leq\abs{U-P_tf}$, since $P_tf\leq M$. Thus $w/t\in L^2$, and the same
+cutoff argument shows $w\in\dot H^1_0$. Testing the equation with $w$ gives
+$\int A\nabla w\cdot\nabla w=0$, so $w=0$. The lower bound follows in the
+same way. For complex data apply the upper bound to
+$\operatorname{Re}(e^{-i\alpha}U)$ for a countable dense set of phases
+$\alpha$. This yields \eqref{eq:maxhalf}.
+\end{proof}
+
+We will also need uniqueness without a global energy assumption.
+
+\begin{lemma}\label{lem:zeroD}
+A bounded $A$-harmonic function in $H^1_{\mathrm{loc}}(\overline\HH)$ with
+zero trace is zero. The same assertion holds when the real uniformly
+elliptic coefficients depend on both $x$ and $t$.
+\end{lemma}
+
+\begin{proof}
+Reflect the function oddly across $t=0$ and the matrix by
+$A_-(x,t)=JA(x,-t)J$, where $J=\operatorname{diag}(I_n,-1)$.
+For a whole-space test $\eta$, the upper-half-space test
+$\eta(x,t)-\eta(x,-t)$ has zero trace. It proves the weak equation for the
+odd extension, whose matrix remains real uniformly elliptic.
+The interior H\"older estimate for such equations
+\cite[Corollary 5.5]{Trudinger} gives, for each fixed ball $B_r$ and arbitrarily
+large $R$, an oscillation bound $C(r/R)^\alpha\norm U_\infty$.
+Hence each real component of the extension is constant. Oddness makes the
+constant zero.
+\end{proof}
+
+\subsection{From boundary mass to bulk mass}
+
+\begin{lemma}\label{lem:mass}
+Let $U\in H^1_{\mathrm{loc}}(\overline\HH)$ be bounded and $A$-harmonic, and
+write $\varphi=\Tr U$. Suppose that, for some $\beta<n$ and finite $M_\beta$,
+\begin{equation}\label{eq:Fbeta}
+ F(R):=\sup_{q\in\R^n}\int_{B'(q,R)}\abs\varphi^2\dd x
+       \leq M_\beta R^\beta\qquad(R\geq1).
+\end{equation}
+Then there is a finite constant $C_\beta$ such that
+\begin{equation}\label{eq:bulk}
+ \sup_{q\in\R^n}\int_{Q(q,R)}\abs U^2\dd x\dd t
+       \leq C_\beta R^{\beta+1}\qquad(R\geq1).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Fix $q,R$ and a nonincreasing radial Lipschitz cutoff $\chi$, equal to one
+on $B'_1$ and zero outside $B'_2$. Set
+\[
+ \chi_0(x)=\chi\left(\frac{x-q}{4R}\right),\qquad
+ \chi_j(x)=\chi\left(\frac{x-q}{2^j4R}\right)
+             -\chi\left(\frac{x-q}{2^{j-1}4R}\right)\quad(j\geq1).
+\]
+The $\chi_j$ are nonnegative and sum to one. The far piece $\chi_j$ vanishes
+on $B'(q,S_j)$, where $S_j=2^{j-1}4R$. Put
+$f_j=\chi_j\varphi$ and $U_j=H_Af_j$.
+Every $f_j$ is compactly supported $H^{1/2}$ data: apply the local $H^1$
+trace theorem to a tangential and vertical cutoff of $U$.
+
+For the near piece, Lemma~\ref{lem:Dirichlet} gives
+\begin{equation}\label{eq:near}
+ \int_{Q(q,R)}\abs{U_0}^2
+       \leq R K_A^2\norm{f_0}_2^2\leq C R^{\beta+1}.
+\end{equation}
+For $j\geq1$, odd reflection of $U_j$ gives a homogeneous elliptic equation
+in the ball of radius $S_j$ centered at $(q,0)$. The interior
+$L^2$-to-supremum estimate \cite[Theorem 5.1]{Trudinger}, together with
+\eqref{eq:vertical}, implies
+\begin{align}\label{eq:far}
+ \sup_{Q(q,R)}\abs{U_j}
+ &\leq C S_j^{-(n+1)/2}
+      \norm{U_j}_{L^2(B'(q,S_j)\times(0,S_j))}\notag\\
+ &\leq C S_j^{-n/2}\norm{f_j}_2
+ \leq C_\beta S_j^{(\beta-n)/2}.
+\end{align}
+Here $Q(q,R)$ lies inside the half-radius ball because $S_j\geq4R$.
+Since $\beta<n$, the geometric series in \eqref{eq:far} sums to at most
+$C_\beta R^{(\beta-n)/2}$.
+
+The sum $V=\sum_{j\geq0}U_j$ converges uniformly on compact patches for its
+far tail. It also converges in local $H^1$ up to the boundary. To see the
+latter assertion, fix a larger patch; sufficiently far finite tails have
+zero trace there. Testing their equation with the tail times a squared
+cutoff gives the boundary Caccioppoli estimate
+\[
+ \norm{\nabla(\text{tail})}_{L^2(\text{smaller patch})}^2
+     \leq C\norm{\text{tail}}_{L^2(\text{larger patch})}^2.
+\]
+The uniform tail bound makes the right-hand side tend to zero. Thus $V$ is
+harmonic with trace $\varphi$. By linearity its partial sums equal
+$H_A((\sum_{j\leq k}\chi_j)\varphi)$, and \eqref{eq:maxhalf} bounds every
+partial sum by $\norm\varphi_\infty$. Therefore $V$ is bounded and
+Lemma~\ref{lem:zeroD} identifies it with $U$.
+Combining \eqref{eq:near} with the square of the summed far bound and the
+volume $O(R^{n+1})$ proves \eqref{eq:bulk}.
+\end{proof}
+
+\subsection{A Robin Liouville lemma}
+
+\begin{proposition}\label{prop:Robin}
+Let $b\in L^\infty(\R^n)$ satisfy $0<b_*\leq b\leq b^*<\infty$.
+If $\lambda\in\C\setminus(-\infty,0]$ and a bounded
+$U\in H^1_{\mathrm{loc}}(\overline\HH)$ satisfies
+\begin{equation}\label{eq:Robin}
+ \int_\HH A\nabla U\cdot\nabla\overline V\dd x\dd t
+   +\lambda\int_{\R^n}b\,\varphi\,\overline{\Tr V}\dd x=0,
+ \qquad \varphi=\Tr U,
+\end{equation}
+for all compactly supported local $H^1$ tests, then $U=0$.
+\end{proposition}
+
+\begin{proof}
+Write $\alpha=\arg\lambda\in(-\pi,\pi)$. Choose a cutoff $\eta_R$ equal to
+one on $B'(q,R)\times[0,R]$, supported in
+$B'(q,2R)\times[0,2R]$, with $\abs{\nabla\eta_R}\leq C/R$.
+Use $V=\eta_R^2 U$ in \eqref{eq:Robin}, multiply by $e^{-i\alpha/2}$,
+and take real parts. Both the gradient quadratic form and the boundary
+term are coercive, with the common positive factor $\cos(\alpha/2)$.
+Young's inequality absorbs the cross term, giving
+\begin{equation}\label{eq:Robinmass}
+ \int_{B'(q,R)}\abs\varphi^2\dd x
+    \leq C_\lambda R^{-2}\int_{Q(q,2R)}\abs U^2\dd x\dd t.
+\end{equation}
+The constants are finite for the fixed $A,b,\lambda$.
+
+Boundedness of $U$ first gives $F(R)\leq C R^{n-1}$ for $R\geq1$.
+This exponent is strictly below $n$. Whenever
+$F(R)\leq C_\beta R^\beta$ with $\beta<n$, Lemma~\ref{lem:mass} and
+\eqref{eq:Robinmass} improve it to $F(R)\leq C_{\beta-1}R^{\beta-1}$.
+After $n$ improvements we obtain $F(R)\leq C/R$.
+For any fixed ball, its trace mass is bounded by $F(R)$ for all sufficiently
+large $R$, so it is zero. Hence $\varphi=0$, and Lemma~\ref{lem:zeroD}
+gives $U=0$.
+\end{proof}
+
+\begin{remark}
+The parameter exclusions in Proposition~\ref{prop:Robin} are necessary.
+At $\lambda=0$ constants are allowed. If $A=I$, $b=1$, and
+$\lambda=-\abs\xi<0$, then
+$U(x,t)=e^{i\xi\cdot x}e^{-\abs\xi t}$ is a nonzero bounded solution.
+\end{remark}
+
+\section{Boundary compactness and the resolvent estimate}
+
+\subsection{Local Neumann estimates on Lipschitz graphs}
+
+The interior estimates used above are the uniformly elliptic specializations
+of \cite[Theorem 5.1 and Corollaries 5.4--5.5]{Trudinger}.
+For the inhomogeneous equation $\diver(B\nabla w)=\diver F$, bounded $F$
+gives local H\"older continuity. After rescaling to fixed balls, the
+constants depend only on dimension, ellipticity and the forcing bound.
+The results apply separately to the real and imaginary parts.
+
+\begin{lemma}\label{lem:Neumann}
+Consider a Lipschitz graph $D=\{(x,s):s>\psi(x)\}$ with
+$\operatorname{Lip}\psi\leq L$, a real uniformly elliptic matrix field $B_0$
+with fixed bounds, and a harmonic $v\in H^1_{\mathrm{loc}}(\overline D)$
+satisfying $\norm v_\infty\leq1$. Suppose that its weak outward conormal
+derivative $h$ is bounded by $H$ on the graph patch in question.
+On each smaller patch, $v$ has local $H^1$ and H\"older bounds depending only
+on $d,L$, the ellipticity bounds, $H$ and the patch radii. It has ambient
+extensions with the same local bounds across the graph.
+\end{lemma}
+
+\begin{proof}
+Test the weak equation with $\eta^2v$. The boundary term is bounded by
+$H$ times the surface area of the patch, and Young's inequality absorbs the
+gradient cross term. This proves the local energy bound.
+
+Flatten by $\Phi(x,t)=(x,t+\psi(x))$. The Sobolev chain rule and graph
+reflection are valid for Lipschitz $\psi$;
+see \cite[arXiv version, Section 3.1 and Lemma 3.3]{Nittka}. The determinant of $D\Phi$ is one,
+and the transformed matrix is
+\[
+ B=(D\Phi)^{-1}B_0(\Phi)(D\Phi)^{-T}.
+\]
+It is real uniformly elliptic with bounds controlled by $L$.
+The graph area formula \cite[Section 3.3.4]{EvansGariepy} gives
+$a(x)=\sqrt{1+\abs{\nabla\psi(x)}^2}$.
+Writing $\widetilde h(x)=h(x,\psi(x))$, the bounded field
+$F=(0,\ldots,0,-\widetilde h a)$, independent of $t$, satisfies
+\[
+ \int_\HH F\cdot\nabla\overline V
+     =\int_{\R^{d-1}}\widetilde h a\,\overline{\Tr V}.
+\]
+Thus the flattened weak equation is
+$\int B\nabla(v\circ\Phi)\cdot\nabla\overline V=\int F\cdot\nabla\overline V$.
+Extend $v\circ\Phi$ evenly across $t=0$, the matrix by $JBJ$, and the field
+by $JF$, where $J=\operatorname{diag}(I_{d-1},-1)$. Testing with the
+sum of the reflected tests proves the
+whole-space inhomogeneous equation. The interior H\"older estimate now
+applies. Transforming back and using the same reflection gives the claimed
+ambient $H^1$ and H\"older extensions.
+\end{proof}
+
+\subsection{Compact resolvents and small parameters}
+
+We first recall why all the resolvents used in \eqref{eq:mainres} exist and
+why only large parameters can violate that estimate. The continuous kernel
+theorem and the $C_0$ theorem in \cite[Corollary 3.5 and Theorem 5.3(a)]{ArendtElst}
+apply with potential $V=0$: the coefficients are real symmetric and
+Lipschitz, and the Dirichlet realization has no zero eigenvalue by
+Poincar\'e's inequality. Positivity and contractivity follow from their
+Proposition 5.1(b).
+
+\begin{lemma}\label{lem:compactres}
+For every $\lambda\in\C\setminus(-\infty,0]$, $\lambda+\Nc$ is invertible
+on $C(\Gamma)$. Its resolvent is compact. For each $\varepsilon>0$,
+$\lambda(\lambda+\Nc)^{-1}$ is uniformly bounded when
+$0<\abs\lambda\leq R$ and $\abs{\arg\lambda}\leq\pi-\varepsilon$, for any
+fixed finite $R$.
+\end{lemma}
+
+\begin{proof}
+For $a>0$, contractivity and the semigroup identity give
+\begin{equation}\label{eq:Laplace}
+ R_a:=(a+\Nc)^{-1}=\int_0^\infty e^{-at}T(t)\dd t.
+\end{equation}
+For example, the difference quotient of the right-hand side $Q_af$ is
+\[
+ \frac{T(h)Q_af-Q_af}{h}
+ =\frac{e^{ah}-1}{h}Q_af-\frac{e^{ah}}h\int_0^h e^{-as}T(s)f\dd s
+ \longrightarrow aQ_af-f.
+\]
+It gives $Q_af\in D(\Nc)$ and $(a+\Nc)Q_af=f$. Injectivity follows from
+the energy identity \eqref{eq:dtn}.
+
+Every $T(t)$, $t>0$, is compact by its continuous kernel and Ascoli.
+Strong continuity is uniform on the compact image of $T(t/2)$, so $T$ is
+norm continuous for positive times. Truncating \eqref{eq:Laplace} to
+$[\delta,M]$ and using norm Riemann sums proves that $R_1$ is compact.
+For $\lambda\notin(-\infty,0]$, $I+(\lambda-1)R_1$ is injective: a kernel
+vector belongs to $D(\Nc)$ and satisfies $(\lambda+\Nc)\varphi=0$, whereas
+\begin{equation}\label{eq:energy}
+ \lambda\norm\varphi_2^2+\int_\Omega C\nabla u\cdot\nabla\overline u=0
+\end{equation}
+forces $\varphi=0$ at such a parameter.
+The compact Fredholm alternative therefore gives
+\begin{equation}\label{eq:resformula}
+ (\lambda+\Nc)^{-1}=R_1[I+(\lambda-1)R_1]^{-1}.
+\end{equation}
+One elementary form of that alternative is as follows. An injective $I-K$
+with compact $K$ is bounded below, by a compactness argument on a sequence
+of unit vectors. Its iterated ranges are closed. If its range were proper,
+these ranges would strictly decrease; unit vectors separated from the next
+range would make their images under $K$ uniformly separated, contradicting
+compactness.
+
+Let $P\varphi=\sigma(\Gamma)^{-1}\int_\Gamma\varphi\dd\sigma$, regarded as a
+constant function. Connectedness of $\Omega$ and \eqref{eq:energy} give
+$\ker\Nc=\C1$. The self-adjoint $L^2$ realization fixes constants and
+preserves the boundary integral; hence $R_1$ commutes with $P$.
+On $X_0=\ker P$, the compact Fredholm alternative makes $I-R_1$ invertible.
+Since $\Nc R_1=I-R_1$, the restriction of $\Nc$ to $X_0$ has bounded inverse
+$R_1(I-R_1)^{-1}$. The Neumann series at zero therefore bounds
+$\lambda(\lambda+\Nc)^{-1}$ on $X_0$ for small $\abs\lambda$; on constants
+it equals $P$. On the remaining compact parameter set, the resolvent
+identity and \eqref{eq:resformula} give norm continuity and a finite bound.
+\end{proof}
+
+\subsection{The large-parameter estimate}
+
+\begin{proposition}\label{prop:resolvent}
+For every $\varepsilon\in(0,\pi)$ there is a finite $M_\varepsilon$ such that
+\[
+ \norm{\lambda(\lambda+\Nc)^{-1}}_{C(\Gamma)\to C(\Gamma)}
+    \leq M_\varepsilon
+ \qquad(\lambda\ne0,\ \abs{\arg\lambda}\leq\pi-\varepsilon),
+\]
+where $\Nc$ is the part of the weak Dirichlet-to-Neumann operator in $C(\Gamma)$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:compactres}, a failure would give parameters
+$\abs{\lambda_j}\to\infty$ with $\abs{\arg\lambda_j}\leq\pi-\varepsilon$,
+data $f_j\in C(\Gamma)$, and
+$\varphi_j=(\lambda_j+\Nc)^{-1}f_j$ such that
+\begin{equation}\label{eq:fail}
+ \frac{\norm{f_j}_\infty}{\abs{\lambda_j}\norm{\varphi_j}_\infty}\longrightarrow0.
+\end{equation}
+Choose $q_j\in\Gamma$ attaining the supremum and set
+$\tau_j=\overline{\varphi_j(q_j)}/\abs{\varphi_j(q_j)}$. Let $u_j$ be the
+harmonic extension of $\tau_j\varphi_j/\norm{\varphi_j}_\infty$, so that
+$u_j(q_j)=1$. The weak maximum principle,
+applied to real phase components, gives $\norm{u_j}_\infty\leq1$.
+Its proof on this bounded domain is the usual test with the positive part
+above the maximum boundary value, which has zero trace.
+
+Pass to one Lipschitz chart containing the $q_j$ with a fixed margin, and
+rotate coordinates once so that the domain is above its graph. Set
+\[
+ r_j=\abs{\lambda_j}^{-1},\qquad
+ v_j(y)=u_j(q_j+r_jy),\qquad z_j=r_j\lambda_j.
+\]
+On every fixed bounded set, for large $j$ the scaled domain is
+$D_j=\{y_d>\psi_j(y')\}$, where $\psi_j(0)=0$ and the Lipschitz constants
+are bounded by a common $L$. A diagonal subsequence converges locally
+uniformly to a global Lipschitz function $\psi$.
+The coefficients $C_j(y)=C(q_j+r_jy)$, in the fixed rotated coordinates,
+converge uniformly locally on $D_j$ to a constant positive matrix $C_*$.
+Indeed, $q_j$ has a convergent subsequence and the Lipschitz modulus of $C$
+at scale $r_j$ tends to zero.
+
+The scaled weak equation is
+\begin{equation}\label{eq:scaled}
+ \int_{D_j} C_j\nabla v_j\cdot\nabla\overline\eta
+   +z_j\int_{\partial D_j}v_j\overline\eta\dd\sigma_j
+     =\int_{\partial D_j}g_j\overline\eta\dd\sigma_j,
+\end{equation}
+for compactly supported tests in the chart, where
+\[
+ g_j(y)=\frac{r_j\tau_j f_j(q_j+r_jy)}{\norm{\varphi_j}_\infty}
+ \quad (y\in\partial D_j).
+\]
+Thus $\norm{g_j}_\infty\to0$ by \eqref{eq:fail}. The factor $r_j$ in the
+boundary terms comes from dividing the weak equation by $r_j^{d-2}$,
+while surface measure scales by $r_j^{d-1}$.
+After a subsequence $z_j\to z_*$, where $\abs{z_*}=1$ and
+$\abs{\arg z_*}\leq\pi-\varepsilon$.
+The conormal derivatives $g_j-z_jv_j$ are uniformly bounded.
+Lemma~\ref{lem:Neumann} gives reflected ambient extensions with uniform
+local $H^1$ and H\"older bounds. Weak $H^1$ compactness and Ascoli on
+successive compact sets yield a bounded limit $v$ on
+$D=\{y_d>\psi(y')\}$, locally $H^1$ up to its boundary, with $v(0)=1$.
+
+In graph coordinates set
+$a_j(x)=\sqrt{1+\abs{\nabla\psi_j(x)}^2}$.
+A further diagonal weak-$*$ subsequence gives
+\begin{equation}\label{eq:density}
+ a_j\mathrel{\overset{*}{\rightharpoonup}} b\quad\text{locally in }L^\infty,
+ \qquad 1\leq b\leq\sqrt{1+L^2}.
+\end{equation}
+Uniform convergence of the extensions and of $\psi_j$ gives uniform
+convergence of $v_j(x,\psi_j(x))$ on compact sets. These values can therefore
+multiply the weak-$*$ convergence in \eqref{eq:density}.
+In the bulk, $1_{D_j}\to1_D$ almost everywhere and strongly in every finite
+local $L^p$ space. Together with coefficient convergence and weak convergence
+of the extension gradients, this passes the bulk integral in
+\eqref{eq:scaled}. The result is
+\begin{equation}\label{eq:limit}
+ \int_D C_*\nabla v\cdot\nabla\overline\eta
+   +z_*\int_{\R^{d-1}}b(x)v(x,\psi(x))
+                            \overline{\eta(x,\psi(x))}\dd x=0.
+\end{equation}
+Initially this holds for compact smooth ambient tests. They are dense in
+the local graph $H^1$ test space: reflect across the graph, multiply by an
+ambient cutoff, mollify the extension, and restrict back to $D$.
+Trace continuity passes the boundary term as well.
+
+Flatten the limiting graph by $\Phi(x,t)=(x,t+\psi(x))$. Its determinant is
+one, so the matrix in the half-space equation is
+\[
+ A(x)=(D\Phi)^{-1}C_*(D\Phi)^{-T}.
+\]
+It is real symmetric uniformly elliptic and independent of $t$.
+Equation \eqref{eq:limit} becomes precisely \eqref{eq:Robin} with
+$U=v\circ\Phi$, $\lambda=z_*$ and the weight $b$ in \eqref{eq:density}.
+Proposition~\ref{prop:Robin} gives $U=0$, contradicting $v(0)=1$.
+This proves the large-parameter estimate and hence \eqref{eq:mainres}.
+\end{proof}
+
+\section{Holomorphic extension}
+
+We finish with the contour argument, including the behavior at the vertex
+of the sector. Put $X=C(\Gamma)$. With $\mu=-\lambda$,
+Proposition~\ref{prop:resolvent} says that, for each $\omega>0$,
+\begin{equation}\label{eq:sectorres}
+ R(\mu)=(\mu-\Nc)^{-1},\qquad
+ \norm{R(\mu)}_{X\to X}\leq\frac{M_\omega}{\abs\mu}
+ \quad(\mu\neq0,\ \abs{\arg\mu}\geq\omega).
+\end{equation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $0<\omega<\pi/2$ and $r>0$. Let $G_{\omega,r}$ run inward from infinity
+on the ray $\arg\mu=\omega$, follow the circle of radius $r$
+counterclockwise from angle $\omega$ to $2\pi-\omega$ through the negative
+half-plane, and then run outward on the ray $\arg\mu=-\omega$.
+For $\abs{\arg z}<\pi/2-\omega$, define
+\begin{equation}\label{eq:contour}
+ E(z)=\frac1{2\pi i}\int_{G_{\omega,r}}e^{-z\mu}R(\mu)\dd\mu.
+\end{equation}
+The integral converges in operator norm. Cauchy's theorem in the annular
+region outside the positive sector makes it independent of $r$.
+Banach-valued integration and Cauchy's theorem can be applied in norm here;
+see \cite[Theorems 3.27, 3.29 and 3.31]{RudinFA}.
+
+Fix $\theta<\pi/2-\omega$ and estimate with $r=1/\abs z$.
+On either ray $\operatorname{Re}(z\mu)\geq c_\theta\abs z\abs\mu$.
+Each ray contribution is at most
+$M_\omega\int_1^\infty e^{-c_\theta s}\dd s/s$.
+On the circle, $\abs{e^{-z\mu}}\leq e$ and its length is
+$(2\pi-2\omega)r$. Thus $E$ is bounded for all $z\in\Sigma_\theta$.
+Keeping $r$ fixed locally in $z$, differentiation under the integral proves
+operator norm holomorphy.
+
+For real $a>r$, absolute convergence permits integrating
+$e^{-at}E(t)$ in $t$ first. We obtain
+\[
+ \int_0^\infty e^{-at}E(t)\dd t
+   =\frac1{2\pi i}\int_{G_{\omega,r}}(a+\mu)^{-1}R(\mu)\dd\mu
+   =(a+\Nc)^{-1}.
+\]
+For the last equality close the contour on the left. Its orientation is
+clockwise, and the pole at $\mu=-a$ has residue
+$R(-a)=-(a+\Nc)^{-1}$; the outer arc tends to zero by
+\eqref{eq:sectorres}. This agrees with the Laplace transform of $T(t)$ in
+\eqref{eq:Laplace}, so uniqueness gives $E(t)=T(t)$ for $t>0$.
+For completeness, scalar uniqueness for bounded continuous functions follows
+by the substitution $s=e^{-t}$: vanishing Laplace transforms give all
+sufficiently high integer moments on $(0,1)$. Polynomial density in
+$C[0,1]$ then gives zero against continuous tests and hence zero everywhere
+by continuity on $(0,1)$. Bounded linear functionals separate the
+Banach-valued functions.
+
+The identity theorem extends the semigroup law from positive real parameters
+to $E(z+w)=E(z)E(w)$ on each such sector, first in one variable and then in
+the other. The sector is convex and closed under addition. Constructions
+with different $\omega$ agree on overlaps, and their union is
+$\Sigma_{\pi/2}$. Denote the resulting extension by $T(z)$.
+
+Finally, for $\varphi\in D(\Nc)$ the sector bound makes
+$\int_0^z T(w)\Nc\varphi\dd w$ a holomorphic primitive from the vertex.
+One may integrate first from an interior point and use Cauchy's theorem;
+small connecting arcs at zero have norm $O(\text{radius})$, so the limit is
+path independent. On positive real parameters the semigroup derivative
+gives this primitive as $\varphi-T(z)\varphi$. The identity theorem gives
+the same equality throughout the sector, and hence
+\[
+ \norm{T(z)\varphi-\varphi}_\infty
+    \leq M_\theta\abs z\norm{\Nc\varphi}_\infty
+       \qquad(z\in\Sigma_\theta).
+\]
+Density of $D(\Nc)$ in $X$, together with \eqref{eq:sectorT}, proves strong
+continuity at zero for every $\varphi\in X$.
+\end{proof}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with proof exploration, checking source statements,
+and preparing the manuscript. The proof has undergone an AI natural-language
+review; it has not been formally verified or independently certified by a
+human referee.
+
+\begin{thebibliography}{10}
+\bibitem{ArendtElst}
+W. Arendt and A. F. M. ter Elst,
+\emph{The Dirichlet-to-Neumann operator on $C(\partial\Omega)$},
+Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) \textbf{20} (2020), 1169--1196.
+\href{https://arxiv.org/abs/1707.05556}{arXiv:1707.05556}.
+
+\bibitem{AAM}
+P. Auscher, A. Axelsson and A. McIntosh,
+\emph{Solvability of elliptic systems with square integrable boundary data},
+Ark. Mat. \textbf{48} (2010), 253--287.
+\href{https://doi.org/10.1007/s11512-009-0108-2}{doi:10.1007/s11512-009-0108-2}.
+
+\bibitem{ElstOuhabazAnalytic}
+A. F. M. ter Elst and E. M. Ouhabaz,
+\emph{Analyticity of the Dirichlet-to-Neumann semigroup on continuous functions},
+J. Evol. Equ. \textbf{19} (2019), 21--31.
+\href{https://arxiv.org/abs/1707.07718}{arXiv:1707.07718}.
+
+\bibitem{OpenProblems}
+A. F. M. ter Elst and E. M. Ouhabaz,
+\emph{Five open problems on the Dirichlet-to-Neumann operator with variable
+coefficients}, Integral Equations Operator Theory \textbf{97} (2025), article 14.
+\href{https://doi.org/10.1007/s00020-025-02796-9}{doi:10.1007/s00020-025-02796-9}.
+
+\bibitem{EvansGariepy}
+L. C. Evans and R. F. Gariepy,
+\emph{Measure Theory and Fine Properties of Functions}, revised edition,
+CRC Press, 2015.
+
+\bibitem{Nittka}
+R. Nittka,
+\emph{Regularity of solutions of linear second order elliptic and parabolic
+boundary value problems on Lipschitz domains},
+J. Differential Equations \textbf{251} (2011), 860--880.
+\href{https://doi.org/10.1016/j.jde.2011.05.019}{doi:10.1016/j.jde.2011.05.019}.
+Preprint: \href{https://arxiv.org/abs/0906.5285v1}{arXiv:0906.5285v1}.
+
+\bibitem{RudinRCA}
+W. Rudin, \emph{Real and Complex Analysis}, third edition,
+McGraw--Hill, 1987.
+
+\bibitem{RudinFA}
+W. Rudin, \emph{Functional Analysis}, second edition,
+McGraw--Hill, 1991.
+
+\bibitem{Trudinger}
+N. S. Trudinger,
+\emph{Linear elliptic operators with measurable coefficients},
+Ann. Scuola Norm. Sup. Pisa Cl. Sci. (3) \textbf{27} (1973), 265--308.
+\href{https://www.numdam.org/item/ASNSP_1973_3_27_2_265_0/}{Numdam}.
+\end{thebibliography}
+\end{document}
