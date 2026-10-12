@@ -1,0 +1,748 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\off}{\operatorname{off}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ind}{\mathbf 1}
+\title{Least singular values of independent random tensor columns}
+\author{Kaiwen Jin\\
+\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(A\) have \(m=\lfloor(1-\varepsilon)n^d\rfloor\) independent
+columns, each the tensor product of \(d\) random vectors in \(\R^n\).
+All scalar coordinates are independent, centered, of variance one,
+and have subgaussian norm at most \(K\). We prove that, for every fixed
+\(\varepsilon\in(0,1/2]\) and every integer sequence
+\(d=o(\sqrt{n/\log n})\), the least singular value is at least
+\(c_K\varepsilon n^{d/2}\) with probability tending to one.
+The constant depends only on \(K\); neither identical distributions
+nor symmetry of the coordinates is required. The proof conditions on
+all but the last tensor factor, estimates quadratic Gram moments of
+projected column blocks, and lifts the block estimate by averaging
+over subsets of columns.
+\end{abstract}
+
+\section{Introduction}
+
+Independent rank-one tensor features arise when coefficients are recovered
+from a linear combination of simple tensors. If these features are the
+columns of a matrix \(A\), a lower bound for its least singular value controls
+the amplification of an error in the observed linear combination.
+Tensor columns are isotropic under the assumptions below, but their scalar
+entries are dependent. The tensor order may also grow with the factor
+dimension.
+
+For a real random variable \(\xi\), use the convention
+\[
+ \|\xi\|_{\psi_2}
+ =\inf\{s>0:\E\exp(\xi^2/s^2)\le2\}.
+\]
+Let \(x_{i\ell}\in\R^n\), \(1\le i\le m\), \(1\le\ell\le d\).
+Assume that all coordinates of all these vectors are mutually independent,
+with mean zero, variance one, and subgaussian norm at most \(K\).
+Define
+\[
+ X_i=x_{i1}\otimes\cdots\otimes x_{id},\qquad
+ A=[X_1,\ldots,X_m]\in\R^{N\times m},\qquad N=n^d.
+\]
+The coordinates can have different laws, and the laws can depend on \(n\).
+For a matrix with \(m\ge1\) columns, write
+\[
+ s_{\min}(A)=\inf\{\|Av\|:v\in\R^m,\ \|v\|=1\}.
+\]
+
+Vershynin's tensor concentration theorem has constants independent of
+the order and yields quantitative linear independence
+\cite[Theorem 1.4 and Corollary 6.2]{Vershynin}.
+In the regime
+\(C_Kd^2\log(n)/n\le\varepsilon\le1/2\), that corollary gives
+\(s_{\min}(A)\ge\sqrt{\varepsilon}/2\) with probability at least
+\(1-2\exp(-c_K\varepsilon n/d)\), when
+\(m\le(1-\varepsilon)n^d\).
+Section 1.5 of the same paper asks for an improvement to the ambient
+dimension scale. The following theorem supplies that scale with a constant
+independent of the tensor order.
+
+\begin{samepage}
+\begin{theorem}\label{thm:main}
+For every \(K>0\) there is \(c_K>0\) with the following property.
+Fix any \(\varepsilon\in(0,1/2]\), and let \(d=d(n)\ge1\) be an integer
+sequence such that
+\[
+ \frac{d^2\log n}{n}\longrightarrow0.
+\]
+Put \(N=n^d\) and \(m=\lfloor(1-\varepsilon)N\rfloor\).
+For every sequence of coordinate laws satisfying the independence,
+centering, variance and subgaussian assumptions above,
+\[
+ \Prob\{s_{\min}(A)\ge c_K\varepsilon\sqrt N\}
+ \longrightarrow1\qquad(n\longrightarrow\infty).
+\]
+The constant \(c_K\) is independent of \(n,d,\varepsilon\) and the
+coordinate laws. Probability convergence is asserted for each fixed
+\(\varepsilon\).
+\end{theorem}
+\end{samepage}
+
+This is the full target of Problem 562 in the AIM collection
+\cite{AIM}, at the revision specified in that reference.
+
+An estimate of the distance of each column from the span of the others
+does not by itself give this scale: selecting a largest coordinate of a
+unit coefficient vector can lose a factor \(\sqrt m\).
+We instead project a small block of \(k\) columns away from all remaining
+columns. Its Gram matrix is well conditioned at the projection-rank
+scale. Once this holds with high probability for each fixed block,
+a deterministic subset-averaging argument gives the conclusion for all
+coefficient vectors without a union bound over all blocks.
+
+To estimate a projected block, we condition on its first \(d-1\) factors.
+The remaining Gram fluctuation is a quadratic polynomial in independent
+scalars. A scalar convex comparison reduces its off-diagonal part to a
+Gaussian quadratic polynomial with constants depending only on \(K\).
+We then prove a Gaussian Gram moment bound using Hermite creation and
+annihilation operators. This use of low-degree operator norms follows the
+method of Bandeira, Kunisky, Nizi\'c-Nikolac, Pesenti and Wang
+\cite[Section 2]{Fock}; the coefficient identities and estimates needed
+here are proved in Section~\ref{sec:moments}. Tensor concentration
+\cite{Vershynin} and matrix Chernoff \cite{Tropp} control the conditioned
+coefficients. These are the two concentration estimates imported into
+the proof.
+
+All vector norms are Euclidean and all matrix norms are induced operator
+norms. The Hilbert--Schmidt norm is denoted by \(\|\cdot\|_{\HS}\),
+and \(\Tr\) is the unnormalized trace. For a square matrix \(H\),
+\(\off(H)=H-\diag(H)\). All logarithms are natural.
+
+\section{Quadratic Gram moments}\label{sec:moments}
+
+\subsection{Scalar comparison}
+
+We first record an elementary scalar form of convex domination.
+For broader vector comparison results, see van Handel \cite{vanHandel}.
+
+\begin{lemma}\label{lem:convex}
+If \(\E\xi=0\) and \(\|\xi\|_{\psi_2}\le K\), and \(g\) is standard
+normal, then
+\[
+ \E f(\xi)\le\E f(16K g)
+\]
+for every finite convex function \(f:\R\to\R\) of polynomial growth.
+\end{lemma}
+
+\begin{proof}
+Put \(Y=\xi/(2K)\). Then \(\E e^{Y^2}\le2\), so
+\(\Prob\{|Y|>u\}\le2e^{-u^2}\). The inequality
+\(Y^2\le e^{Y^2}-1\) gives \(\E Y^2\le1\), and hence
+\(\E|Y|\le1\).
+For \(0\le z\le2\),
+\[
+ \E(Y-z)_+\le1
+ <\frac8{\sqrt{2\pi}}-2
+ \le\E(8g-z)_+.
+\]
+For \(z\ge2\), integration of the upper tail gives
+\[
+ \E(Y-z)_+\le2\int_z^\infty e^{-u^2}\,du
+ \le\frac{e^{-z^2}}{z}\le e^{-z^2}.
+\]
+On the event \(g\ge(z+1)/8\), the positive part \((8g-z)_+\) is
+at least one. Integrating the Gaussian density over the interval
+\([(z+1)/8,(z+9)/8]\) therefore gives
+\[
+ \E(8g-z)_+
+ \ge\Prob\{g\ge(z+1)/8\}
+ \ge\frac1{\sqrt{2\pi}}\exp\!\left(-\frac{(z+9)^2}{128}\right)
+ \ge e^{-z^2}.
+\]
+The last inequality holds because
+\(z^2-(z+9)^2/128\) is increasing for \(z\ge2\), and its value
+at \(2\) is greater than \(3>\log\sqrt{2\pi}\).
+The same bounds hold for \(-Y\). Since \(Y\) is centered,
+\(\E(Y-z)_+=-z+\E(-Y+z)_+\); this proves the comparison of
+positive parts for negative \(z\) as well.
+
+A finite convex piecewise affine function is an affine function plus
+a finite nonnegative linear combination of functions \((x-z)_+\).
+The comparison just proved and centering give its expectation inequality.
+For a general finite convex \(f\), choose one supporting line at each
+rational point and include a fixed supporting line in every finite
+maximum. These maxima increase to \(f\): supporting slopes are locally
+bounded by secant slopes, so rational points approaching any point
+recover its value. Subtracting the fixed line leaves a nonnegative
+increasing sequence. Monotone convergence proves the expectation
+comparison for \(Y\) and \(8g\). Applying this to \(f(2K\,\cdot)\)
+proves the claim. The polynomial-growth assumption ensures that all
+expectations are finite.
+\end{proof}
+
+\begin{lemma}\label{lem:quadratic}
+Let \(\xi_1,\ldots,\xi_s\) be independent centered scalars with
+\(\|\xi_\alpha\|_{\psi_2}\le K\). Let \(H_{\alpha\lambda}\)
+be real symmetric matrices of the same size, with
+\(H_{\alpha\lambda}=H_{\lambda\alpha}\) and \(H_{\alpha\alpha}=0\).
+For independent standard normals \(g_\alpha\), and any \(q\ge1\),
+\[
+ \left(\E\left\|\sum_{\alpha,\lambda}
+ H_{\alpha\lambda}\xi_\alpha\xi_\lambda\right\|^q\right)^{1/q}
+ \le2(16K)^2
+ \left(\E\left\|\sum_{\alpha,\lambda}
+ H_{\alpha\lambda}g_\alpha g_\lambda\right\|^q\right)^{1/q}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write \(Q(x)=\sum_{\alpha,\lambda}H_{\alpha\lambda}
+x_\alpha x_\lambda\). Include each scalar index in a random subset
+\(S\) independently with probability \(1/2\), and let
+\[
+ Q_S(x)=\sum_{\alpha\in S,\ \lambda\notin S}
+ H_{\alpha\lambda}x_\alpha x_\lambda.
+\]
+Then \(Q(x)=4\E_SQ_S(x)\), so convexity of the norm power yields
+\[
+ \|Q(\xi)\|_{L^q}
+ \le4\big(\E_S\E\|Q_S(\xi)\|^q\big)^{1/q}.
+\]
+For fixed \(S\), the expression \(Q_S\) is affine in each separate
+coordinate. Conditional on the others, its norm to the power \(q\)
+is a convex function of that coordinate. Successive application of
+Lemma~\ref{lem:convex}, followed by degree-two homogeneity, gives
+\[
+ \|Q_S(\xi)\|_{L^q}\le(16K)^2\|Q_S(g)\|_{L^q}.
+\]
+If \(g^S\) changes the signs of the coordinates indexed by \(S\),
+symmetry of the coefficient array implies
+\(Q_S(g)=(Q(g)-Q(g^S))/4\).
+Since \(g^S\) has the same law as \(g\), the \(L^q\) triangle
+inequality gives
+\(\|Q_S(g)\|_{L^q}\le\|Q(g)\|_{L^q}/2\).
+Combining the bounds proves the lemma.
+\end{proof}
+
+\subsection{Gaussian column matrices}
+
+The next estimate keeps both covariance scales separate. This is what
+makes a small projected block useful.
+
+\begin{lemma}\label{lem:gaussian}
+Let \(U_i:\R^n\to\R^M\), \(1\le i\le k\), be deterministic real
+matrices, and let \(g_i\) be independent standard Gaussian vectors in
+\(\R^n\). Put
+\[
+ W=[U_1g_1,\ldots,U_kg_k],\quad
+ D=\E W^TW=\diag(\|U_i\|_{\HS}^2),\quad
+ L=\E WW^T=\sum_iU_iU_i^T,
+\]
+and write \(a_0=\|D\|\), \(b_0=\|L\|\), and
+\(t=\max_i\|U_i\|^2\).
+For every integer \(p\ge1\), set
+\[
+ \mathcal M_p=b_0+2(2p+1)t
+       +2\sqrt{(a_0+(2p+1)t)(b_0+(2p+1)t)}.
+\]
+Then
+\begin{equation}\label{eq:gaussian-moment}
+ \big(\E\|\off(W^TW)\|^{2p}\big)^{1/(2p)}
+ \le2k^{1/(2p)}\mathcal M_p.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Denote the columns of \(U_i\) by \(u_{ia}\), index scalar
+coefficients by \(\alpha=(i,a)\), and set
+\(C_\alpha=u_{ia}e_i^T\in\R^{M\times k}\).
+Thus \(W=\sum_\alpha g_\alpha C_\alpha\).
+We need the two self-adjoint block matrices
+\begin{equation}\label{eq:blocks}
+ R_{\alpha\lambda}=C_\lambda^TC_\alpha,\qquad
+ S_{\alpha\lambda}=C_\lambda C_\alpha^T.
+\end{equation}
+They satisfy
+\begin{equation}\label{eq:block-norms}
+ \|R\|\le t,\qquad \|S\|\le t.
+\end{equation}
+Indeed, for an input with coordinates \(f_{(h,b);i}\), the output
+of \(R\) is
+\[
+ (Rf)_{(i,a);h}
+   =\sum_b\langle u_{hb},u_{ia}\rangle f_{(h,b);i}.
+\]
+For each ordered pair \((i,h)\), this is the map \(U_i^TU_h\)
+from the input block labelled \((h,i)\) to the output block
+labelled \((i,h)\). Both block families are disjoint, and each
+map has norm at most \(t\). Summing squared norms proves the first
+bound. For \(S\), coefficients with distinct column indices vanish.
+For each \(i\), the block matrix \([u_{ib}u_{ia}^T]_{a,b}\) is
+\[
+ (I_n\otimes U_i)F(I_n\otimes U_i^T),
+\]
+where \(F\) interchanges the two \(\R^n\) factors. This gives the
+second bound.
+
+We use the Gaussian \(L^2\) inner product on polynomials.
+The Hermite polynomials defined by
+\(H_0=1\), \(H_1(x)=x\), and
+\(H_{\ell+1}=xH_\ell-\ell H_{\ell-1}\) satisfy
+\(H_\ell'=\ell H_{\ell-1}\).
+For the standard Gaussian density \(\phi\),
+\(\phi^{(\ell)}=(-1)^\ell\phi H_\ell\).
+Integration by parts \(\ell\) times shows that
+\(\E H_\ell(g)H_j(g)=\E H_j^{(\ell)}(g)\).
+This is zero if \(\ell>j\), and equals \(\ell!\) if \(\ell=j\);
+the other unequal case follows by symmetry.
+The boundary terms vanish because they are polynomials times \(\phi\).
+The normalized polynomials \(h_\ell=H_\ell/\sqrt{\ell!}\) therefore
+form an orthonormal basis of the polynomial space. Their recurrence is
+\[
+ xh_\ell(x)=\sqrt{\ell+1}\,h_{\ell+1}(x)
+                    +\sqrt{\ell}\,h_{\ell-1}(x).
+\]
+For \(\eta\in\mathbb N_0^{kn}\), the products
+\(h_\eta=\prod_\alpha h_{\eta_\alpha}\) form the corresponding
+multivariate orthonormal basis. Define creation and annihilation on
+this basis by
+\[
+ c_\alpha h_\eta=\sqrt{\eta_\alpha+1}\,h_{\eta+e_\alpha},
+ \qquad
+ c_\alpha^*h_\eta=\sqrt{\eta_\alpha}\,h_{\eta-e_\alpha}.
+\]
+A term with \(\eta_\alpha=0\) in the second formula is zero.
+Multiplication by \(g_\alpha\) is \(c_\alpha+c_\alpha^*\), and
+\[
+ c_\lambda^*c_\alpha-c_\alpha c_\lambda^*
+   =\ind_{\alpha=\lambda}I.
+\]
+Let \(\mathcal P_{\le q}\) be the polynomials of total degree at
+most \(q\), and let \(\Lambda f=(c_\alpha^*f)_\alpha\).
+On \(\mathcal P_{\le q}\), also for vector-valued polynomials,
+\begin{equation}\label{eq:annihilation}
+ \|\Lambda\|\le\sqrt q,
+\end{equation}
+since \(\sum_\alpha c_\alpha c_\alpha^*h_\eta=|\eta|h_\eta\).
+
+Define
+\(\mathcal U=\sum_\alpha C_\alpha c_\alpha\) and
+\(\mathcal V=\sum_\alpha C_\alpha c_\alpha^*\).
+These map \(k\)-component polynomials to \(M\)-component polynomials,
+and multiplication by \(W\) is \(\mathcal U+\mathcal V\).
+The commutator and \eqref{eq:blocks} give the identities
+\begin{equation}\label{eq:operator-identities}
+ \mathcal U^*\mathcal U=D+\Lambda^*R\Lambda,\qquad
+ \mathcal V\mathcal V^*=L+\Lambda^*S\Lambda.
+\end{equation}
+Consequently, on degree at most \(q\),
+\[
+ \|\mathcal U\|\le\sqrt{a_0+qt},\qquad
+ \|\mathcal V^*\|\le\sqrt{b_0+qt}.
+\]
+On degree at most \(q\ge1\), their degree-lowering adjoints satisfy
+\[
+ \|\mathcal U^*\|\le\sqrt{a_0+(q-1)t},\qquad
+ \|\mathcal V\|\le\sqrt{b_0+(q-1)t}.
+\]
+For these last bounds, restrict the raising maps to degree at most
+\(q-1\) and take adjoints; homogeneous degrees are orthogonal.
+Both lowering maps vanish on constants.
+All norms here are restrictions between finite-dimensional
+polynomial spaces. No boundedness of these operators on the full
+Gaussian \(L^2\) space is asserted.
+
+Set \(T=W^TW-D\), viewed also as a multiplication operator.
+By \eqref{eq:operator-identities},
+\[
+ T=\Lambda^*R\Lambda+
+       \mathcal U^*\mathcal V+
+       \mathcal V^*\mathcal U+
+       \mathcal V^*\mathcal V.
+\]
+On input degree at most \(q\), the first term has norm at most
+\(qt\). Each middle term has norm at most
+\(\sqrt{(a_0+(q+1)t)(b_0+(q+1)t)}\), and the last has norm at
+most \(b_0+(q+1)t\). These bounds also hold when \(q=0\), by the
+vanishing of the lowering maps on constants.
+Thus \(T\) raises degree by at most two and its restricted norm is
+at most
+\[
+ b_0+(2q+1)t+
+ 2\sqrt{(a_0+(q+1)t)(b_0+(q+1)t)}.
+\]
+In forming \(T^p(e_i\otimes1)\), the input degrees are
+\(0,2,\ldots,2p-2\); the last display is bounded by \(\mathcal M_p\)
+at each of these steps. Therefore
+\[
+ \E\Tr(T^{2p})
+ =\sum_{i=1}^k\|T^p(e_i\otimes1)\|_{L^2}^2
+ \le k\mathcal M_p^{2p}.
+\]
+Pointwise symmetry gives \(\|T\|^{2p}\le\Tr(T^{2p})\).
+Finally,
+\(\off(W^TW)=T-\diag(T)\) and
+\(\|\diag(T)\|\le\|T\|\). This proves
+\eqref{eq:gaussian-moment}.
+\end{proof}
+
+\section{Tensor blocks and the full matrix}\label{sec:tensors}
+
+We now apply the moment bound in a way that keeps its constants
+independent of \(d\). We use the following form of
+\cite[Theorem 1.4]{Vershynin}.
+If \(Y\) is a tensor of order \(q\ge1\) with independent, centered,
+unit-variance, \(K\)-subgaussian coordinates in its factors, and \(B\)
+is a deterministic linear map from \(\R^{n^q}\) to a Euclidean
+space, then
+\begin{equation}\label{eq:tensor-concentration}
+ \Prob\{|\|BY\|-\|B\|_{\HS}|\ge z\}
+ \le2\exp\!\left(-\frac{a_K z^2}
+                       {q n^{q-1}\|B\|^2}\right),
+ \qquad 0\le z\le2\|B\|_{\HS}.
+\end{equation}
+The constant \(a_K>0\) depends only on \(K\).
+Zero maps can be treated deterministically.
+We also use the upper tail in
+\cite[Theorem 5.1.1]{Tropp}: for independent positive semidefinite
+\(r_0\times r_0\) matrices \(Y_i\le L_0I\), with
+\(\mu=\|\sum_i\E Y_i\|>0\),
+\begin{equation}\label{eq:cher}
+ \Prob\!\left\{\left\|\sum_iY_i\right\|
+                    \ge(1+\theta)\mu\right\}
+ \le r_0\left[\frac{e^\theta}
+                   {(1+\theta)^{1+\theta}}\right]^{\mu/L_0},
+ \qquad \theta\ge0.
+\end{equation}
+
+\subsection{Projected blocks}
+
+\begin{proposition}\label{prop:block}
+Under the assumptions of Theorem~\ref{thm:main}, there is
+\(\delta_K\in(0,1/4)\), depending only on \(K\), as follows.
+Put \(h=N-m\) and \(k=\lfloor\delta_K h\rfloor\).
+For each fixed \(k\)-subset \(J\) of columns, let \(P_J\) project
+orthogonally off the span of the columns outside \(J\).
+For sufficiently large \(n\), \(1\le k\le m\), and
+\[
+ \Prob\{s_{\min}(P_JA_J)<\sqrt{\varepsilon N/8}\}
+ \le q_n,\qquad q_n\longrightarrow0.
+\]
+The bound \(q_n\) can be chosen independently of \(J\) and the
+coordinate laws.
+\end{proposition}
+
+\begin{proof}
+For now let \(\delta\in(0,1/4)\) be a constant to be chosen using
+only \(K\), and set \(k=\lfloor\delta h\rfloor\).
+For fixed \(\varepsilon\) and sufficiently large \(n\),
+\[
+ k\ge\delta h/2,\qquad 1\le k\le m.
+\]
+Fix \(J\) and condition on all columns outside \(J\).
+Write \(P=P_J\), \(r=\rank P\), and
+\[
+ \beta=r/N,\qquad\gamma=k/N.
+\]
+There are \(m-k\) outside columns, even if some are dependent; hence
+\begin{equation}\label{eq:rank}
+ r\ge N-(m-k)=h+k,\qquad
+ \beta\ge\varepsilon,\qquad\gamma\le\delta\beta.
+\end{equation}
+The projection is measurable without any rank assumption on those
+columns. If their matrix is \(C\), it is the pointwise limit
+\[
+ P=\lim_{\lambda\downarrow0}
+ \big[I-C(C^TC+\lambda I)^{-1}C^T\big].
+\]
+The singular-value decomposition verifies the limit. In particular,
+\(P\) is independent of all coordinates of columns in \(J\), so
+conditioning means integration over the outside product law.
+
+Let \(R_0=n^{d-1}\) and
+\(b_i=x_{i1}\otimes\cdots\otimes x_{i,d-1}\in\R^{R_0}\).
+For \(d=1\), set \(R_0=1\) and \(b_i=1\).
+After an orthogonal reordering of tensor coordinates, there are
+isometric embeddings \(E_a:\R^{R_0}\to\R^N\) into \(n\)
+mutually orthogonal blocks such that
+\[
+ X_i=\sum_{a=1}^n \xi_{ia}E_ab_i,
+\]
+where the \(\xi_{ia}\) are the coordinates of the last factor.
+Condition next on all \(b_i\), \(i\in J\), and define
+\begin{equation}\label{eq:Ui}
+ U_i=\frac{[PE_1b_i,\ldots,PE_nb_i]}{\sqrt N},
+ \qquad W=\frac{PA_J}{\sqrt N}.
+\end{equation}
+
+We first establish, with high probability over the \(b_i\),
+\begin{equation}\label{eq:typical}
+ \max_{i\in J}\|b_i\|^2\le2R_0,\qquad
+ \left\|\sum_{i\in J}b_ib_i^T\right\|\le2k,\qquad
+ \max_{i\in J}\|U_i\|_{\HS}^2\le9\beta/4.
+\end{equation}
+For \(d\ge2\), apply \eqref{eq:tensor-concentration} to the
+identity on order \(d-1\) tensors, with
+\(z=(\sqrt2-1)\sqrt{R_0}\), for the first bound.
+For the second, truncate separately in each column:
+\[
+ Y_i=b_ib_i^T\ind_{\{\|b_i\|^2\le2R_0\}}.
+\]
+These matrices are independent, \(0\le Y_i\le2R_0I\), and
+\(\E Y_i\le I\).
+To see the last assertion, note that \(\E b_ib_i^T=I\):
+for tensor multi-indices, the covariance factors into scalar
+covariances and equals one on the diagonal and zero otherwise.
+This uses independence and unit variance, with no equality of laws.
+Let \(\mu=\|\sum_i\E Y_i\|\le k\).
+If \(\mu=0\), positivity and a zero expected trace give
+\(\sum_iY_i=0\) almost surely.
+Otherwise take \(\theta=2k/\mu-1\ge1\) in \eqref{eq:cher}.
+The logarithm of the bracketed probability factor is
+\[
+ \frac{2k-\mu-2k\log(2k/\mu)}{2R_0}.
+\]
+This is increasing in \(\mu\) for \(0<\mu\le k\), and its value
+at \(k\) is \(-(2\log2-1)k/(2R_0)\). Therefore
+\begin{equation}\label{eq:covariance-tail}
+ \Prob\!\left\{\left\|\sum_iY_i\right\|>2k\right\}
+ \le R_0\exp\!\left(-\frac{(2\log2-1)k}{2R_0}\right).
+\end{equation}
+On the first event in \eqref{eq:typical}, \(\sum_iY_i=\sum_ib_ib_i^T\).
+
+For the third bound in \eqref{eq:typical}, put
+\(T_P=\sum_aE_a^TPE_a\). Then \(0\le T_P\le nI\) and
+\(\Tr T_P=r\). Apply \eqref{eq:tensor-concentration} to
+\(T_P^{1/2}\) and \(b_i\), with \(z=\sqrt r/2\).
+Since
+\(\|U_i\|_{\HS}^2=b_i^TT_Pb_i/N\), this gives the desired
+upper bound. All these applications are uniform in the fixed
+projection \(P\).
+For \(d=1\), the three bounds hold deterministically:
+\(\|b_i\|^2=1\), \(\sum_ib_ib_i^T=k\), and
+\(\|U_i\|_{\HS}^2=\beta\).
+
+On \eqref{eq:typical}, the parameters of Lemma~\ref{lem:gaussian}
+for these \(U_i\) satisfy
+\begin{equation}\label{eq:parameters}
+ a_0\le9\beta/4,\qquad b_0\le2\gamma,\qquad t\le2/n.
+\end{equation}
+For the middle inequality,
+\[
+ \sum_iU_iU_i^T
+ =\frac{P(I_n\otimes\sum_ib_ib_i^T)P}{N}.
+\]
+For the last, the unprojected columns \(E_ab_i\) are orthogonal,
+so \(\|U_i\|\le\|b_i\|/\sqrt N\).
+
+The off-diagonal Gram matrix in \eqref{eq:Ui} is a quadratic
+polynomial to which Lemma~\ref{lem:quadratic} applies.
+Explicitly, set \(C_{(i,a)}=PE_ab_i e_i^T/\sqrt N\).
+For \(\alpha=(i,a)\), \(\lambda=(j,b)\), take
+\[
+ H_{\alpha\lambda}=
+ \begin{cases}
+ (C_\alpha^TC_\lambda+C_\lambda^TC_\alpha)/2,&i\ne j,\\
+ 0,&i=j.
+ \end{cases}
+\]
+These coefficients are symmetric as matrices and in their two
+indices, and
+\(\off(W^TW)=\sum_{\alpha,\lambda}
+H_{\alpha\lambda}\xi_\alpha\xi_\lambda\).
+The last-factor coordinates retain their independent centered
+laws after the conditioning. Lemmas~\ref{lem:quadratic}
+and \ref{lem:gaussian} therefore give
+\[
+ \|\off(W^TW)\|_{L^{2p}}
+ \le4(16K)^2k^{1/(2p)}\mathcal M_p,
+\]
+where this moment is conditional on \(P,(b_i)\).
+Choose \(p=\lceil\log N\rceil\), and put
+\(\rho=2(2p+1)/n\) and \(B_K=4(16K)^2\sqrt e\).
+Since \(k\le N\), \eqref{eq:parameters} bounds the last display by
+\begin{equation}\label{eq:conditional-moment}
+ B_K\left[2\gamma+2\rho+
+ 2\sqrt{(9\beta/4+\rho)(2\gamma+\rho)}\right].
+\end{equation}
+Choose \(\delta=\delta_K\in(0,1/4)\) so that
+\begin{equation}\label{eq:delta}
+ B_K[2\delta_K+3\sqrt{2\delta_K}]<1/(16e).
+\end{equation}
+This choice uses only \(K\).
+Dividing \eqref{eq:conditional-moment} by \(\beta\),
+using \eqref{eq:rank}, and setting \(\eta=\rho/\beta\)
+gives the upper bound
+\[
+ B_K\left[2\delta_K+2\eta+
+ 2\sqrt{(9/4+\eta)(2\delta_K+\eta)}\right].
+\]
+At \(\eta=0\), this is less than \(1/(16e)\).
+By continuity it is at most \(1/(8e)\) for
+\(0\le\eta\le\eta_K\), for some \(\eta_K>0\) depending only on \(K\).
+Since \(\rho/\varepsilon\to0\) and \(\beta\ge\varepsilon\),
+this holds for all sufficiently large \(n\). Thus, on
+\eqref{eq:typical}, Markov's inequality gives
+\begin{equation}\label{eq:off-tail}
+ \Prob\{\|\off(W^TW)\|>\beta/8\mid P,(b_i)\}
+ \le e^{-2p}\le N^{-2}.
+\end{equation}
+
+For the actual diagonal entries, condition only on \(P\).
+Apply \eqref{eq:tensor-concentration} at order \(d\), with
+\(B=P\), \(\|P\|_{\HS}=\sqrt r\), and \(z=\sqrt r/2\).
+A union bound gives
+\begin{equation}\label{eq:diag}
+ \min_{i\in J}\frac{\|PX_i\|^2}{N}\ge\beta/4
+\end{equation}
+except with probability at most \(2k\exp(-a_K\beta n/d)\),
+after decreasing \(a_K\) by an absolute factor.
+There is no need for independence between \eqref{eq:diag}
+and the event in \eqref{eq:off-tail}.
+Their intersection implies
+\(\lambda_{\min}(W^TW)\ge\beta/8\), and hence
+\[
+ s_{\min}(PA_J)\ge\sqrt{\beta N/8}
+                  \ge\sqrt{\varepsilon N/8}.
+\]
+
+Combining the three tensor concentration bounds, the covariance
+tail and \eqref{eq:off-tail}, the failure probability is at most
+\begin{equation}\label{eq:qn}
+ q_n=6N\exp(-a_K\varepsilon n/d)
+       +R_0\exp(-c_0\delta_K\varepsilon n)+N^{-2},
+ \qquad c_0=(2\log2-1)/4,
+\end{equation}
+for sufficiently large \(n\), with a further decrease of \(a_K\)
+depending only on \(K\).
+Here \(k/R_0\ge\delta_K\varepsilon n/2\).
+The first term tends to zero because
+\[
+ \frac{d\log n}{\varepsilon n/d}
+       =\frac{d^2\log n}{\varepsilon n}\longrightarrow0,
+\]
+the second because \(\log R_0=(d-1)\log n=o(n)\),
+and the third because \(N\to\infty\).
+Also \(\rho/\varepsilon=O(d\log n/(\varepsilon n))\to0\),
+as used above.
+For \(d=1\), the auxiliary events in \eqref{eq:typical} are
+deterministic, so the same upper bound remains valid.
+Every bound is uniform in \(J\), the conditioned projection,
+and the permitted laws.
+\end{proof}
+
+\subsection{Subset averaging}
+
+We conclude with a deterministic implication for any matrix.
+For a fixed unit vector \(v\in\R^m\), let \(J\) be uniform among
+the \(k\)-subsets of \(\{1,\ldots,m\}\), and write
+\[
+ Z=\|v_J\|^2,\qquad t_0=k/m.
+\]
+Then \(0\le Z\le1\) and \(\E_JZ=t_0\). It follows that
+\begin{equation}\label{eq:subset-mass}
+ \Prob_J\{Z\ge t_0/2\}
+ \ge\frac{t_0}{2-t_0}\ge t_0/2,
+\end{equation}
+by bounding \(\E_JZ\) above by
+\(t_0/2+(1-t_0/2)\Prob_J\{Z\ge t_0/2\}\).
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Take \(\delta_K\) from Proposition~\ref{prop:block}, and set
+\[
+ c_K=\sqrt{\delta_K}/8,\qquad
+ k=\lfloor\delta_K(N-m)\rfloor.
+\]
+For sufficiently large \(n\),
+\[
+ t_0=k/m\ge\delta_K\varepsilon/2.
+\]
+For any realization of \(A\) with
+\(s_{\min}(A)<c_K\varepsilon\sqrt N\), choose a unit vector \(v\)
+with \(\|Av\|<c_K\varepsilon\sqrt N\).
+If \(Z\ge t_0/2\) and the projected block for \(J\) obeyed
+\(s_{\min}(P_JA_J)\ge\sqrt{\varepsilon N/8}\), then
+\[
+ \|Av\|\ge\|P_JAv\|=\|P_JA_Jv_J\|
+ \ge\sqrt{\varepsilon N/8}\sqrt{t_0/2}
+ \ge\sqrt{\delta_K/32}\,\varepsilon\sqrt N,
+\]
+contradicting the choice of \(c_K\).
+By \eqref{eq:subset-mass}, a fraction at least \(t_0/2\)
+of all subsets must therefore have a bad projected block.
+This is a pointwise statement for each matrix and needs no
+measurable selection of \(v\).
+Integrating this finite fraction over the law of \(A\), and using
+Proposition~\ref{prop:block}, gives
+\[
+ \Prob\{s_{\min}(A)<c_K\varepsilon\sqrt N\}
+ \le\frac{2m}{k}\Prob_{A,J}
+       \{s_{\min}(P_JA_J)<\sqrt{\varepsilon N/8}\}
+ \le\frac4{\delta_K\varepsilon}\,q_n
+ \longrightarrow0.
+\]
+The choice of \(c_K\) uses only \(K\), and \eqref{eq:qn}
+applies to every admissible order and coordinate-law sequence.
+This proves the stated fixed-\(\varepsilon\) convergence.
+\end{proof}
+
+\paragraph{AI-use disclosure.}
+The argument and manuscript were developed with assistance from
+OpenAI Codex. AI assistance was used for literature checking,
+calculation checks, drafting, and manuscript review.
+No independent human or formal verification is claimed.
+
+\begin{thebibliography}{9}
+\bibitem{Vershynin}
+R.~Vershynin,
+\emph{Concentration inequalities for random tensors},
+Bernoulli \textbf{26} (2020), no.~4, 3139--3162.
+\href{https://doi.org/10.3150/20-BEJ1218}{doi:10.3150/20-BEJ1218}.
+Updated author manuscript:
+\href{https://arxiv.org/abs/1905.00802v5}{arXiv:1905.00802v5}.
+
+\bibitem{Tropp}
+J.~A.~Tropp,
+\emph{An introduction to matrix concentration inequalities},
+Foundations and Trends in Machine Learning \textbf{8} (2015),
+nos.~1--2, 1--230.
+\href{https://doi.org/10.1561/2200000048}{doi:10.1561/2200000048}.
+Theorem~5.1.1 in the
+\href{https://tropp.caltech.edu/books/Tro14-Introduction-Matrix-preprint.pdf}
+{author preprint revised December 24, 2014}.
+
+\bibitem{Fock}
+A.~S.~Bandeira, D.~Kunisky, P.~Nizi\'c-Nikolac, L.~Pesenti, and R.~Wang,
+\emph{Matrix concentration and equivalent operators on Fock spaces},
+\href{https://arxiv.org/abs/2610.01982v1}{arXiv:2610.01982v1} (2026).
+
+\bibitem{vanHandel}
+R.~van Handel,
+\emph{On the subgaussian comparison theorem},
+\href{https://arxiv.org/abs/2512.18588v2}{arXiv:2512.18588v2} (2026;
+first posted 2025).
+
+\bibitem{AIM}
+S.~Brunton, M.~J.~Colbrook, M.~V.~de Hoop, G.~Stepaniants,
+A.~Townsend, and R.~Ward,
+\emph{AIM --- Open Applied Problems}, GitHub repository (2026).
+Problem 562, revision
+\nolinkurl{c9929805cece044705abaaebe1cebddac1ba11a6}.
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/562-tensor-singular-value.md}
+{Frozen problem statement}.
+\end{thebibliography}
+\end{document}
