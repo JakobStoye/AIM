@@ -1,0 +1,364 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Sph}{\mathbb S^2}
+\newcommand{\dd}{\,d}
+\DeclareMathOperator{\sech}{sech}
+\title{The Mercedes-star partition of a disk}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Among triples of pairwise disjoint nonempty connected open subsets of the
+unit disk, the three sectors of opening $2\pi/3$ minimize the largest first
+Dirichlet eigenvalue. The minimum is $j_{3/2,1}^2$, where $j_{3/2,1}$ is
+the first positive zero of the Bessel function $J_{3/2}$.
+The proof transfers any triple with smaller energy to a triple on the unit
+sphere with energy below its known sharp minimum $15/4$. A common radial
+change of variables matches the angular terms after division by positive
+reference profiles. A Wronskian comparison shows that the remaining radial
+term has the required sign. The argument imposes no condition on the cells'
+boundary regularity, topology, symmetry, or coverage of the disk.
+\end{abstract}
+
+\section{The minimax problem}
+Spectral partition problems balance the first Dirichlet eigenvalues of
+several disjoint cells. For three cells in a disk, the natural candidate is
+the Mercedes star: three equal sectors meeting at the center.
+Let $B=\{x\in\R^2:|x|<1\}$. For a nonempty open subset $D$ of $B$, write
+\begin{equation}\label{eq:rayleigh}
+ \lambda_1(D)=\inf_{0\ne u\in C_c^\infty(D;\R)}
+                  \frac{\int_D|\nabla u|^2}{\int_Du^2}.
+\end{equation}
+This also equals the infimum over $H_0^1(D)$, defined as the closure of
+$C_c^\infty(D)$ in $H^1(D)$: convergence in that norm passes the energy
+inequality to the closure, and the reverse comparison follows from inclusion.
+This convention is valid for arbitrary open sets.
+
+Berkolaiko, Canzani, Cox and Marzuola prove minimality of the Mercedes star
+among partitions whose boundary contains a curve from the origin to the
+boundary of the disk \cite[Theorem~1.8]{BCCM}. The unrestricted class also
+allows interfaces outside that comparison. On the unit sphere, in contrast,
+the three equal lunes are known to minimize the same objective
+\cite[Theorem~1.1 and (1.9)]{HHT}. The arbitrary-open-cell formulation is
+stated by Soave and Terracini \cite[Definition~1 and Theorem~1.10]{ST}.
+We use that spherical result to obtain the unrestricted disk comparison.
+
+\begin{theorem}\label{thm:main}
+For every triple $(D_1,D_2,D_3)$ of pairwise disjoint nonempty connected open
+subsets of $B$,
+\[
+ \max_{1\le i\le3}\lambda_1(D_i)\ge j_{3/2,1}^2.
+\]
+The three sectors separated by radii at angles $2\pi/3$ attain equality.
+Thus the infimum over all such triples is $j_{3/2,1}^2$.
+Here $j_{3/2,1}$ is the first positive zero of the Bessel function $J_{3/2}$.
+\end{theorem}
+
+The comparison acts on arbitrary compactly supported test functions.
+We divide out the positive radial profile of an equal sector, and choose a
+radial map so that its angular energy agrees with the corresponding
+spherical energy. The radial energy is then larger. Consequently, three
+disk cells with eigenvalues below the proposed value would yield three
+spherical cells below their sharp value. A logarithmic cutoff handles tests
+that meet the center. We prove the radial comparison in Section~2, the
+energy identity in Section~3, and the theorem in Section~4.
+
+We record the external spectral result in the precise form used below.
+The sphere has radius one and its induced metric; its eigenvalues are
+defined by \eqref{eq:rayleigh} with spherical gradient and area measure.
+\begin{proposition}[Spherical three-partition theorem]\label{prop:sphere}
+For every triple of pairwise disjoint nonempty connected open subsets
+$\Omega_i$ of $\Sph$, one has
+$\max_i\lambda_1(\Omega_i)\ge15/4$.
+\end{proposition}
+This is the $N=3$ case of \cite[Theorem~1.10]{ST}, with the partition class
+of Definition~1 and the objective in equation~(10) of that paper's
+arXiv v2. It requires neither a covering nor regular boundaries.
+
+\section{A radial comparison}
+Put $\nu=3/2$ and $E=j_{3/2,1}^2$. It is useful to write the positive
+reference profile without Bessel notation. Let $k$ be the first positive
+zero of $f(x)=\sin x-x\cos x$. Since $f'=x\sin x$, it is positive on
+$(0,\pi]$ and strictly decreases from $\pi$ to $-1$ on
+$(\pi,3\pi/2)$. Hence $k\in(\pi,3\pi/2)$.
+The identities for the spherical Bessel function
+\[
+ j_1(z)=\sqrt{\frac{\pi}{2z}}J_{3/2}(z)
+       =\frac{\sin z}{z^2}-\frac{\cos z}{z}
+ \quad(z>0)
+\]
+\cite[10.47.3 and 10.49.3]{DLMF} identify $k=j_{3/2,1}$.
+Define
+\begin{equation}\label{eq:q}
+ q(r)=r^{-3/2}\{\sin(kr)-kr\cos(kr)\},\qquad 0<r<1.
+\end{equation}
+It is positive and solves
+\begin{equation}\label{eq:diskode}
+ -q''-\frac{q'}r+\frac{\nu^2}{r^2}q=Eq.
+\end{equation}
+Indeed, for $g(r)=f(kr)$, $g'=k^2r\sin(kr)$ and
+$g''=k^2\sin(kr)+k^3r\cos(kr)$; the left side is
+$r^{-3/2}(2g'/r-g'')=k^2q$. At the endpoints,
+\begin{equation}\label{eq:endpoints}
+ \begin{aligned}
+ q(r)&=a r^{3/2}+O(r^{7/2}),&
+ q'(r)&=\tfrac32a r^{1/2}+O(r^{5/2}),\\
+ a&=k^3/3>0,& q(1)&=0,\qquad q'(1)=k^2\sin k<0.
+ \end{aligned}
+\end{equation}
+
+The spherical profile will be $\sin^{3/2}\theta$. To match the angular
+energy after dividing by these profiles, set
+\begin{equation}\label{eq:massmap}
+ \begin{gathered}
+ T=\int_0^1q(r)^2\frac{\dd r}{r},\qquad C=\frac{2T}{\pi},\\
+ \int_0^{\theta(r)}\sin^2 a\dd a
+       =\frac1C\int_0^r q(t)^2\frac{\dd t}{t}.
+ \end{gathered}
+\end{equation}
+Here $0<T<\infty$ by \eqref{eq:endpoints}.
+The cumulative functions increase strictly from $0$ to $\pi/2$;
+therefore $\theta:(0,1)\to(0,\pi)$ is a smooth increasing bijection,
+with endpoint limits $0$ and $\pi$. In particular,
+\begin{equation}\label{eq:thetader}
+ \theta'=\frac{q^2}{Cr\sin^2\theta}.
+\end{equation}
+
+\begin{lemma}\label{lem:radial}
+For every $0<r<1$,
+\begin{equation}\label{eq:h}
+ q(r)^2>C\sin^3\theta(r),\qquad
+ h(r):=\frac{r\theta'(r)}{\sin\theta(r)}>1.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use logarithmic radius: $Q(t)=q(e^t)$ on $t<0$, extended by zero on
+$t\ge0$. For each real $s$, compare it with
+$Z_s(t)=\sqrt C\,\sech^{3/2}(t-s)$ on $\R$.
+The substitution $a=2\arctan e^{t-s}$ gives
+$a'=\sin a=\sech(t-s)$, and hence
+\[
+ \int_\R Q^2\dd t=T=\int_\R Z_s^2\dd t.
+\]
+On $t<0$, \eqref{eq:diskode} and differentiation give
+\[
+ Q''=(\nu^2-Ee^{2t})Q,\qquad
+ Z_s''=(\nu^2-\nu(\nu+1)\sech^2(t-s))Z_s.
+\]
+The Wronskian $W=Q'Z_s-QZ_s'$ therefore satisfies
+\begin{equation}\label{eq:wronskian}
+ W'=e^{2t}b_s(t)QZ_s,\qquad
+ b_s(t)=\frac{15e^{-2s}}{(1+e^{2(t-s)})^2}-E.
+\end{equation}
+The coefficient $b_s$ decreases strictly, and
+$b_s(0)\le15/4-E<0$.
+Also $W(-\infty)=0$, because both profiles and their derivatives are
+$O(e^{3t/2})$, while $W(0^-)=q'(1)Z_s(0)<0$.
+If $b_s$ is negative throughout, then $W<0$. Otherwise $W$ first increases
+from zero and then strictly decreases, crossing zero once before $t=0$.
+Since $(Q/Z_s)'=W/Z_s^2$, the ratio is strictly decreasing, or increases
+and then decreases. Its zero extension adds no peak.
+
+It follows that $I=\{Q^2>Z_s^2\}$ is a single open interval. It is
+nonempty, since the two total masses agree and $Q^2-Z_s^2<0$ on
+$[0,\infty)$. Its right endpoint $b$ is less than zero.
+Write $H(t)=\int_{-\infty}^t(Q^2-Z_s^2)\dd a$.
+If $I=(-\infty,b)$, then $H(t)>0$ at every finite $t$: before $b$ it is
+an integral of a positive function, and after $b$ it is minus the remaining
+negative tail integral. If $I=(a,b)$ with finite $a$, then $H<0$ up to $a$,
+$H$ is strictly increasing on $(a,b)$, and
+\[
+ H(b)=-\int_b^\infty(Q^2-Z_s^2)\dd t>0.
+\]
+Outside $I$ the density difference is strictly negative except at its
+endpoints; strict monotonicity of the ratio excludes an equality interval.
+Thus any finite zero of $H$ lies strictly inside $I$. We have proved
+\begin{equation}\label{eq:crossing}
+ \int_{-\infty}^{t_0}Q^2\dd t=
+ \int_{-\infty}^{t_0}Z_s^2\dd t
+ \quad\Longrightarrow\quad Q(t_0)^2>Z_s(t_0)^2
+ \qquad(t_0<0).
+\end{equation}
+
+For a fixed $r$, choose $t_0=\log r$ and
+$s=t_0-\log\tan(\theta(r)/2)$.
+The substitution defining $a$ shows that \eqref{eq:massmap} is exactly
+the cumulative equality in \eqref{eq:crossing}.
+Since $\sech(t_0-s)=\sin\theta(r)$, this gives the first inequality in
+\eqref{eq:h}; the second follows from \eqref{eq:thetader}.
+\end{proof}
+
+\section{Comparison of quadratic forms}
+The radial map
+\begin{equation}\label{eq:map}
+ \Phi(r,\phi)=(\sin\theta(r)\cos\phi,
+               \sin\theta(r)\sin\phi,\cos\theta(r)),
+ \qquad\Phi(0)=(0,0,1),
+\end{equation}
+is a homeomorphism from $B$ onto the sphere minus its south pole.
+Indeed, the radial functions are inverse continuous increasing bijections,
+and the angular circles collapse continuously at the origin and north pole.
+Away from these two points, it is a smooth diffeomorphism.
+Its image is open in the full sphere, so it preserves openness,
+connectedness, nonemptiness and disjointness of cells.
+
+Let $u$ be a real compact smooth test on $B$ whose support avoids the origin.
+Set
+\[
+ u=qv,\qquad V(\theta,\phi)=v(r(\theta),\phi),\qquad
+ w(\theta,\phi)=\sin^\nu\theta\,V(\theta,\phi).
+\]
+Extend $w$ by zero near the two poles. It is smooth there because its
+support stays away from both poles, and it is nonzero whenever $u$ is.
+Define the shifted forms
+\[
+ G_B(u)=\int_B|\nabla u|^2-E\int_Bu^2,\qquad
+ G_S(w)=\int_{\Sph}|\nabla_Sw|^2-\tfrac{15}{4}\int_{\Sph}w^2.
+\]
+Expanding $u_r=q'v+qv_r$ and integrating the mixed term gives
+\begin{equation}\label{eq:gb}
+ G_B(u)=\int_0^{2\pi}\int_0^1
+ \left[rq^2v_r^2+\frac{q^2}{r}(v_\phi^2-\nu^2v^2)\right]\dd r\dd\phi.
+\end{equation}
+For clarity, the coefficient of $v^2$ after that integration is
+$r q'^2-Erq^2-(rqq')'=-q(rq')'-Erq^2=-\nu^2q^2/r$.
+All boundary terms vanish by compact support.
+
+On the sphere the area measure is $\sin\theta\dd\theta\dd\phi$ and
+$|\nabla_Sw|^2=w_\theta^2+w_\phi^2/\sin^2\theta$.
+The profile $p(\theta)=\sin^\nu\theta$ satisfies
+\[
+ -p''-\cot\theta\,p'+\frac{\nu^2}{\sin^2\theta}p
+       =\nu(\nu+1)p=\tfrac{15}{4}p.
+\]
+This follows from $p'/p=\nu\cot\theta$ and
+$\csc^2\theta-\cot^2\theta=1$.
+The corresponding mixed-term integration yields
+\begin{equation}\label{eq:gs}
+ G_S(w)=\int_0^{2\pi}\int_0^\pi
+ \left[\sin^4\theta\,V_\theta^2+
+       \sin^2\theta\,(V_\phi^2-\nu^2V^2)\right]\dd\theta\dd\phi.
+\end{equation}
+There are again no boundary terms, since the support avoids the poles.
+By \eqref{eq:thetader} and \eqref{eq:h},
+\[
+ \frac{q^2}{r\theta'}=C\sin^2\theta,
+ \qquad rq^2\theta'=C\sin^4\theta\,h^2.
+\]
+Changing variables in \eqref{eq:gb} and subtracting $C$ times
+\eqref{eq:gs} proves the exact identity
+\begin{equation}\label{eq:comparison}
+ G_B(u)-CG_S(w)=C\int_0^{2\pi}\int_0^\pi
+  \sin^4\theta\,[h(r(\theta))^2-1]V_\theta^2\dd\theta\dd\phi\ge0.
+\end{equation}
+Thus a negative disk form gives a negative spherical form. In particular,
+no comparison of the two unweighted masses is needed.
+
+\section{Proof of Theorem~\ref{thm:main}}
+Suppose that an admissible triple had $\lambda_1(D_i)<E$ for all three
+indices. Choose nonzero $u_i\in C_c^\infty(D_i;\R)$ with $G_B(u_i)<0$.
+We first make their supports avoid the origin without losing these strict
+inequalities.
+Choose a smooth $\eta:\R\to[0,1]$, zero on $(-\infty,0]$ and one on
+$[1,\infty)$, and put
+\[
+ \chi_\varepsilon(r)=\eta\left(
+ \frac{\log r-2\log\varepsilon}{\log(1/\varepsilon)}\right),
+ \qquad 0<\varepsilon<1/2.
+\]
+It vanishes for $r\le\varepsilon^2$ and equals one for $r\ge\varepsilon$.
+Its constant extension near zero is smooth. With $M=\|\eta'\|_\infty$,
+\[
+ \int_B|\nabla\chi_\varepsilon|^2
+       \le\frac{2\pi M^2}{\log(1/\varepsilon)}\longrightarrow0.
+\]
+For a fixed compact smooth $u$, the $L^2$ errors
+$(\chi_\varepsilon-1)u$ and
+$(\chi_\varepsilon-1)\nabla u$ are bounded by their supremum norms times
+$\sqrt\pi\varepsilon$, while
+$\|u\nabla\chi_\varepsilon\|_2\le\|u\|_\infty
+\|\nabla\chi_\varepsilon\|_2\to0$.
+Hence $\chi_\varepsilon u\to u$ in $H^1(B)$.
+A common sufficiently small $\varepsilon$ leaves all three products
+nonzero with negative $G_B$, still compactly supported in their original
+cells. Relabel them $u_i$.
+
+The cells $\Omega_i=\Phi(D_i)$ are pairwise disjoint nonempty connected
+open spherical sets. The tests obtained in Section~3 are nonzero members of
+$C_c^\infty(\Omega_i)$, with $G_S(w_i)<0$ by \eqref{eq:comparison}.
+Thus all three $\lambda_1(\Omega_i)<15/4$, contradicting
+Proposition~\ref{prop:sphere}. This proves the universal lower bound.
+
+For the upper bound, let $\ell=2\pi/3$ and consider the sector
+$0<r<1$, $0<\phi<\ell$. Its trial function
+$U=q(r)\sin(\nu\phi)$ has finite mass and gradient energy by
+\eqref{eq:endpoints}. Multiplication of \eqref{eq:diskode} by $rq$ gives
+\[
+ \int_0^1\left(rq'^2+\nu^2q^2/r\right)\dd r
+        =E\int_0^1rq^2\dd r,
+\]
+since $rqq'\to0$ at both endpoints. Both squared angular factors integrate
+to $\ell/2$, so the quotient of $U$ is $E$.
+
+To verify $U\in H_0^1$ explicitly, choose a smooth $\rho$ bounded between
+zero and one, zero on $(-\infty,1]$ and one on $[2,\infty)$.
+Multiply $U$ by
+\[
+ \rho(r/\delta)\rho((1-r)/\delta)
+ \rho(\phi/\delta)\rho((\ell-\phi)/\delta).
+\]
+For small $\delta>0$ this is a compact smooth sector test.
+The original mass and gradient integrals over the removed strips tend to
+zero by integrability. The extra derivative energies are $O(\delta^3)$
+at the vertex, since $q=O(r^{3/2})$, and $O(\delta)$ at the circular edge,
+since $q=O(1-r)$. At either angular edge the sine vanishes linearly,
+and the extra energy is bounded by
+\[
+ K\left(\int_0^1q^2\frac{\dd r}{r}\right)
+    \delta^{-2}\int_0^{2\delta}a^2\dd a=O(\delta).
+\]
+Here $K$ is independent of $\delta$; the other cutoffs are bounded by one.
+The square of the sum of four extra gradient terms is at most four times
+the sum of their squares. The tests therefore converge to $U$ in $H^1$.
+Their quotients tend to $E$, giving the sector eigenvalue at most $E$.
+The three rotated sectors are an admissible triple. Their maximum is at
+most $E$ and, by the lower bound, at least $E$. This proves attainment and
+the stated exact infimum.\hfill$\square$
+
+\begin{thebibliography}{9}
+\bibitem{BCCM}
+G. Berkolaiko, Y. Canzani, G. Cox and J. L. Marzuola,
+\emph{Homology of spectral minimal partitions},
+arXiv:2406.04225v1 (2024).
+\url{https://arxiv.org/abs/2406.04225v1}.
+\bibitem{HHT}
+B. Helffer, T. Hoffmann-Ostenhof and S. Terracini,
+\emph{On spectral minimal partitions: the case of the sphere},
+arXiv:0903.3326v1 (2009).
+\url{https://arxiv.org/abs/0903.3326v1}.
+\bibitem{ST}
+N. Soave and S. Terracini,
+\emph{Liouville theorems and $1$-dimensional symmetry for solutions of an
+elliptic system modelling phase separation},
+Advances in Mathematics \textbf{279} (2015), 29--66.
+\href{https://doi.org/10.1016/j.aim.2015.03.015}{doi:10.1016/j.aim.2015.03.015}.
+Source version: \url{https://arxiv.org/abs/1404.7288v2}.
+\bibitem{DLMF}
+NIST, \emph{Digital Library of Mathematical Functions},
+equations 10.47.3 and 10.49.3.
+\url{https://dlmf.nist.gov/10.47.E3};
+\url{https://dlmf.nist.gov/10.49.E3}.
+\end{thebibliography}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used for proof exploration, source checks, symbolic
+calculations and drafting this manuscript.
+\end{document}
