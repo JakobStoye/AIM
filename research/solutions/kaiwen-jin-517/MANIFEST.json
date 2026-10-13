@@ -1,0 +1,153 @@
+{
+  "format_version": 1,
+  "problem_id": 517,
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "date": "2026-10-11",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Exclude local raw results, caches and build intermediates.",
+      "sha256": "fe64f5dd9102c947b92c363c0aecc30009ee9d1c001844597269394e072a8b4f",
+      "bytes": 198
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "purpose": "Software and platform versions for the reported checks.",
+      "sha256": "5b0232121c23df8c53021624670798675f04ea55b3150d7f6c314d83ba22b7e9",
+      "bytes": 420
+    },
+    {
+      "path": "README.md",
+      "purpose": "Public package overview and reproduction commands.",
+      "sha256": "dbdc9a2bed842944be14d39e3ad583cfc3ed6c4d2f4c8adeef4c2a80732b7509",
+      "bytes": 2773
+    },
+    {
+      "path": "REPRODUCTION_RECORD.md",
+      "purpose": "Recorded clean-package validation outcomes.",
+      "sha256": "107b3597da27bd6cbd7e992287a6c3f375de2d4423279066ae5a3f9f22f7258f",
+      "bytes": 2377
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence between the original target and manuscript.",
+      "sha256": "8e8ef8504a05728f0529559f224f893a98a5b6c21788d15e73ea85bc6f17d28a",
+      "bytes": 3865
+    },
+    {
+      "path": "numerical_case/README.md",
+      "purpose": "Fixed experiment configuration, runner, plotter and documentation.",
+      "sha256": "95aa32a39fb41f2b49a2d647747976a48f2857d8d3ff10deac15937da2bb277e",
+      "bytes": 3140
+    },
+    {
+      "path": "numerical_case/config.json",
+      "purpose": "Fixed experiment configuration, runner, plotter and documentation.",
+      "sha256": "03054d8c375b9f249be2b33e792057b973186d101e4438daefc8274408d7e728",
+      "bytes": 257
+    },
+    {
+      "path": "numerical_case/figures/determinant_comparison.pdf",
+      "purpose": "Vector figure used by the manuscript.",
+      "sha256": "faa2849fef460ca96ef0aef85879a0b38e3a868f8624e16b3c03ca0cb4342d8f",
+      "bytes": 13811
+    },
+    {
+      "path": "numerical_case/figures/radial_spectra.pdf",
+      "purpose": "Vector figure used by the manuscript.",
+      "sha256": "b8b60215031e057f56a27681691e8ffaa4b85f415f3e57bda136d5d1ca6edebe",
+      "bytes": 21504
+    },
+    {
+      "path": "numerical_case/plot_cases.py",
+      "purpose": "Fixed experiment configuration, runner, plotter and documentation.",
+      "sha256": "f92233bc196b6c792cc575fb3c523c296999628026b053ae3307f67975b221b1",
+      "bytes": 2934
+    },
+    {
+      "path": "numerical_case/run_cases.py",
+      "purpose": "Fixed experiment configuration, runner, plotter and documentation.",
+      "sha256": "b20f922fd45dbd77aedc1e9dc1e5603cb5e15cfc3edb423e40ea8a861b178a42",
+      "bytes": 9117
+    },
+    {
+      "path": "numerical_case/summaries/paper_results.json",
+      "purpose": "Compact recorded numerical summary.",
+      "sha256": "105fb54a452f2172114872aacaf3295c1180d74b4f22395a1af453051476e413",
+      "bytes": 903
+    },
+    {
+      "path": "paper/REFERENCE_GUIDE.md",
+      "purpose": "Primary reference links and cited passage locations.",
+      "sha256": "fb5555cf5a73a9b8c160d7f55d7ffbfd9eab7a73d55c40e5e208f63ca7f169e0",
+      "bytes": 3060
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Final manuscript and its public source dependencies.",
+      "sha256": "33847f9d30b26420a3308634fff1a7e17b9ade916b53b4979a1dfece320d9f81",
+      "bytes": 360588
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Final manuscript and its public source dependencies.",
+      "sha256": "343c78aa29d834006766976aebe45333bb8b3ae06ec76d86ef2685be7138c8e8",
+      "bytes": 32113
+    },
+    {
+      "path": "paper/references.bib",
+      "purpose": "Final manuscript and its public source dependencies.",
+      "sha256": "4d2a4f4fd05c454515be91b85d0f878576e90cf2bea8cd17fd8e434df97b9dd1",
+      "bytes": 2481
+    },
+    {
+      "path": "pyproject.toml",
+      "purpose": "Library packaging and dependency declarations.",
+      "sha256": "514c7ebd9dbefef5a40010420ae81c5c0686c5ba2d7271b6b80ff4ce6143057e",
+      "bytes": 412
+    },
+    {
+      "path": "requirements.txt",
+      "purpose": "Pinned experiment and test dependencies.",
+      "sha256": "c72ba0eb4b71a187c35dbe63ba45876f8759a2313270a96f1ccbdcefbb647d8e",
+      "bytes": 108
+    },
+    {
+      "path": "src/README.md",
+      "purpose": "Reusable numerical methods and library documentation.",
+      "sha256": "6eb64a6f9d5b51779dc72b94fa77a5401cda9afa6621b09ce7e6f8653ecbfa93",
+      "bytes": 2145
+    },
+    {
+      "path": "src/elliptic_widths/__init__.py",
+      "purpose": "Reusable numerical methods and library documentation.",
+      "sha256": "ed693e32403b0ff71a7069699752412b686b3f70cd56096ff574e3b583ddf01c",
+      "bytes": 517
+    },
+    {
+      "path": "src/elliptic_widths/radial.py",
+      "purpose": "Reusable numerical methods and library documentation.",
+      "sha256": "d88ccceb8570af8e9f9c51d4315339f9e41fe5491263bf37408769c1a5216155",
+      "bytes": 6814
+    },
+    {
+      "path": "src/elliptic_widths/spectral.py",
+      "purpose": "Reusable numerical methods and library documentation.",
+      "sha256": "8da1ad149b17468e795f752703bcaf2acc8dc8b4bad107f84a7782f78190932a",
+      "bytes": 4944
+    },
+    {
+      "path": "test/README.md",
+      "purpose": "Independent references and reliability tests.",
+      "sha256": "048586953753d321733ad4bf8af3407e62f439b77e2c02cb28f0f5134e2502eb",
+      "bytes": 1100
+    },
+    {
+      "path": "test/test_radial.py",
+      "purpose": "Independent references and reliability tests.",
+      "sha256": "c6593026457f559e2e4c687406b9157387217317ffedb8bb3444ab562ba6d668",
+      "bytes": 10266
+    }
+  ],
+  "checksum_scope": "SHA256SUMS covers these files and MANIFEST.json; SHA256SUMS excludes itself."
+}

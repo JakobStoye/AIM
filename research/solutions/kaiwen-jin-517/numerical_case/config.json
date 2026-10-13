@@ -1,0 +1,12 @@
+{
+  "seed": 5172026,
+  "dimensions": [2, 3],
+  "cases_per_dimension": 20,
+  "form_trials_per_dimension": 40,
+  "annuli": 64,
+  "core_radius": 0.00390625,
+  "outer_radius": 1.0,
+  "inner_radius": 0.5,
+  "maximum_degree": 80,
+  "maximum_count_check": 10000
+}

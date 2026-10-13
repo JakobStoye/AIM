@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "seed": 5172026,
+  "dimensions": [
+    2,
+    3
+  ],
+  "form_trials": 80,
+  "radial_cases": 40,
+  "minimum_form_trace_margin": 1.4648013019208128,
+  "maximum_splitting_error": 1.0231815394945443e-12,
+  "maximum_product_excess": -0.3032518914949752,
+  "maximum_individual_excess": -0.1516259457474876,
+  "reference_errors": [
+    {
+      "dimension": 2,
+      "label": "isotropic",
+      "exact_reference_error": 1.4921397450962104e-13
+    },
+    {
+      "dimension": 2,
+      "label": "polar_anisotropy",
+      "exact_reference_error": 3.907985046680551e-14
+    },
+    {
+      "dimension": 3,
+      "label": "isotropic",
+      "exact_reference_error": 1.7053025658242404e-13
+    },
+    {
+      "dimension": 3,
+      "label": "polar_anisotropy",
+      "exact_reference_error": 4.085620730620576e-14
+    }
+  ],
+  "environment": {
+    "python": "3.13.3",
+    "numpy": "2.4.4"
+  }
+}
