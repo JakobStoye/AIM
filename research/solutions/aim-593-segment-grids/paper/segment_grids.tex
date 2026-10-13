@@ -1,0 +1,307 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Rectangular grids in crossing segment arrangements},
+pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\detv}[2]{\det(#1,#2)}
+\title{Rectangular grids in crossing segment arrangements}
+\author{Kaiwen Jin\\{\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+For every integer \(k\geq1\), an arrangement of \(3k\) disjoint red
+straight-line segments and \(3k\) disjoint blue straight-line segments,
+with every red--blue pair crossing in both relative interiors, contains
+\(k\) segments of each color forming an embedded rectangular grid.
+This answers Question~1 of Jain, Ricci, Rollin and Schulz.
+The equivalence preserves the entire subdivided segment paths, their
+cyclic orders and the unbounded face.
+More generally, \(n\) segments of each color contain a rectangular
+subarrangement of \(p\) red and \(n-p+1\) blue segments for every
+\(1\leq p\leq n\); consequently \(2k-1\) segments of each color suffice
+for a \(k\)-grid.
+The selection follows by averaging consecutive gaps in the circular
+order of the segment directions.
+\end{abstract}
+
+Throughout, segments are closed and nondegenerate, and a crossing is
+the intersection of two nonparallel supporting lines in the relative
+interior of both segments. A rectangular \(m\)-by-\(q\) grid is the
+arrangement of \(m\) horizontal red segments crossing \(q\) vertical
+blue segments. An arrangement is equivalent to such a grid if its
+subdivided colored planar graph is isomorphic to that of the grid,
+preserving the counterclockwise cyclic orders at vertices and the
+unbounded face. Endpoints and terminal edges are included.
+
+In their study of the geometric thickness of \(2\)-degenerate graphs,
+Jain, Ricci, Rollin and Schulz~\cite[Section~3.1, Lemma~5]{JRRS}
+extract a \(k\)-grid from \(k2^{k-1}\) disjoint red segments and \(k\)
+disjoint blue segments that cross completely between colors.
+Their argument selects a common crossing-orientation pattern.
+They ask whether \(3k\) segments of each color suffice
+\cite[Section~4, Question~1]{JRRS}. We retain the orientation idea
+and use the circular order of straight-segment directions to obtain
+a linear bound. The geometric argument below also identifies the
+endpoint tails and the unbounded face.
+
+\begin{theorem}\label{thm:original}
+Let \(k\geq1\) be an integer. Suppose that \(3k\) pairwise disjoint
+red straight-line segments and \(3k\) pairwise disjoint blue
+straight-line segments lie in the plane, and every red segment crosses
+every blue segment in both relative interiors. Then \(k\) red segments
+and \(k\) blue segments form an arrangement equivalent to a rectangular
+\(k\)-by-\(k\) grid.
+\end{theorem}
+
+\section{Coherent orientations and the embedding}
+
+An orientation of a segment chooses its initial and terminal endpoints.
+Its direction vector points from the initial endpoint to the terminal
+endpoint. For vectors \(u,v\in\R^2\), write
+\(\detv{u}{v}=u_1v_2-u_2v_1\).
+
+We first record the elementary quadrilateral fact used to compare
+crossing orders.
+\begin{lemma}\label{lem:turns}
+A simple quadrilateral with four nonzero turn determinants cannot have
+two positive and two negative turns. If all four turns have the same
+sign, the quadrilateral is convex.
+\end{lemma}
+\begin{proof}
+Nonzero turns exclude collinearity of any three vertices. If all four
+are vertices of their convex hull, a simple cycle follows the boundary:
+either of the other two cycles through the four vertices uses both intersecting
+diagonals. The boundary cycle is convex and its turns have one sign.
+Otherwise one vertex \(X\) lies strictly inside the triangle of the
+other three. Label that triangle \(U,V,W\) counterclockwise and write
+\(X=aU+bV+cW\), where \(a,b,c>0\) and \(a+b+c=1\).
+Up to reversal and cyclic relabeling, the quadrilateral is \(U,X,V,W\).
+Putting \(T=\detv{V-U}{W-U}>0\), its turn determinants are
+\[
+ bT,\qquad -cT,\qquad aT,\qquad T.
+\]
+There are three positive turns and one negative turn; reversal reverses
+all signs. These cases prove both assertions.
+\end{proof}
+
+\begin{lemma}\label{lem:embedding}
+Suppose \(m\geq1\) red segments and \(q\geq1\) blue segments are
+pairwise disjoint within each color, and every red--blue pair crosses
+properly. If they can be oriented with direction vectors \(u_r,v_b\)
+such that
+\[
+ \detv{u_r}{v_b}>0
+ \quad\text{for every red segment \(r\) and blue segment \(b\),}
+\]
+then their entire arrangement is equivalent to a rectangular
+\(m\)-by-\(q\) grid.
+\end{lemma}
+\begin{proof}
+Assume first that \(m,q\geq2\). Take two reds \(r,r'\) and two blues
+\(b,b'\), and put
+\[
+ A=r\cap b,\quad B=r\cap b',\quad C=r'\cap b',\quad D=r'\cap b.
+\]
+These points are distinct. The four sides of \(ABCD\) lie on the
+original segments, so nonadjacent sides are disjoint by the
+same-color disjointness assumption. Adjacent sides have only their
+named intersection. Thus \(ABCD\) is simple and all its turns are nonzero.
+
+Exchange \(b,b'\) if necessary so that \(A\) precedes \(B\) on \(r\).
+For some \(a,c>0\), \(\varepsilon\in\{1,-1\}\), and nonzero real
+\(s,t\), write
+\[
+ B-A=a u_r,\qquad C-D=\varepsilon c u_{r'},\qquad
+ D-A=s v_b,\qquad C-B=t v_{b'}.
+\]
+The four turn determinants, in order at \(A,B,C,D\), are
+\begin{align*}
+ \detv{A-D}{B-A}&=sa\detv{u_r}{v_b},&
+ \detv{B-A}{C-B}&=at\detv{u_r}{v_{b'}},\\
+ \detv{C-B}{D-C}&=\varepsilon ct\detv{u_{r'}}{v_{b'}},&
+ \detv{D-C}{A-D}&=\varepsilon cs\detv{u_{r'}}{v_b}.
+\end{align*}
+Their signs are
+\(\operatorname{sgn}s,\operatorname{sgn}t,
+\varepsilon\operatorname{sgn}t,\varepsilon\operatorname{sgn}s\).
+If \(\varepsilon=-1\), exactly two signs are positive and two are
+negative, contradicting Lemma~\ref{lem:turns}. Hence
+\(\varepsilon=1\): the two reds meet these blues in the same oriented
+order. Opposite signs of \(s,t\) would again give two turns of each
+sign, so \(s,t\) have the same sign. The two blues therefore meet
+these reds in the same oriented order as well. All four turns agree,
+and \(ABCD\) is convex.
+
+Applying this to every pair of segments of each color shows that all
+reds encounter all blues in one common oriented total order, and all
+blues encounter all reds in one common oriented total order.
+Label the reds \(r_1,\ldots,r_m\) in the latter order and the blues
+\(b_1,\ldots,b_q\) in the former order. Map \(r_i\cap b_j\) to the
+grid crossing \((j,i)\), red initial and terminal endpoints to the left
+and right row endpoints, and blue initial and terminal endpoints to the
+lower and upper column endpoints. These maps match exactly the
+consecutive edges on every segment and preserve colors.
+At a crossing, the counterclockwise rays have order
+\[
+ u_r,\quad v_b,\quad -u_r,\quad -v_b,
+\]
+since their determinant is positive. This is the order of the
+rightward red and upward blue rays in the standard grid. Endpoint
+vertices have degree one. Thus all cyclic orders agree.
+
+It remains to identify the unbounded face. The four extreme segments
+bound the convex quadrilateral \(Q\) with successive corners
+\[
+ r_1\cap b_1,\quad r_1\cap b_q,\quad
+ r_m\cap b_q,\quad r_m\cap b_1.
+\]
+For any intermediate red, its intersections with \(b_1,b_q\) lie
+strictly on the corresponding opposite sides of \(Q\), by the common
+red order. Its portion between them is a chord of \(Q\), containing
+all its crossings by the common blue order. The same argument applies
+to intermediate blues, while the extreme portions form the sides of
+\(Q\). Every crossing and every edge between crossings is therefore
+in \(Q\).
+
+The endpoints of an intermediate segment are outside \(Q\), since
+its two extreme crossings are the entry and exit of its supporting
+line through this convex quadrilateral, and both crossings are in
+the segment's relative interior. For an extreme segment, continuation
+past either corner of its side also leaves \(Q\). Outside \(Q\) the
+graph consequently consists only of terminal tails, each attached to
+the boundary at one end and free at the other. They have no
+intersection outside \(Q\).
+
+These tails do not disconnect the exterior from infinity. Start with
+an exterior polygonal path to a sufficiently large surrounding polygon,
+avoiding the finitely many endpoints and meeting tails transversely.
+At a tail crossing, follow a thin neighborhood of the tail from that
+crossing to its free endpoint, pass around the endpoint, and return
+on the other side. This removes the crossing. The detour meets no
+other tail or \(Q\): the closed tail portion in question is disjoint
+from those finitely many segments and has positive clearance.
+For two disjoint closed segments this clearance follows directly by
+minimizing their squared distance: clamping the projection onto one
+segment leaves a piecewise quadratic function on the other, whose
+minimum is attained and cannot be zero. Apply this also to the four
+sides of \(Q\). Repeating the finitely many detours gives a path to
+infinity avoiding the graph.
+Thus the exterior belongs to the unbounded face, with the extreme
+cycle and all terminal tails as its boundary. All faces inside \(Q\)
+are bounded because its full boundary is in the graph. The graph map
+above identifies this same outer boundary in the rectangular grid.
+
+If \(m=1\) or \(q=1\), the nontrivial crossing order is simply the
+order on the sole transversal, and the graph and rotation maps still
+apply. The arrangement is one segment with free half-segments attached
+at its crossings. Starting with that segment, each attachment preserves
+connectedness of the complement by the same free-end detour just
+described. There is a unique face, the unbounded face, as in the
+one-row or one-column grid. This includes \(m=q=1\).
+\end{proof}
+
+\section{Selecting segment directions}
+
+An unoriented segment direction is an angle modulo \(\pi\), hence a
+point on a circle of length \(\pi\). No red direction equals a blue
+direction, since segments of those two directions could not cross
+properly. Directions within one color may coincide.
+
+\begin{lemma}\label{lem:selection}
+Let \(n\geq1\), and let an arrangement have \(n\) disjoint red segments
+and \(n\) disjoint blue segments, with every red--blue pair crossing
+properly. For every integer \(p\) with \(1\leq p\leq n\), there are
+\(p\) red and \(n-p+1\) blue segments that admit the positive
+determinant orientations of Lemma~\ref{lem:embedding}.
+\end{lemma}
+\begin{proof}
+List the red direction angles, with multiplicity, as
+\(\alpha_1\leq\cdots\leq\alpha_n\) in \([0,\pi)\), and extend them by
+\(\alpha_{i+n}=\alpha_i+\pi\).
+Let \(g_i\) be the number of blue segment directions, counted with
+multiplicity, in the open gap from
+\(\alpha_i\) to \(\alpha_{i+1}\), interpreted cyclically.
+Tied red directions have empty gaps. Every blue direction belongs
+to exactly one gap, so
+\[
+ \sum_{i=1}^n g_i=n.
+\]
+The window of \(p\) consecutive reds starting at \(i\) spans
+\([\alpha_i,\alpha_{i+p-1}]\). Its interior contains
+\[
+ c_i=\sum_{j=i}^{i+p-2}g_j
+\]
+blue directions, with the empty sum understood as zero for \(p=1\).
+Every gap occurs in exactly \(p-1\) cyclic windows. Therefore
+\[
+ \sum_{i=1}^n c_i=(p-1)n,
+\]
+and some \(c_i\leq p-1\).
+
+This chosen window has angular length strictly less than \(\pi\).
+All windows have length at most \(\pi\); a window of length \(\pi\)
+would contain all \(n\) blues, since no blue direction equals its
+red endpoint direction, contradicting \(c_i\leq p-1<n\).
+Thus at least \(n-c_i\geq n-p+1\) blues lie in its complementary
+open arc.
+
+Keep these \(p\) reds and any \(n-p+1\) such blues. Orient the reds
+at their lifted angles in \([\alpha_i,\alpha_{i+p-1}]\), and the
+blues at their lifts in \((\alpha_{i+p-1},\alpha_i+\pi)\).
+Every blue angle exceeds every red angle by a number strictly between
+zero and \(\pi\), so every red--blue determinant is positive.
+The selected objects remain the original segments.
+The counting also covers \(p=n\), when each window omits one gap,
+and arbitrary same-color ties; no perturbation is required.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:original}]
+Use Lemma~\ref{lem:selection} with \(n=3k\) and \(p=k\).
+It selects \(k\) red and \(2k+1\) blue segments with positive
+red--blue determinants. Keep any \(k\) of these blue segments.
+The proper crossings, same-color disjointness and coherent orientations
+are inherited. Lemma~\ref{lem:embedding} gives the required grid
+with its full segment paths, cyclic orders and unbounded face.
+\end{proof}
+
+\begin{corollary}\label{cor:stronger}
+Under the same disjointness and proper-crossing assumptions, \(n\)
+segments of each color contain an embedded rectangular arrangement of
+\(p\) red and \(n-p+1\) blue segments for every \(1\leq p\leq n\).
+In particular, \(2k-1\) segments of each color suffice for a \(k\)-grid
+for every integer \(k\geq1\).
+\end{corollary}
+\begin{proof}
+Combine Lemmas~\ref{lem:selection} and~\ref{lem:embedding}; then set
+\(n=2k-1\) and \(p=k\). Larger equal families can first be restricted
+to \(2k-1\) of each color.
+\end{proof}
+
+Corollary~\ref{cor:stronger} is incompatible with the exclusion claimed
+in \cite[Figure~26]{JRRS} for an arrangement of \(3t\) segments of each
+color containing no \((t+1)\)-grid: for every \(t\geq1\),
+\(3t\geq2(t+1)-1\). Under the embedded-grid definition in
+Question~1 and in this note, that exclusion cannot hold.
+No optimality claim is made for the sufficient bound \(2k-1\).
+
+\begin{thebibliography}{1}
+\bibitem{JRRS}
+R.~Jain, M.~Ricci, J.~Rollin and A.~Schulz,
+\emph{On the geometric thickness of 2-degenerate graphs},
+Journal of Computational Geometry \textbf{15}(2) (2024 issue), 94--123.
+Published 10 February 2025.
+\href{https://doi.org/10.20382/jocg.v15i2a4}{doi:10.20382/jocg.v15i2a4}.
+\end{thebibliography}
+
+\paragraph{AI use.}
+OpenAI Codex (gpt-6.1-sol) was used to develop and check the argument
+and prepare the manuscript. No independent human review or formal
+verification is claimed.
+\end{document}
