@@ -1,0 +1,404 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\rate}{\operatorname{rate}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\med}{\operatorname{med}}
+\newcommand{\ed}{e^{\mathrm{det}}}
+\newcommand{\er}{e^{\mathrm{ran}}}
+\title{The maximal gain of nonadaptive randomization}
+\author{Kaiwen Jin\\{\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We determine the supremum of the improvement in polynomial convergence rate
+due to randomization for approximation of bounded linear operators between
+real Banach spaces using nonadaptive continuous linear measurements.
+The supremum is one. We construct fixed infinite-dimensional operators whose
+gains tend to one, with worst-case expected-norm error and at most \(n\)
+measurements for every random seed. The construction combines a
+finite-dimensional deterministic lower bound with a known nonadaptive
+CountSketch estimate and a weighted \(\ell_1\) sum of blocks.
+\end{abstract}
+
+\section{Introduction}
+
+Suppose that a bounded linear operator \(S:X\to Y\), between real Banach
+spaces, must be approximated on the closed unit ball \(B_X\) from \(n\)
+continuous linear measurements. A nonadaptive deterministic algorithm has
+the form
+\[
+ A(x)=\phi(L_1x,\ldots,L_nx),\qquad L_j\in X',
+\]
+where the functionals are fixed and the reconstruction \(\phi:\R^n\to Y\)
+is unrestricted. Its minimal worst-case norm error is denoted by
+\(\ed_n(S)\). Using fewer than \(n\) measurements is allowed.
+
+A nonadaptive randomized algorithm chooses the whole list of functionals
+and its reconstruction independently of the input. For every seed \(\omega\)
+it uses at most \(n\) measurements. We require the real-valued error
+\((\omega,x)\mapsto\|Sx-A^\omega(x)\|_Y\) to be jointly measurable on the
+seed space times the Borel unit ball. The minimal error is
+\[
+ \er_n(S)=\inf_A\sup_{x\in B_X}\E\|Sx-A^\omega(x)\|_Y.
+\]
+Thus the input supremum is outside the expectation; the error criterion is
+the expected norm. All errors in this note use nonadaptive information.
+
+For a bounded nonnegative sequence \(u=(u_n)_{n\ge1}\), set
+\[
+ \rate(u)=\sup\{\alpha\ge0:u_n=O(n^{-\alpha})\}.
+\]
+Write \(a(S)=\rate(\ed_n(S))\), \(b(S)=\rate(\er_n(S))\), and
+\begin{equation}\label{eq:G}
+ G=\sup_{\substack{X,Y\ {\rm real\ Banach},\ S\in\mathcal L(X,Y)\\
+                   a(S)<\infty,\ b(S)<\infty}}
+       \bigl(b(S)-a(S)\bigr).
+\end{equation}
+The operator and spaces in each rate are fixed as \(n\to\infty\).
+
+Krieg, Novak and Ullrich proved the general upper bound \(G\le1\)
+\cite[Corollaries 14--15]{KNU}. If either space is Hilbert, their bound
+improves to \(1/2\). The general nonadaptive question remained between
+\(1/2\) and \(1\); this interval is stated explicitly in
+\cite[Section 10.2, equation (10.10)]{KU}. It is also the question posed in
+AIM Problem 555 \cite{AIM555}. Results that permit adaptive randomized
+measurements do not decide this comparison.
+
+\begin{theorem}\label{thm:main}
+The supremum in \eqref{eq:G} is \(G=1\).
+\end{theorem}
+
+The finite-dimensional estimates needed for the lower construction have
+different dependence on dimension. A deterministic method has constant
+error on \(\ell_p^m\to\ell_\infty^m\) when \(m\) is sufficiently large
+relative to its rank. In contrast, a nonadaptive randomized sketch needs
+only logarithmic dependence on \(m\) for a prescribed accuracy
+\cite[Proposition 4.1]{KW}. A finite-dimensional example alone has infinite
+asymptotic rates, so it cannot be used in \eqref{eq:G}. We place such
+examples in a fixed infinite-dimensional operator. The \(\ell_1\) norm
+across blocks controls the expected error for inputs occupying many blocks;
+reading an initial group of blocks exactly makes the remaining sketch
+budget affordable. The resulting gains approach one. We do not assert
+that the supremum is attained by one operator.
+
+\section{Finite-dimensional estimates}
+
+We first give a lower bound that allows arbitrary deterministic
+reconstruction. For a vector \(z\in\R^m\), \(\|z\|_r\) denotes its usual
+\(\ell_r\) norm.
+
+\begin{lemma}\label{lem:det}
+Let \(q\ge4\) be an even integer, \(p=q/(q-1)\), and \(0\le n<m\).
+Every deterministic algorithm using at most \(n\) fixed linear measurements
+to approximate the identity \(\ell_p^m\to\ell_\infty^m\) has error at least
+\begin{equation}\label{eq:finite-det}
+ \frac{1-\sqrt{n/m}}{1+\sqrt n\,m^{-1/q}}.
+\end{equation}
+In particular its error is at least \(1/4\) if
+\(m\ge4n\) and \(m\ge n^{q/2}\).
+\end{lemma}
+
+\begin{proof}
+Let \(N\) be the information matrix and \(V\) its row space. Set
+\[
+ \rho=\max_{1\le i\le m}
+       \sup_{\substack{x\in\ker N\\\|x\|_p\le1}}|x_i|.
+\]
+The inputs \(x\) and \(-x\) in \(\ker N\) have identical information.
+Their images have distance \(2\|x\|_\infty\), so the worst error of any
+reconstruction is at least \(\rho\).
+
+For each standard basis vector \(e_i\), we claim that
+\begin{equation}\label{eq:distance}
+ \sup_{\substack{x\in V^\perp\\\|x\|_p\le1}}|x_i|
+       =\dist_{\ell_q^m}(e_i,V).
+\end{equation}
+H\"older's inequality proves the inequality from left to right.
+Choose a minimizer \(v_i\in V\) for the distance. Such a minimizer exists
+by finite-dimensional compactness: a minimizing sequence is bounded and
+\(V\) is closed. Put \(r_i=e_i-v_i\). If \(r_i=0\), both sides vanish.
+Otherwise, differentiating the polynomial
+\(\sum_j((r_i)_j-tv_j)^q\) at its minimum \(t=0\), for \(v\in V\), gives
+\(\sum_j(r_i)_j^{q-1}v_j=0\). Therefore
+\[
+ x_j=\frac{(r_i)_j^{q-1}}{\|r_i\|_q^{q-1}}
+\]
+defines a vector in \(V^\perp\) with \(\|x\|_p=1\) and
+\[
+ x_i=\langle e_i,x\rangle
+     =\langle r_i,x\rangle=\|r_i\|_q.
+\]
+This proves \eqref{eq:distance}.
+
+Form the matrix \(B\) with rows \(v_i\), and put \(E=I-B\). Its residual
+rows have \(\ell_q\) norm at most \(\rho\), and \(\rank B\le n\). Hence
+\[
+ \tr B\ge m(1-\rho),\qquad
+ \|B\|_F\le\sqrt m+m^{1-1/q}\rho,
+\]
+where \(\|\cdot\|_F\) is the Frobenius norm. Indeed,
+\(\|z\|_2\le m^{1/2-1/q}\|z\|_q\) for every row of \(E\).
+Let \(P_V\) be the Euclidean orthogonal projection onto \(V\).
+Since \(B=BP_V\), \(P_V\) is symmetric and
+\(\|P_V\|_F=\sqrt{\dim V}\), we have
+\[
+ |\tr B|=|\langle B,P_V\rangle_F|\le\sqrt n\,\|B\|_F.
+\]
+Combining these inequalities and dividing by \(m\) yields
+\[
+ 1-\rho\le\sqrt{n/m}+\sqrt n\,m^{-1/q}\rho,
+\]
+which is \eqref{eq:finite-det}. Under the two additional size conditions
+its numerator is at least \(1/2\) and its denominator at most two.
+\end{proof}
+
+We use the following explicit randomized estimate from
+\cite[Proposition 4.1]{KW}, with its fixed preprint version and numbering.
+For integers \(R,G\), with \(R\) odd, draw independent uniform labels
+\(H_{ri}\in\{1,\ldots,G\}\) and signs \(\sigma_{ri}\in\{-1,1\}\).
+Take the \(RG\) grouped linear measurements
+\[
+ y_{rg}=\sum_{\{i:H_{ri}=g\}}\sigma_{ri}z_i,
+ \qquad
+ C_{R,G}(z)_i=\med_{1\le r\le R}
+                   \bigl(\sigma_{ri}y_{r,H_{ri}}\bigr).
+\]
+The labels and signs determine every measurement before the input.
+
+\begin{proposition}[Kunsch--Wnuk]\label{prop:sketch}
+Let \(1\le p\le2\), \(m\ge2\), \(L\ge1\) be an integer and \(G=2^{4+L}\).
+Choose \(R\) as the smallest odd integer satisfying
+\(R\ge\max\{5,2+3\log_2m\}\). Then
+\begin{equation}\label{eq:sketch}
+ \sup_{\|z\|_p\le1}\E\|z-C_{R,G}(z)\|_\infty
+       \le4\,2^{-L/p}.
+\end{equation}
+The algorithm uses \(RG\) measurements for every seed.
+\end{proposition}
+
+An odd median commutes with multiplication by any real scalar.
+Thus \eqref{eq:sketch} holds for arbitrary \(z\) after multiplying its
+right side by \(\|z\|_p\). The seed space is finite, and every realized
+reconstruction is continuous. These facts will also give the required
+measurability after the blocks are combined.
+
+\section{Infinite-dimensional construction}
+
+Fix an even integer \(q\ge4\), and put
+\[
+ p=\frac q{q-1},\qquad s=\frac1{q^2},\qquad
+ m_k=2^k,\qquad w_k=2^{-sk}\quad(k\ge1).
+\]
+Define the real Banach spaces
+\[
+ X_q=\left(\bigoplus_{k\ge1}\ell_p^{m_k}\right)_{\ell_1},
+ \qquad \|x\|_{X_q}=\sum_{k\ge1}\|x_k\|_p,
+ \qquad
+ Y=\ell_\infty\bigl(\{(k,i):k\ge1,\ 1\le i\le m_k\}\bigr),
+\]
+and the real-linear operator
+\begin{equation}\label{eq:operator}
+ (S_qx)_{k,i}=w_k(x_k)_i.
+\end{equation}
+The direct sum is complete: a Cauchy sequence converges in each block;
+passing to the limit in finite partial sums shows that its coordinate
+limit belongs to \(X_q\) and that convergence holds in the summed norm.
+The same coordinate-limit argument proves completeness of \(Y\).
+Moreover \(\|S_qx\|_Y\le\|x\|_{X_q}\).
+
+\begin{theorem}\label{thm:rates}
+For the fixed operator \eqref{eq:operator}, both rates are finite and
+\begin{equation}\label{eq:rates}
+ s\le a(S_q)\le\frac{sq}{2},
+ \qquad
+ s+\frac1p\le b(S_q)\le a(S_q)+1.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:gain}
+ b(S_q)-a(S_q)\ge1-\frac3{2q}+\frac1{q^2}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For the deterministic lower bound, let \(n\ge4\) and choose
+\(k=\lceil(q/2)\log_2n\rceil\). Restrict an arbitrary \(n\)-measurement
+algorithm on \(X_q\) to inputs in block \(k\), and project its output to
+that block. Its restricted information has rank at most \(n\).
+Since \(m_k\ge n^{q/2}\ge4n\), Lemma~\ref{lem:det} gives
+\begin{equation}\label{eq:global-det}
+ \ed_n(S_q)\ge\frac{w_k}{4}
+       \ge\frac{2^{-s}}4\,n^{-sq/2}.
+\end{equation}
+Thus \(a(S_q)\le sq/2\). Conversely, reading all coordinates in blocks
+\(1,\ldots,J\) costs \(2^{J+1}-2\) measurements and leaves error
+\(w_{J+1}\). Taking \(J=\lfloor\log_2(n+2)\rfloor-1\), for \(n\ge2\),
+gives \(\ed_n(S_q)\le2^s(n+2)^{-s}\), hence \(a(S_q)\ge s\).
+
+We now allocate a strict randomized budget. In a block of dimension
+\(m_k=2^k\), suppose \(w_k\ge\varepsilon>0\). Apply
+Proposition~\ref{prop:sketch} with
+\[
+ L_k=\left\lceil p\log_2\frac{4w_k}{\varepsilon}\right\rceil .
+\]
+Then \(L_k\ge1\), the weighted expected error is at most
+\(\varepsilon\|x_k\|_p\), and its number of measurements satisfies
+\begin{equation}\label{eq:block-cost}
+ R_kG_k\le 6k\cdot32
+       \left(\frac{4w_k}{\varepsilon}\right)^p
+       \le C_0k\left(\frac{w_k}{\varepsilon}\right)^p,
+ \qquad C_0=3072.
+\end{equation}
+Here \(R_k\le3+3k\le6k\) and \(1<p\le2\).
+All group measurements extend to continuous linear functionals on \(X_q\),
+since each has support in one finite block.
+
+Put \(\theta=2^{-sp}\), so \(0<\theta<1\), and fix \(D>0\) such that
+\begin{equation}\label{eq:D}
+ D^p\ge\frac{2C_0\,8^{sp}}{(\ln2)(1-\theta)^2}.
+\end{equation}
+For \(n\ge8\), set
+\[
+ J=\lfloor\log_2(n/4)\rfloor,\qquad
+ \varepsilon=D\,n^{-s-1/p}\bigl(\ln(n+1)\bigr)^{1/p},\qquad
+ K=\max\left\{J,\left\lfloor\frac{\log_2(1/\varepsilon)}s
+                                      \right\rfloor\right\}.
+\]
+Read blocks \(k\le J\) exactly, sketch blocks \(J<k\le K\), and return
+zero on the remaining blocks. These choices depend only on \(n,q\).
+Every sketched block satisfies \(w_k\ge\varepsilon\), while
+\(w_{K+1}<\varepsilon\); if \(K=J\), there are no sketched blocks.
+
+The exact prefix costs at most \(n/2\). For the other measurements,
+the geometric first-moment sum gives
+\[
+ \sum_{k>J}k\theta^k
+ =\theta^{J+1}\left(\frac{J+1}{1-\theta}
+                           +\frac{\theta}{(1-\theta)^2}\right)
+ \le\frac{(J+1)\theta^J}{(1-\theta)^2}.
+\]
+Using \(2^J\ge n/8\) and \(J+1\le\log_2n\), \eqref{eq:block-cost} yields
+\[
+ \begin{split}
+ \sum_{k=J+1}^{K}R_kG_k
+ &\le C_0\varepsilon^{-p}\sum_{k>J}k2^{-spk}\\
+ &\le\frac{C_0\,8^{sp}}{D^p(\ln2)(1-\theta)^2}
+                    \frac{\ln n}{\ln(n+1)}\,n
+ \le\frac n2.
+ \end{split}
+\]
+Thus every seed uses at most \(n\) measurements. There are finitely many
+sketched blocks, with a finite product seed space, and all their grouped
+measurements and reconstructions are fixed before input.
+
+For any \(x\in X_q\), bound the maximum block error by the sum of
+the finitely many sketched errors and the deterministic tail bound.
+Homogeneity of the block algorithms gives
+\[
+ \begin{split}
+ \E\|S_qx-A_n^\omega(x)\|_Y
+ &\le\varepsilon\sum_{J<k\le K}\|x_k\|_p
+       +\varepsilon\sum_{k>K}\|x_k\|_p\\
+ &\le\varepsilon\|x\|_{X_q}.
+ \end{split}
+\]
+This includes inputs spread over infinitely many blocks. Each realized
+algorithm is continuous, because its output consists of finitely many
+linear coordinates and medians. Its scalar norm error is continuous in
+\(x\), and hence jointly measurable on the finite seed space times \(B_{X_q}\).
+We have proved
+\begin{equation}\label{eq:global-ran}
+ \er_n(S_q)\le D\,n^{-s-1/p}\bigl(\ln(n+1)\bigr)^{1/p},
+ \qquad n\ge8.
+\end{equation}
+For every \(\alpha<s+1/p\), the logarithmic factor is
+\(O(n^{s+1/p-\alpha})\), so \(b(S_q)\ge s+1/p\).
+
+It remains to check the finite-rate restriction. The symmetric case of
+\cite[Corollary 14]{KNU} gives, for every bounded linear \(S:X\to Y\)
+and \(\alpha>0\),
+\begin{equation}\label{eq:universal}
+ \ed_{2n-1}(S)\le C_\alpha n^{1-\alpha}
+          \sup_{0\le j<n}(j+1)^\alpha e_j^{\mathrm{ran,ad}}(S),
+\end{equation}
+where \(e_j^{\mathrm{ran,ad}}\) allows adaptive randomized information.
+Its continuous-information formulation is explicit in
+\cite[Section 6.3]{KNU}. Since
+\(e_j^{\mathrm{ran,ad}}(S)\le\er_j(S)\), an available nonadaptive
+randomized exponent \(\alpha>1\) implies \(a(S)\ge\alpha-1\).
+The \(j=0\) initial error is bounded by \(\|S\|\), and monotonicity in the
+deterministic budget extends the estimate to all indices.
+If \(b(S_q)=\infty\), choosing an available \(\alpha>1+sq/2\)
+contradicts \eqref{eq:global-det}. Hence \(b(S_q)<\infty\). If
+\(b(S_q)>1\), taking \(\alpha\) up to \(b(S_q)\) proves
+\(b(S_q)\le a(S_q)+1\); if \(b(S_q)\le1\), this follows from
+\(a(S_q)\ge0\).
+Finally \eqref{eq:rates} gives
+\[
+ b(S_q)-a(S_q)\ge s+\frac1p-\frac{sq}{2}
+                    =1-\frac3{2q}+\frac1{q^2}.
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The comparison \eqref{eq:universal} gives \(b(S)-a(S)\le1\) whenever
+both rates are finite. Indeed, if \(b(S)>1\), use each available
+\(1<\alpha<b(S)\) and then let \(\alpha\uparrow b(S)\); if \(b(S)\le1\),
+use \(a(S)\ge0\). Thus \(G\le1\).
+The operators of Theorem~\ref{thm:rates} are admissible in \eqref{eq:G}
+for every finite even \(q\ge4\), and their gains in \eqref{eq:gain}
+tend to one as \(q\to\infty\). Therefore \(G\ge1\).
+\end{proof}
+
+\paragraph{AI-use disclosure.}
+This manuscript was developed with assistance from OpenAI Codex in exploring
+the construction, drafting and checking the argument, verifying cited sources,
+and preparing the text.
+
+\begin{thebibliography}{9}
+\bibitem{KNU}
+D. Krieg, E. Novak and M. Ullrich,
+\emph{On the power of adaption and randomization},
+Forum of Mathematics, Sigma \textbf{13} (2025), e152.
+\href{https://doi.org/10.1017/fms.2025.10101}{doi:10.1017/fms.2025.10101}.
+Theorem numbering here refers to
+\href{https://arxiv.org/abs/2406.07108v2}{arXiv:2406.07108v2}.
+
+\bibitem{KW}
+R. J. Kunsch and M. Wnuk,
+\emph{Adaptive and non-adaptive randomized approximation of
+high-dimensional vectors},
+Journal of Approximation Theory \textbf{318} (2026), 106318.
+\href{https://doi.org/10.1016/j.jat.2026.106318}{doi:10.1016/j.jat.2026.106318}.
+Theorem numbering here refers to
+\href{https://arxiv.org/abs/2410.23067v2}{arXiv:2410.23067v2}.
+
+\bibitem{KU}
+D. Krieg and M. Ullrich,
+\emph{Approximation of functions: Optimal sampling and complexity},
+Acta Numerica \textbf{35} (2026), 273--457.
+\href{https://doi.org/10.1017/S0962492925100287}{doi:10.1017/S0962492925100287}.
+The equation locator here refers to
+\href{https://arxiv.org/abs/2602.02066v2}{arXiv:2602.02066v2}.
+
+\bibitem{AIM555}
+AIM problem collection,
+\emph{Problem 555: Maximal gain from randomization with nonadaptive
+linear measurements},
+statement at revision \texttt{c9929805cece044705abaaebe1cebddac1ba11a6}.
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/555-nonadaptive-randomization-gain.md}{Immutable problem statement}.
+\end{thebibliography}
+\end{document}
