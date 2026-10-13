@@ -1,0 +1,87 @@
+{
+  "format_version": 1,
+  "problem_id": "584",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_sha256": "19d39141b7d467c106c8de12a350c701f4c8b8dca0ec62784fb33665c116029e",
+  "claim_status": "complete_solution_claim_awaiting_independent_review",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 134,
+      "sha256": "a37e56ec36bb9495f8e8fcb78540f100d322ecdd87ce4e85d4c2b8bf8966ce37",
+      "purpose": "Exclude ordinary local Python and TeX build products."
+    },
+    {
+      "path": "ENVIRONMENT.md",
+      "bytes": 1607,
+      "sha256": "4dd766b435af1d93747dc02d54529a8c28e3040e65dff1aedd8bd87dccbbc086",
+      "purpose": "Tested runtime and reproduction/build instructions."
+    },
+    {
+      "path": "README.md",
+      "bytes": 4143,
+      "sha256": "d88455f7015630cb47096640d45e09b5607ed972ad1b15c29192079f35517188",
+      "purpose": "Public mathematical claim, file map, scope and AI-use disclosure."
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 3229,
+      "sha256": "0af9e06609227aa5934f6bbab7dd5f450bcf5c4e4cb02ce3027a59bc4fabff20",
+      "purpose": "Correspondence between the frozen original statement and final manuscript."
+    },
+    {
+      "path": "certificate/farkas.json",
+      "bytes": 1571134,
+      "sha256": "c64ca628b2ea2b324a840827ef7571b9d68f2a8fd4039c7c0baab43581bf4f67",
+      "purpose": "Proof-critical semantic rational multipliers."
+    },
+    {
+      "path": "numerical_case/README.md",
+      "bytes": 1436,
+      "sha256": "b2bee1670a524339355d733df841683050f2b71e6909c8394072b0cdaf16e12f",
+      "purpose": "Reproduction commands and proof-relevant output interpretation."
+    },
+    {
+      "path": "numerical_case/critical_certificate_replay.json",
+      "bytes": 481,
+      "sha256": "7df04d4c1b48f31d090db35949132e010f8153af2ad3b4b07606a714db2ffa8e",
+      "purpose": "Actual successful exported-package exact replay output."
+    },
+    {
+      "path": "numerical_case/replay_certificate.py",
+      "bytes": 362,
+      "sha256": "41d78a2b284e7984c974a3dccdd09285706b5861c2cd5170619f6ebffa45f6ce",
+      "purpose": "Public-input reproduction wrapper."
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 333483,
+      "sha256": "1ececb1c453892a84c6f73139acb987edb3b43f31e3bc0aafd13afcff986ee96",
+      "purpose": "Six-page final mathematical manuscript."
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 17663,
+      "sha256": "9457589f2a88d817c332385be9c5b3361f5f262136dd53dabbdb30533def758b",
+      "purpose": "Editable complete final manuscript."
+    },
+    {
+      "path": "src/probability_rules.py",
+      "bytes": 11629,
+      "sha256": "9fc1bf6caa391257ebbbde325997e752c24a4e19d7e1b2472c24ed70a1d3053a",
+      "purpose": "Exact reconstruction of probability identities, short cylinders and bounds."
+    },
+    {
+      "path": "src/verify_certificate.py",
+      "bytes": 2559,
+      "sha256": "cf06c4233fd08aad97069a91327a711c98131d7afdec860f9302b5052bcb4f44",
+      "purpose": "Standard-library rational certificate verifier."
+    },
+    {
+      "path": "test/test_certificate.py",
+      "bytes": 4510,
+      "sha256": "1be70d3df7c449a3082c04d13562df26b360643f121804ac8b40bf1597c6e8a4",
+      "purpose": "Twelve implementation and independent probability-control tests."
+    }
+  ]
+}

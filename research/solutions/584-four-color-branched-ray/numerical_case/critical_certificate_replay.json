@@ -1,0 +1,13 @@
+{
+  "status": "EXACT_CERTIFICATE_REPLAY_PASSED",
+  "short_cylinders": 78,
+  "equations": 8245,
+  "nonnegative_expressions": 7244,
+  "probability_and_moment_symbols": 8298,
+  "nonzero_coefficients": 0,
+  "margin": "4663173554073621650668701/229601458397122150289899520",
+  "margin_decimal": 0.020309860340730616,
+  "margin_strictly_greater_than": "1/50",
+  "certificate_sha256": "c64ca628b2ea2b324a840827ef7571b9d68f2a8fd4039c7c0baab43581bf4f67",
+  "seconds": 0.36615170806180686
+}
