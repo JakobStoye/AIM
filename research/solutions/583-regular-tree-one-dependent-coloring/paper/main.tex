@@ -1,0 +1,419 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.12in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\title{Symmetric one-dependent colorings of regular trees}
+\author{Kaiwen Jin}
+\email{yui.ui.siki@gmail.com}
+\date{October 13, 2026}
+\subjclass[2020]{60G60, 05C15, 60G10}
+\keywords{Finitely dependent process, proper coloring, regular tree, invariant law}
+\begin{document}
+\begin{abstract}
+For every integer $d\geq3$, we construct a proper coloring of the infinite
+$d$-regular tree with finitely many colors whose law is one-dependent and
+invariant under every tree automorphism and every permutation of the colors.
+The construction uses symmetric tensors in a real Hilbert space. Orthogonal
+projections force adjacent colors to differ, tensor summation gives consistent
+finite-dimensional laws, and a uniform estimate on rooted trees proves their
+positivity. An explicit, unoptimized bound is
+$q(d)=2^{2d+16}d^2(2^d-1)9^{d-1}$ colors.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+A random proper coloring has local exclusions: neighboring vertices must
+receive different colors. Finite dependence asks for exact independence once
+two sets of vertices are sufficiently separated, despite those exclusions.
+Let $T_d$ be the infinite connected tree in which every vertex has degree $d$,
+and let $[q]=\{1,\ldots,q\}$. A field $X=(X_z)_{z\in V(T_d)}$ taking values in
+$[q]$ is \emph{one-dependent} if $X|_A$ and $X|_B$ are independent whenever
+$A,B\subset V(T_d)$ are finite and their graph distance is greater than one.
+Here independence refers to the complete vectors, including their internal
+correlations. The field is proper if $X_z\ne X_w$ for every edge $zw$, almost
+surely.
+
+\begin{theorem}\label{thm:main}
+For every integer $d\geq3$, put
+\begin{equation}\label{eq:q}
+q(d)=2^{2d+16}d^2(2^d-1)9^{d-1}.
+\end{equation}
+There is a proper one-dependent $[q(d)]$-valued coloring of $T_d$ whose law is
+invariant under the full group $\Aut(T_d)$ and under every permutation of
+$[q(d)]$.
+\end{theorem}
+
+The number of colors is fixed before any finite set is considered. The bound
+in \eqref{eq:q} is chosen for a uniform positivity estimate and is not claimed
+to be optimal.
+
+Holroyd and Liggett constructed a stationary one-dependent four-coloring of
+$\mathbb Z$ with a law invariant under color permutations
+\cite[Theorems 1 and 4]{HL}. Liggett and Tang studied one-dependent colorings
+of the three-ray star graph and asked about automorphism-invariant
+one-dependent colorings of regular trees \cite{LT}. Their star has a single
+branch point; a regular tree branches at every vertex. For unimodular
+transitive graphs of bounded degree, Tim\'ar obtained automorphism-invariant two-dependent colorings
+\cite[Theorem 2]{Timar}. Theorem~\ref{thm:main} gives one-dependence on regular
+trees together with full color-permutation invariance.
+
+Our construction is inspired by the word-space projections and positive-cone
+argument for paths in Flin, Li and Suomela \cite[Section 4.1 and Appendix B]{FLS}.
+We prove the estimates needed here directly. Branching requires a tensor with
+one slot for each incident edge, rather than a succession of path operators.
+Its sum over colors must allow deletion of an internal vertex, and positivity
+must survive simultaneous contraction against several child branches. An
+inverse sum of tensor projections supplies the deletion identity. A small
+neighborhood of a product tensor supplies positivity on every finite tree.
+The two parts of a tree bipartition use complementary projection ranges;
+conjugation by word parity removes the apparent dependence on that choice.
+
+Section~\ref{sec:projections} constructs the tensors and proves a quantitative
+approximation by product tensors. Section~\ref{sec:finite} obtains positive,
+consistent laws on finite forests. Section~\ref{sec:infinite} extends them to
+the infinite tree and proves the required independence and symmetries.
+All Hilbert spaces and contractions below are real.
+
+\section{Projections on the word space}\label{sec:projections}
+
+Fix $d\geq3$. Initially let $q$ be any integer satisfying
+\begin{equation}\label{eq:invertibilityrange}
+q\geq32d16^d.
+\end{equation}
+Let $G$ consist of the empty word and all finite words in $[q]$ whose adjacent
+letters are distinct. On $H=\ell^2(G;\R)$ write $e_g$ for the coordinate unit
+vector at a word $g$, and write $e$ for the unit vector at the empty word.
+Define $L_i$ by prepending $i$ to a word unless its first letter is $i$, in
+which case that letter is deleted. Define $R_i$ by the analogous operation at
+the last letter. These operations permute the coordinate vectors.
+
+Both operations are involutions. For a fixed $i$, the two end operations
+commute. On words of length at least two this follows by performing the end
+operations; on the empty word both composites return the empty word. On a
+one-letter word $j$, both composites return $i$ if $j=i$, and $iji$ otherwise.
+Thus $L_i$ and $R_i$ are commuting self-adjoint isometries. Set
+\begin{equation}\label{eq:PQ}
+P_i=\frac{(I+L_i)(I+R_i)}4,\qquad
+J e_g=(-1)^{|g|}e_g,\qquad Q_i=JP_iJ.
+\end{equation}
+The operator $J$ is a self-adjoint isometry, $Je=e$, and $J$ anticommutes
+with $L_i$ and $R_i$. Consequently
+\[
+Q_i=\frac{(I-L_i)(I-R_i)}4,\qquad P_iQ_i=0.
+\]
+Both $P_i$ and $Q_i$ are orthogonal projections. The two vectors
+\begin{equation}\label{eq:uv}
+u_i=e+e_i,\qquad v_i=e-e_i
+\end{equation}
+satisfy
+\begin{equation}\label{eq:overlaps}
+\|u_i\|=\|v_i\|=\sqrt2,\qquad
+\ip e{u_i}=\ip e{v_i}=1,\qquad
+\ip{u_i}{v_j}=\begin{cases}0&i=j,\\1&i\ne j.\end{cases}
+\end{equation}
+Here $e_i$ is the coordinate vector at the one-letter word $i$.
+
+For $k\geq1$ we identify $H^{\otimes k}$ with $\ell^2(G^k;\R)$, and set
+$H^{\otimes0}=\R$. Tensor products are therefore ordinary products of
+coordinates. Contraction of a slot against $h\in H$ is a bounded map of norm
+at most $\|h\|$, by Cauchy--Schwarz. These conventions also define every
+partial contraction used below.
+
+\begin{lemma}\label{lem:inverse}
+The bounded operator
+\[
+A=\sum_{i=1}^q P_i^{\otimes d}
+\]
+on $H^{\otimes d}$ is invertible under \eqref{eq:invertibilityrange}, and
+\begin{equation}\label{eq:inversebound}
+\|A^{-1}\|\leq\frac{2\,4^d}{q}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expand $P_i^{\otimes d}$ into its $4^d$ patterns, choosing in each coordinate
+one of $I,L_i,R_i,L_iR_i$. Each pattern defines an involutive permutation
+$\phi_i$ of $G^d$. Separate its fixed points from its off-diagonal entries.
+After averaging the patterns, write $A=D+B$, where $D$ is diagonal and $B$
+has zero diagonal. The all-identity pattern contributes $q/4^d$ to every
+diagonal entry, whereas each summand of $A$ has diagonal entries at most one.
+Thus
+\begin{equation}\label{eq:D}
+\frac{q}{4^d}\leq D(g,g)\leq q.
+\end{equation}
+
+For a fixed pattern, orient each nontrivial edge $g\leftrightarrow\phi_i(g)$
+from smaller to larger total word length, using a fixed total order to break
+ties. At any tuple, at most $2d$ labels $i$ can give a nontrivial neighbor of
+no larger length. Indeed, such an $i$ must be the first or last letter of a
+nonempty coordinate on which the pattern acts. Outside this set of labels,
+a single end operation increases the length by one. The operation $L_iR_i$
+increases the length of a nonempty word by two, and fixes the empty word.
+If every active coordinate is empty and every active operation is $L_iR_i$,
+the tuple is fixed, so it was already removed.
+
+Let $M$ be the matrix of the oriented edges, retaining multiplicities if
+different labels give the same edge. One of its row and column sums is at
+most $q$, and the other is at most $2d$. For a finitely supported $f$, weighted
+Cauchy--Schwarz gives
+\[
+\|Mf\|_2^2\leq
+\left(\sup_x\sum_y M_{xy}\right)
+\left(\sup_y\sum_x M_{xy}\right)\|f\|_2^2
+\leq2dq\|f\|_2^2.
+\]
+It extends to $H^{\otimes d}$ by density. The off-diagonal matrix of this
+pattern is $M+M^*$, so averaging all patterns proves
+\begin{equation}\label{eq:B}
+\|B\|\leq2\sqrt{2dq}.
+\end{equation}
+Equations \eqref{eq:D}--\eqref{eq:B} imply
+$\|D^{-1}B\|\leq2\,4^d\sqrt{2d/q}\leq1/2$. The norm-convergent Neumann
+series for $(I+D^{-1}B)^{-1}$ now gives \eqref{eq:inversebound} from
+$A=D(I+D^{-1}B)$.
+\end{proof}
+
+Define
+\begin{equation}\label{eq:tensors}
+V=A^{-1}e^{\otimes d},\qquad t_{i,d}=P_i^{\otimes d}V.
+\end{equation}
+For $0\leq k\leq d$, obtain $t_{i,k}$ by contracting $d-k$ slots against $e$,
+and set $s_{i,k}=J^{\otimes k}t_{i,k}$. The operators $A$ and $A^{-1}$ commute
+with permutations of the $d$ slots. Hence $V$ and $t_{i,d}$ are symmetric
+tensors, and the definition of $t_{i,k}$ does not depend on which slots are
+retained. The tensors satisfy
+\begin{align}
+\sum_i t_{i,k}=\sum_i s_{i,k}&=e^{\otimes k},\label{eq:sum}\\
+t_{i,k}\in\ran(P_i^{\otimes k}),\qquad
+s_{i,k}&\in\ran(Q_i^{\otimes k}).\label{eq:range}
+\end{align}
+Contracting any slot of $t_{i,k}$ against $e$ gives $t_{i,k-1}$, and the same
+holds for $s_{i,k}$ because $Je=e$. A permutation $\pi$ of $[q]$ acts on every
+letter of $G$, fixes $e$, and conjugates $P_i$ to $P_{\pi(i)}$. It commutes
+with $A$ after summation. Thus it carries $t_{i,k}$ and $s_{i,k}$ to the tensors
+indexed by $\pi(i)$.
+
+\begin{lemma}\label{lem:approximation}
+Put $C_d=2\,4^d\sqrt{2^d-1}$ and $\delta=C_dq^{-3/2}$. For every $i$ and
+$0\leq k\leq d$,
+\begin{equation}\label{eq:approximation}
+\|t_{i,k}-q^{-1}u_i^{\otimes k}\|\leq\delta,\qquad
+\|s_{i,k}-q^{-1}v_i^{\otimes k}\|\leq\delta.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $V_*=2^de^{\otimes d}/q$. Since $P_i e=u_i/2$,
+\[
+AV_*-e^{\otimes d}
+=\frac1q\sum_{i=1}^q\sum_{\varnothing\ne S\subseteq[d]}
+\bigotimes_{j=1}^d h_j(i,S),\qquad
+h_j(i,S)=\begin{cases}e_i&j\in S,\\e&j\notin S.\end{cases}
+\]
+These $q(2^d-1)$ terms are distinct orthogonal coordinate vectors. The residual
+therefore has norm $\sqrt{(2^d-1)/q}$. Lemma~\ref{lem:inverse} gives
+$\|V-V_*\|\leq C_dq^{-3/2}$. Apply $P_i^{\otimes d}$ and contract the
+discarded slots against $e$, operations of norm at most one. The corresponding
+contraction of $P_i^{\otimes d}V_*$ is $q^{-1}u_i^{\otimes k}$. Applying the
+isometry $J^{\otimes k}$ proves the second estimate.
+\end{proof}
+
+\section{Probabilities on finite forests}\label{sec:finite}
+
+Choose either bipartition of $T_d$. For a finite vertex set $F$ and a specified
+coloring $x\in[q]^F$, use its induced forest. At a vertex $z$ of degree $k$
+in that forest, place $t_{x_z,k}$ if $z$ is in the first part and $s_{x_z,k}$
+if it is in the second. Assign the tensor slots to incident edges in any
+order and contract the slots at the two ends of each edge by the real inner
+product. Let $p_F(x)$ be the product of the resulting scalars over components.
+An isolated vertex uses a tensor with $k=0$, and $p_\varnothing=1$.
+
+These finite-tree contractions are well-defined. Contracting a leaf vector
+into its neighbor has norm at most the product of the two norms. Induction
+bounds a full scalar contraction in absolute value by the product of all
+vertex-tensor norms, and bounds an outgoing vector contraction in the same
+way. The contraction is multilinear and continuous in the finitely many
+tensors. Approximate them by finite-support tensors: their finite sums agree
+in all leaf-contraction orders, and continuity gives order independence for
+the original tensors. No infinite tree is contracted in this definition.
+
+\begin{proposition}\label{prop:consistency}
+The functions $p_F$ vanish on improper colorings and satisfy, for each
+$z\in F$,
+\begin{equation}\label{eq:deletion}
+\sum_{a=1}^q p_F(x_{F\setminus\{z\}},x_z=a)
+=p_{F\setminus\{z\}}(x_{F\setminus\{z\}}).
+\end{equation}
+They are invariant under color permutations and under tree automorphisms.
+In particular, $\sum_{x\in[q]^F}p_F(x)=1$.
+\end{proposition}
+
+\begin{proof}
+Cut a monochromatic edge with color $i$ at both ends and contract the branches
+on its two sides. By \eqref{eq:range}, the remaining endpoint vectors lie in
+the orthogonal ranges of $P_i$ and $Q_i$. Their inner product is zero.
+
+To sum over a vertex color, \eqref{eq:sum} replaces its tensor by
+$e^{\otimes k}$. Each of its incident edges then contracts $e$ into the tensor
+at the other endpoint, producing the prescribed tensor with one fewer slot.
+This proves \eqref{eq:deletion}, including when deletion of an internal vertex
+splits a component into several branches. Repeated deletion proves the total
+mass identity and consistency under every restriction of finite sets.
+
+The action of a color permutation on the word space preserves inner products
+and permutes the tensor family, so it preserves $p_F$. Switching the two
+parts of the bipartition applies $J$ at both ends of every edge. Since $J$ is
+an isometry, those two actions leave each inner product unchanged. Thus the
+law is independent of the bipartition choice. Slot symmetry removes the
+choice of incident-edge order. Every automorphism of the connected tree
+preserves or swaps its two bipartition classes, proving the stated tree
+invariance.
+\end{proof}
+
+It remains to prove that the scalars $p_F(x)$ are nonnegative. Orthogonality
+and summation alone do not give this. We now take $q=q(d)$ from
+\eqref{eq:q}; it satisfies \eqref{eq:invertibilityrange}. With the constant
+$C_d$ of Lemma~\ref{lem:approximation}, this choice can be written as
+\begin{equation}\label{eq:constants}
+q=\bigl[64dC_d(3/2)^{d-1}\bigr]^2,\qquad
+\eta=\frac1{16d},\qquad
+\tau=q\delta(3/2)^{d-1}=\frac1{64d}=\frac\eta4.
+\end{equation}
+
+\begin{lemma}\label{lem:positivity}
+For this value of $q$, every proper coloring of every finite induced forest
+has $p_F(x)>0$.
+\end{lemma}
+
+\begin{proof}
+First consider a finite rooted branch with one additional outgoing edge at
+its root. Use one tensor slot for that edge, and contract all edges within
+the branch, obtaining a message $m\in H$. We prove by induction that, for
+a properly colored branch with root color $i$ in the first part,
+\begin{equation}\label{eq:cone}
+m=z\ell,\qquad z=\ip e m>0,\qquad
+\ip e\ell=1,\qquad \|\ell-u_i\|\leq\eta.
+\end{equation}
+For a root in the second part replace $u_i$ by $v_i$. The message remains in
+the corresponding projection range by \eqref{eq:range}.
+
+Suppose the root has $r\leq d-1$ children. By induction write their messages
+as $z_j\ell_j$ with $z_j>0$; the case $r=0$ uses empty products and requires
+no induction hypothesis. A root in the first part has children in the second
+part, with colors $i_j\ne i$. After dividing out these already positive
+scalars, Lemma~\ref{lem:approximation} gives
+\begin{equation}\label{eq:message}
+\frac{m}{\prod_j z_j}=c u_i+\epsilon,\qquad
+c=\frac1q\prod_{j=1}^r\ip{u_i}{\ell_j},\qquad
+\|\epsilon\|\leq\delta(3/2)^r.
+\end{equation}
+Indeed, $\|\ell_j\|\leq\sqrt2+\eta<3/2$. From
+$\ip{u_i}{v_{i_j}}=1$ and \eqref{eq:cone}, each factor in $qc$ is at least
+$1-\sqrt2\eta$. Therefore
+\begin{equation}\label{eq:mainterm}
+qc\geq(1-\sqrt2\eta)^r\geq1-r\sqrt2\eta\geq\frac78.
+\end{equation}
+The scalar $b=\ip e{c u_i+\epsilon}$ is at least
+$(7/8-\tau)/q>0$. Normalizing \eqref{eq:message} by $b$ yields
+\[
+\left\|\frac{c u_i+\epsilon}{b}-u_i\right\|
+=\left\|\frac{\epsilon-\ip e\epsilon\,u_i}{b}\right\|
+\leq\frac{(1+\sqrt2)\tau}{7/8-\tau}\leq4\tau=\eta.
+\]
+Thus \eqref{eq:cone} holds at the root, including the leaf case. At a root in
+the second part, the same calculation uses $v_i$ and the overlaps
+$\ip{v_i}{u_{i_j}}=1$.
+
+Finally root a whole tree component, with no outgoing edge. The root can
+have $r\leq d$ children. Its scalar contraction is at least
+\begin{equation}\label{eq:rootpositive}
+\frac{\prod_j z_j}{q}
+\left[\frac78-q\delta(3/2)^d\right]>0.
+\end{equation}
+Here \eqref{eq:mainterm} still holds because $r\leq d$ and
+$d\sqrt2\eta=\sqrt2/16<1/8$, while
+$q\delta(3/2)^d=(3/2)\tau\leq3/128$. This also covers an isolated vertex.
+The product over components is strictly positive. The same $q$ and cone
+radius work for every finite size.
+\end{proof}
+
+\section{The infinite coloring}\label{sec:infinite}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:consistency} and Lemma~\ref{lem:positivity} show that
+$p_F$ is a probability mass function on $[q]^F$ for every finite vertex set
+$F$, and that these functions are projective under restriction. The vertex
+set of $T_d$ is countable, and the discrete state space $[q]$ is a Borel
+space. The extension theorem \cite[Theorem 5.16, p.~92]{Kallenberg} therefore
+gives a field $X$ having exactly these finite-dimensional laws.
+
+If finite sets $A,B$ have distance greater than one, their induced union
+has no edge between $A$ and $B$. Every component belongs entirely to one of
+the two sets. The definition by component contractions gives, for all
+$x\in[q]^A$ and $y\in[q]^B$,
+\[
+\mathbb P(X|_A=x,X|_B=y)=p_{A\cup B}(x,y)=p_A(x)p_B(y).
+\]
+This is independence of the complete vectors. Empty restrictions are
+deterministic and cause no exception.
+
+All finite-dimensional laws have the two invariances proved in
+Proposition~\ref{prop:consistency}. Finite-dimensional distributions determine
+the law on the product measurable space
+\cite[Proposition 2.2, p.~25]{Kallenberg}. Applying this to each tree
+automorphism and each color permutation gives invariance of the entire law.
+The transformations are measurable since each transformed coordinate is a
+finite-state function of one original coordinate. For every edge, the
+probability of equal endpoint colors is zero. There are countably many
+edges, so all edges are proper simultaneously almost surely.
+\end{proof}
+
+\subsection*{AI-use statement}
+OpenAI Codex assisted with literature searches, development and checking of
+the construction and proof, and preparation of this manuscript. Independent
+mathematical review is requested.
+
+\begin{thebibliography}{5}
+\bibitem{HL}
+A. E. Holroyd and T. M. Liggett,
+\emph{Finitely dependent coloring},
+Forum of Mathematics, Pi \textbf{4} (2016), e9.
+\href{https://doi.org/10.1017/fmp.2016.7}{doi:10.1017/fmp.2016.7}.
+
+\bibitem{LT}
+T. M. Liggett and W. Tang,
+\emph{One-dependent colorings of the star graph},
+Annals of Applied Probability \textbf{33} (2023), no.~6A, 4341--4365.
+\href{https://doi.org/10.1214/22-AAP1920}{doi:10.1214/22-AAP1920}.
+
+\bibitem{Timar}
+\'A. Tim\'ar,
+\emph{Finitely dependent random colorings of bounded degree graphs},
+arXiv:2402.17068v1 (2024).
+\href{https://arxiv.org/abs/2402.17068v1}{arXiv:2402.17068v1}.
+
+\bibitem{FLS}
+M. Flin, L. Li and J. Suomela,
+\emph{Quantum Advantage for Distributed Symmetry Breaking},
+arXiv:2609.26788v1 (2026).
+\href{https://arxiv.org/abs/2609.26788v1}{arXiv:2609.26788v1}.
+
+\bibitem{Kallenberg}
+O. Kallenberg,
+\emph{Foundations of Modern Probability},
+first edition, Springer, New York, 1997.
+\href{https://doi.org/10.1007/b98838}{doi:10.1007/b98838}.
+\end{thebibliography}
+\end{document}

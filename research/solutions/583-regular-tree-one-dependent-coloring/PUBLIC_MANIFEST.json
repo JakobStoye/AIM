@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "problem_id": "583",
+  "title": "Symmetric one-dependent colorings of regular trees",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/583-regular-tree-one-dependent-coloring.md",
+  "submission_kind": "complete analytic solution claim",
+  "payload_files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, claim scope, materials and rebuild instructions",
+      "bytes": 2487,
+      "sha256": "a50331d0a587da9b2c385cfd46eb1e8612550dd59aa858c0037a37a6194a1d22"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the pinned public target",
+      "bytes": 3230,
+      "sha256": "9f5250c8bd879d36a7c80f240428449103978d23b11296a125028f3d56637749"
+    },
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI-use and review disclosure",
+      "bytes": 1022,
+      "sha256": "bf754a6facd8e964cf925399b6d60b8258980af3ce9cc5fa380f06ca37907381"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete final editable analytic manuscript",
+      "bytes": 19146,
+      "sha256": "7e22e3866bdd4cd6b672ea405e0a010b09b27e6c470719776ce9fd66b7f5f634"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete final six-page manuscript",
+      "bytes": 358180,
+      "sha256": "6bab89c9a0c709901af93c5c0fe5085f5578c172f86bce9a68fbfd429ac28144"
+    }
+  ],
+  "metadata_files": [
+    {
+      "path": "PUBLIC_MANIFEST.json",
+      "purpose": "Payload paths, purposes and hashes; no self-hash"
+    },
+    {
+      "path": "SHA256SUMS",
+      "purpose": "Hashes of the five payload files and this manifest; no self-hash"
+    }
+  ]
+}
