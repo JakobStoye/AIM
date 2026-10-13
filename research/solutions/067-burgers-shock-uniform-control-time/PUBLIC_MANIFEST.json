@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "problem_id": "067",
+  "title": "Exact uniform control time for a centered viscous Burgers shock",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/067-burgers-shock-uniform-control-time.md",
+  "author": "Kaiwen Jin",
+  "result": "T_unif/L = 4 sqrt(2); the critical-time cost is not asserted",
+  "contribution_type": "analytic_theorem",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview and manuscript build instructions",
+      "sha256": "0b98bc42ee43d077835ab32b87a0d7df6d3d29d3c1a4e4ab3353d21c9361e911"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence between the original problem and the submitted theorem",
+      "sha256": "755ba0d9e8eca2d30f8172f0fe82caec8d1537497dcdc5d3302e9fabf4ac16ef"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable manuscript",
+      "sha256": "1142f800b2ff4b6ff08a445714b3d4b7739225dc5c7a894794c841b5480225d1"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete compiled manuscript",
+      "sha256": "4f9106c3fa2182343555f2d4287bd3e6e18cd46ffc3ff45a2cf73f2bc4818cdb"
+    }
+  ]
+}
