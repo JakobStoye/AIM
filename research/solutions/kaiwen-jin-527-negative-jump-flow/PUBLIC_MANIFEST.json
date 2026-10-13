@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "title": "Weak existence for adaptive porous flow with a negative drag jump",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "problem": {
+    "id": "527",
+    "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+    "statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/527-negative-jump-adaptive-flow.md"
+  },
+  "evidence_type": "analytic theorem",
+  "files": [
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI assistance and review limits",
+      "sha256": "83e68ce97da129543a916a35fb27654ae98b7d7c598c0e68fef15ad812e9e0a2"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, file entry points and rebuild command",
+      "sha256": "61f84942fa95241b30b48c76b1397b43f81240569b5f58062c82695466b4a92f"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence between the manuscript and original public target",
+      "sha256": "6b3783e7ff9bd190e071f0f4a1ff0727fab9763aeff277823a745e6afff5e403"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete 12-page compiled manuscript",
+      "sha256": "d4eaa34913bd37590cec0225dd05df1bb49aa1643e2772660d95563a10925a36"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable standalone mathematical manuscript",
+      "sha256": "9d28a963276d2b44507f4d24e57ac6bec132cb27e7d4130d59337a686adcbabf"
+    }
+  ],
+  "integrity_files": [
+    {
+      "path": "PUBLIC_MANIFEST.json",
+      "purpose": "Payload inventory and hashes; its own hash is in SHA256SUMS"
+    },
+    {
+      "path": "SHA256SUMS",
+      "purpose": "Checksums of payload files and PUBLIC_MANIFEST.json; omits its own hash"
+    }
+  ]
+}
