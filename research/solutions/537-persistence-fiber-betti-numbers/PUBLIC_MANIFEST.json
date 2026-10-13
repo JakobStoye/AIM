@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "title": "The homology of a persistence fiber without finite bars",
+  "problem_id": "537",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic theorem",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "public package documentation",
+      "sha256": "4f82375d3552d828d1e12c22b3dd48c4e20bc25264c3e67d1bd100160615c3ed",
+      "bytes": 1970
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "public package documentation",
+      "sha256": "36fb7a894403c7562cf0dceb1f5b45c108d46878b6f44213f75ea840cf22601a",
+      "bytes": 2788
+    },
+    {
+      "path": "paper/persistence_fiber.pdf",
+      "purpose": "final manuscript",
+      "sha256": "37fec5d6659cf7469e84a8386df602f3513df70e40d4e9e4ef080dbbb052f403",
+      "bytes": 304516
+    },
+    {
+      "path": "paper/persistence_fiber.tex",
+      "purpose": "final manuscript",
+      "sha256": "ec26f353125220cf0b0e70f61721dd14225e2ce9167cce9028b2e85487ea0d4b",
+      "bytes": 13504
+    }
+  ],
+  "integrity_metadata_not_self_hashed": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ]
+}
