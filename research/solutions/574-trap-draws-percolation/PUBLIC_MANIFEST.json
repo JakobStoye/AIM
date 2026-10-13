@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "problem_id": "574",
+  "title": "Draws in the undirected trapping game on site-percolated lattices",
+  "author": "Kaiwen Jin",
+  "date": "2026-10-13",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Ignore ordinary local LaTeX build output",
+      "bytes": 64,
+      "sha256": "3f2955cf7f4be208f4f5cf43eb845e95e6fc49873dfa41f265918ab8e16fad1a"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Problem, package, AI-use and review-scope description",
+      "bytes": 1547,
+      "sha256": "f8d7c2f740921dd2d4f920cc5657175373ac4081399d51e73138b1c30659809d"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-statement to manuscript comparison",
+      "bytes": 2994,
+      "sha256": "b0635136635135c3e43a155131328905a952e7462dda90e6670975126d4c6dae"
+    },
+    {
+      "path": "paper/README.md",
+      "purpose": "Standalone document build instructions",
+      "bytes": 718,
+      "sha256": "4307f69bebbac61f7c3b6df7681addb0f0ad132c9a4724ef484302d05e9d0767"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Rendered complete manuscript",
+      "bytes": 351364,
+      "sha256": "99ab479ba95c8ffce2143a250b1bc9328b2d52b74a4439dcef1c61388061fcee"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable manuscript and analytic proof",
+      "bytes": 45447,
+      "sha256": "3e789b411b9009b7729f11a0e85e6fd212afcf262dedd19dc2087806a83bab8f"
+    }
+  ],
+  "manifest_scope": "Payload files only; SHA256SUMS also hashes this manifest and omits only itself."
+}
