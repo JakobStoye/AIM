@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "package": "AIM 516 complete-resolution claim",
+  "author": "Kaiwen Jin",
+  "contact_email": "yui.ui.siki@gmail.com",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "proof_type": "analytic natural-language proof",
+  "proof_critical_computation": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Exclude local build and replay outputs",
+      "bytes": 99,
+      "sha256": "25eb6a12676f267967fc75726026557a83e6556d9956ea318f715a9f9fb2a09c"
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "purpose": "Tested standard-library verifier and LaTeX environment",
+      "bytes": 568,
+      "sha256": "a9ecf2514328a08dfd007b9cdcaed7deeefd1ddd061050479cd2677f06d730cd"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Public mathematical summary and reproduction commands",
+      "bytes": 2816,
+      "sha256": "740cda873e080b519581eeba6045b24730ded414300b1b0f2ffad32a405d4c9c"
+    },
+    {
+      "path": "REPRODUCTION_RECORD.md",
+      "purpose": "Actual finite replay and manuscript validation scope",
+      "bytes": 1396,
+      "sha256": "7712766ce472de764a9a229fb257dbde23e551aa9e7ab07de091ff887987cd0e"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original-target quantifiers and manuscript coverage",
+      "bytes": 2735,
+      "sha256": "c678758053e447be883d22081e85a41f01d295e02b05b5a2438086e39db59e21"
+    },
+    {
+      "path": "paper/REFERENCE_GUIDE.md",
+      "purpose": "Primary-source uses and theorem locators",
+      "bytes": 1666,
+      "sha256": "a660cc8484c4802a3b234231a346ecbe8b5497d30ac1e9e3e605b462ca3f9b5c"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Fixed eight-page manuscript artifact",
+      "bytes": 338933,
+      "sha256": "c147595b3bb3add6a6f61ccfc7e6af37bde8767b3f4b1f3ae0c729152e081ced"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete standalone editable manuscript",
+      "bytes": 23999,
+      "sha256": "9e96a3422097238523e8e0338b8504aa078ed12d70afcde11f1ebfa12aa2b9b0"
+    },
+    {
+      "path": "verification/summary.json",
+      "purpose": "Compact exact finite-check results",
+      "bytes": 354,
+      "sha256": "92b038060f4f7135888ec6c3c18dedc3e774eb434f22eec221f6764ff59872fb"
+    },
+    {
+      "path": "verification/verify_small_graphs.py",
+      "purpose": "Standalone exact four-vertex consistency verifier",
+      "bytes": 5817,
+      "sha256": "2d65d8b2068e162301caf51a328ff1935c528b6a815e456f0856ff227d1353cb"
+    }
+  ],
+  "hash_scope": "MANIFEST.json lists content files; SHA256SUMS includes this manifest and all listed files, excluding itself."
+}

@@ -1,0 +1,531 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\D}{\mathcal D}
+\newcommand{\M}{\mathcal M}
+\newcommand{\Q}{\mathbb Q}
+\title{Tail bounds for Markov equivalence classes\protect\\of uniform random DAGs}
+\author{Kaiwen Jin\thanks{Contact: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $G_n$ be uniform among the simple directed acyclic graphs on $n$ labeled
+vertices. We prove that its Markov equivalence class satisfies
+\[
+\Prob\bigl(|\M(G_n)|>t\bigr)
+ \le C\exp\left[-c\left(\frac{\log t}{\log\log t}\right)^2\right]
+\]
+for all sufficiently large $t$, uniformly in $n$. This implies the upper tail
+with exponent $2-\varepsilon$ asked for by Schmid and Sly. The main estimate is
+a Gaussian tail for the number of vertices incident to reversible edges.
+Within a large essential-graph component, absence of unshielded colliders is
+costly; between many small components, their common-parent condition supplies
+the remaining quadratic cost. Source-layer enumeration transfers these
+estimates from independent forward edges to the uniform-DAG measure.
+Complete skeletons show that the logarithmic scale of the bound is sharp up to
+constants in the exponent.
+\end{abstract}
+
+\section{Introduction and results}
+Let $\D_n$ be the set of simple directed acyclic graphs (DAGs) on
+$[n]=\{1,\ldots,n\}$, and let $G_n$ be uniform on $\D_n$. The skeleton of a
+DAG forgets its edge orientations. An unshielded collider, or $v$-structure,
+is a triple $u\to v\leftarrow w$ with $u,w$ nonadjacent. We write
+\[
+\M(G)=\{H\in\D_n:H\text{ has the same skeleton and unshielded colliders as }G\}.
+\]
+These are the Markov equivalent DAGs; see \cite[Theorem 2.1]{AMP}.
+All logarithms below are natural.
+
+Schmid and Sly \cite[Theorem 1.1]{SS} prove a uniform upper tail with power
+$1+1/20$ on $\log t$ and ask, immediately after that theorem, whether the
+power can approach two from below. We prove the following stronger bound.
+The distribution here is uniform over labeled DAGs. Choosing a uniform
+vertex order and then independent forward edges gives a different law.
+
+\begin{theorem}\label{thm:main}
+There are universal constants $c,C>0$ and $t_0>e$ such that, for every integer
+$n\ge1$ and every real $t\ge t_0$,
+\begin{equation}\label{eq:main}
+ \Prob\bigl(|\M(G_n)|>t\bigr)
+ \le C\exp\left[-c\left(\frac{\log t}{\log\log t}\right)^2\right].
+\end{equation}
+\end{theorem}
+
+\begin{corollary}\label{cor:target}
+For every $\varepsilon\in(0,1)$ there are $C_\varepsilon<\infty$ and
+$t_\varepsilon>1$ such that, simultaneously for every integer $n\ge1$ and every
+real $t\ge t_\varepsilon$,
+\[
+ \Prob\bigl(|\M(G_n)|>t\bigr)
+ \le C_\varepsilon\exp[-(\log t)^{2-\varepsilon}].
+\]
+\end{corollary}
+
+The essential graph of $G$ retains an arrow when all members of $\M(G)$
+give it the same orientation, and replaces every other edge by an undirected
+edge. Let $C_1,\ldots,C_k$ be its undirected connected components with at
+least two vertices, and set
+\[
+ R(G)=\sum_{i=1}^k |C_i|,
+\]
+with $R(G)=0$ when $k=0$. Thus $R$ counts the vertices incident to reversible
+edges. Our main combinatorial estimate is
+\begin{theorem}\label{thm:vertices}
+There are universal constants $c,C>0$ such that, for all integers $n,m\ge1$,
+\begin{equation}\label{eq:vertices}
+ \Prob(R(G_n)\ge m)\le C e^{-cm^2}.
+\end{equation}
+\end{theorem}
+The factorial bound $|\M(G)|\le R(G)!$ then gives Theorem~\ref{thm:main}.
+The proof uses the source-layer enumeration underlying the tower method of
+Schmid and Sly \cite[Section 2, Lemma 3.1 and Proposition 3.2]{SS}, with
+elementary bounds sufficient for our purpose. We give those bounds in full.
+The additional quadratic estimate uses both the internal structure of each
+essential component and the arrows between components.
+
+\section{Necessary conditions on essential components}
+We use the essential-graph characterization of Andersson, Madigan and
+Perlman \cite[Propositions 4.1--4.2 and Theorem 4.1]{AMP}. The essential graph
+is a chain graph: it has no semidirected cycle, meaning a cycle containing at
+least one arrow whose arrows all point consistently around the cycle. Its
+undirected components are chordal, and each member of the equivalence class
+orients each component perfectly, that is, acyclically and without an
+unshielded collider inside the component. The essential graph also has no
+induced configuration $u\to v\text{---}w$ with $u,w$ nonadjacent.
+The quoted locations are printed pages 10--11 of the primary-author technical
+report \cite{AMP}; perfect orientations are defined in its Appendix A.
+
+\begin{lemma}\label{lem:components}
+Every induced graph $G[C_i]$ has no unshielded collider. The directed graph
+obtained by contracting all essential components is acyclic. If $u\notin C_i$
+and $u\to v$ for some $v\in C_i$, then $u\to w$ for every $w\in C_i$.
+Moreover,
+\begin{equation}\label{eq:factorial}
+ |\M(G)|\le\prod_{i=1}^k |C_i|!\le R(G)!.
+\end{equation}
+Every reversible edge is absent from all unshielded colliders of $G$.
+\end{lemma}
+\begin{proof}
+The internal assertion follows from perfect orientation. A directed cycle
+after contraction would yield a semidirected cycle before contraction, using
+undirected paths inside the components.
+For the parent assertion, take an undirected edge $v\text{---}w$ within $C_i$.
+The absence of an induced $u\to v\text{---}w$ forces $u,w$ to be adjacent.
+Their edge is directed in the essential graph because $u$ is outside the
+component. It cannot point from $w$ to $u$, since
+$u\to v\text{---}w\to u$ would be a semidirected cycle. Hence $u\to w$.
+Propagation along undirected paths proves the assertion for every $w$.
+
+All arrows between components are fixed throughout the class. An acyclic
+orientation of a component is determined by some topological order, and each
+order determines at most one orientation of its fixed skeleton. There are at
+most $|C_i|!$ such orientations. The product bounds the class size; the second
+inequality in \eqref{eq:factorial} is the multinomial inequality. When $R=0$
+both sides equal one. Finally, either arrow of a specified unshielded collider
+must keep its direction throughout the class, so it cannot be reversible.
+\end{proof}
+
+\section{Source layers and comparison with independent edges}
+Delete all sources of a DAG, then all sources of the remaining graph, and
+continue. Write the resulting nonempty layers as $H_1,\ldots,H_T$, with
+$h_i=|H_i|$, and put $h_i=0$ for $i>T$. The process terminates because every
+nonempty finite DAG has a source. Edges point from an earlier to a later
+layer, and every vertex of $H_{i+1}$ has at least one parent in $H_i$.
+Conversely these two conditions characterize the source layers.
+
+Conditionally on the graph, order each layer uniformly and independently,
+and concatenate the orders. We call the positions in this list ranks.
+This auxiliary randomness does not change the law of $G_n$. Let $F_q$ be
+the induced graph on its first $q$ ranks. For comparison, $\Q_q$ denotes
+the law on $[q]$ which includes each possible arrow $a\to b$, $a<b$,
+independently with probability $1/2$. An exact forward graph has $\Q_q$-mass
+$2^{-\binom q2}$.
+
+Put $a_n=|\D_n|$, $a_0=1$, and
+\[
+ B_n=\frac{a_n}{n!2^{\binom n2}}.
+\]
+For a positive composition $h=(h_1,\ldots,h_T)$ of $n$, define
+\begin{equation}\label{eq:weight}
+ W(h)=\prod_{i=1}^T\frac{2^{-\binom{h_i}{2}}}{h_i!}
+       \prod_{i<T}(1-2^{-h_i})^{h_{i+1}}.
+\end{equation}
+The empty composition has weight one.
+
+\begin{lemma}\label{lem:enumeration}
+We have $B_n=\sum_{|h|=n}W(h)$ and
+$\Prob(h(G_n)=h)=W(h)/B_n$. Conditionally on the ordered labeled layers,
+all edges joining layers at distance at least two are mutually independent
+fair bits. This remains true after the intralayer orders are chosen.
+\end{lemma}
+\begin{proof}
+The labeled layer sets can be chosen in $n!/\prod_i h_i!$ ways.
+Adjacent layers have $(2^{h_i}-1)^{h_{i+1}}$ possible edge sets, since
+each vertex of the later layer needs a parent in the earlier one.
+Nonadjacent layers have unrestricted edges. The total is therefore
+\[
+ \frac{n!}{\prod_i h_i!}\,2^{\sum_{i<j}h_i h_j}
+ \prod_{i<T}(1-2^{-h_i})^{h_{i+1}}.
+\]
+Divide by $n!2^{\binom n2}$ and use
+$\binom n2=\sum_i\binom{h_i}{2}+\sum_{i<j}h_i h_j$.
+No adjacent-layer restriction involves a nonadjacent-layer edge, which also
+proves independence. The auxiliary orders are chosen independently of these
+edge bits.
+\end{proof}
+
+\begin{lemma}\label{lem:layer}
+For every $n\ge1$, every layer index $i\ge1$, and every integer $x\ge32$,
+\begin{equation}\label{eq:layer}
+ \Prob(h_i\ge x)\le4\,2^{-x^2/4}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Fix $y\ge x$. Replace an entry $h_i=y$ by $y$ consecutive ones, obtaining
+a composition $\widetilde h$ of the same $n$. For fixed $i,y$ this map is
+injective, since the specified singleton entries can be collapsed again.
+Let $s=h_{i+1}$, taking $s=0$ at the last layer. The preceding interface,
+if present, contributes a ratio at most one. The new singleton interfaces
+contribute $2^{y-1}$ to $W(h)/W(\widetilde h)$, and the following interface
+contributes at most $2^s$. Thus
+\[
+ \frac{W(h)}{W(\widetilde h)}
+ \le\frac{2^{-\binom{y-1}{2}+s}}{y!}.
+\]
+If $s\le x^2/16$, then $y\ge x\ge32$ gives
+\[
+ -\binom{y-1}{2}+s
+ \le-\frac{y^2}{2}+\frac{3y}{2}-1+\frac{y^2}{16}
+ \le-\frac{y^2}{4}.
+\]
+Summing over the injective image and dividing by $B_n$ yields
+$\Prob(h_i=y,h_{i+1}\le x^2/16)\le2^{-y^2/4}$.
+Consecutive terms in the sum over $y\ge x$ have ratio less than $1/2$, so
+\[
+ \Prob(h_i\ge x)
+ \le\Prob\left(h_{i+1}\ge\lfloor x^2/16\rfloor+1\right)
+       +2\,2^{-x^2/4}.
+\]
+Iterate with $x_0=x$ and $x_{j+1}=\lfloor x_j^2/16\rfloor+1$.
+Then $x_{j+1}\ge2x_j$ for $x_j\ge32$. Once $x_j>n$ the remaining
+probability vanishes. The finite sum of error terms is bounded by
+$4\,2^{-x^2/4}$.
+\end{proof}
+
+\begin{lemma}\label{lem:normalizer}
+For $n\ge1$ and $0\le q\le n$,
+\begin{equation}\label{eq:normalizer}
+ B_n\ge2^{-32}B_{n-1},\qquad B_{n-q}/B_n\le2^{32q}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Take a DAG on $n-1$ labels, with $S$ sources. Choose one of the $n$ labels
+for a new vertex, connect it to every old source, and choose arbitrary
+outgoing edges to the other $n-1-S$ vertices. The new vertex is the unique
+source. Deleting it recovers the input and its chosen edges, so this is an
+injective count, after the remaining labels are identified in increasing
+order with $[n-1]$. Hence
+\[
+ a_n\ge n2^{n-1}a_{n-1}\E[2^{-S}],\qquad
+ B_n\ge B_{n-1}\E[2^{-S}].
+\]
+Lemma~\ref{lem:layer} gives $\Prob(S\le31)\ge1/2$ and thus
+$\E[2^{-S}]\ge2^{-32}$. For $n=1$ the empty input has $S=0$.
+Iteration proves the second inequality.
+\end{proof}
+
+Call $q$ a layer boundary if it is the sum of an initial sequence of layer
+sizes; $n$ is always a boundary.
+\begin{lemma}\label{lem:prefix}
+For every exact forward graph $F$ on $[q]$, where $1\le q\le n$,
+\begin{equation}\label{eq:boundary}
+ \Prob(q\text{ is a boundary},F_q=F)\le2^{32q}\Q_q(F).
+\end{equation}
+Consequently, for every integer $L\ge32$, $\ell=\min(n,L)$, and every
+event $A$ of forward graphs on $[\ell]$,
+\begin{equation}\label{eq:prefix}
+ \Prob(F_\ell\in A)
+ \le2L\,2^{64L}\Q_\ell(A)+4L\,2^{-L^2/4}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+An admissible complete rank graph $J$ has contiguous source-layer blocks of
+sizes $h$. Each permutation from ranks to original labels gives a pair
+consisting of a labeled DAG and its chosen intralayer orders. All $n!$ pairs
+are distinct, including when the DAG has automorphisms, because the orders
+are part of the pair. Each has probability $1/(a_n\prod_i h_i!)$. Therefore
+\[
+ \Prob(F_n=J)=\frac{2^{-\binom n2}}{B_n\prod_i h_i!}.
+\]
+If $q$ is a boundary, the source layers of $F$ are contiguous blocks;
+their vector $g=(g_1,\ldots,g_r)$ is uniquely determined by $F$.
+The source layers of the induced remainder are exactly the remaining
+layers of the full graph. Cross edges are free except that every vertex of
+the first remainder layer needs a parent in the last prefix layer. Summing
+over remainder graphs and cross edges gives the exact identity
+\begin{equation}\label{eq:exactprefix}
+ \Prob(q\text{ boundary},F_q=F)
+ =\frac{2^{-\binom q2}}{B_n\prod_{i=1}^r g_i!}
+   \sum_{|h|=n-q}W(h)(1-2^{-g_r})^{h_1}.
+\end{equation}
+When $q=n$, the sum and its interface factor are both one. Otherwise the
+sum is at most $B_{n-q}$. Lemma~\ref{lem:normalizer} proves
+\eqref{eq:boundary}. If $F$ has noncontiguous source layers, the event is
+empty; there is no additional sum over prefix vectors.
+
+For \eqref{eq:prefix}, if $n<L$ use the terminal boundary $q=n$.
+If $n\ge L$, take the first boundary $q\ge L$. When $q>2L$, the layer
+containing rank $L$ has size at least $L$, and its index is at most $L$.
+Lemma~\ref{lem:layer} and a union bound give probability at most
+$4L\,2^{-L^2/4}$ for this exception. Otherwise sum
+\eqref{eq:boundary} over $L\le q\le\min(2L,n)$, restricting each graph
+to its first $L$ ranks. Under $\Q_q$ that restriction has law $\Q_L$.
+There are at most $L+1\le2L$ boundaries to consider, and
+$2^{32q}\le2^{64L}$.
+\end{proof}
+
+We call an edge non-collider if it belongs to no unshielded collider.
+\begin{lemma}\label{lem:deep}
+There are universal $c_1,C_1>0$ such that, for all integers $n,L\ge1$,
+\begin{equation}\label{eq:deep}
+ \Prob(\text{some non-collider edge has an endpoint of rank}>L)
+ \le C_1e^{-c_1L}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a possible larger endpoint $b\ge6400$, let $r=\lfloor b/100\rfloor$.
+By Lemma~\ref{lem:layer}, the chance that one of the first $b$ layers has
+size greater than $r$ is at most $4b\,2^{-r^2/4}$. Condition on ordered
+layers satisfying this size cutoff. An edge $a\to b$, $a<b$, must join
+distinct layers. Among the first $\lfloor b/2\rfloor$ ranks, discard those
+in layers at distance at most one from either endpoint's layer.
+At most $6r$ ranks are discarded, leaving at least $b/3$ witnesses.
+Every layer meeting these earlier ranks has index at most $b$; a layer
+after the layer of $b$ contains none of them.
+
+For each remaining witness $u$, the bits $\{u,b\}$ and $\{u,a\}$ are
+independent fair bits by Lemma~\ref{lem:enumeration}. These pairs are also
+disjoint across witnesses. Since $u<b$, the first edge, if present,
+points to $b$. With probability $1/4$ it is present and $\{u,a\}$ is
+absent. If $a\to b$ is present, this gives $a\to b\leftarrow u$.
+Thus the event that $a\to b$ exists and is non-collider has conditional
+probability at most $(3/4)^{b/3}$. We have not conditioned on the existence
+of $a\to b$, so adjacent-layer restrictions on that edge cause no problem.
+
+A union bound over $a<b$ gives
+\[
+ b(3/4)^{b/3}+4b\,2^{-\lfloor b/100\rfloor^2/4}.
+\]
+Since $\lfloor b/100\rfloor\ge b/200$, this is at most $A e^{-cb}$
+for universal positive constants. Sum over $b>L$, extending the sum to
+infinity to remove dependence on $n$. Increasing $C_1$ covers $L<6400$.
+\end{proof}
+
+\section{Quadratic cost of the component conditions}
+We first work under the independent-edge law $\Q$.
+\begin{lemma}\label{lem:colliderfree}
+There are universal $a,A>0$ such that, for every integer $r\ge2$,
+\begin{equation}\label{eq:colliderfree}
+ \Q_r(\text{no unshielded collider})\le e^{-ar^2+Ar}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $r\ge16$ let $U$ be the first $\lfloor r/2\rfloor$ vertices, $V$ the
+remaining vertices, and $k=\lfloor r/8\rfloor\ge r/16$. Reveal only the
+edges within $U$. If the graph of missing skeleton edges on $U$ has a
+matching of size $k$, choose one by a deterministic rule. For each $v\in V$,
+absence of colliders requires that $v$ not receive both endpoints of any
+matched pair. The parent bits are distinct and unrevealed. Hence the
+conditional probability is at most
+\[
+ (3/4)^{k|V|}\le\exp[-\log(4/3)\,r^2/32].
+\]
+If no such matching exists, a maximum matching leaves at least
+$\lfloor r/2\rfloor-2(k-1)\ge r/4-1$ unmatched vertices. No missing
+edge joins two of them. They therefore form a clique of size at least $k$.
+The probability of this alternative is at most
+\[
+ 2^r2^{-\binom k2}
+ \le\exp[-(\log2)r^2/512+(33/32)(\log2)r],
+\]
+where $\binom k2\ge r^2/512-r/32$ follows from $k\ge r/16$.
+Adding the two alternatives proves \eqref{eq:colliderfree} with, for example,
+\[
+ a=\min\{\log(4/3)/32,\log2/512\},\qquad A=2\log2.
+\]
+For $2\le r<16$ the right side of \eqref{eq:colliderfree} exceeds one.
+\end{proof}
+
+Select $s$ vertices of a $\Q_\ell$ graph, partition them into blocks
+$B_1,\ldots,B_k$ of sizes $r_i\ge2$, and fix a proposed topological order
+of the blocks. Require each induced block to have no unshielded collider.
+For $i<j$, require each vertex of $B_i$ to be a parent either of all
+vertices of $B_j$ or of none, and forbid arrows from $B_j$ to $B_i$.
+These are necessary conditions from Lemma~\ref{lem:components} for distinct
+essential components, or for subsets of them.
+
+\begin{lemma}\label{lem:partition}
+For a fixed selected set, partition and block order, the probability of
+these conditions is at most
+\begin{equation}\label{eq:fixedpartition}
+ \exp(-a_0s^2+As),\qquad a_0=\min\{a,\log2/4\}>0.
+\end{equation}
+Let $A_{m,\ell}$ be the event that some selected set of size
+$m\le s\le2m$ admits such a partition and order. There is a universal
+$d>0$ such that, for every sufficiently large integer $m$ and
+$\ell\le L\le m^2$,
+\begin{equation}\label{eq:partition}
+ \Q_\ell(A_{m,\ell})\le e^{-dm^2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a fixed $u\in B_i$, $i<j$, at most two patterns on its $r_j$ pairs
+with $B_j$ are allowed: all arrows $u\to B_j$, or all pairs absent.
+If a rank in $B_j$ precedes $u$, the all-parent pattern is impossible,
+which only decreases the count. The interblock probability is therefore
+at most $2^{-r_i(r_j-1)}$. Since $r_j\ge2$,
+\[
+ \sum_{i<j}r_i(r_j-1)
+ \ge\tfrac12\sum_{i<j}r_ir_j
+ =\tfrac14\left(s^2-\sum_i r_i^2\right).
+\]
+Internal and interblock edge sets are disjoint. The induced law within
+each selected block is $\Q_{r_i}$, regardless of gaps between its ranks.
+Lemma~\ref{lem:colliderfree} thus bounds the full probability by
+\[
+ \exp\left[-a\sum_i r_i^2+As
+       -\frac{\log2}{4}\left(s^2-\sum_i r_i^2\right)\right]
+ \le e^{-a_0s^2+As}.
+\]
+
+There are at most $L^s$ choices of vertices, $s^s$ partitions and $s!$
+block orders. For $m\le s\le2m$, $L\le m^2$, the logarithm of this
+overcount is at most $s(4\log m+2\log2)$. Together with $As$, it is
+at most $(a_0/2)s^2$ for all sufficiently large $m$. Sum the resulting
+bound $e^{-a_0m^2/2}$ over at most $m+1$ values of $s$.
+One may take $d=a_0/4$ after increasing the threshold. Values $s>\ell$
+give empty events.
+\end{proof}
+
+\section{Proof of the tails and their scale}
+\begin{proof}[Proof of Theorem~\ref{thm:vertices}]
+Let $D=64\log2+1$, choose $\kappa=d/(4D)<1$, and put
+$L=\lfloor\kappa m^2\rfloor$. For large enough $m$, we have
+$32\le L\le m^2$ and $L\ge\kappa m^2/2$. If $n<m$ there is nothing
+to prove. Otherwise, on $R\ge m$, choose $m$ vertices from one component
+of size at least $m$, if such a component exists. If all components are
+smaller, accumulate whole nontrivial components until the total first
+reaches $m$. Their total size $s$ then lies in $[m,2m)$.
+In either case the selected blocks have at least two vertices and inherit
+the conditions of Lemma~\ref{lem:components}. They need not be essential
+components of the induced prefix graph.
+
+By Lemma~\ref{lem:components}, every vertex counted by $R$ is incident to
+a non-collider edge. Outside the exception of Lemma~\ref{lem:deep}, all
+such vertices have rank at most $L$. Thus the selection witnesses
+$A_{m,\ell}$ in $F_\ell$, where $\ell=\min(n,L)$. Lemmas~\ref{lem:prefix}
+and \ref{lem:partition} give
+\begin{equation}\label{eq:combine}
+ \Prob(R\ge m)
+ \le C_1 e^{-c_1L}
+       +2L\,2^{64L}e^{-dm^2}
+       +4L\,2^{-L^2/4}.
+\end{equation}
+Since $\log(2L)\le L$, the middle term is at most
+$\exp(DL-dm^2)\le e^{-3dm^2/4}$. The first term is at most
+$C_1e^{-c_1\kappa m^2/2}$. The last is bounded by
+$C'e^{-c'm^4}$, and hence by a Gaussian in $m$.
+All constants are independent of $n$. Increasing $C$ covers the finitely
+many smaller positive integers $m$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main} and Corollary~\ref{cor:target}]
+Write $x=\log t$ and, for large enough $x$, put
+\[
+ m=\lfloor x/(2\log x)\rfloor.
+\]
+Then $m\ge x/(4\log x)$, while
+\[
+ \log(m!)\le m\log m\le m\log x\le x/2.
+\]
+In particular $m!\le t$. By \eqref{eq:factorial}, $|\M(G_n)|>t$
+implies $R(G_n)>m$. Theorem~\ref{thm:vertices} now proves
+\eqref{eq:main}, after changing its universal constant $c$.
+For each fixed $\varepsilon\in(0,1)$,
+$x^\varepsilon/(\log x)^2\to\infty$. Choose $X_\varepsilon$ above the
+preceding thresholds so that $c x^\varepsilon/(\log x)^2\ge1$ for
+all $x\ge X_\varepsilon$. With $t_\varepsilon=e^{X_\varepsilon}$ and
+$C_\varepsilon=C$, \eqref{eq:main} gives Corollary~\ref{cor:target}.
+\end{proof}
+
+\begin{proposition}\label{prop:sharp}
+The Gaussian scale in \eqref{eq:vertices} and the scale
+$(\log t/\log\log t)^2$ in \eqref{eq:main} are sharp up to universal
+constants in the exponent along complete-skeleton examples. In particular,
+no constants $c,C>0$ give a uniform upper bound
+$C\exp[-c(\log t)^2]$ for the class-size tail at all large $t$.
+\end{proposition}
+\begin{proof}
+Every DAG has a topological order, so $a_n\le n!2^{\binom n2}$.
+Exactly $n!$ DAGs have complete skeleton, one for each total order.
+They belong to one class, of size $n!$, and have $R=n$ for $n\ge2$.
+Consequently
+\[
+ \Prob(\text{complete skeleton})\ge2^{-\binom n2}.
+\]
+Also $n\log n-n+1\le\log(n!)\le n\log n$, by integrating the
+increasing function $\log x$. For $t_n=n!-1$ we have
+$\log t_n\sim n\log n$ and
+$\log t_n/\log\log t_n\sim n$. The displayed lower bound thus has
+the same exponential scales as \eqref{eq:vertices} and \eqref{eq:main}.
+A proposed bound $C e^{-c(\log t)^2}$ at $t=t_n$ would imply
+$c(\log t_n)^2\le\log C+(\log2)\binom n2$, which is impossible
+after division by $n^2$.
+\end{proof}
+
+\paragraph{Finite check.}
+A standalone exact-enumeration script accompanies the manuscript.
+For four vertices it enumerates all 543 labeled DAGs and their 185 Markov
+equivalence classes. It checks the source-layer weights, the exact prefix
+identity \eqref{eq:exactprefix}, the common-parent condition and the
+factorial bound using integer and rational arithmetic. These finite checks
+are ancillary; no computation is used as a premise of the proofs above.
+
+\begin{thebibliography}{9}
+\bibitem{AMP}
+S. A. Andersson, D. Madigan and M. D. Perlman,
+\emph{A characterization of Markov equivalence classes for acyclic digraphs},
+Annals of Statistics \textbf{25} (1997), no. 2, 505--541.
+\href{https://doi.org/10.1214/aos/1031833662}{doi:10.1214/aos/1031833662}.
+Primary-author version: University of Washington Technical Report 287 (1995),
+\href{https://stat.uw.edu/sites/default/files/files/reports/1995/tr287.pdf}{full text}.
+The locators used in this article refer to that report's printed pagination.
+
+\bibitem{SS}
+D. Schmid and A. Sly,
+\emph{On the number and size of Markov equivalence classes of random
+directed acyclic graphs},
+\href{https://arxiv.org/abs/2209.04395v2}{arXiv:2209.04395v2} (2024),
+revised September 28, 2024.
+\end{thebibliography}
+
+\paragraph{AI use.}
+OpenAI Codex (GPT-6.1 Sol) was used to develop and check the argument,
+verify source passages, implement the supplementary finite enumeration,
+and prepare this manuscript. The manuscript has not been formally verified
+or independently reviewed by a human. Independent mathematical review is
+requested.
+\end{document}
