@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "problem_id": 386,
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/386-slow-surface-schrodinger-observability.md",
+  "evidence_type": "analytic counterexample claim",
+  "review_status": "AI-assisted preparation; independent mathematical review requested",
+  "numerical_code": "not applicable",
+  "detailed_ai_review": "none",
+  "payload_files": [
+    {
+      "path": "README.md",
+      "purpose": "Submission overview, build instructions and AI disclosure",
+      "sha256": "072ecee7edf4bfe8e0e735f58c99632ab8ebcccdb8eef742d84e454ec7f441d4",
+      "bytes": 1879
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Complete source-to-theorem correspondence",
+      "sha256": "87b638126679593401cafba571164a89d23b0ed6f18d42ae62c1888aa5ce631c",
+      "bytes": 3474
+    },
+    {
+      "path": "paper/exterior_observability.pdf",
+      "purpose": "Final manuscript PDF",
+      "sha256": "8a456ecd87d89623334ad2e1efaa6d767a1e46e77d8f457bf0776d18463c9332",
+      "bytes": 325510
+    },
+    {
+      "path": "paper/exterior_observability.tex",
+      "purpose": "Final self-contained editable manuscript",
+      "sha256": "867cf1a3690d2d2f51b47b0e84487067f0fdcc4089aa18e66d16ed6fd671f24f",
+      "bytes": 16976
+    }
+  ],
+  "manifest_integrity": "SHA256SUMS includes this manifest; checksums omit themselves"
+}
