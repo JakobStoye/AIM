@@ -1,0 +1,418 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\DeclareMathOperator{\diver}{div}
+\title{Failure of a mixed Sobolev estimate for scalar potentials}
+\author{Kaiwen Jin\thanks{Contact: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct smooth real mean-zero functions on the two-dimensional unit
+torus whose gradients stay bounded in $H^{-1/2}+L^1$, while their
+$H^{1/2}+W^{1,1}$ norms tend to infinity. This disproves the mixed
+potential estimate proposed by Bourgain and Brezis. The construction uses
+a finite stationary reflected walk to produce a bounded vector field
+with a uniformly bounded $H^{-1/2}$ divergence. Pairing this divergence
+with a smoothed sheet potential gives the divergent lower bound.
+\end{abstract}
+
+\section{The estimate and the counterexample}
+
+On $\T^d=\R^d/\Z^d$, with measure of total mass one, consider
+\begin{equation}\label{eq:question}
+ \norm{\psi}_{H^{1/2}+W^{1,1}}
+ \leq C_d\norm{\nabla\psi}_{H^{-1/2}+L^1},
+ \qquad \psi\in C^\infty(\T^d;\R),\quad \int_{\T^d}\psi=0.
+\end{equation}
+The constant is to depend only on the dimension, for every $d\geq2$.
+This estimate appears in Bourgain--Brezis \cite[eq.~(1.16), p.~397]{BB}
+and in Brezis \cite[Open Problem~7.1]{Brezis}.
+
+Our Fourier convention and inhomogeneous Sobolev norms are
+\[
+ \widehat u(k)=\int_{\T^d}u(x)e^{-2\pi i k\cdot x}\,dx,
+ \qquad
+ \norm{u}_{H^s}^2=\sum_{k\in\Z^d}(1+4\pi^2|k|^2)^s|\widehat u(k)|^2.
+\]
+For vectors, the modulus is Euclidean. We use
+$\norm v_{W^{1,1}}=\norm v_1+\norm{\nabla v}_1$, and
+\[
+ \norm w_{X+Y}=\inf_{w=u+v}
+                  \bigl(\norm u_X+\norm v_Y\bigr),
+\]
+where equality in the decomposition is distributional. Using a sum of
+component gradient norms in $W^{1,1}$ gives an equivalent norm with constants
+depending only on $d$, and hence the same failure of \eqref{eq:question}.
+
+\begin{theorem}\label{thm:main}
+There are constants $c,C>0$ and real mean-zero
+$\psi_M\in C^\infty(\T^2)$, for every integer $M\geq2$, such that
+\begin{equation}\label{eq:main}
+ \norm{\nabla\psi_M}_{H^{-1/2}(\T^2;\R^2)+L^1(\T^2;\R^2)}\leq C,
+ \qquad
+ \norm{\psi_M}_{H^{1/2}(\T^2)+W^{1,1}(\T^2)}\geq c\sqrt M-C.
+\end{equation}
+Consequently no finite $C_2$ satisfies \eqref{eq:question}.
+\end{theorem}
+
+The lower bound will come from functions $f_M=\diver Z_M$ with both
+$\norm{f_M}_{H^{-1/2}}$ and $\norm{Z_M}_\infty$ bounded independently of $M$.
+Such a function tests every decomposition of the scalar potential at once.
+To obtain a large pairing, we first use a sheet supported at $x=0$,
+then smooth it. The scales normal to the sheet are separated enough that
+the divergence errors have bounded total Sobolev energy, whereas their
+pairings add with the same sign.
+
+We write the coordinates as $(x,y)$, with $x\in(-1/2,1/2)$ and
+$y\in[0,1)$. Constants in the proof depend only on a cutoff fixed below.
+They are independent of all integers and small scales in the construction.
+We use the usual $L^2$ Fourier expansion on a torus
+\cite[\S4]{Guillemin}; passing from period $2\pi$ to period one by
+$\theta=2\pi x$ gives precisely the convention above. Every interchange
+of integrals below involves absolutely integrable functions, so Fubini's
+theorem applies \cite[Theorem~1.7.21]{Tao}.
+
+\section{A finite reflected walk}
+
+Fix $M\geq2$ and put
+\begin{equation}\label{eq:scales}
+ \beta=M^{-1},\qquad J=M^3,\qquad L=2M^6,
+ \qquad h_0=(2M+1)^{-1},\qquad h_j=h_0L^{-j}.
+\end{equation}
+Partition the $y$-circle into $2M+1$ equal intervals, and assign the values
+\[
+ 0,\ \beta,\ -\beta,\ 2\beta,\ -2\beta,\ \ldots,\ 1,\ -1
+\]
+in this order. Call this step function $U_0$. Refine every interval into
+$L$ equal children, and repeat $J$ times. At refinement $j$, let $r_j$
+be $+1$ on even children and $-1$ on odd children, starting with child zero.
+Lebesgue measure makes $U_0$ uniform on the $2M+1$ states
+$\{-1,-1+\beta,\ldots,1\}$ and the $r_j$ independent uniform signs,
+independent of $U_0$. Indeed every parent has exactly $L/2$ children of
+each sign. This is only a finite partition construction.
+
+Define
+\[
+ U_j=\max\{-1,\min\{1,U_{j-1}+\beta r_j\}\}.
+\]
+The transition matrix is symmetric: at an interior state the walk moves
+to either neighbor with probability $1/2$, while at a boundary state it
+stays or moves inward, each with probability $1/2$. Therefore the uniform
+law is stationary. Decompose the increments as
+\begin{equation}\label{eq:increments}
+ U_j-U_{j-1}=d_j+e_j,\qquad
+ e_j=-\frac\beta2\operatorname{sgn}(U_{j-1})
+                   \mathbf1_{\{|U_{j-1}|=1\}},\qquad d_j=c_jr_j,
+\end{equation}
+where $c_j=\beta$ in the interior and $c_j=\beta/2$ at the boundary.
+Here $c_j,e_j$ are constant on each parent of length $h_{j-1}$, and
+$d_j$ has mean zero on each parent. Set
+\[
+ a_M=J^{-1/2}\sum_{j=1}^Jr_j.
+\]
+
+\begin{lemma}\label{lem:walk}
+The functions above satisfy $\int a_M=0$, $\norm{a_M}_2=1$, and
+\begin{equation}\label{eq:walkbounds}
+ \sum_{j=1}^J\norm{e_j}_2^2
+   =\frac{J\beta^2}{2(2M+1)}\leq\frac14,
+ \qquad
+ -\sum_{j=1}^J\ip{a_M}{e_j}\geq\frac12\sqrt M-1.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The first two assertions follow by independence. Stationarity gives
+$|\{|U_{j-1}|=1\}|=2/(2M+1)$, proving the energy identity.
+In $\ip{a_M}{d_j}$, every term $r_i$ with $i<j$ vanishes after averaging
+$r_j$ conditional on the past. Terms with $i>j$ vanish by independence
+of $r_i$ from $d_j$. Thus
+\[
+ \ip{a_M}{d_j}=J^{-1/2}\int c_j\geq\frac\beta{2\sqrt J},
+ \qquad \ip{a_M}{U_0}=0.
+\]
+Since $U_J=U_0+\sum_j(d_j+e_j)$ and $|U_J|\leq1$,
+\[
+ -\sum_j\ip{a_M}{e_j}
+   =\sum_j\ip{a_M}{d_j}-\ip{a_M}{U_J}
+   \geq\frac\beta2\sqrt J-1=\frac12\sqrt M-1.
+\]
+\end{proof}
+
+\section{A bounded field and its divergence}
+
+Fix a smooth even cutoff $\eta$, equal to one on $[-1,1]$, zero for
+$|x|\geq2$, with $0\leq\eta\leq1$ and $\eta'\leq0$ on the positive
+half-line. For example, with $b(s)=e^{-1/s}$ for $s>0$ and zero otherwise,
+take $\eta(x)=b(2-|x|)/(b(2-|x|)+b(|x|-1))$.
+Set $\alpha_j(x)=h_j^{-1}\eta'(x/h_j)$ and regard these as smooth periodic
+functions. Their supports $h_j<|x|<2h_j$ do not overlap, and
+$2h_0\leq2/5<1/2$.
+
+Let
+\[
+ p_0(y)=\int_0^yU_0(s)\,ds,\qquad p_j(y)=\int_0^yd_j(s)\,ds\quad(j\geq1).
+\]
+The order $0,\beta,-\beta,\ldots,1,-1$ for $U_0$ and the alternating
+children give
+\begin{equation}\label{eq:primitives}
+ 0\leq p_0\leq h_0,\qquad 0\leq p_j\leq\beta h_j.
+\end{equation}
+Each primitive is continuous and periodic: every positive and negative
+pair cancels, and $d_j$ has zero integral on every parent.
+Define
+\begin{align*}
+ Z_1(x,y)&=U_0(y)\eta(x/h_0)
+         +\sum_{j=1}^J(U_j-U_{j-1})(y)\eta(x/h_j),\\
+ Z_2(x,y)&=-\alpha_0(x)p_0(y)-\sum_{j=1}^J\alpha_j(x)p_j(y).
+\end{align*}
+On each transition annulus $Z_1$ is a convex combination of consecutive
+values of $U_j$, and elsewhere it is one of these values or zero.
+Thus $|Z_1|\leq1$. Nonoverlap and \eqref{eq:primitives} give
+\begin{equation}\label{eq:Zbound}
+ \norm Z_\infty\leq D_\eta:=\sqrt{1+\norm{\eta'}_\infty^2}.
+\end{equation}
+Only the $x$ derivative of $Z_1$ and the $y$ derivative of $Z_2$ enter
+the divergence. The $U_0$ and $d_j$ terms cancel, leaving, in distributions,
+\begin{equation}\label{eq:f}
+ f_M:=\diver Z=\sum_{j=1}^J\alpha_j(x)e_j(y).
+\end{equation}
+For fixed $M$ this is a bounded $L^2$ function of mean zero.
+
+\begin{lemma}\label{lem:negative}
+There is $A_\eta<\infty$, independent of $M$, such that
+$\norm{f_M}_{H^{-1/2}(\T^2)}\leq A_\eta$.
+\end{lemma}
+\begin{proof}
+For $0<t\leq1/5$, write $\alpha_t=t^{-1}\eta'(x/t)$.
+If $\widehat\eta_{\R}(u)=\int_\R\eta(v)e^{-iuv}\,dv$, then
+\[
+ \widehat\alpha_t(n)=i2\pi nt\,\widehat\eta_{\R}(2\pi nt),\qquad
+ \widehat\alpha_t(0)=0.
+\]
+Three integrations by parts and the trivial low-frequency bound imply
+\begin{equation}\label{eq:alpha}
+ |\widehat\alpha_t(n)|\leq B_\eta
+           \min\{|n|t,(|n|t)^{-2}\}\quad(n\ne0).
+\end{equation}
+For $0<t\leq s\leq1/5$, split positive $n$ at $1/s$ and $1/t$.
+The summands $n^{-1}|\widehat\alpha_t(n)\widehat\alpha_s(n)|$ are bounded
+in the three ranges by constant multiples of
+$nts$, $t/(n^2s^2)$, and $1/(n^5t^2s^2)$, respectively. Summing gives
+\begin{equation}\label{eq:overlap}
+ \sum_{n\ne0}\frac{|\widehat\alpha_t(n)\widehat\alpha_s(n)|}{|n|}
+       \leq C_\eta\frac ts.
+\end{equation}
+The last range costs $C_\eta(t/s)^2\leq C_\eta t/s$; rounding the two
+cutoffs changes only a constant.
+
+For arbitrary $v_j\in L^2(\T)$, Parseval in $y$ and
+$(1+4\pi^2(n^2+m^2))^{-1/2}\leq(2\pi|n|)^{-1}$ for $n\ne0$ give
+\begin{align*}
+ \norm{\sum_j\alpha_jv_j}_{H^{-1/2}}^2
+ &\leq\frac1{2\pi}\sum_{n\ne0}\frac1{|n|}
+            \norm{\sum_j\widehat\alpha_j(n)v_j}_2^2\\
+ &\leq C_\eta\sum_{j,\ell}L^{-|j-\ell|}\norm{v_j}_2\norm{v_\ell}_2
+ \leq C'_\eta\sum_j\norm{v_j}_2^2.
+\end{align*}
+The final bound uses $2ab\leq a^2+b^2$ and the row sum
+$1+2/(L-1)\leq3$. Apply this to $v_j=e_j$ and use
+Lemma~\ref{lem:walk}. No tangential orthogonality is required.
+\end{proof}
+
+\section{The sheet potential}
+
+Let $P_t$ be the circle Poisson operator, with Fourier multiplier
+$e^{-2\pi t|m|}$. The geometric series gives its nonnegative unit-mass kernel
+\begin{equation}\label{eq:poisson}
+ q_t(y)=\frac{1-r^2}{1-2r\cos(2\pi y)+r^2},\qquad r=e^{-2\pi t}.
+\end{equation}
+For $0<t\leq1$ it satisfies
+$q_t(y)\leq Ct/(t^2+\operatorname{dist}(y,\Z)^2)$.
+
+\begin{lemma}\label{lem:poisson}
+If $e$ is constant on equal circle intervals of length $h$ and takes
+values in $[-\beta/2,\beta/2]$, then
+\[
+ \norm{P_te-e}_2\leq C\beta\sqrt{t/h},\qquad 0<t\leq h.
+\]
+In particular, for $h_j\leq x\leq2h_j$,
+$\norm{P_xe_j-e_j}_2\leq C\beta/\sqrt L$.
+\end{lemma}
+\begin{proof}
+Translation by distance $s\leq1/2$ changes $e$ only on a set of measure
+at most $\min(1,s/h)$, and the change is at most $\beta$. Thus the
+$L^2$ difference is at most $\beta\min(1,\sqrt{s/h})$.
+The integral triangle inequality and the kernel bound reduce the claim
+to integrating $Ct/(t^2+s^2)\min(1,\sqrt{s/h})$.
+For $0<s<h$, substitution $s=tv$ bounds the integral by
+\[
+ C\sqrt{t/h}\int_0^\infty\frac{\sqrt v}{1+v^2}\,dv.
+\]
+For $s>h$ the bound is $Ct/h\leq C\sqrt{t/h}$.
+The two directions on the circle change only the constant.
+Finally $e_j$ is constant on parents of length $h_{j-1}$, and
+$x\leq2h_j=2h_{j-1}/L$.
+\end{proof}
+
+Temporarily take the vector distribution
+$F_0=(1,0)\delta_0(x)a_M(y)$, and define the mean-zero potential
+$\psi_0=\Delta^{-1}\diver F_0$. Its nonzero Fourier coefficients are
+\begin{equation}\label{eq:sheetfourier}
+ \widehat\psi_0(n,m)=-\frac{in\widehat a_M(m)}{2\pi(n^2+m^2)}.
+\end{equation}
+All $m=0$ coefficients vanish. Since
+\[
+ \sum_n\frac{n^2}{(n^2+m^2)^2}
+       \leq\sum_n\frac1{n^2+m^2}\leq\frac C{|m|}\quad(m\ne0),
+\]
+we have $\psi_0\in L^2(\T^2)$ with norm bounded independently of $M$.
+
+For $0<x<1/2$ and $\lambda=2\pi|m|$, the periodic Green function for
+$\partial_x^2-\lambda^2$ is
+\[
+ G(x)=-\frac{e^{-\lambda x}+e^{-\lambda(1-x)}}
+                     {2\lambda(1-e^{-\lambda})},\qquad 0<x<1.
+\]
+It is continuous across the identified endpoints and $G'$ has jump one.
+Differentiating therefore gives
+\begin{equation}\label{eq:green}
+ \widehat{\psi_0(x,\cdot)}(m)
+       =\frac{e^{-\lambda x}-e^{-\lambda(1-x)}}
+                   {2(1-e^{-\lambda})}\widehat a_M(m).
+\end{equation}
+The potential is odd in $x$. On $0<x\leq2/5$ write this as
+$\psi_0(x,\cdot)=\tfrac12P_xa_M+R_xa_M$.
+On mean-zero $L^2(\T)$ functions, the multiplier of $R_x$ is
+$-e^{-\lambda}\sinh(\lambda x)/(1-e^{-\lambda})$.
+Using $\sinh(\lambda x)\leq\lambda x e^{\lambda x}$ and
+$\lambda\geq2\pi$ shows $\norm{R_x}_{L^2\to L^2}\leq Cx$.
+Self-adjointness of $P_x$, Lemma~\ref{lem:poisson}, and $\norm{a_M}_2=1$
+now give, on the positive support of $\alpha_j$,
+\[
+ \left|\ip{\psi_0(x,\cdot)}{e_j}-\frac12\ip{a_M}{e_j}\right|
+       \leq C\beta/\sqrt L+Cx\norm{e_j}_2.
+\]
+Both $\psi_0$ and $\alpha_j$ are odd in $x$, and
+$\alpha_j\leq0$ for $x>0$ with $\int_{x>0}\alpha_j=-1$.
+Integrating, summing, and using \eqref{eq:scales} yields
+\begin{equation}\label{eq:pairing}
+ \left|\int_{\T^2}\psi_0f_M+\sum_j\ip{a_M}{e_j}\right|
+ \leq CJ\beta/\sqrt L+C\sum_jh_j\norm{e_j}_2\leq C/M.
+\end{equation}
+Indeed $J\beta/\sqrt L=1/(\sqrt2M)$ and
+$\sum_jh_j\norm{e_j}_2\leq\beta h_1/(1-1/L)$.
+All these are legitimate $L^2$ pairings for each finite $M$.
+Lemma~\ref{lem:walk} proves
+\begin{equation}\label{eq:largepair}
+ \int\psi_0f_M\geq\frac12\sqrt M-1-C/M.
+\end{equation}
+
+\section{Smoothing and the mixed norms}
+
+For $\delta>0$ let $\rho_\delta=q_\delta$ from \eqref{eq:poisson}, and set
+\[
+ a_{M,\delta}=\rho_\delta*a_M,\qquad
+ F_{M,\delta}(x,y)=(1,0)\rho_\delta(x)a_{M,\delta}(y),\qquad
+ \psi_{M,\delta}=\Delta^{-1}\diver F_{M,\delta}.
+\]
+Their Fourier series have exponential decay. Thus the functions are smooth
+and real, and the potential has mean zero. Positivity and unit mass give
+$\norm{F_{M,\delta}}_1\leq\norm{a_M}_1\leq1$.
+
+For $k=(n,m)\ne0$ put $P(k)=kk^T/|k|^2$, and put $P(0)=0$, $Q=I-P$.
+The Fourier formula for the inverse Laplacian gives
+$\nabla\psi_{M,\delta}=F_{M,\delta}-QF_{M,\delta}$.
+Since $|Q(n,m)(1,0)|^2=m^2/(n^2+m^2)$ and all $m=0$ terms vanish,
+\begin{align*}
+ \norm{QF_{M,\delta}}_{H^{-1/2}}^2
+ &\leq\sum_{m\ne0}|\widehat a_{M,\delta}(m)|^2
+     \sum_n\frac{m^2}{(n^2+m^2)\sqrt{1+4\pi^2(n^2+m^2)}}\\
+ &\leq\frac3{2\pi}\norm{a_{M,\delta}}_2^2\leq\frac3{2\pi}.
+\end{align*}
+For the middle bound, the decreasing even function
+$m^2/(t^2+m^2)^{3/2}$ has integral one on $t>0$, so its integer sum
+is at most $1/|m|+2\leq3$. We have proved the uniform estimate
+\begin{equation}\label{eq:right}
+ \norm{\nabla\psi_{M,\delta}}_{H^{-1/2}+L^1}
+       \leq B:=1+\sqrt{3/(2\pi)}.
+\end{equation}
+
+For fixed $M$, smoothing multiplies \eqref{eq:sheetfourier} by
+$e^{-2\pi\delta(|n|+|m|)}$, so $\psi_{M,\delta}\to\psi_0$ in $L^2$.
+To see this without any uniformity assertion in $M$, first bound the
+squared error outside a finite set by four times the Fourier tail of
+$\psi_0$, then let $\delta$ decrease on the finite set.
+Let $n_M$ be the least integer $n\geq M$ for which
+\[
+ \norm{\psi_{M,2^{-n}}-\psi_0}_2\leq(1+\norm{f_M}_2)^{-1}.
+\]
+It exists by this convergence. Set $\delta_M=2^{-n_M}$ and
+$\psi_M=\psi_{M,\delta_M}$. Then \eqref{eq:largepair} implies
+\begin{equation}\label{eq:smoothpair}
+ \int\psi_Mf_M\geq\frac12\sqrt M-2-C/M.
+\end{equation}
+
+For any decomposition $\psi=u+v$ with $u\in H^{1/2}$ and
+$v\in W^{1,1}$, Fourier Cauchy--Schwarz and \eqref{eq:f} give
+\begin{align*}
+ \left|\int\psi f_M\right|
+ &\leq\norm{f_M}_{H^{-1/2}}\norm u_{H^{1/2}}
+              +\norm Z_\infty\norm{\nabla v}_1\\
+ &\leq C_*\bigl(\norm u_{H^{1/2}}+\norm v_{W^{1,1}}\bigr),
+ \qquad C_*:=\max(A_\eta,D_\eta).
+\end{align*}
+For the integration by parts, extend $v$ periodically and mollify on an
+open cube larger than a fundamental cube. Local weak-derivative
+mollification \cite[Theorem~3.19]{Hunter} gives smooth periodic approximations
+converging with their gradients in $L^1(\T^2)$.
+The integrals against fixed-$M$ bounded $f_M$ and bounded $Z$ therefore
+converge. Also $u\in L^2\subset L^1$, so a distributional decomposition
+agrees with an almost-everywhere equality and the displayed pairing is valid.
+Taking the infimum over all decompositions and using \eqref{eq:smoothpair},
+\[
+ \norm{\psi_M}_{H^{1/2}+W^{1,1}}
+       \geq\frac{\frac12\sqrt M-2-C/M}{C_*}.
+\]
+Together with \eqref{eq:right}, this proves Theorem~\ref{thm:main} and
+shows that the proposed family of estimates fails already in dimension two.
+
+\paragraph{AI use.}
+OpenAI Codex was used to develop the construction, draft the proof, check
+sources, and prepare this manuscript. Independent mathematical review is
+requested.
+
+\begin{thebibliography}{9}
+\bibitem{BB}
+J. Bourgain and H. Brezis,
+\emph{On the equation $\diver Y=f$ and application to control of phases},
+Journal of the American Mathematical Society \textbf{16} (2003), 393--426.
+\href{https://sites.math.rutgers.edu/~brezis/PUBlications/171-J.pdf}{Author PDF}.
+\bibitem{Brezis}
+H. Brezis, \emph{Some of my favorite open problems},
+Rendiconti Lincei -- Matematica e Applicazioni \textbf{34} (2023),
+no. 2, 307--335.
+\href{https://doi.org/10.4171/RLM/1008}{doi:10.4171/RLM/1008}.
+\bibitem{Guillemin}
+V. Guillemin, \emph{Notes for 18.117: Elliptic operators}, MIT, Spring 2005,
+\S4. \href{https://math.mit.edu/~vwg/classnotes-spring05.pdf}{Author notes}.
+\bibitem{Tao}
+T. Tao, \emph{An Introduction to Measure Theory}, Graduate Studies in
+Mathematics 126, American Mathematical Society, 2011.
+\href{https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-126-tao5-measure-book.pdf}{Author's preliminary version}.
+\bibitem{Hunter}
+J. K. Hunter, \emph{Notes on Partial Differential Equations}, Chapter 3,
+Theorem 3.19. \href{https://www.math.ucdavis.edu/~hunter/pdes/ch3.pdf}{Author notes}.
+\end{thebibliography}
+\end{document}
