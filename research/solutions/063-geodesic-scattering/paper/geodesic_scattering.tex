@@ -1,0 +1,844 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\D}{\mathbb D}
+\newcommand{\Sone}{\mathbb S^1}
+\newcommand{\Cpair}{\mathcal C}
+\newcommand{\BA}{\mathcal B_A}
+\newcommand{\Fset}{\mathcal F}
+\newcommand{\Kset}{\mathcal K}
+\newcommand{\Varea}{\mathcal V}
+\newcommand{\dd}{\,d}
+\DeclareMathOperator{\Area}{Area}
+\DeclareMathOperator{\supp}{supp}
+\hypersetup{pdftitle={A variational characterization of geodesic scattering on simple disks},pdfauthor={Kaiwen Jin}}
+\title{A variational characterization of geodesic scattering on simple disks}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give necessary and sufficient conditions for a boundary map to be the
+geodesic scattering map of a smooth simple Riemannian metric on a fixed disk
+with a prescribed boundary metric. The conditions depend only on the proposed
+map and that boundary metric. Boundary invariant functions first determine a
+normalized conformal boundary coordinate. In the resulting Euclidean disk,
+length inequalities define a nonempty convex set of densities whose strong
+$L^2$ closure has a unique element of least norm. Realizability is equivalent
+to smooth positivity and the prescribed boundary value of this element,
+explicit geodesic and Jacobi equation tests, and a scalar area equality.
+The proof transfers the length inequalities through the closure by integrating
+over the geodesic family. Strict monotonicity of the area functional then
+forces equality of boundary distances and hence of scattering maps. The
+characterization is exact and qualitative; no finite decision procedure or
+stability estimate is asserted.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+The scattering map records the point and direction at which a geodesic
+leaves a manifold after entering at its boundary. On a simple surface,
+every inward direction has a finite flight and distinct boundary endpoints.
+For a fixed boundary metric, the tangential components of the incoming and
+outgoing unit covectors give a common space on which to compare these maps.
+The range question asks which proposed maps are produced by smooth simple
+Riemannian metrics. It is a consistency question for the directions of rays,
+before one attempts to recover an interior metric.
+
+This question differs from uniqueness for data already known to come from
+a metric. Pestov and Uhlmann prove that two-dimensional compact simple
+Riemannian manifolds are boundary distance rigid, and their
+Theorem~1.3 recovers the Dirichlet-to-Neumann map from actual scattering
+data \cite{PU}. The metric-to-scattering range question is posed separately
+in \cite[Section~15.1, problem~2]{PSU}. Bohr and Paternain's
+Theorem~1.5 characterizes non-Abelian scattering data on an already fixed
+simple surface \cite{BP}; the geometric scattering relation of that surface
+is an input there. Lens-map realization results for Finsler metrics
+\cite{BI} also concern a different class of interior geometries.
+The problem considered here allows an arbitrary proposed boundary map and
+requires a Riemannian realization. The geometric and transport results
+used below are those developed in \cite{PSU}.
+
+Fix a smooth compact disk $M$ and a smooth positive boundary metric $h$.
+The requested characterization is in terms of $A$ and $h$ alone, with
+no additional interior metric among the data. We give such a characterization
+by selecting a density before testing realizability.
+
+\medskip
+\noindent\textbf{Main result, informal form.}
+\emph{A map on the entire open unit cotangent bundle of the boundary is
+realizable if and only if it passes the boundary action and boundary
+Fourier tests below, and the uniquely selected least-norm density is smooth
+and positive with the prescribed boundary value, passes the fixed
+geodesic and Jacobi equation tests, and has the area determined by the
+boundary action. There is no smallness, genericity, or local perturbation
+assumption.}
+\medskip
+
+The boundary Fourier test extracts the traces of holomorphic functions
+for actual scattering data, and a three-point normalization selects a
+circle coordinate. One then considers all positive smooth densities on
+a fixed Euclidean disk whose lengths dominate the proposed boundary
+distances. This convex set is always nonempty after the boundary tests,
+even for data that have no realization. Its strong $L^2$ closure therefore
+selects one density class without making a metric-existence assumption.
+The remaining conditions test this fixed class rather than search among
+simple metrics.
+
+The main analytical difficulty is that restriction to an individual curve
+is not continuous in $L^2$ on the disk. Santal\'o's formula instead controls
+the error integrated over all geodesics of the selected smooth metric.
+This yields a pointwise lower bound on its boundary distance, by continuity.
+A symmetric integration-by-parts identity shows that the action area is
+strictly increasing under a strict increase of boundary distance with
+positive mixed derivative. Thus one scalar area equality forces exact
+equality of all boundary distances. First variation then identifies the
+scattering map.
+
+The result is a qualitative characterization of the full range. Its tests
+include infinitely many curves, smoothness of an $L^2$ minimizer, and exact
+ODE and scalar conditions. It does not supply a finite computation or
+quantitative stability, and it does not address non-simple surfaces or
+Finsler realization.
+
+Section~\ref{sec:conditions} states the conditions and theorem.
+Section~\ref{sec:boundary} proves the boundary and conformal facts for
+actual simple metrics. Section~\ref{sec:variation} proves the universal
+convex construction and the two directions of the characterization.
+Throughout, the exit covector is recorded without reversal, Fourier
+averages have the factor $1/(2\pi)$, and all $L^2$ spaces and closures of
+densities are real and use Euclidean area.
+
+\section{Boundary tests and the selected density}\label{sec:conditions}
+Choose an orientation, an $h$-arclength origin, and three distinct
+positively cyclically ordered boundary points $s_1,s_2,s_3$.
+Write $L>0$ for the $h$-length of the boundary and identify it with
+$\mathbb R/L\mathbb Z$. The positive unit tangent $T$ is chosen so that
+$(T,\nu)$ is positive when $\nu$ is the inward unit normal.
+Then
+\[
+ Z=(\mathbb R/L\mathbb Z)\times(-1,1)
+\]
+identifies with $B_h^*\partial M$: $p$ denotes the coefficient of the
+tangential covector $p\,ds$. Start with an arbitrary set map $A:Z\to Z$.
+The following conditions are evaluated in order. If a condition fails,
+the map is rejected and later constructions are not needed.
+
+\subsection{The boundary action: condition (C1)}\label{subsec:c1}
+Require that $A$ be a smooth diffeomorphism. Write $A(s,p)=(t,q)$ and
+require the endpoint map
+\[
+ E:Z\longrightarrow\Cpair,
+ \qquad E(s,p)=(s,t),\qquad
+ \Cpair=\{(s,t)\in(\mathbb R/L\mathbb Z)^2:s\ne t\},
+\]
+to be a smooth diffeomorphism. Its inverse defines functions
+$P(s,t)=p$ and $Q(s,t)=q$. For the unique forward lift $s<t<s+L$, put
+\begin{equation}\label{eq:primitive}
+ D(s,t)=\int_s^t Q(s,u)\dd u.
+\end{equation}
+The integral converges at its lower endpoint since $|Q|<1$.
+Its profile $d(s,\delta)=D(s,s+\delta)$, initially $0<\delta<L$,
+must extend smoothly to $(\mathbb R/L\mathbb Z)\times[0,L]$ and satisfy
+\begin{gather}\label{eq:profile}
+ d(s,0)=d(s,L)=0,\qquad
+ d_\delta(s,0)=1,\qquad d_\delta(s,L)=-1,\\
+ D>0,\qquad D(s,t)=D(t,s),\qquad
+ D_s=-P,\qquad D_t=Q,\qquad D_{st}>0\quad\hbox{on }\Cpair.
+ \label{eq:action}
+\end{gather}
+Derivatives of $D$ treat its endpoints as independent variables; hence
+$D_s=d_s-d_\delta$ and $D_{st}=d_{s\delta}-d_{\delta\delta}$.
+Define the action area
+\begin{equation}\label{eq:area-action}
+ \Varea(D)=\frac1{2\pi}\int_{\Cpair}D D_{st}\dd s\dd t.
+\end{equation}
+This is a finite integral of the smooth profile on the compact rectangle,
+using positive product arclength measure $ds\,dt=ds\,d\delta$.
+
+\subsection{A conformal boundary coordinate: condition (C2)}\label{subsec:c2}
+For a metric inducing $h$, a boundary unit vector has the form
+$\cos\theta\,T+\sin\theta\,\nu$.
+The full boundary torus is the abstract space
+$S=(\mathbb R/L\mathbb Z)\times(\mathbb R/2\pi\mathbb Z)$.
+Define a piecewise map on it by
+\begin{equation}\label{eq:full-lift}
+ \alpha_A(s,\theta)=
+ \begin{cases}
+ (t,2\pi-\arccos q), &0<\theta<\pi,
+       \quad A(s,\cos\theta)=(t,q),\\
+ (u,\arccos p), &\pi<\theta<2\pi,
+       \quad A^{-1}(s,\cos\theta)=(u,p),\\
+ (s,\theta), &\theta=0,\pi.
+ \end{cases}
+\end{equation}
+Require that $\alpha_A$ be smooth on $S$. Its square is the identity by
+construction, so it is then a smooth diffeomorphism.
+For $U\in C^\infty(S;\mathbb C)$ use the coefficients
+\[
+ U_k(s)=\frac1{2\pi}\int_0^{2\pi}U(s,\theta)e^{-ik\theta}\dd\theta.
+\]
+Let $\BA$ consist of the functions $U_0$ obtained from such $U$ with
+\begin{equation}\label{eq:boundary-fourier}
+ U\circ\alpha_A=U,\qquad
+ U(s,\theta+\pi)=U(s,\theta),\qquad
+ U_k=0\quad(k<0).
+\end{equation}
+This definition uses only functions on the boundary torus.
+
+Set $\omega=e^{2\pi i/3}$. Require that there be exactly one smooth
+orientation-preserving circle diffeomorphism
+\begin{equation}\label{eq:phi}
+ \phi:\mathbb R/L\mathbb Z\longrightarrow\Sone,
+ \qquad \phi\in\BA,\qquad \phi(s_j)=\omega^{j-1}
+       \quad(j=1,2,3).
+\end{equation}
+Here membership in $\BA$ treats $\phi$ as a complex-valued function.
+On the unit circle define the positive boundary density $b$ and action
+$D_\phi$ by
+\begin{equation}\label{eq:boundary-density}
+ b(\phi(s))=\frac1{|\phi_s(s)|},\qquad
+ D_\phi(a,c)=D(\phi^{-1}(a),\phi^{-1}(c))\quad(a\ne c).
+\end{equation}
+The angular derivative of an orientation-preserving diffeomorphism is
+positive, so the denominator never vanishes.
+
+\subsection{The convex construction: condition (C3)}\label{subsec:c3}
+All further constructions take place in the fixed closed Euclidean unit
+disk $\overline\D$. Smooth functions on this disk mean restrictions of
+smooth functions on a neighborhood. Let
+\[
+ H=L^2(\D,dx\,dy;\mathbb R),\qquad
+ \|u\|_H^2=\int_\D u^2\dd x\dd y,
+\]
+with equality of functions understood almost everywhere. Let $\Fset$
+be the set of $\sigma\in C^\infty(\overline\D;\mathbb R)$, strictly
+positive on $\overline\D$, such that
+\begin{equation}\label{eq:all-curves}
+ \int_0^1\sigma(\gamma(r))|\gamma'(r)|\dd r
+       \ge D_\phi(a,c)
+\end{equation}
+for every pair $a\ne c$ on $\Sone$ and every piecewise $C^1$ curve
+$\gamma:[0,1]\to\overline\D$ joining them. Curves along the boundary,
+self-intersections, and repeated segments are included.
+No boundary-value, curvature, or simplicity requirement is imposed on
+$\sigma$ in this definition. Let $\Kset$ be the strong $H$-closure of
+$\Fset$.
+
+Lemma~\ref{lem:projection} shows that $\Fset$ is nonempty and convex for
+every map passing (C1)--(C2), and that $\Kset$ has a unique element
+$\rho_D$ of smallest $H$ norm. Thus $\rho_D$ is defined before any
+realizability test on it. Require that this one $L^2$ class have a smooth
+representative $\rho$ that is strictly positive on $\overline\D$, and
+require
+\begin{equation}\label{eq:rho-trace}
+ \rho|_{\Sone}=b.
+\end{equation}
+A continuous representative, if it exists, is unique, including its
+boundary values by continuity. Curve integrals are never evaluated on an
+arbitrary representative of an $L^2$ class.
+
+\subsection{Fixed differential equations: condition (C4)}\label{subsec:c4}
+If (C3) passes, put $\lambda=\log\rho$, $v(\beta)=(\cos\beta,\sin\beta)$,
+$J(x,y)=(-y,x)$ and $K_\rho=-\rho^{-2}\Delta\lambda$.
+Require
+\begin{equation}\label{eq:convexity}
+ 1+\partial_r\lambda>0\quad\hbox{on }\Sone,
+\end{equation}
+where $\partial_r$ is the outward radial derivative. For every interior
+initial point and every $\beta\in\mathbb R/2\pi\mathbb Z$, and for every
+boundary initial point with $z\cdot v(\beta)<0$, solve the fixed equations
+\begin{equation}\label{eq:fixed-ode}
+ z'=\frac{v(\beta)}{\rho(z)},\qquad
+ \beta'=\frac{\nabla\lambda(z)\cdot Jv(\beta)}{\rho(z)},\qquad
+ j''+K_\rho(z)j=0,\quad j(0)=0,\quad j'(0)=1.
+\end{equation}
+Require a finite first exit time $\tau>0$, with $|z(t)|<1$ for
+$0<t<\tau$, and require
+\begin{equation}\label{eq:jacobi-positive}
+ j(t)>0\quad(0<t\le\tau).
+\end{equation}
+For an inward boundary state, first exit means first return after
+entering the disk. For an interior state it means its first subsequent
+encounter with the boundary. The equations are considered only up to
+this encounter; a smooth extension of $\rho$ outside the disk does not
+change their solution before it. Boundary tangent states have zero flight
+time and are excluded.
+
+\subsection{Area saturation and the theorem}\label{subsec:c5}
+The final condition (C5) is the exact scalar equality
+\begin{equation}\label{eq:saturation}
+ \|\rho_D\|_H^2=\Varea(D).
+\end{equation}
+Neither side is an approximate or numerical quantity.
+
+\begin{theorem}\label{thm:main}
+For every smooth compact disk $M$, every smooth positive boundary metric
+$h$, and every map $A:B_h^*\partial M\to B_h^*\partial M$, conditions
+(C1)--(C5) are necessary and sufficient for $A$ to be the scattering map
+of a smooth simple Riemannian metric on $M$ inducing $h$. Their truth
+is independent of the initial orientation, arclength origin, and positively
+ordered boundary triple.
+\end{theorem}
+
+In these conditions, $L$ is the boundary length, $D$ is the primitive
+\eqref{eq:primitive}, $\phi$ is the uniquely normalized boundary map
+\eqref{eq:phi}, $b$ is the prescribed circle density
+\eqref{eq:boundary-density}, and $\rho_D$ is the unique least-norm
+element of the strong closure defined by \eqref{eq:all-curves}.
+All are determined by $A,h$ and the fixed auxiliary choices. In particular,
+the universal construction of $\rho_D$ is distinct from the conclusion
+that a realizing metric exists.
+
+\begin{example}\label{ex:euclidean}
+For the Euclidean disk of radius $R>0$, with $L=2\pi R$ and marks
+$0,L/3,2L/3$, the data are
+\[
+ A(s,p)=(s+2R\arccos p,p),\qquad
+ d(s,\delta)=2R\sin\frac\delta{2R},\qquad
+ D_{st}=\frac1{2R}\sin\frac\delta{2R}.
+\]
+Thus $\Varea(D)=\pi R^2$. The full lift is
+$\alpha(s,\theta)=(s+2R\theta,-\theta)$ modulo the two periods.
+The function $U=e^{is/R}(1+e^{2i\theta})$ is even, invariant under this
+lift, and has modes $0,2$. Its average is $\phi(s)=e^{is/R}$.
+Lemma~\ref{lem:coordinate} gives its required uniqueness, and
+Proposition~\ref{prop:necessity} identifies $\rho_D=R$.
+Here $b=R$, $K_\rho=0$ and $j(t)=t$. Every permitted ray has finite
+exit, the expression in \eqref{eq:convexity} is $1$, and all five
+conditions hold. This is an exact calculation of the signs and area factor.
+\end{example}
+
+\section{Boundary geometry and conformal coordinates}\label{sec:boundary}
+We first consider data from an actual smooth simple metric $g$ inducing
+$h$. Let $J_g:TM\to TM$ be the positive $g$-orthogonal rotation by
+$\pi/2$; in oriented conformal coordinates it agrees with the Euclidean
+rotation $J$ in (C4). We use the equivalence between simplicity and strict convexity,
+nontrapping, and absence of conjugate points on a disk
+\cite[Theorem~3.8.2]{PSU}. Its connecting geodesics minimize length
+\cite[Proposition~3.8.4]{PSU}.
+
+\subsection{The action, twist and area}\label{subsec:geometry}
+\begin{lemma}\label{lem:geometry}
+For actual simple-metric scattering data, (C1) holds and the primitive
+$D$ is the boundary distance $D_g$. The full lift \eqref{eq:full-lift}
+is smooth. Moreover,
+\begin{equation}\label{eq:santalo-area}
+ \Area_g(M)=\Varea(D_g).
+\end{equation}
+\end{lemma}
+\begin{proof}
+A geodesic joining distinct boundary points enters and exits strictly
+transversely. Indeed a boundary defining function positive in the
+interior has negative second derivative along a tangent geodesic, by
+strict convexity, so that such a geodesic lies outside near the encounter.
+The minimizing property also rules out a positive-length return to the
+starting point.
+
+Let a connecting geodesic vary smoothly with its endpoints. For its
+constant-speed parametrization $c(r,\varepsilon)$, $0\le r\le1$,
+write $W=\partial_r c$, $Y=\partial_\varepsilon c$ and length
+$\ell(\varepsilon)$. Metric compatibility, torsion-freeness, and integration
+by parts give
+\[
+ \ell'=\ell^{-1}\int_0^1 g(\nabla_rY,W)\dd r
+        =g(W/\ell,Y)\big|_{r=1}-g(W/\ell,Y)\big|_{r=0}.
+\]
+Thus $(D_g)_s=-p$ and $(D_g)_t=q$, with the outgoing covector retained.
+
+To calculate the sign of the mixed derivative, fix the initial boundary
+point and vary the inward angle $0<\theta<\pi$. The normal Jacobi field
+is $j(t)J_g\dot c(t)$, where $j(0)=0$, $j'(0)=1$ and
+$j''+K_g(c(t))j=0$; see \cite[Lemmas~3.7.2, 3.7.6 and 3.7.7]{PSU}.
+It is positive until exit, since there are no conjugate points.
+Write the exit vector as $qT-r\nu$, $r=\sqrt{1-q^2}>0$.
+Differentiating the exit event and pairing with $J_g\dot c(\tau)$ yields
+\[
+ T\,t_\theta=j(\tau)J_g\dot c(\tau)+\dot c(\tau)\tau_\theta,
+ \qquad r t_\theta=j(\tau).
+\]
+Since $p=\cos\theta$, this gives
+\begin{equation}\label{eq:twist}
+ t_p=-\frac{j(\tau)}{r\sin\theta},\qquad
+ (D_g)_{st}=-p_t=\frac{r\sin\theta}{j(\tau)}>0.
+\end{equation}
+Unique connecting geodesics give a bijective endpoint map, and this
+nonzero derivative gives its smooth inverse. The smooth full scattering
+involution, including the tangent states, is
+\cite[Lemma~3.3.5]{PSU}; in the $(T,\nu)$ frame it is exactly
+\eqref{eq:full-lift}. Its incoming restriction gives a smooth
+diffeomorphism on $Z$.
+
+The diagonal behavior is checked in endpoint coordinates, without
+requiring smoothness in $p$ at $\pm1$. Extend $g$ to a closed surface
+and to a slightly larger simple neighborhood, as in
+\cite[Lemma~3.1.8 and Proposition~3.8.7]{PSU}.
+The exponential inverse $w(s,\delta)$ of the nearby endpoints
+$x(s),x(s+\delta)$ is smooth with $w(s,0)=0$ and
+$w_\delta(s,0)=T$. The identity
+\[
+ \frac{w(s,\delta)}\delta
+       =\int_0^1 w_\delta(s,r\delta)\dd r
+\]
+extends this quotient smoothly and nonvanishingly to $\delta=0$.
+For small positive $\delta$ the connecting geodesic lies in $M$ and
+\[
+ D_g(s,s+\delta)
+   =\delta\sqrt{g_{x(s)}(w(s,\delta)/\delta,w(s,\delta)/\delta)}.
+\]
+It has the required smooth one-sided extension with derivative $1$.
+Symmetry gives the end at $\delta=L$ with derivative $-1$.
+Away from the diagonal, smoothness is part of simplicity.
+First variation and the zero diagonal value identify
+\eqref{eq:primitive} with $D_g$, giving all of (C1).
+
+The incoming flux measure is
+\[
+ d\mu=\sin\theta\dd s\dd\theta=\dd s\,|dp|.
+\]
+Changing from $p$ to the exit point with $p=-(D_g)_s$ and
+\eqref{eq:twist} gives
+\[
+ \int_{\partial_+SM}\tau\dd\mu
+     =\int_{\Cpair}D_g(D_g)_{st}\dd s\dd t.
+\]
+Santal\'o's formula \cite[Proposition~3.6.6]{PSU} says, for a continuous
+base function $f$,
+\begin{equation}\label{eq:santalo}
+ \int_{\partial_+SM}\int_0^\tau f(c(t))\dd t\dd\mu
+       =2\pi\int_M f\dd V_g.
+\end{equation}
+The factor $2\pi$ is the mass of the unit tangent circle in Liouville
+measure $dV_g\,d\theta$ \cite[Section~3.5.2]{PSU}.
+Taking $f=1$ proves \eqref{eq:santalo-area}.
+\end{proof}
+
+\subsection{Holomorphic traces determined by the boundary lift}
+Let $X$ denote the geodesic vector field on $SM$, and $V$ the positive
+fiber rotation. Put $X_\perp=[X,V]$ and
+$\eta_\pm=(X\pm iX_\perp)/2$. A fiber mode $u_k$ satisfies
+$-iVu_k=ku_k$; write
+$\Omega_k=\{u\in C^\infty(SM;\mathbb C):-iVu=ku\}$.
+Smooth fiber Fourier series and their projections converge
+in $C^\infty$, and
+\begin{equation}\label{eq:mode-operators}
+ X=\eta_++\eta_-,\qquad
+ (Xw)_k=\eta_+w_{k-1}+\eta_-w_{k+1},
+\end{equation}
+where $\eta_+$ raises and $\eta_-$ lowers the index
+\cite[Lemmas~6.1.3 and 6.1.5]{PSU}. On base functions,
+$\eta_-H=0$ is exactly holomorphicity in the oriented complex structure
+\cite[Lemma~6.1.21]{PSU}. Vanishing of a mode and the zeroth average
+are independent of an orthonormal frame rotation. In particular the
+boundary tangent frame need not extend to the interior.
+
+We use three transport facts with their smooth domains. On a simple
+surface, a smooth function on $\partial SM$ invariant under the full
+scattering involution extends uniquely to a smooth $w$ on $SM$ with
+$Xw=0$ \cite[Theorem~5.1.1]{PSU}. On such a surface $I_0^*$ is
+surjective onto $C^\infty(M)$; hence every smooth complex base function
+$H$ is the zeroth Fourier coefficient of a smooth invariant function
+\cite[Theorems~8.2.1 and 8.2.2]{PSU}. Here the source's
+$\ell_0^*w=2\pi w_0$ is the unnormalized fiber integral, so the
+source theorem is applied to $2\pi H$. Finally, on a compact nontrapping
+surface with strictly convex boundary and surjective $I_0^*$, the ray
+transform is injective on each single fiber mode: if $u$ is smooth,
+$u|_{\partial SM}=0$, and $Xu$ has one mode, then $u=0$
+\cite[Theorem~10.2.3]{PSU}. Indeed the integral of $Xu$ along every
+geodesic is zero; injectivity gives $Xu=0$ and the zero boundary value
+then gives $u=0$. Real statements extend to complex functions by applying
+them to real and imaginary parts in the surjectivity step.
+
+\begin{lemma}\label{lem:traces}
+For actual simple-metric data, $\BA$ is exactly the set of boundary
+restrictions of smooth holomorphic base functions on $(M,g)$.
+\end{lemma}
+\begin{proof}
+Let $H$ be such a holomorphic function. Choose a smooth invariant $w$
+with $w_0=H$ by the preceding surjectivity result, and replace $w$ by
+$[w(x,v)+w(x,-v)]/2$. It remains invariant, since direction reversal
+changes the sign of $X$, and its zeroth average remains $H$.
+All its odd modes vanish. Put $W=\sum_{k\ge0}w_k$.
+The projection is smooth through the boundary. In \eqref{eq:mode-operators},
+every positive mode of $XW$ vanishes by $Xw=0$, its zeroth mode vanishes
+by evenness, and its only possible negative mode is $\eta_-w_0=0$.
+Thus $XW=0$. Its boundary trace $U$ is even, has no negative modes,
+and is invariant under the full lift. Its average is the trace of $H$.
+
+Conversely let $U$ satisfy \eqref{eq:boundary-fourier}. Its invariant
+extension $w$ is smooth by the transport regularity statement.
+Uniqueness follows by tracing an interior orbit to the incoming boundary.
+The reversed $w(x,-v)$ has the same full boundary trace, by the evenness
+of $U$, so uniqueness makes $w$ even. Set $w^- =\sum_{k<0}w_k$.
+It is smooth with zero full boundary trace. The mode equations and
+evenness give
+\[
+ Xw^-=\eta_+w_{-2}\in\Omega_{-1}.
+\]
+The single-mode injectivity statement applies with $m=-1$ and yields
+$w^-=0$. The mode $-1$ equation for $Xw$ is now
+$\eta_-w_0=0$. Hence $w_0$ is holomorphic and its boundary trace is
+$U_0$. This proves the reverse inclusion.
+\end{proof}
+
+\subsection{Three-point normalization}\label{subsec:normalization}
+\begin{lemma}\label{lem:coordinate}
+For actual simple-metric data, (C2) holds. Its selected $\phi$ is the
+boundary restriction of the unique holomorphic disk diffeomorphism with
+the prescribed three-point normalization. In this coordinate the metric
+is $\rho^2|dz|^2$ with $\rho$ smooth and positive on $\overline\D$ and
+$\rho|_{\Sone}=b$.
+\end{lemma}
+\begin{proof}
+Smooth uniformization \cite[Theorem~3.4.15]{PSU} supplies a holomorphic
+map $\Phi_0:M\to\overline\D$ that is a smooth diffeomorphism of the
+closed disks. Its boundary trace belongs to $\BA$ by
+Lemma~\ref{lem:traces}.
+
+We first show that every smooth holomorphic $H$ whose boundary trace
+is an orientation-preserving circle diffeomorphism is itself a disk
+diffeomorphism. In the coordinate $\Phi_0$, write $F=H\circ\Phi_0^{-1}$.
+It is holomorphic on $\D$, smooth on its closure and nonconstant.
+For a fixed $w$ with $|w|\ne1$, the functions $F-w$ are nonzero near
+the boundary. The argument principle on circles $|z|=r<1$, close to $1$,
+gives the zero count
+\[
+ n_r(w)=\frac1{2\pi i}\int_{|z|=r}\frac{F'(z)}{F(z)-w}\dd z.
+\]
+As $r\uparrow1$ this tends to the corresponding boundary integral.
+Writing $F(e^{i\theta})=e^{ia(\theta)}$, where $a'>0$ and
+$a(\theta+2\pi)=a(\theta)+2\pi$, and changing variable to $a$ shows
+that the limit is $1$ for $|w|<1$ and $0$ for $|w|>1$.
+For example these values follow by expanding the denominator in its
+uniformly convergent geometric series on the boundary circle.
+The integer $n_r(w)$ therefore equals its limit for all $r$ sufficiently
+close to $1$. In the first case there are no zeros in a thin outer
+annulus, so there is exactly one preimage in $\D$, with multiplicity one.
+In the second case there is none: any preimage would lie inside one of
+the circles with zero count.
+
+An interior preimage of $w_0\in\Sone$ is also impossible. A small circle
+around such a point has a positive argument-principle count for $F-w_0$.
+That integer remains unchanged for $w$ near $w_0$, by continuity and
+nonvanishing on the small contour. Taking $|w|>1$ contradicts the zero
+count just proved. Thus $F$ maps $\D$ bijectively onto $\D$ and its
+derivative never vanishes there. At the boundary its tangential derivative
+is nonzero. The Cauchy--Riemann equations hold there by continuity, so
+its real Jacobian is nonzero as well. A smooth extension and the inverse
+function theorem give smooth local inverses through the boundary.
+All uses of the argument principle were on interior contours; no analytic
+continuation through $\Sone$ was assumed.
+
+For completeness, the three-point normalization can be made explicitly.
+For a positively ordered triple $\zeta_1,\zeta_2,\zeta_3$ on $\Sone$, set
+\[
+ C_{\zeta_3}(z)=i\frac{\zeta_3+z}{\zeta_3-z},\qquad
+ r_j=C_{\zeta_3}(\zeta_j)\ (j=1,2),\qquad
+ H_\zeta=\frac{C_{\zeta_3}-r_1}{r_2-r_1}.
+\]
+The imaginary part of $C_{\zeta_3}$ is
+$(1-|z|^2)/|\zeta_3-z|^2$, and $r_1<r_2$ are real by the cyclic order.
+Thus $H_\zeta$ maps the disk to the upper half-plane and the triple to
+$(0,1,\infty)$. Applying the same formula to $(1,\omega,\omega^2)$,
+the composition $H_{\rm roots}^{-1}H_\zeta$ is the desired disk
+automorphism. Upper half-plane automorphisms are real fractional linear
+maps \cite[Theorem~1.7]{Milnor}, and one fixing $0,1,\infty$ is the
+identity. Any competing $\phi\in\BA$ extends by Lemma~\ref{lem:traces}
+to a holomorphic $H$, which is a disk diffeomorphism by the preceding
+argument. Comparing the two disk maps therefore proves uniqueness.
+
+In the normalized coordinate the pushed metric is
+$\rho^2|dz|^2$, with smooth positive $\rho$ through the boundary.
+The boundary arclength identity is
+\[
+ \rho(\phi(s))|\phi_s(s)|=1,
+\]
+which gives exactly \eqref{eq:boundary-density}.
+Together with Lemma~\ref{lem:geometry}, this proves (C2).
+\end{proof}
+
+\section{Variational realization}\label{sec:variation}
+We now begin with proposed data, without assuming any realizing metric.
+The first lemma makes the convex construction well defined on every
+input passing its boundary prerequisites.
+
+\subsection{Universal feasibility and projection}\label{subsec:projection}
+\begin{lemma}\label{lem:projection}
+Under (C1)--(C2), $\Fset$ is nonempty and convex. Its strong $H$ closure
+$\Kset$ has a unique element $\rho_D$ of smallest norm. If this class
+has a continuous representative on $\overline\D$, that representative
+is unique.
+\end{lemma}
+\begin{proof}
+Since $|D_t|=|Q|<1$ and the profile vanishes at both ends,
+\[
+ D(s,s+\delta)\le\delta,\qquad
+ D(s,s+\delta)\le L-\delta.
+\]
+Thus $D$ is bounded by the shorter $h$-arclength arc. Put
+$B=\max_{\Sone}b$. If $a,c\in\Sone$ have shorter angular separation
+$\alpha\in(0,\pi]$, the corresponding $h$-shorter arc is no longer than
+$B\alpha$. Since $\alpha\le(\pi/2)|a-c|$,
+\[
+ D_\phi(a,c)\le\frac\pi2B|a-c|.
+\]
+Every joining piecewise $C^1$ curve has Euclidean length at least
+$|a-c|$, so the constant $\sigma=(\pi/2)B$ belongs to $\Fset$.
+
+Strict positivity and the linear inequalities \eqref{eq:all-curves}
+persist under convex combinations. Hence $\Fset$, and also its closure,
+are convex. Let $m=\inf_{u\in\Kset}\|u\|_H$. Choose $u_n\in\Kset$
+with $\|u_n\|_H^2\le m^2+1/n$. The midpoint is in $\Kset$, and
+the parallelogram identity gives
+\[
+ \|u_n-u_k\|_H^2
+ =2\|u_n\|_H^2+2\|u_k\|_H^2
+       -4\|(u_n+u_k)/2\|_H^2\le 2/n+2/k.
+\]
+Completeness of $H$ and closedness of $\Kset$ produce a limit of norm
+$m$. Applying the same identity to two minima proves uniqueness.
+If continuous representatives differed at an interior point, their
+difference would be bounded away from zero on a ball of positive area,
+contradicting equality almost everywhere. Interior limits then identify
+their boundary values.
+\end{proof}
+
+\subsection{The ODE tests and necessity}\label{subsec:necessity}
+\begin{lemma}\label{lem:ode}
+For a smooth positive $\rho$ on $\overline\D$, condition (C4) is
+equivalent to simplicity of $g_\rho=\rho^2|dz|^2$.
+\end{lemma}
+\begin{proof}
+The conformal geodesic equation has the first two components in
+\eqref{eq:fixed-ode} \cite[Lemma~3.5.6]{PSU}. Its speed has
+$g_\rho$ norm one. More explicitly the Christoffel symbols are
+\[
+ \Gamma^k_{ij}=\delta^k_i\lambda_j+\delta^k_j\lambda_i
+                    -\delta_{ij}\lambda_k.
+\]
+In the curvature expression the quadratic first-derivative terms cancel,
+giving $K_{g_\rho}=-\rho^{-2}(\lambda_{xx}+\lambda_{yy})$.
+On the unit circle the unit tangent and inward normal are respectively
+$\rho^{-1}(-\sin\psi,\cos\psi)$ and
+$-\rho^{-1}(\cos\psi,\sin\psi)$. Substitution gives
+\[
+ g_\rho(\nabla_TT,\nu)=\rho^{-1}(1+\partial_r\lambda).
+\]
+Thus \eqref{eq:convexity} is exactly strict boundary convexity.
+The third equation in \eqref{eq:fixed-ode} is the normal Jacobi equation
+\cite[Lemmas~3.7.6 and 3.7.7]{PSU}.
+
+Finite exit for all interior and inward boundary initial states gives
+forward nontrapping; reversing the initial directions gives backward
+nontrapping. A normal Jacobi field vanishing at its initial point is a
+multiple of $j$. Its positivity through exit prevents conjugate pairs.
+The tangential Jacobi component has the form $a+bt$ and cannot vanish
+at two distinct times unless it is zero. Every subsegment begins at a
+state covered by (C4), so this includes conjugate pairs starting in the
+interior and pairs involving endpoints. The equivalence in
+\cite[Theorem~3.8.2]{PSU} now gives simplicity. Conversely simplicity
+gives finite exit and no zero of $j$ after its initial positive slope,
+as well as strict convexity, so all the ODE tests hold.
+\end{proof}
+
+\begin{proposition}\label{prop:necessity}
+Every smooth simple Riemannian metric inducing $h$ produces data
+satisfying (C1)--(C5). Its normalized conformal density is exactly
+$\rho_D$.
+\end{proposition}
+\begin{proof}
+Lemmas~\ref{lem:geometry} and \ref{lem:coordinate} give (C1)--(C2)
+and a normalized smooth positive density $\rho$ with boundary value $b$.
+Every curve has $g_\rho$ length at least the boundary distance, so
+$\rho\in\Fset$. For any $\sigma\in\Fset$ and any incoming
+$g_\rho$-unit-speed geodesic, \eqref{eq:all-curves} gives
+\[
+ I_g(\sigma/\rho):=\int_0^\tau(\sigma/\rho)(c(t))\dd t\ge\tau.
+\]
+The endpoints are distinct. Integrate over the incoming boundary and
+apply \eqref{eq:santalo} to the continuous base functions $\sigma/\rho$
+and $1$. In Euclidean coordinates this yields
+\[
+ 2\pi\int_\D\sigma\rho\dd x\dd y
+        \ge 2\pi\int_\D\rho^2\dd x\dd y.
+\]
+The pairing with $\rho$ is continuous in $H$, so
+$\langle u,\rho\rangle_H\ge\|\rho\|_H^2$ for every $u\in\Kset$.
+Consequently
+\[
+ \|u\|_H^2
+ =\|\rho\|_H^2+\|u-\rho\|_H^2+2\langle u-\rho,\rho\rangle_H
+ \ge\|\rho\|_H^2+\|u-\rho\|_H^2.
+\]
+Thus the true density is the unique least-norm element $\rho_D$.
+It satisfies (C3), and Lemma~\ref{lem:ode} gives (C4).
+Finally \eqref{eq:santalo-area} gives
+$\|\rho_D\|_H^2=\Area_g(M)=\Varea(D)$, which is (C5).
+\end{proof}
+
+\subsection{Passing length inequalities through the closure}
+\begin{lemma}\label{lem:closure}
+Assume (C1)--(C4), and use $\phi$ to express the boundary distance of
+the selected simple metric $g_\rho$ in the original arclength
+coordinates. Then
+\begin{equation}\label{eq:distance-order}
+ D_{g_\rho}(s,t)\ge D(s,t)\quad(s\ne t).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The selected density has the correct boundary metric since
+$\rho(\phi(s))|\phi_s(s)|=1$. Choose $\sigma_n\in\Fset$ with
+$\sigma_n\to\rho$ strongly in $H$, and put
+$f_n=(\sigma_n-\rho)/\rho$. All these functions are smooth.
+Santal\'o's formula and Cauchy--Schwarz give
+\begin{align}\label{eq:family-L1}
+ \int_{\partial_+S\overline\D}|I_gf_n|\dd\mu
+ &\le\int_{\partial_+S\overline\D}I_g|f_n|\dd\mu\\
+ &=2\pi\int_\D|\sigma_n-\rho|\rho\dd x\dd y
+ \le2\pi\|\sigma_n-\rho\|_H\|\rho\|_H\longrightarrow0.\notag
+\end{align}
+For each of its geodesics, the curve inequality gives
+$\tau+I_gf_n\ge D(s,t)$. Therefore
+\[
+ (D(s,t)-\tau)_+\le |I_gf_n|.
+\]
+The integral of this nonnegative left side is zero by
+\eqref{eq:family-L1}. It is continuous on the open incoming bundle,
+where flux has strictly positive density. Positivity at one state would
+give a neighborhood of positive integral; hence it vanishes everywhere.
+The endpoint diffeomorphism of Lemma~\ref{lem:geometry} then gives
+\eqref{eq:distance-order} for every distinct boundary pair.
+Only smooth functions were integrated along individual curves. No trace
+on a curve or ray transform of a general $L^2$ class was used.
+\end{proof}
+
+\subsection{Strict area monotonicity and sufficiency}
+\begin{lemma}\label{lem:area-order}
+Let $D_0,D_1$ have smooth zero-ended profiles as in
+\eqref{eq:profile}, and suppose $(D_i)_{st}>0$ on $\Cpair$.
+If $D_1\ge D_0$ and $\Varea(D_1)=\Varea(D_0)$, then $D_1=D_0$.
+\end{lemma}
+\begin{proof}
+On the compact profile rectangle put
+$\mathcal L=\partial_s\partial_\delta-\partial_\delta^2$.
+For smooth periodic zero-ended profiles $u,v$, two integrations by parts
+give
+\[
+ \int u v_{s\delta}=-\int u_\delta v_s=\int u_{s\delta}v,
+ \qquad
+ -\int u v_{\delta\delta}=\int u_\delta v_\delta
+                           =-\int u_{\delta\delta}v.
+\]
+Terms at $s=0,L$ cancel by periodicity, while the first and second
+$\delta$ boundary terms vanish because $u=0$ and $v=0$, respectively.
+Thus $\int u\mathcal Lv=\int v\mathcal Lu$. Expanding the quadratic
+functional \eqref{eq:area-action} gives
+\begin{equation}\label{eq:area-difference}
+ \Varea(D_1)-\Varea(D_0)
+ =\frac1{2\pi}\int_{\Cpair}(D_1-D_0)
+             \big((D_1)_{st}+(D_0)_{st}\big)\dd s\dd t.
+\end{equation}
+If $D_1-D_0$ is nonzero and nonnegative, continuity makes it positive
+on an open set. The mixed derivatives are positive there, so the right
+side is strictly positive, a contradiction. All integrations by parts
+occur on the smooth compact rectangle; no diagonal-strip limit is needed.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Necessity is Proposition~\ref{prop:necessity}. For sufficiency assume
+all five conditions. Lemma~\ref{lem:projection} defines the selected
+density, (C3) supplies its smooth positive representative, and
+Lemma~\ref{lem:ode} makes $g_\rho$ simple. Lemma~\ref{lem:closure}
+gives $D_{g_\rho}\ge D$. The two actions have smooth zero-ended
+profiles and positive mixed derivative, by (C1) and
+Lemma~\ref{lem:geometry}. Their action areas agree, since
+\[
+ \Varea(D_{g_\rho})=\Area_{g_\rho}(\overline\D)
+                 =\|\rho_D\|_H^2=\Varea(D).
+\]
+Lemma~\ref{lem:area-order} forces $D_{g_\rho}=D$ pointwise.
+
+For $(s,p)\in Z$ let $A(s,p)=(t,q)$. The unique geodesic from $s$
+to $t$ for the selected metric has initial tangential covector
+$-(D_{g_\rho})_s=-D_s=P(s,t)=p$ and exit covector
+$(D_{g_\rho})_t=D_t=Q(s,t)=q$. Thus its scattering is exactly $A$
+on the whole open cylinder.
+
+To realize this metric on the fixed smooth disk $M$, choose any
+orientation-preserving smooth disk chart $M\to\overline\D$.
+In this chart the desired boundary map is
+$e^{i\theta}\mapsto e^{ia(\theta)}$ with $a'>0$ and
+$a(\theta+2\pi)=a(\theta)+2\pi$. Choose a smooth radial cutoff
+$0\le\chi\le1$, zero near the origin and one near the boundary.
+The map
+\[
+ (r,\theta)\longmapsto
+       (r,\theta+\chi(r)(a(\theta)-\theta))
+\]
+is well defined modulo $2\pi$ and has positive angular derivative
+$1-\chi+\chi a'$. It is the identity near the center and a smooth
+bijection on each circle, with smooth inverse. Composing with the chart
+gives a smooth disk diffeomorphism $\Psi$ with boundary value $\phi$.
+The pullback $\Psi^*(\rho^2|dz|^2)$ is a smooth simple Riemannian
+metric on $M$. It induces $h$ by \eqref{eq:rho-trace} and
+\eqref{eq:boundary-density}, and its scattering is the prescribed $A$.
+
+Every initial choice was arbitrary in both directions of the proof.
+Passing the tests for one choice gives a realizing metric; necessity
+then makes its data pass for every other choice. This proves the
+claimed independence of the classification. For proposed data without
+a realization, no algebra or fractional-linear closure property of
+$\BA$ has been assumed.
+\end{proof}
+
+\paragraph{AI-use statement.}
+An OpenAI Codex agent assisted in developing the argument, checking cited
+source statements, and preparing this manuscript. The submitted result is
+an analytic proof claim. AI-assisted checks and successful typesetting do
+not establish independent mathematical verification. Independent review
+of the complete argument is requested.
+
+\begin{thebibliography}{9}
+\bibitem{BI}
+D. Burago and S. Ivanov,
+\emph{Boundary distance, lens maps and entropy of geodesic flows of Finsler metrics},
+Geometry \& Topology \textbf{20} (2016), 469--490.
+\href{https://doi.org/10.2140/gt.2016.20.469}{doi:10.2140/gt.2016.20.469}.
+
+\bibitem{BP}
+J. Bohr and G. P. Paternain,
+\emph{The Transport Oka--Grauert Principle for Simple Surfaces},
+Journal de l'\'Ecole polytechnique --- Math\'ematiques \textbf{10} (2023), 727--769.
+\href{https://doi.org/10.5802/jep.231}{doi:10.5802/jep.231}.
+
+\bibitem{Milnor}
+J. Milnor,
+\emph{Dynamics in One Complex Variable: Introductory Lectures},
+Stony Brook IMS Preprint \#1990/5, revised September 1991.
+\url{https://abel.math.harvard.edu/archive/118r_spring_05/docs/milnor.pdf}.
+
+\bibitem{PSU}
+G. P. Paternain, M. Salo and G. Uhlmann,
+\emph{Geometric Inverse Problems: With Emphasis on Two Dimensions},
+Cambridge Studies in Advanced Mathematics, vol.~204,
+Cambridge University Press, 2023.
+\href{https://doi.org/10.1017/9781009039901}{doi:10.1017/9781009039901}.
+
+\bibitem{PU}
+L. Pestov and G. Uhlmann,
+\emph{Two dimensional compact simple Riemannian manifolds are boundary distance rigid},
+Annals of Mathematics (2) \textbf{161} (2005), 1093--1110.
+\href{https://doi.org/10.4007/annals.2005.161.1093}{doi:10.4007/annals.2005.161.1093}.
+\end{thebibliography}
+\end{document}
