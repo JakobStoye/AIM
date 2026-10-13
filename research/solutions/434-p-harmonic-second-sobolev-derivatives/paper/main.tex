@@ -1,0 +1,736 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\dd}{\,dx}
+\newcommand{\dA}{\,dA}
+\newcommand{\ds}{\,ds}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\eps}{\varepsilon}
+\title{Second-order Sobolev regularity of three-dimensional
+  \texorpdfstring{$p$}{p}-harmonic functions}
+\author{Kaiwen Jin\\
+  \small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For every finite $p\geq5$, a weak $p$-harmonic function on an arbitrary
+open subset of $\R^3$ belongs to $W^{2,2}_{\loc}$. The conclusion concerns
+the full unweighted distributional Hessian and includes neighborhoods
+of critical points without assumptions on the critical set.
+We prove an estimate for smooth regularized solutions in which the
+Hessian energy is divided by the actual gradient norm. Gaussian
+curvature of the level surfaces supplies the component that is lost
+in the usual pointwise coercivity estimate. The equation excludes
+closed level components in a ball, so Gauss--Bonnet and the total
+curvature of the boundary curves control the integrated correction.
+A radial cutoff argument makes the estimate uniform in the
+regularization parameter, and smooth approximation identifies every
+second distributional derivative.
+\end{abstract}
+
+\section{Introduction}
+
+The $p$-Laplace equation
+\begin{equation}\label{eq:main}
+ \diver\bigl(|Du|^{p-2}Du\bigr)=0
+\end{equation}
+is a basic model of degenerate ellipticity. Its weak solutions are
+$p$-harmonic functions. Local H\"older continuity of the gradient is
+available for every $1<p<\infty$, but for $p>2$ the coefficient in
+\eqref{eq:main} degenerates where the gradient vanishes
+\cite[Section 4]{Lindqvist}. Consequently, this first-order regularity
+does not by itself identify a square-integrable Hessian across the
+critical set.
+
+Second-order estimates often control a nonlinear function of the
+gradient. Sarsa proves local $W^{1,2}$ regularity of
+$|Du|^{(p-2+\sigma)/2}Du$ when
+$\sigma>-1-(p-1)/(n-1)$ \cite[Theorem 1.1]{Sarsa}.
+Setting $\sigma=2-p$ removes the weight only in the range
+$p<3+2/(n-2)$ for $n>2$. The same range appears in the classical
+unweighted $W^{2,2}_{\loc}$ result discussed by Lindqvist
+\cite[Section 11, p.~93, Second Derivatives]{Lindqvist} and in the global
+Cordes-based theory of Haarala and Sarsa \cite{HaaralaSarsa}.
+In three dimensions its upper endpoint is $5$. A weighted derivative
+estimate does not settle what happens at a zero of $Du$ when the
+weight vanishes, and the pointwise coercivity underlying that
+argument does not remain positive beyond the endpoint.
+
+We prove the unweighted conclusion in the remaining range. We use
+the usual distributional definition: $u\in W^{1,p}_{\loc}(\Omega)$ is
+a weak solution if
+\begin{equation}\label{eq:weak}
+ \int_\Omega |Du|^{p-2}Du\cdot D\varphi\dd=0
+ \qquad\bigl(\varphi\in C_c^\infty(\Omega)\bigr).
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+Let $5\leq p<\infty$, let $\Omega\subset\R^3$ be open, and let
+$u\in W^{1,p}_{\loc}(\Omega)$ be real valued and satisfy
+\eqref{eq:weak}. Then $u\in W^{2,2}_{\loc}(\Omega)$.
+In particular, each of the nine distributional derivatives
+$D_jD_i u$, $1\leq i,j\leq3$, belongs to $L^2_{\loc}(\Omega)$.
+\end{theorem}
+
+Here $W^{k,r}_{\loc}$ means that the function and all its
+distributional derivatives of order at most $k$ are locally in $L^r$.
+Theorem~\ref{thm:main} imposes no sign or symmetry condition and no
+restriction on the geometry or measure of the critical set.
+It gives an affirmative answer to the three-dimensional
+second-derivative question stated in Section~11 of Lindqvist's notes, including
+$p=5$ and every larger finite exponent.
+
+The missing normal component of the Hessian can be recovered by
+adding signed Gaussian curvature of the level surfaces to a
+divergence expression. This correction need not be positive at
+each point. Its integral is nevertheless bounded by quantities on
+the boundary of a ball: the equation rules out a closed regular
+level component, and Gauss--Bonnet reduces its signed curvature
+integral to the total curvature of the boundary curves. Fenchel's
+inequality then controls the number of those curves.
+
+The resulting estimate divides the squared Hessian by $|Dv|$ for
+a smooth regularized solution $v$. At a critical point this
+quotient requires care even though $v$ is smooth. A nonnegative
+norm identity and Fatou's lemma establish its local integrability
+and the favorable distributional inequality before curvature is
+integrated. Radial cutoffs and an iteration remove the preliminary
+dependence on the regularization parameter. The known uniform
+gradient bound then converts this estimate into an unweighted
+$L^2$ bound.
+
+All constants below may depend on the fixed finite exponent $p$;
+we make no assertion uniform as $p\to\infty$. The argument uses
+two-dimensional level surfaces and does not assert the corresponding
+result in higher spatial dimensions.
+Section~\ref{sec:critical} treats critical points of smooth
+regularizations. Section~\ref{sec:geometry} supplies the curvature
+identity and its boundary estimate, and
+Section~\ref{sec:energy} proves the uniform estimate and the
+distributional conclusion. Appendix~\ref{sec:coarea} gives the
+smooth critical-value and coarea facts used in the geometric step.
+All vector norms are Euclidean and matrix norms are Hilbert--Schmidt;
+balls in an argument have a common center.
+
+\section{A norm identity through the critical set}\label{sec:critical}
+
+Fix $5\leq p<\infty$, $\eps>0$, and a smooth real solution $v$ on an open set $U\subset\R^3$
+of
+\begin{equation}\label{eq:regularized}
+ \diver\bigl((\eps+|Dv|^2)^{(p-2)/2}Dv\bigr)=0.
+\end{equation}
+The approximation to a general weak solution will be taken only
+after the estimates for this fixed $v$ have been proved.
+Write
+\[
+ q=|Dv|,\qquad H=D^2v,\qquad Z=\{q=0\}.
+\]
+On $U\setminus Z$, let $e=Dv/q$, and split the Hessian into its
+normal and tangential blocks:
+\begin{equation}\label{eq:blocks}
+\begin{gathered}
+ P=I-e\otimes e,\qquad a=e^THe,\qquad w=PHe,\\
+ B=PHP\big|_{e^\perp},\qquad
+ B_0=B-\tfrac12(\tr B)I_{e^\perp},\qquad
+ s=1+(p-2)\frac{q^2}{q^2+\eps}.
+\end{gathered}
+\end{equation}
+The block $B$ is a symmetric operator on the two-dimensional
+tangent plane. Expansion of \eqref{eq:regularized} gives
+\begin{equation}\label{eq:trace}
+ \tr H+(s-1)a=0,\qquad \tr B=-sa,\qquad 1\leq s\leq p-1.
+\end{equation}
+In an orthonormal frame with first vector $e$,
+\begin{equation}\label{eq:decomposition}
+ |H|^2=(1+s^2/2)a^2+2|w|^2+|B_0|^2,\qquad
+ T:=|H|^2-|He|^2=|w|^2+|B|^2.
+\end{equation}
+Since $s^2a^2\leq2|B|^2$ and $s\geq1$, these identities imply
+\begin{equation}\label{eq:kato}
+ |H|^2\leq3T.
+\end{equation}
+
+\begin{lemma}\label{lem:critical}
+Define
+\[
+ E=\frac{|H|^2}{q}\quad\hbox{on }U\setminus Z,\qquad E=0\quad\hbox{on }Z.
+\]
+Then $E\in L^1_{\loc}(U)$. The weak gradient of $q$ is $He$,
+with $e=0$ on $Z$. The vector field
+\[
+ G=(\Delta v)e,\qquad S=Dq-G
+\]
+has a $C^1$ extension for $G$ and a locally bounded realization for
+$S$, both zero on $Z$. If
+\begin{equation}\label{eq:f}
+ f=\frac{|w|^2+|B_0|^2-\tfrac12s(s-2)a^2}{q}
+ \quad\hbox{on }U\setminus Z,\qquad f=0\quad\hbox{on }Z,
+\end{equation}
+then $f\in L^1_{\loc}(U)$ and
+\begin{equation}\label{eq:critical}
+ \int_U \psi f\dd\leq-\int_U S\cdot D\psi\dd
+ \qquad(0\leq\psi\in C_c^\infty(U)).
+\end{equation}
+Moreover, $|S|\leq(1+\sqrt3)|H|$ almost everywhere, and
+\begin{equation}\label{eq:zeroidentity}
+ |H|=\sqrt E\,\sqrt q\qquad\hbox{almost everywhere on }U.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $\delta>0$ set $q_\delta=(q^2+\delta^2)^{1/2}$. Differentiation gives
+\[
+ Dq_\delta=\frac{HDv}{q_\delta},\qquad
+ \Delta q_\delta=
+ \underbrace{\frac{|H|^2}{q_\delta}
+   -\frac{|HDv|^2}{q_\delta^3}}_{T_\delta}
+ +\frac{Dv}{q_\delta}\cdot D\Delta v.
+\]
+Here $T_\delta\geq0$ because $|HDv|\leq|H|q$.
+On compact subsets, $q_\delta\to q$ uniformly and
+$Dq_\delta\to He$ pointwise, including zero on $Z$;
+also $|Dq_\delta|\leq|H|$. Dominated convergence in the test
+identity for a first derivative identifies the weak gradient
+$Dq=He$.
+For a nonnegative compactly supported smooth $\psi$, integration by
+parts yields
+\[
+ \int\psi T_\delta\dd
+ =\int q_\delta\Delta\psi\dd
+   -\int\psi\frac{Dv}{q_\delta}\cdot D\Delta v\dd.
+\]
+The right side has a finite limit: $D\Delta v$ is bounded on the
+support and $|Dv/q_\delta|\leq1$. Fatou's lemma, applied on $U\setminus Z$,
+therefore gives
+\begin{equation}\label{eq:fatou}
+ \int_{U\setminus Z}\psi\frac Tq\dd
+ \leq-\int Dq\cdot D\psi\dd
+       -\int\psi e\cdot D\Delta v\dd.
+\end{equation}
+Choose $\psi$ equal to one on a prescribed compact set.
+Equations~\eqref{eq:kato} and \eqref{eq:fatou} imply
+$E\in L^1_{\loc}$. This is a finiteness statement for the
+fixed smooth solution; its present bound may depend on $\eps$
+and on third derivatives.
+
+We next justify integration by parts for $G$ at $Z$.
+Equation~\eqref{eq:trace} implies
+\begin{equation}\label{eq:G}
+ G=-(p-2)\frac{(Dv^THDv)Dv}{q(q^2+\eps)}\qquad(q>0).
+\end{equation}
+For a symmetric matrix $A$, the map
+$F(z,A)=(z^TAz)z/|z|$, assigned zero at $z=0$, is $C^1$.
+Indeed, off zero
+\[
+ |F|\leq |A||z|^2,\qquad
+ |D_zF|\leq C|A||z|,\qquad |D_AF|\leq C|z|^2.
+\]
+The first bound shows that the derivative at zero is zero,
+and the other bounds give its continuity there. Composing with
+$Dv,H$ and dividing by the positive smooth function $q^2+\eps$
+in \eqref{eq:G} proves that $G$ is $C^1$ and $G=DG=0$ on $Z$.
+
+Off $Z$, differentiation of $e$ gives
+$\diver e=(\Delta v-a)/q$, so the classical divergence of $S$ is
+\[
+ \frac{T-(\Delta v)^2+(\Delta v)a}{q}.
+\]
+Using $\Delta v=(1-s)a$ and \eqref{eq:decomposition} gives exactly
+\eqref{eq:f}. Equivalently, off $Z$,
+\[
+ f=T/q+e\cdot D\Delta v-\diver G.
+\]
+All three terms are locally integrable. The latter two vanish on
+$Z$, and $T/q$ is extended by zero there. Adding those two terms
+to \eqref{eq:fatou} and integrating $G$ by parts proves
+\eqref{eq:critical}. In particular, the passage through the
+critical set preserves the required direction of the inequality.
+Since $|Dq|\leq|H|$ and $|\Delta v|\leq\sqrt3|H|$, the stated bound
+for $S$ follows.
+
+Finally $H=0$ almost everywhere on $Z$. For each smooth component
+$v_i$ of $Dv$, the part of $\{v_i=0\}$ where $Dv_i\ne0$ is locally
+a smooth hypersurface by the implicit function theorem. A graph
+has three-dimensional measure zero by Fubini, and countably many
+such graphs cover that part of the zero set. Apply this to all
+three components $v_i$. At almost every point of $Z$ all the
+rows of $H$ vanish, proving \eqref{eq:zeroidentity}.
+The convergence and integration facts used here are the usual
+Fatou, dominated convergence and Fubini theorems
+\cite[Sections 1.4 and 1.7]{TaoMeasure}; the smooth calculus and
+implicit graph facts can be found in
+\cite[Sections 4.3 and 5.3]{LeblI} and
+\cite[Sections 8.3, 8.5 and 8.6]{LeblII}.
+\end{proof}
+
+\section{Curvature of level surfaces}\label{sec:geometry}
+
+\subsection{The coercive identity}
+
+At $q>0$, the second fundamental form of the level surface of $v$
+is $B/q$, up to the sign convention for the normal. Its Gaussian
+curvature is therefore $K=\det B/q^2$. Introduce the signed density
+\begin{equation}\label{eq:curvature}
+ \mathcal K=Kq=\frac{\det B}{q}
+   =\frac{s^2a^2/4-|B_0|^2/2}{q}
+ \quad(q>0),\qquad \mathcal K=0\quad(q=0).
+\end{equation}
+The determinant of a symmetric two-dimensional matrix satisfies
+$|\det B|\leq|B|^2/2$, whence
+$|\mathcal K|\leq E/2$.
+Lemma~\ref{lem:critical} has thus established absolute integrability
+before we integrate signed curvature.
+
+Let
+\begin{equation}\label{eq:constants}
+ \ell=p-1,\qquad c_p=\ell+\ell^{-1},\qquad d_p=2c_p-2.
+\end{equation}
+Substitution of \eqref{eq:decomposition}, \eqref{eq:f}, and
+\eqref{eq:curvature} gives the identity
+\begin{equation}\label{eq:coerciveidentity}
+ c_pf+d_p\mathcal K-E
+ =\frac{(c_p-2)|w|^2+(sc_p-s^2-1)a^2}{q}\qquad(q>0).
+\end{equation}
+The coefficient of $|B_0|^2$ cancels. The remaining normal
+coefficient factors as
+\[
+ sc_p-s^2-1=\frac{(\ell-s)(s\ell-1)}{\ell}\geq0
+ \qquad(1\leq s\leq\ell),
+\]
+and $c_p-2=(\ell-1)^2/\ell\geq0$. Consequently
+\begin{equation}\label{eq:coercive}
+ E\leq c_pf+d_p\mathcal K
+ \qquad\hbox{almost everywhere on }U.
+\end{equation}
+There is no separate positivity assertion for $f$ or for $K$.
+
+\subsection{An integrated boundary estimate}
+
+\begin{lemma}\label{lem:boundary}
+For every closed ball $\overline{B_r}\subset U$,
+\begin{equation}\label{eq:boundary}
+ \int_{B_r}\mathcal K\dd
+ \leq2\int_{\partial B_r}\left(|H|+\frac{2q}{r}\right)\dA.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Translate the center to zero. By Lemma~\ref{lem:values}, almost
+every $t$ is a regular value both of $v$ near the ball and of
+$v|_{\partial B_r}$. For such $t$,
+$\Sigma_t=\{v=t\}\cap\overline{B_r}$ is a compact smooth
+orientable surface with smooth boundary, possibly empty.
+Its orientation comes from $Dv/q$.
+It has finitely many components, as does its boundary: connected
+coordinate neighborhoods have a finite subcover of a compact
+manifold and each belongs to one component.
+
+Every nonempty component has boundary. Otherwise a connected
+closed embedded component $M$ lies in $B_r$. It separates a bounded
+region $D$ from the unbounded region
+\cite[B19]{SullivanSurfaces}. Every point outside the ball can
+be joined to infinity without meeting $M$, so $D\subset B_r$,
+and $v=t$ on $\partial D=M$.
+To use the equation without importing a boundary regularity
+argument, freeze the coefficient field
+\[
+ A(x)=I+(p-2)\frac{Dv\otimes Dv}{q^2+\eps},\qquad
+ Lz=\tr(A(x)D^2z).
+\]
+Then $Lv=0$ and $I\leq A\leq(p-1)I$. For $\rho>0$,
+$L(v+\rho e^{x_1})=\rho A_{11}e^{x_1}>0$.
+At an interior maximum the Hessian is negative semidefinite,
+which would give $L(v+\rho e^{x_1})\leq0$.
+Thus its maximum on $\overline D$ is attained on $\partial D$.
+Letting $\rho\downarrow0$ gives $v\leq t$ in $D$.
+Applying the minimum argument to $v-\rho e^{x_1}$ gives
+$v\geq t$. Hence $v=t$ in $D$, and continuity of $Dv$ gives
+$Dv=0$ on $M$, contradicting regularity of the level.
+
+Let $b$ be the total number of boundary curves. A connected
+orientable compact surface of genus $\gamma_i$ with $b_i$
+boundary circles has Euler characteristic $2-2\gamma_i-b_i$
+\cite[B17]{SullivanSurfaces}. Here $b_i\geq1$, so
+$\chi(\Sigma_t)\leq\sum_i b_i=b$.
+Gauss--Bonnet for a smooth boundary
+\cite[B16--B18]{SullivanSurfaces} gives
+\begin{align}
+ \int_{\Sigma_t}K\dA
+ &=2\pi\chi(\Sigma_t)-\sum_\Gamma\int_\Gamma k_g^{\Sigma_t}\ds
+ \notag\\
+ &\leq2\pi b+\sum_\Gamma\int_\Gamma|k_g^{\Sigma_t}|\ds
+ \leq2\sum_\Gamma\int_\Gamma\kappa\ds. \label{eq:GB}
+\end{align}
+Here $k_g^{\Sigma_t}$ is signed geodesic curvature with the
+Gauss--Bonnet orientation, and $\kappa$ is nonnegative Euclidean
+curvature of a boundary curve. The last inequality uses
+$|k_g^{\Sigma_t}|\leq\kappa$ and Fenchel's inequality
+$2\pi\leq\int_\Gamma\kappa\ds$ separately for each closed
+regular curve \cite[Theorem 2.4 and Proposition 3.1]{SullivanCurves}.
+
+We bound this last curvature on the sphere. Put $n=x/r$ and
+$g=|D_{\partial B_r}v|$. On $\{g>0\}$ an arclength parametrization
+$\Gamma$ of a spherical level curve has unit tangent $T$ and
+\[
+ \Gamma''=\eta\nu-\frac nr,\qquad
+ \nu=\frac{D_{\partial B_r}v}{g},
+\]
+for a signed scalar $\eta$. Indeed, differentiation of $n\cdot T=0$
+gives the normal component $-n/r$, while the tangential component
+is perpendicular to $T$.
+Differentiating $v(\Gamma)=t$ twice gives
+$0=H(T,T)+\eta g-D_nv/r$. It follows that
+\begin{equation}\label{eq:spherecurvature}
+ \kappa g\leq|\eta|g+\frac gr
+ \leq |H|+\frac{|D_nv|+g}{r}
+ \leq |H|+\frac{2q}{r}.
+\end{equation}
+The volume coarea identity in Lemma~\ref{lem:coarea} gives
+\[
+ \int_{B_r}\mathcal K\dd
+   =\int_\R\int_{\Sigma_t}K\dA\,dt.
+\]
+It applies to this signed integrand because $|\mathcal K|\leq E/2$
+is integrable. Surface coarea on $\partial B_r$ gives
+\[
+ \int_\R\sum_\Gamma\int_\Gamma\kappa\ds\,dt
+   =\int_{\partial B_r}\kappa g\dA,
+\]
+with $\kappa g=0$ on $\{g=0\}$. This nonnegative integral is finite
+by \eqref{eq:spherecurvature}. Integrate \eqref{eq:GB} in $t$
+and use \eqref{eq:spherecurvature} to obtain \eqref{eq:boundary}.
+The critical-value assertion concerns the fixed smooth $v$,
+and does not make any assertion about critical values of the
+limiting weak solution.
+\end{proof}
+
+\section{Uniform energy and distributional second derivatives}\label{sec:energy}
+
+\begin{proposition}\label{prop:energy}
+For each finite $p\geq5$ there is $L_p<\infty$, depending only
+on $p$, such that every smooth solution of
+\eqref{eq:regularized} on a neighborhood of $\overline{B_{2R}}$
+satisfies
+\begin{equation}\label{eq:energy}
+ \int_{B_R}\frac{|D^2v|^2}{|Dv|}
+       \mathbf1_{\{|Dv|>0\}}\dd
+ \leq\frac{L_p}{R^2}\int_{B_{2R}}|Dv|\dd.
+\end{equation}
+The constant is independent of $\eps>0$ and of $v$.
+\end{proposition}
+
+\begin{proof}
+Retain $q=|Dv|$, $H=D^2v$, and the zero-extended densities
+$E,\mathcal K$ from Sections~\ref{sec:critical} and
+\ref{sec:geometry}. Set
+$F(r)=\int_{B_r}E\dd$ and $Q=\int_{B_{2R}}q\dd$.
+These are finite for this fixed smooth solution.
+For $R\leq a<b\leq2R$ put $h=b-a$, and choose a smooth
+decreasing function $\eta$, equal to one for $r\leq a$ and
+zero for $r\geq b$, with $0\leq\eta\leq1$ and
+$|\eta'|\leq2/h$. Such a function is obtained by integrating
+a smooth nonnegative unit-mass function supported in $(0,1)$
+and bounded by $2$, then scaling the interval. The radial
+function $\psi(x)=\eta(|x|)$ is a smooth compactly supported
+test, constant near the center.
+Equations~\eqref{eq:critical} and \eqref{eq:coercive} yield
+\begin{equation}\label{eq:testenergy}
+ F(a)\leq\int\psi E\dd
+ \leq-c_p\int S\cdot D\psi\dd+d_p\int\psi\mathcal K\dd.
+\end{equation}
+
+The identity $\psi(x)=\int_{|x|}^b-\eta'(r)\,dr$ and Fubini give
+\[
+ \int\psi\mathcal K\dd
+ =\int_a^b-\eta'(r)\int_{B_r}\mathcal K\dd\,dr.
+\]
+The interchange is justified by absolute integrability of
+$\mathcal K$, despite its sign. Apply Lemma~\ref{lem:boundary}
+under this nonnegative radial weight, and use polar integration
+on the shell $B_b\setminus B_a$. The result is
+\begin{equation}\label{eq:radialcurvature}
+ \int\psi\mathcal K\dd
+ \leq\frac4h\int_{B_b\setminus B_a}|H|\dd
+       +\frac8{ah}\int_{B_b\setminus B_a}q\dd.
+\end{equation}
+Polar integration here is the smooth coarea identity for $|x|$
+on the shell.
+Also, Lemma~\ref{lem:critical} gives
+\[
+ -\int S\cdot D\psi\dd
+ \leq\frac{2(1+\sqrt3)}h\int_{B_b\setminus B_a}|H|\dd.
+\]
+Put
+\[
+ A_p=2c_p(1+\sqrt3)+4d_p,\qquad B_p=8d_p.
+\]
+By \eqref{eq:zeroidentity}, Cauchy--Schwarz, and
+\eqref{eq:testenergy}--\eqref{eq:radialcurvature},
+\begin{align}
+ F(a)&\leq\frac{A_p}{h}\sqrt{F(b)Q}+\frac{B_p}{ah}Q\notag\\
+ &\leq\vartheta F(b)
+   +\frac{A_p^2/(4\vartheta)+B_p}{h^2}Q
+   \qquad(0<\vartheta<1). \label{eq:iteration}
+\end{align}
+The second line uses $xy\leq\vartheta x^2+y^2/(4\vartheta)$
+and $h\leq R\leq a$.
+
+Choose $\vartheta=1/8$ and write
+$L=A_p^2/(4\vartheta)+B_p$.
+With $r_j=2R-R2^{-j}$, iteration of \eqref{eq:iteration} gives
+\[
+ F(R)\leq\vartheta^mF(r_m)
+    +\frac{4LQ}{R^2}\sum_{j=0}^{m-1}(4\vartheta)^j.
+\]
+For the fixed $\eps$ and $v$, $F(r_m)\leq F(2R)<\infty$.
+Thus the terminal term tends to zero as $m\to\infty$.
+Since $4\vartheta=1/2$, \eqref{eq:energy} follows with $L_p=8L$.
+This iteration is completed before taking any limit in $\eps$;
+no uniform bound on the preliminary quantity $F(2R)$ was used.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix an arbitrary ball $\overline{B_{4R}}\subset\Omega$.
+The local $C^{1,\alpha}$ representative of $u$ is available
+by \cite[Section 4]{Lindqvist}. Use the smooth Dirichlet
+approximation on $U=B_{4R}$ described in
+\cite[Section 3, (3.2)--(3.4)]{Sarsa}: for a sequence
+$\eps_k\downarrow0$, there are $v_k\in C^\infty(U)$ solving
+\eqref{eq:regularized} with $\eps=\eps_k$ and boundary data $u$,
+such that the interior $C^{1,\alpha}$ norms are uniformly
+bounded and $Dv_k\to Du$ locally uniformly.
+These approximation statements hold for every finite $p>1$;
+they do not require a second-order bound on $u$.
+In the present application, $u$ is bounded on $\overline U$
+by its local $C^1$ regularity, the ball is smooth, and
+$\overline{B_{2R}}\subset U$ has positive distance from its boundary.
+Consequently
+\[
+ M:=\sup_k\sup_{B_{2R}}|Dv_k|<\infty.
+\]
+
+Lemma~\ref{lem:critical} says that $D^2v_k=0$ almost everywhere
+where $Dv_k=0$. Proposition~\ref{prop:energy} therefore gives
+the full unweighted bound
+\begin{equation}\label{eq:unweighted}
+ \int_{B_R}|D^2v_k|^2\dd
+ \leq\frac{L_pM}{R^2}\int_{B_{2R}}|Dv_k|\dd
+ \leq\frac{L_pM^2|B_{2R}|}{R^2}=:C_0^2.
+\end{equation}
+This includes the case $M=0$.
+For every $i,j\in\{1,2,3\}$ and
+$\varphi\in C_c^\infty(B_R)$, local uniform gradient convergence
+and integration by parts imply
+\[
+ -\int_{B_R}D_i u\,D_j\varphi\dd
+   =\lim_{k\to\infty}\int_{B_R}D_jD_i v_k\,\varphi\dd.
+\]
+By \eqref{eq:unweighted}, its absolute value is at most
+$C_0\|\varphi\|_{L^2(B_R)}$. Thus $D_jD_i u$, initially a
+distribution, defines a bounded linear functional on
+$C_c^\infty(B_R)$ with the $L^2$ norm.
+
+For completeness, density on this ball follows from the usual
+$C_c^\infty(\R^3)$ density in $L^2(\R^3)$ and smooth cutoffs
+\cite[Exercise 1.13.1(iii)--(iv)]{TaoEpsilon}.
+Extend $h\in L^2(B_R)$ by zero and take cutoffs
+$0\leq\eta_m\leq1$ supported in $B_R$ with
+$\eta_m\to1$ pointwise there. Dominated convergence gives
+$\eta_mh\to h$ in $L^2$. For fixed $m$, approximate the zero
+extension of $h$ by smooth compactly supported functions on
+$\R^3$ and multiply by $\eta_m$. A diagonal choice proves
+density of $C_c^\infty(B_R)$ in $L^2(B_R)$.
+The functional extends uniquely to that real Hilbert space.
+Riesz representation \cite[Theorem 1.4.13]{TaoEpsilon} supplies
+$h_{ji}\in L^2(B_R)$ such that
+\[
+ -\int_{B_R}D_i u\,D_j\varphi\dd
+   =\int_{B_R}h_{ji}\varphi\dd
+   \qquad(\varphi\in C_c^\infty(B_R)).
+\]
+This is precisely the distributional identity $D_jD_i u=h_{ji}$.
+It treats all nine entries without any condition on the
+limiting critical set. Because $p\geq5>2$ and $B_R$ has finite
+measure, $u,Du\in L^2(B_R)$ by H\"older's inequality.
+Hence $u\in W^{2,2}(B_R)$.
+Every point of $\Omega$ admits such balls. Distributional
+uniqueness identifies the derivatives on overlaps, and finite
+covers of compact subsets give their local square integrability.
+\end{proof}
+
+\appendix
+\section{Smooth critical values and coarea}\label{sec:coarea}
+
+The geometric argument needs these facts only for a fixed smooth
+regularization and its restriction to a sphere. The following
+proofs also specify the measures in the two coarea identities.
+
+\begin{lemma}\label{lem:values}
+If $f$ is smooth on an open subset of $\R^m$, $1\leq m\leq3$,
+then the set of values at points where $Df=0$ has
+one-dimensional Lebesgue measure zero. The same holds on a smooth
+$m$-dimensional manifold with a countable atlas.
+\end{lemma}
+
+\begin{proof}
+Induct on $m$. Let $A_j$ be the set where all derivatives of
+orders $1,\ldots,j$ vanish. On a compact subset of the domain,
+divide a bounding rectangle into cubes of side $h$.
+For a cube meeting $A_m$, choose $x$ in that intersection.
+Taylor's theorem applied to $\tau\mapsto f(x+\tau(y-x))$
+gives $|f(y)-f(x)|\leq Ch^{m+1}$ for $y$ in that cube:
+the derivatives through order $m$ vanish at $x$, and the
+$(m+1)$st derivatives are bounded on a fixed neighborhood.
+There are at most $C'h^{-m}$ cubes. The outer measure of the
+image of $A_m$ on this compact subset is therefore at most
+$C''h$, and hence zero. A compact exhaustion removes the
+compactness restriction.
+
+For $1\leq j<m$ and $x\in A_j\setminus A_{j+1}$,
+some derivative $D^\beta f$ of order $j$ has a nonzero
+first derivative at $x$. Its zero set is a smooth
+$(m-1)$-dimensional hypersurface near $x$ and contains $A_j$
+there. Since $Df=0$ on $A_j$, these points are critical
+for the restriction of $f$ to that hypersurface. The induction
+hypothesis, in its charts, makes their image null.
+Countably many such neighborhoods cover each stratum.
+Their union with $A_m$ is $A_1$. For $m=1$ only the Taylor
+argument is needed. Countably many charts also establish the
+manifold statement.
+Taylor's theorem and the implicit function theorem used here
+are \cite[Theorem 4.3.2]{LeblI} and
+\cite[Theorem 8.5.6]{LeblII}.
+\end{proof}
+
+\begin{lemma}\label{lem:coarea}
+Let $f$ be smooth on an open subset $V$ of $\R^3$. For a Borel
+function $h$ on $\{|Df|>0\}$,
+\begin{equation}\label{eq:volumecoarea}
+ \int_{\{|Df|>0\}}h|Df|\dd
+   =\int_\R\int_{\{f=t\}\cap\{|Df|>0\}}h\dA\,dt
+\end{equation}
+if $h\geq0$, or if the integral of $|h||Df|$ is finite.
+For a smooth surface $N$ and $g=|D_Nf|$, the corresponding identity is
+\begin{equation}\label{eq:surfacecoarea}
+ \int_{\{g>0\}\subset N}hg\dA
+   =\int_\R\int_{\{f=t\}\cap\{g>0\}}h\ds\,dt
+\end{equation}
+under the analogous condition.
+\end{lemma}
+
+\begin{proof}
+In a coordinate rectangle with $f_1\ne0$, solve $f(x_1,y)=t$
+for $x_1$. One-variable substitution gives
+$dx_1=dt/|f_1|$, and the level graph has area element
+$|Df|\,dy/|f_1|$. These equalities and Fubini give
+\eqref{eq:volumecoarea} on the rectangle.
+To justify this substitution for Borel integrands, first
+apply the elementary substitution theorem to intervals
+\cite[Theorem 5.3.5]{LeblI}. The two finite measures agree
+on their Boolean algebra of finite interval unions and
+therefore on Borel sets by the monotone-class lemma
+\cite[Lemma 1.7.14]{TaoMeasure}. Exhaustion, simple functions
+and monotone convergence give the nonnegative formula.
+Positive and negative parts give the absolutely integrable
+formula.
+
+For the surface identity, write a chart $X(y_1,y_2)$ with
+metric $G_{ij}=X_i\cdot X_j$. On a chart where $f_1\ne0$,
+the speed of the level curve parametrized by $y_2$ is
+\[
+ L=\left|X_2-\frac{f_2}{f_1}X_1\right|,\qquad
+ g^2=\frac{G_{22}f_1^2-2G_{12}f_1f_2+G_{11}f_2^2}{\det G}.
+\]
+Thus $L=g\sqrt{\det G}/|f_1|$, while substitution of $t$
+in the surface area element gives
+$\sqrt{\det G}\,dt\,dy_2/|f_1|$. This proves
+\eqref{eq:surfacecoarea} in the chart by the same substitution
+argument. Cover each noncritical set with countably many
+such charts, partition it into disjoint Borel subsets of
+the charts and sum using Tonelli. Absolute integrability
+permits the signed sum. Lemma~\ref{lem:values} allows the
+$t$ integrals to be restricted to simultaneous regular values.
+\end{proof}
+
+\section*{AI-use statement}
+AI assistance was used in developing and checking the argument,
+locating and checking sources, and preparing the manuscript.
+The submission is offered for independent mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{Lindqvist}
+P. Lindqvist,
+\emph{Notes on the $p$-Laplace equation}, second edition,
+Report 161, University of Jyv\"askyl\"a, 2017.
+\href{https://jyx.jyu.fi/bitstreams/2a8cbc94-58e9-4e75-94d6-0f1f5bc22ac1/download}
+{Author's monograph}.
+
+\bibitem{Sarsa}
+S. Sarsa,
+\emph{Note on an elementary inequality and its application to the
+regularity of $p$-harmonic functions},
+arXiv:2009.10102v1, 2020.
+\url{https://arxiv.org/abs/2009.10102v1}.
+
+\bibitem{HaaralaSarsa}
+A. Haarala and S. Sarsa,
+\emph{Global second order Sobolev-regularity of $p$-harmonic functions},
+Journal of Differential Equations \textbf{339} (2022), 232--260.
+\href{https://doi.org/10.1016/j.jde.2022.08.022}
+{doi:10.1016/j.jde.2022.08.022}.
+Preprint: \url{https://arxiv.org/abs/2204.13550v2}.
+
+\bibitem{SullivanSurfaces}
+J. M. Sullivan,
+\emph{Diff Geom I, SS 2013}, section B: Surfaces,
+TU Berlin course notes, summer semester 2013, B16--B19.
+\url{https://www3.math.tu-berlin.de/geometrie/Lehre/SS13/DGI/dg1.pdf}.
+
+\bibitem{SullivanCurves}
+J. M. Sullivan,
+\emph{Curves of Finite Total Curvature},
+arXiv:math/0606007v2, 24 October 2007.
+\url{https://arxiv.org/abs/math/0606007v2}.
+
+\bibitem{TaoMeasure}
+T. Tao,
+\emph{An Introduction to Measure Theory},
+American Mathematical Society, 2011.
+Author's preliminary version:
+\url{https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-126-tao5-measure-book.pdf}.
+
+\bibitem{TaoEpsilon}
+T. Tao,
+\emph{An epsilon of room: pages from year three of a mathematical blog},
+author's preliminary version, 2010, Chapter 1.
+\url{https://terrytao.wordpress.com/wp-content/uploads/2010/02/epsilon.pdf}.
+
+\bibitem{LeblI}
+J. Lebl,
+\emph{Basic Analysis I: Introduction to Real Analysis, Volume I},
+version 6.3, 15 May 2026.
+\url{https://www.jirka.org/ra/realanal.pdf}.
+
+\bibitem{LeblII}
+J. Lebl,
+\emph{Basic Analysis II: Introduction to Real Analysis, Volume II},
+version 6.3, 15 May 2026.
+\url{https://www.jirka.org/ra/realanal2.pdf}.
+\end{thebibliography}
+\end{document}
