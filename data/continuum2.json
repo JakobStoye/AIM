@@ -76,8 +76,11 @@
     "title": "Smooth approximation of three-dimensional Sobolev homeomorphisms",
     "area": "Nonlinear elasticity and approximation",
     "file": "problems/153-ball-evans-three-dimensions.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proofs (two exponent ranges)",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "154",
@@ -108,8 +111,11 @@
     "title": "The first dimension with a singular one-phase minimizing cone",
     "area": "Free boundaries and fluid interfaces",
     "file": "problems/157-one-phase-critical-dimension.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "158",
@@ -164,8 +170,11 @@
     "title": "A uniform limit-cycle bound for quadratic planar dynamics",
     "area": "Nonlinear oscillations and dynamical systems",
     "file": "problems/164-quadratic-hilbert-sixteen.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "165",
@@ -236,8 +245,11 @@
     "title": "Affine Bernstein rigidity in dimensions three through nine",
     "area": "Fourth-order elliptic PDEs / geometric variational problems",
     "file": "problems/391-affine-bernstein-entire-low-dimensions.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "392",
@@ -284,8 +296,11 @@
     "title": "Continuity of manifold transport under MTW and convex injectivity domains",
     "area": "Monge–Ampère PDEs / transport on manifolds",
     "file": "problems/401-mtw-convex-domains-transport-continuity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "404",

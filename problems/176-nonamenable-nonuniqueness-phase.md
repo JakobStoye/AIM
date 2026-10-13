@@ -2,9 +2,9 @@
 
 **Area:** Percolation and network resilience
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -26,14 +26,16 @@ A strict gap gives a regime with several macroscopic conducting regions before t
 - [Tom Hutchcroft, *Percolation on Hyperbolic Graphs* (2019)](https://doi.org/10.1007/s00039-019-00498-0), a substantial class where the gap is known.
 - [Tom Hutchcroft and Minghao Pan, *Percolation at the uniqueness threshold via subgroup relativization* (2024 preprint)](https://arxiv.org/abs/2409.12283), later results about particular group structures and behavior at the uniqueness threshold.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/paper.pdf), result family 214 (2026). Statement locator: `Theorem 1.1, PDF page 3; Introduction theorem label thm:main, introduction.tex lines 58-69; definitions/nonamenability preceding.`.
+
 ## Status review
 
-**Known cases:** A strict nonuniqueness phase is established for the cited hyperbolic-graph class and other specified algebraic classes.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-**Remaining target:** A strict gap between the percolation and uniqueness thresholds for every transitive nonamenable graph in the statement.
+**Statement comparison:** The theorem applies to every infinite connected locally finite nonamenable quasi-transitive graph and gives pc<p_(2to2)<=pu. Vertex-transitive AIM graphs are included. Its vertex-boundary nonamenability is equivalent to the AIM edge-boundary form on these uniformly bounded-degree graphs. Definitions of pc/pu agree.
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-176) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The updated book retains the general conjecture. Results for hyperbolic graphs, specially chosen generating sets, and particular algebraic classes do not cover every transitive nonamenable graph. The properties of the model at $`p_u`$ are a distinct issue from proving a strict gap.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/214.md). Family214 docs link BenjaminiSchramm/CayleyPercolation statements for the relevant full graph class. Comparator templates alone are not reproduction evidence; no local verification claimed. No AIM Lean-verified status is asserted.
 
-Search topics checked on 2026-09-08: `nonamenable transitive pc pu conjecture 2025 2026; Benjamini Schramm nonuniqueness phase resolution`. No later resolution of the exact statement was located; this is not a certification that no proof exists.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/176-nonamenable-nonuniqueness-phase.md).

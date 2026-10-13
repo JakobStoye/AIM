@@ -4,8 +4,11 @@
     "title": "The symmetric Mahler inequality in four dimensions",
     "area": "Convex geometry and optimization",
     "file": "problems/086-mahler-symmetric-four-dimensions.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "311",
@@ -247,8 +250,11 @@
     "title": "Simplices maximize the isotropic constant",
     "area": "Geometric probability and covariance bounds",
     "file": "problems/543-simplex-maximal-isotropic-constant.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "544",

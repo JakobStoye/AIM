@@ -2,9 +2,9 @@
 
 **Area:** Free boundaries and fluid interfaces
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -28,8 +28,16 @@ No direct application is identified in this entry. The question identifies the f
 
 3. Benjy Firester, Raphael Tsiamis and Yipeng Wang, *Stability inequalities for one-phase cones* (2026), introduction and Theorem 1.1. [Paper](https://arxiv.org/abs/2601.16966). Explicitly records $`5\le d_*\le7`$ and proves new results under bi-orthogonal symmetry.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf), result family 367 (2026). Statement locator: `build/paper.tex, thm:main`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The January 2026 paper still gives precisely the range stated here. Searches for “Stability inequalities for one-phase cones” and “one phase critical dimension five six 2026” found new symmetric cones and stability criteria, not a classification of all minimizing cones in dimensions five and six. Stable critical points and global minimizers are different classes; no conclusion is inferred merely from the symmetric examples.
+**Statement comparison:** Exactly J=integral(|grad u|^2+indicator(u>0)), one-homogeneous nonnegative global minimizers with arbitrary nonnegative Sobolev same-trace competitors. Every cone through dimension six is flat and a nonflat cone exists in dimension seven, so the target critical dimension is seven. Standard minimizer regularity supplies continuity for the existence example.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-157) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/367.md). docs/367 covers only existence of a nonflat cone in dimension seven via BernoulliNonflatInSeven; flatness in dimensions at most six is outside it, so it does not determine the full critical dimension. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/157-one-phase-critical-dimension.md).

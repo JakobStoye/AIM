@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -26,14 +26,18 @@ This would establish whether arbitrarily weak disorder ultimately localizes all 
 2. F. Hernández, [Lecture notes on Quantum Diffusion and Random Matrix Theory](https://arxiv.org/abs/2511.04380), preprint (2025), §1, two-dimensional localization discussion.
 3. J. Šuntajs, T. Prosen and L. Vidmar, [Localization challenges quantum chaos in the finite two-dimensional Anderson model](https://arxiv.org/abs/2212.10625), Physical Review B 107 (2023), 064205, numerical investigation.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/paper.pdf), result family 261 (2026). Statement locator: `build/sections/introduction.tex, main:theorem and scope paragraph at line 95`.
+
 ## Status review
 
-**Known cases:** Exponential localization is established in the strong-disorder regime of the stated Anderson model.
+**Known cases:** The OpenAI manuscript proves pure-point spectrum and a complete orthonormal eigenbasis at every fixed positive disorder. Exponential localization was already known at strong disorder.
 
-**Remaining target:** Localization throughout the spectrum at every positive disorder strength, including arbitrarily weak disorder.
+**Remaining target:** Establish exponential decay for an entire orthonormal eigenbasis at every positive disorder, including weak disorder. Pure-point spectral type alone does not provide that decay.
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Statement comparison:** Same uniform law and every fixed positive disorder. The theorem supplies pure-point type and a complete orthonormal eigenbasis but explicitly does not assert exponential eigenfunction decay.
 
-The 2025 notes explicitly leave bulk localization in d=2 conjectural. Strong-disorder and spectral-edge localization do not cover every energy at weak disorder. The numerical study emphasizes finite-size effects; it cannot decide the stated infinite-lattice assertion. Simon's pure-point question is given here in its standard exponential-localization form.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-016) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-**Search audit:** “Anderson localization two dimensions arbitrary weak disorder open 2025 2026”; “two dimensional Anderson localization proof”. Searches included proof, counterexample, and 2025–2026 updates. This is a literature search result, not a certification that no proof exists.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/261.md). docs/261 establishes only spectrum [-4-h,4+h], not pure-point type or exponential decay. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/016-anderson-planar-localization.md).

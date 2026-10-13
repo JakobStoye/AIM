@@ -2,9 +2,9 @@
 
 **Area:** Eigenfunction geometry
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -26,10 +26,16 @@ Nodal hypersurfaces are the stationary interfaces of high-frequency vibration pa
 2. A. Logunov, [Nodal sets of Laplace eigenfunctions: proof of Nadirashvili's conjecture and of the lower bound in Yau's conjecture](https://arxiv.org/abs/1605.02589), Annals of Mathematics 187 (2018).
 3. A. Logunov, E. Malinnikova, N. Nadirashvili and F. Nazarov, [The sharp upper bound for the area of the nodal sets of Dirichlet Laplace eigenfunctions](https://arxiv.org/abs/2104.09012), preprint (2021).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf), result family 350 (2026). Statement locator: `build/sections/introduction.tex, thm:main (S3 fixed-metric counterexample)`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete counterexample to the original target.
 
-Logunov obtains a polynomial upper bound, with a larger exponent, for smooth manifolds; the separate lower-bound theorem resolves the other half of Yau's conjecture. The sharp Euclidean-domain Dirichlet theorem in the third reference does not cover arbitrary smooth Riemannian metrics. No subsequent general resolution was located in the 2025–2026 search.
+**Statement comparison:** One fixed smooth metric on the closed connected three-sphere has exact nonzero real Laplace eigenfunctions with positive eigenvalues tending to infinity and nodal area divided by $`\sqrt{\lambda}`$ tending to infinity. This refutes the universal target; the smooth-surface upper bound is an additional positive subcase.
 
-**Search audit:** “Yau nodal upper bound smooth metrics Logunov 2025 2026”; “Yau conjecture upper bound solved”. Searches included proof, counterexample, and 2025–2026 updates. This is a literature search result, not a certification that no proof exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-011) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/350.md). docs/350 describes fixed-metric counterexamples via SmoothYau (and a separate dimension-five YauCounterexample), as well as the surface theorem. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/011-yau-nodal-upper-bound.md).

@@ -2,9 +2,9 @@
 
 **Area:** Inverse problems / partial boundary data
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -29,10 +29,16 @@ In electrical imaging, electrodes may cover only one accessible part of an objec
 2. C. Kenig and M. Salo, *The Calderón problem with partial data on manifolds and applications*, Analysis & PDE **6** (2013), 2003–2048. [Paper](https://msp.org/apde/2013/6-8/apde-v6-n8-p07-p.pdf).
 3. Giovanni Covi, Antti Kujanpää and Jesse Railo, *Partial data stability for the inverse fractional conductivity problem* (2025), introduction comparing the classical problem. [Preprint](https://arxiv.org/abs/2505.18567).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf), result family 365 (2026). Statement locator: `build/sections/01-introduction.tex, main:scalar corollary`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Reference 1 explicitly lists the unrestricted partial-data problem. The 2025 comparison still describes classical partial-data uniqueness as unresolved in general. Existing reflection and Carleman-weight results impose geometric or measurement-set hypotheses; uniqueness for a linearization does not establish this nonlinear statement.
+**Statement comparison:** The explicit scalar corollary proves equality throughout the closed domain for strictly positive smooth scalar conductivities from identical arbitrary same-patch voltage/flux measurements, all n>=3, with no inaccessible-boundary agreement assumption.
 
-Searches on 2026-09-08 included `partial data Calderon arbitrary open boundary subset disjoint open problem 2025 2026`, `Calderón partial data open problem 2024`, and `Calderón arbitrary local 2026`. No proof for arbitrary $`\Omega`$ and $`\Gamma`$ was located. Fractional conductivity results concern a different forward operator.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-048) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/365.md). docs/365 links only the rough scalar nonuniqueness comparator, not the smooth same-patch uniqueness result. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/048-arbitrary-local-calderon-data.md).

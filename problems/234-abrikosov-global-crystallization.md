@@ -2,9 +2,9 @@
 
 **Area:** Superconductivity and Coulomb crystallization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -31,8 +31,16 @@ The energy describes the microscopic arrangement of vortices in type-II supercon
 - Sylvia Serfaty, [*Ginzburg–Landau vortices, Coulomb gases, and Abrikosov lattices*](https://doi.org/10.1016/j.crhy.2014.06.001) (2014), Theorem 1 and Conjecture 1: optimality among lattices and the open global extension.
 - Simona Rota Nodari and Sylvia Serfaty, [*Renormalized energy equidistribution and local charge balance in 2D Coulomb systems*](https://math.nyu.edu/~serfaty/REG_V12.pdf) (2013 manuscript), §1.1, Definitions 1, 3 and 4: precise admissible fields and renormalized-energy normalization; the introduction states the unresolved crystallization question.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf), result family 090 (2026). Statement locator: `Theorem thm:main; definitions eq:cutoffs, eq:admissible, eq:local-energy, eq:whole-energy`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Searched “Abrikosov triangular lattice global renormalized energy minimizer proof 2025 2026” and “Coulomb crystallization Sandier Serfaty conjecture solved”. Located lattice optimality, local charge-balance and equidistribution results, not unrestricted global crystallization. The target is optimal energy, with no uniqueness claim: changing finitely many points need not change a thermodynamic energy density.
+**Statement comparison:** This companion is a separate direct theorem matching the Sandier-Serfaty/Abrikosov target. It uses the same divE=2*pi(sum delta-1), curlE=0, unit background, fixed-width smooth square cutoffs, puncture limit before limsup, self-energy pi*log(eta), normalization 4R^2, and covolume-one triangular field. Its density bound on centered disks is equivalent to AIM square growth bound by disk-square inclusions and local finiteness. The source derives local Lq (q<2) from the equations and permits nonperiodic competitors and infinite energies.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-234) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/090.md). Family090 Lean docs cover Gaussian minorants/universal nonnegative pair energies and circle packing, not this renormalized Coulomb field theorem; no full AIM234 Lean certificate established. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/234-abrikosov-global-crystallization.md).

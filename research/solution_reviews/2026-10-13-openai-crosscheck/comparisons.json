@@ -1,0 +1,2244 @@
+{
+  "review_date": "2026-10-13",
+  "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "review_kind": "Independent AI theorem-to-target comparisons of published manuscripts; not complete proof audits or Lean kernel replays",
+  "comparisons": [
+    {
+      "aim_id": "028",
+      "aim_file": "problems/028-matrix-multiplication-exponent.md",
+      "family": "107",
+      "family_title": "Matrix multiplication with exponent at most 9/4",
+      "pdf_path": "preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex"
+      ],
+      "theorem_locator": "Theorem thm:main (section 1)",
+      "coverage": "Exact complex arithmetic and arbitrary exponent slack match AIM. The theorem proves omega<=9/4, improving the previous upper bound; it does not prove omega=2 or omega>2. Rectangular exponent-two bounds do not establish the square exponent.",
+      "recommendation": "partial",
+      "outcome": "Affirmative proof",
+      "explanation": "Exact complex arithmetic and arbitrary exponent slack match AIM. The theorem proves omega<=9/4, improving the previous upper bound; it does not prove omega=2 or omega>2. Rectangular exponent-two bounds do not establish the square exponent.",
+      "lean_docs": [
+        "lean/docs/107.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean",
+        "lean/ComparatorChallenges/MatrixMultiplication.lean"
+      ],
+      "lean_scope": "Actual endpoint complex_omega_le_nine_quarters is implemented; the comparator is a sorry-containing target file, not the certificate. This formalizes partial progress only; no replay/axiom log inspected.",
+      "lean_verified": false,
+      "known_cases": "Over the complex numbers, the square matrix-multiplication exponent is at most $`9/4`$, with exact algorithms using $`O_\\varepsilon(n^{9/4+\\varepsilon})`$ arithmetic operations.",
+      "remaining_target": "Determine whether the exponent equals two; the improved upper bound remains strictly above two.",
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean",
+        "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "086",
+      "aim_file": "problems/086-mahler-symmetric-four-dimensions.md",
+      "family": "087",
+      "family_title": "The Mahler conjectures, functional inequalities and polar-product symplectic width",
+      "pdf_path": "preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf",
+      "source_paths": [
+        "preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main; equation eq:main-inequality",
+      "coverage": "Set n=4 in the unrestricted origin-symmetric convex-body inequality |K||Kpolar|>=4^n/n!. Compactness, nonempty interior, ordinary Euclidean polar and volume are exactly AIM hypotheses. Equality classification is extra, not needed.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "Set n=4 in the unrestricted origin-symmetric convex-body inequality |K||Kpolar|>=4^n/n!. Compactness, nonempty interior, ordinary Euclidean polar and volume are exactly AIM hypotheses. Equality classification is extra, not needed.",
+      "lean_docs": [
+        "lean/docs/087.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Analysis/Mahler/MainTheorem.lean",
+        "lean/ComparatorChallenges/MahlerConjecture.lean"
+      ],
+      "lean_scope": "Actual endpoint symmetric_mahler has no external hypothesis beyond compactness/convexity/symmetry/nonempty interior. Set n=4. No successful local replay/axiom audit.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/Mahler/Classification.lean",
+        "lean/OAI/Analysis/Mahler/MainTheorem.lean",
+        "lean/OAI/Geometry/PolarProducts/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "087",
+      "aim_file": "problems/087-triangular-universal-optimality.md",
+      "family": "090",
+      "family_title": "Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy",
+      "pdf_path": "preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf",
+      "source_paths": [
+        "preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/build/main.tex",
+        "preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/build/sections/06-gaussian-energy-transfer.tex"
+      ],
+      "theorem_locator": "Theorems thm:universal and thm:gaussian; transfer eq:gaussian-energy",
+      "coverage": "Use g(t)=exp(-pi*alpha*t) for every alpha>0. Any AIM periodic union of N translates of a lattice of covolume N is locally finite and has centered-disk density one. Its ordered-pair finite-disk energy per particle converges to the displayed per-cell average: each offset occurs with frequency 1/N, Gaussian tails are summable, and boundary pairs have vanishing normalized contribution. Both sides omit only equal-point self-interactions. The theorem therefore yields the full arbitrary-N periodic bound.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "Use g(t)=exp(-pi*alpha*t) for every alpha>0. Any AIM periodic union of N translates of a lattice of covolume N is locally finite and has centered-disk density one. Its ordered-pair finite-disk energy per particle converges to the displayed per-cell average: each offset occurs with frequency 1/N, Gaussian tails are summable, and boundary pairs have vanishing normalized contribution. Both sides omit only equal-point self-interactions. The theorem therefore yields the full arbitrary-N periodic bound.",
+      "lean_docs": [
+        "lean/docs/090.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Analysis/Triangular/Energy/Universal.lean",
+        "lean/OAI/Analysis/Triangular/Main.lean",
+        "lean/ComparatorChallenges/TriangularEnergy.lean"
+      ],
+      "lean_scope": "Actual universal_energy_minimum proves the all-configuration completely-monotone energy statement, and sharp_gaussian_minorants_atomic supplies every Gaussian parameter. Periodic per-cell identification is a mathematical transfer, not a separately replayed AIM adapter. No local verification log.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/Triangular/Energy/Universal.lean",
+        "lean/OAI/Analysis/Triangular/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "092",
+      "aim_file": "problems/092-kls-poincare.md",
+      "family": "093",
+      "family_title": "Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures",
+      "pdf_path": "preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main; subgaussian condition eq:intro-subgaussian",
+      "coverage": "A dimension-free LSI implies a Poincare bound by linearizing the entropy inequality at a constant. It gives AIM for isotropic log-concave densities whose linear subgaussian parameter a is bounded by a fixed absolute constant; uniform convex-body densities are allowed. General isotropic log-concave measures may have only exponential tails, so the subgaussian assumption is a genuine restriction and cannot be discarded.",
+      "recommendation": "partial",
+      "outcome": "Affirmative proof",
+      "explanation": "A dimension-free LSI implies a Poincare bound by linearizing the entropy inequality at a constant. It gives AIM for isotropic log-concave densities whose linear subgaussian parameter a is bounded by a fixed absolute constant; uniform convex-body densities are allowed. General isotropic log-concave measures may have only exponential tails, so the subgaussian assumption is a genuine restriction and cannot be discarded.",
+      "lean_docs": [],
+      "lean_paths": [],
+      "lean_scope": "No matching Lean scope is declared in the family catalogue/docs inspected.",
+      "lean_verified": false,
+      "known_cases": "A dimension-free logarithmic Sobolev bound gives the required Poincare bound for isotropic log-concave measures with an absolute bound on their linear subgaussian parameter.",
+      "remaining_target": "Obtain a universal bound for arbitrary isotropic log-concave measures without the additional subgaussian restriction.",
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "208",
+      "aim_file": "problems/208-sphere-fourier-restriction.md",
+      "family": "077",
+      "family_title": "Fourier restriction for positively curved surfaces",
+      "pdf_path": "preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf",
+      "source_paths": [
+        "preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/build/sections/00-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main",
+      "coverage": "The theorem states precisely the same S2 extension, phase 2*pi*i*x.omega, surface area measure, complex bounded measurable inputs, and every p>3 with a constant depending only on p. It reaches all remaining exponents. The diagonal positively-curved-surface companion also implies this on S2 by finite-measure embedding.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "The theorem states precisely the same S2 extension, phase 2*pi*i*x.omega, surface area measure, complex bounded measurable inputs, and every p>3 with a constant depending only on p. It reaches all remaining exponents. The diagonal positively-curved-surface companion also implies this on S2 by finite-measure embedding.",
+      "lean_docs": [],
+      "lean_paths": [],
+      "lean_scope": "No matching Lean scope is declared in the family catalogue/docs inspected.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "209",
+      "aim_file": "problems/209-bochner-riesz-three-dimensions.md",
+      "family": "078",
+      "family_title": "The three-dimensional Bochner–Riesz conjecture",
+      "pdf_path": "preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf",
+      "source_paths": [
+        "preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/01-introduction.tex",
+        "preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/12-multiplier.tex"
+      ],
+      "theorem_locator": "Theorem thm:bochner-riesz; Corollary cor:full-bochner-riesz",
+      "coverage": "The primary L3 estimate holds for every positive order; the explicitly read analytic-interpolation and duality corollary gives all 1<=p<=infinity under delta>max(3|1/p-1/2|-1/2,0). Restricting to AIM 1<p<infinity gives exactly its multiplier and full strict range. No equality endpoint is needed.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "The primary L3 estimate holds for every positive order; the explicitly read analytic-interpolation and duality corollary gives all 1<=p<=infinity under delta>max(3|1/p-1/2|-1/2,0). Restricting to AIM 1<p<infinity gives exactly its multiplier and full strict range. No equality endpoint is needed.",
+      "lean_docs": [],
+      "lean_paths": [],
+      "lean_scope": "No matching Lean scope is declared in the family catalogue/docs inspected.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "210",
+      "aim_file": "problems/210-euclidean-wave-local-smoothing.md",
+      "family": "079",
+      "family_title": "Local smoothing in three dimensions",
+      "pdf_path": "preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex",
+        "preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/09-physical-wave.tex"
+      ],
+      "theorem_locator": "Theorem thm:main; Corollary cor:full-range, eq:phys-full-range and its annular interpolation proof",
+      "coverage": "The half-wave and time interval [1,2] agree. The critical p=3 estimate permits every positive Sobolev loss; the read corollary/interpolation proof covers all p>2. For AIM p>=3 choose alpha=1-3/p+epsilon and localize to lambda<=|xi|<=2lambda; the annular multiplier bound gives lambda^alpha times the Lp input norm, uniformly in lambda>=1.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "The half-wave and time interval [1,2] agree. The critical p=3 estimate permits every positive Sobolev loss; the read corollary/interpolation proof covers all p>2. For AIM p>=3 choose alpha=1-3/p+epsilon and localize to lambda<=|xi|<=2lambda; the annular multiplier bound gives lambda^alpha times the Lp input norm, uniformly in lambda>=1.",
+      "lean_docs": [],
+      "lean_paths": [],
+      "lean_scope": "No matching Lean scope is declared in the family catalogue/docs inspected.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "234",
+      "aim_file": "problems/234-abrikosov-global-crystallization.md",
+      "family": "090",
+      "family_title": "Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy",
+      "pdf_path": "preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main; definitions eq:cutoffs, eq:admissible, eq:local-energy, eq:whole-energy",
+      "coverage": "This companion is a separate direct theorem matching the Sandier-Serfaty/Abrikosov target. It uses the same divE=2*pi(sum delta-1), curlE=0, unit background, fixed-width smooth square cutoffs, puncture limit before limsup, self-energy pi*log(eta), normalization 4R^2, and covolume-one triangular field. Its density bound on centered disks is equivalent to AIM square growth bound by disk-square inclusions and local finiteness. The source derives local Lq (q<2) from the equations and permits nonperiodic competitors and infinite energies.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "This companion is a separate direct theorem matching the Sandier-Serfaty/Abrikosov target. It uses the same divE=2*pi(sum delta-1), curlE=0, unit background, fixed-width smooth square cutoffs, puncture limit before limsup, self-energy pi*log(eta), normalization 4R^2, and covolume-one triangular field. Its density bound on centered disks is equivalent to AIM square growth bound by disk-square inclusions and local finiteness. The source derives local Lq (q<2) from the equations and permits nonperiodic competitors and infinite energies.",
+      "lean_docs": [
+        "lean/docs/090.md"
+      ],
+      "lean_paths": [],
+      "lean_scope": "Family090 Lean docs cover Gaussian minorants/universal nonnegative pair energies and circle packing, not this renormalized Coulomb field theorem; no full AIM234 Lean certificate established.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "293",
+      "aim_file": "problems/293-unique-games.md",
+      "family": "102",
+      "family_title": "The Unique Games Conjecture and optimal approximation thresholds",
+      "pdf_path": "preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:ugc",
+      "coverage": "Take the theorem errors epsilon=delta equal to AIM epsilon. The fixed alphabet F2^s depends only on the errors; translations are permutations. Output graphs are nonempty explicit unweighted simple bipartite instances, and value is ordinary classical fraction of satisfied edges. The deterministic polynomial reduction from 3SAT supplies exactly the NP-hard promise gap.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "Take the theorem errors epsilon=delta equal to AIM epsilon. The fixed alphabet F2^s depends only on the errors; translations are permutations. Output graphs are nonempty explicit unweighted simple bipartite instances, and value is ordinary classical fraction of satisfied edges. The deterministic polynomial reduction from 3SAT supplies exactly the NP-hard promise gap.",
+      "lean_docs": [
+        "lean/docs/102.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Computability/UniqueGames/Theorem.lean",
+        "lean/ComparatorChallenges/UniqueGamesTheorem.lean"
+      ],
+      "lean_scope": "Actual theorem11 returns BinaryGapReduction with a fixed alphabet/program before inputs, simple bipartite outputs, translations, completeness and soundness. No local replay/axiom log.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Computability/MaxCut/Main.lean",
+        "lean/OAI/Computability/UniqueGames/Theorem.lean",
+        "lean/OAI/Computability/VertexCover/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "301",
+      "aim_file": "problems/301-three-processor-unit-scheduling.md",
+      "family": "124",
+      "family_title": "Polynomial-time scheduling on three identical machines",
+      "pdf_path": "preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/paper.tex"
+      ],
+      "theorem_locator": "Theorem thm:main; deterministic multitape time O((L+2)^150020)",
+      "coverage": "Arbitrary explicitly listed DAG, nonpreemptive unit-length jobs and exactly three identical machines agree. Its slot values 1..T equal AIM start times plus one. The theorem treats n>=1 and 1<=T<=n: AIM extra cases are immediate in polynomial time (n=0 feasible, T=0 with n>0 infeasible, T>=n feasible by topological sequential schedule). Thus binary arbitrary deadline and empty input add no unresolved case.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "Arbitrary explicitly listed DAG, nonpreemptive unit-length jobs and exactly three identical machines agree. Its slot values 1..T equal AIM start times plus one. The theorem treats n>=1 and 1<=T<=n: AIM extra cases are immediate in polynomial time (n=0 feasible, T=0 with n>0 infeasible, T>=n feasible by topological sequential schedule). Thus binary arbitrary deadline and empty input add no unresolved case.",
+      "lean_docs": [
+        "lean/docs/124.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Computability/Scheduling/Main.lean",
+        "lean/ComparatorChallenges/ThreeMachine.lean"
+      ],
+      "lean_scope": "Actual main_theorem proves one finite machine and binary-input polynomial bound for nonempty n and normalized deadlines; the trivial edge-case adapter is not a separately replayed AIM theorem. No local verification record.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Computability/Scheduling/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "321",
+      "aim_file": "problems/321-polynomial-trace-reconstruction.md",
+      "family": "122",
+      "family_title": "Quantitative trace-reconstruction bounds with a uniform decoder",
+      "pdf_path": "preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main and thm:tv",
+      "coverage": "Definitions match known length n, fixed known deletion probability q in (0,1), independent complete deletion traces (including length), randomized decoder common to all binary strings, unrestricted computation and exact recovery. Set success s=2/3. For each fixed q, n^(c*log(q^3*log n)) eventually exceeds Cq*n^kq for every constants Cq,kq. Hence the requested polynomial-sample assertion is false at every fixed channel.",
+      "recommendation": "solved",
+      "outcome": "Counterexample",
+      "explanation": "Definitions match known length n, fixed known deletion probability q in (0,1), independent complete deletion traces (including length), randomized decoder common to all binary strings, unrestricted computation and exact recovery. Set success s=2/3. For each fixed q, n^(c*log(q^3*log n)) eventually exceeds Cq*n^kq for every constants Cq,kq. Hence the requested polynomial-sample assertion is false at every fixed channel.",
+      "lean_docs": [
+        "lean/docs/122.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Probability/TraceReconstruction.lean",
+        "lean/ComparatorChallenges/TraceReconstruction.lean"
+      ],
+      "lean_scope": "Actual superpolynomial_sample_complexity and quantitative_sample_lower_bound agree with the unrestricted complete-trace target; inspected estimator definitions include decoder randomization. No successful local replay/axiom log.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Probability/TraceReconstruction.lean"
+      ]
+    },
+    {
+      "aim_id": "341",
+      "aim_file": "problems/341-modified-integer-round-up.md",
+      "family": "118",
+      "family_title": "Bin packing and unbounded configuration-LP gaps",
+      "pdf_path": "preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf",
+      "source_paths": [
+        "preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:unbounded-gap; Definition def:configuration-lp",
+      "coverage": "The source explicitly uses unrestricted numerical-size type patterns, whose multiplicities are limited by capacity rather than input demand; this is the exact nonproper-pattern LP in AIM. Set c=1: LP=B integer and OPT>B+1 refutes MIRUP without a ceiling ambiguity. Convert rational sizes to integer item lengths using a common denominator W; positive integer type demands are multiplicities. Removing excess items identifies integer covering optimum with packing optimum. This is an unconditional structural counterexample, independent of NP!=P.",
+      "recommendation": "solved",
+      "outcome": "Counterexample",
+      "explanation": "The source explicitly uses unrestricted numerical-size type patterns, whose multiplicities are limited by capacity rather than input demand; this is the exact nonproper-pattern LP in AIM. Set c=1: LP=B integer and OPT>B+1 refutes MIRUP without a ceiling ambiguity. Convert rational sizes to integer item lengths using a common denominator W; positive integer type demands are multiplicities. Removing excess items identifies integer covering optimum with packing optimum. This is an unconditional structural counterexample, independent of NP!=P.",
+      "lean_docs": [
+        "lean/docs/118.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Computability/BinPacking/Main.lean",
+        "lean/ComparatorChallenges/BinPackingGap.lean"
+      ],
+      "lean_scope": "Actual main_results proves unbounded gaps with both typeLP and individualLP equal integer B. The relevant typeLP preserves unrestricted patterns. Integer-length scaling is a mathematical adapter. No local replay/axiom log.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Computability/BinPacking/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "447",
+      "aim_file": "problems/447-triangular-hilbert-transform-l3.md",
+      "family": "082",
+      "family_title": "Annular variation and dyadic absolute bounds for the triangular Hilbert transform",
+      "pdf_path": "preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main",
+      "coverage": "The operator is literally AIM integral F(x+t,y)G(x,y+t)dt/t with both finite hard truncation endpoints. An absolute bound for the pointwise supremum over epsilon,R in L^(3/2), for arbitrary complex L3 inputs, dominates every individual truncation. This is a full resolution, stronger than AIM; it is not merely the dyadic companion.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "The operator is literally AIM integral F(x+t,y)G(x,y+t)dt/t with both finite hard truncation endpoints. An absolute bound for the pointwise supremum over epsilon,R in L^(3/2), for arbitrary complex L3 inputs, dominates every individual truncation. This is a full resolution, stronger than AIM; it is not merely the dyadic companion.",
+      "lean_docs": [
+        "lean/docs/082.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Analysis/TriangularHilbert/Main.lean",
+        "lean/ComparatorChallenges/TriangularHilbert.lean"
+      ],
+      "lean_scope": "Actual main_estimate formalizes the maximal estimate and full-measure/measurability conditions with genuine hard integrals. No local replay/axiom log.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/TriangularHilbert/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "448",
+      "aim_file": "problems/448-fourier-l-log-l-pointwise-convergence.md",
+      "family": "075",
+      "family_title": "The $`L\\log L`$ Fourier-convergence conjecture",
+      "pdf_path": "preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main",
+      "coverage": "Source torus R/(2*pi*Z) with normalized measure and e^(ikx) is AIM unit torus after x=2*pi*y. Integrability with log(2+|f|) is equivalent to log(e+|f|), with bounded ratio and finite measure. Both state complex measurable data and a single null set outside which the entire sequence of ordinary symmetric partial sums converges to f.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "Source torus R/(2*pi*Z) with normalized measure and e^(ikx) is AIM unit torus after x=2*pi*y. Integrability with log(2+|f|) is equivalent to log(e+|f|), with bounded ratio and finite measure. Both state complex measurable data and a single null set outside which the entire sequence of ordinary symmetric partial sums converges to f.",
+      "lean_docs": [
+        "lean/docs/075.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Analysis/FourierLLogL/PaperMain.lean",
+        "lean/ComparatorChallenges/FourierLLogL.lean"
+      ],
+      "lean_scope": "Actual paperMain establishes full symmetric sums for measurable complex LlogL data on the normalized 2*pi torus; coordinate rescaling identifies AIM. No local reproduction/axiom log.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/FourierLLogL/PaperMain.lean"
+      ]
+    },
+    {
+      "aim_id": "450",
+      "aim_file": "problems/450-stein-lipschitz-direction-hilbert-bound.md",
+      "family": "083",
+      "family_title": "Hilbert transforms along Lipschitz directions",
+      "pdf_path": "preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf",
+      "source_paths": [
+        "preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main",
+      "coverage": "The theorem assumes all 1-Lipschitz unit fields on R2, allows both coordinates, holds at absolute outer scale a*>0, and proves a strong L2 principal-value bound and the exact weak-(2,2) inequality for Schwartz data. Choose AIM K=1/a* (>=1) and C=C*^2. Symmetric principal values exist pointwise on Schwartz inputs.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "The theorem assumes all 1-Lipschitz unit fields on R2, allows both coordinates, holds at absolute outer scale a*>0, and proves a strong L2 principal-value bound and the exact weak-(2,2) inequality for Schwartz data. Choose AIM K=1/a* (>=1) and C=C*^2. Symmetric principal values exist pointwise on Schwartz inputs.",
+      "lean_docs": [
+        "lean/docs/083.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Analysis/LipschitzHilbert/Main.lean",
+        "lean/ComparatorChallenges/LipschitzHilbert.lean"
+      ],
+      "lean_scope": "Actual main provides principal-value and weak-(2,2) at an existential short scale; uniform_truncation additionally gives the reciprocal-Lipschitz bound. It discharges laceyLiInput through a proved import, not an external assumption in the endpoint. No local replay/axiom audit.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/LipschitzHilbert/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "487",
+      "aim_file": "problems/487-gnrs-minor-free-flow-cut.md",
+      "family": "089",
+      "family_title": "Bounded-distortion <i>L</i><sub>1</sub> embeddings of planar and bounded-treewidth graphs",
+      "pdf_path": "preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex",
+        "preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/01-introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main in each manuscript",
+      "coverage": "The results establish constant distortion for all planar graphs and every fixed treewidth bound, with arbitrary positive real lengths and arbitrary demands. They do not cover every fixed excluded minor: minor-free classes can include nonplanar graphs of unbounded treewidth. Finite L1 metrics are finite nonnegative sums of cut metrics, giving AIM finite-dimensional real ell1. Nonnegative edge lengths are obtained by adding epsilon to each edge then taking a limit in the finite-dimensional cut cone (or contracting zero components); distortion constant is preserved.",
+      "recommendation": "partial",
+      "outcome": "Affirmative proof",
+      "explanation": "The results establish constant distortion for all planar graphs and every fixed treewidth bound, with arbitrary positive real lengths and arbitrary demands. They do not cover every fixed excluded minor: minor-free classes can include nonplanar graphs of unbounded treewidth. Finite L1 metrics are finite nonnegative sums of cut metrics, giving AIM finite-dimensional real ell1. Nonnegative edge lengths are obtained by adding epsilon to each edge then taking a limit in the finite-dimensional cut cone (or contracting zero components); distortion constant is preserved.",
+      "lean_docs": [
+        "lean/docs/089.md"
+      ],
+      "lean_paths": [
+        "lean/OAI/Combinatorics/PlanarL1/Embedding.lean",
+        "lean/OAI/Combinatorics/TreewidthL1/Main.lean",
+        "lean/ComparatorChallenges/PlanarL1.lean",
+        "lean/ComparatorChallenges/BoundedTreewidthL1.lean"
+      ],
+      "lean_scope": "Actual endpoints cover positive-length planar and fixed-treewidth metrics only. They do not formalize the full arbitrary-excluded-minor target or the zero-length transfer. No local verification record.",
+      "lean_verified": false,
+      "known_cases": "Universal distortion holds for planar graph metrics, and distortion depending only on the treewidth bound holds for every fixed bounded-treewidth class. The comparison explains the finite-dimensional cut-metric and zero-length-edge reductions.",
+      "remaining_target": "Cover every fixed excluded-minor class; nonplanar minor-free classes may have unbounded treewidth.",
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Combinatorics/PlanarL1/Embedding.lean",
+        "lean/OAI/Combinatorics/TreewidthL1/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "491",
+      "aim_file": "problems/491-simple-stochastic-games-polynomial-time.md",
+      "family": "104",
+      "family_title": "Quasipolynomial algorithms for mean-payoff, stochastic and parity games",
+      "pdf_path": "preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf",
+      "source_paths": [
+        "preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "Theorem thm:main and explicit simple-stochastic-game reduction in section 1",
+      "coverage": "The deterministic algorithm has bit time 2^O((log(L+2))^2), which is quasipolynomial, not a fixed polynomial. The source explicitly reduces reachability >=1/2 to nonnegative expectation-of-liminf mean payoff with absorbing rewards +/-1, including nonabsorbing plays. AIM strict >1/2 is also obtainable: pure positional SSG values are rational with denominator at most 3^n by integer linear systems and Hadamard; positive 2v-1 is >=3^-n. Multiply all +/-1 rewards by 2*3^n and subtract 1 from every edge, so nonnegative mean payoff holds iff v>1/2. This has polynomial encoding length and preserves the quasipolynomial bound.",
+      "recommendation": "partial",
+      "outcome": "Affirmative proof",
+      "explanation": "The deterministic algorithm has bit time 2^O((log(L+2))^2), which is quasipolynomial, not a fixed polynomial. The source explicitly reduces reachability >=1/2 to nonnegative expectation-of-liminf mean payoff with absorbing rewards +/-1, including nonabsorbing plays. AIM strict >1/2 is also obtainable: pure positional SSG values are rational with denominator at most 3^n by integer linear systems and Hadamard; positive 2v-1 is >=3^-n. Multiply all +/-1 rewards by 2*3^n and subtract 1 from every edge, so nonnegative mean payoff holds iff v>1/2. This has polynomial encoding length and preserves the quasipolynomial bound.",
+      "lean_docs": [
+        "lean/docs/104.md"
+      ],
+      "lean_paths": [],
+      "lean_scope": "Docs104 formalize only randomized ordinary mean-payoff and a finite Truffet counterexample. They do not declare a formalization of this deterministic stochastic algorithm or AIM491.",
+      "lean_verified": false,
+      "known_cases": "A deterministic quasipolynomial-time algorithm decides the reachability threshold, including the strict comparison requested here after the rational-value gap reduction described in the review. Polynomial algorithms were already known when the number of random vertices is fixed and for the stopping ladder class; see references 1–2.",
+      "remaining_target": "Obtain a fixed polynomial-time algorithm for all encoded inputs. Quasipolynomial running time does not meet that requirement.",
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Computability/RandomMean/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "543",
+      "aim_file": "problems/543-simplex-maximal-isotropic-constant.md",
+      "family": "101",
+      "family_title": "The sharp simplex conjecture for isotropic constants",
+      "pdf_path": "preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf",
+      "source_paths": [
+        "preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex"
+      ],
+      "theorem_locator": "Theorem intro:simplex; equation intro:simplex-bound",
+      "coverage": "The source definition of L_K is exactly (det covariance/volume^2)^(1/(2n)), and its all-dimensional arbitrary-convex-body inequality has precisely AIM simplex constant. No symmetry/polytope restriction appears. Equality uniqueness is extra. This resolves the sharp target, not merely the weaker uniform slicing constant.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "explanation": "The source definition of L_K is exactly (det covariance/volume^2)^(1/(2n)), and its all-dimensional arbitrary-convex-body inequality has precisely AIM simplex constant. No symmetry/polytope restriction appears. Equality uniqueness is extra. This resolves the sharp target, not merely the weaker uniform slicing constant.",
+      "lean_docs": [],
+      "lean_paths": [],
+      "lean_scope": "No matching Lean scope is declared in the family catalogue/docs inspected.",
+      "lean_verified": false,
+      "known_cases": null,
+      "remaining_target": null,
+      "comparison_agent": "agent001",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "064",
+      "aim_title": "Global Birkhoff billiard integrability conjecture",
+      "aim_file": "problems/064-birkhoff-billiard-integrability.md",
+      "aim_base_status": "Open",
+      "family": "147",
+      "family_title": "The near-boundary Birkhoff conjecture",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf",
+      "coverage": "The AIM target assumes a smooth complete foliation of a full grazing annulus, including rational rotation levels. Phase-foliation rigidity permits merely continuous essential individually invariant leaves, for an arbitrary bounded C-infinity strictly convex positive-curvature planar table, and concludes ellipse. The smooth AIM foliation supplies the homeomorphism in the theorem. No closeness or symmetry is added. The physical-collar companion supplies the stated analytic input.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Phase-foliation rigidity theorem, introduction.tex lines 17-33, label thm:main; companion Physical-collar rigidity theorem cited as Definition 1.1/Theorem 1.2.",
+      "source_paths": [
+        "preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex",
+        "preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "lean_docs": [],
+      "lean_comparators": [],
+      "lean_scope": "No family Lean documentation linked; no complete-target verification evidence inspected.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\064.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\064.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "065",
+      "aim_title": "Positive metric entropy for a standard map",
+      "aim_file": "problems/065-standard-map-metric-entropy.md",
+      "aim_base_status": "Open",
+      "family": "146",
+      "family_title": "Positive metric entropy for the standard map",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf",
+      "coverage": "For the unit torus source map f_k(x,y)=(x+y+k sin(2 pi x), y+k sin(2 pi x)), every k above a positive threshold has positive entropy for normalized area. Coordinate scaling X=2 pi x,Y=2 pi y gives the exact AIM map with K=2 pi k, preserving normalized probability and entropy. Hence an admissible nonzero K exists.",
+      "theorem_locator": "Theorem 1.1, PDF page 2; Introduction, theorem label main:entropy (first theorem).",
+      "source_paths": [
+        "preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/146.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/StandardMapComponents.lean",
+        "lean/ComparatorChallenges/StandardMapEntropy.lean",
+        "lean/ComparatorChallenges/StandardMapLyapunov.lean"
+      ],
+      "lean_scope": "StandardMapEntropy comparator defines the actual sine map and finite-partition entropy and the full parameter-tail statement. The comparator theorem ends in sorry; upstream proof-module and reproduction/axiom evidence must be evaluated separately. No local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 2",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\065.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\065.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "088",
+      "aim_title": "Absence of an infinite cluster at criticality in three-dimensional percolation",
+      "aim_file": "problems/088-critical-percolation-three-dimensions.md",
+      "aim_base_status": "Open",
+      "family": "213",
+      "family_title": "Critical percolation on every quasi-transitive graph",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf",
+      "coverage": "The theorem explicitly treats independent nearest-neighbor Bernoulli bond percolation on the ordinary cubic lattice Z^3 at its separately defined bond critical parameter. Almost surely no infinite cluster implies theta(p_c)=0. The additional site result is unnecessary for AIM coverage.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Introduction theorem label thm:main, introduction.tex lines 17-22.",
+      "source_paths": [
+        "preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/build/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/213.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/CriticalZ3.lean",
+        "lean/ComparatorChallenges/CriticalPercolation.lean"
+      ],
+      "lean_scope": "CriticalZ3 comparator defines the cubic nearest-neighbor bonds and product Bernoulli law and states all critical clusters finite. Main comparator declaration uses sorry; no local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\088.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\088.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Probability/CriticalZ3/Main.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "090",
+      "aim_title": "Cardy's crossing formula for square-lattice bond percolation",
+      "aim_file": "problems/090-square-bond-cardy-formula.md",
+      "aim_base_status": "Open",
+      "family": "223",
+      "family_title": "Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf",
+      "coverage": "The Cardy theorem directly proves actual free-boundary square-lattice bond crossing probabilities with all edges independent at p=1/2, including boundary edges. Uniform marked Jordan approximation includes smooth AIM domains; the buffered boundary comparison transfers between lattice boundary arcs and the AIM O(mesh) boundary-vertex convention. Its beta-integral ratio equals the hypergeometric formula in AIM by the incomplete beta identity with a=b=1/3. This is an explicit crossing theorem, not an inference from the SLE abstract. The Jordan-quad transfer proof (chordal.tex, Proposition jordan:transfer and Corollary jordan:cardy) sandwiches actual edge crossings on a common primal grid between fixed-margin easier/harder quads. The same fixed-margin comparison applies to the smooth-domain induced graph and vertices within2delta of its designated arcs; this last reduction is the reviewer's geometric scope inference from that proof.",
+      "theorem_locator": "Theorem 1.2, PDF page 6; Introduction theorem Cardy's formula, label intro:cardy, lines 235-245; free-boundary definitions lines 222-234 and boundary-transfer discussion immediately after.",
+      "source_paths": [
+        "preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/build/sections/introduction.tex",
+        "preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/build/sections/chordal.tex"
+      ],
+      "lean_docs": [],
+      "lean_comparators": [],
+      "lean_scope": "No family Lean documentation linked; no complete-target local verification evidence inspected.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.2, PDF page 6",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\090.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\090.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "164",
+      "aim_title": "A uniform limit-cycle bound for quadratic planar dynamics",
+      "aim_file": "problems/164-quadratic-hilbert-sixteen.md",
+      "aim_base_status": "Open",
+      "family": "143",
+      "family_title": "Hilbert's sixteenth problem: uniform bounds for limit cycles",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf",
+      "coverage": "Uniform boundedness states that every real planar polynomial vector field of degree at most d has at most the finite integer B(d) isolated geometric periodic-orbit images in the whole plane, independent of coefficients. Specializing d=2 supplies H_2. Definitions match AIM without multiplicity.",
+      "theorem_locator": "Theorem 1.1, PDF page 3; Uniform boundedness theorem, label thm:uniform, 01-introduction.tex lines 12-16.",
+      "source_paths": [
+        "preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/143.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/QuinticLienard.lean"
+      ],
+      "lean_scope": "Family143 Lean docs link only QuinticLienard: degree<=5 classical Lienard systems, not arbitrary quadratic planar vector fields. Thus complete AIM164 is not covered by the selected formal statement; no Lean verified status.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 3",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\164.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\164.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/LienardCycles/Main.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "169",
+      "aim_title": "Strict convexity of the planar exponential first-passage shape",
+      "aim_file": "problems/169-strict-convexity-fpp.md",
+      "aim_base_status": "Open",
+      "family": "212",
+      "family_title": "Planar first-passage geometry and the absence of bigeodesics",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/main.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/main.pdf",
+      "coverage": "The exponential limit-shape theorem covers undirected nearest-neighbor Z^2 FPP with independent exponential weights of any positive rate, including rate1. It explicitly gives strict convexity and the strict interpolation inequality for every pair of distinct boundary points, with no assumed curvature or geodesic hypothesis.",
+      "theorem_locator": "Theorem 1.1, PDF page 3; The exponential limit shape theorem, label thm:exponential-shape, introduction.tex lines 21-32.",
+      "source_paths": [
+        "preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/212.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/PlanarFirstPassage.lean",
+        "lean/ComparatorChallenges/GammaPassage.lean"
+      ],
+      "lean_scope": "Family212 docs explicitly say strict convexity is outside its selected differentiability comparators. A C1 boundary or unique supporting line does not imply strict convexity. No complete AIM169 formalization/verification supported by these links.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 3",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\169.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\169.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Probability/FirstPassage/BoundaryCurve.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "171",
+      "aim_title": "Absence of doubly infinite minimizing paths in planar first-passage percolation",
+      "aim_file": "problems/171-absence-fpp-bigeodesics.md",
+      "aim_base_status": "Open",
+      "family": "212",
+      "family_title": "Planar first-passage geometry and the absence of bigeodesics",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/main.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/main.pdf",
+      "coverage": "The no-bigeodesics theorem rules out all injective doubly infinite nearest-neighbor minimizing paths simultaneously for every nonnegative nonatomic iid weight law satisfying E[min(X1,X2,X3,X4)^2]<infinity. Mean-one exponential weights satisfy this hypothesis (their minimum has rate4 and finite second moment). No direction restriction or shape assumption occurs.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Introduction theorem label thm:main, 01-introduction.tex lines 24-37.",
+      "source_paths": [
+        "preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/212.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/PlanarFirstPassage.lean",
+        "lean/ComparatorChallenges/GammaPassage.lean"
+      ],
+      "lean_scope": "Family212 selected Lean docs only cover differentiability of limit shapes; no bigeodesic comparator is linked. No full AIM171 formalization/verification supported.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\171.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\171.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Probability/FirstPassage/BoundaryCurve.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "176",
+      "aim_title": "A nonuniqueness phase on every nonamenable transitive graph",
+      "aim_file": "problems/176-nonamenable-nonuniqueness-phase.md",
+      "aim_base_status": "Partially resolved",
+      "family": "214",
+      "family_title": "The Benjamini–Schramm nonuniqueness conjecture",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/paper.pdf",
+      "coverage": "The theorem applies to every infinite connected locally finite nonamenable quasi-transitive graph and gives pc<p_(2to2)<=pu. Vertex-transitive AIM graphs are included. Its vertex-boundary nonamenability is equivalent to the AIM edge-boundary form on these uniformly bounded-degree graphs. Definitions of pc/pu agree.",
+      "theorem_locator": "Theorem 1.1, PDF page 3; Introduction theorem label thm:main, introduction.tex lines 58-69; definitions/nonamenability preceding.",
+      "source_paths": [
+        "preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/214.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/BenjaminiSchramm.lean",
+        "lean/ComparatorChallenges/CayleyPercolation.lean"
+      ],
+      "lean_scope": "Family214 docs link BenjaminiSchramm/CayleyPercolation statements for the relevant full graph class. Comparator templates alone are not reproduction evidence; no local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 3",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\176.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\176.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "178",
+      "aim_title": "Does directional transience imply ballistic transport in an iid medium?",
+      "aim_file": "problems/178-rwre-transience-ballisticity.md",
+      "aim_base_status": "Open",
+      "family": "220",
+      "family_title": "Directional zero–one laws beyond iid environments and iid ballisticity",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf",
+      "coverage": "Directional transience implies ballisticity is stated for every d>=2, iid nearest-neighbor transition rows with a common positive lower bound, every fixed unit direction, and annealed almost-sure escape. It gives a deterministic vector limit X_n/n and strictly positive projection in the same direction, exactly including AIM d=3.",
+      "theorem_locator": "Theorem 1.1, PDF page 3; Directional transience implies ballisticity theorem, label thm:main, 01-introduction.tex lines 50-61.",
+      "source_paths": [
+        "preprints/Directional-transience-implies-ballisticity-September-23-2026/build/01-introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/220.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/DirectionalWalk.lean",
+        "lean/ComparatorChallenges/DirectionalBallisticity.lean",
+        "lean/ComparatorChallenges/VelocityHemisphere.lean"
+      ],
+      "lean_scope": "DirectionalBallisticity comparator constructs an environment sampled once and retained along the walk, annealed path law, uniform ellipticity, and the exact vector limit. The declaration uses sorry; no local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 3",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\178.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\178.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Probability/Ballisticity/Main.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "179",
+      "aim_title": "The directional zero–one law in three-dimensional random media",
+      "aim_file": "problems/179-rwre-directional-zero-one.md",
+      "aim_base_status": "Open",
+      "family": "220",
+      "family_title": "Directional zero–one laws beyond iid environments and iid ballisticity",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf",
+      "coverage": "The zero-one theorem covers every d>=3, iid nearest-neighbor transition rows, every fixed nonzero real direction, and merely strict positivity. Uniform ellipticity of the AIM Z^3 model is stronger and hence sufficient. Its escape event and annealed law from the origin agree exactly.",
+      "theorem_locator": "Theorem 1.1, PDF page 2; Introduction theorem label thm:main, 01-introduction.tex lines 61-69, strict-ellipticity equation and path-law definitions preceding.",
+      "source_paths": [
+        "preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/build/01-introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/220.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/DirectionalWalk.lean",
+        "lean/ComparatorChallenges/DirectionalBallisticity.lean",
+        "lean/ComparatorChallenges/VelocityHemisphere.lean"
+      ],
+      "lean_scope": "DirectionalWalk comparator gives the iid product environment and annealed origin escape event; main declaration uses sorry. No local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 2",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\179.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\179.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Probability/Ballisticity/Main.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "273",
+      "aim_title": "No asymptotic extinction in bounded weakly reversible mass-action kinetics",
+      "aim_file": "problems/273-reaction-network-persistence.md",
+      "aim_base_status": "Open",
+      "family": "149",
+      "family_title": "Classwise permanence for weakly reversible mass-action systems",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf",
+      "coverage": "Uniform permanence holds for every finite weakly reversible mass-action network with fixed positive reaction rates and every positive initial state, with a classwise compact absorbing set contained in the strictly positive orthant. The eventual positive lower bound implies each AIM bounded global trajectory has positive liminf for every species; complex balance is not imposed. The theorem is stronger than the target because it also ensures global bounded positive solutions.",
+      "theorem_locator": "Theorem 1.1, PDF page 2; Main theorem label thm:main, introduction.tex lines 43-60; epsilon_P bounds in equation eq:uniform-bounds.",
+      "source_paths": [
+        "preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/149.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/MassAction.lean"
+      ],
+      "lean_scope": "Family149 Lean docs concern the September boundedness/persistence article, giving initial-state-dependent all-time bounds rather than classwise uniform October permanence. This is nevertheless sufficient for AIM273. MassAction comparator main statement uses sorry; no local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 2",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\273.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\273.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "323",
+      "aim_title": "Strong thin-tree conjecture",
+      "aim_file": "problems/323-strong-thin-tree.md",
+      "aim_base_status": "Open",
+      "family": "174",
+      "family_title": "Deterministic construction of strong thin spanning trees",
+      "match": "full",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf",
+      "coverage": "The theorem quantifies one absolute C>0 over every integer k>=1 and every finite loopless k-edge-connected multigraph with >=2 vertices, counts parallel edges separately, and selects one spanning tree satisfying every nontrivial cut inequality C/k simultaneously. The efficient companion exceeds AIM's existence requirement.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Main theorem label thm:main, source/sections/introduction.tex lines 17-28.",
+      "source_paths": [
+        "preprints/The-strong-thin-tree-conjecture-September-23-2026/build/source/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/174.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/StrongThinTree.lean",
+        "lean/ComparatorChallenges/AlgorithmicThinTrees.lean"
+      ],
+      "lean_scope": "StrongThinTree comparator models edges by separate labels and states exactly the all-cut universal-constant result; declaration uses sorry. AlgorithmicThinTrees is additional. No local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\323.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\323.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Combinatorics/ThinTrees/Main.lean"
+      ],
+      "outcome": "Affirmative proof"
+    },
+    {
+      "aim_id": "585",
+      "aim_title": "Sidorenko's lower bound for bipartite homomorphism counts",
+      "aim_file": "problems/585-sidorenko.md",
+      "aim_base_status": "Partially resolved",
+      "family": "161",
+      "family_title": "Counterexamples to Sidorenko’s conjecture and the forcing conjecture",
+      "match": "counterexample",
+      "recommended_status": "Solved",
+      "pdf_path": "preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
+      "coverage": "Main theorem explicitly produces a finite simple unweighted host G with at least one edge and a fixed finite simple bipartite incidence graph H with35 vertices and66 edges for which t(H,G)<p(G)^66. Definitions t=hom/n^v and p=2|E|/n^2 match AIM, including noninjective maps. Thus this is a complete negative resolution, not only a weighted or graphon counterexample.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Main theorem label thm:main, introduction.tex lines18-26; definitions lines1-15.",
+      "source_paths": [
+        "preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/161.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/SidorenkoCounterexample.lean"
+      ],
+      "lean_scope": "SidorenkoCounterexample comparator explicitly defines the22 triples, incidence graph, all homomorphisms and finite simple host deficit. Main declaration uses sorry; forcing consequence is outside selected Lean statement and irrelevant to AIM585. No local verification claimed.",
+      "known_cases": "",
+      "remaining_target": "",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\585.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\585.txt",
+      "recommendation": "solved",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [],
+      "outcome": "Counterexample"
+    },
+    {
+      "aim_id": "142",
+      "aim_title": "An irrational polygon with nonergodic billiard flow",
+      "aim_file": "problems/142-irrational-nonergodic-polygon.md",
+      "aim_base_status": "Open",
+      "family": "150",
+      "family_title": "Weak mixing of triangular billiards with an irrational angle",
+      "match": "partial",
+      "recommended_status": "Partially resolved",
+      "pdf_path": "preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf",
+      "coverage": "The weak-mixing theorem applies to every nondegenerate irrational-angle Euclidean triangle under precisely normalized position-times-uniform-direction Liouville measure, excluding the same null vertex-hit trajectories. Weak mixing implies ergodicity, so every three-side instance of the requested irrational polygon example is impossible; the existential question for larger polygons remains open.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Introduction theorem label thm:main, normalized measure immediately preceding.",
+      "source_paths": [
+        "preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/150.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/IrrationalTriangleBilliard.lean"
+      ],
+      "lean_scope": "Family150 selected Lean docs formalize ergodicity of irrational triangles, which suffices for this partial exclusion; weak mixing is not the selected comparator claim. Comparator presence is not local verification.",
+      "known_cases": "Every irrational-angle Euclidean triangle is weakly mixing, hence ergodic, for the specified Liouville billiard measure. This rules out a nonergodic example with three sides.",
+      "remaining_target": "Decide whether an irrational polygon with four or more sides can be nonergodic, or rule out all such examples.",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\142.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\142.txt",
+      "recommendation": "partial",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "337",
+      "aim_title": "Reed's bound for the chromatic number",
+      "aim_file": "problems/337-reed-colouring.md",
+      "aim_base_status": "Open",
+      "family": "184",
+      "family_title": "Correspondence coloring with a fixed forbidden subgraph",
+      "match": "partial",
+      "recommended_status": "Partially resolved",
+      "pdf_path": "preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf",
+      "coverage": "For each fixed integer r>=4, correspondence coloring of every K_r-free simple graph is at most ceil(C_r Delta/log Delta) for sufficiently large Delta. Since ordinary chi<=chi_DP, taking Delta sufficiently large that C_r/log Delta<=1/2 implies the exact Reed inequality for this bounded-clique subcase. The constants and threshold depend on the fixed clique cap; this does not handle arbitrary graph-dependent clique number or all degrees. This is a derived subset consequence rather than a manuscript theorem named Reed.",
+      "theorem_locator": "Theorem 1.1, PDF page 2; Correspondence-coloring main theorem label thm:main, introduction.tex lines24-33; chi<=chi_list<=chi_DP preceding.",
+      "source_paths": [
+        "preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/184.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/CliqueFreeLog.lean"
+      ],
+      "lean_scope": "Family184 selected Lean docs only formalize the logarithmic independence lower bound (CliqueFreeLog), not the correspondence-coloring theorem used here; no full or direct partial Reed verification claimed.",
+      "known_cases": "For each fixed clique cap, the correspondence-coloring bound implies the exact Reed inequality at all sufficiently large maximum degrees; the threshold depends on that cap.",
+      "remaining_target": "Prove the stated bound for arbitrary clique numbers and all degrees, or give a counterexample. The fixed-clique asymptotic subcase does not cover that full quantifier.",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 2",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\337.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\337.txt",
+      "recommendation": "partial",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": [
+        "lean/OAI/Combinatorics/CliqueFree/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "346",
+      "aim_title": "The near-linear bound for planar halving lines",
+      "aim_file": "problems/346-planar-halving-lines.md",
+      "aim_base_status": "Open",
+      "family": "183",
+      "family_title": "Power savings for planar halving lines and <i>k</i>-sets",
+      "match": "partial",
+      "recommended_status": "Partially resolved",
+      "pdf_path": "preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf",
+      "coverage": "The halving-power theorem counts exactly unordered pairs determining balanced straight lines of arbitrary even planar n-point sets with no three collinear. It gives an absolute fixed positive saving epsilon from4/3 for all sufficiently large even n; enlarging C covers finite smaller n. It neither supplies exponents1+eta for every eta>0 nor gives a disproof of that near-linear target.",
+      "theorem_locator": "Theorem 1.1, PDF page 2; Power-saving halving theorem label thm:halving-power, introduction.tex lines9-16.",
+      "source_paths": [
+        "preprints/A-power-saving-for-planar-halving-lines-September-25-2026/build/sections/introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/183.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/HalvingLines.lean"
+      ],
+      "lean_scope": "HalvingLines comparator states the same fixed power saving for general-position sets, and a separate all-level bound for a stronger generic condition. Main declaration uses sorry; no local verification claimed.",
+      "known_cases": "The manuscript improves the upper exponent for planar halving lines from $`4/3`$ to $`4/3-\\varepsilon_0`$ for one absolute $`\\varepsilon_0>0`$.",
+      "remaining_target": "Reach an upper bound of order $`n^{1+\\eta}`$ for every $`\\eta>0`$, or disprove that near-linear target.",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 2",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\346.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\346.txt",
+      "recommendation": "partial",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "091",
+      "aim_title": "The planar self-avoiding-walk displacement exponent",
+      "aim_file": "problems/091-planar-self-avoiding-walk-exponent.md",
+      "aim_base_status": "Open",
+      "family": "237",
+      "family_title": "The three-quarter exponent for honeycomb self-avoiding walk",
+      "match": "related",
+      "recommended_status": "Keep current status; record related progress if useful",
+      "pdf_path": "preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/main.pdf",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/main.pdf",
+      "coverage": "The main fixed-length theorem and gyration corollary concern uniformly sampled honeycomb walks, diameter and radius-of-gyration moments. AIM fixes Z^2 square-lattice walks and endpoint mean-square displacement. A lattice-universality transfer and endpoint-versus-diameter lower-moment comparison are absent. This is a substantive analogue, not a solved subcase of the exact target. The actual PDF explicitly states that its assertions do not include a lattice-universality theorem or a fixed-length endpoint-displacement lower bound.",
+      "theorem_locator": "Theorem 1.1, PDF page 1; Fixed-length mass and covering theorem label thm:main, 00_introduction.tex lines17-27; radius-of-gyration and moment corollary lines50-61.",
+      "source_paths": [
+        "preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/build/sections/00_introduction.tex"
+      ],
+      "lean_docs": [
+        "lean/docs/237.md"
+      ],
+      "lean_comparators": [
+        "lean/ComparatorChallenges/HoneycombBridgeFiniteness.lean",
+        "lean/ComparatorChallenges/HoneycombFreeEnergy.lean",
+        "lean/ComparatorChallenges/CriticalStripMass.lean",
+        "lean/ComparatorChallenges/HoneycombBridgeMassSupport.lean"
+      ],
+      "lean_scope": "Family237 docs explicitly exclude spatial3/4 and moment laws from its supporting bridge/free-energy comparator statements. No full-target Lean coverage.",
+      "known_cases": "The honeycomb analogue has diameter and radius-of-gyration moments of order n^(3p/4+o(1)); it does not establish a square-lattice endpoint-displacement case.",
+      "remaining_target": "The exact square-lattice uniform-walk endpoint mean-square displacement exponent remains the complete AIM091 target.",
+      "lean_verified": false,
+      "pdf_theorem_locator": "Theorem 1.1, PDF page 1",
+      "local_pdf_evidence": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\091.pdf",
+      "local_pdf_text": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\openai-crosscheck-2026-10-13\\agent125\\pdfs\\091.txt",
+      "recommendation": "no_match",
+      "comparison_agent": "agent125",
+      "review_date": "2026-10-13"
+    },
+    {
+      "aim_id": "038",
+      "aim_file": "problems/038-dixmier-unitarizability.md",
+      "family": "251",
+      "pdf_path": "preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/build/main.tex",
+        "preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:main",
+      "coverage": "The theorem proves amenability iff unitarizability for all discrete groups, including the exact countable target. Uniform boundedness and arbitrary complex Hilbert spaces agree.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/251.md"
+      ],
+      "lean_scope": "docs/251 covers full equivalence; DixmierAllDiscrete and Dixmier comparators. Available formalization, not locally kernel verified.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/Unitarizability/AllDiscrete.lean"
+      ]
+    },
+    {
+      "aim_id": "015",
+      "aim_file": "problems/015-anderson-extended-states.md",
+      "family": "261",
+      "pdf_path": "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/build/01-introduction.tex",
+        "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/build/paper.tex"
+      ],
+      "theorem_locator": "build/01-introduction.tex, thm:main and eq:energy-windows",
+      "coverage": "For d=3 the theorem gives a fixed I=(-6+e2/2,-6+e2) inside (-6,6), a positive disorder threshold, I contained in spectrum and pure absolute continuity almost surely for each fixed coupling. A stated parity unitary flips the hopping sign to the target convention.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/261.md"
+      ],
+      "lean_scope": "docs/261 only proves the planar spectral set; it covers neither the 3D absolute-continuity target nor planar pure-point type.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "016",
+      "aim_file": "problems/016-anderson-planar-localization.md",
+      "family": "261",
+      "pdf_path": "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/build/paper.tex",
+        "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/build/sections/introduction.tex",
+        "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/build/sections/setup.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, main:theorem and scope paragraph at line 95",
+      "coverage": "Same uniform law and every fixed positive disorder. The theorem supplies pure-point type and a complete orthonormal eigenbasis but explicitly does not assert exponential eigenfunction decay.",
+      "recommendation": "partial",
+      "outcome": "Partial affirmative result",
+      "lean_docs": [
+        "lean/docs/261.md"
+      ],
+      "lean_scope": "docs/261 establishes only spectrum [-4-h,4+h], not pure-point type or exponential decay.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "known_cases": "The OpenAI manuscript proves pure-point spectrum and a complete orthonormal eigenbasis at every fixed positive disorder. Exponential localization was already known at strong disorder.",
+      "remaining_target": "Establish exponential decay for an entire orthonormal eigenbasis at every positive disorder, including weak disorder. Pure-point spectral type alone does not provide that decay.",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "098",
+      "aim_file": "problems/098-maximal-molecular-ionization.md",
+      "family": "263",
+      "pdf_path": "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/build/main.tex",
+        "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, thm:main and following threshold caveat",
+      "coverage": "Same full fermionic Coulomb Hamiltonian with kinetic term -Delta/2 and two spin states. The theorem proves n<=Z+CM under strict binding E_n<E_(n-1), for real charges at least one and all distinct positions. It expressly leaves threshold eigenstates outside its assertion, while the AIM Nmax includes them.",
+      "recommendation": "partial",
+      "outcome": "Partial affirmative result",
+      "lean_docs": [
+        "lean/docs/263.md"
+      ],
+      "lean_scope": "docs/263 formalizes generalized large-ionization asymptotics and radii, not this strict-binding excess-charge bound.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "known_cases": "The stated excess-charge bound holds for strictly bound molecular sectors: $`E_N<E_{N-1}`$ implies $`N\\le Z+CM`$ with a universal constant.",
+      "remaining_target": "Control ground-state eigenvalues at the ionization threshold as well. The original definition of maximal charge includes such threshold eigenvalues.",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/CoulombIonization/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "099",
+      "aim_file": "problems/099-uniform-first-ionization.md",
+      "family": "263",
+      "pdf_path": "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/build/main.tex",
+        "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, cor:first-ionization",
+      "coverage": "The first-ionization corollary proves universal two-sided positive bounds for neutral integer-Z atoms with exactly the target kinetic and spin normalization. Its upper bound settles the whole supremum question.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/263.md"
+      ],
+      "lean_scope": "docs/263 explicitly excludes fixed-m convergence; the selected comparators do not establish the first-ionization bound.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/CoulombIonization/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "199",
+      "aim_file": "problems/199-two-dimensional-area-law.md",
+      "family": "265",
+      "pdf_path": "preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/build/main.tex",
+        "preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/build/sections/00-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/00-introduction.tex, thm:area and cor:rectangles",
+      "coverage": "Set interaction range R=1 and strength J=1. Rectangles and all nearest-neighbor/on-site terms are admitted, with only a unique ground state and a full-system gap. The vertical-cut edge boundary has exactly M edges, yielding C(q,1,1,Delta)M uniformly over L,M,ell and the interactions.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [],
+      "lean_scope": "No Lean document is linked for this family.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "031",
+      "aim_file": "problems/031-mub-dimension-six.md",
+      "family": "266",
+      "pdf_path": "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf",
+      "source_paths": [
+        "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/paper.tex",
+        "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/sections/introduction.tex",
+        "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/sections/execution.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:main; manuscript Section 7 and Appendix A; build/sections/execution.tex, execute:finite-theorem and execute:observed",
+      "coverage": "The stated computer-assisted theorem excludes four arbitrary complex orthonormal bases in C6, without restricting the second Hadamard matrix to a known family, and concludes N(6)=3. It depends on the published binary64 arithmetic/compiler and complete-execution certificate conditions; no execution was reproduced by this agent. Section 7 reports a completed 4 October 2026 run with all 100 invocations accounted and no final unresolved records. Its native source/archive paths are named but those verification directories are absent from the pinned public preprints tree; the run was not independently reproduced.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/266.md"
+      ],
+      "lean_scope": "docs/266 only proves at most five bases and supporting Fourier cancellation. It does not prove N(6)=3 or exclude four.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "evidence_limitations": "Published observed-execution report checked. Referenced native code and computation archive not present under this folder in the pinned public tree; no independent run or compiler-semantics audit.",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "196",
+      "aim_file": "problems/196-thermodynamic-bose-condensation.md",
+      "family": "267",
+      "pdf_path": "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf",
+      "source_paths": [
+        "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/build/main.tex",
+        "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/build/sections/introduction.tex",
+        "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/build/sections/setup.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:main",
+      "coverage": "The density-uniform theorem covers every fixed bounded measurable nonzero nonnegative radial finite-range potential, so includes every target Cc-infinity potential. At T=0 its exact canonical ground state has occupation at least c*(V)>0 at every sufficiently dilute fixed density along all thermodynamic sequences, with trace-N density matrix and constant orbital.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/267.md"
+      ],
+      "lean_scope": "docs/267 covers only the hard-sphere ground-state model. The target requires smooth finite-range potentials; that formalization does not cover it.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "194",
+      "aim_file": "problems/194-haldane-gap.md",
+      "family": "268",
+      "pdf_path": "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/introduction.tex",
+        "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/main.tex",
+        "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/model.tex"
+      ],
+      "theorem_locator": "build/introduction.tex, thm:main and immediately following small-chain paragraph",
+      "coverage": "Identical pure spin-one antiferromagnetic coupling-one Hamiltonian on even periodic rings and next distinct eigenvalue convention. The positive bound holds for every even N>=60. Taking the minimum with the finitely many positive finite-dimensional gaps N=4,...,58 gives the required all-N uniform positive gap.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [],
+      "lean_scope": "No Lean document is linked for this family; numerical/interval verification files are separate from Lean kernel verification.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "206",
+      "aim_file": "problems/206-ppt-squared.md",
+      "family": "272",
+      "pdf_path": "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/main.tex",
+        "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/source/sections/introduction.tex, thm:main-channel",
+      "coverage": "The manuscript constructs a trace-preserving PPT channel Theta on M21 whose square is not entanglement breaking. Taking Phi=Psi=Theta directly disproves the all-dimension all-channel target. The separate two non-trace-preserving maps would not by themselves be enough.",
+      "recommendation": "solved",
+      "outcome": "Counterexample",
+      "lean_docs": [
+        "lean/docs/272.md"
+      ],
+      "lean_scope": "docs/272 covers the dimension-21 trace-preserving PPT channel counterexample via DimensionTenChannel; the zero-secret-key statement is outside the comparators. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "590",
+      "aim_file": "problems/590-revised-peres.md",
+      "family": "272",
+      "pdf_path": "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/main.tex",
+        "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/source/sections/introduction.tex, thm:main-state and operational-extension paragraph",
+      "coverage": "An explicit PPT entangled state on C10 tensor C10 has zero distillable secret key for arbitrary admitted completed protocols; PPT ensures bound entanglement. A positive device-independent key protocol would give a positive trusted-device key protocol, so this supplies a substantive affirmative case of the target, not its universal conclusion.",
+      "recommendation": "partial",
+      "outcome": "Partial affirmative result",
+      "lean_docs": [
+        "lean/docs/272.md"
+      ],
+      "lean_scope": "docs/272 explicitly excludes the zero-distillable-secret-key statement; only PPT-composition consequences are formalized.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "known_cases": "The explicit dimension-ten PPT bound-entangled state has zero distillable secret key even with trusted devices, and therefore cannot yield a device-independent secret key. Reference [1, Section III.B] also rules out a specified one-way protocol using the Vertesi–Brunner state and measurements; that earlier result leaves arbitrary protocols open.",
+      "remaining_target": "Decide the prohibition for every finite-dimensional bound-entangled state and arbitrary device-independent protocols.",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "205",
+      "aim_file": "problems/205-entropy-photon-number.md",
+      "family": "273",
+      "pdf_path": "preprints/The-entropy-photon-number-inequality-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/The-entropy-photon-number-inequality-September-24-2026/build/main.tex",
+        "preprints/The-entropy-photon-number-inequality-September-24-2026/build/sections/00-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/00-introduction.tex, thm:epni",
+      "coverage": "The exact displayed g-inverse entropy photon-number inequality is proved for any finite number of modes, any transmissivity in [0,1], finite photon energy, product inputs, and arbitrary correlations within either port. Entropy uses natural logarithms as in the target.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/273.md"
+      ],
+      "lean_scope": "docs/273 describes the full EPnI target via EntropyPhotonNumber; only channel-capacity consequences are outside it. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-entropy-photon-number-inequality-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "207",
+      "aim_file": "problems/207-amplitude-damping-additivity.md",
+      "family": "276",
+      "pdf_path": "preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/build/paper.tex"
+      ],
+      "theorem_locator": "build/paper.tex, thm:main and generalized-channel definition",
+      "coverage": "The theorem establishes unrestricted tensor-power Holevo additivity for all generalized amplitude-damping parameters. At stationary excited population nu=0 the Kraus channel is the target ordinary amplitude-damping channel. Entropy and capacity are in bits, and arbitrary entangled block inputs are included.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/276.md"
+      ],
+      "lean_scope": "docs/276 covers tensor-power additivity for all parameters via AmplitudeDamping. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/InformationTheory/AmplitudeDamping/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "037",
+      "aim_file": "problems/037-kadison-similarity.md",
+      "family": "288",
+      "pdf_path": "preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/build/main.tex",
+        "preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:similarity",
+      "coverage": "Exactly arbitrary unital complex C*-algebras, arbitrary complex Hilbert spaces and bounded unital algebra homomorphisms, without complete-boundedness assumption. The manuscript uses S*pi*S^-1 rather than S^-1*pi*S; replacing S by its inverse reconciles the conventions.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/288.md"
+      ],
+      "lean_scope": "docs/288 describes the full unrestricted similarity theorem via KadisonSimilarity. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "034",
+      "aim_file": "problems/034-kadison-kastler.md",
+      "family": "289",
+      "pdf_path": "preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/main.tex",
+        "preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, thm:main",
+      "coverage": "The two-sided norm-unit-ball distance and the epsilon/delta quantifiers agree exactly for von Neumann algebras sharing identity I_H, the standard convention for the target. The separate one-sided near-inclusion and C*-algebra counterexamples do not refute this target.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/289.md"
+      ],
+      "lean_scope": "docs/289 covers the universal near-identity unitary conjugacy statement via StrongKadisonKastler. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "023",
+      "aim_file": "problems/023-complete-crouzeix.md",
+      "family": "325",
+      "pdf_path": "preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf",
+      "source_paths": [
+        "preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex"
+      ],
+      "theorem_locator": "build/main.tex, thm:main",
+      "coverage": "All n,m, all degrees, arbitrary complex coefficient matrices and constant two match. The manuscript orders tensors A^j tensor C_j and AIM orders C_j tensor A^j; the tensor-factor flip is unitary and preserves the operator norm.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/325.md"
+      ],
+      "lean_scope": "docs/325 covers the full finite-matrix target via DirectCrouzeix/CompleteCrouzeix, plus arbitrary-Hilbert and structural extensions. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean",
+        "lean/OAI/Analysis/NumericalRange/Main.lean",
+        "lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean"
+      ]
+    },
+    {
+      "aim_id": "127",
+      "aim_file": "problems/127-cartan-hadamard-isoperimetry.md",
+      "family": "337",
+      "pdf_path": "preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/build/main.tex",
+        "preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/build/sections/01-introduction.tex",
+        "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/sections/01-introduction.tex",
+        "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/sections/08-classical.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, thm:main with kappa=0",
+      "coverage": "The theorem includes all smooth complete simply connected n>=2 manifolds with Sec<=0 and every finite-volume finite-perimeter set. For the target smooth relatively compact domain, perimeter is boundary area; the coefficient is exactly n*omega_n^(1/n). This includes n>=5 with no additional geometric restriction. The CAT(0) companion separately states cor:cartan-hadamard with exactly the same smooth-domain inequality in every d>=3.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/337.md"
+      ],
+      "lean_scope": "docs/337 covers sharp integral-current filling in proper CAT(0) spaces via SharpCAT0Filling. The companion explicitly derives the smooth Cartan-Hadamard domain inequality by uniqueness of compactly supported top-dimensional fillings. This is mathematical target coverage with a geometric-current reduction, not a successful local kernel verification.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "additional_pdf_paths": [
+        "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf"
+      ],
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "011",
+      "aim_file": "problems/011-yau-nodal-upper-bound.md",
+      "family": "350",
+      "pdf_path": "preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/build/paper.tex",
+        "preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:main (S3 fixed-metric counterexample)",
+      "coverage": "One fixed smooth metric on the closed connected three-sphere has exact nonzero real Laplace eigenfunctions with positive eigenvalues tending to infinity and nodal two-measure/sqrt(lambda) tending to infinity. This refutes the universal target; the smooth-surface upper bound is an additional positive subcase.",
+      "recommendation": "solved",
+      "outcome": "Counterexample",
+      "lean_docs": [
+        "lean/docs/350.md"
+      ],
+      "lean_scope": "docs/350 describes fixed-metric counterexamples via SmoothYau (and a separate dimension-five YauCounterexample), as well as the surface theorem. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Geometry/NodalSets/Main.lean",
+        "lean/OAI/Geometry/SmoothYau/ProductMetric/SphereProduct.lean",
+        "lean/OAI/Geometry/SmoothYau/SphereMetric/ThreeSphere.lean"
+      ]
+    },
+    {
+      "aim_id": "391",
+      "aim_file": "problems/391-affine-bernstein-entire-low-dimensions.md",
+      "family": "353",
+      "pdf_path": "preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf",
+      "source_paths": [
+        "preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/build/main.tex"
+      ],
+      "theorem_locator": "build/main.tex, thm:main",
+      "coverage": "For n=3,...,9 the theorem classifies smooth positive-Hessian affine maximal graphs complete in induced Euclidean metric. An entire graph is Euclidean-complete because its metric dominates Euclidean distance and the graph is closed. The C4 target bootstraps locally to smoothness: the positive cofactor matrix makes the w equation elliptic on compact subsets, and det(D2u)=w^(-(n+2)/(n+1)) plus local Monge-Ampere regularity iterates Schauder regularity. No growth or affine completeness is needed.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/353.md"
+      ],
+      "lean_scope": "docs/353 covers the smooth Euclidean-complete graph theorem via AffineBernstein. The C4 bootstrap and target comparison are mathematical implications, not a locally checked Lean theorem. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "401",
+      "aim_file": "problems/401-mtw-convex-domains-transport-continuity.md",
+      "family": "360",
+      "pdf_path": "preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/build/main.tex",
+        "preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:main",
+      "coverage": "Same squared-distance cost and weak MTW formula. The theorem gives an almost-everywhere unique optimal map with a global bi-Holder homeomorphic representative for measurable probability densities between fixed positive finite bounds on compact connected smooth manifolds. It does not require convex injectivity domains in advance, so covers the target assumptions.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/360.md"
+      ],
+      "lean_scope": "docs/360 covers full bi-Holder transport via BiholderTransport. Supporting finite-family geometric statements have narrower scope. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/BiholderTransport/Main.lean",
+        "lean/OAI/Geometry/WeakMTW/Convexity.lean"
+      ]
+    },
+    {
+      "aim_id": "073",
+      "aim_file": "problems/073-vlasov-maxwell-global-classical.md",
+      "family": "362",
+      "pdf_path": "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex",
+        "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex",
+        "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/setup.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:global and eq:data",
+      "coverage": "Exact one-species R3 relativistic Vlasov-Maxwell normalization, compact nonnegative smooth particle data, Cb-infinity finite-L2-energy fields and Gauss constraints. The global solution has compact phase-space support on each finite interval, so in particular bounded momentum support, preserves Gauss constraints and finite field energy; no size/symmetry restriction.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/362.md"
+      ],
+      "lean_scope": "docs/362 describes the full target via VlasovMaxwell. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/VlasovMaxwell/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "227",
+      "aim_file": "problems/227-renormalized-boltzmann-uniqueness.md",
+      "family": "363",
+      "pdf_path": "preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/build/main.tex",
+        "preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/build/paper/01-introduction.tex"
+      ],
+      "theorem_locator": "build/paper/01-introduction.tex, thm:main and def:admissible",
+      "coverage": "Two distinct global solutions have the same datum, exact target hard-sphere |(v-v*) dot omega| normalization, all weighted Q+ and Q- locally integrable, strong L1 initial traces, all five local conservation laws and entropy dissipation. The paper renormalizes F/M for a fixed Maxwellian. Locally integrable unrenormalized transport/collision equation gives the beta(F) chain rule along characteristics; conserved mass and kinetic energy turn relative entropy into the target absolute entropy inequality. The datum is rough, so this does not resolve smooth-data AIM074.",
+      "recommendation": "solved",
+      "outcome": "Counterexample",
+      "lean_docs": [
+        "lean/docs/363.md"
+      ],
+      "lean_scope": "docs/363 covers the earlier periodic renormalized nonuniqueness theorem, not the later full local-conservation refinement. Comparator BoltzmannNonuniqueness; no local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "046",
+      "aim_file": "problems/046-rough-conductivity-calderon.md",
+      "family": "365",
+      "pdf_path": "preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/build/paper.tex"
+      ],
+      "theorem_locator": "build/paper.tex, thm:main",
+      "coverage": "Uniformly positive bounded real scalar conductivities on the smooth ball B(0,3) differ on positive volume and have exactly the same full weak H1/2-to-H-1/2 DN operator. This directly refutes the all-pairs target and even keeps both conductivities equal to one near the boundary.",
+      "recommendation": "solved",
+      "outcome": "Counterexample",
+      "lean_docs": [
+        "lean/docs/365.md"
+      ],
+      "lean_scope": "docs/365 covers this full rough scalar-conductivity counterexample via Conductivity. It does not cover the separate smooth anisotropic papers. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/Conductivity/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "047",
+      "aim_file": "problems/047-smooth-anisotropic-calderon.md",
+      "family": "365",
+      "pdf_path": "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex",
+        "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, main:full corollary",
+      "coverage": "The explicit full-boundary corollary recovers arbitrary smooth metrics on any compact connected smooth n>=3 manifold by a diffeomorphism fixing every boundary point. Equal target pointwise normal-DN operators with the same boundary metric yield equal density-valued energy maps, so the corollary applies.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/365.md"
+      ],
+      "lean_scope": "docs/365 links only the bounded-measurable scalar counterexample. No Lean formalization of this smooth anisotropic target is provided in the family document.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/Conductivity/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "048",
+      "aim_file": "problems/048-arbitrary-local-calderon-data.md",
+      "family": "365",
+      "pdf_path": "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex",
+        "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, main:scalar corollary",
+      "coverage": "The explicit scalar corollary proves equality throughout the closed domain for strictly positive smooth scalar conductivities from identical arbitrary same-patch voltage/flux measurements, all n>=3, with no inaccessible-boundary agreement assumption.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/365.md"
+      ],
+      "lean_scope": "docs/365 links only the rough scalar nonuniqueness comparator, not the smooth same-patch uniqueness result.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/Conductivity/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "157",
+      "aim_file": "problems/157-one-phase-critical-dimension.md",
+      "family": "367",
+      "pdf_path": "preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf",
+      "source_paths": [
+        "preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/build/paper.tex"
+      ],
+      "theorem_locator": "build/paper.tex, thm:main",
+      "coverage": "Exactly J=integral(|grad u|^2+indicator(u>0)), one-homogeneous nonnegative global minimizers with arbitrary nonnegative Sobolev same-trace competitors. Every cone through dimension six is flat and a nonflat cone exists in dimension seven, so the target critical dimension is seven. Standard minimizer regularity supplies continuity for the existence example.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/367.md"
+      ],
+      "lean_scope": "docs/367 covers only existence of a nonflat cone in dimension seven via BernoulliNonflatInSeven; flatness in dimensions at most six is outside it, so it does not determine the full critical dimension.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "153",
+      "aim_file": "problems/153-ball-evans-three-dimensions.md",
+      "family": "368",
+      "pdf_path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf",
+      "source_paths": [
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex",
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex",
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/README.md",
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex",
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "both manuscripts build/sections/01-introduction.tex, main:theorem",
+      "coverage": "The first manuscript covers 1<=p<=2 and the second covers 2<p<infinity. Together they prove strong W1p approximation by smooth diffeomorphisms onto the same target for any bounded 3D domains and any Sobolev homeomorphism. No boundary smoothness or boundary equality is required; orientation-preserving maps are included.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [],
+      "lean_scope": "No Lean document is linked for this family.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "additional_pdf_paths": [
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf"
+      ],
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "003",
+      "aim_file": "problems/003-planar-convex-hot-spots.md",
+      "family": "369",
+      "pdf_path": "preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf",
+      "source_paths": [
+        "preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/build/main.tex",
+        "preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, thm:main and eq:hotspots",
+      "coverage": "Every nonzero real eigenfunction in the first positive Neumann eigenspace on every smooth bounded simply connected planar domain has no interior critical point and obeys strict interior inequalities against boundary extrema. Every convex target domain is simply connected; multiplicities and every vector in the eigenspace are explicitly included.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/369.md"
+      ],
+      "lean_scope": "docs/369 covers the full strict hot-spots conclusion via HotSpots. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "350",
+      "aim_file": "problems/350-lane-emden-subcritical-system.md",
+      "family": "370",
+      "pdf_path": "preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/build/main.tex",
+        "preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/01-introduction.tex, cor:lane-emden",
+      "coverage": "The unweighted corollary covers n>=3 and all p,q>0 under exactly 1/(p+1)+1/(q+1)>(n-2)/n, excluding strictly positive entire C2 solutions without symmetry, decay, integrability, stability or energy assumptions. This includes every n>=5 target case.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/370.md"
+      ],
+      "lean_scope": "docs/370 covers the complete unweighted target as a specialization of HenonEmden. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf",
+      "available_lean_proof_paths": [
+        "lean/OAI/Analysis/HenonEmden/Main.lean"
+      ]
+    },
+    {
+      "aim_id": "050",
+      "aim_file": "problems/050-static-lame-uniqueness.md",
+      "family": "372",
+      "pdf_path": "preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf",
+      "source_paths": [
+        "preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/main.tex",
+        "preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "build/sections/introduction.tex, thm:main",
+      "coverage": "Exactly bounded connected smooth 3D domains, arbitrary smooth real lambda/mu, mu>0 and 3lambda+2mu>0, static zero-frequency displacement-to-traction map and recovery of both coefficients. No near-boundary or near-constant condition is added.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [
+        "lean/docs/372.md"
+      ],
+      "lean_scope": "docs/372 covers the full uniqueness target via ElasticityUniqueness. No local kernel log inspected.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "089",
+      "aim_file": "problems/089-de-giorgi-dimension-five.md",
+      "family": "375",
+      "pdf_path": "preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf",
+      "source_paths": [
+        "preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/main.tex",
+        "preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/sections/00-introduction.tex"
+      ],
+      "theorem_locator": "build/sections/00-introduction.tex, thm:monotone",
+      "coverage": "The unrestricted monotone Allen-Cahn rigidity theorem is stated in dimension eight with no directional limits, energy growth or minimization hypothesis. Embed the target by U(x1,...,x8)=u(x1,...,x4,x8). The extra-coordinate independence forces their components of the resulting unit direction to vanish, giving exactly the dimension-five tanh profile with positive fifth component.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [],
+      "lean_scope": "No Lean document is linked for this family.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "419",
+      "aim_file": "problems/419-infinity-harmonic-c1-three-dimensions.md",
+      "family": "377",
+      "pdf_path": "preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf",
+      "source_paths": [
+        "preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/build/manuscript/main.tex",
+        "preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/build/manuscript/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "build/manuscript/sections/01-introduction.tex, thm:main and cor:interior-c1",
+      "coverage": "The theorem gives interior C1,alpha in every dimension d>=3 for continuous viscosity infinity-harmonic functions, including zero-gradient tests. The corollary explicitly localizes by bounded compact balls, so the target arbitrary continuous 3D solution has continuous gradient locally. Connectedness is handled componentwise.",
+      "recommendation": "solved",
+      "outcome": "Affirmative proof",
+      "lean_docs": [],
+      "lean_scope": "No Lean document is linked for this family.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf",
+      "available_lean_proof_paths": []
+    },
+    {
+      "aim_id": "303",
+      "aim_file": "problems/303-anderson-fixed-disorder-diffusion.md",
+      "family": "261",
+      "pdf_path": "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/build/01-introduction.tex",
+        "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/build/paper.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "A purely absolutely continuous spectral interval does not imply the fixed-disorder all-large-time two-sided diffusive mean-square displacement rate requested by AIM303.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/261.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf"
+    },
+    {
+      "aim_id": "018",
+      "aim_file": "problems/018-lieb-thirring-three-dimensional.md",
+      "family": "262",
+      "pdf_path": "preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/sharp-matrix-lieb-thirring.pdf",
+      "source_paths": [
+        "preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/build/main.tex",
+        "preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/build/sections/introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "The theorem is one-dimensional, finite matrix-valued and has the scalar one-bound-state coefficient. AIM018 fixes the three-dimensional scalar gamma=1 semiclassical coefficient 1/(15*pi^2). Neither the dimension nor sharp coefficient matches; no target subclass resolution follows.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/262.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/sharp-matrix-lieb-thirring.pdf"
+    },
+    {
+      "aim_id": "195",
+      "aim_file": "problems/195-laughlin-gap.md",
+      "family": "269",
+      "pdf_path": "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026.pdf",
+      "source_paths": [
+        "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/build/main.tex",
+        "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "The theorem is the fermionic spherical V1 projector at filling 1/3 with cubic Laughlin polynomial. AIM195 is bosonic planar Bargmann contact interaction at filling 1/2 with a total-degree cutoff and squared Laughlin polynomial. These are different Hamiltonians, statistics and geometries, not a subset of the target.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/269.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026.pdf"
+    },
+    {
+      "aim_id": "197",
+      "aim_file": "problems/197-wu-bose-energy.md",
+      "family": "267",
+      "pdf_path": "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/fixed-repulsion-quantum-depletion.pdf",
+      "source_paths": [
+        "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/build/source/main.tex",
+        "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/build/source/sections/introduction.tex",
+        "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/build/source/sections/setup.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "Quantum depletion and condensation bounds do not establish the thermodynamic Wu logarithmic energy coefficient with an error little-o of rho*a^3*abs(log(rho*a^3)).",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/267.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/fixed-repulsion-quantum-depletion.pdf"
+    },
+    {
+      "aim_id": "100",
+      "aim_file": "problems/100-atomic-energy-convexity.md",
+      "family": "263",
+      "pdf_path": "preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/paper.tex",
+        "preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "Ionization asymptotics in the limit m->infinity and Z/m->infinity do not prove convexity of E(N,Z) at every N and integer Z, or give a counterexample.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/263.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf"
+    },
+    {
+      "aim_id": "032",
+      "aim_file": "problems/032-npt-bound-entanglement.md",
+      "family": "272",
+      "pdf_path": "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/main.tex",
+        "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/sections/introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "The constructed states come from PPT maps and have positive partial transpose. They do not give the negative-partial-transpose all-copy nondistillability required by AIM032.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/272.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf"
+    },
+    {
+      "aim_id": "051",
+      "aim_file": "problems/051-potential-on-general-manifold.md",
+      "family": "365",
+      "pdf_path": "preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/build/paper.tex",
+        "preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "The theorem recovers a metric and a unitary rank-two connection. It does not recover an arbitrary real scalar Schrodinger potential on a fixed general manifold from one zero-frequency DN map.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/365.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/paper.pdf"
+    },
+    {
+      "aim_id": "055",
+      "aim_file": "problems/055-simple-boundary-rigidity.md",
+      "family": "365",
+      "pdf_path": "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+      "source_paths": [
+        "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex",
+        "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "Metric recovery from an elliptic DN map does not by itself give recovery from the boundary-distance function of smooth simple manifolds; no conversion between these data is proved here.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/365.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf"
+    },
+    {
+      "aim_id": "452",
+      "aim_file": "problems/452-fully-nonlinear-bounded-hessian-liouville.md",
+      "family": "353",
+      "pdf_path": "preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf",
+      "source_paths": [
+        "preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/build/main.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "Affine maximal surfaces solve a specific fourth-order cofactor equation. AIM452 concerns arbitrary smooth uniformly elliptic second-order F(D2u)=0 with bounded Hessian in dimensions three and four. The objects and equations differ.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [
+        "lean/docs/353.md"
+      ],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf"
+    },
+    {
+      "aim_id": "154",
+      "aim_file": "problems/154-elastic-energy-approximation.md",
+      "family": "368",
+      "pdf_path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf",
+      "source_paths": [
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex",
+        "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "theorem_locator": "Main theorem scope and definitions in the listed sources",
+      "coverage": "Strong forward W1p diffeomorphic approximation alone does not guarantee convergence of an elastic energy with singular determinant/compression penalties. The high-p manuscript explicitly distinguishes this question.",
+      "recommendation": "no_match",
+      "outcome": "No target resolution",
+      "lean_docs": [],
+      "lean_scope": "Formalization availability does not change this scope mismatch.",
+      "review_kind": "Independent AI theorem-to-target statement comparison; not an independent complete proof audit",
+      "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "aim_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+      "review_date": "2026-10-13",
+      "comparison_agent": "agent249",
+      "pdf_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf"
+    }
+  ]
+}

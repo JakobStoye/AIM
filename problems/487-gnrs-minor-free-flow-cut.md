@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -64,22 +64,18 @@ The associated sparsest-cut relaxation is used to find network partitions and an
 7. Chandra Chekuri, Guyslain Naves, Joseph Poremba and F. Bruce Shepherd, *Uncrossed Multiflows and Applications to Disjoint Paths*, APPROX/RANDOM 2026, LIPIcs **392**, 12:1–12:23, published September 9, 2026. [Full proceedings text](https://drops.dagstuhl.de/storage/00lipics/lipics-vol392-approx-random2026/LIPIcs.APPROX-RANDOM.2026.12/LIPIcs.APPROX-RANDOM.2026.12.pdf), Theorems 1–3, Corollaries 4–5 and §§2.4–3.
 8. Daniel Agassy, Dani Dorfman and Haim Kaplan, *Improved Tree Sparsifiers in Near-Linear Time*, ICALP 2026, LIPIcs **374**, Article 7. [Full text](https://drops.dagstuhl.de/storage/00lipics/lipics-vol374-icalp2026/html/LIPIcs.ICALP.2026.7/LIPIcs.ICALP.2026.7.html), §2, Claim 2.7 and Theorem 2.8.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf), result family 089 (2026). Statement locator: `Theorem thm:main in each manuscript`.
+
 ## Status review
 
-**Known cases:** The conjecture holds for treewidth-two graphs and for classes excluding a fixed tree; see references 1–2.
+**Known cases:** Universal distortion holds for planar graph metrics, and distortion depending only on the treewidth bound holds for every fixed bounded-treewidth class. The comparison explains the finite-dimensional cut-metric and zero-length-edge reductions.
 
-**Remaining target:** A size-independent bound for every fixed excluded minor, including arbitrary planar supply graphs and unrestricted demands.
+**Remaining target:** Cover every fixed excluded-minor class; nonplanar minor-free classes may have unbounded treewidth.
 
-**Integration review (2026-09-23):** The September 19 source audit was refreshed with problem-specific web searches and searches scoped to arXiv, Zenodo, GitHub and Palomar. No matching full-scope solution announcement was located. Search coverage is limited by indexing and access; this is not a proof of openness. See the [integration record](../research/integration-2026-09-23.md).
+**Statement comparison:** The results establish constant distortion for all planar graphs and every fixed treewidth bound, with arbitrary positive real lengths and arbitrary demands. They do not cover every fixed excluded minor: minor-free classes can include nonplanar graphs of unbounded treewidth. Finite L1 metrics are finite nonnegative sums of cut metrics, giving AIM finite-dimensional real ell1. Nonnegative edge lengths are obtained by adding epsilon to each edge then taking a limit in the finite-dimensional cut cone (or contracting zero components); distortion constant is preserved.
 
-The May 2026 notes [3] explicitly retain GNRS and its planar case as open. The independently authored July 2026 paper [6, §1.3] still reports a planar flow-cut gap between the lower bound $`2`$ and the upper bound $`O(\sqrt{\log n})`$, where $`n=|V|`$. The upper bound grows with graph size. A constant bound for all planar supply graphs with arbitrary demands remains unproved in these sources.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-487) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The original paper settles restricted classes, including graphs of treewidth two. Its bound in terms of $`|E|-|V|+1`$ concerns cycle rank, not surface genus. Lee–Sidiropoulos settle classes excluding a fixed tree and reduce general GNRS to planar and clique-sum conjectures; the reduction does not prove those remaining statements. [1, 2]
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/089.md). Actual endpoints cover positive-length planar and fixed-treewidth metrics only. They do not formalize the full arbitrary-excluded-minor target or the zero-length transfer. No local verification record. No AIM Lean-verified status is asserted.
 
-Filtser's terminal embedding has distortion $`O(\sqrt{\log(\gamma+1)})`$, where $`\gamma`$ is the number of faces needed to cover the terminals in a fixed planar drawing; the extra one accommodates the separately solved single-face case. This is constant for bounded $`\gamma`$, but not for unrestricted terminal placement. Kumar's constant bound requires each demanded pair to share a face. Such a face may vary between pairs, but arbitrary pairs need not share any face. [4, 5]
-
-The 2026 outerplanar result rounds an already feasible fractional flow while allowing additive capacity overflow. The September result requires a strongly uncrossed fractional flow for its congestion rounding, and obtains approximation results for pairwise-planar demand layouts; its integral flow–multicut comparison uses a different objective from concurrent flow versus sparsest cut. The new tree sparsifier has a polylogarithmic quality bound. None gives the general size-independent constant sought here. [6–8]
-
-The [evidence record](../research/expansion-2026-09/candidates/gnrs-minor-free-flow-cut.json) records actual searches, source versions, theorem-scope comparisons and access limits. The publisher's original GNRS text and Filtser's journal text were not accessed in full; author versions were inspected. The September 19, 2026 check covered named and mathematical formulations, recent and unrestricted-date resolution searches, author pages, revisions and corrections. A64 was a separated adversarial self-review by the same assistant; it also checked directed-flow results and constant-distortion embeddings into the maximum norm. It was not an independent expert review or a certification of the cited proofs.
-
-The [Li–Li question](298-li-li-multiple-unicast.md) compares coding with fractional routing. The [strong thin-tree question](323-strong-thin-tree.md) selects a spanning tree under cut constraints. Neither is this comparison of cut bottlenecks with fractional routing. The planar case and equivalent metric formulation receive no separate entry.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/487-gnrs-minor-free-flow-cut.md).

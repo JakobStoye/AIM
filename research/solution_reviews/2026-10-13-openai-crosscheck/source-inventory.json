@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/openai/math",
+  "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "review_date": "2026-10-13",
+  "families": 372,
+  "catalogue_manuscripts": 719,
+  "manuscript_map_pdf_links_parsed": 719,
+  "preprints_tree_entries": 13223,
+  "preprints_tree_truncated": false,
+  "public_actions_runs_observed": 0,
+  "formalization_review_status": "unchecked",
+  "upstream_lean_toolchain": "leanprover/lean4:v4.34.1",
+  "metadata_sha256": {
+    "README.md": "5e8878ee04866f52ec942852552b9c28db278f65691c7ab49a87c9e93a9199fd",
+    "CONTENTS.md": "cc7c0b8a1cdedd845a777e77cf682657308503daf8346c1349e06e9259d063c2",
+    "history.md": "41c2a2d470014b3628695c7aabf5fd0c93f6f687621fca172062f22b59ed6a1e",
+    "lean/formalization.yaml": "5a8a164259591208886cd018416e61552665265ec9e20cff636f9d51117c2278",
+    "lean/README.md": "292ff9d539f494158dfbf68d989ba85a82782a4343b2fe43088f8fa62525bf1b",
+    "lean/ComparatorChallenges/README.md": "2ed835b3c59709be6feffe0dec54fc9783fb26aa22d35517475a82ef5199c555",
+    "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/lakefile.lean": "4cca977ebece444b6c999d99755c1ad3c93119bafc127ea761f7f703c7279e74",
+    "lean/lake-manifest.json": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794"
+  }
+}

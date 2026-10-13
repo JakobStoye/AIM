@@ -4,8 +4,11 @@
     "title": "Strict convexity of the planar exponential first-passage shape",
     "area": "Stochastic growth and random media",
     "file": "problems/169-strict-convexity-fpp.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "170",
@@ -20,8 +23,11 @@
     "title": "Absence of doubly infinite minimizing paths in planar first-passage percolation",
     "area": "Optimal transport through random media",
     "file": "problems/171-absence-fpp-bigeodesics.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "172",
@@ -60,8 +66,11 @@
     "title": "A nonuniqueness phase on every nonamenable transitive graph",
     "area": "Percolation and network resilience",
     "file": "problems/176-nonamenable-nonuniqueness-phase.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "177",
@@ -76,16 +85,22 @@
     "title": "Does directional transience imply ballistic transport in an iid medium?",
     "area": "Diffusion and transport in random environments",
     "file": "problems/178-rwre-transience-ballisticity.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "179",
     "title": "The directional zero–one law in three-dimensional random media",
     "area": "Random transport and ergodicity",
     "file": "problems/179-rwre-directional-zero-one.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "180",

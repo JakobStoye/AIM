@@ -2,9 +2,9 @@
 
 **Area:** Geometric analysis / volume and boundary optimization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -28,8 +28,16 @@ The inequality would compare the boundary cost of enclosing material in negative
 2. M. Ghomi, *Isoperimetric and total curvature inequalities in Cartan-Hadamard manifolds with nullity* (2026), [arXiv:2605.24638](https://arxiv.org/abs/2605.24638), Theorem 1.1 and Corollary 1.2. Covers manifolds with nullity index at least $`n-3`$.
 3. M. Ghomi, *Total curvature and isoperimetric inequalities in pinched Cartan-Hadamard manifolds* (2026), [arXiv:2608.12020](https://arxiv.org/abs/2608.12020), abstract and introduction. Establishes a five-dimensional result with sufficiently tight curvature pinching.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf), result family 337 (2026). Statement locator: `build/sections/01-introduction.tex, thm:main with kappa=0`. [Additional PDF 2](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Sharp-integral-fillings-in-CAT%280%29-spaces-September-23-2026/paper.pdf).
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The conjecture is established in dimensions at most four. The three 2026 results listed above have additional hypotheses and do not establish the general inequality in dimensions five and higher. Searches included “Cartan Hadamard conjecture solved 2026”, “Ghomi nullity isoperimetric 2026” and “Cartan Hadamard pinched dimension five August 2026”. Older abstracts claiming a full solution were checked against the authors' current, more limited statements.
+**Statement comparison:** The theorem includes all smooth complete simply connected n>=2 manifolds with Sec<=0 and every finite-volume finite-perimeter set. For the target smooth relatively compact domain, perimeter is boundary area; the coefficient is exactly n*omega_n^(1/n). This includes n>=5 with no additional geometric restriction. The CAT(0) companion separately states cor:cartan-hadamard with exactly the same smooth-domain inequality in every d>=3.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-127) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/337.md). docs/337 covers sharp integral-current filling in proper CAT(0) spaces via SharpCAT0Filling. The companion explicitly derives the smooth Cartan-Hadamard domain inequality by uniqueness of compactly supported top-dimensional fillings. This is mathematical target coverage with a geometric-current reduction, not a successful local kernel verification. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/127-cartan-hadamard-isoperimetry.md).

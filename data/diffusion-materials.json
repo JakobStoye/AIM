@@ -76,8 +76,11 @@
     "title": "Global optimality of the Abrikosov triangular lattice",
     "area": "Superconductivity and Coulomb crystallization",
     "file": "problems/234-abrikosov-global-crystallization.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "235",
@@ -156,8 +159,11 @@
     "title": "Nonexistence of subcritical Lane–Emden equilibria in higher dimensions",
     "area": "Nonlinear elliptic systems; reaction–diffusion",
     "file": "problems/350-lane-emden-subcritical-system.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "352",

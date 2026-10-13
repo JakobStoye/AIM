@@ -1,0 +1,643 @@
+{
+  "upstream_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "review_date": "2026-10-13",
+  "upstream_review_status": "unchecked",
+  "kernel_replay_performed": false,
+  "files": [
+    {
+      "path": "lean/OAI/Analysis/BiholderTransport/Main.lean",
+      "git_blob": "158c989788d426391320bf2ef17853ccafc4f787",
+      "sha256": "9bf6adbcf58f16be43cd7838b0b990cde20aeb4be99962c510f1bf345bc2d1ca",
+      "bytes": 2463,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/Conductivity/Main.lean",
+      "git_blob": "4946318f6ceb4f3dbf4ae2cbd673123e5f6f8d68",
+      "sha256": "22f81441c04d3efbc997677252bddfc347584295c4ffc9d7756111619d241b7f",
+      "bytes": 3897,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/CoulombIonization/Main.lean",
+      "git_blob": "924cc67e71bf528cfea0b556c6eba5d175e0a005",
+      "sha256": "fc751545fdc004a123765cd5f349b56aec348dfff48fe5c56b0029459883e0da",
+      "bytes": 2554,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean",
+      "git_blob": "a504007c267984cb20e977b0e8c31c4198bad757",
+      "sha256": "c8f0706d92662aaca2d1a26fe7647b3719035f72177d68fbf5b490028f12e891",
+      "bytes": 2757,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/FourierLLogL/PaperMain.lean",
+      "git_blob": "bedb72c179d611d1278f8357d77346762e4d3352",
+      "sha256": "271246cdbf3f4e18ab11e5647c5d8a75e18deed10f9625c95c087f7aafe5adcf",
+      "bytes": 769,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/HenonEmden/Main.lean",
+      "git_blob": "e68ed629019e74239ef0f475268978112fe16dfe",
+      "sha256": "f4e2f096a0243cf1190de46dda83d96e8d95fdeae5463b114f18c7222f7e8823",
+      "bytes": 1697,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/LienardCycles/Main.lean",
+      "git_blob": "f8db625152ccc3b35e4d723f2ee41caf3f5bc803",
+      "sha256": "13baacc8e7d7def3b6104d31b329dc0f4da0cb0e6adc1f87e367e416d9ac00c5",
+      "bytes": 748,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/LipschitzHilbert/Main.lean",
+      "git_blob": "c9eaff5a6ebfd8de5a7eed5530ee781572927676",
+      "sha256": "c7d42396ce5202569b253b54965eb6e3991cb536fa3b2ab0b40eccb4c2351070",
+      "bytes": 1368,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/Mahler/Classification.lean",
+      "git_blob": "60f060d2ed0bcead291a6223d18cbcbfd14e5732",
+      "sha256": "3bab72e986a45df928d08419b18392202c827e2f8c803278414db3fa90580c65",
+      "bytes": 23200,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/Mahler/MainTheorem.lean",
+      "git_blob": "d5c55dee7e95a66312217de1f875ea8cb7508e62",
+      "sha256": "ff4222bb24b6b48e571c63a481f6cbe430ce68f8c707da065c2117d7e94f058e",
+      "bytes": 882,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/NumericalRange/Main.lean",
+      "git_blob": "efa3c8b2063e4cb282059ec21521635deffcc150",
+      "sha256": "fbbd1e3e5006b9a851b91899e9544793d6e426cf92ab8216a68e4136bf80a8b4",
+      "bytes": 3419,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean",
+      "git_blob": "9da30a18756928338f04aeaede68daaeda142431",
+      "sha256": "9fcce1d3babe276a302041c177e25b5e09093e4051220bb59c8add28dc3a07c3",
+      "bytes": 390,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/Triangular/Energy/Universal.lean",
+      "git_blob": "67105df7ccf22afc7930a13a56bb2128478982e7",
+      "sha256": "35765ec2deda6020ae292681a4f56c6d73dfbcbdfbb7baa831e06e52dec82b1d",
+      "bytes": 970,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/Triangular/Main.lean",
+      "git_blob": "7c673bde297afccf2f246051adc62a0b843eef2c",
+      "sha256": "e15e37b9aea663262166041a1c739a7d7794e691fe849d621690a0bdae735189",
+      "bytes": 3922,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/TriangularHilbert/Main.lean",
+      "git_blob": "79bef397195538364db8addcdf0850d38d85e417",
+      "sha256": "49dcd89df22c7a7567df9033079ca50e83ee41df1092be2a417ab6c54f66ed12",
+      "bytes": 2039,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/Unitarizability/AllDiscrete.lean",
+      "git_blob": "07ebfcdfe0955c13b36aa1751f47b33e3c9c5445",
+      "sha256": "ac9a1a1473614df13753cad5a9ca26d2a7a814ba01f73d5049a9c5d6c42569c5",
+      "bytes": 719,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Analysis/VlasovMaxwell/Main.lean",
+      "git_blob": "27c4af45312b02fffdd8b3014084dc5d398a36a7",
+      "sha256": "32271d189735ec576f8000b501aa70502e7d32dbaa071b160615a5d615369b50",
+      "bytes": 2373,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Combinatorics/CliqueFree/Main.lean",
+      "git_blob": "8f1a47dcf0c0ca1f0087f813640ab3b47f3f2848",
+      "sha256": "6d5bc17478c824c2f8a4ef87e6618a234d651238c33843ab0fbdf2a7ba6a3745",
+      "bytes": 3445,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Combinatorics/PlanarL1/Embedding.lean",
+      "git_blob": "6a5cafc6b9160f9a407372b33300b047d0fe5330",
+      "sha256": "a381374bfac8f35fca2f6f8e1ceba38507475c7c513c401cba1ea672b458b2ae",
+      "bytes": 5468,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Combinatorics/ThinTrees/Main.lean",
+      "git_blob": "88f3f50750f5f0e20402df9b52dbe4cf44439faa",
+      "sha256": "ad1ebfbabac088b6ac4d232a864055f5231341cfb9a717ccdc8dcf50b017d3d6",
+      "bytes": 2479,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Combinatorics/TreewidthL1/Main.lean",
+      "git_blob": "bc8b92a4b0aa73a24be359b4ef8f85448f544b22",
+      "sha256": "3f5b9460f90f6dd51604e6cfa9c8a6fe9807ee013b6b4e80839471d7f1cd2fc2",
+      "bytes": 8725,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Computability/BinPacking/Main.lean",
+      "git_blob": "2800e6abe9382b13df1ef3e2fc71e778ca889c96",
+      "sha256": "a61c56a63fd72264e61ce9a83b3e9671b7a41ac4da214836c68dc0c2fc9b7d46",
+      "bytes": 1493,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Computability/MaxCut/Main.lean",
+      "git_blob": "ba1155880978dd1c4deb62c163d6086c36a233d9",
+      "sha256": "2adfe150548ca1dbc957482565f3de763ac9b45b25638a836a5072d427214283",
+      "bytes": 3542,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Computability/RandomMean/Main.lean",
+      "git_blob": "3a704090bf1117948a4afa153266b55f20b85e13",
+      "sha256": "6305408e6a1aed02542ae3bbac9d46f4be8ee0ff6ace61485259a176e1ec8c04",
+      "bytes": 3175,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Computability/Scheduling/Main.lean",
+      "git_blob": "e1bde8078ff07f7508b9677830b1d8d52e0acb51",
+      "sha256": "94df75ac25f7c06690e4d404aed6fbca43d09c343dd581d989663debae55b82b",
+      "bytes": 3538,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Computability/UniqueGames/Theorem.lean",
+      "git_blob": "5946d0262d07a5b1e55778ab984ecf9b6d5b8a4c",
+      "sha256": "9d440290260c3fad2905780465be3a49f2cfa83445a28b1df8d33454ee4350ab",
+      "bytes": 1200,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Computability/VertexCover/Main.lean",
+      "git_blob": "073e2397866c1b22b34df5ccd2db964c9173b295",
+      "sha256": "76c21aead1b0ed5797e6e4a6d211b797070b3b2dd4e46666fe92bd4c96196e0c",
+      "bytes": 5108,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Geometry/NodalSets/Main.lean",
+      "git_blob": "910c94d347793582ba0bb887125f4bdc2ede7e6c",
+      "sha256": "e3100b341e684ac424ea0b2ea97d4d2cb8306fd3c8810fe11373df64f90990a4",
+      "bytes": 411,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Geometry/PolarProducts/Main.lean",
+      "git_blob": "1b51f466a7102e0851387484f9ed44a0c8e8ff4f",
+      "sha256": "0b698fe6edebe1859696b5bbf7f08e51bb16df6ab64993248710884e64bc5ae2",
+      "bytes": 566,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Geometry/SmoothYau/ProductMetric/SphereProduct.lean",
+      "git_blob": "cfd7c29e4183edf531366c0b10357257b40a2551",
+      "sha256": "1a773cba9d8a84dec448c11ace72338d85c8b0e382cf20a06b9c8154a759cdc8",
+      "bytes": 4355,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Geometry/SmoothYau/SphereMetric/ThreeSphere.lean",
+      "git_blob": "86b89f18c9cade379b83b2c9b81efdf1940b9977",
+      "sha256": "748dca6b8a2a0c194b891bacd551ac38b41a865d4d5d1ee6ac5ffab0c5c405ba",
+      "bytes": 729,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Geometry/WeakMTW/Convexity.lean",
+      "git_blob": "f121572eb54853e3402484d36761a84591e6ef60",
+      "sha256": "8e48dafc02f24b0eeca65e202be53cf0da0c8f04ee90811f455ba03b90368ab6",
+      "bytes": 4002,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/InformationTheory/AmplitudeDamping/Main.lean",
+      "git_blob": "c11701969c7b48e6e608b6c11ad1e598d715631e",
+      "sha256": "24aeebc34cbc3932d57e82236613dd086c1233a27c461717a5337facc7a31d87",
+      "bytes": 2452,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean",
+      "git_blob": "16e2687447f1512b599c65e24f07b608b19d9155",
+      "sha256": "a500381b4027670a79654ccd982212c5948462b1ca9af6cf3e464cb08a2215eb",
+      "bytes": 968,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean",
+      "git_blob": "7608542c58cf1d6e2955038e8b35f0a5fb127d0a",
+      "sha256": "9c2108c42436ad48ee6e348b4a18d9465a2caadd08dc6b8bb0915ef483eff816",
+      "bytes": 1273,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Probability/Ballisticity/Main.lean",
+      "git_blob": "e63468abd024d61ed7abd20c0412572d6a53d966",
+      "sha256": "38f91c87ea497aec8f5fce3b1b4b1dad443982c4ac67ab38b2b81b0bf7e92e0c",
+      "bytes": 1290,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Probability/CriticalZ3/Main.lean",
+      "git_blob": "dd6361d5bfe6ed788cfd94129ebd6850cbec0865",
+      "sha256": "96577659112104cc08377ee04238d9aa7ab0ddb6275eacb7d323201331b6f212",
+      "bytes": 5134,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Probability/FirstPassage/BoundaryCurve.lean",
+      "git_blob": "c1e3d8e1058d31e58d0a86fc8e6fa386c5de9a8b",
+      "sha256": "155353bf6cc2e6de1fec40c42e77bb77075758efc6c75718c272989bc914f053",
+      "bytes": 3948,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    },
+    {
+      "path": "lean/OAI/Probability/TraceReconstruction.lean",
+      "git_blob": "a4f3f0f32540d93a4267678de4330fdacb8e6978",
+      "sha256": "e74413607c5181f58bebe218cdafef3dc527a45ebfb00c55f1695b0b4477c12d",
+      "bytes": 19665,
+      "inspection": "Public proof-module availability and immutable bytes checked; transitive elaboration/kernel replay not performed."
+    }
+  ],
+  "modules_by_aim": {
+    "028": [
+      "lean/OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean",
+      "lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean"
+    ],
+    "086": [
+      "lean/OAI/Analysis/Mahler/Classification.lean",
+      "lean/OAI/Analysis/Mahler/MainTheorem.lean",
+      "lean/OAI/Geometry/PolarProducts/Main.lean"
+    ],
+    "087": [
+      "lean/OAI/Analysis/Triangular/Energy/Universal.lean",
+      "lean/OAI/Analysis/Triangular/Main.lean"
+    ],
+    "092": [],
+    "208": [],
+    "209": [],
+    "210": [],
+    "234": [],
+    "293": [
+      "lean/OAI/Computability/MaxCut/Main.lean",
+      "lean/OAI/Computability/UniqueGames/Theorem.lean",
+      "lean/OAI/Computability/VertexCover/Main.lean"
+    ],
+    "301": [
+      "lean/OAI/Computability/Scheduling/Main.lean"
+    ],
+    "321": [
+      "lean/OAI/Probability/TraceReconstruction.lean"
+    ],
+    "341": [
+      "lean/OAI/Computability/BinPacking/Main.lean"
+    ],
+    "447": [
+      "lean/OAI/Analysis/TriangularHilbert/Main.lean"
+    ],
+    "448": [
+      "lean/OAI/Analysis/FourierLLogL/PaperMain.lean"
+    ],
+    "450": [
+      "lean/OAI/Analysis/LipschitzHilbert/Main.lean"
+    ],
+    "487": [
+      "lean/OAI/Combinatorics/PlanarL1/Embedding.lean",
+      "lean/OAI/Combinatorics/TreewidthL1/Main.lean"
+    ],
+    "491": [
+      "lean/OAI/Computability/RandomMean/Main.lean"
+    ],
+    "543": [],
+    "064": [],
+    "065": [],
+    "088": [
+      "lean/OAI/Probability/CriticalZ3/Main.lean"
+    ],
+    "090": [],
+    "164": [
+      "lean/OAI/Analysis/LienardCycles/Main.lean"
+    ],
+    "169": [
+      "lean/OAI/Probability/FirstPassage/BoundaryCurve.lean"
+    ],
+    "171": [
+      "lean/OAI/Probability/FirstPassage/BoundaryCurve.lean"
+    ],
+    "176": [],
+    "178": [
+      "lean/OAI/Probability/Ballisticity/Main.lean"
+    ],
+    "179": [
+      "lean/OAI/Probability/Ballisticity/Main.lean"
+    ],
+    "273": [],
+    "323": [
+      "lean/OAI/Combinatorics/ThinTrees/Main.lean"
+    ],
+    "585": [],
+    "142": [],
+    "337": [
+      "lean/OAI/Combinatorics/CliqueFree/Main.lean"
+    ],
+    "346": [],
+    "038": [
+      "lean/OAI/Analysis/Unitarizability/AllDiscrete.lean"
+    ],
+    "015": [],
+    "016": [],
+    "098": [
+      "lean/OAI/Analysis/CoulombIonization/Main.lean"
+    ],
+    "099": [
+      "lean/OAI/Analysis/CoulombIonization/Main.lean"
+    ],
+    "199": [],
+    "031": [],
+    "196": [],
+    "194": [],
+    "206": [],
+    "590": [],
+    "205": [],
+    "207": [
+      "lean/OAI/InformationTheory/AmplitudeDamping/Main.lean"
+    ],
+    "037": [],
+    "034": [],
+    "023": [
+      "lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean",
+      "lean/OAI/Analysis/NumericalRange/Main.lean",
+      "lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean"
+    ],
+    "127": [],
+    "011": [
+      "lean/OAI/Geometry/NodalSets/Main.lean",
+      "lean/OAI/Geometry/SmoothYau/ProductMetric/SphereProduct.lean",
+      "lean/OAI/Geometry/SmoothYau/SphereMetric/ThreeSphere.lean"
+    ],
+    "391": [],
+    "401": [
+      "lean/OAI/Analysis/BiholderTransport/Main.lean",
+      "lean/OAI/Geometry/WeakMTW/Convexity.lean"
+    ],
+    "073": [
+      "lean/OAI/Analysis/VlasovMaxwell/Main.lean"
+    ],
+    "227": [],
+    "046": [
+      "lean/OAI/Analysis/Conductivity/Main.lean"
+    ],
+    "047": [
+      "lean/OAI/Analysis/Conductivity/Main.lean"
+    ],
+    "048": [
+      "lean/OAI/Analysis/Conductivity/Main.lean"
+    ],
+    "157": [],
+    "153": [],
+    "003": [],
+    "350": [
+      "lean/OAI/Analysis/HenonEmden/Main.lean"
+    ],
+    "050": [],
+    "089": [],
+    "419": []
+  },
+  "configurations_by_aim": {
+    "028": [
+      "ComparatorChallenges/MatrixFields.json",
+      "ComparatorChallenges/MatrixMultiplication.json"
+    ],
+    "086": [
+      "ComparatorChallenges/GeneralMahler.json",
+      "ComparatorChallenges/MahlerConjecture.json",
+      "ComparatorChallenges/SymmetricMahlerEquality.json",
+      "ComparatorChallenges/SymmetricPolar.json"
+    ],
+    "087": [
+      "ComparatorChallenges/AtomicGaussian.json",
+      "ComparatorChallenges/PlanarPacking.json",
+      "ComparatorChallenges/TriangularEnergy.json",
+      "ComparatorChallenges/TriangularGaussian.json"
+    ],
+    "092": [],
+    "208": [],
+    "209": [],
+    "210": [],
+    "234": [
+      "ComparatorChallenges/AtomicGaussian.json",
+      "ComparatorChallenges/PlanarPacking.json",
+      "ComparatorChallenges/TriangularEnergy.json",
+      "ComparatorChallenges/TriangularGaussian.json"
+    ],
+    "293": [
+      "ComparatorChallenges/DirectedFeedback.json",
+      "ComparatorChallenges/MinUncut.json",
+      "ComparatorChallenges/OptimalMaxCut.json",
+      "ComparatorChallenges/UniqueGamesTheorem.json",
+      "ComparatorChallenges/VertexCover.json"
+    ],
+    "301": [
+      "ComparatorChallenges/ThreeMachine.json"
+    ],
+    "321": [
+      "ComparatorChallenges/TraceReconstruction.json"
+    ],
+    "341": [
+      "ComparatorChallenges/BinPackingGap.json"
+    ],
+    "447": [
+      "ComparatorChallenges/TriangularHilbert.json"
+    ],
+    "448": [
+      "ComparatorChallenges/FourierLLogL.json"
+    ],
+    "450": [
+      "ComparatorChallenges/LipschitzHilbert.json"
+    ],
+    "487": [
+      "ComparatorChallenges/BoundedTreewidthL1.json",
+      "ComparatorChallenges/PlanarL1.json"
+    ],
+    "491": [
+      "ComparatorChallenges/RandomizedMeanPayoff.json",
+      "ComparatorChallenges/TruffetCounterexample.json"
+    ],
+    "543": [],
+    "064": [],
+    "065": [
+      "ComparatorChallenges/StandardMapComponents.json",
+      "ComparatorChallenges/StandardMapEntropy.json",
+      "ComparatorChallenges/StandardMapLyapunov.json"
+    ],
+    "088": [
+      "ComparatorChallenges/CriticalPercolation.json",
+      "ComparatorChallenges/CriticalZ3.json"
+    ],
+    "090": [],
+    "164": [
+      "ComparatorChallenges/QuinticLienard.json"
+    ],
+    "169": [
+      "ComparatorChallenges/GammaPassage.json",
+      "ComparatorChallenges/PlanarFirstPassage.json"
+    ],
+    "171": [
+      "ComparatorChallenges/GammaPassage.json",
+      "ComparatorChallenges/PlanarFirstPassage.json"
+    ],
+    "176": [
+      "ComparatorChallenges/BenjaminiSchramm.json",
+      "ComparatorChallenges/CayleyPercolation.json"
+    ],
+    "178": [
+      "ComparatorChallenges/DirectionalBallisticity.json",
+      "ComparatorChallenges/DirectionalWalk.json",
+      "ComparatorChallenges/VelocityHemisphere.json"
+    ],
+    "179": [
+      "ComparatorChallenges/DirectionalBallisticity.json",
+      "ComparatorChallenges/DirectionalWalk.json",
+      "ComparatorChallenges/VelocityHemisphere.json"
+    ],
+    "273": [
+      "ComparatorChallenges/MassAction.json"
+    ],
+    "323": [
+      "ComparatorChallenges/AlgorithmicThinTrees.json",
+      "ComparatorChallenges/StrongThinTree.json"
+    ],
+    "585": [
+      "ComparatorChallenges/SidorenkoCounterexample.json"
+    ],
+    "142": [
+      "ComparatorChallenges/IrrationalTriangleBilliard.json"
+    ],
+    "337": [
+      "ComparatorChallenges/CliqueFreeLog.json"
+    ],
+    "346": [
+      "ComparatorChallenges/HalvingLines.json"
+    ],
+    "038": [
+      "ComparatorChallenges/Dixmier.json",
+      "ComparatorChallenges/DixmierAllDiscrete.json"
+    ],
+    "015": [
+      "ComparatorChallenges/PlanarAndersonSpectrum.json"
+    ],
+    "016": [
+      "ComparatorChallenges/PlanarAndersonSpectrum.json"
+    ],
+    "098": [
+      "ComparatorChallenges/CoulombIonization.json",
+      "ComparatorChallenges/CoulombRadii.json"
+    ],
+    "099": [
+      "ComparatorChallenges/CoulombIonization.json",
+      "ComparatorChallenges/CoulombRadii.json"
+    ],
+    "199": [],
+    "031": [
+      "ComparatorChallenges/HadamardCubeFiber.json",
+      "ComparatorChallenges/MUBSix.json"
+    ],
+    "196": [
+      "ComparatorChallenges/HardSphere.json"
+    ],
+    "194": [],
+    "206": [
+      "ComparatorChallenges/DimensionTenChannel.json",
+      "ComparatorChallenges/DimensionTenPair.json"
+    ],
+    "590": [
+      "ComparatorChallenges/DimensionTenChannel.json",
+      "ComparatorChallenges/DimensionTenPair.json"
+    ],
+    "205": [
+      "ComparatorChallenges/EntropyPhotonNumber.json"
+    ],
+    "207": [
+      "ComparatorChallenges/AmplitudeDamping.json"
+    ],
+    "037": [
+      "ComparatorChallenges/KadisonSimilarity.json",
+      "ComparatorChallenges/UniformCommutator.json"
+    ],
+    "034": [
+      "ComparatorChallenges/StrongKadisonKastler.json"
+    ],
+    "023": [
+      "ComparatorChallenges/CompleteCrouzeix.json",
+      "ComparatorChallenges/CrouzeixHilbert.json",
+      "ComparatorChallenges/DirectCrouzeix.json",
+      "ComparatorChallenges/HilbertCrouzeix.json",
+      "ComparatorChallenges/StructuralCrouzeix.json"
+    ],
+    "127": [
+      "ComparatorChallenges/FillingCoefficient.json",
+      "ComparatorChallenges/SharpCAT0Filling.json"
+    ],
+    "011": [
+      "ComparatorChallenges/NodalLength.json",
+      "ComparatorChallenges/SmoothYau.json",
+      "ComparatorChallenges/YauCounterexample.json"
+    ],
+    "391": [
+      "ComparatorChallenges/AffineBernstein.json"
+    ],
+    "401": [
+      "ComparatorChallenges/BiholderTransport.json",
+      "ComparatorChallenges/WeakMTWGlobalSupport.json"
+    ],
+    "073": [
+      "ComparatorChallenges/VlasovMaxwell.json"
+    ],
+    "227": [
+      "ComparatorChallenges/BoltzmannNonuniqueness.json"
+    ],
+    "046": [
+      "ComparatorChallenges/Conductivity.json"
+    ],
+    "047": [
+      "ComparatorChallenges/Conductivity.json"
+    ],
+    "048": [
+      "ComparatorChallenges/Conductivity.json"
+    ],
+    "157": [
+      "ComparatorChallenges/BernoulliNonflatInSeven.json"
+    ],
+    "153": [],
+    "003": [
+      "ComparatorChallenges/HotSpots.json"
+    ],
+    "350": [
+      "ComparatorChallenges/HenonEmden.json"
+    ],
+    "050": [
+      "ComparatorChallenges/ElasticityUniqueness.json"
+    ],
+    "089": [],
+    "419": []
+  }
+}

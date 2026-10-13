@@ -2,9 +2,9 @@
 
 **Area:** Quantum information; repeater channels
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -27,14 +27,16 @@ This determines whether a pair of noisy quantum links with positive partial tran
 1. Matthias Christandl, Alexander Müller-Hermes, and Michael M. Wolf, [When Do Composed Maps Become Entanglement Breaking?](https://arxiv.org/abs/1807.01266), *Ann. Henri Poincaré* 20 (2019). Introduction and the discussion of the PPT-squared conjecture establish the formulation and dimension-three result.
 2. Junhyeong An and Soojoon Lee, [Beyond the Positive Partial Transpose Squared Conjecture: The Qutrit Case](https://arxiv.org/abs/2607.15947), preprint, 17 July 2026. Introduction and Section II, Conjecture 2, explicitly leave higher dimensions open.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf), result family 272 (2026). Statement locator: `build/source/sections/introduction.tex, thm:main-channel`.
+
 ## Status review
 
-**Known cases:** The PPT-composition conclusion is established in complex dimension three, the qutrit case.
+**Resolution:** The linked OpenAI manuscript reports a complete counterexample to the original target.
 
-**Remaining target:** The entanglement-breaking conclusion for compositions of all such channels in arbitrary complex dimension.
+**Statement comparison:** The manuscript constructs a trace-preserving PPT channel Theta on M21 whose square is not entanglement breaking. Taking Phi=Psi=Theta directly disproves the all-dimension all-channel target. The separate two non-trace-preserving maps would not by themselves be enough.
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-206) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The July 2026 paper confirms the higher-dimensional conjecture remains open. Its new composition theorems concern qutrits and additional map classes. The question here is over complex Hilbert spaces; counterexamples to real-Hilbert-space analogues do not settle it.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/272.md). docs/272 covers the dimension-21 trace-preserving PPT channel counterexample via DimensionTenChannel; the zero-secret-key statement is outside the comparators. No local kernel log inspected. No AIM Lean-verified status is asserted.
 
-**Search audit:** Queries: “PPT squared conjecture proof counterexample 2026”, “Christandl Muller Hermes Wolf PPT composition”, with the July 2026 qutrit paper checked. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/206-ppt-squared.md).

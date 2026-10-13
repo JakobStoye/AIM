@@ -2,9 +2,9 @@
 
 **Area:** Scheduling and operations research
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-17
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -29,10 +29,16 @@ Precedence edges represent dependencies between computational tasks or project a
 2. Syamantak Das and Andreas Wiese, *A Simpler QPTAS for Scheduling Jobs with Precedence Constraints*, ESA 2022, 40:1–40:11. [Published paper](https://doi.org/10.4230/LIPIcs.ESA.2022.40), §1. The arXiv upload appeared in 2025.
 3. Christina Büsing, Maurice Draeger and Corinna Mathwieser, *Parameterized Complexity of Scheduling Unit-Time Jobs with Generalized Precedence Constraints*, IPEC 2025, 7:1–7:16. [Published paper](https://doi.org/10.4230/LIPIcs.IPEC.2025.7), §5 and Theorem 13.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf), result family 124 (2026). Statement locator: `Theorem thm:main; deterministic multitape time O((L+2)^150020)`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Nederlof–Swennenhuis–Węgrzycki pose the exact three-processor problem and give an algorithm with running time $`2^{O(\sqrt n\log n)}`$. Independent papers by Das–Wiese and Büsing–Draeger–Mathwieser identify the remaining fixed-machine gap. Approximation schemes do not give exact polynomial-time feasibility by taking arbitrarily small error. The inspected hardness reductions either let the number of processors grow or introduce OR dependencies; a makespan of three must not be confused with three processors.
+**Statement comparison:** Arbitrary explicitly listed DAG, nonpreemptive unit-length jobs and exactly three identical machines agree. Its slot values 1..T equal AIM start times plus one. The theorem treats n>=1 and 1<=T<=n: AIM extra cases are immediate in polynomial time (n=0 feasible, T=0 with n>0 infeasible, T>=n feasible by topological sequential schedule). Thus binary arbitrary deadline and empty input add no unresolved case.
 
-Current resolution searches cover the three-field notation, unit execution times, three machines/processors, author names, proof and counterexample claims, 2025–2026 and unrestricted dates, and version/correction checks. The [candidate ledger](../research/expansion-2026-09/candidates/three-processor-unit-scheduling.json) records the comparisons and access limits. A separate adversarial self-pass also checked processor-allocation hardness and the outforest restriction in an older linear-time algorithm. Resolution searches and duplicate checks were refreshed immediately before the September 17, 2026 batch integration.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-301) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/124.md). Actual main_theorem proves one finite machine and binary-input polynomial bound for nonempty n and normalized deadlines; the trivial edge-case adapter is not a separately replayed AIM theorem. No local verification record. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/301-three-processor-unit-scheduling.md).

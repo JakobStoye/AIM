@@ -2,9 +2,9 @@
 
 **Area:** Computational geometry and parametric selection
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-19
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -37,20 +37,18 @@ Consider retaining the cheapest half of $`n`$ options whose costs are affine fun
 6. Javier Rodrigo, Mariló López, Danilo Magistrali and Estrella Alonso, *An Improvement of the Lower Bound on the Maximum Number of Halving Lines for Sets in the Plane with an Odd Number of Points*, Axioms 14 (2025), 62, [publisher PDF](https://mdpi-res.com/d_attachment/axioms/axioms-14-00062/article_deploy/axioms-14-00062-v2.pdf), DOI 10.3390/axioms14010062. §§2–4, Propositions 1–7.
 7. Elizaveta Streltsova and Uli Wagner, *Levels in Arrangements: Linear Relations, the g-Matrix, and Applications to Crossing Numbers*, SoCG 2025, article 75, [proceedings paper](https://drops.dagstuhl.de/storage/00lipics/lipics-vol332-socg2025/LIPIcs.SoCG.2025.75/LIPIcs.SoCG.2025.75.pdf). §§1.1–1.2, Theorem 6 and Remark 7.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf), result family 183 (2026). Statement locator: `Theorem 1.1, PDF page 2; Power-saving halving theorem label thm:halving-power, introduction.tex lines9-16.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Known cases:** The manuscript improves the upper exponent for planar halving lines from $`4/3`$ to $`4/3-\varepsilon_0`$ for one absolute $`\varepsilon_0>0`$.
 
-Open in cited literature; no later resolution located as of **2026-09-19**. The independently authored formulations agree on the exponent target, and the 2025 arrangement paper retains the planar gap. Dey's general upper bound has order $`n^{4/3}`$. Nivasch constructs examples with at least a constant multiple of
+**Remaining target:** Reach an upper bound of order $`n^{1+\eta}`$ for every $`\eta>0`$, or disprove that near-linear target.
 
-```math
-\frac{n\exp\!\bigl(\sqrt{\log4}\sqrt{\log n}\bigr)}{\sqrt{\log n}}
-```
+**Statement comparison:** The halving-power theorem counts exactly unordered pairs determining balanced straight lines of arbitrary even planar n-point sets with no three collinear. It gives an absolute fixed positive saving epsilon from4/3 for all sufficiently large even n; enlarging C covers finite smaller n. It neither supplies exponents1+eta for every eta>0 nor gives a disproof of that near-linear target.
 
-halving edges, for all sufficiently large even $`n`$, with natural logarithms. This rules out an $`O(n\log n)`$ upper bound but remains compatible with every $`n^{1+\varepsilon}`$ bound in the question.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-346) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The 2024 upper-bound improvement subtracts a term of order $`n`$ while retaining exponent $`4/3`$. The 2025 odd-cardinality constructions and recurrence inequalities do not close this exponent gap. Streltsova–Wagner's sublevel theorem concerns $`n`$ vectors in dimension $`n-3`$ and levels at most one; its Remark 7 separates that result from the unresolved planar question. Their nonpointed spherical configurations cannot be substituted for affine planar point sets. Bounds for dense or random point sets, for pseudolines, and for general parametric matroids also require separate scope checks.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/183.md). HalvingLines comparator states the same fixed power saving for general-position sets, and a separate all-level bound for a stronger generic condition. Main declaration uses sorry; no local verification claimed. No AIM Lean-verified status is asserted.
 
-Searches covered the named conjecture, halving edges, middle levels, explicit bounds, proof and counterexample claims, corrections and 2025–2026 results. A July 2026 preprint about improved lower bounds for small sets was accessible only through indexed metadata and an incomplete abstract; its results are not used here. The [evidence ledger](../research/expansion-2026-09/candidates/planar-halving-lines.json) records these limits and the theorem comparisons. Nearest existing entries concern [opaque sensing barriers](122-shortest-opaque-square-barrier.md), [connection-network lengths](276-planar-steiner-ratio.md) and [polytope graph diameter](311-polynomial-hirsch.md); none asks for this extremal count. No additional entry is allocated to another formulation of the same family.
-
-The separated A59 adversarial self-review passed on September 19, 2026. No independent agent or human review is claimed.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/346-planar-halving-lines.md).

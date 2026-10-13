@@ -2,9 +2,9 @@
 
 **Area:** Deterministic chemical reaction networks
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -20,10 +20,16 @@ A proof would rule out eventual loss of a chemical species solely from the netwo
 - [Gheorghe Craciun, *Polynomial Dynamical Systems, Reaction Networks, and Toric Differential Inclusions*, SIAM Journal on Applied Algebra and Geometry (2019)](https://people.math.wisc.edu/~craciun/PAPERS_NEW/1_SIAG_Feb_2018_Revision_3.pdf), §2.2, persistence and permanence questions.
 - [Praneet Nandan, Philippe Nghe and Jérémie Unterberger, *Autocatalytic cores in the diluted regime: classification and properties*, Journal of Mathematical Biology (2026)](https://link.springer.com/article/10.1007/s00285-026-02357-7), §4.2.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf), result family 149 (2026). Statement locator: `Theorem 1.1, PDF page 2; Main theorem label thm:main, introduction.tex lines 43-60; epsilon_P bounds in equation eq:uniform-bounds.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The bounded-trajectory version is retained to separate extinction from the additional boundedness problem. Claims about complex-balanced global attraction do not settle general weak reversibility. The 2026 paper continues to identify persistence as a conjecture.
+**Statement comparison:** Uniform permanence holds for every finite weakly reversible mass-action network with fixed positive reaction rates and every positive initial state, with a classwise compact absorbing set contained in the strictly positive orthant. The eventual positive lower bound implies each AIM bounded global trajectory has positive liminf for every species; complex balance is not imposed. The theorem is stronger than the target because it also ensures global bounded positive solutions.
 
-Search topics checked on 2026-09-13: `weakly reversible persistence conjecture bounded trajectories proof counterexample 2026`. No later resolution of this exact statement was located; this is a literature check, not a certification that no proof exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-273) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/149.md). Family149 Lean docs concern the September boundedness/persistence article, giving initial-state-dependent all-time bounds rather than classwise uniform October permanence. This is nevertheless sufficient for AIM273. MassAction comparator main statement uses sorry; no local verification claimed. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/273-reaction-network-persistence.md).

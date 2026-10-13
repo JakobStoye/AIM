@@ -2,9 +2,9 @@
 
 **Area:** Monge–Ampère PDEs / transport on manifolds
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -25,8 +25,16 @@ Continuity prevents arbitrarily close source locations from being assigned dista
 1. G. De Philippis and A. Figalli, *The Monge–Ampère equation and its link to optimal transportation*, Bulletin of the American Mathematical Society 51 (2014), 527–580, §5.2, open problem (7). [Author manuscript](https://arxiv.org/abs/1310.6167).
 2. A. Figalli, L. Rifford and C. Villani, *Necessary and sufficient conditions for continuity of optimal transport maps on Riemannian manifolds*, Tohoku Mathematical Journal 63 (2011), 855–876, introduction and continuity criteria. [Journal full text](https://www.jstage.jst.go.jp/article/tmj/63/4/63_855/_pdf/-char/ja).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf), result family 360 (2026). Statement locator: `build/sections/introduction.tex, thm:main`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The cited sources establish necessity and sufficiency in dimension two and pose higher-dimensional sufficiency. The 2026 paper “A quantitative stability result for regularity of optimal transport on compact manifolds” (DOI 10.1007/s00526-026-03367-5, Theorem 1) requires smooth densities close in Wasserstein distance, so does not resolve this global assertion. Searches through 22 September 2026 for MTW, convex injectivity domains and higher-dimensional continuity found no resolution.
+**Statement comparison:** Same squared-distance cost and weak MTW formula. The theorem gives an almost-everywhere unique optimal map with a global bi-Holder homeomorphic representative for measurable probability densities between fixed positive finite bounds on compact connected smooth manifolds. It does not require convex injectivity domains in advance, so covers the target assumptions.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-401) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/360.md). docs/360 covers full bi-Holder transport via BiholderTransport. Supporting finite-family geometric statements have narrower scope. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/401-mtw-convex-domains-transport-continuity.md).

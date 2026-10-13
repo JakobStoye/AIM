@@ -2,9 +2,9 @@
 
 **Area:** Network design and combinatorial optimization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -33,18 +33,16 @@ Thin trees also support rounding arguments for asymmetric routing. An existence 
 4. Mohit Daga, *Thin Trees via k-Respecting Cut Identities*, [arXiv:2510.12050v1](https://arxiv.org/html/2510.12050v1), October 14, 2025, preprint, §1.3 and Theorems 2.1–2.5.
 5. Alireza Haqi and Shayan Oveis Gharan, *On Thin Perfect Matchings up to Polylogarithmic Factors*, [arXiv:2606.01330v2](https://arxiv.org/html/2606.01330v2), revised July 1, 2026, preprint, Lemma 1.2 and Theorems 1.3–1.4.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf), result family 174 (2026). Statement locator: `Theorem 1.1, PDF page 1; Main theorem label thm:main, source/sections/introduction.tex lines 17-28.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Open in cited literature; no later resolution located as of 2026-09-18. The July 2026 publication [1] explicitly retains the strong conjecture. The general bound in [2, Corollary 1.8] has a numerator polynomial in $`\log\log |V|`$, so it does not give the required absolute constant. Spectral thinness imposes inequalities for all real vectors and is stronger than the cut condition here; spectral counterexamples do not refute this statement.
+**Statement comparison:** The theorem quantifies one absolute C>0 over every integer k>=1 and every finite loopless k-edge-connected multigraph with >=2 vertices, counts parallel edges separately, and selects one spanning tree satisfying every nontrivial cut inequality C/k simultaneously. The efficient companion exceeds AIM's existence requirement.
 
-Theorem 1 of [1] finds one tree crossing each cut of size less than $`41k/40`$ in at most $`88`$ edges. Its Theorem 2 gives $`66/k`$ thinness for a prescribed laminar family, whose shores are pairwise nested or disjoint. Neither result controls all cuts simultaneously. The example in §1.1 defeats a particular laminar-selection strategy, not the conjecture.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-323) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The certification results [4] restrict the cuts under examination or allow a different tree for each cut. The verification-hardness claim [3] concerns a supplied tree and does not disprove existence. The matching counterexample [5] uses a fractional perfect-matching model with degree-one constraints, a different feasible class from connected spanning trees.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/174.md). StrongThinTree comparator models edges by separate labels and states exactly the all-cut universal-constant result; declaration uses sorry. AlgorithmicThinTrees is additional. No local verification claimed. No AIM Lean-verified status is asserted.
 
-The [evidence record](../research/expansion-2026-09/candidates/strong-thin-tree.json) documents source versions, exact resolution searches, scope comparisons and duplicate checks. The research review examines full relevant statements and model assumptions; it does not certify the cited technical proofs.
-
-The September 17, 2026 check covered named and mathematical formulations, author pages, current and preceding years, unrestricted resolution searches, versions, corrections and withdrawals. A35 was a separated adversarial self-pass by the same assistant. The forthcoming beyond-laminar title was rechecked on September 18; no manuscript or theorem was linked.
-
-A publication refresh on September 18, 2026 rechecked status and upstream duplicates; see the [batch 4 audit](../research/expansion-2026-09/batch-04-review.md). No matching later resolution was located.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/323-strong-thin-tree.md).

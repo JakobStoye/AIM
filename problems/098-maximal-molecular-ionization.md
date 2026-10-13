@@ -2,9 +2,9 @@
 
 **Area:** Many-electron quantum mechanics
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -32,10 +32,18 @@ The inequality would give a mathematically uniform limit on how many additional 
 2. E. H. Lieb, [Bound on the maximum negative ionization of atoms and molecules](https://doi.org/10.1103/PhysRevA.29.3018), Physical Review A 29 (1984), main bound: a general estimate proportional to total nuclear charge.
 3. J. P. Solovej, [Mathematics of complex atoms and the periodic table](https://www.math.uci.edu/node/38671), research colloquium abstract (15 May 2026): explicitly distinguishes the open full many-body problem from Hartree–Fock theory.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf), result family 263 (2026). Statement locator: `build/sections/01-introduction.tex, thm:main and following threshold caveat`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Known cases:** The stated excess-charge bound holds for strictly bound molecular sectors: $`E_N<E_{N-1}`$ implies $`N\le Z+CM`$ with a universal constant.
 
-Lewin’s 2025 Open Problem 1 asks for this universal bound. Lieb’s general estimate $`N_{\max}<2Z+M`$ leaves a charge-dependent excess. Hartree–Fock bounds and large-$`Z`$ asymptotics do not prove a uniform bound for the full fermionic Hamiltonian; the May 2026 Solovej abstract reiterates that distinction.
+**Remaining target:** Control ground-state eigenvalues at the ionization threshold as well. The original definition of maximal charge includes such threshold eigenvalues.
 
-**Search audit:** “maximal ionization atoms molecules universal constant conjecture 2025 2026”; “ionization conjecture 2026 proof”. Searches included proof, counterexample, and 2025–2026 updates. No later resolution of the stated problem was located; this is a literature review, not a proof of openness.
+**Statement comparison:** Same full fermionic Coulomb Hamiltonian with kinetic term $`-\Delta/2`$ and two spin states. The theorem proves $`N\le Z+CM`$ under strict binding $`E_N<E_{N-1}`$, for real charges at least one and all distinct positions. It expressly leaves threshold eigenstates outside its assertion, while the AIM Nmax includes them.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-098) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/263.md). docs/263 formalizes generalized large-ionization asymptotics and radii, not this strict-binding excess-charge bound. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/098-maximal-molecular-ionization.md).

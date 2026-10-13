@@ -1,0 +1,359 @@
+{
+  "review_date": "2026-10-13",
+  "aim_base": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "final_validation_input_tree": "09ac4cb82946c5f18445fd055da1ea94eadf9ed5",
+  "complete_matches": 56,
+  "partial_matches": 10,
+  "negative_complete_matches": 7,
+  "counts": {
+    "open_targets": 582,
+    "solved_entries": 83,
+    "lean_verified": 0
+  },
+  "catalogue_regression": {
+    "tests": 58,
+    "seconds": 558.738,
+    "result": "passed",
+    "log": "catalogue-regression.log",
+    "scope": "Clean snapshot of the new cross-reference and generator; the later Sidorenko outcome correction and presentation/evidence refinements passed final catalogue validation separately.",
+    "generator_sha256": "49d9dce07ab7486a7e35d886e16ff6252b80219694b08d7e62ab85273b6ee9d2",
+    "test_suite_sha256": "e88b49b1b4ae3ab365426aed386557a59ef85d1d1fe814e20f02df0bec818639"
+  },
+  "checked_pages": [
+    {
+      "id": "028",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "086",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "087",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "092",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "208",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "209",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "210",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "234",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "293",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "301",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "321",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "341",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "447",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "448",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "450",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "487",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "491",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "543",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "064",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "065",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "088",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "090",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "164",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "169",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "171",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "176",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "178",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "179",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "273",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "323",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "585",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "142",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "337",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "346",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "038",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "015",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "016",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "098",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "099",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "199",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "031",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "196",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "194",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "206",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "590",
+      "status": "Partially resolved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "205",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "207",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "037",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "034",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "023",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "127",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "011",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "391",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "401",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "073",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "227",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "046",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "047",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "048",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "157",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "153",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "003",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "350",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "050",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "089",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    },
+    {
+      "id": "419",
+      "status": "Solved",
+      "statement_and_application_preserved": true
+    }
+  ],
+  "problem_files_removed_or_renamed": [],
+  "new_openai_pdfs_or_source_files_staged": [],
+  "numeric_collections_distinguished": true,
+  "preexisting_untracked_drafts_preserved": true
+}

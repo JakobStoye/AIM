@@ -4,8 +4,11 @@
     "title": "A uniform gap for the spin-one Heisenberg chain",
     "area": "Quantum magnetism",
     "file": "problems/194-haldane-gap.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "195",
@@ -20,8 +23,11 @@
     "title": "Bose condensation at fixed dilute density",
     "area": "Ultracold quantum gases",
     "file": "problems/196-thermodynamic-bose-condensation.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "197",
@@ -44,8 +50,11 @@
     "title": "An area law for general gapped two-dimensional spin systems",
     "area": "Quantum many-body theory; entanglement",
     "file": "problems/199-two-dimensional-area-law.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "200",
@@ -92,48 +101,66 @@
     "title": "The entropy photon-number inequality",
     "area": "Quantum optics; communication limits",
     "file": "problems/205-entropy-photon-number.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-entropy-photon-number-inequality-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "206",
     "title": "Composing two PPT channels destroys all entanglement",
     "area": "Quantum information; repeater channels",
     "file": "problems/206-ppt-squared.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "207",
     "title": "Can entangled codewords improve amplitude-damping classical capacity?",
     "area": "Quantum communication; dissipative qubits",
     "file": "problems/207-amplitude-damping-additivity.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "208",
     "title": "Sharp Fourier extension from the sphere in three dimensions",
     "area": "Harmonic analysis; monochromatic wave concentration",
     "file": "problems/208-sphere-fourier-restriction.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "209",
     "title": "Sharp Bochner–Riesz summability in three dimensions",
     "area": "Harmonic analysis; frequency filtering",
     "file": "problems/209-bochner-riesz-three-dimensions.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "210",
     "title": "Sharp local smoothing for the three-dimensional wave equation",
     "area": "Wave propagation; dispersive estimates",
     "file": "problems/210-euclidean-wave-local-smoothing.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "211",

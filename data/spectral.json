@@ -20,8 +20,11 @@
     "title": "Hot spots on convex planar domains",
     "area": "Heat flow and Neumann eigenfunctions",
     "file": "problems/003-planar-convex-hot-spots.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "004",
@@ -84,8 +87,11 @@
     "title": "Yau's sharp upper bound for nodal volume",
     "area": "Eigenfunction geometry",
     "file": "problems/011-yau-nodal-upper-bound.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "012",
@@ -116,8 +122,11 @@
     "title": "Extended states in the three-dimensional Anderson model",
     "area": "Disordered quantum transport",
     "file": "problems/015-anderson-extended-states.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "016",
@@ -125,7 +134,7 @@
     "area": "Disordered quantum transport",
     "file": "problems/016-anderson-planar-localization.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-13"
   },
   {
     "id": "017",

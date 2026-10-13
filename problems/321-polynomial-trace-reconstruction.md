@@ -2,9 +2,9 @@
 
 **Area:** Statistical inference and molecular data retrieval
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -36,16 +36,16 @@ Repeated molecular reads can lose symbols without identifying their original pos
 6. Xi Chen, Anindya De, Chin Ho Lee, Rocco A. Servedio and Sandip Sinha, *Polynomial-time trace reconstruction in the smoothed complexity model*, [arXiv:2008.12386v1](https://arxiv.org/pdf/2008.12386v1), August 27, 2020, author manuscript; §1.2 Theorem 1. The source string is randomly perturbed before traces are generated.
 7. Xi Chen, Anindya De, Chin Ho Lee and Rocco A. Servedio, *Trace Reconstruction from Local Statistical Queries*, APPROX/RANDOM 2024, LIPIcs 317, 52:1–52:24, [published paper](https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2024.52), §2.1 and §3 Theorem 6. Its lower bound restricts access to local statistical queries.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf), result family 122 (2026). Statement locator: `Theorem thm:main and thm:tv`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete counterexample to the original target.
 
-The September 17, 2026 investigation covered worst-case and polynomial trace reconstruction, deletion-sample wording, original and later authors, recent improvements, proof and counterexample claims, corrections and version histories. Aamand–Liu–Narayanan and Sima–Bruck explicitly retain the polynomial-sample question. The July 2026 Burudgunte–Valiant–Wang theorem now gives a quasipolynomial upper bound, $`\exp((\log n)^{O(1)})`$ for each fixed $`q`$. Its full theorem and final reduction from distinguishing two strings to reconstruction were read. It does not establish polynomial sample complexity; the paper also distinguishes its sample guarantee from the running time of full reconstruction.
+**Statement comparison:** Definitions match known length n, fixed known deletion probability q in (0,1), independent complete deletion traces (including length), randomized decoder common to all binary strings, unrestricted computation and exact recovery. Set success s=2/3. For each fixed q, n^(c*log(q^3*log n)) eventually exceeds Cq*n^kq for every constants Cq,kq. Hence the requested polynomial-sample assertion is false at every fixed channel.
 
-Chase's lower bound uses pairs of length $`n=4k+3`$ requiring $`\Omega_q(n^{3/2}/\log^7 n)`$ traces at constant success probability. This does not rule out a larger polynomial upper bound. The current gap is therefore between polynomial lower bounds and quasipolynomial upper bounds. Older surveys' exponential upper bounds have been superseded.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-321) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The polynomial algorithms in the cited smoothed and mildly separated models impose additional assumptions on the source string. Sima–Bruck require a bounded edit-distance promise relative to a known reference. A separate Chen–De–Lee–Servedio–Sinha low-deletion theorem allows a deletion rate tending to zero with $`n`$, not an arbitrary fixed positive rate. Exponential lower bounds for mean-based or local-statistical-query methods restrict the decoder and do not establish an information-theoretic obstruction for general traces. These full-scope comparisons and access limitations are in the [evidence record](../research/expansion-2026-09/candidates/polynomial-trace-reconstruction.json).
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/122.md). Actual superpolynomial_sample_complexity and quantitative_sample_lower_bound agree with the unrestricted complete-trace target; inspected estimator definitions include decoder randomization. No successful local replay/axiom log. No AIM Lean-verified status is asserted.
 
-Unlike [entry 138](137-binary-deletion-channel-capacity.md), this question allows repeated independent channel outputs and requires recovery of every input string instead of optimizing a codebook's transmission rate. [Entries 278](277-binary-lcs-constant.md) and [287](286-binary-lcs-linear-variance.md) study alignment statistics of two independent random strings, rather than observations of one unknown source. No independent mathematical proof certification is claimed.
-
-A publication refresh on September 18, 2026 rechecked status and upstream duplicates; see the [batch 4 audit](../research/expansion-2026-09/batch-04-review.md). No matching later resolution was located.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/321-polynomial-trace-reconstruction.md).

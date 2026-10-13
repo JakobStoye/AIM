@@ -2,9 +2,9 @@
 
 **Area:** Random media
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -25,10 +25,16 @@ The question asks whether the onset of macroscopic connectivity in a simple mode
 - [Tom Hutchcroft, *Power-law bounds for critical long-range percolation below the upper-critical dimension* (Probability Theory and Related Fields, 2021), introduction and discussion of nearest-neighbor percolation on Z³](https://doi.org/10.1007/s00440-021-01043-7).
 - [Hugo Duminil-Copin, Vladas Sidoravicius and Vincent Tassion, *Absence of infinite cluster for critical Bernoulli percolation on slabs* (2014 preprint), introduction](https://www.ihes.fr/~duminil/publi/2014criticalslab.pdf).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf), result family 213 (2026). Statement locator: `Theorem 1.1, PDF page 1; Introduction theorem label thm:main, introduction.tex lines 17-22.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The first source explicitly contrasts long-range continuity with the open nearest-neighbor problem, including Z³. Slab results and recent hierarchical or Gaussian-free-field percolation results have different graphs or laws. Targeted searches through 2026 found no resolution of nearest-neighbor Bernoulli percolation at p_c in Z³.
+**Statement comparison:** The theorem explicitly treats independent nearest-neighbor Bernoulli bond percolation on the ordinary cubic lattice Z^3 at its separately defined bond critical parameter. Almost surely no infinite cluster implies theta(p_c)=0. The additional site result is unnecessary for AIM coverage.
 
-Status-search topics (2026-09-08): `Critical percolation Z^3 open problem`; `critical percolation three dimensions open 2025 2026`; `critical percolation Z3 2026 open`. This is a literature search, not a proof that no solution exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-088) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/213.md). CriticalZ3 comparator defines the cubic nearest-neighbor bonds and product Bernoulli law and states all critical clusters finite. Main comparator declaration uses sorry; no local verification claimed. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/088-critical-percolation-three-dimensions.md).

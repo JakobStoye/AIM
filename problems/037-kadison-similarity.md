@@ -2,9 +2,9 @@
 
 **Area:** Operator representations and stability
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -26,10 +26,16 @@ The problem asks when a bounded operator representation can be put in adjoint-pr
 2. G. K. Eleftherakis and V. I. Paulsen, [Hyperreflexivity of Von Neumann Algebras and Similarity of Finitely Generated $`C^*`$-Algebras](https://doi.org/10.1007/s00020-026-02832-2), Integral Equations and Operator Theory (2026), preliminaries. Further equivalences.
 3. J. Peterson, [Open problems in operator algebras](https://www.math.uwaterloo.ca/~j37peter/problems.html), updated May 2026; Problem O.5.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/paper.pdf), result family 288 (2026). Statement locator: `build/sections/introduction.tex, thm:similarity`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Checked on **2026-09-08**. Both the March 2026 research paper and the May 2026 expert list retain the general question. The paper establishes conditional equivalences, not the universal similarity property. No subsequent complete solution was located.
+**Statement comparison:** Exactly arbitrary unital complex C*-algebras, arbitrary complex Hilbert spaces and bounded unital algebra homomorphisms, without complete-boundedness assumption. The manuscript uses S*pi*S^-1 rather than S^-1*pi*S; replacing S by its inverse reconciles the conventions.
 
-Searches included: `Kadison similarity problem 2026 open`; `Kadison similarity problem solved bounded homomorphism`; `hyperreflexivity finitely generated 2026`. This is a documented literature check, not a certification that no solution exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-037) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/288.md). docs/288 describes the full unrestricted similarity theorem via KadisonSimilarity. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/037-kadison-similarity.md).

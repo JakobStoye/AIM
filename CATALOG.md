@@ -2,29 +2,29 @@
 
 [Repository overview](README.md) · [Solved and claimed solutions](RESOLVED.md)
 
-**638 open targets**, grouped by subject with solved problems listed immediately below each open list. Open and Partial entries are counted once each; Solved and Lean verified entries count in the Solved column. Every linked page gives the precise statement, an application where one is identified or a note on its mathematical significance, references, known cases, and its own literature-review date. See the [status legend](README.md#problem-status) and the [resolution archive](RESOLVED.md).
+**582 open targets**, grouped by subject with solved problems listed immediately below each open list. Open and Partial entries are counted once each; Solved and Lean verified entries count in the Solved column. Every linked page gives the precise statement, an application where one is identified or a note on its mathematical significance, references, known cases, and its own literature-review date. See the [status legend](README.md#problem-status) and the [resolution archive](RESOLVED.md).
 
 ## Browse by subject
 
 | Subject group | Open targets | Solved |
 | --- | ---: | ---: |
-| [Spectral theory and spectral geometry](#spectral-theory-and-spectral-geometry) | [23](#spectral-open) | [2](#spectral-solved) |
-| [Operators, matrices and computation](#operators-matrices-and-computation) | [35](#operators-open) | [4](#operators-solved) |
-| [Inverse problems, control and dynamics](#inverse-problems-control-and-dynamics) | [28](#inverse-open) | [0](#inverse-solved) |
-| [PDEs, fluids and materials](#pdes-fluids-and-materials) | [31](#pdes-materials-open) | [1](#pdes-materials-solved) |
-| [Probability, statistics and learning](#probability-statistics-and-learning) | [42](#probability-statistics-open) | [4](#probability-statistics-solved) |
+| [Spectral theory and spectral geometry](#spectral-theory-and-spectral-geometry) | [20](#spectral-open) | [5](#spectral-solved) |
+| [Operators, matrices and computation](#operators-matrices-and-computation) | [27](#operators-open) | [12](#operators-solved) |
+| [Inverse problems, control and dynamics](#inverse-problems-control-and-dynamics) | [22](#inverse-open) | [6](#inverse-solved) |
+| [PDEs, fluids and materials](#pdes-fluids-and-materials) | [27](#pdes-materials-open) | [5](#pdes-materials-solved) |
+| [Probability, statistics and learning](#probability-statistics-and-learning) | [40](#probability-statistics-open) | [6](#probability-statistics-solved) |
 | [Numerical analysis and scientific computing](#numerical-analysis-and-scientific-computing) | [22](#numerical-analysis-open) | [7](#numerical-analysis-solved) |
-| [Geometry and topology](#geometry-and-topology) | [77](#geometry-topology-open) | [2](#geometry-topology-solved) |
-| [Combinatorics, optimization and information theory](#combinatorics-optimization-and-information-theory) | [26](#optimization-information-open) | [0](#optimization-information-solved) |
-| [Waves, quantum systems and spectral geometry](#waves-quantum-systems-and-spectral-geometry) | [32](#spectral2-open) | [0](#spectral2-solved) |
-| [Imaging, control, geometry and dynamics](#imaging-control-geometry-and-dynamics) | [30](#inverse2-open) | [0](#inverse2-solved) |
-| [Fluids, kinetic theory and continuum mechanics](#fluids-kinetic-theory-and-continuum-mechanics) | [48](#continuum2-open) | [0](#continuum2-solved) |
-| [Stochastic growth, populations and statistical mechanics](#stochastic-growth-populations-and-statistical-mechanics) | [30](#stochastic2-open) | [1](#stochastic2-solved) |
-| [Many-body physics, quantum information and wave analysis](#many-body-physics-quantum-information-and-wave-analysis) | [32](#spectral3-open) | [1](#spectral3-solved) |
-| [Nonlinear waves, fluids and kinetic equations](#nonlinear-waves-fluids-and-kinetic-equations) | [31](#waves-fluids-kinetics-open) | [2](#waves-fluids-kinetics-solved) |
-| [Diffusion, materials and variational problems](#diffusion-materials-and-variational-problems) | [57](#diffusion-materials-open) | [2](#diffusion-materials-solved) |
-| [Applied geometry, control and information](#applied-geometry-control-and-information) | [48](#inverse3-open) | [1](#inverse3-solved) |
-| [Stochastic dynamics, reaction networks and applied optimization](#stochastic-dynamics-reaction-networks-and-applied-optimization) | [46](#stochastic3-open) | [0](#stochastic3-solved) |
+| [Geometry and topology](#geometry-and-topology) | [75](#geometry-topology-open) | [4](#geometry-topology-solved) |
+| [Combinatorics, optimization and information theory](#combinatorics-optimization-and-information-theory) | [24](#optimization-information-open) | [2](#optimization-information-solved) |
+| [Waves, quantum systems and spectral geometry](#waves-quantum-systems-and-spectral-geometry) | [31](#spectral2-open) | [1](#spectral2-solved) |
+| [Imaging, control, geometry and dynamics](#imaging-control-geometry-and-dynamics) | [29](#inverse2-open) | [1](#inverse2-solved) |
+| [Fluids, kinetic theory and continuum mechanics](#fluids-kinetic-theory-and-continuum-mechanics) | [43](#continuum2-open) | [5](#continuum2-solved) |
+| [Stochastic growth, populations and statistical mechanics](#stochastic-growth-populations-and-statistical-mechanics) | [25](#stochastic2-open) | [6](#stochastic2-solved) |
+| [Many-body physics, quantum information and wave analysis](#many-body-physics-quantum-information-and-wave-analysis) | [23](#spectral3-open) | [10](#spectral3-solved) |
+| [Nonlinear waves, fluids and kinetic equations](#nonlinear-waves-fluids-and-kinetic-equations) | [30](#waves-fluids-kinetics-open) | [3](#waves-fluids-kinetics-solved) |
+| [Diffusion, materials and variational problems](#diffusion-materials-and-variational-problems) | [55](#diffusion-materials-open) | [4](#diffusion-materials-solved) |
+| [Applied geometry, control and information](#applied-geometry-control-and-information) | [47](#inverse3-open) | [2](#inverse3-solved) |
+| [Stochastic dynamics, reaction networks and applied optimization](#stochastic-dynamics-reaction-networks-and-applied-optimization) | [42](#stochastic3-open) | [4](#stochastic3-solved) |
 
 [Publication batches and review dates](#publication-batches)
 
@@ -38,7 +38,6 @@
 | --- | --- | --- | --- |
 | 001 | [Pólya's eigenvalue inequalities](problems/001-polya-eigenvalue-bound.md) | 🟡 PARTIAL | Spectral geometry |
 | 002 | [Ivrii's measure-zero conjecture for billiards](problems/002-ivrii-periodic-billiards.md) | 🔵 OPEN | Spectral asymptotics and ray dynamics |
-| 003 | [Hot spots on convex planar domains](problems/003-planar-convex-hot-spots.md) | 🔵 OPEN | Heat flow and Neumann eigenfunctions |
 | 004 | [Pólya–Szegő polygonal Faber–Krahn conjecture](problems/004-polygonal-faber-krahn.md) | 🔵 OPEN | Spectral shape optimization |
 | 005 | [Does the disk minimize the third Dirichlet eigenvalue?](problems/005-third-dirichlet-disk.md) | 🔵 OPEN | Spectral shape optimization |
 | 006 | [Rayleigh's clamped-plate conjecture in higher dimensions](problems/006-rayleigh-clamped-plate.md) | 🔵 OPEN | Elasticity and fourth-order spectra |
@@ -46,11 +45,9 @@
 | 008 | [The sharp ratio of the first two buckling eigenvalues](problems/008-buckling-eigenvalue-ratio.md) | 🔵 OPEN | Elastic stability and eigenvalue inequalities |
 | 009 | [The spectral honeycomb conjecture](problems/009-spectral-honeycomb.md) | 🔵 OPEN | Spectral partitions |
 | 010 | [The Mercedes-star partition of a disk](problems/010-mercedes-disk-partition.md) | 🔵 OPEN | Spectral partitions |
-| 011 | [Yau's sharp upper bound for nodal volume](problems/011-yau-nodal-upper-bound.md) | 🔵 OPEN | Eigenfunction geometry |
 | 012 | [The sharp planar Pleijel constant](problems/012-sharp-pleijel-constant.md) | 🔵 OPEN | Nodal domains and spectral complexity |
 | 013 | [Quantum unique ergodicity in negative curvature](problems/013-quantum-unique-ergodicity.md) | 🔵 OPEN | Quantum chaos |
 | 014 | [Berry's random-wave conjecture as a local limit](problems/014-berry-random-waves.md) | 🔵 OPEN | Quantum chaos and random waves |
-| 015 | [Extended states in the three-dimensional Anderson model](problems/015-anderson-extended-states.md) | 🔵 OPEN | Disordered quantum transport |
 | 016 | [Localization at every disorder strength in two dimensions](problems/016-anderson-planar-localization.md) | 🟡 PARTIAL | Disordered quantum transport |
 | 017 | [A fractal Weyl lower bound for obstacle resonances](problems/017-fractal-weyl-resonances.md) | 🔵 OPEN | Scattering and open wave systems |
 | 018 | [The three-dimensional Lieb–Thirring constant](problems/018-lieb-thirring-three-dimensional.md) | 🔵 OPEN | Quantum mechanics and spectral inequalities |
@@ -66,6 +63,9 @@
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 003 | [Hot spots on convex planar domains](problems/003-planar-convex-hot-spots.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 011 | [Yau's sharp upper bound for nodal volume](problems/011-yau-nodal-upper-bound.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 015 | [Extended states in the three-dimensional Anderson model](problems/015-anderson-extended-states.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 652 | [The Robin fundamental gap conjecture](research/resolved/652-robin-fundamental-gap.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/021-robin-gap-counterexample/robin_gap_021.pdf) | [Review](research/solution_reviews/2026-10-02/021-review.md) |
 | 653 | [Exponential interior decay for smooth Steklov domains](research/resolved/653-steklov-smooth-interior-decay.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/siavash-sadeghi-steklov-024/steklov_counterexample.pdf) | [Review](research/solution_reviews/2026-10-02/024-review.md) |
 
@@ -77,22 +77,17 @@
 
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
-| 023 | [The complete Crouzeix conjecture](problems/023-complete-crouzeix.md) | 🟡 PARTIAL | Operator theory and numerical linear algebra |
 | 024 | [Lieb’s permanental dominance conjecture](problems/024-lieb-permanental-dominance.md) | 🔵 OPEN | Matrix analysis and quantum information |
 | 025 | [Chollet’s Hadamard-product permanent inequality](problems/025-chollet-permanent.md) | 🔵 OPEN | Matrix analysis and bosonic computation |
 | 026 | [Hadamard matrices in every admissible order](problems/026-hadamard-all-orders.md) | 🔵 OPEN | Matrix design, coding and experimental design |
 | 027 | [The exact real Grothendieck constant](problems/027-real-grothendieck-constant.md) | 🔵 OPEN | Operator norms and semidefinite optimization |
-| 028 | [Is the matrix-multiplication exponent two?](problems/028-matrix-multiplication-exponent.md) | 🔵 OPEN | Numerical linear algebra and algebraic complexity |
+| 028 | [Is the matrix-multiplication exponent two?](problems/028-matrix-multiplication-exponent.md) | 🟡 PARTIAL | Numerical linear algebra and algebraic complexity |
 | 029 | [Explicit matrices with Valiant-scale rigidity](problems/029-explicit-rigid-matrices.md) | 🔵 OPEN | Matrix computation and complexity lower bounds |
 | 030 | [SIC measurements in every finite dimension](problems/030-sic-povms.md) | 🔵 OPEN | Quantum measurement and frame theory |
-| 031 | [The maximum number of mutually unbiased bases in dimension six](problems/031-mub-dimension-six.md) | 🔵 OPEN | Quantum information and matrix design |
 | 032 | [Existence of NPT bound entanglement](problems/032-npt-bound-entanglement.md) | 🔵 OPEN | Quantum information and positive operators |
 | 033 | [Exact quantum capacity of the qubit depolarizing channel](problems/033-depolarizing-quantum-capacity.md) | 🔵 OPEN | Quantum communication and operator optimization |
-| 034 | [Uniform spatial stability of von Neumann algebras](problems/034-kadison-kastler.md) | 🔵 OPEN | Operator perturbation theory |
 | 035 | [Are the standard quantum entropy inequalities complete?](problems/035-quantum-entropy-cone.md) | 🔵 OPEN | Quantum information and convex optimization |
 | 036 | [Arveson–Douglas essential normality for homogeneous ideals](problems/036-arveson-douglas.md) | 🔵 OPEN | Multivariable operator theory |
-| 037 | [Kadison’s similarity problem](problems/037-kadison-similarity.md) | 🔵 OPEN | Operator representations and stability |
-| 038 | [Dixmier’s unitarizability problem for countable groups](problems/038-dixmier-unitarizability.md) | 🔵 OPEN | Group representations and operator theory |
 | 039 | [Deterministic sensing matrices with optimal RIP measurement count](problems/039-deterministic-rip.md) | 🔵 OPEN | Compressed sensing and matrix construction |
 | 040 | [Uniformly effective algebraic multigrid for diagonally dominant systems](problems/040-universal-algebraic-multigrid.md) | 🔵 OPEN | Numerical PDE solvers and preconditioning |
 | 041 | [Deterministic pseudospectral shattering in nearly cubic time](problems/041-deterministic-pseudospectral-shattering.md) | 🔵 OPEN | Eigenvalue computation and nonnormal operators |
@@ -107,10 +102,7 @@
 | 426 | [The sharp vector Riesz inequality for multidimensional potential fields](problems/426-vector-riesz-sharp-norm.md) | 🔵 OPEN | Harmonic analysis and elliptic potential fields |
 | 431 | [Analytic boundary diffusion on continuous functions for Lipschitz domains](problems/431-dtn-analyticity-continuous-boundary.md) | 🔵 OPEN | Elliptic PDEs and analytic semigroups |
 | 446 | [The sharp Beurling–Ahlfors bound for planar elliptic systems](problems/446-beurling-ahlfors-sharp-norm.md) | 🔵 OPEN | Planar elliptic PDEs and singular integral operators |
-| 447 | [A uniform L3 estimate for the triangular Hilbert transform](problems/447-triangular-hilbert-transform-l3.md) | 🔵 OPEN | Multilinear harmonic analysis and coupled signal interactions |
-| 448 | [Almost-everywhere Fourier reconstruction of L log L signals](problems/448-fourier-l-log-l-pointwise-convergence.md) | 🔵 OPEN | Fourier analysis and endpoint signal reconstruction |
 | 449 | [Hexagonal optimality for Gaussian time-frequency sampling](problems/449-gaussian-gabor-hexagonal-optimality.md) | 🟡 PARTIAL | Applied harmonic analysis and communication channels |
-| 450 | [Stein’s Hilbert-transform bound along Lipschitz directions](problems/450-stein-lipschitz-direction-hilbert-bound.md) | 🔵 OPEN | Directional singular integrals and variable-direction propagation |
 | 490 | [Deterministic parallel perfect matching in general graphs](problems/490-general-graph-perfect-matching-nc.md) | 🟡 PARTIAL | Parallel algorithms and combinatorial optimization |
 
 <a name="operators-solved"></a>
@@ -119,8 +111,16 @@
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 023 | [The complete Crouzeix conjecture](problems/023-complete-crouzeix.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 031 | [The maximum number of mutually unbiased bases in dimension six](problems/031-mub-dimension-six.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 034 | [Uniform spatial stability of von Neumann algebras](problems/034-kadison-kastler.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 037 | [Kadison’s similarity problem](problems/037-kadison-similarity.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 038 | [Dixmier’s unitarizability problem for countable groups](problems/038-dixmier-unitarizability.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 043 | [A nearly cubic Schur algorithm using only linear precision](problems/043-linear-precision-schur.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/e375a6fc0a12df52c4f5a38b53df78b837e1c390/eigenvalues-and-inverse-problems/IE-08/solution.md) | [Review](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/e375a6fc0a12df52c4f5a38b53df78b837e1c390/references/colbrook-additional-2026-09-11/verification/reviews/IE-08-review.md) |
 | 045 | [Improve the worst-case tensor-train approximation factor](problems/045-tensor-train-approximation.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/e375a6fc0a12df52c4f5a38b53df78b837e1c390/references/colbrook-recovered-tensors-2026-09-11/manuscripts/TR-04.pdf) | [Review](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/e375a6fc0a12df52c4f5a38b53df78b837e1c390/references/colbrook-recovered-tensors-2026-09-11/verification/reviews/TR-04-review.md) |
+| 447 | [A uniform L3 estimate for the triangular Hilbert transform](problems/447-triangular-hilbert-transform-l3.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 448 | [Almost-everywhere Fourier reconstruction of L log L signals](problems/448-fourier-l-log-l-pointwise-convergence.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 450 | [Stein’s Hilbert-transform bound along Lipschitz directions](problems/450-stein-lipschitz-direction-hilbert-bound.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 656 | [Poisson kernel bounds for elliptic boundary diffusion on Lipschitz domains](research/resolved/656-dtn-poisson-bounds-lipschitz.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/435-corner-poisson-counterexample/PROOF.md) | [Review](research/solution_reviews/2026-10-02/435-review.md) |
 | 657 | [Finite-density time sampling of an infinite observation window](research/resolved/657-infinite-time-dynamical-frame-discretization.md) | ✅ SOLVED | Affirmative proof | [Proof](research/solutions/siavash-sadeghi-457-558/aim_457_uniform_sampling.pdf) | [Review](research/solution_reviews/2026-10-02/457-review.md) |
 
@@ -132,11 +132,7 @@
 
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
-| 046 | [Calderón uniqueness for bounded measurable conductivities](problems/046-rough-conductivity-calderon.md) | 🟡 PARTIAL | Inverse problems / electrical impedance tomography |
-| 047 | [Smooth anisotropic Calderón uniqueness](problems/047-smooth-anisotropic-calderon.md) | 🟡 PARTIAL | Inverse problems / anisotropic imaging |
-| 048 | [Calderón uniqueness from an arbitrary local boundary patch](problems/048-arbitrary-local-calderon-data.md) | 🔵 OPEN | Inverse problems / partial boundary data |
 | 049 | [Global conductivity uniqueness for the p-Laplacian in higher dimensions](problems/049-nonlinear-p-calderon.md) | 🟡 PARTIAL | Nonlinear inverse problems / electrical materials |
-| 050 | [Recover both Lamé moduli from static boundary measurements](problems/050-static-lame-uniqueness.md) | 🔵 OPEN | Inverse elasticity / nondestructive testing |
 | 051 | [Recover a potential on a general known Riemannian manifold](problems/051-potential-on-general-manifold.md) | 🔵 OPEN | Inverse boundary problems / anisotropic wave media |
 | 052 | [Global uniqueness from inverse backscattering data](problems/052-inverse-backscattering.md) | 🔵 OPEN | Inverse scattering / monostatic imaging |
 | 053 | [Recover an arbitrary sound speed from one incident direction](problems/053-fixed-angle-sound-speed.md) | 🔵 OPEN | Inverse scattering / acoustic tomography |
@@ -150,8 +146,6 @@
 | 061 | [Invertibility of the Pestov–Uhlmann reconstruction operator](problems/061-pestov-uhlmann-fredholm-invertibility.md) | 🟡 PARTIAL | Integral geometry and computational tomography |
 | 062 | [Injectivity with attenuation of finite angular degree](problems/062-finite-angular-attenuation.md) | 🟡 PARTIAL | Attenuated tomography |
 | 063 | [Characterizing realizable geodesic scattering data](problems/063-range-of-geodesic-scattering.md) | 🔵 OPEN | Geometric inverse problems and data consistency |
-| 064 | [Global Birkhoff billiard integrability conjecture](problems/064-birkhoff-billiard-integrability.md) | 🔵 OPEN | Hamiltonian dynamics and ray optics |
-| 065 | [Positive metric entropy for a standard map](problems/065-standard-map-metric-entropy.md) | 🔵 OPEN | Hamiltonian chaos and transport |
 | 066 | [Small-time global control of a slightly superlinear heat equation](problems/066-small-time-superlinear-heat-control.md) | 🟡 PARTIAL | Nonlinear PDE control |
 | 067 | [Exact uniform control time near a viscous Burgers shock](problems/067-burgers-shock-uniform-control-time.md) | 🔵 OPEN | Singular limits and control |
 | 068 | [Unique continuation for the higher-dimensional p-Laplace equation](problems/068-p-harmonic-unique-continuation.md) | 🔵 OPEN | Nonlinear potential theory and inverse problems |
@@ -165,7 +159,14 @@
 
 ### Solved problems
 
-No solved problems are currently recorded in this subject.
+| ID | Problem | Status | Outcome | Proof | Review |
+| --- | --- | --- | --- | --- | --- |
+| 046 | [Calderón uniqueness for bounded measurable conductivities](problems/046-rough-conductivity-calderon.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 047 | [Smooth anisotropic Calderón uniqueness](problems/047-smooth-anisotropic-calderon.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 048 | [Calderón uniqueness from an arbitrary local boundary patch](problems/048-arbitrary-local-calderon-data.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 050 | [Recover both Lamé moduli from static boundary measurements](problems/050-static-lame-uniqueness.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 064 | [Global Birkhoff billiard integrability conjecture](problems/064-birkhoff-billiard-integrability.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 065 | [Positive metric entropy for a standard map](problems/065-standard-map-metric-entropy.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 
 ## PDEs, fluids and materials
 
@@ -177,7 +178,6 @@ No solved problems are currently recorded in this subject.
 | --- | --- | --- | --- |
 | 071 | [Global regularity of the three-dimensional Navier–Stokes equations](problems/071-navier-stokes-global-regularity.md) | 🔵 OPEN | Fluid dynamics |
 | 072 | [Global regularity for supercritical dissipative surface quasi-geostrophic flow](problems/072-supercritical-sqg.md) | 🔵 OPEN | Geophysical fluid dynamics |
-| 073 | [Large-data global classical solutions of relativistic Vlasov–Maxwell](problems/073-vlasov-maxwell-global-classical.md) | 🔵 OPEN | Kinetic theory and plasma physics |
 | 074 | [Large-data global smoothness for the spatially inhomogeneous Boltzmann equation](problems/074-inhomogeneous-boltzmann-regularity.md) | 🔵 OPEN | Kinetic theory |
 | 075 | [The no-slip inviscid limit in two dimensions](problems/075-no-slip-inviscid-limit.md) | 🔵 OPEN | Fluid dynamics and boundary layers |
 | 076 | [Bressan's logarithmic lower bound on the cost of mixing](problems/076-bressan-mixing-cost.md) | 🔵 OPEN | Transport and mixing |
@@ -190,9 +190,6 @@ No solved problems are currently recorded in this subject.
 | 083 | [The bulk ground-state energy of the planar Lennard–Jones system](problems/083-lennard-jones-planar-crystallization.md) | 🔵 OPEN | Atomistic materials |
 | 084 | [The three-dimensional lattice-periodic Kelvin problem](problems/084-kelvin-lattice-foam.md) | 🔵 OPEN | Foams and geometric optimization |
 | 085 | [The optimal three-dimensional quadratic quantization constant](problems/085-bcc-quantization.md) | 🔵 OPEN | Quantization and mesh generation |
-| 087 | [Gaussian-energy optimality of the triangular lattice among periodic configurations](problems/087-triangular-universal-optimality.md) | 🟡 PARTIAL | Crystallization and energy minimization |
-| 089 | [One-dimensionality of monotone Allen–Cahn fronts in dimension five](problems/089-de-giorgi-dimension-five.md) | 🔵 OPEN | Phase transitions |
-| 419 | [Continuous gradients for three-dimensional infinity-harmonic functions](problems/419-infinity-harmonic-c1-three-dimensions.md) | 🔵 OPEN | Degenerate elliptic PDEs and supremal variational problems |
 | 420 | [Sharp gradient regularity for higher-dimensional p-Poisson equations](problems/420-sharp-p-poisson-gradient-regularity.md) | 🔵 OPEN | Nonlinear elliptic PDEs and nonlinear diffusion |
 | 427 | [Strong comparison for ordered p-harmonic fields](problems/427-p-harmonic-strong-comparison.md) | 🔵 OPEN | Nonlinear elliptic PDEs and comparison principles |
 | 433 | [A nonlinear Weyl lemma at the minimal p-harmonic integrability threshold](problems/433-very-weak-p-harmonic-energy-regularity.md) | 🔵 OPEN | Degenerate elliptic PDEs and nonlinear potential theory |
@@ -213,6 +210,10 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 073 | [Large-data global classical solutions of relativistic Vlasov–Maxwell](problems/073-vlasov-maxwell-global-classical.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 087 | [Gaussian-energy optimality of the triangular lattice among periodic configurations](problems/087-triangular-universal-optimality.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 089 | [One-dimensionality of monotone Allen–Cahn fronts in dimension five](problems/089-de-giorgi-dimension-five.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 419 | [Continuous gradients for three-dimensional infinity-harmonic functions](problems/419-infinity-harmonic-c1-three-dimensions.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 665 | [Smooth-gradient approximation of finite-Fisher-information scores](research/resolved/665-fisher-score-gradient-closure.md) | ✅ SOLVED | Affirmative proof | [Proof](research/solutions/618-fisher-score/PROOF.md) | [Review](research/solution_reviews/2026-10-02/618-review.md) |
 
 ## Probability, statistics and learning
@@ -223,10 +224,8 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
-| 088 | [Absence of an infinite cluster at criticality in three-dimensional percolation](problems/088-critical-percolation-three-dimensions.md) | 🔵 OPEN | Random media |
-| 090 | [Cardy's crossing formula for square-lattice bond percolation](problems/090-square-bond-cardy-formula.md) | 🔵 OPEN | Random media and conformal invariance |
 | 091 | [The planar self-avoiding-walk displacement exponent](problems/091-planar-self-avoiding-walk-exponent.md) | 🔵 OPEN | Polymer models |
-| 092 | [The dimension-free Kannan–Lovász–Simonovits inequality](problems/092-kls-poincare.md) | 🔵 OPEN | High-dimensional probability and sampling |
+| 092 | [The dimension-free Kannan–Lovász–Simonovits inequality](problems/092-kls-poincare.md) | 🟡 PARTIAL | High-dimensional probability and sampling |
 | 306 | [Classical hardness of learning parity with noise](problems/306-learning-parity-noise.md) | 🔵 OPEN | Statistical learning and average-case computational complexity |
 | 307 | [Linear-size sample compression for binary concept classes](problems/307-linear-sample-compression.md) | 🔵 OPEN | Statistical learning and combinatorial dimension |
 | 317 | [Orthogonal separation of independent Gaussian polynomial statistics](problems/317-gaussian-polynomial-unlinking.md) | 🔵 OPEN | Probability and mathematical statistics |
@@ -272,6 +271,8 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 088 | [Absence of an infinite cluster at criticality in three-dimensional percolation](problems/088-critical-percolation-three-dimensions.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 090 | [Cardy's crossing formula for square-lattice bond percolation](problems/090-square-bond-cardy-formula.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 637 | [Absolute continuity of stationary Elo ratings](problems/637-elo-density.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/siavash-sadeghi-637/aim637_counterexample.pdf) | [Review](research/solution_reviews/2026-10-02-active-prs/637-review.md) |
 | 660 | [Small-ball ratios for general symmetric product priors](research/resolved/660-product-prior-small-ball-ratios.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/siavash-sadeghi-506/aim506_counterexample.pdf) | [Review](research/solution_reviews/2026-10-02/506-review.md) |
 | 662 | [Variance ordering for Gaussian alpha-divergence approximations](research/resolved/662-gaussian-variational-variance-ordering.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/siavash-sadeghi-457-558/aim_558_counterexample.pdf) | [Review](research/solution_reviews/2026-10-02/558-review.md) |
@@ -330,7 +331,6 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
-| 086 | [The symmetric Mahler inequality in four dimensions](problems/086-mahler-symmetric-four-dimensions.md) | 🔵 OPEN | Convex geometry and optimization |
 | 311 | [Polynomial bounds for the graph diameter of polytopes](problems/311-polynomial-hirsch.md) | 🔵 OPEN | Convex geometry and linear optimization |
 | 494 | [Universality of the interleaving distance over arbitrary fields](problems/494-interleaving-distance-universality.md) | 🟡 PARTIAL | Applied topology and multiparameter persistent homology |
 | 498 | [Planar Rips complexes as wedges of spheres](problems/498-planar-rips-wedges-of-spheres.md) | 🟡 PARTIAL | Applied topology and geometric complexes |
@@ -359,7 +359,6 @@ No solved problems are currently recorded in this subject.
 | 537 | [Betti numbers of a persistence fiber with no finite bars](problems/537-persistence-fiber-betti-numbers.md) | 🔵 OPEN | Applied topology and inverse persistent homology |
 | 538 | [Monotonicity of connectivity in spherical Čech filtrations](problems/538-spherical-cech-connectivity-monotonicity.md) | 🔵 OPEN | Applied and computational topology |
 | 539 | [Finite homotopy models for spherical Čech complexes](problems/539-spherical-cech-finite-homotopy-models.md) | 🔵 OPEN | Applied and computational topology |
-| 543 | [Simplices maximize the isotropic constant](problems/543-simplex-maximal-isotropic-constant.md) | 🟡 PARTIAL | Geometric probability and covariance bounds |
 | 544 | [Bounded weakening for constrained invertibility](problems/544-constrained-invertibility-bounded-weakening.md) | 🔵 OPEN | Applied topology and structured linear algebra |
 | 545 | [A 325-point two-distance set in dimension 24](problems/545-two-distance-325-points-dimension24.md) | 🔵 OPEN | Computational geometry and Euclidean distance matrices |
 | 546 | [Uniqueness of 277-point two-distance sets in dimension 23](problems/546-two-distance-277-point-uniqueness.md) | 🔵 OPEN | Computational geometry and Euclidean distance matrices |
@@ -414,7 +413,9 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 086 | [The symmetric Mahler inequality in four dimensions](problems/086-mahler-symmetric-four-dimensions.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 534 | [Triangle inequality for the pullback distance of verbose persistence barcodes](problems/534-verbose-persistence-pullback-triangle.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/siavash-sadeghi-544/aim544_counterexample.pdf) | [Review](research/solution_reviews/2026-10-02-active-prs/534-review.md) |
+| 543 | [Simplices maximize the isotropic constant](problems/543-simplex-maximal-isotropic-constant.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 661 | [Path connectivity of the infinity Z-Gromov–Wasserstein space](research/resolved/661-z-gw-infinity-path-connectivity.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/514-infinity-z-gw/PROOF.md) | [Review](research/solution_reviews/2026-10-02/514-review.md) |
 
 ## Combinatorics, optimization and information theory
@@ -426,16 +427,14 @@ No solved problems are currently recorded in this subject.
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
 | 093 | [A strongly polynomial pivot rule for the simplex method](problems/093-strongly-polynomial-simplex.md) | 🔵 OPEN | Numerical optimization |
-| 293 | [The Unique Games Conjecture](problems/293-unique-games.md) | 🔵 OPEN | Constraint satisfaction and approximation algorithms |
 | 335 | [The factor-two relation between triangle deletion and packing](problems/335-tuza-triangle-packing-covering.md) | 🔵 OPEN | Combinatorial optimization and network modification |
-| 337 | [Reed's bound for the chromatic number](problems/337-reed-colouring.md) | 🔵 OPEN | Combinatorial optimization and conflict scheduling |
+| 337 | [Reed's bound for the chromatic number](problems/337-reed-colouring.md) | 🟡 PARTIAL | Combinatorial optimization and conflict scheduling |
 | 488 | [The Fourier entropy–influence conjecture](problems/488-fourier-entropy-influence.md) | 🟡 PARTIAL | Boolean models, statistical learning and Fourier analysis |
 | 497 | [The three-quarter conjecture for binary fix-free codes](problems/497-fix-free-three-quarter.md) | 🟡 PARTIAL | Information theory and lossless compression |
 | 540 | [Sharp barrier-parameter growth for hyperbolic balls](problems/540-hyperbolic-ball-barrier-parameter.md) | 🔵 OPEN | Numerical optimization on manifolds |
 | 551 | [Maximum treewidth at a prescribed edge count](problems/551-treewidth-edge-count.md) | 🟡 PARTIAL | Statistical computation and extremal graph theory |
 | 557 | [Unbounded chromatic number of associahedron graphs](problems/557-associahedron-chromatic.md) | 🔵 OPEN | Discrete and computational geometry |
 | 567 | [Perfect Lee codes beyond dimension two](problems/567-golomb-welch.md) | 🟡 PARTIAL | Coding theory and discrete geometry |
-| 585 | [Sidorenko's lower bound for bipartite homomorphism counts](problems/585-sidorenko.md) | 🟡 PARTIAL | Information theory and graphical models |
 | 589 | [Classifying balanced elementary symmetric Boolean functions](problems/589-balanced-elementary-boolean.md) | 🟡 PARTIAL | Cryptography and Boolean functions |
 | 590 | [Can bound entanglement produce a device-independent secret key?](problems/590-revised-peres.md) | 🟡 PARTIAL | Quantum information and cryptography |
 | 601 | [The sharp asymptotic facial length in girth-saturated plane graphs](problems/601-plane-girth-facial-asymptotic.md) | 🔵 OPEN | Graph theory and topological graph embeddings |
@@ -456,7 +455,10 @@ No solved problems are currently recorded in this subject.
 
 ### Solved problems
 
-No solved problems are currently recorded in this subject.
+| ID | Problem | Status | Outcome | Proof | Review |
+| --- | --- | --- | --- | --- | --- |
+| 293 | [The Unique Games Conjecture](problems/293-unique-games.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 585 | [Sidorenko's lower bound for bipartite homomorphism counts](problems/585-sidorenko.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 
 ## Waves, quantum systems and spectral geometry
 
@@ -470,8 +472,7 @@ No solved problems are currently recorded in this subject.
 | 095 | [Irreducibility of complex Fermi varieties](problems/095-complex-fermi-irreducibility.md) | 🔵 OPEN | Periodic quantum Hamiltonians |
 | 096 | [Sunada’s no-gap conjecture for abelian covers](problems/096-sunada-no-gap-cover.md) | 🔵 OPEN | Wave spectra on periodic curved spaces |
 | 097 | [Simon’s multidimensional weighted square-integrability conjecture](problems/097-simon-weighted-l2.md) | 🔵 OPEN | Quantum scattering and transport |
-| 098 | [A universal bound on excess molecular charge](problems/098-maximal-molecular-ionization.md) | 🔵 OPEN | Many-electron quantum mechanics |
-| 099 | [Uniform boundedness of the first atomic ionization energy](problems/099-uniform-first-ionization.md) | 🔵 OPEN | Atomic spectroscopy |
+| 098 | [A universal bound on excess molecular charge](problems/098-maximal-molecular-ionization.md) | 🟡 PARTIAL | Many-electron quantum mechanics |
 | 100 | [Convexity of atomic ground-state energy in electron number](problems/100-atomic-energy-convexity.md) | 🔵 OPEN | Quantum chemistry and density functional theory |
 | 101 | [Concentration of nuclear charge minimizes the Dirac gap level](problems/101-dirac-charge-concentration.md) | 🟡 PARTIAL | Relativistic quantum chemistry |
 | 102 | [Faber–Krahn inequality for graphene quantum dots](problems/102-quantum-dot-dirac-faber-krahn.md) | 🔵 OPEN | Dirac spectral geometry |
@@ -503,7 +504,9 @@ No solved problems are currently recorded in this subject.
 
 ### Solved problems
 
-No solved problems are currently recorded in this subject.
+| ID | Problem | Status | Outcome | Proof | Review |
+| --- | --- | --- | --- | --- | --- |
+| 099 | [Uniform boundedness of the first atomic ionization energy](problems/099-uniform-first-ionization.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 
 ## Imaging, control, geometry and dynamics
 
@@ -521,7 +524,6 @@ No solved problems are currently recorded in this subject.
 | 124 | [Continuous velocity of every sub-Riemannian length minimizer](problems/124-c1-subriemannian-minimizers.md) | 🔵 OPEN | Nonholonomic optimal control / regularity |
 | 125 | [Nonbranching of analytic equiregular sub-Riemannian geodesics](problems/125-equiregular-analytic-nonbranching.md) | 🔵 OPEN | Nonholonomic geometry / optimal transport |
 | 126 | [Pansu's isoperimetric conjecture in the Heisenberg group](problems/126-pansu-heisenberg-isoperimetry.md) | 🔵 OPEN | Sub-Riemannian geometric optimization |
-| 127 | [Euclidean isoperimetry in higher-dimensional Cartan–Hadamard manifolds](problems/127-cartan-hadamard-isoperimetry.md) | 🔵 OPEN | Geometric analysis / volume and boundary optimization |
 | 128 | [An SRB measure for the classical Hénon parameters](problems/128-classical-henon-srb-measure.md) | 🔵 OPEN | Dissipative dynamics / chaotic statistics |
 | 129 | [Saari's constant-inertia conjecture for planar gravitation](problems/129-saari-constant-inertia.md) | 🔵 OPEN | Celestial mechanics / rigid gravitational motions |
 | 130 | [Finiteness of planar central configurations for fixed masses](problems/130-finite-planar-central-configurations.md) | 🟡 PARTIAL | Celestial mechanics / relative equilibria |
@@ -536,7 +538,7 @@ No solved problems are currently recorded in this subject.
 | 139 | [Sharp characterization of exactly trackable boundary heat fluxes](problems/139-sharp-heat-tracking-range.md) | 🔵 OPEN | PDE control / thermal flux tracking |
 | 140 | [Global null control of a heat equation with cubic growth](problems/140-global-cubic-heat-null-control.md) | 🟡 PARTIAL | Nonlinear PDE control / reaction-diffusion |
 | 141 | [Finite-jet determination of small-time local controllability](problems/141-finite-jet-small-time-control.md) | 🟡 PARTIAL | Nonlinear control / local system identification |
-| 142 | [An irrational polygon with nonergodic billiard flow](problems/142-irrational-nonergodic-polygon.md) | 🔵 OPEN | Billiard dynamics / transport and ergodicity |
+| 142 | [An irrational polygon with nonergodic billiard flow](problems/142-irrational-nonergodic-polygon.md) | 🟡 PARTIAL | Billiard dynamics / transport and ergodicity |
 | 143 | [Positive metric entropy for billiards arbitrarily close to an ellipse](problems/143-positive-entropy-billiards-near-ellipse.md) | 🔵 OPEN | Hamiltonian billiards / chaotic ray transport |
 | 291 | [The Černý synchronizing-automaton conjecture](problems/291-cerny.md) | 🔵 OPEN | Finite-state control and synchronization |
 | 319 | [Generic stabilization by static output feedback](problems/319-generic-static-output-feedback-stabilization.md) | 🔵 OPEN | Feedback control and real algebraic geometry |
@@ -548,7 +550,9 @@ No solved problems are currently recorded in this subject.
 
 ### Solved problems
 
-No solved problems are currently recorded in this subject.
+| ID | Problem | Status | Outcome | Proof | Review |
+| --- | --- | --- | --- | --- | --- |
+| 127 | [Euclidean isoperimetry in higher-dimensional Cartan–Hadamard manifolds](problems/127-cartan-hadamard-isoperimetry.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 
 ## Fluids, kinetic theory and continuum mechanics
 
@@ -567,18 +571,15 @@ No solved problems are currently recorded in this subject.
 | 150 | [The nonlinear Landau limit of weakly interacting particles](problems/150-newton-landau-weak-coupling.md) | 🔵 OPEN | Kinetic theory and collisional relaxation |
 | 151 | [The finite-Dirichlet Liouville problem for steady three-dimensional flow](problems/151-steady-navier-stokes-liouville.md) | 🔵 OPEN | Viscous fluid mechanics |
 | 152 | [Steady planar flow around an obstacle at arbitrary Reynolds number](problems/152-exterior-steady-flow.md) | 🔵 OPEN | Viscous flow around bodies |
-| 153 | [Smooth approximation of three-dimensional Sobolev homeomorphisms](problems/153-ball-evans-three-dimensions.md) | 🔵 OPEN | Nonlinear elasticity and approximation |
 | 154 | [Approximation preserving a compressible elastic energy](problems/154-elastic-energy-approximation.md) | 🔵 OPEN | Nonlinear elasticity and variational approximation |
 | 155 | [The full set of zero-energy cubic-to-tetragonal strains](problems/155-tetragonal-quasiconvex-hull.md) | 🔵 OPEN | Materials science and nonlinear elasticity |
 | 156 | [Concentration of eikonal entropy production on jump curves](problems/156-eikonal-entropy-concentration.md) | 🔵 OPEN | Variational interfaces and nonlinear PDE |
-| 157 | [The first dimension with a singular one-phase minimizing cone](problems/157-one-phase-critical-dimension.md) | 🔵 OPEN | Free boundaries and fluid interfaces |
 | 158 | [Multiplicity one at planar network singularities](problems/158-network-multiplicity-one.md) | 🟡 PARTIAL | Grain-boundary evolution |
 | 159 | [Uniqueness of the limiting shape at a network singularity](problems/159-network-tangent-uniqueness.md) | 🔵 OPEN | Grain-boundary evolution |
 | 160 | [Sharp enstrophy-limited heat transport in two dimensions](problems/160-two-dimensional-wall-transport.md) | 🔵 OPEN | Heat transfer and flow optimization |
 | 161 | [The maximal heat-transfer exponent at finite Prandtl number](problems/161-finite-prandtl-heat-scaling.md) | 🔵 OPEN | Buoyant convection and heat transfer |
 | 162 | [An extreme solitary wave for the bidirectional Whitham system](problems/162-extreme-bidirectional-solitary-wave.md) | 🔵 OPEN | Nonlinear water-wave models |
 | 163 | [Uniqueness of the Brownian coagulation similarity profile](problems/163-brownian-coagulation-profile.md) | 🔵 OPEN | Aerosol kinetics and aggregation |
-| 164 | [A uniform limit-cycle bound for quadratic planar dynamics](problems/164-quadratic-hilbert-sixteen.md) | 🔵 OPEN | Nonlinear oscillations and dynamical systems |
 | 165 | [A stationary isotropic gas of freely moving non-colliding disks](problems/165-stationary-noncolliding-billiards.md) | 🔵 OPEN | Kinetic geometry and hard-particle systems |
 | 166 | [Anomalous viscous dissipation with fixed large-scale forcing](problems/166-large-scale-forced-dissipation.md) | 🔵 OPEN | Turbulence and energy transfer |
 | 167 | [The Euler vortex-filament limit for a general moving curve](problems/167-vortex-filament-binormal.md) | 🔵 OPEN | Vortex dynamics and fluid mechanics |
@@ -587,13 +588,11 @@ No solved problems are currently recorded in this subject.
 | 388 | [Global smooth evolution of small semigeostrophic perturbations](problems/388-semigeostrophic-small-data-global-smoothness.md) | 🔵 OPEN | Geophysical PDEs / optimal transport |
 | 389 | [Uniqueness of bounded semigeostrophic potential vorticity](problems/389-semigeostrophic-bounded-vorticity-uniqueness.md) | 🔵 OPEN | Geophysical PDEs / nonlinear transport |
 | 390 | [Sharp weak integrability of planar Monge–Ampère Hessians](problems/390-planar-monge-ampere-sharp-hessian-integrability.md) | 🔵 OPEN | Nonlinear elliptic PDEs / optimal transport |
-| 391 | [Affine Bernstein rigidity in dimensions three through nine](problems/391-affine-bernstein-entire-low-dimensions.md) | 🔵 OPEN | Fourth-order elliptic PDEs / geometric variational problems |
 | 392 | [Regularity of transport interfaces for nonconvex polyhedral targets](problems/392-polyhedral-transport-singular-interface.md) | 🔵 OPEN | Monge–Ampère PDEs / optimal transport |
 | 393 | [Singular-set dimension of polyhedral partial-transport free boundaries](problems/393-polyhedral-partial-transport-free-boundary.md) | 🔵 OPEN | Free-boundary PDEs / optimal transport |
 | 396 | [Polynomial decay for KdV with three critical linear modes](problems/396-critical-kdv-odd-mode-polynomial-decay.md) | 🔵 OPEN | Dispersive PDEs / boundary stabilization |
 | 399 | [Best convex shape for insulation of fixed thickness and perimeter](problems/399-fixed-thickness-insulation-convex-perimeter.md) | 🔵 OPEN | Elliptic PDEs / thermal shape optimization |
 | 400 | [Concentric-ball optimality for thermal insulation with radiative heat transfer](problems/400-radiative-insulation-concentric-balls.md) | 🔵 OPEN | Elliptic PDEs / nonlinear boundary laws |
-| 401 | [Continuity of manifold transport under MTW and convex injectivity domains](problems/401-mtw-convex-domains-transport-continuity.md) | 🔵 OPEN | Monge–Ampère PDEs / transport on manifolds |
 | 404 | [Uniform convergence of value functions in local mean-field games](problems/404-local-mfg-uniform-vanishing-viscosity.md) | 🔵 OPEN | Hamilton–Jacobi / Fokker–Planck PDE systems |
 | 405 | [An algebraic vanishing-noise rate for kinetic mean-field games](problems/405-kinetic-mfg-vanishing-viscosity-rate.md) | 🔵 OPEN | Kinetic PDEs / mean-field games |
 | 406 | [Stationarity of Lipschitz weak solutions of the minimal-surface system](problems/406-lawson-osserman-stationarity.md) | 🔵 OPEN | Nonlinear elliptic PDE systems / surface energy |
@@ -611,7 +610,13 @@ No solved problems are currently recorded in this subject.
 
 ### Solved problems
 
-No solved problems are currently recorded in this subject.
+| ID | Problem | Status | Outcome | Proof | Review |
+| --- | --- | --- | --- | --- | --- |
+| 153 | [Smooth approximation of three-dimensional Sobolev homeomorphisms](problems/153-ball-evans-three-dimensions.md) | ✅ SOLVED | Affirmative proofs (two exponent ranges) | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 157 | [The first dimension with a singular one-phase minimizing cone](problems/157-one-phase-critical-dimension.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 164 | [A uniform limit-cycle bound for quadratic planar dynamics](problems/164-quadratic-hilbert-sixteen.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 391 | [Affine Bernstein rigidity in dimensions three through nine](problems/391-affine-bernstein-entire-low-dimensions.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/main.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 401 | [Continuity of manifold transport under MTW and convex injectivity domains](problems/401-mtw-convex-domains-transport-continuity.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 
 ## Stochastic growth, populations and statistical mechanics
 
@@ -621,17 +626,12 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
-| 169 | [Strict convexity of the planar exponential first-passage shape](problems/169-strict-convexity-fpp.md) | 🔵 OPEN | Stochastic growth and random media |
 | 170 | [The two-thirds passage-time variance exponent](problems/170-fpp-kpz-variance.md) | 🔵 OPEN | Random interfaces and growth fluctuations |
-| 171 | [Absence of doubly infinite minimizing paths in planar first-passage percolation](problems/171-absence-fpp-bigeodesics.md) | 🔵 OPEN | Optimal transport through random media |
 | 172 | [Exclusion of coexistence for unequal Richardson growth rates](problems/172-unequal-richardson-competition.md) | 🟡 PARTIAL | Competing infections and stochastic growth |
 | 173 | [Monotonicity of transport speed on Galton–Watson trees](problems/173-galton-watson-speed-monotonicity.md) | 🟡 PARTIAL | Transport on random branching networks |
 | 174 | [Connectivity of the three-dimensional minimal spanning forest](problems/174-three-dimensional-minimal-spanning-forest.md) | 🔵 OPEN | Disordered network optimization |
 | 175 | [Does supercritical percolation preserve transience?](problems/175-percolation-preserves-transience.md) | 🟡 PARTIAL | Diffusion in diluted networks |
-| 176 | [A nonuniqueness phase on every nonamenable transitive graph](problems/176-nonamenable-nonuniqueness-phase.md) | 🟡 PARTIAL | Percolation and network resilience |
 | 177 | [A deterministic nontrivial growth exponent for planar DLA](problems/177-dla-growth-exponent.md) | 🔵 OPEN | Aggregation and fractal growth |
-| 178 | [Does directional transience imply ballistic transport in an iid medium?](problems/178-rwre-transience-ballisticity.md) | 🔵 OPEN | Diffusion and transport in random environments |
-| 179 | [The directional zero–one law in three-dimensional random media](problems/179-rwre-directional-zero-one.md) | 🔵 OPEN | Random transport and ergodicity |
 | 180 | [The density conjecture for activated random walk on the square lattice](problems/180-activated-random-walk-density.md) | 🔵 OPEN | Self-organized criticality |
 | 181 | [Coexistence for every positive cyclic invasion rate](problems/181-cyclic-spatial-coexistence.md) | 🔵 OPEN | Spatial ecology and evolutionary dynamics |
 | 182 | [Coexistence in a three-strain colicin model](problems/182-three-strain-colicin-coexistence.md) | 🔵 OPEN | Spatial microbiology |
@@ -658,6 +658,11 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 169 | [Strict convexity of the planar exponential first-passage shape](problems/169-strict-convexity-fpp.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/main.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 171 | [Absence of doubly infinite minimizing paths in planar first-passage percolation](problems/171-absence-fpp-bigeodesics.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/main.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 176 | [A nonuniqueness phase on every nonamenable transitive graph](problems/176-nonamenable-nonuniqueness-phase.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 178 | [Does directional transience imply ballistic transport in an iid medium?](problems/178-rwre-transience-ballisticity.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 179 | [The directional zero–one law in three-dimensional random media](problems/179-rwre-directional-zero-one.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 489 | [Global attraction in D-stable Lotka–Volterra systems](problems/489-lotka-volterra-d-stable-global-attraction.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/490-lotka-volterra-counterexample/PROOF.md) | [Review](research/solution_reviews/2026-10-02-active-prs/489-review.md) |
 
 ## Many-body physics, quantum information and wave analysis
@@ -668,23 +673,14 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Area |
 | --- | --- | --- | --- |
-| 194 | [A uniform gap for the spin-one Heisenberg chain](problems/194-haldane-gap.md) | 🔵 OPEN | Quantum magnetism |
 | 195 | [The bosonic Laughlin contact-interaction gap](problems/195-laughlin-gap.md) | 🔵 OPEN | Fractional quantum Hall physics |
-| 196 | [Bose condensation at fixed dilute density](problems/196-thermodynamic-bose-condensation.md) | 🔵 OPEN | Ultracold quantum gases |
 | 197 | [The logarithmic correction to dilute Bose-gas energy](problems/197-wu-bose-energy.md) | 🔵 OPEN | Quantum equations of state |
 | 198 | [The optimal Lieb–Oxford constant](problems/198-optimal-lieb-oxford.md) | 🔵 OPEN | Electronic density-functional theory |
-| 199 | [An area law for general gapped two-dimensional spin systems](problems/199-two-dimensional-area-law.md) | 🔵 OPEN | Quantum many-body theory; entanglement |
 | 200 | [The quantum PCP conjecture for local Hamiltonians](problems/200-quantum-pcp.md) | 🔵 OPEN | Quantum complexity; many-body energy approximation |
 | 201 | [Uniqueness of a boson star at every subcritical mass](problems/201-lieb-yau-boson-star-uniqueness.md) | 🟡 PARTIAL | Relativistic quantum matter; self-gravitating waves |
 | 202 | [Does a bound bipolaron ever break rotational symmetry?](problems/202-bipolaron-rotation-symmetry.md) | 🟡 PARTIAL | Polarons; nonlinear quantum energy minimization |
 | 203 | [Néel order in the square-lattice spin-one-half antiferromagnet](problems/203-square-lattice-neel-order.md) | 🔵 OPEN | Quantum magnetism |
 | 204 | [Antiferromagnetic order in the half-filled square-lattice Hubbard model](problems/204-hubbard-antiferromagnetism.md) | 🔵 OPEN | Correlated electrons; quantum materials |
-| 205 | [The entropy photon-number inequality](problems/205-entropy-photon-number.md) | 🔵 OPEN | Quantum optics; communication limits |
-| 206 | [Composing two PPT channels destroys all entanglement](problems/206-ppt-squared.md) | 🟡 PARTIAL | Quantum information; repeater channels |
-| 207 | [Can entangled codewords improve amplitude-damping classical capacity?](problems/207-amplitude-damping-additivity.md) | 🔵 OPEN | Quantum communication; dissipative qubits |
-| 208 | [Sharp Fourier extension from the sphere in three dimensions](problems/208-sphere-fourier-restriction.md) | 🟡 PARTIAL | Harmonic analysis; monochromatic wave concentration |
-| 209 | [Sharp Bochner–Riesz summability in three dimensions](problems/209-bochner-riesz-three-dimensions.md) | 🟡 PARTIAL | Harmonic analysis; frequency filtering |
-| 210 | [Sharp local smoothing for the three-dimensional wave equation](problems/210-euclidean-wave-local-smoothing.md) | 🔵 OPEN | Wave propagation; dispersive estimates |
 | 211 | [GOE level spacings in a desymmetrized Sinai billiard](problems/211-sinai-goe-spacing.md) | 🔵 OPEN | Quantum chaos / wave-cavity spectra |
 | 212 | [Poisson nearest-neighbor spacings on almost every flat torus](problems/212-berry-tabor-flat-tori.md) | 🔵 OPEN | Quantum integrability; spectral statistics |
 | 213 | [A spectral gap for almost every pair of quantum gates](problems/213-su-two-random-gate-gap.md) | 🔵 OPEN | Spectral theory / quantum dynamics |
@@ -707,6 +703,15 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 194 | [A uniform gap for the spin-one Heisenberg chain](problems/194-haldane-gap.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 196 | [Bose condensation at fixed dilute density](problems/196-thermodynamic-bose-condensation.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 199 | [An area law for general gapped two-dimensional spin systems](problems/199-two-dimensional-area-law.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 205 | [The entropy photon-number inequality](problems/205-entropy-photon-number.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-entropy-photon-number-inequality-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 206 | [Composing two PPT channels destroys all entanglement](problems/206-ppt-squared.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 207 | [Can entangled codewords improve amplitude-damping classical capacity?](problems/207-amplitude-damping-additivity.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 208 | [Sharp Fourier extension from the sphere in three dimensions](problems/208-sphere-fourier-restriction.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 209 | [Sharp Bochner–Riesz summability in three dimensions](problems/209-bochner-riesz-three-dimensions.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 210 | [Sharp local smoothing for the three-dimensional wave equation](problems/210-euclidean-wave-local-smoothing.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 654 | [Bounded harmonic lifting for complex media](research/resolved/654-complex-harmonic-lifting.md) | ✅ SOLVED | Affirmative proof | [Proof](research/solutions/218-complex-harmonic-lifting/PROOF.md) | [Review](research/solution_reviews/2026-10-02/218-review.md) |
 
 ## Nonlinear waves, fluids and kinetic equations
@@ -719,7 +724,6 @@ No solved problems are currently recorded in this subject.
 | --- | --- | --- | --- |
 | 218 | [Fast dynamo action of the unit ABC flow](problems/218-abc-fast-dynamo.md) | 🔵 OPEN | Magnetohydrodynamics |
 | 226 | [One cubic NLS trajectory with unbounded Sobolev norm](problems/226-cubic-nls-unbounded-orbit.md) | 🔵 OPEN | Nonlinear wave turbulence |
-| 227 | [Uniqueness of entropy-admissible renormalized Boltzmann solutions](problems/227-renormalized-boltzmann-uniqueness.md) | 🔵 OPEN | Rarefied-gas kinetics |
 | 229 | [Finite-time growth of total variation in physical gas dynamics](problems/229-p-system-finite-time-bv.md) | 🔵 OPEN | Nonlinear hyperbolic conservation laws |
 | 230 | [Global finite-energy compressible flow at the diatomic exponent](problems/230-compressible-ns-physical-exponent.md) | 🔵 OPEN | Viscous compressible gas dynamics |
 | 231 | [Nonlinear orbital stability of small solitary gravity waves](problems/231-solitary-gravity-wave-nonlinear-stability.md) | 🔵 OPEN | Free-surface fluid dynamics |
@@ -755,6 +759,7 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 227 | [Uniqueness of entropy-admissible renormalized Boltzmann solutions](problems/227-renormalized-boltzmann-uniqueness.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 351 | [Can every bounded entire Burgers profile recur at late times?](problems/351-burgers-entire-limits.md) | ✅ SOLVED | Affirmative proof | [Proof](research/solutions/351-burgers-profile-realization/aim351_burgers_realization.pdf) | [Review](research/solution_reviews/2026-10-02-active-prs/351-review.md) |
 | 353 | [A genuinely periodic firing pattern in the delayed noisy integrate-and-fire PDE](problems/353-delayed-nnlif-periodic.md) | ✅ SOLVED | Affirmative proof | [Proof](research/solutions/353-delayed-nnlif-periodic-branch/aim353_delayed_nnlif_periodic.pdf) | [Review](research/solution_reviews/2026-10-02-active-prs/353-review.md) |
 
@@ -775,7 +780,6 @@ No solved problems are currently recorded in this subject.
 | 225 | [A length-independent mean energy bound for Kuramoto–Sivashinsky](problems/225-kuramoto-sivashinsky-energy-density.md) | 🔵 OPEN | Combustion fronts and spatiotemporal chaos |
 | 228 | [Fourier’s law for a boundary-thermostated anharmonic chain](problems/228-anharmonic-chain-fourier-law.md) | 🔵 OPEN | Nonequilibrium heat transport |
 | 233 | [The attainable stiffness tensors of two-phase elastic composites](problems/233-elastic-two-phase-g-closure.md) | 🔵 OPEN | Composite materials and homogenization |
-| 234 | [Global optimality of the Abrikosov triangular lattice](problems/234-abrikosov-global-crystallization.md) | 🔵 OPEN | Superconductivity and Coulomb crystallization |
 | 235 | [Rigidity of positively curved shells above one-half Hölder regularity](problems/235-holder-isometric-shell-rigidity.md) | 🟡 PARTIAL | Thin-shell geometry and elasticity |
 | 236 | [The quadruple-bubble conjecture in three-dimensional space](problems/236-spatial-quadruple-bubble.md) | 🔵 OPEN | Soap films and interfacial energy |
 | 237 | [The exact minimum ropelength of a trefoil](problems/237-ideal-trefoil-ropelength.md) | 🔵 OPEN | Geometry of ropes and knotted polymers |
@@ -785,7 +789,6 @@ No solved problems are currently recorded in this subject.
 | 304 | [Global classical continuation for a reversible mass-action reaction](problems/304-reversible-reaction-classical-continuation.md) | 🔵 OPEN | Chemical reaction–diffusion / continuum biology |
 | 324 | [Global classical continuation in the chemotaxis-consumption system](problems/324-chemotaxis-consumption-classical-continuation.md) | 🔵 OPEN | Mathematical biology / chemotaxis and cross-diffusion |
 | 349 | [The ball as the least densely packable convex solid](problems/349-ulam-convex-solid-packing.md) | 🔵 OPEN | Convex geometry and particle packing |
-| 350 | [Nonexistence of subcritical Lane–Emden equilibria in higher dimensions](problems/350-lane-emden-subcritical-system.md) | 🔵 OPEN | Nonlinear elliptic systems; reaction–diffusion |
 | 352 | [Competitive exclusion by the slowest diffuser in a multispecies habitat](problems/352-dockery-slowest-diffuser.md) | 🔵 OPEN | Spatial ecology; reaction–diffusion |
 | 368 | [Existence of elastic equilibria under quasiconvexity and infinite compression energy](problems/368-quasiconvex-physical-elastic-minimizers.md) | 🔵 OPEN | Nonlinear elasticity; variational equilibrium |
 | 373 | [Quantization of radial finite-time collapse in fully parabolic Keller–Segel](problems/373-keller-segel-collapse-quantization.md) | 🔵 OPEN | Chemotaxis; concentration of cell density |
@@ -830,6 +833,8 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 234 | [Global optimality of the Abrikosov triangular lattice](problems/234-abrikosov-global-crystallization.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 350 | [Nonexistence of subcritical Lane–Emden equilibria in higher dimensions](problems/350-lane-emden-subcritical-system.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 658 | [Does directional ellipticity force a fractional energy bound?](research/resolved/658-nonlocal-directional-ellipticity-coercivity.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/471-nonlocal-coercivity/PROOF.md) | [Review](research/solution_reviews/2026-10-02/471-review.md) |
 | 659 | [Full-space minimizers for subcritical fourth-order aggregation energy](research/resolved/659-fourth-order-aggregation-full-space-minimizer.md) | ✅ SOLVED | Affirmative proof | [Proof](research/solutions/488-aggregation-minimizer/PROOF.md) | [Review](research/solution_reviews/2026-10-02/488-review.md) |
 
@@ -869,11 +874,10 @@ No solved problems are currently recorded in this subject.
 | 298 | [The Li–Li multiple-unicast conjecture](problems/298-li-li-multiple-unicast.md) | 🔵 OPEN | Applied geometry, control and information |
 | 299 | [Capacity of the two-receiver Gaussian broadcast channel with feedback](problems/299-gaussian-broadcast-feedback.md) | 🔵 OPEN | Applied geometry, control and information |
 | 316 | [Decidability of zeros in integer linear recurrences](problems/316-discrete-skolem-decidability.md) | 🔵 OPEN | Discrete dynamics and formal verification |
-| 321 | [Polynomial sample complexity for deletion-trace reconstruction](problems/321-polynomial-trace-reconstruction.md) | 🔵 OPEN | Statistical inference and molecular data retrieval |
 | 331 | [The optimal asymptotic rate of binary error-correcting codes](problems/331-binary-code-asymptotic-rate.md) | 🔵 OPEN | Coding theory and reliable data transmission |
 | 336 | [Capacity of the binary skew-symmetric broadcast channel](problems/336-binary-skew-symmetric-broadcast.md) | 🔵 OPEN | Network information theory and broadcast communication |
 | 344 | [The sharp degree bound for strong edge-colouring](problems/344-strong-edge-colouring.md) | 🔵 OPEN | Communication networks, interference scheduling and graph colouring |
-| 346 | [The near-linear bound for planar halving lines](problems/346-planar-halving-lines.md) | 🔵 OPEN | Computational geometry and parametric selection |
+| 346 | [The near-linear bound for planar halving lines](problems/346-planar-halving-lines.md) | 🟡 PARTIAL | Computational geometry and parametric selection |
 | 385 | [Observability of an acoustic shell at equal bulk and surface speeds](problems/385-equal-speed-wentzell-wave-observability.md) | 🔵 OPEN | PDE control / acoustic boundary dynamics |
 | 386 | [Boundary observation of a Schrödinger field with slower surface dispersion](problems/386-slow-surface-schrodinger-observability.md) | 🔵 OPEN | PDE control / dispersive boundary dynamics |
 | 387 | [The sharp local maneuvering time for a shallow-water tank](problems/387-shallow-water-tank-sharp-control-time.md) | 🔵 OPEN | PDE control / fluid–structure dynamics |
@@ -896,6 +900,7 @@ No solved problems are currently recorded in this subject.
 
 | ID | Problem | Status | Outcome | Proof | Review |
 | --- | --- | --- | --- | --- | --- |
+| 321 | [Polynomial sample complexity for deletion-trace reconstruction](problems/321-polynomial-trace-reconstruction.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 | 655 | [Logarithmic convexity for subdiffusion with non-gradient drift](research/resolved/655-fractional-drift-logarithmic-convexity.md) | ✅ SOLVED | Counterexample | [Proof](research/solutions/405-fractional-drift/PROOF.md) | [Review](research/solution_reviews/2026-10-02/405-review.md) |
 
 ## Stochastic dynamics, reaction networks and applied optimization
@@ -913,7 +918,6 @@ No solved problems are currently recorded in this subject.
 | 270 | [Does exclusion equilibrate as fast as independent particles?](problems/270-exclusion-independent-mixing.md) | 🔵 OPEN | Interacting particle transport |
 | 271 | [A diameter bound for diffusion to uniform equilibrium](problems/271-transitive-mixing-diameter.md) | 🔵 OPEN | Diffusion on symmetric networks |
 | 272 | [Positive recurrence of every weakly reversible stochastic reaction network](problems/272-reaction-network-positive-recurrence.md) | 🔵 OPEN | Stochastic chemical kinetics |
-| 273 | [No asymptotic extinction in bounded weakly reversible mass-action kinetics](problems/273-reaction-network-persistence.md) | 🔵 OPEN | Deterministic chemical reaction networks |
 | 274 | [Gaussian fluctuations of the optimal Euclidean traveling-salesman tour](problems/274-euclidean-tsp-clt.md) | 🔵 OPEN | Spatial logistics and random optimization |
 | 275 | [The four-thirds integrality gap for metric routing](problems/275-metric-tsp-four-thirds.md) | 🔵 OPEN | Operations research and routing |
 | 276 | [The sharp savings from junctions in planar connection networks](problems/276-planar-steiner-ratio.md) | 🔵 OPEN | Geometric network design |
@@ -931,17 +935,14 @@ No solved problems are currently recorded in this subject.
 | 288 | [Polynomial equilibration at the four-state planar Potts critical point](problems/288-critical-four-state-potts-mixing.md) | 🔵 OPEN | Critical dynamics and statistical simulation |
 | 289 | [Does every strict initial majority win zero-temperature Ising dynamics?](problems/289-majority-ising-fixation.md) | 🔵 OPEN | Coarsening and phase selection |
 | 294 | [Balanced Gaussian simplex noise stability for four or more classes](problems/294-gaussian-simplex.md) | 🔵 OPEN | Gaussian geometry and noise robustness |
-| 301 | [Exact complexity of unit-job precedence scheduling on three processors](problems/301-three-processor-unit-scheduling.md) | 🔵 OPEN | Scheduling and operations research |
 | 312 | [The factor-two integrality gap for asymmetric metric routing](problems/312-asymmetric-tsp-integrality-gap.md) | 🔵 OPEN | Operations research and directed routing |
 | 313 | [Complete EFX allocation of indivisible goods with additive values](problems/313-efx-additive-goods.md) | 🟡 PARTIAL | Fair division and resource allocation |
 | 315 | [Optimal asymptotic competitiveness for online bin packing](problems/315-online-bin-packing-optimal-ratio.md) | 🔵 OPEN | Online optimization and resource allocation |
 | 320 | [Optimal symmetric rendezvous among discrete locations](problems/320-symmetric-rendezvous-discrete-locations.md) | 🔵 OPEN | Decentralized coordination and search theory |
-| 323 | [Strong thin-tree conjecture](problems/323-strong-thin-tree.md) | 🔵 OPEN | Network design and combinatorial optimization |
 | 330 | [The sharp matroid secretary conjecture](problems/330-sharp-matroid-secretary.md) | 🔵 OPEN | Online selection and resource allocation |
 | 333 | [List edge-colouring with no extra colours](problems/333-list-edge-colouring.md) | 🟡 PARTIAL | Scheduling, resource allocation and graph colouring |
 | 334 | [Competitive exclusion in a chemostat with unequal removal rates](problems/334-chemostat-unequal-removal-exclusion.md) | 🔵 OPEN | Mathematical biology and microbial competition |
 | 339 | [Polynomial-factor hardness of scheduling unit jobs on prescribed machines](problems/339-unit-job-unique-machine-hardness.md) | 🔵 OPEN | Scheduling and approximation complexity |
-| 341 | [The modified integer round-up conjecture for cutting stock](problems/341-modified-integer-round-up.md) | 🔵 OPEN | Stochastic dynamics, reaction networks and applied optimization |
 | 453 | [Bourgain–Spencer accuracy for random elliptic media at finite contrast](problems/453-bourgain-spencer-nonperturbative-homogenization.md) | 🔵 OPEN | Stochastic homogenization; diffusion in heterogeneous media |
 | 454 | [Hölder continuity for parabolic SPDEs with merely bounded transport noise](problems/454-rough-transport-spde-holder.md) | 🔵 OPEN | Stochastic parabolic PDEs; passive scalar transport |
 | 455 | [A deterministic Hölder exponent for smooth-transport parabolic SPDEs](problems/455-smooth-transport-spde-deterministic-holder-exponent.md) | 🔵 OPEN | Stochastic parabolic PDEs; quantitative regularity |
@@ -957,7 +958,12 @@ No solved problems are currently recorded in this subject.
 
 ### Solved problems
 
-No solved problems are currently recorded in this subject.
+| ID | Problem | Status | Outcome | Proof | Review |
+| --- | --- | --- | --- | --- | --- |
+| 273 | [No asymptotic extinction in bounded weakly reversible mass-action kinetics](problems/273-reaction-network-persistence.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 301 | [Exact complexity of unit-job precedence scheduling on three processors](problems/301-three-processor-unit-scheduling.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 323 | [Strong thin-tree conjecture](problems/323-strong-thin-tree.md) | ✅ SOLVED | Affirmative proof | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
+| 341 | [The modified integer round-up conjecture for cutting stock](problems/341-modified-integer-round-up.md) | ✅ SOLVED | Counterexample | [Proof](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf) | [Review](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) |
 
 ## Publication batches
 
@@ -965,18 +971,18 @@ Adding a batch does not revalidate earlier entries. Counts below include only cu
 
 | Publication batch | Open targets | Entry review dates |
 | --- | ---: | --- |
-| Original collection | 91 | 2026-09-08–2026-10-02 |
-| Second collection | 100 | 2026-09-08–2026-10-05 |
-| Third collection | 96 | 2026-09-13 |
-| September 2026 expansion — batch 1 | 10 | 2026-09-17 |
-| September 2026 expansion — batch 2 | 10 | 2026-09-17 |
+| Original collection | 71 | 2026-09-08–2026-10-13 |
+| Second collection | 90 | 2026-09-08–2026-10-13 |
+| Third collection | 84 | 2026-09-13 |
+| September 2026 expansion — batch 1 | 9 | 2026-09-17 |
+| September 2026 expansion — batch 2 | 9 | 2026-09-17 |
 | September 2026 expansion — batch 3 | 10 | 2026-09-17 |
-| September 2026 expansion — batch 4 | 10 | 2026-09-18 |
-| September 2026 expansion — batch 5 | 10 | 2026-09-18 |
-| September 2026 expansion — batch 6 | 10 | 2026-09-19 |
-| September 22 expansion — PDE emphasis | 134 | 2026-09-22 |
-| September 2026 expansion — remaining accepted drafts | 6 | 2026-09-23 |
-| Systematic expansion across numerical PDEs, statistics, uncertainty and topology | 151 | 2026-09-23–2026-10-04 |
+| September 2026 expansion — batch 4 | 8 | 2026-09-18 |
+| September 2026 expansion — batch 5 | 10 | 2026-09-18–2026-10-13 |
+| September 2026 expansion — batch 6 | 9 | 2026-09-19–2026-10-13 |
+| September 22 expansion — PDE emphasis | 127 | 2026-09-22 |
+| September 2026 expansion — remaining accepted drafts | 6 | 2026-09-23–2026-10-13 |
+| Systematic expansion across numerical PDEs, statistics, uncertainty and topology | 149 | 2026-09-23–2026-10-13 |
 
 ## Maintaining the collection
 

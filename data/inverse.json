@@ -4,24 +4,33 @@
     "title": "Calderón uniqueness for bounded measurable conductivities",
     "area": "Inverse problems / electrical impedance tomography",
     "file": "problems/046-rough-conductivity-calderon.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "047",
     "title": "Smooth anisotropic Calderón uniqueness",
     "area": "Inverse problems / anisotropic imaging",
     "file": "problems/047-smooth-anisotropic-calderon.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "048",
     "title": "Calderón uniqueness from an arbitrary local boundary patch",
     "area": "Inverse problems / partial boundary data",
     "file": "problems/048-arbitrary-local-calderon-data.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "049",
@@ -36,8 +45,11 @@
     "title": "Recover both Lamé moduli from static boundary measurements",
     "area": "Inverse elasticity / nondestructive testing",
     "file": "problems/050-static-lame-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "051",
@@ -148,16 +160,22 @@
     "title": "Global Birkhoff billiard integrability conjecture",
     "area": "Hamiltonian dynamics and ray optics",
     "file": "problems/064-birkhoff-billiard-integrability.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "065",
     "title": "Positive metric entropy for a standard map",
     "area": "Hamiltonian chaos and transport",
     "file": "problems/065-standard-map-metric-entropy.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "066",

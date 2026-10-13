@@ -2,9 +2,9 @@
 
 **Area:** High-dimensional probability and sampling
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -27,10 +27,18 @@ A dimension-free spectral gap would strengthen guarantees for sampling log-conca
 - [Boaz Klartag and Joseph Lehec, *Isoperimetric inequalities in high-dimensional convex sets* (Bulletin of the AMS, 2025), KLS survey](https://doi.org/10.1090/bull/1869).
 - [Brayden Letwin, *The KLS constant is O(log¹⁄⁴ n)* (July 2026), abstract and main result](https://arxiv.org/abs/2607.24164).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf), result family 093 (2026). Statement locator: `Theorem thm:main; subgaussian condition eq:intro-subgaussian`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Known cases:** A dimension-free logarithmic Sobolev bound gives the required Poincare bound for isotropic log-concave measures with an absolute bound on their linear subgaussian parameter.
 
-The July 2026 preprint establishes the conjectured variance bound for quadratic forms and improves a dimension-dependent KLS bound. It does not provide a dimension-free inequality for arbitrary smooth f. Bourgain's slicing problem is a separate, weaker problem and is not listed here as open.
+**Remaining target:** Obtain a universal bound for arbitrary isotropic log-concave measures without the additional subgaussian restriction.
 
-Status-search topics (2026-09-08): `KLS conjecture 2026 solved`; `KLS 2026 site.arxiv.org`; `The KLS constant is Guan`. This is a literature search, not a proof that no solution exists.
+**Statement comparison:** A dimension-free LSI implies a Poincare bound by linearizing the entropy inequality at a constant. It gives AIM for isotropic log-concave densities whose linear subgaussian parameter a is bounded by a fixed absolute constant; uniform convex-body densities are allowed. General isotropic log-concave measures may have only exponential tails, so the subgaussian assumption is a genuine restriction and cannot be discarded.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-092) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/092-kls-poincare.md).

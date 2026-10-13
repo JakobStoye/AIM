@@ -2,9 +2,9 @@
 
 **Area:** Quantum optics; communication limits
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -31,10 +31,16 @@ This gives a sharp lower bound on optical output noise at fixed input entropies,
 1. Saikat Guha, Baris I. Erkmen, and Jeffrey H. Shapiro, [The Entropy Photon-Number Inequality and its Consequences](https://arxiv.org/abs/0710.5666), preprint (2007). Equation (13) states the original beam-splitter conjecture.
 2. Giacomo De Palma, Dario Trevisan, Vittorio Giovannetti, and Luigi Ambrosio, [Gaussian optimizers for entropic inequalities in quantum information](https://arxiv.org/abs/1803.02360), *J. Math. Phys.* 59 (2018), 081101. Section V.B, Conjecture V.15, equation (70), gives the multimode form; Section VII.A distinguishes the proved quantum entropy-power inequality.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-entropy-photon-number-inequality-September-24-2026/paper.pdf), result family 273 (2026). Statement locator: `build/sections/00-introduction.tex, thm:epni`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The quantum entropy-power inequality is weaker than this conjecture. Gaussian-input results and certain one-mode Gaussian-channel optimizer theorems do not cover two arbitrary independent multimode inputs. Current searches did not locate a proof or counterexample for that class.
+**Statement comparison:** The exact displayed g-inverse entropy photon-number inequality is proved for any finite number of modes, any transmissivity in [0,1], finite photon energy, product inputs, and arbitrary correlations within either port. Entropy uses natural logarithms as in the target.
 
-**Search audit:** Queries: “entropy photon-number inequality 2026”, “entropy photon number inequality proof counterexample 2025 2026”, “Gaussian optimizers De Palma EPnI”. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-205) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/273.md). docs/273 describes the full EPnI target via EntropyPhotonNumber; only channel-capacity consequences are outside it. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/205-entropy-photon-number.md).

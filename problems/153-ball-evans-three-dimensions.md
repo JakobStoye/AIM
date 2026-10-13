@@ -2,9 +2,9 @@
 
 **Area:** Nonlinear elasticity and approximation
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -28,8 +28,16 @@ In nonlinear elasticity, injectivity prevents distinct material points from occu
 
 3. Daniel Campbell, Luigi D’Onofrio and Tomáš Vítek, *Diffeomorphic Approximation of Piecewise Affine Homeomorphisms*, Journal of Geometric Analysis 36 (2026), article 157. [Article](https://doi.org/10.1007/s12220-026-02398-w). Main theorem smooths already piecewise affine maps in dimensions three and four.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf), result family 368 (2026). Statement locator: `both manuscripts build/sections/01-introduction.tex, main:theorem`. [Additional PDF 2](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf).
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Hencl states the general three-dimensional question as open. Searches for “Ball Evans approximation problem 2025 2026 diffeomorphisms” and “diffeomorphic approximation of piecewise affine homeomorphisms 2026” found the significant 2026 smoothing result. It does not construct piecewise affine approximations of arbitrary Sobolev homeomorphisms, so it does not settle this entry. Known low-exponent counterexamples in dimensions at least four are outside its scope.
+**Statement comparison:** The first manuscript covers $`1\le p\le2`$ and the second covers $`2<p<\infty`$. Together they prove strong $`W^{1,p}`$ approximation by smooth diffeomorphisms onto the same target for any bounded 3D domains and any Sobolev homeomorphism. No boundary smoothness or boundary equality is required; orientation-preserving maps are included.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-153) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/153-ball-evans-three-dimensions.md).

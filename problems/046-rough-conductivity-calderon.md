@@ -2,9 +2,9 @@
 
 **Area:** Inverse problems / electrical impedance tomography
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -33,14 +33,16 @@ This asks whether ideal boundary voltage/current measurements can distinguish ar
 1. G. Uhlmann, *30 Years of Calderón's Problem* (2013), discussion of low regularity after the uniqueness theorems. [Authoritative lecture proceedings](https://www.numdam.org/article/SLSEDP_2012-2013____A13_0.pdf).
 2. P. Caro, M. Á. García-Ferrero and K. M. Rogers, *Reconstruction for the Calderón problem with Lipschitz conductivities*, Analysis & PDE **18** (2025), 2033–2060, introduction and main theorem. [Paper](https://doi.org/10.2140/apde.2025.18.2033); [preprint](https://arxiv.org/abs/2401.06120).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf), result family 365 (2026). Statement locator: `build/paper.tex, thm:main`.
+
 ## Status review
 
-**Known cases:** Uniqueness and reconstruction are established for Lipschitz conductivities, which belong to the displayed bounded measurable class.
+**Resolution:** The linked OpenAI manuscript reports a complete counterexample to the original target.
 
-**Remaining target:** Uniqueness for arbitrary uniformly positive bounded measurable conductivities in three dimensions.
+**Statement comparison:** Uniformly positive bounded real scalar conductivities on the smooth ball B(0,3) differ on positive volume and have exactly the same full weak H1/2-to-H-1/2 DN operator. This directly refutes the all-pairs target and even keeps both conductivities equal to one near the boundary.
 
-**Literature check:** Open in cited literature; no later resolution located
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-046) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-Uhlmann identifies rough-conductivity uniqueness as open; the older discussion also includes Lipschitz coefficients, which have since been resolved. The 2025 paper explicitly explains that higher-dimensional uniqueness still requires regularity and proves reconstruction for Lipschitz conductivities. That theorem does not cover arbitrary $`L^\infty`$ coefficients. The two-dimensional bounded-conductivity theorem is also outside this three-dimensional statement.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/365.md). docs/365 covers this full rough scalar-conductivity counterexample via Conductivity. It does not cover the separate smooth anisotropic papers. No local kernel log inspected. No AIM Lean-verified status is asserted.
 
-Searches on 2026-09-08 included `Calderon problem L infinity conductivities dimension three remains open 2025 2026`, `Calderón bounded open 2025 conductivity uniqueness`, and the exact 2025 paper title. No resolution of the stated measurable three-dimensional case was located. This is a literature status, not a certificate of nonexistence of a proof.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/046-rough-conductivity-calderon.md).

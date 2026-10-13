@@ -4,8 +4,11 @@
     "title": "The complete Crouzeix conjecture",
     "area": "Operator theory and numerical linear algebra",
     "file": "problems/023-complete-crouzeix.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "024",
@@ -44,8 +47,8 @@
     "title": "Is the matrix-multiplication exponent two?",
     "area": "Numerical linear algebra and algebraic complexity",
     "file": "problems/028-matrix-multiplication-exponent.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Partially resolved",
+    "last_checked": "2026-10-13"
   },
   {
     "id": "029",
@@ -68,8 +71,11 @@
     "title": "The maximum number of mutually unbiased bases in dimension six",
     "area": "Quantum information and matrix design",
     "file": "problems/031-mub-dimension-six.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "032",
@@ -92,8 +98,11 @@
     "title": "Uniform spatial stability of von Neumann algebras",
     "area": "Operator perturbation theory",
     "file": "problems/034-kadison-kastler.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "035",
@@ -116,16 +125,22 @@
     "title": "Kadison’s similarity problem",
     "area": "Operator representations and stability",
     "file": "problems/037-kadison-similarity.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "038",
     "title": "Dixmier’s unitarizability problem for countable groups",
     "area": "Group representations and operator theory",
     "file": "problems/038-dixmier-unitarizability.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "039",
@@ -266,16 +281,22 @@
     "title": "A uniform L3 estimate for the triangular Hilbert transform",
     "area": "Multilinear harmonic analysis and coupled signal interactions",
     "file": "problems/447-triangular-hilbert-transform-l3.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "448",
     "title": "Almost-everywhere Fourier reconstruction of L log L signals",
     "area": "Fourier analysis and endpoint signal reconstruction",
     "file": "problems/448-fourier-l-log-l-pointwise-convergence.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "449",
@@ -290,8 +311,11 @@
     "title": "Stein’s Hilbert-transform bound along Lipschitz directions",
     "area": "Directional singular integrals and variable-direction propagation",
     "file": "problems/450-stein-lipschitz-direction-hilbert-bound.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "490",

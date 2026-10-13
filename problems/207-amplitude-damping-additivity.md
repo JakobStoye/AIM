@@ -2,9 +2,9 @@
 
 **Area:** Quantum communication; dissipative qubits
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -33,10 +33,16 @@ Amplitude damping models energy relaxation, including spontaneous emission. This
 1. Felix Leditzky, Eneet Kaur, Nilanjana Datta, and Mark M. Wilde, [Approaches for approximate additivity of the Holevo information of quantum channels](https://arxiv.org/abs/1709.01111), *Phys. Rev. A* 97 (2018), 012332. Introduction and Section IV.A, equation (28), explicitly leave the channel’s classical capacity undetermined.
 2. Fernando G. S. L. Brandão, Jens Eisert, Michał Horodecki, and Dong Yang, [Entangled inputs cannot make imperfect quantum channels perfect](https://arxiv.org/abs/1010.5074), *Phys. Rev. Lett.* 106 (2011), 230502; corrected preprint 2013. The amplitude-damping application supplies rigorous capacity bounds.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf), result family 276 (2026). Statement locator: `build/paper.tex, thm:main and generalized-channel definition`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The one-use Holevo quantity is known, but the cited capacity bounds do not establish its additivity over arbitrary block lengths. Recent results on symmetric generalized amplitude damping are unital-channel results; the channel here is nonunital. Known quantum-capacity formulas concern transmission of quantum states, a different task.
+**Statement comparison:** The theorem establishes unrestricted tensor-power Holevo additivity for all generalized amplitude-damping parameters. At stationary excited population nu=0 the Kraus channel is the target ordinary amplitude-damping channel. Entropy and capacity are in bits, and arbitrary entangled block inputs are included.
 
-**Search audit:** Queries: “amplitude damping classical capacity additivity 2025 2026”, “amplitude damping Holevo information exact capacity proof”. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-207) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/276.md). docs/276 covers tensor-power additivity for all parameters via AmplitudeDamping. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/207-amplitude-damping-additivity.md).

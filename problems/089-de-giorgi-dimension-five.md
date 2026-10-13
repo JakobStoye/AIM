@@ -2,9 +2,9 @@
 
 **Area:** Phase transitions
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -32,10 +32,16 @@ The Allen–Cahn equation models diffuse phase interfaces. The assertion would f
 - [Nassif Ghoussoub and Changfeng Gui, *On De Giorgi's conjecture in dimensions 4 and 5* (Annals of Mathematics, 2003), hypotheses of the partial results](https://doi.org/10.4007/annals.2003.157.313).
 - [Enric Florit-Simon and Joaquim Serra, *On stable solutions to the Allen-Cahn equation with bounded energy density in R⁴* (2025), introduction and main theorem](https://arxiv.org/abs/2509.02739).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf), result family 375 (2026). Statement locator: `build/sections/00-introduction.tex, thm:monotone`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The 2025 classification has both a dimension restriction and a bounded-energy-density hypothesis. It does not automatically provide the required control of the four-dimensional end states of an arbitrary monotone solution in R⁵. The original unrestricted dimension-five question, rather than the already-established additional-hypothesis versions, is retained.
+**Statement comparison:** The unrestricted monotone Allen-Cahn rigidity theorem is stated in dimension eight with no directional limits, energy growth or minimization hypothesis. Embed the target by U(x1,...,x8)=u(x1,...,x4,x8). The extra-coordinate independence forces their components of the resulting unit direction to vanish, giving exactly the dimension-five tanh profile with positive fifth component.
 
-Status-search topics (2026-09-08): `De Giorgi conjecture dimension five 2026`; `De Giorgi conjecture dimensions 5 2025 Serra`. This is a literature search, not a proof that no solution exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-089) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/089-de-giorgi-dimension-five.md).

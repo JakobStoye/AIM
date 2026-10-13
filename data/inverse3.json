@@ -228,8 +228,11 @@
     "title": "Polynomial sample complexity for deletion-trace reconstruction",
     "area": "Statistical inference and molecular data retrieval",
     "file": "problems/321-polynomial-trace-reconstruction.md",
-    "status": "Open",
-    "last_checked": "2026-09-18"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "331",
@@ -260,8 +263,8 @@
     "title": "The near-linear bound for planar halving lines",
     "area": "Computational geometry and parametric selection",
     "file": "problems/346-planar-halving-lines.md",
-    "status": "Open",
-    "last_checked": "2026-09-19"
+    "status": "Partially resolved",
+    "last_checked": "2026-10-13"
   },
   {
     "id": "385",

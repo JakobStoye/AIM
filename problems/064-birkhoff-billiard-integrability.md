@@ -2,9 +2,9 @@
 
 **Area:** Hamiltonian dynamics and ray optics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -21,8 +21,16 @@ This identifies the optical cavities whose near-grazing rays possess a complete 
 1. Vadim Kaloshin, Comlan Edmond Koudjinan and Ke Zhang, *Birkhoff Conjecture for Nearly Centrally Symmetric Domains*, Geometric and Functional Analysis **34** (2024), 1973–2007. [DOI](https://doi.org/10.1007/s00039-024-00695-6).
 2. Illya Koval, *Local Strong Birkhoff Conjecture and Local Spectral Uniqueness of Almost Every Ellipse*, Inventiones Mathematicae **244** (2026), 221–298; online December 2025. [DOI](https://doi.org/10.1007/s00222-025-01397-y).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf), result family 147 (2026). Statement locator: `Theorem 1.1, PDF page 1; Phase-foliation rigidity theorem, introduction.tex lines 17-33, label thm:main; companion Physical-collar rigidity theorem cited as Definition 1.1/Theorem 1.2.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Both papers formulate the Birkhoff problem and establish local or symmetry-dependent results. Koval proves a local strong conjecture near almost every ellipse; this leaves the global assertion above open. Searches on 2026-09-08: "Birkhoff conjecture 2026 proof ellipse" and "global strong Birkhoff conjecture solved 2025 2026". No proof for arbitrary smooth strictly convex billiards was located.
+**Statement comparison:** The AIM target assumes a smooth complete foliation of a full grazing annulus, including rational rotation levels. Phase-foliation rigidity permits merely continuous essential individually invariant leaves, for an arbitrary bounded C-infinity strictly convex positive-curvature planar table, and concludes ellipse. The smooth AIM foliation supplies the homeomorphism in the theorem. No closeness or symmetry is added. The physical-collar companion supplies the stated analytic input.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-064) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/064-birkhoff-billiard-integrability.md).

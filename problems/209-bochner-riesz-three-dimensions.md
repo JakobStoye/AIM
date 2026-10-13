@@ -2,9 +2,9 @@
 
 **Area:** Harmonic analysis; frequency filtering
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -31,14 +31,16 @@ Bochner–Riesz means smooth a spherical frequency cutoff. The sharp threshold d
 1. Shukun Wu, [On the Bochner–Riesz operator in three dimensions](https://arxiv.org/abs/2008.13043), *J. Anal. Math.* 149 (2023), 677–718. Introduction, Conjecture 1.1 and equation (1.3), states the threshold; the main theorem covers a restricted exponent range.
 2. Shaoming Guo, Changkeun Oh, Hong Wang, Shukun Wu, and Ruixiang Zhang, [The Bochner–Riesz problem: an old approach revisited](https://arxiv.org/abs/2104.11188), *Peking Math. J.* 8 (2025), 201–270. Conjecture 1.1, Theorem 1.3, and Remark 1.4 separate the conjecture from known bounds.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf), result family 078 (2026). Statement locator: `Theorem thm:bochner-riesz; Corollary cor:full-bochner-riesz`.
+
 ## Status review
 
-**Known cases:** The cited results achieve the predicted smoothing threshold when the larger of p and its conjugate exponent is at least 13/4.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-**Remaining target:** The predicted threshold for every exponent between one and infinity, including intermediate exponents not covered by those results.
+**Statement comparison:** The primary L3 estimate holds for every positive order; the explicitly read analytic-interpolation and duality corollary gives all 1<=p<=infinity under delta>max(3|1/p-1/2|-1/2,0). Restricting to AIM 1<p<infinity gives exactly its multiplier and full strict range. No equality endpoint is needed.
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-209) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The cited results reach $`\max\{p,p/(p-1)\}\ge13/4`$ with the predicted threshold. They do not cover all intermediate exponents. Two-dimensional results and improvements for maximal or weighted variants do not establish this full three-dimensional strong-type assertion.
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
 
-**Search audit:** Queries: “Bochner Riesz conjecture R3 proof 2025 2026”, “Wu Guo Oh Wang Zhang Bochner Riesz sharp range”. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/209-bochner-riesz-three-dimensions.md).

@@ -2,9 +2,9 @@
 
 **Area:** Billiard dynamics / transport and ergodicity
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -30,8 +30,18 @@ Polygonal billiards model collision transport without curved focusing or dispers
 2. J. Chaika and G. Forni, *Weakly mixing polygonal billiards* (2026), [Annals of Mathematics 203, 695–735](https://doi.org/10.4007/annals.2026.203.3.1), main theorem. Establishes weak mixing for a dense $`G_\delta`$ set of nonrational polygons.
 3. F. Arana-Herrera, J. Chaika and G. Forni, *Weak mixing in rational billiards* (2024), [arXiv:2410.11117](https://arxiv.org/abs/2410.11117), §6.2. Lists remaining ergodicity questions for nonrational polygons.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf), result family 150 (2026). Statement locator: `Theorem 1.1, PDF page 1; Introduction theorem label thm:main, normalized measure immediately preceding.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Known cases:** Every irrational-angle Euclidean triangle is weakly mixing, hence ergodic, for the specified Liouville billiard measure. This rules out a nonergodic example with three sides.
 
-Generic ergodicity or weak mixing does not imply the property for every irrational polygon. Searches included “irrational polygon nonergodic example 2025 2026” and “Gutkin Problem 8 solution”. The 2024 *Billiards with Spatial Memory* model changes its accessible region during motion and is not a fixed polygon with the standard billiard flow above. No qualifying counterexample was located.
+**Remaining target:** Decide whether an irrational polygon with four or more sides can be nonergodic, or rule out all such examples.
+
+**Statement comparison:** The weak-mixing theorem applies to every nondegenerate irrational-angle Euclidean triangle under precisely normalized position-times-uniform-direction Liouville measure, excluding the same null vertex-hit trajectories. Weak mixing implies ergodicity, so every three-side instance of the requested irrational polygon example is impossible; the existential question for larger polygons remains open.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-142) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/150.md). Family150 selected Lean docs formalize ergodicity of irrational triangles, which suffices for this partial exclusion; weak mixing is not the selected comparator claim. Comparator presence is not local verification. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/142-irrational-nonergodic-polygon.md).

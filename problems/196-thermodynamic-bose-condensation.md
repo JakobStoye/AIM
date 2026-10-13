@@ -2,9 +2,9 @@
 
 **Area:** Ultracold quantum gases
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -31,10 +31,16 @@ This would derive macroscopic occupation of one orbital directly from a repulsiv
 1. J. J. Chong, H. Liang and P. T. Nam, [Kinetic localization via Poincaré-type inequalities and applications to the condensation of Bose gases](https://arxiv.org/abs/2510.20493), preprint (2025; revised May 2026), §1 and §2.2: explicitly identifies thermodynamic condensation as open and distinguishes its scaling regime.
 2. E. H. Lieb and R. Seiringer, [Bose-Einstein Condensation of Dilute Gases in Traps](https://arxiv.org/abs/math-ph/0210028), preprint (2002), §1, Introduction and Main Results: rigorous condensation in the different Gross–Pitaevskii limit.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf), result family 267 (2026). Statement locator: `build/sections/introduction.tex, thm:main`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Chong–Liang–Nam prove condensation beyond the Gross–Pitaevskii regime but explicitly stop short of the fixed-density thermodynamic limit. Their scaling parameter remains below its thermodynamic endpoint. The displayed question isolates a regular repulsive-potential class and zero temperature; neither energy asymptotics nor trapped-gas condensation proves it.
+**Statement comparison:** The density-uniform theorem covers every fixed bounded measurable nonzero nonnegative radial finite-range potential, so includes every target Cc-infinity potential. At T=0 its exact canonical ground state has occupation at least c*(V)>0 at every sufficiently dilute fixed density along all thermodynamic sequences, with trace-N density matrix and constant orbital.
 
-**Search audit:** “Bose Einstein condensation interacting homogeneous gas thermodynamic limit proof 2026”; “2510.20493 thermodynamic fixed density condensation”. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-196) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/267.md). docs/267 covers only the hard-sphere ground-state model. The target requires smooth finite-range potentials; that formalization does not cover it. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/196-thermodynamic-bose-condensation.md).

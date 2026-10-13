@@ -2,9 +2,9 @@
 
 **Area:** Heat flow and Neumann eigenfunctions
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -26,10 +26,16 @@ The first nonconstant Neumann mode controls the long-time temperature profile in
 2. H. Deng, X. Jiang and X. Yang, [Critical points of second Neumann eigenfunctions on some convex domains in two-dimensional space forms](https://arxiv.org/abs/2607.17882), preprint (2026).
 3. J. de Dios Pont, [Convex sets can have interior hot spots](https://arxiv.org/abs/2412.06344), preprint (2024).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf), result family 369 (2026). Statement locator: `build/sections/01-introduction.tex, thm:main and eq:hotspots`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Rohleder explicitly describes the convex planar conjecture as unresolved in February 2026. The July 2026 paper gives quantitative restrictions, not a proof for all planar convex domains. De Dios Pont's counterexamples concern sufficiently high dimension. Consequently dimension two is an essential restriction.
+**Statement comparison:** Every nonzero real eigenfunction in the first positive Neumann eigenspace on every smooth bounded simply connected planar domain has no interior critical point and obeys strict interior inequalities against boundary extrema. Every convex target domain is simply connected; multiplicities and every vector in the eigenspace are explicitly included.
 
-**Search audit:** “hot spots conjecture convex planar 2026”; “hot spots conjecture proof counterexample convex”. Searches included proof, counterexample, and 2025–2026 updates. This is a literature search result, not a certification that no proof exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-003) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/369.md). docs/369 covers the full strict hot-spots conclusion via HotSpots. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/003-planar-convex-hot-spots.md).

@@ -2,9 +2,9 @@
 
 **Area:** Constraint satisfaction and approximation algorithms
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-17
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -36,14 +36,16 @@ The conjecture is a proposed foundation for sharp limits on approximation algori
 2. J. Kempe, O. Regev and B. Toner, [*Unique Games with Entangled Provers are Easy*](https://arxiv.org/pdf/0710.0655v3), arXiv:0710.0655v3, October 3, 2009; Conjecture 1.2, p. 2, and Theorem 1.3, p. 5.
 3. S. Heilman, [*Sharp Hardness for MAX-3-CUT and Quantum MAX-CUT*](https://arxiv.org/pdf/2608.00333v1), arXiv:2608.00333v1, submitted July 31, 2026; §1.1 and Theorem 1.4. The served manuscript bears August 24, 2026.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf), result family 102 (2026). Statement locator: `Theorem thm:ugc`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The September 17, 2026 review covered Unique Games and unique-label-cover aliases, permutation constraints, proof and refutation claims, 2025–2026 papers, unrestricted searches and version/correction records. Fei–Minzer–Wang still state the exact conjecture in their September 14 report. Their new perfect-completeness hardness theorem has four-to-one constraints. The one-to-one condition required here is different. Their discussion of existing hardness with completeness $`1/2`$ also leaves the almost-satisfiable regime unresolved.
+**Statement comparison:** Take the theorem errors epsilon=delta equal to AIM epsilon. The fixed alphabet F2^s depends only on the errors; translations are permutations. Output graphs are nonempty explicit unweighted simple bipartite instances, and value is ordinary classical fraction of satisfied edges. The deterministic polynomial reduction from 3SAT supplies exactly the NP-hard promise gap.
 
-Kempe–Regev–Toner's algorithm concerns entangled game value. A small classical optimum need not imply a small entangled optimum, so it does not decide the displayed classical promise problem. Heilman's hardness theorem assumes Unique Games rather than proving it.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-293) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The review also inspected two 2026 vertex-cover manuscripts by Frank Vega. The Hallelujah manuscript's displayed guarantee is strictly below $`2\mathop{\mathrm{OPT}}\nolimits`$ for each finite graph; it supplies no uniform constant improvement below factor two. The Salvador manuscript explicitly conjectures its proposed $`7/4`$ upper bound. Neither displayed result supplies a contradiction to Unique Games. These are scope assessments, not certifications of their proofs; the accessible author versions and publisher-access limitation are documented in the [evidence record](../research/expansion-2026-09/candidates/unique-games.json).
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/102.md). Actual theorem11 returns BinaryGapReduction with a fixed alphabet/program before inputs, simple bipartite outputs, translations, completeness and soundness. No local replay/axiom log. No AIM Lean-verified status is asserted.
 
-The record includes duplicate screening and a separate adversarial self-review. The classical constraint problem differs from the catalogue's quantum PCP and traveling-salesperson integrality-gap questions.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/293-unique-games.md).

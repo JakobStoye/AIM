@@ -2,9 +2,9 @@
 
 **Area:** Crystallization and energy minimization
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -28,14 +28,16 @@ This is a crystallization question for particles with repulsive Gaussian interac
 - [Henry Cohn and Abhinav Kumar, *Universally optimal distribution of points on spheres* (Journal of the AMS, 2007), Euclidean universal-optimality conjecture](https://arxiv.org/abs/math/0607446).
 - [Mircea Petrache and Sylvia Serfaty, *Crystallization for Coulomb and Riesz Interactions as a Consequence of the Cohn-Kumar Conjecture* (2019), opening discussion](https://arxiv.org/abs/1908.09714).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf), result family 090 (2026). Statement locator: `Theorems thm:universal and thm:gaussian; transfer eq:gaussian-energy`.
+
 ## Status review
 
-**Known cases:** The triangular lattice minimizes the Gaussian energy among lattices, the one-point-per-cell case of the displayed periodic formulation.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-**Remaining target:** The same lower bound for arbitrary periodic configurations with any number of points per cell.
+**Statement comparison:** Use g(t)=exp(-pi*alpha*t) for every alpha>0. Any AIM periodic union of N translates of a lattice of covolume N is locally finite and has centered-disk density one. Its ordered-pair finite-disk energy per particle converges to the displayed per-cell average: each offset occurs with frequency 1/N, Gaussian tails are summable, and boundary pairs have vanishing normalized contribution. Both sides omit only equal-point self-interactions. The theorem therefore yields the full arbitrary-N periodic bound.
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-087) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The two-dimensional conjecture remains separate from the proven universal optimality of E₈ and the Leech lattice in dimensions eight and 24. The triangular lattice is known to minimize among lattices; allowing N>1 offsets is the unresolved extension here. The 2026 status search found no resolution for arbitrary periodic configurations.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/090.md). Actual universal_energy_minimum proves the all-configuration completely-monotone energy statement, and sharp_gaussian_minorants_atomic supplies every Gaussian parameter. Periodic per-cell identification is a mathematical transfer, not a separately replayed AIM adapter. No local verification log. No AIM Lean-verified status is asserted.
 
-Status-search topics (2026-09-08): `triangular lattice universal optimality 2026`; `Coulomb triangular lattice crystallization conjecture 2026`. This is a literature search, not a proof that no solution exists.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/087-triangular-universal-optimality.md).

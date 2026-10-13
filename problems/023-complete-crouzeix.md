@@ -2,9 +2,9 @@
 
 **Area:** Operator theory and numerical linear algebra
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -27,14 +27,16 @@ Matrix-valued approximation bounds control coupled matrix functions and block co
 2. P. Åhag, R. Czyż and J. Virtanen, [Square Functions and the Complete Crouzeix Conjecture in Dimension Three](https://arxiv.org/abs/2608.27346), 2026, v2; introduction and Theorem 1.1. Complete bound through order three.
 3. A. Townsend and A. Greenbaum, [The Neurosurgery Resident Who Proved Crouzeix’s Conjecture](https://alextownsend.net/essays/SIAMNews_CrouzeixConjecture.pdf), 15 August 2026. Expert verification of the distinct scalar result.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf), result family 325 (2026). Statement locator: `build/main.tex, thm:main`.
+
 ## Status review
 
-**Known cases:** The complete matrix-valued bound is established through matrix order three, for arbitrary amplification level.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-**Remaining target:** The complete bound for arbitrary matrix order, including orders at least four, and arbitrary amplification level.
+**Statement comparison:** All n,m, all degrees, arbitrary complex coefficient matrices and constant two match. The manuscript orders tensors A^j tensor C_j and AIM orders C_j tensor A^j; the tensor-factor flip is unitary and preserves the operator norm.
 
-**Literature check:** Open in cited literature; no later resolution located
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-023) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-Checked on **2026-09-08**. The September 2026 version of Åhag–Czyż–Virtanen distinguishes the complete conjecture from the now-resolved scalar conjecture and reports only the dimensions $`n\le3`$. The scalar theorem does not establish this matrix-amplified inequality. No general complete resolution was located.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/325.md). docs/325 covers the full finite-matrix target via DirectCrouzeix/CompleteCrouzeix, plus arbitrary-Hilbert and structural extensions. No local kernel log inspected. No AIM Lean-verified status is asserted.
 
-Searches included: `complete Crouzeix conjecture 2026`; `Square Functions Complete Crouzeix dimension three`; `Crouzeix solution 2026`. This is a documented literature check, not a certification that no solution exists.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/023-complete-crouzeix.md).

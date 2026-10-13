@@ -2,9 +2,9 @@
 
 **Area:** Wave propagation; dispersive estimates
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -29,10 +29,16 @@ This measures the additional regularity gained by averaging a propagating wave o
 1. David Beltran, Jonathan Hickman, and Christopher D. Sogge, [Sharp local smoothing estimates for Fourier integral operators](https://arxiv.org/abs/1812.11616), survey (2019). Section 2.3, Conjecture 2.4, gives the Euclidean half-wave conjecture and distinguishes it from manifold and general Fourier-integral-operator versions.
 2. Tainara Borges, Benjamin Foster, Yumeng Ou, and Eyvindur Palsson, [Nonempty interior of pinned distance and tree sets](https://doi.org/10.1016/j.aim.2026.110917), *Adv. Math.* (2026). Section 2.3, Conjecture 12, and the discussion following Theorem 3 retain the open three-dimensional threshold.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf), result family 079 (2026). Statement locator: `Theorem thm:main; Corollary cor:full-range, eq:phys-full-range and its annular interpolation proof`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The 2026 application explicitly treats the three-dimensional critical estimate as conjectural. General Fourier-integral-operator theorems have different admissible exponents, and the proved two-dimensional wave result does not cover this dimension. The arbitrarily small loss $`\varepsilon`$ is part of the statement.
+**Statement comparison:** The half-wave and time interval [1,2] agree. The critical p=3 estimate permits every positive Sobolev loss; the read corollary/interpolation proof covers all p>2. For AIM p>=3 choose alpha=1-3/p+epsilon and localize to lambda<=|xi|<=2lambda; the annular multiplier bound gives lambda^alpha times the Lp input norm, uniformly in lambda>=1.
 
-**Search audit:** Queries: “local smoothing conjecture Euclidean wave R3 2026”, “local smoothing rough wave equations 2608.01440”; checked its conjectured endpoint discussion rather than interpreting “sharp” as the full Euclidean range. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-210) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/210-euclidean-wave-local-smoothing.md).

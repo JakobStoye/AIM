@@ -1,0 +1,1040 @@
+{
+  "openai_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "inspected_source_files": [
+    {
+      "path": "preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex",
+      "git_blob": "4492e66c707b9329f763c46e7cc113ff21d2edc0",
+      "sha256": "c396f2580a711b8b9e51ecf1265cb0e691acd745943f81bfc14ec0df209e1028",
+      "bytes": 43060,
+      "inspected_sha256": "c396f2580a711b8b9e51ecf1265cb0e691acd745943f81bfc14ec0df209e1028",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex",
+      "git_blob": "6add39bd8d2370e4a9c406b867df4207459f3239",
+      "sha256": "64a324e85b52d070a01ecc902b57ecabb8022c3521b322971620fbb0a8fad497",
+      "bytes": 14323,
+      "inspected_sha256": "64a324e85b52d070a01ecc902b57ecabb8022c3521b322971620fbb0a8fad497",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/build/main.tex",
+      "git_blob": "dad316cc2ad861a7482d79b46b6f840ed83d2a5e",
+      "sha256": "bfa619a454d49596b65f310f0bfdce3ae3f5ed6545bd9058d0c6316843ded2a6",
+      "bytes": 103614,
+      "inspected_sha256": "bfa619a454d49596b65f310f0bfdce3ae3f5ed6545bd9058d0c6316843ded2a6",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/build/sections/06-gaussian-energy-transfer.tex",
+      "git_blob": "645ee349404140ec0659ac7d9fd53076d0f546f2",
+      "sha256": "3f6e77be05e3fc9b67fc7d314bed2d916c697667783d9eaf6250932f2937a233",
+      "bytes": 9161,
+      "inspected_sha256": "3f6e77be05e3fc9b67fc7d314bed2d916c697667783d9eaf6250932f2937a233",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob": "17e26d7f6710d986241c1d65d4daae1b6caff506",
+      "sha256": "6b737533c3be85eed78ccee2cc3503eb812ac746cac2a55147cb5d4f0b4324f4",
+      "bytes": 12203,
+      "inspected_sha256": "6b737533c3be85eed78ccee2cc3503eb812ac746cac2a55147cb5d4f0b4324f4",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/build/sections/00-introduction.tex",
+      "git_blob": "5b9348ecd24bc61b5840ef2d2622342ee2770e4c",
+      "sha256": "247d54b038326e0b3f8d2923f6ae0ce341868efcee24b975ff98d155ee3e66e7",
+      "bytes": 24864,
+      "inspected_sha256": "247d54b038326e0b3f8d2923f6ae0ce341868efcee24b975ff98d155ee3e66e7",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "10cefe747eb4bfe7d0f48643190877cabe233e52",
+      "sha256": "454e3b971df9fecd5f5d027190a2be507e88a56ea4cda2c0dfb5d7a7b52e4515",
+      "bytes": 14110,
+      "inspected_sha256": "454e3b971df9fecd5f5d027190a2be507e88a56ea4cda2c0dfb5d7a7b52e4515",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/12-multiplier.tex",
+      "git_blob": "971ea891e37a20d817a0268e041f93b34e81d213",
+      "sha256": "f5ff68068a03705d7685d951635c479e84624f6d4cca1a08a94946775cc4b8e7",
+      "bytes": 21935,
+      "inspected_sha256": "a66b49278366ee88d822bc26f488acfa3279753299ac7ae94c3e6df9977987b6",
+      "line_endings_normalized": true,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex",
+      "git_blob": "804eaec4c195708cc6fce858d8618b661e38a5e1",
+      "sha256": "b5c2bee9ecd41185e44113201b763025fa566ec12747145922dc999509d88052",
+      "bytes": 18537,
+      "inspected_sha256": "b5c2bee9ecd41185e44113201b763025fa566ec12747145922dc999509d88052",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/09-physical-wave.tex",
+      "git_blob": "cb31c4bd0646e036fc35119b2fc704de4b04825f",
+      "sha256": "6d76898d6ba40cb575ef429ffb31f34e3030c277fec2018ff08035e6b5921073",
+      "bytes": 28558,
+      "inspected_sha256": "9a2846ff66deed91d40a837ae05b9ccf25ce38d9145b930a541fd4f348c44fd6",
+      "line_endings_normalized": true,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob": "4d3c59f8817b0d411a7568dc3b0441cfe3873275",
+      "sha256": "6326c2926659a7d3bdf3946e843a0ba9d921259c9432a4132ba8da9b3d2f0496",
+      "bytes": 10581,
+      "inspected_sha256": "6326c2926659a7d3bdf3946e843a0ba9d921259c9432a4132ba8da9b3d2f0496",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex",
+      "git_blob": "da53e7ca7263cebd6ed268b786e8b08ef71ffa16",
+      "sha256": "500522d4bf64a2b4891cf8d9db872c0f3e0a116db9e707f2768f2f9023987879",
+      "bytes": 18348,
+      "inspected_sha256": "500522d4bf64a2b4891cf8d9db872c0f3e0a116db9e707f2768f2f9023987879",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/paper.tex",
+      "git_blob": "00a3e5fed881652cd68cc6a522602f6a66e5a3ab",
+      "sha256": "38f8318c45e578108367b3e35d87575ff0c1c56fb203d68a2d3b24b193eb6e2d",
+      "bytes": 25458,
+      "inspected_sha256": "38f8318c45e578108367b3e35d87575ff0c1c56fb203d68a2d3b24b193eb6e2d",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "f3ec9956eb880ff56784dfd37ece9c3cc690f06b",
+      "sha256": "1e553ce3e4bbad52e1632116d8fcb178b58081f1ab2ad6b0ceebf36245ed2972",
+      "bytes": 12211,
+      "inspected_sha256": "1e553ce3e4bbad52e1632116d8fcb178b58081f1ab2ad6b0ceebf36245ed2972",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex",
+      "git_blob": "9bee66aaa542255e9927830556d462f1a3e5dabb",
+      "sha256": "ea6b033b62d79335d053e25e7bbcb1d2eb9edbac15e6dab29d850f7b20d343df",
+      "bytes": 14591,
+      "inspected_sha256": "ea6b033b62d79335d053e25e7bbcb1d2eb9edbac15e6dab29d850f7b20d343df",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "55b5b55445d3f63a3e08f08b10839ae91fc69be0",
+      "sha256": "5f07b4416146334a65e482d378df7d61649124da72163c4c53c410dfc3a38156",
+      "bytes": 7169,
+      "inspected_sha256": "5f07b4416146334a65e482d378df7d61649124da72163c4c53c410dfc3a38156",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob": "15cd10cc9759131ca68e15d5f0808163768ad26f",
+      "sha256": "61ad5332e7a5cd166f99d1f01d0030be70bfc8161e37710f7b45665019011e1b",
+      "bytes": 10099,
+      "inspected_sha256": "61ad5332e7a5cd166f99d1f01d0030be70bfc8161e37710f7b45665019011e1b",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/build/sections/01-introduction.tex",
+      "git_blob": "ce6c6955cb2db817f811553b478b5e94c43531fb",
+      "sha256": "0f4e559ec564a15b0d5b540bcf5c08c3d58d7d21dcdb50a4811c6d614fbb0e6f",
+      "bytes": 14865,
+      "inspected_sha256": "0f4e559ec564a15b0d5b540bcf5c08c3d58d7d21dcdb50a4811c6d614fbb0e6f",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "b4d28e92e4fdce849528f8fe18d71adf00137b2f",
+      "sha256": "b5708dcb680dc251e950b8e6ba0b9095a540905e6ca453f45634ee48c6e36660",
+      "bytes": 12773,
+      "inspected_sha256": "b5708dcb680dc251e950b8e6ba0b9095a540905e6ca453f45634ee48c6e36660",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/01-introduction.tex",
+      "git_blob": "9dc4fda0b1686259acec33d1e67c2e8a0897a913",
+      "sha256": "fb7423a7e0bb09830db501e04c7483625ab2c886a62f377790463d73dde40118",
+      "bytes": 14727,
+      "inspected_sha256": "fb7423a7e0bb09830db501e04c7483625ab2c886a62f377790463d73dde40118",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/sections/introduction.tex",
+      "git_blob": "6c06e4b06b3275b0e824756e53f585d46ad7d019",
+      "sha256": "af26d1d41b3bf4c45956d3c63cc0bb7db4308a0f7852091485c6e7d936dd6c13",
+      "bytes": 10128,
+      "inspected_sha256": "af26d1d41b3bf4c45956d3c63cc0bb7db4308a0f7852091485c6e7d936dd6c13",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex",
+      "git_blob": "8dcf5266e427bc40f61062ba2b7ea77660cf052d",
+      "sha256": "9e3abe4ab91388f2e4b735e51a9f2e41cc4c384d8a96a9d774fc0b41356361e4",
+      "bytes": 9916,
+      "inspected_sha256": "9e3abe4ab91388f2e4b735e51a9f2e41cc4c384d8a96a9d774fc0b41356361e4",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent001"
+    },
+    {
+      "path": "preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "6df55b7cbefdcad5ca5ffbad7406047de56f3878",
+      "sha256": "b991f085e5636cd6a0e5e5f6ebd9627f5860c0961a364189965c6ea5f9f4abe0",
+      "bytes": 10510,
+      "inspected_sha256": "b991f085e5636cd6a0e5e5f6ebd9627f5860c0961a364189965c6ea5f9f4abe0",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "828a77b83fabf6f036f8f0f1c72ebadeb0174440",
+      "sha256": "86088d1aa44fba799ad0816d050f4561edf8661f7eefe90eb252d3f91c5fb8e4",
+      "bytes": 10015,
+      "inspected_sha256": "86088d1aa44fba799ad0816d050f4561edf8661f7eefe90eb252d3f91c5fb8e4",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "b0f39abb16bb3c2e239143090446910ed5186bbf",
+      "sha256": "4dafbb49bc8fdb3d265c62a6408db1109badfe04d176b212296f3000abd4f4f1",
+      "bytes": 10419,
+      "inspected_sha256": "4dafbb49bc8fdb3d265c62a6408db1109badfe04d176b212296f3000abd4f4f1",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/build/introduction.tex",
+      "git_blob": "fba7b32aa3c39bb29db2c9cfb9990b9f0f0493ed",
+      "sha256": "9c122e26801cef5bace09b8c6c9494f25ce31546917b1ab50223f06028981233",
+      "bytes": 8989,
+      "inspected_sha256": "9c122e26801cef5bace09b8c6c9494f25ce31546917b1ab50223f06028981233",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "55071a8b5d6c2dad8b8607b66ed233ce9f42b2d6",
+      "sha256": "cf2697daa58019b77e0bf3ef64e66e9f9b2da47aa365684f7d3dfd420b6ff66a",
+      "bytes": 21561,
+      "inspected_sha256": "cf2697daa58019b77e0bf3ef64e66e9f9b2da47aa365684f7d3dfd420b6ff66a",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/build/sections/chordal.tex",
+      "git_blob": "8acb60784b36ca272234f21562f8e737a8c1894c",
+      "sha256": "9e90a13f7555830380ea63f9f9d5210b3ed9a1909e6797eaecd526765ae2fa99",
+      "bytes": 63397,
+      "inspected_sha256": "9e90a13f7555830380ea63f9f9d5210b3ed9a1909e6797eaecd526765ae2fa99",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "5a2884e91fad9203ccaa8a33bd977ca952bf2fbc",
+      "sha256": "d075ec950d5df9c5cefd3c09a1fd97c015116a253f0f5df0a713c6de38fb137b",
+      "bytes": 14646,
+      "inspected_sha256": "d075ec950d5df9c5cefd3c09a1fd97c015116a253f0f5df0a713c6de38fb137b",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Strict-convexity-and-differentiability-of-the-planar-exponential-first-passage-limit-shape-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "ea108cac0994372ba5887e93df5afb1379ff7b40",
+      "sha256": "29b22e7fd024a81977eaafaea80d02a19a1141a7745c3bf065e4f7e0744a707e",
+      "bytes": 10773,
+      "inspected_sha256": "29b22e7fd024a81977eaafaea80d02a19a1141a7745c3bf065e4f7e0744a707e",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/No-bigeodesics-in-planar-first-passage-percolation-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "731be208d4c934c87c6d2cd59022942cb863e9f0",
+      "sha256": "764efa48ee80cfb4951745210719ddb8f69bab25a530c1c6935ac5de770864e2",
+      "bytes": 10098,
+      "inspected_sha256": "764efa48ee80cfb4951745210719ddb8f69bab25a530c1c6935ac5de770864e2",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Nonuniqueness-of-percolation-on-nonamenable-quasi-transitive-graphs-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "2cccdfdf4c1a734298b13d8f7aa30a9bfe583626",
+      "sha256": "b18975526174ba8a3a483897a7a04e8fd2ad25c3beddb86f4fbdbff07375f325",
+      "bytes": 22800,
+      "inspected_sha256": "b18975526174ba8a3a483897a7a04e8fd2ad25c3beddb86f4fbdbff07375f325",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Directional-transience-implies-ballisticity-September-23-2026/build/01-introduction.tex",
+      "git_blob": "f3d2c1e089fee48a3477bdb10042311a1337a67e",
+      "sha256": "4168aea9523e3c9ce6579f858f6d31b151198f58ef6ded7fdd8e5c0b4a272ebb",
+      "bytes": 12796,
+      "inspected_sha256": "4168aea9523e3c9ce6579f858f6d31b151198f58ef6ded7fdd8e5c0b4a272ebb",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/build/01-introduction.tex",
+      "git_blob": "7f76248054b80c42d4d831c2eaaaea2c144e25d1",
+      "sha256": "364c10922a78f91b891c0fd49ec74026023da3c9b052c8dcfc8bb67636995c8e",
+      "bytes": 11906,
+      "inspected_sha256": "364c10922a78f91b891c0fd49ec74026023da3c9b052c8dcfc8bb67636995c8e",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/build/sections/introduction.tex",
+      "git_blob": "e1c67222e7c247e2c9ed3daa12858ca181a71f8e",
+      "sha256": "73122c3242d7cdcc86a4d50fc3169e1ef79ade9fbf8b0316f0ebd64cec288bb5",
+      "bytes": 9880,
+      "inspected_sha256": "73122c3242d7cdcc86a4d50fc3169e1ef79ade9fbf8b0316f0ebd64cec288bb5",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/The-strong-thin-tree-conjecture-September-23-2026/build/source/sections/introduction.tex",
+      "git_blob": "1a5a2c6c327f3b71752f0759de5c5daf97a4095e",
+      "sha256": "fc32e6c483da6b2f940842a98b6a1e59602f220ae305af8cc5a4442116745ec4",
+      "bytes": 8964,
+      "inspected_sha256": "fc32e6c483da6b2f940842a98b6a1e59602f220ae305af8cc5a4442116745ec4",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "32890ea14c106eeb0556da93226165ac93739371",
+      "sha256": "16c373c05576f0850ca9c1df04df84d28f5193aed68db85d5b8d85f622e7ec02",
+      "bytes": 18486,
+      "inspected_sha256": "16c373c05576f0850ca9c1df04df84d28f5193aed68db85d5b8d85f622e7ec02",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/build/sections/introduction.tex",
+      "git_blob": "a80940eea29c1d87e83da316e4a984cee91b4b4e",
+      "sha256": "404e5756b9dddcee639ce66fe708c61b291b2a1cf2abe4b9b1e7b4de9d8bf3c5",
+      "bytes": 7314,
+      "inspected_sha256": "404e5756b9dddcee639ce66fe708c61b291b2a1cf2abe4b9b1e7b4de9d8bf3c5",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/build/sections/introduction.tex",
+      "git_blob": "082dabaa6852293a3b5e75e80aa059da44f38a11",
+      "sha256": "6febd5802bf7168eb94c328c87e705c14e774c64cae8bc9668e9fd7c42bfe496",
+      "bytes": 9499,
+      "inspected_sha256": "6febd5802bf7168eb94c328c87e705c14e774c64cae8bc9668e9fd7c42bfe496",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/A-power-saving-for-planar-halving-lines-September-25-2026/build/sections/introduction.tex",
+      "git_blob": "d0403ee2c7e940a50c8049555352e07bba3187ee",
+      "sha256": "16f5d1284214d2b9e12a74a7a39adcb8e527262010502861c62b460db2835695",
+      "bytes": 10337,
+      "inspected_sha256": "16f5d1284214d2b9e12a74a7a39adcb8e527262010502861c62b460db2835695",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/build/sections/00_introduction.tex",
+      "git_blob": "7e99154c7b8a0ede4f3c9087d039b4f6fc6cf649",
+      "sha256": "3425dd9ee4aff16c5287081b9875e68dd22aa77ed6ebd26b5e03beb103d9ceac",
+      "bytes": 11152,
+      "inspected_sha256": "3425dd9ee4aff16c5287081b9875e68dd22aa77ed6ebd26b5e03beb103d9ceac",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent125"
+    },
+    {
+      "path": "preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/build/main.tex",
+      "git_blob": "238506227f61786f12dc46d11e2eae336a049f9c",
+      "sha256": "64400c079d013f693c9533c5ca33ac8d48f89562b5ecbf3516096a7d50cb6456",
+      "bytes": 2055,
+      "inspected_sha256": "64400c079d013f693c9533c5ca33ac8d48f89562b5ecbf3516096a7d50cb6456",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Unitarizability-Implies-Amenability-for-Countable-Groups-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "65b32c56150f713189de3c57d59ae57119f5ab39",
+      "sha256": "8bb3d67d61a57b5afe5e6cdc62583168649a0fd96f2e43429f4ca03848737552",
+      "bytes": 11251,
+      "inspected_sha256": "8bb3d67d61a57b5afe5e6cdc62583168649a0fd96f2e43429f4ca03848737552",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/build/01-introduction.tex",
+      "git_blob": "c9097dc71f5439b5e7beb207ac76f64d9f335757",
+      "sha256": "119e8703471d57d2ecdf8fcc699016efaa6d9ebca8185afad8c8fef00cc29192",
+      "bytes": 15618,
+      "inspected_sha256": "119e8703471d57d2ecdf8fcc699016efaa6d9ebca8185afad8c8fef00cc29192",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/build/paper.tex",
+      "git_blob": "7a3097d6f806e94ec32aca911cbb19df24cb4978",
+      "sha256": "ccfc37f19571cebe5b1121d3ec7a45d1fecc5f64bff89d46d8d2089d5bc1651c",
+      "bytes": 2228,
+      "inspected_sha256": "ccfc37f19571cebe5b1121d3ec7a45d1fecc5f64bff89d46d8d2089d5bc1651c",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/build/paper.tex",
+      "git_blob": "23620d4dbfc0367dfa263a3753d0828e299b4415",
+      "sha256": "e62fab87d51366344a7fbe17b49318202fd0d7b38de691d9557e1bfced0b2583",
+      "bytes": 2512,
+      "inspected_sha256": "e62fab87d51366344a7fbe17b49318202fd0d7b38de691d9557e1bfced0b2583",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "8390141d73f582f92a16935c03242512e664181c",
+      "sha256": "8556210d7d0d039d4bc4083e4850d1b5ee2471150585e392b0e51163a7fa47b2",
+      "bytes": 9217,
+      "inspected_sha256": "8556210d7d0d039d4bc4083e4850d1b5ee2471150585e392b0e51163a7fa47b2",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/build/sections/setup.tex",
+      "git_blob": "8e437307b2ebfa29473b65b1f4e3dff4a6c66e6f",
+      "sha256": "fe6dfad8d3e883b5007c94a3516a33e69a16b61de0c97c5e75b338ef4b52941c",
+      "bytes": 3502,
+      "inspected_sha256": "fe6dfad8d3e883b5007c94a3516a33e69a16b61de0c97c5e75b338ef4b52941c",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/build/main.tex",
+      "git_blob": "2fdd9676a3b8251584ba65f1f338dd152f4d733e",
+      "sha256": "8f28abc31ffccdf902bd609237628d8c0e8224a8f889700ee196184e97964856",
+      "bytes": 3136,
+      "inspected_sha256": "8f28abc31ffccdf902bd609237628d8c0e8224a8f889700ee196184e97964856",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "bf95f9b86e9b51400dc589c964d9b59f5d4a8c73",
+      "sha256": "2a166eb9c7c1aef6e65cf927ed98230d80fe9d5882e9cef3fd75340ebf0ac7a7",
+      "bytes": 15286,
+      "inspected_sha256": "2a166eb9c7c1aef6e65cf927ed98230d80fe9d5882e9cef3fd75340ebf0ac7a7",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/build/main.tex",
+      "git_blob": "2e37d3ec457951a7ca5b262c94ad76a999958313",
+      "sha256": "fd8e9055e5becae69a412225fdcde835deaa6ee315a96812554fcc3aaf39e18c",
+      "bytes": 2594,
+      "inspected_sha256": "fd8e9055e5becae69a412225fdcde835deaa6ee315a96812554fcc3aaf39e18c",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/build/sections/00-introduction.tex",
+      "git_blob": "7358b19bfe22251ce7156c86b46ea7e8adde373a",
+      "sha256": "5c18de99132660a357399bd66690fc76cf77134b87beef6529f4c141651b7a52",
+      "bytes": 10963,
+      "inspected_sha256": "5c18de99132660a357399bd66690fc76cf77134b87beef6529f4c141651b7a52",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/paper.tex",
+      "git_blob": "0d125661599edbff6d193f7f8304e20a9e64764e",
+      "sha256": "5e9df7973b7a60a1d093f3d1382c03e796892cb40ca9bb82dca09cd66ae5e7ed",
+      "bytes": 2594,
+      "inspected_sha256": "5e9df7973b7a60a1d093f3d1382c03e796892cb40ca9bb82dca09cd66ae5e7ed",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "9dc4d63c743c09531b4f62897ce17536987769be",
+      "sha256": "416f298956ccc6a070fb17e69482eb6da0c7cf0fd9b6eedd4781df93b2b3c466",
+      "bytes": 12178,
+      "inspected_sha256": "416f298956ccc6a070fb17e69482eb6da0c7cf0fd9b6eedd4781df93b2b3c466",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/sections/execution.tex",
+      "git_blob": "b3031442c035acd426f5c55dd7e8aeca7f249833",
+      "sha256": "bd5e193a7cb0ecc8a34b7452e51dfa3bad686ba423af1b9998b5d70a40f59fbf",
+      "bytes": 20443,
+      "inspected_sha256": "7162b43c7fd53fa7490c3cbf9225390267e7beadd7bdbc628d89b0bc33e88470",
+      "line_endings_normalized": true,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/build/main.tex",
+      "git_blob": "649da8f406709eeb39468bc7837f275f99fa1980",
+      "sha256": "c4ec2ecbb655b56c817182b700fbceb4cbb342b3b049e1f9def9d6951ee5b5f3",
+      "bytes": 2072,
+      "inspected_sha256": "c4ec2ecbb655b56c817182b700fbceb4cbb342b3b049e1f9def9d6951ee5b5f3",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/build/sections/introduction.tex",
+      "git_blob": "f9bc72e44db5879ddf4a05179ae72fca4e46c8dc",
+      "sha256": "58ba2c4e53756170040c8dfdfd66a7e89a17416861fda352dcf8ef5d2d6aa689",
+      "bytes": 6262,
+      "inspected_sha256": "58ba2c4e53756170040c8dfdfd66a7e89a17416861fda352dcf8ef5d2d6aa689",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/build/sections/setup.tex",
+      "git_blob": "d0cbc523bfa5d7c783a01175efe29f86bbde386d",
+      "sha256": "3d9cd207de9a31ebd16e45d5233ce1c4dc9e080063a0e03945885ac6b3488d52",
+      "bytes": 2220,
+      "inspected_sha256": "3d9cd207de9a31ebd16e45d5233ce1c4dc9e080063a0e03945885ac6b3488d52",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/introduction.tex",
+      "git_blob": "1f1fcfc19bf92edcdcbe16c39928bc8da33678df",
+      "sha256": "c120d799db4e691a66ad1990e92331fdd16581e55aad2107c5b662fd28cab8dc",
+      "bytes": 9790,
+      "inspected_sha256": "c120d799db4e691a66ad1990e92331fdd16581e55aad2107c5b662fd28cab8dc",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/main.tex",
+      "git_blob": "72d62936b45c6067d7cbfdbe38a7295adec9c130",
+      "sha256": "6725082470b46d59ab863279c075c2293c5678a32b1491485a4f1dd6094bc823",
+      "bytes": 4186,
+      "inspected_sha256": "6725082470b46d59ab863279c075c2293c5678a32b1491485a4f1dd6094bc823",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/model.tex",
+      "git_blob": "f11cff765b71f52b913e389d4471655679c95274",
+      "sha256": "234933822c1af019a721b5d0df8b7afec47ad4a8ba7ea39287d4e7119756a8b8",
+      "bytes": 6886,
+      "inspected_sha256": "234933822c1af019a721b5d0df8b7afec47ad4a8ba7ea39287d4e7119756a8b8",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/main.tex",
+      "git_blob": "a4f007418af31092e921848b9cbdb77ce5b59f57",
+      "sha256": "62de8d1cb74cf149b14c32d1622aa5926d846337a46f07cf7d2d818a3a4941b6",
+      "bytes": 2771,
+      "inspected_sha256": "62de8d1cb74cf149b14c32d1622aa5926d846337a46f07cf7d2d818a3a4941b6",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/sections/introduction.tex",
+      "git_blob": "b88f716d0569c3ec36b8a6e3bfec1514ffdd4224",
+      "sha256": "a2eda7fe4b6cc97df88acdcc56c8a5392b64cc994ff456cd298e0ae6a3f35d1d",
+      "bytes": 17666,
+      "inspected_sha256": "a2eda7fe4b6cc97df88acdcc56c8a5392b64cc994ff456cd298e0ae6a3f35d1d",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-entropy-photon-number-inequality-September-24-2026/build/main.tex",
+      "git_blob": "b9355df049d23eb0604cbbf9ff3044297feb2442",
+      "sha256": "1ba3e5ae51dde8f6904a4357d24fd3c607df7068e968c22f5093a265a4b151fe",
+      "bytes": 2091,
+      "inspected_sha256": "1ba3e5ae51dde8f6904a4357d24fd3c607df7068e968c22f5093a265a4b151fe",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-entropy-photon-number-inequality-September-24-2026/build/sections/00-introduction.tex",
+      "git_blob": "f5225e23f43d43602b1dff966884448f3a8ed875",
+      "sha256": "e9aacce4cf725d58cd99276a76c989adaee998706a3ffab2a2c0676b506ffb04",
+      "bytes": 14680,
+      "inspected_sha256": "e9aacce4cf725d58cd99276a76c989adaee998706a3ffab2a2c0676b506ffb04",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/build/paper.tex",
+      "git_blob": "8da177e1ce5eb326bb37a77197659e8a59ea2cd5",
+      "sha256": "c25bd71e406cca4f77e1424f33c23aa1e1e56ecbdafedf2ad2c4dac0f0a1c24b",
+      "bytes": 16205,
+      "inspected_sha256": "c25bd71e406cca4f77e1424f33c23aa1e1e56ecbdafedf2ad2c4dac0f0a1c24b",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/build/main.tex",
+      "git_blob": "4013b403eae1822edfd79272cf613c3b4365883a",
+      "sha256": "471dbf1394e49c5c50312119370472f83a957270b5ff16beaed8530eb8930739",
+      "bytes": 933,
+      "inspected_sha256": "471dbf1394e49c5c50312119370472f83a957270b5ff16beaed8530eb8930739",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "43e7f0173b04308ecb1c03a8acf436bf5d565c5b",
+      "sha256": "9d4ab6acd8c51f6dd0562ba68b9085d64d6581a26a907395d59e910e518c8287",
+      "bytes": 10703,
+      "inspected_sha256": "9d4ab6acd8c51f6dd0562ba68b9085d64d6581a26a907395d59e910e518c8287",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/main.tex",
+      "git_blob": "0454f38bae045261cf91180fab5a24f76988d294",
+      "sha256": "e04a4ad6901a962b880ee32db6d481b84dcb1d6af200409440a26cdb9f00fca2",
+      "bytes": 1020,
+      "inspected_sha256": "e04a4ad6901a962b880ee32db6d481b84dcb1d6af200409440a26cdb9f00fca2",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob": "50b24c60258085463fad9420d194367e58edc4bd",
+      "sha256": "e31aae565518cba69d95578dcae352e2615b7ea46a9988e6d876fdd2d028e626",
+      "bytes": 13174,
+      "inspected_sha256": "e31aae565518cba69d95578dcae352e2615b7ea46a9988e6d876fdd2d028e626",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex",
+      "git_blob": "5976502d77febf477933f36f6205c6e1aa6370ae",
+      "sha256": "54a429fe7129b4760b3015fabf2269d4de5fa38aba9539b18542c1df7e58333f",
+      "bytes": 35174,
+      "inspected_sha256": "54a429fe7129b4760b3015fabf2269d4de5fa38aba9539b18542c1df7e58333f",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/build/main.tex",
+      "git_blob": "b8a650c67f4a166dda3e73ad7ceb3ea30ecd626e",
+      "sha256": "492e3c156252d3e66031f27f56168b4b9ec11b967124f942d691f3c891248c55",
+      "bytes": 3748,
+      "inspected_sha256": "492e3c156252d3e66031f27f56168b4b9ec11b967124f942d691f3c891248c55",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob": "bd55f7a766bfa5ae72b8ffc46e809ff3e54dc612",
+      "sha256": "97f1c12bc707399c00911539386b2386d94ba71eb4d5c5bea1bb5b9e8da054d2",
+      "bytes": 13985,
+      "inspected_sha256": "97f1c12bc707399c00911539386b2386d94ba71eb4d5c5bea1bb5b9e8da054d2",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob": "243910c9d900228190067f1ae30bc4c24cdb43b5",
+      "sha256": "56120889c1239e9d8e71fd49afc750e4f2091fd4adba3dd6f06b571b3404773f",
+      "bytes": 11258,
+      "inspected_sha256": "30fe1c483475553a632e7d2a335645ad3fc5c976080b403958689e7a6e9ab1e4",
+      "line_endings_normalized": true,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/sections/08-classical.tex",
+      "git_blob": "452341633564a625d25dc9a3248f3068d4ead412",
+      "sha256": "95249ade66b678e6e03ad67afd11d9ed2e9578b52b0c5e6081b5e03abf67dcb9",
+      "bytes": 3526,
+      "inspected_sha256": "5bb70c2f3ef96ac9bba4251cc206cc2c61d6aee12a4210194e25bfcd89340a50",
+      "line_endings_normalized": true,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/build/paper.tex",
+      "git_blob": "218f843043de43367eb7c2917b1c26b7f777474a",
+      "sha256": "e856eec2ec6b21719ded89798c84be0def46ea377fd97b83e73de3dbb27c0381",
+      "bytes": 2875,
+      "inspected_sha256": "e856eec2ec6b21719ded89798c84be0def46ea377fd97b83e73de3dbb27c0381",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "d4cba9216aa5aee551cd7dec4486e5c5ae6aa439",
+      "sha256": "5dfa709b328222df6e4a231cf7bd73e8b72d6d3f74c98cf5e894934736ea425d",
+      "bytes": 10329,
+      "inspected_sha256": "5dfa709b328222df6e4a231cf7bd73e8b72d6d3f74c98cf5e894934736ea425d",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/build/main.tex",
+      "git_blob": "98e35f213792d604484fd5141d71b93103a2ae68",
+      "sha256": "5d0e189a665462df2c86cc74253704204a0d319ddbb89d0e4b4c897df11360ba",
+      "bytes": 10306,
+      "inspected_sha256": "5d0e189a665462df2c86cc74253704204a0d319ddbb89d0e4b4c897df11360ba",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/build/main.tex",
+      "git_blob": "c8cc26c36696aeea805d8cc4a8895777fecfeb5f",
+      "sha256": "9dfac82a7711c413df34599cafc5ef07b7c8d7cf86a11e13d4421f21ff27bd70",
+      "bytes": 2113,
+      "inspected_sha256": "9dfac82a7711c413df34599cafc5ef07b7c8d7cf86a11e13d4421f21ff27bd70",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/build/sections/introduction.tex",
+      "git_blob": "9ebc2e11c10436dfeae06025ebc5ecf9121f97aa",
+      "sha256": "08e697324bf067dcc76fc938bb123919080b245e591ab40142c9bc9a3b6681b6",
+      "bytes": 10033,
+      "inspected_sha256": "08e697324bf067dcc76fc938bb123919080b245e591ab40142c9bc9a3b6681b6",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex",
+      "git_blob": "1993f13afe4cec701e4f3e1219e229bdec569cbd",
+      "sha256": "317160462afa0d68a6f8ba72cab9f29726b0f7903be3c12f4c8a0b3d54250236",
+      "bytes": 2170,
+      "inspected_sha256": "317160462afa0d68a6f8ba72cab9f29726b0f7903be3c12f4c8a0b3d54250236",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex",
+      "git_blob": "e0ce7bdeff579dddecad7d868a7c38e67c8b9f8e",
+      "sha256": "09040019b94a641c4a0c4e5deda7c16ee4855daf0f398e692e1825f831da3de4",
+      "bytes": 11789,
+      "inspected_sha256": "09040019b94a641c4a0c4e5deda7c16ee4855daf0f398e692e1825f831da3de4",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/setup.tex",
+      "git_blob": "0ffe21a3e691e48db0152c4f68051cd8e94a1a72",
+      "sha256": "40a7d4abe6fa5d9dc96a6ffd689e602a10bb7a1cf3bd9fd8f0caa70cf72a9cf7",
+      "bytes": 6184,
+      "inspected_sha256": "40a7d4abe6fa5d9dc96a6ffd689e602a10bb7a1cf3bd9fd8f0caa70cf72a9cf7",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/build/main.tex",
+      "git_blob": "dbe3edc0260c535db90792deb9b46b2c56876288",
+      "sha256": "aa0ce45292e7fe240edc6dfe262a0786dc597bfe0b30f4be15bc6fb85c7bd017",
+      "bytes": 1177,
+      "inspected_sha256": "aa0ce45292e7fe240edc6dfe262a0786dc597bfe0b30f4be15bc6fb85c7bd017",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/build/paper/01-introduction.tex",
+      "git_blob": "6719b15488bfa545305891d42a49a32bb6eb572f",
+      "sha256": "6529461a673bb0b0bcb3fbcf96e42bcd6cb9beaadf8f8b8adafd0d6cd7e99830",
+      "bytes": 12097,
+      "inspected_sha256": "6529461a673bb0b0bcb3fbcf96e42bcd6cb9beaadf8f8b8adafd0d6cd7e99830",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/build/paper.tex",
+      "git_blob": "3fdf888db7411576d8d9d7de6ff8de6ae90d6bd0",
+      "sha256": "4e3d1582b34a48c561a88eefc99ba2b3b806feb6dde0772884b47b1b83fa9dfc",
+      "bytes": 15501,
+      "inspected_sha256": "4e3d1582b34a48c561a88eefc99ba2b3b806feb6dde0772884b47b1b83fa9dfc",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex",
+      "git_blob": "75ee05391953771e0712ca5c1bad83ead58b51e0",
+      "sha256": "abcb61cda68b10c366f9b8476576b09d9c157298521b9d620d917dc60364c6b6",
+      "bytes": 1030,
+      "inspected_sha256": "abcb61cda68b10c366f9b8476576b09d9c157298521b9d620d917dc60364c6b6",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "ea062fa3408b3c280e75ba2ed451f9e8450964f8",
+      "sha256": "bfc7f8d4162dfb248f81c8f8dd092d74abd0787c1780f46c9853c2e22d0e1a4d",
+      "bytes": 15956,
+      "inspected_sha256": "bfc7f8d4162dfb248f81c8f8dd092d74abd0787c1780f46c9853c2e22d0e1a4d",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/build/paper.tex",
+      "git_blob": "6605ef6b5c74652734b5538d60606f8d36d2c8db",
+      "sha256": "13195acd1719a8a56dc56c5684a9a60e12ab88034696cd6011711f6e42151b81",
+      "bytes": 5483,
+      "inspected_sha256": "13195acd1719a8a56dc56c5684a9a60e12ab88034696cd6011711f6e42151b81",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex",
+      "git_blob": "a7ab0eabef4a33d5845396a05c28914e4ca68446",
+      "sha256": "cec04101ad41a7793e4526c92a70fa1edc1b01ce83e1d20cf15ef44e3753edf3",
+      "bytes": 2534,
+      "inspected_sha256": "cec04101ad41a7793e4526c92a70fa1edc1b01ce83e1d20cf15ef44e3753edf3",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "e9de3c5a9bb1b8d57201f9409c9018f1771fb93d",
+      "sha256": "4b75ccb13ba6e66a962a467129a16f85e74b539223a371bdc9c68ea8e2ac9d90",
+      "bytes": 16336,
+      "inspected_sha256": "4b75ccb13ba6e66a962a467129a16f85e74b539223a371bdc9c68ea8e2ac9d90",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/README.md",
+      "git_blob": "d0add6282e0373cda6e9dc30985a04daea068c85",
+      "sha256": "cf2706670e5228dc2ab509c56cb149ebf4f9e17ca9b939273323cb9335a920ff",
+      "bytes": 679,
+      "inspected_sha256": "cf2706670e5228dc2ab509c56cb149ebf4f9e17ca9b939273323cb9335a920ff",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex",
+      "git_blob": "aedcc4322acee1477b2bd9eab4beec723d2b882e",
+      "sha256": "3da934c1e0d9e6e430a50d090dd948ab1ab9c8e85c9c441653774515592f01ac",
+      "bytes": 2608,
+      "inspected_sha256": "3da934c1e0d9e6e430a50d090dd948ab1ab9c8e85c9c441653774515592f01ac",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "70bad84550727166c7c8a4f35bde7654da762e7b",
+      "sha256": "5373691a991b4673b86eadf2f379c4acbc0caaab7e1a10766a1c5251a2332d71",
+      "bytes": 16087,
+      "inspected_sha256": "5373691a991b4673b86eadf2f379c4acbc0caaab7e1a10766a1c5251a2332d71",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/build/main.tex",
+      "git_blob": "9cdd7064b629cf33cefe9643e2949503d0e00be3",
+      "sha256": "cf375b0720950a8e3d8ea8fec26a482d99a9597f93b1890762caa45ec3cb5f33",
+      "bytes": 2748,
+      "inspected_sha256": "cf375b0720950a8e3d8ea8fec26a482d99a9597f93b1890762caa45ec3cb5f33",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "ca7f7f292379a95899f04a1de411eb610d1fe9ab",
+      "sha256": "15461d58f1bc1b0e6cc0367542a42e712e9dec6779132a291dfa69c8183afc91",
+      "bytes": 9603,
+      "inspected_sha256": "15461d58f1bc1b0e6cc0367542a42e712e9dec6779132a291dfa69c8183afc91",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/build/main.tex",
+      "git_blob": "6823beb08be44ba4cdc693b08763f20145024f8d",
+      "sha256": "cb5f91b0eb64814971e7ea4593a04730756ca5a3029706ec02db387b2e634d2d",
+      "bytes": 3658,
+      "inspected_sha256": "cb5f91b0eb64814971e7ea4593a04730756ca5a3029706ec02db387b2e634d2d",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "e6dc24324d85e94438c407f2519f9b8285717db4",
+      "sha256": "6f100de228636b2ef102573e58febceb2a40df4590c1597731e93edc3699b608",
+      "bytes": 6942,
+      "inspected_sha256": "6f100de228636b2ef102573e58febceb2a40df4590c1597731e93edc3699b608",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/main.tex",
+      "git_blob": "61b90ca504301c711cc18418f9be717305ef88b6",
+      "sha256": "6bcef41f845106bd10219b920717b7f99d10a45a22376e893b96482cfd743514",
+      "bytes": 2107,
+      "inspected_sha256": "6bcef41f845106bd10219b920717b7f99d10a45a22376e893b96482cfd743514",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/sections/introduction.tex",
+      "git_blob": "b5aae70c38c80382af23f1c0782aaa8247e65447",
+      "sha256": "1472cc03ac1ed0546c0bacec93e0c7820bf15d5e1928af2909515c30f8156687",
+      "bytes": 10882,
+      "inspected_sha256": "1472cc03ac1ed0546c0bacec93e0c7820bf15d5e1928af2909515c30f8156687",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/main.tex",
+      "git_blob": "866a9347ac28eff2e3c2478436b5bf164c06f8f0",
+      "sha256": "d0ea85d5539316753fe4d81aa6754614a0076be07779d8bf3d88bb031adf2551",
+      "bytes": 5849,
+      "inspected_sha256": "d0ea85d5539316753fe4d81aa6754614a0076be07779d8bf3d88bb031adf2551",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/sections/00-introduction.tex",
+      "git_blob": "9b6c75f3a5c9a610b1ea6c8542b8f9975fb399a1",
+      "sha256": "d642c4b16d4d709f2023759fa51a07cadcf39b7026b2ec901c7b70c876c0545c",
+      "bytes": 10747,
+      "inspected_sha256": "d642c4b16d4d709f2023759fa51a07cadcf39b7026b2ec901c7b70c876c0545c",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/build/manuscript/main.tex",
+      "git_blob": "26909d87eff894d5a51e7585fe7a2884e6823705",
+      "sha256": "3f587f7d4a4ccddb175b46e7eb4eda00101a9de0407ddbbd93dfc61cc13d62ca",
+      "bytes": 2344,
+      "inspected_sha256": "3f587f7d4a4ccddb175b46e7eb4eda00101a9de0407ddbbd93dfc61cc13d62ca",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/build/manuscript/sections/01-introduction.tex",
+      "git_blob": "091b03e52841c98a79614a4441a73891d4b790a7",
+      "sha256": "8ee40e983c95205a700548341f97981b2c853bd9c483ebafd41aeff7a1e73884",
+      "bytes": 11929,
+      "inspected_sha256": "8ee40e983c95205a700548341f97981b2c853bd9c483ebafd41aeff7a1e73884",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/build/main.tex",
+      "git_blob": "dd6b4bd85654ef7ed944ad9682503916bf1366a5",
+      "sha256": "0e4ff5f92c51cb88c520be25f748bbda14e7a666cc11795fea1d13f50bcc55b0",
+      "bytes": 956,
+      "inspected_sha256": "0e4ff5f92c51cb88c520be25f748bbda14e7a666cc11795fea1d13f50bcc55b0",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/build/sections/introduction.tex",
+      "git_blob": "c474f251726d2936a1778e5d88f718ea66df4b60",
+      "sha256": "72dedb3dd3e00cd1e9e3db45c1bc9080f42006ff654cea6a18a98537528a8b60",
+      "bytes": 5720,
+      "inspected_sha256": "72dedb3dd3e00cd1e9e3db45c1bc9080f42006ff654cea6a18a98537528a8b60",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/build/main.tex",
+      "git_blob": "f4f5d086f1915e25aab9e4132225f3e137d39841",
+      "sha256": "5f89ad7c3bf6860b27af121b5fbd6adf46fdb1f066a21c2fb258f8d7a8d1ada5",
+      "bytes": 4574,
+      "inspected_sha256": "5f89ad7c3bf6860b27af121b5fbd6adf46fdb1f066a21c2fb258f8d7a8d1ada5",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "ca4c9fb728940a87567fc0dc6954b8d7407e2eb6",
+      "sha256": "24a96abec7534a93d049495f5322d145b76f1b556e72d7613518da522d492a0a",
+      "bytes": 10481,
+      "inspected_sha256": "24a96abec7534a93d049495f5322d145b76f1b556e72d7613518da522d492a0a",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/build/source/main.tex",
+      "git_blob": "28385b6a5616a24339224f2ff0c08d102f330444",
+      "sha256": "d75037f3c9dc700a3dfaf9ae07c7c9d410c8870a56f4cee7daafc56ceca8398a",
+      "bytes": 2574,
+      "inspected_sha256": "d75037f3c9dc700a3dfaf9ae07c7c9d410c8870a56f4cee7daafc56ceca8398a",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/build/source/sections/introduction.tex",
+      "git_blob": "dee4d9f8cbda9fd4c4dcc836b91290d3290f46c6",
+      "sha256": "2844c8d56113d2994b61643aec9be3dc08c641aaf46b9c734dd2c685100bcd9a",
+      "bytes": 10024,
+      "inspected_sha256": "2844c8d56113d2994b61643aec9be3dc08c641aaf46b9c734dd2c685100bcd9a",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/build/source/sections/setup.tex",
+      "git_blob": "901c8dfd63bc6ed68533cef463026b9b9297182f",
+      "sha256": "5d6dcb6354da77b6ad6fe650607ea14ce6a51b1d86f24ed8b9141dd7ae859906",
+      "bytes": 13251,
+      "inspected_sha256": "5d6dcb6354da77b6ad6fe650607ea14ce6a51b1d86f24ed8b9141dd7ae859906",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/paper.tex",
+      "git_blob": "aa47672ebdfab12c89b60115b34eb92bdd08b2e4",
+      "sha256": "0177f9377f1a55f1f0ce39ca31cc67da0f19cdee2b5996be4b69b5946afdf4d1",
+      "bytes": 2617,
+      "inspected_sha256": "0177f9377f1a55f1f0ce39ca31cc67da0f19cdee2b5996be4b69b5946afdf4d1",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex",
+      "git_blob": "f0d5bc4f7098c7f01365fe667ca4734aade11645",
+      "sha256": "1bc1b23c7efd6efeeeaa786d9643f4868e42f25d60075318d2aa0a3e3b2b9a49",
+      "bytes": 11373,
+      "inspected_sha256": "1bc1b23c7efd6efeeeaa786d9643f4868e42f25d60075318d2aa0a3e3b2b9a49",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/build/paper.tex",
+      "git_blob": "09a62317e0057f7dbf185397c3c58a05d46b6c35",
+      "sha256": "e8bda5c3392b66c88087be1381bd8d8820d4e127c36a1b594e3025a535e4371b",
+      "bytes": 1026,
+      "inspected_sha256": "e8bda5c3392b66c88087be1381bd8d8820d4e127c36a1b594e3025a535e4371b",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    },
+    {
+      "path": "preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/build/sections/01-introduction.tex",
+      "git_blob": "6ef48de2c3b068e31041be852a44f5d00bf51d00",
+      "sha256": "22dcf7547e397fda9cc0967e3875a45858bc4535f4632b8fa4c1b0049b7c1e4c",
+      "bytes": 8282,
+      "inspected_sha256": "22dcf7547e397fda9cc0967e3875a45858bc4535f4632b8fa4c1b0049b7c1e4c",
+      "line_endings_normalized": false,
+      "comparison_agent": "agent249"
+    }
+  ]
+}

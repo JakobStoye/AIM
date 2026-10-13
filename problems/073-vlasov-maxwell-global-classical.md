@@ -2,9 +2,9 @@
 
 **Area:** Kinetic theory and plasma physics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -35,10 +35,16 @@ This is the self-consistent collisionless model for relativistic plasmas; moment
 - [Daniel Han-Kwan, Toan T. Nguyen and Frédéric Rousset, *Linear Landau Damping for the Vlasov-Maxwell System in R³* (Annals of PDE, 2025), introduction and references to the classical continuation theory](https://doi.org/10.1007/s40818-025-00217-z).
 - [Luis Silvestre, *Regularity estimates and open problems in kinetic equations* (2022), kinetic regularity background](https://arxiv.org/abs/2204.06401).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf), result family 362 (2026). Statement locator: `build/sections/introduction.tex, thm:global and eq:data`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Han-Kwan–Nguyen–Rousset explicitly describe the three-dimensional large-data classical Cauchy problem as open in September 2025. Their linearized damping result is a different assertion. Known weak-solution, small-data and lower-dimensional results do not supply the stated continuation.
+**Statement comparison:** Exact one-species R3 relativistic Vlasov-Maxwell normalization, compact nonnegative smooth particle data, Cb-infinity finite-L2-energy fields and Gauss constraints. The global solution has compact phase-space support on each finite interval, so in particular bounded momentum support, preserves Gauss constraints and finite field energy; no size/symmetry restriction.
 
-Searches run on 2026-09-08: `site.arxiv.org Vlasov Maxwell open problem 2025`; `Vlasov Maxwell global classical solutions open problem 2025 2026`. This is a literature search, not a proof that no solution exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-073) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/362.md). docs/362 describes the full target via VlasovMaxwell. No local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/073-vlasov-maxwell-global-classical.md).

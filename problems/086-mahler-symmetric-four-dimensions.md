@@ -2,9 +2,9 @@
 
 **Area:** Convex geometry and optimization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -33,10 +33,16 @@ Polarity exchanges primal and dual norm constraints. A sharp volume-product ineq
 - [Hiroshi Iriyeh and Masataka Shibata, *Symmetric Mahler's conjecture for the volume product in the 3-dimensional case* (Duke Mathematical Journal, 2020)](https://arxiv.org/abs/1706.01749).
 - [Shibing Chen, Yuanyuan Li, Dongmeng Xi and Zhe-Feng Xu, *The Mahler Conjecture in Three Dimensions* (2026), introduction and three-dimensional results](https://arxiv.org/abs/2605.09334).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf), result family 087 (2026). Statement locator: `Theorem thm:main; equation eq:main-inequality`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The relevant established symmetric theorem and the May–June 2026 extension concern dimension three. They do not prove this four-dimensional inequality. Searches for the four-dimensional/general conjecture found no later resolution; special-symmetry cases remain insufficient.
+**Statement comparison:** Set n=4 in the unrestricted origin-symmetric convex-body inequality |K||Kpolar|>=4^n/n!. Compactness, nonempty interior, ordinary Euclidean polar and volume are exactly AIM hypotheses. Equality classification is extra, not needed.
 
-Status-search topics (2026-09-08): `Mahler conjecture symmetric 2026 arxiv`; `Mahler dimension four open site.arxiv.org`. This is a literature search, not a proof that no solution exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-086) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/087.md). Actual endpoint symmetric_mahler has no external hypothesis beyond compactness/convexity/symmetry/nonempty interior. Set n=4. No successful local replay/axiom audit. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/086-mahler-symmetric-four-dimensions.md).

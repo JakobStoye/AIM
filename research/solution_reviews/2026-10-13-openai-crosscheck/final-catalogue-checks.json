@@ -1,0 +1,22 @@
+[
+  {
+    "command": [
+      "python",
+      "-B",
+      "scripts/catalogue.py",
+      "--write"
+    ],
+    "exit": 0,
+    "log": "final-catalogue-1.log"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "scripts/catalogue.py",
+      "--check"
+    ],
+    "exit": 0,
+    "log": "final-catalogue-2.log"
+  }
+]

@@ -2,9 +2,9 @@
 
 **Area:** Combinatorial optimization and conflict scheduling
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -35,20 +35,18 @@ This would give a universal guarantee for arbitrary conflict patterns. The conne
 5. Shenwei Huang, Yidong Zhou and Yeonsu Chang, *The optimal chromatic bound for even-hole-free graphs without induced seven-vertex paths*, [arXiv:2602.04403v1](https://arxiv.org/pdf/2602.04403v1), February 4, 2026, preprint. §1, Theorem 1.1 and following remark; §2, graph conventions.
 6. Ken-ichi Kawarabayashi and Lucas Picasarri-Arrieta, *An analogue of Reed's conjecture for digraphs*, [arXiv:2407.05827v4](https://arxiv.org/html/2407.05827v4), revised September 8, 2026, preprint; a shorter version appeared in SODA 2025. §1, Conjectures 1.1 and 1.6, Theorem 1.7 and following discussion; §2.1, conventions.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf), result family 184 (2026). Statement locator: `Theorem 1.1, PDF page 2; Correspondence-coloring main theorem label thm:main, introduction.tex lines24-33; chi<=chi_list<=chi_DP preceding.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Known cases:** For each fixed clique cap, the correspondence-coloring bound implies the exact Reed inequality at all sufficiently large maximum degrees; the threshold depends on that cap.
 
-Open in cited literature; no later resolution located as of 2026-09-18. Bonamy–Perrett–Postle explicitly state the conjecture. The independently authored July 2026 paper [3] retains the same exact inequality, as does the September 2026 revision [6]. The formulation here uses these full scholarly restatements; Reed's original 1998 article was not directly read.
+**Remaining target:** Prove the stated bound for arbitrary clique numbers and all degrees, or give a counterexample. The fixed-clique asymptotic subcase does not cover that full quantifier.
 
-The general partial bound in [2, Theorem 1.10] replaces the coefficient $`1/2`$ on the clique number by $`0.119`$ and assumes sufficiently large maximum degree. Its §3.2 explicitly uses a claimed Delcourt–Postle result; Remark 3.1 also gives a $`0.113`$ alternative from another result. The cited v3 incorporates the correction recorded in the arXiv history. Neither bound gives the conjectured coefficient at all degrees, and this review does not independently certify their proofs.
+**Statement comparison:** For each fixed integer r>=4, correspondence coloring of every K_r-free simple graph is at most ceil(C_r Delta/log Delta) for sufficiently large Delta. Since ordinary chi<=chi_DP, taking Delta sufficiently large that C_r/log Delta<=1/2 implies the exact Reed inequality for this bounded-clique subcase. The constants and threshold depend on the fixed clique cap; this does not handle arbitrary graph-dependent clique number or all degrees. This is a derived subset consequence rather than a manuscript theorem named Reed.
 
-King–Reed prove the exact bound for claw-free graphs, meaning graphs with no induced three-leaf star. Their fractional-colouring theorem has a different optimum. Huang–Zhou–Chang's February 2026 theorem excludes both induced seven-vertex paths and induced even cycles of length at least four. These hypotheses do not cover arbitrary conflict graphs. [4, 5]
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-337) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The July 2026 directed theorem [3, Theorem 7] requires the degree parameter to exceed a threshold depending on a fixed integer $`b`$. Restriction to symmetric digraphs yields the older large-degree statement in Corollary 3, not the uniform assertion in Conjecture 4 equivalent to Reed's bound. The September revision [6, Theorem 1.7] gives a positive interpolation coefficient for all digraphs; the following discussion explicitly distinguishes it from the conjectured one-half coefficient. No directed variant or graph subclass is counted separately.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/184.md). Family184 selected Lean docs only formalize the logarithmic independence lower bound (CliqueFreeLog), not the correspondence-coloring theorem used here; no full or direct partial Reed verification claimed. No AIM Lean-verified status is asserted.
 
-The review covered unrestricted and recent proof, disproof, counterexample, correction and version searches. Source locations, namesake resolution claims and access limits are in the [evidence record](../research/expansion-2026-09/candidates/reed-colouring.json). Regenerated dates printed inside older documents were not treated as revision dates.
-
-This differs from [rapid sampling of proper colourings](269-coloring-glauber-threshold.md), which concerns mixing with at least $`\Delta+2`$ colours, and from [list edge-colouring](333-list-edge-colouring.md), which asks for a guarantee under arbitrary lists on edges. The [triangle packing–covering question](335-tuza-triangle-packing-covering.md) compares edge deletion and packing optima.
-
-A publication refresh on September 18, 2026 rechecked status and upstream duplicates; see the [batch 5 audit](../research/expansion-2026-09/batch-05-review.md). No matching later resolution was located.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/337-reed-colouring.md).

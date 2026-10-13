@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -22,10 +22,18 @@ The conjecture asks which entanglement resources can support cryptography when m
 
 1. R. Arnon-Friedman and F. Leditzky, [Upper Bounds on Device-Independent Quantum Key Distribution Rates and a Revised Peres Conjecture](https://doi.org/10.1109/TIT.2021.3086505), *IEEE Transactions on Information Theory* **67**(10) (2021), 6606–6618. [Author manuscript](https://arxiv.org/pdf/2005.12325), Section III, Conjecture 11; Section II.A defines the security and rate framework.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf), result family 272 (2026). Statement locator: `build/source/sections/introduction.tex, thm:main-state and operational-extension paragraph`.
+
 ## Status review
 
-**Known cases:** Reference [1, Section III.B] rules out key generation by a specified one-way protocol using the Vértesi–Brunner bound-entangled state and measurements. It expressly leaves more general protocols unresolved.
+**Known cases:** The explicit dimension-ten PPT bound-entangled state has zero distillable secret key even with trusted devices, and therefore cannot yield a device-independent secret key. Reference [1, Section III.B] also rules out a specified one-way protocol using the Vertesi–Brunner state and measurements; that earlier result leaves arbitrary protocols open.
 
-**Remaining target:** Establish zero rate for every bound-entangled state and every device-independent protocol, or give a state and a positive-rate secure protocol. The original Peres conjecture about Bell violations is false; that does not settle this revised statement.
+**Remaining target:** Decide the prohibition for every finite-dimensional bound-entangled state and arbitrary device-independent protocols.
 
-The 2025 review [The future of secure communications: Device independence in quantum key distribution](https://www.quantum.physics.sk/rcqi/research/publications/2025/rcqi2025ghoreishi_review_device_independent_qkd.pdf) retains the revised conjecture and reviews restricted impossibility results. Searches through 24 September 2026 found no matching resolution announcement or repository duplicate. Native GitHub issues, Zenodo, and Palomar searches returned no matching record; the sole GitHub repository search result was unrelated.
+**Statement comparison:** An explicit PPT entangled state on C10 tensor C10 has zero distillable secret key for arbitrary admitted completed protocols; PPT ensures bound entanglement. A positive device-independent key protocol would give a positive trusted-device key protocol, so this supplies a substantive affirmative case of the target, not its universal conclusion.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-590) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/272.md). docs/272 explicitly excludes the zero-distillable-secret-key statement; only PPT-composition consequences are formalized. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/590-revised-peres.md).

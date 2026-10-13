@@ -2,9 +2,9 @@
 
 **Area:** Quantum magnetism
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -25,10 +25,16 @@ A positive excitation threshold distinguishes an integer-spin quantum magnet fro
 1. F. D. M. Haldane, [Continuum dynamics of the 1-D Heisenberg antiferromagnet: identification with the O(3) nonlinear sigma model](https://www.sciencedirect.com/science/article/pii/037596018390631X), Physics Letters A 93 (1983), 464–468: original physical gap prediction.
 2. H. Tasaki, [The Ground State of the S=1 Antiferromagnetic Heisenberg Chain is Topologically Nontrivial if Gapped](https://arxiv.org/abs/2407.17041), preprint (2024; revised December 2024), introduction and Main results: explicitly unproved gap assumption, and a conditional topological theorem.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf), result family 268 (2026). Statement locator: `build/introduction.tex, thm:main and immediately following small-chain paragraph`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-Tasaki explicitly separates the unproved Heisenberg gap from his conditional topological result. His finite-chain theorem uses boundary fields; the statement here uses periodic boundaries to remove edge excitations. The rigorously gapped AKLT model contains a different, biquadratic interaction and does not settle this Hamiltonian. Searches located no uniform-gap proof for the standard chain.
+**Statement comparison:** Identical pure spin-one antiferromagnetic coupling-one Hamiltonian on even periodic rings and next distinct eigenvalue convention. The positive bound holds for every even N>=60. Taking the minimum with the finitely many positive finite-dimensional gaps N=4,...,58 gives the required all-N uniform positive gap.
 
-**Search audit:** “Haldane conjecture spin 1 Heisenberg chain spectral gap proof 2025 2026”; “Tasaki Haldane gap periodic chain rigorous”. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-194) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/194-haldane-gap.md).

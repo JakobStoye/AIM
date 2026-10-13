@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -46,26 +46,18 @@ The graph can represent a finite system with controlled decisions, adversarial e
 6. Edon Kelmendi, Julia Krämer, Jan Křetínský and Maximilian Weininger, *Value Iteration for Simple Stochastic Games: Stopping Criterion and Learning Algorithm*, CAV 2018, 623–642; [accessible author version, arXiv:1804.04901v1](https://arxiv.org/html/1804.04901v1), April 13, 2018. §§1–2, Algorithm 1 and §4.3, Theorem 4.2.
 7. Lei Huang and Toniann Pitassi, *Automatizability and Simple Stochastic Games*, ICALP 2011, Part I, LNCS 6755, 605–617; [author PDF](https://www.cs.utoronto.ca/~toni/Papers/automatizability.pdf). §§1–2 and §3, Theorem 5 and Corollary 1.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf), result family 104 (2026). Statement locator: `Theorem thm:main and explicit simple-stochastic-game reduction in section 1`.
+
 ## Status review
 
-**Known cases:** Polynomial algorithms exist when the number of random vertices is fixed, and for the stopping ladder class; see references 1–2.
+**Known cases:** A deterministic quasipolynomial-time algorithm decides the reachability threshold, including the strict comparison requested here after the rational-value gap reduction described in the review. Polynomial algorithms were already known when the number of random vertices is fixed and for the stopping ladder class; see references 1–2.
 
-**Remaining target:** One deterministic polynomial bound for the exact strict-threshold decision problem when all vertex counts grow, without a stopping or ladder promise.
+**Remaining target:** Obtain a fixed polynomial-time algorithm for all encoded inputs. Quasipolynomial running time does not meet that requirement.
 
-**Integration review (2026-09-23):** The September 19 source audit was refreshed with problem-specific web searches and searches scoped to arXiv, Zenodo, GitHub and Palomar. No matching full-scope solution announcement was located. Search coverage is limited by indexing and access; this is not a proof of openness. See the [integration record](../research/integration-2026-09-23.md).
+**Statement comparison:** The deterministic algorithm has bit time 2^O((log(L+2))^2), which is quasipolynomial, not a fixed polynomial. The source explicitly reduces reachability >=1/2 to nonnegative expectation-of-liminf mean payoff with absorbing rewards +/-1, including nonabsorbing plays. AIM strict >1/2 is also obtainable: pure positional SSG values are rational with denominator at most 3^n by integer linear systems and Hadamard; positive 2v-1 is >=3^-n. Multiply all +/-1 rewards by 2*3^n and subtract 1 from every edge, so nonnegative mean payoff holds iff v>1/2. This has polynomial encoding length and preserves the quasipolynomial bound.
 
-The integration refresh on 2026-09-23 also checked the [September 19 information-value-free equilibrium announcement](https://arxiv.org/abs/2609.22757). Its abstract gives a hardness comparison with simple stochastic games, not a polynomial algorithm for them. The HTML full-text fetch failed, so this comparison uses the primary abstract only.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-491) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The general polynomial-time question is explicit in [2] and is independently retained in the 2026 introductions of [1] and [3]. In particular, [1] defines the strict half-threshold problem used here. These are dated assessments, not a certificate excluding an unindexed resolution.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/104.md). Docs104 formalize only randomized ordinary mean-payoff and a finite Truffet counterexample. They do not declare a formalization of this deterministic stochastic algorithm or AIM491. No AIM Lean-verified status is asserted.
 
-Recent progress must be interpreted with its parameters intact. The preprint [4] gives a deterministic algorithm with running time $`L^{O(\sqrt n\log n)}`$, where $`n=|V|`$; its exponent is not a fixed constant. The fixed-dimensional Tarski query improvements in [3] likewise do not give a uniform polynomial running time when dimension varies.
-
-The polynomial algorithm in [1, Theorem 2] assumes both stopping and a ladder structure: distance levels from the sinks have two vertices, with a possible single vertex at the last level. General inputs need not satisfy either condition. The older enumeration method in [2] has factorial dependence on the number of random vertices.
-
-The reduction in [5] leads to **exact semidefinite feasibility**, itself not known to admit a polynomial-time algorithm; numerical approximation of an SDP is insufficient to infer one. The interval method in [6] terminates at a requested positive error tolerance but does not establish the required polynomial exact-decision bound. The algorithmic implication in [7] has an additional feasible-interpolation hypothesis.
-
-The September 19 search covered binary and stopping games, reachability thresholds, polynomial algorithms, proofs and counterexamples, current and preceding years, unrestricted dates, original and later authors, corrections and version histories. The [evidence ledger](../research/expansion-2026-09/candidates/simple-stochastic-games-polynomial-time.json) records nine source audits and the full relevant scope comparisons. Condon’s historical original is accessed through explicit scholarly restatements; its proof is not claimed to have been checked. The related 2022 journal extension of [6] was not retrieved in full, so the cited theorem locator refers to the accessible 2018 version.
-
-The [simplex pivot-rule problem](093-strongly-polynomial-simplex.md) asks for a stronger arithmetic guarantee within a specified LP algorithm family. The [continuous Skolem problem](263-continuous-skolem-decidability.md) concerns decidability for deterministic continuous-time dynamics. Neither has the finite stochastic-game assertion above.
-
-A separated adversarial self-pass passed on September 19, 2026. No independent agent or human review is claimed.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/491-simple-stochastic-games-polynomial-time.md).

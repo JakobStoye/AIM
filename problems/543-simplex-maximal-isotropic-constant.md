@@ -2,9 +2,9 @@
 
 **Area:** Geometric probability and covariance bounds
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -38,10 +38,16 @@ For a uniform distribution on a convex region, the covariance determinant measur
 2. B. Klartag and J. Lehec, [Affirmative Resolution of Bourgain's Slicing Problem using Guan's Bound](https://arxiv.org/abs/2412.15044), for the dimension-independent bound that settles the weaker slicing problem.
 3. L. Rademacher, [A simplicial polytope that maximizes the isotropic constant must be a simplex](https://doi.org/10.1112/S0025579315000133), Mathematika **62** (2016), 307–320; [preprint](https://arxiv.org/abs/1404.5662).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf), result family 101 (2026). Statement locator: `Theorem intro:simplex; equation intro:simplex-bound`.
+
 ## Status review
 
-**Known cases:** The inequality holds in dimension one and in dimension two; [1, §1] attributes the planar result to Campi, Colesanti and Gronchi. There are also structural restrictions on possible higher-dimensional maximizers: [3] treats simplicial polytopes, and [1, Theorem 1.2] records the stronger conclusion that a polytopal local maximizer with a simplicial vertex must be a simplex. These statements do not show that every maximizer has such a vertex.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-**Remaining target:** Prove the sharp inequality for arbitrary convex bodies in every dimension $`n\ge3`$, or exhibit a counterexample. The universal, unspecified constant obtained in the solution of Bourgain's slicing problem does not identify the dimension-specific simplex value. The 2026 source [1] explicitly distinguishes the two questions after discussing that solution.
+**Statement comparison:** The source definition of L_K is exactly (det covariance/volume^2)^(1/(2n)), and its all-dimensional arbitrary-convex-body inequality has precisely AIM simplex constant. No symmetry/polytope restriction appears. Equality uniqueness is extra. This resolves the sharp target, not merely the weaker uniform slicing constant.
 
-The literature and announcement checks found no matching resolution through the date above. They included live arXiv version records, 2025–2026 follow-ups, GitHub- and Zenodo-indexed searches, and native Palomar queries. Native Zenodo access returned HTTP 403. Related catalogue problems on KLS, Mahler volume products and illumination have different targets.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-543) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/543-simplex-maximal-isotropic-constant.md).

@@ -4,16 +4,22 @@
     "title": "Absence of an infinite cluster at criticality in three-dimensional percolation",
     "area": "Random media",
     "file": "problems/088-critical-percolation-three-dimensions.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "090",
     "title": "Cardy's crossing formula for square-lattice bond percolation",
     "area": "Random media and conformal invariance",
     "file": "problems/090-square-bond-cardy-formula.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "091",
@@ -28,8 +34,8 @@
     "title": "The dimension-free Kannan–Lovász–Simonovits inequality",
     "area": "High-dimensional probability and sampling",
     "file": "problems/092-kls-poincare.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Partially resolved",
+    "last_checked": "2026-10-13"
   },
   {
     "id": "306",

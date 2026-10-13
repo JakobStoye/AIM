@@ -2,9 +2,9 @@
 
 **Area:** Rarefied-gas kinetics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -34,8 +34,16 @@ This asks whether the natural large-data kinetic theory determines one gas evolu
 - Gayoung An and Donghyun Lee, [*Optimal $`C^{1/2}`$ regularity of the Boltzmann equation in non-convex domains*](https://doi.org/10.1007/s40818-026-00243-5) (2026), introduction: explicitly retains general renormalized uniqueness as open.
 - Rafael Galeano Andrades and Mario Almanza Caro, [*Uniqueness of solutions to Boltzmann equations*](https://arxiv.org/abs/2006.08011) (2020 preprint), §2, Theorem 2.1 and subsequent contraction assumptions: a claim screened during the status check.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf), result family 363 (2026). Statement locator: `build/paper/01-introduction.tex, thm:main and def:admissible`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete counterexample to the original target.
 
-Searched “DiPerna Lions renormalized Boltzmann uniqueness proof 2025 2026” and the title of the 2020 uniqueness preprint. That preprint introduces additional contraction hypotheses, including an explicit constant smaller than one; these are not consequences of finite mass, energy and entropy. The 2026 primary article continues to identify the unrestricted uniqueness problem as open. Boundary regularity and perturbative mild-solution uniqueness address narrower classes.
+**Statement comparison:** Two distinct global solutions have the same datum, exact target hard-sphere |(v-v*) dot omega| normalization, all weighted Q+ and Q- locally integrable, strong L1 initial traces, all five local conservation laws and entropy dissipation. The paper renormalizes F/M for a fixed Maxwellian. Locally integrable unrenormalized transport/collision equation gives the beta(F) chain rule along characteristics; conserved mass and kinetic energy turn relative entropy into the target absolute entropy inequality. The datum is rough, so this does not resolve smooth-data AIM074.
+
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-227) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/363.md). docs/363 covers the earlier periodic renormalized nonuniqueness theorem, not the later full local-conservation refinement. Comparator BoltzmannNonuniqueness; no local kernel log inspected. No AIM Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/227-renormalized-boltzmann-uniqueness.md).

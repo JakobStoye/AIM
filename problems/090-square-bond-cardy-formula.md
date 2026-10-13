@@ -2,9 +2,9 @@
 
 **Area:** Random media and conformal invariance
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -27,10 +27,16 @@ In a planar random network, the crossing probability measures the chance that tw
 - [Vincent Tassion, *Rotation invariance of critical planar percolation* (Séminaire Bourbaki, June 2023, exposé 1210), Conjecture 3.1](https://www.bourbaki.fr/TEXTES/Exp1210-Tassion.pdf).
 - [Mikhail Khristoforov, Mikhail Skopenkov and Stanislav Smirnov, *A Generalization of Cardy's and Schramm's Formulae* (Communications in Mathematical Physics, 2025), triangular-lattice setting and references](https://doi.org/10.1007/s00220-025-05255-z).
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf), result family 223 (2026). Statement locator: `Theorem 1.2, PDF page 6; Introduction theorem Cardy's formula, label intro:cardy, lines 235-245; free-boundary definitions lines 222-234 and boundary-transfer discussion immediately after.`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-The Bourbaki account formulates square-lattice conformal crossing convergence as a conjecture. The 2025 paper works with triangular-lattice site percolation. Rotation invariance, knowledge of p_c=1/2, and triangular-lattice results do not establish the square-lattice formula. Later searches found no resolution.
+**Statement comparison:** The Cardy theorem directly proves actual free-boundary square-lattice bond crossing probabilities with all edges independent at p=1/2, including boundary edges. Uniform marked Jordan approximation includes smooth AIM domains; the buffered boundary comparison transfers between lattice boundary arcs and the AIM O(mesh) boundary-vertex convention. Its beta-integral ratio equals the hypergeometric formula in AIM by the incomplete beta identity with a=b=1/3. This is an explicit crossing theorem, not an inference from the SLE abstract. The Jordan-quad transfer proof (chordal.tex, Proposition jordan:transfer and Corollary jordan:cardy) sandwiches actual edge crossings on a common primal grid between fixed-margin easier/harder quads. The same fixed-margin comparison applies to the smooth-domain induced graph and vertices within2delta of its designated arcs; this last reduction is the reviewer's geometric scope inference from that proof.
 
-Status-search topics (2026-09-08): `Cardy square lattice conjecture site.arxiv.org`; `Cardy formula square lattice 2026 proof`; `square lattice Cardy 2025 open`. This is a literature search, not a proof that no solution exists.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-090) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
+
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
+
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/090-square-bond-cardy-formula.md).

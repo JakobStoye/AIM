@@ -60,8 +60,11 @@
     "title": "No asymptotic extinction in bounded weakly reversible mass-action kinetics",
     "area": "Deterministic chemical reaction networks",
     "file": "problems/273-reaction-network-persistence.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "274",
@@ -204,8 +207,11 @@
     "title": "Exact complexity of unit-job precedence scheduling on three processors",
     "area": "Scheduling and operations research",
     "file": "problems/301-three-processor-unit-scheduling.md",
-    "status": "Open",
-    "last_checked": "2026-09-17"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "312",
@@ -244,8 +250,11 @@
     "title": "Strong thin-tree conjecture",
     "area": "Network design and combinatorial optimization",
     "file": "problems/323-strong-thin-tree.md",
-    "status": "Open",
-    "last_checked": "2026-09-18"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "330",
@@ -284,8 +293,11 @@
     "title": "The modified integer round-up conjecture for cutting stock",
     "area": "Stochastic dynamics, reaction networks and applied optimization",
     "file": "problems/341-modified-integer-round-up.md",
-    "status": "Open",
-    "last_checked": "2026-09-19"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf",
+    "review": "research/solution_reviews/2026-10-13-openai-crosscheck/README.md"
   },
   {
     "id": "453",
@@ -357,7 +369,7 @@
     "area": "Network routing, metric geometry and combinatorial optimization",
     "file": "problems/487-gnrs-minor-free-flow-cut.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-23"
+    "last_checked": "2026-10-13"
   },
   {
     "id": "492",

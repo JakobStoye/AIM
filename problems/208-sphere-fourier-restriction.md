@@ -2,9 +2,9 @@
 
 **Area:** Harmonic analysis; monochromatic wave concentration
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -32,14 +32,16 @@ The extension operator superposes plane waves at a fixed frequency. The estimate
 2. Hong Wang and Shukun Wu, [Restriction estimates using decoupling theorems and two-ends Furstenberg inequalities](https://arxiv.org/abs/2411.08871), preprint (2024). Abstract and principal restriction estimate establish the partial range $`p>22/7`$.
 3. Eric T. Sawyer, [A comparison of trilinear testing conditions for the paraboloid Fourier extension and Kakeya conjectures in three dimensions](https://arxiv.org/abs/2411.18457v8), revised 8 February 2026. Current abstract and version history clarify a search result that still displays an earlier full-proof title.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf), result family 077 (2026). Statement locator: `Theorem thm:main`.
+
 ## Status review
 
-**Known cases:** The displayed Fourier extension estimate is established for every exponent p greater than 22/7.
+**Resolution:** The linked OpenAI manuscript reports a complete affirmative resolution of the original target.
 
-**Remaining target:** The estimate for every p greater than three, including the remaining exponents up to 22/7.
+**Statement comparison:** The theorem states precisely the same S2 extension, phase 2*pi*i*x.omega, surface area measure, complex bounded measurable inputs, and every p>3 with a constant depending only on p. It reaches all remaining exponents. The diagonal positively-curved-surface companion also implies this on S2 by finite-measure embedding.
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-208) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The proved range $`p>22/7`$ leaves exponents immediately above three. A search hit for Sawyer’s original 2024 title claimed a proof; the version history records a withdrawal on 2 January 2025, and the checked February 2026 version presents testing-condition comparisons. It is not used as a resolution. The three-dimensional Kakeya set theorem alone does not imply this restriction estimate.
+**Lean scope:** No corresponding complete Lean development was identified in the linked family record; no Lean-verified status is asserted.
 
-**Search audit:** Queries: “sphere Fourier restriction conjecture three dimensions 2026 proof”, “Wang Wu restriction 22/7”, “Fourier Extension Conjecture three dimensions Sawyer”; checked the latest arXiv version of the apparent proof claim. Searches included later proofs, counterexamples, and 2025–2026 updates. No resolution matching the stated hypotheses was located.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/208-sphere-fourier-restriction.md).

@@ -2,9 +2,9 @@
 
 **Area:** Stochastic dynamics, reaction networks and applied optimization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-19
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -51,18 +51,16 @@ Cutting stock models production from standard rolls or bars, including paper and
 5. Constantine Goulimis, *Counterexamples in the CSP*, [arXiv:2004.01937v3](https://arxiv.org/pdf/2004.01937), July 7, 2020, preprint; PDF title *Counterexamples in the Cutting Stock Problem*. §1; §2, p. 2; §5.1, pp. 6–7. Distinguishes integer rounding, modified integer rounding and a different conjecture about the number of distinct patterns.
 6. John Martinovic, *A note on the integrality gap of cutting and skiving stock instances*, 4OR 20 (2022), 85–104, published online December 23, 2020. [Published article](https://link.springer.com/article/10.1007/s10288-020-00469-4), §2, Definition 3, and §4, Theorem 4. An improved bound under divisibility assumptions.
 
+- OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf), result family 118 (2026). Statement locator: `Theorem thm:unbounded-gap; Definition def:configuration-lp`.
+
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located as of 2026-09-19.
+**Resolution:** The linked OpenAI manuscript reports a complete counterexample to the original target.
 
-The June 2026 preprint states the exact ceiling-plus-one conjecture with nonproper patterns and reports no known violating instance. Its polynomial and pseudopolynomial algorithms exploit the specifically constructed AI and ANI benchmark families; their optimality guarantees do not extend to arbitrary input instances.
+**Statement comparison:** The source explicitly uses unrestricted numerical-size type patterns, whose multiplicities are limited by capacity rather than input demand; this is the exact nonproper-pattern LP in AIM. Set c=1: LP=B integer and OPT>B+1 refutes MIRUP without a ceiling ambiguity. Convert rational sizes to integer item lengths using a common denominator W; positive integer type demands are multiplicities. Removing excess items identifies integer covering optimum with packing optimum. This is an unconditional structural counterexample, independent of NP!=P.
 
-Hoberg–Rothvoss prove a general additive $`O(\log(2+z_{\mathrm{LP}}))`$ bound. This leaves the uniform one-piece target unresolved. Their randomized algorithm runs in expected time polynomial in the total number of individual items; this is not a claim about polynomial time in binary-encoded demands. The discrepancy-based lower bounds of Eisenbrand–Pálvölgyi–Rothvoß restrict the patterns available to the rounding procedure, as specified in their Definition 1. They do not give that lower bound for the unrestricted integer optimum.
+**Review scope:** The [dated source comparison](../research/solution_reviews/2026-10-13-openai-crosscheck/README.md#aim-341) checked the actual theorem, hypotheses, quantifiers and required reductions against the unchanged AIM statement. This is an AI statement-level review of a published manuscript, not a fresh independent audit of its complete proof or a Lean kernel replay.
 
-The stronger ordinary integer round-up assertion $`z_{\mathrm{IP}}=\lceil z_{\mathrm{LP}}\rceil`$ is false. Goulimis records an instance with $`W=132`$, lengths $`(44,33,12)`$ and demands $`(2,3,6)`$, for which $`z_{\mathrm{LP}}=259/132`$ and $`z_{\mathrm{IP}}=3`$; it satisfies MIRUP. The same paper's distinct-pattern counterexample concerns the support of a waste-optimal production plan, a different objective from the total stock count here.
+**Lean scope:** [Upstream scope 1](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/118.md). Actual main_results proves unbounded gaps with both typeLP and individualLP equal integer B. The relevant typeLP preserves unrestricted patterns. Integer-length scaling is a mathematical adapter. No local replay/axiom log. No AIM Lean-verified status is asserted.
 
-For the special case in which $`W/\ell_i`$ is an integer for every item type, Martinovic proves the stronger bound $`z_{\mathrm{IP}}-z_{\mathrm{LP}}<4/3`$. That divisibility hypothesis is absent from the general conjecture.
-
-[Entry 316](315-online-bin-packing-optimal-ratio.md) asks for an online competitive ratio under unknown future arrivals. [Entry 326](325-strong-komlos-prefix-discrepancy.md) concerns signed vector prefixes, and [entry 276](275-metric-tsp-four-thirds.md) concerns a routing relaxation. Their full statements were compared; none is the displayed offline stock-count inequality.
-
-Searches on September 18–19, 2026 covered MIRUP and rounding-up aliases, the mathematical bound, proofs and counterexamples, original and later authors, recent packing algorithms, corrections and version histories. The [evidence ledger](../research/expansion-2026-09/candidates/modified-integer-round-up.json) records theorem-level scope comparisons and access limits. The original 1995 full text was unavailable; its accessible explicit restatements supply the formulation. The researching agent completed a separate adversarial self-review; no independent agent or human review is claimed.
+**Source check:** Reviewed OpenAI commit `1581d4cbdd69a0faf34b2089614fe2a814316a6a` on 2026-10-13, including its current manuscript map, history and available formalization scope. Earlier AIM literature notes remain accessible at [the previous revision](https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/341-modified-integer-round-up.md).
