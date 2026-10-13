@@ -1,0 +1,342 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\M}{\mathbf M}
+\newcommand{\F}{\mathbb F}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\restr}{\mathbin{\vrule height 1.4ex depth 0pt width .07ex\vrule height .07ex depth 0pt width .65ex}}
+\newcommand{\spt}{\operatorname{spt}}
+\newcommand{\BV}{\operatorname{BV}}
+\newcommand{\vol}{\mathrm{vol}}
+\title{Integral optimal flat-norm decompositions in codimension one}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{13 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The real flat norm decomposes a current into a residual and the boundary of
+a filling, minimizing their total mass. We prove that every compactly
+supported integral $d$-current in $\R^{d+1}$ has an integral optimal
+decomposition, including when its boundary is nonzero. The filling is a
+scalar function of bounded variation. Rounding its values with one common
+shift preserves the mean filling mass and does not increase the mean residual
+mass. The integer multiplicities of the input are essential to the latter
+calculation. A compactness argument then gives an integral optimum.
+\end{abstract}
+
+\section{The flat-norm question}
+Let $\mathcal N_k^c(\R^n)$ denote compactly supported real normal $k$-currents,
+and let $\mathcal I_k^c(\R^n)$ denote compactly supported integral currents.
+We use Euclidean comass to define current mass, denoted by $\M$.
+For a compactly supported integral $d$-current $T$ in $\R^{d+1}$, set
+\begin{equation}\label{eq:flat}
+\F(T)=\inf\bigl\{\M(X)+\M(S):
+T=X+\partial S,\ X\in\mathcal N_d^c(\R^{d+1}),\
+S\in\mathcal N_{d+1}^c(\R^{d+1})\bigr\}.
+\end{equation}
+Integral currents describe oriented surfaces with integer multiplicities.
+An integral optimum would retain that interpretation in the two parts of the
+decomposition. Minimization over the integral class alone does not determine
+whether its value equals the real infimum in \eqref{eq:flat}.
+
+Ibrahim, Krishnamoorthy and Vixie \cite{IKV} prove this equality and integral
+attainment for one-currents in the plane (Corollary 3.8). Their introduction
+also records the case of codimension-one boundaries. Their general
+codimension-one theorem (Theorem 3.7) uses a subdivision hypothesis to
+transfer an integral simplicial optimum to the continuous problem. We give
+a direct argument using scalar BV functions, which does not require that
+hypothesis.
+
+\begin{theorem}\label{thm:main}
+For every integer $d\ge1$ and every compactly supported integral $d$-current
+$T$ in $\R^{d+1}$, there exist
+$X_I\in\mathcal I_d^c(\R^{d+1})$ and
+$S_I\in\mathcal I_{d+1}^c(\R^{d+1})$ such that
+\[
+T=X_I+\partial S_I,\qquad
+\F(T)=\M(X_I)+\M(S_I).
+\]
+\end{theorem}
+Here $\partial$ is the current boundary, $\M$ is mass, and $\F$ is the real
+infimum \eqref{eq:flat}. The input may satisfy $\partial T\ne0$.
+The conclusion asserts existence of an integral optimum and does not require
+every real optimum to be integral.
+
+The argument rounds a top-dimensional filling rather than approximating the
+input by a triangulation. Off the input surface, the BV coarea formula controls
+the variation created by rounding. On the surface, both one-sided values must
+use the same shift: their rounded difference lies between two adjacent
+integers. Since the input multiplicity is an integer, the absolute residual
+is affine on that interval. This gives the cost estimate needed for
+Theorem~\ref{thm:main}.
+
+\section{Currents and scalar BV functions}
+Put $n=d+1$ and $\vol=dx_1\wedge\cdots\wedge dx_n$.
+For $z\in C_c^\infty(\R^n;\R^n)$, write $\omega_z=\iota_z\vol$.
+Every finite-mass $(n-1)$-current $A$ has a vector Radon measure $\mu_A$ with
+\begin{equation}\label{eq:vector}
+A(\omega_z)=-\int z\cdot d\mu_A,\qquad
+\M(A)=|\mu_A|(\R^n).
+\end{equation}
+The sign is chosen for the identity below; the mass identity follows from
+the isometry between Euclidean vectors and $(n-1)$-forms. For $u\in L^1(\R^n)$,
+define the $n$-current $[u]$ by
+$[u](f\vol)=\int uf\,dx$, $f\in C_c^\infty(\R^n)$.
+If $u\in\BV(\R^n)$, integration by parts gives
+\begin{equation}\label{eq:dictionary}
+\mu_{\partial[u]}=Du,\qquad
+\M([u])=\|u\|_1,\qquad
+\M(\partial[u])=|Du|(\R^n).
+\end{equation}
+The derivative $Du$ is distributional; its total variation is the BV
+seminorm. We always choose Borel representatives of BV functions.
+
+\begin{lemma}\label{lem:top}
+Every compactly supported normal $n$-current in $\R^n$ is $[u]$ for a
+compactly supported $u\in\BV(\R^n)$.
+\end{lemma}
+\begin{proof}
+The finite-mass measure representation gives a finite signed measure $\sigma$
+on $n$-forms. Finite boundary mass means that the distributional gradient
+$D\sigma$ is a finite vector measure, by testing against $\omega_z$.
+For nonnegative smooth mollifiers $\rho_\varepsilon$, let
+$u_\varepsilon=\sigma*\rho_\varepsilon$. Convolution gives
+\[
+\|u_\varepsilon\|_1\le|\sigma|(\R^n),\qquad
+\int|\nabla u_\varepsilon|\,dx\le|D\sigma|(\R^n).
+\]
+For $\varepsilon<1$ the supports lie in one bounded set. BV compactness
+\cite[slides 29--33]{Lahti} gives an $L^1$-convergent subsequence with limit
+$u\in\BV(\R^n)$. On the other hand, mollification converges distributionally
+to $\sigma$, so $\sigma=u\LL^n$. Testing outside $\spt\sigma$ shows that $u$
+vanishes there. The measure representation used here and in
+\eqref{eq:vector} is recalled in \cite[slides 15--17]{Lahti}.
+\end{proof}
+
+For the integral input, \eqref{eq:vector} takes the form
+\begin{equation}\label{eq:input}
+\mu_T=m\nu\,\HH^{n-1}\restr M,
+\end{equation}
+where $M$ is a Borel countably $(n-1)$-rectifiable carrier, $\nu$ is a
+measurable unit normal, and $m\in L^1(\HH^{n-1}\restr M;\Z\setminus\{0\})$.
+The sign of $m$ incorporates the chosen orientation.
+In particular $\HH^{n-1}(M)\le\M(T)<\infty$.
+
+We use two classical BV formulas, in the complete forms stated in
+\cite[Theorems A.9 and A.18]{RT}. For $u\in\BV(\R^n)$, localized coarea gives
+\begin{equation}\label{eq:coarea}
+|Du|(B)=\int_\R |D\mathbf1_{\{u>t\}}|(B)\,dt
+\end{equation}
+for every Borel $B$. On an oriented countably $(n-1)$-rectifiable set $M$,
+the one-sided approximate $L^1$ limits $u_M^+,u_M^-$ exist and are finite
+at $\HH^{n-1}$-almost every point, and
+\begin{equation}\label{eq:trace}
+Du\restr M=(u_M^+-u_M^-)\nu\,\HH^{n-1}\restr M.
+\end{equation}
+The vector-valued source statement gives the scalar one by applying it to
+$(u,0,\ldots,0)$ and taking the first component. For compactly supported $u$
+and the carrier \eqref{eq:input}, the source formulas on a bounded open ball
+apply on any ball containing the supports in its interior. Indicators of
+nonzero superlevels are constant near that ball's boundary, so extending
+them by the same constant introduces no boundary measure. Thus
+\eqref{eq:coarea} also applies to the full-space superlevel perimeters used
+below.
+
+\section{Rounding without increasing the cost}
+For $0<\theta<1$, let $q_\theta(a)=\lfloor a+\theta\rfloor$.
+For every $a\in\R$, writing $a=j+r$ with $j\in\Z$ and $0\le r<1$ shows that
+$q_\theta(a)$ takes the values $j,j+1$ with probabilities $1-r,r$. Hence
+\begin{equation}\label{eq:scalar-volume}
+\int_0^1q_\theta(a)\,d\theta=a,\qquad
+\int_0^1|q_\theta(a)|\,d\theta=|a|.
+\end{equation}
+For $a,b\in\R$ and $m\in\Z$, we also have
+\begin{equation}\label{eq:scalar-jump}
+\int_0^1|m-q_\theta(a)+q_\theta(b)|\,d\theta=|m-a+b|.
+\end{equation}
+Indeed, if $a-b=j+r$, then
+$q_\theta(a)-q_\theta(b)=j+\lfloor\{b+\theta\}+r\rfloor$, where braces
+denote fractional part. The difference lies between the adjacent integers
+$\lfloor a-b\rfloor$ and $\lceil a-b\rceil$, and its mean is $a-b$.
+The function $s\mapsto|m-s|$ is affine on that interval because its corner
+$m$ is an integer. This proves \eqref{eq:scalar-jump}, including all signs.
+
+\begin{lemma}\label{lem:round}
+Let $\mu=m\nu\HH^{n-1}\restr M$ be as in \eqref{eq:input}, and let
+$u\in\BV(\R^n)$ vanish almost everywhere off a compact set $K$.
+There is a compactly supported $v\in\BV(\R^n;\Z)$ such that
+\begin{equation}\label{eq:cost}
+|\mu-Dv|(\R^n)+\|v\|_1
+\le |\mu-Du|(\R^n)+\|u\|_1.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Take $u=0$ outside $K$ and set $v_\theta=q_\theta(u)$.
+Then $v_\theta=0$ outside $K$ and $|v_\theta|\le|u|+\mathbf1_K$.
+Tonelli's theorem and \eqref{eq:scalar-volume} give
+\begin{equation}\label{eq:mean-volume}
+\int_0^1\|v_\theta\|_1\,d\theta=\|u\|_1.
+\end{equation}
+For $k\in\Z$, put $E_{k,\theta}=\{u>k-\theta\}$ and define
+\[
+A_\theta(B)=\sum_{k\in\Z}|D\mathbf1_{E_{k,\theta}}|(B).
+\]
+Coarea and the partition of $\R$ by the intervals $(k-1,k)$ yield
+\begin{equation}\label{eq:sample-coarea}
+\int_0^1 A_\theta(B)\,d\theta=|Du|(B)
+\end{equation}
+for every Borel $B$. For almost every $\theta$, every sampled level has
+finite perimeter and $A_\theta(\R^n)<\infty$. Fubini also gives
+$u(x)+\theta\notin\Z$ for $\LL^n$-almost every $x$, for almost every $\theta$.
+For these parameters the sums
+\[
+\sum_{k=-N}^N
+\bigl(\mathbf1_{E_{k,\theta}}-\mathbf1_{\{0>k-\theta\}}\bigr)
+\]
+converge almost everywhere and in $L^1$ to $v_\theta$. Their absolute values
+are bounded by $|v_\theta|$. Their derivative series converges in total
+variation, since its total variation norms sum to $A_\theta(\R^n)$.
+Distributional testing therefore shows that $v_\theta\in\BV$ and
+\begin{equation}\label{eq:variation}
+|Dv_\theta|\le A_\theta\quad\text{as measures}.
+\end{equation}
+This includes all diffuse variation of $u$.
+
+Let $a(x)=u_M^+(x)$ and $b(x)=u_M^-(x)$ be the traces in
+\eqref{eq:trace}. At each point where they exist, the parameters satisfying
+$a(x)+\theta\in\Z$ or $b(x)+\theta\in\Z$ form a countable set.
+Since the traces have measurable representatives and $\HH^{n-1}(M)<\infty$,
+Fubini gives one full-measure set of parameters avoiding these equalities
+at almost every point of $M$.
+For such a parameter, the traces of $v_\theta$ are $q_\theta(a)$ and
+$q_\theta(b)$. To justify this despite the discontinuity of the floor
+function, if $c+\theta\notin\Z$ choose $\delta>0$ on which $q_\theta$ is
+constant around $c$. For all $s\in\R$,
+\[
+|q_\theta(s)-q_\theta(c)|\le(1+\delta^{-1})|s-c|.
+\]
+Averaging this inequality over a shrinking half-ball proves the assertion
+from the approximate $L^1$ trace of $u$, with no boundedness assumption.
+Applying \eqref{eq:trace} to $v_\theta$ now gives
+\[
+(\mu-Dv_\theta)\restr M
+ =\bigl(m-q_\theta(a)+q_\theta(b)\bigr)\nu\HH^{n-1}\restr M.
+\]
+Consequently \eqref{eq:scalar-jump} implies
+\begin{equation}\label{eq:mean-on}
+\int_0^1|\mu-Dv_\theta|(M)\,d\theta
+=\int_M|m-a+b|\,d\HH^{n-1}=|\mu-Du|(M).
+\end{equation}
+On $M^c$ the input measure vanishes, so
+\eqref{eq:variation} and \eqref{eq:sample-coarea} give
+\[
+\int_0^1|\mu-Dv_\theta|(M^c)\,d\theta\le|Du|(M^c).
+\]
+Together with \eqref{eq:mean-volume} and \eqref{eq:mean-on}, this bounds
+the mean total cost by the right-hand side of \eqref{eq:cost}.
+The cost is measurable: its variation term is the supremum over a countable
+$C^1$-dense family of smooth vector tests of supremum norm at most one on a
+fixed bounded neighbourhood of the supports. Each evaluation is measurable
+by the joint measurability of $v_\theta$ and its uniform $L^1$ bound.
+Thus at least one of the common good parameters has cost at most that mean.
+Choosing it proves the lemma.
+\end{proof}
+
+For integer-valued $v\in\BV$ with compact support, $[v]$ has integer density
+on $\R^n$, finite mass $\|v\|_1$, and finite boundary mass $|Dv|(\R^n)$.
+The classical boundary rectifiability theorem therefore makes $[v]$ integral;
+see \cite[Theorem 1.1]{DelNin} for an explicit statement and proof, and
+\cite[Section 1.1]{IKV}. It follows that $T-\partial[v]$ is integral too,
+and its boundary is $\partial T$. By \eqref{eq:dictionary},
+Lemma~\ref{lem:round} therefore rounds any real admissible decomposition to
+an integral one without increasing its cost.
+
+\section{Attainment with compact support}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Choose $r_0>0$ with $\spt T\subset\operatorname{int}B_{r_0}$.
+We first confine real competitors to one fixed ball. Take a smooth
+$\rho:[0,\infty)\to[0,1]$ that is one up to $r_0$ and zero after $r_0+1$,
+and let $g(r)=\int_0^r\rho(t)\,dt$.
+The smooth map
+\[
+f(x)=g(|x|)\frac{x}{|x|}\quad(x\ne0),\qquad f(0)=0,
+\]
+is the identity on $B_{r_0}$ and has image in $B_{r_0+1}$.
+Its radial and tangential derivative eigenvalues are $g'(r)$ and $g(r)/r$,
+both in $[0,1]$. Thus $\|Df\|\le1$.
+For compactly supported currents, define $f_\#$ by smooth pullback, using a
+cutoff equal to one near the current and its boundary. Pullback commutes
+with exterior differentiation there, so $\partial f_\#S=f_\#\partial S$.
+The derivative bound and the mass definition give $\M(f_\#A)\le\M(A)$ in
+every degree. Since $f_\#T=T$, this operation preserves the decomposition
+and decreases both cost terms. Global properness of $f$ is unnecessary for
+these compactly supported inputs.
+
+The trivial competitor $(T,0)$ gives $0\le\F(T)\le\M(T)$.
+Take a real minimizing sequence with costs at most $\F(T)+1/j$, confine it
+by $f_\#$, and write its fillings as $[u_j]$ by Lemma~\ref{lem:top}.
+Apply Lemma~\ref{lem:round} to choose integer-valued $v_j\in\BV$, supported
+in the same fixed ball, and put $X_j=T-\partial[v_j]$.
+Both currents are integral and
+\[
+\M(X_j)+\|v_j\|_1\le\F(T)+1/j.
+\]
+Their BV norms are bounded because
+\[
+\|v_j\|_1\le\F(T)+1,\qquad
+|Dv_j|(\R^n)\le\M(T)+\M(X_j)\le\M(T)+\F(T)+1.
+\]
+BV compactness gives a subsequence converging locally in $L^1$ to
+$v\in\BV(\R^n)$. The common support makes convergence global in $L^1$
+and keeps $v$ supported in the closed ball. Pass to a further subsequence
+with $\sum_j\|v_j-v\|_1<\infty$. Tonelli then gives pointwise convergence
+almost everywhere, so $v$ is integer valued.
+
+Set $S_I=[v]$ and $X_I=T-\partial[v]$. The preceding boundary rectifiability
+argument makes both currents integral and compactly supported. Global $L^1$
+convergence gives $\|v_j\|_1\to\|v\|_1$ and current convergence
+$X_j\to X_I$. Mass is lower semicontinuous under current convergence by its
+supremum definition. Hence
+\[
+\M(X_I)+\M(S_I)
+\le\liminf_j\bigl(\M(X_j)+\|v_j\|_1\bigr)=\F(T).
+\]
+The reverse inequality holds because this pair is admissible for the real
+infimum. The resulting equality proves the theorem, with
+$\partial X_I=\partial T$ throughout.
+\end{proof}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with proof development, source checking and writing.
+Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{IKV}
+S. Ibrahim, B. Krishnamoorthy and K. R. Vixie,
+\emph{Flat norm decomposition of integral currents},
+Journal of Computational Geometry \textbf{7}(1) (2016), 285--307.
+\href{https://doi.org/10.20382/jocg.v7i1a14}{doi:10.20382/jocg.v7i1a14}.
+\bibitem{RT}
+R. Rossi and M. Thomas,
+\emph{From an adhesive to a brittle delamination model in thermo-visco-elasticity},
+ESAIM: Control, Optimisation and Calculus of Variations \textbf{21}(1)
+(2015), 1--59.
+\href{https://doi.org/10.1051/cocv/2014015}{doi:10.1051/cocv/2014015}.
+\bibitem{Lahti}
+P. Lahti, \emph{Minicourse on BV functions},
+University of Oxford, lecture slides, 16 June 2016.
+\href{https://www.maths.ox.ac.uk/system/files/attachments/BV_minicourse_Slides_Version3_0.pdf}{Author's slides}.
+\bibitem{DelNin}
+G. Del Nin, \emph{Boundary rectifiability and compactness of integral currents
+via $BV$ functions}, arXiv:2606.11185v1 (2026).
+\href{https://arxiv.org/abs/2606.11185v1}{arXiv:2606.11185v1}.
+\end{thebibliography}
+\end{document}
