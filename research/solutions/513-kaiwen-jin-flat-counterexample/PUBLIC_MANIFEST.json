@@ -7,27 +7,32 @@
     {
       "path": "README.md",
       "sha256": "f3b955a1196dcf1eff432c2758d7a7a06908cf89372a59d3324f8c8bcad151e8",
-      "bytes": 1960
+      "bytes": 1960,
+      "purpose": "Package entry point, claim scope, author contact and AI-use disclosure."
     },
     {
       "path": "TARGET_COMPARISON.md",
       "sha256": "0b6ab48668749d0c83ed6a3e4181c37609ad18f516c9bacb32ad1abd086f17d6",
-      "bytes": 2032
+      "bytes": 2032,
+      "purpose": "Clause-by-clause correspondence with the pinned public AIM 513 target."
     },
     {
       "path": "VERIFICATION.md",
       "sha256": "2af4ad5fea71566ea3b75cee31f5dbf050454909fddcf6582ba8fc4a7e4e2ade",
-      "bytes": 1231
+      "bytes": 1231,
+      "purpose": "Performed document checks and standalone LaTeX rebuild command."
     },
     {
       "path": "paper/main.pdf",
       "sha256": "c5496d722843fc8822aad1377cee0268fa62230db84d7a763a031185027da09a",
-      "bytes": 316245
+      "bytes": 316245,
+      "purpose": "Complete three-page mathematical manuscript."
     },
     {
       "path": "paper/main.tex",
       "sha256": "dc355c67cbcef5339b89d82213a0a7283c5e71ed52321c8c6fe8d53f477ab00b",
-      "bytes": 9073
+      "bytes": 9073,
+      "purpose": "Editable standalone manuscript source with embedded bibliography."
     }
   ],
   "manifest_exclusions": [
