@@ -1,0 +1,239 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+ pdftitle={An exponential lower bound for integration under uniform derivative bounds},
+ pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\op}{\mathrm{op}}
+\title{An exponential lower bound for integration\protect\\under uniform derivative bounds}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider integration on the unit cube for smooth functions whose every
+partial derivative, including the function itself, is bounded by one.
+For every fixed absolute error tolerance $0<\varepsilon<1$, we prove that
+deterministic integration requires at least
+$(1-\varepsilon)(\tfrac12+\sin\tfrac12)^{-d}$ function evaluations in
+dimension $d$. The bound includes adaptive sampling and nonlinear
+reconstruction. The proof uses quadratic forms of tensor products of unit
+vectors: a projection makes the function vanish at the samples, while its
+integral stays large and all derivative bounds are preserved.
+\end{abstract}
+
+\section{The integration problem}
+
+Uniform control of derivatives gives strong local regularity, but the cost
+of integrating such functions in high dimension is a separate question.
+For each integer $d\ge1$, let
+\begin{equation}\label{eq:class}
+ F_d=\left\{f\in C^\infty([0,1]^d;\R):
+       \|D^\alpha f\|_\infty\le1\text{ for every }\alpha\in\N_0^d\right\},
+ \qquad I_d(f)=\int_{[0,1]^d}f(x)\,dx.
+\end{equation}
+Here $D^\alpha$ denotes the mixed partial derivative with multi-index
+$\alpha$, and the supremum is taken on the closed cube. In particular,
+$\alpha=0$ is included. Let $n(\varepsilon,d)$ be the smallest number of
+exact function evaluations needed by a deterministic algorithm with
+worst-case absolute error at most $\varepsilon$ on $F_d$. The sites may be
+chosen adaptively and the output may depend nonlinearly on the sampled values.
+
+Wojtaszczyk~\cite[Theorem 2.1]{Wojtaszczyk} proved that, for any fixed number
+of samples, the minimal integration error on this class tends to one as
+$d\to\infty$. The exponential dependence on dimension remained a distinct
+question. Krieg and Ullrich~\cite[Section 8.1, equation (8.5) and the
+discussion after Proposition 8.3]{KriegUllrich} explicitly distinguish it
+from the known curse for uniform approximation on the same class.
+Novak and Pillichshammer~\cite[Section 5.2]{NovakPillichshammer} give related
+integration lower bounds for finite-summability derivative norms and
+positive quadrature formulas; their discussion leaves the supremum
+derivative norm unresolved.
+
+Positive-matrix and squared-kernel arguments give exponential integration
+lower bounds in tensor Hilbert spaces~\cite{Vybiral,HinrichsEtAl}.
+Those Hilbert unit balls need not satisfy \eqref{eq:class}; the
+trigonometric example in~\cite[Section 3.1]{HinrichsEtAl} has a sup-norm
+embedding constant $2^{d/2}$. Here we use the operator norm of a projection
+to bound a quadratic function directly. Choosing the vector frequency to
+be $1/2$ preserves every derivative bound, and a tensor moment calculation
+retains the absolute integration scale.
+
+\begin{theorem}\label{thm:main}
+Set $\lambda=\tfrac12+\sin(\tfrac12)$, with angles in radians. For every
+$d\ge1$ and $n\in\N_0$, any deterministic algorithm using at most $n$
+exact function evaluations has worst-case absolute integration error on
+$F_d$ at least
+\begin{equation}\label{eq:error}
+ \max\{0,1-n\lambda^d\}.
+\end{equation}
+Consequently, for every $0<\varepsilon<1$ and $d\ge1$,
+\begin{equation}\label{eq:complexity}
+ n(\varepsilon,d)\ge (1-\varepsilon)\lambda^{-d}.
+\end{equation}
+This includes adaptive algorithms and nonlinear reconstruction, without
+any restriction on quadrature weights.
+\end{theorem}
+
+Since $\tfrac12<\lambda<1$, equation~\eqref{eq:complexity} gives the curse
+of dimensionality: one may take $\varepsilon_0=1/2$, $c=1/2$ and
+$\rho=\lambda^{-1}>1$, in every dimension.
+
+\section{Proof}
+
+We construct a bounded function that vanishes at any prescribed sample
+sites. Its values are squared distances from a subspace in a finite
+Euclidean space. The vector defining this distance has derivatives of
+exact norm $2^{-k}$ at order $k$, which offsets the factors in the product rule.
+
+For $t\in\R$ and $x\in\R^d$, define
+\begin{equation}\label{eq:vectors}
+ u(t)=\begin{pmatrix}\cos((t-1/2)/2)\\\sin((t-1/2)/2)\end{pmatrix},
+ \qquad U_d(x)=\bigotimes_{j=1}^d u(x_j)\in\R^{2^d}.
+\end{equation}
+All vector norms below are Euclidean. The tensor product in
+\eqref{eq:vectors} has one coordinate for each choice of a sine or cosine
+component in every factor.
+
+\begin{lemma}\label{lem:derivatives}
+If $A$ is a real symmetric $2^d\times2^d$ matrix with
+$\|A\|_\op\le1$, then
+$f_A(x)=U_d(x)^T A U_d(x)$ belongs to $F_d$.
+\end{lemma}
+
+\begin{proof}
+Let $J=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)$.
+Then $u^{(k)}(t)=2^{-k}J^k u(t)$ and $\|u(t)\|_2=1$, so
+$\|u^{(k)}(t)\|_2=2^{-k}$ for all $k\ge0$. Each coordinate derivative
+acts on its own tensor factor. The squared norm of a tensor product is the
+product of the squared factor norms; therefore
+\begin{equation}\label{eq:vector-derivatives}
+ \|D^\beta U_d(x)\|_2=2^{-|\beta|},\qquad
+ |\beta|=\beta_1+\cdots+\beta_d.
+\end{equation}
+For every $\alpha\in\N_0^d$, the product rule gives
+\[
+ D^\alpha f_A(x)=\sum_{\beta\le\alpha}
+ {\alpha\choose\beta}(D^\beta U_d(x))^T A D^{\alpha-\beta}U_d(x),
+ \qquad {\alpha\choose\beta}=\prod_{j=1}^d{\alpha_j\choose\beta_j},
+\]
+where $\beta\le\alpha$ means coordinatewise comparison. By
+Cauchy--Schwarz and \eqref{eq:vector-derivatives},
+\[
+ |D^\alpha f_A(x)|\le
+ 2^{-|\alpha|}\sum_{\beta\le\alpha}{\alpha\choose\beta}
+ =2^{-|\alpha|}\prod_{j=1}^d2^{\alpha_j}=1.
+\]
+The finite sums and products defining $f_A$ are smooth on all of $\R^d$.
+The estimate includes order zero and every repeated or mixed derivative.
+\end{proof}
+
+\begin{lemma}\label{lem:fooler}
+For any $m\in\N_0$ and sites $x^1,\ldots,x^m\in[0,1]^d$, there is a
+function $f\in F_d$ such that $0\le f\le1$, $f(x^j)=0$ for every $j$, and
+\begin{equation}\label{eq:integral-fooler}
+ I_d(f)\ge1-m\lambda^d.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $P$ be the orthogonal projection onto
+$V=\operatorname{span}\{U_d(x^1),\ldots,U_d(x^m)\}$ and let $Q=\Id-P$.
+For $m=0$, take $P=0$. The projection $Q$ is a symmetric contraction, so
+Lemma~\ref{lem:derivatives} applies to
+\[
+ f(x)=U_d(x)^TQ U_d(x)=\|Q U_d(x)\|_2^2.
+\]
+Thus $0\le f\le1$ and $f(x^j)=0$.
+
+To estimate its integral, compute the one-dimensional moment matrix
+\begin{equation}\label{eq:moment}
+ M=\int_0^1u(t)u(t)^T\,dt
+ =\begin{pmatrix}\lambda&0\\0&1-\lambda\end{pmatrix}.
+\end{equation}
+The off-diagonal entry vanishes by oddness about $1/2$, and
+\[
+ \int_0^1\cos^2((t-1/2)/2)\,dt
+ =\frac12+\frac12\int_0^1\cos(t-1/2)\,dt
+ =\frac12+\sin(1/2).
+\]
+The sine-square entry is its complement. Since $0<\sin(1/2)<1/2$,
+$\tfrac12<\lambda<1$. Product integration of the continuous entries yields
+\[
+ M_d=\int_{[0,1]^d}U_d(x)U_d(x)^T\,dx=M^{\otimes d}.
+\]
+The matrix $M_d$ is diagonal, has trace one, and every diagonal entry is
+at most $\lambda^d$. Write $r=\dim V\le m$ and choose an orthonormal
+basis $v_1,\ldots,v_r$ of $V$. Then $P=\sum_{i=1}^r v_i v_i^T$, and
+\[
+ \tr(PM_d)=\sum_{i=1}^r v_i^T M_d v_i\le r\lambda^d\le m\lambda^d.
+\]
+It follows that
+$I_d(f)=\tr(QM_d)=1-\tr(PM_d)\ge1-m\lambda^d$.
+Repeated or dependent sample sites simply reduce $r$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Run the algorithm on the zero function and record its $m\le n$ sample
+sites, including its stopping decision. Apply Lemma~\ref{lem:fooler} to
+these sites. Both $f$ and $-f$ belong to $F_d$ and return zero at every
+recorded site. By induction over the sampling steps, the algorithm follows
+the same path on either input and produces the same output $a$.
+For $b=I_d(f)\ge0$, the triangle inequality gives
+\[
+ \max\{|b-a|,|-b-a|\}\ge b\ge1-m\lambda^d\ge1-n\lambda^d.
+\]
+This proves \eqref{eq:error}, since an error is nonnegative. If an
+algorithm has worst-case error at most $\varepsilon$, then
+$1-n\lambda^d\le\varepsilon$, which is \eqref{eq:complexity}.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex assisted with the literature search, construction and checking
+of the argument, and preparation of the manuscript. Independent
+mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{KriegUllrich}
+D. Krieg and M. Ullrich,
+\emph{Approximation of functions: Optimal sampling and complexity},
+Acta Numerica \textbf{35} (2026), 273--457.
+\href{https://doi.org/10.1017/S0962492925100287}{doi:10.1017/S0962492925100287}.
+Preprint version checked:
+\href{https://arxiv.org/abs/2602.02066v2}{arXiv:2602.02066v2}.
+
+\bibitem{Wojtaszczyk}
+J. O. Wojtaszczyk,
+\emph{Multivariate integration in $C^\infty([0,1]^d)$ is not strongly tractable},
+Journal of Complexity \textbf{19} (2003), 638--643.
+\href{https://arxiv.org/abs/0803.0441v1}{arXiv:0803.0441v1}.
+
+\bibitem{NovakPillichshammer}
+E. Novak and F. Pillichshammer,
+\emph{Intractability results for integration in tensor product spaces},
+preprint (2024),
+\href{https://arxiv.org/abs/2404.17163v1}{arXiv:2404.17163v1}.
+
+\bibitem{Vybiral}
+J. Vyb\'iral,
+\emph{A variant of Schur's product theorem and its applications},
+Advances in Mathematics \textbf{368} (2020), 107140.
+\href{https://doi.org/10.1016/j.aim.2020.107140}{doi:10.1016/j.aim.2020.107140}.
+
+\bibitem{HinrichsEtAl}
+A. Hinrichs, D. Krieg, E. Novak and J. Vyb\'iral,
+\emph{Lower bounds for the error of quadrature formulas for Hilbert spaces},
+Journal of Complexity \textbf{65} (2021), 101544.
+\href{https://arxiv.org/abs/2004.00274v2}{arXiv:2004.00274v2}.
+\end{thebibliography}
+\end{document}
