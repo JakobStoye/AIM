@@ -1,0 +1,454 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\VR}{\operatorname{VR}}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\st}{\operatorname{st}}
+\newcommand{\conv}{\operatorname{conv}}
+\title{Torus-grid Vietoris--Rips complexes at half the diameter}
+\author{Kaiwen Jin}
+\email{yui.ui.siki@gmail.com}
+\date{October 14, 2026}
+\hypersetup{pdftitle={Torus-grid Vietoris-Rips complexes at half the diameter},pdfauthor={Kaiwen Jin}}
+\begin{document}
+\begin{abstract}
+For every integer \(k\geq3\), we determine the homotopy type of the closed
+Vietoris--Rips complex of the \(2k\) by \(2k\) periodic Manhattan grid at
+radius \(k\). It is
+\(S^3\vee\bigvee^{4k}S^{2k-1}\), as conjectured by Adams, Adetowubo,
+Barriga-Acosta, Feng and Sterling. Adjacent pairs of rows and columns give
+the high-dimensional spheres. Removing one facet from each leaves a
+complex with the integral homology of a three-sphere. The comparison is
+proved uniformly through a homotopy calculation for finite cylinders
+and a cover by coordinate semicircles.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+Vietoris--Rips complexes of periodic samples provide finite models in which
+one can follow the change from local geometry to higher-dimensional
+topology. For a torus grid with the periodic Manhattan metric, Adams,
+Adetowubo, Barriga-Acosta, Feng and Sterling~\cite{torus} determined several
+families of homotopy types. Their Theorem~5.8 identifies the small-scale
+torus regime, while Theorems~5.10 and~5.12 describe the first two
+transition families. Their Question~8.6 asks for the homotopy type at
+half the diameter of an even square grid. We answer that question for all
+\(k\geq3\); the case \(k=2\) was already known.
+
+For \(n\geq1\), write
+\[
+T_{n,n}=(\ZZ/n\ZZ)^2,\qquad
+\delta_n(a,c)=\min\{|a-c|,n-|a-c|\},
+\]
+using representatives \(0,\ldots,n-1\), and set
+\[
+d((a,b),(c,e))=\delta_n(a,c)+\delta_n(b,e).
+\]
+The closed complex \(\VR(T_{n,n};r)\) contains a finite subset precisely
+when every pair in it has distance at most \(r\). It is the clique complex
+of its graph of edges.
+
+\begin{theorem}\label{thm:main}
+For every integer \(k\geq3\),
+\[
+\VR(T_{2k,2k};k)\simeq
+S^3\vee\bigvee_{j=1}^{4k}S^{2k-1}.
+\]
+\end{theorem}
+
+The metric diameter here is \(2k\), so the radius is exactly half the
+diameter. The wedge is taken at a common base point. For \(k=2\) the same
+formula gives nine three-spheres, agreeing with the known homotopy type
+in~\cite{torus}.
+
+The \(4k\) high-dimensional spheres have concrete representatives:
+each pair of adjacent rows or columns induces a cross-polytope boundary.
+We remove one suitable facet from each of these spheres. Their remaining
+union has a good cover whose nerve is the join of two circles. To compare
+this union with the rest of the Rips complex, we use coordinate
+semicircles. The main calculation is a cylinder whose circular direction
+has circumference \(2k\); adding a column adds exactly one
+\((2k-1)\)-sphere. This also explains why the equality at the closed
+threshold matters.
+
+Throughout the proof, fix \(k\geq3\), put \(n=2k\), and write
+\(K=\VR(T_{n,n};k)\). All homology groups have integer coefficients,
+and simplicial complexes are identified with their geometric realizations
+when discussing homotopy.
+
+\section{Adjacent rows and columns}
+
+For \(b\in\ZZ/n\ZZ\), let \(B_b\) be the induced subcomplex of \(K\) on the
+two rows with second coordinates \(b,b+1\). For \(a\in\ZZ/n\ZZ\), let
+\(D_a\) be the induced subcomplex on columns \(a,a+1\).
+All indices in these definitions are taken modulo \(n\).
+
+\begin{lemma}\label{lem:bands}
+Each \(B_b\) and \(D_a\) is the boundary of an \(n\)-dimensional
+cross-polytope. In particular, it is homeomorphic to \(S^{n-1}\).
+The faces
+\[
+\tau_b=\{(a,b):a\ \text{even}\}
+       \cup\{(a+k,b+1):a\ \text{odd}\},
+\]
+and their coordinate-swapped counterparts \(\upsilon_a\) in \(D_a\),
+are maximal faces of \(K\). Each belongs to only its own band among the
+\(2n\) complexes \(B_b,D_a\).
+\end{lemma}
+
+\begin{proof}
+Every pair within one row is adjacent. Between the two rows the only
+nonedges are
+\[
+(a,b),\quad (a+k,b+1).
+\]
+These form \(n\) opposite pairs, so the clique complex is the
+cross-polytope boundary. The selected face chooses one vertex from each
+pair.
+
+To check maximality in \(K\), consider a vertex \((x,y)\) outside the
+two rows. Its circular distance from at least one of them is at least
+two. The first coordinates selected in either row form a parity class;
+their maximum circular distance from \(x\) is at least \(k-1\).
+Thus a vertex of the selected face is at distance at least \(k+1\)
+from \((x,y)\). Inside the band, maximality follows from the opposite-pair
+description.
+
+The two occupied rows identify the horizontal band uniquely. Its
+first-coordinate projection contains a parity class of \(k\geq3\)
+points, so it cannot be contained in two adjacent columns. The vertical
+claims follow by interchanging the coordinates.
+\end{proof}
+
+Let
+\[
+L=\bigcup_b B_b\ \cup\ \bigcup_a D_a.
+\]
+Delete the \(2n\) maximal faces \(\tau_b,\upsilon_a\), retaining all their
+proper faces, from \(K\) and \(L\). Denote the resulting subcomplexes by
+\(K^-\) and \(L^-\), respectively.
+
+\begin{lemma}\label{lem:split}
+There is a homotopy equivalence
+\[
+K\simeq K^-\vee\bigvee^{2n}S^{n-1}.
+\]
+\end{lemma}
+
+\begin{proof}
+In each band sphere, the complement of the interior of its selected facet
+is a closed ball. By Lemma~\ref{lem:bands}, this ball contains no other
+deleted facet. It therefore lies in \(K^-\), and contracts the attaching
+map of the selected facet's boundary.
+Restoring the facets one at a time gives the asserted wedge.
+Equivalently, apply the null-homotopic union lemma
+from~\cite[Lemma~5.7]{torus}: if both inclusions from \(X\cap Y\)
+into \(X,Y\) are null-homotopic, then
+\[
+X\cup Y\simeq X\vee Y\vee\Sigma(X\cap Y).
+\]
+Here \(Y\) is the restored simplex and \(X\cap Y\) its boundary.
+The complexes remain connected because their one-skeletons are unchanged.
+\end{proof}
+
+\begin{proposition}\label{prop:band-nerve}
+The complex \(L^-\) is homotopy equivalent to \(S^3\).
+\end{proposition}
+
+\begin{proof}
+Cover \(L^-\) by the \(2n\) band spheres with their selected facets removed.
+Each member is a closed ball. Two horizontal bands intersect when their
+indices are adjacent, in a full row simplex; three distinct horizontal
+bands have empty intersection. The same holds vertically.
+A mixed intersection is a simplex on a subset of a two-by-two grid,
+whose pair distances are at most two. None of these intersections
+contains a deleted facet.
+
+Every nonempty intersection is therefore contractible. The nerve of this
+cover is \(C_n*C_n\), where \(C_n\) is the simplicial cycle with \(n\)
+vertices: the horizontal and vertical intersection conditions are
+independent. The finite subcomplex nerve theorem
+~\cite[Theorem~10.6(i)]{bjorner} gives
+\[
+L^-\simeq C_n*C_n\simeq S^1*S^1\cong S^3.
+\]
+\end{proof}
+
+\section{Coordinate restrictions}
+
+We will compare \(K^-\) and \(L^-\) on coordinate semicircles. A cyclic
+interval of length \(\ell\) means
+\(\{c,c+1,\ldots,c+\ell\}\), with all entries reduced modulo \(n\).
+
+\begin{lemma}\label{lem:semicircle}
+Every simplex of \(K\) has at least one coordinate projection contained
+in a cyclic interval of length \(k\).
+\end{lemma}
+
+\begin{proof}
+Embed the grid in \(\mathbb R^2\oplus\mathbb R^2\) by
+\[
+v(a,b)=
+(\cos(\pi a/k),\sin(\pi a/k),
+ \cos(\pi b/k),\sin(\pi b/k)).
+\]
+For angular coordinate distances \(\alpha,\beta\in[0,\pi]\), the pair
+inner product is
+\[
+\cos\alpha+\cos\beta
+=2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}.
+\]
+It is nonnegative exactly when \(\alpha+\beta\leq\pi\).
+The cases where the second factor is zero also have
+\(\alpha+\beta=\pi\). Thus clique vertices have pairwise nonnegative
+inner products.
+
+Write them as \((x_i,y_i)\). If the convex hull of the \(x_i\) excludes
+zero, choose its closest point \(p\) to zero. Minimality along the segment
+from \(p\) to \(x_i\) gives \(p\cdot x_i\geq |p|^2>0\);
+the first coordinates lie in an open semicircle.
+Otherwise choose nonnegative \(\lambda_i\), summing to one, with
+\(\sum_i\lambda_i x_i=0\), and put \(w=\sum_i\lambda_i y_i\).
+Since \(|(x_i,y_i)|^2=2\),
+\[
+|w|^2=\Big|\sum_i\lambda_i(x_i,y_i)\Big|^2
+\geq 2\sum_i\lambda_i^2>0.
+\]
+Moreover \(y_j\cdot w\geq0\) for every \(j\), by the pair inner products.
+The second coordinates consequently lie in a closed semicircle.
+For integer coordinates, either semicircle can be enlarged to one of
+the stated intervals.
+\end{proof}
+
+\subsection*{Finite cylinders}
+
+For \(1\leq m\leq k+1\), let \(F_m\) be the closed Rips complex at radius
+\(k\) on
+\(\{0,\ldots,m-1\}\times\ZZ/n\ZZ\), with metric
+\[
+|x-x'|+\delta_n(y,y').
+\]
+Only the first coordinate is unwrapped.
+
+\begin{proposition}\label{prop:cylinder}
+For \(1\leq m\leq k+1\),
+\[
+F_m\simeq\bigvee^{m-1}S^{n-1},
+\]
+where a zero-fold wedge is a point. Deleting the selected facets of its
+\(m-1\) adjacent-column bands leaves a contractible complex \(F_m^-\).
+\end{proposition}
+
+\begin{proof}
+The case \(m=1\) is a simplex. For \(m\geq2\), put \(t=m-1\), and let
+\[
+U=\bigcup_{c\in\ZZ/n\ZZ}\st_{F_m}(t,c),
+\qquad E=F_{m-1}\cap U.
+\]
+Here the closed star consists of faces that can be extended by the indicated
+vertex. The vertices of the last column form a simplex. All nonempty
+intersections of their closed stars are cones at any of the corresponding
+last-column vertices. Their nerve is a full simplex, so \(U\) is
+contractible, and \(F_m=F_{m-1}\cup U\).
+
+Cover \(E\) by \(E_c=F_{m-1}\cap\st_{F_m}(t,c)\).
+For each nonempty proper set \(S\subset\ZZ/n\ZZ\), there is a \(z\) with
+\[
+z\notin S+k,\qquad \delta_n(z,s_0)\leq1
+\quad\text{for some }s_0\in S.                 \tag{*}
+\]
+If some \(s\in S\) has \(s+k\notin S\), take \(z=s\).
+Otherwise \(S=S+k\), and a cyclic edge from \(S\) to its complement
+gives \(s_0,z\) as required.
+
+The vertex \((t-1,z)\) belongs to every \(E_c\), \(c\in S\), since
+\(\delta_n(z,c)\leq k-1\). If \((x,y)\) belongs to their intersection,
+put \(r=t-x\). Then \(r+\delta_n(y,s_0)\leq k\), and
+\[
+d((t-1,z),(x,y))
+\leq r-1+\delta_n(z,s_0)+\delta_n(s_0,y)\leq k.
+\]
+Thus the intersection is a cone at \((t-1,z)\).
+The intersection over all \(n\) centers is empty: the second-coordinate
+antipode of any previous-column vertex gives distance \(r+k>k\).
+The nerve is therefore the boundary of an \((n-1)\)-simplex, and
+\(E\simeq S^{n-2}\).
+
+Inductively \(F_{m-1}\) is \((n-2)\)-connected. This connectivity follows
+from its wedge description and cellular approximation
+~\cite[Theorem~4.8]{hatcher}. Both maps from \(E\) to \(F_{m-1}\) and
+\(U\) are null-homotopic. The null-homotopic union lemma gives
+\[
+F_m\simeq F_{m-1}\vee\Sigma E
+\simeq\bigvee^{m-1}S^{n-1}.
+\]
+
+The facet-removal argument of Lemma~\ref{lem:split} also applies inside
+this cylinder:
+\[
+F_m\simeq F_m^-\vee\bigvee^{m-1}S^{n-1}.
+\]
+It follows that \(F_m^-\) has trivial reduced integral homology.
+Its fundamental group is unchanged by the facet deletions, which occur
+in dimension \(n-1\geq5\); cellular approximation applies to the common
+two-skeleton. Hence \(F_m^-\) is simply connected.
+The homology form of Whitehead's theorem
+~\cite[Corollary~4.33]{hatcher}, applied to its map to a point, proves
+contractibility.
+\end{proof}
+
+\subsection*{Rectangles and restricted bands}
+
+\begin{lemma}\label{lem:rectangle}
+The closed Manhattan Rips complex at radius \(k\) on a nonempty finite
+integer rectangle is contractible.
+\end{lemma}
+
+\begin{proof}
+By~\cite[Corollary~4.3]{torus}, this complex is the nerve of the open
+Manhattan balls of radius \((k+1)/2\) centered at its grid points.
+The balls have convex intersections and cover the whole rectangular region:
+each point is within Manhattan distance one of a grid point.
+Coordinate clamping to the rectangle decreases distance to every grid
+center. The straight-line homotopy to the clamped point stays in each ball
+containing the starting point. Thus the union deforms onto the rectangle,
+and the nerve theorem~\cite[Theorem~10.7]{bjorner} proves the claim.
+\end{proof}
+
+For coordinate sets \(I,J\), write \(X|_{I\times J}\) for the induced
+restriction of a complex \(X\).
+
+\begin{lemma}\label{lem:restricted-bands}
+If \(I,J\) are each a nonempty cyclic interval of length at most \(k\)
+or the whole circle, and at least one is a proper interval, then
+\(L^-|_{I\times J}\) is contractible.
+\end{lemma}
+
+\begin{proof}
+Cover it by the restrictions of the punctured bands.
+A nonempty band restricted to a proper interval in its circular
+coordinate is a cone. In its
+cross-polytope description, at least one vertex has its opposite absent:
+an interval of length less than \(k\) has no antipodal pair, while one
+of length \(k\) has interior vertices with antipodes outside.
+No selected facet lies in this restricted direction, since its parity
+projection has minimum cyclic span \(n-2>k\).
+If a full circular direction is retained, a complete band in that
+direction is its punctured ball. A restriction to one row or column is
+a simplex. All nonempty intersections of distinct restricted bands remain
+simplices.
+
+For a full coordinate the band-intersection graph is an \(n\)-cycle.
+For a proper interval it is a path: its vertices are the consecutive bands
+meeting that interval, and its edges correspond to their shared
+coordinates in the interval. This includes the two bands meeting a
+singleton. The cover nerve is the join of the two graphs. It has a path
+factor, so it is contractible. The subcomplex nerve theorem completes
+the proof.
+\end{proof}
+
+\section{Comparison and the homotopy formula}
+
+We use the following finite-cover homology observation.
+
+\begin{lemma}\label{lem:comparison}
+Suppose a finite simplicial complex \(X\) is covered by subcomplexes
+\(X_1,\ldots,X_s\), and \(Y\subset X\). If for every nonempty index set
+\(J\subset\{1,\ldots,s\}\) the inclusion
+\[
+Y\cap\bigcap_{j\in J}X_j\ \longrightarrow\ \bigcap_{j\in J}X_j
+\]
+induces an isomorphism on integral homology, then \(Y\hookrightarrow X\)
+does so.
+\end{lemma}
+
+\begin{proof}
+Induct on \(s\). Separate \(X_s\) from the union of the preceding
+members. The induction hypothesis applies both to that union and to
+its intersection with \(X_s\), covered by \(X_i\cap X_s\), \(i<s\).
+Naturality of the Mayer--Vietoris sequences for these subcomplex unions
+and the five lemma give the assertion in every degree; see
+~\cite[Section~2.2, pp.~149--150]{hatcher}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Lemma~\ref{lem:semicircle}, the induced restrictions to
+\[
+\{a,\ldots,a+k\}\times\ZZ/n\ZZ,\qquad
+\ZZ/n\ZZ\times\{b,\ldots,b+k\},
+\]
+cover \(K^-\) simplex by simplex. Use the same restrictions for \(L^-\).
+
+Every intersection is a restriction to \(I\times J\). Each coordinate
+set is the whole circle if unconstrained; otherwise it is empty,
+a connected cyclic interval of length at most \(k\), or a pair of
+antipodal points. Indeed, two closed semicircles either meet in an
+interval or, when complementary, in their two endpoints. Intersecting
+a shorter interval with another semicircle cannot disconnect it, since
+their total lengths are less than a full circumference. Further cuts of
+an endpoint pair give a singleton or the empty set.
+
+If one coordinate is an antipodal pair, every clique is contained in
+one of its two rows or columns, or is a pair whose other coordinate is
+constant. All these faces already lie in \(L\), and none is deleted.
+Thus the restricted inclusion from \(L^-\) to \(K^-\) is the identity.
+The same is true for a singleton coordinate.
+
+If both coordinates are proper connected intervals, the metric unwraps
+to an ordinary rectangle. No selected facet lies there because
+\(n-2>k\). Lemmas~\ref{lem:rectangle} and~\ref{lem:restricted-bands}
+make both restrictions contractible.
+If exactly one coordinate is proper and the other is full,
+Proposition~\ref{prop:cylinder} makes the restriction of \(K^-\)
+contractible, and Lemma~\ref{lem:restricted-bands} does the same for
+\(L^-\). Empty intersections occur on both sides.
+
+Lemma~\ref{lem:comparison} now gives
+\[
+H_*(L^-;\ZZ)\cong H_*(K^-;\ZZ).
+\]
+By Proposition~\ref{prop:band-nerve}, the only nonzero reduced group of
+\(K^-\) is \(H_3(K^-;\ZZ)\cong\ZZ\).
+
+The complex \(K^-\) is simply connected. Each Rips edge is homotopic,
+relative to its endpoints, to a shortest grid path of length at most
+\(k\). Its path vertices form a retained simplex, having at most
+\(k+1<n\) vertices. Unit-square triangulations are also retained.
+Square homotopies commute horizontal and vertical steps, so a closed grid
+loop reduces to powers of the two coordinate cycles. These cycles bound
+in the retained full row and full column simplices.
+
+Hurewicz first gives \(\pi_2(K^-)=0\) and then represents a generator of
+\(H_3(K^-;\ZZ)\) by a map \(S^3\to K^-\).
+This map is an integral homology isomorphism, so
+~\cite[Theorem~4.32 and Corollary~4.33]{hatcher} gives \(K^-\simeq S^3\).
+Lemma~\ref{lem:split} restores the \(2n=4k\) spheres of dimension
+\(n-1=2k-1\), proving the theorem.
+\end{proof}
+
+\section*{AI assistance}
+OpenAI Codex was used to explore and draft the proof, check the cited
+theorem statements, and prepare the manuscript. Independent human
+mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{torus}
+H.~Adams, A.~Y.~Adetowubo, H.~Barriga-Acosta, Z.~Feng and J.~Sterling,
+\emph{Vietoris--Rips complexes of torus grids},
+Mediterranean Journal of Mathematics \textbf{22} (2025), article 173,
+\href{https://doi.org/10.1007/s00009-025-02945-9}{doi:10.1007/s00009-025-02945-9}.
+Author version: \href{https://arxiv.org/abs/2502.07134v2}{arXiv:2502.07134v2}.
+\bibitem{bjorner}
+A.~Bj\"orner, \emph{Topological methods},
+in R.~L.~Graham, M.~Gr\"otschel and L.~Lov\'asz (eds.),
+\emph{Handbook of Combinatorics}, vol.~2, Elsevier, 1995, pp.~1819--1872.
+\bibitem{hatcher}
+A.~Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "problem_id": 532,
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "analytic theorem and proof",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "submission entry point and factual AI disclosure",
+      "sha256": "c5c6df3bca2414bca95b5c07fe82dff2cf9e5ef7765b202c432a0753712ab09b"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "full target correspondence and public dependency locators",
+      "sha256": "5e31f8ebd6cd81249ff1355eb02110b2d296dd367a28ed522d1be5cd69e22ebb"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "standalone complete manuscript source",
+      "sha256": "e49443abbac1ccfb0270d12b66848efe923600d0034efc72ad60a7ca57d9bd87"
+    },
+    {
+      "path": "paper/torus-grid-half-diameter.pdf",
+      "purpose": "compiled complete manuscript",
+      "sha256": "fb2dce5f4d2fd61e24f75c2ef19fe775f4d42fc0bfe5ec5eac6a3709fb93038f"
+    }
+  ]
+}
