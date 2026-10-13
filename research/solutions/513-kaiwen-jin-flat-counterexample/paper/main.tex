@@ -1,0 +1,218 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\TC}{\operatorname{TC}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\F}{\mathbb F_2}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\title[An oriented flat counterexample]{An oriented flat counterexample to the centre-rank formula for topological complexity}
+\author{Kaiwen Jin}
+\email{yui.ui.siki@gmail.com}
+\date{October 13, 2026}
+\begin{document}
+\begin{abstract}
+We construct a closed connected oriented flat five-manifold whose fundamental
+group has centre of rank two and whose unreduced topological complexity is at
+least ten. Since its universal cover is Euclidean space, this gives a negative
+answer to the proposed formula $\TC(M)=2\dim M+1-\rank Z(\pi_1M)$ for closed
+oriented aspherical manifolds. The lower bound follows from a nonzero product
+of nine degree-one zero divisors in the mod-$2$ cohomology ring of a real Bott
+manifold.
+\end{abstract}
+\maketitle
+
+\section{The centre-rank question}
+For a path-connected space $X$, its unreduced topological complexity $\TC(X)$
+is the least number of open subsets covering $X\times X$ on which the path
+endpoint map $PX\to X\times X$ admits continuous sections. Thus $\TC(X)$
+counts the continuous local rules needed for motion planning, with both the
+initial and final configuration allowed to vary \cite{Farber}.
+
+For a closed connected oriented aspherical $n$-manifold $M$, put
+\[
+ z=\dim_{\Q}\bigl(Z(\pi_1M)\otimes_{\Z}\Q\bigr).
+\]
+The centre-rank question asks whether
+\begin{equation}\label{eq:formula}
+ \TC(M)=2n+1-z.
+\end{equation}
+This formula is posed in \cite[Question~5.8]{Neofytidis}. We show that it fails
+already among oriented flat manifolds.
+
+\begin{theorem}\label{thm:main}
+There is a closed connected oriented flat five-manifold $M$ with contractible
+universal cover $\R^5$ such that
+\[
+ \dim_{\Q}\bigl(Z(\pi_1M)\otimes_{\Z}\Q\bigr)=2,
+ \qquad \TC(M)\geq 10.
+\]
+In particular, $M$ is an aspherical counterexample to \eqref{eq:formula},
+whose right-hand side is $9$ for this manifold.
+\end{theorem}
+
+The construction uses the affine realization and cohomology presentation of
+real Bott manifolds due to Kamishima and Masuda \cite{KM}. A mixed product
+of nine zero divisors then gives the lower bound through Farber's theorem
+\cite[Theorem~7]{Farber}. An exact value of $\TC(M)$ is not needed for the
+counterexample. Section~2 constructs the manifold and computes its centre;
+Section~3 gives the cup product and completes the proof. All cohomology below
+has coefficients in $\F$, and $\TC$ always uses the unreduced convention.
+
+\section{The manifold and its centre}
+Consider the strictly upper triangular binary matrix
+\begin{equation}\label{eq:matrix}
+ A=\begin{pmatrix}
+ 0&1&0&1&0\\
+ 0&0&0&1&1\\
+ 0&0&0&1&1\\
+ 0&0&0&0&0\\
+ 0&0&0&0&0
+ \end{pmatrix}.
+\end{equation}
+For $1\leq i\leq5$, let $e_i$ be the $i$th coordinate vector and define
+the affine isometry
+\begin{equation}\label{eq:generators}
+ s_i(u)=D_i u+\tfrac12 e_i,
+ \qquad
+ D_i=\operatorname{diag}\bigl((-1)^{A_{i1}},\ldots,(-1)^{A_{i5}}\bigr).
+\end{equation}
+Set $\Gamma=\langle s_1,\ldots,s_5\rangle$ and $M=\R^5/\Gamma$.
+These are exactly the generators in \cite[equation~(3.1)]{KM}, and
+\cite[Lemma~3.1]{KM} identifies this quotient with the real Bott manifold
+$M(A)$ and its fundamental group with $\Gamma$.
+
+\begin{proposition}\label{prop:geometry}
+The manifold $M$ is closed, connected, oriented and aspherical, and
+$\dim_{\Q}(Z(\Gamma)\otimes_{\Z}\Q)=2$.
+\end{proposition}
+\begin{proof}
+Since $A_{ii}=0$, the square $s_i^2$ is the unit translation by $e_i$.
+The integer translation lattice $\Z^5$ is therefore a normal subgroup of
+$\Gamma$. On $T^5=\R^5/\Z^5$ the five generators commute and have order two:
+a sign change and a half translation commute modulo integer translations.
+For a nonempty product of distinct generators, choose its smallest index $i$.
+Every selected generator of larger index fixes coordinate $i$, whereas $s_i$
+translates that coordinate by $1/2$. Hence the product has no fixed point.
+The induced action is consequently a free action of $(\Z/2)^5$.
+
+It follows that $M=T^5/(\Z/2)^5$ is a smooth compact connected manifold
+without boundary. Its Euclidean metric descends to a flat metric. The lifted
+action on $\R^5$ is free and properly discontinuous: all translation vectors
+lie in $\tfrac12\Z^5$, the linear parts are diagonal sign matrices, and only
+finitely many such affine maps can move a compact set to meet itself. Thus
+$\R^5$ is its contractible universal cover. Every row of $A$ has even sum,
+so every $D_i$ has determinant $+1$ and $M$ is oriented.
+
+Let $g(u)=Bu+v$ be central in $\Gamma$. Commuting with the five unit
+translations gives $Be_i=e_i$ for every $i$, so $B=I$. A translation by $v$
+commutes with $s_i$ precisely when $D_i v=v$. For the matrix
+\eqref{eq:matrix} these conditions are
+\[
+ v_2=v_4=v_5=0.
+\]
+The unit translations in coordinates $1$ and $3$ are central, while every
+central vector lies in $\tfrac12\Z e_1\oplus\tfrac12\Z e_3$. The two unit
+translations therefore span the centre after tensoring with $\Q$ and remain
+linearly independent under the coordinate map to $\Q^2$. Its rank is exactly
+two.
+\end{proof}
+
+\section{A product of nine zero divisors}
+By \cite[Lemma~2.1]{KM}, the cohomology ring $R=H^*(M;\F)$ has degree-one
+generators $a,b,c,d,e$, corresponding to $x_1,\ldots,x_5$, and presentation
+\begin{equation}\label{eq:ring}
+ R=\F[a,b,c,d,e]\big/
+ \bigl(a^2,\ b^2+ab,\ c^2,\ d^2+(a+b+c)d,\ e^2+(b+c)e\bigr).
+\end{equation}
+Each successive relation is monic quadratic in the newly adjoined variable.
+Polynomial division therefore gives a free rank-two extension with basis
+$1,x_j$ at each stage. The squarefree monomials are a basis of $R$; in
+particular,
+\[
+ \alpha=abcd\in H^4(M;\F),\qquad
+ \omega=abcde\in H^5(M;\F)
+\]
+are nonzero.
+
+For $x\in R$, write $\bar x=x\otimes1+1\otimes x$ in the graded algebra
+$R\otimes_{\F}R$. This lies in the kernel of cup multiplication
+$R\otimes R\to R$, which is the zero-divisors ideal used in
+\cite[Definition~6]{Farber}. All graded tensor signs equal $1$ over $\F$.
+
+\begin{lemma}\label{lem:product}
+In $R\otimes_{\F}R$,
+\begin{equation}\label{eq:product}
+ \bar a\,\bar b\,\bar d^{\,5}\,\bar e^{\,2}
+ =\alpha\otimes\omega+\omega\otimes\alpha\neq0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $u=a+b+c$. The relations \eqref{eq:ring} give
+\[
+ u^2=ab,\qquad u^3=abc,\qquad u^4=0.
+\]
+Indeed, $u^3=ab(a+b+c)=abc$, since $a^2=0$ and $ab^2=a^2b=0$.
+It follows from $d^2=ud$ that
+\[
+ d^4=u^3d=\alpha,\qquad d^5=u^4d=0.
+\]
+The binomial coefficients $\binom5j$ are odd only for $j=0,1,4,5$.
+Consequently
+\[
+ \bar d^{\,5}=\alpha\otimes d+d\otimes\alpha.
+\]
+Since $a\alpha=b\alpha=0$, multiplication by $\bar a\bar b$ leaves
+\begin{equation}\label{eq:intermediate}
+ \bar a\bar b\bar d^{\,5}
+ =\alpha\otimes abd+abd\otimes\alpha.
+\end{equation}
+Finally,
+\[
+ \bar e^{\,2}=e^2\otimes1+1\otimes e^2,
+ \qquad \alpha e^2=0,
+ \qquad abd\,e^2=abd(b+c)e=\omega.
+\]
+Multiplying \eqref{eq:intermediate} by $\bar e^{\,2}$ proves the identity.
+The two summands have distinct bidegrees $(4,5)$ and $(5,4)$ and are both
+nonzero, so their sum is nonzero.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:geometry} supplies the required manifold and its centre
+rank. The product \eqref{eq:product} contains $1+1+5+2=9$ zero-divisor
+factors. Farber's lower bound \cite[Theorem~7]{Farber} states, in the
+unreduced convention, that $\TC(M)$ is strictly greater than the
+zero-divisors cup length of $H^*(M;\F)$. Hence $\TC(M)\geq10$, while
+$2\dim M+1-\dim_{\Q}(Z(\pi_1M)\otimes_{\Z}\Q)=9$.
+\end{proof}
+
+\section*{AI use}
+OpenAI Codex was used for the finite construction search, algebraic checks,
+and preparation of the text. The proof is given in full through the displayed
+algebraic calculations and the cited cohomology and topological complexity results.
+
+\begin{thebibliography}{9}
+\bibitem{Farber}
+M.~Farber, \emph{Topological complexity of motion planning},
+Discrete Comput. Geom. \textbf{29} (2003), 211--221.
+\href{https://doi.org/10.1007/s00454-002-0760-9}{doi:10.1007/s00454-002-0760-9}.
+Preprint: \href{https://arxiv.org/abs/math/0111197}{arXiv:math/0111197v1}.
+\bibitem{KM}
+Y.~Kamishima and M.~Masuda, \emph{Cohomological rigidity of real Bott manifolds},
+Algebr. Geom. Topol. \textbf{9} (2009), 2479--2502.
+\href{https://arxiv.org/abs/0807.4263v1}{arXiv:0807.4263v1}.
+\bibitem{Neofytidis}
+C.~Neofytidis, \emph{Topological complexity, asphericity and connected sums},
+J. Appl. Comput. Topol. \textbf{9} (2025), article~10.
+\href{https://doi.org/10.1007/s41468-025-00205-z}{doi:10.1007/s41468-025-00205-z}.
+Preprint: \href{https://arxiv.org/abs/2212.08962v2}{arXiv:2212.08962v2}.
+\end{thebibliography}
+\end{document}
