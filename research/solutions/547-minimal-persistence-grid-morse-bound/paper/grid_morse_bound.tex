@@ -1,0 +1,255 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\kk}{\Bbbk}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\LL}{\mathcal L}
+\title{Minimal persistence grids and homological Morse bounds}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The persistent homology of a finite simplicial complex is determined by a
+canonical grid whose coordinate values occur in minimal generators and
+relations. We prove that the number of values in each coordinate is bounded
+by the homological Morse lower bound defined from the multigraded Betti
+tables. The result holds over every field, for every number of parameters,
+and for filters with coincident coordinate values. It establishes the
+conjecture in Remark~5.12 of Harrington, Tillmann and Torras-P\'erez.
+The proof selects a minimal presentation degree on each coordinate slice.
+At that degree a local Koszul calculation eliminates higher syzygies;
+injectivity of top-dimensional homology handles the final homology degree.
+\end{abstract}
+
+\section{The grid and the lower bound}
+
+Persistent homology records the homology of sublevel complexes together
+with the maps induced by their inclusions. In the inverse problem, one asks
+which filters give the same persistent homology. Harrington, Tillmann and
+Torras-P\'erez~\cite{HHT} obtain dimension estimates for these spaces of
+filters using both a minimal determining grid and a lower bound for
+homological Morse numbers. Their Remark~5.12 asks whether each coordinate
+of the minimal grid has cardinality at most that lower bound. We prove
+this comparison for general filters, including coordinate coincidences.
+
+Fix a field $\kk$, an integer $n\ge1$, and a finite nonempty simplicial
+complex $K$ of dimension $d$. A filter assigns $f(\sigma)\in[0,1]^n$
+to every nonempty simplex, with $f(\tau)\le f(\sigma)$ coordinatewise
+whenever $\tau\subseteq\sigma$. For $u\in\mathbb R^n$, ordered
+coordinatewise, set
+\[
+ K_u=\{\sigma\in K:f(\sigma)\le u\},\qquad
+ M_u^q=H_q(K_u;\kk),\qquad 0\le q\le d,
+\]
+using ordinary unreduced homology and inclusion-induced maps. Write
+$\mathbf M=(M^0,\ldots,M^d)$. A free summand born at a grade $w$
+has value $\kk$ at every $v\ge w$ and zero elsewhere; all maps
+between its nonzero components are identities.
+Let $\xi_i^q(u)$ be the multiplicity of a free summand at grade $u$
+in position $i$ of a minimal free resolution of $M^q$. We set these
+numbers to zero when $q<0$ or $q>d$.
+
+Let
+\begin{equation}\label{eq:grid}
+ S=\bigcup_{q=0}^d\supp(\xi_0^q+\xi_1^q),\qquad
+ G_j=\{s_j:s\in S\},\qquad G=\prod_{j=1}^nG_j.
+\end{equation}
+By \cite[Lemma~1.23 and Definition~2.9]{HHT}, $G$ is the canonical
+minimal grid determining the tuple. Values $0$ and $1$ are included only
+when they occur in the indicated supports.
+The lower bound in question is
+\begin{align}
+ b_q(u)&=\max\left\{0,\xi_0^q(u)+\xi_1^{q-1}(u)
+       -\sum_{p=1}^{n-1}\xi_{p+1}^{q-p}(u)\right\},\label{eq:b}\\
+ \LL(\mathbf M)&=\sum_{u\in G}\sum_{q=0}^d b_q(u).\label{eq:L}
+\end{align}
+The expression in \eqref{eq:b} comes from the Morse inequalities of
+Guidolin and Landi~\cite[Theorem~7.3]{GL}; \eqref{eq:b}--\eqref{eq:L}
+are the quantities used in \cite[Definition~5.7 and Proposition~5.9]{HHT}.
+Their grid comparison is known for one parameter and for filters
+injective in every coordinate~\cite[Lemma~5.10 and Remark~5.12]{HHT}.
+For general filters the higher-syzygy terms can cancel the positive
+terms at some grades. We will find a grade with a positive contribution
+on every coordinate slice of $G$.
+
+We use consecutive integer indices for each ordered $G_j$ and extend
+the modules along this grid to $\mathbb Z^n$. This regrading preserves
+minimal free resolutions and their summand multiplicities
+\cite[Section~1.4]{HHT}. Each coordinate set keeps its cardinality. In these indices put
+$R=\kk[x_1,\ldots,x_n]$, with $\deg x_j=e_j$, where $e_j$ is the
+$j$th standard basis vector. A free summand $R(-w)$ has a copy of $\kk$
+at $v$ precisely when $w\le v$, and its maps between present components
+are identities. Each module has a minimal presentation
+\begin{equation}\label{eq:presentation}
+ F_1^q\longrightarrow F_0^q\longrightarrow M^q\longrightarrow0,
+\end{equation}
+whose basis degrees are counted by $\xi_1^q$ and $\xi_0^q$.
+The common grid determines every component, even if a component has a
+smaller minimal grid. Below its support the extended module is zero.
+
+\section{A local Koszul calculation}
+
+For a finitely presented integer-graded $R$-module $V$ and a grade $u$,
+its Koszul complex is
+\[
+ \mathbb K_i(V)(u)=
+ \bigoplus_{\substack{\alpha\subseteq\{1,\ldots,n\}\\|\alpha|=i}}
+ V_{u-e_\alpha},\qquad e_\alpha=\sum_{k\in\alpha}e_k.
+\]
+The differential is the alternating sum of the coordinate maps that
+delete one index from $\alpha$. Its homology computes the Betti tables:
+\begin{equation}\label{eq:Koszul}
+ \xi_i(u)=\dim_\kk H_i(\mathbb K_*(V)(u));
+\end{equation}
+see the integer-graded derivation in \cite[Section~1.4]{HHT}, followed
+by Definition~1.30 and Lemma~1.31 there. The next lemma needs
+isomorphisms in just one coordinate, away from the vertex $u$.
+
+\begin{lemma}\label{lem:local}
+Fix $j\in\{1,\ldots,n\}$. Suppose that
+\begin{equation}\label{eq:off-center}
+ V_{u-e_j-e_\alpha}\longrightarrow V_{u-e_\alpha}
+\end{equation}
+is an isomorphism for every nonempty
+$\alpha\subseteq\{1,\ldots,n\}\setminus\{j\}$.
+Then $\xi_i(u)=0$ for all $i\ge2$. If, in addition,
+$V_{u-e_j}\to V_u$ is injective, then $\xi_1(u)=0$.
+\end{lemma}
+
+\begin{proof}
+Let $A$ and $B$ be the Koszul complexes in the variables other than
+$x_j$, at grades $u-e_j$ and $u$, respectively. Multiplication by $x_j$
+gives a chain map $\phi:A\to B$. The hypothesis says that
+$\phi_p$ is an isomorphism for every $p\ge1$, including zero terms
+above the lengths of these complexes.
+
+Choose the exterior ordering with $j$ first. Separating the subsets
+that contain $j$ identifies the full Koszul complex with
+\[
+ C_i=B_i\oplus A_{i-1},\qquad
+ D_i(b,a)=(d_Bb+\phi_{i-1}a,-d_Aa).
+\]
+The minus sign comes from differentiating an exterior product
+$e_j\wedge\eta$: its two terms are $x_j\eta-e_j\wedge d\eta$.
+
+For a cycle $(b,a)\in C_i$ with $i\ge2$, take
+$c=\phi_i^{-1}b$. The cycle equation and $d_B\phi=\phi d_A$ give
+\[
+ \phi_{i-1}(a+d_Ac)=d_Bb+\phi_{i-1}a=0.
+\]
+Since $\phi_{i-1}$ is injective, $a=-d_Ac$. Thus
+\[
+ (b,a)=D_{i+1}(0,c)
+\]
+is a boundary, proving the first assertion by \eqref{eq:Koszul}.
+
+For a degree-one cycle, the same choice
+$c=\phi_1^{-1}b$ reduces it, modulo the boundary $D_2(0,c)$, to
+$(0,a+d_Ac)$ with $\phi_0(a+d_Ac)=0$. Injectivity of $\phi_0$
+makes that cycle zero. When $n=1$, $A$ and $B$ have only degree-zero
+terms, so the assertion is the kernel calculation for
+$V_{u-e_j}\to V_u$.
+\end{proof}
+
+\section{The cardinality bound}
+
+The last homology degree requires a simple fact about the common
+underlying complex. For every inclusion $K_v\subseteq K_w$, the map
+$H_d(K_v;\kk)\to H_d(K_w;\kk)$ is injective: there are no
+$(d+1)$-simplices, so these homology groups are the kernels of the
+degree-$d$ boundary, and the chain map includes one kernel in the
+other. At $d=0$, ordinary unreduced homology has $\partial_0=0$,
+and the same argument applies. Thus all coordinate maps of $M^d$
+are injective, also after the grid regrading.
+
+\begin{theorem}\label{thm:main}
+Let $K$ be any finite nonempty simplicial complex, $\kk$ any field,
+and $n\ge1$. For every face-monotone filter $f:K\to[0,1]^n$,
+including filters with coincident coordinate values, its ordinary
+unreduced persistent homology tuple satisfies
+\[
+ |G_j|\le
+ \sum_{u\in G}\sum_{q=0}^{d}
+ \max\left\{0,\xi_0^q(u)+\xi_1^{q-1}(u)
+             -\sum_{p=1}^{n-1}\xi_{p+1}^{q-p}(u)\right\}
+ =\LL(\mathbf M)
+ \quad (1\le j\le n).
+\]
+Here $d=\dim K$, $\xi_i^q$ are the multigraded Betti tables of
+$H_q(K_u;\kk)$ from this same filter, with absent homology degrees
+assigned zero, and $G=\prod_jG_j$ is the canonical minimal grid
+defined in \eqref{eq:grid}.
+\end{theorem}
+
+\begin{proof}
+Fix $j$ and $t\in G_j$. In the finite nonempty set
+$\{s\in S:s_j=t\}$ choose an element $u$ minimal in the
+coordinatewise order. There is consequently no $s\in S$ with
+$s_j=t$, $s\le u$ and $s\ne u$. This choice uses the
+presentation degrees from all homology degrees together.
+
+For a nonempty
+$\alpha\subseteq\{1,\ldots,n\}\setminus\{j\}$ put
+$v=u-e_\alpha$. No basis degree $w$ of either $F_0^q$ or $F_1^q$
+can satisfy $w\le v$ and $w_j=t$, for such a $w$ would belong to
+$S$ and be strictly below $u$ on the same slice. All free summands
+present at $v$ therefore have $w_j\le t-1$, and are already present
+at $v-e_j$. Multiplication by $x_j$ gives isomorphisms on both
+free modules of \eqref{eq:presentation} at these two grades.
+Their commuting presentation maps identify the images, hence the
+cokernels. We obtain
+\[
+ M^q_{u-e_j-e_\alpha}\ \xrightarrow{\ \cong\ }\ M^q_{u-e_\alpha}
+ \qquad(0\le q\le d).
+\]
+Lemma~\ref{lem:local} yields
+\[
+ \xi_i^q(u)=0\quad(i\ge2,\ 0\le q\le d).
+\]
+Its last assertion, applied to the injective coordinate map of
+$M^d$, also gives $\xi_1^d(u)=0$.
+
+Since $u\in S$, some $\xi_0^q(u)$ or $\xi_1^q(u)$ is positive.
+In the latter case $q<d$. At this selected grade all subtraction
+terms in \eqref{eq:b} vanish, so
+\[
+ b_q(u)=\xi_0^q(u)+\xi_1^{q-1}(u),\qquad
+ \sum_{q=0}^d b_q(u)\ge1.
+\]
+Each selected $u=u(t)$ belongs to $G$. Distinct values of $t$ give
+distinct grades because $u(t)_j=t$. Nonnegativity of every $b_q$
+now gives
+\[
+ \LL(\mathbf M)
+ \ge\sum_{t\in G_j}\sum_{q=0}^d b_q(u(t))
+ \ge |G_j|.
+\]
+This proves the result for each coordinate. An empty coordinate
+set would give the inequality $0\le\LL(\mathbf M)$ directly.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted with proof development, source checking and
+manuscript preparation. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{HHT}
+H.~A.~Harrington, U.~Tillmann and M.~Torras-P\'erez,
+\emph{The fiber of multiparameter persistent homology for simplicial
+complexes}, preprint, 2026, arXiv:2608.04640v1.
+\url{https://arxiv.org/abs/2608.04640v1}.
+
+\bibitem{GL}
+A.~Guidolin and C.~Landi,
+\emph{Morse inequalities for the Koszul complex of multi-persistence},
+Journal of Pure and Applied Algebra \textbf{227} (2023), no.~7, 107319.
+\href{https://doi.org/10.1016/j.jpaa.2023.107319}{doi:10.1016/j.jpaa.2023.107319}.
+\end{thebibliography}
+\end{document}
