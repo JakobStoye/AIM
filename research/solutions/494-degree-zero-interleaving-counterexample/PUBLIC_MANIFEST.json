@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "title": "A counterexample to degree-zero universality of the interleaving distance",
+  "problem_id": "494",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package description and reproduction",
+      "sha256": "f0eb90fdcad313626d660670a75d491004c8b10808ace1acae649587fe31acc4"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Complete frozen-target correspondence",
+      "sha256": "abe7dd06ffd7fd06e792aea3d3a0785b727c5c0babf9377752d7dcf8f023463d"
+    },
+    {
+      "path": "paper/interleaving_counterexample.tex",
+      "purpose": "Editable final mathematical manuscript",
+      "sha256": "5d9b071f1e17fb8c7ff4deddd767a24dd500a9c68ea2ae0770c9ee8ce478a05d"
+    },
+    {
+      "path": "paper/interleaving_counterexample.pdf",
+      "purpose": "Final five-page manuscript",
+      "sha256": "17d7e2035f573502bc8fc6612d8079ac3c2bffe44e96f370ce6232301dc43540"
+    }
+  ],
+  "integrity_files": "PUBLIC_MANIFEST.json lists content files. SHA256SUMS also hashes this manifest and excludes itself to avoid a self-reference."
+}

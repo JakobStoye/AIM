@@ -1,0 +1,365 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A counterexample to degree-zero universality of the interleaving distance},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\im}{\mathop{\mathrm{im}}}
+\newcommand{\supp}{\mathop{\mathrm{supp}}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\title{A counterexample to degree-zero universality\texorpdfstring{\\}{ }of the interleaving distance}
+\author{Kaiwen Jin\thanks{\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{13 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The universality conjecture for the interleaving distance asks whether every
+distance stable under uniform perturbations of sublevel functions is bounded
+by the interleaving distance on realizable persistence modules. Its formulation
+for each homology degree is false for ordinary zero-dimensional homology.
+For every field we construct a bounded, $0$-stable pseudometric on all
+four-parameter persistence modules and a pair realized on three-point discrete
+spaces for which this distance is $3$ and the interleaving distance is $1$.
+The algebraic pair is Bjerkevik's published free-module example. The additional
+argument recovers the upper supports of eventual sublevel components from the
+image of a module in its colimit and proves stability for arbitrary spaces and
+functions, with no finite-dimensionality assumption.
+\end{abstract}
+
+\section{The degree-zero question}
+
+Sublevel persistent homology records how the topology of a space changes as
+one or several thresholds increase. A distance between the resulting modules
+is stable when a uniform change in the threshold function bounds the change
+in the descriptor. Universality asks whether the interleaving distance is the
+largest distance with this property on modules that arise from homology.
+Lesnick proved this assertion over prime fields in positive homology degrees
+\cite[Theorem 5.5]{Lesnick}. His Conjecture 5.7 includes degree zero and
+arbitrary fields, with the comparison restricted to realizable modules.
+We give a counterexample to its ordinary degree-zero clause.
+
+Fix a field $k$. All modules in this note are functors
+$M:(\R^4,\leq)\to\Vect_k$, with coordinatewise order. Write
+$\one=(1,1,1,1)$ and $M(\varepsilon)_a=M_{a+\varepsilon\one}$.
+An $\varepsilon$-interleaving, $\varepsilon\geq0$, consists of natural maps
+$\varphi:M\to N(\varepsilon)$ and $\psi:N\to M(\varepsilon)$ satisfying
+\[
+ \psi(\varepsilon)\varphi=\eta_M^{2\varepsilon},\qquad
+ \varphi(\varepsilon)\psi=\eta_N^{2\varepsilon},
+\]
+where $\eta_M^{2\varepsilon}$ is the structure map
+$M_a\to M_{a+2\varepsilon\one}$. The distance $d_I$ is the infimum of
+such $\varepsilon$, or $+\infty$ if none exists.
+For any topological space $X$ and arbitrary function $f:X\to\R^4$, let
+\[
+ P_0(f)_a=H_0\bigl(\{x\in X:f(x)\leq a\};k\bigr),
+\]
+using ordinary singular homology and sublevel inclusions. A pseudometric on
+module isomorphism classes is $0$-stable if
+\begin{equation}\label{eq:stability}
+ d(P_0(f),P_0(g))\leq
+ \sup_{x\in X}\|f(x)-g(x)\|_\infty
+\end{equation}
+for every $X,f,g$, with the empty supremum equal to zero. Extended
+pseudometrics may take the value $+\infty$ and may vanish on distinct classes.
+
+\begin{theorem}\label{thm:main}
+For every field $k$, there is a $[0,3]$-valued pseudometric $d_0$ on
+isomorphism classes of all four-parameter $k$-modules satisfying
+\eqref{eq:stability}. There are continuous functions $f,g$ on the discrete
+space $\{1,2,3\}$ such that, for $M=P_0(f)$ and $N=P_0(g)$,
+\[
+ d_I(M,N)=1,\qquad d_0(M,N)=3.
+\]
+\end{theorem}
+
+The finite algebraic separation used here is Bjerkevik's example
+\cite[Examples 5.2--5.3]{Bjerkevik}. A barcode matching distance on free modules
+alone does not supply the required distance on all module classes. We construct
+such a distance from the supports of components in the directed colimit.
+Uniform perturbations match these components, whereas linear interleavings
+can mix their basis vectors. This distinction gives the inequality in
+Theorem~\ref{thm:main}.
+
+The conclusion concerns ordinary $H_0$. It does not resolve the
+arbitrary-field question in positive degrees, nor does it contradict
+prime-field universality for a distance required to be stable in every
+homology degree \cite[Corollary 5.6]{Lesnick}. Lesnick's one-parameter
+pointwise finite-dimensional result in Section 5.4 uses reduced homology;
+that convention is not used here.
+
+\section{Supports in the image of a module's colimit}
+
+For any module $M$, put
+\[
+ C_M=\colim_{a\in\R^4}M_a,\qquad
+ I_M(a)=\im(M_a\longrightarrow C_M).
+\]
+The subspaces $I_M(a)$ increase with $a$, and their union is $C_M$.
+Indeed, the vector-space colimit is the direct sum of the $M_a$ modulo
+structure-map relations. An element has finitely many representatives, which
+can be transported to a common upper grade.
+
+Consider modules for which $C_M$ is finite-dimensional and has a basis
+$e_1,\ldots,e_r$ such that every $I_M(a)$ is spanned by a subset of this
+basis. The zero colimit is included. For each basis vector define its upper
+support
+\[
+ U_j=\{a\in\R^4:e_j\in I_M(a)\}.
+\]
+An upper set is a subset closed under increasing coordinates. Each $U_j$
+is nonempty because the images exhaust $C_M$. Let $\mathcal S(M)$ be the
+finite multiset of these supports, with one occurrence for each basis vector.
+
+\begin{proposition}\label{prop:intrinsic}
+The existence of such a coordinate basis and the multiset
+$\mathcal S(M)$ depend only on the module's isomorphism class.
+\end{proposition}
+\begin{proof}
+We recover each support multiplicity directly from the subspaces $I_M(a)$.
+For a nonempty upper set $U$, define
+\[
+ K_U=\bigcap_{a\in U}I_M(a),\qquad
+ L_U=\sum_{\substack{V\text{ nonempty upper}\ U\subsetneq V}}K_V.
+\]
+The second subspace lies in the first. In a coordinate basis, membership
+in any intersection can be tested coefficient by coefficient, giving
+\[
+ K_U=\operatorname{span}\{e_j:U\subseteq U_j\},\qquad
+ L_U=\operatorname{span}\{e_j:U\subsetneq U_j\}.
+\]
+For the second identity, a basis vector belonging to $K_V$ has support
+containing $V$ and therefore properly containing $U$. Conversely, if
+$U\subsetneq U_j$, that vector belongs to the summand $K_{U_j}$ of $L_U$.
+Thus
+\[
+ \dim(K_U/L_U)=\#\{j:U_j=U\}.
+\]
+This recovers the multiplicity of every upper set without choosing a basis.
+A natural module isomorphism induces a colimit isomorphism carrying every
+$I_M(a)$ to the corresponding image. It therefore preserves the coordinate
+basis property and all the recovered multiplicities.
+\end{proof}
+
+\section{A distance stable for all ordinary degree-zero inputs}
+
+For nonempty upper sets $U,V$, define
+\[
+ \rho(U,V)=\inf\{\varepsilon\geq0:
+ U+\varepsilon\one\subseteq V,\quad
+ V+\varepsilon\one\subseteq U\}.
+\]
+The infimum of the empty set is $+\infty$. This is an extended pseudometric.
+To check the triangle inequality, two pairs of shifted containments compose
+with the shifts added. Taking arbitrarily close upper bounds for the two
+infima gives the triangle inequality without an attainment assumption.
+
+For finite multisets $\mathcal U,\mathcal V$ with the same number of
+occurrences, let
+\[
+ \beta(\mathcal U,\mathcal V)
+   =\inf_{\sigma}\max_{U\in\mathcal U}\rho(U,\sigma(U)),
+\]
+where $\sigma$ ranges over occurrence bijections. Set the distance to
+$+\infty$ for unequal cardinalities and set
+$\beta(\varnothing,\varnothing)=0$. Composing bijections and applying the
+triangle inequality for $\rho$ proves that $\beta$ is an extended
+pseudometric. Adjoin a symbol $*$ at distance $+\infty$ from every multiset
+and at distance zero from itself; write $\beta_*$ for this extension.
+
+Define a feature on every module class by
+\[
+ \mathcal F(M)=
+ \begin{cases}
+ \mathcal S(M),& C_M\text{ has a finite coordinate basis as above},\\
+ *,&\text{otherwise},
+ \end{cases}
+\]
+Then put
+\[
+ d_0(M,N)=\min\{3,\beta_*(\mathcal F(M),\mathcal F(N))\}.
+\]
+Proposition~\ref{prop:intrinsic} makes this definition independent of all
+choices. Pullback preserves the pseudometric properties, and the cap preserves
+the triangle inequality by
+$\min\{3,s+t\}\leq\min\{3,s\}+\min\{3,t\}$ for
+$s,t\in[0,+\infty]$. Consequently $d_0$ is a bounded pseudometric on the
+entire class of modules.
+
+\begin{proposition}\label{prop:stable}
+The distance $d_0$ is $0$-stable for every topological space and arbitrary
+functions to $\R^4$.
+\end{proposition}
+\begin{proof}
+Ordinary singular $H_0(Y;k)$ is naturally the free vector space
+$k[\pi_0(Y)]$ on path components: singular $0$-chains are free on points,
+and boundaries of singular $1$-simplices impose precisely the relations
+identifying endpoints of paths. This description is natural for maps.
+Write
+\[
+ \Pi_a^f=\pi_0\bigl(\{x:f(x)\leq a\}\bigr),\qquad
+ B_f=\colim_a\Pi_a^f
+\]
+with the second colimit taken in sets. The free-vector-space construction
+commutes with this colimit. For any vector space $W$, compatible linear maps
+from $k[\Pi_a^f]$ to $W$ are exactly compatible set maps from $\Pi_a^f$ to
+the underlying set of $W$, hence set maps from $B_f$ to $W$. This universal
+property gives
+\[
+ C_{P_0(f)}\cong k[B_f].
+\]
+The image $I_{P_0(f)}(a)$ is spanned by the subset of $B_f$ reached from
+$\Pi_a^f$. If $B_f$ is finite, it supplies a coordinate basis and its supports
+are exactly $\mathcal S(P_0(f))$. If $B_f$ is infinite, the colimit is
+infinite-dimensional and $\mathcal F(P_0(f))=*$. We use this actual sublevel
+colimit throughout; no identification of $B_f$ with $\pi_0(X)$ is needed.
+
+Let $\delta=\sup_x\|f(x)-g(x)\|_\infty$. If $\delta=+\infty$, the required
+bound is automatic. Otherwise the sublevel inclusions induce natural set maps
+\[
+ \Pi_a^f\longrightarrow\Pi_{a+\delta\one}^g,
+ \qquad
+ \Pi_a^g\longrightarrow\Pi_{a+\delta\one}^f.
+\]
+Their composites are the structure maps at shift $2\delta$. They therefore
+induce inverse bijections $\alpha:B_f\to B_g$ on the colimits: the composite
+sends any represented component to its later structure image, representing
+the same colimit element. Compatibility of the maps makes this independent
+of the chosen representative.
+
+If these sets are infinite, both features are $*$ and $d_0=0$. If finite,
+$\alpha$ matches their supports with
+\[
+ U_b^f+\delta\one\subseteq U_{\alpha(b)}^g,
+ \qquad
+ U_{\alpha(b)}^g+\delta\one\subseteq U_b^f.
+\]
+The first containment follows from the first component map at every grade
+in $U_b^f$. The reverse map gives the second, since its colimit bijection
+is $\alpha^{-1}$. Thus each matched $\rho$ is at most $\delta$, so
+$\beta\leq\delta$ and $d_0\leq\delta$. The argument includes $\delta=0$.
+For empty $X$ both multisets are empty and $d_0=0$.
+\end{proof}
+
+In particular, finite perturbations preserve the finite or infinite
+cardinality of the component colimit. This is why assigning the exceptional
+feature to infinite-colimit inputs is compatible with the stability bound.
+Individual sublevel homology spaces may still be infinite-dimensional when
+the component colimit is finite.
+
+\section{The three-point counterexample}
+
+For $p\in\R^4$, let $k_{\uparrow p}$ denote the module with value $k$ at
+$a\geq p$, zero elsewhere, and identity maps between nonzero values.
+Take the birth vectors of Bjerkevik's four-parameter free-module example
+\cite[Example 5.3]{Bjerkevik}:
+\[
+\begin{aligned}
+ u_1&=(0,1,10,11),&v_1&=(1,0,11,10),\\
+ u_2&=(0,-1,12,11),&v_2&=(1,0,9,12),\\
+ u_3&=(2,1,10,9),&v_3&=(-1,2,11,10).
+\end{aligned}
+\]
+Put $M=\bigoplus_{i=1}^3k_{\uparrow u_i}$ and
+$N=\bigoplus_{j=1}^3k_{\uparrow v_j}$. On the discrete space
+$X=\{1,2,3\}$, define $f(i)=u_i$ and $g(i)=v_i$. Its sublevels consist of
+the points whose birth vectors lie below the grade, so naturally
+$P_0(f)\cong M$ and $P_0(g)\cong N$. Both functions are continuous.
+
+A morphism $k_{\uparrow p}\to k_{\uparrow q}(\varepsilon)$ is a scalar map
+if $p+\varepsilon\one\geq q$, and otherwise it is zero. Indeed, in the first
+case every source grade lies in the shifted target, and naturality at common
+upper grades forces one scalar. In the second case the map at $p$ is zero;
+naturality from $p$ and any other source grade to a common upper grade forces
+every component to be zero. This also describes each component of a morphism
+between the finite direct sums.
+
+The least directed shifts for $M_i\to N_j(\varepsilon)$ and
+$N_j\to M_i(\varepsilon)$ are respectively
+\[
+ T^{\to}=\begin{pmatrix}1&1&1\\1&1&3\\1&3&1\end{pmatrix},\qquad
+ T^{\leftarrow}=\begin{pmatrix}1&1&1\\1&3&1\\1&1&3\end{pmatrix}.
+\]
+The first matrix has source $M_i$ in row $i$ and target $N_j$ in column $j$;
+the second has source $N_j$ in row $j$ and target $M_i$ in column $i$.
+Their entries are obtained by taking the maximum coordinate of the
+target birth vector minus the source birth vector.
+
+The inverse matrices from Bjerkevik's Example 5.2, equation (15), are
+\[
+ A=\begin{pmatrix}1&1&1\\1&1&0\\1&0&1\end{pmatrix},\qquad
+ B=\begin{pmatrix}-1&1&1\\1&0&-1\\1&-1&0\end{pmatrix}.
+\]
+Use the source-row convention: the component of $\varphi:M\to N(1)$ from
+$M_i$ to $N_j(1)$ has coefficient $A_{ij}$, and the component of
+$\psi:N\to M(1)$ from $N_j$ to $M_i(1)$ has coefficient $B_{ji}$.
+Every nonzero entry has directed threshold
+$1$, so these are natural transformations. Direct integer multiplication gives
+\[
+ AB=
+ \begin{pmatrix}
+ -1+1+1&1-1&1-1\\
+ -1+1&1&1-1\\
+ -1+1&1-1&1
+ \end{pmatrix}=I_3,\qquad BA=I_3.
+\]
+Each nonzero composite component follows two allowed support containments.
+Thus at every active source grade the composite is given by the same constant
+matrix product, and these products give the structure maps at shift $2$.
+The integer identities hold over every field, including characteristic $2$.
+We have a $1$-interleaving.
+
+For $0\leq\varepsilon<1$, every component map $M_i\to N_j(\varepsilon)$
+is zero, as all entries of $T^{\to}$ are at least $1$. The map
+$\varphi$ must therefore be zero. It cannot compose to
+$\eta_M^{2\varepsilon}$, which is nonzero at any grade with nonzero $M$.
+Consequently $d_I(M,N)=1$.
+
+The image families of $M$ and $N$ in their three-dimensional colimits are
+coordinate families. Their support multisets consist of the principal upper
+sets $\uparrow u_i$ and $\uparrow v_j$. The shifted-containment definition gives
+\[
+ \rho(\uparrow p,\uparrow q)=\|p-q\|_\infty.
+\]
+The matching-cost matrix is therefore
+\[
+ \bigl(\|u_i-v_j\|_\infty\bigr)_{i,j}
+ =\begin{pmatrix}1&1&1\\1&3&3\\1&3&3\end{pmatrix}.
+\]
+A matching of cost below $3$ would have to send both the second and third
+$M$ occurrences to the first $N$ occurrence. This is impossible for a
+bijection. Every entry is at most $3$, so a matching of cost $3$ exists.
+It follows that $d_0(M,N)=3$. Together with Proposition~\ref{prop:stable},
+this proves Theorem~\ref{thm:main}: the realizable ordinary-$H_0$ modules above
+have stable distance $3$ and interleaving distance $1$, over every field.
+
+\begin{thebibliography}{9}
+\bibitem{Lesnick}
+M. Lesnick, \emph{The Theory of the Interleaving Distance on Multidimensional
+Persistence Modules}, Foundations of Computational Mathematics
+\textbf{15} (2015), 613--650.
+\href{https://doi.org/10.1007/s10208-015-9255-y}{doi:10.1007/s10208-015-9255-y}.
+Author version: \href{https://arxiv.org/abs/1106.5305v4}{arXiv:1106.5305v4}.
+
+\bibitem{Bjerkevik}
+H. B. Bjerkevik, \emph{Stability of higher-dimensional interval decomposable
+persistence modules}, \href{https://arxiv.org/abs/1609.02086v3}{arXiv:1609.02086v3},
+21 January 2020; Examples 5.2--5.3, pp. 17--18.
+\end{thebibliography}
+
+\section*{AI-use statement}
+This manuscript was prepared with assistance from OpenAI Codex for source
+retrieval, proof development, drafting, and checks of the finite integer
+calculations. The mathematical argument was reviewed by the same AI assistant.
+Independent human mathematical review is requested.
+
+\end{document}
