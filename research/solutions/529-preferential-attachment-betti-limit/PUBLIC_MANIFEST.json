@@ -1,0 +1,30 @@
+{
+  "package_version": "1.0.0",
+  "problem_id": "529",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "Analytic theorem and refutation of finite-positive-exponent regular variation",
+  "review_status": "Solution claim awaiting independent mathematical review",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "adf68efaee87210a5d371aea269fdbdc592808714aa4ccc6b74c28acb1faadd1",
+      "bytes": 2265
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "920903dcbec66f31ca6b5a21896d4e85962e8475b09fcebf474b82b17d353cb5",
+      "bytes": 3129
+    },
+    {
+      "path": "paper/main.tex",
+      "sha256": "181c949bd8c2e27783875c9514ddde794ebae3ca44a4e8e8a0d4ecd1021e25ca",
+      "bytes": 35148
+    },
+    {
+      "path": "paper/main.pdf",
+      "sha256": "caf70db8ffa200e8d1cdf242056cd5cf5ba34dd16bac28bb92ea370bd515e07d",
+      "bytes": 353999
+    }
+  ],
+  "checksum_note": "SHA256SUMS covers these material files and PUBLIC_MANIFEST.json; checksum metadata are not self-hashed."
+}
