@@ -1,0 +1,402 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A uniform Kolmogorov bound for Jack measures},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\dK}{d_{\mathrm K}}
+\newcommand{\fall}[2]{#1^{\downarrow #2}}
+\title{A uniform Kolmogorov bound for Jack measures}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the normalized transposition statistic under Jack measure on partitions
+of $n$, we prove a Kolmogorov bound
+$10\max\{n^{-1/2},\sqrt\alpha/n\}$ for every $n\ge3$ and $\alpha\ge1$.
+This removes the logarithmic loss in the known bound, including the transition
+$\alpha\asymp n$, and proves the uniform estimate conjectured by Fulman.
+The proof retains cancellation in the conditional third moment of a Jack
+growth exchangeable pair. Its expansion in three orthogonal Jack characters
+gives the required parameter dependence.
+\end{abstract}
+
+\section{Introduction}
+
+Jack measures deform Plancherel measure on integer partitions and provide
+discrete analogues of Gaussian beta ensembles \cite{Fulman}.
+For a partition $\lambda\vdash n$, put
+\[
+ c_\lambda=\prod_{u\in\lambda}(\alpha a(u)+\ell(u)+1),\qquad
+ c'_\lambda=\prod_{u\in\lambda}(\alpha a(u)+\ell(u)+\alpha),
+ \qquad
+ \pi_{n,\alpha}(\lambda)=\frac{\alpha^n n!}{c_\lambda c'_\lambda}.
+\]
+Here $a(u)$ and $\ell(u)$ count the boxes to the right of and below $u$.
+The parameter satisfies $\alpha>0$; at $\alpha=1$ the law is Plancherel
+measure. Write $\lambda_i$ and $\lambda'_i$ for row and column lengths.
+The statistic of interest is
+\begin{equation}\label{eq:statistic}
+ W_{n,\alpha}=
+ \frac{\sum_i\left[\alpha\binom{\lambda_i}{2}-\binom{\lambda'_i}{2}\right]}
+      {\sqrt{\alpha\binom n2}},\qquad \lambda\sim\pi_{n,\alpha}.
+\end{equation}
+It has mean zero and variance one \cite[Lemmas~3.1--3.2]{Fulman}.
+At $\alpha=1$, it is the normalized
+irreducible character ratio of a transposition. Its normal approximation
+quantifies fluctuations of this character statistic as the partition size
+and the deformation parameter vary.
+
+Let $Z$ be standard normal, with distribution function $\Phi$, and write
+\[
+ \dK(V,Z)=\sup_{x\in\mathbb R}|\Prob(V\le x)-\Phi(x)|.
+\]
+Fulman conjectured a bound by a universal constant times
+$\max\{n^{-1/2},\sqrt\alpha/n\}$ \cite[p.~4 of the author version]{Fulman}.
+Chen, Rai\v c and Th\`anh proved
+$8.2\max\{n^{-1/2},\sqrt\alpha\log n/n\}$
+\cite[Proposition~4.1]{CRT}.
+Their estimate has the desired order for $1\le\alpha\le n/\log^2n$;
+they also obtained the desired order for $\alpha\ge n^{1+\varepsilon}$,
+with a constant depending on the fixed $\varepsilon>0$.
+Th\`anh and Tu's subsequent non-uniform estimate applies on the restricted
+range $\log^2 n/n\le\alpha\le n/\log^2 n$ \cite[Theorem~8]{TT}.
+The uniform Kolmogorov estimate across the intermediate range is the
+remaining question. The following bound covers the whole parameter range.
+
+\begin{theorem}\label{thm:main}
+For every integer $n\ge3$ and every real $\alpha\ge1$,
+\begin{equation}\label{eq:main}
+ \dK(W_{n,\alpha},Z)
+ \le 10\max\left\{n^{-1/2},\frac{\sqrt\alpha}{n}\right\}.
+\end{equation}
+\end{theorem}
+
+The constant is independent of both parameters; no restriction is needed
+when $\alpha$ is comparable to $n$. We do not optimize its numerical value.
+The growth coupling of Kerov \cite{Kerov} supplies an exchangeable pair
+whose increment need not have a small deterministic bound. We use the
+normal-approximation inequality of Shao and Zhang \cite{SZ}, which depends
+on the signed conditional third moment rather than the absolute third
+moment of the increment. We compute this conditional moment as a linear
+combination of three orthogonal Jack characters. Orthogonality then gives
+its exact second moment and the uniform estimate.
+
+\section{Jack growth and the cubic increment}
+
+\subsection{Corner probabilities and content moments}
+
+Fix $\alpha\ge1$ and write $d=\alpha-1$. The content of a box $(i,j)$,
+with indices starting at one, is
+$c(i,j)=\alpha(j-1)-(i-1)$. For any partition $\rho$, set
+\[
+ s_k(\rho)=\sum_{u\in\rho}c(u)^k.
+\]
+The contents sum to the numerator of \eqref{eq:statistic}, by summing $j-1$
+along rows and $i-1$ along columns.
+An outer corner has coordinate $x=c(u)$ for an addable box $u$.
+An inner corner has coordinate $y=c(u)+d$ for a removable box $u$;
+the shift arises because the inner coordinate uses the south-east corner
+of the box. Define
+\begin{equation}\label{eq:G}
+ G_\rho(z)=\frac{\prod_{y\text{ inner}}(z-y)}{\prod_{x\text{ outer}}(z-x)}.
+\end{equation}
+
+Kerov's growth process adds a box to $\rho$ with content $X$, with
+probabilities equal to the residues of $G_\rho$. If $\lambda$ has $n$ boxes,
+its reverse process deletes a box of content $Y$, and
+\begin{equation}\label{eq:transforms}
+ G_\rho(z)=\E\left(\frac1{z-X}\,\middle|\,\rho\right),\qquad
+ \frac1{G_\lambda(z)}
+   =z-\alpha n\E\left(\frac1{z-(Y+d)}\,\middle|\,\lambda\right).
+\end{equation}
+These are the transition and cotransition formulas in
+\cite[Section~2, Theorem~6.7 and Lemma~7.2]{Kerov}.
+Both formulas use exactly the content and shifted inner-corner coordinates
+defined above.
+
+Both kernels have the Jack laws as coherent marginals. To check the
+normalization and reversal explicitly, let $\kappa(\nu,\lambda)$ be the
+positive one-box Jack Pieri multiplicity in Kerov's notation, and put
+$D(\rho)=|\rho|!\alpha^{|\rho|}/c'_\rho$ and $\varphi(\rho)=1/c_\rho$.
+The hook and branching formulas give
+\[
+ D(\lambda)=\sum_{\nu\nearrow\lambda}\kappa(\nu,\lambda)D(\nu),\qquad
+ p(\nu,\lambda)=\kappa(\nu,\lambda)\frac{\varphi(\lambda)}{\varphi(\nu)},
+ \qquad q(\lambda,\nu)=\kappa(\nu,\lambda)\frac{D(\nu)}{D(\lambda)}
+\]
+\cite[Sections~6--7]{Kerov}. Since $\pi(\rho)=D(\rho)\varphi(\rho)$,
+\begin{equation}\label{eq:balance}
+ \pi_{n-1,\alpha}(\nu)p(\nu,\lambda)
+       =\pi_{n,\alpha}(\lambda)q(\lambda,\nu).
+\end{equation}
+Starting from the empty diagram and summing proves the marginal assertion
+and normalization at every level.
+
+The two transforms give the low moments needed below.
+
+\begin{lemma}\label{lem:moments}
+If $\rho$ has $m$ boxes, upward growth satisfies
+\begin{equation}\label{eq:upmoments}
+ \E(X\mid\rho)=0,\quad \E(X^2\mid\rho)=\alpha m,\quad
+ \E(X^3\mid\rho)=2\alpha s_1(\rho)+\alpha dm.
+\end{equation}
+If $\lambda$ has $n$ boxes and $N=\binom n2$, reverse growth satisfies,
+with $s_k=s_k(\lambda)$,
+\begin{align}
+ \E(Y\mid\lambda)&=\frac{2s_1}{n},\label{eq:down1}\\
+ \E(Y^2\mid\lambda)&=\frac{3s_2-ds_1-\alpha N}{n},\label{eq:down2}\\
+ \E(Y^3\mid\lambda)&=
+ \frac{4s_3-3ds_2+d^2s_1-2\alpha(n-1)s_1+\alpha dN}{n}.
+ \label{eq:down3}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Row-wise telescoping in \eqref{eq:G} gives
+\begin{equation}\label{eq:boxproduct}
+ G_\rho(z)=\frac1z\prod_{u\in\rho}
+ \frac{(z-c(u))(z-c(u)-d)}{(z-c(u)-\alpha)(z-c(u)+1)}.
+\end{equation}
+Indeed, row $i$ of length $r$ contributes
+$(z+i-1)(z+i-\alpha r)/[(z+i)(z+i-1-\alpha r)]$.
+The first factors telescope over rows; the others cancel across equal
+successive row lengths, leaving the genuine corners in \eqref{eq:G}.
+
+In the following display $s_k=s_k(\rho)$.
+Write $L_j$ for the coefficient of $z^{-j}$ in the formal Laurent series
+$\log(zG_\rho(z))$. Its $z^{-1}$ coefficient vanishes, and a box of
+content $c$ contributes
+$[(c+\alpha)^j+(c-1)^j-c^j-(c+d)^j]/j$. Hence
+\begin{align*}
+ L_2&=\alpha m,& L_3&=2\alpha s_1+\alpha dm,\\
+ L_4&=3\alpha s_2+3\alpha ds_1+(\alpha d^2+\alpha^2/2)m,\\
+ L_5&=4\alpha s_3+6\alpha ds_2+(4\alpha d^2+2\alpha^2)s_1
+                                      +(\alpha d^3+\alpha^2d)m.
+\end{align*}
+The first transform in \eqref{eq:transforms} proves \eqref{eq:upmoments}.
+For the second transform take $\rho=\lambda$ and $m=n$, and expand
+\[
+ \frac1G=z-L_2z^{-1}-L_3z^{-2}
+ -(L_4-L_2^2/2)z^{-3}-(L_5-L_2L_3)z^{-4}+O(z^{-5}).
+\]
+It follows that the first three moments of $Y+d$ are, respectively,
+$L_3/(\alpha n)$, $(L_4-L_2^2/2)/(\alpha n)$ and
+$(L_5-L_2L_3)/(\alpha n)$. Expanding $Y=(Y+d)-d$ gives
+\eqref{eq:down1}--\eqref{eq:down3}. All expansions here are formal
+coefficients of finite rational functions.
+\end{proof}
+
+\subsection{Three orthogonal Jack characters}
+
+We now assume $n\ge5$, and keep $N=\binom n2$.
+To estimate the cubic expression under Jack measure, use the coefficients
+of power sums. Here $p_r=\sum_i x_i^r$ in formal variables and
+$p_\mu=\prod_{j=1}^{\ell(\mu)}p_{\mu_j}$, with $\ell(\mu)$ the number
+of parts of $\mu$. Expand the integral Jack polynomial as
+$J_\lambda^{(\alpha)}=\sum_{\mu\vdash n}\theta_\mu^\lambda(\alpha)p_\mu$.
+Write $\theta_k=\theta_{(k,1^{n-k})}^\lambda(\alpha)$ and
+\[
+ \delta=\frac{\alpha-1}{\sqrt\alpha},\quad b=\delta^2,\quad
+ P_k=\frac{s_k(\lambda)}{\alpha^{k/2}}\ (k=1,2,3),\quad
+ H_k=\frac{k\theta_k}{\alpha^{(k-1)/2}}\ (k=2,3,4).
+\]
+The character normalization makes their second moments independent of
+$\alpha$. Jack coefficient orthogonality \cite[Lemmas~3.1--3.2]{Fulman}
+gives
+\begin{equation}\label{eq:orthogonality}
+ \E H_k=0,\qquad
+ \E(H_jH_k)=\mathbf1_{j=k}\,k\fall nk,\qquad
+ \fall nk=n(n-1)\cdots(n-k+1).
+\end{equation}
+In detail, the coefficient orthogonality is
+\[
+ \sum_{\lambda\vdash n}\frac{\theta_\mu^\lambda\theta_\nu^\lambda}
+                              {c_\lambda c'_\lambda}
+    =\frac{\mathbf1_{\mu=\nu}}{z_\mu\alpha^{\ell(\mu)}},
+ \qquad z_\mu=\prod_{r\ge1}r^{m_r(\mu)}m_r(\mu)!,
+ \qquad \theta_{(1^n)}^\lambda=1.
+\]
+For $\mu=(k,1^{n-k})$, one has $z_\mu=k(n-k)!$ and
+$\ell(\mu)=n-k+1$. Multiplication by $\alpha^n n!$ gives
+$\E\theta_k^2=\alpha^{k-1}\fall nk/k$ and the stated means and cross terms.
+
+Lassalle's low content identities \cite[Section~15, p.~41 of version~3]{Lassalle}
+give
+\begin{equation}\label{eq:Hcontents}
+ \begin{aligned}
+ H_2&=2P_1,\\
+ H_3&=3(P_2-\delta P_1-N),\\
+ H_4&=4[P_3-3\delta P_2+(2\delta^2-(2n-3))P_1+2\delta N].
+ \end{aligned}
+\end{equation}
+His content convention is $c/\alpha$, his parameter $\beta$ is $1-\alpha$,
+and his coefficient $\vartheta_k$ is $k\theta_k$. These substitutions give
+\eqref{eq:Hcontents}; only the three displayed exact identities are used.
+In particular $W=P_1/\sqrt N=H_2/(2\sqrt N)$ has $\E W=0$ and $\E W^2=1$.
+
+\subsection{Conditional moments of the exchangeable pair}
+
+Draw $\nu\sim\pi_{n-1,\alpha}$ and, conditionally on $\nu$, grow
+$\lambda$ and $\lambda'$ independently by the upward kernel. Define
+$W=s_1(\lambda)/\sqrt{\alpha N}$ and
+$W'=s_1(\lambda')/\sqrt{\alpha N}$. By \eqref{eq:balance} these have the
+required Jack marginals, and the pair is exchangeable. Conditional on
+$\lambda$, its construction first removes a box of content $Y$ by the
+reverse kernel, and then inserts a box of content $X$ from $\nu$.
+Thus
+\[
+ \Delta:=W-W'=\frac{Y-X}{\sqrt{\alpha N}}.
+\]
+
+\begin{lemma}\label{lem:pair}
+For this pair, $\E(\Delta\mid\lambda)=2W/n$. Moreover
+\begin{align}
+ A_\lambda&:=1-\frac n4\E(\Delta^2\mid\lambda)
+                  =-\frac{H_3+\delta H_2}{4N},\label{eq:defect}\\
+ M_\lambda&:=\E(\Delta^3\mid\lambda)
+       =\frac{H_4+3\delta H_3+(5n-6+b)H_2}{nN^{3/2}}.\label{eq:cubic}
+\end{align}
+Their second moments are
+\begin{align}
+ V:=\E A_\lambda^2&=\frac{3(n-2)+2b}{4n(n-1)},\label{eq:V}\\
+ \E M_\lambda^2&=\frac{8Q}{n^4(n-1)^2},\label{eq:cubicnorm}\\
+ Q&=4(n-2)(n-3)+27b(n-2)+2(5n-6+b)^2.\label{eq:Q}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Let $D_j=\E(Y^j\mid\lambda)$, as in Lemma~\ref{lem:moments}.
+Conditional on the deleted box, the inserted content has mean zero and
+variance $\alpha(n-1)$.
+It follows that
+\[
+ \E(\Delta\mid\lambda)=\frac{D_1}{\sqrt{\alpha N}}=\frac2n W,
+ \qquad
+ \E(\Delta^2\mid\lambda)=\frac{D_2+\alpha(n-1)}{\alpha N}
+                        =\frac{3P_2-\delta P_1+N}{nN}.
+\]
+Formula \eqref{eq:Hcontents} gives \eqref{eq:defect}.
+For the cubic moment note that $s_1(\nu)=s_1(\lambda)-Y$.
+Using \eqref{eq:upmoments} conditional on the deleted box, we obtain
+\begin{align*}
+ \E((Y-X)^3\mid\lambda)
+ &=D_3+3\alpha(n-1)D_1-2\alpha(s_1-D_1)-\alpha d(n-1)\\
+ &=\frac{4s_3-3ds_2+d^2s_1}{n}+2\alpha s_1-\frac{\alpha d(n-1)}2.
+\end{align*}
+After division by $(\alpha N)^{3/2}$, the identity
+\[
+ H_4+3\delta H_3+(5n-6+b)H_2
+       =4P_3-3\delta P_2+(b+2n)P_1-\delta N
+\]
+proves \eqref{eq:cubic}. Finally, \eqref{eq:orthogonality} gives
+\[
+ \E A_\lambda^2=\frac{3\fall n3+2b\fall n2}{16N^2},\qquad
+ \E M_\lambda^2=
+ \frac{4\fall n4+27b\fall n3+2(5n-6+b)^2\fall n2}{n^2N^3},
+\]
+which reduce to \eqref{eq:V} and \eqref{eq:cubicnorm}.
+\end{proof}
+
+\section{The uniform estimate}
+
+We use the following normal-approximation result of Shao and Zhang
+\cite[Corollary~2.2 of version~2]{SZ}. If $(U,U')$ is a real exchangeable
+pair, $D=U-U'$, $\E(D\mid U)=\tau(U+R)$ with $0<\tau<1$, and
+$\E|U|\le2$, then
+\begin{equation}\label{eq:Stein}
+ \dK(U,Z)\le
+ \E\left|1-\frac1{2\tau}\E(D^2\mid U)\right|+\E|R|
+       +2\sqrt{\frac{\E|\E(D^3\mid U)|}{\tau}}.
+\end{equation}
+Our pair has finite support, so all required moments exist.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+First let $n\ge5$. Since $W$ is a function of $\lambda$,
+Lemma~\ref{lem:pair} gives $\E(\Delta\mid W)=(2/n)W$.
+Also $\E|W|\le1$, because $\E W^2=1$.
+We may therefore use \eqref{eq:Stein} with $\tau=2/n$ and $R=0$.
+Conditioning on $\lambda$ gives the defect $A_\lambda$ and cubic moment
+$M_\lambda$ in Lemma~\ref{lem:pair}. Conditional expectation and
+Cauchy--Schwarz imply
+\[
+ \E\left|1-\frac n4\E(\Delta^2\mid W)\right|\le\sqrt V,
+ \qquad \E|\E(\Delta^3\mid W)|\le\E|M_\lambda|\le\|M_\lambda\|_2.
+\]
+Consequently
+\begin{equation}\label{eq:reduce}
+ \dK(W,Z)\le\sqrt V+2\sqrt{\|M_\lambda\|_2/(2/n)}.
+\end{equation}
+
+Put $t=\alpha/n$ and $u=b/n$. Since
+$b=(\alpha-1)^2/\alpha\le\alpha$ for $\alpha\ge1$, one has $0\le u\le t$.
+The exact expressions in \eqref{eq:V}--\eqref{eq:Q} give
+\begin{align*}
+ V&\le\frac{3+2u}{4(n-1)}\le\frac{5\max\{1,t\}}{4(n-1)},\\
+ Q&\le54n^2+47bn+2b^2
+    =n^2(54+47u+2u^2)\le103n^2\max\{1,t^2\}.
+\end{align*}
+For the last inequality, separate $u\le1$ and $u\ge1$ and bound each term
+by its coefficient times $\max\{1,u^2\}$.
+Substituting into \eqref{eq:cubicnorm} and \eqref{eq:reduce} yields
+\[
+ \dK(W,Z)\le\left(\frac{\sqrt5}{2}+2\,206^{1/4}\right)
+                   \frac{\max\{1,\sqrt t\}}{\sqrt{n-1}}.
+\]
+Let $r=\max\{n^{-1/2},\sqrt\alpha/n\}=\max\{1,\sqrt t\}/\sqrt n$.
+For $n\ge5$, $\sqrt{n/(n-1)}\le\sqrt{5/4}<9/8$.
+Since $\sqrt5/2<9/8$ and $206^{1/4}<19/5$, the preceding bound is less than
+\[
+ \frac98\left(\frac98+\frac{38}5\right)r
+       =\frac{3141}{320}r<10r.
+\]
+For $n=3,4$, use $\dK(W,Z)\le1$ and $r\ge n^{-1/2}\ge1/2$.
+This proves \eqref{eq:main} for all the stated parameters.
+\end{proof}
+
+\paragraph{AI use.}
+This manuscript was prepared with assistance from OpenAI's Codex in
+literature retrieval, proof development, symbolic checks and exposition.
+The mathematical claims and citations remain the author's responsibility.
+
+\begin{thebibliography}{9}
+\bibitem{CRT}
+L. H. Y. Chen, M. Rai\v c and L. V. Th\`anh,
+\emph{On the error bound in the normal approximation for Jack measures},
+Bernoulli \textbf{27}(1) (2021), 442--468.
+\href{https://doi.org/10.3150/20-BEJ1245}{doi:10.3150/20-BEJ1245}.
+\bibitem{Fulman}
+J. Fulman, \emph{Stein's method, Jack measure, and the Metropolis algorithm},
+J. Combin. Theory Ser. A \textbf{108} (2004), 275--296.
+\href{https://doi.org/10.1016/j.jcta.2004.07.003}{doi:10.1016/j.jcta.2004.07.003}.
+Author version (referee revisions, June 30, 2004):
+\href{https://dornsife.usc.edu/jason-fulman/wp-content/uploads/sites/224/2023/06/steinjackfinal6.pdf}{full text}.
+\bibitem{Kerov}
+S. Kerov, \emph{Anisotropic Young diagrams and Jack symmetric functions},
+\href{https://arxiv.org/abs/math/9712267v1}{arXiv:math/9712267v1} (1997).
+\bibitem{Lassalle}
+M. Lassalle, \emph{Jack polynomials and free cumulants},
+Adv. Math. \textbf{222} (2009), 2227--2269.
+\href{https://doi.org/10.1016/j.aim.2009.07.007}{doi:10.1016/j.aim.2009.07.007}.
+Author version: \href{https://arxiv.org/abs/0802.0448v3}{arXiv:0802.0448v3}.
+\bibitem{SZ}
+Q.-M. Shao and Z.-S. Zhang,
+\emph{Berry--Esseen bounds of normal and nonnormal approximation for
+unbounded exchangeable pairs}, Ann. Probab. \textbf{47}(1) (2019), 61--108.
+\href{https://doi.org/10.1214/18-AOP1255}{doi:10.1214/18-AOP1255}.
+Author version: \href{https://arxiv.org/abs/1710.01554v2}{arXiv:1710.01554v2}.
+\bibitem{TT}
+L. V. Th\`anh and N. N. Tu,
+\emph{Non-uniform Berry--Esseen bounds for exchangeable pairs with
+applications to the mean-field classical N-vector models and Jack measures},
+C. R. Math. \textbf{363} (2025), 757--776.
+\href{https://doi.org/10.5802/crmath.711}{doi:10.5802/crmath.711}.
+\end{thebibliography}
+\end{document}

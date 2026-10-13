@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "problem_id": "636",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "target_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/636-jack-normal.md",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "claim_status": "Complete solution claim pending independent mathematical review",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1853,
+      "sha256": "667c5672dc3c308c2114764aae4c709e0e5de7bd96688eb48d0982449fd6d4d2"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2526,
+      "sha256": "98b4bdbdccd26d78d6c51aceac912b799d3670db068ab2701d5b24d33b567555"
+    },
+    {
+      "path": "BUILD.md",
+      "bytes": 1206,
+      "sha256": "c789f26faa38612c3592b0d7ad317e5d6d462f91833737fcac7912ac5c18a247"
+    },
+    {
+      "path": "paper/jack_normal.tex",
+      "bytes": 16946,
+      "sha256": "fee68f00aa9307019da004241c5eb292999576d66c6076db4e1823c0a4dc81c4"
+    },
+    {
+      "path": "paper/jack_normal.pdf",
+      "bytes": 298474,
+      "sha256": "1ab46729c88490786299dff6851c2d73b6e988c826d21922ebbdbe723164bb7a"
+    }
+  ],
+  "manifest_convention": "This manifest hashes the five payload files; SHA256SUMS also hashes this manifest. Neither file hashes itself."
+}
