@@ -1,0 +1,617 @@
+{
+  "certificate_suite_passed": true,
+  "scope": "N>=1, k>=5; analytical coverage lemmas also required",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0"
+  },
+  "summaries": {
+    "independent_integer_assembly": {
+      "passed": true,
+      "analytical_integer_gradients": true,
+      "small_grid_matrices_equal": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reference_N": 6,
+      "forward_residual_nnz": 0,
+      "reverse_residual_nnz": 0,
+      "pivot_residual_nnz": 0
+    },
+    "universal_sources_verified": {
+      "source_terms": 105320,
+      "universal_nonnegative_barycentric_inequalities": 631920,
+      "universal_face_plane_identities": 210640,
+      "max_source_multiplier": 4,
+      "max_normalform_coefficient": 3,
+      "passed": true,
+      "rules": 59943,
+      "pivot_rules": 17331,
+      "face_profiles": 888,
+      "scope": "all N>=2, all potential degrees d>=7",
+      "source_data_sha256": "5c221381001ebbfbdfa7fbcbe06d911309dff21e1a91ae740f5369b25bd28994",
+      "arithmetic": "arbitrary-precision Python integers and exact affine lower bounds",
+      "seconds": 4.715353012084961
+    },
+    "pivot_and_support_verified": {
+      "passed": true,
+      "unbounded_parameter_chambers": 249177,
+      "boundary_context_chambers": 1569530,
+      "off_pivot_links": 10782184,
+      "owner_intersections_changed": 23228,
+      "free_rule_owners": 42612,
+      "arithmetic": "exact signed integers and affine cone inequalities"
+    },
+    "reverse_identity_verified": {
+      "passed": true,
+      "face_profiles": 888,
+      "beta_cap": 5,
+      "unbounded_parameter_chambers": 144744,
+      "nonzero_row_identities": 358926,
+      "coefficient_classifications": 1713456,
+      "arithmetic": "exact signed integers and affine cone inequalities"
+    },
+    "all_degree_dimension": {
+      "passed": true,
+      "scope": "N>=2 and d>=7",
+      "formula": "3*N**3*(d - 2)*(d - 1)**2 + 3*N**2*(d - 1)*(5*d - 4) + 9*N*(2*d - 1) + 6",
+      "expanded": "3*N**3*d**3 - 12*N**3*d**2 + 15*N**3*d - 6*N**3 + 15*N**2*d**2 - 27*N**2*d + 12*N**2 + 18*N*d - 9*N + 6",
+      "finite_transition_degrees_checked": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "eventual_range": "all d>=12, by the polynomial identity",
+      "arithmetic": "exact rational symbolic algebra",
+      "count_table": [
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 0,
+          "minimum_degree": 7,
+          "multiplicity": 432
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 0,
+          "minimum_degree": 8,
+          "multiplicity": 144
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 3,
+          "multiplicity": 81
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 4,
+          "multiplicity": 333
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 5,
+          "multiplicity": 1008
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 6,
+          "multiplicity": 1644
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 7,
+          "multiplicity": 1968
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 8,
+          "multiplicity": 1296
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 1,
+          "minimum_degree": 9,
+          "multiplicity": 576
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 2,
+          "minimum_degree": 6,
+          "multiplicity": 294
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 2,
+          "minimum_degree": 7,
+          "multiplicity": 738
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 2,
+          "minimum_degree": 8,
+          "multiplicity": 1524
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 2,
+          "minimum_degree": 9,
+          "multiplicity": 1296
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 2,
+          "minimum_degree": 10,
+          "multiplicity": 864
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 3,
+          "minimum_degree": 9,
+          "multiplicity": 360
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 3,
+          "minimum_degree": 10,
+          "multiplicity": 432
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 3,
+          "minimum_degree": 11,
+          "multiplicity": 576
+        },
+        {
+          "interior_axes": 0,
+          "saturated_gaps": 4,
+          "minimum_degree": 12,
+          "multiplicity": 144
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 0,
+          "minimum_degree": 7,
+          "multiplicity": 624
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 0,
+          "minimum_degree": 8,
+          "multiplicity": 216
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 3,
+          "multiplicity": 81
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 4,
+          "multiplicity": 363
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 5,
+          "multiplicity": 1212
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 6,
+          "multiplicity": 2130
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 7,
+          "multiplicity": 2712
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 8,
+          "multiplicity": 1872
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 1,
+          "minimum_degree": 9,
+          "multiplicity": 864
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 2,
+          "minimum_degree": 6,
+          "multiplicity": 369
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 2,
+          "minimum_degree": 7,
+          "multiplicity": 969
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 2,
+          "minimum_degree": 8,
+          "multiplicity": 2112
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 2,
+          "minimum_degree": 9,
+          "multiplicity": 1872
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 2,
+          "minimum_degree": 10,
+          "multiplicity": 1296
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 3,
+          "minimum_degree": 9,
+          "multiplicity": 504
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 3,
+          "minimum_degree": 10,
+          "multiplicity": 624
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 3,
+          "minimum_degree": 11,
+          "multiplicity": 864
+        },
+        {
+          "interior_axes": 1,
+          "saturated_gaps": 4,
+          "minimum_degree": 12,
+          "multiplicity": 216
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 0,
+          "minimum_degree": 7,
+          "multiplicity": 300
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 0,
+          "minimum_degree": 8,
+          "multiplicity": 108
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 3,
+          "multiplicity": 27
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 4,
+          "multiplicity": 129
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 5,
+          "multiplicity": 474
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 6,
+          "multiplicity": 906
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 7,
+          "multiplicity": 1236
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 8,
+          "multiplicity": 900
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 1,
+          "minimum_degree": 9,
+          "multiplicity": 432
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 2,
+          "minimum_degree": 6,
+          "multiplicity": 153
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 2,
+          "minimum_degree": 7,
+          "multiplicity": 420
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 2,
+          "minimum_degree": 8,
+          "multiplicity": 969
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 2,
+          "minimum_degree": 9,
+          "multiplicity": 900
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 2,
+          "minimum_degree": 10,
+          "multiplicity": 648
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 3,
+          "minimum_degree": 9,
+          "multiplicity": 234
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 3,
+          "minimum_degree": 10,
+          "multiplicity": 300
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 3,
+          "minimum_degree": 11,
+          "multiplicity": 432
+        },
+        {
+          "interior_axes": 2,
+          "saturated_gaps": 4,
+          "minimum_degree": 12,
+          "multiplicity": 108
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 0,
+          "minimum_degree": 7,
+          "multiplicity": 48
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 0,
+          "minimum_degree": 8,
+          "multiplicity": 18
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 3,
+          "multiplicity": 3
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 4,
+          "multiplicity": 15
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 5,
+          "multiplicity": 60
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 6,
+          "multiplicity": 126
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 7,
+          "multiplicity": 186
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 8,
+          "multiplicity": 144
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 1,
+          "minimum_degree": 9,
+          "multiplicity": 72
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 2,
+          "minimum_degree": 6,
+          "multiplicity": 21
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 2,
+          "minimum_degree": 7,
+          "multiplicity": 60
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 2,
+          "minimum_degree": 8,
+          "multiplicity": 147
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 2,
+          "minimum_degree": 9,
+          "multiplicity": 144
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 2,
+          "minimum_degree": 10,
+          "multiplicity": 108
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 3,
+          "minimum_degree": 9,
+          "multiplicity": 36
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 3,
+          "minimum_degree": 10,
+          "multiplicity": 48
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 3,
+          "minimum_degree": 11,
+          "multiplicity": 72
+        },
+        {
+          "interior_axes": 3,
+          "saturated_gaps": 4,
+          "minimum_degree": 12,
+          "multiplicity": 18
+        }
+      ]
+    },
+    "critical_dimension": {
+      "exact_count_polynomial": "300*N**3 + 390*N**2 + 99*N + 6",
+      "reference_value": 79440,
+      "derived_from_template_count": true
+    },
+    "small_grid_certificates": {
+      "N1_d6": {
+        "case": "N1_d6",
+        "passed": true,
+        "dimension": 795,
+        "exact_residual_nnz": 0,
+        "A_minor_mod_p": 1000002,
+        "B_minor_mod_p": 1,
+        "prime": 1000003
+      },
+      "N2_d6": {
+        "case": "N2_d6",
+        "passed": true,
+        "dimension": 4164,
+        "exact_residual_nnz": 0,
+        "A_minor_mod_p": 1000002,
+        "B_minor_mod_p": 1,
+        "prime": 1000003
+      },
+      "N3_d6": {
+        "case": "N3_d6",
+        "passed": true,
+        "dimension": 11913,
+        "exact_residual_nnz": 0,
+        "A_minor_mod_p": 1000002,
+        "B_minor_mod_p": 1000002,
+        "prime": 1000003
+      },
+      "N4_d6": {
+        "case": "N4_d6",
+        "passed": true,
+        "dimension": 25842,
+        "exact_residual_nnz": 0,
+        "A_minor_mod_p": 1000002,
+        "B_minor_mod_p": 1,
+        "prime": 1000003
+      }
+    },
+    "uniform_normalform_verified": {
+      "reference_N": 6,
+      "potential_degree": 6,
+      "variables": 151959,
+      "constraint_rows": 99792,
+      "rank": 72519,
+      "dimension": 79440,
+      "templates": 17496,
+      "template_boundary_cutoff": 5,
+      "C_coefficient_radius": 7,
+      "source_full_geometry_radius": 11,
+      "A_coefficient_radius": 2,
+      "A_full_geometry_radius": 7,
+      "axis_state_coverage": {
+        "5": 18,
+        "7": 22,
+        "11": 30,
+        "12": 32
+      },
+      "exact_WA_minus_C_nnz": 0,
+      "exact_A_minus_ApC_nnz": 0,
+      "pivot_identity_nnz": 0,
+      "integer_product_bound": 524,
+      "passed": true,
+      "seconds": 4.178477048873901
+    },
+    "independent_repairs_verified": {
+      "dimension": 79440,
+      "already_vertex_local": 78715,
+      "nonlocal_vectors": 725,
+      "repair_parts": 1450,
+      "max_parts_per_vector": 2,
+      "max_denominator": 1,
+      "max_abs_part_coefficient": 2,
+      "vertex_distance_from_free_coefficient": 6,
+      "full_star_geometry_radius": 12,
+      "exact_membership_and_sums": true,
+      "passed": true,
+      "seconds": 3.2194161415100098
+    },
+    "transport_N5_verified": {
+      "N": 5,
+      "d": 6,
+      "variables": 89373,
+      "dimension": 47751,
+      "predicted_dimension": 47751,
+      "transported_nonlocal_repairs": 384,
+      "exact_constraint_normalform": true,
+      "exact_all_kernel_template_matches": true,
+      "exact_local_support_and_repairs": true,
+      "passed": true,
+      "seconds": 3.831310987472534
+    },
+    "transport_N7_verified": {
+      "N": 7,
+      "d": 6,
+      "variables": 238521,
+      "dimension": 122709,
+      "predicted_dimension": 122709,
+      "transported_nonlocal_repairs": 1224,
+      "exact_constraint_normalform": true,
+      "exact_all_kernel_template_matches": true,
+      "exact_local_support_and_repairs": true,
+      "passed": true,
+      "seconds": 10.170021057128906
+    }
+  }
+}

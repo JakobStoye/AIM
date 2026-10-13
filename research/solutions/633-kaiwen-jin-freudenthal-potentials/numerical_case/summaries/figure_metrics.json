@@ -1,0 +1,14 @@
+{
+  "6": {
+    "mean_nnz": 9.243673090318087,
+    "max_nnz": 69,
+    "dimension": 25842,
+    "basis_sha256": "48d91fbb85d5365297a98159630c325258e789500db70b5e6dcdc1951c2caed3"
+  },
+  "7": {
+    "mean_nnz": 6.9856694417906375,
+    "max_nnz": 69,
+    "dimension": 43962,
+    "basis_sha256": "aeec84d1de2a8e08b67bd8fd3355b588b3a548d926e7cb04fc16b1f43646192b"
+  }
+}

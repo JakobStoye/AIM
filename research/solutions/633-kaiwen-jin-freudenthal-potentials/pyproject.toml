@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freudenthal-potentials"
+version = "0.1.0"
+description = "Exact local potential bases on consistently oriented Freudenthal meshes"
+requires-python = ">=3.11"
+authors = [{name = "Kaiwen Jin", email = "yui.ui.siki@gmail.com"}]
+dependencies = ["numpy>=2.0", "scipy>=1.12"]
+
+[project.optional-dependencies]
+validation = ["sympy>=1.12", "pytest>=8", "matplotlib>=3.6", "ruff>=0.9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["freudenthal*"]
+
+[tool.setuptools.package-data]
+freudenthal = ["certificates/*", "_certificate_check/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["src/freudenthal/_certificate_check", "numerical_case/results"]

@@ -1,0 +1,470 @@
+{
+  "format_version": 1,
+  "title": "AIM 633: Local potential bases on Freudenthal meshes",
+  "version": "0.1.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "generated-output exclusions",
+      "bytes": 189,
+      "sha256": "c69d6304d11bbbdb64469d4404901097bf8af371c1a624936c4de134d8cbe4dd"
+    },
+    {
+      "path": "README.md",
+      "purpose": "submission scope and reproduction instructions",
+      "bytes": 3767,
+      "sha256": "99f93cad898ef109c09c7d7ae15b9b7c6520237927a5d09cf7b239640166c75f"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "public problem and manuscript correspondence",
+      "bytes": 3706,
+      "sha256": "0afbfbfd88cf84319bc965394c0d86557602229f9dc99a7d3b1bdaa43048a8bc"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "purpose": "execution evidence and mathematical limitations",
+      "bytes": 4168,
+      "sha256": "13ddfabf8aee595fc25f6217e450d7a8ec86ee3c5e717c3416350ef413aa5781"
+    },
+    {
+      "path": "numerical_case/README.md",
+      "purpose": "paper-case reproduction instructions",
+      "bytes": 1742,
+      "sha256": "6a42670f0e07549e441adb1f7492f856457302e9f236a5163abacfa2b4b353b2"
+    },
+    {
+      "path": "numerical_case/plot_results.py",
+      "purpose": "paper construction driver and compact data",
+      "bytes": 3636,
+      "sha256": "510aa4960679171ce71179ee8c8c0a903c7193c066a7cccd4c6e3c6e42400d20"
+    },
+    {
+      "path": "numerical_case/run_cases.py",
+      "purpose": "paper construction driver and compact data",
+      "bytes": 3200,
+      "sha256": "1d89b6732e278f471aa8f393f3cc415df0900cddc33fcc88603b9bb75f17c5be"
+    },
+    {
+      "path": "numerical_case/summaries/certificates.json",
+      "purpose": "compact exact-check outcomes",
+      "bytes": 15779,
+      "sha256": "27f72e080ff4b59ae3d777ec8cdd70c05af63ae0517d4b29c09e777cdd8c4424"
+    },
+    {
+      "path": "numerical_case/summaries/figure_metrics.json",
+      "purpose": "paper construction driver and compact data",
+      "bytes": 362,
+      "sha256": "6647765f698284eab31cd7e422d273eb3d8e5eb8f0984be19ee88e7080f5cfe6"
+    },
+    {
+      "path": "numerical_case/summaries/implementation.json",
+      "purpose": "submitted implementation hashes",
+      "bytes": 7835,
+      "sha256": "871a215200796b4f8849b3f56ce076e6a95958e0ce4dd15e6156d63b31af583d"
+    },
+    {
+      "path": "numerical_case/summaries/paper_cases.json",
+      "purpose": "paper construction driver and compact data",
+      "bytes": 5462,
+      "sha256": "5818de434fa0cb7b4614a7570e7c8ff05e5b282755368c11361a0bacc1f4fe53"
+    },
+    {
+      "path": "numerical_case/summaries/sparsity_histograms.json",
+      "purpose": "paper construction driver and compact data",
+      "bytes": 8141,
+      "sha256": "96cc7ff200094d12a46e1a920587fd529f3167618b2a745607d203d9f425a49d"
+    },
+    {
+      "path": "paper/figures/sparsity.pdf",
+      "purpose": "published manuscript or figure",
+      "bytes": 16209,
+      "sha256": "f59dc29fa5dc6fa5a352f3f43303dc52f827595071565a57e0cec42d739a8174"
+    },
+    {
+      "path": "paper/figures/sparsity.pgf",
+      "purpose": "published manuscript or figure",
+      "bytes": 3393,
+      "sha256": "a920a7231f6e2670058d49f5cdb7988ef6a56afb2e09c04be616d9d1359922bc"
+    },
+    {
+      "path": "paper/figures/sparsity.svg",
+      "purpose": "published manuscript or figure",
+      "bytes": 17709,
+      "sha256": "c9c691a8c7087081b35ae6c53dc66a64124e300c7f17c997c26ebd808c90ed48"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "finished manuscript PDF",
+      "bytes": 126544,
+      "sha256": "ff66b3e2a102a628df304a2b2d3103f777cd15e014cbe71d1d8677d60cfb73e4"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "published manuscript or figure",
+      "bytes": 45547,
+      "sha256": "4b737d5a89e2820733e6c9bfe36b1510bc1fa65fe6207b598911e60e024c35c3"
+    },
+    {
+      "path": "pyproject.toml",
+      "purpose": "tests or reproducibility environment",
+      "bytes": 846,
+      "sha256": "c84221be6f15c41c60f6f8e56ebeb73026f6831090d7c653b0a49602a7b50f61"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "purpose": "tests or reproducibility environment",
+      "bytes": 306,
+      "sha256": "871f981b5419c69d470d0a3735039254892ff325823b4b46125cfc05cb4f8bd1"
+    },
+    {
+      "path": "src/README.md",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3055,
+      "sha256": "8a5a348641dab7d4f691f3e77885c0c671dc4a67a2192b9537ab8443015e642b"
+    },
+    {
+      "path": "src/freudenthal/CERTIFICATES.md",
+      "purpose": "fixed mathematical witness description",
+      "bytes": 1781,
+      "sha256": "1ca13f875266239bb7f7ac7130470d37b3427f50e0e66395fa53edd6e97e6999"
+    },
+    {
+      "path": "src/freudenthal/__init__.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 404,
+      "sha256": "02c3e32f98286bf9da95d391d12d6ac11431d4d194b38087d6e77948d7394748"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/src/construct_basis.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 4247,
+      "sha256": "e39a1da294301e8dcd6bad29959e9ca078ae91367bd27bca5d4d4acca0712cd5"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/src/dimension_all_degrees.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1717,
+      "sha256": "04941613091eab2e77c440b1638cda65e0c64959527af91ae7efac72c696db9f"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/src/discover_rules.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 5761,
+      "sha256": "51a0df835d2ca25243f80151451eb7de27bb0a75ba92eb2a6603537108313fa6"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/src/exact_parameter_check.cpp",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 10547,
+      "sha256": "9fe78971a93c2a4a0bbe0e56abe8b7dc11b9909e4123debad8df77b9785aa565"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/src/legacy_geometry.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 9462,
+      "sha256": "81d3dbe3771e8cde27b4c9a3a58a03f86895f2ccc0a65b406f5ee14669814564"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/src/verify_symbolic_sources.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 7877,
+      "sha256": "2a0bc98a6e39fe25babd6157a6a3b44c84bff3a06a69469e37a28742e97026c9"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/all_degree/verify_all.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2734,
+      "sha256": "1f8c1017881a578444d884ecdb30fed99853a76e53ae4c9d878eb85ec7f91654"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/algebra.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 4071,
+      "sha256": "d296bb9ed8e2d2c1968e97af3fb5ccd894da33b9f7a16c3253fbcff9d7b83b57"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/basis_order_search.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2943,
+      "sha256": "36b9690e4367bcf4c2078cf12d0fd8b1128e6417381f07af3f33564819934013"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/benchmark_rank.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 570,
+      "sha256": "d9be4c5086e541c7c0fc63e08104e17ee554c7aaab2810408ce9a31fcf615a12"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/certificates.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 5957,
+      "sha256": "653faff445466fccdd6d8f8be15189a47a9f65adbe7fac4bbf0e84220ba39865"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/degree_experiments.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3172,
+      "sha256": "4ff79bce4addf3f62688b5f4a172360b610bbb836e499d03accd836d56a633e9"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/entity_spans.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1319,
+      "sha256": "b7eef103628ba618df58e084b8862591c894c3458f8dcedeee78d2c9486f4bcf"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/experiment_core.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 5602,
+      "sha256": "32f9ab05455db0b7253f29933833df994e52fdb6f4df781f8fca460e277cedb0"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/family_benchmarks.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 4508,
+      "sha256": "d35a23ed72e607e14921c3195ff1332f6e7585f7f2b9cb7b715b684bdac60d6a"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/geometry.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 9462,
+      "sha256": "81d3dbe3771e8cde27b4c9a3a58a03f86895f2ccc0a65b406f5ee14669814564"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/inspect_structure.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 463,
+      "sha256": "414bf000c21fb70dc89051ae9591d1a633e8c4470c45f2c86dce42feec06cbba"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/interior_primitives.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 5076,
+      "sha256": "0449376297ebc3a0bed7b9805f610331f94d209ddd0e345fa5fbca425ff6139f"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/load_basis.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2303,
+      "sha256": "7b4b3a4f6347b1a55fdb771f061f118833f5d43ae966c5f83b61e89417625546"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/native_rank.cpp",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2276,
+      "sha256": "a86d918461b24425e72fc6fd03212fbf5cc38b63785eba56cfa60570d6ccdc89"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/native_rank.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2813,
+      "sha256": "4e481aa40b00d53521d00ef0de9e329848e9e007532bfc79bc3ce53753c5fb57"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/numerical_diagnostics.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3333,
+      "sha256": "a81364395cfd160d138cbcbd149da3a981499fb8a64538170191337411e892b6"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/plot_results.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1930,
+      "sha256": "ae901b3686e0e44bc4d4dcbfb9763612de58ff2a7d137e1e4873a395da505874"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/polynomial_seed_global.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3187,
+      "sha256": "9e6b43406eb63fd0c7d67fe029b6f79b0337ecac837ae60591bc0925246fb135"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/primitive_global_role.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1800,
+      "sha256": "9c9f91a290b84671d58e74392946758746fb7a27f201afb9ab1ca4dc871fc9ab"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/run_sweep.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1295,
+      "sha256": "b27c7fffc2846db5056c35f3f6b85266af35f39d6bb136907545ed1d789734a0"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 6799,
+      "sha256": "5efe885dcad9b36a852e8d7f03b9f147371f19f30cc31664e7bbcf00c6ba55e8"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/transformations.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2643,
+      "sha256": "8b4d77ea43afec29a11df2493510c4b136a04ad0f4c987fccb7bbee94a5b5605"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/verify_local_templates.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3892,
+      "sha256": "e0ce8af990f9c586180b801e767ab91125f3606af37c775f9a9afb7269dba5db"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/aim633_experiments/src/verify_saved.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1690,
+      "sha256": "042ab0bcf0bb984da6c8b49062371eca5f2135a5e82abbac046cf5d0de71c809"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/certify_repairs.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 5844,
+      "sha256": "51b44d02ad5846736e4762fd661cf554574aa6f64fa7e850b43d7614e274a38a"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/certify_uniform_normalform.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3623,
+      "sha256": "5666f8b2974b9375b6561765d7de4bdcee7f1d35d1d2a46b5caf792508b48436"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/dimension_polynomial.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 754,
+      "sha256": "26d92915d2d1dfdbf6b44701fd5a003a2cd799892023512ca9011af39546f483"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/normalform_geometry.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1305,
+      "sha256": "11e84b353e321f614fff30903f00f01ec777c3a3907d710c8cc029c021bd899f"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/repair_nonlocal.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1311,
+      "sha256": "699c67b4a970d6e76820f50885105b7cfc33905356f7660830311cb1f418db6a"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/template_signatures.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1105,
+      "sha256": "7769e98c1484901ff59cd71dd05f15b499b2acd6e5209b10bedfb3cab4a39b66"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/tracked_rref.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2658,
+      "sha256": "7b34f856c583f41760c987bbf65829e5189be13e8fd4e3e4dfbc6e3927dfba6a"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/transport_regression.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 3446,
+      "sha256": "c585d932c00758512849cb3537fa45c7fa1638ee8de819f8f95101e57934577b"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/src/verify_repairs.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2686,
+      "sha256": "7c884c3c87d12c12e34bfcec64eb035dda1a061b275e52c0dda0637350ccc557"
+    },
+    {
+      "path": "src/freudenthal/_certificate_check/critical/verify_all.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 914,
+      "sha256": "41d6db58e2cc30b4e03cc807f1ee543cfbf42e30e749354dd04a10a778bd210d"
+    },
+    {
+      "path": "src/freudenthal/algebra.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 4756,
+      "sha256": "fe58b456e915465c73f336b2f824be0859a235413c3bbe2aa27e4b1f7bdea05b"
+    },
+    {
+      "path": "src/freudenthal/basis.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 16399,
+      "sha256": "12a4c4d41d71e03875846cb3e58e7198ec1b66e48099e8e58e3e337e2ad08b09"
+    },
+    {
+      "path": "src/freudenthal/certificates/all_degree_rules.json.gz",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 970778,
+      "sha256": "43d45cfd9394befe130b7e5e27f22851369e0adaf0669f8526e3d8156bc7b5ee"
+    },
+    {
+      "path": "src/freudenthal/certificates/manifest.json",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 445,
+      "sha256": "fd0f4bf38edac17abd51d3d54847cb149ab26e8d582761554c53bce400c8bc2b"
+    },
+    {
+      "path": "src/freudenthal/certificates/verification_data.zip",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 7489779,
+      "sha256": "32c3c6847241288a4607d699e68ac7fbbdae3378e4057531c44a94274f85f7c7"
+    },
+    {
+      "path": "src/freudenthal/data.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1618,
+      "sha256": "cb8c5f6d0d1909f992242bd167cc67b9e7f7bc76069df9a3fd99f45a9ff1c3a6"
+    },
+    {
+      "path": "src/freudenthal/exact.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1339,
+      "sha256": "90dd99253a2fd82c5c6217951c83206775dba62fb208478639ed51ca0ff58c32"
+    },
+    {
+      "path": "src/freudenthal/geometry.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 11355,
+      "sha256": "54bb4b00edfd62fb16dad3c32698671ca7fba0a07017b1616de12d2a7e1fd6b3"
+    },
+    {
+      "path": "src/freudenthal/provenance.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 755,
+      "sha256": "985a1395079d6fdc2086859894b480a06669f614e996febac24a46503272e52d"
+    },
+    {
+      "path": "src/freudenthal/rules.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 2588,
+      "sha256": "87bac38413e0d478d31e4958b2fca9e1fd1b25a4e15dc81975609e62b031e96e"
+    },
+    {
+      "path": "src/freudenthal/verification.py",
+      "purpose": "numerical library or fixed exact-checking input",
+      "bytes": 1776,
+      "sha256": "7f1884ba9e922e2d204ad70a341394229dabe360f9e61bdae5f3700d19e32448"
+    },
+    {
+      "path": "test/test_basis.py",
+      "purpose": "tests or reproducibility environment",
+      "bytes": 2186,
+      "sha256": "4f6220600018bd6c1c44a318c38e79032d6551ffc5ee5d7adad4e2d1260c8eff"
+    },
+    {
+      "path": "test/test_evaluation.py",
+      "purpose": "tests or reproducibility environment",
+      "bytes": 2483,
+      "sha256": "585a89f461b702ff9e33f687186c8b3ed95806d8935a15ee36b98cfad3077246"
+    },
+    {
+      "path": "test/test_geometry.py",
+      "purpose": "tests or reproducibility environment",
+      "bytes": 1673,
+      "sha256": "63dd2fea6b5a800649b16f821c87b8ed38513ee0ac6644220d56a6cd4806f15f"
+    },
+    {
+      "path": "verify_all.py",
+      "purpose": "tests or reproducibility environment",
+      "bytes": 6751,
+      "sha256": "eff5b539dffbdcc28748c952fd747ea3dc3041005d722a01b88730a93feab244"
+    }
+  ],
+  "inventory_convention": "This manifest and SHA256SUMS are excluded from the file inventory to avoid self-reference; SHA256SUMS includes this manifest."
+}
