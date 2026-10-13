@@ -1,0 +1,34 @@
+{
+  "package": "Repeated GUE interaction on three tensor legs",
+  "author": "Kaiwen Jin",
+  "problem_id": "577",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/577-repeated-gue-strong-freeness.md",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public package overview, build instructions, AI-use and review disclosure",
+      "bytes": 2566,
+      "sha256": "7a45259afa01d71f6d9396da452c03aa15f38f5e150e3b8858a163c3f7fa0787"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original requirement-to-manuscript comparison and public dependency map",
+      "bytes": 4873,
+      "sha256": "c82936942b554a70254b33226011102d562da9d8520d2ad722ed19472a85ae6b"
+    },
+    {
+      "path": "paper/repeated_gue_three_legs.tex",
+      "purpose": "Complete editable standalone mathematical manuscript",
+      "bytes": 22206,
+      "sha256": "f66d7c2461bfd4a77a06b009c9e6ad8d9cc79ff1055a7a2f2956da684d137b73"
+    },
+    {
+      "path": "paper/repeated_gue_three_legs.pdf",
+      "purpose": "Seven-page compiled mathematical manuscript",
+      "bytes": 318999,
+      "sha256": "b9d257e86ea0ae4df86dc98c28d0ecf5f1d460d09b9349a7f32eec5000fbe7c6"
+    }
+  ],
+  "integrity_note": "Hashes identify submitted files; they are not a mathematical certificate. MANIFEST.json and SHA256SUMS are integrity-control files."
+}

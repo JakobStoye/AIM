@@ -1,0 +1,561 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Var}{Var}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\C}{\mathbb C}
+\newcommand{\M}{\mathrm M}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Strong convergence for a repeated GUE interaction\\ on three tensor legs}
+\author{Kaiwen Jin\\ \small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{13 October 2026}
+\hypersetup{pdftitle={Strong convergence for a repeated GUE interaction on three tensor legs},
+pdfauthor={Kaiwen Jin}}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $X_N$ be a normalized Gaussian unitary ensemble matrix of size $N^2$.
+We place the same realization on two adjacent pairs of tensor factors,
+as $X_N\otimes I_N$ and $I_N\otimes X_N$ on $(\C^N)^{\otimes3}$.
+For every fixed complex noncommutative polynomial, its operator norm
+converges in probability to the norm of that polynomial in two free
+variance-one semicircular elements. The argument computes the covariance
+of the dependent pair and applies existing Gaussian spectral comparison
+and operator-valued free convergence results. A direct Gaussian variance
+estimate supplies the trace convergence needed for the norm lower bound.
+\end{abstract}
+
+\section{Introduction}
+
+A local interaction may be used repeatedly in a quantum spin system.
+The resulting operators act on different tensor factors, while their
+random coefficients come from one matrix. Collins and Yuan
+\cite[Section~1.1 and Section~5(2)]{CY}
+describe this repeated-interaction question and study tensor embeddings
+with independent local GUE matrices. The more general tensor models in
+Chen, Garza-Vargas and van Handel \cite[Section~9.4, Theorem~9.8]{CGV}
+also use independent local matrices. Here we retain the common Gaussian
+coefficients and consider two overlapping ordered embeddings.
+
+For each positive integer $N$, let $X_N$ be a normalized Hermitian GUE
+matrix on $\C^N\otimes\C^N$. Thus its diagonal entries have variance
+$N^{-2}$, and its upper-triangular complex entries satisfy
+$\E|(X_N)_{ab}|^2=N^{-2}$. Define
+\begin{equation}\label{eq:model}
+ A_N=X_N\otimes I_N,\qquad B_N=I_N\otimes X_N
+ \quad\text{on }(\C^N)^{\otimes3}.
+\end{equation}
+Both expressions use exactly the same $X_N$, with the displayed tensor
+factor order. Let $s_1,s_2$ be centered free semicircular elements of
+variance one in their reduced free-product $C^*$-algebra, equipped with
+its faithful tracial representation.
+
+\begin{theorem}\label{thm:main}
+For every fixed polynomial $P\in\C\langle x,y\rangle$,
+\[
+ \norm{P(A_N,B_N)}
+ \xrightarrow[N\to\infty]{\Prob}
+ \norm{P(s_1,s_2)}.
+\]
+All norms are operator norms, and the norm on the right is the norm in
+the reduced free-product $C^*$-algebra.
+\end{theorem}
+
+This proves the three-site, two-interaction case of the repeated-matrix
+question. The conclusion includes non-self-adjoint polynomials and
+does not impose a degree restriction on a fixed polynomial. Larger
+families of repeated interactions are outside the present result.
+
+The general comparison and convergence results are due to
+Bandeira, Boedihardjo and van Handel \cite{BBvH}, Gao and
+Kunnawalkam Elayavalli \cite{GK}, and Jekel, Lee, Nelson and Pi \cite{JLNP}.
+Our application consists of the covariance calculation for the shared
+realization and the passage through complete linear matrix pencils.
+The joint entry covariance has norm $2/N$, while every fixed covariance
+expression formed from the identity tends to its scalar free value.
+These facts permit comparison with the free pair. We keep the constant
+matrix coefficient inside the Gaussian comparison, and use the
+deterministic linearization of Haagerup and Thorbj{\o}rnsen \cite{HT}.
+Expected trace convergence and a variance bound then give the reverse
+norm inequality.
+
+We write $\Tr$ for unnormalized trace and $\tr_k=k^{-1}\Tr$.
+Hilbert--Schmidt norms are unnormalized:
+$\norm{R}_{\HS}^2=\Tr(R^*R)$. The proof estimates are made for $N\ge2$;
+a finite initial dimension does not affect the limit.
+
+\section{Covariance of the shared realization}
+
+Put $m=N^2$ and $n=N^3$. Choose a Hermitian orthonormal basis
+$(H_\alpha)_{\alpha=1}^{N^4}$ of $\M_m(\C)$ for
+$\Tr(H_\alpha H_\beta)=\delta_{\alpha\beta}$.
+For the given matrix, the coordinates
+$g_\alpha=N\Tr(H_\alpha X_N)$ are independent standard real Gaussians.
+Hence
+\begin{equation}\label{eq:coefficients}
+ X_N=\frac1N\sum_\alpha g_\alpha H_\alpha,\qquad
+ C_{1\alpha}=\frac{H_\alpha\otimes I_N}{N},\qquad
+ C_{2\alpha}=\frac{I_N\otimes H_\alpha}{N}.
+\end{equation}
+With $Y_{1,N}=A_N$ and $Y_{2,N}=B_N$, both coordinates are given by
+\begin{equation}\label{eq:joint-gaussian}
+ Y_{i,N}=\sum_\alpha g_\alpha C_{i\alpha}.
+\end{equation}
+In particular, the scalar index is shared in the two sums.
+
+The covariance maps on $\M_n(\C)$ are
+\[
+ \eta_{ij,N}(R)=\E[Y_{i,N}RY_{j,N}]
+             =\sum_\alpha C_{i\alpha}RC_{j\alpha}.
+\]
+The block map $R\mapsto(\eta_{ij,N}(R))_{i,j=1}^2$ is completely
+positive: stack $C_{1\alpha}$ and $C_{2\alpha}$ to form its Kraus
+operators. Since these matrices are Hermitian, cyclicity of trace gives
+\begin{equation}\label{eq:trace-symmetry}
+ \tr_n(\eta_{ij,N}(R)T)=\tr_n(R\eta_{ji,N}(T)).
+\end{equation}
+All component maps are normal in finite dimension.
+
+\begin{lemma}\label{lem:covariance}
+For $i,j\in\{1,2\}$,
+\begin{align}
+ \sum_\alpha C_{i\alpha}^2&=I_n,
+ &\norm{\eta_{ij,N}(R)}&\le\norm R, \label{eq:map-bounds}\\
+ \eta_{11,N}(I_n)&=\eta_{22,N}(I_n)=I_n,
+ &\eta_{12,N}(I_n)&=N^{-2}U_N,\quad
+ \eta_{21,N}(I_n)=N^{-2}U_N^*, \label{eq:identity-values}\\
+ \Tr(C_{i\alpha}C_{i\beta})&=N^{-1}\delta_{\alpha\beta}.
+ &&\label{eq:gram}
+\end{align}
+Here $U_N$ is the cyclic permutation unitary
+$U_N(e_a\otimes e_b\otimes e_c)=e_b\otimes e_c\otimes e_a$.
+The joint entry-covariance operator, in the unnormalized
+Hilbert--Schmidt convention, has norm $2/N$.
+\end{lemma}
+
+\begin{proof}
+Basis completeness and Hermitian symmetry give
+\[
+ \sum_\alpha (H_\alpha)_{ab}(H_\alpha)_{cd}
+       =\delta_{ad}\delta_{bc},\qquad
+ \sum_\alpha H_\alpha^2=mI_m.
+\]
+The second identity proves the first part of \eqref{eq:map-bounds}.
+The coefficient row $(C_{i\alpha})_\alpha$ has norm one, as does
+the corresponding adjoint column. Factoring the map as row, diagonal
+copies of $R$, and column proves the map bound.
+
+The entry covariance of the original matrix is
+$\E[(X_N)_{ab}(X_N)_{cd}]=N^{-2}\delta_{ad}\delta_{bc}$.
+Using the ordered embeddings, the row $(i,j,k)$ and column $(l,p,q)$
+entry of $\E[A_NB_N]$ is
+\[
+ N^{-2}\delta_{ip}\delta_{jq}\delta_{kl}.
+\]
+This is $N^{-2}U_N$; taking adjoints gives the other cross term.
+The diagonal identity values follow from the first part of the lemma.
+
+Equation \eqref{eq:gram} follows from
+$N^{-2}\Tr(H_\alpha H_\beta)\Tr(I_N)=N^{-1}\delta_{\alpha\beta}$.
+
+Let $V_N$ have columns
+$(\operatorname{vec}C_{1\alpha},\operatorname{vec}C_{2\alpha})$
+in the direct sum of two Hilbert--Schmidt spaces.
+The joint covariance operator is $T_N=V_NV_N^*$.
+Thus
+\begin{equation}\label{eq:choi}
+ V_N^*V_N=\frac2N I_{N^4},\qquad \norm{T_N}=\frac2N.
+\end{equation}
+This is also the Choi operator in the convention of
+\cite[Definition~1.5 and Remark~1.6]{JLNP}.
+\end{proof}
+
+For the limiting scalar base algebra $\C$, put
+$\eta_{ij}(z)=\delta_{ij}z$.
+A deterministic covariance expression means a fixed finite expression
+formed from scalars and the identity using sums, products, adjoints
+and the maps $\eta_{ij,N}$. Its coefficients and expression do not
+depend on $N$.
+
+\begin{lemma}\label{lem:base-convergence}
+For each such expression $f$, there is a constant $K_f$ such that
+\begin{equation}\label{eq:scalar-approximation}
+ \norm{f(\eta_N,I_n)-f(\eta,1)I_n}\le K_fN^{-2},
+ \qquad N\ge2.
+\end{equation}
+Consequently both its normalized trace and its norm converge to their
+scalar values.
+\end{lemma}
+
+\begin{proof}
+Induct over the finite expression. Scalars and the identity give the
+base cases. Sums and adjoints preserve the estimate.
+For products use
+$R_NS_N-cdI=(R_N-cI)S_N+c(S_N-dI)$;
+the preceding estimates bound $S_N$ uniformly.
+For a map application, write $R_N=cI_n+E_N$. Lemma~\ref{lem:covariance}
+gives
+\[
+ \norm{\eta_{ij,N}(R_N)-\delta_{ij}cI_n}
+ \le\norm{E_N}+|c|N^{-2}\mathbf1_{\{i\ne j\}}.
+\]
+This proves the induction. The trace conclusion follows from
+$|\tr_n(E_N)|\le\norm{E_N}$.
+\end{proof}
+
+The cross map in Lemma~\ref{lem:covariance} is only small at the
+identity. The argument uses its uniform norm bound for general inputs;
+it does not require that its full operator norm tend to zero.
+
+\section{The spectral upper bound}
+
+Let $(h_\alpha)$ be a free variance-one semicircular family in a
+faithful tracial von Neumann algebra, and define
+\begin{equation}\label{eq:free-replacement}
+ S_{i,N}=\sum_\alpha C_{i\alpha}\otimes h_\alpha.
+\end{equation}
+The same $h_\alpha$ occurs in both components.
+By \cite[Proposition~1.8]{JLNP}, this is an $\M_n$-valued
+semicircular family with covariance $\eta_N$.
+
+\begin{lemma}\label{lem:free-convergence}
+For every fixed complex polynomial $P$,
+\[
+ \norm{P(S_{1,N},S_{2,N})}\longrightarrow\norm{P(s_1,s_2)}.
+\]
+\end{lemma}
+
+\begin{proof}
+Use \cite[Corollary~1.4 and Examples~2.5(3)]{GK}, in the tracial
+form explained in \cite[Theorem~4.3]{JLNP}.
+The finite base algebras are $\M_n$, the base tuples are $I_n$,
+and the limiting base is $\C$ generated by $1$.
+The covariance is block completely positive and trace-symmetric
+by \eqref{eq:trace-symmetry}; its diagonal value at $1$ is bounded by one.
+Lemma~\ref{lem:base-convergence} proves strong convergence of all
+deterministic covariance expressions, including normalized traces.
+
+The norm tests in \cite[Examples~2.5(3)]{GK} can also be read directly:
+for fixed $p,q$ in the base variable,
+\[
+ \norm{p(I_n)-\eta_{ij,N}(q(I_n))}
+ \longrightarrow |p(1)-\delta_{ij}q(1)|.
+\]
+The generation condition is imposed on the limiting base, not on
+the finite algebras. The faithful product trace on
+$\M_n\otimes W^*(h_\alpha)$ provides the tracial realization of
+\eqref{eq:free-replacement}. The chosen limit is the target free pair,
+with scalar covariance $\delta_{ij}$.
+\end{proof}
+
+We need this convergence for matrix pencils as well as scalar
+polynomials. The following argument also covers continuous spectra.
+
+\begin{lemma}\label{lem:free-spectra}
+Fix $d\ge1$ and self-adjoint $a_0,a_1,a_2\in\M_d(\C)$, and set
+\[
+ Q_{N,\mathrm{free}}=a_0\otimes1+
+                   a_1\otimes S_{1,N}+a_2\otimes S_{2,N},\qquad
+ Q=a_0\otimes1+a_1\otimes s_1+a_2\otimes s_2.
+\]
+There is a sequence $\delta_N\to0$ such that
+\[
+ \Spec(Q_{N,\mathrm{free}})
+       \subseteq\Spec(Q)+[-\delta_N,\delta_N].
+\]
+\end{lemma}
+
+\begin{proof}
+Put $\mathcal A_N=C^*(1,S_{1,N},S_{2,N})$ and
+$\mathcal A=C^*(1,s_1,s_2)$.
+The norm in $\prod_N\mathcal A_N/\bigoplus_N\mathcal A_N$ is the norm
+limsup, where the direct sum denotes norm-null sequences.
+Indeed norm-null corrections preserve the limsup, and cancelling
+finite initial segments gives the reverse inequality.
+Lemma~\ref{lem:free-convergence} therefore makes
+\[
+ P(s_1,s_2)\longmapsto[(P(S_{1,N},S_{2,N}))_N]
+\]
+a well-defined isometry on the polynomial algebra. It extends to a
+unital $*$-embedding of $\mathcal A$ into this quotient.
+Apply the map entrywise in $\M_d$. Matrix boundedness and
+norm-nullness are equivalent to the corresponding properties of
+their finitely many entries.
+
+If the claimed spectral containment failed, uniform boundedness would
+give a subsequence of spectral points $\lambda_N$ tending to a real
+$\lambda\notin\Spec(Q)$. The inverse of $\lambda-Q$ maps to an inverse
+of the matrix sequence class. Choose a bounded representative $R_N$.
+Both inverse residuals tend to zero. For all sufficiently large $N$,
+their norms are less than $1/2$, so the Neumann series gives an actual
+two-sided inverse of $\lambda-Q_{N,\mathrm{free}}$, with norm at most
+$2\sup_N\norm{R_N}$.
+
+Inversion sends $\lambda_N$ to the spectral point
+$(\lambda-\lambda_N)^{-1}$ of that inverse. Its norm must tend to
+infinity, a contradiction. If $\lambda=\lambda_N$, invertibility
+already fails. This uses spectral points, without an eigenspace
+assumption. The sequence-quotient argument is the deterministic
+mechanism in \cite[pp.~758--760]{HT}.
+\end{proof}
+
+Now consider the Gaussian pencil
+\begin{equation}\label{eq:full-pencil}
+ Q_N=a_0\otimes I_n+a_1\otimes A_N+a_2\otimes B_N
+     =a_0\otimes I_n+\sum_\alpha g_\alpha L_{\alpha,N},
+ \quad
+ L_{\alpha,N}=a_1\otimes C_{1\alpha}+a_2\otimes C_{2\alpha}.
+\end{equation}
+Its free replacement is precisely $Q_{N,\mathrm{free}}$.
+For a self-adjoint Gaussian pencil
+$Y=L_0+\sum_\alpha g_\alpha L_\alpha$ of size $D$,
+the parameters in \cite[Section~2.1]{BBvH} are
+\[
+ \sigma(Y)^2=\norm{\sum_\alpha L_\alpha^2},\qquad
+ v(Y)^2=\sup_{\Tr(R^*R)\le1}\sum_\alpha|\Tr(L_\alpha R)|^2.
+\]
+The source's parameter $\sigma_*$ satisfies $\sigma_*\le v$.
+Consequently \cite[Theorem~2.1]{BBvH} gives, for all $t\ge0$,
+\begin{equation}\label{eq:bbvh}
+ \Prob\!\left\{\Spec(Y)\subseteq\Spec(Y_{\mathrm{free}})
+  +C\big[v(Y)^{1/2}\sigma(Y)^{1/2}(\log D)^{3/4}
+                +v(Y)t\big][-1,1]\right\}\ge1-e^{-t^2}.
+\end{equation}
+Here $Y_{\mathrm{free}}=L_0\otimes1+\sum_\alpha L_\alpha\otimes h_\alpha$.
+The deterministic shift is unchanged, and is not included in either
+noise parameter.
+
+For \eqref{eq:full-pencil}, let
+$M_a=\norm{a_1}+\norm{a_2}$ and
+$K_a=2(\norm{a_1}_{\HS}^2+\norm{a_2}_{\HS}^2)$.
+Lemma~\ref{lem:covariance} gives
+\[
+ \sum_\alpha L_{\alpha,N}^2
+ =a_1^2\otimes I_n+a_2^2\otimes I_n+
+ N^{-2}(a_1a_2\otimes U_N+a_2a_1\otimes U_N^*),
+\]
+so $\sigma(Q_N)\le M_a$.
+Bessel's inequality using \eqref{eq:gram} gives, for each component,
+\[
+ \sum_\alpha|\Tr((a_i\otimes C_{i\alpha})R)|^2
+ \le N^{-1}\norm{a_i}_{\HS}^2\norm{R}_{\HS}^2.
+\]
+Applying two-term Cauchy--Schwarz to the shared coefficient sum yields
+$v(Q_N)^2\le K_a/N$.
+
+Choose $t_N=(\log(dN^3))^{3/2}$ in \eqref{eq:bbvh}.
+Then, with probability at least $1-e^{-(\log(dN^3))^3}$,
+\begin{equation}\label{eq:gaussian-free-inclusion}
+ \Spec(Q_N)\subseteq\Spec(Q_{N,\mathrm{free}})+[-r_N,r_N],
+\end{equation}
+where
+\[
+ r_N\le C\left[
+ K_a^{1/4}M_a^{1/2}N^{-1/4}(\log(dN^3))^{3/4}
+ +K_a^{1/2}N^{-1/2}(\log(dN^3))^{3/2}\right]\longrightarrow0.
+\]
+The failure probabilities are summable.
+Borel--Cantelli and Lemma~\ref{lem:free-spectra} give, for each fixed
+pencil and each $\varepsilon>0$,
+\begin{equation}\label{eq:final-spectral-inclusion}
+ \Spec(Q_N)\subseteq\Spec(Q)+[-\varepsilon,\varepsilon]
+ \quad\text{eventually, almost surely}.
+\end{equation}
+The comparison was applied to the whole pencil, including $a_0$;
+no addition of separate spectral containments is used.
+
+\begin{proposition}\label{prop:upper}
+On a probability space carrying the GUE sequence,
+\[
+ \limsup_{N\to\infty}\norm{P(A_N,B_N)}
+       \le\norm{P(s_1,s_2)}
+ \quad\text{almost surely for every }P\in\C\langle x,y\rangle.
+\]
+\end{proposition}
+
+\begin{proof}
+Intersect the events in \eqref{eq:final-spectral-inclusion} for all
+positive integer $d$ and all self-adjoint coefficient matrices with
+entries in $\mathbb Q+i\mathbb Q$. This is a countable intersection.
+Coordinate pencils give almost-sure boundedness of $A_N,B_N$.
+
+Fix such an outcome and form
+$\mathcal C=\prod_N\M_{N^3}/\bigoplus_N\M_{N^3}$,
+with coordinate classes $y_1,y_2$.
+For any rational self-adjoint pencil, a point outside $\Spec(Q)$ is
+at a fixed positive distance from every sufficiently late finite
+Gaussian spectrum. The late resolvents are uniformly bounded; setting
+the finitely many early resolvents to zero gives an inverse in the
+matrix quotient. Thus its spectrum is contained in $\Spec(Q)$.
+The deterministic \cite[Theorem~2.4]{HT} gives a unital
+$*$-homomorphism from $C^*(1,s_1,s_2)$ onto $C^*(1,y_1,y_2)$,
+sending $s_i$ to $y_i$.
+Its contractivity and the quotient norm-limsup formula give the
+conclusion for all complex polynomials.
+This is also the criterion stated in \cite[Theorem~7.7]{BBvH}.
+\end{proof}
+
+\section{Trace convergence and the norm lower bound}
+
+The expected trace theorem \cite[Lemma~3.9]{JLNP} applies to our
+joint Gaussian tuple, with deterministic base data $I_n$.
+Lemma~\ref{lem:covariance} supplies trace symmetry and bounded
+component maps; \eqref{eq:choi} gives Choi norms tending to zero
+also for every coordinate restriction.
+Lemma~\ref{lem:base-convergence} gives every deterministic
+covariance-expression trace limit. The identity base is independent
+of the Gaussian tuple and has uniformly bounded moments.
+Hence, for each word $w$,
+\begin{equation}\label{eq:expected-moments}
+ \E\tr_n w(A_N,B_N)\longrightarrow\tau w(s_1,s_2).
+\end{equation}
+Here $\tau$ is the faithful trace of the limiting free pair.
+
+We first bound the operator-norm moments needed for a direct
+Poincar\'e estimate. In \eqref{eq:bbvh}, use the coordinate pencil
+$A_N$. Its parameters are $\sigma(A_N)=1$ and
+$v(A_N)=N^{-1/2}$ by \eqref{eq:map-bounds} and
+\eqref{eq:gram}. The free coordinate norms are uniformly bounded by
+Lemma~\ref{lem:free-convergence}, and
+$N^{-1/4}(\log(N^3))^{3/4}$ is bounded.
+Since $\norm{A_N}=\norm{B_N}=\norm{X_N}$, constants $M,C>0$ independent
+of $N\ge2$ satisfy
+\begin{equation}\label{eq:coordinate-tail}
+ \Prob\{\norm{X_N}>M+Ct\}\le e^{-t^2},\qquad t\ge0.
+\end{equation}
+Partition into $[0,M]$ and $(M+Ck,M+C(k+1)]$, $k\ge0$.
+For each fixed positive integer $r$,
+\[
+ \sup_N\E\norm{X_N}^r
+ \le M^r+\sum_{k\ge0}(M+C(k+1))^r e^{-k^2}<\infty.
+\]
+
+\begin{lemma}\label{lem:variance}
+For every word $w$ of length $\ell\ge1$ there is a constant $C_\ell$
+independent of $N$ such that
+\[
+ \Var(\tr_n w(A_N,B_N))\le C_\ell N^{-4}.
+\]
+Consequently the normalized traces of all words converge almost surely
+to their traces in the free pair.
+\end{lemma}
+
+\begin{proof}
+Write $F_N=\tr_n(Y_{i_1,N}\cdots Y_{i_\ell,N})$.
+Differentiate with respect to the actual shared scalar $g_\alpha$
+in \eqref{eq:joint-gaussian}. Cyclicity gives
+\[
+ \partial_\alpha F_N=\frac1n\sum_{t=1}^{\ell}
+                  \Tr(C_{i_t,\alpha}W_t),
+\]
+where $W_t$ is the cyclic product of the remaining $\ell-1$ factors.
+Using Cauchy--Schwarz over the positions and Bessel's inequality
+for \eqref{eq:gram},
+\[
+ \sum_\alpha|\partial_\alpha F_N|^2
+ \le\frac{\ell}{Nn^2}\sum_t\norm{W_t}_{\HS}^2
+ \le\frac{\ell^2}{Nn}\norm{X_N}^{2\ell-2}.
+\]
+The Gaussian Poincar\'e inequality
+\cite[Proposition~4.1 and Corollary~4.2]{HT}
+applies to this complex polynomial and its square-integrable gradient.
+The uniform moments just proved and $n=N^3$ give the variance bound.
+Constant words have zero variance.
+
+For each positive $\varepsilon$, the squared-deviation inequality gives
+\[
+ \Prob\{|F_N-\E F_N|>\varepsilon\}
+          \le C_\ell\varepsilon^{-2}N^{-4}.
+\]
+This is summable, so Borel--Cantelli gives
+$F_N-\E F_N\to0$ almost surely.
+Combine with \eqref{eq:expected-moments} and intersect the countably
+many word events. Finite linear combinations then cover all
+complex polynomial traces. No independence between different $N$
+is used.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Place the GUE matrices on a common probability space.
+For a fixed $P$, put
+$Z_N=P(A_N,B_N)^*P(A_N,B_N)$ and
+$Z=P(s_1,s_2)^*P(s_1,s_2)$.
+For every fixed integer $q\ge1$, Lemma~\ref{lem:variance} gives
+$\tr_n(Z_N^q)\to\tau(Z^q)$ almost surely. Since $Z_N$ is positive,
+\[
+ \liminf_N\norm{P(A_N,B_N)}
+       \ge \tau(Z^q)^{1/(2q)}.
+\]
+The limiting trace is faithful, so
+$\tau(Z^q)^{1/q}\to\norm Z$.
+Indeed the upper bound follows from $Z\le\norm Z\,1$, and a nonzero
+spectral neighborhood below $\norm Z$ has positive trace, giving the
+reverse bound after taking roots. The case $Z=0$ is immediate.
+This is the trace-power argument of \cite[Lemma~4.1]{JLNP}.
+Taking $q\to\infty$ after the fixed-$q$ limit proves
+\[
+ \liminf_N\norm{P(A_N,B_N)}\ge\norm{P(s_1,s_2)}.
+\]
+Combine with Proposition~\ref{prop:upper} to obtain the norm limit
+almost surely on this coupling. It therefore holds in probability
+for the prescribed GUE marginals. In the displayed model, $I_N$
+is the $N$ by $N$ identity, both embeddings keep the ordered legs,
+and $P$ has fixed complex coefficients independent of $N$.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{BBvH}
+Afonso S. Bandeira, March T. Boedihardjo and Ramon van Handel,
+\emph{Matrix concentration inequalities and free probability},
+Invent. Math. \textbf{234} (2023), 419--487.
+Version used: \href{https://arxiv.org/abs/2108.06312v2}{arXiv:2108.06312v2}.
+
+\bibitem{CGV}
+Chi-Fang Chen, Jorge Garza-Vargas and Ramon van Handel,
+\emph{A new approach to strong convergence II: The classical ensembles},
+\href{https://arxiv.org/abs/2412.00593v3}{arXiv:2412.00593v3} (2026).
+
+\bibitem{CY}
+Beno\^{i}t Collins and Wangjun Yuan,
+\emph{Strong convergence for tensor GUE random matrices},
+\href{https://arxiv.org/abs/2407.09065v1}{arXiv:2407.09065v1} (2024).
+
+\bibitem{GK}
+David Gao and Srivatsav Kunnawalkam Elayavalli,
+\emph{Toeplitz exactness for strong convergence},
+\href{https://arxiv.org/abs/2604.14106v3}{arXiv:2604.14106v3} (2026).
+
+\bibitem{HT}
+Uffe Haagerup and Steen Thorbj{\o}rnsen,
+\emph{A new application of random matrices:
+$\operatorname{Ext}(C^*_{\mathrm{red}}(\mathbb F_2))$ is not a group},
+Ann. of Math. \textbf{162} (2005), 711--775.
+\href{https://doi.org/10.4007/annals.2005.162.711}{doi:10.4007/annals.2005.162.711}.
+
+\bibitem{JLNP}
+David Jekel, Yoonkyeong Lee, Brent Nelson and Jennifer Pi,
+\emph{Strong convergence to operator-valued semicirculars},
+\href{https://arxiv.org/abs/2506.19940v3}{arXiv:2506.19940v3} (2026).
+\end{thebibliography}
+
+\section*{AI use}
+OpenAI Codex assisted with deriving and checking the argument,
+retrieving references, and preparing the manuscript.
+The mathematical claims are submitted for independent review.
+
+\end{document}
