@@ -1,0 +1,11 @@
+{
+  "quadruples": 2085056,
+  "covariance_samples": 989,
+  "normalized_geometry_maxima": [
+    2.411764705882353,
+    2.0
+  ],
+  "exact_integer_comparisons": true,
+  "status": "FINITE_CHECK_PASSED",
+  "limitation": "Numerical and finite combinatorial evidence only; not a proof premise."
+}

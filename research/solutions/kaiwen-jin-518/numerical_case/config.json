@@ -1,0 +1,23 @@
+{
+  "seed": 518,
+  "final_time": 0.25,
+  "data_norm": 2.0,
+  "steps": [16, 32, 64, 128, 256, 512],
+  "reference_steps": [8192, 16384],
+  "reference_quality_fraction": 0.01,
+  "global_cases": [
+    {"gamma": 0.1, "N": 8, "family": "mixed"},
+    {"gamma": 0.5, "N": 8, "family": "mixed"},
+    {"gamma": 1.0, "N": 8, "family": "mixed"},
+    {"gamma": 0.1, "N": 8, "family": "power"},
+    {"gamma": 0.5, "N": 8, "family": "power"},
+    {"gamma": 1.0, "N": 8, "family": "power"},
+    {"gamma": 0.1, "N": 16, "family": "mixed"},
+    {"gamma": 1.0, "N": 16, "family": "mixed"}
+  ],
+  "local_gammas": [0.1, 0.5, 1.0],
+  "local_bandwidths": [4, 8, 16, 32],
+  "local_phases": ["even", "odd", "half_airy", "random"],
+  "spatial_checks": [{"gamma": 0.1, "N": 16}, {"gamma": 1.0, "N": 16}],
+  "precision_check": {"gamma": 1.0, "N": 8, "family": "mixed", "steps": 512}
+}

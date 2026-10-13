@@ -1,0 +1,19 @@
+# Observed numerical/test runtime, Python 3.13.3, macOS arm64, 2026-10-10.
+# Runtime pins are not a bitwise reproducibility guarantee across platforms.
+numpy==2.4.4
+scipy==1.18.1
+matplotlib==3.10.9
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.62.1
+kiwisolver==1.5.0
+packaging==26.2
+pillow==12.2.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+six==1.17.0
+pytest==9.1.1
+iniconfig==2.3.1
+pluggy==1.6.0
+pygments==2.21.0
+mpmath==1.3.0

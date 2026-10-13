@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "problem_id": 518,
+  "target_repository": "https://github.com/MColbrook/AIM",
+  "target_commit": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "author": "Kaiwen Jin",
+  "email": "yui.ui.siki@gmail.com",
+  "claim_status": "Solution claimed; independent mathematical review requested",
+  "numerical_code_delivery": "code_package",
+  "detailed_ai_review": "none",
+  "hash_scope": "This manifest covers all core deliverables. SHA256SUMS additionally covers this manifest and excludes itself.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "submission documentation and environment",
+      "bytes": 344,
+      "sha256": "65acb72814310ed268c06ca0e5f2fc155fc51d50f5939e726facab163e3a6e3f"
+    },
+    {
+      "path": "README.md",
+      "purpose": "submission documentation and environment",
+      "bytes": 4077,
+      "sha256": "447c10a5e5bea91b3d7a01871152cfbc1bf6e9c8881ba7a9f72805744898ac0f"
+    },
+    {
+      "path": "REPRODUCTION_REPORT.md",
+      "purpose": "submission documentation and environment",
+      "bytes": 3470,
+      "sha256": "e0a85b8164ff901033ca471985eaf48fb4884a0de22fb1becdfb6beddd4cb8dc"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "submission documentation and environment",
+      "bytes": 5285,
+      "sha256": "72e586dfd68317847b0507464963609ec96a53da5402cbe4a565517b819c1689"
+    },
+    {
+      "path": "numerical_case/README.md",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 3253,
+      "sha256": "4f615e47904906b990807ca120de158a6929c70dd487c464baecdd7057eaa6e6"
+    },
+    {
+      "path": "numerical_case/check_frequency_bounds.py",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 2033,
+      "sha256": "ed6312b97ddd0d581a46055060796f116d4f833e4799e1b5ced0d437897d8526"
+    },
+    {
+      "path": "numerical_case/config.json",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 857,
+      "sha256": "da3028d8423174e0c72a5c46165e3ddf9429cbe632c7a05c4f3be47dd393f63e"
+    },
+    {
+      "path": "numerical_case/export_publication_summary.py",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 2934,
+      "sha256": "caf22a3585c0cd6fe6a77c9b399c2c0b9598eeac6169b766dbdb0df68f3a61d5"
+    },
+    {
+      "path": "numerical_case/make_figures.py",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 5456,
+      "sha256": "66454e38ce09f7758e4e08d49086f25dc283ed7a008c064013a941e1cfcd7ea6"
+    },
+    {
+      "path": "numerical_case/run_study.py",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 13063,
+      "sha256": "26f5121f0e448030235b3cac47414302dff74ae21bf28bf88fbefee5164251a5"
+    },
+    {
+      "path": "numerical_case/summary/README.md",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 1735,
+      "sha256": "62b27b493f48b512c91ef1129932067ee5f9369499d445f17e2c1b960a6caebe"
+    },
+    {
+      "path": "numerical_case/summary/defect_accumulation.csv",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 1203,
+      "sha256": "8374df21df3e9aec47decdeb6b7032633e546c1967367ab46e6f1b3705f5b27c"
+    },
+    {
+      "path": "numerical_case/summary/export_receipt.json",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 1748,
+      "sha256": "72a7496a50fe5b804151c4372486bf5cb5c34b6fcf06157e4fb0eade00d042d6"
+    },
+    {
+      "path": "numerical_case/summary/frequency_checks.json",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 289,
+      "sha256": "8bc143d145f15200b89fc847e4b6f169cfa7794eb4964dc5fcf2918c8e4aefc5"
+    },
+    {
+      "path": "numerical_case/summary/global_summary.csv",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 10923,
+      "sha256": "e3cf65efb92932a2fc377ff392a8e794ab4e9273ac4a6073b2ae2ef883c66d11"
+    },
+    {
+      "path": "numerical_case/summary/local_summary.csv",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 4406,
+      "sha256": "8057a999a67cdb791f8adad819adcca9740d1f5fb91cac18c400cb0e00ed3da8"
+    },
+    {
+      "path": "numerical_case/summary/rough_ode_validation.json",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 747,
+      "sha256": "5b7a075c9941d43a73324e256c50884c49c6ecef5a300dd5dd9d6ffb721a3483"
+    },
+    {
+      "path": "numerical_case/summary/run_manifest.json",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 2568,
+      "sha256": "c6764f3cbee8bb4a5a993a35e6fec13e95b6e53714724e22e611024867ef29a9"
+    },
+    {
+      "path": "numerical_case/summary/validation.json",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 1169,
+      "sha256": "0ed847fb7fa60714acc5bcaaa907a31d411e29ba3dea79ea7a0e712a2781fe23"
+    },
+    {
+      "path": "numerical_case/validate_rough_ode.py",
+      "purpose": "numerical case and compact evidence",
+      "bytes": 1692,
+      "sha256": "93e75059ea32fb0699551a380d2d92db58ff5b342551f30b0d1e991a4ce483d0"
+    },
+    {
+      "path": "paper/README.md",
+      "purpose": "manuscript",
+      "bytes": 1208,
+      "sha256": "38c0f67212b4c569e51b93adfa82d0b8022374f8a77f0df2e54b24539deeb174"
+    },
+    {
+      "path": "paper/figures/defect_accumulation.pdf",
+      "purpose": "figure",
+      "bytes": 22534,
+      "sha256": "c695aa89d591ee0b3f27a5e89dca8552500f27390ad2df8d98097b06a34acdd1"
+    },
+    {
+      "path": "paper/figures/global_convergence.pdf",
+      "purpose": "figure",
+      "bytes": 25793,
+      "sha256": "fd98513c4daf1b2f9a7b6c1f327455fe556dec7ae767e77aee24f3554b071fe7"
+    },
+    {
+      "path": "paper/figures/local_remainder.pdf",
+      "purpose": "figure",
+      "bytes": 27245,
+      "sha256": "2aa581990fd2c5eb3f4a1fac5b3c719ee8e82afc360e0da4298fbb73fa303512"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "manuscript",
+      "bytes": 471941,
+      "sha256": "5d6432bf9c097991bf5d853f38e831a539b4f052f0ccf4010bba6e37b54507b6"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "manuscript",
+      "bytes": 51523,
+      "sha256": "2e6b8036110b66415e484a6b4a44538c8312f71dd6fcbcec6b5df639c6ffab5d"
+    },
+    {
+      "path": "paper/numerical_summary.json",
+      "purpose": "manuscript",
+      "bytes": 645,
+      "sha256": "5ba7b834d6ab2a0ddc467a2fa40d3eacb9d4847b3e370bd56d3ab4b340e4ddc0"
+    },
+    {
+      "path": "paper/numerical_table.tex",
+      "purpose": "manuscript",
+      "bytes": 590,
+      "sha256": "80ce271169bd39a2e871fabcacd0fac55645c1cf4cb62aa7aabc94cd01fe834e"
+    },
+    {
+      "path": "pyproject.toml",
+      "purpose": "submission documentation and environment",
+      "bytes": 513,
+      "sha256": "62073b72012597424817ba75e33d208824b0d2f869d70558517a7010e9b73149"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "purpose": "submission documentation and environment",
+      "bytes": 431,
+      "sha256": "098dca3b3e3ddc4c451dcd6280eff07c812aa4b380121c75566cff40a493947e"
+    },
+    {
+      "path": "src/README.md",
+      "purpose": "numerical source",
+      "bytes": 2685,
+      "sha256": "3ce064f7536d33600850251b291df6cdca898bff98ab18fb7cbde1a233524ba7"
+    },
+    {
+      "path": "src/kdvlogloss/__init__.py",
+      "purpose": "numerical source",
+      "bytes": 461,
+      "sha256": "ce0bd7e531eaa3e2230d1ce17621358f3a2301749ecf76fd16445c9c7b68f158"
+    },
+    {
+      "path": "src/kdvlogloss/fourier.py",
+      "purpose": "numerical source",
+      "bytes": 3229,
+      "sha256": "1a2c5a6b509ac6cfd8770b4231e55a2a820d4ca3c0fe62a4743c3e552f5d9e53"
+    },
+    {
+      "path": "src/kdvlogloss/integrator.py",
+      "purpose": "numerical source",
+      "bytes": 2963,
+      "sha256": "4fed8d6cafc4dc9f8e4dc79579002775f80d98a93f9848e20cfc2f5615a43796"
+    },
+    {
+      "path": "src/kdvlogloss/remainder.py",
+      "purpose": "numerical source",
+      "bytes": 3621,
+      "sha256": "b942e9b6f6522f34934f75e4e6b250497924e0c9dbcac653e131821c31688f31"
+    },
+    {
+      "path": "test/README.md",
+      "purpose": "numerical tests",
+      "bytes": 1074,
+      "sha256": "1e326327ff62273a5ea194b26129ac1dfbcfe3bba046de483ecda1ca75a7b6de"
+    },
+    {
+      "path": "test/test_high_precision.py",
+      "purpose": "numerical tests",
+      "bytes": 2190,
+      "sha256": "db79b6c05e821d923b305f893ee864adb4ad3a1d69419bc08c13484574c491c7"
+    },
+    {
+      "path": "test/test_integrator.py",
+      "purpose": "numerical tests",
+      "bytes": 4317,
+      "sha256": "ca8e30fe947fbaa6af1e05dd6f352d49783c0b5136414efe3bc7e47214122200"
+    },
+    {
+      "path": "test/test_remainder.py",
+      "purpose": "numerical tests",
+      "bytes": 2713,
+      "sha256": "179f487fe82fd60c1f52b1d7f1cec556f12b2ad9890806abf031d60aaa869b4e"
+    }
+  ]
+}

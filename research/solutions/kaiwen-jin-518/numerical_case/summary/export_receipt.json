@@ -1,0 +1,26 @@
+{
+  "classification": "NUMERICAL EVIDENCE; compact publication inputs",
+  "local_raw_directory": "numerical_case/results",
+  "raw_directory_version_controlled": false,
+  "selected_defect_case": "mixed_g0.1_N16_L16",
+  "selected_defect_samples": 17,
+  "source_archive_sha256": {
+    "global_summary.csv": "e3cf65efb92932a2fc377ff392a8e794ab4e9273ac4a6073b2ae2ef883c66d11",
+    "local_summary.csv": "8057a999a67cdb791f8adad819adcca9740d1f5fb91cac18c400cb0e00ed3da8",
+    "manifest.json": "c6764f3cbee8bb4a5a993a35e6fec13e95b6e53714724e22e611024867ef29a9",
+    "validation.json": "0ed847fb7fa60714acc5bcaaa907a31d411e29ba3dea79ea7a0e712a2781fe23",
+    "rough_ode_validation.json": "5b7a075c9941d43a73324e256c50884c49c6ecef5a300dd5dd9d6ffb721a3483",
+    "frequency_checks.json": "8bc143d145f15200b89fc847e4b6f169cfa7794eb4964dc5fcf2918c8e4aefc5",
+    "checkpoints/mixed_g0.1_N16_L16.npz": "1f9283fdeaa14d0b5792cad2d6ed9543715a05947e8f5675021868de97ac829c"
+  },
+  "exported_files": {
+    "global_summary.csv": "e3cf65efb92932a2fc377ff392a8e794ab4e9273ac4a6073b2ae2ef883c66d11",
+    "local_summary.csv": "8057a999a67cdb791f8adad819adcca9740d1f5fb91cac18c400cb0e00ed3da8",
+    "run_manifest.json": "c6764f3cbee8bb4a5a993a35e6fec13e95b6e53714724e22e611024867ef29a9",
+    "validation.json": "0ed847fb7fa60714acc5bcaaa907a31d411e29ba3dea79ea7a0e712a2781fe23",
+    "rough_ode_validation.json": "5b7a075c9941d43a73324e256c50884c49c6ecef5a300dd5dd9d6ffb721a3483",
+    "frequency_checks.json": "8bc143d145f15200b89fc847e4b6f169cfa7794eb4964dc5fcf2918c8e4aefc5",
+    "defect_accumulation.csv": "8374df21df3e9aec47decdeb6b7032633e546c1967367ab46e6f1b3705f5b27c"
+  },
+  "scope": "Measured scalar summaries and plot inputs; no Fourier trajectories or checkpoints"
+}

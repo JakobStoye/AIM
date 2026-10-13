@@ -1,0 +1,55 @@
+{
+  "spatial": [
+    {
+      "case": "mixed_g0.1_N16",
+      "K": 64,
+      "K_fine": 128,
+      "steps": 512,
+      "reference_full_space_difference": 2.6667890592568826e-12,
+      "numerical_full_space_difference": 1.0449661573333676e-11
+    },
+    {
+      "case": "mixed_g1_N16",
+      "K": 64,
+      "K_fine": 128,
+      "steps": 512,
+      "reference_full_space_difference": 1.7170812719180682e-15,
+      "numerical_full_space_difference": 6.117540597454622e-16
+    }
+  ],
+  "precision": {
+    "case": "mixed_g1_N8",
+    "steps": 512,
+    "longdouble_mantissa_bits": 52,
+    "numerical_difference": 4.4319129107136267e-16,
+    "reference_difference": 1.3752089444897018e-15
+  },
+  "independent_ode": {
+    "method": "DOP853",
+    "K": 12,
+    "T": 0.12,
+    "rtol": [
+      1e-10,
+      2e-12
+    ],
+    "atol": [
+      1e-12,
+      2e-14
+    ],
+    "reference_tolerance_difference": 9.627463037659002e-12,
+    "steps": [
+      32,
+      64,
+      128
+    ],
+    "max_errors": [
+      4.2851957832709435e-07,
+      1.0669162963555001e-07,
+      2.6613005006185054e-08
+    ],
+    "refinement_ratios": [
+      4.016431090150958,
+      4.0090034782150346
+    ]
+  }
+}

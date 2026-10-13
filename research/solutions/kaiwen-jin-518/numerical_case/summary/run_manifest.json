@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-10-10T12:20:20.064518+00:00",
+  "config": {
+    "seed": 518,
+    "final_time": 0.25,
+    "data_norm": 2.0,
+    "steps": [
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "reference_steps": [
+      8192,
+      16384
+    ],
+    "reference_quality_fraction": 0.01,
+    "global_cases": [
+      {
+        "gamma": 0.1,
+        "N": 8,
+        "family": "mixed"
+      },
+      {
+        "gamma": 0.5,
+        "N": 8,
+        "family": "mixed"
+      },
+      {
+        "gamma": 1.0,
+        "N": 8,
+        "family": "mixed"
+      },
+      {
+        "gamma": 0.1,
+        "N": 8,
+        "family": "power"
+      },
+      {
+        "gamma": 0.5,
+        "N": 8,
+        "family": "power"
+      },
+      {
+        "gamma": 1.0,
+        "N": 8,
+        "family": "power"
+      },
+      {
+        "gamma": 0.1,
+        "N": 16,
+        "family": "mixed"
+      },
+      {
+        "gamma": 1.0,
+        "N": 16,
+        "family": "mixed"
+      }
+    ],
+    "local_gammas": [
+      0.1,
+      0.5,
+      1.0
+    ],
+    "local_bandwidths": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "local_phases": [
+      "even",
+      "odd",
+      "half_airy",
+      "random"
+    ],
+    "spatial_checks": [
+      {
+        "gamma": 0.1,
+        "N": 16
+      },
+      {
+        "gamma": 1.0,
+        "N": 16
+      }
+    ],
+    "precision_check": {
+      "gamma": 1.0,
+      "N": 8,
+      "family": "mixed",
+      "steps": 512
+    }
+  },
+  "seed": 518,
+  "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "numpy": "2.4.4",
+  "scipy": "1.18.1",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "wall_seconds": 84.27649887499865,
+  "peak_rss_bytes": 390070272,
+  "source_hashes": {
+    "src/kdvlogloss/__init__.py": "ce0bd7e531eaa3e2230d1ce17621358f3a2301749ecf76fd16445c9c7b68f158",
+    "src/kdvlogloss/fourier.py": "1a2c5a6b509ac6cfd8770b4231e55a2a820d4ca3c0fe62a4743c3e552f5d9e53",
+    "src/kdvlogloss/integrator.py": "4fed8d6cafc4dc9f8e4dc79579002775f80d98a93f9848e20cfc2f5615a43796",
+    "src/kdvlogloss/remainder.py": "b942e9b6f6522f34934f75e4e6b250497924e0c9dbcac653e131821c31688f31",
+    "numerical_case/run_study.py": "26f5121f0e448030235b3cac47414302dff74ae21bf28bf88fbefee5164251a5"
+  },
+  "global_rows": 48,
+  "local_rows": 48,
+  "quality_pass_rows": 48,
+  "classification": "NUMERICAL EVIDENCE; finite bandwidths and nonrigorous references"
+}
