@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newcommand{\VR}{\operatorname{VR}_{<}}
+\newcommand{\conv}{\operatorname{conv}}
+\title{Six points with a contractible Rips shadow and nontrivial fundamental group}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{13 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The affine projection from a Euclidean Vietoris--Rips complex to its shadow
+need not be injective on fundamental groups. We give six rational points in
+three-dimensional space whose Rips complex retracts onto a four-cycle, while
+its shadow is the union of two convex quadrilaterals containing the origin
+and is therefore contractible. Scaling and isometric inclusion give the same
+failure in every ambient dimension at least three and at every positive scale.
+This refutes the injectivity conjecture of Adamaszek, Frick and Vakili.
+\end{abstract}
+
+For a nonempty finite set $X\subset\mathbb R^n$ and a scale $r>0$, let
+\[
+ K=\VR(X;r)=\{\sigma\subseteq X:\operatorname{diam}(\sigma)<r\},
+ \qquad
+ S(X;r)=\bigcup_{\sigma\in K}\conv(\sigma),
+\]
+where distances are Euclidean. The vertex inclusion extends affinely on each
+abstract simplex to a continuous map $p:|K|\to S(X;r)$, called the shadow map.
+The complex is determined by its edges: a set of vertices spans a simplex
+exactly when every pair is at distance less than $r$.
+
+Chambers, de Silva, Erickson and Ghrist proved that the shadow map induces an
+isomorphism on fundamental groups for planar samples
+\cite[Theorem~3.1]{CDSEG}. The strict and non-strict scale conventions are
+equivalent for these finite-sample statements by choosing a scale in a gap
+between the finitely many distances \cite[Remark~1.4]{AFV}.
+Adamaszek, Frick and Vakili proved surjectivity in three-dimensional space
+\cite[Theorem~I]{AFV} and conjectured injectivity in all dimensions
+\cite[Conjecture~7.2]{AFV}. The following example answers that fixed-sample
+question negatively already in dimension three.
+
+\begin{theorem}\label{thm:counterexample}
+For every integer $n\ge3$ and every $r>0$, there is a six-point set
+$X\subset\mathbb R^n$ such that $S(X;r)$ is contractible and
+\[
+ \pi_1(|\VR(X;r)|,v)\cong\mathbb Z
+ \qquad\text{for every }v\in X.
+\]
+Consequently the affine shadow map is not injective on fundamental groups
+at any sample base vertex.
+\end{theorem}
+
+\begin{proof}
+We first take $n=3$ and $r=1$. Put
+\[
+ a=\frac9{20},\qquad b=\frac{501}{1000},\qquad s=\frac{309}{1000},
+\]
+and let $X=\{v_0,\ldots,v_5\}$, where
+\begin{align*}
+ v_0&=(a,s,0),&v_1&=(a,-s,0),&v_2&=(-b,0,0),\\
+ v_3&=(b,0,0),&v_4&=(-a,0,s),&v_5&=(-a,0,-s).
+\end{align*}
+All six points are distinct. The following table lists every unordered pair;
+the notation $ij$ denotes the pair $\{v_i,v_j\}$.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Pairs & Squared distance & Comparison with $1$\\
+\midrule
+$01,45$ & $4s^2=95481/250000$ & $<1$\\
+$02,12,34,35$ & $(a+b)^2+s^2=499941/500000$ & $<1$\\
+$03,13,24,25$ & $(b-a)^2+s^2=49041/500000$ & $<1$\\
+$04,05,14,15$ & $4a^2+2s^2=500481/500000$ & $>1$\\
+$23$ & $4b^2=251001/250000$ & $>1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular, no distance equals the threshold. The only maximal simplices
+of $K=\VR(X;1)$ are
+\[
+ [012],\quad[013],\quad[245],\quad[345].\tag{1}
+\]
+Indeed, there is no edge between $\{0,1\}$ and $\{4,5\}$, and the edge $23$
+is missing. On each of the vertex sets $\{0,1,2,3\}$ and $\{2,3,4,5\}$,
+this leaves precisely the two triangles displayed in (1).
+
+Let $C\subset K$ be the four-cycle with ordered vertices $2,0,3,4$.
+Define a map on abstract vertices by
+\[
+ f(1)=0,\qquad f(5)=4,\qquad f(i)=i\quad(i\in\{0,2,3,4\}).
+\]
+It sends the four triangles in (1) to the edges $[02],[03],[24],[34]$,
+respectively, and extends to a simplicial retraction $f:|K|\to|C|$.
+Moreover, for every simplex $\sigma$ in (1), the vertices of
+$\sigma\cup f(\sigma)$ are still contained in $\sigma$. In the standard
+barycentric realization, therefore,
+\[
+ H(u,t)=(1-t)u+t f(u),\qquad 0\le t\le1,
+\]
+stays in that same simplex. These affine formulas agree on shared faces,
+and $H$ fixes $|C|$ pointwise. Thus $|K|$ strongly deformation retracts onto
+the four-cycle. Its fundamental group is infinite cyclic
+\cite[Theorem~1.7 and Proposition~1.17]{Hatcher}; a generator at $v_2$ is the
+edge loop
+\[
+ \gamma=(v_2,v_0,v_3,v_4,v_2).\tag{2}
+\]
+
+The shadow has a different topology. Set
+\[
+ Q_1=\conv\{v_0,v_1,v_2\}\cup\conv\{v_0,v_1,v_3\},\qquad
+ Q_2=\conv\{v_2,v_4,v_5\}\cup\conv\{v_3,v_4,v_5\}.
+\]
+By (1), the whole shadow is $Q_1\cup Q_2$. In the $xy$-plane the first
+triangle has slices
+$-b\le x\le a$, $|y|\le s(x+b)/(a+b)$, and the second has slices
+$a\le x\le b$, $|y|\le s(b-x)/(b-a)$. Since $0<a<b$, their union is exactly
+\[
+ Q_1=\left\{(x,y,0):
+ |y|\le\frac{s(x+b)}{a+b},\quad
+ |y|\le\frac{s(b-x)}{b-a}\right\}.\tag{3}
+\]
+The two bounds agree at $x=a$; the first is smaller for $x\le a$ and the
+second for $x\ge a$. Their nonnegativity forces $-b\le x\le b$.
+The four linear inequalities in (3) show that $Q_1$ is a convex
+quadrilateral. It contains the entire axis segment $[v_2,v_3]$.
+The linear isometry $(x,y,z)\mapsto(-x,z,y)$ sends $Q_1$ to $Q_2$,
+so $Q_2$ is also convex and contains that segment.
+
+Both quadrilaterals contain the origin. Hence
+\[
+ h(w,t)=(1-t)w,\qquad w\in Q_1\cup Q_2,\quad 0\le t\le1,
+\]
+is a contraction of the shadow: a point stays in whichever convex
+quadrilateral originally contains it. The projected loop $p(\gamma)$ is
+therefore null-homotopic, whereas (2) is nontrivial in $|K|$.
+The complex is connected, so its fundamental group is infinite cyclic at
+every sample base vertex \cite[Proposition~1.5]{Hatcher}; the contractible
+shadow has trivial fundamental group at all of them.
+
+For $n\ge3$, append $n-3$ zero coordinates. For any prescribed $r>0$,
+multiply the six points by $r$. Squared distances and the squared threshold
+are both multiplied by $r^2$, giving exactly the same abstract complex,
+while the shadow is carried to the new one by an isometric inclusion and
+a positive scaling. This proves the theorem.
+\end{proof}
+
+The segment $[v_2,v_3]$ explains the lost loop. Its endpoints are too far
+apart to be a Rips edge, but the segment lies in both planar parts of the
+shadow. The two abstract triangulated disks meet only in the vertices
+$v_2,v_3$; their shadows meet along the whole segment.
+
+\paragraph{Exact verification.}
+The accompanying standard-library Python code enumerates the exact rational
+distances and all simplices, checks the carried vertex retraction, and checks
+an integer simplicial cocycle taking value $1$ on (2). These finite checks
+supplement the explicit homotopies above.
+
+\begin{thebibliography}{9}
+\bibitem{AFV}
+Micha\l{} Adamaszek, Florian Frick and Adrien Vakili,
+\emph{On homotopy types of Euclidean Rips complexes},
+\href{https://arxiv.org/abs/1602.04131v1}{arXiv:1602.04131v1}, 2016.
+
+\bibitem{CDSEG}
+Erin W. Chambers, Vin de Silva, Jeff Erickson and Robert Ghrist,
+\emph{Rips Complexes of Planar Point Sets},
+\href{https://arxiv.org/abs/0712.0395v1}{arXiv:0712.0395v1}, 2007.
+
+\bibitem{Hatcher}
+Allen Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002.
+\href{https://math.uchicago.edu/~farb/algtop2023/Hatcher.pdf}{Original monograph PDF}.
+\end{thebibliography}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used to develop and analyze the construction, check exact
+arithmetic, and draft the manuscript and verification code. The mathematical
+argument is given in full above. Independent mathematical review is requested.
+\end{document}
