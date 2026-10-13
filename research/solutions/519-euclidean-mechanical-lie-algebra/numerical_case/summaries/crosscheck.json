@@ -1,0 +1,24 @@
+{
+  "polynomial_calibrations": [
+    {
+      "dimension": 2,
+      "potential_degree": 5,
+      "seed": 519,
+      "checks": 40
+    },
+    {
+      "dimension": 2,
+      "potential_degree": 5,
+      "seed": 2026,
+      "checks": 40
+    }
+  ],
+  "lowering_max_order": 5,
+  "iterated_lowering_cases": 8,
+  "iterated_lowering_steps": 17,
+  "max_initial_degree": 4,
+  "max_final_potential_terms": 105,
+  "all_passed": true,
+  "exact_arithmetic": true,
+  "elapsed_seconds": 0.146
+}
