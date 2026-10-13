@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "problem_id": 398,
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "result_type": "analytic counterexample",
+  "claim_status": "solution claim; independent mathematical review requested",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Exclude disposable LaTeX build files",
+      "sha256": "0d7ba81615f64b9ed3561c68164bd9ac838d3967bc64dac8b11d6e583c3eea9c"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Package description, build instructions and AI-use statement",
+      "sha256": "312562df230202d062ea80900e687d89adf8de698ce12e8bca2ef5d359a9ce76"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Exact original-target correspondence",
+      "sha256": "db2ab3519d5fb71146a8afa65232fd35a0ec101296f535ef03ce00f5518e30cd"
+    },
+    {
+      "path": "paper/obstacle_control_counterexample.pdf",
+      "purpose": "Rendered complete analytic manuscript",
+      "sha256": "0847f6c6f4b8dc67b9e07e4cceb91de5eda8537e050b75690bc0e196b81ff1a9"
+    },
+    {
+      "path": "paper/obstacle_control_counterexample.tex",
+      "purpose": "Complete editable analytic manuscript",
+      "sha256": "f76504ce36512f297e68f506ef3db976ba3c74c0e3813a8d30fa22af05f2b305"
+    }
+  ],
+  "integrity_files": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "integrity_convention": "SHA256SUMS binds every listed payload and PUBLIC_MANIFEST.json; it omits itself."
+}
