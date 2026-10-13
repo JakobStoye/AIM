@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "title": "Least singular values of independent random tensor columns",
+  "author": "Kaiwen Jin",
+  "manuscript_contact": "yui.ui.siki@gmail.com",
+  "claim_status": "Complete analytic solution claim awaiting independent mathematical review",
+  "created_at": "2026-10-12T22:46:50.166271+00:00",
+  "problem_id": "562",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "target_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/562-tensor-singular-value.md",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "1ac4025a996d0f2996e883c9da4ec928d437a17095b9c833287014bc7ff307db",
+      "purpose": "Package entry point and build instructions"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "df6befb2f24804c445184e259dcaa615bc4562e39151b80344fc8ee19f409fc0",
+      "purpose": "Original-target comparison and source roles"
+    },
+    {
+      "path": "paper/main.tex",
+      "sha256": "7f2d34a01a23d907da6f8b572aa3aa65f4261f794c2a6fc2520f5bc698b353fe",
+      "purpose": "Standalone editable full manuscript"
+    },
+    {
+      "path": "paper/main.pdf",
+      "sha256": "c2582f70c16fe53af32577d2009db98e5876a505e7926d11a44d233703b7733e",
+      "purpose": "Final complete manuscript; 10 pages"
+    }
+  ],
+  "hash_scope": "Payload file hashes are above. SHA256SUMS also hashes this manifest; the hash sidecar does not hash itself.",
+  "sidecars": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "detailed_ai_review": "none",
+  "numerical_or_formal_material": "not applicable to this analytic proof"
+}
