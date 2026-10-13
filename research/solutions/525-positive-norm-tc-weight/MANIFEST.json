@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "problem_id": "525",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic counterexample claim",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1915,
+      "sha256": "9b0983c782cb940612676c46c1fba99daf9d3aa2ac6e11de8c40adf646ce170e"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 3646,
+      "sha256": "f46a417360ae7f09a5d6ad4c9915ad999f8ddba352abc1e909b522850273c867"
+    },
+    {
+      "path": "paper/counterexample.tex",
+      "bytes": 9559,
+      "sha256": "8637a66851ecd1dc06aadfcaca310f107ab06b5cf8d8c31aa330acc91bfff8be"
+    },
+    {
+      "path": "paper/counterexample.pdf",
+      "bytes": 252894,
+      "sha256": "ae98f3f89c27ede57c548925371238880a6c25f6dbcd365bdb0f2e17c1ca1e16"
+    }
+  ]
+}
