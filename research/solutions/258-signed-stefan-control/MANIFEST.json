@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "problem_id": 258,
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "files": {
+    "README.md": {
+      "sha256": "177edc0c9a28cd6976b637fbe06bef1c310390b77d8cce9bbfaad57e006f9468",
+      "bytes": 2155,
+      "purpose": "Public entry point, scope, build instructions and AI-use disclosure"
+    },
+    "TARGET_COMPARISON.md": {
+      "sha256": "2b1580288cec3a08b3c23023580ca388cf886df9af4906eb490aa165dfcbf580",
+      "bytes": 2891,
+      "purpose": "Correspondence with the full pinned target"
+    },
+    "stefan_signed_control.tex": {
+      "sha256": "a0dba10e0e9ad7ac9a57386e6760a3c6570735c02b1404c60ddd0814314dc21c",
+      "bytes": 27330,
+      "purpose": "Complete editable standalone manuscript"
+    },
+    "stefan_signed_control.pdf": {
+      "sha256": "9d4063f81935e1cc5f588d099e5d50424451d6948b98afd76ef2e517d87573a9",
+      "bytes": 260258,
+      "purpose": "Compiled complete manuscript"
+    }
+  }
+}
