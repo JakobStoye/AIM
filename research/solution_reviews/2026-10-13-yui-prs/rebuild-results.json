@@ -1,0 +1,362 @@
+[
+  {
+    "pr": 88,
+    "source": "research/solutions/574-trap-draws-percolation/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-88\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-88\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 87,
+    "source": "research/solutions/582-accumulating-gaps/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-87\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-87\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 86,
+    "source": "research/solutions/kaiwen-jin-527-negative-jump-flow/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-86\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-86\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 85,
+    "source": "research/solutions/494-degree-zero-interleaving-counterexample/paper/interleaving_counterexample.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-85\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-85\\interleaving_counterexample.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 84,
+    "source": "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-84\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-84\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 83,
+    "source": "research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-83\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-83\\uniform_derivative_integration.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 82,
+    "source": "research/solutions/636-uniform-jack-normal/paper/jack_normal.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-82\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-82\\jack_normal.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 81,
+    "source": "research/solutions/615-gambler-scaling/paper/gambler_scaling.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-81\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-81\\gambler_scaling.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 80,
+    "source": "research/solutions/584-four-color-branched-ray/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-80\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-80\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 79,
+    "source": "research/solutions/583-regular-tree-one-dependent-coloring/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-79\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-79\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 78,
+    "source": "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-78\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-78\\ising_replica_covariance.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 77,
+    "source": "research/solutions/559-univariate-trace-decidability/paper/trace_decidability.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-77\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-77\\trace_decidability.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 76,
+    "source": "research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-76\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-76\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 75,
+    "source": "research/solutions/kaiwen-jin-516/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-75\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-75\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 74,
+    "source": "research/solutions/507-sequential-private-spectral-density/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-74\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-74\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 73,
+    "source": "research/solutions/515-gspo-counterexample/paper/counterexample.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-73\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-73\\counterexample.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 72,
+    "source": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-72\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-72\\mixed_private_density.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 71,
+    "source": "research/solutions/051-potential-on-general-manifold/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-71\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-71\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 70,
+    "source": "research/solutions/434-p-harmonic-second-sobolev-derivatives/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-70\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-70\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 69,
+    "source": "research/solutions/451-mixed-sobolev-counterexample/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-69\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-69\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 68,
+    "source": "research/solutions/597-entropy-chain-rule-lipschitz/paper/manuscript.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-68\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-68\\manuscript.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 67,
+    "source": "research/solutions/300-carrying-simplex-interior/paper/interior_smoothness.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-67\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-67\\interior_smoothness.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 66,
+    "source": "research/solutions/063-geodesic-scattering/paper/geodesic_scattering.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-66\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-66\\geodesic_scattering.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 64,
+    "source": "research/solutions/431-dtn-analyticity-continuous-boundary/paper/dtn_analyticity.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-64\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-64\\dtn_analyticity.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 60,
+    "source": "research/solutions/010-mercedes-disk-partition/paper/mercedes_partition.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-60\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-60\\mercedes_partition.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 58,
+    "source": "research/solutions/415-nongradient-neumann-uniform-control/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-58\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-58\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 57,
+    "source": "research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-57\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-57\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 56,
+    "source": "research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-56\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-56\\obstacle_control_counterexample.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 54,
+    "source": "research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-54\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-54\\exterior_observability.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 53,
+    "source": "research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-53\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-53\\equal_speed_observability.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 52,
+    "source": "research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-52\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-52\\obstruction.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 51,
+    "source": "research/solutions/258-signed-stefan-control/stefan_signed_control.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-51\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-51\\stefan_signed_control.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 49,
+    "source": "research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-49\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-49\\heat_tracking.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 48,
+    "source": "research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-48\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-48\\manuscript.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 46,
+    "source": "research/solutions/555-nonadaptive-randomization-gain/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-46\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-46\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 45,
+    "source": "research/solutions/067-burgers-shock-uniform-control-time/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-45\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-45\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 40,
+    "source": "research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-40\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-40\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 39,
+    "source": "research/solutions/kaiwen-jin-517/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-39\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-39\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 38,
+    "source": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": false,
+    "log": "<scratch>\\rebuilt\\pr-38\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-38\\main.pdf",
+    "last_log": ""
+  },
+  {
+    "pr": 37,
+    "source": "research/solutions/kaiwen-jin-518/paper/main.tex",
+    "exit_code": 0,
+    "same_extracted_text": true,
+    "log": "<scratch>\\rebuilt\\pr-37\\rebuild.log",
+    "pdf": "<scratch>\\rebuilt\\pr-37\\main.pdf",
+    "last_log": ""
+  }
+]

@@ -1,0 +1,255 @@
+{
+  "manifests": 4,
+  "payload_checks": 41,
+  "errors": [],
+  "legitimate_runner_refreshes": [
+    "<scratch>\\pr-39\\research\\solutions\\kaiwen-jin-517\\numerical_case\\summaries\\paper_results.json"
+  ],
+  "records": [
+    {
+      "manifest": "pr-38\\research\\solutions\\633-kaiwen-jin-freudenthal-potentials\\src\\freudenthal\\certificates\\manifest.json",
+      "path": "verification_data.zip",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-38\\research\\solutions\\633-kaiwen-jin-freudenthal-potentials\\src\\freudenthal\\certificates\\manifest.json",
+      "path": "all_degree_rules.json.gz",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-38\\research\\solutions\\633-kaiwen-jin-freudenthal-potentials\\src\\freudenthal\\certificates\\manifest.json",
+      "path": "all_degree_rules.json.gz (uncompressed)",
+      "verified": true
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": ".gitignore",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "ENVIRONMENT.json",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "README.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "REPRODUCTION_RECORD.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "TARGET_COMPARISON.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/README.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/config.json",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/figures/determinant_comparison.pdf",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/figures/radial_spectra.pdf",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/plot_cases.py",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/run_cases.py",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "numerical_case/summaries/paper_results.json",
+      "verified": true,
+      "source": "C:\\Users\\MatthewColbrook\\.codex\\visualizations\\2026\\10\\01\\01a0f88a-46a6-73c1-ae0f-23d167c70a94\\yui-review-2026-10-13\\pr-39\\research\\solutions\\kaiwen-jin-517\\numerical_case\\summaries\\paper_results.json"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "paper/REFERENCE_GUIDE.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "paper/main.pdf",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "paper/main.tex",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "paper/references.bib",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "pyproject.toml",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "requirements.txt",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "src/README.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "src/elliptic_widths/__init__.py",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "src/elliptic_widths/radial.py",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "src/elliptic_widths/spectral.py",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "test/README.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-39\\research\\solutions\\kaiwen-jin-517\\MANIFEST.json",
+      "path": "test/test_radial.py",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-51\\research\\solutions\\258-signed-stefan-control\\MANIFEST.json",
+      "path": "README.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-51\\research\\solutions\\258-signed-stefan-control\\MANIFEST.json",
+      "path": "TARGET_COMPARISON.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-51\\research\\solutions\\258-signed-stefan-control\\MANIFEST.json",
+      "path": "stefan_signed_control.tex",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-51\\research\\solutions\\258-signed-stefan-control\\MANIFEST.json",
+      "path": "stefan_signed_control.pdf",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": ".gitignore",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "ENVIRONMENT.json",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "README.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "REPRODUCTION_RECORD.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "TARGET_COMPARISON.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "paper/REFERENCE_GUIDE.md",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "paper/main.pdf",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "paper/main.tex",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "verification/summary.json",
+      "verified": true,
+      "source": "pinned package"
+    },
+    {
+      "manifest": "pr-75\\research\\solutions\\kaiwen-jin-516\\MANIFEST.json",
+      "path": "verification/verify_small_graphs.py",
+      "verified": true,
+      "source": "pinned package"
+    }
+  ]
+}

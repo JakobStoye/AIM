@@ -14,13 +14,13 @@
       "purpose": "Correspondence with the full pinned target"
     },
     "stefan_signed_control.tex": {
-      "sha256": "a0dba10e0e9ad7ac9a57386e6760a3c6570735c02b1404c60ddd0814314dc21c",
-      "bytes": 27330,
+      "sha256": "16c60a4c750575950e38046b6d703a6d9b75aea4cf48c371de65a62fe5c9d51e",
+      "bytes": 27328,
       "purpose": "Complete editable standalone manuscript"
     },
     "stefan_signed_control.pdf": {
-      "sha256": "9d4063f81935e1cc5f588d099e5d50424451d6948b98afd76ef2e517d87573a9",
-      "bytes": 260258,
+      "sha256": "6789babfc19d2cf8ec5a391640d5df734840d9fcd2ecd7b9ac4341dad6b771f6",
+      "bytes": 288752,
       "purpose": "Compiled complete manuscript"
     }
   }

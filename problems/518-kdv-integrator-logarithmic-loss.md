@@ -2,9 +2,9 @@
 
 **Area:** Numerical PDE analysis and dispersive equations
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -60,6 +60,8 @@ KdV describes nonlinear dispersive waves, including long shallow-water waves. Ro
 
 ## Status review
 
-Reference [1] proves the displayed error bound with an additional factor $`\log(1/\tau)`$ and explicitly leaves its necessity unresolved. Reference [2] proves convergence for negative Sobolev regularity using a filtered scheme and an $`H^{-1/2}`$ error norm. Those results do not establish the proposed estimate for the scheme above.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/kaiwen-jin-518/paper/main.pdf) establishes the full original target. Affirmative: logarithm-free unfiltered Li-Wu L2 convergence for every0<gamma<=1, uniformly on bounded Hgamma balls.
 
-Searches on 24 September 2026, including author publications and indexed arXiv, Zenodo, GitHub and Palomar records, found no matching resolution or announced solution.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/518-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #37](https://github.com/MColbrook/AIM/pull/37) at `24ab3fa10db1f33a143f32876c6ae5b023782933`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

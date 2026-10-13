@@ -2,9 +2,9 @@
 
 **Area:** Applied probability and random combinatorial games
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -33,6 +33,8 @@ The game connects optimal strategies on random networks to maximum-cardinality m
 
 ## Status review
 
-At $`p=0`$ the full lattice gives a draw. For sufficiently large deletion probability every open cluster is finite, excluding draws. The asymmetric model in [1], with different deletion probabilities on the two parity classes, also has a proved region without draws; this does not settle equal positive deletion probabilities.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/574-trap-draws-percolation/paper/main.pdf) establishes the full original target. No planar Trap draws for any interior deletion probability, and positive draws at some positive deletion probability in every higher dimension.
 
-The later discussion [2] retains the undirected question. The planar no-draw result in [3] permits only steps in two positive coordinate directions and therefore does not resolve this problem. Current literature, arXiv-indexed, public GitHub and native Palomar checks found no matching solution announcement. Zenodo's native API returned HTTP 403; indexed searches found no matching announcement.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/574-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #88](https://github.com/MColbrook/AIM/pull/88) at `f12120de3dc3eaaf35f078c7cd99e08d1218ec4f`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

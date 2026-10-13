@@ -11,12 +11,12 @@
     {
       "path": "README.md",
       "purpose": "Public explanation, exact result, limits and AI disclosure",
-      "sha256": "44bc1c9f75cc6f64a63b047dee8dbc12318d560c8f6f8ecb342fe6fac1e091c8"
+      "sha256": "b0495952443fa3ffc6b70cb8940dae12b1197c59b3677c16d682123b72bec927"
     },
     {
       "path": "TARGET_COMPARISON.md",
       "purpose": "Original target correspondence and explicit imported source applications",
-      "sha256": "5919e162cd6488c3606c15f6c463fa548a5533b13618687f4d5671ea030de5bd"
+      "sha256": "8dfec81139a6147a6eddc20cccfc3be1fd08c376f2419985f1fc289a595c1c9f"
     },
     {
       "path": "REPRODUCE.md",

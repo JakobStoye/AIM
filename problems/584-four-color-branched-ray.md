@@ -2,9 +2,9 @@
 
 **Area:** Applied probability and random graph coloring
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -30,6 +30,8 @@ The question asks whether a symmetric random assignment with no dependencies bey
 
 ## Status review
 
-Proposition 1.4 rules out the extension when every path must have the particular line law given by the source's equation (1). The question here permits any symmetric stationary one-dependent four-color law. The paper explicitly distinguishes these assertions; its uniqueness discussion explains why the proved obstruction does not settle the unrestricted statement. Its constructions with five or more colors concern a different alphabet size.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/584-four-color-branched-ray/paper/main.pdf) establishes the full original target. Complete nonexistence proof on the two-leaf branched ray for an arbitrary symmetric common line law.
 
-The three-infinite-ray graph cannot have a color-symmetric one-dependent four-coloring by a separate hard-core bound; that larger-graph obstruction does not imply nonexistence on $`G`$. Current literature and announcement checks found no matching solution.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/584-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #80](https://github.com/MColbrook/AIM/pull/80) at `0415b9d841373ea4b7bd78b9d5e84adc9c569b6d`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

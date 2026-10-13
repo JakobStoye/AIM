@@ -2,9 +2,9 @@
 
 **Area:** Statistical inference and random graphical models
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -36,6 +36,8 @@ Even exact observational independence information can leave several causal graph
 
 ## Status review
 
-Reference [1] proves a uniform tail estimate with power $`1+1/20`$ on $`\log t`$ and explicitly asks whether the power can approach two from below. It also proves positive limiting ratios for counts of equivalence classes and essential DAGs, so those older existence questions are not included here. The target is a stronger tail bound, without asserting the endpoint power two.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/kaiwen-jin-516/paper/main.pdf) establishes the full original target. Uniform labeled-DAG Markov equivalence-class tail with every required near-quadratic logarithmic exponent.
 
-Reference [3] gives large-class lower bounds under sparse DAG priors and in mixed or cyclic graph models. These changed assumptions do not resolve the stated uniform-DAG question. Searches on 24 September 2026, including indexed arXiv, Zenodo, GitHub and Palomar records, found no matching resolution or announced solution.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/516-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #75](https://github.com/MColbrook/AIM/pull/75) at `49687d565a727aeda3ae7a9134ad628a6fc48d4a`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

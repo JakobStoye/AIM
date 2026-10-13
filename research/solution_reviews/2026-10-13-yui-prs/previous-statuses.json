@@ -1,0 +1,248 @@
+[
+  {
+    "id": "010",
+    "file": "problems/010-mercedes-disk-partition.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-08"
+  },
+  {
+    "id": "051",
+    "file": "problems/051-potential-on-general-manifold.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-08"
+  },
+  {
+    "id": "063",
+    "file": "problems/063-range-of-geodesic-scattering.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-08"
+  },
+  {
+    "id": "067",
+    "file": "problems/067-burgers-shock-uniform-control-time.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-08"
+  },
+  {
+    "id": "138",
+    "file": "problems/138-unique-minimum-time-positive-heat-control.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-08"
+  },
+  {
+    "id": "139",
+    "file": "problems/139-sharp-heat-tracking-range.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-08"
+  },
+  {
+    "id": "258",
+    "file": "problems/258-global-two-phase-stefan-control.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-13"
+  },
+  {
+    "id": "300",
+    "file": "problems/300-carrying-simplex-interior.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-17"
+  },
+  {
+    "id": "385",
+    "file": "problems/385-equal-speed-wentzell-wave-observability.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "386",
+    "file": "problems/386-slow-surface-schrodinger-observability.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "387",
+    "file": "problems/387-shallow-water-tank-sharp-control-time.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "398",
+    "file": "problems/398-parabolic-obstacle-boundary-control.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "415",
+    "file": "problems/415-nongradient-neumann-uniform-control.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "417",
+    "file": "problems/417-analytic-reachable-set-polynomial-growth.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "431",
+    "file": "problems/431-dtn-analyticity-continuous-boundary.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "434",
+    "file": "problems/434-p-harmonic-second-sobolev-derivatives.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "451",
+    "file": "problems/451-bourgain-brezis-mixed-sobolev-gradient-estimate.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-22"
+  },
+  {
+    "id": "494",
+    "file": "problems/494-interleaving-distance-universality.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-23"
+  },
+  {
+    "id": "506",
+    "file": "problems/506-private-density-mixed-anisotropy.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "507",
+    "file": "problems/507-interactive-private-spectral-density.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "515",
+    "file": "problems/515-greedy-sparsest-poset-consistency.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "516",
+    "file": "problems/516-random-dag-equivalence-class-tails.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "517",
+    "file": "problems/517-sharp-local-elliptic-widths.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "518",
+    "file": "problems/518-kdv-integrator-logarithmic-loss.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "519",
+    "file": "problems/519-euclidean-mechanical-lie-algebra.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "527",
+    "file": "problems/527-negative-jump-adaptive-flow.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "554",
+    "file": "problems/554-stieltjes-rational-asymptotic-constant.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "555",
+    "file": "problems/555-nonadaptive-randomization-gain.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "556",
+    "file": "problems/556-smooth-integration-dimensional-curse.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "559",
+    "file": "problems/559-univariate-trace-decidability.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "562",
+    "file": "problems/562-tensor-singular-value.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "574",
+    "file": "problems/574-trap-draws-percolation.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "576",
+    "file": "problems/576-ising-replica-covariance.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "582",
+    "file": "problems/582-fractal-screen-sobolev-invertibility.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "583",
+    "file": "problems/583-regular-tree-one-dependent-coloring.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "584",
+    "file": "problems/584-four-color-branched-ray.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "597",
+    "file": "problems/597-entropy-chain-rule-lipschitz.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "615",
+    "file": "problems/615-gambler-scaling.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "633",
+    "file": "problems/633-freudenthal-local-potential-basis.md",
+    "previous_status": "Open",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "636",
+    "file": "problems/636-jack-normal.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  },
+  {
+    "id": "639",
+    "file": "problems/639-wis-fractional-euler-rate.md",
+    "previous_status": "Partially resolved",
+    "previous_last_checked": "2026-09-24"
+  }
+]

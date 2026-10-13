@@ -2,9 +2,9 @@
 
 **Area:** Numerical PDEs and porous-media flow
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -53,8 +53,8 @@ Adaptive porous-flow models switch constitutive laws according to the computed s
 
 ## Status review
 
-Reference [1] proves existence for nonnegative inverse-permeability jumps in arbitrary dimension and treats the negative-jump case in one dimension. Reference [2] extends the framework but still leaves nonmonotone existence in higher dimensions open. These established cases lie outside the displayed residual target.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/kaiwen-jin-527-negative-jump-flow/paper/main.pdf) establishes the full original target. Weak existence for every original higher-dimensional free-transition porous-flow datum, with speed at least one almost everywhere.
 
-The Darcy-to-Forchheimer switching law in [3] adds nonnegative inertial corrections and invokes the monotone theory; its regularization convergence does not settle the negative-jump case above. Later numerical and neural-network classification work likewise supplies no general existence theorem for this target.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/527-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Primary-source, duplicate and solution-announcement checks on 24 September 2026 found no matching resolution.
+The reviewed submission is [PR #86](https://github.com/MColbrook/AIM/pull/86) at `adbe6891d9441d819df9d6acc614fc747f5821a3`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

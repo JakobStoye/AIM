@@ -2,9 +2,9 @@
 
 **Area:** Free-boundary control / thermal processing
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -32,6 +32,8 @@ This asks whether arbitrary temperature profiles and a phase interface can be re
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/258-signed-stefan-control/stefan_signed_control.pdf) establishes the full original target. Full affirmative resolution of the exact target.
 
-This is the smooth compatible-data version of the survey’s global question; its local theorem holds near the terminal equilibrium. Global means all stated profiles at every prescribed positive time while keeping both phases nonempty. Searches included “two-phase Stefan global controllability 2026”, “Stefan minimal time boundary controls”, and the Araújo–Fernández-Cara–Límaco–Souza title. Stabilization, local control and one-phase results do not settle it; no global theorem or matching obstruction was located.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/258-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #51](https://github.com/MColbrook/AIM/pull/51) at `8f5c27ab02df36559997f106dcbccfb6f6c3738a`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

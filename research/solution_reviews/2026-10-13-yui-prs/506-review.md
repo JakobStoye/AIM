@@ -1,0 +1,33 @@
+# AIM 506: independent review of PR #72
+
+Reviewed 13 October 2026 at head `6a5fae3b6a465b6afa0dd01544993e8c90ef0070`. Verdict: **Solved**. This is a documented independent AI audit, with no claim of human or Lean verification. The manuscript discloses AI assistance.
+
+[Proof](../../solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.pdf), [source](../../solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.tex).
+
+## Exact target
+
+The proof keeps the positive integer smoothness, proportional anisotropy, radius $`R^2>d`$, mixed discriminator smoothness, bounded privacy parameter and $`T=n\alpha^2\ge1`$ assumptions of the original problem. Its loss is the expected **unsquared** negative-Sobolev distance. It treats every sequential full-history locally private mechanism, including arbitrary measurable output spaces. With $`q=\sum_m1/\delta_m`$ and $`c=\beta_m/\delta_m`$, the three rates are $`T^{-(c+1)/(2(c+q))}`$, $`\log(eT)/\sqrt T`$, and $`T^{-1/2}`$ according as $`q>1`$, $`q=1`$, or $`q<1`$. No part of the target remains.
+
+## Upper bound checked independently
+
+The dual norm is exactly the weighted sum of squared Fourier coefficient errors with weight $`v_j^{-1}`$, where $`v_j=\sum_mj_m^{2\delta_m}`$. The constant density coefficient is known. The proportionality gives $`d^{-c}v_j^c\le u_j\le d v_j^c`$ by comparison with the largest summand; no invalid coordinate-product substitution is made. Counting integer boxes and summing geometric shells gives the cutoff cardinality and the three possible orders of $`S(t)=\sum_{v_j\le t}v_j^{-1/2}`$.
+
+The random index distribution is independent of the input. Conditional randomized response has likelihood ratio at most $`e^\alpha`$, since the bounded Fourier feature is normalized by $`2^{d/2}`$. The inverse-probability coefficient estimator is unbiased with variance at most the claimed constant times $`(n\kappa^2p_j)^{-1}`$. Cross-coefficient dependence causes no problem for the diagonal quadratic norm. Bias is bounded by $`d^cR^2t^{-(c+1)}`$. Jensen's inequality gives the expected unsquared norm, and $`\kappa\ge\alpha/(e^A+1)`$ uniformly on the stated privacy range. Optimizing the cutoffs yields each displayed upper rate, including small $`T`$ after adjusting a fixed constant. The admissible estimator need only be measurable and square-integrable, not itself a density.
+
+## Novel full-history lower bound checked independently
+
+For arbitrary output spaces the proof forms a joint finite measure for input, released history and current output, and compares it to the joint reference law at uniform input. Full-history privacy gives measure domination by $`e^{\pm\alpha}`$; Radon–Nikodym therefore supplies a jointly measurable bounded density. Fubini gives its input normalization. This avoids assuming a jointly measurable family of conditional likelihood ratios on arbitrary spaces. The Fourier scores have zero conditional mean and Bessel's inequality bounds their total square by $`(e^\alpha-1)^2`$.
+
+For a fixed sign density the likelihood of the released prefix factors recursively because the new raw observation is independent of the earlier observations under that density. The current multiplier is between one half and three halves. Neighboring signs differ by twice one Fourier perturbation. The elementary logarithmic inequality, followed by the zero conditional score mean, gives the manuscript's KL upper bound in terms of the information allocated to that coefficient. Summing the score trace over coefficients and times gives at most $`n(e^\alpha-1)^2`$ **for the full adaptive history**. Pinsker then gives the correctly averaged total variation bounds. No independence of released outputs is used.
+
+At the critical exponent, the amplitudes satisfy $`a_j^2=\eta^2 S\sqrt{v_j}/T`$ with cutoff $`t=T^{1/[4(c+1)]}`$. Their absolute sum and smoothness budget tend to zero, so all sign choices define densities between one half and three halves and inside the specified ball. I checked both limits directly; the cutoff exponent leaves a strict margin even when $`c`$ is small. For coefficient weights $`b_j=a_j^2/v_j`$, total weight is $`V=\eta^2S^2/T`$, and the Cauchy–Schwarz information penalty is at most $`2e^A\eta^3S^2/T`$. Choosing the stated fixed small $`\eta`$ makes this at most $`V/2`$. Pointwise $`\sqrt{x}\ge x/\sqrt V`$ for the weighted Hamming error then yields an expected unsquared norm lower bound $`\eta S/(4\sqrt T)`$. This step is essential: the proof does not incorrectly infer an unsquared lower bound from a squared-risk bound. At $`q=1`$, $`S\asymp\log T`$. The cited noncritical lower bound covers the remaining cases and the bounded interval before the critical construction becomes admissible.
+
+## Reference audit
+
+[Albert–Chevallier–Laurent–Sacko](https://www.jmlr.org/papers/volume27/24-0494/24-0494.pdf), JMLR 27(69) (2026), 1–43, is correctly identified. Its Theorem 10, printed page 14, has precisely the integer smoothness, proportionality, radius and privacy assumptions used here; its mechanism definition includes the entire private history and its loss is unsquared. The substitution of harmonic means gives the claimed noncritical exponent. Theorem 11's unresolved mixed setting accurately motivates the contribution.
+
+[Duchi–Jordan–Wainwright](https://arxiv.org/abs/1604.02390v2), published in JASA 113(521) (2018), 182–201, DOI [10.1080/01621459.2017.1389735](https://doi.org/10.1080/01621459.2017.1389735), is correctly attributed for the standard privacy-contraction background. It is not used to bypass the new trace argument. The author-hosted [Fremlin Chapter 23](https://www1.essex.ac.uk/maths/people/fremlin/chap23.ro.pdf), Section 232F, and [Chapter 25](https://www1.essex.ac.uk/maths/people/fremlin/chap25.ro.pdf), Sections 252C and 252H, give the stated Radon–Nikodym and Fubini/Tonelli facts. All measures to which they are applied here are finite, so their hypotheses hold. All three bibliography entries and all imported proof dependencies were checked; the new lemmas are proved in the submission.
+
+## Presentation and limits
+
+The complete manuscript and supporting prose were read, and all eight rendered PDF pages were inspected. The target, rate formulae, novel trace argument, theorem and bibliography match the source presentation. No clipped content or unresolved references were found. There is no computational certificate or numerical dependency. The outcome is acceptance following an independent AI audit, not a formal proof certificate or an assertion of independent human verification.

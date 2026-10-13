@@ -2,9 +2,9 @@
 
 **Area:** Spectral partitions
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -27,8 +27,8 @@ This provides a concrete three-cell benchmark for partition algorithms used to b
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/010-mercedes-disk-partition/paper/mercedes_partition.pdf) establishes the full original target. The unrestricted three-cell disk partition minimum equals the Mercedes-sector eigenvalue and is attained.
 
-The 2013 paper studies the conjecture, and the 2025 paper still labels the Mercedes partition conjectural. Its minimality results within specified topological classes do not establish unrestricted global minimality. The analogous Y-partition result on the sphere is a different, solved problem.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/010-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-**Search audit:** “minimal 3 partition disk Mercedes conjecture 2025 2026”; “Mercedes star disk partition proof”. Searches included proof, counterexample, and 2025–2026 updates. This is a literature search result, not a certification that no proof exists.
+The reviewed submission is [PR #60](https://github.com/MColbrook/AIM/pull/60) at `533508074cd44bc0117d6a936853db0d259e25e2`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

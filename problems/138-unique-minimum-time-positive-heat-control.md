@@ -2,9 +2,9 @@
 
 **Area:** Constrained PDE control / thermal processes
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -31,6 +31,8 @@ Nonnegative boundary temperatures impose a genuine waiting time. Uniqueness woul
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.pdf) establishes the full original target. Full affirmative resolution of the exact target.
 
-The 2017 paper proves positivity and finiteness of the waiting time and existence of measure controls, while explicitly leaving uniqueness open. The 2021 results apply to finite-dimensional systems, including spatial discretizations, and do not establish uniqueness for the continuum heat equation. Searches included “heat equation minimal time nonnegative Radon controls uniqueness 2025 2026” and “Lohéac Trélat Zuazua minimum time uniqueness”. No continuum resolution was located.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/138-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #48](https://github.com/MColbrook/AIM/pull/48) at `7dce20795e3be02ef553fe1dda8db4864567e890`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

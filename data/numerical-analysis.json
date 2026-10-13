@@ -23,24 +23,33 @@
     "title": "Sharp local approximation widths for rough elliptic equations",
     "area": "Numerical PDE analysis and multiscale approximation",
     "file": "problems/517-sharp-local-elliptic-widths.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative: sharp local elliptic widths with exponent1/(d-1) for arbitrary measurable symmetric elliptic coefficients in d=2,3.",
+    "proof": "research/solutions/kaiwen-jin-517/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/517-review.md"
   },
   {
     "id": "518",
     "title": "Removing the logarithmic loss in the Li–Wu KdV integrator",
     "area": "Numerical PDE analysis and dispersive equations",
     "file": "problems/518-kdv-integrator-logarithmic-loss.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative: logarithm-free unfiltered Li-Wu L2 convergence for every0<gamma<=1, uniformly on bounded Hgamma balls.",
+    "proof": "research/solutions/kaiwen-jin-518/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/518-review.md"
   },
   {
     "id": "519",
     "title": "Universal identities for Euclidean mechanical Lie brackets",
     "area": "Geometric numerical integration and numerical PDEs",
     "file": "problems/519-euclidean-mechanical-lie-algebra.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative: no additional universal Euclidean mechanical Lie identities, in every order.",
+    "proof": "research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/519-review.md"
   },
   {
     "id": "522",
@@ -66,8 +75,11 @@
     "title": "Existence for adaptive porous flow with a negative drag jump",
     "area": "Numerical PDEs and porous-media flow",
     "file": "problems/527-negative-jump-adaptive-flow.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/kaiwen-jin-527-negative-jump-flow/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/527-review.md"
   },
   {
     "id": "536",
@@ -109,24 +121,33 @@
     "title": "Sharp asymptotic constant for rational approximation of fractional inverse powers",
     "area": "Rational approximation and numerical analysis",
     "file": "problems/554-stieltjes-rational-asymptotic-constant.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative: the exact Stieltjes rational minimax asymptotic constant.",
+    "proof": "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/554-review.md"
   },
   {
     "id": "555",
     "title": "Maximal gain from randomization with nonadaptive linear measurements",
     "area": "Information-based complexity and randomized approximation",
     "file": "problems/555-nonadaptive-randomization-gain.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative: maximal finite-rate gain from nonadaptive randomization is one.",
+    "proof": "research/solutions/555-nonadaptive-randomization-gain/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/555-review.md"
   },
   {
     "id": "556",
     "title": "Does integration of uniformly derivative-bounded analytic functions suffer the dimensional curse?",
     "area": "Numerical integration and information-based complexity",
     "file": "problems/556-smooth-integration-dimensional-curse.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Dimensional curse proved",
+    "proof": "research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/556-review.md"
   },
   {
     "id": "561",
@@ -187,8 +208,11 @@
     "title": "Full Sobolev invertibility range for Hausdorff-measure screen operators",
     "area": "Boundary integral equations and numerical scattering",
     "file": "problems/582-fractal-screen-sobolev-invertibility.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Negative: an admissible accumulating-gap screen disproves the full regularity-isomorphism conjecture.",
+    "proof": "research/solutions/582-accumulating-gaps/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/582-review.md"
   },
   {
     "id": "605",
@@ -214,16 +238,22 @@
     "title": "Local potential bases on Freudenthal meshes",
     "area": "Finite elements and multigrid methods",
     "file": "problems/633-freudenthal-local-potential-basis.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Vertex-star decomposition proved for every degree at least five",
+    "proof": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/633-review.md"
   },
   {
     "id": "639",
     "title": "Strong convergence rate of the fractional WIS Euler integrator",
     "area": "Numerical stochastic differential equations",
     "file": "problems/639-wis-fractional-euler-rate.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Improved fractional WIS Euler terminal rate proved for Lipschitz drift",
+    "proof": "research/solutions/639-wis-fractional-euler-rate/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/639-review.md"
   },
   {
     "id": "641",

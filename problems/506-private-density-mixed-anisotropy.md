@@ -2,9 +2,9 @@
 
 **Area:** Statistical inference and local differential privacy
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -52,16 +52,8 @@ Different coordinates of a multivariate density can have different smoothness. S
 
 ## Status review
 
-Theorem 10 of [1] gives the lower bound
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.pdf) establishes the full original target. Matching mixed-anisotropy full-history private density minimax rates, including the critical unsquared logarithmic rate.
 
-```math
-\mathcal R_{n,\alpha}\gtrsim
-\max\left\{(n\alpha^2)^{-(\bar\beta+\bar\delta)/(2\bar\beta+2d)},
-(n\alpha^2)^{-1/2}\right\},\qquad
-\bar\beta^{-1}=d^{-1}\sum_m\beta_m^{-1},\quad
-\bar\delta^{-1}=d^{-1}\sum_m\delta_m^{-1}.
-```
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/506-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Theorem 11 supplies matching rates when every discriminator smoothness is below $`d`$, or every one is above $`d`$. Its separate all-equal-to-$`d`$ bound has a logarithmic gap. The paragraph after that theorem explicitly leaves minimax optimality open when the coordinates do not share a regime. The target here is the strict mixed case; the displayed lower bound is not asserted to be sharp there.
-
-The published March 2026 formulation and the arXiv version history (latest v2, July 2025) were checked. Title, author and topic searches on 24 September 2026, including indexed arXiv, Zenodo, GitHub and Palomar searches, located no matching resolution or announcement.
+The reviewed submission is [PR #72](https://github.com/MColbrook/AIM/pull/72) at `6a5fae3b6a465b6afa0dd01544993e8c90ef0070`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

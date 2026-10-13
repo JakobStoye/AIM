@@ -2,9 +2,9 @@
 
 **Area:** Numerical analysis of diffusion and optimal transport
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -54,8 +54,8 @@ This chain rule identifies limits satisfying an energy-dissipation inequality as
 
 ## Status review
 
-**Known cases:** The convex-domain result is established in [1]. For smooth nonconvex domains, [2] proves an upper chain rule for the unweighted entropy, and an exact rule assuming that $`\nabla\log\rho`$ belongs to the $`L^2(\rho\,dx)`$ closure of gradients of $`C^1`$ functions. Its Lemma A.3 verifies that extra condition for densities bounded above and away from zero.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/597-entropy-chain-rule-lipschitz/paper/manuscript.pdf) establishes the full original target. Exact prescribed-flux entropy chain rule with vacuum on every bounded Lipschitz domain under only the original estimates.
 
-**Remaining target:** Establish the exact rule under only the hypotheses above on arbitrary bounded Lipschitz domains. The discussion in [2] explicitly leaves the extension to Lipschitz geometry for future work; its smooth-domain result does not settle this target.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/597-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Literature and arXiv searches, together with public GitHub, native Zenodo and Palomar checks, found no matching full solution or announcement. No equivalent catalogue problem was found.
+The reviewed submission is [PR #68](https://github.com/MColbrook/AIM/pull/68) at `6af624cf8fca3a9197fbf70ba82938b610e23cb7`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

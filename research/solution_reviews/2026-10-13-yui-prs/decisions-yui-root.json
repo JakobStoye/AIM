@@ -1,0 +1,122 @@
+[
+  {
+    "pr": 83,
+    "id": "556",
+    "pinned_head": "73683304bcf7d3e748eb1c3f4db614175c938170",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Affirmative: the dimensional curse holds, with exponential deterministic sampling complexity.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: the dimensional curse holds, with exponential deterministic sampling complexity.",
+    "proof": "research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/556-review.md"
+  },
+  {
+    "pr": 77,
+    "id": "559",
+    "pinned_head": "8112a718b350324672c81c059624d5a561e20907",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Undecidability: universal positivity of univariate unnormalized trace polynomials admits no algorithmic decider.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Undecidability: universal positivity of univariate unnormalized trace polynomials admits no algorithmic decider.",
+    "proof": "research/solutions/559-univariate-trace-decidability/paper/trace_decidability.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/559-review.md"
+  },
+  {
+    "pr": 85,
+    "id": "494",
+    "pinned_head": "22d05af29e9febd77cceb59298889c1c8ad64d96",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Negative: degree-zero universality fails for the unrestricted multi-parameter interleaving target.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Negative: degree-zero universality fails for the unrestricted multi-parameter interleaving target.",
+    "proof": "research/solutions/494-degree-zero-interleaving-counterexample/paper/interleaving_counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/494-review.md"
+  },
+  {
+    "pr": 46,
+    "id": "555",
+    "pinned_head": "4f2a858c30c12c9e096ebaa7688c20e44d125721",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Affirmative: maximal finite-rate gain from nonadaptive randomization is one.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: maximal finite-rate gain from nonadaptive randomization is one.",
+    "proof": "research/solutions/555-nonadaptive-randomization-gain/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/555-review.md"
+  },
+  {
+    "pr": 39,
+    "id": "517",
+    "pinned_head": "c5902207726a88e2f2922c7ffb1189272e755cdb",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Affirmative: sharp local elliptic widths with exponent1/(d-1) for arbitrary measurable symmetric elliptic coefficients in d=2,3.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: sharp local elliptic widths with exponent1/(d-1) for arbitrary measurable symmetric elliptic coefficients in d=2,3.",
+    "proof": "research/solutions/kaiwen-jin-517/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/517-review.md"
+  },
+  {
+    "pr": 40,
+    "id": "519",
+    "pinned_head": "8dc12e3f97d7c2230981ad0d46ab00aa06188bfd",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Affirmative: no additional universal Euclidean mechanical Lie identities, in every order.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: no additional universal Euclidean mechanical Lie identities, in every order.",
+    "proof": "research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/519-review.md"
+  },
+  {
+    "pr": 38,
+    "id": "633",
+    "pinned_head": "f69a9853cae1afc0f82ee4f466c5a53b30709f9a",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument and original-target audit passed.",
+    "verified_progress": "Affirmative: vertex-star decomposition on every uniform Freudenthal mesh for every polynomial degree k>=5.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: vertex-star decomposition on every uniform Freudenthal mesh for every polynomial degree k>=5.",
+    "proof": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/633-review.md"
+  },
+  {
+    "pr": 87,
+    "id": "582",
+    "pinned_head": "c84ae22b6a0e37b01160367c79eccb970ebce507",
+    "verdict": "Solved",
+    "reason": "Coordinator reconstruction plus a fresh independent full argument stress test passed.",
+    "verified_progress": "Negative: an admissible accumulating-gap screen disproves the full regularity-isomorphism conjecture.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Negative: an admissible accumulating-gap screen disproves the full regularity-isomorphism conjecture.",
+    "proof": "research/solutions/582-accumulating-gaps/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/582-review.md"
+  },
+  {
+    "pr": 84,
+    "id": "554",
+    "pinned_head": "5461765e0fc13968ceb5767db690615ffbe1d2e2",
+    "verdict": "Solved",
+    "reason": "Coordinator reconstruction plus a fresh independent full argument stress test passed.",
+    "verified_progress": "Affirmative: the exact Stieltjes rational minimax asymptotic constant.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: the exact Stieltjes rational minimax asymptotic constant.",
+    "proof": "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/554-review.md"
+  },
+  {
+    "pr": 37,
+    "id": "518",
+    "pinned_head": "24ab3fa10db1f33a143f32876c6ae5b023782933",
+    "verdict": "Solved",
+    "reason": "Coordinator reconstruction plus a fresh independent full argument stress test passed.",
+    "verified_progress": "Affirmative: logarithm-free unfiltered Li-Wu L2 convergence for every0<gamma<=1, uniformly on bounded Hgamma balls.",
+    "remaining_target": "None for the original target.",
+    "outcome": "Affirmative: logarithm-free unfiltered Li-Wu L2 convergence for every0<gamma<=1, uniformly on bounded Hgamma balls.",
+    "proof": "research/solutions/kaiwen-jin-518/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/518-review.md"
+  }
+]

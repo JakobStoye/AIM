@@ -2,9 +2,9 @@
 
 **Area:** Geometric inverse problems and data consistency
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -23,6 +23,8 @@ A range characterization would identify which measured ray directions can arise 
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/063-geodesic-scattering/paper/geodesic_scattering.pdf) establishes the full original target. Qualitative intrinsic necessary-and-sufficient characterization of all simple Riemannian scattering maps for the fixed boundary metric.
 
-The book asks for the range of the metric-to-scattering map. Bohr–Paternain characterize a different range, that of the non-Abelian X-ray transform with a fixed metric. Searches on 2026-09-08: "scattering relation range simple surfaces 2025 2026" and "range metric scattering relation simple surface characterization". No full metric-scattering range characterization was located.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/063-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #66](https://github.com/MColbrook/AIM/pull/66) at `70fea40cdc7c8555a835feab3ff4882a1fcf7139`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

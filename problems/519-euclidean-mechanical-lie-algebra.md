@@ -2,9 +2,9 @@
 
 **Area:** Geometric numerical integration and numerical PDEs
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -47,4 +47,8 @@ The answer determines whether mechanical splitting integrators have additional u
 
 ## Status review
 
-Reference [2] retains the conjecture. Searches on 24 September 2026 found no matching solution or announcement, including indexed arXiv, Zenodo, GitHub and Palomar searches.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.pdf) establishes the full original target. Affirmative: no additional universal Euclidean mechanical Lie identities, in every order.
+
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/519-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #40](https://github.com/MColbrook/AIM/pull/40) at `8dc12e3f97d7c2230981ad0d46ab00aa06188bfd`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

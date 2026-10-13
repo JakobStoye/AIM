@@ -2,9 +2,9 @@
 
 **Area:** Applied probability and distributed graph coloring
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -29,8 +29,8 @@ Proper random colors model conflict-free assignments on networks. One-dependence
 
 ## Status review
 
-Symmetric stationary one-dependent four-colorings exist on the two-regular tree, the integer line. The hard-core-process bound discussed in [1] requires at least $`d^d/(d-1)^{d-1}`$ colors on $`T_d`$; it gives a necessary condition, not a construction. The journal introduction explicitly leaves invariant existence with any finite number of colors unresolved for $`d>2`$.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/583-regular-tree-one-dependent-coloring/paper/main.pdf) establishes the full original target. Automorphism and color invariant proper one-dependent coloring of every infinite d-regular tree, integer d>=3, using finite q(d).
 
-Timár [3] constructs automorphism-invariant two-dependent colorings of regular trees. This reduces the dependence range but does not yield independence at every distance greater than one.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/583-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-The latest source revision remains January 2023. Current exact-topic and solution-announcement searches found no matching result. The August 2026 quantum distributed-coloring lower bound, arXiv:2608.11720, restricts realizable algorithms and does not exclude all finitely dependent probability laws. Native Palomar and source-identifier GitHub searches returned no matches.
+The reviewed submission is [PR #79](https://github.com/MColbrook/AIM/pull/79) at `7f9e4214fdc060c1ddc37ec6044b12b22bf182f4`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

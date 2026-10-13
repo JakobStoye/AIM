@@ -2,9 +2,9 @@
 
 **Area:** Probability and random matrix models
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -42,8 +42,8 @@ Jack measures model dependent random partitions and serve as discrete counterpar
 
 ## Status review
 
-**Known cases:** The conjectured order holds in Wasserstein distance. In Kolmogorov distance, the 2021 bound is $`8.2\max\{n^{-1/2},\sqrt\alpha\log(n)/n\}`$; this has the desired order for $`1\le\alpha\le n/\log^2 n`$. For each fixed $`\delta>0`$, the desired order also holds when $`\alpha\ge n^{1+\delta}`$, with a constant depending on $`\delta`$.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/636-uniform-jack-normal/paper/jack_normal.pdf) establishes the full original target. Universal 10 times max(n^(-1/2),sqrt(alpha)/n) Kolmogorov bound for all n>=3 and alpha>=1.
 
-**Remaining target:** Remove the logarithmic loss with one constant valid across the full parameter range, including the transition around $`\alpha=n`$.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/636-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-The 2025 follow-up explicitly recalls the logarithmic gap and proves a non-uniform-in-$`x`$ bound only on a restricted parameter range. Current web and arXiv searches, together with native GitHub, Zenodo and Palomar checks, found no full-scope solution announcement.
+The reviewed submission is [PR #82](https://github.com/MColbrook/AIM/pull/82) at `ec73c4f188e85051b8560f41b762835a564e05fa`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

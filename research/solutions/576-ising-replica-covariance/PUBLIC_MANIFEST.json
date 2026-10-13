@@ -20,19 +20,19 @@
     {
       "path": "TARGET_COMPARISON.md",
       "purpose": "Full-target correspondence to final manuscript",
-      "sha256": "006ae18e20417d69cf5bce407f1b115a477fd37ae3b00934e71dcfad4164cb31",
+      "sha256": "8dba1db5d57974c9720a36f95cc13fa8f659940dc006773dda373c0772a046e3",
       "bytes": 2767
     },
     {
       "path": "paper/ising_replica_covariance.pdf",
       "purpose": "Complete six-page manuscript PDF",
-      "sha256": "6b7a1168b71ad08d02d8ac91a1686a22728ffd28312a2891bb8f037ab9ac8190",
-      "bytes": 307530
+      "sha256": "32e922189d26599ee9980877415a43d7a965645bafd1eac265470d483eeefe67",
+      "bytes": 333556
     },
     {
       "path": "paper/ising_replica_covariance.tex",
       "purpose": "Complete standalone editable manuscript",
-      "sha256": "51dc6aa5421389946c3b7a1f135d473ba35e00338d16c220d275ddf384b20e0d",
+      "sha256": "90ef1caef41a29329804f40bd3167288c571d51e93d17c1204ae079eae4b1f1e",
       "bytes": 16992
     }
   ]

@@ -2,9 +2,9 @@
 
 **Area:** Inverse boundary problems / anisotropic wave media
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -28,8 +28,8 @@ This separates recovery of an absorption or reaction coefficient from recovery o
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/051-potential-on-general-manifold/paper/main.pdf) establishes the full original target. Full smooth real potential uniqueness on every known smooth manifold under the original nonresonance assumption.
 
-Both references explicitly distinguish the open smooth higher-dimensional fixed-frequency potential problem from results in special geometries. Reference 2 proves a high-frequency theorem under a stable ray-transform hypothesis; neither high frequency nor that geometry is assumed here. Full frequency-dependent data would constitute a stronger experiment.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/051-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-On 2026-09-08 the review searched `potential general Riemannian manifold open problem inverse`, `Calderón potential arbitrary open problem`, and the exact title of reference 2 with `2025 2026`. No resolution on an arbitrary known smooth manifold at the stated single frequency was located.
+The reviewed submission is [PR #71](https://github.com/MColbrook/AIM/pull/71) at `8ac038c0eb03ee265826ad268aa458f7513ab27a`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

@@ -2,9 +2,9 @@
 
 **Area:** Probability, statistical mechanics and sampling
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -42,8 +42,8 @@ The estimate would control fluctuations in particle systems that exchange spins 
 
 ## Status review
 
-**Known cases:** Stochastic-localization estimates give covariance control under a high-temperature spectral assumption on $`J`$. For a single total-magnetization constraint, [1, Proposition 3.6] gives the bound $`2/(1-2\lambda_{max}(J))`$ when $`J`$ is positive definite and $`\lambda_{max}(J)<1/2`$, uniformly over fields and system size. Section 3.4 handles the multicomponent setting needed for entropy decay. Section 4.5 also discusses bounds obtained through equivalence of ensembles with the tilt fixed; these do not give the required uniformity over arbitrary tilts.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.pdf) establishes the full original target. Uniform covariance bound for all fixed real symmetric interactions, partitions, feasible magnetizations and replica-dependent fields.
 
-**Remaining target:** Obtain a finite bound for every fixed interaction matrix, with the simultaneous uniformity stated above, or disprove it. A bound proportional to $`Nn`$ from the diagonal variances does not suffice.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/576-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-The latest arXiv record remains version 1 of 7 November 2025 and retains the conjecture. The authors' July 2026 paper on nonlinear exchange for independent sets concerns a different state space and does not announce this result. Searches through 24 September 2026 found no matching solution announcement or repository duplicate. Native Palomar, GitHub repository/issue searches, and Zenodo returned no matching records under the source identifier or corresponding topic query.
+The reviewed submission is [PR #78](https://github.com/MColbrook/AIM/pull/78) at `9f7637ced9f656199f8ce36eba7feb7d857c764a`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

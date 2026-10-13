@@ -159,16 +159,22 @@
     "title": "Uniqueness of nonnegative heat controls at the minimum time",
     "area": "Constrained PDE control / thermal processes",
     "file": "problems/138-unique-minimum-time-positive-heat-control.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/138-review.md"
   },
   {
     "id": "139",
     "title": "Sharp characterization of exactly trackable boundary heat fluxes",
     "area": "PDE control / thermal flux tracking",
     "file": "problems/139-sharp-heat-tracking-range.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/139-review.md"
   },
   {
     "id": "140",

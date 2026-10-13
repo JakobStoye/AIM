@@ -1,0 +1,15 @@
+{
+  "PR": 89,
+  "ID": "639",
+  "pinned_head": "7c5a97db1d7f13732cdfe8900e14a9e52ab6d64b",
+  "verdict": "Solved",
+  "reason": "Independent reconstruction verifies the exact delayed conditional quadrature bounds for every non-Brownian H and the Brownian time-reversal/zero-crossing localization argument; the unchanged terminal scheme achieves the full requested rate.",
+  "verified_progress": "Terminal L2 error at most C*h^(min(H+1/2,1)) for every fixed original autonomous globally Lipschitz problem, including all H in (0,1), zero initial values, nonzero a(0), zero crossings and degenerate coefficients.",
+  "remaining_target": "None.",
+  "outcome": "affirmative",
+  "direct_proof_file": "research/solutions/639-wis-fractional-euler-rate/paper/main.tex",
+  "direct_proof_pdf": "research/solutions/639-wis-fractional-euler-rate/paper/main.pdf",
+  "report_path": "research/solution_reviews/2026-10-13-yui-prs/639-review.md",
+  "corrections": [],
+  "mathematical_evidence": "Complete natural-language analytic proof, audited independently by a Codex agent; no numerical or formal certificate."
+}

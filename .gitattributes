@@ -1,0 +1,2 @@
+# Keep solution-package text bytes stable for published SHA-256 manifests.
+research/solutions/** text=auto eol=lf

@@ -122,32 +122,44 @@
     "title": "Minimax rates for private density estimation with mixed anisotropy",
     "area": "Statistical inference and local differential privacy",
     "file": "problems/506-private-density-mixed-anisotropy.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Matching mixed-anisotropy full-history private density minimax rates, including the critical unsquared logarithmic rate.",
+    "proof": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/506-review.md"
   },
   {
     "id": "507",
     "title": "Sharp interactive privacy rates for spectral density estimation",
     "area": "Statistical inference, time series and local differential privacy",
     "file": "problems/507-interactive-private-spectral-density.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Matching sequentially private Gaussian spectral-density minimax rate and consistency boundary.",
+    "proof": "research/solutions/507-sequential-private-spectral-density/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/507-review.md"
   },
   {
     "id": "515",
     "title": "Consistency of the Greedy Sparsest Poset algorithm",
     "area": "Statistical inference and causal discovery",
     "file": "problems/515-greedy-sparsest-poset-consistency.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample: the original GSPO search can be trapped in a three-graph component above the global edge minimum.",
+    "proof": "research/solutions/515-gspo-counterexample/paper/counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/515-review.md"
   },
   {
     "id": "516",
     "title": "Tail bounds for causal equivalence classes of uniform random DAGs",
     "area": "Statistical inference and random graphical models",
     "file": "problems/516-random-dag-equivalence-class-tails.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Uniform labeled-DAG Markov equivalence-class tail with every required near-quadratic logarithmic exponent.",
+    "proof": "research/solutions/kaiwen-jin-516/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/516-review.md"
   },
   {
     "id": "528",
@@ -210,8 +222,11 @@
     "title": "Sharp least-singular-value bounds for independent random tensor columns",
     "area": "Random matrices and tensor methods",
     "file": "problems/562-tensor-singular-value.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Sharp ambient-scale smallest singular-value lower bound with a K-only constant throughout the stated growing-order regime.",
+    "proof": "research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/562-review.md"
   },
   {
     "id": "563",
@@ -226,8 +241,11 @@
     "title": "Draws in the undirected trapping game on percolation clusters",
     "area": "Applied probability and random combinatorial games",
     "file": "problems/574-trap-draws-percolation.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "No planar Trap draws for any interior deletion probability, and positive draws at some positive deletion probability in every higher dimension.",
+    "proof": "research/solutions/574-trap-draws-percolation/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/574-review.md"
   },
   {
     "id": "575",
@@ -242,8 +260,11 @@
     "title": "Uniform covariance bounds for constrained Ising replicas",
     "area": "Probability, statistical mechanics and sampling",
     "file": "problems/576-ising-replica-covariance.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Uniform constrained-Ising replica covariance bound at arbitrary fixed interaction strengths.",
+    "proof": "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/576-review.md"
   },
   {
     "id": "577",
@@ -258,16 +279,22 @@
     "title": "Automorphism-invariant one-dependent colorings of regular trees",
     "area": "Applied probability and distributed graph coloring",
     "file": "problems/583-regular-tree-one-dependent-coloring.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Automorphism and color invariant proper one-dependent coloring of every infinite d-regular tree, integer d>=3, using finite q(d).",
+    "proof": "research/solutions/583-regular-tree-one-dependent-coloring/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/583-review.md"
   },
   {
     "id": "584",
     "title": "Extending a symmetric one-dependent four-color law across a branch",
     "area": "Applied probability and random graph coloring",
     "file": "problems/584-four-color-branched-ray.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Nonexistence of the stipulated symmetric one-dependent four-color extension.",
+    "proof": "research/solutions/584-four-color-branched-ray/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/584-review.md"
   },
   {
     "id": "588",
@@ -322,16 +349,22 @@
     "title": "Fourth-order diffusion approximation for three-player ruin",
     "area": "Applied probability and diffusion approximation",
     "file": "problems/615-gambler-scaling.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/615-gambler-scaling/paper/gambler_scaling.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/615-review.md"
   },
   {
     "id": "636",
     "title": "A uniform Gaussian approximation bound for Jack measures",
     "area": "Probability and random matrix models",
     "file": "problems/636-jack-normal.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Uniform Jack normal-approximation bound without logarithmic loss.",
+    "proof": "research/solutions/636-uniform-jack-normal/paper/jack_normal.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/636-review.md"
   },
   {
     "id": "637",

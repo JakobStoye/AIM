@@ -2,9 +2,9 @@
 
 **Area:** Statistical inference and causal discovery
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -48,6 +48,8 @@ Unobserved common causes can make ordinary directed acyclic models of measured v
 
 ## Status review
 
-Theorem 2 of [1] proves that a globally sparsest $`G_\pi`$ belongs to the true Markov equivalence class. Conjecture 1 asks whether the prescribed nonincreasing search can always reach one. Reference [2] explicitly retains this as open. The fixed depth used in simulations is not the universal assertion.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/515-gspo-counterexample/paper/counterexample.pdf) establishes the full original target. Complete counterexample for restricted-faithfulness original GSPO search.
 
-Searches on 24 September 2026, including indexed arXiv, Zenodo, GitHub and Palomar records, found no matching resolution or announced solution. Later results about orienting an already specified equivalence class do not establish this search property.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/515-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #73](https://github.com/MColbrook/AIM/pull/73) at `6c47f2a0345e5b51292a7ff5b7590a7c7be5ecac`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

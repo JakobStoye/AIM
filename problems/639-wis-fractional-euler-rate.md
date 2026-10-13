@@ -2,9 +2,9 @@
 
 **Area:** Numerical stochastic differential equations
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -52,6 +52,8 @@ This determines the time-step accuracy attainable when simulating stochastic mod
 
 ## Status review
 
-**Known cases:** Theorem 3.6 gives the weaker rate $`h^H`$. The source reports order one for the Brownian case $`H=1/2`$ and exactness when $`a=0`$.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/639-wis-fractional-euler-rate/paper/main.pdf) proves the full displayed terminal error rate for every original fixed Lipschitz problem, using the unchanged recurrence and exact samples of the same noise path. It covers all Hurst values, including Brownian noise, zero initial values, zero crossings and degenerate coefficients.
 
-**Remaining target:** Establish or refute the displayed improved rate for general autonomous Lipschitz drift and $`H\ne1/2`$. Correlated error terms obstruct the source's argument. Targeted literature, arXiv, GitHub, Zenodo and Palomar searches found no matching resolution; these checks are bounded announcement searches. No equivalent catalogue entry was found.
+**Independent review:** the [complete argument audit](../research/solution_reviews/2026-10-13-yui-prs/639-review.md) and [separate fresh stress test](../research/solution_reviews/2026-10-13-yui-prs/639-second-check.md) reconstruct the conditional quadrature, Brownian localization, terminal stability and primary-source interface. Both are independent Codex AI audits during maintainer processing; neither asserts human peer review or Lean verification.
+
+The reviewed submission is [PR89](https://github.com/MColbrook/AIM/pull/89) at `7c5a97db1d7f13732cdfe8900e14a9e52ab6d64b`, compared with the unchanged original target at `c9929805cece044705abaaebe1cebddac1ba11a6`. Its source, PDF, references, ancillary documents and original hashes were checked. The proof and documented independent reviews meet the repository's **Solved** criterion. No uniform-in-H, simulated-noise or supremum-in-time rate is asserted.

@@ -78,8 +78,12 @@ For functions defined at the necessary neighbors, let
 Define $v_M(z)=P_{a,b,c}(321)$. The remaining two-player game has winning
 probability equal to the player's fraction of the total capital: that affine
 function satisfies the averaging equation and the two absorbing values.
-Absorption is almost sure, since $M$ transfers in one direction have probability
-at least $2^{-M}$ and force absorption. Consequently the boundary data for
+For the two-player chain, absorption is almost sure: a prescribed sequence
+of at most $M$ transfers in one direction has probability at least $2^{-M}$
+and reaches an absorbing endpoint. In the three-player chain, a prescribed
+sequence of at most $M$ transfers for a fixed pair and direction has probability
+at least $6^{-M}$ and forces an elimination. Repeating finite blocks proves
+almost-sure elimination, followed by the two-player absorption just established. Consequently the boundary data for
 $v_M$ are
 \begin{equation}\label{eq:boundary}
  g_M(z)=1-b/M\quad(c=0),\qquad

@@ -2,9 +2,9 @@
 
 **Area:** Information-based complexity and randomized approximation
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -54,6 +54,8 @@ The answer quantifies the strongest possible information savings from randomly c
 
 ## Status review
 
-The lower bound $`1/2`$ comes from Sobolev approximation examples. The general upper bound of one is known, and gains of one are attainable when adaptive randomized measurements are allowed. Those adaptive examples do not settle this nonadaptive question. The vector-approximation results in [3] are among the advances already incorporated in the 2026 survey.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/555-nonadaptive-randomization-gain/paper/main.pdf) establishes the full original target. Affirmative: maximal finite-rate gain from nonadaptive randomization is one.
 
-Current arXiv and author-publication checks found no solution of this remaining gap. Public GitHub and Palomar searches found no matching announcement; Zenodo's API returned an access denial, and indexed searches found none. The accompanying numerical-journal review records the checked sources and limitations. No equivalent existing catalogue entry was found.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/555-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #46](https://github.com/MColbrook/AIM/pull/46) at `4f2a858c30c12c9e096ebaa7688c20e44d125721`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

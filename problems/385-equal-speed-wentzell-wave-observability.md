@@ -2,9 +2,9 @@
 
 **Area:** PDE control / acoustic boundary dynamics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -47,6 +47,8 @@ The inequality asks whether measurements on the exterior determine all vibration
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.pdf) establishes the full original target. Full negative resolution of the exact target.
 
-The 2025 review explicitly leaves equal bulk and surface coefficients unresolved. Faster surface propagation is covered by its observability theorem; slower surface propagation has a counterexample in the annular wave setting. Searches through 22 September 2026 for equal-speed Wentzell/Ventcel wave observability and the authors’ subsequent work located no theorem or counterexample at equality. Results for one-dimensional dynamic endpoints do not settle a boundary with tangential propagation.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/385-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #53](https://github.com/MColbrook/AIM/pull/53) at `1b29cbe43828ce9b9fa1eeff602756fba40ff879`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

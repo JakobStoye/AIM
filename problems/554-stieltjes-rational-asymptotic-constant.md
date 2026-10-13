@@ -2,9 +2,9 @@
 
 **Area:** Rational approximation and numerical analysis
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -44,6 +44,8 @@ Rational approximations of fractional inverse powers are used to approximate fra
 
 ## Status review
 
-The source establishes the exponential rate and provides numerical evidence for this more precise leading constant. Its relative-error theorem for the square root is a different approximation problem, and the classical asymptotic result on an infinite interval does not prove the stated finite-interval formula.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.pdf) establishes the full original target. Affirmative: the exact Stieltjes rational minimax asymptotic constant.
 
-Checks through 24 September 2026 found no matching proof or announcement. The published text, author preprint, current institute publication list, arXiv-indexed searches, public GitHub searches and Palomar were checked. Zenodo's API was inaccessible; its indexed search returned no matching result. No equivalent catalogue entry was found. Detailed checks are in the accompanying numerical-journal review.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/554-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #84](https://github.com/MColbrook/AIM/pull/84) at `5461765e0fc13968ceb5767db690615ffbe1d2e2`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

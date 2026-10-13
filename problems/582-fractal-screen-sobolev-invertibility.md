@@ -2,9 +2,9 @@
 
 **Area:** Boundary integral equations and numerical scattering
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -45,8 +45,8 @@ The conjecture would establish the solution regularity required for nearly optim
 
 ## Status review
 
-**Known cases:** At $`t=0`$, coercivity gives invertibility for every screen in the statement. The full interval is known when $`\Gamma`$ is the closure of a bounded Lipschitz domain in its supporting hyperplane. For disjoint iterated-function-system attractors, [1] proves invertibility in some neighborhood $`|t|<\varepsilon`$ of zero.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/582-accumulating-gaps/paper/main.pdf) establishes the full original target. Negative: an admissible accumulating-gap screen disproves the full regularity-isomorphism conjecture.
 
-**Remaining target:** Obtain the entire interval $`|t|<t_d`$ for arbitrary compact $`d`$-sets. The 2026 multifractal extension [2] still supplies only a possibly smaller neighborhood of zero under additional geometric hypotheses; its convergence results do not establish this conjecture.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/582-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Current literature, arXiv (including the 2026 follow-up), public GitHub, native Zenodo and Palomar checks found no full resolution or matching announcement. No equivalent catalogue problem was found.
+The reviewed submission is [PR #87](https://github.com/MColbrook/AIM/pull/87) at `c84ae22b6a0e37b01160367c79eccb970ebce507`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

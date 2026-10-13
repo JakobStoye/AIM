@@ -56,8 +56,11 @@
     "title": "Recover a potential on a general known Riemannian manifold",
     "area": "Inverse boundary problems / anisotropic wave media",
     "file": "problems/051-potential-on-general-manifold.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/051-potential-on-general-manifold/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/051-review.md"
   },
   {
     "id": "052",
@@ -152,8 +155,11 @@
     "title": "Characterizing realizable geodesic scattering data",
     "area": "Geometric inverse problems and data consistency",
     "file": "problems/063-range-of-geodesic-scattering.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/063-geodesic-scattering/paper/geodesic_scattering.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/063-review.md"
   },
   {
     "id": "064",
@@ -190,8 +196,11 @@
     "title": "Exact uniform control time near a viscous Burgers shock",
     "area": "Singular limits and control",
     "file": "problems/067-burgers-shock-uniform-control-time.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/067-burgers-shock-uniform-control-time/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/067-review.md"
   },
   {
     "id": "068",
@@ -222,8 +231,11 @@
     "title": "Interior smoothness of carrying simplices in competitive population maps",
     "area": "Mathematical biology and dynamical systems",
     "file": "problems/300-carrying-simplex-interior.md",
-    "status": "Open",
-    "last_checked": "2026-09-17"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/300-carrying-simplex-interior/paper/interior_smoothness.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/300-review.md"
   },
   {
     "id": "308",

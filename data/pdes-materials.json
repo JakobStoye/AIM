@@ -184,8 +184,11 @@
     "title": "Second-order Sobolev regularity of p-harmonic functions beyond the Cordes range",
     "area": "Degenerate elliptic PDE regularity",
     "file": "problems/434-p-harmonic-second-sobolev-derivatives.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/434-p-harmonic-second-sobolev-derivatives/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/434-review.md"
   },
   {
     "id": "437",
@@ -232,16 +235,22 @@
     "title": "A mixed Sobolev estimate for reconstructing a scalar potential",
     "area": "Elliptic potential reconstruction and critical function spaces",
     "file": "problems/451-bourgain-brezis-mixed-sobolev-gradient-estimate.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "research/solutions/451-mixed-sobolev-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/451-review.md"
   },
   {
     "id": "597",
     "title": "Entropy chain rule on nonsmooth nonconvex Lipschitz domains",
     "area": "Numerical analysis of diffusion and optimal transport",
     "file": "problems/597-entropy-chain-rule-lipschitz.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/597-entropy-chain-rule-lipschitz/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/597-review.md"
   },
   {
     "id": "631",

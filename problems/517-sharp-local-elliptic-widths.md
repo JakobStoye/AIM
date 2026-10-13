@@ -2,9 +2,9 @@
 
 **Area:** Numerical PDE analysis and multiscale approximation
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -58,6 +58,8 @@ In porous-media flow and diffusion through heterogeneous materials, a coarse fin
 
 ## Status review
 
-Ma proves decay with exponent $`1/d`$ and explicitly conjectures $`1/(d-1)`$. The overlap approximation result [2] also gives $`1/d`$. The lower bound announced in [3] concerns constructions with fixed local dimension, support and coefficient visibility as the coarse mesh changes; it does not refute this width bound as $`n`$ grows for fixed data.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/kaiwen-jin-517/paper/main.pdf) establishes the full original target. Affirmative: sharp local elliptic widths with exponent1/(d-1) for arbitrary measurable symmetric elliptic coefficients in d=2,3.
 
-Searches on 24 September 2026, including indexed arXiv, Zenodo, GitHub and Palomar records, found no matching resolution or announced solution.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/517-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #39](https://github.com/MColbrook/AIM/pull/39) at `c5902207726a88e2f2922c7ffb1189272e755cdb`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

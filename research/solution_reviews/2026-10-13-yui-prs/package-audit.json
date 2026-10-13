@@ -1,0 +1,3169 @@
+[
+  {
+    "pr": 88,
+    "head": "f12120de3dc3eaaf35f078c7cd99e08d1218ec4f",
+    "files": [
+      {
+        "path": "research/solutions/574-trap-draws-percolation/.gitignore",
+        "bytes": 64,
+        "sha256": "3f2955cf7f4be208f4f5cf43eb845e95e6fc49873dfa41f265918ab8e16fad1a"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/PUBLIC_MANIFEST.json",
+        "bytes": 1665,
+        "sha256": "4f787f018b614e82914c722c3114f92bb1a5c07996aa90356e234dec15c10e29"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/README.md",
+        "bytes": 1547,
+        "sha256": "f8d7c2f740921dd2d4f920cc5657175373ac4081399d51e73138b1c30659809d"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/SHA256SUMS",
+        "bytes": 571,
+        "sha256": "765025c2742ed787ec9c79f706a988aa2fd242b7e1b0a28c5f7d57a86b8561be"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/TARGET_COMPARISON.md",
+        "bytes": 2994,
+        "sha256": "b0635136635135c3e43a155131328905a952e7462dda90e6670975126d4c6dae"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/paper/README.md",
+        "bytes": 718,
+        "sha256": "4307f69bebbac61f7c3b6df7681addb0f0ad132c9a4724ef484302d05e9d0767"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/paper/main.pdf",
+        "bytes": 351364,
+        "sha256": "99ab479ba95c8ffce2143a250b1bc9328b2d52b74a4439dcef1c61388061fcee"
+      },
+      {
+        "path": "research/solutions/574-trap-draws-percolation/paper/main.tex",
+        "bytes": 45447,
+        "sha256": "3e789b411b9009b7729f11a0e85e6fd212afcf262dedd19dc2087806a83bab8f"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/574-trap-draws-percolation/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 87,
+    "head": "c84ae22b6a0e37b01160367c79eccb970ebce507",
+    "files": [
+      {
+        "path": "research/solutions/582-accumulating-gaps/PUBLIC_MANIFEST.json",
+        "bytes": 1527,
+        "sha256": "2f15d952f7b71ff78f5926cc490f03cd8b54c2dde3239360a8c715e6078e9b4f"
+      },
+      {
+        "path": "research/solutions/582-accumulating-gaps/README.md",
+        "bytes": 2542,
+        "sha256": "44bc1c9f75cc6f64a63b047dee8dbc12318d560c8f6f8ecb342fe6fac1e091c8"
+      },
+      {
+        "path": "research/solutions/582-accumulating-gaps/REPRODUCE.md",
+        "bytes": 1666,
+        "sha256": "388490bf44fe5a5553c54054630d3cc3123e42f134979f7022bc008feab99975"
+      },
+      {
+        "path": "research/solutions/582-accumulating-gaps/SHA256SUMS",
+        "bytes": 491,
+        "sha256": "259fe684611a800783ef7190ddc4f757d330e1a12b8feed9dc90d67b45c27ad0"
+      },
+      {
+        "path": "research/solutions/582-accumulating-gaps/TARGET_COMPARISON.md",
+        "bytes": 4967,
+        "sha256": "5919e162cd6488c3606c15f6c463fa548a5533b13618687f4d5671ea030de5bd"
+      },
+      {
+        "path": "research/solutions/582-accumulating-gaps/paper/main.pdf",
+        "bytes": 387006,
+        "sha256": "d0a512ec2a4da2eecca59bf2607d7e5eeaea5df2dc18c809bcdd94287754b440"
+      },
+      {
+        "path": "research/solutions/582-accumulating-gaps/paper/main.tex",
+        "bytes": 26582,
+        "sha256": "518586bd84003f6d7ec67c4fd89938d763921abc2ffdedad71ca080ee921d067"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/582-accumulating-gaps/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 86,
+    "head": "adbe6891d9441d819df9d6acc614fc747f5821a3",
+    "files": [
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/AI_USE.md",
+        "bytes": 891,
+        "sha256": "83e68ce97da129543a916a35fb27654ae98b7d7c598c0e68fef15ad812e9e0a2"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/PUBLIC_MANIFEST.json",
+        "bytes": 1752,
+        "sha256": "07fa51716afc518343bfe92b103d80897dbc3ee048226a93b7f24d120f02eacb"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/README.md",
+        "bytes": 1925,
+        "sha256": "61f84942fa95241b30b48c76b1397b43f81240569b5f58062c82695466b4a92f"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/SHA256SUMS",
+        "bytes": 488,
+        "sha256": "80990ab23c5356ee7f86e4acd7f6cd37f3f7119f2f7c8b99f441ccfaff1eaf62"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/TARGET_COMPARISON.md",
+        "bytes": 3571,
+        "sha256": "6b3783e7ff9bd190e071f0f4a1ff0727fab9763aeff277823a745e6afff5e403"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/paper/main.pdf",
+        "bytes": 351328,
+        "sha256": "d4eaa34913bd37590cec0225dd05df1bb49aa1643e2772660d95563a10925a36"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-527-negative-jump-flow/paper/main.tex",
+        "bytes": 39233,
+        "sha256": "9d28a963276d2b44507f4d24e57ac6bec132cb27e7d4130d59337a686adcbabf"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/kaiwen-jin-527-negative-jump-flow/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 85,
+    "head": "22d05af29e9febd77cceb59298889c1c8ad64d96",
+    "files": [
+      {
+        "path": "research/solutions/494-degree-zero-interleaving-counterexample/PUBLIC_MANIFEST.json",
+        "bytes": 1149,
+        "sha256": "d42da01add43e4601a0351606a71e957250bd58a3493d8042671f790041166e8"
+      },
+      {
+        "path": "research/solutions/494-degree-zero-interleaving-counterexample/README.md",
+        "bytes": 1904,
+        "sha256": "f0eb90fdcad313626d660670a75d491004c8b10808ace1acae649587fe31acc4"
+      },
+      {
+        "path": "research/solutions/494-degree-zero-interleaving-counterexample/SHA256SUMS",
+        "bytes": 458,
+        "sha256": "53d45246e2e3aa421230a5ed3a451ce9df42a4282ee9e57d1b00b6c046860589"
+      },
+      {
+        "path": "research/solutions/494-degree-zero-interleaving-counterexample/TARGET_COMPARISON.md",
+        "bytes": 3125,
+        "sha256": "abe7dd06ffd7fd06e792aea3d3a0785b727c5c0babf9377752d7dcf8f023463d"
+      },
+      {
+        "path": "research/solutions/494-degree-zero-interleaving-counterexample/paper/interleaving_counterexample.pdf",
+        "bytes": 316265,
+        "sha256": "17d7e2035f573502bc8fc6612d8079ac3c2bffe44e96f370ce6232301dc43540"
+      },
+      {
+        "path": "research/solutions/494-degree-zero-interleaving-counterexample/paper/interleaving_counterexample.tex",
+        "bytes": 16161,
+        "sha256": "5d9b071f1e17fb8c7ff4deddd767a24dd500a9c68ea2ae0770c9ee8ce478a05d"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/494-degree-zero-interleaving-counterexample/paper/interleaving_counterexample.pdf"
+    ]
+  },
+  {
+    "pr": 84,
+    "head": "5461765e0fc13968ceb5767db690615ffbe1d2e2",
+    "files": [
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/PUBLIC_MANIFEST.json",
+        "bytes": 1440,
+        "sha256": "74f5d63ceaad0b369edd72149b6d4dd5d4080263bd485b0375be22849eb33d6d"
+      },
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/README.md",
+        "bytes": 2465,
+        "sha256": "ea10840d5a937378c4caa697012e36bb82ae3d911260cb4e56ef76fd2e882be8"
+      },
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/SHA256SUMS",
+        "bytes": 493,
+        "sha256": "575997ed53202e7265135c169d61dffd11e4a4c91890fbc1072643814871102a"
+      },
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/TARGET_COMPARISON.md",
+        "bytes": 4127,
+        "sha256": "39f45b98a1689f4b9331026b15d11dac5e35d754e3314da4429f1953266f68cb"
+      },
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/Makefile",
+        "bytes": 240,
+        "sha256": "a5b2e2d2162f4ef45c49a70259a6310e379f653fcf8f7728cffcc77d481504a4"
+      },
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.pdf",
+        "bytes": 313520,
+        "sha256": "9aa872e7dcb522cfcbb9581f2f492430dbdb75d710a42b33a1083588fe7f3b6a"
+      },
+      {
+        "path": "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.tex",
+        "bytes": 23879,
+        "sha256": "88a844dbde353a2791eb610522b19442f371ce8bf0557ecc27ec2d7ac25f8cc4"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/554-stieltjes-rational-asymptotic-constant/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 83,
+    "head": "73683304bcf7d3e748eb1c3f4db614175c938170",
+    "files": [
+      {
+        "path": "research/solutions/556-uniform-derivative-integration/PUBLIC_MANIFEST.json",
+        "bytes": 993,
+        "sha256": "06310ec2d7dea852dfbb63739205e29384d67ac7e64ef643ed53b3875d55754d"
+      },
+      {
+        "path": "research/solutions/556-uniform-derivative-integration/README.md",
+        "bytes": 2157,
+        "sha256": "20782ff8d3f4a5ca71586b75bbea7ec1d6a42c64adbeb3ace6a94ab97a42e16a"
+      },
+      {
+        "path": "research/solutions/556-uniform-derivative-integration/SHA256SUMS",
+        "bytes": 464,
+        "sha256": "15b2d49217d199e88c376d6f83b2f9786b4d7e6b441d7e54de6659d446297026"
+      },
+      {
+        "path": "research/solutions/556-uniform-derivative-integration/TARGET_COMPARISON.md",
+        "bytes": 2260,
+        "sha256": "9909135c5452f45fa35f88f45f33f4ac47ec8d525f23d3079818f64488bc72fe"
+      },
+      {
+        "path": "research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.pdf",
+        "bytes": 265606,
+        "sha256": "2dd95a90e803268f7284d05f9abfded291c28ae2a600832716e4d99352e23471"
+      },
+      {
+        "path": "research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.tex",
+        "bytes": 10065,
+        "sha256": "6f7276a440d0031275a092424ae387134ec58ffb94d87954dc0565438ed31756"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.pdf"
+    ]
+  },
+  {
+    "pr": 82,
+    "head": "ec73c4f188e85051b8560f41b762835a564e05fa",
+    "files": [
+      {
+        "path": "research/solutions/636-uniform-jack-normal/BUILD.md",
+        "bytes": 1206,
+        "sha256": "c789f26faa38612c3592b0d7ad317e5d6d462f91833737fcac7912ac5c18a247"
+      },
+      {
+        "path": "research/solutions/636-uniform-jack-normal/PUBLIC_MANIFEST.json",
+        "bytes": 1302,
+        "sha256": "f9cddd42b317e615522607d353b891ece99db5122065d622b3bd7578e51a0876"
+      },
+      {
+        "path": "research/solutions/636-uniform-jack-normal/README.md",
+        "bytes": 1853,
+        "sha256": "667c5672dc3c308c2114764aae4c709e0e5de7bd96688eb48d0982449fd6d4d2"
+      },
+      {
+        "path": "research/solutions/636-uniform-jack-normal/SHA256SUMS",
+        "bytes": 501,
+        "sha256": "2d68d1eebc165edf63fed9e5eb6b2ebaf0ac7a50bb4e258673a8ba264d53ffcc"
+      },
+      {
+        "path": "research/solutions/636-uniform-jack-normal/TARGET_COMPARISON.md",
+        "bytes": 2526,
+        "sha256": "98b4bdbdccd26d78d6c51aceac912b799d3670db068ab2701d5b24d33b567555"
+      },
+      {
+        "path": "research/solutions/636-uniform-jack-normal/paper/jack_normal.pdf",
+        "bytes": 298474,
+        "sha256": "1ab46729c88490786299dff6851c2d73b6e988c826d21922ebbdbe723164bb7a"
+      },
+      {
+        "path": "research/solutions/636-uniform-jack-normal/paper/jack_normal.tex",
+        "bytes": 16946,
+        "sha256": "fee68f00aa9307019da004241c5eb292999576d66c6076db4e1823c0a4dc81c4"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/636-uniform-jack-normal/paper/jack_normal.pdf"
+    ]
+  },
+  {
+    "pr": 81,
+    "head": "312df9569f5265fd7a85dfe7f7c1b5300cb5765b",
+    "files": [
+      {
+        "path": "research/solutions/615-gambler-scaling/PUBLIC_MANIFEST.json",
+        "bytes": 1136,
+        "sha256": "dcda595d95eb78c0fb64a8f5a0b3e4613d2fc1a969414596a5c3b849774fec3d"
+      },
+      {
+        "path": "research/solutions/615-gambler-scaling/README.md",
+        "bytes": 1898,
+        "sha256": "20ab74c34e9a07800551d4c4ae1fb12709484cb8903ee9b66908112a1e047156"
+      },
+      {
+        "path": "research/solutions/615-gambler-scaling/SHA256SUMS",
+        "bytes": 434,
+        "sha256": "0d38b1c922fc49a06e39f867e3521a770290068f6f19e9c5e60eafc6ed3f2c35"
+      },
+      {
+        "path": "research/solutions/615-gambler-scaling/TARGET_COMPARISON.md",
+        "bytes": 2038,
+        "sha256": "680d141381426036950ccc70b09970472f83f394ee86d54e71ebd5309176e532"
+      },
+      {
+        "path": "research/solutions/615-gambler-scaling/paper/gambler_scaling.pdf",
+        "bytes": 269200,
+        "sha256": "3b7f0db37060abfcdd51b4776218dc142bb920aa2258e3df77350e3a73910bf9"
+      },
+      {
+        "path": "research/solutions/615-gambler-scaling/paper/gambler_scaling.tex",
+        "bytes": 15481,
+        "sha256": "a49fcf871f9181d25916b4ffdaedce45e8ae0a818b3b0a140224bc761405d65d"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/615-gambler-scaling/paper/gambler_scaling.pdf"
+    ]
+  },
+  {
+    "pr": 80,
+    "head": "0415b9d841373ea4b7bd78b9d5e84adc9c569b6d",
+    "files": [
+      {
+        "path": "research/solutions/584-four-color-branched-ray/.gitignore",
+        "bytes": 134,
+        "sha256": "a37e56ec36bb9495f8e8fcb78540f100d322ecdd87ce4e85d4c2b8bf8966ce37"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/ENVIRONMENT.md",
+        "bytes": 1607,
+        "sha256": "4dd766b435af1d93747dc02d54529a8c28e3040e65dff1aedd8bd87dccbbc086"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/PUBLIC_MANIFEST.json",
+        "bytes": 3313,
+        "sha256": "53d9541a2acd302bcb0c164b9970fd7b7710a8e67bb0d2251e3b7d689605bcaa"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/README.md",
+        "bytes": 4143,
+        "sha256": "d88455f7015630cb47096640d45e09b5607ed972ad1b15c29192079f35517188"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/SHA256SUMS",
+        "bytes": 1242,
+        "sha256": "7b10c1917fb2496e4551e61986b6341b9fa9ceb46727a2df465ad3ca76d7d462"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/TARGET_COMPARISON.md",
+        "bytes": 3229,
+        "sha256": "0af9e06609227aa5934f6bbab7dd5f450bcf5c4e4cb02ce3027a59bc4fabff20"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/certificate/farkas.json",
+        "bytes": 1571134,
+        "sha256": "c64ca628b2ea2b324a840827ef7571b9d68f2a8fd4039c7c0baab43581bf4f67"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/numerical_case/README.md",
+        "bytes": 1436,
+        "sha256": "b2bee1670a524339355d733df841683050f2b71e6909c8394072b0cdaf16e12f"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/numerical_case/critical_certificate_replay.json",
+        "bytes": 481,
+        "sha256": "7df04d4c1b48f31d090db35949132e010f8153af2ad3b4b07606a714db2ffa8e"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/numerical_case/replay_certificate.py",
+        "bytes": 362,
+        "sha256": "41d78a2b284e7984c974a3dccdd09285706b5861c2cd5170619f6ebffa45f6ce"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/paper/main.pdf",
+        "bytes": 333483,
+        "sha256": "1ececb1c453892a84c6f73139acb987edb3b43f31e3bc0aafd13afcff986ee96"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/paper/main.tex",
+        "bytes": 17663,
+        "sha256": "9457589f2a88d817c332385be9c5b3361f5f262136dd53dabbdb30533def758b"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/src/probability_rules.py",
+        "bytes": 11629,
+        "sha256": "9fc1bf6caa391257ebbbde325997e752c24a4e19d7e1b2472c24ed70a1d3053a"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/src/verify_certificate.py",
+        "bytes": 2559,
+        "sha256": "cf06c4233fd08aad97069a91327a711c98131d7afdec860f9302b5052bcb4f44"
+      },
+      {
+        "path": "research/solutions/584-four-color-branched-ray/test/test_certificate.py",
+        "bytes": 4510,
+        "sha256": "1be70d3df7c449a3082c04d13562df26b360643f121804ac8b40bf1597c6e8a4"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [
+      {
+        "path": "research/solutions/584-four-color-branched-ray/src/verify_certificate.py",
+        "line": 55,
+        "call": "args.output.write_text(json.dumps(report, indent=2) + '\\n')"
+      }
+    ],
+    "pdfs": [
+      "research/solutions/584-four-color-branched-ray/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 79,
+    "head": "7f9e4214fdc060c1ddc37ec6044b12b22bf182f4",
+    "files": [
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/AI_USE.md",
+        "bytes": 1022,
+        "sha256": "bf754a6facd8e964cf925399b6d60b8258980af3ce9cc5fa380f06ca37907381"
+      },
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/PUBLIC_MANIFEST.json",
+        "bytes": 1771,
+        "sha256": "53a28ae61d7c886a2cbb7d426d4819f1a2be3d9a0f050423772a34bee4c5a516"
+      },
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/README.md",
+        "bytes": 2487,
+        "sha256": "a50331d0a587da9b2c385cfd46eb1e8612550dd59aa858c0037a37a6194a1d22"
+      },
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/SHA256SUMS",
+        "bytes": 488,
+        "sha256": "f0a7c77d8b3f3d2fddefb557dbec31801de8766dbd1910207d513f4a4d10aea4"
+      },
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/TARGET_COMPARISON.md",
+        "bytes": 3230,
+        "sha256": "9f5250c8bd879d36a7c80f240428449103978d23b11296a125028f3d56637749"
+      },
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/paper/main.pdf",
+        "bytes": 358180,
+        "sha256": "6bab89c9a0c709901af93c5c0fe5085f5578c172f86bce9a68fbfd429ac28144"
+      },
+      {
+        "path": "research/solutions/583-regular-tree-one-dependent-coloring/paper/main.tex",
+        "bytes": 19146,
+        "sha256": "7e22e3866bdd4cd6b672ea405e0a010b09b27e6c470719776ce9fd66b7f5f634"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/583-regular-tree-one-dependent-coloring/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 78,
+    "head": "9f7637ced9f656199f8ce36eba7feb7d857c764a",
+    "files": [
+      {
+        "path": "research/solutions/576-ising-replica-covariance/AI_USE.md",
+        "bytes": 716,
+        "sha256": "44c64513a83df8033714be2cc46300c3cf49370d77cdac68d67caf58a34c8ee5"
+      },
+      {
+        "path": "research/solutions/576-ising-replica-covariance/PUBLIC_MANIFEST.json",
+        "bytes": 1331,
+        "sha256": "33443f7466c4eb8aacaa73b715c7b915d71f170c516af8a5677669da688f76d5"
+      },
+      {
+        "path": "research/solutions/576-ising-replica-covariance/README.md",
+        "bytes": 2124,
+        "sha256": "3fffafc56352ce5a1d8df120db87a4c704b53089437458d3f3654e175dd28091"
+      },
+      {
+        "path": "research/solutions/576-ising-replica-covariance/SHA256SUMS",
+        "bytes": 528,
+        "sha256": "ec602d0feb6886e9f58c3606637ad290cd722b56051c74b7f5c95f7339da38ff"
+      },
+      {
+        "path": "research/solutions/576-ising-replica-covariance/TARGET_COMPARISON.md",
+        "bytes": 2767,
+        "sha256": "006ae18e20417d69cf5bce407f1b115a477fd37ae3b00934e71dcfad4164cb31"
+      },
+      {
+        "path": "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.pdf",
+        "bytes": 307530,
+        "sha256": "6b7a1168b71ad08d02d8ac91a1686a22728ffd28312a2891bb8f037ab9ac8190"
+      },
+      {
+        "path": "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.tex",
+        "bytes": 16992,
+        "sha256": "51dc6aa5421389946c3b7a1f135d473ba35e00338d16c220d275ddf384b20e0d"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.pdf"
+    ]
+  },
+  {
+    "pr": 77,
+    "head": "8112a718b350324672c81c059624d5a561e20907",
+    "files": [
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/.gitignore",
+        "bytes": 8,
+        "sha256": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf"
+      },
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/PUBLIC_MANIFEST.json",
+        "bytes": 1427,
+        "sha256": "4829858a7ca2bbddd67f9f59fd782a604a3e8bdd34bce9f97a7141843d62b5fa"
+      },
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/README.md",
+        "bytes": 2002,
+        "sha256": "b540951fe359b4aa392ddfb4e93eff86c7e0ee84c09a6270d7c616c1a0dd1900"
+      },
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/SHA256SUMS",
+        "bytes": 517,
+        "sha256": "700bdbcb06f68f351e97a088ceed04ffed70e4b2bf1edea0a403b916cce225ce"
+      },
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/TARGET_COMPARISON.md",
+        "bytes": 2515,
+        "sha256": "c23cc8d2865eed063ddfefab6c9e912bbe73b54385a582d8b7c0513eacee10e2"
+      },
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/paper/trace_decidability.pdf",
+        "bytes": 290561,
+        "sha256": "b00ee225f97b64933f4f0f5b4b737b187f8c84cb141162175729f4e188972440"
+      },
+      {
+        "path": "research/solutions/559-univariate-trace-decidability/paper/trace_decidability.tex",
+        "bytes": 10976,
+        "sha256": "0003807245fd14b414c76638f6054790347775019d087f2d01e0b8c32fc838e8"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/559-univariate-trace-decidability/paper/trace_decidability.pdf"
+    ]
+  },
+  {
+    "pr": 76,
+    "head": "a1cb3d593a70a09257d8df249433ba5dc14da1e6",
+    "files": [
+      {
+        "path": "research/solutions/kaiwen-jin-562-tensor-singular-values/PUBLIC_MANIFEST.json",
+        "bytes": 1614,
+        "sha256": "eac1f2aef5fb87d935e4cc3579f7033f733705cb4d8db1fbec8e339d11d5a699"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-562-tensor-singular-values/README.md",
+        "bytes": 1646,
+        "sha256": "1ac4025a996d0f2996e883c9da4ec928d437a17095b9c833287014bc7ff307db"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-562-tensor-singular-values/SHA256SUMS",
+        "bytes": 412,
+        "sha256": "1176224e4d27d50cd7dfdc7bbd01bd0760e6d404dcad482bce58803020477a73"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-562-tensor-singular-values/TARGET_COMPARISON.md",
+        "bytes": 4512,
+        "sha256": "df6befb2f24804c445184e259dcaa615bc4562e39151b80344fc8ee19f409fc0"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.pdf",
+        "bytes": 352984,
+        "sha256": "c2582f70c16fe53af32577d2009db98e5876a505e7926d11a44d233703b7733e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.tex",
+        "bytes": 27789,
+        "sha256": "7f2d34a01a23d907da6f8b572aa3aa65f4261f794c2a6fc2520f5bc698b353fe"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 75,
+    "head": "49687d565a727aeda3ae7a9134ad628a6fc48d4a",
+    "files": [
+      {
+        "path": "research/solutions/kaiwen-jin-516/.gitignore",
+        "bytes": 99,
+        "sha256": "25eb6a12676f267967fc75726026557a83e6556d9956ea318f715a9f9fb2a09c"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/ENVIRONMENT.json",
+        "bytes": 568,
+        "sha256": "a9ecf2514328a08dfd007b9cdcaed7deeefd1ddd061050479cd2677f06d730cd"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/MANIFEST.json",
+        "bytes": 2645,
+        "sha256": "bf5b82027ba419714896514b221e09dbe76d841e5bf69cb7010131e788691190"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/README.md",
+        "bytes": 2816,
+        "sha256": "740cda873e080b519581eeba6045b24730ded414300b1b0f2ffad32a405d4c9c"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/REPRODUCTION_RECORD.md",
+        "bytes": 1396,
+        "sha256": "7712766ce472de764a9a229fb257dbde23e551aa9e7ab07de091ff887987cd0e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/SHA256SUMS",
+        "bytes": 939,
+        "sha256": "f39c597b5f3d1abae5668da4e201e872d758224ba7a02d4b6d330fc3882a2187"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/TARGET_COMPARISON.md",
+        "bytes": 2735,
+        "sha256": "c678758053e447be883d22081e85a41f01d295e02b05b5a2438086e39db59e21"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/paper/REFERENCE_GUIDE.md",
+        "bytes": 1666,
+        "sha256": "a660cc8484c4802a3b234231a346ecbe8b5497d30ac1e9e3e605b462ca3f9b5c"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/paper/main.pdf",
+        "bytes": 338933,
+        "sha256": "c147595b3bb3add6a6f61ccfc7e6af37bde8767b3f4b1f3ae0c729152e081ced"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/paper/main.tex",
+        "bytes": 23999,
+        "sha256": "9e96a3422097238523e8e0338b8504aa078ed12d70afcde11f1ebfa12aa2b9b0"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/verification/summary.json",
+        "bytes": 354,
+        "sha256": "92b038060f4f7135888ec6c3c18dedc3e774eb434f22eec221f6764ff59872fb"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-516/verification/verify_small_graphs.py",
+        "bytes": 5817,
+        "sha256": "2d65d8b2068e162301caf51a328ff1935c528b6a815e456f0856ff227d1353cb"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/kaiwen-jin-516/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 74,
+    "head": "1986a0aaa93ef42709e196bfa9c4746fab250351",
+    "files": [
+      {
+        "path": "research/solutions/507-sequential-private-spectral-density/PUBLIC_MANIFEST.json",
+        "bytes": 1609,
+        "sha256": "c59c8e6edfc00643fdf3e3ba8b4466530785fd3973fef5652f5edc73afb954b1"
+      },
+      {
+        "path": "research/solutions/507-sequential-private-spectral-density/README.md",
+        "bytes": 2723,
+        "sha256": "0791034772e0e8bbf5d3bb9758e0e693c4fb1d654a6e0aeb3b11212994fecc84"
+      },
+      {
+        "path": "research/solutions/507-sequential-private-spectral-density/SHA256SUMS",
+        "bytes": 412,
+        "sha256": "0578247e3fd3cb34a47285f3fd716ba0f56e55936d940ddaf74b8b5ca283cdb1"
+      },
+      {
+        "path": "research/solutions/507-sequential-private-spectral-density/TARGET_COMPARISON.md",
+        "bytes": 4664,
+        "sha256": "ca232358a08585278f389ae9b3771c9fc7697384e3bfa94935dabbfe3c33daf4"
+      },
+      {
+        "path": "research/solutions/507-sequential-private-spectral-density/paper/main.pdf",
+        "bytes": 392909,
+        "sha256": "36c2b38276067b9cb1246879354adcba5343b5e5a1823dfd03ae245a8f6ea57f"
+      },
+      {
+        "path": "research/solutions/507-sequential-private-spectral-density/paper/main.tex",
+        "bytes": 25836,
+        "sha256": "fa71de91513117c0aeb94e68d2e59c8b072bc3229dab3783bd3e9f493299ae06"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/507-sequential-private-spectral-density/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 73,
+    "head": "6c47f2a0345e5b51292a7ff5b7590a7c7be5ecac",
+    "files": [
+      {
+        "path": "research/solutions/515-gspo-counterexample/.gitignore",
+        "bytes": 56,
+        "sha256": "ae627e7baf4e54eb68c8db5851bdae626301b4dee1245c9a8607b6a6232084d2"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/PUBLIC_MANIFEST.json",
+        "bytes": 2764,
+        "sha256": "eaef021d37225e6018f76f9b83de83299d34a85f306aeedc439dc21bb8bb858c"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/README.md",
+        "bytes": 3503,
+        "sha256": "638420d2164f4d52e73d87220566d989091b14a62f4e3b0905c3acfaf07551a5"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/SHA256SUMS",
+        "bytes": 1058,
+        "sha256": "3a05176044327b13d217f3c3a1714ab47388c1e17012e53eaf1513526113876f"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/TARGET_COMPARISON.md",
+        "bytes": 3224,
+        "sha256": "d47632fc80975eb7338b4d1c9a571aea3bd7294b71a6d5eb087c5db8d5de2969"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/VERIFICATION.md",
+        "bytes": 3390,
+        "sha256": "24d2061fa20def15cc113c879bb23689bd184c844322349fa699eb011d00ee0a"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/numerical_case/README.md",
+        "bytes": 1354,
+        "sha256": "10d0332f708a1d12274a8f5f5a87d2c2e5b7ce6b8c9e0342691e62a9825c1bd0"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/numerical_case/counterexample.json",
+        "bytes": 21224,
+        "sha256": "72ebcc42c639fb8690c7d905370eddd0771aaca6bd82dbb9350fa899c241e4f4"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/paper/counterexample.pdf",
+        "bytes": 331640,
+        "sha256": "538172e3c85ed8b129fe75de6706224d9c15cbe0ef058cd879e0569fd3cb8f1f"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/paper/counterexample.tex",
+        "bytes": 22962,
+        "sha256": "8ec02ea6ff581e9ace5e6c3fa0ea53ab1131c36af515fe0b7f173725788e6eed"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/scripts/verify_certificate.py",
+        "bytes": 4468,
+        "sha256": "80d97b3faf2f27a4f7fc672265eb49e4e2cb0372416864d11845884f0583658f"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/src/dmag_reference.py",
+        "bytes": 6473,
+        "sha256": "671e76901d9d744da28b002d8e70906e018b58fef779447b94a100f57179891e"
+      },
+      {
+        "path": "research/solutions/515-gspo-counterexample/test/test_certificate.py",
+        "bytes": 2281,
+        "sha256": "ca7467ca370d6148988f9deb557c1c8e4f447597771f68cc95c6895a9a4f2ccb"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [
+      {
+        "path": "research/solutions/515-gspo-counterexample/test/test_certificate.py",
+        "line": 52,
+        "call": "p.write_text(json.dumps(data))"
+      }
+    ],
+    "pdfs": [
+      "research/solutions/515-gspo-counterexample/paper/counterexample.pdf"
+    ]
+  },
+  {
+    "pr": 72,
+    "head": "6a5fae3b6a465b6afa0dd01544993e8c90ef0070",
+    "files": [
+      {
+        "path": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/PUBLIC_MANIFEST.json",
+        "bytes": 967,
+        "sha256": "e08c8cc3204aa4149ac25686f405e88e9b9b65a567542d4098bc78b971baa232"
+      },
+      {
+        "path": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/README.md",
+        "bytes": 2633,
+        "sha256": "e13b38950e6e78f9a6ff22294e59dabf2a887e7e7420e3eb00e302d63e11b94e"
+      },
+      {
+        "path": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/SHA256SUMS",
+        "bytes": 446,
+        "sha256": "eeaf8e60c5316ac7946cf1c62f6e84e7f85ba29ab62e0df2d9786006c4176e43"
+      },
+      {
+        "path": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/TARGET_COMPARISON.md",
+        "bytes": 3296,
+        "sha256": "db408a6f50a39ae1fd94dba5e066f0652d25e1dd13db9d9a7c28034976c0e0a7"
+      },
+      {
+        "path": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.pdf",
+        "bytes": 356539,
+        "sha256": "c3898cda7c00baf17a03d65e7ba8f53976dd47399fd98bec1dd718c3ab27e196"
+      },
+      {
+        "path": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.tex",
+        "bytes": 22339,
+        "sha256": "a81c184183b545b55c6e163b38cc2b2659664fa9fdbc8fd9a546cf38047645f1"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.pdf"
+    ]
+  },
+  {
+    "pr": 71,
+    "head": "8ac038c0eb03ee265826ad268aa458f7513ab27a",
+    "files": [
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/.gitignore",
+        "bytes": 58,
+        "sha256": "8684e5e018cfc6c86ffa46ad5561ba057e81ea2ec5e2865a5b310172ec451e00"
+      },
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/PUBLIC_MANIFEST.json",
+        "bytes": 1430,
+        "sha256": "71ecb350d6a9b3c26b3c9590833eecec203bee40302ebd8a0ac9a2b557d7d55a"
+      },
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/README.md",
+        "bytes": 2851,
+        "sha256": "630d3dde4d390d3a16fdfd001bce9f8b28be78ff1fdf9af32598b886925e793c"
+      },
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/SHA256SUMS",
+        "bytes": 489,
+        "sha256": "6432987424456da1ef4cba7456848fa837c54e57d1a40eed78cf1f3d93e1ced9"
+      },
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/TARGET_COMPARISON.md",
+        "bytes": 3372,
+        "sha256": "6bee54b1159e8ceb812d873a8a12a90b77a21d96f30bf010b78cd321211073df"
+      },
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/paper/main.pdf",
+        "bytes": 411781,
+        "sha256": "c29217f3d34566b6952575aaf16151f0d951e59d7237373684334eb8858997e5"
+      },
+      {
+        "path": "research/solutions/051-potential-on-general-manifold/paper/main.tex",
+        "bytes": 61567,
+        "sha256": "3758df6b10e77307b624a2a2cca05960c31c4dfcc586cc68f6e4b0c22fed12a0"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/051-potential-on-general-manifold/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 70,
+    "head": "2e3c856584ed33f10b88389dd0ff65b9518e88d6",
+    "files": [
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/.gitignore",
+        "bytes": 71,
+        "sha256": "2515420d0e8eeba6389d6effa22f337e1cd4165f07b5b41e4ca78d76640bc807"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/PUBLIC_MANIFEST.json",
+        "bytes": 1470,
+        "sha256": "f40c8316e0c9aabc3ce3a48c2b5a7057bc052e65de0caf69a6faa900533aca01"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/README.md",
+        "bytes": 2856,
+        "sha256": "a8c5e7ed73c385dd49ea1683f4fbbccf55abcdacbe4c5510e39bde499805f5eb"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/SHA256SUMS",
+        "bytes": 571,
+        "sha256": "ef13842e1461719641a509053ce8e5529093855513b167170d40c6055a773498"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/TARGET_COMPARISON.md",
+        "bytes": 2835,
+        "sha256": "039eaf6af299b524d72d3792637968c73aef2d06b5cb4d8878e9cecb7ff4bd4d"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/paper/README.md",
+        "bytes": 813,
+        "sha256": "fd5dd4b2dd6698c7d09413b1bc48a2a2a89c80546a075b994534d177cca4fef1"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/paper/main.pdf",
+        "bytes": 365098,
+        "sha256": "60a34f645fc4f6ba998784c05459e54f4a039d443997edb49bcdb4a47a515cd8"
+      },
+      {
+        "path": "research/solutions/434-p-harmonic-second-sobolev-derivatives/paper/main.tex",
+        "bytes": 29101,
+        "sha256": "6b29abfb7e14803c1c7105dd27730c2f2f160e65de28a5110d0275b3508038a8"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/434-p-harmonic-second-sobolev-derivatives/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 69,
+    "head": "c27cd2a4b9a1f4a11d0f4cda8b33b233695260da",
+    "files": [
+      {
+        "path": "research/solutions/451-mixed-sobolev-counterexample/PUBLIC_MANIFEST.json",
+        "bytes": 1003,
+        "sha256": "35ec2ea5b052daa260f4787e64bc04f4f97ee62243d66b5d117ddb60bc1565da"
+      },
+      {
+        "path": "research/solutions/451-mixed-sobolev-counterexample/README.md",
+        "bytes": 1625,
+        "sha256": "870c1d92b7e1076daa01182dbd60a99487f3fa8c1ea128ddcb81dc928d7090d3"
+      },
+      {
+        "path": "research/solutions/451-mixed-sobolev-counterexample/SHA256SUMS",
+        "bytes": 412,
+        "sha256": "5cdc3ba09c1c6971b1c7c4af50a207682923e6de0a269e3e3bb90fae80ed835c"
+      },
+      {
+        "path": "research/solutions/451-mixed-sobolev-counterexample/TARGET_COMPARISON.md",
+        "bytes": 2662,
+        "sha256": "0e0aafd26967eb3bc4a15780b6c411e53c79504f9892a34622988bd0387513a6"
+      },
+      {
+        "path": "research/solutions/451-mixed-sobolev-counterexample/paper/main.pdf",
+        "bytes": 338412,
+        "sha256": "0de035233a087b973ce46d7f271aafb03e733e2ff3a77c4c891c171480157252"
+      },
+      {
+        "path": "research/solutions/451-mixed-sobolev-counterexample/paper/main.tex",
+        "bytes": 17231,
+        "sha256": "c08b8d54e8ccb9d531a2b2e92426ec613856d95871e3ac60a37d4ba74d9b9169"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/451-mixed-sobolev-counterexample/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 68,
+    "head": "6af624cf8fca3a9197fbf70ba82938b610e23cb7",
+    "files": [
+      {
+        "path": "research/solutions/597-entropy-chain-rule-lipschitz/PUBLIC_MANIFEST.json",
+        "bytes": 1652,
+        "sha256": "ce0d4d11894427f3a3b8f80cfb0e471e6a80f208d24adf31ad03e8c3e4dbcbee"
+      },
+      {
+        "path": "research/solutions/597-entropy-chain-rule-lipschitz/README.md",
+        "bytes": 2327,
+        "sha256": "e118129c60d04824d26c0f27f50cba3705ad265b4d7dc74065b960b6a9c8b968"
+      },
+      {
+        "path": "research/solutions/597-entropy-chain-rule-lipschitz/SHA256SUMS",
+        "bytes": 424,
+        "sha256": "d6fe3a1d1c61ec439ac54b28b861fec8c7c4d1d8a1200088c5ef647a2bef8155"
+      },
+      {
+        "path": "research/solutions/597-entropy-chain-rule-lipschitz/TARGET_COMPARISON.md",
+        "bytes": 4354,
+        "sha256": "17f33502876b91db754cb8185be1a44552346f3b7825f04b9fa78d0c1921c92a"
+      },
+      {
+        "path": "research/solutions/597-entropy-chain-rule-lipschitz/paper/manuscript.pdf",
+        "bytes": 301767,
+        "sha256": "a7fb04394764d8489215028d64360049ce96907fdba70d52ff3eb7769be2e524"
+      },
+      {
+        "path": "research/solutions/597-entropy-chain-rule-lipschitz/paper/manuscript.tex",
+        "bytes": 20847,
+        "sha256": "afeb9f5ecfe7245fed6b5efea378a1984be28b0fa5a2e853a5b4c9495d6ca21e"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/597-entropy-chain-rule-lipschitz/paper/manuscript.pdf"
+    ]
+  },
+  {
+    "pr": 67,
+    "head": "efb5c003723b01af6090482c58330db2da99e86b",
+    "files": [
+      {
+        "path": "research/solutions/300-carrying-simplex-interior/PUBLIC_MANIFEST.json",
+        "bytes": 1100,
+        "sha256": "3e2bcc232ffa70ed0552f3d6d0f0a1001b727ca62ea9f6de74b6b02e08de94bb"
+      },
+      {
+        "path": "research/solutions/300-carrying-simplex-interior/README.md",
+        "bytes": 2402,
+        "sha256": "7414dcb6f7fddf7a882448756d4dea13435f0a8c3511897369f8bd4f55a52a31"
+      },
+      {
+        "path": "research/solutions/300-carrying-simplex-interior/SHA256SUMS",
+        "bytes": 442,
+        "sha256": "0b6396171f04e59622393103380305d7cba04554af8353fdc32cede85622d6aa"
+      },
+      {
+        "path": "research/solutions/300-carrying-simplex-interior/TARGET_COMPARISON.md",
+        "bytes": 4446,
+        "sha256": "ea230b4bfa4b9dd40d785d7298968a2859a0dd71e2ad6ed70f1d76b286597b39"
+      },
+      {
+        "path": "research/solutions/300-carrying-simplex-interior/paper/interior_smoothness.pdf",
+        "bytes": 295343,
+        "sha256": "78e326077831c2ed836d355fdc8ea51dbab2f387eff3870a511bf591a60ca441"
+      },
+      {
+        "path": "research/solutions/300-carrying-simplex-interior/paper/interior_smoothness.tex",
+        "bytes": 19319,
+        "sha256": "d55a913ae9159d97dce2436468ab3948310a90875fee50a7c0b0d7486757246b"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/300-carrying-simplex-interior/paper/interior_smoothness.pdf"
+    ]
+  },
+  {
+    "pr": 66,
+    "head": "70fea40cdc7c8555a835feab3ff4882a1fcf7139",
+    "files": [
+      {
+        "path": "research/solutions/063-geodesic-scattering/.gitignore",
+        "bytes": 7,
+        "sha256": "181314065df2f2fdaf920b1a8b5311daa216a2d6489a06ada5b49cc514d89417"
+      },
+      {
+        "path": "research/solutions/063-geodesic-scattering/Makefile",
+        "bytes": 295,
+        "sha256": "ba504901a18e647b0d1210853f69cfe1b9a39cad91d0e165b1d65c956cf62a50"
+      },
+      {
+        "path": "research/solutions/063-geodesic-scattering/README.md",
+        "bytes": 3015,
+        "sha256": "963bf78f0f56da5622d7b4e77cc59832ce49dd3d8d195f6d39e7e55014b67f52"
+      },
+      {
+        "path": "research/solutions/063-geodesic-scattering/SHA256SUMS",
+        "bytes": 507,
+        "sha256": "cb0521aa8ca5f08f4410b5de4fbc81e635b331bb1577eae6a4bedd319a2ac2cb"
+      },
+      {
+        "path": "research/solutions/063-geodesic-scattering/TARGET_COMPARISON.md",
+        "bytes": 4761,
+        "sha256": "8abe99cc15e8564d2afb30cd9fd7b5ecb1ac6f321d5dcd63df79a68a222a40b0"
+      },
+      {
+        "path": "research/solutions/063-geodesic-scattering/paper/geodesic_scattering.pdf",
+        "bytes": 368476,
+        "sha256": "2a1695988472c7af84a76ae5fa0c4779db0af44131775a637e3b5ae4d8f289fa"
+      },
+      {
+        "path": "research/solutions/063-geodesic-scattering/paper/geodesic_scattering.tex",
+        "bytes": 38813,
+        "sha256": "ea13605d2b42c11095cf9b9ef60695da44d892a65099f86c421c87a98a22c5ab"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/063-geodesic-scattering/paper/geodesic_scattering.pdf"
+    ]
+  },
+  {
+    "pr": 64,
+    "head": "e601b95efa8c1c3a570734191d65b18d9ddd4438",
+    "files": [
+      {
+        "path": "research/solutions/431-dtn-analyticity-continuous-boundary/PUBLIC_MANIFEST.json",
+        "bytes": 1000,
+        "sha256": "c8a2d045a76a725bb949aa86b3c746f2981dd233b5b854d7c13c188e40a3e108"
+      },
+      {
+        "path": "research/solutions/431-dtn-analyticity-continuous-boundary/README.md",
+        "bytes": 2407,
+        "sha256": "05bed400652b56850c6f3fcf4e045cbaae8405292056ffe98b24079a5bc6c145"
+      },
+      {
+        "path": "research/solutions/431-dtn-analyticity-continuous-boundary/SHA256SUMS",
+        "bytes": 434,
+        "sha256": "ecc203e31183958d27342fcb1b5d0292b5d81f3a5a528bd32a2a945971c699ef"
+      },
+      {
+        "path": "research/solutions/431-dtn-analyticity-continuous-boundary/TARGET_COMPARISON.md",
+        "bytes": 3950,
+        "sha256": "9ef92ac0fd55b4e50a8952e5bcbe0ca8f03d07e77b21583284d6af186edfdb51"
+      },
+      {
+        "path": "research/solutions/431-dtn-analyticity-continuous-boundary/paper/dtn_analyticity.pdf",
+        "bytes": 370937,
+        "sha256": "997d9454c33e442100938f4f64e1cf0f3d7945497bc7133cf58e13f40a7a8104"
+      },
+      {
+        "path": "research/solutions/431-dtn-analyticity-continuous-boundary/paper/dtn_analyticity.tex",
+        "bytes": 31796,
+        "sha256": "7e05b99ff9dafcfd65c381b9d1e631cfc448469118c8183aa72e7bc9fbc755f9"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/431-dtn-analyticity-continuous-boundary/paper/dtn_analyticity.pdf"
+    ]
+  },
+  {
+    "pr": 60,
+    "head": "533508074cd44bc0117d6a936853db0d259e25e2",
+    "files": [
+      {
+        "path": "research/solutions/010-mercedes-disk-partition/PUBLIC_MANIFEST.json",
+        "bytes": 1364,
+        "sha256": "0b76a4d6b84807c013c9567c0b0bd92d70a8624df02e65df69336b2d19bbc091"
+      },
+      {
+        "path": "research/solutions/010-mercedes-disk-partition/README.md",
+        "bytes": 2579,
+        "sha256": "5a06ccb3000c162ec017bd6071c4564ac9c2671805fd87d66bfd9ecc4782c327"
+      },
+      {
+        "path": "research/solutions/010-mercedes-disk-partition/SHA256SUMS",
+        "bytes": 440,
+        "sha256": "189cf8071e26d5e5edab640ee698f53ca384a8414a8739d565388b8691ecc0f3"
+      },
+      {
+        "path": "research/solutions/010-mercedes-disk-partition/TARGET_COMPARISON.md",
+        "bytes": 3418,
+        "sha256": "b0059e457d3f5e0fff9d9bc608f202fe6ec1efa0b0e9b2e830898ab38affbb8f"
+      },
+      {
+        "path": "research/solutions/010-mercedes-disk-partition/paper/mercedes_partition.pdf",
+        "bytes": 328033,
+        "sha256": "c0354238f1b49a79096589f0d3a43528dac0d4ff208c463eb7dfbbe3c63a5627"
+      },
+      {
+        "path": "research/solutions/010-mercedes-disk-partition/paper/mercedes_partition.tex",
+        "bytes": 15493,
+        "sha256": "fc2b42d32ef4216c54989dbd8dfe8d4a2f7456d133d59204673d7c49889fd757"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/010-mercedes-disk-partition/paper/mercedes_partition.pdf"
+    ]
+  },
+  {
+    "pr": 58,
+    "head": "060bceb02fd167080976f6bb780f4be9dc1b9910",
+    "files": [
+      {
+        "path": "research/solutions/415-nongradient-neumann-uniform-control/PUBLIC_MANIFEST.json",
+        "bytes": 1543,
+        "sha256": "c0ae73b97afe60af5f20fd0ef82641d54ad80972335726af67d42875e203192a"
+      },
+      {
+        "path": "research/solutions/415-nongradient-neumann-uniform-control/README.md",
+        "bytes": 2647,
+        "sha256": "9ab9713177b4a0a6be3d1bb5c370da380f1de5e0d37448b08730e96236211c71"
+      },
+      {
+        "path": "research/solutions/415-nongradient-neumann-uniform-control/SHA256SUMS",
+        "bytes": 412,
+        "sha256": "891799e9ac4a0703b4c8ad3e955c4162cf9d9a31a3edcace8adb90c855f197a5"
+      },
+      {
+        "path": "research/solutions/415-nongradient-neumann-uniform-control/TARGET_COMPARISON.md",
+        "bytes": 5444,
+        "sha256": "e091f1a509cc90efcbf0ffadb80b5dbfda73b49f66ef98f21ac37edc672f831f"
+      },
+      {
+        "path": "research/solutions/415-nongradient-neumann-uniform-control/paper/main.pdf",
+        "bytes": 346441,
+        "sha256": "2fd879033d826c3680e1ee4778148ce6775b69e796cc553540a277ae39c833c1"
+      },
+      {
+        "path": "research/solutions/415-nongradient-neumann-uniform-control/paper/main.tex",
+        "bytes": 33394,
+        "sha256": "5531cc4216af7f028c7a80a12cacb3ae3ad1746cf71a41bb87c9658cabc48398"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/415-nongradient-neumann-uniform-control/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 57,
+    "head": "fff30eeb072395341d9944e4c75d5267b770f3b8",
+    "files": [
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/.gitignore",
+        "bytes": 26,
+        "sha256": "6cf68f361ed9af9c89f8304b81604d87347c3d38348e90f1e5bef55ea8fa99a5"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/PUBLIC_MANIFEST.json",
+        "bytes": 2115,
+        "sha256": "1e6b5c0703c2aae09023a6e52273b7cae3d6b184e3aa4313e75d26a2f604e94c"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/README.md",
+        "bytes": 1935,
+        "sha256": "7bbbe7066bb0d78783d015fee1dab8471d236c6b34e7e75599f9bd7e1694b469"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/REPRODUCTION.md",
+        "bytes": 1869,
+        "sha256": "3b886df5ccc4f19b6c4eff070ef472a03bbc8db4d400b48d69633e458e882ddc"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/SHA256SUMS",
+        "bytes": 660,
+        "sha256": "38676be189b62622d941d78751808b41c3d00f7b16a435873e388e30ceade47c"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/TARGET_COMPARISON.md",
+        "bytes": 3000,
+        "sha256": "27b3633fc221eb1de8674d97c79b19bb3e6bd2588f85318436cc1647b957dc28"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/code/check_profiles.py",
+        "bytes": 3521,
+        "sha256": "e0958c4ec8c19fd89967c566d339c43722e793c3035e15e5458655041d9597e7"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.pdf",
+        "bytes": 298898,
+        "sha256": "c3f0e10f0482810564f38a0f8d6a474ca31f57a12b04edc92547cee9a7a7234a"
+      },
+      {
+        "path": "research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.tex",
+        "bytes": 16645,
+        "sha256": "ff0b33604d3fb748c50751ebbe17d87baf39d7dcb06d4418de90024fc124ce62"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 56,
+    "head": "a44c2c3ff89538a75e814dda1b958bd8c688485f",
+    "files": [
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/.gitignore",
+        "bytes": 87,
+        "sha256": "0d7ba81615f64b9ed3561c68164bd9ac838d3967bc64dac8b11d6e583c3eea9c"
+      },
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/PUBLIC_MANIFEST.json",
+        "bytes": 1437,
+        "sha256": "68ed78500159546c3dc59887e5f25e779b62426faca7ce94b9508bc2349d4c1b"
+      },
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/README.md",
+        "bytes": 2615,
+        "sha256": "312562df230202d062ea80900e687d89adf8de698ce12e8bca2ef5d359a9ce76"
+      },
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/SHA256SUMS",
+        "bytes": 543,
+        "sha256": "2b2d4f4e6dc801b432158fbd45f1e6be99f46a30d9099e5c62e9d37f821ccd64"
+      },
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/TARGET_COMPARISON.md",
+        "bytes": 2773,
+        "sha256": "db2ab3519d5fb71146a8afa65232fd35a0ec101296f535ef03ce00f5518e30cd"
+      },
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.pdf",
+        "bytes": 282945,
+        "sha256": "0847f6c6f4b8dc67b9e07e4cceb91de5eda8537e050b75690bc0e196b81ff1a9"
+      },
+      {
+        "path": "research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.tex",
+        "bytes": 10185,
+        "sha256": "f76504ce36512f297e68f506ef3db976ba3c74c0e3813a8d30fa22af05f2b305"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.pdf"
+    ]
+  },
+  {
+    "pr": 54,
+    "head": "6b03556d5c8ba561a30fb600d7bc0348074361dc",
+    "files": [
+      {
+        "path": "research/solutions/386-slow-surface-schrodinger-observability/PUBLIC_MANIFEST.json",
+        "bytes": 1473,
+        "sha256": "f35e646e471deb87d8102ddc4dc9a4c67faf1ea51c9ed35e30f17e7849e86c53"
+      },
+      {
+        "path": "research/solutions/386-slow-surface-schrodinger-observability/README.md",
+        "bytes": 1879,
+        "sha256": "072ecee7edf4bfe8e0e735f58c99632ab8ebcccdb8eef742d84e454ec7f441d4"
+      },
+      {
+        "path": "research/solutions/386-slow-surface-schrodinger-observability/SHA256SUMS",
+        "bytes": 448,
+        "sha256": "db30ffc008c9024328a4342d46fc3278d7279a9a3404fefe953282f498953c92"
+      },
+      {
+        "path": "research/solutions/386-slow-surface-schrodinger-observability/TARGET_COMPARISON.md",
+        "bytes": 3474,
+        "sha256": "87b638126679593401cafba571164a89d23b0ed6f18d42ae62c1888aa5ce631c"
+      },
+      {
+        "path": "research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.pdf",
+        "bytes": 325510,
+        "sha256": "8a456ecd87d89623334ad2e1efaa6d767a1e46e77d8f457bf0776d18463c9332"
+      },
+      {
+        "path": "research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.tex",
+        "bytes": 16976,
+        "sha256": "867cf1a3690d2d2f51b47b0e84487067f0fdcc4089aa18e66d16ed6fd671f24f"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.pdf"
+    ]
+  },
+  {
+    "pr": 53,
+    "head": "1b29cbe43828ce9b9fa1eeff602756fba40ff879",
+    "files": [
+      {
+        "path": "research/solutions/385-equal-speed-wentzell-wave-observability/PUBLIC_MANIFEST.json",
+        "bytes": 1071,
+        "sha256": "a9057ba7cf93214db00af7e67d3c58922215b86c37c2550db08c3a84a83dc6a3"
+      },
+      {
+        "path": "research/solutions/385-equal-speed-wentzell-wave-observability/README.md",
+        "bytes": 2156,
+        "sha256": "74b0431a54fae770afa154250133ddbc88414e38cc683fe6a33bb1845ac94743"
+      },
+      {
+        "path": "research/solutions/385-equal-speed-wentzell-wave-observability/SHA256SUMS",
+        "bytes": 454,
+        "sha256": "a25d3aeaa8369c29ed6ae2ed0f921ea0b3b48cbe1940ea2e593d9438cca47e16"
+      },
+      {
+        "path": "research/solutions/385-equal-speed-wentzell-wave-observability/TARGET_COMPARISON.md",
+        "bytes": 3076,
+        "sha256": "d4595e92fbfd4514e10fcac84e2e2c7eb77e0d1680d080b7888a10e3fadc6676"
+      },
+      {
+        "path": "research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.pdf",
+        "bytes": 320073,
+        "sha256": "a84c371f4124dfb590da5f476b88b2e789d3e06a751f8dd541158ceea9684e72"
+      },
+      {
+        "path": "research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.tex",
+        "bytes": 15199,
+        "sha256": "4a66f5f46c02377a8d0354f30a13171e44c72c23d5cc752b9c6d949a9c999ef4"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.pdf"
+    ]
+  },
+  {
+    "pr": 52,
+    "head": "3fb86256a82f8fd8fe35a9ee2df338d0017f7057",
+    "files": [
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/PUBLIC_MANIFEST.json",
+        "bytes": 1218,
+        "sha256": "9ad6afec261da1d63501bd33fd440ef3044488cf30aa598a6a8454841f5c748e"
+      },
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/README.md",
+        "bytes": 1915,
+        "sha256": "033d9ccc3dbc758bbfc412eb3af0cae58fe5cb2210c33a52aa72f05436069201"
+      },
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/SHA256SUMS",
+        "bytes": 501,
+        "sha256": "9d1a936bc1d6713202c728356a61d030faa350e9e8c02bcced46ac9ddf660073"
+      },
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/TARGET_COMPARISON.md",
+        "bytes": 2937,
+        "sha256": "09705733d7977ee831190f566fa079dfc309da4c12c29906f02e5f4bc872fe47"
+      },
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/build.sh",
+        "bytes": 143,
+        "sha256": "e9bd563318044fe28a779550004d8857b3fe7d6e15056f26b12c4a4f5ad5b6c7"
+      },
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.pdf",
+        "bytes": 330811,
+        "sha256": "bfa002128c7c79a5450e79ea0223663c0a86137379fcb641157584373dc9ffa1"
+      },
+      {
+        "path": "research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.tex",
+        "bytes": 20007,
+        "sha256": "5d5b7125b33ed736d98acad52a0856f26ace96803b84a1ad190cb45c4ee169c0"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.pdf"
+    ]
+  },
+  {
+    "pr": 51,
+    "head": "8f5c27ab02df36559997f106dcbccfb6f6c3738a",
+    "files": [
+      {
+        "path": "research/solutions/258-signed-stefan-control/MANIFEST.json",
+        "bytes": 958,
+        "sha256": "a19fe4a40bf40bea0849917e5cb73e429f7e5d27d5919bed8f27028f2035c4f9"
+      },
+      {
+        "path": "research/solutions/258-signed-stefan-control/README.md",
+        "bytes": 2155,
+        "sha256": "177edc0c9a28cd6976b637fbe06bef1c310390b77d8cce9bbfaad57e006f9468"
+      },
+      {
+        "path": "research/solutions/258-signed-stefan-control/TARGET_COMPARISON.md",
+        "bytes": 2891,
+        "sha256": "2b1580288cec3a08b3c23023580ca388cf886df9af4906eb490aa165dfcbf580"
+      },
+      {
+        "path": "research/solutions/258-signed-stefan-control/stefan_signed_control.pdf",
+        "bytes": 260258,
+        "sha256": "9d4063f81935e1cc5f588d099e5d50424451d6948b98afd76ef2e517d87573a9"
+      },
+      {
+        "path": "research/solutions/258-signed-stefan-control/stefan_signed_control.tex",
+        "bytes": 27330,
+        "sha256": "a0dba10e0e9ad7ac9a57386e6760a3c6570735c02b1404c60ddd0814314dc21c"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/258-signed-stefan-control/stefan_signed_control.pdf"
+    ]
+  },
+  {
+    "pr": 49,
+    "head": "b87f79b5a7bf638d4b2833a4245c014b11d76718",
+    "files": [
+      {
+        "path": "research/solutions/139-sharp-heat-tracking-range/PUBLIC_MANIFEST.json",
+        "bytes": 1663,
+        "sha256": "62563047a3177839b435a89015d3315f4fe6d577a9b76f6d293d7e3339977d12"
+      },
+      {
+        "path": "research/solutions/139-sharp-heat-tracking-range/README.md",
+        "bytes": 3730,
+        "sha256": "e6546424430162075971223f5b96483c9ac703327589f9823cb6daf7b3062b84"
+      },
+      {
+        "path": "research/solutions/139-sharp-heat-tracking-range/SHA256SUMS",
+        "bytes": 430,
+        "sha256": "2600ca12346386a2662b771816362f4318e4c4e4c36d710a8473e1040bc72de4"
+      },
+      {
+        "path": "research/solutions/139-sharp-heat-tracking-range/TARGET_COMPARISON.md",
+        "bytes": 5889,
+        "sha256": "cead01edd8acda299d41a9e4a9a479b6dbdda5d25ccffb1df614518d5dcbfa2c"
+      },
+      {
+        "path": "research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.pdf",
+        "bytes": 295215,
+        "sha256": "7bbc877821c4c114e07d933494b1d7ebfc4b90390bdf9950fd5ba2e530015b72"
+      },
+      {
+        "path": "research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.tex",
+        "bytes": 46170,
+        "sha256": "f6157ed34c67887dbdebaa31d9066f55d518d570cf827ac0fa92b1f59bcd2347"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.pdf"
+    ]
+  },
+  {
+    "pr": 48,
+    "head": "7dce20795e3be02ef553fe1dda8db4864567e890",
+    "files": [
+      {
+        "path": "research/solutions/138-unique-minimum-time-positive-heat-control/PUBLIC_MANIFEST.json",
+        "bytes": 1287,
+        "sha256": "b0414758b9c3c89997904444c0f442670e12160c31879c294081bc7aec03eacd"
+      },
+      {
+        "path": "research/solutions/138-unique-minimum-time-positive-heat-control/README.md",
+        "bytes": 3285,
+        "sha256": "6541bb09d38fc78e7e8a7b1aec21623f8a42ddc208d7adb4ac1c899fe2e21fa0"
+      },
+      {
+        "path": "research/solutions/138-unique-minimum-time-positive-heat-control/SHA256SUMS",
+        "bytes": 424,
+        "sha256": "dfc77289467996e16ed8b977d3f93f9b20641071970bcfc529cd339f61f29a71"
+      },
+      {
+        "path": "research/solutions/138-unique-minimum-time-positive-heat-control/TARGET_COMPARISON.md",
+        "bytes": 3178,
+        "sha256": "5574cba0b17907141ddbb4f6a8bcb1f693551044de9d9cf0b190fe586bdae832"
+      },
+      {
+        "path": "research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.pdf",
+        "bytes": 349565,
+        "sha256": "ec63d11a8701a66160d214d29a8f84b64f1c50d8d2e83cfb393bef7e4ca91821"
+      },
+      {
+        "path": "research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.tex",
+        "bytes": 35911,
+        "sha256": "862e379bc48409d8853cb48e53b8218779b3dbeb950e3f106f7616e6724140d8"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.pdf"
+    ]
+  },
+  {
+    "pr": 46,
+    "head": "4f2a858c30c12c9e096ebaa7688c20e44d125721",
+    "files": [
+      {
+        "path": "research/solutions/555-nonadaptive-randomization-gain/PUBLIC_MANIFEST.json",
+        "bytes": 1494,
+        "sha256": "5cee5b4a028bd2904a6e36d1e9712e869bb8c81e325706c412c93b02a273720c"
+      },
+      {
+        "path": "research/solutions/555-nonadaptive-randomization-gain/README.md",
+        "bytes": 2692,
+        "sha256": "8c693c2a89b61adc354b5e7edf35b759f25eb47da16f1be279b8a78a5c78aabd"
+      },
+      {
+        "path": "research/solutions/555-nonadaptive-randomization-gain/SHA256SUMS",
+        "bytes": 412,
+        "sha256": "63519874aaab4297c3ba5aa26508deb9c99730b17c889cdb9797354e32dbf72e"
+      },
+      {
+        "path": "research/solutions/555-nonadaptive-randomization-gain/TARGET_COMPARISON.md",
+        "bytes": 4365,
+        "sha256": "486240d2e84c76164d4db2d61f521d8b063ad541b97966a798097319a0b16f9b"
+      },
+      {
+        "path": "research/solutions/555-nonadaptive-randomization-gain/paper/main.pdf",
+        "bytes": 324187,
+        "sha256": "a2cabb08dd2e3d9d86c92640df99d4797ec4216d25dee66deb58bedf0024767d"
+      },
+      {
+        "path": "research/solutions/555-nonadaptive-randomization-gain/paper/main.tex",
+        "bytes": 16373,
+        "sha256": "5eeb5e7f05f8d353279413c8995b06577b486fcd08c887a0fa84791688912cd9"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/555-nonadaptive-randomization-gain/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 45,
+    "head": "7d51782d7f43f71724d3caa92e8f256572286359",
+    "files": [
+      {
+        "path": "research/solutions/067-burgers-shock-uniform-control-time/PUBLIC_MANIFEST.json",
+        "bytes": 1281,
+        "sha256": "1de1b52b24fe66e2561dabd6852fe995c24bbdb48a9866a835ea3dcbc7dfe9b2"
+      },
+      {
+        "path": "research/solutions/067-burgers-shock-uniform-control-time/README.md",
+        "bytes": 1618,
+        "sha256": "0b98bc42ee43d077835ab32b87a0d7df6d3d29d3c1a4e4ab3353d21c9361e911"
+      },
+      {
+        "path": "research/solutions/067-burgers-shock-uniform-control-time/SHA256SUMS",
+        "bytes": 412,
+        "sha256": "00ad2b9c4bc2a13f039ad80c4113b85ec5e5e8342692fe14c4b19529ea41913e"
+      },
+      {
+        "path": "research/solutions/067-burgers-shock-uniform-control-time/TARGET_COMPARISON.md",
+        "bytes": 3259,
+        "sha256": "755ba0d9e8eca2d30f8172f0fe82caec8d1537497dcdc5d3302e9fabf4ac16ef"
+      },
+      {
+        "path": "research/solutions/067-burgers-shock-uniform-control-time/paper/main.pdf",
+        "bytes": 409168,
+        "sha256": "4f9106c3fa2182343555f2d4287bd3e6e18cd46ffc3ff45a2cf73f2bc4818cdb"
+      },
+      {
+        "path": "research/solutions/067-burgers-shock-uniform-control-time/paper/main.tex",
+        "bytes": 38306,
+        "sha256": "1142f800b2ff4b6ff08a445714b3d4b7739225dc5c7a894794c841b5480225d1"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [],
+    "pdfs": [
+      "research/solutions/067-burgers-shock-uniform-control-time/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 40,
+    "head": "8dc12e3f97d7c2230981ad0d46ab00aa06188bfd",
+    "files": [
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/.gitignore",
+        "bytes": 145,
+        "sha256": "99e9569071efc5faeaed6327da224e68a9738eb79e1072b664f917a4b9204f07"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/PUBLIC_MANIFEST.json",
+        "bytes": 6293,
+        "sha256": "47ac47e9f384640fc9ce9179b2b75e1e79dd94ac6f96a7a61521db60ccf7eeea"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/README.md",
+        "bytes": 2732,
+        "sha256": "4dcef197d420ee2cb4adaafd04496482d771a9a5d6a260554217a462fbfc3491"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/SHA256SUMS",
+        "bytes": 2627,
+        "sha256": "377ca61b72764a90945ad8d4a160ecb854fae272e0cd6721f77490803189f009"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/TARGET_COMPARISON.md",
+        "bytes": 2515,
+        "sha256": "252712f15920fa44eae1b68d45c9637d06d6cc7ef955cc4c1a9b34a76e77ed93"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/README.md",
+        "bytes": 2798,
+        "sha256": "b472d72d08f2b9d68896de7722199a51b9539a8cfaab8b0034970c03d8999af2"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/figures/dimensions.svg",
+        "bytes": 3272,
+        "sha256": "a7742a319e46dfeea4f8a4c722060997c8e2145b2a6ee3215d384ca47b2f4b3b"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/plot_dimensions.py",
+        "bytes": 2552,
+        "sha256": "e0c0f812dae511cf78ececa18cf78d5fe00a7fd0bdcb4ca491ae82e8024a50e8"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "bytes": 5320,
+        "sha256": "3ac00408e8685c733bfac8245946597c3cf6ca7507be31e7332b2c826457a144"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/summaries/audit.json",
+        "bytes": 488,
+        "sha256": "34816843b9c0196664f016af7c722250c535bb13ca0f0bd7ccf5be94e3e7ac0d"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/summaries/crosscheck.json",
+        "bytes": 476,
+        "sha256": "d11799c4cdc6e698920d5ce4b3d1086b2910b1f8152caa3a7968423bf21ffe06"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/summaries/rank_summary.csv",
+        "bytes": 350,
+        "sha256": "341be7eda0e4640fbf5a89e73b600c8b7a03e3a835472a526b4d89781d527dfb"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/summaries/replay.json",
+        "bytes": 107,
+        "sha256": "0979552536d3a9e932ed0ca63be8d620c9984e9fdd0215d4cbd2df3f98603f33"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/summaries/reproduction.json",
+        "bytes": 6464,
+        "sha256": "d69135391cc2a4b00f0e6abc868acfbf86cf11335692e1145b2b111099dd2f55"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/paper/README.md",
+        "bytes": 800,
+        "sha256": "4181ac79d6f02aa8462f8c5f436c399905f495566f3745c8fe645c05d6302f9c"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.pdf",
+        "bytes": 294745,
+        "sha256": "3e8ff720c56295b85929a7d09dcaf33919cf03dc6fb35d41f20052e7db0263e9"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.tex",
+        "bytes": 24487,
+        "sha256": "e1f42cfa10bdd970249408f62bb3877cc049f1f576951a44dbc5445dcc404d87"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/pyproject.toml",
+        "bytes": 454,
+        "sha256": "661588c23e2e98d4f12a24945d6017d869778a5b501191ea07613d6b5cb423ff"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/README.md",
+        "bytes": 2848,
+        "sha256": "c2d88d7de725aa15a25d4b5516dcfb0db82243bbffd0f11cee75b7c3984b860a"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/__init__.py",
+        "bytes": 173,
+        "sha256": "ca4245bf115b09d5e398b0f64ca8cbdd13aa3056780829793cd9f3275c7b71a4"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/associative.py",
+        "bytes": 3982,
+        "sha256": "2e1c7dc31e347ef76598eedc966122803b301422e8a4686670267de9c661bd02"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/audit.py",
+        "bytes": 8822,
+        "sha256": "33a92147e3f91f32dce4201068f54c4383c4b4e955caf8fffcfc6747c96dfa65"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/certificates.py",
+        "bytes": 2127,
+        "sha256": "eb2061d13b3e2ff3fabde2ee7d0fbc8ab1ffa4b8a4fd3913e548ca4d336b76e8"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/core.py",
+        "bytes": 1213,
+        "sha256": "72c49ceb7cd7dbe12db1334efcaa5a5488497d4583b1684f03dc05d56f246d6a"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/errors.py",
+        "bytes": 569,
+        "sha256": "f3bcfa4d0854c43dfc811b16047f258d05fe08d9c506616ae722e5fb6feb314e"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/linear.py",
+        "bytes": 1160,
+        "sha256": "09a932e4b9df0acaa2f8601b195874e6469dfe2c613fed0af30b64a27ee9a5d1"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/magmatic.py",
+        "bytes": 968,
+        "sha256": "bc851e47d9f53a5bc6872d2c43085504f8c9cf721e1fffbbe34bbc1f391c7915"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/mechanical.py",
+        "bytes": 4238,
+        "sha256": "0034e1218d0857a6135ea28634761023dfaf264baea03046a2c29617291e015d"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/polynomial.py",
+        "bytes": 7713,
+        "sha256": "47d3159f570d2683867bceba57406becae789430b06ac511739c8fa642876392"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/test/test_algebra.py",
+        "bytes": 8086,
+        "sha256": "c484288e55742d8402016e8ab1581299ac2e656bba4b4ecc40f47ded04b01ef4"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/plot_dimensions.py",
+        "line": 55,
+        "call": "args.output.write_text('\\n'.join(pieces) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/plot_dimensions.py",
+        "line": 15,
+        "call": "args.table.open(newline='')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 55,
+        "call": "subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT, capture_output=True, text=True)"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 58,
+        "call": "path.write_text(json.dumps(manifest, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 106,
+        "call": "(args.output / 'summary.json').write_text(json.dumps(summary, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 119,
+        "call": "path.write_text(json.dumps(manifest, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 74,
+        "call": "(args.output / 'lowering_traces.json').write_text(json.dumps(traces, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 99,
+        "call": "(args.output / 'verified_blocks.json').write_text(json.dumps(verified, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 69,
+        "call": "(args.output / f'polynomial_seed_{seed}.json').write_text(json.dumps(details, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/numerical_case/run_cases.py",
+        "line": 88,
+        "call": "gzip.open(args.certificate, 'rt')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/audit.py",
+        "line": 213,
+        "call": "(out / 'audit_summary.json').write_text(json.dumps(result, indent=2), encoding='utf8')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/audit.py",
+        "line": 194,
+        "call": "(out / 'rank_summary.csv').open('w', newline='')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/audit.py",
+        "line": 196,
+        "call": "w.writeheader()"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/audit.py",
+        "line": 197,
+        "call": "w.writerows(table)"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/audit.py",
+        "line": 199,
+        "call": "gzip.open(out / 'rank_certificates.json.gz', 'wt', encoding='utf8')"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/polynomial.py",
+        "line": 125,
+        "call": "peval(pw(w), point)"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/polynomial.py",
+        "line": 142,
+        "call": "peval(px(x), point)"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/polynomial.py",
+        "line": 126,
+        "call": "eval_tree(t)"
+      },
+      {
+        "path": "research/solutions/519-euclidean-mechanical-lie-algebra/src/aim519/polynomial.py",
+        "line": 143,
+        "call": "eval_tree(t)"
+      }
+    ],
+    "pdfs": [
+      "research/solutions/519-euclidean-mechanical-lie-algebra/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 39,
+    "head": "c5902207726a88e2f2922c7ffb1189272e755cdb",
+    "files": [
+      {
+        "path": "research/solutions/kaiwen-jin-517/.gitignore",
+        "bytes": 198,
+        "sha256": "fe64f5dd9102c947b92c363c0aecc30009ee9d1c001844597269394e072a8b4f"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/ENVIRONMENT.json",
+        "bytes": 420,
+        "sha256": "5b0232121c23df8c53021624670798675f04ea55b3150d7f6c314d83ba22b7e9"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/MANIFEST.json",
+        "bytes": 5783,
+        "sha256": "281c09ccf1e47b33890dcbaecd4914f6215f65496c980fba3f268e1ad1194713"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/README.md",
+        "bytes": 2773,
+        "sha256": "dbdc9a2bed842944be14d39e3ad583cfc3ed6c4d2f4c8adeef4c2a80732b7509"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/REPRODUCTION_RECORD.md",
+        "bytes": 2377,
+        "sha256": "107b3597da27bd6cbd7e992287a6c3f375de2d4423279066ae5a3f9f22f7258f"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/SHA256SUMS",
+        "bytes": 2242,
+        "sha256": "360f470857d4b9a606b8f537e008c8fd9dfecc0359a24f85287cd39d2c5a4207"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/TARGET_COMPARISON.md",
+        "bytes": 3865,
+        "sha256": "8e8ef8504a05728f0529559f224f893a98a5b6c21788d15e73ea85bc6f17d28a"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/README.md",
+        "bytes": 3140,
+        "sha256": "95aa32a39fb41f2b49a2d647747976a48f2857d8d3ff10deac15937da2bb277e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/config.json",
+        "bytes": 257,
+        "sha256": "03054d8c375b9f249be2b33e792057b973186d101e4438daefc8274408d7e728"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/figures/determinant_comparison.pdf",
+        "bytes": 13811,
+        "sha256": "faa2849fef460ca96ef0aef85879a0b38e3a868f8624e16b3c03ca0cb4342d8f"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/figures/radial_spectra.pdf",
+        "bytes": 21504,
+        "sha256": "b8b60215031e057f56a27681691e8ffaa4b85f415f3e57bda136d5d1ca6edebe"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/plot_cases.py",
+        "bytes": 2934,
+        "sha256": "f92233bc196b6c792cc575fb3c523c296999628026b053ae3307f67975b221b1"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/run_cases.py",
+        "bytes": 9117,
+        "sha256": "b20f922fd45dbd77aedc1e9dc1e5603cb5e15cfc3edb423e40ea8a861b178a42"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/summaries/paper_results.json",
+        "bytes": 903,
+        "sha256": "105fb54a452f2172114872aacaf3295c1180d74b4f22395a1af453051476e413"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/paper/REFERENCE_GUIDE.md",
+        "bytes": 3060,
+        "sha256": "fb5555cf5a73a9b8c160d7f55d7ffbfd9eab7a73d55c40e5e208f63ca7f169e0"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/paper/main.pdf",
+        "bytes": 360588,
+        "sha256": "33847f9d30b26420a3308634fff1a7e17b9ade916b53b4979a1dfece320d9f81"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/paper/main.tex",
+        "bytes": 32113,
+        "sha256": "343c78aa29d834006766976aebe45333bb8b3ae06ec76d86ef2685be7138c8e8"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/paper/references.bib",
+        "bytes": 2481,
+        "sha256": "4d2a4f4fd05c454515be91b85d0f878576e90cf2bea8cd17fd8e434df97b9dd1"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/pyproject.toml",
+        "bytes": 412,
+        "sha256": "514c7ebd9dbefef5a40010420ae81c5c0686c5ba2d7271b6b80ff4ce6143057e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/requirements.txt",
+        "bytes": 108,
+        "sha256": "c72ba0eb4b71a187c35dbe63ba45876f8759a2313270a96f1ccbdcefbb647d8e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/src/README.md",
+        "bytes": 2145,
+        "sha256": "6eb64a6f9d5b51779dc72b94fa77a5401cda9afa6621b09ce7e6f8653ecbfa93"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/src/elliptic_widths/__init__.py",
+        "bytes": 517,
+        "sha256": "ed693e32403b0ff71a7069699752412b686b3f70cd56096ff574e3b583ddf01c"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/src/elliptic_widths/radial.py",
+        "bytes": 6814,
+        "sha256": "d88ccceb8570af8e9f9c51d4315339f9e41fe5491263bf37408769c1a5216155"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/src/elliptic_widths/spectral.py",
+        "bytes": 4944,
+        "sha256": "8da1ad149b17468e795f752703bcaf2acc8dc8b4bad107f84a7782f78190932a"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/test/README.md",
+        "bytes": 1100,
+        "sha256": "048586953753d321733ad4bf8af3407e62f439b77e2c02cb28f0f5134e2502eb"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/test/test_radial.py",
+        "bytes": 10266,
+        "sha256": "c6593026457f559e2e4c687406b9157387217317ffedb8bb3444ab562ba6d668"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/run_cases.py",
+        "line": 137,
+        "call": "(args.output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-517/numerical_case/run_cases.py",
+        "line": 141,
+        "call": "(summary_dir / 'paper_results.json').write_text(json.dumps(summary, indent=2) + '\\n')"
+      }
+    ],
+    "pdfs": [
+      "research/solutions/kaiwen-jin-517/numerical_case/figures/determinant_comparison.pdf",
+      "research/solutions/kaiwen-jin-517/numerical_case/figures/radial_spectra.pdf",
+      "research/solutions/kaiwen-jin-517/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 38,
+    "head": "f69a9853cae1afc0f82ee4f466c5a53b30709f9a",
+    "files": [
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/.gitignore",
+        "bytes": 189,
+        "sha256": "c69d6304d11bbbdb64469d4404901097bf8af371c1a624936c4de134d8cbe4dd"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/PUBLIC_MANIFEST.json",
+        "bytes": 19760,
+        "sha256": "958bc586e16ab437153b12430574110f21440416af3f5b09fe872f40cb20397c"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/README.md",
+        "bytes": 3767,
+        "sha256": "99f93cad898ef109c09c7d7ae15b9b7c6520237927a5d09cf7b239640166c75f"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/SHA256SUMS",
+        "bytes": 9347,
+        "sha256": "11de72688f403e73068ac0ecfcc3c20fd3afdbe99b37e350d63c69a3edb4f294"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/TARGET_COMPARISON.md",
+        "bytes": 3706,
+        "sha256": "0afbfbfd88cf84319bc965394c0d86557602229f9dc99a7d3b1bdaa43048a8bc"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/VERIFICATION.md",
+        "bytes": 4168,
+        "sha256": "13ddfabf8aee595fc25f6217e450d7a8ec86ee3c5e717c3416350ef413aa5781"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/README.md",
+        "bytes": 1742,
+        "sha256": "6a42670f0e07549e441adb1f7492f856457302e9f236a5163abacfa2b4b353b2"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/plot_results.py",
+        "bytes": 3636,
+        "sha256": "510aa4960679171ce71179ee8c8c0a903c7193c066a7cccd4c6e3c6e42400d20"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "bytes": 3200,
+        "sha256": "1d89b6732e278f471aa8f393f3cc415df0900cddc33fcc88603b9bb75f17c5be"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/summaries/certificates.json",
+        "bytes": 15779,
+        "sha256": "27f72e080ff4b59ae3d777ec8cdd70c05af63ae0517d4b29c09e777cdd8c4424"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/summaries/figure_metrics.json",
+        "bytes": 362,
+        "sha256": "6647765f698284eab31cd7e422d273eb3d8e5eb8f0984be19ee88e7080f5cfe6"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/summaries/implementation.json",
+        "bytes": 7835,
+        "sha256": "871a215200796b4f8849b3f56ce076e6a95958e0ce4dd15e6156d63b31af583d"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/summaries/paper_cases.json",
+        "bytes": 5462,
+        "sha256": "5818de434fa0cb7b4614a7570e7c8ff05e5b282755368c11361a0bacc1f4fe53"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/summaries/sparsity_histograms.json",
+        "bytes": 8141,
+        "sha256": "96cc7ff200094d12a46e1a920587fd529f3167618b2a745607d203d9f425a49d"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/figures/sparsity.pdf",
+        "bytes": 16209,
+        "sha256": "f59dc29fa5dc6fa5a352f3f43303dc52f827595071565a57e0cec42d739a8174"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/figures/sparsity.pgf",
+        "bytes": 3393,
+        "sha256": "a920a7231f6e2670058d49f5cdb7988ef6a56afb2e09c04be616d9d1359922bc"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/figures/sparsity.svg",
+        "bytes": 17709,
+        "sha256": "c9c691a8c7087081b35ae6c53dc66a64124e300c7f17c997c26ebd808c90ed48"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.pdf",
+        "bytes": 126544,
+        "sha256": "ff66b3e2a102a628df304a2b2d3103f777cd15e014cbe71d1d8677d60cfb73e4"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.tex",
+        "bytes": 45547,
+        "sha256": "4b737d5a89e2820733e6c9bfe36b1510bc1fa65fe6207b598911e60e024c35c3"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/pyproject.toml",
+        "bytes": 846,
+        "sha256": "c84221be6f15c41c60f6f8e56ebeb73026f6831090d7c653b0a49602a7b50f61"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/requirements-lock.txt",
+        "bytes": 306,
+        "sha256": "871f981b5419c69d470d0a3735039254892ff325823b4b46125cfc05cb4f8bd1"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/README.md",
+        "bytes": 3055,
+        "sha256": "8a5a348641dab7d4f691f3e77885c0c671dc4a67a2192b9537ab8443015e642b"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/CERTIFICATES.md",
+        "bytes": 1781,
+        "sha256": "1ca13f875266239bb7f7ac7130470d37b3427f50e0e66395fa53edd6e97e6999"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/__init__.py",
+        "bytes": 404,
+        "sha256": "02c3e32f98286bf9da95d391d12d6ac11431d4d194b38087d6e77948d7394748"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/construct_basis.py",
+        "bytes": 4247,
+        "sha256": "e39a1da294301e8dcd6bad29959e9ca078ae91367bd27bca5d4d4acca0712cd5"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/dimension_all_degrees.py",
+        "bytes": 1717,
+        "sha256": "04941613091eab2e77c440b1638cda65e0c64959527af91ae7efac72c696db9f"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/discover_rules.py",
+        "bytes": 5761,
+        "sha256": "51a0df835d2ca25243f80151451eb7de27bb0a75ba92eb2a6603537108313fa6"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/exact_parameter_check.cpp",
+        "bytes": 10547,
+        "sha256": "9fe78971a93c2a4a0bbe0e56abe8b7dc11b9909e4123debad8df77b9785aa565"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/legacy_geometry.py",
+        "bytes": 9462,
+        "sha256": "81d3dbe3771e8cde27b4c9a3a58a03f86895f2ccc0a65b406f5ee14669814564"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/verify_symbolic_sources.py",
+        "bytes": 7877,
+        "sha256": "2a0bc98a6e39fe25babd6157a6a3b44c84bff3a06a69469e37a28742e97026c9"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/verify_all.py",
+        "bytes": 2734,
+        "sha256": "1f8c1017881a578444d884ecdb30fed99853a76e53ae4c9d878eb85ec7f91654"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/algebra.py",
+        "bytes": 4071,
+        "sha256": "d296bb9ed8e2d2c1968e97af3fb5ccd894da33b9f7a16c3253fbcff9d7b83b57"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/basis_order_search.py",
+        "bytes": 2943,
+        "sha256": "36b9690e4367bcf4c2078cf12d0fd8b1128e6417381f07af3f33564819934013"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/benchmark_rank.py",
+        "bytes": 570,
+        "sha256": "d9be4c5086e541c7c0fc63e08104e17ee554c7aaab2810408ce9a31fcf615a12"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/certificates.py",
+        "bytes": 5957,
+        "sha256": "653faff445466fccdd6d8f8be15189a47a9f65adbe7fac4bbf0e84220ba39865"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/degree_experiments.py",
+        "bytes": 3172,
+        "sha256": "4ff79bce4addf3f62688b5f4a172360b610bbb836e499d03accd836d56a633e9"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/entity_spans.py",
+        "bytes": 1319,
+        "sha256": "b7eef103628ba618df58e084b8862591c894c3458f8dcedeee78d2c9486f4bcf"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/experiment_core.py",
+        "bytes": 5602,
+        "sha256": "32f9ab05455db0b7253f29933833df994e52fdb6f4df781f8fca460e277cedb0"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/family_benchmarks.py",
+        "bytes": 4508,
+        "sha256": "d35a23ed72e607e14921c3195ff1332f6e7585f7f2b9cb7b715b684bdac60d6a"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/geometry.py",
+        "bytes": 9462,
+        "sha256": "81d3dbe3771e8cde27b4c9a3a58a03f86895f2ccc0a65b406f5ee14669814564"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/inspect_structure.py",
+        "bytes": 463,
+        "sha256": "414bf000c21fb70dc89051ae9591d1a633e8c4470c45f2c86dce42feec06cbba"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/interior_primitives.py",
+        "bytes": 5076,
+        "sha256": "0449376297ebc3a0bed7b9805f610331f94d209ddd0e345fa5fbca425ff6139f"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/load_basis.py",
+        "bytes": 2303,
+        "sha256": "7b4b3a4f6347b1a55fdb771f061f118833f5d43ae966c5f83b61e89417625546"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/native_rank.cpp",
+        "bytes": 2276,
+        "sha256": "a86d918461b24425e72fc6fd03212fbf5cc38b63785eba56cfa60570d6ccdc89"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/native_rank.py",
+        "bytes": 2813,
+        "sha256": "4e481aa40b00d53521d00ef0de9e329848e9e007532bfc79bc3ce53753c5fb57"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/numerical_diagnostics.py",
+        "bytes": 3333,
+        "sha256": "a81364395cfd160d138cbcbd149da3a981499fb8a64538170191337411e892b6"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/plot_results.py",
+        "bytes": 1930,
+        "sha256": "ae901b3686e0e44bc4d4dcbfb9763612de58ff2a7d137e1e4873a395da505874"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/polynomial_seed_global.py",
+        "bytes": 3187,
+        "sha256": "9e6b43406eb63fd0c7d67fe029b6f79b0337ecac837ae60591bc0925246fb135"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/primitive_global_role.py",
+        "bytes": 1800,
+        "sha256": "9c9f91a290b84671d58e74392946758746fb7a27f201afb9ab1ca4dc871fc9ab"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/run_sweep.py",
+        "bytes": 1295,
+        "sha256": "b27c7fffc2846db5056c35f3f6b85266af35f39d6bb136907545ed1d789734a0"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+        "bytes": 6799,
+        "sha256": "5efe885dcad9b36a852e8d7f03b9f147371f19f30cc31664e7bbcf00c6ba55e8"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/transformations.py",
+        "bytes": 2643,
+        "sha256": "8b4d77ea43afec29a11df2493510c4b136a04ad0f4c987fccb7bbee94a5b5605"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/verify_local_templates.py",
+        "bytes": 3892,
+        "sha256": "e0ce8af990f9c586180b801e767ab91125f3606af37c775f9a9afb7269dba5db"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/verify_saved.py",
+        "bytes": 1690,
+        "sha256": "042ab0bcf0bb984da6c8b49062371eca5f2135a5e82abbac046cf5d0de71c809"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_repairs.py",
+        "bytes": 5844,
+        "sha256": "51b44d02ad5846736e4762fd661cf554574aa6f64fa7e850b43d7614e274a38a"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_uniform_normalform.py",
+        "bytes": 3623,
+        "sha256": "5666f8b2974b9375b6561765d7de4bdcee7f1d35d1d2a46b5caf792508b48436"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/dimension_polynomial.py",
+        "bytes": 754,
+        "sha256": "26d92915d2d1dfdbf6b44701fd5a003a2cd799892023512ca9011af39546f483"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/normalform_geometry.py",
+        "bytes": 1305,
+        "sha256": "11e84b353e321f614fff30903f00f01ec777c3a3907d710c8cc029c021bd899f"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/repair_nonlocal.py",
+        "bytes": 1311,
+        "sha256": "699c67b4a970d6e76820f50885105b7cfc33905356f7660830311cb1f418db6a"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/template_signatures.py",
+        "bytes": 1105,
+        "sha256": "7769e98c1484901ff59cd71dd05f15b499b2acd6e5209b10bedfb3cab4a39b66"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/tracked_rref.py",
+        "bytes": 2658,
+        "sha256": "7b34f856c583f41760c987bbf65829e5189be13e8fd4e3e4dfbc6e3927dfba6a"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/transport_regression.py",
+        "bytes": 3446,
+        "sha256": "c585d932c00758512849cb3537fa45c7fa1638ee8de819f8f95101e57934577b"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/verify_repairs.py",
+        "bytes": 2686,
+        "sha256": "7c884c3c87d12c12e34bfcec64eb035dda1a061b275e52c0dda0637350ccc557"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/verify_all.py",
+        "bytes": 914,
+        "sha256": "41d6db58e2cc30b4e03cc807f1ee543cfbf42e30e749354dd04a10a778bd210d"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/algebra.py",
+        "bytes": 4756,
+        "sha256": "fe58b456e915465c73f336b2f824be0859a235413c3bbe2aa27e4b1f7bdea05b"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/basis.py",
+        "bytes": 16399,
+        "sha256": "12a4c4d41d71e03875846cb3e58e7198ec1b66e48099e8e58e3e337e2ad08b09"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/certificates/all_degree_rules.json.gz",
+        "bytes": 970778,
+        "sha256": "43d45cfd9394befe130b7e5e27f22851369e0adaf0669f8526e3d8156bc7b5ee"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/certificates/manifest.json",
+        "bytes": 445,
+        "sha256": "fd0f4bf38edac17abd51d3d54847cb149ab26e8d582761554c53bce400c8bc2b"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/certificates/verification_data.zip",
+        "bytes": 7489779,
+        "sha256": "32c3c6847241288a4607d699e68ac7fbbdae3378e4057531c44a94274f85f7c7"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/data.py",
+        "bytes": 1618,
+        "sha256": "cb8c5f6d0d1909f992242bd167cc67b9e7f7bc76069df9a3fd99f45a9ff1c3a6"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/exact.py",
+        "bytes": 1339,
+        "sha256": "90dd99253a2fd82c5c6217951c83206775dba62fb208478639ed51ca0ff58c32"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/geometry.py",
+        "bytes": 11355,
+        "sha256": "54bb4b00edfd62fb16dad3c32698671ca7fba0a07017b1616de12d2a7e1fd6b3"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/provenance.py",
+        "bytes": 755,
+        "sha256": "985a1395079d6fdc2086859894b480a06669f614e996febac24a46503272e52d"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/rules.py",
+        "bytes": 2588,
+        "sha256": "87bac38413e0d478d31e4958b2fca9e1fd1b25a4e15dc81975609e62b031e96e"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/verification.py",
+        "bytes": 1776,
+        "sha256": "7f1884ba9e922e2d204ad70a341394229dabe360f9e61bdae5f3700d19e32448"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_basis.py",
+        "bytes": 2186,
+        "sha256": "4f6220600018bd6c1c44a318c38e79032d6551ffc5ee5d7adad4e2d1260c8eff"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_evaluation.py",
+        "bytes": 2483,
+        "sha256": "585a89f461b702ff9e33f687186c8b3ed95806d8935a15ee36b98cfad3077246"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_geometry.py",
+        "bytes": 1673,
+        "sha256": "63dd2fea6b5a800649b16f821c87b8ed38513ee0ac6644220d56a6cd4806f15f"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/verify_all.py",
+        "bytes": 6751,
+        "sha256": "eff5b539dffbdcc28748c952fd747ea3dc3041005d722a01b88730a93feab244"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/plot_results.py",
+        "line": 77,
+        "call": "(output / 'sparsity.pgf').write_text(text + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/plot_results.py",
+        "line": 78,
+        "call": "(ROOT / 'numerical_case/summaries/figure_metrics.json').write_text(json.dumps(metrics, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/plot_results.py",
+        "line": 86,
+        "call": "paper.write_text(head + BEGIN + '\\n' + text + '\\n' + END + tail)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 72,
+        "call": "(args.output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 75,
+        "call": "(summaries / 'paper_cases.json').write_text(json.dumps({'cases': cases, 'versions': manifest['versions']}, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 78,
+        "call": "(summaries / 'sparsity_histograms.json').write_text(json.dumps(histograms, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 79,
+        "call": "(summaries / 'implementation.json').write_text(json.dumps(implementation, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 40,
+        "call": "(case / 'run.json').write_text(json.dumps(summary, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 50,
+        "call": "subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True, stderr=subprocess.DEVNULL).strip()"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/numerical_case/run_cases.py",
+        "line": 50,
+        "call": "subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True, stderr=subprocess.DEVNULL)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/construct_basis.py",
+        "line": 62,
+        "call": "(save / 'verified.json').write_text(json.dumps(out, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/dimension_all_degrees.py",
+        "line": 31,
+        "call": "(ROOT / 'results/all_degree_dimension.json').write_text(json.dumps(out, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/discover_rules.py",
+        "line": 131,
+        "call": "(BASE / 'results' / 'all_degree_candidate_rules.json').write_text(json.dumps(rules, separators=(',', ':')))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/discover_rules.py",
+        "line": 132,
+        "call": "(BASE / 'results' / 'candidate_build.json').write_text(json.dumps(counts, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/src/verify_symbolic_sources.py",
+        "line": 165,
+        "call": "(BASE / 'results/universal_sources_verified.json').write_text(json.dumps(out, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/verify_all.py",
+        "line": 33,
+        "call": "(ROOT / 'results/final_verification.json').write_text(json.dumps(out, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/verify_all.py",
+        "line": 12,
+        "call": "subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/all_degree/verify_all.py",
+        "line": 29,
+        "call": "z.extractall(ROOT / 'dependencies')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/basis_order_search.py",
+        "line": 36,
+        "call": "(root / 'basis_order_search.jsonl').open('w')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/basis_order_search.py",
+        "line": 38,
+        "call": "f.write(line + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/basis_order_search.py",
+        "line": 43,
+        "call": "f.write(line + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/certificates.py",
+        "line": 59,
+        "call": "(folder / 'verified_certificate.json').write_text(json.dumps(res, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/certificates.py",
+        "line": 91,
+        "call": "(root / 'verified_negative_certificate.json').write_text(json.dumps(verify, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/certificates.py",
+        "line": 42,
+        "call": "open(folder / 'checkpoints.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/degree_experiments.py",
+        "line": 48,
+        "call": "outfile.open('a')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/degree_experiments.py",
+        "line": 53,
+        "call": "f.write(json.dumps(r) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/entity_spans.py",
+        "line": 23,
+        "call": "(root / 'standalone_entity_spans.json').write_text(json.dumps(rows, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/experiment_core.py",
+        "line": 97,
+        "call": "open(artifact_path + '/checkpoints.json', 'w')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/family_benchmarks.py",
+        "line": 61,
+        "call": "(root / f'families_N{N}_d{d}.json').write_text(json.dumps(r, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/interior_primitives.py",
+        "line": 57,
+        "call": "(root / 'verified_local_statement.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/native_rank.py",
+        "line": 17,
+        "call": "subprocess.run(['g++', '-O3', '-std=c++17', '-shared', '-fPIC', str(src), '-o', str(lib)], check=True)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/numerical_diagnostics.py",
+        "line": 48,
+        "call": "(root / 'numerical_diagnostics.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/polynomial_seed_global.py",
+        "line": 48,
+        "call": "(root / f'global_polynomial_seeds_N{N}_d6.json').write_text(json.dumps(res, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/primitive_global_role.py",
+        "line": 20,
+        "call": "(root / 'interior_primitives_global_role.json').write_text(json.dumps(res, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/run_sweep.py",
+        "line": 11,
+        "call": "fn.write_text(json.dumps(r, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/run_sweep.py",
+        "line": 24,
+        "call": "logfile.open('w')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/run_sweep.py",
+        "line": 27,
+        "call": "f.write(s + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+        "line": 60,
+        "call": "bernstein_eval(local, space.d, lam)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+        "line": 70,
+        "call": "bernstein_eval(np.array(deriv, dtype=np.int64), space.d - 1, lam)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+        "line": 119,
+        "call": "open(root / 'results/N2_d6/checkpoints.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+        "line": 115,
+        "call": "eval_tet(sp, inc[0][0], vec, point)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/test_core.py",
+        "line": 115,
+        "call": "eval_tet(sp, inc[1][0], vec, point)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/aim633_experiments/src/verify_local_templates.py",
+        "line": 58,
+        "call": "(root / 'independent_template_validation.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_repairs.py",
+        "line": 77,
+        "call": "(out / 'repairs.json').write_text(json.dumps(repairs))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_repairs.py",
+        "line": 77,
+        "call": "(out / 'part_metadata.json').write_text(json.dumps(metaparts))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_repairs.py",
+        "line": 79,
+        "call": "(out / 'verified.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_uniform_normalform.py",
+        "line": 55,
+        "call": "(base / 'degree6_normalform_templates.json').write_text(json.dumps(rules, separators=(',', ':')))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/certify_uniform_normalform.py",
+        "line": 57,
+        "call": "(base / 'uniform_normalform_verified.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/dimension_polynomial.py",
+        "line": 15,
+        "call": "(base / 'dimension_polynomial.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/dimension_polynomial.py",
+        "line": 3,
+        "call": "open(base / 'degree6_normalform_templates.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/transport_regression.py",
+        "line": 48,
+        "call": "(base / f'transport_N{N}_verified.json').write_text(json.dumps(result, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/transport_regression.py",
+        "line": 27,
+        "call": "open(ref / 'part_metadata.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/transport_regression.py",
+        "line": 12,
+        "call": "open(base / 'degree6_normalform_templates.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/transport_regression.py",
+        "line": 27,
+        "call": "open(ref / 'repairs.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/verify_repairs.py",
+        "line": 30,
+        "call": "(base / 'independent_repairs_verified.json').write_text(json.dumps(out, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/verify_repairs.py",
+        "line": 7,
+        "call": "open(rep / 'repairs.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/src/verify_repairs.py",
+        "line": 7,
+        "call": "open(rep / 'part_metadata.json')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/verify_all.py",
+        "line": 23,
+        "call": "(ROOT / 'results' / 'all_verifications.json').write_text(json.dumps({'passed': True, 'completed': completed, 'scope': 'all N at k=5; not all k>=5'}, indent=2))"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/_certificate_check/critical/verify_all.py",
+        "line": 21,
+        "call": "subprocess.run([sys.executable, *args], cwd=ROOT, check=True)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/basis.py",
+        "line": 139,
+        "call": "(directory / 'summary.json').write_text(json.dumps(self.summary(), indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/src/freudenthal/basis.py",
+        "line": 225,
+        "call": "self.evaluate_on_tetrahedron(basis_id, int(tet), [1 - r[0], r[0] - r[1], r[1] - r[2], r[2]])"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_evaluation.py",
+        "line": 32,
+        "call": "field.evaluate(0, [0.31, 0.22, 0.18])"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_evaluation.py",
+        "line": 42,
+        "call": "polynomial_field.evaluate(0, point)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_evaluation.py",
+        "line": 62,
+        "call": "polynomial_field.evaluate(0, point)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/test/test_evaluation.py",
+        "line": 55,
+        "call": "polynomial_field.evaluate_on_tetrahedron(0, t, lam)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/verify_all.py",
+        "line": 155,
+        "call": "(output / 'verification.json').write_text(json.dumps(result, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/verify_all.py",
+        "line": 165,
+        "call": "(summaries_dir / 'certificates.json').write_text(json.dumps(public, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/verify_all.py",
+        "line": 64,
+        "call": "subprocess.run(list(map(str, command)), cwd=cwd, env=env, check=True, capture_output=capture, text=capture)"
+      },
+      {
+        "path": "research/solutions/633-kaiwen-jin-freudenthal-potentials/verify_all.py",
+        "line": 55,
+        "call": "path.write_bytes(blob)"
+      }
+    ],
+    "pdfs": [
+      "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/figures/sparsity.pdf",
+      "research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.pdf"
+    ]
+  },
+  {
+    "pr": 37,
+    "head": "24ab3fa10db1f33a143f32876c6ae5b023782933",
+    "files": [
+      {
+        "path": "research/solutions/kaiwen-jin-518/.gitignore",
+        "bytes": 344,
+        "sha256": "65acb72814310ed268c06ca0e5f2fc155fc51d50f5939e726facab163e3a6e3f"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/PUBLIC_MANIFEST.json",
+        "bytes": 8727,
+        "sha256": "81b131df0d883d361acba10157e926d6c00a7f86a45d42a77bed8873739fb399"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/README.md",
+        "bytes": 4077,
+        "sha256": "447c10a5e5bea91b3d7a01871152cfbc1bf6e9c8881ba7a9f72805744898ac0f"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/REPRODUCTION_REPORT.md",
+        "bytes": 3470,
+        "sha256": "e0a85b8164ff901033ca471985eaf48fb4884a0de22fb1becdfb6beddd4cb8dc"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/SHA256SUMS",
+        "bytes": 3801,
+        "sha256": "e4c6912de1b1c4dc6cc4b7a9252ad1c38ce9474ef1021e117c98234302b3feb1"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/TARGET_COMPARISON.md",
+        "bytes": 5285,
+        "sha256": "72e586dfd68317847b0507464963609ec96a53da5402cbe4a565517b819c1689"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/README.md",
+        "bytes": 3253,
+        "sha256": "4f615e47904906b990807ca120de158a6929c70dd487c464baecdd7057eaa6e6"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/check_frequency_bounds.py",
+        "bytes": 2033,
+        "sha256": "ed6312b97ddd0d581a46055060796f116d4f833e4799e1b5ced0d437897d8526"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/config.json",
+        "bytes": 857,
+        "sha256": "da3028d8423174e0c72a5c46165e3ddf9429cbe632c7a05c4f3be47dd393f63e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/export_publication_summary.py",
+        "bytes": 2934,
+        "sha256": "caf22a3585c0cd6fe6a77c9b399c2c0b9598eeac6169b766dbdb0df68f3a61d5"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/make_figures.py",
+        "bytes": 5456,
+        "sha256": "66454e38ce09f7758e4e08d49086f25dc283ed7a008c064013a941e1cfcd7ea6"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "bytes": 13063,
+        "sha256": "26f5121f0e448030235b3cac47414302dff74ae21bf28bf88fbefee5164251a5"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/README.md",
+        "bytes": 1735,
+        "sha256": "62b27b493f48b512c91ef1129932067ee5f9369499d445f17e2c1b960a6caebe"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/defect_accumulation.csv",
+        "bytes": 1203,
+        "sha256": "8374df21df3e9aec47decdeb6b7032633e546c1967367ab46e6f1b3705f5b27c"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/export_receipt.json",
+        "bytes": 1748,
+        "sha256": "72a7496a50fe5b804151c4372486bf5cb5c34b6fcf06157e4fb0eade00d042d6"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/frequency_checks.json",
+        "bytes": 289,
+        "sha256": "8bc143d145f15200b89fc847e4b6f169cfa7794eb4964dc5fcf2918c8e4aefc5"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/global_summary.csv",
+        "bytes": 10923,
+        "sha256": "e3cf65efb92932a2fc377ff392a8e794ab4e9273ac4a6073b2ae2ef883c66d11"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/local_summary.csv",
+        "bytes": 4406,
+        "sha256": "8057a999a67cdb791f8adad819adcca9740d1f5fb91cac18c400cb0e00ed3da8"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/rough_ode_validation.json",
+        "bytes": 747,
+        "sha256": "5b7a075c9941d43a73324e256c50884c49c6ecef5a300dd5dd9d6ffb721a3483"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/run_manifest.json",
+        "bytes": 2568,
+        "sha256": "c6764f3cbee8bb4a5a993a35e6fec13e95b6e53714724e22e611024867ef29a9"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/summary/validation.json",
+        "bytes": 1169,
+        "sha256": "0ed847fb7fa60714acc5bcaaa907a31d411e29ba3dea79ea7a0e712a2781fe23"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/validate_rough_ode.py",
+        "bytes": 1692,
+        "sha256": "93e75059ea32fb0699551a380d2d92db58ff5b342551f30b0d1e991a4ce483d0"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/README.md",
+        "bytes": 1208,
+        "sha256": "38c0f67212b4c569e51b93adfa82d0b8022374f8a77f0df2e54b24539deeb174"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/figures/defect_accumulation.pdf",
+        "bytes": 22534,
+        "sha256": "c695aa89d591ee0b3f27a5e89dca8552500f27390ad2df8d98097b06a34acdd1"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/figures/global_convergence.pdf",
+        "bytes": 25793,
+        "sha256": "fd98513c4daf1b2f9a7b6c1f327455fe556dec7ae767e77aee24f3554b071fe7"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/figures/local_remainder.pdf",
+        "bytes": 27245,
+        "sha256": "2aa581990fd2c5eb3f4a1fac5b3c719ee8e82afc360e0da4298fbb73fa303512"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/main.pdf",
+        "bytes": 471941,
+        "sha256": "5d6432bf9c097991bf5d853f38e831a539b4f052f0ccf4010bba6e37b54507b6"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/main.tex",
+        "bytes": 51523,
+        "sha256": "2e6b8036110b66415e484a6b4a44538c8312f71dd6fcbcec6b5df639c6ffab5d"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/numerical_summary.json",
+        "bytes": 645,
+        "sha256": "5ba7b834d6ab2a0ddc467a2fa40d3eacb9d4847b3e370bd56d3ab4b340e4ddc0"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/paper/numerical_table.tex",
+        "bytes": 590,
+        "sha256": "80ce271169bd39a2e871fabcacd0fac55645c1cf4cb62aa7aabc94cd01fe834e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/pyproject.toml",
+        "bytes": 513,
+        "sha256": "62073b72012597424817ba75e33d208824b0d2f869d70558517a7010e9b73149"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/requirements-lock.txt",
+        "bytes": 431,
+        "sha256": "098dca3b3e3ddc4c451dcd6280eff07c812aa4b380121c75566cff40a493947e"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/src/README.md",
+        "bytes": 2685,
+        "sha256": "3ce064f7536d33600850251b291df6cdca898bff98ab18fb7cbde1a233524ba7"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/src/kdvlogloss/__init__.py",
+        "bytes": 461,
+        "sha256": "ce0bd7e531eaa3e2230d1ce17621358f3a2301749ecf76fd16445c9c7b68f158"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/src/kdvlogloss/fourier.py",
+        "bytes": 3229,
+        "sha256": "1a2c5a6b509ac6cfd8770b4231e55a2a820d4ca3c0fe62a4743c3e552f5d9e53"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/src/kdvlogloss/integrator.py",
+        "bytes": 2963,
+        "sha256": "4fed8d6cafc4dc9f8e4dc79579002775f80d98a93f9848e20cfc2f5615a43796"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/src/kdvlogloss/remainder.py",
+        "bytes": 3621,
+        "sha256": "b942e9b6f6522f34934f75e4e6b250497924e0c9dbcac653e131821c31688f31"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/test/README.md",
+        "bytes": 1074,
+        "sha256": "1e326327ff62273a5ea194b26129ac1dfbcfe3bba046de483ecda1ca75a7b6de"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/test/test_high_precision.py",
+        "bytes": 2190,
+        "sha256": "db79b6c05e821d923b305f893ee864adb4ad3a1d69419bc08c13484574c491c7"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/test/test_integrator.py",
+        "bytes": 4317,
+        "sha256": "ca8e30fe947fbaa6af1e05dd6f352d49783c0b5136414efe3bc7e47214122200"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/test/test_remainder.py",
+        "bytes": 2713,
+        "sha256": "179f487fe82fd60c1f52b1d7f1cec556f12b2ad9890806abf031d60aaa869b4e"
+      }
+    ],
+    "errors": [],
+    "python_security_calls": [
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/check_frequency_bounds.py",
+        "line": 40,
+        "call": "path.write_text(json.dumps(result, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/export_publication_summary.py",
+        "line": 63,
+        "call": "(output / 'export_receipt.json').write_text(json.dumps(receipt, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/export_publication_summary.py",
+        "line": 47,
+        "call": "(output / 'defect_accumulation.csv').open('w', newline='')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/export_publication_summary.py",
+        "line": 48,
+        "call": "csv.writer(stream)"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/export_publication_summary.py",
+        "line": 49,
+        "call": "writer.writerow(['time', 'error_l2', 'transported_defect_l2', 'transported_feedback_l2'])"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/export_publication_summary.py",
+        "line": 50,
+        "call": "writer.writerows(zip(time, *norms))"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/make_figures.py",
+        "line": 90,
+        "call": "(ROOT / 'paper/numerical_table.tex').write_text('\\n'.join(table) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/make_figures.py",
+        "line": 106,
+        "call": "(ROOT / 'paper/numerical_summary.json').write_text(json.dumps(report, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/make_figures.py",
+        "line": 21,
+        "call": "(RESULT / 'global_summary.csv').open()"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/make_figures.py",
+        "line": 23,
+        "call": "(RESULT / 'local_summary.csv').open()"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/make_figures.py",
+        "line": 63,
+        "call": "(RESULT / 'defect_accumulation.csv').open()"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 189,
+        "call": "(out / 'validation.json').write_text(json.dumps(checks, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 215,
+        "call": "(out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 39,
+        "call": "path.open('w', newline='')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 41,
+        "call": "writer.writeheader()"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 41,
+        "call": "writer.writerows(rows)"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 200,
+        "call": "(out / 'run.log').open('w')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/run_study.py",
+        "line": 202,
+        "call": "stream.write(line + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/validate_rough_ode.py",
+        "line": 28,
+        "call": "(ROOT / 'rough_ode_validation.json').write_text(json.dumps({'cases': rows, 'wall_seconds': time.perf_counter() - start}, indent=2) + '\\n')"
+      },
+      {
+        "path": "research/solutions/kaiwen-jin-518/numerical_case/validate_rough_ode.py",
+        "line": 21,
+        "call": "evaluations.append(sol.nfev)"
+      }
+    ],
+    "pdfs": [
+      "research/solutions/kaiwen-jin-518/paper/figures/defect_accumulation.pdf",
+      "research/solutions/kaiwen-jin-518/paper/figures/global_convergence.pdf",
+      "research/solutions/kaiwen-jin-518/paper/figures/local_remainder.pdf",
+      "research/solutions/kaiwen-jin-518/paper/main.pdf"
+    ]
+  }
+]

@@ -2,9 +2,9 @@
 
 **Area:** Elliptic potential reconstruction and critical function spaces
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 ## Problem statement
 
 For every integer $`d\ge2`$, is there $`C_d<\infty`$ such that every real $`\psi\in C^\infty(\mathbb T^d)`$ with $`\int_{\mathbb T^d}\psi=0`$ satisfies
@@ -26,6 +26,8 @@ The estimate would recover a potential from a gradient containing both rough int
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/451-mixed-sobolev-counterexample/paper/main.pdf) establishes the full original target. Explicit real smooth mean-zero two-dimensional counterexample sequence for the exact mixed sum-norm estimate.
 
-The 2023 source retains this exact mixed-norm estimate as open. Searches through the review date for equation (1.16), Open Problem 7.1, and mixed H1/2 + W1,1 Bourgain–Brezis estimates found no resolution. The August 2026 paper [arXiv:2608.04237](https://arxiv.org/abs/2608.04237) addresses critical homogeneous Hodge estimates with dimension-dependent differentiability, not this fixed-half-derivative sum-norm inequality. Classical divergence solvability and one-dimensional fractional Bergman–Bourgain–Brezis inequalities also differ.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/451-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #69](https://github.com/MColbrook/AIM/pull/69) at `c27cd2a4b9a1f4a11d0f4cda8b33b233695260da`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

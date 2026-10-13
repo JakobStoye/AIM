@@ -2,9 +2,9 @@
 
 **Area:** Real algebraic geometry and matrix inequalities
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -38,6 +38,8 @@ A decision procedure would certify matrix trace inequalities uniformly over all 
 
 ## Status review
 
-Section 7 of [1] explicitly leaves the univariate case open. Its undecidability construction uses several matrix variables. Its decidability result for normalized traces uses $`n^{-1}\mathop{\mathrm{tr}}\nolimits(A^j)`$ and does not apply to the statement above. The trace convention in [2] is also normalized, as specified in its abstract and introduction.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/559-univariate-trace-decidability/paper/trace_decidability.pdf) establishes the full original target. Undecidability: universal positivity of univariate unnormalized trace polynomials admits no algorithmic decider.
 
-For each fixed dimension, real quantifier elimination decides the inequality. The challenge is a single terminating procedure valid across all dimensions.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/559-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #77](https://github.com/MColbrook/AIM/pull/77) at `8112a718b350324672c81c059624d5a561e20907`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

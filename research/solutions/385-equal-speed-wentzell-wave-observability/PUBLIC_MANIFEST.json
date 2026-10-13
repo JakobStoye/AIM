@@ -7,12 +7,12 @@
     {
       "path": "README.md",
       "purpose": "Result scope, materials, build instructions and factual AI-use/review disclosure",
-      "sha256": "74b0431a54fae770afa154250133ddbc88414e38cc683fe6a33bb1845ac94743"
+      "sha256": "10a0471ba53fe732c74c15d9aef42c5c637c5d2c5ee73880b6a4c2cc4e4ca78e"
     },
     {
       "path": "TARGET_COMPARISON.md",
       "purpose": "Comparison of the original annular problem with the complete manuscript",
-      "sha256": "d4595e92fbfd4514e10fcac84e2e2c7eb77e0d1680d080b7888a10e3fadc6676"
+      "sha256": "4b9d387d8b0ad76077c97da2c9a908d5cb93e1c37d687513a10ab2dcb0cbbbd8"
     },
     {
       "path": "paper/equal_speed_observability.pdf",

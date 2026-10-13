@@ -79,8 +79,11 @@
     "title": "The Mercedes-star partition of a disk",
     "area": "Spectral partitions",
     "file": "problems/010-mercedes-disk-partition.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/010-mercedes-disk-partition/paper/mercedes_partition.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/010-review.md"
   },
   {
     "id": "011",

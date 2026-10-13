@@ -132,8 +132,11 @@
     "title": "Global constrained null control of a two-phase Stefan interface",
     "area": "Free-boundary control / thermal processing",
     "file": "problems/258-global-two-phase-stefan-control.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/258-signed-stefan-control/stefan_signed_control.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/258-review.md"
   },
   {
     "id": "259",
@@ -271,24 +274,33 @@
     "title": "Observability of an acoustic shell at equal bulk and surface speeds",
     "area": "PDE control / acoustic boundary dynamics",
     "file": "problems/385-equal-speed-wentzell-wave-observability.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/385-review.md"
   },
   {
     "id": "386",
     "title": "Boundary observation of a Schrödinger field with slower surface dispersion",
     "area": "PDE control / dispersive boundary dynamics",
     "file": "problems/386-slow-surface-schrodinger-observability.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/386-review.md"
   },
   {
     "id": "387",
     "title": "The sharp local maneuvering time for a shallow-water tank",
     "area": "PDE control / fluid–structure dynamics",
     "file": "problems/387-shallow-water-tank-sharp-control-time.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/387-review.md"
   },
   {
     "id": "394",
@@ -319,8 +331,11 @@
     "title": "Boundary control to equilibrium for a parabolic obstacle problem",
     "area": "PDE control / variational inequalities",
     "file": "problems/398-parabolic-obstacle-boundary-control.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/398-review.md"
   },
   {
     "id": "402",
@@ -367,16 +382,22 @@
     "title": "Uniform control of Neumann advection–diffusion for non-gradient flows",
     "area": "PDE control / transport with weak diffusion",
     "file": "problems/415-nongradient-neumann-uniform-control.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/415-nongradient-neumann-uniform-control/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/415-review.md"
   },
   {
     "id": "417",
     "title": "Polynomial growth of reachable neighborhoods for analytic control systems",
     "area": "Nonlinear control / minimum-time regularity",
     "file": "problems/417-analytic-reachable-set-polynomial-growth.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Counterexample",
+    "proof": "research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/417-review.md"
   },
   {
     "id": "486",

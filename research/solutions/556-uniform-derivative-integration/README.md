@@ -6,10 +6,11 @@ This package submits an affirmative solution claim for
 Theorem 1 of the [manuscript](paper/uniform_derivative_integration.pdf)
 proves, for every dimension `d >= 1` and every `0 < epsilon < 1`,
 
-\[
+```math
 n(\varepsilon,d)\ge (1-\varepsilon)
  \left(\tfrac12+\sin\tfrac12\right)^{-d}.
-\]
+```
+
 
 The function class and information model are those of the linked problem:
 every mixed partial derivative of every order, including the function itself,

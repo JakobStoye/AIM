@@ -19,12 +19,12 @@
     {
       "path": "paper/gambler_scaling.tex",
       "purpose": "Complete editable analytic manuscript",
-      "sha256": "a49fcf871f9181d25916b4ffdaedce45e8ae0a818b3b0a140224bc761405d65d"
+      "sha256": "1ad9fd2a88d7485f00a31386508d1d8a0da813293c4aed847268e2be0fdd9903"
     },
     {
       "path": "paper/gambler_scaling.pdf",
       "purpose": "Five-page rendered complete manuscript",
-      "sha256": "3b7f0db37060abfcdd51b4776218dc142bb920aa2258e3df77350e3a73910bf9"
+      "sha256": "7af6410fa12745dca04304e3ae6db3aff571fc23ea37180bc7f722200bb77414"
     }
   ]
 }

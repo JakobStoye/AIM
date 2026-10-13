@@ -2,9 +2,9 @@
 
 **Area:** Mathematical biology and dynamical systems
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-17
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -36,8 +36,8 @@ Competition maps describe populations whose per-capita growth decreases with eve
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/300-carrying-simplex-interior/paper/interior_smoothness.pdf) establishes the full original target. Interior C1 carrying-simplex regularity for every map in the original class, without a permanence or convexity assumption.
 
-Baigent and the independently authored Mierczyński–Niu–Ruiz-Herrera paper identify the interior regularity gap. Convexity gives smoothness under additional hypotheses; local conjugacy or smoothness near particular fixed points does not settle the entire interior. Later retrotone and time-periodic existence results supply Lipschitz geometry and topological reduction. Known boundary singularities are outside the question.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/300-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Current resolution searches and comparisons are recorded in the [candidate ledger](../research/expansion-2026-09/candidates/carrying-simplex-interior.json). A separate adversarial self-pass also compared older strongly monotone hypersurface theorems: their global positivity and basin assumptions do not establish this conclusion for all interior points. The original Tereščák preprint was not obtained; its scope was checked through Mierczyński’s full primary discussion, not represented as a direct reading. Resolution searches and duplicate checks were refreshed immediately before the September 17, 2026 batch integration.
+The reviewed submission is [PR #67](https://github.com/MColbrook/AIM/pull/67) at `efb5c003723b01af6090482c58330db2da99e86b`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

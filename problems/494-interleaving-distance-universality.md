@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and multiparameter persistent homology
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -60,10 +60,8 @@ Multiparameter persistent homology describes data while varying several threshol
 
 ## Status review
 
-**Known cases:** Lesnick's Theorem 5.5 proves the displayed assertion for every $`n\ge1`$ when $`k=\mathbb Q`$ or $`k=\mathbb F_p`$ for a prime $`p`$, and $`i\ge1`$.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/494-degree-zero-interleaving-counterexample/paper/interleaving_counterexample.pdf) establishes the full original target. Negative: degree-zero universality fails for the unrestricted multi-parameter interleaving target.
 
-**Remaining target:** Establish the full assertion for arbitrary fields and all homology degrees, or give an $`i`$-stable distance and a realizable pair violating it. The known prime-field, positive-degree theorem leaves the full quantifiers unresolved. Lesnick's §5.4 also treats a related one-parameter, pointwise finite-dimensional problem using reduced homology; its conventions should not be silently substituted into this statement.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/494-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-The 2023 survey still identifies the arbitrary-field extension as open. Searches on 2026-09-23 covered the conjecture, authors, field restrictions, proofs and counterexamples, including indexed arXiv, Zenodo, GitHub and Palomar results. No matching full-scope resolution or announcement was located. The homotopy-universality theorem, its September 2026 equivariant analogue, and September 2026 equalities for cohomology interleaving distances concern different objects or axioms. The searches are evidence, not a certificate that no announcement exists; Palomar access did not expose a complete registry listing.
-
- This entry counts the complete conjecture once, without splitting fields or homology degrees into separate problems.
+The reviewed submission is [PR #85](https://github.com/MColbrook/AIM/pull/85) at `22d05af29e9febd77cceb59298889c1c8ad64d96`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

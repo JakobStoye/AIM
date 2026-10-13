@@ -2,9 +2,9 @@
 
 **Area:** PDE control / thermal flux tracking
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -35,6 +35,8 @@ The problem identifies precisely which temperature-flux histories can be imposed
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.pdf) establishes the full original target. Explicit target-only exact range characterization and sharp geometry-dependent initial-time evaluation scale.
 
-Smoothing supplies necessary regularity, while one-dimensional flatness constructions supply sufficient Gevrey classes. These do not identify the sharp multidimensional range. The 2026 moving-target result concerns approximate tracking, which is weaker than exact range membership. Searches included “heat tracking controllability sharp space Gevrey 2026” and “boundary flux heat exact tracking range characterization 2025 2026”. No sharp general characterization was located.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/139-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #49](https://github.com/MColbrook/AIM/pull/49) at `b87f79b5a7bf638d4b2833a4245c014b11d76718`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

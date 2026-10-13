@@ -2,9 +2,9 @@
 
 **Area:** Random matrices and tensor methods
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -32,10 +32,8 @@ The columns model independent rank-one tensor features. A quantitative lower bou
 
 ## Status review
 
-**Known cases:** The matrix case $`d=1`$ has the corresponding scale. For growing $`d`$ in the displayed regime, [1, Corollary 6.2] proves the weaker lower bound $`s_{\min}(A)\ge\sqrt{\varepsilon}/2`$ with probability at least $`1-2\exp(-c_K\varepsilon n/d)`$, under $`C_Kd^2\log(n)/n\le\varepsilon\le1/2`$.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.pdf) establishes the full original target. Sharp ambient-scale smallest singular-value lower bound with a K-only constant throughout the stated growing-order regime.
 
-**Remaining target:** Recover the factor $`n^{d/2}`$ while retaining linear dependence on the aspect-ratio gap and constants independent of the tensor order.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/562-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-The latest arXiv version of [1] retains the improvement as an open question. Projection small-ball estimates in [2] address a different bound and do not directly give this uniform singular-value estimate. The September 2026 announcement [3] concerns linear independence of symmetric Boolean tensor powers at fixed degree; it does not establish the quantitative estimate for independent factors and growing degree above.
-
-Searches through 24 September 2026 found no matching solution announcement. Native GitHub repository and issue searches for the source identifier returned no records; the Palomar tensor query returned unrelated records. The Zenodo API returned HTTP 403, and indexed searches found no matching announcement.
+The reviewed submission is [PR #76](https://github.com/MColbrook/AIM/pull/76) at `a1cb3d593a70a09257d8df249433ba5dc14da1e6`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

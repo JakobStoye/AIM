@@ -2,9 +2,9 @@
 
 **Area:** PDE control / variational inequalities
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -27,6 +27,8 @@ Obstacle evolution models contact constraints and American-option exercise regio
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.pdf) establishes the full original target. Full negative resolution of the exact target.
 
-The thesis expressly poses boundary exact control to the stationary obstacle solution, including the one-dimensional case. The 2018 paper explains why controllability of penalized equations does not settle the obstacle limit. The statement fixes a concrete admissible control class and asks large-time reachability, without assuming arbitrary-time control. Searches through 22 September 2026 for exact parabolic obstacle controllability and boundary control to stationary contact states found no resolution.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/398-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #56](https://github.com/MColbrook/AIM/pull/56) at `a44c2c3ff89538a75e814dda1b958bd8c688485f`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

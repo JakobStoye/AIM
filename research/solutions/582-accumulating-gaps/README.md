@@ -6,21 +6,30 @@ This package submits an analytic counterexample to [AIM problem 582](https://git
 
 ## Result
 
-Set $q=1/4$ and
+Set $`q=1/4`$ and
 
-$$\Gamma=\{0\}\cup\bigcup_{j\ge0}[q^{j+1},2q^{j+1}].$$
+```math
+\Gamma=\{0\}\cup\bigcup_{j\ge0}[q^{j+1},2q^{j+1}].
+```
 
-This compact subset of the real line is an Ahlfors regular 1-set: for every $x\in\Gamma$ and $0<r\le1$,
 
-$$r/16\le\mathcal H^1(\Gamma\cap B_r(x))\le2r.$$
+This compact subset of the real line is an Ahlfors regular 1-set: for every $`x\in\Gamma`$ and $`0<r\le1`$,
 
-Theorem 1.1 gives an exponent $\alpha\in(0,1/2)$ such that, for every Helmholtz wavenumber $k>0$ and every $\alpha<t<1/2$, the original Hausdorff-measure single-layer operator
+```math
+r/16\le\mathcal H^1(\Gamma\cap B_r(x))\le2r.
+```
 
-$$\mathbb S_k:\mathbb H^{t-1/2}(\Gamma)\longrightarrow\mathbb H^{t+1/2}(\Gamma)$$
 
-is bounded and fails to be surjective. A fixed energy-space density has an image with an $H^1(\mathbb R)$ extension and does not belong to the asserted smoother density space. The positive harmonic function used to construct it comes from a mixed-boundary problem on a periodic cylinder; the strict adjoint boundary term forces its radial exponent below $1/2$.
+Theorem 1.1 gives an exponent $`\alpha\in(0,1/2)`$ such that, for every Helmholtz wavenumber $`k>0`$ and every $`\alpha<t<1/2`$, the original Hausdorff-measure single-layer operator
 
-The original problem permits $n=d=1$, so this is a disproof of its universal assertion. The argument does not determine the sharp regularity threshold for this screen or settle the assertion restricted to noninteger dimension $d<n$. It also does not assert irregularity for any one prescribed incident wave.
+```math
+\mathbb S_k:\mathbb H^{t-1/2}(\Gamma)\longrightarrow\mathbb H^{t+1/2}(\Gamma)
+```
+
+
+is bounded and fails to be surjective. A fixed energy-space density has an image with an $`H^1(\mathbb R)`$ extension and does not belong to the asserted smoother density space. The positive harmonic function used to construct it comes from a mixed-boundary problem on a periodic cylinder; the strict adjoint boundary term forces its radial exponent below $`1/2`$.
+
+The original problem permits $`n=d=1`$, so this is a disproof of its universal assertion. The argument does not determine the sharp regularity threshold for this screen or settle the assertion restricted to noninteger dimension $`d<n`$. It also does not assert irregularity for any one prescribed incident wave.
 
 ## Evidence and AI use
 

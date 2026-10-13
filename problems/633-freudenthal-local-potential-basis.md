@@ -2,9 +2,9 @@
 
 **Area:** Finite elements and multigrid methods
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -44,4 +44,8 @@ Curls of local potentials supply divergence-free corrections for multigrid solve
 
 ## Status review
 
-The source provides numerical evidence for local support. Its separate inf-sup conjecture has an announced proof in [2], concerning a bounded right inverse of divergence. That assertion does not construct the potential-space basis requested here. Current targeted literature, arXiv, GitHub, Zenodo and Palomar checks found no matching resolution of this local-basis target. Zenodo search omitted a known inf-sup announcement; that announcement was checked directly, so negative index results are not treated as exhaustive. No equivalent catalogue entry was found.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/633-kaiwen-jin-freudenthal-potentials/paper/main.pdf) establishes the full original target. Affirmative: vertex-star decomposition on every uniform Freudenthal mesh for every polynomial degree k>=5.
+
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/633-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #38](https://github.com/MColbrook/AIM/pull/38) at `f69a9853cae1afc0f82ee4f466c5a53b30709f9a`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

@@ -4,9 +4,12 @@ This package submits a complete solution claim for [AIM 636](https://github.com/
 
 For the Jack law and normalized statistic in that statement, Theorem 1.1 proves
 
-$$d_{\mathrm K}(W_{n,\alpha},Z)\le 10\max\{n^{-1/2},\sqrt\alpha/n\}$$
+```math
+d_{\mathrm K}(W_{n,\alpha},Z)\le 10\max\{n^{-1/2},\sqrt\alpha/n\}
+```
 
-for every integer $n\ge3$ and every real $\alpha\ge1$, with one constant independent of both parameters. The estimate includes $\alpha\asymp n$ and has no logarithmic factor.
+
+for every integer $`n\ge3`$ and every real $`\alpha\ge1`$, with one constant independent of both parameters. The estimate includes $`\alpha\asymp n`$ and has no logarithmic factor.
 
 - [Complete manuscript](paper/jack_normal.pdf)
 - [Editable LaTeX source](paper/jack_normal.tex)

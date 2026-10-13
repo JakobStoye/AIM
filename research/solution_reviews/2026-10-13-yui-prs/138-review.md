@@ -1,0 +1,44 @@
+# AIM 138: independent review of PR #48
+
+**Date:** 2026-10-13. **Reviewer:** OpenAI Codex, independent AI argument audit during maintainer review; no human or Lean verification is asserted.
+
+**PR:** [#48](https://github.com/MColbrook/AIM/pull/48). **Audited head:** `7dce20795e3be02ef553fe1dda8db4864567e890`. **Target revision:** `c9929805cece044705abaaebe1cebddac1ba11a6`.
+
+**Direct proof:** [Source manuscript](https://github.com/MColbrook/AIM/blob/7dce20795e3be02ef553fe1dda8db4864567e890/research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.tex).
+
+All source sections, ancillary mathematical claims and bibliography entries were read and independently reconstructed. This audit does not rely on the submission's own AI checks.
+
+## Exact target
+
+The claim concerns every distinct pair of positive constant states, the original infimum over bounded nonnegative Dirichlet controls, and uniqueness of the complete nonnegative finite Radon pair on the closed critical interval. The proof uses the exact terminal sine moments, retains endpoint atoms, and derives symmetry rather than assuming it. No finite-dimensional or purely impulsive uniqueness result is substituted for the continuum target.
+
+## Complete independent argument audit
+
+1. Dividing by the terminal constant and passing to the average $`w`$ and difference $`h`$ gives the stated odd positive moments and even zero moments. Nonnegativity is exactly $`w\ge0`$, $`|h|\le w`$. The sine coefficients and scaling constants check (source lines 132-173).
+2. The convolution bridge extends a feasible measure pair by the initial constant to the past and the terminal constant to the future. A one-sided nonnegative smooth kernel preserves every odd moment at the slightly enlarged time and preserves the zero even moments. It includes both endpoint atoms. The lifted heat solution has precisely these sine coefficients, so the smoothed controls are actual bounded nonnegative controls with the required terminal state. Thus bounded, L1 and measure-feasible infima agree. The cited positive finite waiting time applies, and the first exponential moment bounds mass for weak-star passage to an attained critical measure pair (178-237).
+3. A critical scalar measure cannot have a positive density floor on any interior interval. Shifting its later portion slightly left yields the exact displayed moment deficit. Those deficits are bounded uniformly in the eigenvalue and tend to zero individually. Multiplication by the fixed positive-time heat factor gives an actual L2 state tending to zero. The cited smooth bounded null controls on a fixed interval, averaged to preserve odd symmetry, correct every deficit with arbitrarily small supremum norm. The existing positive density absorbs that signed correction. The convolution bridge would then yield a bounded feasible time strictly below criticality, a contradiction (243-299).
+4. The finite moment cones are closed and full dimensional; the first two moments bound their feasible ratio intervals. The vector represented by Lebesgue measure is interior by the positive-definite exponential Gram matrix. Endpoint ratios converge to the actual ratio, since a strict gap would mix an endpoint measure with Lebesgue measure and violate the no-density result. Supporting hyperplanes produce nonnegative exponential tests with normalized negative-time integral and costs tending to zero against every critical measure (430-512).
+5. The real-exponential zero bound follows by factoring the lowest exponential and applying Rolle's theorem with multiplicities. Confluent determinants have positive sign and give alternating nonzero coefficients. The endpoint measures are supported on the finite test zero set. The two explicit interpolants in the root-count lemma rule out fewer than N-1 roots: in each case both terms in the moment functional would be strictly positive. This also identifies whether an atom at zero can occur. Consequently all roots and multiplicities are exhausted in the critical interval and every coefficient is nonzero (307-342, 514-549).
+6. Moving an exponent toward a preserved exponent, without crossing another, retains the root multiplicities and leading sign. The difference cancels the preserved coefficient and has N-1 roots in N exponentials. Coefficient alternation gives the opposite sign to the original interpolant, so the new interpolant lies between zero and the original on each complementary interval. This proves the required pointwise domination, not only an integral estimate (344-369).
+7. The normalized determinant recursion was independently checked by column integration and Vandermonde cancellation. Its positive integrand changes by a factor between one and $`e^{dT}`$ when one exponent increases by d. The result survives confluent node limits (382-424).
+8. Setting $`x=e^{\pi^2t}`$ writes each test as a sparse polynomial with integer exponents $`0,8,24,\ldots`$. Its L1 bound on the physical interval, the actual sparse-polynomial Remez theorem, and successive derivative estimates give locally uniform compactness with every fixed derivative below the terminal radius. The actual closure theorem gives a power expansion. The normalized negative-time integral persists under convergence on $`[0,1]`$, so the limit is nonzero and one fixed coefficient stays bounded away from zero (557-615).
+9. Inserting any fixed exponent between an odd eigenvalue and the next even eigenvalue preserves the highest coefficient. Its new coefficient is the original fixed coefficient times a ratio of positive minors. The Vandermonde ratio is bounded above by a finite constant, and the normalized determinant bound gives the additional factor $`e^{dT}`$. Hence the inserted coefficient has a positive lower bound independent of N (619-665).
+10. For two critical measures, their difference is dominated by their average. All old odd moments cancel against the inserted test; domination and vanishing cost force the difference's exponential transform to vanish on an open exponent interval. Compact support makes the transform analytic, and polynomial density then makes the measure zero. Moving the other exponents inward to the interlacing even family keeps the inserted coefficient and domination, forcing the dominated boundary difference to vanish by the same argument. This proves uniqueness of the average and of the full pair, including endpoint atoms (667-731).
+
+## References and ancillary claims
+
+All four bibliography entries and their uses were checked. Publisher DOI records agree with all article metadata. The actual Lohéac-Trelat-Zuazua 2017 paper has the needed Theorem 2.1 positive waiting time and Lemma 2.1 smooth null controls with the stated supremum estimate. Its discussion really leaves continuum uniqueness open. The actual author-deposited Lohéac 2021 manuscript proves uniqueness only within the purely impulsive class and leaves arbitrary Radon uniqueness open in Section 5, as the submission says. The finite-dimensional paper's real-spectral uniqueness is contextual and is not used to assert continuum uniqueness. Borwein-Erdelyi Theorems 3.2, 5.6 and 6.1 were checked visually in the author PDF: the derivative, Lq Remez and gap-based expansion statements match, and all hypotheses hold for the sparse integer exponent sequences, including after fixed differentiation. The novel extremal-test and determinant steps are proved internally; no density theorem for the sparse original moments is assumed.
+
+Primary evidence: [LTZ 2017](https://cmc.deusto.eus/wp-content/uploads/2017/07/MinimalContHeat.pdf), [Lohéac 2021 author manuscript](https://hal.science/hal-02613883/document), [finite-dimensional publisher DOI](https://doi.org/10.1016/j.anihpc.2020.07.004), [Borwein-Erdelyi author PDF](https://www.cecm.sfu.ca/~pborwein/PAPERS/P107.pdf).
+
+## Decision
+
+**Solved - affirmative by a complete independent argument audit.** No substantive gap or missing target clause remains. The exact minimal-time value and nonconstant profiles are outside the target.
+
+## PDF consistency and layout
+
+All rendered manuscript pages, including the second contact sheet where present, were visually inspected. The title, author, theorem/proof structure, conclusions and bibliography agree with the audited source. No clipped equations, blank pages or unresolved references were observed. Package hashes and repository checks are separate maintainer integration work.
+
+## Ancillary package content
+
+The package README, exact-target comparison, AI-use disclosures, manifests and reproduction guidance were inspected. Their mathematical scope agrees with the manuscript, and none claims human or Lean verification. Maintainer integrity checks cover the listed files. There is no executable proof certificate or numerical experiment used as a proof premise.

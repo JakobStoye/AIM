@@ -2,9 +2,9 @@
 
 **Area:** Applied probability and diffusion approximation
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -35,8 +35,8 @@ Elimination probabilities enter fair allocation of tournament prizes. A quantita
 
 ## Status review
 
-**Known cases:** Denisov and Wachtel establish a cubic-order error bound between the discrete and Brownian probabilities. They also prove exact asymptotics for a different regime, with two players' initial capitals fixed and the third growing.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/615-gambler-scaling/paper/gambler_scaling.pdf) establishes the full original target. Full affirmative resolution of the exact target.
 
-**Remaining target:** The fourth-order bound above. Reference [2] explicitly distinguishes its cubic estimate from this conjecture and leaves the faster rate unresolved. Its abstract's statement about confirming a conjecture concerns the separate asymptotic regime.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/615-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Searches through 24 September 2026 found no matching resolution or duplicate. Exact-paper GitHub searches and Palomar returned no result; broader GitHub and Zenodo matches concerned other problems. No later comprehensive status survey was found.
+The reviewed submission is [PR #81](https://github.com/MColbrook/AIM/pull/81) at `312df9569f5265fd7a85dfe7f7c1b5300cb5765b`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

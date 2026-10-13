@@ -2,9 +2,9 @@
 
 **Area:** PDE control / dispersive boundary dynamics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -47,6 +47,8 @@ Dynamic boundary conditions represent surface degrees of freedom coupled to a qu
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.pdf) establishes the full original target. Full negative resolution of the exact target.
 
-The SIAM theorem assumes the surface coefficient exceeds the bulk coefficient. Section 5.1 of the 2025 review expressly distinguishes the unresolved Schrödinger regime below that threshold from the negative result for waves. Searches through 22 September 2026 included “Schrödinger dynamic boundary delta less than d observability”, Wentzell control and Mercado–Morales follow-ups. The 2026 inverse-potential reconstruction paper retains the faster-surface hypothesis; no resolution of the stated slower-surface case was located.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/386-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #54](https://github.com/MColbrook/AIM/pull/54) at `6b03556d5c8ba561a30fb600d7bc0348074361dc`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

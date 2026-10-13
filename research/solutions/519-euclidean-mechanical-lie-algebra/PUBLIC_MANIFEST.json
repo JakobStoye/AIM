@@ -141,8 +141,8 @@
     },
     {
       "path": "numerical_case/summaries/rank_summary.csv",
-      "bytes": 350,
-      "sha256": "341be7eda0e4640fbf5a89e73b600c8b7a03e3a835472a526b4d89781d527dfb",
+      "bytes": 331,
+      "sha256": "d07d843ae93e155ad9e5b04361ade69cd52a38bfd554c6f9780d517e194e7191",
       "purpose": "code, reproduction or small published material"
     },
     {

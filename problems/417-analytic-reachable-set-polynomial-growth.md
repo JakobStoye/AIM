@@ -2,9 +2,9 @@
 
 **Area:** Nonlinear control / minimum-time regularity
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -31,6 +31,8 @@ Qualitative local controllability says nearby maneuvers are possible. The conjec
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.pdf) establishes the full original target. Full negative resolution of the exact target.
 
-Jafarpour separately states this quantitative growth conjecture and the finite-jet determination conjecture. The known implication from polynomial growth to finite-jet robustness does not prove polynomial growth from controllability. The 2026 notes continue to identify the quantitative issue as open. Searches through 22 September 2026 found no general proof or counterexample; results for particular polynomial systems give sufficient conditions only.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/417-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #57](https://github.com/MColbrook/AIM/pull/57) at `fff30eeb072395341d9944e4c75d5267b770f3b8`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

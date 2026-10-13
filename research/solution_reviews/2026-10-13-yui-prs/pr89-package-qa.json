@@ -1,0 +1,17 @@
+{
+  "pr": 89,
+  "head": "7c5a97db1d7f13732cdfe8900e14a9e52ab6d64b",
+  "manifest_files": 7,
+  "checksum_files": 8,
+  "citation_keys": [
+    "Altmeyer",
+    "BDG",
+    "Chafai",
+    "ELS",
+    "KR",
+    "Moritoki"
+  ],
+  "rebuild": "PASS",
+  "pdf_pages": 12,
+  "pdf_text_matches_rebuild": true
+}

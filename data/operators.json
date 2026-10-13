@@ -265,8 +265,11 @@
     "title": "Analytic boundary diffusion on continuous functions for Lipschitz domains",
     "area": "Elliptic PDEs and analytic semigroups",
     "file": "problems/431-dtn-analyticity-continuous-boundary.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-13",
+    "outcome": "Affirmative proof",
+    "proof": "research/solutions/431-dtn-analyticity-continuous-boundary/paper/dtn_analyticity.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/431-review.md"
   },
   {
     "id": "446",

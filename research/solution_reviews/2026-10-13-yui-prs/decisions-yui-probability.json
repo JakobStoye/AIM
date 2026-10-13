@@ -1,0 +1,137 @@
+[
+  {
+    "pr": 73,
+    "id": "515",
+    "pinned_head": "6c47f2a0345e5b51292a7ff5b7590a7c7be5ecac",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit, exact target match, analytic premises and inspected exact verifier semantics checked; replay and corruption controls passed.",
+    "verified_progress": "Complete counterexample for restricted-faithfulness original GSPO search.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Counterexample: the original GSPO search can be trapped in a three-graph component above the global edge minimum.",
+    "proof": "research/solutions/515-gspo-counterexample/paper/counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/515-review.md"
+  },
+  {
+    "pr": 80,
+    "id": "584",
+    "pinned_head": "0415b9d841373ea4b7bd78b9d5e84adc9c569b6d",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit, exact target match, analytic premises and inspected exact verifier semantics checked; replay and corruption controls passed.",
+    "verified_progress": "Complete nonexistence proof on the two-leaf branched ray for an arbitrary symmetric common line law.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Nonexistence of the stipulated symmetric one-dependent four-color extension.",
+    "proof": "research/solutions/584-four-color-branched-ray/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/584-review.md"
+  },
+  {
+    "pr": 78,
+    "id": "576",
+    "pinned_head": "9f7637ced9f656199f8ce36eba7feb7d857c764a",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs all proof-critical steps and verifies imported source statements and original target quantifiers.",
+    "verified_progress": "Uniform covariance bound for all fixed real symmetric interactions, partitions, feasible magnetizations and replica-dependent fields.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Uniform constrained-Ising replica covariance bound at arbitrary fixed interaction strengths.",
+    "proof": "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/576-review.md",
+    "required_corrections": [
+      {
+        "file": "research/solutions/576-ising-replica-covariance/paper/ising_replica_covariance.tex",
+        "line": 55,
+        "old": "eqs. (1.15)--(1.16)",
+        "new": "eqs. (1.23)--(1.24)",
+        "reason": "Canonical measure equation numbers in pinned CM version1; editorial only, source/PDF/hashes should be updated."
+      },
+      {
+        "file": "research/solutions/576-ising-replica-covariance/TARGET_COMPARISON.md",
+        "old": "(1.15)--(1.16)",
+        "new": "(1.23)--(1.24)",
+        "reason": "Same CM equation-locator typo also occurs below the target comparison table; editorial only."
+      }
+    ]
+  },
+  {
+    "pr": 82,
+    "id": "636",
+    "pinned_head": "ec73c4f188e85051b8560f41b762835a564e05fa",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs all proof-critical steps and verifies imported source statements and original target quantifiers.",
+    "verified_progress": "Universal 10 times max(n^(-1/2),sqrt(alpha)/n) Kolmogorov bound for all n>=3 and alpha>=1.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Uniform Jack normal-approximation bound without logarithmic loss.",
+    "proof": "research/solutions/636-uniform-jack-normal/paper/jack_normal.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/636-review.md"
+  },
+  {
+    "pr": 79,
+    "id": "583",
+    "pinned_head": "7f9e4214fdc060c1ddc37ec6044b12b22bf182f4",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs all proof-critical steps and verifies imported hypotheses and exact original target.",
+    "verified_progress": "Automorphism and color invariant proper one-dependent coloring of every infinite d-regular tree, integer d>=3, using finite q(d).",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Automorphism and color invariant proper one-dependent coloring of every infinite d-regular tree, integer d>=3, using finite q(d).",
+    "proof": "research/solutions/583-regular-tree-one-dependent-coloring/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/583-review.md"
+  },
+  {
+    "pr": 72,
+    "id": "506",
+    "pinned_head": "6a5fae3b6a465b6afa0dd01544993e8c90ef0070",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs all proof-critical steps and verifies imported hypotheses and exact original target.",
+    "verified_progress": "Matching mixed-anisotropy full-history private density minimax rates, including the critical unsquared logarithmic rate.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Matching mixed-anisotropy full-history private density minimax rates, including the critical unsquared logarithmic rate.",
+    "proof": "research/solutions/yuiyuiui-506-private-density-mixed-anisotropy/paper/mixed_private_density.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/506-review.md"
+  },
+  {
+    "pr": 74,
+    "id": "507",
+    "pinned_head": "1986a0aaa93ef42709e196bfa9c4746fab250351",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs all proof-critical steps and verifies imported hypotheses and exact original target.",
+    "verified_progress": "Matching sequentially private Gaussian spectral-density minimax rate and consistency boundary.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Matching sequentially private Gaussian spectral-density minimax rate and consistency boundary.",
+    "proof": "research/solutions/507-sequential-private-spectral-density/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/507-review.md"
+  },
+  {
+    "pr": 75,
+    "id": "516",
+    "pinned_head": "49687d565a727aeda3ae7a9134ad628a6fc48d4a",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs every proof-critical step, including novel uniform bottleneck lemmas, and verifies target and imported hypotheses.",
+    "verified_progress": "Uniform labeled-DAG Markov equivalence-class tail with every required near-quadratic logarithmic exponent.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Uniform labeled-DAG Markov equivalence-class tail with every required near-quadratic logarithmic exponent.",
+    "proof": "research/solutions/kaiwen-jin-516/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/516-review.md"
+  },
+  {
+    "pr": 76,
+    "id": "562",
+    "pinned_head": "a1cb3d593a70a09257d8df249433ba5dc14da1e6",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs every proof-critical step, including novel uniform bottleneck lemmas, and verifies target and imported hypotheses.",
+    "verified_progress": "Sharp ambient-scale smallest singular-value lower bound with a K-only constant throughout the stated growing-order regime.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "Sharp ambient-scale smallest singular-value lower bound with a K-only constant throughout the stated growing-order regime.",
+    "proof": "research/solutions/kaiwen-jin-562-tensor-singular-values/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/562-review.md"
+  },
+  {
+    "pr": 88,
+    "id": "574",
+    "pinned_head": "f12120de3dc3eaaf35f078c7cd99e08d1218ec4f",
+    "verdict": "Solved",
+    "reason": "Complete independent AI audit reconstructs every proof-critical step, including novel uniform bottleneck lemmas, and verifies target and imported hypotheses.",
+    "verified_progress": "No planar Trap draws for any interior deletion probability, and positive draws at some positive deletion probability in every higher dimension.",
+    "remaining_target": "None for the stated target.",
+    "outcome": "No planar Trap draws for any interior deletion probability, and positive draws at some positive deletion probability in every higher dimension.",
+    "proof": "research/solutions/574-trap-draws-percolation/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-13-yui-prs/574-review.md"
+  }
+]

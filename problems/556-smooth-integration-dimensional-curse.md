@@ -2,9 +2,9 @@
 
 **Area:** Numerical integration and information-based complexity
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -38,8 +38,8 @@ This problem tests whether uniformly controlling derivatives of every order is e
 
 ## Status review
 
-The 2026 survey explicitly leaves this integration question open. A curse is known for uniform approximation on the same class, but this does not imply a lower bound for integration. The latter is known not to have dimension-independent complexity; that weaker fact does not establish exponential growth.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/556-uniform-derivative-integration/paper/uniform_derivative_integration.pdf) establishes the full original target. Affirmative: the dimensional curse holds, with exponential deterministic sampling complexity.
 
-The related tensor-product integration results in [2] use finite-summability derivative norms and, for the analytic examples, positive quadrature formulas. Its Section 5.2 explicitly distinguishes the unresolved supremum derivative norm. These restrictions prevent treating those results as a solution here.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/556-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Checks through 24 September 2026 found no matching announced solution or catalogue duplicate. Searches covered the current literature and arXiv, author publications, public GitHub and Palomar. Zenodo's native API was inaccessible, and indexed Zenodo searches found no matching announcement. The accompanying numerical-journal review records scope and access limits.
+The reviewed submission is [PR #83](https://github.com/MColbrook/AIM/pull/83) at `73683304bcf7d3e748eb1c3f4db614175c938170`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

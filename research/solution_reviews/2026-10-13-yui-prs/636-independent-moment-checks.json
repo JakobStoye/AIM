@@ -1,0 +1,146 @@
+[
+  {
+    "n": 5,
+    "alpha": "1",
+    "partitions": 7,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 5,
+    "alpha": "2",
+    "partitions": 7,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 5,
+    "alpha": "10",
+    "partitions": 7,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 5,
+    "alpha": "100",
+    "partitions": 7,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 6,
+    "alpha": "1",
+    "partitions": 11,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 6,
+    "alpha": "2",
+    "partitions": 11,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 6,
+    "alpha": "10",
+    "partitions": 11,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 6,
+    "alpha": "100",
+    "partitions": 11,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 7,
+    "alpha": "1",
+    "partitions": 15,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 7,
+    "alpha": "2",
+    "partitions": 15,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 7,
+    "alpha": "10",
+    "partitions": 15,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 7,
+    "alpha": "100",
+    "partitions": 15,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 8,
+    "alpha": "1",
+    "partitions": 22,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 8,
+    "alpha": "2",
+    "partitions": 22,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 8,
+    "alpha": "10",
+    "partitions": 22,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 8,
+    "alpha": "100",
+    "partitions": 22,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 9,
+    "alpha": "1",
+    "partitions": 30,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 9,
+    "alpha": "2",
+    "partitions": 30,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 9,
+    "alpha": "10",
+    "partitions": 30,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 9,
+    "alpha": "100",
+    "partitions": 30,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 10,
+    "alpha": "1",
+    "partitions": 42,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 10,
+    "alpha": "2",
+    "partitions": 42,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 10,
+    "alpha": "10",
+    "partitions": 42,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  },
+  {
+    "n": 10,
+    "alpha": "100",
+    "partitions": 42,
+    "variance_defect_and_conditional_cubic_second_moment": "exact match"
+  }
+]

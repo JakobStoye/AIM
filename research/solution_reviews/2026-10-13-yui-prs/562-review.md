@@ -1,0 +1,43 @@
+# AIM 562: independent review of PR #76
+
+Reviewed 13 October 2026 at head `a1cb3d593a70a09257d8df249433ba5dc14da1e6`. Verdict: **Solved** after a complete independent AI mathematical audit. No independent human review or Lean verification is claimed. The manuscript discloses Codex assistance.
+
+[Proof](../../solutions/kaiwen-jin-562-tensor-singular-values/paper/main.pdf), [source](../../solutions/kaiwen-jin-562-tensor-singular-values/paper/main.tex).
+
+## Target
+
+The conclusion has the exact ambient scale and linear aspect-ratio gap of the original problem: $`s_{\min}(A)\ge c_K\varepsilon n^{d/2}`$ with probability tending to one. It keeps mutually independent centered unit-variance scalar coordinates with bounded exponential-square subgaussian norm, allowing different and discrete laws. It treats every fixed $`\varepsilon\in(0,1/2]`$, the floor in the column count, and every growing integer order satisfying $`d^2\log n/n\to0`$, including $`d=1`$. The constant depends only on $`K`$; the convergence threshold may depend on fixed epsilon. No part of the stated target remains.
+
+## Scalar comparison and decoupling
+
+I checked the scalar convex domination from tail-integrated call functions. Centering allows nonnegative thresholds to suffice, and the Gaussian lower call bound dominates the subgaussian upper bound at the proposed factor $`16K`$. Subtracting a supporting affine function and integrating the nonnegative second-derivative measure extends this to convex functions, including unbounded ones. No symmetry of the scalar law is presumed. For an off-diagonal quadratic matrix form, random splitting makes each cross term appear with the correct factor four. The cross form is separately affine in each independent coordinate, so its norm-power is separately convex and the scalar domination can be applied successively. Gaussian sign reflection relates the decoupled cross form to the original off-diagonal form with the correct factor two. These steps preserve independence and have constants depending on K alone.
+
+## Critical Gaussian Gram estimate: independently established
+
+For deterministic column maps $`U_i`$, the two coefficient-block operators really have norm at most $`t=\max_i\|U_i\|^2`$. The first sends the disjoint input block indexed by $`(h,i)`$ to the disjoint output block $`(i,h)`$ using $`U_i^TU_h`$; summing squared norms proves its bound. The second is a direct sum over i of $`(I\otimes U_i)F(I\otimes U_i^T)`$, where F flips the two input factors. This is crucial: bounding it by a total covariance instead would lose the small scale needed later.
+
+I independently expanded all creation/annihilation identities on the normalized multivariate Hermite basis. The total annihilation column has norm at most the square root of input degree. Commuting an annihilation past a creation gives the diagonal covariance $`D`$ or total covariance $`L`$, plus the indicated coefficient-block form. This yields the raising-map bounds $`\sqrt{a_0+qt}`$ and $`\sqrt{b_0+qt}`$. The degree-lowering adjoints are legitimately bounded by restricting the raising maps to degree at most q minus one: their domains and ranges are finite-dimensional orthogonal homogeneous polynomial spaces. The proof does not assert boundedness on the full Gaussian L2 space.
+
+Writing multiplication by the centered Gram matrix as four such terms gives the stated restricted-degree norm. In its p-th power applied to a constant vector, input degree is at most zero, two, up to two p minus two. The manuscript's somewhat looser displayed moment scale bounds every step. The identity between the expected even trace and the squared L2 norms of these p-th powers follows from pointwise symmetry. Operator norm to even trace, then removal of the diagonal, gives the exact lemma with factor two. Thus the novel Fock/Hermite lemma has been checked algebraically, rather than simply read or imported from a recent reference.
+
+## Projected blocks, constants, and uniform limits
+
+Conditioning on columns outside a fixed subset makes their orthogonal-complement projection deterministic and leaves the remaining tensor factors independent. Its rank is at least the dimension minus the number of outside columns; no rank equality or generic random-subspace law is required. Split each remaining tensor into its first d minus one factors and its final vector. Tensor concentration controls the first-factor norms, their projected quadratic form, and the complete projected-column norms. Truncating the first-factor outer products preserves independence and positive semidefiniteness; their expectation is bounded by the identity because of tensor isotropy. Matrix Chernoff therefore supplies the stated high-probability bound on their sum.
+
+On these events I checked all three Gaussian Gram scales: the largest individual Hilbert–Schmidt square is at most $`9\beta/4`$, total covariance norm at most twice the relative block size, and coefficient-map norm square at most $`2/n`$. With the moment order the ceiling of log ambient dimension, the degree correction divided by n tends to zero under the precise growing-order assumption. Choosing the relative subset size sufficiently small using K alone makes the leading Gram error a fixed small multiple of beta; Markov gives the inverse-square ambient-dimension failure term. The diagonal concentration then dominates the off-diagonal error and proves the projected-block singular-value bound. For d equal to one the auxiliary first-factor events are deterministic, as claimed.
+
+The remaining failure terms tend to zero uniformly in every fixed subset and permitted scalar-law sequence. In particular $`\log N=d\log n`$ is negligible relative to $`n/d`$ exactly by $`d^2\log n/n\to0`$. This checks that no exponential-in-order hidden constant invalidates the result.
+
+The last deterministic averaging step is also valid. Any unit coefficient vector places at least half its expected mass in a positive fraction of uniformly chosen subsets. If the full matrix has too small a singular value, every such subset must have a bad projected block; projection kills all complementary columns. This is a pointwise implication for each matrix, so neither a measurable choice of the bad vector nor a union bound over exponentially many subsets is needed. Integrating the finite bad-subset fraction and using the uniform fixed-subset estimate gives the asserted probability limit with $`c_K=\sqrt{\delta_K}/8`$.
+
+## All references and dependencies
+
+[Vershynin, version 5](https://arxiv.org/html/1905.00802v5), Theorem 1.4, has exactly the tensor concentration range used, with its constants independent of tensor order and depending on the scalar subgaussian bound only. The parameter used is within its permitted Hilbert–Schmidt range. Its journal metadata, Bernoulli 26(4) (2020), 3139–3162, DOI [10.3150/20-BEJ1218](https://doi.org/10.3150/20-BEJ1218), match the bibliography. Its weaker smallest-singular-value benchmark is accurately distinguished from the new conclusion.
+
+[Tropp's revised 24 December 2014 author preprint](https://tropp.caltech.edu/books/Tro14-Introduction-Matrix-preprint.pdf), Theorem 5.1.1, gives the matrix Chernoff inequality for independent positive semidefinite bounded summands, all of which the truncated outer products satisfy. The published metadata, Foundations and Trends in Machine Learning 8(1–2) (2015), 1–230, DOI [10.1561/2200000048](https://doi.org/10.1561/2200000048), are correct; author-preprint pagination differs and is explicitly identified.
+
+[Bandeira–Kunisky–Nizić-Nikolac–Pesenti–Wang, version 1](https://arxiv.org/html/2610.01982v1), dated 1 October 2026, is a real source with matching title/authors. Its Section 2 supplies acknowledged method lineage for Fock-space operator concentration; none of its unstated conclusions are used in place of the self-contained new Gram lemma. [Van Handel, version 2](https://arxiv.org/html/2512.18588v2), dated 12 July 2026 and first posted in 2025, is correctly attributed for broader convex-comparison context. The scalar comparison used here is proved directly. The fifth entry links the exact frozen AIM562 target and gives the repository authors. No missing external mathematical dependency was found.
+
+## Package and PDF
+
+The full source, README and target comparison were read, and all ten PDF pages were visually inspected. The title, theorem, constants, operator derivations, final limit and bibliography match the source presentation; no clipping or unresolved references were found. The package has no code, numerical experiment or computational certificate on which the theorem depends. This is an analytic audit by an AI reviewer, not an assertion of human validation or formal proof certification.

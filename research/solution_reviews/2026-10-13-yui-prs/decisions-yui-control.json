@@ -1,0 +1,136 @@
+[
+  {
+    "PR": 57,
+    "ID": "417",
+    "pinned_head": "fff30eeb072395341d9944e4c75d5267b770f3b8",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit verifies a counterexample matching every target hypothesis.",
+    "verified_progress": "Full negative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "negative",
+    "direct_proof_file": "research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/417-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 56,
+    "ID": "398",
+    "pinned_head": "a44c2c3ff89538a75e814dda1b958bd8c688485f",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit verifies a counterexample matching every target hypothesis.",
+    "verified_progress": "Full negative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "negative",
+    "direct_proof_file": "research/solutions/398-parabolic-obstacle-counterexample/paper/obstacle_control_counterexample.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/398-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 53,
+    "ID": "385",
+    "pinned_head": "1b29cbe43828ce9b9fa1eeff602756fba40ff879",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit verifies a counterexample matching every target hypothesis.",
+    "verified_progress": "Full negative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "negative",
+    "direct_proof_file": "research/solutions/385-equal-speed-wentzell-wave-observability/paper/equal_speed_observability.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/385-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 54,
+    "ID": "386",
+    "pinned_head": "6b03556d5c8ba561a30fb600d7bc0348074361dc",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit verifies a counterexample matching every target hypothesis.",
+    "verified_progress": "Full negative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "negative",
+    "direct_proof_file": "research/solutions/386-slow-surface-schrodinger-observability/paper/exterior_observability.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/386-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 81,
+    "ID": "615",
+    "pinned_head": "312df9569f5265fd7a85dfe7f7c1b5300cb5765b",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit establishes the full exact target; a probability-scope clarification is editorial.",
+    "verified_progress": "Full affirmative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "affirmative",
+    "direct_proof_file": "research/solutions/615-gambler-scaling/paper/gambler_scaling.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/615-review.md",
+    "corrections": [
+      "Clarify the two distinct finite-block arguments: the written two-player bound 2^{-M} is valid; a prescribed three-player pair/direction path has bound 6^{-M} and forces first elimination."
+    ]
+  },
+  {
+    "PR": 52,
+    "ID": "387",
+    "pinned_head": "3fb86256a82f8fd8fe35a9ee2df338d0017f7057",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit establishes the full exact target; no correction or substantive gap was identified.",
+    "verified_progress": "Full negative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "negative",
+    "direct_proof_file": "research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/387-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 51,
+    "ID": "258",
+    "pinned_head": "8f5c27ab02df36559997f106dcbccfb6f6c3738a",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit establishes the full exact target; specified elementary corrections do not change the theorem.",
+    "verified_progress": "Full affirmative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "affirmative",
+    "direct_proof_file": "research/solutions/258-signed-stefan-control/stefan_signed_control.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/258-review.md",
+    "corrections": [
+      "Restrict the flatness lemma to 1<sigma<2 or explain the sigma=1 case using an intermediate Gevrey order greater than 1; the cited proposition itself has sigma>1."
+    ]
+  },
+  {
+    "PR": 48,
+    "ID": "138",
+    "pinned_head": "7dce20795e3be02ef553fe1dda8db4864567e890",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit establishes the full exact target.",
+    "verified_progress": "Full affirmative resolution of the exact target.",
+    "remaining_target": "None.",
+    "outcome": "affirmative",
+    "direct_proof_file": "research/solutions/138-unique-minimum-time-positive-heat-control/paper/manuscript.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/138-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 45,
+    "ID": "067",
+    "pinned_head": "7d51782d7f43f71724d3caa92e8f256572286359",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit establishes the full exact target.",
+    "verified_progress": "Exact dimensionless time T_unif/L=4 sqrt(2), with original L2 data and control classes.",
+    "remaining_target": "None.",
+    "outcome": "affirmative",
+    "direct_proof_file": "research/solutions/067-burgers-shock-uniform-control-time/paper/main.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/067-review.md",
+    "corrections": []
+  },
+  {
+    "PR": 49,
+    "ID": "139",
+    "pinned_head": "b87f79b5a7bf638d4b2833a4245c014b11d76718",
+    "verdict": "Solved",
+    "reason": "Complete independent AI argument audit establishes the full exact target.",
+    "verified_progress": "Explicit target-only exact range characterization and sharp geometry-dependent initial-time evaluation scale.",
+    "remaining_target": "None.",
+    "outcome": "affirmative",
+    "direct_proof_file": "research/solutions/139-sharp-heat-tracking-range/paper/heat_tracking.tex",
+    "report_path": "research/solution_reviews/2026-10-13-yui-prs/139-review.md",
+    "corrections": []
+  }
+]

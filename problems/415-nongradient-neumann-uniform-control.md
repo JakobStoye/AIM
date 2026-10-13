@@ -2,9 +2,9 @@
 
 **Area:** PDE control / transport with weak diffusion
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -34,6 +34,8 @@ This asks whether a sensor-actuator region reached by all backward flow paths ca
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/415-nongradient-neumann-uniform-control/paper/main.pdf) establishes the full original target. Uniform Neumann null control for every strictly outward autonomous drift satisfying the original flushing condition.
 
-Remark 1.6 explicitly identifies removal of the gradient-field assumption as open. The statement specializes to autonomous smooth drift while retaining strict outward flux and the uniform neighborhood version of the flushing condition. The available Neumann theorem requires gradient drift; Dirichlet and tangential-boundary results do not provide this conclusion. Searches through 22 September 2026 located no resolution.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/415-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #58](https://github.com/MColbrook/AIM/pull/58) at `060bceb02fd167080976f6bb780f4be9dc1b9910`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

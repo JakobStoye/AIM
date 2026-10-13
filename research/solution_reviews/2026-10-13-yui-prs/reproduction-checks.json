@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-13",
+  "independent_ai_review": true,
+  "human_review": false,
+  "lean_verification": false,
+  "tests": {
+    "AIM515": {
+      "passed": 6
+    },
+    "AIM584": {
+      "passed": 12
+    },
+    "AIM517": {
+      "passed": 23,
+      "runtime": "LinuxPython3.12.3,NumPy2.2.6,mpmath1.3"
+    },
+    "AIM518": {
+      "passed": 21,
+      "runner": "pytest8.3.5"
+    },
+    "AIM519": {
+      "passed": 30,
+      "runner": "unittest"
+    },
+    "AIM633": {
+      "passed": 34,
+      "runner": "pytest8.3.5"
+    }
+  },
+  "campaigns": {
+    "AIM517": {
+      "radial_cases": 40,
+      "matrix_comparisons": 80,
+      "passed": true
+    },
+    "AIM518": {
+      "global_rows": 48,
+      "local_rows": 48,
+      "reference_quality_pass_rows": 48,
+      "passed": true,
+      "frequency_quadruples": 2085056,
+      "covariance_samples": 989
+    },
+    "AIM519": {
+      "orders": 18,
+      "integer_columns": 6705,
+      "rank_blocks": 91,
+      "rank_replay_passed": true,
+      "rational_poisson_calibrations": 80,
+      "iterated_lowering_cases": 8,
+      "passed": true
+    },
+    "AIM633": {
+      "full_certificate_suite_passed": true,
+      "receipt": "633-certificate-replay.json",
+      "uniform_analytic_coverage_audited": true
+    }
+  },
+  "corrected_pdfs": {
+    "AIM258": 8,
+    "AIM576": 6,
+    "AIM615": 5
+  },
+  "corrected_pdf_full_page_visual_qa": "PASS",
+  "initial_runtime_import_failures": "Resolved using isolated declared Linux dependencies; no mathematical test failures remained."
+}

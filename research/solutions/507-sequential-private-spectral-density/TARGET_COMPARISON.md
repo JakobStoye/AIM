@@ -10,7 +10,7 @@ This comparison uses the original public problem and the submitted manuscript. T
 | Even, nonnegative, $`2\pi`$-periodic spectral density | Section 1, definitions preceding (1)–(2). |
 | $`\gamma_f(h)=\int_{-\pi}^{\pi} f(\lambda)e^{ih\lambda}\,d\lambda`$, $`\rho_f(h)=\gamma_f(h)/\gamma_f(0)`$ | Equation (1), with no change of Fourier normalization. |
 | Variance in $`[C_0^{-1},C_0]`$ | Class (2); the lower-bound alternatives have variance one, which lies in this interval. |
-| $`\sum_{h\ne0}|h|^{2s}|\rho_f(h)|^2\le C_1^2`$ | Class (2); Section 4 verifies this bound, including both positive and negative lags. The cited upper bound applies to the same class. |
+| $`\sum_{h\ne0}\lvert h\rvert^{2s}\lvert \rho_f(h)\rvert^2\le C_1^2`$ | Class (2); Section 4 verifies this bound, including both positive and negative lags. The cited upper bound applies to the same class. |
 | Consecutive dependent observations of a centered real stationary Gaussian process | Section 1, observation model; Section 4 constructs legal stationary Gaussian alternatives. Independence of the observations is not assumed. |
 | Kernels $`Q_i(\cdot\mid X_i,Z_{<i})`$ | Section 1, equation (3) and its preceding paragraph. |
 | Each release uses only its own raw observation and earlier private outputs; no earlier raw observations | Section 1, specified access rule; Lemma 3 and Proposition 6 use it to protect an innovation in the entire output prefix. Theorem 7 preserves it under a fixed raw shift. |

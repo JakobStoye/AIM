@@ -2,9 +2,9 @@
 
 **Area:** PDE control / fluid–structure dynamics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -36,6 +36,8 @@ This determines the shortest small-amplitude maneuver of a liquid-filled contain
 
 ## Status review
 
-**Literature check:** Open in cited literature; no later resolution located.
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/387-shallow-water-tank-obstruction/paper/obstruction.pdf) establishes the full original target. Full negative resolution of the exact target.
 
-The book conjectures the threshold $`2`$ in this normalization. The 2024 paper proves the corresponding lower-time obstruction using the quadratic dynamics; it does not give local controllability for every time above the threshold. Searches through 22 September 2026 included tank Saint-Venant sharp/minimal control time and Coron–Koenig–Nguyen continuations. Large-time local controllability and feedback stabilization were distinguished from a proof for all $`T>2`$.
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/387-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
+
+The reviewed submission is [PR #52](https://github.com/MColbrook/AIM/pull/52) at `3fb86256a82f8fd8fe35a9ee2df338d0017f7057`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

@@ -2,9 +2,9 @@
 
 **Area:** Statistical inference, time series and local differential privacy
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-13
 
 ## Problem statement
 
@@ -54,15 +54,8 @@ Spectral densities describe temporal dependence in correlated measurements. Shar
 
 ## Status review
 
-The class above is the explicitly variance-bounded class in [2]. That preprint announces the sharp **non-interactive** rate
+**Resolution reviewed 2026-10-13:** [Kaiwen Jin's manuscript](../research/solutions/507-sequential-private-spectral-density/paper/main.pdf) establishes the full original target. Matching sequentially private Gaussian spectral-density minimax rate and consistency boundary.
 
-```math
-\mathcal R^{\mathrm{NI}}_{n,\alpha}\asymp
-1\wedge(n\alpha^4)^{-2s/(2s+1)},\qquad 0<\alpha\le1.
-```
+**Independent review:** the [complete per-problem audit](../research/solution_reviews/2026-10-13-yui-prs/507-review.md) reconstructs the argument, compares its hypotheses and quantifiers with the original statement, and checks the cited sources and accompanying materials. The review was carried out by independent Codex AI agents during maintainer processing; it does not assert human peer review or Lean verification.
 
-Its definition restricts each release to a channel depending only on $`X_i`$. Consequently, its lower bound does not establish an interactive lower bound. Section 3.4 explicitly leaves sharp interactive rates open and refers to [1].
-
-Reference [1] constructs sequential mechanisms and leaves their global minimax optimality unresolved. The target here is the remaining interactive problem, with privacy allowed to strengthen as the sample size grows. It does not ask to re-establish the non-interactive result or assert that the currently available interactive bound is sharp.
-
-Primary statements, version histories and the authors' public simulation repository were checked. Searches on 24 September 2026, including indexed arXiv, Zenodo, GitHub and Palomar, located the non-interactive announcement above but no matching interactive resolution.
+The reviewed submission is [PR #74](https://github.com/MColbrook/AIM/pull/74) at `1986a0aaa93ef42709e196bfa9c4746fab250351`. The original problem statement at `c9929805cece044705abaaebe1cebddac1ba11a6` was compared with its unchanged current form. The proof and documented independent audit meet the repository's **Solved** criterion; the original problem page and ID are retained.

@@ -15,7 +15,7 @@ Result: Theorem 1.1 of the accompanying manuscript, proved in Sections 2--3.
 | Finite C(J,A), independent of N,M,v | Lemmas 2.2--2.3 give L > 0 and U < infinity; Proposition 2.1 gives U/L; Section 3 gives C = 2U/L | Full simultaneous uniformity; explicit unoptimized constant |
 
 The original measure is identical to equation (1). Its density convention in
-Caputo--Morellini Definition 1.9, equations (1.15)--(1.16) of the v1 PDF is related to the integer totals by
+Caputo--Morellini Definition 1.9, equations (1.23)--(1.24) of the v1 PDF is related to the integer totals by
 rho(A) = (1 + M_A/(N |A|))/2, as stated in the manuscript. Since a fixed finite
 set has finitely many partitions, their constants can also be maximized to
 obtain a bound depending only on J.
