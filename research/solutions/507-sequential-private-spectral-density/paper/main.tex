@@ -1,0 +1,583 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\KL}{D}
+\newcommand{\F}{\mathcal F}
+\newcommand{\risk}{\mathcal R^{\mathrm{seq}}_{n,\alpha}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Sharp minimax rates for spectral density estimation\protect\\
+under sequential local differential privacy}
+\author{Kaiwen Jin\thanks{\texttt{yui.ui.siki@gmail.com}}}
+\date{13 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We determine the minimax integrated squared error for estimating the spectral
+density of a centered stationary Gaussian time series when each observation
+is released under local differential privacy and the release may depend on
+all earlier private outputs. On a variance-bounded class whose normalized
+covariances have Sobolev smoothness $s>1/2$, the risk is, up to constants,
+$1\wedge(n\alpha^4)^{-2s/(2s+1)}$, uniformly for $n\ge2$ and
+$0<\alpha\le1$. Thus sequential interaction preserves the sharp
+non-interactive rate, without a logarithmic loss. The lower bound follows by
+representing a covariance perturbation through independent Gaussian
+innovations. An innovation that enters only one past raw observation remains
+protected by the same privacy inequality after the entire past output has
+been released. Gaussian smoothing and the current private channel then give
+a divergence bound of order $n\alpha^4$. The matching upper bound is the
+non-interactive estimator of Issartel and Roueff.
+\end{abstract}
+
+\section{The problem and the minimax rate}\label{sec:problem}
+
+A spectral density describes the covariance of a stationary time series.
+Estimating it from locally private measurements is therefore a basic problem
+in inference on dependence: each data holder transmits a private version of
+one raw observation, while the statistician sees only the transmitted outputs.
+Sequential interaction lets a holder consult previous private outputs before
+choosing the next release.
+
+Issartel and Roueff \cite[Theorems 1 and 3]{IR} obtain a sharp, log-free
+minimax rate for Gaussian spectral density estimation when the releases are
+non-interactive. Their lower bound concerns channels that depend only on
+their own raw coordinate, and their Section 3.4 leaves the sharp interactive
+rate open. Butucea, Klockmann and Krivobokova \cite[Section 2.4]{BKK}
+construct sequential estimators; the global minimax question is stated on
+p.\,5 of their paper. The difference between these models matters for a
+lower bound. With interaction, the conditional law of the current raw
+observation depends on the entire private history, whose distribution changes
+under the competing spectral densities.
+
+We show that this additional dependence does not improve the joint minimax
+rate on the class below. The argument controls a Gaussian innovation through
+the full private history, rather than assuming that the privatized coordinates
+are conditionally independent. It applies when the privacy parameter is
+allowed to shrink with the sample size. The access rule remains essential:
+each release may use its own raw observation and previous private outputs,
+but cannot read earlier raw observations.
+
+Fix known parameters $s>1/2$, $C_0>1$ and $C_1>0$. For an even, nonnegative,
+$2\pi$-periodic spectral density $f$, put
+\begin{equation}\label{eq:covariance}
+ \gamma_f(h)=\int_{-\pi}^{\pi}f(\lambda)e^{ih\lambda}\,d\lambda,
+ \qquad \rho_f(h)=\frac{\gamma_f(h)}{\gamma_f(0)},\qquad h\in\Z.
+\end{equation}
+The parameter class is
+\begin{equation}\label{eq:class}
+ \F(C_0,C_1,s)=\left\{f:\ C_0^{-1}\le\gamma_f(0)\le C_0,
+ \quad \sum_{h\ne0}|h|^{2s}|\rho_f(h)|^2\le C_1^2\right\}.
+\end{equation}
+Here and below $f$ is integrable, real and even, and functions are identified
+almost everywhere. We use Lebesgue measure for the $L^2([-\pi,\pi])$ norm.
+The class and normalization in \eqref{eq:covariance}--\eqref{eq:class} are
+exactly those in \cite[(3)]{IR}.
+
+The raw data $X_1,\ldots,X_n$ are consecutive observations of a centered,
+real stationary Gaussian process with spectral density $f$. A sequential
+mechanism has standard Borel output spaces $E_i$ and Markov kernels
+$Q_i(dz_i\mid x_i,z_{<i})$, where $z_{<i}=(z_1,\ldots,z_{i-1})$.
+For every history, raw input pair and measurable output event, require
+\begin{equation}\label{eq:privacy}
+ Q_i(B\mid x,z_{<i})\le e^\alpha Q_i(B\mid x',z_{<i}).
+\end{equation}
+For a fixed raw vector, its transcript law is the chronological iterated
+product of these kernels. Write $\mathcal Q^{\mathrm{seq}}_{n,\alpha}$ for
+this class, with the own-observation access rule specified above. Define
+\begin{equation}\label{eq:risk}
+ \risk=\inf_{Q\in\mathcal Q^{\mathrm{seq}}_{n,\alpha}}
+ \inf_{\widehat f}\sup_{f\in\F(C_0,C_1,s)}
+ \E_{f,Q}\norm{\widehat f(Z_{1:n})-f}_2^2,
+\end{equation}
+where the second infimum is over measurable $L^2([-\pi,\pi])$-valued
+estimators. The mechanism and estimator may use the known class parameters.
+
+\begin{theorem}\label{thm:main}
+For every fixed $s>1/2$, $C_0>1$ and $C_1>0$, there are constants
+$0<c\le C<\infty$, depending only on these three parameters, such that
+for every integer $n\ge2$ and every $0<\alpha\le1$,
+\begin{equation}\label{eq:rate}
+ c\left[1\wedge(n\alpha^4)^{-2s/(2s+1)}\right]
+ \le \risk\le
+ C\left[1\wedge(n\alpha^4)^{-2s/(2s+1)}\right].
+\end{equation}
+Consequently, along any sequence of admissible parameter pairs, the minimax
+risk tends to zero if and only if $n\alpha^4$ tends to infinity.
+\end{theorem}
+
+The upper bound is inherited from \cite[Theorem 3]{IR}. The new argument is
+a lower bound for every mechanism in \eqref{eq:risk}, including arbitrary
+dependence on the private history. On a moving-average pair, the innovation
+shared by the current and a past raw observation occurs only once in the
+past. Privacy bounds its posterior density relative to its original Gaussian
+law by $e^{\pm\alpha}$. Adding the fresh innovation makes the two current
+predictive laws close, and privatizing the current coordinate contracts their
+divergence again. Each of these two effects contributes a factor of order
+$\alpha^2$. A common Gaussian background permits the same calculation for
+the Fourier alternatives used in the minimax lower bound.
+
+The proof concerns the precise Gaussian class and access rule above.
+It makes no claim for releases that can read past raw data or for
+non-Gaussian time series. Section~\ref{sec:innovation} proves the privacy and
+smoothing facts, Section~\ref{sec:testing} gives the sequential divergence
+estimate, and Section~\ref{sec:minimax} proves Theorem~\ref{thm:main}.
+
+\begin{remark}\label{rem:largen}
+Large-sample upper bounds with an $\alpha$-dependent threshold do not by
+themselves give a bound uniform in a shrinking privacy parameter.
+For example, the clipping calculation in \cite[Appendix A.3, p.\,27]{BKK}
+contains the remainder
+$\exp[-\widetilde\tau_n\alpha/(4\tau_n^2)]$ with
+$\widetilde\tau_n=16(\log n)^{1+\eta}\tau_n^2$, for fixed $\eta>0$.
+It equals $\exp[-4\alpha(\log n)^{1+\eta}]$; its polynomial decay therefore
+requires an $\alpha$-dependent large-$n$ condition. This qualification is
+relevant when comparing their Theorem 7 with \eqref{eq:rate}.
+\end{remark}
+
+\section{Privacy of a Gaussian innovation}\label{sec:innovation}
+
+We first record how a single raw coordinate can affect the entire output
+history. This observation uses the restriction on access to past raw data.
+
+\begin{lemma}\label{lem:prefix}
+Let $L_t(\cdot\mid x_{1:t})$ be the law of the first $t$ outputs of a
+mechanism satisfying \eqref{eq:privacy}, with a deterministic raw prefix.
+If $x_{1:t}$ and $x'_{1:t}$ differ in only one coordinate, then
+\[
+ L_t(B\mid x_{1:t})\le e^\alpha L_t(B\mid x'_{1:t})
+\]
+for every measurable prefix event $B$.
+If a latent variable $U$ is independent of a nuisance vector $V$ and the
+raw prefix $x(U,V)$ depends on $U$ in at most one coordinate, the channel
+from $U$ to the whole private prefix is also $\alpha$-LDP.
+\end{lemma}
+
+\begin{proof}
+Suppose the changed coordinate is $j$. The histories before $j$ have the
+same law. At time $j$, integrate \eqref{eq:privacy} against this common
+history law to dominate the joint output measure through time $j$ by
+$e^\alpha$ times the other measure. At each later time $k$, both measures
+are extended by the same kernel
+$z_{<k}\mapsto Q_k(\cdot\mid x_k,z_{<k})$, because $x_k=x'_k$.
+The integral of any nonnegative measurable function preserves a measure
+domination, so induction gives the claim through time $t$.
+For the latent-variable assertion, first fix $V=v$ and apply this comparison
+to any two values of $U$. Integrate over the same law of $V$, which is
+independent of $U$. If the coordinate never appears, the channel is constant.
+\end{proof}
+
+\begin{lemma}\label{lem:posterior}
+Let $K$ be an $\alpha$-LDP kernel between standard Borel spaces, with input
+law $\pi$ and output law $M=K\pi$. For $M$-almost every output $z$, the
+posterior input law has a density $r(\cdot,z)$ relative to $\pi$ satisfying
+\begin{equation}\label{eq:posterior}
+ e^{-\alpha}\le r(u,z)\le e^\alpha\quad\text{for $\pi$-almost every $u$},
+ \qquad \int(r(u,z)-1)^2\pi(du)\le(e^\alpha-1)^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Averaging the privacy inequality over a second input gives, for every $u$,
+$e^{-\alpha}M\le K(\cdot\mid u)\le e^\alpha M$ as inequalities of
+measures. Applying these inequalities to the measurable sections of a
+product event and integrating in $u$ yields
+\[
+ e^{-\alpha}(\pi\otimes M)\le \pi\otimes K
+       \le e^\alpha(\pi\otimes M).
+\]
+The Radon--Nikodym derivative $r(u,z)$ of the middle measure has the same
+bounds. By Fubini and equality of the output marginals,
+$\int r(u,z)\pi(du)=1$ for $M$-almost every $z$; the measures
+$r(u,z)\pi(du)$ give a version of the posterior. These uses of
+Radon--Nikodym and product integration are covered, for example, by
+\cite[Theorems 1.6.6 and 1.6.12]{VH}. Finally
+$|r-1|\le e^\alpha-1$ proves the squared-density bound.
+\end{proof}
+
+We write $\KL(P\|R)$ for relative entropy and
+$\chi^2(P\|R)=\int(dP/dR-1)^2dR$, with value $+\infty$ if the required
+absolute continuity fails. The next bound measures the effect of adding an
+independent Gaussian innovation to the posterior in
+Lemma~\ref{lem:posterior}.
+
+\begin{lemma}\label{lem:smoothing}
+Let $G=N(0,1)$, and let $U$ have density $r$ relative to $G$, where
+$r-1\in L^2(G)$. Let $W\sim G$ be independent of $U$. If $|t|<1$ and
+$P_t$ is the law of $tU+\sqrt{1-t^2}W$, then
+\begin{equation}\label{eq:smoothing}
+ \chi^2(P_t\|G)\le\frac{t^2}{1-t^2}\int(r-1)^2dG.
+\end{equation}
+If $e^{-\alpha}\le r\le e^\alpha$ almost everywhere, the same bounds
+hold for $dP_t/dG$.
+\end{lemma}
+
+\begin{proof}
+Under the reference law $U\sim G$, the pair $(U,Y)$, where
+$Y=tU+\sqrt{1-t^2}W$, is a bivariate standard normal with covariance
+\[
+ \Sigma=\begin{pmatrix}1&t\\t&1\end{pmatrix}.
+\]
+Let $S_t(u,y)$ be its density relative to $G\otimes G$. Its two marginals
+are $G$, so the density $p_t=dP_t/dG$ satisfies
+\[
+ p_t(y)-1=\int(r(u)-1)(S_t(u,y)-1)G(du).
+\]
+Cauchy--Schwarz and Tonelli give
+\[
+ \int(p_t-1)^2dG
+ \le\left[\int(r-1)^2dG\right]
+       \iint(S_t-1)^2\,dG\,dG.
+\]
+For $x=(u,y)^{\mathsf T}$ the normal density formula gives
+\[
+ S_t(x)=(\det\Sigma)^{-1/2}
+       \exp\!\left[-\tfrac12 x^{\mathsf T}(\Sigma^{-1}-I)x\right].
+\]
+The matrix $2\Sigma^{-1}-I$ has positive eigenvalues
+$(1-t)/(1+t)$ and $(1+t)/(1-t)$, hence determinant one. The change of
+variables $(u,y)\mapsto((u+y)/\sqrt2,(u-y)/\sqrt2)$ evaluates the
+convergent Gaussian integral as
+\[
+ \iint S_t^2\,dG\,dG
+ =\frac{1}{\det\Sigma\sqrt{\det(2\Sigma^{-1}-I)}}
+ =\frac{1}{1-t^2}.
+\]
+Since $\iint S_t\,dG\,dG=1$, the integral of $(S_t-1)^2$ equals
+$t^2/(1-t^2)$. This proves \eqref{eq:smoothing}, including $t=0$.
+Finally, $p_t(y)=\int r(u)S_t(u,y)G(du)$ is an average of $r$ under
+the reference conditional normal law, so it retains its upper and lower
+bounds.
+\end{proof}
+
+\section{Sequential testing for a covariance perturbation}\label{sec:testing}
+
+The testing pair below changes one autocovariance and leaves the marginal
+variance fixed. A moving-average representation makes the relevant past
+innovation fall within Lemma~\ref{lem:prefix}.
+
+\begin{proposition}\label{prop:purelag}
+For $a>0$, an integer $h\ge1$ and $|\delta|\le1$, define
+\[
+ g_\pm(\lambda)=\frac{a}{2\pi}
+                 \left[1\pm\frac{\delta}{2}\cos(h\lambda)\right].
+\]
+Let $M_\pm$ be the output laws of any sequential mechanism satisfying
+\eqref{eq:privacy} under these two centered Gaussian observation laws.
+For every $n\ge1$ and $0<\alpha\le1$,
+\begin{equation}\label{eq:purelag}
+ \KL(M_+\|M_-)\le128(n-h)_+\alpha^4\delta^2,
+ \qquad (n-h)_+=\max(n-h,0).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Choose $A>0$ and signed $B$ by
+\begin{equation}\label{eq:ma-coefficients}
+ B^2=\frac{1-\sqrt{1-\delta^2/4}}2,
+ \qquad A=\sqrt{1-B^2},\qquad B=\frac{\delta}{4A}.
+\end{equation}
+These relations are consistent and give
+$A^2+B^2=1$, $AB=\delta/4$, $B^2\le\delta^2/8$, and $A^2\ge7/8$.
+Take independent standard normals $\varepsilon_k$, $1-h\le k\le n$, and
+put
+\begin{equation}\label{eq:ma}
+ U_i^\pm=\sqrt a\,(A\varepsilon_i\pm B\varepsilon_{i-h}),
+ \qquad 1\le i\le n.
+\end{equation}
+The variance is $a$, the lag-$h$ covariance is $\pm aAB=\pm a\delta/4$,
+and all other nonzero-lag covariances vanish. These are exactly the Fourier
+coefficients of $g_\pm$ in \eqref{eq:covariance}. Centered Gaussian vectors
+are determined by their covariances \cite[Section 3.10]{Durrett}, so
+\eqref{eq:ma} realizes the observation laws.
+
+Both raw prefix laws are mutually absolutely continuous. Indeed
+$g_\pm\ge a/(4\pi)$, and for every real coefficient vector $c$ their
+covariance matrices satisfy
+\[
+ c^{\mathsf T}T_\pm c
+ =\int_{-\pi}^{\pi}g_\pm(\lambda)
+        \left|\sum_jc_j e^{ij\lambda}\right|^2d\lambda
+ \ge\frac a2\sum_j c_j^2.
+\]
+They therefore have strictly positive Gaussian densities. Passing them
+through the same transcript kernel preserves absolute continuity in both
+directions. In particular, the two laws of each private history have the
+same null sets. All conditional comparisons that follow are made outside
+these common null sets; regular conditional laws exist on the standard
+Borel spaces involved.
+
+Fix time $i$. The fresh $\varepsilon_i$ is independent of the pair
+$(\varepsilon_{i-h},Z_{<i})$: no raw prefix coordinate involves
+$\varepsilon_i$, and the prefix kernels use only that prefix. If $i>h$,
+the innovation $\varepsilon_{i-h}$ appears in the raw prefix only in
+$U_{i-h}^\pm$. Its next appearance is in the current $U_i^\pm$.
+Lemma~\ref{lem:prefix}, with all other innovations as independent nuisance
+variables, says that its channel to the entire history is $\alpha$-LDP.
+Lemma~\ref{lem:posterior} bounds its posterior density relative to $G$ by
+$e^{\pm\alpha}$ and its $\chi^2$ divergence by $(e^\alpha-1)^2$,
+separately under each sign model.
+
+For a fixed common history $z$, let $P_\pm^z$ be the predictive law of
+$U_i^\pm$. Write $G_a=N(0,a)$. Apply Lemma~\ref{lem:smoothing} with
+$t=\pm B$; scaling by $\sqrt a$ cancels from both density ratios. Since
+$B^2/(1-B^2)\le\delta^2/(8-\delta^2)\le\delta^2/7$, we obtain
+\begin{equation}\label{eq:predictive}
+ e^{-\alpha}\le\frac{dP_\pm^z}{dG_a}\le e^\alpha,
+ \qquad \chi^2(P_\pm^z\|G_a)
+        \le\frac{\delta^2}{7}(e^\alpha-1)^2.
+\end{equation}
+When $i\le h$, $\varepsilon_{i-h}$ is absent from the observed prefix.
+It remains a standard normal independent of the history and of the fresh
+innovation, so in this case $P_+^z=P_-^z=G_a$.
+
+For $i>h$, put $p_\pm=dP_\pm^z/dG_a$. Using $\log u\le u-1$ and
+$p_-\ge e^{-\alpha}$ gives
+\begin{align}\label{eq:predictive-kl}
+ \KL(P_+^z\|P_-^z)
+ &\le \chi^2(P_+^z\|P_-^z)
+ \le e^\alpha\int(p_+-p_-)^2dG_a\notag\\
+ &\le2e^\alpha\{\chi^2(P_+^z\|G_a)+\chi^2(P_-^z\|G_a)\}
+ \le\frac{4e^\alpha}{7}\delta^2(e^\alpha-1)^2.
+\end{align}
+At the same history $z$, the current kernel $Q_i(\cdot\mid\cdot,z)$ is
+one common $\alpha$-LDP channel under both models. By
+\cite[Lemma 3]{IR}, for any input laws $P,R$ it satisfies
+\begin{equation}\label{eq:channel-contraction}
+ \KL(Q_iP\|Q_iR)\le\beta_\alpha\KL(P\|R),
+ \qquad \beta_\alpha=\frac12(e^\alpha-e^{-\alpha})^2\wedge1.
+\end{equation}
+For $0<\alpha\le1$, convexity gives $e^\alpha-1\le(e-1)\alpha<2\alpha$,
+and integration of $e^t+e^{-t}\le2e<6$ gives
+$e^\alpha-e^{-\alpha}\le6\alpha$. Thus
+\[
+ \beta_\alpha\frac{4e^\alpha}{7}(e^\alpha-1)^2
+ \le\frac{864}{7}\alpha^4<128\alpha^4.
+\]
+The conditional output divergence at each $i>h$ is at most
+$128\alpha^4\delta^2$, and it is zero at each $i\le h$.
+The kernel chain rule \cite[Lemma 14]{IR} now gives
+\[
+ \KL(M_+\|M_-)
+ =\sum_{i=1}^n\E_+\!\left[
+    \KL\bigl(\mathcal L_+(Z_i\mid Z_{<i})\,
+             \|\,\mathcal L_-(Z_i\mid Z_{<i})\bigr)\right],
+\]
+which proves \eqref{eq:purelag}. Finite products of the output spaces are
+standard Borel, so the chain rule and conditional versions apply throughout.
+\end{proof}
+
+\begin{theorem}\label{thm:pair}
+Let $f_+,f_-$ be even, nonnegative, integrable spectral densities. Suppose
+that for some $a>0$, integer $h\ge1$ and $|\delta|\le1$,
+\begin{equation}\label{eq:pair-condition}
+ \min(f_+,f_-)\ge\frac{3a}{4\pi},\qquad
+ f_+-f_-=\frac{a\delta}{2\pi}\cos(h\lambda)
+ \quad\text{almost everywhere}.
+\end{equation}
+Every sequential $\alpha$-LDP mechanism with the specified access rule
+satisfies
+\begin{equation}\label{eq:pair-kl}
+ \KL\bigl(\mathcal L_{f_+,Q}(Z_{1:n})\,
+          \|\,\mathcal L_{f_-,Q}(Z_{1:n})\bigr)
+ \le128(n-h)_+\alpha^4\delta^2
+\end{equation}
+for $n\ge1$ and $0<\alpha\le1$.
+\end{theorem}
+
+\begin{proof}
+With $g_\pm$ as in Proposition~\ref{prop:purelag}, define the common
+spectral background
+\[
+ f_V=\frac{f_++f_-}{2}-\frac{a}{2\pi}\ge\frac{a}{4\pi}.
+\]
+Let $U^\pm$ be the centered Gaussian vectors with spectral densities
+$g_\pm$ constructed in \eqref{eq:ma}, and let $M_\pm$ denote the
+transcript laws under $f_\pm$ and $Q$.
+The background $f_V$ has a positive definite finite Toeplitz covariance matrix,
+by the same
+quadratic-form calculation used above. A Cholesky factor therefore constructs
+a centered Gaussian vector $V$ with that covariance, independent of $U^\pm$.
+The vectors $X^\pm=U^\pm+V$ have the original covariance matrices because
+$g_\pm+f_V=f_\pm$. Their centered Gaussian laws are the required raw laws.
+
+Condition on $V=v$. The release kernels become
+\[
+ Q_i^v(dz_i\mid u_i,z_{<i})
+       =Q_i(dz_i\mid u_i+v_i,z_{<i}).
+\]
+For every fixed $v$, these are still sequential $\alpha$-LDP kernels:
+the raw shift preserves \eqref{eq:privacy}, and each kernel still reads only
+its current $u_i$ and previous private outputs. Proposition~\ref{prop:purelag}
+therefore applies uniformly in $v$. The law $\nu$ of $V$ is common to both
+models. The common-mixture divergence inequality \cite[Lemma 15]{IR},
+or the joint chain rule followed by projection, gives
+\[
+ \KL(M_+\|M_-)
+ \le\int \KL\bigl(\mathcal L_+(Z_{1:n}\mid V=v)\,
+                  \|\,\mathcal L_-(Z_{1:n}\mid V=v)\bigr)\nu(dv).
+\]
+This proves \eqref{eq:pair-kl}. The conditional transcript kernels are
+measurable in $v$ by iterated kernel composition.
+\end{proof}
+
+\section{Proof of the minimax bounds}\label{sec:minimax}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For the lower bound, write $b=n\alpha^4$ and choose
+\begin{equation}\label{eq:packing}
+ m=\left\lceil(\max(1,b))^{1/(2s+1)}\right\rceil,
+ \qquad \kappa=\min\left(\frac{C_1}{\sqrt2},\frac1{512}\right),
+ \qquad \theta=\kappa m^{-s-1/2}.
+\end{equation}
+The choice of $m$ covers both small and large effective sample sizes.
+The two restrictions on $\kappa$ enforce the class constraint and keep
+neighboring output laws close. For $\omega\in\{-1,1\}^m$, set
+\begin{equation}\label{eq:hypercube}
+ f_\omega(\lambda)=\frac1{2\pi}
+             \left[1+2\theta\sum_{h=1}^m\omega_h\cos(h\lambda)\right].
+\end{equation}
+Since $s>1/2$, $\theta m\le\kappa$ and
+$f_\omega\ge(1-2\kappa)/(2\pi)>0$. These densities are even and periodic.
+Direct integration gives $\gamma_\omega(0)=1$,
+$\gamma_\omega(\pm h)=\theta\omega_h$ for $1\le h\le m$, and zero at
+other nonzero lags. Hence the variance is in $[C_0^{-1},C_0]$, and
+\[
+ \sum_{h\ne0}|h|^{2s}|\rho_\omega(h)|^2
+ =2\theta^2\sum_{h=1}^m h^{2s}\le2\kappa^2\le C_1^2.
+\]
+Thus all $f_\omega$ are in the original class. Their positive spectral
+lower bound makes every finite Toeplitz covariance positive definite.
+The corresponding Gaussian finite laws are consistent, so the countable
+extension theorem \cite[Theorem A.3.1]{Durrett} gives a stationary Gaussian
+process: translation invariance follows from its covariance and Gaussian
+identification. This also verifies the observation-law realization of the
+subfamily.
+
+If $\omega,\omega'$ differ only at coordinate $h$, then
+\[
+ f_\omega-f_{\omega'}=\frac{2\theta\omega_h}{\pi}\cos(h\lambda).
+\]
+Apply Theorem~\ref{thm:pair} with $a=1/4$ and $\delta=16\theta\omega_h$.
+Here $|\delta|\le1/32$, and
+$\min(f_\omega,f_{\omega'})\ge3/(16\pi)$, as required by
+\eqref{eq:pair-condition}. For any admissible mechanism, let $\mu_\omega$
+be its entire output law under $f_\omega$. Then
+\begin{equation}\label{eq:neighbor}
+ \KL(\mu_\omega\|\mu_{\omega'})
+ \le32768 b\theta^2
+ \le32768\kappa^2\le\frac18,
+\end{equation}
+because $m^{2s+1}\ge\max(1,b)$.
+
+For any measurable $L^2$-valued estimator, define
+\[
+ T_h=\operatorname{Re}\int_{-\pi}^{\pi}\widehat f(\lambda)
+                     \cos(h\lambda)\,d\lambda,
+ \qquad
+ \widehat\omega_h=\begin{cases}1,&T_h\ge0,\\-1,&T_h<0.\end{cases}
+\]
+The coefficient functionals are continuous by Cauchy--Schwarz, so these
+decisions are measurable. Since $\int f_\omega\cos(h\lambda)d\lambda
+=\theta\omega_h$ and the cosine functions are orthogonal with squared
+norm $\pi$, their finite orthogonal projection gives
+\begin{equation}\label{eq:loss-reduction}
+ \norm{\widehat f-f_\omega}_2^2
+ \ge\frac1\pi\sum_{h=1}^m(T_h-\theta\omega_h)^2
+ \ge\frac{\theta^2}{\pi}d_H(\widehat\omega,\omega).
+\end{equation}
+For a complex estimator, first take the real part of its error; this cannot
+increase its norm. The second inequality includes zero ties, since a wrong
+sign costs at least $\theta$ in its coefficient. Here $d_H$ is the number
+of differing sign coordinates.
+
+The Assouad--Pinsker inequality \cite[Lemma 7]{IR} applies to any family
+of probability laws on a common measurable space. It states
+\[
+ \inf_T\sup_\omega\E_\omega d_H(T,\omega)
+ \ge\frac m2\min_{d_H(\omega,\omega')=1}
+       \left[1-\sqrt{\frac{\KL(\mu_\omega\|\mu_{\omega'})}{2}}\right]
+ \ge\frac{3m}{8},
+\]
+where the last bound is \eqref{eq:neighbor}. Applying it to the actual
+sequential output family and using \eqref{eq:loss-reduction} yields, for
+every $Q$,
+\[
+ \inf_{\widehat f}\sup_{f\in\F(C_0,C_1,s)}
+        \E_{f,Q}\norm{\widehat f-f}_2^2
+ \ge\frac{3\kappa^2}{8\pi}m^{-2s}.
+\]
+The same inequality holds after taking the infimum over $Q$. As
+$m\le2(\max(1,b))^{1/(2s+1)}$, the lower bound in \eqref{eq:rate} holds
+with $c=3\kappa^2/(8\pi 2^{2s})>0$.
+
+For the upper bound, \cite[Theorem 3]{IR} supplies a non-interactive
+mechanism and a measurable estimator on exactly \eqref{eq:class} with
+\[
+ \sup_{f\in\F(C_0,C_1,s)}\E_{f,Q}\norm{\widehat f-f}_2^2
+ \le C_{C_0,C_1,s}
+       \left[1\wedge\{n(\alpha^4\wedge1)\}^{-2s/(2s+1)}\right]
+\]
+for every $n\ge2$ and $\alpha>0$. Their release adds independent Laplace
+noise of scale $3/\alpha$ to the binary indicator
+$\mathbf 1_{\{|X_i|>C_0\}}\in\{0,1\}$ and the sign statistic
+$\operatorname{sgn}(X_i)\in[-1,1]$. The joint $\ell^1$ sensitivity is
+at most $1+2=3$, so this is an $\alpha$-LDP
+kernel into $\R^2$. A non-interactive kernel is sequentially admissible by
+ignoring the private history. For $\alpha\le1$, the displayed expression
+is the upper bound in \eqref{eq:rate}.
+
+Finally, the two-sided estimate shows that the risk tends to zero when
+$n\alpha^4\to\infty$. If $n\alpha^4$ fails to tend to infinity, it has a
+bounded subsequence; the lower bound is bounded away from zero there.
+This proves the converse and completes the theorem.
+\end{proof}
+
+The effective size $n\alpha^4$ therefore describes both the consistent
+regime and its boundary. In particular, every regime with bounded
+$n\alpha^4$ prevents uniformly consistent spectral density estimation,
+and no logarithmic factor is required in either minimax bound.
+
+\section*{AI-use statement}
+OpenAI Codex was used to develop the argument, retrieve and check cited
+source statements, and prepare the manuscript. The mathematical content has
+not received independent human verification. Independent mathematical review
+is requested.
+
+\begin{thebibliography}{9}
+\bibitem{BKK}
+C. Butucea, K. Klockmann and T. Krivobokova,
+\emph{Nonparametric Spectral Density Estimation using Interactive Mechanisms
+under Local Differential Privacy}, Journal of Machine Learning Research
+\textbf{27}(168) (2026), 1--49.
+\url{https://www.jmlr.org/papers/v27/25-0680.html}.
+
+\bibitem{IR}
+Y. Issartel and F. Roueff,
+\emph{On the privacy cost for dependent Gaussian data: spectral density
+estimation under local differential privacy}, arXiv:2608.24847v1,
+25 August 2026.
+\url{https://arxiv.org/abs/2608.24847v1}.
+
+\bibitem{Durrett}
+R. Durrett, \emph{Probability: Theory and Examples}, fifth edition,
+version of 11 January 2019.
+\url{https://services.math.duke.edu/~rtd/PTE/PTE5_011119.pdf}.
+
+\bibitem{VH}
+R. van Handel, \emph{Stochastic Calculus, Filtering, and Stochastic Control},
+lecture notes, version of 29 May 2007.
+\url{https://web.math.princeton.edu/~rvan/acm217/ACM217.pdf}.
+\end{thebibliography}
+\end{document}
