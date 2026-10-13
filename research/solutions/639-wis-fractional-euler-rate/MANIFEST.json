@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "problem_id": "639",
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "contribution_type": "analytic theorem",
+  "claim_status": "proposed complete resolution; independent mathematical review requested",
+  "manuscript_author": "Kaiwen Jin",
+  "manuscript_contact": "yui.ui.siki@gmail.com",
+  "public_review_report": "none",
+  "numerical_code_delivery": "none",
+  "build": {
+    "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build paper/main.tex",
+    "latexmk": "4.86a",
+    "pdfTeX": "1.40.27",
+    "distribution": "TeX Live 2025",
+    "pages": 12
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 68,
+      "sha256": "2227c1bd0e36868f38fd732804ff2dc284874412117e23a8214bb3eea3738c1c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2091,
+      "sha256": "a4a67559caecc38262ceadadd75f584b9c5779e3b8a71b890c570a443062a33b"
+    },
+    {
+      "path": "REPRODUCTION_RECORD.md",
+      "bytes": 1702,
+      "sha256": "675e71706070310a80cbccaa47d38b9c528ce05344203a9d49cf1dae0374107f"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 3251,
+      "sha256": "d4ec32adbb4300f52541971df4fbd4ac36bb8140ae839c73c59c006cb09f1e49"
+    },
+    {
+      "path": "paper/README.md",
+      "bytes": 428,
+      "sha256": "cd21bbf854af47be852ac3d8e19da6a502829916c39130fda6bc05ea711b4a4a"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 390760,
+      "sha256": "3ee8190efd17d58b10efcee151aa7a6f61455a2a43c32a8cfe5b827d70cfed19"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 40689,
+      "sha256": "4e8056590ced4613b4679b84fa323d0a955079b2c7d37ac81e936d2d90920810"
+    }
+  ]
+}

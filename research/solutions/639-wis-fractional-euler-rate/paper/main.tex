@@ -1,0 +1,971 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype,xurl}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathcal F}
+\newcommand{\Acal}{\mathcal A}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\ind}{\mathbf 1}
+\DeclareMathOperator{\TV}{TV}
+\hypersetup{pdftitle={Strong convergence of the fractional WIS Euler integrator for Lipschitz drifts},
+ pdfauthor={Kaiwen Jin},pdfsubject={Terminal strong convergence for a fixed Wick-Ito-Skorohod Euler scheme}}
+\title{Strong convergence of the fractional WIS Euler integrator for Lipschitz drifts}
+\author{Kaiwen Jin\\ \small\texttt{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove a terminal strong convergence bound for the GfBm\_EM Euler
+integrator of a scalar stochastic differential equation driven by
+multiplicative fractional Brownian noise in the Wick--It\^o--Skorohod
+sense. For every Hurst parameter \(H\in(0,1)\) and every autonomous
+globally Lipschitz drift, the root mean-square error is bounded by
+\(C h^{\min\{H+1/2,1\}}\), using exact samples of the same noise path.
+The drift need not have higher derivatives. Initial values may be zero,
+and solutions may cross zero. Conditional Gaussian averaging controls the
+signed quadrature error at each time scale. Summing those scales gives
+the fractional rate without an exponent loss. At the Brownian
+endpoint, time reversal and short intervals chosen by the distance
+from zero yield order one with polynomial localization constants.
+\end{abstract}
+
+\section{Introduction}
+
+Fractional Brownian motion provides a Gaussian driving noise with
+correlated increments, but multiplicative equations require an
+interpretation of the stochastic integral. The Wick--It\^o--Skorohod
+(WIS) interpretation permits all Hurst parameters \(H\in(0,1)\) and
+leads to a useful exact integrating-factor representation.
+Erdo\u{g}an, Lord and Schieven \cite{ELS} used this representation to
+define and implement the GfBm\_EM method for scalar equations with
+linear multiplicative noise. Their method applies ordinary Euler
+time stepping to a transformed random ordinary differential equation.
+It is exact for the homogeneous linear equation.
+
+For autonomous globally Lipschitz drifts, Theorem 3.6 of \cite{ELS}
+proves a root mean-square terminal error of order \(h^H\).
+The same paper conjectures the sharper rate
+\(h^{\min\{H+1/2,1\}}\) in equation (1.3).
+Its Section 6 explains the difficulty: local noise defects are small,
+but their random coefficients prevent the cross terms from being
+discarded as martingale orthogonality. Summing absolute cell errors
+therefore loses the improvement seen in the signed time integral.
+
+The present paper proves the conjectured autonomous estimate for the
+stated scheme and data class. More precisely, for every fixed
+\(T>0\), \(H\in(0,1)\), real coefficients and initial state, and
+autonomous globally Lipschitz drift of at most linear growth, the
+terminal approximation using the exact noise samples has error
+\[
+ \bigl(\E\abs{X_T-X_n}^2\bigr)^{1/2}
+ \le C(T/n)^{\min\{H+1/2,1\}} .
+\]
+The constant is independent of \(n\). We require no differentiability
+of the drift and include zero initial states and crossings of zero.
+The exact recurrence and full statement are given in
+Section~\ref{sec:setup}.
+
+Related quadrature gains occur in several neighboring settings.
+Butkovsky, Dareiotis and Gerencs\'er \cite{BDG} obtain nearly
+\(\min\{1/2+\vartheta H,1\}\) strong rates for additive fractional
+equations under suitable \(\vartheta\)-H\"older drift conditions,
+using stochastic sewing. For additive equations with unbounded
+Lipschitz drift, Moritoki \cite[Theorem 1.1]{Moritoki} proves order
+one when \(H>1/2\) and order \(H+1/2-\varepsilon\), for every
+\(\varepsilon>0\), when \(H\le1/2\).
+Altmeyer \cite[Theorems 4--5]{Altmeyer} studies quadrature of
+occupation functionals of unperturbed fractional Brownian motion
+under Sobolev regularity. Kloeden and Rosa \cite{KR} establish
+order-one Euler convergence for semimartingale-driven random
+ordinary differential equations and treat a linear fractional-noise
+example in Appendix A. These results identify useful averaging
+mechanisms, but do not directly estimate the present quadrature with
+its random Euler state and exponential integrating factor.
+
+Two features of the transformed equation are decisive here.
+Its Lipschitz constant in the state is deterministic, while the
+unpredictable part of that state over an interval of length
+\(\ell\) is only of order \(\ell^{1+H}\).
+Conditioning in the past smooths the Gaussian noise variable.
+The resulting local bound retains both
+\(\ell h^H\) and \(h\ell^H\); a dyadic martingale sum then gives
+\(h^{H+1/2}\) for \(H<1/2\) and \(h\) for \(H>1/2\).
+Keeping the dependence on the interval length avoids replacing the
+target exponent by a nearby exponent.
+
+The Brownian endpoint is critical for that sum. We treat it separately.
+Forward and backward It\^o formulas give a maximal order-one
+quadrature bound for a Lipschitz function of Brownian motion.
+After separating the value of the drift at zero, the remaining
+noise coefficient vanishes with the transformed state.
+Short grid intervals of length proportional to the square of its
+distance from zero keep a local Girsanov density uniformly controlled.
+Their contributions and number have summable powers of that distance;
+the integrating-factor localization grows only polynomially.
+
+Section~\ref{sec:setup} gives the exact terminal representation and
+common estimates. Section~\ref{sec:fractional} proves the conditional
+fractional quadrature bound. Section~\ref{sec:brownian} treats the
+Brownian endpoint and completes the terminal error estimate.
+
+
+\section{Terminal representation and common estimates}\label{sec:setup}
+
+Fix \(T>0\), \(H\in(0,1)\), \(\alpha,\beta,x_0\in\R\), and an autonomous
+globally Lipschitz function \(a:\R\to\R\) of at most linear growth.
+Let \(B^H\) be centered fractional Brownian motion, normalized by
+\[
+ \E[B^H_tB^H_s]=\frac12(t^{2H}+s^{2H}-\abs{t-s}^{2H}).
+\]
+The solution \(X\) of
+\begin{equation}\label{eq:sde}
+ dX_t=(\alpha X_t+a(X_t))\,dt+\beta X_t\,dB^H_t,\qquad X_0=x_0,
+\end{equation}
+uses the Wick--It\^o--Skorohod (WIS) interpretation of
+\cite{ELS}. Define, for this fixed terminal time,
+\begin{equation}\label{eq:factor}
+ c(t)=-\alpha t+\frac{\beta^2}{2}\bigl(T^{2H}-(T-t)^{2H}\bigr),
+ \qquad J_t=\exp(c(t)-\beta B^H_t).
+\end{equation}
+Theorem 3.2 and equations (3.6)--(3.9) of \cite{ELS} give the exact
+representation
+\begin{equation}\label{eq:exact-ode}
+ X_T=J_T^{-1}Z_T,\qquad
+ Z_t=x_0+\int_0^t F(c(s),B^H_s,Z_s)\,ds,\qquad
+ F(c,b,z)=e^{c-\beta b}a(e^{-c+\beta b}z).
+\end{equation}
+Thus the WIS integral is accounted for by the terminal factor and the
+deterministic correction in \(c\). All subsequent time integrals involving
+\(Z\) are ordinary Lebesgue integrals on the same noise path.
+
+For \(n\ge1\), put \(h=T/n\), \(t_i=ih\), and
+\(\eta(t)=h\lfloor t/h\rfloor\), with endpoint values immaterial in integrals.
+The prescribed GfBm\_EM method is
+\begin{equation}\label{eq:scheme}
+ Z^n_0=x_0,\qquad
+ Z^n_{t_{i+1}}=Z^n_{t_i}+hF(c(t_i),B^H_{t_i},Z^n_{t_i}),\qquad
+ X_n=J_T^{-1}Z^n_T .
+\end{equation}
+It uses exact samples from the path appearing in \eqref{eq:exact-ode}.
+We use the continuous interpolation
+\begin{equation}\label{eq:interpolation}
+ Z^n_t=x_0+\int_0^t F(c(\eta(s)),B^H_{\eta(s)},Z^n_{\eta(s)})\,ds.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+For every fixed data set just specified, there is a finite constant \(C\),
+independent of the integer \(n\ge1\), such that the scheme
+\eqref{eq:scheme} satisfies
+\begin{equation}\label{eq:main-rate}
+ \bigl(\E\abs{X_T-X_n}^2\bigr)^{1/2}
+ \le C h^{\min\{H+1/2,1\}}.
+\end{equation}
+\end{theorem}
+
+The constant may depend on \(T,H,\alpha,\beta,x_0\) and \(a\).
+No derivative assumption on \(a\), sign restriction on \(x_0\), or
+restriction on \(a(0)\) is imposed. The estimate concerns the terminal
+value and exact noise samples. Its proof appears at the end of
+Section~\ref{sec:brownian}, after the two noise regimes have been treated.
+
+Write \(\norm{Y}_p=(\E\abs{Y}^p)^{1/p}\).
+Constants \(C_p\) below may depend on the fixed problem data and on \(p\);
+they are independent of \(n\) and of time variables in \([0,T]\).
+Let \(L\) be a Lipschitz constant for \(a\), \(a_0=a(0)\), and \(a_1=a-a_0\).
+Then
+\begin{equation}\label{eq:basic-F}
+ \abs{F(c,b,z)}\le L\abs z+\abs{a_0}e^{c-\beta b},\qquad
+ \abs{F(c,b,z)-F(c,b,z')}\le L\abs{z-z'}.
+\end{equation}
+The second bound is deterministic despite the random integrating factor.
+
+The dependence on the noise can also be estimated using only \(L\).
+For \(\sigma\in\{-1,1\}\), define
+\begin{equation}\label{eq:ratio}
+ b_\sigma(q)=\frac{a_1(\sigma e^q)}{\sigma e^q}.
+\end{equation}
+We have \(\abs{b_\sigma}\le L\) and
+\([b_\sigma]_{\mathrm{Lip}}\le2L\). Indeed, for \(q>r\),
+with \(x=\sigma e^q\), \(y=\sigma e^r\),
+\[
+ \left|\frac{a_1(x)}x-\frac{a_1(y)}y\right|
+ \le 2L\frac{\abs{x-y}}{\abs x}
+ =2L(1-e^{r-q})\le2L(q-r).
+\]
+For \(z\ne0\), the part of \(F\) corresponding to \(a_1\) is
+\begin{equation}\label{eq:F1}
+ F_1(c,b,z)=z\,b_{\operatorname{sign}z}
+                  (\log\abs z-c+\beta b),
+\end{equation}
+and \(F_1(c,b,0)=0\). Consequently,
+\begin{align}
+ \abs{F_1(c,b,z)}&\le L\abs z,\label{eq:F1-bounds}\\
+ \abs{F_1(c,b,z)-F_1(c,b',z)}
+       &\le2L\abs\beta\,\abs z\,\abs{b-b'},\nonumber\\
+ \abs{F_1(c,b,z)-F_1(c',b,z)}
+       &\le2L\abs z\,\abs{c-c'}.\nonumber
+\end{align}
+The \(a_0\) part is \(a_0e^{c-\beta b}\).
+The inequality
+\(\abs{e^u-e^v}\le(e^u+e^v)\abs{u-v}\), together with
+\eqref{eq:F1-bounds}, gives all noise and \(c\) increments used below.
+For example, if \(z\) has bounded moments of the required orders, then
+H\"older's inequality and Gaussian exponential moments give
+\begin{equation}\label{eq:F-noise}
+ \norm{F(c,B^H_r,z)-F(c,B^H_u,z)}_p
+ \le C_p\abs{r-u}^H
+\end{equation}
+for \(c\) in a fixed bounded interval. Independence of \(z\) and the noise
+is not required.
+
+We will smooth the noise variable, rather than the original drift.
+Let \(P_v f\) be convolution with the centered Gaussian density of
+variance \(v>0\), and put \(f_{c,z}(b)=F(c,b,z)\).
+
+\begin{lemma}\label{lem:heat}
+For bounded \(c\) and \(0<v\le V<\infty\),
+\begin{align}
+ \abs{\partial_bP_vf_{c,z}(b)}
+    &\le C(\abs z+e^{-\beta b}),\label{eq:heat-weighted}\\
+ \abs{\partial_vP_vf_{c,z}(b)}
+    &\le Cv^{-1/2}(\abs z+e^{-\beta b}).\nonumber
+\end{align}
+For \(g=f_{c,z}-f_{c,z'}\),
+\begin{equation}\label{eq:heat-mixed}
+ \norm{\partial_bP_vg}_\infty\le CL\abs{z-z'}v^{-1/2},
+ \qquad
+ \norm{\partial_vP_vg}_\infty\le CL\abs{z-z'}v^{-1}.
+\end{equation}
+Here the constants are independent of \(z,z',b,v\) in the stated ranges.
+\end{lemma}
+\begin{proof}
+The increment estimates above bound \(\abs{f_{c,z}(b+y)-f_{c,z}(b)}\)
+by \(C\abs y(\abs z+e^{-\beta b}(1+e^{\abs\beta\abs y}))\).
+Both derivatives of the Gaussian kernel have integral zero. Subtract
+\(f_{c,z}(b)\) inside their integrals. For the first derivative,
+the integral of \(\abs y\) times its absolute value is bounded by a
+constant; for the second it is bounded by \(Cv^{-1/2}\).
+The exponential weight obeys the same bounds for \(v\le V\), by Gaussian
+scaling and exponential moments. Since
+\(\partial_vP_v=\tfrac12\partial_{bb}P_v\), this proves
+\eqref{eq:heat-weighted}. Finally,
+\(\norm g_\infty\le L\abs{z-z'}\) by \eqref{eq:basic-F}.
+The \(L^1\) norms of the first spatial and variance derivatives of the
+Gaussian kernel are \(Cv^{-1/2}\) and \(Cv^{-1}\), respectively, which
+proves \eqref{eq:heat-mixed}. All differentiated integrals converge
+absolutely, including the exponential weights.
+\end{proof}
+
+\begin{lemma}\label{lem:moments}
+For every finite \(p\ge1\),
+\begin{equation}\label{eq:moments}
+ \sup_{n,t\le T}\norm{Z^n_t}_p+\sup_{t\le T}\norm{Z_t}_p\le C_p,
+ \qquad
+ \norm{Z^n_t-Z^n_s}_p+\norm{Z_t-Z_s}_p\le C_p\abs{t-s}.
+\end{equation}
+Also \(J_t\) and \(J_t^{-1}\) have uniformly bounded moments of every
+finite order, and
+\begin{equation}\label{eq:c-var}
+ \TV(c;[0,T])\le\abs\alpha T+\frac{\beta^2}{2}T^{2H}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The assertions for \(J\) follow from its Gaussian exponential formula.
+Equation \eqref{eq:basic-F} and Minkowski's inequality give the scalar
+Gronwall bounds for \(Z\) and the discrete Gronwall bounds for the
+grid values of \(Z^n\). Equation \eqref{eq:interpolation} gives the same
+bound between grid points. Integrating the bounded \(L^p\) drift norms
+then gives the increment estimate. The two summands of \(c\) in
+\eqref{eq:factor} have total variations \(\abs\alpha T\) and
+\(\beta^2T^{2H}/2\). In particular the terminal singularity of \(c'\)
+when \(H<1/2\) causes no loss after integration.
+\end{proof}
+
+\section{Conditional quadrature for fractional noise}\label{sec:fractional}
+
+Throughout this section \(H\ne1/2\). We realize the normalized noise using
+a two-sided Brownian motion \(W\):
+\begin{equation}\label{eq:MVN}
+ B^H_t=\gamma_H\int_{\R}
+       \bigl((t-u)_+^{H-1/2}-(-u)_+^{H-1/2}\bigr)\,dW_u ,
+\end{equation}
+where \(\gamma_H>0\) is chosen so that \(\E(B^H_1)^2=1\).
+The integrand is square integrable: the finite singularities have squared
+exponent \(2H-1>-1\), and its difference at negative infinity is
+\(O(\abs u^{H-3/2})\). The Wiener integral and its isometry are as in
+\cite[Theorem 3.7.1]{Chafai}; the negative and positive half-lines use
+independent Brownian motions. Translation gives stationary increments and
+dilation gives variance \(t^{2H}\), so polarization yields exactly the
+covariance in Section~\ref{sec:setup}. Gaussian moment bounds and the
+continuity criterion of \cite[Theorem 3.6.3]{Chafai} give a continuous
+version. Since the exact terminal value and its approximation
+in \eqref{eq:exact-ode}--\eqref{eq:scheme} are functions of the same
+continuous Gaussian path, this realization preserves their joint law.
+
+Let \(\F_s=\sigma(W_u:u\le s)\), completed, and write
+\(\E^s=\E[\cdot\mid\F_s]\).
+This is the driving Brownian filtration, including the negative-time past;
+we do not identify it with the natural filtration of \(B^H\).
+For \(r>s\), the conditional Gaussian mean and variance are
+\[
+ m_s(r)=\E^s B^H_r,\qquad
+ v_s(r)=q_H(r-s)^{2H},\qquad q_H=\frac{\gamma_H^2}{2H}.
+\]
+The innovation is independent of \(\F_s\). Thus, for an
+\(\F_s\)-measurable \(z\),
+\begin{equation}\label{eq:conditional-heat}
+ \E^s F(c,B^H_r,z)=P_{v_s(r)}f_{c,z}(m_s(r)).
+\end{equation}
+For \(s\le u<r\) with \(r-u\le u-s\), the Wiener isometry and the
+mean-value formula for the kernel give
+\begin{equation}\label{eq:conditional-mean}
+ \norm{m_s(r)-m_s(u)}_p
+ \le C_p(r-u)(u-s)^{H-1}.
+\end{equation}
+Indeed, the squared kernel derivative integrates on \((-\infty,s]\)
+to a constant times \((u-s)^{2H-2}\); Gaussian scaling gives every
+finite \(p\). Moreover \(\operatorname{Var}(m_s(r))\le T^{2H}\).
+Its exponential moments are therefore uniformly bounded.
+
+The slow Euler state can be predicted more accurately than the noise.
+
+\begin{lemma}\label{lem:prediction}
+For \(p\ge1\) and \(0\le s<t\le T\),
+\begin{equation}\label{eq:prediction}
+ \norm{Z^n_{\eta(t)}-\E^s Z^n_{\eta(t)}}_p
+ \le C_p(t-s)^{1+H}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The left side is zero if \(\eta(t)\le s\).
+Otherwise put \(s^+=h\lceil s/h\rceil\le\eta(t)\).
+The state \(Z^n_{s^+}\) is \(\F_s\)-measurable: the full Euler step
+ending at \(s^+\) uses the preceding grid noise and state.
+The random variable
+\[
+ V=Z^n_{s^+}+
+       \int_{s^+}^{\eta(t)}F(c(\eta(r)),B^H_s,Z^n_{s^+})\,dr
+\]
+is \(\F_s\)-measurable. Keeping the deterministic \(c(\eta(r))\)
+unchanged, \eqref{eq:basic-F}, \eqref{eq:F-noise} and
+Lemma~\ref{lem:moments} yield
+\[
+ \norm{Z^n_{\eta(t)}-V}_p
+ \le C_p\int_{s^+}^{\eta(t)}
+       \bigl(\eta(r)-s^++(\eta(r)-s)^H\bigr)\,dr
+ \le C_p(t-s)^{1+H}.
+\]
+Conditional contraction proves \eqref{eq:prediction}, with a factor two.
+In particular, if \(s_1\le s_2\le r\) and \(r-s_1\le C_0\ell\), then
+\begin{equation}\label{eq:prediction-difference}
+ \norm{\E^{s_1}Z^n_{\eta(r)}-\E^{s_2}Z^n_{\eta(r)}}_p
+ \le C_p\ell^{1+H}.
+\end{equation}
+This follows by conditioning \(Z^n_{\eta(r)}-\E^{s_1}Z^n_{\eta(r)}\)
+at \(s_2\).
+\end{proof}
+
+We estimate a signed quadrature, rather than the sum of absolute cell
+errors. Put \(c_r=c(\eta(r))\), \(U_r=Z^n_{\eta(r)}\), and
+\begin{equation}\label{eq:GQ}
+ G_r(z)=F(c_r,B^H_r,z)-F(c_r,B^H_{\eta(r)},z),\qquad
+ Q_h(t)=\int_0^tG_r(U_r)\,dr.
+\end{equation}
+
+\begin{proposition}\label{prop:fractional-Q}
+Uniformly for \(0\le t\le T\),
+\begin{equation}\label{eq:fractional-Q}
+ \norm{Q_h(t)}_4\le
+ \begin{cases}
+ C h^{H+1/2},&0<H<1/2,\\
+ C h,&1/2<H<1 .
+ \end{cases}
+\end{equation}
+\end{proposition}
+\begin{proof}
+For an interval \([s,t]\) of length \(\ell=t-s\), let
+\(v=(s-\ell)\vee0\) and define the conditional increment
+\begin{equation}\label{eq:A}
+ \Acal_{s,t}=\E^v\int_s^tG_r(\E^v U_r)\,dr.
+\end{equation}
+We use intervals with \(s=0\) or \(s\ge\ell\), which include every
+dyadic interval in \([0,t]\). For every fixed \(p\ge1\),
+\begin{equation}\label{eq:A-size}
+ \norm{\Acal_{s,t}}_p
+ \le C_p b_h(\ell),\qquad
+ b_h(\ell)=\min\{\ell h^H,h\ell^H\}.
+\end{equation}
+The first bound is \eqref{eq:F-noise} integrated over the interval.
+For the second, suppose first that \(s\ge\ell\) and \(\ell\ge2h\).
+Then \(\eta(r)-v\ge\ell/2\). Conditional Gaussian convolution,
+\eqref{eq:conditional-mean}, and Lemma~\ref{lem:heat} give, with
+\(z_r=\E^v U_r\),
+\[
+ \begin{split}
+ &\norm{P_{v_v(r)}f_{c_r,z_r}(m_v(r))
+       -P_{v_v(\eta(r))}f_{c_r,z_r}(m_v(\eta(r)))}_p\\
+ &\hspace{25mm}\le
+ C_p\bigl(h\ell^{H-1}+\ell^{-H}h\ell^{2H-1}\bigr)
+ \le C_ph\ell^{H-1}.
+ \end{split}
+\]
+The two terms respectively change the mean and variance.
+Their weighted derivative factors have bounded higher moments, by
+Lemma~\ref{lem:moments} and the Gaussian bounds on \(m_v\).
+Integrating gives \(C_ph\ell^H\). For \(s=0\), the part \(r\le2h\)
+costs \(C_ph^{1+H}\); on \(r>2h\) the same integrand estimate is
+\(C_ph r^{H-1}\), whose integral is \(C_ph\ell^H\).
+If \(h\le\ell\le2h\), the first bound implies the second up to a
+fixed factor; if \(\ell<h\), the minimum is the first bound.
+
+Let \(u=(s+t)/2\) and
+\(\delta\Acal_{s,u,t}=\Acal_{s,t}-\Acal_{s,u}-\Acal_{u,t}\).
+For \(s\ge\ell\) we also have
+\begin{equation}\label{eq:A-delta}
+ \norm{\E^{s-\ell}\delta\Acal_{s,u,t}}_p
+ \le C_ph\ell^{1+H}.
+\end{equation}
+If \(\ell\le4h\), the tower property expresses the conditional
+difference as integrals of \(G_r(z_1)-G_r(z_2)\), where \(z_1\)
+and \(z_2\) are the parent and child predictions of \(U_r\).
+The \(2L\)-Lipschitz bound on \(G_r\) and
+\eqref{eq:prediction-difference} give
+\(C_p\ell^{2+H}\le C_ph\ell^{1+H}\).
+
+For \(\ell\ge4h\), the child's conditioning time is
+\(w=s-\ell/2\) on the left half and \(w=s\) on the right half.
+On its corresponding half, \(\eta(r)-w\ge\ell/4\).
+Both \(z_1=\E^{s-\ell}U_r\) and \(z_2=\E^wU_r\) are
+\(\F_w\)-measurable. Apply \eqref{eq:conditional-heat} to the bounded
+function \(g=f_{c_r,z_1}-f_{c_r,z_2}\).
+Equations \eqref{eq:heat-mixed} and \eqref{eq:conditional-mean}
+bound the conditional integrand in \(L^p\) by
+\[
+ C_p\norm{z_1-z_2}_{2p}
+       \bigl(\ell^{-H}h\ell^{H-1}
+                    +\ell^{-2H}h\ell^{2H-1}\bigr)
+ \le C_ph\ell^H.
+\]
+Integrate over the two halves and condition once more at \(s-\ell\)
+to obtain \eqref{eq:A-delta}. If \(s=0\), the parent and both children
+condition at zero, so \(\delta\Acal_{0,t/2,t}=0\) exactly.
+
+For the dyadic subdivision of \([0,t]\) at length
+\(\ell_j=t2^{-j}\), let \(S_j\) be the sum of its conditional
+increments. The difference \(S_{j+1}-S_j\) is minus the sum of their
+\(\delta\Acal\)'s. At the interval \([i\ell_j,(i+1)\ell_j]\),
+this difference is \(\F_{i\ell_j}\)-measurable, since the latest
+child conditioning time is \(i\ell_j\). For \(i\ge1\), subtract its
+conditional expectation at \(\F_{(i-1)\ell_j}\).
+The resulting sequence is a martingale-difference sequence; the
+initial interval contributes zero. Equations
+\eqref{eq:A-size}--\eqref{eq:A-delta} give
+\begin{equation}\label{eq:scale-sum}
+ \norm{S_{j+1}-S_j}_4
+ \le C\sqrt{t/\ell_j}\,b_h(\ell_j)+Cth\ell_j^H.
+\end{equation}
+For completeness, the required discrete estimate is elementary.
+If \(D_i\) are martingale differences, \(M=\sum_i\norm{D_i}_4^2\),
+and \(S=\sum_iD_i\), then
+\[
+ S^2=2\sum_iS_{i-1}D_i+\sum_iD_i^2,\qquad
+ \norm S_4^2\le2\norm S_4\sqrt M+M.
+\]
+The first sum has orthogonal \(L^2\) increments, and conditional
+Jensen bounds every \(\norm{S_{i-1}}_4\) by \(\norm S_4\).
+Solving the quadratic gives
+\(\norm S_4\le(1+\sqrt2)\sqrt M\), which proves
+\eqref{eq:scale-sum}.
+
+The sums \(S_j\) converge to \(Q_h(t)\) in \(L^4\).
+On an interval of length \(\ell\), replacing \(U_r\) by its prediction
+costs \(C\ell^{2+H}\), by \eqref{eq:prediction}.
+Conditional projection of \(F(c_r,B^H_r,z_r)\) costs \(C\ell^H\)
+pointwise: its innovation has variance at most \(C\ell^{2H}\),
+and the noise increment bound has integrable exponential weights.
+The same holds for \(B^H_{\eta(r)}\), with zero cost if
+\(\eta(r)\le v\). Hence
+\[
+ \norm{S_j-Q_h(t)}_4\le CT(\ell_j^H+\ell_j^{1+H})\longrightarrow0.
+\]
+
+In \eqref{eq:scale-sum}, scales \(\ell_j\ge h\) contribute
+\[
+ C\sqrt t\,h\sum_{\ell_j\ge h}\ell_j^{H-1/2},
+\]
+whereas scales \(\ell_j<h\) contribute at most
+\(C\sqrt t\,h^{H+1/2}\).
+The conditional-mean terms sum to
+\(Cth\sum_j\ell_j^H\le Ch\).
+The initial increment satisfies \eqref{eq:A-size}.
+The first geometric sum is dominated by its smallest scale if
+\(H<1/2\) and by its largest scale if \(H>1/2\), giving
+\eqref{eq:fractional-Q}. For \(t<h\), the direct estimate
+\(Cth^H\) suffices. All bounds are uniform for \(t\le T\).
+\end{proof}
+
+At \(H=1/2\), the first geometric sum is critical and this argument
+would give \(h(1+\log(T/h))\). We next use the Brownian structure to
+recover order one without differentiating the drift.
+
+\section{The Brownian endpoint}\label{sec:brownian}
+
+Here \(H=1/2\), \(B^{1/2}=W\) is ordinary Brownian motion, and
+\(c(t)=(-\alpha+\beta^2/2)t\).
+We first record the quadrature estimate that replaces the critical scale
+sum. The stochastic-calculus facts used in this section are ordinary
+It\^o calculus, the Brownian martingale characterization, Girsanov's
+theorem for bounded progressive drifts, and the
+Burkholder--Davis--Gundy inequalities; see
+\cite[Theorems 7.1.1, 7.2.1, 7.5.1 and 7.7.1]{Chafai}.
+
+\begin{lemma}\label{lem:Brownian-quadrature}
+Let \(W_0=0\), \(d=mh\) for an integer \(m\ge1\), and \(f:\R\to\R\)
+be globally Lipschitz. For every \(p\ge2\),
+\begin{equation}\label{eq:Brownian-quadrature}
+ \left\|\sup_{t\le d}\left|
+   \int_0^t(f(W_s)-f(W_{\eta(s)}))\,ds\right|\right\|_p
+ \le C_p[f]_{\mathrm{Lip}}h\sqrt d .
+\end{equation}
+The bound is independent of \(f(0)\) and of shifts of its argument.
+\end{lemma}
+\begin{proof}
+First suppose \(f\) is smooth with bounded first derivative.
+Set \(g_h(s)=(\lfloor s/h\rfloor+1)h-s\).
+At grid endpoints the quadrature is \(\int_0^t g_h(s)\,df(W_s)\).
+At intermediate \(t\), its difference from that integral is
+\[
+ -\bigl((\lfloor t/h\rfloor+1)h-t\bigr)
+          (f(W_t)-f(W_{\eta(t)})).
+\]
+The maximum of this correction has \(L^p\) norm at most
+\(C_p[f]_{\mathrm{Lip}}h\sqrt d\).
+
+The change \(df(W)\) is the average of its forward and right-endpoint
+backward stochastic differentials:
+\begin{equation}\label{eq:forward-backward}
+ \int_0^t g_h\,df(W)
+ =\frac12\int_0^t g_h(s)f'(W_s)\,dW_s
+  +\frac12\int_0^t g_h(s)f'(W_s)\,d^-W_s.
+\end{equation}
+The forward integral equals the change in \(f(W)\) minus
+one-half the \(f''\) integral, while the backward integral equals that
+change plus one-half the \(f''\) integral. The deterministic
+bounded-variation function \(g_h\) adds no quadratic covariation.
+This proves \eqref{eq:forward-backward} first on each cell and then
+on their union.
+
+To estimate the backward integral, let \(Y_u=W_{d-u}\) in its natural
+reverse filtration. Its Gaussian bridge transition gives, for \(u<v<d\),
+\[
+ \E[Y_v\mid Y_r,\ r\le u]=\frac{d-v}{d-u}Y_u.
+\]
+It follows that
+\(M_u=Y_u-Y_0+\int_0^uY_r/(d-r)\,dr\) is a continuous martingale.
+Its quadratic variation is \(u\), because the added integral has
+finite variation and Brownian increments retain their quadratic
+variation on reversal. The Brownian martingale characterization
+therefore gives
+\[
+ dY_u=dM_u-\frac{Y_u}{d-u}\,du.
+\]
+The drift extends to the endpoint in every finite \(L^p\), since
+\(\int_0^d\norm{Y_u}_p/(d-u)\,du=2C_p\sqrt d\).
+Writing
+\(N_u=\int_0^u g_h(d-v)f'(Y_v)\,dM_v\), the reversal is explicitly
+\[
+ \int_0^t g_h(s)f'(W_s)\,d^-W_s
+ =-\int_{d-t}^d g_h(d-u)f'(Y_u)\,dY_u
+ =-(N_d-N_{d-t})
+   +\int_{d-t}^d g_h(d-u)f'(Y_u)\frac{Y_u}{d-u}\,du .
+\]
+The martingale increment is controlled by \(2\sup_{u\le d}|N_u|\);
+its integrand is bounded by \(h[f]_{\mathrm{Lip}}\).
+The drift term is bounded by
+\[
+ h[f]_{\mathrm{Lip}}\int_0^d\frac{\abs{W_s}}s\,ds,
+\]
+whose \(L^p\) norm is at most \(2C_p h[f]_{\mathrm{Lip}}\sqrt d\).
+The forward martingale maximum has the same bound by the maximal
+martingale inequality. One can first reverse before \(d\) and then
+pass to \(d\) using the displayed integrability bounds.
+This proves \eqref{eq:Brownian-quadrature}.
+Finally, mollify \(f\) by a Gaussian kernel. The Lipschitz constant
+does not increase and the approximations converge uniformly, so their
+quadratures converge uniformly. The same estimate holds for \(f\).
+\end{proof}
+
+\begin{lemma}\label{lem:bounded-drift}
+Suppose \(\beta\ne0\) and, on a grid block of length \(d=mh\),
+\[
+ dq_t=u(q_t)\,dt+\beta\,dW_t,\qquad \abs u\le M.
+\]
+If \(M^2d\le C_0\), then for every bounded Lipschitz \(b\) and \(p\ge2\),
+\begin{equation}\label{eq:bounded-drift}
+ \left\|\sup_{t\le d}\left|
+   \int_0^t(b(q_s)-b(q_{\eta(s)}))\,ds\right|\right\|_p
+ \le C_{p,C_0,\beta}[b]_{\mathrm{Lip}}h\sqrt d .
+\end{equation}
+The constant is uniform in the initial value. The same estimate holds
+conditionally at a stopping time in a finite deterministic grid, with
+the initial value and block length known at that time.
+\end{lemma}
+\begin{proof}
+Let \(\mu_t=u(q_t)/\beta\) and
+\(D=\exp(-\int_0^d\mu_t\,dW_t-\tfrac12\int_0^d\mu_t^2\,dt)\).
+The bounded progressive coefficient makes this a probability density.
+Under \(d\mathbb Q=D\,d\mathbb P\), the process
+\(\widetilde W_t=W_t+\int_0^t\mu_s\,ds\) is Brownian and
+\(q_t=q_0+\beta\widetilde W_t\).
+For each fixed moment exponent, both the forward and inverse densities
+have moments bounded by \(\exp(C_pM^2d/\beta^2)\); this follows by
+factoring their powers into an exponential martingale and its
+bounded quadratic-variation correction.
+H\"older's inequality and Lemma~\ref{lem:Brownian-quadrature},
+applied at exponent \(2p\) to \(f(x)=b(q_0+\beta x)\), prove
+\eqref{eq:bounded-drift}.
+At a finite-grid stopping time, condition on each of its possible
+values. The future Brownian increments are independent of the past,
+and all block parameters are already known. The same density argument
+gives the conditional assertion.
+\end{proof}
+
+We retain the original \(Z\)-equation for stability.
+The logarithm will only be used on intervals where \(Z\) stays away
+from zero. On a sign interval \(\sigma=\operatorname{sign}Z\), recall
+\[
+ b_\sigma(q)=\frac{a(\sigma e^q)-a_0}{\sigma e^q},
+ \qquad Z'_t=J_ta(Z_t/J_t).
+\]
+For \(q_t=\log\abs{Z_t/J_t}=\log\abs{Z_t}-c(t)+\beta W_t\),
+the finite-variation term has differential \((Z'_t/Z_t)\,dt\).
+Since \(c'=-\alpha+\beta^2/2\), this gives
+\begin{equation}\label{eq:log-SDE}
+ dq_t=\left(\alpha-\frac{\beta^2}{2}
+          +b_\sigma(q_t)+\sigma a_0e^{-q_t}\right)\,dt
+          +\beta\,dW_t.
+\end{equation}
+If \(a_0=0\) and \(x_0\ne0\), then
+\(\abs{x_0}e^{-LT}\le\abs{Z_t}\le\abs{x_0}e^{LT}\), so its sign
+never changes. The drift in \eqref{eq:log-SDE} is bounded.
+The noise quadrature vanishes when \(\beta=0\), so assume \(\beta\ne0\) here.
+Define
+\[
+ R(t)=\int_0^t[b_\sigma(q_s)-b_\sigma(q_{\eta(s)})]\,ds .
+\]
+Lemma~\ref{lem:bounded-drift} over the whole interval gives
+\(\|\sup_{t\le T}|R(t)|\|_p\le C_ph\).
+By \eqref{eq:basic-F}, \eqref{eq:F1-bounds} and
+Lemma~\ref{lem:moments}, the exact-state \(F_1\) noise quadrature on a
+grid prefix, defined in \eqref{eq:Brownian-Q} below, differs from
+\(\int_0^{t_k}Z_{\eta(s)}\,dR(s)\) by \(O(h)\) in \(L^p\).
+Summation by parts bounds this weighted integral by
+\[
+ \bigl(\sup_{t\le T}|Z_t|+\TV(Z_\eta;[0,T])\bigr)
+       \sup_{t\le T}|R(t)|.
+\]
+The first factor is deterministically bounded, so the \(F_1\) noise
+quadrature has order \(h\). If also \(x_0=0\), the solution and scheme
+vanish identically.
+
+When \(a_0\ne0\), the last drift term in \eqref{eq:log-SDE} can be
+singular. Short blocks chosen by the distance of \(Z\) from zero
+keep its density cost bounded. The resulting estimates grow only
+polynomially in the integrating factor.
+
+\begin{proposition}\label{prop:Brownian-Q}
+For \(H=1/2\), uniformly at grid times \(t_k\),
+\begin{equation}\label{eq:Brownian-Q}
+ \left\|\int_0^{t_k}
+ \bigl(F_1(c(\eta(s)),W_s,Z_{\eta(s)})
+       -F_1(c(\eta(s)),W_{\eta(s)},Z_{\eta(s)})\bigr)\,ds
+ \right\|_4\le Ch .
+\end{equation}
+\end{proposition}
+\begin{proof}
+The case \(a_0=0\) was just discussed, with the \(O(h)\) state and
+\(c\) freezing bounds from \eqref{eq:F1-bounds} and
+Lemma~\ref{lem:moments}. If \(\beta=0\), the integral vanishes.
+Reflection \(X\mapsto-X\) permits us to assume \(a_0>0\).
+If \(L=0\), then \(a_1=0\), so suppose \(L>0\).
+Let
+\[
+ M_J=\max\{1,\sup_{t\le T}J_t,\sup_{t\le T}J_t^{-1}\},
+ \qquad E_K=\{M_J\le K\},\quad K\ge2.
+\]
+On \(E_K\), deterministic Gronwall gives
+\begin{equation}\label{eq:localized-Z}
+ \sup_{t\le T}\abs{Z_t}\le C_ZK,\qquad
+ \sup_{t\le T}\abs{Z'_t}\le C_DK.
+\end{equation}
+Choose a fixed \(r_*>0\) with
+\(r_*\le\min\{1,a_0/(4L)\}\) and put \(r_0=r_*/K\).
+In the band \(\abs{Z_t}\le2r_0\),
+\begin{equation}\label{eq:monotone-band}
+ Z'_t=a_0J_t+F_1(c(t),W_t,Z_t)\ge\frac{a_0}{2K}.
+\end{equation}
+Thus \(Z\) traverses the band monotonically. A positive or negative
+annulus inside the band is traversed at most once; the time spent
+in \(\epsilon/2\le\abs Z\le3\epsilon\) is at most \(CK\epsilon\)
+when \(3\epsilon\le2r_0\).
+
+Choose a sufficiently large fixed \(D\ge8C_DC_Z+1\), and put
+\(\delta=2\sqrt D\,K\sqrt h\).
+We first assume \(h\le c_*K^{-4}\), where the fixed \(c_*>0\) is
+small enough that \(2\delta\le r_0\) and \(C_DKh\le\delta\).
+Partition a prefix \([0,t_k]\) at grid times as follows.
+A start \(t_i\) with \(\abs{Z_{t_i}}\le\delta\) receives one cell.
+Otherwise choose \(\epsilon=\delta2^j\) with
+\(\epsilon\le\abs{Z_{t_i}}<2\epsilon\), and take
+\begin{equation}\label{eq:block-length}
+ m_i=\min\left\{k-i,\left\lfloor\frac{\epsilon^2}{DK^2h}
+                         \right\rfloor\right\}
+\end{equation}
+consecutive cells. Every start is a finite-grid stopping time.
+Its sign, \(\epsilon\), and length \(d=m_ih\) are known at that time.
+The floor is at least four before the final truncation, and
+\[
+ d\le\frac{\epsilon^2}{DK^2},\qquad
+ d\ge\frac{\epsilon^2}{2DK^2}
+\]
+unless this is the last block.
+
+On \(E_K\), \(\epsilon\le C_ZK\), and \eqref{eq:localized-Z} gives
+\(\abs{Z_t-Z_{t_i}}\le C_DKd\le\epsilon/4\).
+Throughout an outer block, \(Z\) therefore keeps its sign and
+\(\epsilon/2\le\abs Z\le3\epsilon\), while
+\(\abs{Z/J}\ge\epsilon/(2K)\).
+Clip the last term of \eqref{eq:log-SDE} to
+\[
+ \sigma\min\{a_0e^{-q},2a_0K/\epsilon\}.
+\]
+This produces a globally Lipschitz bounded drift agreeing with the
+exact \(q\) on the block on \(E_K\).
+For starts with \(\epsilon\le C_ZK\), its bound is \(CK/\epsilon\),
+and its squared bound times \(d\) is uniformly bounded.
+Let \(q^{\mathrm{cl}}\) be this clipped process with
+\(q^{\mathrm{cl}}_{t_i}=q_{t_i}\). For this block \(b=[t_i,t_i+d]\), put
+\[
+ R_b^{\mathrm{cl}}(u)
+   =\int_{t_i}^u
+       [b_\sigma(q^{\mathrm{cl}}_s)
+        -b_\sigma(q^{\mathrm{cl}}_{\eta(s)})]\,ds,
+ \qquad t_i\le u\le t_i+d .
+\]
+On \(E_K\), write \(R_b\) for the same primitive using the unclipped \(q\);
+the supremum below is over this block. Lemma~\ref{lem:bounded-drift},
+with test function \(b_\sigma\), gives conditionally at the start
+\begin{equation}\label{eq:clipped-R}
+ \left(\E\left[\sup\abs{R_b^{\mathrm{cl}}}^p
+                    \mid\F_{t_i}\right]\right)^{1/p}
+ \le C_ph\sqrt d\le C_ph\epsilon/K .
+\end{equation}
+The Lipschitz constant of \(b_\sigma\) is at most \(2L\), independently
+of the clipping level.
+
+On this block, the integrand in \eqref{eq:Brownian-Q} differs from
+\(Z_{\eta(s)}[b_\sigma(q_s)-b_\sigma(q_{\eta(s)})]\) by at most
+\(CKh\) on \(E_K\). Indeed, \eqref{eq:F1-bounds} and
+\eqref{eq:localized-Z} freeze \(Z_s\) and the linear \(c(s)\)
+at cost \(CKh\). These errors over all blocks cost \(CKh\).
+Summation by parts bounds the weighted quadrature by
+\[
+ \bigl(\sup\abs Z+\TV(Z_\eta;\text{block})\bigr)\sup\abs{R_b}
+ \le C\epsilon\,\sup\abs{R_b},
+\]
+since \(\TV(Z_\eta;\text{block})\le C_DKd\le\epsilon/4\).
+On \(E_K\) the original and clipped processes agree.
+Thus each block contribution, multiplied by \(\ind_{E_K}\),
+has \(L^p\) norm at most \(C_ph\epsilon^2/K\).
+
+
+For \(\epsilon<r_0/4\), every such block lies in its expanded annulus.
+Equations \eqref{eq:monotone-band} and \eqref{eq:block-length}
+bound the number of these disjoint blocks by \(CK^3/\epsilon\),
+apart from one final truncated block.
+Their total \(L^p\) contribution is bounded by
+\[
+ C_phK^2\epsilon+C_ph\epsilon^2/K .
+\]
+Summing the dyadic \(\epsilon\)'s below \(r_0/4\) gives a polynomial
+multiple of \(h\). For the remaining outer blocks,
+\(\epsilon\ge r_0/4\); every nonfinal length is at least \(cK^{-4}\).
+There are at most \(CK^4\) of them, and each contribution is at most
+\(C_phK\) because \(\epsilon\le C_ZK\) on \(E_K\).
+They therefore cost at most \(C_phK^5\).
+
+These counts remain valid in the norm estimates even though the block
+starts are random. For a fixed small annulus, enumerate its successive
+starts as grid stopping times. On \(E_K\), only the first deterministic
+upper bound on their number is present. Each contribution with its
+indicator is bounded by \(C\epsilon\sup\abs{R_b^{\mathrm{cl}}}\);
+\eqref{eq:clipped-R} gives its norm conditionally at that start.
+For large blocks enumerate only starts with \(\epsilon\le C_ZK\),
+a condition already known at the start. On \(E_K\) this includes
+every large block. Apply the deterministic count bound and
+Minkowski's inequality. Missing starts contribute zero at \(t_k\).
+No independence of \(E_K\) and the block errors is used.
+
+It remains to bound the cells starting within \(\abs{Z_{\eta(s)}}\le\delta\).
+On \(E_K\), all their times lie within \(\abs Z\le2\delta\), by
+\(C_DKh\le\delta\). Their total length is at most \(CK\delta\).
+The noise increment estimate \eqref{eq:F1-bounds} bounds their
+quadrature pathwise by
+\[
+ C\delta(K\delta)D_h\le CK^3hD_h,\qquad
+ D_h=\max_{i<n}\sup_{s\in[t_i,t_{i+1}]}\abs{W_s-W_{t_i}} .
+\]
+The Brownian maximal tail bound and a union bound give
+\(\norm{D_h}_p\le C_p\sqrt{h\log(2n)}\), uniformly bounded as
+\(h=T/n\). This inner contribution is consequently at most
+\(C_phK^3\) in \(L^p\).
+Writing \(Q_h^{(1)}(t_k)\) for the integral in
+\eqref{eq:Brownian-Q}, we have proved
+\begin{equation}\label{eq:polynomial-localization}
+ \norm{Q_h^{(1)}(t_k)\ind_{E_K}}_p\le C_phK^6,\qquad p\ge2 .
+\end{equation}
+The harmless enlargement from \(K^5\) to \(K^6\) includes all preceding
+constants. If \(h>c_*K^{-4}\), the direct increment and moment bounds
+give \(\norm{Q_h^{(1)}(t_k)}_p\le C_p\sqrt h\le C_phK^2\),
+so \eqref{eq:polynomial-localization} holds for every \(n\).
+
+Finally \(J_t=e^{c(t)-\beta W_t}\), and the Brownian supremum tail implies
+\[
+ \mathbb P(M_J>K)\le C\exp\{-c_1(\log K-C_1)^2\}
+\]
+for large \(K\), with fixed constants.
+For dyadic \(K\), H\"older's inequality and
+\eqref{eq:polynomial-localization} at \(p=8\) give
+\[
+ \norm{Q_h^{(1)}(t_k)
+        \ind_{\{K/2<M_J\le K\}}}_4
+ \le ChK^6\mathbb P(M_J>K/2)^{1/8}.
+\]
+The dyadic sum is finite, independently of \(n\), proving
+\eqref{eq:Brownian-Q}.
+\end{proof}
+
+The constant drift part is \(a_0J_t\).
+Ordinary It\^o calculus gives
+\begin{equation}\label{eq:dJ}
+ dJ_t=(-\alpha+\beta^2)J_t\,dt-\beta J_t\,dW_t.
+\end{equation}
+Integrating this differential with the deterministic sawtooth weight
+bounded by \(h\), and using Gaussian exponential moments and the
+maximal martingale inequality, shows
+\begin{equation}\label{eq:J-quadrature}
+ \left\|\int_0^{t_k}(J_s-J_{\eta(s)})\,ds\right\|_4\le Ch .
+\end{equation}
+Combining \eqref{eq:Brownian-Q} and \eqref{eq:J-quadrature} therefore
+controls the entire Brownian drift quadrature.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let \(e_k=Z_{t_k}-Z^n_{t_k}\) and
+\(\rho=\min\{H+1/2,1\}\).
+For \(H\ne1/2\), subtract \eqref{eq:interpolation} from
+\eqref{eq:exact-ode} and use the decomposition
+\[
+ \begin{split}
+ F(c(s),B^H_s,Z_s)-F(c(\eta(s)),B^H_{\eta(s)},Z^n_{\eta(s)})
+  ={}&F(c(s),B^H_s,Z_s)-F(c(s),B^H_s,Z^n_{\eta(s)})\\
+   &+F(c(s),B^H_s,Z^n_{\eta(s)})
+                 -F(c(\eta(s)),B^H_s,Z^n_{\eta(s)})\\
+   &+G_s(Z^n_{\eta(s)}).
+ \end{split}
+\]
+The first line costs \(Ch+Lh\sum_{i<k}\norm{e_i}_4\), by
+\eqref{eq:basic-F} and Lemma~\ref{lem:moments}.
+The \(c\) increments cost \(Ch\TV(c)\): their \(L^4\) weighted
+factors are uniformly bounded, and
+\[
+ \int_0^{t_k}\abs{c(s)-c(\eta(s))}\,ds\le h\TV(c).
+\]
+Proposition~\ref{prop:fractional-Q} bounds the last line by \(Ch^\rho\).
+Hence
+\begin{equation}\label{eq:Gronwall-error}
+ \norm{e_k}_4\le Ch^\rho+Lh\sum_{i<k}\norm{e_i}_4 .
+\end{equation}
+
+For \(H=1/2\), use instead the exact-state residual
+\[
+ R_k=\int_0^{t_k}
+  \bigl(F(c(s),W_s,Z_s)-F(c(\eta(s)),W_{\eta(s)},Z_{\eta(s)})\bigr)\,ds.
+\]
+Freezing \(Z_s\) and the linear \(c(s)\) costs \(Ch\).
+The remaining \(a_1\) quadrature is
+Proposition~\ref{prop:Brownian-Q}; the \(a_0\) quadrature is
+\eqref{eq:J-quadrature}. Thus \(\norm{R_k}_4\le Ch\).
+The deterministic \(z\)-Lipschitz estimate at each grid point gives
+\eqref{eq:Gronwall-error} with \(\rho=1\).
+The case \(\beta=0\) follows directly from deterministic Euler
+stability and consistency.
+
+Discrete Gronwall yields \(\norm{e_n}_4\le Ch^\rho\).
+The prescribed quotient uses the same strictly positive \(J_T\)
+for the exact and approximate terminal states. Therefore
+\[
+ \norm{X_T-X_n}_2\le\norm{e_n}_4\norm{J_T^{-1}}_4\le Ch^\rho,
+\]
+as required. These estimates may first be used for \(h\le\min\{T,1\}\).
+The finitely many larger steps have finite errors by the moment bounds,
+and enlarging the fixed-data constant includes them.
+If \(a=0\), both transformed states are identically \(x_0\) and
+the scheme is exact.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex was used for proof development, source checking and drafting
+this manuscript. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{ELS}
+U.~Erdo\u{g}an, G.~J. Lord and R.~B. Schieven,
+\emph{Numerical approximation of SDEs driven by fractional Brownian motion
+for all \(H\in(0,1)\) using WIS integration},
+IMA Journal of Numerical Analysis (2026),
+\href{https://doi.org/10.1093/imanum/drag055}{doi:10.1093/imanum/drag055}.
+Version used: \href{https://arxiv.org/abs/2404.07013v2}{arXiv:2404.07013v2}.
+
+\bibitem{BDG}
+O.~Butkovsky, K.~Dareiotis and M.~Gerencs\'er,
+\emph{Approximation of SDEs: a stochastic sewing approach},
+Probability Theory and Related Fields \textbf{181} (2021), 975--1034,
+\href{https://doi.org/10.1007/s00440-021-01080-2}{doi:10.1007/s00440-021-01080-2}.
+
+\bibitem{Moritoki}
+T.~Moritoki,
+\emph{Strong rate of convergence for the Euler--Maruyama scheme of additive
+fractional SDEs with Lipschitz drift},
+\href{https://arxiv.org/abs/2607.24166v1}{arXiv:2607.24166v1} (2026).
+
+\bibitem{Altmeyer}
+R.~Altmeyer,
+\emph{Approximation of occupation time functionals},
+\href{https://arxiv.org/abs/1706.03418v4}{arXiv:1706.03418v4} (2021).
+
+\bibitem{KR}
+P.~E. Kloeden and R.~M.~S. Rosa,
+\emph{Strong order-one convergence of the Euler method for random ordinary
+differential equations driven by semi-martingale noises},
+\href{https://arxiv.org/abs/2306.15418v8}{arXiv:2306.15418v8} (2025).
+
+\bibitem{Chafai}
+D.~Chafa\"i,
+\emph{Introduction to stochastic calculus},
+Universit\'e Paris-Dauphine--PSL, 2020--2021 lecture notes,
+corrected version compiled December 7, 2025,
+\url{https://djalil.chafai.net/docs/M2/m2-stochastic-calculus-course-2020-2021.pdf}.
+\end{thebibliography}
+\end{document}
