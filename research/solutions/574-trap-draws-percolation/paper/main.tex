@@ -1,0 +1,987 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\indicator}{\mathbf 1}
+\DeclareMathOperator{\Ext}{Ext}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\numberwithin{equation}{section}
+\title{Draws in the undirected trapping game on site-percolated lattices}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{13 October 2026}
+\hypersetup{pdftitle={Draws in the undirected trapping game on site-percolated lattices},pdfauthor={Kaiwen Jin}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Independently delete each vertex of the nearest-neighbor lattice
+$\Z^d$ with probability $p$. Two players, knowing the entire resulting
+board, move a token alternately to an undeleted neighbor that has never
+been visited; a player with no legal move loses. A draw means that neither
+player can force a win. We prove that the draw probability is zero in
+dimension two for every $0<p<1$, whereas in every dimension $d\ge3$
+it is positive for some strictly positive deletion probability.
+The proof expresses the outcome through the effect of distant boundary
+conditions on maximum independent sets. In the plane, a deterministic
+boundary bound is incompatible with the fluctuations that a positive draw
+probability would produce. In higher dimensions, contour shifts and a
+uniform comparison of permuted deletion configurations retain the
+influence of the two checkerboard boundary conditions. The comparison is
+performed for all fixed geometries before a contour is selected from
+the random board.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+The undirected trapping game, or Trap, is a game of perfect information
+on a graph. A token starts at a specified vertex. The players alternate
+moving it to a neighboring vertex that has not previously been visited,
+and the player with no legal move loses. A finite board always has a
+winner under optimal play. On an infinite board neither player need
+have a strategy forcing a win; this outcome is called a draw.
+The distinction is sensitive to the whole graph, since a strategy may
+depend on arbitrarily distant parts of the board.
+
+We consider the nearest-neighbor graph on $\Z^d$, with each vertex
+independently deleted with probability $p\in(0,1)$. Both players know
+the sampled graph before play begins. The starting vertex is the origin.
+If it is deleted, the first player is declared the winner, so that this
+event is not a draw. Let $D_d(p)$ denote the probability that neither
+player can force a win. The question is whether the draw phase of the
+undeleted lattice survives a positive density of deleted vertices.
+
+Basu, Holroyd, Martin and W\"astlund \cite{BHMW} studied Trap on random
+boards and related its finite outcomes to graph optimization.
+For bipartite graphs their criterion can be expressed in terms of maximum
+independent sets: the first mover loses at a vertex precisely when every
+maximum independent set contains it. This relation suggests comparing
+the two checkerboard boundary conditions of the lattice.
+A persistent difference at the origin can then prevent either player
+from forcing a win on the infinite board. The symmetric site-deletion
+question is stated in the open problems of \cite{BHMW} and in AIM
+Problem~574 \cite{AIM574}.
+In the plane they also prove absence of draws in an asymmetric model:
+for each fixed positive deletion probability on one parity, a sufficiently
+small deletion probability on the other parity excludes draws
+\cite[Theorem~1(ii), arXiv version~1, page~3]{BHMW}.
+That result leaves equal positive deletion probabilities unresolved.
+
+There is a related question for the hard-core model, which assigns
+weight $\lambda^{|I|}$ to each independent set $I$ at activity
+$\lambda$. Ayuso Ventura, Chiarini, Helmuth and Powell \cite{AVCHP}
+prove uniqueness of its Gibbs measure on site-percolated $\Z^2$ at
+every finite activity when the retention probability is less than one.
+Their argument compares disorder fluctuations with the size of the
+boundary and uses a spatial symmetry to interchange the checkerboards.
+This result concerns finite activity. Trap instead depends on exact
+maximum-cardinality sets, and passage to infinite activity alone does
+not identify its winning strategies. A separate connection between
+finite boundary conditions and the infinite game is therefore needed.
+
+We establish the dimension-dependent picture for the original
+undirected game:
+\begin{theorem}\label{thm:main}
+For every $p\in(0,1)$,
+\[
+ D_2(p)=0.
+\]
+For every integer $d\ge3$, there exists $p_d\in(0,1)$ such that
+\[
+ D_d(p_d)>0.
+\]
+\end{theorem}
+The rules include self-avoidance of the token path and complete knowledge
+of the board. The theorem makes no assertion about the location of a
+transition or the exact set of deletion probabilities with draws.
+
+The finite-to-infinite connection uses games in which reaching the
+boundary permits an exit with a prescribed winner. These games have
+an exact independent-set description. Their root influences are
+monotone as the domain grows, and a draw is exactly a disagreement
+between their limiting outcomes. In dimension two, we integrate these
+influences into a finite-coordinate difference of independence numbers.
+Its size is bounded by the boundary length. If draws had positive
+probability, its martingale fluctuations would have a nonzero Gaussian
+characteristic-function limit on the same scale. The deterministic
+bound rules this out. This is a maximum-cardinality version of the
+fluctuation-versus-boundary comparison in \cite{AVCHP}; we give the
+limiting argument directly.
+
+For $d\ge3$, we use contours surrounding regions with the wrong
+checkerboard pattern. Shifting such regions by one lattice step and
+filling the contour increases the number of occupied vertices.
+To respect the deletions, the occupation shift is accompanied by a
+finite permutation of the board coordinates and removal of the newly
+occupied deleted sites. A contour chosen from the board gives a
+board-dependent permutation, whose output need not be iid.
+We instead compare all fixed admissible permutations simultaneously.
+Dyadic majority approximations control their number at each scale,
+and rare-deletion concentration controls their increments. The
+resulting series converges precisely in dimensions above two.
+The estimates make the two checkerboard boundary conditions force
+opposite root occupations with positive probability uniformly in the box.
+The monotone exit-game limits then give a draw on the infinite board.
+Spatial shifts and disorder comparisons also appear in the
+low-temperature framework of Chen, Zhou, Liu and Zhou \cite{CZLZ}.
+Here the argument is given for exact independence numbers with the
+original finite boundary restriction; no Gibbs-state theorem is used
+to infer a game outcome.
+
+Section~\ref{sec:games} establishes the finite boundary description
+and its infinite-game limit. Section~\ref{sec:planar} proves the planar
+assertion. Sections~\ref{sec:contours} and \ref{sec:random} give the
+deterministic contour comparison and the uniform random estimate
+needed in higher dimensions.
+
+\section{Finite games and boundary conditions}\label{sec:games}
+Write $\rho(v)=\sum_{i=1}^d v_i\pmod 2$ for the parity of a lattice vertex.
+The player whose moves land on parity $\tau$ vertices is called the
+$\tau$-player. At an even starting vertex the first mover is the $1$-player.
+Let $\eta_v$ be one if $v$ is deleted and zero otherwise.
+We use $X_v=1-\eta_v$ for the open indicator and $q=1-p$.
+
+For a finite simple graph $G$, let $\alpha(G)$ be its independence number.
+The finite-game criterion of Basu, Holroyd, Martin and W\"astlund
+\cite[Proposition~5 and the following bipartite equivalence]{BHMW} gives
+\begin{equation}\label{eq:finite-criterion}
+ \text{the first mover loses from }v
+ \quad\Longleftrightarrow\quad
+ \alpha(G)-\alpha(G-v)=1
+\end{equation}
+when $G$ is bipartite and $v\in G$.
+Indeed, their Vicious Trap criterion is that every maximum independent set
+contains $v$. On a bipartite graph its additional deletion option removes
+only vertices of the deleting player's destination parity, so its outcome
+agrees with ordinary Trap. If a maximum independent set omits $v$, deleting
+$v$ leaves $\alpha$ unchanged. Otherwise deleting $v$ lowers $\alpha$ by
+exactly one. For a disconnected graph, apply the criterion to the component
+of $v$ and use additivity of $\alpha$.
+The statements used here are in the cited arXiv version~1,
+pages~6--7; the Proposition~5 proof is on page~15.
+
+For finite $V\subset\Z^d$, let
+\[
+ B(V)=\{v\in V:\text{ a lattice neighbor of }v\text{ is outside }V\},
+ \qquad A_V^\tau=B(V)\cap\{\rho=1-\tau\}.
+\]
+In the exit-$\tau$ game a player standing at a boundary vertex may choose
+an exit, ending the game with the $\tau$-player winning. This option is
+offered without consulting the outside board. Set
+\begin{equation}\label{eq:boundary-alpha}
+ a_V^\tau(X)=\alpha\bigl(G[V\cap\{X=1\}\setminus A_V^\tau]\bigr),
+ \qquad
+ s_V^\tau(v;X)=a_V^\tau(X^{v=1})-a_V^\tau(X^{v=0}).
+\end{equation}
+Here $X^{v=i}$ changes only the coordinate at $v$.
+Removing one vertex changes an independence number by at most one, so
+$s_V^\tau\in\{0,1\}$.
+
+\begin{lemma}\label{lem:exit}
+At an open starting vertex $v\in V$, the exit-$\tau$ winner has parity
+$\rho(v)$ exactly when $s_V^\tau(v;X)=1$.
+\end{lemma}
+\begin{proof}
+At each $v\in B(V)$ of parity $1-\tau$, attach a private leaf of parity
+$\tau$. At each boundary vertex of parity $\tau$, attach a private path
+of two edges whose last vertex has parity $\tau$. Entering either gadget
+has a forced continuation ending with a $\tau$-move, hence realizes the
+declared exit winner. Retain all gadget vertices even when their attachment
+vertex is closed.
+
+A maximum independent set can omit every leaf attachment of parity
+$1-\tau$: replace an occupied attachment by its private leaf, without
+changing cardinality or creating an edge. Each leaf then contributes one.
+A two-edge gadget contributes exactly one of its two private vertices,
+whether or not its attachment is occupied. Thus the augmented graph has
+independence number $|B(V)|+a_V^\tau(X)$.
+This constant is unchanged when the starting vertex is removed, because
+its gadgets remain. The augmented graph is finite, simple and bipartite;
+\eqref{eq:finite-criterion} proves the assertion.
+\end{proof}
+
+\begin{lemma}\label{lem:infinite}
+For every fixed board, at an even vertex the quantities $s_V^0(v)$
+decrease and $s_V^1(v)$ increase as $V$ increases, with
+$s_V^0(v)\ge s_V^1(v)$. At an odd vertex the inequalities reverse.
+Their limits $s^\tau(v)$ exist and do not depend on the increasing
+exhaustion. With $v$ forced open, put
+\[
+ h_v(X)=s^0(v;X)-s^1(v;X).
+\]
+Then $h_v$ ignores $X_v$ and equals $(-1)^{\rho(v)}$ on a draw at that
+forced-open vertex, and zero otherwise. In particular,
+\begin{equation}\label{eq:draw-influence}
+ D_d(p)=q\,\E h_0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+A strategy winning an exit game in which exits favor its opponent cannot
+allow any exit along a compatible history. It uses only moves inside $V$,
+and cannot reach a boundary vertex on the opponent's turn, since that
+opponent could exit and win. Consequently it remains winning in every
+larger domain and on the actual infinite board.
+
+Conversely, a strategy forcing a finite win on the infinite board has a
+uniform finite bound on its compatible histories. Its history tree is
+finitely branching; if depths were unbounded, successively choosing a
+child with arbitrarily deep descendants would produce an infinite
+compatible play. A domain containing this finite history tree and a
+one-site buffer realizes the win even with exits awarded to the opponent.
+
+These statements imply monotonicity in the domain. Awarding exits to a player can only improve that player's outcome, which
+gives the comparison of the two boundary conditions. Every finite domain
+eventually lies in any increasing exhaustion, so the limits agree across
+exhaustions. At an even vertex the pair of limits can only be $(0,0)$,
+$(1,1)$ or $(1,0)$: the first two give an actual finite win by the odd or
+even player, respectively, by the correspondence just proved. The last
+gives neither win, hence a draw. The odd-vertex case reverses the roles.
+Forcing $v$ open makes $h_v$ independent of its own coordinate. An actually
+closed origin is not a draw, giving \eqref{eq:draw-influence}.
+\end{proof}
+
+The indicators above are measurable: finite-game outcomes are functions
+of finitely many coordinates, and their limits are pointwise limits.
+For $T_vX$ defined by $(T_vX)_w=X_{w+v}$, the exhaustion independence also
+gives
+\begin{equation}\label{eq:translation-h}
+ h_v(X)=(-1)^{\rho(v)}h_0(T_vX).
+\end{equation}
+The iid board law is invariant under translations and under
+$\theta(v)=(1-v_1,v_2,\ldots,v_d)$, which interchanges the two parities.
+
+We will use elementary conditional averages on this countable product
+space. A few facts behind the limiting averages are useful to record.
+Finite-coordinate conditioning is a finite sum on coordinate atoms.
+For a bounded $f$, its averages on nested finite coordinate sets are
+orthogonal projections in $L^2$; their squared norms increase and remain
+at most $\E f^2$. The Pythagorean identity makes them Cauchy.
+
+A bounded $L^2$-Cauchy sequence has a bounded $L^2$ limit without any
+additional probabilistic theorem: select a subsequence whose consecutive
+$L^2$ distances are at most $2^{-2j}$. Markov's bound makes the probability
+of a difference exceeding $2^{-j}$ at most $2^{-2j}$. A tail union bound
+shows that only finitely many such exceptions occur almost surely; the
+subsequence is then pointwise Cauchy. Bounded convergence and the original
+Cauchy property give convergence of the whole sequence.
+
+Bounded finite-coordinate functions are dense in $L^2$ of the
+coordinate-generated sigma algebra. For indicators, approximable events
+contain the cylinder algebra and are closed under complements and finite
+unions, by clipping approximants to $[0,1]$ and taking maxima. Countable
+unions follow by first using a finite partial union and continuity of
+probability. Quantization gives the bounded-function statement. The same
+argument holds for any coordinate subfamily. The projection limit
+therefore satisfies the conditional averaging identity for that subfamily.
+These facts also give convergence of averages on growing cubes to the
+original bounded function.
+
+All uses of bounded convergence below can be seen directly from
+$\E|U_n-U|\le\epsilon+M\Pr(|U_n-U|>\epsilon)$ for uniformly bounded
+differences; countable additivity gives convergence in probability from
+pointwise convergence. Symmetry of the iid law follows first on cylinder
+events and then on their generated sigma algebra.
+
+
+\section{Absence of planar draws}\label{sec:planar}
+In this section $d=2$ and
+$V_n=[-n+1,n]^2\cap\Z^2$. These squares are preserved by $\theta$.
+The infinite-game influence $h_v$ will be detected by finite-coordinate
+fluctuations of independence numbers.
+
+For finite $L$ and $n$ large enough that $L\subset V_n$, define
+\[
+ \Psi_{n,L}^\tau(X)=a_{V_n}^\tau(X)-a_{V_n}^\tau(X^{L=1}).
+\]
+Forcing sites open changes cardinality by at most one per site, so
+$|\Psi_{n,L}^\tau|\le |L|$. Telescoping over the finitely many changed
+coordinates expresses this difference as a sum of signed $s_{V_n}^\tau(v)$
+in fixed finitely perturbed boards. Lemma~\ref{lem:infinite} makes each
+binary summand eventually constant. Consequently $\Psi_{n,L}^\tau$
+has a pointwise limit $\Psi_L^\tau$ on every board. Put
+\[
+ H_{n,L}=\Psi_{n,L}^0-\Psi_{n,L}^1,\qquad
+ H_L=\Psi_L^0-\Psi_L^1,\qquad F_L=\E[H_L\mid X_L].
+\]
+These are bounded measurable functions, and $F_L$ depends only on $X_L$.
+Since the all-open reference is unchanged by toggling $v\in L$,
+bounded convergence and finite-coordinate conditioning give
+\begin{equation}\label{eq:toggle-F}
+ F_L(X^{v=1})-F_L(X^{v=0})
+ =\E[h_v\mid X_{L\setminus\{v\}}].
+\end{equation}
+
+\begin{lemma}\label{lem:surface}
+For $L=V_j$,
+\begin{equation}\label{eq:surface}
+ \E F_L=0,\qquad |F_L|\le 8j+4.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Remove the annulus $C_j=V_{j+1}\setminus V_j$ from the already reduced
+graphs in $V_n$, with $n\ge j+2$. Its cardinality is $8j+4$. The removal
+separates the unrestricted inner graph on $L$ from the outer graph,
+which retains its original boundary restriction at $B(V_n)$.
+No new boundary restriction is placed along the annulus.
+
+Conditional on $X_L$, the inner independence number is identical for the
+two parities. Reflection $\theta$ interchanges the outer boundary
+restrictions and preserves the law of the outside coordinates. The
+conditional expected difference of the two independence numbers after
+removal is therefore zero. Removal decreases each number by an amount
+in $[0,|C_j|]$, so their difference changes by at most $|C_j|$.
+It follows that
+\[
+ \left|\E[a_{V_n}^0(X)-a_{V_n}^1(X)\mid X_L]\right|\le |C_j|.
+\]
+For $X^{L=1}$, the expected parity difference is zero by reflection even
+conditional on $X_L$: that reference ignores $X_L$, and its all-open
+inner square is reflection invariant. Subtract the reference and pass
+to the limit using the bound $|H_{n,L}|\le2|L|$. This proves the pointwise
+bound on $F_L$. Reflecting the entire board changes $H_L$ to $-H_L$,
+which proves $\E F_L=0$.
+\end{proof}
+
+Order the lattice lexicographically and enumerate $L=V_j$ as
+$v_1,\ldots,v_N$, $N=4j^2$. Write
+$\mathcal F_i=\sigma(X_{v_1},\ldots,X_{v_i})$.
+Equation~\eqref{eq:toggle-F} gives the Doob differences
+\begin{equation}\label{eq:doob}
+ F_L=\sum_{i=1}^N Y_{i,j},\qquad
+ Y_{i,j}=(X_{v_i}-q)a_{i,j},\qquad
+ a_{i,j}=\E[h_{v_i}\mid\mathcal F_{i-1}].
+\end{equation}
+To verify the coefficient, the two possible conditional means after
+exposing $X_{v_i}$ differ by the average of \eqref{eq:toggle-F} over
+unexposed sites. The field $h_{v_i}$ ignores its own coordinate.
+Thus $|Y_{i,j}|\le1$ and
+\[
+ \E[Y_{i,j}^2\mid\mathcal F_{i-1}]=q(1-q)a_{i,j}^2.
+\]
+
+Let $\mathcal P_v=\sigma(X_w:w\prec v)$ be the full lexicographic past and
+put $a_v=\E[h_v\mid\mathcal P_v]$. The bounded projection construction in
+Section~\ref{sec:games} defines this average. Its uniqueness and
+\eqref{eq:translation-h} allow versions
+$a_v=(-1)^{\rho(v)}a_0\circ T_v$. In particular $a_v^2$ is stationary.
+Set
+\[
+ b^2=q(1-q)\E a_0^2.
+\]
+
+\begin{lemma}\label{lem:variance}
+As $j\to\infty$,
+\begin{equation}\label{eq:variance-limit}
+ Q_j:=\frac1N\sum_{i=1}^N
+ \E[Y_{i,j}^2\mid\mathcal F_{i-1}]
+ \longrightarrow b^2\quad\text{in probability},
+ \qquad b^2\ge q(1-q)(\E h_0)^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $a_v^{(r)}$ condition on past sites in $v+[-r,r]^2$.
+The projection construction gives
+$\|a_v^{(r)}-a_v\|_2\to0$, uniformly in $v$ after its parity sign.
+If the radius-$r$ cube lies in $L$, the finite revealed past contains
+these coordinates and lies in $\mathcal P_v$. Nested projection errors
+give
+$\|a_{i,j}-a_{v_i}\|_2\le\|a_{v_i}^{(r)}-a_{v_i}\|_2$.
+The exceptional sites form a boundary fraction tending to zero at fixed
+$r$. Boundedness and $|x^2-y^2|\le2|x-y|$ for $|x|,|y|\le1$ show
+\[
+ \frac1N\sum_i |a_{i,j}^2-a_{v_i}^2|\longrightarrow0
+ \quad\text{in }L^1
+\]
+by first sending $j$, then $r$, to infinity.
+
+For the spatial average of $a_v^2$, approximate it by
+$g_v^{(r)}=\E[a_v^2\mid X_{v+[-r,r]^2}]$.
+These bounded stationary variables are independent when their cubes
+are disjoint. The variance of their average is at most $(4r+1)^2/N$.
+The average approximation error has expectation no greater than
+$\E|a_0^2-g_0^{(r)}|$, which tends to zero by finite-coordinate density.
+Thus $N^{-1}\sum_{v\in L}a_v^2\to\E a_0^2$ in $L^1$.
+This proves the limit for $Q_j$.
+Finally $\E a_0=\E h_0$, and nonnegativity of
+$\E(a_0-\E a_0)^2$ gives the lower bound.
+\end{proof}
+
+For fixed $t\in\R$, put $Z_i=Y_{i,j}/\sqrt N$ and
+$r_i=\E[Z_i^2\mid\mathcal F_{i-1}]$.
+The power-series remainder for the exponential, conditional mean zero,
+and $|Z_i|\le N^{-1/2}$ give
+\[
+ \E[\exp(itZ_i+t^2r_i/2)\mid\mathcal F_{i-1}]
+ =1+O_t(N^{-3/2}).
+\]
+Here $r_i\le N^{-1}$ and the remainder is uniform in $i,j$.
+For
+\[
+ T_k=\exp\left(it\sum_{i\le k}Z_i+
+                    \frac{t^2}{2}\sum_{i\le k}r_i\right)
+\]
+we have $|T_k|\le e^{t^2/2}$. Conditional averaging and telescoping
+therefore give $\E T_N=1+O_t(N^{-1/2})$.
+By Lemma~\ref{lem:variance}, the bounded factor $e^{t^2Q_j/2}$
+converges in $L^1$ to $e^{t^2b^2/2}$. Replacing that factor in the
+expectation, with an error bounded by its $L^1$ difference, yields
+\begin{equation}\label{eq:characteristic}
+ \E e^{itF_{V_j}/\sqrt{|V_j|}}\longrightarrow e^{-t^2b^2/2}.
+\end{equation}
+This argument uses predictable compensators throughout.
+
+\begin{proposition}\label{prop:planar}
+For every $p\in(0,1)$, $D_2(p)=0$.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:surface} bounds $U_j=F_{V_j}/\sqrt{|V_j|}$ in $[-6,6]$.
+Let $\phi_j(t)=\E e^{itU_j}$.
+For any positive integer $m$ and any real $s\ne0$, a binomial expansion gives
+\[
+ \frac{(-1)^m}{s^{2m}}\sum_{k=0}^{2m}(-1)^k
+       \binom{2m}{k}\phi_j((m-k)s)
+ =\E\left(\frac{2\sin(sU_j/2)}s\right)^{2m}
+ \le6^{2m}.
+\]
+At fixed $m,s$, use \eqref{eq:characteristic} in this finite sum.
+Then let $s\to0$ in the resulting analytic expression.
+The binomial difference annihilates degrees below $2m$; the leading
+coefficient gives $(2m-1)!!\,b^{2m}\le6^{2m}$ for every $m$.
+If $b>0$ this is impossible: at least $\lfloor m/2\rfloor$ factors in
+$(2m-1)!!$ are at least $m$, so its $2m$-th root tends to infinity.
+Hence $b=0$. Since $q(1-q)>0$, \eqref{eq:variance-limit} gives
+$\E h_0=0$, and \eqref{eq:draw-influence} proves the result.
+\end{proof}
+
+
+\section{Contours and comparison of maximum sets}\label{sec:contours}
+We next work in arbitrary dimension $d\ge2$.
+For $\tau\in\{0,1\}$ put $b^\tau(v)=\indicator_{\{\rho(v)=\tau\}}$.
+Let $C_z=2z+\{0,1\}^d$, $z\in\Z^d$, be the coarse cells, and write
+$\widehat S=\bigcup_{z\in S}C_z$.
+All coarse neighborhoods use integer shifts.
+A cell box $\Omega=\widehat\Lambda$ has $\Lambda$ a finite rectangular
+coarse box.
+
+An occupation $n:\Z^d\to\{0,1\}$ is admissible if it is independent on
+the full nearest-neighbor lattice, equals $b^\tau$ outside $\Omega$,
+and is zero at deleted sites inside $\Omega$.
+Its interior set $I=\{v\in\Omega:n_v=1\}$ is exactly an independent set
+of the reduced graph in \eqref{eq:boundary-alpha}.
+Indeed, an occupied outside neighbor forbids precisely the
+opposite-parity internal boundary sites.
+The exterior checkerboard is this finite boundary reference; deletion
+constraints are imposed only in the free box.
+Write $\alpha_\Omega^\tau(\eta)=a_\Omega^\tau(1-\eta)$ for its maximum
+interior cardinality.
+
+For such an occupation let $\mathcal D$ be the edges with two empty
+endpoints. This set is finite, since the outside occupation is a
+checkerboard. Let $B$ be the set of coarse cells at sup distance at most
+one from a cell containing an endpoint of $\mathcal D$, and put
+$\Gamma=B+[-2,2]^d$. Its components use star adjacency, meaning sup
+distance one between distinct coarse cells.
+
+For finite coarse $S$, let $\Ext(S)$ be the unique infinite
+nearest-neighbor component of $S^c$, and let
+$H(S)=\Z^d\setminus\Ext(S)$ be its filled hull.
+Uniqueness follows because the exterior of a large box is connected
+in $d\ge2$, and every infinite complementary component reaches that
+exterior. The other components are finite.
+
+We use the following lattice consequence of Tim\'ar's boundary theorem
+\cite[Theorem~3]{Timar}: for a finite star-connected $S$, the
+nearest-neighbor boundary adjacent to $S$ in each complementary
+nearest-neighbor component $R$ is star connected.
+The cited version~2 states the exterior case and the case inside a cubic
+box. A bounded global $R$ fits, with $S$, into a translated larger cube;
+translation preserves both adjacencies and the boundary, giving the
+stated consequence.
+
+\begin{lemma}\label{lem:collar}
+Let $S$ be a star component of $\Gamma$. For every nearest-neighbor
+component $R$ of $S^c$, the cells
+\[
+ D_R=\{z\in R:z\text{ has a nearest neighbor in }S\}
+\]
+and the adjacent cells of $S$ have one common checkerboard label
+$\tau_R$. Thus the fine occupation there agrees with $b^{\tau_R}$.
+\end{lemma}
+\begin{proof}
+A cell outside $B$, with its radius-one cell neighborhood, contains no
+empty-edge endpoint. Independence excludes occupied pairs, so on this
+connected fine box every edge has exactly one occupied endpoint.
+Its occupation is one checkerboard. Neighborhoods of star-adjacent good
+cells overlap, so their labels agree.
+
+Every cell in $D_R$ is outside $\Gamma$, since otherwise it would join
+the component $S$. Each adjacent cell of $S$ is outside $B$: a cell of
+$B$ has its radius-two neighborhood in $\Gamma$, hence in its own
+component. Tim\'ar's result connects $D_R$ by star steps. The good-cell
+overlaps identify all its labels and those of the adjacent $S$ cells.
+Defects farther inside $R$ play no role.
+\end{proof}
+
+\begin{lemma}\label{lem:outer-selection}
+If $n_v\ne b^\tau(v)$ for some $v\in\Omega$, there is a component $S$
+of $\Gamma$ with exterior label $\tau$ and with the coarse cell of $v$
+in $H(S)$.
+\end{lemma}
+\begin{proof}
+A nearest-neighbor component of $\Gamma^c$ has one checkerboard label.
+Its infinite component has label $\tau$, because it reaches the fixed
+outside region.
+If the root cell $z$ is outside $\Gamma$, its label is wrong, hence
+its good component $R_0$ is finite. The exterior nearest-neighbor
+boundary of $R_0$, visible from infinity in $R_0^c$, lies in $\Gamma$
+and is star connected by Tim\'ar's result. It lies in one component $S$.
+Every infinite simple path from $R_0$ has a last departure from this
+finite set; the next vertex is on that visible boundary. Hence $S$
+separates $z$ from infinity and $z\in H(S)$.
+If $z\in\Gamma$, begin with its own component.
+
+If $S$ has the wrong exterior label, choose an exterior collar cell
+$x\in\Ext(S)$. It is outside $\Gamma$ and its good component $R$ has
+the wrong label, so $R$ is finite. Its visible exterior boundary lies
+in a component $S'$ of $\Gamma$ and separates $x$ from infinity.
+Thus $x$ is in a bounded component of $(S')^c$. The component $S'$ cannot
+be $S$, because $x\in\Ext(S)$.
+
+Distinct $\Gamma$ components are at sup distance at least two.
+A star step within $S$ can be interpolated by a nearest-neighbor path
+in its unit cube avoiding $S'$. Together with the edge from $x$ to $S$,
+these paths place all of $S$ in the bounded component of $(S')^c$
+containing $x$. Conversely $R\subset\Ext(S)$, and a point of its visible
+boundary connects to $R$ while avoiding $S$. Interpolating star paths
+in $S'$ while avoiding $S$ puts all of $S'$ in $\Ext(S)$.
+
+It follows that $\Ext(S')\subset\Ext(S)$ and
+$H(S)\subsetneq H(S')$; strictness uses
+$S'\subset H(S')\setminus H(S)$.
+Repeating selects distinct components of the finite $\Gamma$, so the
+ascent terminates with the required exterior label and preserves enclosure
+of the root.
+\end{proof}
+
+\begin{lemma}\label{lem:transport}
+Let $S$ have exterior label $\tau$ and cardinality $k$.
+Let $A$ be the fine union of bounded complementary components whose
+collar label is $1-\tau$, and let $u=e_1$ be a fine unit vector.
+There is a finite permutation $\pi_A$, supported inside the original
+$\Omega$, such that for $\eta'_v=\eta_{\pi_A(v)}$,
+\begin{equation}\label{eq:projected-comparison}
+ \alpha_\Omega^\tau(\eta')\ge |I|+
+ c_d k-\sum_{v\in T(S)\cap\Omega}\eta_v,\qquad
+ c_d=\frac1{4d\,15^d},\quad T(S)=\widehat{S+[-1,1]^d}.
+\end{equation}
+This assertion holds for every admissible $I$, with no probabilistic
+hypothesis.
+\end{lemma}
+\begin{proof}
+Define
+\[
+ n'_v=\begin{cases}
+ b^\tau(v),&v\in\widehat S,\\
+ n_{v-u},&v\in A,\\
+ n_v,&\text{otherwise}.
+ \end{cases}
+\]
+On each line parallel to $u$, write the maximal fine intervals of $A$
+as $[a,b]$. Call $a-u$ the head and $b$ the tail of such an interval.
+
+Every opposite-label bounded component is inside the free cell box.
+Otherwise an outward coarse ray from a cell outside that box, avoiding
+the box, first meets $S$ after passing through fixed $\tau$ sites.
+Its last cell is on the component collar and would give label $\tau$,
+a contradiction. The interval heads one fine step outside $A$ are
+inside $\Omega$ too: their cells are adjacent $S$ collar cells with
+label $1-\tau$, incompatible with the fixed exterior checkerboard.
+Thus $n'$ keeps the prescribed outside values.
+
+An empty-edge endpoint cell outside $S$ belongs to $B$. Its radius-two
+neighborhood lies in another $\Gamma$ component, so its sup distance
+from $S$ is at least four. Translating an empty edge by one fine step
+keeps it in the same complementary component.
+Near a shifted component boundary the old label $1-\tau$ becomes
+$\tau$, since $b^{1-\tau}(v-u)=b^\tau(v)$.
+The unchanged collars already have label $\tau$.
+Hence $n'$ is independent, no crossing empty edge is created, and
+empty edges outside $\widehat S$ are unchanged or translated
+bijectively inside their own components.
+
+Let $m$ count old empty edges in $\widehat S$.
+No old empty edge crosses its boundary, by the radius-two buffer around
+its endpoint cells in $B$.
+All these $m$ edges disappear. For independent occupations the empty-edge
+indicator is $1-n_x-n_y$. Summing its difference over the finitely many
+affected edges gives
+\begin{equation}\label{eq:edge-identity}
+ m=2d\sum_{v\in\Omega}(n'_v-n_v).
+\end{equation}
+Every fine vertex has degree $2d$, and outside changes vanish.
+Moreover $k\le5^d|B\cap S|$. Each contributing empty edge supplies at most
+$2\cdot3^d$ cells of $B$, and those source edges lie wholly in $\widehat S$.
+Thus $k\le2\,15^d m$ and $m/(2d)\ge c_d k$.
+
+For these intervals, set
+\[
+ \pi_A(v)=v-u\quad(v\in[a,b]),\qquad
+ \pi_A(a-u)=b,
+\]
+and fix all other sites. The extended intervals $[a-u,b]$ are disjoint
+cycles and contained in $\Omega$, so $\pi_A$ is a bijection of its board
+coordinates. If $v\in A$ and $n'_v=1$, its source $\pi_A(v)=v-u$ was
+occupied and open. Off $A\cup\widehat S$ both transformations are the
+identity. Therefore
+\[
+ C=\{v\in\Omega:n'_v=1,\ \eta'_v=1\}\subset\widehat S.
+\]
+The distinct sources $\pi_A(C)$ are sites of $S$ or interval tails
+adjacent to $S$, and lie in $T(S)\cap\Omega$. Consequently
+$|C|\le\sum_{T(S)\cap\Omega}\eta_v$.
+
+Set $n^*_v=0$ on $C$ and $n^*_v=n'_v$ elsewhere.
+This occupation is independent, open under $\eta'$ inside $\Omega$,
+and has the original outside boundary. Its interior cardinality is
+$|I|+m/(2d)-|C|$ by \eqref{eq:edge-identity}.
+It is an allowed set for $\alpha_\Omega^\tau(\eta')$, proving
+\eqref{eq:projected-comparison}.
+\end{proof}
+
+For a maximum original $I$, \eqref{eq:projected-comparison} compares
+two maximum-size problems on jointly transformed boards. The map used
+by an actual contour depends on the board. The next section bounds all
+fixed admissible geometries simultaneously before making that selection.
+
+
+\section{Uniform comparison and higher-dimensional draws}
+\label{sec:random}
+Fix the cell box $\Omega$, its boundary parity $\tau$, a coarse root $z_0$,
+and an integer $k\ge1$ before sampling the board.
+Let $\mathcal A_{\Omega,z_0,k}$ be the distinct fine sets $A$ obtained
+by choosing any bounded complementary components of a star-connected
+coarse $S$ with $|S|=k$ and $z_0\in H(S)$, subject to
+$A$ and all its interval heads lying inside $\Omega$.
+The class is deterministic and finite. It contains the empty set.
+All geometries from Lemmas~\ref{lem:outer-selection} and
+\ref{lem:transport} belong to it.
+
+Define the process
+\[
+ Z_A(\eta)=\alpha_\Omega^\tau(P_A\eta)-\alpha_\Omega^\tau(\eta),
+ \qquad (P_A\eta)_v=\eta_{\pi_A(v)}.
+\]
+For fixed $A$, $P_A$ is a permutation of iid coordinates inside $\Omega$.
+We need a bound holding for the entire fixed class, since the geometry
+of an actual maximum set is selected from the board.
+
+\subsection{Geometry and majority approximations}
+Every coordinate span of a star-connected $S$ with $k$ cells is at most
+$k-1$. Its filled hull lies in its coordinate bounding box: outside that
+box an outward ray avoids $S$. Thus all its cells are at sup distance
+at most $k-1$ from $z_0$.
+Every bounded complementary component has a nearest-neighbor edge to
+$S$, so there are at most $2dk$ such components.
+With $\Delta=3^d-1$, rooted depth-first walks give at most
+\begin{equation}\label{eq:support-count}
+ (2k-1)^d\Delta^{2(k-1)}
+\end{equation}
+supports enclosing $z_0$.
+Every fine cut edge of $A$ meets $\widehat S$, since a neighbor outside
+$S$ would be in the same selected complementary component.
+Consequently its edge boundary and interval-head count are at most
+$B_d k$, where $B_d=d2^d$.
+
+Tile the fine lattice by aligned cubes of side $l=2^\ell$ and let
+$U_\ell(A)$ be the union of cubes at least half filled by $A$.
+Ties are included.
+
+\begin{lemma}\label{lem:entropy}
+There are dimension-only constants $F_d,E_d>0$ such that, uniformly
+over $\Omega,z_0,k,\ell$,
+\begin{align}
+ |A\triangle U_\ell(A)|&\le B_dkl,\label{eq:majority-error}\\
+ \#\{\text{cube-lattice cut edges of }U_\ell(A)\}
+ &\le \left\lfloor F_d k/l^{d-1}\right\rfloor,\label{eq:coarse-cuts}\\
+ \log\#\{U_\ell(A):A\in\mathcal A_{\Omega,z_0,k}\}
+ &\le E_d(1+\ell)k/l^{d-1}.\label{eq:entropy}
+\end{align}
+One may take $F_d=8dB_d$.
+\end{lemma}
+\begin{proof}
+Join ordered pairs in a rectangular lattice block by changing coordinates
+in the order $1,\ldots,d$. For an edge in direction $i$, path congestion
+is at most $L_i$ times the block volume, where $L_i$ is its side length.
+In a cube of $N=l^d$ sites let $r$ be the smaller of the two label counts.
+The ordered-pair difference sum is $2r(N-r)\ge rN$, and congestion is
+at most $lN$. Hence $r\le l$ times its internal cut-edge count.
+Summing disjoint cubes proves \eqref{eq:majority-error}.
+
+Two adjacent cubes with different majority labels have at least $N/2$
+sites of each type in their union. The difference sum is at least $N^2$,
+while congestion is at most $4l^{d+1}$. There are therefore at least
+$l^{d-1}/4$ original cut edges in this rectangle.
+Each fine edge belongs to at most $2d$ such rectangles, giving
+\eqref{eq:coarse-cuts} with $F_d=8dB_d$.
+
+For completeness we give the position count, including disconnected and
+nested interfaces. Put $M=\lfloor F_d k/l^{d-1}\rfloor$.
+Address a cube-lattice cut edge by $(z,i)$ joining the cubes at $lz$ and
+$l(z+e_i)$. Join addresses when their base points are at sup distance
+at most three. This fixed graph has degree at most $W_d-1$, with
+$W_d=d7^d$. Split the cut set into components of sizes
+$q_1,\ldots,q_m$, total $Q\le M$, and choose one root edge in each.
+
+The rectangle argument locates a fine cut edge near every root.
+That cut edge meets $\widehat S$, so the integer fine root address $lz$
+is within $\ell^1$ distance $(2d+1)l$ of some $2s$, $s\in S$.
+Order roots by first visits to these attachment points along a
+depth-first traversal of a spanning tree of $S$.
+The fine traversal length is at most $4d(k-1)$, and its start is within
+$2d(k-1)$ of $2z_0$. Thus total root-list jump length is at most
+\[
+ 6dk+2(2d+1)lm\le K_d k,\qquad
+ K_d=6d+2(2d+1)F_d,
+\]
+because $m\le M$ and $d\ge2$.
+The support traversal proves existence of this ordering; it need not
+be encoded.
+
+A code records the ordered composition of $Q$, integer root increments
+with total absolute sum at most $K=K_dk$, root orientations, and rooted
+component depth-first walks. For given $Q,m$ their number is at most
+\[
+ \binom{Q-1}{m-1}\,W_d^{2Q}\,d^m\,
+ 2^{dm}\binom{K+dm}{dm}.
+\]
+The walks recover the cut set. A finite cube union is determined by its
+cut edges and label zero at infinity: the modulo-two difference of any
+two such labelings is constant on the connected cube lattice.
+Therefore valid codes decode uniquely; every attained majority union
+has a code. Invalid codes only enlarge this upper bound.
+
+The inequality $\binom{n}{r}\le(en/r)^r$ follows from the $r$-th
+term of $e^r=\sum_j r^j/j!$.
+The function $m\log(1+K/m)$ is increasing.
+Summing compositions over $Q\le M$ gives, when $M\ge1$,
+\[
+ \#\{U_\ell(A)\}\le
+ 1+\exp\{a_d M+dM\log(1+K/M)\},
+ \quad a_d=\log2+\log d+2\log W_d+d(1+\log2).
+\]
+Since $\lfloor x\rfloor\ge x/2$ for $x\ge1$,
+$K/M\le (2K_d/F_d)l^{d-1}$.
+This proves \eqref{eq:entropy}; for example one can choose
+\[
+ E_d=F_d\left[\log2+a_d+d\log(1+2K_d/F_d)
+                     +d(d-1)\log2\right].
+\]
+If $M=0$, a nonempty finite cube union would have a cut edge, so every
+majority union is empty and its count is one.
+All counts used only geometric properties shared by every admissible $A$;
+the original-box restriction takes a subclass.
+\end{proof}
+
+\subsection{Centered increments for fixed permutations}
+Changing one deletion coordinate changes $\alpha_\Omega^\tau$ by at
+most one. For fixed $A,A'$ put
+\[
+ D=\{v:\pi_A(v)\ne\pi_{A'}(v)\},\qquad
+ R=\pi_A(D)=\pi_{A'}(D).
+\]
+The equality follows from bijectivity and agreement on $D^c$.
+Conditional on the inputs in $\Omega\setminus R$, the common output
+coordinates outside $D$ are fixed, while the coordinates in $D$ are
+two permutations of the same unexposed iid inputs. Thus
+\begin{equation}\label{eq:conditional-center}
+ \E[Z_A-Z_{A'}\mid\eta_{\Omega\setminus R}]=0.
+\end{equation}
+The boundary graph is the same function of each output array; no graph
+permutation invariance is required.
+Changing one input in $R$ changes this difference by at most two.
+
+For $0<p<1/4$ let
+\[
+ \nu(p)=\max\{\sqrt p,4/\log(1/p)\}.
+\]
+If $U=\eta-p$, then $\E U=0$, $\E U^2\le p$, $|U|\le1$.
+For $|t|\le h=\tfrac12\log(1/p)$, the exponential-series remainder gives
+$\E e^{tU}\le1+\tfrac12t^2e^{|t|}p\le e^{t^2\sqrt p/2}$.
+For $|t|>h$, it gives $\E e^{tU}\le e^{|t|}\le e^{t^2/h}$.
+Hence $\E e^{tU}\le e^{\nu(p)t^2/2}$ for every real $t$.
+Exposing the $|R|$ inputs in \eqref{eq:conditional-center} yields
+increments $(\eta_i-p)c_i$ with past-measurable $|c_i|\le2$.
+Iterating the conditional exponential bound and optimizing Markov's
+inequality therefore gives
+\begin{equation}\label{eq:increment-tail}
+ \Pr(|Z_A-Z_{A'}|\ge t)
+ \le2\exp\left\{-\frac{t^2}{8\nu(p)|D|}\right\}.
+\end{equation}
+For $D=\varnothing$ the difference is zero.
+The maps agree as shifts on $A\cap A'$ and as identities away from
+their symmetric difference and interval heads, so
+\begin{equation}\label{eq:permutation-metric}
+ |D|\le |A\triangle A'|+\#\text{heads}(A)+\#\text{heads}(A')
+ \le |A\triangle A'|+2B_dk.
+\end{equation}
+
+\subsection{A finite chain of actual admissible representatives}
+For each majority class select an actual $A$ in the class, before
+sampling $\eta$, using increasing cardinality and then a fixed
+lexicographic order. Denote the representative of the class of $A$ by
+$r_\ell(A)$. The empty set is selected for an empty majority union.
+At $\ell=0$ the representative is $A$ itself. Let $L_k$ be the first
+integer with $2^{L_k(d-1)}>F_dk$. By Lemma~\ref{lem:entropy},
+$r_{L_k}(A)=\varnothing$ and $Z_{r_{L_k}(A)}=0$.
+
+The approximation bound gives
+$|r_\ell(A)\triangle A|\le2B_dk2^\ell$, hence
+$|r_\ell(A)\triangle r_{\ell+1}(A)|\le6B_dk2^\ell$.
+Equations~\eqref{eq:increment-tail}--\eqref{eq:permutation-metric}
+bound each consecutive increment by
+\[
+ 2\exp\{-t^2/(V_d\nu(p)k2^\ell)\},\qquad V_d=64B_d.
+\]
+The log number of attained pairs is at most the sum of the two cover
+entropies, bounded by
+$H_d(1+\ell)k/2^{\ell(d-1)}$, $H_d=2E_d$.
+No consistency of parent majority classes is needed.
+
+Now assume $d\ge3$. Put
+\[
+ A_d=\sqrt{2V_dH_d},\qquad
+ \beta=(\sqrt2-1)/8,\qquad
+ S_d=\sum_{\ell\ge0}\sqrt{1+\ell}\,2^{-\ell(d-2)/2}<\infty.
+\]
+Choose $p$ so small that $A_d\sqrt{\nu(p)}S_d\le c_d/8$.
+Use thresholds, for $0\le\ell<L_k$,
+\[
+ t_\ell=A_d\sqrt{\nu(p)}\,k\sqrt{1+\ell}\,2^{-\ell(d-2)/2}
+             +\beta c_dk\,2^{(\ell-L_k)/2}.
+\]
+Their sum is at most $c_dk/4$. The square of the first term pays twice
+the log pair count in the exponential bound; the square of the second
+leaves $\beta^2c_d^2k/(V_d\nu(p)2^{L_k})$.
+A union bound over pairs and levels gives
+\begin{equation}\label{eq:uniform-tail}
+ \begin{aligned}
+ \Pr\left(\max_{A\in\mathcal A_{\Omega,z_0,k}}Z_A\ge c_dk/2\right)
+ &\le2L_k\exp\left\{-\frac{\beta^2c_d^2k}
+                         {V_d\nu(p)2^{L_k}}\right\}\\
+ &\le C_d\log(2k)\exp\{-b_dk^{(d-2)/(d-1)}/\nu(p)\}.
+ \end{aligned}
+\end{equation}
+with $C_d,b_d>0$ depending only on $d$.
+Indeed, outside the increment failures the chain telescopes to the empty
+representative and bounds every $|Z_A|$ by $c_dk/4$.
+Also $2^{L_k}\le2(F_dk)^{1/(d-1)}$ and
+$L_k\le1+\log_2(F_dk)/(d-1)$.
+All representatives stay in the original admissible class; their majority
+cube unions themselves are never used as board permutations.
+
+The sum of the right-hand side of \eqref{eq:uniform-tail} over $k\ge1$
+tends to zero as $p\downarrow0$.
+For a fixed small $\nu_0$, its dyadic block $2^j\le k<2^{j+1}$ is
+bounded by $C(j+1)2^j e^{-b2^{j(d-2)/(d-1)}/\nu_0}$, a summable series.
+Smaller $\nu$ have this common tail bound, while each fixed term tends
+to zero. A finite head and uniform tail justify the limit.
+
+\subsection{Forcing the root and passing to the infinite game}
+For any support $S$ of size $k$,
+$|T(S)|\le6^dk$. Put $a=c_d/2$ and $M_d=6^d$.
+For $p<a/(eM_d)$, exponential Markov with
+$e^t=a/(M_dp)$ gives
+\[
+ \Pr\left(\sum_{T(S)\cap\Omega}\eta_v\ge ak\right)
+ \le(eM_dp/a)^{ak}.
+\]
+Multiplying by \eqref{eq:support-count} and summing over $k$ yields a
+quantity tending to zero with $p$. For small enough $p$ the exponential
+ratio $\Delta^2(eM_dp/a)^a$ is below $e^{-2}$, which gives a common
+polynomial-times-exponential summable bound.
+
+If a maximum set has a wrong root, Lemma~\ref{lem:outer-selection}
+selects an enclosing exterior-$\tau$ support, and
+\eqref{eq:projected-comparison} gives
+$Z_A\ge c_dk-\sum_{T(S)\cap\Omega}\eta_v$ for its admissible $A$.
+Thus either $Z_A\ge c_dk/2$ or the last sum is at least $c_dk/2$.
+The preceding bounds hold for all fixed supports and admissible $A$
+simultaneously. They can therefore be used for this selected geometry
+without asserting an iid law for its adaptively transformed board.
+
+For any $\delta>0$ choose a strictly positive sufficiently small $p$
+so that the total exception probability is below $\delta$, uniformly
+in $\Omega$ and $\tau$. Every even-boundary maximum then occupies the
+even origin with probability at least $1-\delta$, and every odd-boundary
+maximum omits it with probability at least $1-\delta$.
+The first event forces an open origin and $s_\Omega^0(0)=1$.
+The second implies $s_\Omega^1(0)=0$ on that open-origin event.
+It follows that
+\[
+ \Pr(X_0=1,\ s_\Omega^0(0)=1,\ s_\Omega^1(0)=0)\ge1-2\delta.
+\]
+Along the exhaustion $\Omega_n=[-2n,2n+1]^d$ these weaker
+cardinality-increment events decrease by Lemma~\ref{lem:infinite}.
+Their intersection is exactly an infinite-board draw at an open origin.
+Continuity of probability from above gives $D_d(p)\ge1-2\delta$.
+Choose $\delta=1/4$ to obtain a positive draw probability for each
+fixed $d\ge3$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:planar} proves the first assertion for every
+$p\in(0,1)$. The preceding uniform comparison and infinite-game passage
+prove the second for each integer $d\ge3$ with a strictly positive
+dimension-dependent deletion probability. Both use the original
+undirected rules and the stipulated exclusion of a deleted origin
+from draws.
+\end{proof}
+
+\section*{AI-use statement}
+Codex was used to develop candidate arguments, perform finite diagnostic
+checks, draft and revise the manuscript, and check proof details and
+citations. The proof presented here is analytic; the diagnostic computations
+are not premises of the theorem. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{BHMW}
+R.~Basu, A.~E.~Holroyd, J.~B.~Martin and J.~W\"astlund,
+\emph{Trapping games on random boards},
+Annals of Applied Probability \textbf{26} (2016), no.~6, 3727--3753.
+\href{https://doi.org/10.1214/16-AAP1190}{doi:10.1214/16-AAP1190}.
+Statement and proposition numbering used here:
+\href{https://arxiv.org/abs/1505.07485v1}{arXiv:1505.07485v1} (2015).
+
+\bibitem{Timar}
+\'A.~Tim\'ar,
+\emph{Boundary-connectivity via graph theory},
+Proceedings of the American Mathematical Society \textbf{141}
+(2013), 475--480.
+\href{https://doi.org/10.1090/S0002-9939-2012-11333-4}
+{doi:10.1090/S0002-9939-2012-11333-4}.
+Version used here:
+\href{https://arxiv.org/abs/0711.1713v2}{arXiv:0711.1713v2} (2011).
+
+\bibitem{AVCHP}
+I.~Ayuso Ventura, L.~Chiarini, T.~Helmuth and E.~Powell,
+\emph{Imry-Ma phenomenon for the hard-core model on $\Z^2$},
+\href{https://arxiv.org/abs/2601.05798v1}{arXiv:2601.05798v1} (2026).
+
+\bibitem{CZLZ}
+Y.~Chen, J.~Zhou, R.~Liu and H.-J.~Zhou,
+\emph{The stability of long-range order in disordered systems:
+A generalized Ding-Zhuang argument},
+\href{https://arxiv.org/abs/2507.11445v1}{arXiv:2507.11445v1} (2025).
+
+\bibitem{AIM574}
+AIM Open Problems,
+\emph{574. Draws in the undirected trapping game on percolation clusters},
+problem statement at the pinned revision.
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/574-trap-draws-percolation.md}
+{Pinned AIM statement}.
+\end{thebibliography}
+\end{document}
