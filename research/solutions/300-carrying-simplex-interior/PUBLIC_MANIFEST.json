@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "problem": 300,
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public entry point, build instructions and AI-use/review disclosure",
+      "sha256": "7414dcb6f7fddf7a882448756d4dea13435f0a8c3511897369f8bd4f55a52a31"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison of the public problem with the finished manuscript",
+      "sha256": "ea230b4bfa4b9dd40d785d7298968a2859a0dd71e2ad6ed70f1d76b286597b39"
+    },
+    {
+      "path": "paper/interior_smoothness.tex",
+      "purpose": "Standalone editable manuscript with complete analytic proof",
+      "sha256": "d55a913ae9159d97dce2436468ab3948310a90875fee50a7c0b0d7486757246b"
+    },
+    {
+      "path": "paper/interior_smoothness.pdf",
+      "purpose": "Seven-page rendered manuscript",
+      "sha256": "78e326077831c2ed836d355fdc8ea51dbab2f387eff3870a511bf591a60ca441"
+    }
+  ],
+  "integrity": "SHA256SUMS covers these payload files and this manifest; the checksum file is the entry point."
+}
