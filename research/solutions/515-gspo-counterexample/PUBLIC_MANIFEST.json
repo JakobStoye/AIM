@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "problem_id": "515",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "scope": "Standalone mathematical counterexample and its necessary finite replay inputs",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Build/cache exclusions",
+      "sha256": "ae627e7baf4e54eb68c8db5851bdae626301b4dee1245c9a8607b6a6232084d2",
+      "bytes": 56
+    },
+    {
+      "path": "README.md",
+      "purpose": "Counterexample and reproducibility overview",
+      "sha256": "638420d2164f4d52e73d87220566d989091b14a62f4e3b0905c3acfaf07551a5",
+      "bytes": 3503
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target correspondence",
+      "sha256": "d47632fc80975eb7338b4d1c9a571aea3bd7294b71a6d5eb087c5db8d5de2969",
+      "bytes": 3224
+    },
+    {
+      "path": "VERIFICATION.md",
+      "purpose": "Verification scope and dated replay",
+      "sha256": "24d2061fa20def15cc113c879bb23689bd184c844322349fa699eb011d00ee0a",
+      "bytes": 3390
+    },
+    {
+      "path": "paper/counterexample.pdf",
+      "purpose": "Complete final manuscript",
+      "sha256": "538172e3c85ed8b129fe75de6706224d9c15cbe0ef058cd879e0569fd3cb8f1f",
+      "bytes": 331640
+    },
+    {
+      "path": "paper/counterexample.tex",
+      "purpose": "Standalone editable manuscript",
+      "sha256": "8ec02ea6ff581e9ace5e6c3fa0ea53ab1131c36af515fe0b7f173725788e6eed",
+      "bytes": 22962
+    },
+    {
+      "path": "src/dmag_reference.py",
+      "purpose": "Definition-based graph and exact-arithmetic implementation",
+      "sha256": "671e76901d9d744da28b002d8e70906e018b58fef779447b94a100f57179891e",
+      "bytes": 6473
+    },
+    {
+      "path": "scripts/verify_certificate.py",
+      "purpose": "Standalone finite-certificate replay",
+      "sha256": "80d97b3faf2f27a4f7fc672265eb49e4e2cb0372416864d11845884f0583658f",
+      "bytes": 4468
+    },
+    {
+      "path": "test/test_certificate.py",
+      "purpose": "Meaningful arithmetic and graph controls",
+      "sha256": "ca7467ca370d6148988f9deb557c1c8e4f447597771f68cc95c6895a9a4f2ccb",
+      "bytes": 2281
+    },
+    {
+      "path": "numerical_case/counterexample.json",
+      "purpose": "Small proof-critical exact inputs and tables",
+      "sha256": "72ebcc42c639fb8690c7d905370eddd0771aaca6bd82dbb9350fa899c241e4f4",
+      "bytes": 21224
+    },
+    {
+      "path": "numerical_case/README.md",
+      "purpose": "Case encoding and source credit",
+      "sha256": "10d0332f708a1d12274a8f5f5a87d2c2e5b7ce6b8c9e0342691e62a9825c1bd0",
+      "bytes": 1354
+    }
+  ],
+  "integrity_files": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "verification": "See VERIFICATION.md; Python standard library only; finite proof inputs and explicit manuscript proof"
+}
