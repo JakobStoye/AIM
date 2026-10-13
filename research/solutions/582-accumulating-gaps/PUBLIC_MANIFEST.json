@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "title": "Failure of Sobolev surjectivity for a screen with accumulating gaps",
+  "author": "Kaiwen Jin",
+  "contact_email": "yui.ui.siki@gmail.com",
+  "date": "2026-10-13",
+  "problem_id": "582",
+  "target_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "evidence_type": "Analytic counterexample, solution claim submitted for review",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public explanation, exact result, limits and AI disclosure",
+      "sha256": "44bc1c9f75cc6f64a63b047dee8dbc12318d560c8f6f8ecb342fe6fac1e091c8"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original target correspondence and explicit imported source applications",
+      "sha256": "5919e162cd6488c3606c15f6c463fa548a5533b13618687f4d5671ea030de5bd"
+    },
+    {
+      "path": "REPRODUCE.md",
+      "purpose": "Allowed-input manuscript build and package integrity commands",
+      "sha256": "388490bf44fe5a5553c54054630d3cc3123e42f134979f7022bc008feab99975"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete final mathematical manuscript and inline figure/bibliography",
+      "sha256": "518586bd84003f6d7ec67c4fd89938d763921abc2ffdedad71ca080ee921d067"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Reviewed eight-page manuscript",
+      "sha256": "d0a512ec2a4da2eecca59bf2607d7e5eeaea5df2dc18c809bcdd94287754b440"
+    }
+  ],
+  "manifest_integrity": "SHA256SUMS also covers this manifest; the checksum file is not self-hashed."
+}
