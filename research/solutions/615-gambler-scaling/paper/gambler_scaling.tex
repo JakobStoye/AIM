@@ -1,0 +1,350 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\BM}{\mathrm{BM}}
+\newcommand{\Sset}{\mathcal S}
+\newcommand{\barrier}{\mathcal B}
+\title{Fourth-order diffusion approximation for three-player gambler's ruin}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{13 October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+For three-player fair gambler's ruin, we prove that the probability of each
+elimination order differs from its Brownian scaling limit by
+$O((nN)^{-4})$ when fixed positive capitals with total $N$ are multiplied
+by $n$. This is Conjecture 4.2(b) of Diaconis and Ethier. The error is antisymmetric when the two losing players are exchanged.
+On the resulting half triangle, the Brownian harmonic function has a
+sixth-order stencil defect with the angular factor $\sin(6\theta)$. The explicit barrier
+$r^{-4}\sin(6\theta)$ and a finite discrete comparison argument give the
+claimed rate.
+\end{abstract}
+
+\section{The scaling estimate}
+
+Three players, labeled $1,2,3$, start with positive integer capitals $A,B,C$.
+At each step a pair of surviving players is chosen uniformly, and a fair coin
+determines a transfer of one unit between them. A player is removed on reaching
+zero. Write $P_{A,B,C}(\sigma)$ for the probability of elimination order
+$\sigma\in S_3$, with the winner listed last, and set $N=A+B+C$.
+Diaconis and Ethier \cite[Theorem 4.1]{DE} identify the limits
+\[
+ P^{\BM}_{A,B,C}(\sigma)=\lim_{m\to\infty}P_{mA,mB,mC}(\sigma)
+\]
+by Brownian exit distributions in an equilateral triangle. Their
+Conjecture 4.2(b) asks for a fourth-order error bound.
+Denisov and Wachtel \cite[Proposition 5]{DW} prove a cubic bound and suggest
+that symmetry may yield the faster rate. Their asymptotics with two fixed
+capitals and a growing third capital concern a different regime.
+
+\begin{theorem}\label{thm:main}
+For every fixed positive integer triple $A,B,C$ and every $\sigma\in S_3$,
+\[
+ \left|P_{nA,nB,nC}(\sigma)-P^{\BM}_{A,B,C}(\sigma)\right|
+ =O\bigl((nN)^{-4}\bigr),\qquad n\to\infty.
+\]
+The implied constant may depend on the capital proportions and on $\sigma$.
+\end{theorem}
+
+The sixth-order local defect alone does not explain this rate: the boundary
+payoff jumps at one corner. Exchanging the two losing players makes the error
+odd across the bisector of that corner. This reduces the comparison to a
+$30$-degree wedge, where a positive barrier of degree $-4$ is available.
+The lattice has one jump across the bisector; retaining its exact contribution
+is necessary for the comparison.
+
+\section{Harmonic functions and reflection}
+
+Put $\omega=e^{i\pi/3}$ and use the lattice and triangle
+\[
+ \Lambda=\{b+c\omega:b,c\in\mathbb Z\},\qquad
+ T_M=\{b+c\omega:b,c>0,\ b+c<M\}.
+\]
+Here $M$ is an integer total capital, $a=M-b-c$, and $z=b+c\omega$.
+The transition before the first elimination has the six equally likely steps
+\[
+ \Sset=\{\pm1,\ \pm\omega,\ \pm(\omega-1)\}.
+\]
+For functions defined at the necessary neighbors, let
+\[
+ Ph(z)=\frac16\sum_{s\in\Sset}h(z+s),\qquad L=I-P.
+\]
+Define $v_M(z)=P_{a,b,c}(321)$. The remaining two-player game has winning
+probability equal to the player's fraction of the total capital: that affine
+function satisfies the averaging equation and the two absorbing values.
+Absorption is almost sure, since $M$ transfers in one direction have probability
+at least $2^{-M}$ and force absorption. Consequently the boundary data for
+$v_M$ are
+\begin{equation}\label{eq:boundary}
+ g_M(z)=1-b/M\quad(c=0),\qquad
+ g_M(z)=0\quad(b=0\text{ or }b+c=M).
+\end{equation}
+These prescriptions refer to open sides. An interior lattice point cannot
+jump directly to a vertex. The finite averaging problem is unique:
+a positive maximum of a zero-boundary difference propagates along the steps
+$(b,c)\mapsto(b,c-1)$ until it reaches the boundary. Thus $Lv_M=0$ and
+$0\le v_M\le1$.
+
+Let $u_M$ be the bounded harmonic function with the same open-side data,
+given by the Brownian exit expectation. It satisfies $0\le u_M\le1$.
+The map $q=2z/M-1$ sends our triangle to the one used in
+\cite[Theorem 4.1]{DE}. On its bottom side the weight $|q-1|/2$ is $1-b/M$.
+Similarities preserve isotropic Brownian exit distributions, so
+\begin{equation}\label{eq:bm}
+ u_M(z)=u_1(z/M),\qquad
+ u_{nN}\bigl(n(B+C\omega)\bigr)=P^{\BM}_{A,B,C}(321).
+\end{equation}
+
+We shall use odd reflection for zero-trace harmonic functions, removal of
+bounded isolated harmonic singularities, and harmonic derivative estimates.
+These are, respectively, Theorems 4.12, 2.3 and 2.4 of
+Axler, Bourdon and Ramey \cite{HFT}.
+At a corner of angle $\pi/3$, six successive odd reflections give a bounded
+harmonic function on a punctured disk whenever both adjacent traces are zero.
+The sectors agree on their zero-trace rays and are consistent after a full
+turn. The singularity is removable, and oddness forces the value at the
+corner to be zero. It follows by the maximum principle
+\cite[Corollary 1.10]{HFT} that bounded harmonic functions with the same
+open-side data on $T_M$ are unique.
+
+\begin{lemma}\label{lem:symmetry}
+Let $Rz=\omega\overline z$, which interchanges $b$ and $c$, and put
+$\ell_M(z)=1-(b+c)/M$. Then
+\begin{equation}\label{eq:symmetry}
+ v_M(z)+v_M(Rz)=\ell_M(z),\qquad
+ u_M(z)+u_M(Rz)=\ell_M(z).
+\end{equation}
+In particular $e_M=v_M-u_M$ is odd under $R$ and is zero on $b=c$.
+\end{lemma}
+\begin{proof}
+The reflection preserves $\Sset$ and $T_M$. On each open side the sum of the
+two boundary values in \eqref{eq:boundary} is $\ell_M$.
+This affine function is harmonic and satisfies $P\ell_M=\ell_M$.
+Discrete and continuous uniqueness prove \eqref{eq:symmetry}.
+\end{proof}
+
+Only the corner $0$ has incompatible boundary traces. At the other two
+corners we can reflect after subtracting an affine function matching both
+adjacent sides. This gives derivative bounds which do not deteriorate near
+those corners.
+
+\begin{lemma}\label{lem:derivatives}
+There are constants $\kappa,C_0>0$, independent of $M$, such that for every
+$z\in\overline T_M\setminus\{0\}$, $u_M$ has a harmonic continuation to
+$B(z,\kappa|z|)$ bounded in absolute value by $C_0$.
+For every nonnegative integer $k$ this implies
+\begin{equation}\label{eq:derivatives}
+ |D^\alpha u_M(z)|\le C_k|z|^{-k},\qquad |\alpha|=k,
+\end{equation}
+with $C_k$ independent of $M$.
+\end{lemma}
+\begin{proof}
+It suffices to work with $M=1$. At an open side, subtract an affine harmonic
+function with the prescribed trace, reflect the difference oddly, and add the
+affine function back. At vertex $1$, $\ell_1$ matches both adjacent traces.
+At vertex $\omega$, both traces are zero. The six-reflection argument above
+therefore gives harmonic continuations through these vertices.
+
+Near $0$, a ball of sufficiently small fixed relative radius $\kappa|z|$
+misses $0$ and the opposite side, and meets at most one of the two adjacent
+side lines. A single affine reflection then gives a uniformly bounded
+continuation. Away from $0$, the remaining closed part of the normalized
+triangle is compact. A finite cover by the side and vertex continuations,
+followed by a reduction of $\kappa$, gives the asserted balls and a uniform
+bound. The continuations agree on overlaps by real analyticity
+\cite[Theorems 1.27--1.28]{HFT}; overlapping local disks can be chosen to meet
+the original triangle. The harmonic derivative estimate on these balls gives
+\eqref{eq:derivatives}. Scaling by $M$ proves both conclusions.
+\end{proof}
+
+\section{The defect and a barrier}
+
+For a uniformly chosen step $s\in\Sset$, the odd moments vanish and
+\[
+ \mathbb E(s_x^2)=\mathbb E(s_y^2)=\tfrac12,\quad
+ \mathbb E(s_xs_y)=0,
+ \quad \mathbb E(s_x^4)=\mathbb E(s_y^4)=\tfrac38,
+ \quad \mathbb E(s_x^2s_y^2)=\tfrac18,
+\]
+while $\mathbb E(s_x^3s_y)=\mathbb E(s_xs_y^3)=0$.
+Taylor expansion through degree five therefore yields
+\begin{equation}\label{eq:taylor}
+ Ph-h=\tfrac14\Delta h+\tfrac1{64}\Delta^2h+\mathcal R_h,
+ \qquad |\mathcal R_h(z)|\le C\sup_{|w-z|\le1}|D^6h(w)|.
+\end{equation}
+Here $|D^k h|$ denotes the maximum absolute value of its partial derivatives
+of total order $k$. One may obtain the remainder directly by applying
+\[
+ h(z+s)=\sum_{j=0}^5\frac{(s\cdot\nabla)^j h(z)}{j!}
+ +\frac1{5!}\int_0^1(1-t)^5(s\cdot\nabla)^6h(z+ts)\,dt
+\]
+to each step. Applying the same formula to the first derivatives also gives
+\[
+ |\nabla\mathcal R_h(z)|\le C\sup_{|w-z|\le1}|D^7h(w)|.
+\]
+
+Write $z=re^{i\theta}$. The half triangle $b>c>0$ lies in
+$0<\theta<\pi/6$.
+
+\begin{lemma}\label{lem:defect}
+There are fixed constants $r_0,C_f>0$, independent of $M$, such that
+$f_M=Pu_M-u_M$ obeys
+\begin{equation}\label{eq:defect}
+ |f_M(z)|\le C_f r^{-6}\sin(6\theta)
+ \quad(z\in T_M,\ b>c,\ r\ge r_0).
+\end{equation}
+The stencil here uses the harmonic continuations when $z$ is not a lattice
+point and a shifted point lies outside $T_M$.
+\end{lemma}
+\begin{proof}
+Choose $r_0$ large enough that the relative balls of
+Lemma~\ref{lem:derivatives} contain all the unit neighborhoods under
+consideration. Harmonicity and \eqref{eq:taylor} give
+\begin{equation}\label{eq:rawdefect}
+ |f_M(z)|\le Cr^{-6},\qquad |\nabla f_M(z)|\le Cr^{-7}.
+\end{equation}
+The same bounds hold along segments whose radii are a fixed fraction of $r$.
+
+On the lower side $c=0$, subtract $1-\operatorname{Re}z/M$ before odd
+reflection. Since $P$ is exact on affine functions and commutes with complex
+conjugation, $f_M$ is odd about that side and is zero there.
+Likewise \eqref{eq:symmetry} and invariance under $R$ make $f_M$ zero on
+the bisector. These identities hold for the local continuations too, by
+analyticity, including when a stencil near the bisector meets the opposite
+side of the triangle.
+
+Project $z$ perpendicularly onto the nearer ray $\theta=0$ or
+$\theta=\pi/6$. The lower-side foot has capital coordinates $(b+c/2,0)$;
+the bisector foot has coordinates $((b+c)/2,(b+c)/2)$.
+Both feet and the connecting segments remain in the closed triangle.
+Every radius on the chosen segment is at least $r\cos(\pi/12)$.
+Set $t=\min(\theta,\pi/6-\theta)$. The segment length is $r\sin t$.
+The zero at the foot and the gradient estimate in \eqref{eq:rawdefect} give
+$|f_M(z)|\le Cr^{-6}\sin t$. On $0\le t\le\pi/12$,
+$\sin t\le C\sin(6t)$, and $\sin(6t)=\sin(6\theta)$.
+This proves \eqref{eq:defect}.
+\end{proof}
+
+\begin{lemma}\label{lem:barrier}
+The function
+\[
+ \barrier(z)=\frac{\operatorname{Im}(z^6)}{|z|^{10}}
+           =r^{-4}\sin(6\theta)
+\]
+is positive for $0<\theta<\pi/6$. After increasing a fixed $r_0$ if necessary,
+\begin{equation}\label{eq:barrier}
+ L\barrier(z)\ge\tfrac52 r^{-6}\sin(6\theta),\qquad r\ge r_0,
+ \quad 0<\theta<\pi/6.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The polar-coordinate identity
+$\Delta(r^q\sin(k\theta))=(q^2-k^2)r^{q-2}\sin(k\theta)$ gives
+\[
+ \Delta\barrier=-20r^{-6}\sin(6\theta),\qquad
+ \Delta^2\barrier=0.
+\]
+By smoothness on the unit circle and homogeneity,
+$|D^j\barrier(z)|\le C_jr^{-4-j}$. Thus \eqref{eq:taylor} gives
+\[
+ L\barrier=5r^{-6}\sin(6\theta)+\rho,
+ \qquad |\rho|\le Cr^{-10},\quad |\nabla\rho|\le Cr^{-11}.
+\]
+Both $\barrier$ and the leading term are odd about the two bounding rays,
+and $L$ commutes with their reflections. Hence $\rho$ is zero on both rays.
+The projection argument in Lemma~\ref{lem:defect} now gives
+$|\rho|\le Cr^{-10}\sin(6\theta)$. Choose the fixed $r_0$ so that
+$Cr_0^{-4}\le5/2$ to obtain \eqref{eq:barrier}.
+\end{proof}
+
+\section{Discrete comparison and the full estimate}
+
+A step from $b>c$ can cross to $b'<c'$ only if $b-c=1$.
+There is exactly one such step, namely
+$(b,c)\mapsto(b-1,c+1)=(c,b)$. For an odd function its value at that
+neighbor is minus its value at the original point. Thus, when restricted to
+the half triangle, $L$ has diagonal
+$1+\tfrac16\mathbf1_{\{b-c=1\}}$ and coefficient $-1/6$ at every remaining
+neighbor; fixed-line values are zero.
+
+This operator has the finite comparison property. Indeed, suppose $Lw\le0$
+on a finite subset of the half triangle and $w\le0$ at its outside
+neighbors, with the crossing value interpreted by odd reflection.
+If a positive maximum $m$ occurs where $b-c=1$, then
+$Lw\ge(7/6)m-(5/6)m=m/3>0$. At any other point, $Lw\ge0$,
+and equality forces all six neighbor values to equal $m$.
+Following $(b,c)\mapsto(b,c-1)$ then reaches an outside neighbor or $c=0$,
+contradicting its nonpositive value. Hence $w\le0$ on the subset.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Since $Lv_M=0$, the error satisfies $Le_M=f_M$.
+Use the same fixed $r_0$ in Lemmas~\ref{lem:defect} and \ref{lem:barrier}, and set
+\[
+ E_M=\{z=b+c\omega\in T_M\cap\Lambda:b>c,\ |z|\ge r_0\}.
+\]
+Choose $K\ge2C_f/5$. Increase it, independently of $M$, so that
+$K\barrier(z)\ge1$ at all half-wedge lattice points with $0<|z|<r_0$.
+There are only finitely many such points, and $\barrier$ is positive at each.
+For either sign,
+\[
+ L(\pm e_M-K\barrier)\le0\quad\hbox{on }E_M.
+\]
+At inner neighbors outside $E_M$, $|e_M|\le1\le K\barrier$.
+At physical sides $e_M=0$ and $\barrier\ge0$; on the bisector both are zero.
+There is no jump over a physical side or directly to a vertex, and the sole
+crossing jump is already included in the half-domain diagonal.
+Finite comparison therefore yields
+\begin{equation}\label{eq:halferror}
+ |e_M(z)|\le K|z|^{-4}\sin(6\theta)\quad(z\in E_M).
+\end{equation}
+Reflection by $R$, and the exact zero on its fixed line, give
+\begin{equation}\label{eq:radial}
+ |v_M(z)-u_M(z)|\le K|z|^{-4}
+ \quad(z\in T_M\cap\Lambda,\ |z|\ge r_0),
+\end{equation}
+with the same constants for every $M$.
+
+For fixed $A,B,C$, take $M=nN$ and $z=n(B+C\omega)$ in
+\eqref{eq:radial}. Since $|z|^2=n^2(B^2+BC+C^2)$, \eqref{eq:bm} gives,
+for all sufficiently large integers $n$,
+\[
+ \left|P_{nA,nB,nC}(321)-P^{\BM}_{A,B,C}(321)\right|
+ \le\frac{K}{n^4(B^2+BC+C^2)^2}
+ =\frac{KN^4}{(B^2+BC+C^2)^2}(nN)^{-4}.
+\]
+The last coefficient depends only on the fixed proportions. Relabeling the
+players preserves the transition law and proves the estimate for every
+$\sigma\in S_3$. When the two losing players start with equal capitals,
+\eqref{eq:symmetry} gives exact agreement with the Brownian probability.
+\end{proof}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with the argument, proof drafting and algebraic checks.
+This is a natural-language proof submission. No Lean verification or human
+referee certification is asserted. The submission records the scope of the
+AI review performed.
+
+\begin{thebibliography}{9}
+\bibitem{HFT}
+S. Axler, P. Bourdon and W. Ramey,
+\emph{Harmonic Function Theory}, 2nd ed., Graduate Texts in Mathematics 137,
+Springer, 2001.
+\href{https://www.axler.net/HFT.pdf}{Author-hosted book}.
+\bibitem{DE}
+P. Diaconis and S. N. Ethier, Gambler's ruin and the ICM,
+\emph{Statistical Science} \textbf{37}(3) (2022), 289--305.
+\href{https://doi.org/10.1214/21-STS826}{doi:10.1214/21-STS826}.
+Author manuscript: \href{https://arxiv.org/abs/2011.07610v3}{arXiv:2011.07610v3}.
+\bibitem{DW}
+D. Denisov and V. Wachtel, Harmonic measure in a multidimensional gambler's problem,
+\emph{Annals of Applied Probability} \textbf{34}(5) (2024), 4387--4407.
+\href{https://doi.org/10.1214/24-AAP2069}{doi:10.1214/24-AAP2069}.
+Author manuscript: \href{https://arxiv.org/abs/2212.11526v1}{arXiv:2212.11526v1}.
+\end{thebibliography}
+\end{document}
