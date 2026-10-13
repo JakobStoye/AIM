@@ -1,0 +1,465 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Tt}{\mathbb T_2}
+\title{Failure of local controllability at time $21/10$\newline for a shallow-water tank}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider a one-dimensional tank governed by the normalized Saint--Venant
+equations, with the tank acceleration as its only control. We show that local
+exact controllability around the flat equilibrium, with uniformly small
+classical trajectories in $C^1$, fails at time $T=21/10$. The terminal states
+form an explicit family tending to equilibrium, and the tank starts and ends
+with zero velocity and displacement. Thus the sufficiency of every time
+$T>2$ is false. The proof computes the full quadratic endpoint in a spatial
+primitive, separates it uniformly from a prescribed terminal profile, and
+controls the nonlinear error in the same supremum norm. The least time for
+local controllability is not determined here.
+\end{abstract}
+
+\section{The problem and the counterexample}
+The motion of a shallow inviscid fluid in a horizontally accelerated tank is
+described by the Saint--Venant equations. After normalizing the tank length,
+gravity and equilibrium depth to one, the system is
+\begin{equation}\label{eq:tank}
+ H_t+(Hv)_x=0,\qquad
+ v_t+(H+v^2/2)_x=-a(t),\qquad 0<x<1,
+\end{equation}
+with
+\begin{equation}\label{eq:walls}
+v(t,0)=v(t,1)=0,\qquad s'(t)=a(t),\qquad D'(t)=s(t).
+\end{equation}
+Here $H$ is the fluid depth, $v$ its velocity relative to the tank, and $s,D$
+are the tank velocity and displacement. The control $a$ is continuous, and
+the fluid trajectory is jointly $C^1$ in $(t,x)$. The mathematical question
+concerns classical solutions of this reduced model.
+
+Coron proved local controllability for a sufficiently large time by the
+return method \cite[Theorem 2]{Coron2002}. In his formulation of the time
+problem \cite[Problem 7.1, pp.~247--250]{Coron2004}, the conjectured range
+was $T>2$. Coron, Koenig and Nguyen subsequently proved a nonlinear
+obstruction for $1<T<2$: an initially flat fluid cannot return to the flat
+state with the same zero tank velocity under a sufficiently small nonzero
+continuous control \cite[Theorem 1.2]{CKN2024}. The corresponding sufficiency
+question above two is asked in AIM Problem 387 \cite{AIM387}.
+
+We use
+\[
+\norm{w}_1=\max_{x\in[0,1]}(|w(x)|+|w'(x)|)
+\]
+and the state space
+\[
+\mathcal Y=\left\{(H,v,s,D)\in C^1([0,1])^2\times\mathbb R^2:
+ H>0,\ \int_0^1H=1,\ v(0)=v(1)=0,\ H_x(0)=H_x(1)\right\}.
+\]
+Let $P(T)$ mean that for every $\varepsilon>0$ there exists $\eta>0$ such
+that any two states whose total distance from $(1,0,0,0)$ is less than $\eta$
+can be joined in time $T$ by a classical trajectory satisfying
+\begin{equation}\label{eq:small}
+\sup_{0\le t\le T}
+\bigl(\norm{H(t)-1}_1+\norm{v(t)}_1+|s(t)|+|D(t)|+|a(t)|\bigr)
+<\varepsilon.
+\end{equation}
+The conclusion below also holds with the equivalent norm
+$\max|w|+\max|w'|$.
+
+Fix throughout
+\[
+T=\frac{21}{10},\qquad d=\frac1{10},\qquad L=T-1=\frac{11}{10}.
+\]
+Define $S(r)=10r^3-15r^4+6r^5$ on $[0,1]$ and the one-periodic $C^2$
+function $b$ by
+\begin{equation}\label{eq:b}
+b(y)=\begin{cases}
+0,&0\le y\le d,\\
+S((y-d)/d),&d\le y\le2d,\\
+1,&2d\le y\le1-d,\\
+1-S((y-(1-d))/d),&1-d\le y\le1.
+\end{cases}
+\end{equation}
+In particular, $0\le b\le1$. For $\rho>0$ put
+\begin{equation}\label{eq:target}
+q_\rho(x)=\frac32\rho b'(T-x),\qquad
+h_\rho(x)=\frac{q_\rho(x)+q_\rho(-x)}2,\qquad
+v_\rho(x)=\frac{q_\rho(x)-q_\rho(-x)}2.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+There exists $\rho_*>0$ such that, for every $0<\rho<\rho_*$, the state
+$(1+h_\rho,v_\rho,0,0)$ belongs to $\mathcal Y$, and no classical trajectory
+from $(1,0,0,0)$ to this state in time $T=21/10$ satisfies
+\eqref{eq:small} with $\varepsilon=10^{-8}$. Consequently $P(21/10)$ is
+false, and $P(T)$ does not hold for every $T>2$.
+\end{theorem}
+
+The endpoints tend to equilibrium in the prescribed norm. The theorem
+therefore disproves local controllability, rather than imposing a lower bound
+on the amplitude of a particular transfer. It does not give the eventual
+positive controllability time.
+
+The first-order fluid response is antiperiodic under a unit translation,
+whereas the target in \eqref{eq:target} is periodic. Hence its periodic
+component must come from the nonlinear terms. The tank's zero displacement
+imposes a zero-mean condition on the temporal primitive producing that
+component. For a time just above two, most of the quadratic spatial primitive
+is the square of a single continuous function. A long positive plateau and a
+short zero interval cannot be approximated by such a square while preserving
+the zero mean. We use the full spatial primitive because its supremum error
+can be controlled uniformly by the trajectory's $C^1$ smallness.
+
+\section{Unfolding and uniform nonlinear estimates}
+Write $h=H-1$ and unfold the fluid variables onto the period-two circle
+$\Tt=\mathbb R/(2\mathbb Z)$:
+\begin{equation}\label{eq:z}
+z(t,x)=\begin{cases}h(t,x)+v(t,x),&0\le x\le1,\\
+h(t,-x)-v(t,-x),&-1\le x\le0.
+\end{cases}
+\end{equation}
+The wall conditions make $z$ continuous and spatially Lipschitz; it is $C^1$
+on the two open halves. Reflection is understood on $\Tt$. Define
+\[
+\theta(x)=\begin{cases}-1,&0<x<1,\\+1,&-1<x<0,\end{cases}
+\qquad
+Q(A,B)=\frac{3A^2-2AB-B^2}{8},\qquad
+r_z(t,x)=Q(z(t,x),z(t,-x)).
+\]
+Direct substitution in \eqref{eq:tank} gives
+\begin{equation}\label{eq:transport}
+z_t+z_x=a(t)\theta(x)-\partial_xr_z.
+\end{equation}
+On the positive half, $Q(z,z\circ(-\mathrm{id}))=hv+v^2/2$; on the
+negative half this is the reflected flux of $h-v$. At a wall both arguments
+of Q agree, so $r_z=Q(A,A)=0$. Thus the flux is continuous at each junction
+and \eqref{eq:transport} holds also in distributions.
+
+For a trajectory starting at equilibrium, let
+\[
+U(t)=\int_0^t a(\tau)\,d\tau,\qquad
+\ell(t,x)=\int_0^t a(\tau)\theta(x+\tau-t)\,d\tau,
+\]
+with $U(t)=0$ for $t<0$. The linear response $\ell$ is continuous and
+one-antiperiodic: $\ell(t,x+1)=-\ell(t,x)$. For $0\le x\le1$,
+\begin{equation}\label{eq:linear}
+\ell(t,x)=-U(t)+2\sum_{k\ge0}(-1)^kU(t-x-k).
+\end{equation}
+There are at most three nonzero terms for $0\le t\le T<3$. With
+$A=\norm{U}_{C^0([0,T])}$ this gives $\norm{\ell}_\infty\le7A$.
+Throughout this section, a supremum without a displayed domain for a
+time-dependent fluid variable is over $[0,T]\times\Tt$.
+
+Integrating \eqref{eq:transport} along straight characteristics gives
+\begin{equation}\label{eq:characteristic}
+z(t,x)=\ell(t,x)-\int_0^t(\partial_xr_z)(\tau,x+\tau-t)\,d\tau.
+\end{equation}
+There are only finitely many wall crossings; the fundamental theorem applies
+on each intervening interval and the values match by continuity. Introduce
+the endpoint primitive
+\begin{equation}\label{eq:gamma}
+\Gamma_z(x)=\int_0^T r_z(t,x+t-T)\,dt.
+\end{equation}
+Integrating \eqref{eq:characteristic} in x over any interval $[\xi,\zeta]$
+and using continuity of the flux at its junctions gives
+\[
+\int_\xi^\zeta(z(T,x)-\ell(T,x))\,dx
+=-\Gamma_z(\zeta)+\Gamma_z(\xi).
+\]
+The finite integrations can be interchanged: their bounded integrands are
+continuous away from finitely many straight wall-crossing lines. Rectangular
+Riemann sums agree off the cells meeting those lines, whose total area tends
+to zero. Since $z(T)-\ell(T)$ is continuous, $\Gamma_z$ is $C^1$ and
+\begin{equation}\label{eq:endpoint}
+z(T)=\ell(T)-\partial_x\Gamma_z.
+\end{equation}
+
+\begin{lemma}\label{lem:nonlinear}
+If $\sup_t(\norm{h(t)}_1+\norm{v(t)}_1)\le\varepsilon$ and
+$\varepsilon\le1/(3T)$, then
+\begin{equation}\label{eq:state-bound}
+\norm{z}_\infty\le14A,\qquad
+\norm{z-\ell}_\infty\le21T\varepsilon A\le45\varepsilon A.
+\end{equation}
+For pairs whose components are bounded by $M$ and $M'$ and whose
+componentwise difference is at most $\delta$,
+\begin{equation}\label{eq:polar}
+|Q(A_1,A_2)-Q(B_1,B_2)|\le\tfrac34(M+M')\delta.
+\end{equation}
+\end{lemma}
+\begin{proof}
+On the smooth halves, $|z_x|\le\varepsilon$ and
+$Q_A=(3A-B)/4$, $Q_B=-(A+B)/4$, so
+$|\partial_xr_z|\le(3/2)\varepsilon\norm{z}_\infty$.
+Formula \eqref{eq:characteristic} gives
+$\norm{z}_\infty\le7A+(3/2)T\varepsilon\norm{z}_\infty$.
+Absorbing the last term proves the first estimate; substituting it back
+proves the second. To obtain \eqref{eq:polar}, integrate the gradient of Q
+on the segment between the two pairs. Its componentwise sum is bounded by
+$3((1-\tau)M+\tau M')/2$ at segment parameter $\tau$.
+\end{proof}
+
+\section{The quadratic endpoint and its separation}
+We first compute the quadratic primitive for a linear return. For a continuous
+piecewise $C^1$ function F supported in $[0,L]$ and vanishing at its endpoints,
+put $U=F+F(\cdot-1)$ and $a=F'+F'(\cdot-1)$ in the linear formula. The
+derivative may have finitely many jumps; this auxiliary linear control is
+used only in an explicit integral. Define
+\begin{equation}\label{eq:G}
+J_F(s)=\int_{s-1}^{s+1}F(r)\,dr,\qquad
+g_F(s)=F(s)^2-F(s)J_F(s),\qquad
+G_F(s)=\sum_{n\in\mathbb Z}g_F(s+n).
+\end{equation}
+The sum is locally finite and $G_F$ is continuous and one-periodic.
+
+\begin{proposition}\label{prop:quadratic}
+For the linear response generated by this F, the primitive defined as in
+\eqref{eq:gamma} satisfies
+\begin{equation}\label{eq:quadratic}
+\Gamma_\ell(x)=\frac32G_F(T-x)
+ +\frac12\int_0^T U(t)^2\,dt-\frac12\int_{\mathbb R}F(t)^2\,dt.
+\end{equation}
+No zero-mean assumption on F is needed for this identity.
+\end{proposition}
+\begin{proof}
+Substitution in \eqref{eq:linear} telescopes to
+\begin{equation}\label{eq:paired}
+\ell(t,y)=2F(t-y)-U(t),\qquad
+\ell(t,-y)=U(t)-2F(t+y-1),\qquad0\le y\le1.
+\end{equation}
+Since $\ell$ is one-antiperiodic, its quadratic flux is one-periodic. Fix
+$s=T-x$ and partition time into intervals $[\beta,\beta+1]$, where
+$\beta=s+n$ for $n\in\mathbb Z$. On such an interval set
+$y=t-\beta$, $P=F(\beta)$ and $R=F(2t-\beta-1)$. Expanding Q using
+\eqref{eq:paired} gives
+\begin{equation}\label{eq:expansion}
+r_\ell(t,x+t-T)
+=\frac32P^2-2PU(t)+PR+\frac12U(t)^2-\frac12R^2.
+\end{equation}
+Whenever $P\ne0$, the whole time interval lies in $[0,T]$, since
+$0\le\beta\le L=T-1$. Also
+\[
+\int_\beta^{\beta+1}U(t)\,dt=J_F(\beta),\qquad
+\int_\beta^{\beta+1}R\,dt=\tfrac12J_F(\beta).
+\]
+Thus the first three terms in \eqref{eq:expansion} integrate to
+$3g_F(\beta)/2$. They vanish when $P=0$.
+
+For the last term, the argument $r=2t-\beta-1=t+y-1$ lies in $[t-1,t]$.
+Hence R is zero outside $[0,T]$ and its time integration on each interval
+can be extended to that whole interval. An affine substitution gives
+\[
+\sum_n\int_{s+n}^{s+n+1}F(2t-s-n-1)^2\,dt
+=\tfrac12\sum_n\int_{s+n-1}^{s+n+1}F(r)^2\,dr
+=\int_{\mathbb R}F(r)^2\,dr.
+\]
+The length-two intervals at unit spacing cover each real point twice,
+apart from endpoints of no effect on the integral. Only finitely many terms
+intersect the support nontrivially. Summing \eqref{eq:expansion} now proves
+\eqref{eq:quadratic}.
+\end{proof}
+
+The zero tank displacement will force F to have zero mean. On the long
+interval $[d,1]$, this makes $G_F$ exactly $F^2$. The next lemma exploits
+that relation without a derivative bound for F.
+
+\begin{lemma}\label{lem:separation}
+Let F be continuous, supported in $[0,1+d]$, with $\int_{\mathbb R}F=0$ and
+$M=\norm{F}_\infty>0$. For every $c\in\mathbb R$ and $\rho>0$,
+\begin{equation}\label{eq:separation}
+\norm{G_F-c-\rho b}_\infty>\frac1{100}M^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Set $I=[d,1]$, $O=[0,d]$, and for $s\in O$ write
+$p(s)=F(s)$, $q(s)=F(s+1)$. On I the interval $[s-1,s+1]$ contains the
+support, so $J_F=0$ and $G_F=F^2$. On O the zero mean gives
+\begin{equation}\label{eq:outer}
+G_F(s)=p(s)^2+q(s)^2
+ +p(s)\int_s^d q(r)\,dr+q(s)\int_0^s p(r)\,dr.
+\end{equation}
+If $|F|$ attains M on I, then $\max G_F\ge M^2$. Otherwise the point of
+maximum belongs to one of the outer intervals, and each cross term in
+\eqref{eq:outer} is bounded in magnitude by $dM^2$. Thus always
+$\max G_F\ge(1-2d)M^2=4M^2/5$.
+If F has a zero on I, then $\min_I G_F=0$. If it has no zero there, it has
+one sign; zero mean then gives $(1-d)\min_I|F|\le2dM$. Consequently
+\begin{equation}\label{eq:osc}
+\operatorname{osc}G_F\ge(4/5-4/81)M^2.
+\end{equation}
+
+Suppose \eqref{eq:separation} fails, and put $e=1/100$. Since b takes both
+values zero and one, \eqref{eq:osc} implies
+$\rho\ge(4/5-4/81-2e)M^2\ge7M^2/10$.
+Let $E=\int_O(p^2+q^2)$. Integrating \eqref{eq:outer} gives
+\[
+\int_O G_F=E+2\int_{0\le s<r\le d}p(s)q(r)\,ds\,dr.
+\]
+The absolute value of the cross term is at most
+$2\int_O|p|\int_O|q|\le dE$ by Cauchy--Schwarz and
+$2\sqrt{ab}\le a+b$. Since $b=0$ on O,
+\begin{equation}\label{eq:energy}
+(1-d)E\le d(c+eM^2),\qquad c\ge-eM^2,\qquad
+\left|\int_I F\right|\le\sqrt{2dE}.
+\end{equation}
+The last inequality uses zero mean and Cauchy--Schwarz on the two outer
+intervals, whose total length is $2d$.
+
+If $c\ge2eM^2$, then $F^2\ge c-eM^2\ge c/2$ on I. Therefore F has
+one sign and $|\int_I F|\ge(1-d)\sqrt{c/2}$. But \eqref{eq:energy}
+also gives $E\le3dc/[2(1-d)]$ and
+$|\int_I F|\le d\sqrt{3c/(1-d)}$. This is impossible at $d=1/10$,
+since $(1-d)^2/2>3d^2/(1-d)$. Hence $c<2eM^2$, so
+\begin{equation}\label{eq:mean-small}
+E\le\tfrac e3M^2,\qquad \left|\int_I F\right|\le\sqrt{e/15}\,M.
+\end{equation}
+On $[2d,1-d]$, b equals one and the presumed approximation implies
+$F^2\ge\rho-2eM^2\ge17M^2/25>16M^2/25$. Thus F has one sign on
+this connected interval and $|F|\ge4M/5$. Its length is $7/10$; the
+remaining part of I has length $1/5$ and $|F|\le M$. It follows that
+\[
+\left|\int_I F\right|\ge\tfrac7{10}\tfrac45M-\tfrac15M
+=\tfrac9{25}M,
+\]
+contradicting \eqref{eq:mean-small}.
+\end{proof}
+
+\section{Projection to a linear return and proof of the theorem}
+Suppose a trajectory reaches the target \eqref{eq:target} with the smallness
+bound \eqref{eq:small}. Its tank endpoints give
+\begin{equation}\label{eq:moments}
+U(T)=0,\qquad \int_0^T U(t)\,dt=0.
+\end{equation}
+We replace its linear response by one with an exact zero endpoint and the
+same zero tank displacement, changing only its control primitive by a small
+relative amount. This allows application of Lemma~\ref{lem:separation}.
+
+For $0\le t\le T$ define
+$F(t)=U(t)-U(t-1)+U(t-2)$, with negative-time values zero. Since $T<3$,
+\[
+F(t)+F(t-1)=U(t),\qquad \norm{F}_\infty\le3A.
+\]
+The operators $P_\pm w(x)=(w(x)\pm w(x+1))/2$ contract the supremum norm.
+The unfolded terminal profile is the periodic $q_\rho$, so applying $P_-$
+to \eqref{eq:state-bound} at T gives
+$\norm{\ell(T)}_\infty\le45\varepsilon A$. By \eqref{eq:linear} and
+\eqref{eq:moments}, $\ell(T,x)=2F(T-x)$ for $0\le x\le1$, whence
+\begin{equation}\label{eq:tail}
+\norm{F}_{C^0([L,T])}\le23\varepsilon A.
+\end{equation}
+
+Set $F_0(t)=F(t)-(t/L)F(L)$ on $[0,L]$, zero elsewhere. It is continuous
+and piecewise $C^1$, with zero values at both support endpoints, and
+$\norm{F_0-F}_{C^0([0,T])}\le23\varepsilon A$. Put
+$U_0=F_0+F_0(\cdot-1)$ and $\alpha=\int_0^LF_0$.
+Since $T=L+1$, $\int_0^TU_0=2\alpha$. Equation \eqref{eq:moments} gives
+$|\alpha|\le23T\varepsilon A<49\varepsilon A$.
+
+To remove this remaining mean, use
+$\psi(t)=6t(L-t)/L^3$ on $[0,L]$, zero elsewhere. Its integral is one
+and its supremum is $3/(2L)<3/2$. Define
+\[
+\widehat F=F_0-\alpha\psi,\qquad
+\widehat U=\widehat F+\widehat F(\cdot-1).
+\]
+Then $\widehat F$ is supported in $[0,L]$, vanishes at its endpoints and
+has zero mean, while
+\begin{equation}\label{eq:correction}
+\norm{\widehat F-F}_{C^0([0,T])}\le100\varepsilon A,\qquad
+\norm{\widehat U-U}_{C^0([0,T])}\le200\varepsilon A.
+\end{equation}
+For $M=\norm{\widehat F}_\infty$ and $\varepsilon\le1/400$, these estimates
+imply $A\le2M+200\varepsilon A$, hence $A\le4M$.
+
+Let $\widehat\ell$ be the auxiliary linear response with primitive
+$\widehat U$. It has zero terminal fluid profile by \eqref{eq:linear},
+and its tank velocity and displacement endpoints vanish. Formula
+\eqref{eq:linear} also gives
+$\norm{\widehat\ell-\ell}_\infty\le1400\varepsilon A$. Combining
+\eqref{eq:state-bound}, \eqref{eq:polar} and \eqref{eq:correction} yields
+\[
+\norm{z-\widehat\ell}_\infty\le1450\varepsilon A,
+\qquad \norm{\widehat\ell}_\infty\le14A,
+\]
+and therefore
+\begin{equation}\label{eq:error}
+\norm{\Gamma_z-\Gamma_{\widehat\ell}}_\infty
+\le T\tfrac34(28A)(1450\varepsilon A)
+\le1{,}100{,}000\varepsilon M^2.
+\end{equation}
+The intermediate constant after using $A\le4M$ is $1{,}023{,}120$.
+In particular the estimate is uniform in the frequency of the original
+control, whose derivative has never been bounded.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The derivatives of S through order two match the constant pieces in
+\eqref{eq:b}. Hence $q_\rho$ is $C^1$, periodic, nonzero and has zero mean.
+Its even and odd parts satisfy
+$\int_0^1h_\rho=0$, $v_\rho(0)=v_\rho(1)=0$ and
+$h_\rho'(0)=h_\rho'(1)=0$. For all sufficiently small $\rho>0$,
+$1+h_\rho>0$. These are exactly the required state conditions.
+
+For a supposed small trajectory, apply $P_+$ to \eqref{eq:endpoint}:
+\[
+q_\rho=-\partial_xP_+\Gamma_z,
+\qquad P_+\Gamma_z(x)=\tfrac32\rho b(T-x)+C_z
+\]
+for a spatial constant $C_z$. Proposition~\ref{prop:quadratic}, applied to
+the corrected mean-zero $\widehat F$, gives
+$\Gamma_{\widehat\ell}(x)=3G_{\widehat F}(T-x)/2+C_\ell$, which is
+one-periodic. Applying the contraction $P_+$ to \eqref{eq:error}, absorbing
+the constants and rotating the spatial variable gives some $c\in\mathbb R$
+with
+\[
+\norm{G_{\widehat F}-c-\rho b}_\infty
+\le\tfrac23(1{,}100{,}000)\varepsilon M^2.
+\]
+For $\varepsilon=10^{-8}$, all earlier smallness conditions hold and the
+right-hand coefficient is $11/1500<1/100$. If $M>0$, this contradicts
+Lemma~\ref{lem:separation}. If $M=0$, then $A\le4M=0$, and
+\eqref{eq:state-bound} implies $z=0$, contradicting nonzero $q_\rho$.
+
+Finally, $\norm{h_\rho}_1+\norm{v_\rho}_1=O(\rho)$ with a fixed constant.
+Every endpoint neighborhood therefore contains a member of this unreachable
+family, for the same fixed $T>2$ and the same fixed $\varepsilon>0$.
+This disproves the asserted universal sufficiency.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex was used for proof development, calculation checks, retrieval of
+the cited literature, and preparation and editing of this manuscript.
+
+\begin{thebibliography}{9}
+\bibitem{Coron2002}
+J.-M. Coron, \emph{Local controllability of a 1-D tank containing a fluid
+modeled by the shallow water equations}, ESAIM: Control, Optimisation and
+Calculus of Variations \textbf{8} (2002), 513--554.
+\href{https://doi.org/10.1051/cocv:2002050}{doi:10.1051/cocv:2002050}.
+
+\bibitem{Coron2004}
+J.-M. Coron, \emph{Time for local controllability of a 1-D tank containing a
+fluid modeled by the shallow water equations}, Problem 7.1 in V. D. Blondel
+and A. Megretski (eds.), \emph{Unsolved Problems in Mathematical Systems and
+Control Theory}, Princeton University Press, 2004, 247--250.
+\href{https://doi.org/10.1515/9781400826155}{doi:10.1515/9781400826155}.
+
+\bibitem{CKN2024}
+J.-M. Coron, A. Koenig and H.-M. Nguyen, \emph{Lack of local controllability
+for a water-tank system when the time is not large enough}, Annales de
+l'Institut Henri Poincar\'e C, Analyse non lin\'eaire \textbf{41} (2024),
+1327--1365. \href{https://doi.org/10.4171/AIHPC/123}{doi:10.4171/AIHPC/123}.
+
+\bibitem{AIM387}
+AIM problem repository, \emph{387. The sharp local maneuvering time for a
+shallow-water tank}, statement revision
+\texttt{c9929805cece044705abaaebe1cebddac1ba11a6}.
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/387-shallow-water-tank-sharp-control-time.md}{Immutable problem statement}.
+\end{thebibliography}
+\end{document}
