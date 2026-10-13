@@ -29,6 +29,6 @@ lattice-realization arguments. The package makes no claim of priority beyond
 the presented argument and its stated citations.
 
 Review status: a complete AI-assisted natural-language proof claim.
-Codex checked the complete argument and cited-source applicability; a separate fresh Codex context reviewed the full manuscript and original-target correspondence, finding one minor citation-placement issue and no major objection. The final citation repair and two wording clarifications were checked by the authoring context.. No human or kernel certification, or upstream
+Codex checked the complete argument and cited-source applicability; a separate fresh Codex context reviewed the full manuscript and original-target correspondence, finding one minor citation-placement issue and no major objection. The final citation repair and two wording clarifications were checked by the authoring context. No human or kernel certification, or upstream
 acceptance, is asserted. This is a mathematical target comparison, not a
 detailed AI review report.

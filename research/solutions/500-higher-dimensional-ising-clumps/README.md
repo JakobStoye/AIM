@@ -27,7 +27,7 @@ argument; it does not supply explicit cube coordinates, numerical evidence,
 or a formal proof project.
 
 Status: AI-assisted natural-language proof claim submitted for mathematical
-review. Codex checked the complete argument and cited-source applicability; a separate fresh Codex context reviewed the full manuscript and original-target correspondence, finding one minor citation-placement issue and no major objection. The final citation repair and two wording clarifications were checked by the authoring context.. No independent human review, formal verification
+review. Codex checked the complete argument and cited-source applicability; a separate fresh Codex context reviewed the full manuscript and original-target correspondence, finding one minor citation-placement issue and no major objection. The final citation repair and two wording clarifications were checked by the authoring context. No independent human review, formal verification
 or repository acceptance is claimed. The separate dimension-three question
 is left open. If the all-state size-weighted law is normalizable, the paper
 also explains why the chain started at the singleton cannot converge to it;
