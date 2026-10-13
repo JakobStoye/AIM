@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "case": {
+    "k": 5,
+    "n": 13,
+    "radius": 5
+  },
+  "enumeration": {
+    "visited_origin_cliques": 467112,
+    "origin_nonliftable_cliques": 332,
+    "core_diamonds": 338
+  },
+  "basis_sha256": "755ae1f9ed07c406b842e1958d929e4ecde5abe5e2e8e088df3ff5a0cbf2fecd",
+  "initial_chain_dimensions": {
+    "2": 1352,
+    "3": 4394,
+    "4": 4394,
+    "5": 1690,
+    "6": 338
+  },
+  "unit_cancellations_by_degree": {
+    "6": 338,
+    "5": 1352,
+    "4": 3016,
+    "3": 1350
+  },
+  "residual_chain_dimensions": {
+    "2": 2,
+    "3": 28,
+    "4": 26,
+    "5": 0,
+    "6": 0
+  },
+  "nonzero_d4_columns": 24,
+  "rank_d4_mod3": 24,
+  "rank_d4_Q": 24,
+  "relative_H4_free_rank": 2,
+  "limitation": "Finite chain certificate checked. The manuscript supplies the torus-core identification and transfer to H4(K;Z)."
+}
