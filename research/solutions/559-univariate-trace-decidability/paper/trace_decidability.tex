@@ -1,0 +1,272 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Undecidability of unnormalized univariate trace inequalities},pdfauthor={Kaiwen Jin},pdfsubject={An exact undecidability reduction for ordinary pure traces}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Nzero}{\mathbb{N}_0}
+\title{Undecidability of unnormalized univariate trace inequalities}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that no algorithm decides whether a rational polynomial in the
+ordinary traces of powers of one real symmetric matrix is nonnegative for
+all finite matrix sizes. The proof encodes nonnegative integers as spectral
+multiplicities. Stationary polynomial interpolation controls deviations from
+the encoding nodes with an error bound independent of the number of
+eigenvalues. A polynomial penalty then transfers an undecidable discrete
+sign problem to an unrestricted pure trace inequality. The construction uses
+only positive powers and never uses the matrix dimension as a trace variable.
+\end{abstract}
+
+\section{The decision problem}
+
+For $d\geq1$ and $F\in\mathbb{Q}[z_1,\ldots,z_d]$, consider the statement
+\begin{equation}\label{eq:target}
+ F\bigl(\tr A,\tr(A^2),\ldots,\tr(A^d)\bigr)\geq0
+ \quad\text{for all }n\geq1\text{ and real symmetric }A\in\mathbb{R}^{n\times n}.
+\end{equation}
+The trace is ordinary and unnormalized. The polynomial is pure trace: its
+value is a scalar, with no additional matrix factor, and its scalar constant
+$1$ is not $\tr I=n$. By diagonalization, \eqref{eq:target} is equivalent to
+\begin{equation}\label{eq:spectrum}
+ F\bigl(p_1(x),\ldots,p_d(x)\bigr)\geq0
+ \quad\text{for all }n\geq1\text{ and }x\in\mathbb{R}^n,
+ \qquad p_r(x)=\sum_{a=1}^n x_a^r.
+\end{equation}
+
+Acevedo, Blekherman, Debus and Riener prove undecidability with several
+matrix variables and decidability for normalized traces
+\cite[Theorems 6.2 and 6.5]{ABDR}. Their Section 7 leaves the ordinary
+univariate case open. The positivity results of Klep, Pascoe and Vol\v{c}i\v{c}
+use normalized traces \cite[Introduction, arXiv version v2]{KPV}. The distinction is relevant here:
+ordinary traces retain integer multiplicities, whereas normalization divides
+those multiplicities by the dimension.
+
+\begin{theorem}\label{thm:main}
+There is no algorithm that, on every input consisting of a positive integer
+$d$ and a polynomial $F\in\mathbb{Q}[z_1,\ldots,z_d]$, always terminates and
+correctly decides \eqref{eq:target}.
+\end{theorem}
+
+We prove the theorem by reducing nonnegativity on integer tuples to
+\eqref{eq:spectrum}. A spectrum supported on $\{0,1,\ldots,k\}$ can record
+$k$ arbitrary integer multiplicities. The main point is to control every
+spectrum away from these nodes, uniformly in its size. Interpolating functions
+with zero first derivatives at the nodes give the required control. Including
+$0$ as a node makes the relevant polynomial sums independent of zero padding
+and avoids any use of a zeroth power sum.
+
+\section{A uniform estimate for spectral multiplicities}
+
+Write $\Nzero=\{0,1,2,\ldots\}$. Fix $k\geq1$. For each real $x$, let
+$j(x)$ be a closest element of $\{0,\ldots,k\}$, choosing the smaller index at
+a tie. For a rational polynomial $q(x)=\sum_r b_r x^r$ and $R\geq1$, use the
+coefficient bound $\|q\|_R=\sum_r |b_r|R^r$.
+
+\begin{lemma}\label{lem:rounding}
+One can effectively construct rational polynomials $e_1,\ldots,e_k,h$ and a
+positive rational number $C$, depending only on $k$, such that
+\[
+ \deg e_i\leq2k+1,\qquad \deg h=2k+2,\qquad
+ e_i(0)=h(0)=0,\qquad h(x)\geq0\quad(x\in\mathbb{R}),
+\]
+and
+\begin{equation}\label{eq:pointwise}
+ |e_i(x)-\delta_{i,j(x)}|\leq C h(x)
+ \quad (x\in\mathbb{R},\ 1\leq i\leq k).
+\end{equation}
+Consequently, for every $n\geq1$ and $x\in\mathbb{R}^n$, the quantities
+\begin{equation}\label{eq:counts}
+ s_i=\sum_{a=1}^n e_i(x_a),\qquad
+ t=\sum_{a=1}^n h(x_a),\qquad
+ m_i=\#\{a:j(x_a)=i\}
+\end{equation}
+satisfy $m\in\Nzero^k$, $t\geq0$ and $|s_i-m_i|\leq Ct$.
+Every $m\in\Nzero^k$ is realized with $s=m$ and $t=0$ by a finite spectrum.
+\end{lemma}
+
+\begin{proof}
+For $1\leq i\leq k$, define
+\begin{equation}\label{eq:interpolants}
+ \ell_i(x)=\prod_{\substack{0\leq j\leq k\\j\ne i}}\frac{x-j}{i-j},
+ \qquad
+ e_i(x)=\bigl[1-2\ell_i'(i)(x-i)\bigr]\ell_i(x)^2,
+ \qquad
+ h(x)=\prod_{j=0}^k(x-j)^2.
+\end{equation}
+The squared Lagrange factors give
+$e_i(j)=\delta_{ij}$ and $e_i'(j)=0$ at every $j\ne i$. At $i$, the two
+terms in the derivative cancel, so $e_i(i)=1$ and $e_i'(i)=0$ as well.
+The degree and zero-constant assertions follow from these formulas.
+
+For every $i,j$ the quotient
+\[
+ q_{ij}(x)=\frac{e_i(x)-\delta_{ij}}{(x-j)^2}
+\]
+is a rational polynomial of degree at most $2k-1$. Put $R=2(k+1)$ and take
+\begin{equation}\label{eq:C}
+ C=1+2^{2k}\max_{i,j}\|q_{ij}\|_R
+      +2^{2k+2}\max_i\bigl(1+\|e_i\|_1\bigr),
+\end{equation}
+where $1\leq i\leq k$ and $0\leq j\leq k$. This is a computable rational
+number.
+
+If $|x|\leq R$ and $j=j(x)$, every other node $l$ satisfies $|x-l|\geq1/2$.
+Indeed, a node at distance less than $1/2$ would be the unique closest node.
+It follows that
+\[
+ h(x)\geq2^{-2k}(x-j)^2,
+ \qquad
+ |e_i(x)-\delta_{ij}|\leq(x-j)^2\|q_{ij}\|_R\leq C h(x).
+\]
+This also holds directly when $x=j$. If $|x|>R$, then
+$|x-l|\geq |x|-k>|x|/2$ for every node $l$. Therefore
+\[
+ h(x)\geq (|x|/2)^{2k+2},\qquad
+ |e_i(x)-\delta_{i,j(x)}|\leq(1+\|e_i\|_1)|x|^{2k+1},
+\]
+which again proves \eqref{eq:pointwise}. Summing the pointwise bounds gives
+$|s_i-m_i|\leq Ct$ without a factor depending on $n$.
+Finally, take one zero entry and $m_i$ copies of $i$ for each $i=1,\ldots,k$.
+This spectrum has size $1+\sum_i m_i\geq1$ and gives $s=m$, $t=0$.
+\end{proof}
+
+\section{The effective reduction}
+
+The following discrete decision problem is undecidable: given an integer
+polynomial, determine whether it is nonnegative on every tuple of positive
+integers \cite[Section 5, p.~11 of the arXiv version]{HN}. This is a consequence
+of Matiyasevich's theorem used in that source. Replacing each variable by
+$u_i+1$ shows that nonnegativity on $\Nzero^k$, for arbitrary finite $k$, is
+also undecidable.
+
+We first control the change in such a polynomial when the interpolated
+sums $s$ are replaced by the associated integer counts $m$ from
+\eqref{eq:counts}.
+
+\begin{lemma}\label{lem:variation}
+Let $P(u)=\sum_\alpha c_\alpha u^\alpha\in\mathbb{Z}[u_1,\ldots,u_k]$,
+where $|\alpha|=\sum_i\alpha_i$. Set
+\[
+ D=\max\{1,\deg P\},\qquad
+ K=\sum_\alpha |c_\alpha|\,|\alpha|,\qquad
+ L=3^{D-1}C^2K^2,
+\]
+with $D=1$ when $P=0$. If $t\geq0$ and $|s_i-m_i|\leq Ct$ for every $i$,
+then
+\begin{equation}\label{eq:variation}
+ \bigl(P(s)-P(m)\bigr)^2
+ \leq L t^2\left(1+\sum_{i=1}^k s_i^2+C^2t^2\right)^{D-1}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a nonconstant monomial, telescope the difference of its $|\alpha|$
+coordinate factors, including repetitions. Each changed factor contributes
+at most $Ct$, and the other factors have magnitude at most
+$\max_i|s_i|+Ct$. Thus
+\[
+ |s^\alpha-m^\alpha|
+ \leq |\alpha|Ct\bigl(1+\max_i|s_i|+Ct\bigr)^{|\alpha|-1}.
+\]
+The base is at least $1$. Multiplying by $|c_\alpha|$, summing, and using
+$|\alpha|\leq D$ gives
+\[
+ |P(s)-P(m)|\leq CKt\bigl(1+\max_i|s_i|+Ct\bigr)^{D-1}.
+\]
+The inequality $(1+a+b)^2\leq3(1+a^2+b^2)$ and
+$(\max_i|s_i|)^2\leq\sum_i s_i^2$ prove \eqref{eq:variation}.
+For a constant polynomial, including $P=0$, both $K$ and the difference are
+zero, and the same bound holds with $D=1$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Given $P\in\mathbb{Z}[u_1,\ldots,u_k]$, set $d=2k+2$ and take the
+polynomials and $C$ of Lemma~\ref{lem:rounding}. Write
+\[
+ e_i(x)=\sum_{r=1}^d e_{ir}x^r,\qquad
+ h(x)=\sum_{r=1}^d h_r x^r,
+\]
+allowing zero coefficients. Define linear forms in the positive power-sum
+variables by
+\[
+ S_i(z)=\sum_{r=1}^d e_{ir}z_r,\qquad
+ T(z)=\sum_{r=1}^d h_r z_r.
+\]
+With $D,K,L$ as in Lemma~\ref{lem:variation}, form the rational polynomial
+\begin{equation}\label{eq:F}
+ \begin{split}
+ F_P(z)={}&2P\bigl(S_1(z),\ldots,S_k(z)\bigr)+1\\
+ &+L T(z)^2\left(1+\sum_{i=1}^k S_i(z)^2+C^2T(z)^2\right)^{D-1}.
+ \end{split}
+\end{equation}
+All these operations terminate in exact rational polynomial arithmetic:
+finite products, derivatives, exact divisions by $(x-j)^2$, rational
+coefficient bounds and finite compositions. The expression can be expanded
+into a finite coefficient list. No discrete solution is needed to construct
+it.
+
+At $z=(p_1(x),\ldots,p_d(x))$, the forms $S_i$ and $T$ equal the spectral
+sums $s_i$ and $t$ in \eqref{eq:counts}. Since $e_i(0)=h(0)=0$, these sums
+use only positive powers. The constants in \eqref{eq:F} are scalar
+polynomial constants, so the construction never introduces $\tr I$ or a
+zeroth power-sum variable.
+
+Suppose $P(m)\geq0$ for every $m\in\Nzero^k$. For any finite real spectrum,
+let $m$ be its rounded counts and put $\eta=P(s)-P(m)$. Lemma~\ref{lem:variation}
+gives
+\[
+ \begin{split}
+ F_P\bigl(p_1(x),\ldots,p_d(x)\bigr)
+ &\geq 2P(m)+2\eta+1+\eta^2\\
+ &=2P(m)+(\eta+1)^2\geq0.
+ \end{split}
+\]
+Conversely, if $P(m)<0$ at some $m\in\Nzero^k$, then $P(m)\leq-1$ by
+integrality. The node spectrum from Lemma~\ref{lem:rounding} has $s=m$,
+$t=0$ and therefore
+\[
+ F_P\bigl(p_1(x),\ldots,p_d(x)\bigr)=2P(m)+1\leq-1.
+\]
+We have proved
+\[
+ P\geq0\text{ on }\Nzero^k
+ \quad\Longleftrightarrow\quad
+ F_P\bigl(p_1(x),\ldots,p_d(x)\bigr)\geq0
+ \text{ for every }n\geq1,\ x\in\mathbb{R}^n.
+\]
+An always-terminating decider for \eqref{eq:target}, applied to the computable
+input $(2k+2,F_P)$, would decide the discrete problem. This contradiction
+proves the theorem.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used to develop the argument, check cited sources and draft
+this manuscript. Independent human mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{ABDR}
+J.~Acevedo, G.~Blekherman, S.~Debus and C.~Riener,
+\emph{The wonderful geometry of the Vandermonde map},
+Foundations of Computational Mathematics \textbf{26} (2026), 2005--2051.
+\href{https://doi.org/10.1007/s10208-025-09718-6}{doi:10.1007/s10208-025-09718-6}.
+\bibitem{KPV}
+I.~Klep, J.~E.~Pascoe and J.~Vol\v{c}i\v{c},
+\emph{Positive univariate trace polynomials},
+Journal of Algebra \textbf{579} (2021), 303--317.
+\href{https://doi.org/10.1016/j.jalgebra.2021.03.027}{doi:10.1016/j.jalgebra.2021.03.027}.
+The cited version is \href{https://arxiv.org/abs/2009.10081v2}{arXiv:2009.10081v2}.
+\bibitem{HN}
+H.~Hatami and S.~Norine,
+\emph{Undecidability of linear inequalities in graph homomorphism densities},
+arXiv:1005.2382v3 (2010).
+\url{https://arxiv.org/abs/1005.2382v3}.
+\end{thebibliography}
+\end{document}

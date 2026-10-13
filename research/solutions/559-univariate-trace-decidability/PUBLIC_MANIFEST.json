@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "problem_id": "559",
+  "original_statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "original_statement_url": "https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/559-univariate-trace-decidability.md",
+  "evidence_type": "Analytic undecidability proof submitted as a complete solution claim.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Ignore local document rebuild outputs.",
+      "sha256": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Public mathematical package entry point and rebuild instructions.",
+      "sha256": "b540951fe359b4aa392ddfb4e93eff86c7e0ee84c09a6270d7c616c1a0dd1900"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target correspondence derived from the finished note.",
+      "sha256": "c23cc8d2865eed063ddfefab6c9e912bbe73b54385a582d8b7c0513eacee10e2"
+    },
+    {
+      "path": "paper/trace_decidability.pdf",
+      "purpose": "Complete four-page manuscript with author contact and AI-use disclosure.",
+      "sha256": "b00ee225f97b64933f4f0f5b4b737b187f8c84cb141162175729f4e188972440"
+    },
+    {
+      "path": "paper/trace_decidability.tex",
+      "purpose": "Editable complete manuscript.",
+      "sha256": "0003807245fd14b414c76638f6054790347775019d087f2d01e0b8c32fc838e8"
+    }
+  ]
+}
