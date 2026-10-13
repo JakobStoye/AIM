@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "Fourth-order diffusion approximation for three-player gambler's ruin",
+  "problem_id": 615,
+  "statement_revision": "c9929805cece044705abaaebe1cebddac1ba11a6",
+  "evidence_type": "analytic theorem",
+  "claim_status": "complete solution claim submitted for review",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Claim, public files, build and factual AI-use/review scope",
+      "sha256": "20ab74c34e9a07800551d4c4ae1fb12709484cb8903ee9b66908112a1e047156"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause correspondence with the immutable public target",
+      "sha256": "680d141381426036950ccc70b09970472f83f394ee86d54e71ebd5309176e532"
+    },
+    {
+      "path": "paper/gambler_scaling.tex",
+      "purpose": "Complete editable analytic manuscript",
+      "sha256": "a49fcf871f9181d25916b4ffdaedce45e8ae0a818b3b0a140224bc761405d65d"
+    },
+    {
+      "path": "paper/gambler_scaling.pdf",
+      "purpose": "Five-page rendered complete manuscript",
+      "sha256": "3b7f0db37060abfcdd51b4776218dc142bb920aa2258e3df77350e3a73910bf9"
+    }
+  ]
+}
