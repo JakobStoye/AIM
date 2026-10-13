@@ -1,0 +1,872 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,aliascnt}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\newtheorem{theorem}{Theorem}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\theoremstyle{remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\hypersetup{pdftitle={Weak existence for adaptive porous flow with a negative drag jump},pdfauthor={Kaiwen Jin},pdfsubject={Weak solutions with free transition drag},pdfkeywords={porous flow, weak existence, negative drag jump}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\norm}[2]{\lVert #1\rVert_{#2}}
+\newcommand{\pair}[2]{\int_\Omega \big(#1\big)\cdot #2}
+\title{Weak existence for adaptive porous flow with a negative drag jump}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove weak existence for a stationary porous-flow model whose drag law
+changes at speed one and has a negative jump. At the threshold the drag is
+an arbitrary vector field, as in the free-transition formulation of the model.
+The result holds in every dimension $d\ge2$ on bounded connected Lipschitz
+domains, for all finite growth exponents $r\ge2$ and all the prescribed mixed
+pressure and flux data in their original Lebesgue and Sobolev spaces.
+The solution can be chosen with speed at least one almost everywhere.
+Finite divergence-free and gradient oscillations use the free unit sphere,
+while monotone auxiliary equations confine the only constitutive defects
+to bounded values. Comparing their exact solutions with the oscillatory
+targets gives summable corrections in the conjugate norms, so the argument
+also applies to rough data.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+Adaptive porous-flow models select different drag laws according to the
+local fluid speed. In the stationary mixed formulation, a drag field balances
+the pressure gradient and an external force, while the velocity satisfies mass
+conservation. Fumagalli and Patacchini introduced a model in which two radial
+laws are selected below and above a speed threshold \cite{FP22}. Such a
+switch permits the constitutive response to change across the medium rather
+than fixing one law throughout the domain.
+
+The sign of the drag jump changes the existence argument. The variational
+theory in \cite[Theorems 4.10--4.11]{FP22} treats the nonnegative jump in
+arbitrary dimension, whereas its negative-jump result is restricted to one
+dimension. The related monotone framework in
+\cite[Theorem 3.3, Remark 3.4 and Corollary 4.5]{FPpreprint} makes the same
+distinction between general monotone laws and higher-dimensional nonmonotone
+existence. A negative jump destroys convexity of the switched dissipation.
+In several dimensions the mass constraint also permits nontrivial oscillations,
+so minimization cannot be transferred from the one-dimensional argument.
+
+There is an important distinction in the original model: the drag at the
+threshold is completely free. Any vector $L^s$ field may be used on the
+unit-speed set, not only a radial branch value or an energy subgradient.
+As observed in \cite[Remark 3.6]{FP22}, weak solutions with this transition
+law need not be minimizers of the underlying energy. We address precisely
+that weak existence question, with the original mixed pressure and normal-flux
+conditions and with no extra boundedness assumption on the data.
+
+Our result is that every such datum in dimension $d\ge2$, with finite
+growth exponent $r\ge2$ and conjugate exponent $s=r/(r-1)$, admits a
+velocity in $L^r$, a pressure in the prescribed affine $W^{1,s}$ space,
+and a drag in $L^s$ satisfying the constitutive and weak mass equations.
+Moreover, the velocity can be chosen with speed at least one almost everywhere.
+\Cref{thm:existence} states the complete hypotheses. Its inputs and solution
+concept are those of the weak-existence question in \cite{AIM527}; the extra
+speed bound is an output. Thus the theorem answers that question for every
+original datum, without requiring minimization of the switched energy.
+
+The free unit sphere permits finite splits of an arbitrary velocity--drag
+pair into graph states, with divergence-free velocity differences and gradient
+drag differences. Near the graph these splits have small mixed moments in
+the two conjugate norms. Local finite-potential constructions of this kind
+are part of convex integration \cite{ST21}. We give an explicit version
+on measurable sets that preserves the global pressure and both original
+boundary conditions.
+
+The main difficulty is using such finite constructions with rough data:
+their bounds depend on the pair values, which need not be uniformly bounded.
+We first extend the high branch to a strongly monotone radial law, then add
+a bounded source multiplied by a velocity cutoff. Every resulting exact
+solution already lies on the high graph at large speeds; all its remaining
+defects occur in a bounded pair range. Finite oscillations can therefore
+reduce those defects. A uniform monotonicity comparison turns the approximate
+affine fields into exact solutions of another cutoff equation. Iterating
+with summable norm corrections gives a strong limit in the original spaces.
+
+The proof uses the threshold's unrestricted drag essentially. It does not
+give a selected transition law, uniqueness, or an energy-minimizing solution.
+\Cref{sec:aux} gives the weak formulation and auxiliary equations;
+\cref{sec:oscillations} proves the finite constructions;
+\cref{sec:proof} completes the strong-limit argument. Equalities of fields
+are understood almost everywhere and divergence identities distributionally.
+Vector norms are Euclidean and $\norm{\cdot}{p}$ denotes the $L^p(\Omega)$ norm.
+
+\section{Problem and auxiliary equations}\label{sec:aux}
+
+\subsection{The weak problem}
+Let $d\ge2$ and let $\Omega\subset\R^d$ be a bounded connected Lipschitz
+domain. Its boundary is partitioned, up to surface measure zero, into relatively
+open sets $\Sigma_p$ and $\Sigma_v$. Fix
+\begin{equation}\label{eq:exponents}
+ 2\le r<\infty,\qquad s=\frac r{r-1}.
+\end{equation}
+The two coefficients $\phi_1:[0,1]\to[0,\infty)$ and
+$\phi_2:[1,\infty)\to[0,\infty)$ are continuous and nondecreasing. Assume
+that for some $c,C>0$,
+\begin{equation}\label{eq:law-assumptions}
+ c a^{(r-2)/2}\le\phi_2(a)\le C(1+a^{(r-2)/2})\quad(a\ge1),
+ \qquad 0<\phi_2(1)<\phi_1(1).
+\end{equation}
+The negative jump is the last strict inequality. For
+$u\in L^r(\Omega;\R^d)$ the permitted drag fields form the set
+\begin{equation}\label{eq:original-law}
+ \Lambda(u)=\left\{
+ \phi_1(|u|^2)u\ind_{\{|u|<1\}}
+ +\phi_2(|u|^2)u\ind_{\{|u|>1\}}
+ +h\ind_{\{|u|=1\}}:
+ h\in L^s(\Omega;\R^d)\right\}.
+\end{equation}
+In particular the unit-speed drag is an arbitrary vector field in $L^s$.
+Each branch coefficient is evaluated only on its indicated speed region.
+
+The data are
+\[
+ q\in L^r(\Omega),\qquad f\in L^s(\Omega;\R^d),\qquad
+ u_0\in L^r(\Sigma_v).
+\]
+When $\Sigma_p$ has positive surface measure, prescribe an extension
+$P\in W^{1,s}(\Omega)$ and set
+\[
+ V=\{\psi\in W^{1,s}(\Omega):\Tr\psi=0\text{ on }\Sigma_p\}.
+\]
+When $\Sigma_p=\varnothing$, use
+\begin{equation}\label{eq:pure-flux}
+ P=0,\qquad V=\left\{\psi\in W^{1,s}(\Omega):\int_\Omega\psi=0\right\},
+ \qquad \int_\Omega q=\int_{\partial\Omega}u_0.
+\end{equation}
+These are the only cases: a nonempty relatively open part of a Lipschitz
+boundary has positive surface measure. Boundary integrals below use the
+Sobolev trace and surface measure.
+
+A weak solution is a triple $u\in L^r(\Omega;\R^d)$, $p\in P+V$ and
+$z\in L^s(\Omega;\R^d)$ such that
+\begin{equation}\label{eq:weak-problem}
+ z\in\Lambda(u),\qquad z=f-\nabla p,\qquad
+ \pair{u}{\nabla\psi}=-\int_\Omega q\psi
+      +\int_{\Sigma_v}u_0\Tr\psi\quad(\psi\in V).
+\end{equation}
+The velocity need not have a classical boundary trace; the last identity
+specifies the normal-flux condition at its actual regularity.
+
+\begin{theorem}\label{thm:existence}
+For every domain, boundary partition, coefficients and datum satisfying
+\eqref{eq:exponents}--\eqref{eq:pure-flux} and the conditions above,
+\eqref{eq:weak-problem} has a weak solution. It can be chosen with
+$|u|\ge1$ almost everywhere in $\Omega$.
+\end{theorem}
+
+The additional speed bound is a property of the constructed solution. It
+removes the low branch from the proof; it imposes no restriction on the data.
+The theorem concerns the free transition law \eqref{eq:original-law}. It
+does not assert uniqueness or minimization of the switched dissipation.
+
+\subsection{The affine constraints and a monotone extension}
+Write $X=L^r(\Omega;\R^d)$ and define
+\begin{align*}
+ \ell(\psi)&=-\int_\Omega q\psi+\int_{\Sigma_v}u_0\Tr\psi,\\
+ \mathcal C&=\{u\in X:\pair{u}{\nabla\psi}=\ell(\psi)\quad\forall\psi\in V\},\\
+ K&=\{v\in X:\pair{v}{\nabla\psi}=0\quad\forall\psi\in V\},
+ \qquad Y=\nabla V\subset L^s(\Omega;\R^d).
+\end{align*}
+The following linear facts will recover pressure after the velocity has
+been constructed. They do not depend on either nonlinear branch.
+
+\begin{proposition}[Linear pressure and mass constraints]\label{prop:linear}
+The gradient norm on $V$ is equivalent to its $W^{1,s}$ norm.
+The set $\mathcal C$ is a nonempty weakly closed affine translate of $K$,
+and
+\[
+ K^\perp=Y=\nabla V.
+\]
+The gradient map $V\to Y$ has a bounded inverse, with $Y$ closed in $L^s$.
+\end{proposition}
+\begin{proof}
+These are the linear statements of \cite[Lemmas 4.1--4.2, pp.\ 573--574]{FP22},
+using the homogeneous pressure space defined on p.\ 572. The source's
+pressure space is our $V$ and its velocity kernel is our $K$. Its operator
+$B(u)(\psi)=\pair{u}{\nabla\psi}$ induces an isomorphism
+$X/K\to V^*$, and its adjoint is an isomorphism $V\to K^\perp$.
+The Poincare and trace bounds on this space make $\ell\in V^*$,
+so $B(u)=\ell$ has a representative in $X$.
+The adjoint is exactly the gradient under $L^r$--$L^s$ duality.
+Its image is closed because annihilation of each member of $K$ passes
+through an $L^s$ limit. Finally each defining gradient pairing for
+$\mathcal C$ is weakly continuous. The source's linear proof uses the
+trace constraints and boundary integrals only up to null sets, so the
+present boundary-partition convention gives the same statements.
+\end{proof}
+
+Set $\beta=\phi_2(1)>0$ and extend the high law continuously below its
+threshold:
+\begin{equation}\label{eq:A}
+ \alpha(t)=\begin{cases}\beta,&0\le t\le1,\\\phi_2(t^2),&t>1,\end{cases}
+ \qquad A(a)=\alpha(|a|)a\quad(a\in\R^d).
+\end{equation}
+This extension permits exact monotone auxiliary equations for the original
+data, without changing the weak affine constraints.
+
+\clearpage
+\begin{lemma}\label{lem:monotonicity}
+There is $\gamma>0$, depending only on $\beta,c,r$, such that
+for all $a,b\in\R^d$,
+\begin{equation}\label{eq:monotonicity}
+ (A(a)-A(b))\cdot(a-b)\ge\beta|a-b|^2,
+ \qquad (A(a)-A(b))\cdot(a-b)\ge\gamma|a-b|^r.
+\end{equation}
+Also $A:L^r(\Omega;\R^d)\to L^s(\Omega;\R^d)$ is continuous.
+More generally, if $a_n,c_n$ have uniformly integrable $r$th powers and
+$\norm{a_n-c_n}{r}\to0$, then $\norm{A(a_n)-A(c_n)}{s}\to0$.
+\end{lemma}
+\begin{proof}
+The coefficient $g=\alpha-\beta$ is nonnegative and nondecreasing.
+If $|a|\ge|b|$, then
+\[
+ (g(|a|)a-g(|b|)b)\cdot(a-b)
+ =g(|b|)|a-b|^2+(g(|a|)-g(|b|))(|a|^2-a\cdot b)\ge0.
+\]
+This proves the quadratic bound. Put $k_0=\min(\beta,c)$;
+$\alpha(t)\ge k_0t^{r-2}$. Let $R_0=\max(|a|,|b|)$ and
+$t_0=\min(|a|,|b|)$. If $t_0\ge R_0/2$, the same expansion gives
+\[
+ (A(a)-A(b))\cdot(a-b)
+ \ge k_0(R_0/2)^{r-2}|a-b|^2
+ \ge k_0 2^{4-2r}|a-b|^r.
+\]
+If $t_0<R_0/2$, use $a\cdot b\le R_0t_0$ to obtain
+\begin{align*}
+ (A(a)-A(b))\cdot(a-b)
+ &\ge(R_0-t_0)(\alpha(R_0)R_0-\alpha(t_0)t_0)\\
+ &\ge\alpha(R_0)(R_0-t_0)^2
+ \ge(k_0/4)R_0^r
+ \ge(k_0/4)(2/3)^r|a-b|^r.
+\end{align*}
+Thus one can take
+$\gamma=k_0\min(2^{4-2r},\tfrac14(\tfrac23)^r)$.
+The case $a=b=0$ is immediate; no division by a speed is required.
+
+The growth assumptions imply
+\begin{equation}\label{eq:growth}
+ |A(a)|^s\le C_A(1+|a|^r).
+\end{equation}
+For the stated families, bounded $L^r$ norms make their large-value sets
+small in measure. On a fixed velocity ball $A$ is uniformly continuous.
+Together with $a_n-c_n\to0$ in measure this gives
+$A(a_n)-A(c_n)\to0$ in measure. Their $s$th-power differences are
+uniformly integrable by \eqref{eq:growth}, hence converge to zero in $L^s$.
+Indeed, split their integral into a set where the difference exceeds a
+fixed small number and its complement; the first set has vanishing measure
+and the second contribution is bounded by that number to the power $s$
+times $|\Omega|$.
+Strong $L^r$ convergence makes the $r$th powers uniformly integrable,
+which proves continuity at a fixed field. To see the stability under
+small errors explicitly, write $c_n=a_n+e_n$ with $e_n\to0$ in $L^r$.
+Then $|c_n|^r\le2^{r-1}(|a_n|^r+|e_n|^r)$. The total integrals
+of $|e_n|^r$ are arbitrarily small after a finite prefix, and the prefix
+has absolutely continuous integrals. This proves uniform integrability.
+In particular, it holds for a fixed rough field plus uniformly bounded
+increments and for all families close to it in $L^r$.
+\end{proof}
+
+\begin{lemma}\label{lem:auxiliary}
+For every $F\in L^s(\Omega;\R^d)$ there is a unique pair
+$u\in\mathcal C$, $p\in P+V$ satisfying $A(u)=F-\nabla p$.
+\end{lemma}
+\begin{proof}
+The convex $C^1$ function
+\[
+ J(a)=\begin{cases}
+ \beta|a|^2/2,&|a|\le1,\\
+ \beta/2+\displaystyle\int_1^{|a|}\phi_2(t^2)t\,dt,&|a|>1
+ \end{cases}
+\]
+has gradient $A$ and bounds
+$(c/r)|a|^r-C_J\le J(a)\le C_J(1+|a|^r)$.
+Minimize
+\[
+ \int_\Omega J(u)-\pair{F-\nabla P}{u}
+ \quad\text{over }u\in\mathcal C.
+\]
+Coercivity and Holder's inequality bound a minimizing sequence in $L^r$.
+Reflexivity and weak sequential compactness give a weak limit in
+$\mathcal C$; see \cite[Theorems 3.18 and 4.10]{Brezis}.
+The supporting-plane inequality at this limit,
+$J(v)\ge J(u)+A(u)\cdot(v-u)$, proves weak lower semicontinuity after
+integration, since $A(u)\in L^s$. The minimum is therefore attained.
+
+For $w\in K$, differentiating along $u+tw$ gives
+$\pair{A(u)-F+\nabla P}{w}=0$. The segment identity for $J$ and
+\cref{lem:monotonicity} justify the derivative in the dual pairing;
+its integrand is bounded by
+$C(1+|u|^{r-1}+|w|^{r-1})|w|$, which is integrable, so the exchange
+of the segment and spatial integrals is justified. By \cref{prop:linear}
+there is $v\in V$ with $\nabla v=F-\nabla P-A(u)$.
+Then $p=P+v$ has the required sign and trace convention.
+For two solutions, their velocity difference is in $K$ and their
+pressure difference in $V$. Testing the equation difference by the
+velocity difference cancels pressure; \eqref{eq:monotonicity} and
+\cref{prop:linear} give uniqueness.
+\end{proof}
+
+\subsection{Cutoff equations and bounded defects}
+We will alter drag on bounded velocity sets while leaving large velocities
+on the high graph. For $R\ge1$ use the $1/R$-Lipschitz function
+\begin{equation}\label{eq:cutoff}
+ \chi_R(a)=\begin{cases}
+ 1,&|a|\le R,\\2-|a|/R,&R<|a|<2R,\\0,&|a|\ge2R.
+ \end{cases}
+\end{equation}
+For a bounded measurable source $b:\Omega\to\R^d$, set
+$F_{b,R}(x,a)=A(a)+b(x)\chi_R(a)$.
+
+\begin{lemma}\label{lem:cutoff}
+If $M=\norm{b}{\infty}$ and $M/R\le\beta/4$, the original affine
+constraints have an exact solution
+\begin{equation}\label{eq:cutoff-solution}
+ u\in\mathcal C,\quad p\in P+V,\quad
+ z=F_{b,R}(x,u)=f-\nabla p.
+\end{equation}
+Moreover, if an affine pair $(\widetilde u,\widetilde z)$ satisfies
+$\widetilde z=F_{b,R}(x,\widetilde u)+d$, $d\in L^s$, then
+\begin{equation}\label{eq:comparison}
+ \norm{u-\widetilde u}{r}^{r-1}\le\frac2\gamma\norm{d}{s}.
+\end{equation}
+Here an affine pair means $\widetilde u\in\mathcal C$ and
+$\widetilde z=f-\nabla\widetilde p$ with $\widetilde p\in P+V$.
+\end{lemma}
+\begin{proof}
+Average the two bounds in \eqref{eq:monotonicity} and subtract the
+cutoff error $M|a-c|^2/R$:
+\begin{equation}\label{eq:cutoff-monotonicity}
+ (F_{b,R}(x,a)-F_{b,R}(x,c))\cdot(a-c)
+ \ge\frac\gamma2|a-c|^r+\frac\beta4|a-c|^2.
+\end{equation}
+To obtain existence, for $v\in L^2$ let $T(v)$ be the velocity from
+\cref{lem:auxiliary} with force $f-b\chi_R(v)$. This belongs to
+$L^r\subset L^2$. Comparing two such equations, the pressure term
+vanishes and the quadratic bound gives
+\[
+ \norm{T(v)-T(w)}2\le\frac{M}{\beta R}\norm{v-w}2
+ \le\frac14\norm{v-w}2.
+\]
+Iteration is Cauchy in the complete space $L^2$; its limit is a fixed
+point by this Lipschitz bound. As a value of $T$ it belongs to $L^r$,
+and its auxiliary pressure gives \eqref{eq:cutoff-solution}.
+For comparison, both velocity fields have the same affine mass data,
+so their drag difference pairs to zero with their velocity difference.
+Using \eqref{eq:cutoff-monotonicity} and Holder gives
+$(\gamma/2)\norm{u-\widetilde u}{r}^r
+ \le\norm{d}{s}\norm{u-\widetilde u}{r}$, proving
+\eqref{eq:comparison}, including the zero-difference case.
+\end{proof}
+
+The closed part of the original graph which we shall use is
+\begin{equation}\label{eq:graph}
+ \Gamma=\{(a,z):|a|=1,\ z\in\R^d\}
+ \cup\{(a,A(a)):|a|>1\}.
+\end{equation}
+Its continuous nonnegative defect is
+\begin{equation}\label{eq:defect}
+ G(a,z)=\begin{cases}
+ 1-|a|,&|a|\le1,\\
+ \min(|a|-1,|z-A(a)|),&|a|>1.
+ \end{cases}
+\end{equation}
+Continuity at the sphere follows from $G\le\big||a|-1\big|$ there,
+and $G^{-1}(0)=\Gamma$.
+For a solution of \eqref{eq:cutoff-solution}, the residual
+$z-A(u)=b\chi_R(u)$ is bounded and vanishes at $|u|\ge2R$.
+Consequently
+\begin{equation}\label{eq:defect-bound}
+ G(u,z)>0\ \Longrightarrow\ |u|<2R,\quad
+ |z|\le\max_{|a|\le2R}|A(a)|+M.
+\end{equation}
+This is the boundedness used below. The solution itself may have
+unbounded velocity and drag.
+
+\section{Finite oscillatory constructions}\label{sec:oscillations}
+
+\subsection{Wave connections and the full finite hull}
+For pairs $U_i=(a_i,z_i)\in\R^d\times\R^d$ the relation
+\begin{equation}\label{eq:wave}
+ (a_1-a_2)\cdot(z_1-z_2)=0
+\end{equation}
+permits a divergence-free velocity oscillation and a gradient drag
+oscillation with one common normal. Indeed there is a unit vector
+$\xi$ such that $a_1-a_2$ is perpendicular to $\xi$ and
+$z_1-z_2$ is parallel to $\xi$: use its direction if the drag
+difference is nonzero, and otherwise choose a perpendicular direction
+to the velocity difference. This uses $d\ge2$.
+
+A finite laminate here means a finite probability measure obtained from
+a single mean pair by finitely many binary splits
+$U=\theta U_1+(1-\theta)U_2$, $0\le\theta\le1$, each satisfying
+\eqref{eq:wave}. Zero-weight states can be omitted. We first establish
+that every pair can be split into states of the graph \eqref{eq:graph}.
+
+\begin{lemma}\label{lem:hull}
+Every pair $(a,z)\in\R^{2d}$ is the mean of a finite laminate
+supported in $\Gamma$. On each set $|a|,|z|\le D$ the atoms can
+be chosen in a uniformly bounded set, with uniformly bounded split depth.
+\end{lemma}
+\begin{proof}
+For $|a|=\rho\le1$, write $a=\rho e$ and choose a unit vector
+$b\perp e$. At $a=0$ choose any orthonormal $e,b$.
+The two unit states
+\[
+ \big(\rho e\pm\sqrt{1-\rho^2}\,b,z\big)
+\]
+with equal weights have mean $(a,z)$ and satisfy \eqref{eq:wave}.
+When $\rho=1$ the original graph state suffices.
+
+For $|a|>1$, choose a unit $b\perp a$, put $\delta=A(a)-z$,
+and choose $T>|\delta|+|a\cdot\delta|+1$. For $\sigma\in\{-1,1\}$ set
+\[
+ z_\sigma=z+\sigma Tb,\qquad
+ e_\sigma=\frac{A(a)-z_\sigma}{|A(a)-z_\sigma|},\qquad
+ d_\sigma=a-e_\sigma.
+\]
+The denominator is nonzero by the choice of $T$. Along the ray
+$y_\sigma(\lambda)=e_\sigma+\lambda d_\sigma$, $\lambda\ge1$,
+the speed is at least $|a|>1$ and $d_\sigma\cdot y_\sigma(\lambda)>0$.
+Consider
+\[
+ F_\sigma(\lambda)=d_\sigma\cdot(A(y_\sigma(\lambda))-z_\sigma).
+\]
+At the initial point,
+\[
+ F_\sigma(1)=a\cdot\delta-|\delta-\sigma Tb|<-1.
+\]
+The quadratic bound in \eqref{eq:monotonicity} gives, for $\lambda>\mu\ge1$,
+\[
+ F_\sigma(\lambda)-F_\sigma(\mu)
+ \ge\beta(\lambda-\mu)|d_\sigma|^2.
+\]
+Thus the continuous function has a unique zero $\lambda_\sigma>1$.
+Define
+\[
+ a_\sigma^h=e_\sigma+\lambda_\sigma d_\sigma,\qquad
+ z_\sigma^u=
+ \frac{\lambda_\sigma z_\sigma-A(a_\sigma^h)}{\lambda_\sigma-1}.
+\]
+The unit state $(e_\sigma,z_\sigma^u)$ and the high state
+$(a_\sigma^h,A(a_\sigma^h))$, with weights
+$(\lambda_\sigma-1)/\lambda_\sigma$ and $1/\lambda_\sigma$,
+have mean $(a,z_\sigma)$. Their velocity difference is
+$-\lambda_\sigma d_\sigma$, their drag difference is
+$\lambda_\sigma(z_\sigma-A(a_\sigma^h))/(\lambda_\sigma-1)$,
+and their scalar product is zero by the root equation.
+Finally $(a,z_+)$ and $(a,z_-)$ have the same velocity and mean
+$(a,z)$ with equal weights. This gives a two-level laminate.
+
+For the uniform bounds, choose $T$ with a common strict margin on
+the compact input range, including its limiting sphere $|a|=1$.
+Let $D_\delta$ bound $|\delta|$. The transverse component gives
+\[
+ |d_\sigma|\ge|e_\sigma\cdot b|
+ \ge\frac1{T+D_\delta}=:m>0.
+\]
+If $C_F$ bounds $|F_\sigma(1)|$, the preceding monotonicity gives
+$\lambda_\sigma\le1+C_F/(\beta m^2)$.
+On this bounded range the parameters and $\lambda$ form a compact
+set. Uniform continuity of $F_\sigma$, together with
+$F_\sigma(1)<-1$, keeps $\lambda_\sigma-1$ uniformly positive.
+It therefore also bounds $z_\sigma^u$. The high atoms and the
+subunit construction are bounded as well. No continuous choice of the
+perpendicular vector is needed.
+\end{proof}
+
+\subsection{Mixed moment bounds near the graph}
+Fullness of the finite hull alone does not give small corrections near
+$\Gamma$. The following estimate supplies that property in the two
+conjugate norms of the weak problem.
+
+\begin{lemma}\label{lem:tight}
+For every $D\ge1$ there are finite $B_D,C_D$ such that every
+$U=(a,z)$ with $|a|,|z|\le D$ is the mean of a finite laminate
+$\nu_U$ supported in $\Gamma\cap\{|a'|,|z'|\le B_D\}$, with
+\begin{equation}\label{eq:moment}
+ \int_{\R^{2d}}\big(|a'-a|^r+|z'-z|^s\big)\,d\nu_U(a',z')
+ \le C_D G(a,z).
+\end{equation}
+The number of atoms and split depth can be bounded independently of $U$.
+\end{lemma}
+\begin{proof}
+Inside the unit ball, the construction in \cref{lem:hull} has velocity
+moment $(1-\rho^2)^{r/2}\le2^{r/2}(1-\rho)$ and zero drag moment.
+
+For $a=(1+\varepsilon)e$, $0<\varepsilon<1/4$, choose a unit
+$b\perp e$, a fixed $T>0$, and put
+\[
+ \theta=2\varepsilon,\qquad
+ a_+=2e,\qquad
+ a_-=\rho e,\quad \rho=\frac{1-3\varepsilon}{1-2\varepsilon},
+ \qquad z_+=z+Tb,\quad
+ z_-=z-\frac{\theta}{1-\theta}Tb.
+\]
+The weights $\theta,1-\theta$ give mean $(a,z)$, and the two
+differences in this split are perpendicular. Replace the plus pair by
+\cref{lem:hull}'s laminate and the minus pair by two unit states
+with common drag $z_-$. The plus inputs stay in a fixed compact set,
+so their atoms have a uniform bound and contribute at most
+$C_D\varepsilon$. For each minus unit state,
+\[
+ |a'-a|^2\le9\varepsilon^2+4\varepsilon,\qquad
+ |z_--z|\le4T\varepsilon.
+\]
+Here $1-\rho=\varepsilon/(1-2\varepsilon)\le2\varepsilon$.
+Its mixed moment is at most
+$C(\varepsilon^{r/2}+\varepsilon^s)\le C\varepsilon$, since
+$r\ge2$ and $s>1$. This gives a bound by $|a|-1$ near the sphere.
+When $|a|-1\ge1/4$, the bounded atoms from \cref{lem:hull} give
+the same bound after enlargement of the constant.
+
+For a second bound, suppose $|a|>1$ and
+$\delta=|z-A(a)|\in(0,1/2)$. Split the pair into the exact high
+state $(a,A(a))$ of weight $1-\delta$ and the mean pair
+\[
+ \left(a,A(a)+\frac{z-A(a)}\delta\right)
+\]
+of weight $\delta$. Their velocities agree, so the split is allowed.
+The second input stays bounded; replace it using \cref{lem:hull}.
+The first atom has drag deviation $\delta$, and the other bounded
+atoms have total weight $\delta$. The mixed cost is at most
+$C_D\delta$. For $\delta\ge1/2$ use the full bounded construction,
+and for $\delta=0$ use the exact graph state. Selecting the cheaper
+of this construction and the sphere construction proves \eqref{eq:moment}.
+Each case uses a fixed finite binary tree, so the bounds on atom number
+and depth are uniform.
+\end{proof}
+
+Enlarge the compact-set constants to nondecreasing majorants. Choose a
+continuous nondecreasing $k:[1,\infty)\to[1,\infty)$ which dominates
+them with one unit of radius slack; interpolation of a nondecreasing
+sequence with $k(n)\ge C_{n+2}$ suffices. Set
+\begin{equation}\label{eq:H}
+ H(a,z)=k(1+|a|+|z|)G(a,z).
+\end{equation}
+Then $H\ge G$, its zero set is $\Gamma$, and at every pair one
+of the laminates has mixed cost at most $H(a,z)$.
+The function is bounded on compact pair sets. By \eqref{eq:defect-bound},
+$H(u,z)$ is bounded for every cutoff solution, although no $r$-growth
+bound for $H$ at arbitrary mismatched pairs is asserted.
+
+\subsection{Measurable masks and exact affine perturbations}
+The local finite-potential construction for laminates is familiar from
+convex integration; see, for example, \cite[Proposition 4.5]{ST21}.
+We give the required form directly, because the initial affine pair may
+be rough and the set on which it is changed is merely measurable.
+
+\begin{lemma}\label{lem:masks}
+Let $U=(u,z)$ be an affine pair, and let $E$ be a measurable subset
+of a compact set contained in $\Omega$, with $U$ bounded on $E$.
+For every $\epsilon>0$ there are fields $W_n=(w_n,\omega_n)$ and
+affine pairs $\widetilde W_n=(\widetilde w_n,\widetilde\omega_n)$ such that
+\begin{align}
+ &W_n=U\text{ off }E,\quad W_n-U\text{ uniformly bounded},\label{eq:target-support}\\
+ &\int_E H(W_n)<\epsilon,\label{eq:target-H}\\
+ &\limsup_n\big(\norm{w_n-u}{r}^r+\norm{\omega_n-z}{s}^s\big)
+      \le\int_E H(U)+\epsilon,\label{eq:target-cost}\\
+ &\norm{\widetilde w_n-w_n}{r}
+   +\norm{\widetilde\omega_n-\omega_n}{s}\longrightarrow0.
+   \label{eq:affine-approx}
+\end{align}
+The perturbations $\widetilde W_n-U$ are compactly supported
+divergence-free/gradient pairs. For this fixed construction they also
+have a uniform $L^\infty$ bound.
+\end{lemma}
+\begin{proof}
+Partition $E$ into finitely many measurable value bins $E_j$, with
+constants $C_j$ such that $|U-C_j|\le\delta$ on $E_j$.
+Here and below a pair norm is $|(a,z)|=|a|+|z|$.
+Choose $\delta\le1$, so all centers remain in one fixed compact
+range. Choose the laminates of \cref{lem:tight} at those centers.
+Their atoms have a common bound independent of the bin precision.
+On a bin the ideal field takes values
+\[
+ U(x)+(a_{j,\ell},z_{j,\ell})-C_j,
+\]
+where $(a_{j,\ell},z_{j,\ell})$ is a graph atom. Uniform continuity
+of $H$ on that compact range makes its integral on $E$ smaller
+than $\epsilon$ by choosing $\delta$ small. It also makes
+$\sum_j|E_j|H(C_j)\le\int_E H(U)+\epsilon$ with any prescribed
+smaller error in place of $\epsilon$.
+
+We realize the state fractions while approximating these ideal fields
+by exact affine ones. For a binary split with difference
+$q=(q_u,q_z)$ and weights $\theta,1-\theta$, choose a unit
+$\xi$ with $q_u\cdot\xi=0$ and $q_z=t\xi$.
+Let $h$ be a periodic profile taking values $1-\theta$ and
+$-\theta$ on fractions $\theta$ and $1-\theta$ of each period.
+Its mean is zero, so it has a bounded periodic Lipschitz primitive $L$.
+For a measurable parent phase $F$, the ideal correction is
+$\ind_F h(N\xi\cdot x)q$.
+
+Approximate $\ind_F$ by smooth amplitudes $\eta$, between zero
+and one, supported in a fixed compact interior neighborhood. Convolution
+gives convergence in both $L^r$ and $L^s$; see
+\cite[Theorem 4.22]{Brezis}. Set
+$S=q_u\otimes\xi-\xi\otimes q_u$, so $S$ is skew and $S\xi=q_u$.
+The potentials
+\begin{equation}\label{eq:potentials}
+ \Psi_N(x)=\frac1N S\eta(x)L(N\xi\cdot x),\qquad
+ v_N(x)=\frac tN\eta(x)L(N\xi\cdot x)
+\end{equation}
+give
+\[
+ (\Div\Psi_N,\nabla v_N)
+ =\eta h(N\xi\cdot x)q
+ +\frac{L(N\xi\cdot x)}N(S\nabla\eta,t\nabla\eta).
+\]
+Row divergence is used for the matrix. First choose the smooth amplitude
+with small mask error, and then choose $N$ so the last term is small
+in $L^\infty$. Differentiation is also valid distributionally: $L$ is
+continuous and piecewise affine, so integration by parts on its affine
+intervals has cancelling interface terms. Fubini along the $\xi$
+coordinate gives the displayed derivative identity.
+
+The velocity perturbation is divergence-free because the potential is
+skew. It pairs to zero with the gradient of every $\psi\in V$:
+first use smooth tests, then the local Sobolev approximation of
+\cite[Theorem 9.2]{Brezis} on the compact support, and pass by Holder.
+The drag perturbation is a global gradient. Its pressure correction is
+$-v_N$, with the mean restored by a constant in the pure-flux case.
+Thus both original boundary conditions are preserved, also on domains
+with holes.
+
+Periodic averaging gives the required fractions on every measurable
+parent phase. For a smooth compactly supported weight, integrate a
+zero-mean profile's bounded primitive in direction $\xi$, obtaining
+an error $O(N^{-1})$. Density in $L^1$ extends this to $\ind_F$;
+see \cite[Theorem 4.12]{Brezis} and mollification. Apply this also
+to each phase indicator minus its mean fraction.
+
+Carry out the finite split trees in order. At index $n$, choose the
+outer frequencies with errors below $1/n$. Their ideal phase masks
+are then fixed measurable sets. For each inner split, smooth its
+parent mask with error below $1/n$ in both norms and choose its
+frequency so its fraction error and potential remainder are below
+$1/n$. There are only finitely many splits. Their free corrections
+sum to a uniformly bounded compactly supported perturbation, and
+the accumulated mask and remainder errors tend to zero.
+On the disjoint bins the corresponding ideal targets take the leaf
+values above, so they have a uniform bound on $E$.
+
+The conditional phase measures converge to the prescribed weights.
+Consequently the ideal mixed increment cost converges to the sum of
+the bin measures times the laminate moments, bounded by
+$\sum_j|E_j|H(C_j)$. Choosing the bin error smaller than
+$\epsilon$ proves \eqref{eq:target-cost}. The other properties
+follow from the construction. All bounds here are for a fixed finite
+collection of bins and trees; no measurable selection of a continuum
+of laminates is needed.
+\end{proof}
+
+\section{Proof of existence}\label{sec:proof}
+
+We now use the finite oscillations to improve exact solutions, keeping the
+original data fixed. Call a pair a compact-source cutoff solution if it
+satisfies \eqref{eq:cutoff-solution}, $b$ vanishes outside a compact subset
+of $\Omega$, and $R\ge1$, $\norm{b}{\infty}/R\le\beta/4$.
+The zero source is allowed. Recall that $H$ is the continuous weighted
+defect \eqref{eq:H}; it is integrable on every such solution by
+\eqref{eq:defect-bound}.
+
+\begin{lemma}[Exact improvement]\label{lem:improvement}
+For every compact-source cutoff solution $U=(u,z)$ and every $\eta>0$
+there is another one, $U'=(u',z')$, with the identical original data and
+\begin{equation}\label{eq:improvement}
+ \int_\Omega H(U')<\eta,\qquad
+ \norm{u'-u}{r}^r+\norm{z'-z}{s}^s\le2\int_\Omega H(U)+\eta.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $H(U)$ is bounded, choose a compact interior set $K_0$ with
+$\int_{\Omega\setminus K_0}H(U)<\eta/10$ and set
+$E=K_0\cap\{G(U)>0\}$. Compact interior exhaustion and dominated
+convergence justify the choice. The same bound holds outside $E$,
+and $U$ is bounded on $E$ by \eqref{eq:defect-bound}.
+Use \cref{lem:masks} with an error $\epsilon<\eta/10$, small enough
+that the target $H$ integral on $E$ is also below $\eta/10$.
+Write its ideal targets $W_n=(w_n,\omega_n)$ and affine approximants
+$\widetilde W_n=(\widetilde w_n,\widetilde\omega_n)$.
+
+The target residual
+\[
+ b_n(x)=\omega_n(x)-A(w_n(x))
+\]
+is bounded on $E$ by the common target range. Outside $E$ it is
+the old residual $b\chi_R(u)$, hence is bounded and vanishes off the
+old compact source support. Thus all $b_n$ vanish outside one compact
+set, and $\norm{b_n}{\infty}\le M_*$ uniformly in $n$.
+Choose $R_*$, independently of $n$, larger than $2R$ and the
+target velocity bound on $E$, with $M_*/R_*\le\beta/4$.
+At every point where $b_n\ne0$, $|w_n|<R_*$, so
+\begin{equation}\label{eq:target-identity}
+ \omega_n=A(w_n)+b_n\chi_{R_*}(w_n).
+\end{equation}
+Solve the exact cutoff problem of \cref{lem:cutoff} with this source,
+obtaining $U_n^*=(u_n^*,z_n^*)$ and the original mass and pressure data.
+
+For comparison with the affine approximant define
+\[
+ d_n=\widetilde\omega_n-A(\widetilde w_n)
+          -b_n\chi_{R_*}(\widetilde w_n).
+\]
+Subtract \eqref{eq:target-identity}. The direct drag difference
+tends to zero in $L^s$. The targets are the fixed rough $u$ plus
+uniformly bounded increments, so their $r$th powers are uniformly
+integrable; the $L^r$-close affine velocities have the same property.
+\Cref{lem:monotonicity} therefore makes their $A$ difference tend to
+zero in $L^s$. The cutoff difference tends to zero in $L^s$ by
+its Lipschitz bound, the common $M_*$ and $L^r\subset L^s$ on
+the bounded domain. Consequently $\norm{d_n}{s}\to0$.
+
+The exact and approximate velocities lie in $\mathcal C$ and both
+drag fields equal $f$ minus a gradient with pressure in $P+V$.
+\Cref{lem:cutoff} yields
+\[
+ \norm{u_n^*-\widetilde w_n}{r}^{r-1}
+ \le\frac2\gamma\norm{d_n}{s}\longrightarrow0.
+\]
+Uniform integrability passes to these exact velocities. The identity
+\[
+ z_n^*-\widetilde\omega_n
+ =A(u_n^*)-A(\widetilde w_n)
+  +b_n\big(\chi_{R_*}(u_n^*)-\chi_{R_*}(\widetilde w_n)\big)-d_n
+\]
+and \cref{lem:monotonicity} then give drag convergence in $L^s$.
+Thus $U_n^*-W_n\to0$ in $L^r\times L^s$.
+
+The $H$ integrals also become close, despite the possible rough tails.
+All exact solutions have the common cutoff radius $R_*$ and source
+bound $M_*$, so \eqref{eq:defect-bound} bounds $H(U_n^*)$ uniformly.
+The targets have a uniform $H$ bound as well: off $E$ they are $U$,
+and on $E$ they lie in a common compact range. They are tight in
+measure, being the fixed pair $U$ plus uniformly bounded increments.
+Discard a small-measure large-value set of $U$. On its complement
+$W_n$ lies in a common compact range; outside another set of vanishing
+measure, product-norm closeness places $U_n^*$ in a slightly larger
+range. Uniform continuity of $H$ there proves
+$H(U_n^*)-H(W_n)\to0$ in measure. Its uniform bound makes the
+convergence $L^1$: split at a fixed small magnitude as in the proof
+of \cref{lem:monotonicity}.
+Only these exact fields and ideal targets enter this argument; no
+integrability of $H(\widetilde W_n)$ is needed.
+
+It follows that $\int_\Omega H(U_n^*)<\eta$ for all sufficiently
+large $n$. Also product-norm closeness and the bounded target increment
+norms imply
+\[
+ \limsup_n\big(\norm{u_n^*-u}{r}^r+\norm{z_n^*-z}{s}^s\big)
+ \le\int_\Omega H(U)+\epsilon.
+\]
+A sufficiently large finite $n$ satisfies both inequalities in
+\eqref{eq:improvement}, including when the original integral is zero.
+Set $U'=U_n^*$. The new source and cutoff bounds may depend on this
+step, but were fixed throughout its frequency limit.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:existence}]
+Start with the auxiliary solution $U^{(0)}=(u^{(0)},z^{(0)})$ from
+\cref{lem:auxiliary} with $F=f$. It is a compact-source cutoff
+solution with $b=0$. On $|u^{(0)}|>1$ its defect vanishes, and on
+$|u^{(0)}|\le1$ its drag is $\beta u^{(0)}$, so
+$\int_\Omega H(U^{(0)})<\infty$.
+Apply \cref{lem:improvement} to $U^{(j)}$ with
+$\eta_j=2^{-r(j+1)}$. Then, for $j\ge1$,
+\begin{align*}
+ \int_\Omega H(U^{(j)})&\le2^{-rj},\\
+ \norm{u^{(j+1)}-u^{(j)}}{r}^r
+  +\norm{z^{(j+1)}-z^{(j)}}{s}^s&\le3\,2^{-rj}.
+\end{align*}
+The first step has finite cost. The remaining velocity norm increments
+are bounded by $3^{1/r}2^{-j}$, and the drag norm increments by
+$3^{1/s}2^{-(r-1)j}$. Both series converge. Completeness gives
+\[
+ u^{(j)}\longrightarrow u\text{ in }L^r,\qquad
+ z^{(j)}\longrightarrow z\text{ in }L^s.
+\]
+Each $z^{(j)}=f-\nabla p^{(j)}$ with $p^{(j)}\in P+V$.
+The bounded inverse gradient of \cref{prop:linear} makes
+$p^{(j)}-P$ Cauchy in $W^{1,s}$, giving $p\in P+V$ and
+$z=f-\nabla p$. For every fixed $\psi\in V$, Holder's inequality
+passes the mass identity to the limit. This preserves exactly the
+original normal-flux functional and, in pure flux, the pressure mean.
+
+An almost-everywhere convergent subsequence exists in the finitely
+many pair components by \cite[Theorem 4.9]{Brezis}. Continuity of
+$H$ and Fatou's lemma give
+\[
+ 0\le\int_\Omega H(u,z)
+ \le\liminf_j\int_\Omega H(U^{(j)})=0.
+\]
+Therefore $(u,z)\in\Gamma$ almost everywhere. In particular $|u|\ge1$,
+and $z=\phi_2(|u|^2)u$ where $|u|>1$. Define the single global
+$h=z\ind_{\{|u|=1\}}\in L^s$. The original law
+\eqref{eq:original-law} then gives $z\in\Lambda(u)$, and all
+conditions in \eqref{eq:weak-problem} hold.
+\end{proof}
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{Brezis}
+H. Brezis, \emph{Functional Analysis, Sobolev Spaces and Partial Differential
+Equations}, Springer, 2011.
+\href{https://doi.org/10.1007/978-0-387-70914-7}{doi:10.1007/978-0-387-70914-7}.
+
+\bibitem{FP22}
+A. Fumagalli and F. S. Patacchini,
+Model adaptation for non-linear elliptic equations in mixed form:
+existence of solutions and numerical strategies,
+\emph{ESAIM Math. Model. Numer. Anal.} \textbf{56} (2022), 565--592.
+\href{https://doi.org/10.1051/m2an/2022016}{doi:10.1051/m2an/2022016}.
+
+\bibitem{FPpreprint}
+A. Fumagalli and F. S. Patacchini,
+Well-posedness and variational numerical scheme for an adaptive model in
+highly heterogeneous porous media,
+\href{https://arxiv.org/abs/2206.07970v1}{arXiv:2206.07970v1}, 2022.
+
+\bibitem{ST21}
+M. Sorella and R. Tione,
+The four-state problem and convex integration for linear differential operators,
+\href{https://arxiv.org/abs/2107.10785v1}{arXiv:2107.10785v1}, 2021.
+
+\bibitem{AIM527}
+MColbrook/AIM, \emph{527. Existence for adaptive porous flow with a negative
+drag jump}, problem repository, revision
+\texttt{c9929805cece044705abaaebe1cebddac1ba11a6}, 2026.
+\href{https://github.com/MColbrook/AIM/blob/c9929805cece044705abaaebe1cebddac1ba11a6/problems/527-negative-jump-adaptive-flow.md}{Immutable problem statement}.
+\end{thebibliography}
+
+\section*{AI-use statement}
+This proof and manuscript were developed with substantial assistance from
+OpenAI Codex. AI assistance included mathematical exploration, drafting,
+checking primary-source statements, self-review and manuscript preparation.
+A separate Codex context reviewed a prepublication version of the manuscript
+and its cited public sources. Both drafting and AI review used OpenAI systems.
+No independent human review or formal proof verification is claimed.
+The argument is submitted for independent mathematical review.
+\end{document}
