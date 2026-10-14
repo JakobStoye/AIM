@@ -1,0 +1,7 @@
+# References and cited content
+
+1. Thomas Chaplin, *First Betti number of the path homology of random directed graphs*, Journal of Applied and Computational Topology **8** (2024), 1503–1549. [Publisher version](https://doi.org/10.1007/s41468-022-00108-3); [arXiv:2111.13493v1](https://arxiv.org/abs/2111.13493v1). Conjecture B.2 is the exact source question. Section 3.3 distinguishes regular and non-regular generators, including common-base reciprocal-path differences. The manuscript derives its spanning family directly.
+2. Sourav Chatterjee, *Stats 310A (Math 230A) Lecture notes*, [author-hosted source](https://souravchatterjee.su.domains/stat310a-lecture-notes.pdf), accessed 14 October 2026. Proposition 5.11.1, printed pages 53–54 (PDF pages 57–58), gives the characteristic function `exp(-t^2/2)` of the standard normal law, with convention `E exp(i t X)`. The notes are undated; no publication year or venue is inferred.
+3. Christian Doebler, *A short proof of Levy’s continuity theorem without using tightness*, [arXiv:2111.01603v1](https://arxiv.org/abs/2111.01603v1), 2 November 2021. Theorem 1.1, page 1, identifies weak convergence of Borel probability measures with pointwise convergence of their characteristic functions to that of the proposed limiting measure. The manuscript applies it in dimension one.
+
+The DOI, source versions, theorem locators, and cited content were checked against the primary documents. Chaplin's conjecture is background and a target, not an assumed theorem. No numerical result is an imported proof premise.
