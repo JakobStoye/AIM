@@ -1,0 +1,423 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+ pdftitle={Global attraction of the positive equilibrium in an irreversible reaction-diffusion system},
+ pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Global attraction of the positive equilibrium\\
+in an irreversible reaction--diffusion system}
+\author{Kaiwen Jin\thanks{\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+An irreversible reaction--diffusion system can have both a positive
+equilibrium and a stationary state at which the catalyst is absent.
+For the three-species system studied by Nguyen and Tang, we prove that
+every strictly positive compatible initial triple converges uniformly
+to the positive equilibrium whenever the conserved masses satisfy
+\(M_2\le M_1<2M_2\). The result holds on bounded connected smooth domains
+in every dimension and for arbitrary positive diffusion coefficients.
+Quadratic dissipation first removes the spatial oscillations of two
+species. The total catalyst mass then satisfies a logistic equation
+with a relative error tending to zero, which identifies the positive
+limit and closes the strictly positive form of the global-attraction question.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+We consider the reaction--diffusion system
+\begin{equation}\label{eq:system}
+ \begin{aligned}
+ a_t-d_1\Delta a&=b(c-a),\\
+ b_t-d_2\Delta b&=b(c-a),\\
+ c_t-d_3\Delta c&=-b(c-a)
+ \end{aligned}
+ \qquad\text{in }\Omega,
+\end{equation}
+with homogeneous Neumann boundary conditions. Here \(\Omega\subset\mathbb R^n\)
+is bounded, connected and smooth, \(|\Omega|=1\), and \(d_1,d_2,d_3>0\).
+The concentrations \(a,b,c\) represent the irreversible chemical reaction
+studied in \cite{NT}, in which the presence of \(b\) enables the reaction
+between \(a\) and \(c\). Diffusion and the reaction preserve
+\begin{equation}\label{eq:masses}
+ \int_\Omega(a(t)+c(t))\,dx=M_1,\qquad
+ \int_\Omega(b(t)+c(t))\,dx=M_2,
+\end{equation}
+where \(M_1=\int_\Omega(a_0+c_0)\,dx\) and
+\(M_2=\int_\Omega(b_0+c_0)\,dx\).
+For nonnegative bounded data the global classical solution is uniformly
+bounded; this is established in \cite[Theorem~2.1]{NT}.
+The remaining issue here is its long-time selection of equilibrium.
+
+When \(M_2\le M_1<2M_2\), the conserved masses admit both the positive equilibrium
+\[
+ \left(\frac{M_1}{2},\,M_2-\frac{M_1}{2},\,\frac{M_1}{2}\right)
+\]
+and the boundary equilibrium \((M_1-M_2,0,M_2)\).
+Nguyen and Tang prove local exponential stability of the positive
+equilibrium in this regime \cite[Theorem~2.7]{NT}, and formulate global
+attraction as a conjecture after their Table~1.
+Their global positive-convergence result in the different regime
+\(M_1<M_2\) uses the mass lower bound
+\(\int_\Omega b\ge M_2-M_1>0\) \cite[Theorem~2.4]{NT}.
+That bound is unavailable in the coexistence regime, so it does not
+settle whether every positive initial state selects the positive equilibrium.
+
+We prove this selection for strictly positive initial concentrations.
+The fixed version of \href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/416-catalytic-reaction-diffusion-positive-attractor.md}{AIM Problem~416}
+assumes the same strictly positive \(C^2(\overline\Omega)\) data,
+Neumann compatibility, and unique global bounded classical solution used here.
+This restriction excludes the stationary boundary equilibrium:
+the printed nonnegative-data wording of the source conjecture permits
+\(b_0=0\), for which that equilibrium cannot evolve to a positive state.
+
+\begin{theorem}\label{thm:main}
+Let \(n\ge1\), let \(\Omega\subset\mathbb R^n\) be a bounded connected
+smooth domain of volume one, and let \(d_1,d_2,d_3>0\).
+Assume \(a_0,b_0,c_0\in C^2(\overline\Omega)\) are strictly positive
+and satisfy the homogeneous Neumann compatibility conditions.
+Let \((a,b,c)\) be the unique global bounded classical solution
+of \eqref{eq:system}. If \(M_2\le M_1<2M_2\), then
+\[
+ \lim_{t\to\infty}
+ \left[\left\|a(t)-\frac{M_1}{2}\right\|_\infty+
+ \left\|b(t)-\left(M_2-\frac{M_1}{2}\right)\right\|_\infty+
+ \left\|c(t)-\frac{M_1}{2}\right\|_\infty\right]=0.
+\]
+\end{theorem}
+The masses are those in \eqref{eq:masses}, and all uniform norms are over
+\(\overline\Omega\), equivalently essential uniform norms over \(\Omega\).
+The diffusion coefficients may be unequal, and no smallness of the
+initial deviation from equilibrium is required. The statement is
+convergence for each admitted solution, with no common rate over all data.
+
+The quadratic energy of \(a,c\), already used in the proof of
+\cite[Theorem~2.7]{NT}, dissipates their spatial gradients even when the
+catalyst is small. Compactness of bounded forced heat orbits turns this
+dissipation into uniform spatial homogenization. The conserved masses
+then reduce the catalyst's total mass to a positive logistic comparison
+with an error controlled by those spatial oscillations.
+Its limit identifies the means of \(a,c\); a final heat estimate removes
+the remaining spatial variation of \(b\).
+Section~\ref{sec:heat} gives the two heat lemmas, and
+Section~\ref{sec:proof} proves the attraction theorem.
+Throughout, \(\bar f=\int_\Omega f\,dx\) is the spatial average.
+
+\section{Two heat equation lemmas}\label{sec:heat}
+For a continuous real function \(f\) on \(\overline\Omega\), write
+\[
+ \bar f=\int_\Omega f\,dx,\qquad Qf=f-\bar f,\qquad
+ X=C(\overline\Omega).
+\]
+The volume normalization makes \(\bar f\) the spatial average.
+We use the pointwise uniform norm on \(X\) and the usual \(L^2(\Omega)\)
+norm. The Neumann heat semigroup for \(u_t=d\Delta u\) is denoted by
+\(S_d(t)\), where \(d>0\). Its constant mode is preserved, so \(Q\)
+commutes with \(S_d(t)\).
+
+We recall the precise heat properties used below. The Neumann realization
+of \(-\Delta\) has a complete real orthonormal eigenbasis in \(L^2(\Omega)\)
+and a smooth positive-time kernel; see \cite[Chapter~4, Section~8,
+Proposition~4.56 and Theorem~4.58]{Baudoin}. Green's identity
+\cite[Proposition~4.49]{Baudoin} shows that a zero eigenfunction has zero
+gradient. Connectedness therefore leaves only the constants in the zero
+eigenspace. We index the eigenvalues by
+\[
+ 0=\lambda_0<\lambda_1\le\lambda_2\le\cdots,\qquad \psi_0=1.
+\]
+The multiplier of \(S_d(t)\) on \(\psi_j\) is \(e^{-d\lambda_jt}\).
+For \(C^2\) functions \(g\) with \(\partial_\nu g=0\), Green's identity
+gives
+\begin{equation}\label{eq:poincare}
+ \|\nabla g\|_2^2
+ =\sum_{j\ge1}\lambda_j|\langle g,\psi_j\rangle|^2
+ \ge\lambda_1\|Qg\|_2^2 .
+\end{equation}
+The coefficient inner product converges because \(g,\Delta g\in L^2\).
+
+The heat flow preserves nonnegativity. One may test its equation by a
+smooth convex approximation of the squared negative part, then use
+strong \(L^2\) continuity at time zero. Its continuous kernel \(k_d(t,x,y)\)
+is consequently nonnegative: a negative kernel value would give a negative
+heat value for a nonnegative test function supported nearby.
+The constant mode gives
+\[
+ \int_\Omega k_d(t,x,y)\,dy=1,\qquad
+ \|S_d(t)f\|_\infty\le\|f\|_\infty.
+\]
+At each fixed \(\tau>0\), continuity of the kernel on the compact closure
+product also gives
+\begin{equation}\label{eq:smoothing}
+ \|S_d(\tau)f\|_\infty\le H_{d,\tau}\|f\|_2,\qquad
+ H_{d,\tau}:=\sup_{x\in\overline\Omega}
+       \left(\int_\Omega k_d(\tau,x,y)^2\,dy\right)^{1/2}<\infty .
+\end{equation}
+Bounded input sets in \(X\) have uniformly bounded, equicontinuous images
+under \(S_d(\tau)\). A finite spatial net and finite grids for the image
+values on that net give finite covers in the uniform norm. Thus
+\(S_d(\tau)\) maps bounded sets into relatively compact sets in \(X\).
+
+We will also use, for every \(C^2\) Neumann-compatible \(g\),
+\begin{equation}\label{eq:shorttime}
+ S_d(h)g-g=d\int_0^h S_d(r)\Delta g\,dr,\qquad
+ \|S_d(h)g-g\|_\infty\le dh\|\Delta g\|_\infty .
+\end{equation}
+For the identity, Green's identity gives
+\[
+ \langle\Delta g,\psi_j\rangle=-\lambda_j\langle g,\psi_j\rangle,
+\]
+since both functions satisfy the Neumann condition. Integrating the
+multiplier \(e^{-d\lambda_jr}\) proves \eqref{eq:shorttime} on each
+spectral coefficient, including the zero coefficient. The integral
+exists in \(X\): contraction bounds every tail over an interval of
+length \(\varepsilon\) by \(\varepsilon\|\Delta g\|_\infty\), so the
+truncated integrals are Cauchy in \(X\). Completeness of the eigenbasis
+identifies the two sides in \(L^2\); their continuity gives the identity
+in \(X\). Contraction then gives the displayed norm estimate.
+These arguments use fixed positive heat times and are valid in every dimension.
+
+\begin{lemma}\label{lem:compact}
+Let \(d>0\), and let \(u_t-d\Delta u=f\) be a classical solution with
+homogeneous Neumann conditions for positive times. Suppose that \(f\)
+is continuous in time with values in \(X\), and that
+\[
+ \sup_{t\ge1}\|u(t)\|_\infty<\infty,\qquad
+ F:=\sup_{t\ge1}\|f(t)\|_\infty<\infty.
+\]
+Then \(\{u(t):t\ge2\}\) has compact closure in \(X\), and \(u\) is
+uniformly continuous from \([2,\infty)\) into \(X\).
+\end{lemma}
+\begin{proof}
+The forced heat formula is
+\begin{equation}\label{eq:duhamel}
+ u(t)=S_d(t-s)u(s)+\int_s^tS_d(t-r)f(r)\,dr,\qquad t\ge s\ge1.
+\end{equation}
+It follows by solving the scalar equation on each Neumann eigenfunction
+coefficient. The integrand is continuous in \(X\) away from its upper
+endpoint. The improper integral converges in \(X\), because every
+endpoint tail of length \(\varepsilon\) has norm at most \(F\varepsilon\).
+Completeness of the eigenbasis then gives the stated identity.
+
+For \(t\ge2\) and \(0<\varepsilon<1\), split the last unit time interval:
+\begin{align*}
+ u(t)={}&S_d(1)u(t-1)
+ +S_d(\varepsilon)\int_\varepsilon^1
+           S_d(r-\varepsilon)f(t-r)\,dr\\
+ &+\int_0^\varepsilon S_d(r)f(t-r)\,dr .
+\end{align*}
+The first term ranges over a relatively compact set. The input of the
+middle heat operator is bounded by \(F\), so the second term also ranges
+over a relatively compact set. The last term has norm at most
+\(F\varepsilon\). Taking \(\varepsilon\) small and covering the first
+two sets proves total boundedness of the orbit. Its closure is compact
+because \(X\) is complete.
+
+For \(\eta>0\), choose a finite \(\eta\)-net with centers
+\(g_j=u(t_j)\) from the actual orbit, \(t_j\ge2\). Each \(g_j\) is
+\(C^2\) and Neumann-compatible. Contraction and \eqref{eq:shorttime},
+followed by \eqref{eq:duhamel}, give
+\[
+ \|u(t+h)-u(t)\|_\infty
+ \le2\eta+h\left(d\max_j\|\Delta g_j\|_\infty+F\right),\qquad t\ge2 .
+\]
+The maximum is finite because there are finitely many centers. First
+choose \(\eta\) small, then \(h\) small. This proves uniform continuity;
+it requires no bound on \(\Delta u(t)\) over the entire orbit.
+\end{proof}
+
+\begin{lemma}\label{lem:forced}
+Let \(d>0\), and let \(w\) be a classical Neumann solution of
+\(w_t-d\Delta w=Qf\), with \(\bar w(t)=0\). Suppose that \(f(t)\in X\)
+is continuous, bounded for \(t\ge1\), and
+\(\|f(t)\|_\infty\to0\). Then \(\|w(t)\|_\infty\to0\).
+\end{lemma}
+\begin{proof}
+Set \(\gamma=d\lambda_1>0\). The spectral expansion and
+\eqref{eq:smoothing} imply, for \(r\ge1\),
+\[
+ \|S_d(r)Qf\|_\infty
+ \le H_{d,1}e^{-\gamma(r-1)}\|Qf\|_2
+ \le H_{d,1}e^{-\gamma(r-1)}\|f\|_\infty.
+\]
+For \(0\le r\le1\), contraction gives \(2\|f\|_\infty\).
+Thus, for a finite constant \(C_d\) depending on \(d,\Omega\),
+\begin{equation}\label{eq:decay}
+ \|S_d(r)Qf\|_\infty
+ \le C_de^{-\gamma r}\|f\|_\infty,\qquad r\ge0 .
+\end{equation}
+Apply \eqref{eq:duhamel} from any fixed \(T\ge2\):
+\[
+ \|w(t)\|_\infty
+ \le C_de^{-\gamma(t-T)}\|w(T)\|_\infty+
+ C_d\int_T^t e^{-\gamma(t-s)}\|f(s)\|_\infty\,ds .
+\]
+For a fixed \(S\ge T\), the integral over \([T,S]\) tends to zero as
+\(t\to\infty\), while the part over \([S,t]\) is at most
+\(\gamma^{-1}\sup_{s\ge S}\|f(s)\|_\infty\).
+Taking \(t\to\infty\) and then \(S\to\infty\) proves the lemma.
+\end{proof}
+
+\section{Proof of the attraction theorem}\label{sec:proof}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix a uniform bound \(K\ge1\) for the absolute values of \(a,b,c\).
+First, all three components remain nonnegative. To see this directly,
+write \(U=(a,b,c)\), \(p_i=U_i^-\), and \(V=U^+\), and denote
+the reaction vector by \(F(U)=(b(c-a),b(c-a),-b(c-a))\).
+On the set \(p_i>0\), the \(i\)-th reaction component satisfies
+\(F_i(V)\ge0\), whereas
+\[
+ |b(c-a)-V_b(V_c-V_a)|\le2K(p_a+p_b+p_c).
+\]
+Testing the three equations by the negative parts, justified by a smooth
+convex approximation, gives
+\[
+ P_-(t)\le12K\int_0^tP_-(s)\,ds,\qquad
+ P_-(t):=\int_\Omega(p_a^2+p_b^2+p_c^2)\,dx .
+\]
+Here \(P_-(0)=0\). For \(J(t)=\int_0^tP_-(s)\,ds\),
+\((e^{-12Kt}J(t))'\le0\), and \(J\ge0\); hence \(P_-=0\).
+
+Integrating the equations preserves the two masses in
+\eqref{eq:masses}. In particular, with \(B(t)=\bar b(t)\),
+\begin{equation}\label{eq:means}
+ \bar a=M_1-M_2+B,\qquad
+ \bar c=M_2-B,\qquad B'=\int_\Omega b(c-a)\,dx .
+\end{equation}
+Since \(c-a\ge-K\),
+\[
+ B(t)\ge B(0)e^{-Kt}>0\qquad\text{for every finite }t\ge0 .
+\]
+Only this finite-time nonvanishing will be needed when normalizing by \(B\).
+
+Consider the quadratic energy of \(a,c\):
+\[
+ E(t)=\frac12\int_\Omega(a(t)^2+c(t)^2)\,dx.
+\]
+The Neumann conditions remove the boundary terms, and
+\((a-c)b(c-a)=-b(c-a)^2\) gives the exact dissipation identity
+\begin{equation}\label{eq:energy}
+ E'=-d_1\|\nabla a\|_2^2-d_3\|\nabla c\|_2^2
+       -\int_\Omega b(c-a)^2\,dx\le0 .
+\end{equation}
+Since \(E\ge0\), the two gradient squares are time-integrable.
+By \eqref{eq:poincare},
+\[
+ z(t):=\|Qa(t)\|_2^2+\|Qc(t)\|_2^2,\qquad
+ \int_2^\infty z(t)\,dt<\infty .
+\]
+The forcing \(b(c-a)\) is uniformly bounded and continuous in \(X\).
+Lemma~\ref{lem:compact} applies separately to \(a,c\) with their own
+diffusivities, and gives uniform continuity in time in \(X\).
+The quadratic functional defining \(z\) is Lipschitz on bounded subsets
+of \(X\); for example,
+\[
+ \big|\|Qg\|_2^2-\|Qh\|_2^2\big|
+ \le8K\|g-h\|_\infty\quad
+ \text{if }\|g\|_\infty,\|h\|_\infty\le K.
+\]
+Thus \(z\) is uniformly continuous. A nonnegative uniformly continuous
+function with finite integral tends to zero: otherwise a separated
+sequence of times would give disjoint intervals of a common positive
+length on which the function stays bounded below. Therefore \(z(t)\to0\).
+
+The same lemma makes the \(a,c\) orbits relatively compact in \(X\).
+It follows that
+\begin{equation}\label{eq:oscillations}
+ h(t):=\|a(t)-\bar a(t)\|_\infty+
+       \|c(t)-\bar c(t)\|_\infty\longrightarrow0 .
+\end{equation}
+Indeed, a violating sequence has a common uniformly convergent
+subsequence for \(a,c\). The limits have zero variance because
+\(z\to0\), and hence are constant, contradicting that violation.
+
+It remains to identify these changing averages. Put
+\(\delta=2M_2-M_1>0\). Equation~\eqref{eq:means} gives
+\(\bar c-\bar a=\delta-2B\), so the exact equation for \(B\) is
+\begin{equation}\label{eq:meanode}
+ B'=B(\delta-2B+\rho(t)),\qquad
+ \rho(t)=\frac1{B(t)}\int_\Omega
+          b\big[(c-\bar c)-(a-\bar a)\big]\,dx .
+\end{equation}
+Because \(b\ge0\) and \(\int_\Omega b=B>0\),
+\begin{equation}\label{eq:rhobound}
+ |\rho(t)|\le h(t)\longrightarrow0 .
+\end{equation}
+The weight \(b/B\) has total mass one, so this estimate remains valid
+even when \(B\) is small.
+
+For \(0<\eta<\delta\), choose \(T\ge2\) with
+\(|\rho(t)|\le\eta\) for every \(t\ge T\). Then
+\[
+ B(\delta-\eta-2B)\le B'\le B(\delta+\eta-2B).
+\]
+For \(k_\pm=\delta\pm\eta\), define
+\[
+ y_\pm(t)=\frac{k_\pm/2}
+ {1+\big(k_\pm/(2B(T))-1\big)e^{-k_\pm(t-T)}} .
+\]
+The denominators are positive, since \(k_\pm>0\) and \(B(T)>0\).
+These functions solve \(y_\pm'=y_\pm(k_\pm-2y_\pm)\) and start at
+\(B(T)\). The difference \(D=B-y_-\) satisfies
+\[
+ D'\ge\big(k_--2(B+y_-)\big)D,\qquad D(T)=0 ,
+\]
+so multiplication by the corresponding positive integrating factor
+gives \(B\ge y_-\). Applying the same calculation to \(y_+-B\)
+gives \(B\le y_+\). Hence
+\[
+ \frac{\delta-\eta}{2}\le\liminf_{t\to\infty}B(t)
+ \le\limsup_{t\to\infty}B(t)\le\frac{\delta+\eta}{2}.
+\]
+Letting \(\eta\downarrow0\) proves
+\[
+ B(t)\longrightarrow M_2-M_1/2,\qquad
+ \bar a(t),\bar c(t)\longrightarrow M_1/2 .
+\]
+Together with \eqref{eq:oscillations}, this identifies the uniform
+limits of \(a,c\). In particular
+\[
+ \|b(t)(c(t)-a(t))\|_\infty
+ \le K\big(\|c(t)-M_1/2\|_\infty+\|a(t)-M_1/2\|_\infty\big)\to0 .
+\]
+Finally \(w=b-B\) has zero average and satisfies
+\[
+ w_t-d_2\Delta w=Q\big(b(c-a)\big).
+\]
+Lemma~\ref{lem:forced} gives \(\|b(t)-B(t)\|_\infty\to0\).
+The already determined limit of \(B\) proves the required limit of \(b\),
+and completes the convergence of all three components.
+\end{proof}
+
+\section*{AI use}
+OpenAI Codex assisted with source retrieval, development and checking of the
+mathematical argument, and preparation of this manuscript. Two further
+evaluations in fresh Codex contexts provided reader and referee feedback
+on one frozen draft; they shared the same provider and workspace with the
+drafting process. The manuscript was then revised. Independent mathematical
+review is welcome.
+
+\begin{thebibliography}{9}
+\bibitem{NT}
+T.~L. Nguyen and B.~Q. Tang,
+\emph{Stability analysis of irreversible chemical reaction-diffusion
+systems with boundary equilibria},
+Zeitschrift f\"ur angewandte Mathematik und Physik
+\textbf{77} (2026), article 199, 30 pp.
+\href{https://doi.org/10.1007/s00033-026-02847-0}
+{doi:10.1007/s00033-026-02847-0}.
+
+\bibitem{Baudoin}
+F. Baudoin,
+\emph{Diffusion processes and Stochastic calculus},
+author version dated 13 February 2019,
+Chapter~4, Proposition~4.49 and Section~8, pp.~131, 135--136.
+\url{https://fabricebaudoin.blog/wp-content/uploads/2019/12/book_emsstyle.pdf}.
+\end{thebibliography}
+\end{document}
