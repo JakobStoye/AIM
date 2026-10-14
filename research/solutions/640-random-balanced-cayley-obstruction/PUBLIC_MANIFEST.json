@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "title": "Boolean polynomial obstructions to binary expansion of balanced Cayley complexes",
+  "problem_id": "640",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result overview, primary attribution and build instructions",
+      "sha256": "a5551cdad9069ab7518ad34fee24511f8c61887423f51efd999b16ef8db5caa3",
+      "bytes": 1962
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Every original target requirement matched to manuscript",
+      "sha256": "99a708f89d024e0ff354a14285279faf4d22ebe742c5a8bd85624ab1d6947387",
+      "bytes": 2522
+    },
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI-use and review disclosure",
+      "sha256": "ec3ef4f22c049044c0f2819269295b961ef63555f70ade30edb70ccab4b72a2c",
+      "bytes": 499
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable analytic manuscript",
+      "sha256": "cb68cb911fdd8f0b4e9f4dadd85ad1c2572fcfeda2b27c25c0b792ba0b6b5bf1",
+      "bytes": 9499
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete rendered analytic manuscript",
+      "sha256": "3fe05ab17ee2883058bb1a00a2b2b3b1eaa8de738d97433b4c3fa7ade2270daa",
+      "bytes": 338129
+    }
+  ],
+  "build": "Run pdflatex twice on paper/main.tex with standard article, AMS, geometry, Latin Modern and hyperref packages.",
+  "mathematical_evidence": "Complete analytic proof in the manuscript; no code or certificate dependency.",
+  "external_repositories": []
+}

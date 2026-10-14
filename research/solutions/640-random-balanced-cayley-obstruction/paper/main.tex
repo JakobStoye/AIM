@@ -1,0 +1,225 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\F}{\mathbb F_2}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\im}{\operatorname{im}}
+
+\title{Boolean polynomial obstructions to binary expansion\newline
+of balanced Cayley complexes}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The proposed coboundary expansion of random balanced Cayley complexes
+with binary coefficients and logarithmically many group-product layers
+fails in every fixed dimension $k\ge2$. For $G=(\F)^d$ and every
+$A\subseteq G$, we prove
+\[
+\dim_{\F}H^{k-1}(Y_{A,k};\F)
+\ge \sum_{j=0}^{\min(k,d)}\binom dj-|A|.
+\]
+The proof maps a Boolean polynomial vanishing on $A$ to a cohomology class
+by writing the polynomial of a total group sum as a simplicial coboundary
+on the complete join. Consequently, for any fixed positive constant $C$,
+every subset of size $\lceil C\log D(G)\rceil$ has zero binary coboundary
+expansion for all sufficiently large $d$, where $D(G)$ is the sum of the
+degrees of its irreducible complex representations.
+\end{abstract}
+
+\section{The complex and the obstruction}
+
+Coboundary expansion measures the number of violated parity constraints
+relative to the distance of a binary cochain from the coboundary space.
+Meshulam introduced balanced Cayley complexes and proved a real-coefficient
+spectral-gap estimate when the number of allowed group products is
+logarithmic in a representation parameter \cite{meshulam}.
+Conjecture~8.1 of that paper asks for a binary coboundary-expansion analogue,
+uniformly over finite groups whose orders tend to infinity.
+We give a deterministic obstruction on elementary abelian $2$-groups.
+
+Fix integers $d\ge1$ and $k\ge2$, and write $G=(\F)^d$ additively.
+Let $V_i=\{i\}\times G$ for $1\le i\le k+1$, and put
+$X=V_1*\cdots*V_{k+1}$. A face of this join contains at most one vertex
+from each part. For $A\subseteq G$, let $Y_{A,k}$ contain the complete
+$(k-1)$-skeleton of $X$ and exactly the $k$-faces with labels
+$(g_1,\ldots,g_{k+1})$ satisfying
+\[
+g_1+\cdots+g_{k+1}\in A.
+\]
+Addition here is the ordered group product of the original construction.
+
+All cochains below have coefficients in $\F$. We use the increasing order
+of vertex parts to identify a face with its tuple of labels.
+The simplicial coboundary $\delta_r:C^r(Y;\F)\to C^{r+1}(Y;\F)$ adds the
+values on the codimension-one faces. Write
+\[
+B^r(Y)=\im\delta_{r-1},\qquad
+Z^r(Y)=\ker\delta_r,\qquad H^r(Y;\F)=Z^r(Y)/B^r(Y)
+\]
+for $r\ge1$. For a cochain $\phi$, let $|\phi|=|\supp\phi|$ be its
+unnormalized support count. The expansion constant under consideration is
+\begin{equation}\label{eq:expansion}
+h_{k-1}(Y)=\min_{\phi\notin B^{k-1}(Y)}
+\frac{|\delta_{k-1}\phi|}{\min_{b\in B^{k-1}(Y)}|\phi+b|}.
+\end{equation}
+A nonzero cohomology class has a representative with zero numerator and
+strictly positive denominator in \eqref{eq:expansion}. Thus nonvanishing
+of $H^{k-1}(Y;\F)$ forces $h_{k-1}(Y)=0$.
+
+\begin{theorem}\label{thm:obstruction}
+For every $d\ge1$, $k\ge2$ and $A\subseteq(\F)^d$, put
+\[
+N_k(d)=\sum_{j=0}^{\min(k,d)}\binom dj.
+\]
+Then
+\begin{equation}\label{eq:dimension}
+\dim_{\F}H^{k-1}(Y_{A,k};\F)\ge N_k(d)-|A|.
+\end{equation}
+In particular, $|A|<N_k(d)$ implies $h_{k-1}(Y_{A,k})=0$.
+\end{theorem}
+
+For a finite group $G$, write
+$D(G)=\sum_{\rho\in\widehat G}\dim\rho$, where $\widehat G$ denotes its
+irreducible complex representations, as in \cite{meshulam}.
+For the groups considered here, $D((\F)^d)=2^d$, as proved below,
+so $\log D(G)=d\log2$.
+
+The number $N_k(d)$ is the dimension of the Boolean polynomial functions
+of degree at most $k$ on $(\F)^d$. Vanishing on $A$ imposes at most $|A|$
+linear constraints on these functions. The central point is that the
+remaining functions give distinct cohomology classes in the specified
+complex. Since $N_k(d)$ is at least quadratic in $d$ for $k\ge2$, this
+already rules out logarithmic sampling.
+
+\begin{corollary}\label{cor:logarithmic}
+Fix $k\ge2$ and $C,\varepsilon>0$. For $G_d=(\F)^d$, let $A$ be uniform
+among the subsets of size $m_d=\lceil C\log D(G_d)\rceil$.
+For all sufficiently large $d$, this sample size is admissible and
+\[
+\Pr\{h_{k-1}(Y_{A,k})\ge\varepsilon\}=0.
+\]
+Consequently, the constants requested in the binary expansion conjecture
+do not exist for any fixed $k\ge2$.
+\end{corollary}
+
+\section{Proofs}
+
+\begin{proof}[Proof of Theorem~\ref{thm:obstruction}]
+Let $\mathcal P_k(d)$ be the space of Boolean polynomial functions
+\[
+q(t)=\sum_{\substack{S\subseteq[d]\\|S|\le k}}c_S\prod_{r\in S}t_r,
+\qquad c_S\in\F,
+\]
+where $[d]=\{1,\ldots,d\}$ and the empty product is one.
+These monomials are independent as functions. Indeed, evaluation at the
+vector $1_T$ supported on $T$ gives $q(1_T)=\sum_{S\subseteq T}c_S$.
+For a zero function, the empty set first gives $c_\varnothing=0$, and
+induction on $|T|\le k$ then gives every $c_T=0$.
+Therefore $\dim\mathcal P_k(d)=N_k(d)$.
+
+Let $K_A$ be the subspace of polynomials vanishing on $A$.
+The evaluation map $\mathcal P_k(d)\to\F^A$ has rank at most $|A|$, so
+\begin{equation}\label{eq:kernel}
+\dim K_A\ge N_k(d)-|A|.
+\end{equation}
+We construct a linear injection from $K_A$ into the cohomology in
+\eqref{eq:dimension}.
+
+For each $q\in\mathcal P_k(d)$, expand $q(g_1+\cdots+g_{k+1})$.
+For a monomial indexed by $S$, the expansion is
+\begin{equation}\label{eq:monomial}
+\prod_{r\in S}\left(\sum_{j=1}^{k+1}(g_j)_r\right)
+=\sum_{\alpha:S\to[k+1]}\prod_{r\in S}(g_{\alpha(r)})_r.
+\end{equation}
+Each term uses at most $|S|\le k$ of the $k+1$ vertex parts.
+Assign it to the smallest part index $i$ outside $\im\alpha$;
+for the empty monomial assign it to $i=1$.
+Grouping the assigned terms, with their coefficients $c_S$, yields functions
+$f_i^q$ independent of $g_i$ such that
+\begin{equation}\label{eq:decomposition}
+q(g_1+\cdots+g_{k+1})
+=\sum_{i=1}^{k+1}f_i^q(g_1,\ldots,\widehat{g_i},\ldots,g_{k+1}).
+\end{equation}
+The assignment is fixed independently of $q$, so the functions depend
+linearly on its coefficients.
+
+Every $(k-1)$-face of $X$ misses exactly one vertex part. Define $Tq$ on
+a face missing part $i$ to have value $f_i^q$ at that face's labels.
+Equation~\eqref{eq:decomposition} is precisely the identity
+\begin{equation}\label{eq:coboundary}
+\delta_X(Tq)(g_1,\ldots,g_{k+1})=q(g_1+\cdots+g_{k+1}).
+\end{equation}
+If $q\in K_A$, the right-hand side vanishes on every top face of
+$Y_{A,k}$. Hence $Tq$ is a cocycle there, and $q\mapsto[Tq]$ is a linear
+map into $H^{k-1}(Y_{A,k};\F)$.
+
+To prove injectivity, suppose $Tq=\delta_{k-2}\psi$ in $Y_{A,k}$.
+The complexes $Y_{A,k}$ and $X$ have identical faces and incidences through
+dimension $k-1$, so the same equality holds in $X$.
+Applying its next coboundary gives $\delta_X(Tq)=0$:
+in $\delta^2$, every codimension-two subface occurs twice, and $2=0$ in
+$\F$. Equation~\eqref{eq:coboundary}, evaluated at $(t,0,\ldots,0)$,
+now gives $q(t)=0$ for every $t\in G$. This is a valid top face of $X$
+because its vertex parts are disjoint, even when some labels coincide.
+Thus $q=0$, proving injectivity. Together with \eqref{eq:kernel}, it proves
+\eqref{eq:dimension}.
+
+If $|A|<N_k(d)$, choose a nonzero $q\in K_A$.
+Then $Tq$ is a cocycle outside $B^{k-1}(Y_{A,k})$.
+Each $Tq+b$, with $b$ in that coboundary space, is nonzero, so its support
+has at least one face. The denominator in \eqref{eq:expansion} is thus a
+finite positive minimum, while the numerator is zero. All ratios are
+nonnegative, and the asserted zero expansion follows.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:logarithmic}]
+Every irreducible complex representation of $G_d$ is one-dimensional.
+Indeed, its coordinate generators act by commuting involutions.
+For an involution $M$, the projectors $(I+M)/2$ and $(I-M)/2$ split into
+its two eigenspaces. The other generators preserve both spaces, and
+successive splitting gives simultaneous eigenspaces. Every line in a
+nonzero simultaneous eigenspace is invariant, so irreducibility forces
+dimension one. The $2^d$ independent choices of signs on the coordinate
+generators give exactly the characters
+$\chi_u(t)=(-1)^{u\cdot t}$ for $u\in(\F)^d$. Consequently $D(G_d)=2^d$.
+
+Choose $d_0\ge2$ so that $(d_0+1)/2>C\log2$.
+For every $d\ge d_0$, using natural logarithms,
+\[
+\begin{aligned}
+m_d=\lceil C d\log2\rceil
+&\le C d\log2+1
+<1+\frac{d(d+1)}2\\
+&=1+d+\binom d2\le N_k(d)\le2^d.
+\end{aligned}
+\]
+The sample size is therefore admissible. Theorem~\ref{thm:obstruction}
+gives $h_{k-1}(Y_{A,k})=0$ for every subset of that size, making the
+displayed probability zero for every $\varepsilon>0$.
+Since $|G_d|=2^d\to\infty$, this sequence violates the required guarantee
+for every proposed pair of constants and each fixed $k\ge2$.
+A different fixed base of the logarithm only rescales $C$.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted with mathematical derivation, proof checking and
+drafting of this manuscript. The mathematical claim and the complete proof
+are presented here for independent review.
+
+\begin{thebibliography}{1}
+\bibitem{meshulam}
+R.~Meshulam, \emph{Random Balanced Cayley Complexes},
+arXiv:2211.02085v1 (2022), Sections~1--2 and Conjecture~8.1.
+\url{https://arxiv.org/abs/2211.02085v1}.
+\end{thebibliography}
+
+\end{document}
