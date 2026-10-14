@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "title": "Relative density under fixed-parameter extrapolation",
+  "problem_id": "630",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/630-extrapolation-relative-density.md",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, build instructions and factual AI-use/review disclosure",
+      "sha256": "7337f2ba7073c58364b43f6b38ab9e37d39647724dcb20536a8b9b87d60639eb"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the fixed public problem",
+      "sha256": "5a0683b876f901be30c7b1f6463af186038caf7f52c77c410515c0dec9d6be6e"
+    },
+    {
+      "path": "paper/relative_density.tex",
+      "purpose": "Complete editable manuscript",
+      "sha256": "7332a5f45e8f616be582b79cc6200d6c2521c7edf851087ad718758a77ebe724"
+    },
+    {
+      "path": "paper/relative_density.pdf",
+      "purpose": "Complete three-page manuscript PDF",
+      "sha256": "dfd7ed0756f5ccde3eec22083d34bca9d0e81b759d6a06a24f8bd3a420c80ac6"
+    }
+  ]
+}

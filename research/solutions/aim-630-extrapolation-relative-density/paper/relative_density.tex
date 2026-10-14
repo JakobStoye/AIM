@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+
+\title{Relative density under fixed-parameter extrapolation}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Starting from $0$ and $1$, repeatedly apply the operation
+$(a,b)\mapsto(1-\lambda)a+\lambda b$, with a fixed complex parameter
+$\lambda$. We prove that the generated set has bounded holes in the real
+line for every real $\lambda\notin[0,1]$, and in the complex plane for every
+nonreal $\lambda$. This answers the relative-density question of Fenner,
+Green and Homer. Their characterization by integer polynomials allows a
+single affine image of a relatively dense set of finite digit expansions
+to be placed inside the generated set.
+\end{abstract}
+
+\section{The relative-density question}
+
+For $\lambda\in\C$, let $Q_\lambda$ be the smallest subset of $\C$
+containing $0,1$ and closed under
+\[
+ a\star_\lambda b=(1-\lambda)a+\lambda b.
+\]
+Only finitely many applications of this operation are allowed; no
+topological closure is taken. Such sets occur in the study of aperiodic
+point patterns. Relative density asks whether their holes have bounded size.
+Fenner, Green and Homer established this property for several algebraic
+parameters and asked whether it holds throughout the following two domains
+\cite[Section~6 and Open Question~11.3]{FGH}.
+
+For $\lambda\in\C\setminus[0,1]$, set
+\[
+ X_\lambda=
+ \begin{cases}
+  \R,&\lambda\in\R\setminus[0,1],\\
+  \C,&\lambda\in\C\setminus\R.
+ \end{cases}
+\]
+
+\begin{theorem}\label{thm:main}
+For every $\lambda\in\C\setminus[0,1]$, there is a finite constant
+$R_\lambda$ such that
+\[
+ \forall z\in X_\lambda\quad\exists q\in Q_\lambda:
+ \qquad |z-q|\le R_\lambda.
+\]
+\end{theorem}
+
+The radius may depend on the parameter. The proof uses integer polynomials
+that are small on $[0,1]$ and large at $\lambda$. Finite sums of their powers
+can approximate every point with a fixed error, while remaining uniformly
+bounded on the interval. We then use the bounded-polynomial embedding
+observation in \cite[Lemma~6.19 and the following remark]{FGH} to obtain
+points of $Q_\lambda$ at one fixed scale.
+
+\section{Proof}
+
+We use the following consequence of the polynomial characterization of
+Fenner, Green and Homer \cite[Theorem~3.6, Fact~3.3 and Corollary~3.8]{FGH}:
+\begin{equation}\label{eq:characterization}
+ p\in\Z[x],\qquad 0<p(t)<1\ \text{for every }0<t<1
+ \quad\Longrightarrow\quad p(\lambda)\in Q_\lambda.
+\end{equation}
+The conclusion concerns the generated set itself.
+
+\begin{lemma}\label{lem:separation}
+For every $\lambda\in\C\setminus[0,1]$, there is $h\in\Z[x]$ such that
+\[
+ \sup_{0\le t\le1}|h(t)|\le\frac14,
+ \qquad |h(\lambda)|>1.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $C_0(u)=1$, $C_1(u)=u$, and
+$C_{n+1}(u)=2uC_n(u)-C_{n-1}(u)$. These are integer polynomials. The
+recurrence gives, for every $r\ne0$,
+\begin{equation}\label{eq:chebyshev}
+ C_n\!\left(\frac{r+r^{-1}}2\right)=\frac{r^n+r^{-n}}2.
+\end{equation}
+For $u\in[-1,1]$, choose $r=u+i\sqrt{1-u^2}$, which has modulus one.
+Equation~\eqref{eq:chebyshev} gives $|C_n(u)|\le1$.
+
+Put $w=2\lambda-1\notin[-1,1]$. The roots of $r^2-2wr+1=0$ are
+nonzero and reciprocal. If both had modulus one, then
+$w=(r+\overline r)/2\in[-1,1]$. Thus one root has $|r|>1$, and
+\[
+ |C_n(w)|\ge\frac{|r|^n-|r|^{-n}}2\longrightarrow\infty.
+\]
+Writing $s(x)=x(1-x)$, choose $n$ so that
+$|s(\lambda)C_n(2\lambda-1)|>1$, which is possible since
+$s(\lambda)\ne0$. Then $h(x)=s(x)C_n(2x-1)$ has the required properties.
+\end{proof}
+
+\begin{lemma}\label{lem:digits}
+Fix $\lambda\in\C\setminus[0,1]$, and put
+\[
+ L=\begin{cases}\Z,&X_\lambda=\R,\\
+                  \Z+\lambda\Z,&X_\lambda=\C.
+    \end{cases}
+\]
+If $\beta\in X_\lambda$ and $|\beta|>1$, there are a finite set
+$D\subset L$ containing $0$ and a finite $\rho>0$ such that
+\[
+ S=\left\{\sum_{j=0}^m d_j\beta^j:
+                 m\ge0,\ d_j\in D\right\}
+\]
+is $\rho$-relatively dense in $X_\lambda$.
+\end{lemma}
+
+\begin{proof}
+Take $\delta=1/2$ in the real case and
+$\delta=(1+|\lambda|)/2$ in the nonreal case. Every point of $X_\lambda$
+is within distance $\delta$ of $L$. In the second case, write the point as
+$a+b\lambda$ with $a,b\in\R$ and round both coefficients to integers.
+This is possible because $\operatorname{Im}\lambda\ne0$.
+Also, bounded subsets of $L$ are finite: if $|m+n\lambda|\le A$, then
+\[
+ |n|\le\frac A{|\operatorname{Im}\lambda|},\qquad
+ |m|\le A+\frac{A|\operatorname{Re}\lambda|}{|\operatorname{Im}\lambda|}.
+\]
+In the real case this finiteness follows from $|m|\le A$.
+
+Set $\rho=|\beta|\delta$,
+$K=\{y\in X_\lambda:|y|\le\rho\}$ and
+$D=L\cap\{d:|d|\le\rho+\delta\}$. For each $y\in K$, choose $d\in L$
+with $|y-d|\le\delta$. Then $d\in D$ and $\beta(y-d)\in K$. Thus
+\begin{equation}\label{eq:cover}
+ K\subseteq D+\beta^{-1}K.
+\end{equation}
+
+Given $z\in X_\lambda$, choose $N\ge0$ with
+$y_0=\beta^{-N}z\in K$. If $N=0$, the element $0\in S$ is sufficient.
+Otherwise apply \eqref{eq:cover} finitely many times to choose $d_j\in D$
+and $y_{j+1}=\beta(y_j-d_j)\in K$ for $j=0,\ldots,N-1$. This gives
+\begin{equation}\label{eq:finite-expansion}
+ z=\sum_{j=0}^{N-1}\beta^{N-j}d_j+y_N.
+\end{equation}
+The sum is in $S$, with zero as its constant digit, and $|y_N|\le\rho$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $\lambda\in\C\setminus[0,1]$. Choose $h$ from
+Lemma~\ref{lem:separation} and put $\beta=h(\lambda)$. When $\lambda$ is
+real, so is $\beta$, and hence Lemma~\ref{lem:digits} applies in both
+domains. Let $D,S,\rho$ be as in that lemma.
+
+For each $d\in D$, choose an integer polynomial $e_d$ satisfying
+$e_d(\lambda)=d$: use the constant polynomial $d$ in the real case,
+and $e_d(x)=a+bx$ when $d=a+b\lambda$, $a,b\in\Z$, in the nonreal case.
+Define
+\[
+ M=\max\!\left(1,\max_{d\in D}\max\{|e_d(0)|,|e_d(1)|\}\right),
+ \qquad B=\frac{4M}{3}.
+\]
+For $0\le t\le1$, the affine identity
+$e_d(t)=(1-t)e_d(0)+te_d(1)$ gives $|e_d(t)|\le M$. Consequently every
+finite digit polynomial
+\[
+ f(x)=\sum_{j=0}^m e_{d_j}(x)h(x)^j
+\]
+has integer coefficients and satisfies the bound
+\begin{equation}\label{eq:uniform-bound}
+ |f(t)|\le M\sum_{j=0}^m4^{-j}\le B
+ \qquad(0\le t\le1).
+\end{equation}
+Their evaluations at $\lambda$ exhaust $S$.
+
+Choose an integer $\ell>B$ and an integer $k\ge1$ with
+$(\ell+B)4^{-k}<1$. These choices are the same for every digit polynomial.
+With $s(x)=x(1-x)$, set
+\[
+ p_f(x)=s(x)^k(\ell+f(x))\in\Z[x].
+\]
+For every $0<t<1$, \eqref{eq:uniform-bound} implies
+\[
+ 0<s(t)^k(\ell-B)\le p_f(t)\le4^{-k}(\ell+B)<1.
+\]
+The characterization \eqref{eq:characterization} therefore yields
+\begin{equation}\label{eq:embedding}
+ c(\ell+S)\subseteq Q_\lambda,
+ \qquad c=s(\lambda)^k\ne0.
+\end{equation}
+
+Finally, for any $z\in X_\lambda$, choose $v\in S$ with
+$|z/c-\ell-v|\le\rho$, and put $q=c(\ell+v)\in Q_\lambda$. Then
+\[
+ |z-q|\le |c|\rho.
+\]
+Thus $R_\lambda=|\lambda(1-\lambda)|^k\rho$ is a finite covering radius.
+The quantities $h,D,\rho,\ell,k$ are fixed before $z$ is chosen, and every
+approximant in \eqref{eq:embedding} comes from a finite digit polynomial.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used to develop the mathematical argument, check the cited
+source, and prepare this manuscript.
+
+\begin{thebibliography}{1}
+\bibitem{FGH}
+S.~Fenner, F.~Green and S.~Homer,
+\emph{Fixed-Parameter Extrapolation and Aperiodic Order},
+Discrete \& Computational Geometry \textbf{76} (2026), 1--74.
+\href{https://doi.org/10.1007/s00454-025-00816-4}{doi:10.1007/s00454-025-00816-4}.
+\end{thebibliography}
+\end{document}
