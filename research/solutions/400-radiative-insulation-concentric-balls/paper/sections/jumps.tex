@@ -1,0 +1,218 @@
+\section{Approximation and removal of jumps}\label{sec:jumps}
+
+The lower bound in Proposition~\ref{prop:lower} involves a monotone
+\(BV\) potential. We first approximate its cost by temperatures with
+finitely many jumps. Concavity will then remove those jumps.
+For a nonincreasing piecewise \(H^1\) temperature \(u\), equal to 1
+inside \(B_1\) and zero after radius \(R\), set
+\begin{equation}\label{eq:J}
+ J(u)=\int_1^R A(r)|u'(r)|^2\dd r+
+       \sum_s A(s)\bigl[\Theta(u(s-))-\Theta(u(s+))\bigr].
+\end{equation}
+The sum runs over its finitely many downward jumps, including a possible
+jump at 1 and the terminal jump to zero. This is an auxiliary cost:
+interior jumps are not admissible in the original \(H^1\) problem.
+
+\begin{proposition}\label{prop:approximation}
+For every augmented monotone profile \(w\) in \eqref{eq:F} and every
+\(\epsilon>0\), there is a temperature of the above form satisfying
+\[
+ J(u)\le F(w)+\epsilon .
+\]
+\end{proposition}
+
+\begin{proof}
+All approximation parameters are chosen with \(n,\beta,\gamma,R\)
+fixed. Write \(A_*=R^{n-1}\), \(L_A=(n-1)R^{n-2}\), and
+\(L_G=\operatorname{Lip}(G)\).
+
+\emph{Polygonal potentials.}
+Choose a partition of \([1,R]\), of mesh \(h\), with all interior
+vertices at continuity points of \(w\). Join the endpoint values
+linearly on each cell, using \(w(1+)\) and \(w(R-)\) at the ends,
+and keep the two endpoint atoms. Call the result \(w_h\).
+For a cell \(C_i=(x_i,x_{i+1})\), let \(d_i\) be its length,
+\(y_i\) its left value, and \(m_i\ge0\) its total drop. Thus
+\(m_i=\mu(C_i)\), with the retained end atoms excluded, and
+\(\sum_i m_i\le Y\).
+
+Freeze \(A_i=A(x_i)\) and \(g_i=G(y_i)\).
+For every constant \(p\in[0,1]\),
+\[
+ pm_i-d_ig_ip^2
+   =\int_{C_i}(pz(r)-g_ip^2)\dd r+p\mu_s(C_i)
+   \le\int_{C_i}\psi_{g_i}(z(r))\dd r+\mu_s(C_i).
+\]
+Taking the supremum proves
+\[
+ d_i\psi_{g_i}(m_i/d_i)
+       \le\int_{C_i}\psi_{g_i}(z(r))\dd r+\mu_s(C_i).
+\]
+For both profiles, the potential stays between \(y_i-m_i\) and \(y_i\).
+Unfreezing the weight costs at most \(L_Ahm_i\), since
+\(\psi\le z\) and the singular coefficient is 1.
+By \eqref{eq:psilip}, unfreezing \(G\) costs at most
+\(A_*L_Gd_im_i\). Apply these estimates on both sides and sum:
+\begin{equation}\label{eq:polygonalerror}
+ F(w_h)\le F(w)+2h(L_A+A_*L_G)Y .
+\end{equation}
+The endpoint atom costs are identical. This estimate does not require
+bounded slopes of \(w\), and applies also to Cantor variation.
+
+\emph{Cutoff near zero.}
+Fix \(0<\delta<Y\). Follow the polygonal profile until its potential
+first falls to or below \(\delta\), and replace the remainder by zero.
+At a continuous crossing this adds a terminal drop \(\delta\).
+If an existing jump skips the level, its right value is
+\(c\le\delta\); replacing that jump by a drop to zero adds only \(c\).
+The same reasoning applies at 1 and \(R\). Removed energy is nonnegative.
+For the resulting \(q\),
+\begin{equation}\label{eq:cutofferror}
+ F(q)\le F(w_h)+A_*\delta.
+\end{equation}
+If the cutoff is immediate at 1, its cost is the bare-ball cost \(Y\).
+Otherwise all positive one-sided values of the retained finite polygon
+lie in \([\delta,Y]\), up to its terminal jump at some
+\(\ell\in(1,R]\).
+
+\emph{Finite jumps and affine segments.}
+Keep the existing jumps of \(q\). Let \(D<\infty\) bound its finitely
+many affine slopes, and put
+\(g_*=\min_{[\delta,Y]}G>0\), \(g^*=\max_{[\delta,Y]}G\).
+Subdivide each affine piece into cells of mesh \(\eta\).
+If a cell has left endpoint \(x_i\), length \(d_i\), left value \(y_i\), and drop
+\(m_i=z_i d_i\le D\eta\), put
+\[
+ A_i=A(x_i),\qquad g_i=G(y_i),\qquad b_i=\min(z_i,2g_i).
+\]
+Insert at the left endpoint a potential drop \(m_i-b_id_i\), then
+use an affine segment of slope \(-b_i\) reaching the prescribed
+right value. The new potential stays in the cell's original range.
+Writing it as \(\widetilde q\), the temperature \(u=Q(\widetilde q)\)
+is piecewise \(H^1\), because \(Q'\) is bounded on \([\delta,Y]\).
+There are finitely many jumps.
+
+The frozen cell cost is exactly
+\begin{equation}\label{eq:microjump}
+ A_i\left\{\frac{d_ib_i^2}{4g_i}+m_i-b_id_i\right\}
+                   =A_id_i\psi_{g_i}(z_i).
+\end{equation}
+On its affine part,
+\(|u'|^2=b_i^2/(4G(\widetilde q))\),
+\(|\widetilde q-y_i|\le m_i\), and \(b_i\le2g^*\).
+The error between the actual and frozen Dirichlet terms is at most
+\[
+ \left(\frac{L_A\eta}{4g_*}
+              +\frac{A_*L_Gm_i}{4g_*^2}\right)b_i^2d_i .
+\]
+The inserted jump has the exact weight \(A_i\).
+The difference between the right side of \eqref{eq:microjump}
+and the cost of the original affine cell of \(q\) is at most
+\(L_A\eta m_i+A_*L_Gd_im_i\).
+Since \(m_i\le D\eta\), \(\sum d_i\le R-1\), and
+\(\sum m_i\le Y\), the sum of these errors is \(C_\delta\eta\)
+for a finite constant depending on the fixed polygon, cutoff and
+original parameters. Retained jumps have the same prescribed drop;
+if jumps coincide, their potential differences add.
+Thus
+\[
+ J(u)\le F(q)+C_\delta\eta .
+\]
+Choose first \(h\), then \(\delta\), and finally \(\eta\) to make
+the total errors in this inequality, \eqref{eq:polygonalerror}, and
+\eqref{eq:cutofferror} less than \(\epsilon\). No uniform bound on
+\(1/G\) as \(\delta\downarrow0\) is used.
+\end{proof}
+
+\begin{proposition}\label{prop:elimination}
+Every finite-jump temperature in \eqref{eq:J} can be replaced, without
+increasing its cost, by an admissible temperature for
+\((B_1,B_\ell)\) for some \(\ell\in[1,R]\). Its physical energy is
+at most \(S J(u)\).
+\end{proposition}
+
+\begin{proof}
+Take the first downward jump with positive right temperature. Denote
+its left and right temperatures by \(b>c>0\), and its radius by \(s\).
+On the whole tail after \(s\), replace the potential by
+\(\lambda\Theta(u)\), where
+\[
+ 0\le\lambda\le M:=\frac{\Theta(b)}{\Theta(c)}>1.
+\]
+Its temperature is \(g_\lambda(u)=Q(\lambda\Theta(u))\).
+All tail temperatures are at most \(c\), so the inverse is evaluated
+in \([0,\Theta(b)]\subset[0,Y]\).
+
+For each fixed \(\lambda>0\), \(g_\lambda\) is Lipschitz on \([0,c]\).
+Indeed, if \(\gamma>0\), the leading term of \(\Theta(t)\) at zero
+is \(2\beta\gamma^3t^2\); if \(\gamma=0\), it is \(\beta t^5/5\).
+Writing the respective order as \(m=2\) or \(m=5\), one obtains
+\[
+ g_\lambda(t)/t\longrightarrow\lambda^{1/m},\qquad
+ g_\lambda'(t)=\frac{\lambda\Theta'(t)}
+                         {\Theta'(g_\lambda(t))}
+                         \longrightarrow\lambda^{1/m}.
+\]
+The derivative is bounded away from that endpoint as well.
+For \(\lambda=0\) take the zero map. Thus every transformed piece
+is \(H^1\), and both endpoint costs are finite.
+
+For \(y=\Theta(u)>0\), the transformed Dirichlet density is
+\[
+ \frac{\lambda^2|y'|^2}{4G(\lambda y)}
+                   =\frac{|y'|^2}{4y^2}H(\lambda y).
+\]
+At \(\lambda=0\) its value is zero. On \(y=0\), \(y'=0\) a.e.,
+and the density is also set to zero there.
+Lemma~\ref{lem:concavity} makes this expression concave in \(\lambda\).
+Integration preserves that inequality, with finite nonnegative
+terms. Every later jump cost, including the terminal one, is linear
+in \(\lambda\). At the selected jump the cost is
+\[
+ A(s)\bigl[\Theta(b)-\lambda\Theta(c)\bigr],
+\]
+also affine. The total cost \(J_\lambda\) is concave on \([0,M]\);
+therefore
+\[
+ J_1\ge(1-1/M)J_0+J_M/M.
+\]
+One of the two endpoint choices costs no more than the original profile.
+
+At zero, the entire tail disappears and the selected jump becomes
+the outer boundary. At \(M\), the selected jump disappears because
+its right temperature becomes \(b\). The number of jumps with
+positive right value strictly decreases; monotonicity prevents
+new upward jumps. After finitely many repetitions only a terminal
+jump to zero remains, at some \(\ell\in[1,R]\).
+If the profile reaches zero continuously, this terminal jump has
+size zero. Equal traces at the finitely many intervening pieces
+cancel their distributional boundary terms. The resulting radial
+temperature, extended by 1 in \(B_1\), is in \(H^1(B_\ell)\).
+Its gradient and outer trace costs are
+\[
+ S\int_1^\ell A(r)|u'(r)|^2\dd r
+              +S A(\ell)\Theta(u(\ell-))=S J(u).
+\]
+At \(\ell=1\) this is exactly the bare ball. In particular, the
+comparison is now with the original physical energy.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix any original admissible \(v\). Proposition~\ref{prop:lower}
+gives \(w\) with \(S F(w)\le\mathcal E_\Omega(v)\).
+For every \(\epsilon>0\), Proposition~\ref{prop:approximation}
+gives \(J(u)\le F(w)+\epsilon\), and
+Proposition~\ref{prop:elimination} gives an admissible concentric-ball competitor.
+Lemma~\ref{lem:radial} ensures that the radial minimum exists.
+Hence
+\[
+ \min_{1\le r\le R}E_\Theta(B_1,B_r)
+        \le S J(u)\le S F(w)+S\epsilon
+        \le\mathcal E_\Omega(v)+S\epsilon.
+\]
+Let \(\epsilon\downarrow0\), with the original parameters and
+temperature fixed, then minimize over \(v\).
+This proves the claimed inequality for the original measurable
+cores and bounded Lipschitz outer sets, including the bare ball
+and every smaller outer volume.
+\end{proof}

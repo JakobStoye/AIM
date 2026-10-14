@@ -1,0 +1,60 @@
+{
+  "title": "Concentric balls for thermal insulation with a radiative boundary law",
+  "author": "Kaiwen Jin",
+  "target": "AIM problem 400",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "Analytic theorem and proof, submitted as a complete solution claim for independent review",
+  "files": [
+    {
+      "path": "COVER_NOTE.md",
+      "purpose": "Public submission correspondence using package-relative evidence links",
+      "sha256": "e5e8154fff671e0478c11bd9947c8ebee191620a727eea9a57036539f5bf5646"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Reader entry point, exact target link, build instructions and factual AI-use disclosure",
+      "sha256": "02d8758ad151df1746173dc6ee885c497f8bb755fa88149cd02afa806b323b86"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the pinned public problem",
+      "sha256": "96c2d8389f8042314b544069555a23336b0d7d25bc6ba41fbf0fccb422c29af8"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete final ten-page mathematical manuscript",
+      "sha256": "b91d6d7774df43cb9096fac288e244de617f584ca986b10569b63c7198ddda27"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Editable manuscript entry source",
+      "sha256": "4333ac1a94aaef814419c4c5bff3e5061904b49478de413379c95d08a98f0533"
+    },
+    {
+      "path": "paper/references.tex",
+      "purpose": "Five verified references and primary-source links",
+      "sha256": "6fe281447aad43fca8b05dd1a5122a4a2042203f6fb19f672fa5d015235f43d0"
+    },
+    {
+      "path": "paper/sections/introduction.tex",
+      "purpose": "Manuscript section source",
+      "sha256": "608a4c5a79ae5eefdce6b9fb057254e9e4dd7434b568da0fa8d79874d7e4916a"
+    },
+    {
+      "path": "paper/sections/jumps.tex",
+      "purpose": "Manuscript section source",
+      "sha256": "343ca78b07fc6e92183b38848a6659ab6199b2bbada8998b43212b7bdc50e422"
+    },
+    {
+      "path": "paper/sections/radial.tex",
+      "purpose": "Manuscript section source",
+      "sha256": "a9202451d4832c00e64fdd55c58182e32209b68e28a4ba02d1f6c7dfa09d4c76"
+    },
+    {
+      "path": "paper/sections/rearrangement.tex",
+      "purpose": "Manuscript section source",
+      "sha256": "8d06868388cf22021dd5f81bf42bfd4a90ee17de4105565d57ca2d03add8c37b"
+    }
+  ],
+  "self_hash_policy": "This manifest and SHA256SUMS are omitted from the file entries to avoid self-reference. SHA256SUMS includes this manifest and every other package file except itself."
+}
