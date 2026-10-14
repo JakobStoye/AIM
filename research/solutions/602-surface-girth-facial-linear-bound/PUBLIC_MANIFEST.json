@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "title": "A uniform linear bound for facial cycles on surfaces",
+  "author": "Kaiwen Jin",
+  "problem_id": "602",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/602-surface-girth-facial-linear-bound.md",
+  "mathematical_evidence": "Complete analytic manuscript and its cited public dependencies",
+  "claim_scope": "Complete affirmative solution claim; classification is left to maintainer review",
+  "detailed_ai_review": "none",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3635,
+      "sha256": "779502eef53cdd6c4e06a7b09ee4ecade8a1e6a17a4aa83d3b1dea1315b4edda",
+      "purpose": "Public entry point, exact scope, reproduction and factual AI use/review"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 3855,
+      "sha256": "8b5e46f731d78aae0d6f1989cdce561c2b598aef57830e09ce0aaf252e298142",
+      "purpose": "Original-target clause correspondence and public imported theorem interfaces"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "bytes": 26326,
+      "sha256": "a7637c8e3d9676ea6d1f5755032f76b559df9e057f7e09626aeee4b50e64416d",
+      "purpose": "Editable complete standalone analytic manuscript"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "bytes": 289057,
+      "sha256": "ca80970a4c734e37a531ddaef7d469e56877e05c9877c56e38b1888ce1a45af7",
+      "purpose": "Complete rendered analytic manuscript"
+    }
+  ],
+  "manifest_checksum": "SHA256SUMS covers this manifest and all listed payload files"
+}
