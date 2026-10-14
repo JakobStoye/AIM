@@ -1,0 +1,450 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Norm inflation in homogeneous H one-quarter for the defocusing quintic Gabitov--Turitsyn equation},pdfauthor={Kaiwen Jin}}
+\newcommand{\R}{\mathbb R}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\title{Norm inflation in $\dot H^{1/4}(\R^3)$ for the defocusing quintic Gabitov--Turitsyn equation}
+\author{Kaiwen Jin\thanks{Contact: \href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}.}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove norm inflation in the homogeneous Sobolev space $\dot H^{1/4}(\R^3)$
+for the defocusing quintic Gabitov--Turitsyn equation with averaging interval
+$[0,1]$. A family of Schwartz initial data has arbitrarily small initial norm,
+while its global smooth solutions attain arbitrarily large norms at arbitrarily
+small negative times. The proof combines a finite-interval virial identity with
+a lower bound for the averaged nonlinear forcing obtained from localized
+low-frequency mass. A rescaling keeps the variance bounded over a long time
+interval and forces growth of the fractional Sobolev norm.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The Gabitov--Turitsyn equation is a nonlinear Schr\"odinger equation whose
+nonlinearity is averaged along the free Schr\"odinger flow. We consider the
+three-dimensional defocusing quintic equation
+\begin{equation}\label{eq:GT}
+ iu_t-\Delta u+Q_1(u)=0,\qquad
+ Q_1(f)=\int_0^1T_{-\sigma}(|T_\sigma f|^4T_\sigma f)\,d\sigma,
+ \qquad T_\sigma=e^{i\sigma\Delta}.
+\end{equation}
+The averaging interval is fixed throughout. For this sign and power, global
+well-posedness in the energy space with a finite second spatial moment follows
+from Kawakami and Murphy~\cite[Proposition~5.1]{KM}. This global control leaves
+open the behavior of weaker Sobolev norms for initial data whose energy is large.
+
+Kowalski~\cite[Theorem~1.2]{K} proves failure of $C^5$ regularity of the solution
+map below the mass-scaling index $s_m=1$ for this model. Norm inflation asks
+for a stronger instability. The integrated-scaling index is $s_i=1/2$;
+the range $0<s<s_i$ is left open in the discussion
+of~\cite[Section~6.4]{K}. We resolve the fixed exponent $s=1/4$.
+
+\begin{theorem}\label{thm:inflation}
+For every $\varepsilon>0$, there are $u_0\in\mathcal S(\R^3)$ and a global
+smooth solution $u$ of~\eqref{eq:GT}, with $u(0)=u_0$, such that for some
+$t_\varepsilon\in(-\varepsilon,0)$,
+\[
+ \|u_0\|_{\dot H^{1/4}(\R^3)}<\varepsilon,
+ \qquad \|u(t_\varepsilon)\|_{\dot H^{1/4}(\R^3)}>\varepsilon^{-1}.
+\]
+\end{theorem}
+
+The time in the theorem is negative and nonzero. The initial data are Gaussians
+with growing amplitude and shrinking width. Their $H^1$ norms need not be
+small, so the conclusion is compatible with global energy-space control.
+
+Our argument uses the defocusing virial approach of
+Kowalski~\cite[Proposition~1.5 and Section~6.1]{K}, keeping the finite endpoint
+of the rescaled averaging interval. Growth of the kinetic energy alone does
+not give a lower bound for a fractional Sobolev norm: a small amount of mass
+at very high frequency can carry the kinetic energy. Instead, a bounded
+variance and a small fractional norm keep a fixed amount of mass in a fixed
+ball for a short free evolution. This yields a lower bound for a positive
+term in the variance identity. After rescaling, its time integral is bounded
+independently of the long observation interval. The resulting incompatibility
+forces growth in $\dot H^{1/4}$.
+
+Section~\ref{sec:estimates} proves the localization and virial estimates and
+justifies the regularity used in them. Section~\ref{sec:proof} gives the
+rescaling and the quantitative Gaussian construction. We make no claim here
+about the other positive exponents below $1/2$ or about inflation at positive
+times.
+
+We use the unitary Fourier transform
+$\widehat f(\xi)=(2\pi)^{-3/2}\int_{\R^3}e^{-ix\cdot\xi}f(x)\,dx$ and
+\[
+ \|f\|_{\dot H^s}^2=\int_{\R^3}|\xi|^{2s}|\widehat f(\xi)|^2\,d\xi.
+\]
+The spaces $H^k$ are the inhomogeneous Sobolev spaces, $\|\cdot\|_p$ denotes
+the $L^p(\R^3)$ norm, and $\langle f,h\rangle=\int\bar f h$.
+All unspecified spatial integrals are over $\R^3$. Constants in the estimates
+may depend on a displayed derivative order or on fixed data, but the constants
+in the norm-inflation construction are independent of its parameter $g$.
+
+\section{Two estimates for the averaged equation}\label{sec:estimates}
+
+We first record the regularity needed for the virial calculation. Write
+$\Sigma=\{f\in H^1(\R^3):xf\in L^2(\R^3)\}$.
+
+\begin{lemma}[Smooth Gaussian solutions]\label{lem:smooth}
+For $A,L>0$ and $u_0(x)=A\exp(-|x|^2/(4L^2))$, equation~\eqref{eq:GT}
+has a global smooth solution $u$. On every compact time interval $I$,
+\[
+ u,\ xu,\ |x|^2u\in C(I;H^k(\R^3))\qquad(k=0,1,2,\ldots).
+\]
+\end{lemma}
+
+\begin{proof}
+Kawakami and Murphy~\cite[Proposition~5.1]{KM} prove global well-posedness
+in $\Sigma$, with a uniform $H^1$ bound, for the defocusing equation
+$iv_t+\Delta v=Q_1(v)$ when $d=3$ and the nonlinearity is $|v|^4v$. The change
+$u(t)=v(-t)$ gives~\eqref{eq:GT} with the same averaging interval.
+
+Here are persistence estimates for the smooth weighted data used below.
+Within this proof, $D^k$ denotes the family of order-$k$ derivatives.
+For each integer $k\ge1$,
+\begin{equation}\label{eq:tame}
+ \|Q_1(f)\|_{H^k}\le C_k\|f\|_{H^1}^4\|f\|_{H^k}.
+\end{equation}
+Indeed, the free Strichartz estimate~\cite[Theorem~1.2]{KT} for
+$(q,r)=(5,30/11)$ and Sobolev embedding give
+\[
+ \|T_\sigma D^kf\|_{L^5_\sigma L^{30/11}_x}\lesssim_k\|f\|_{H^k},
+ \qquad
+ \|T_\sigma f\|_{L^5_\sigma L^{30}_x}\lesssim\|\nabla f\|_2,
+ \qquad 0\le\sigma\le1.
+\]
+In a Leibniz term, let $k_1+\cdots+k_5=k$ be the derivative orders on its
+five factors. Integer Gagliardo--Nirenberg interpolation~\cite[p.~125]{N}
+gives, with $h=T_\sigma f$,
+\[
+ \|D^{k_j}h\|_{p_j}
+ \lesssim_k\|h\|_{30}^{1-k_j/k}\|D^kh\|_{30/11}^{k_j/k},
+ \qquad \frac1{p_j}=\frac{1+10k_j/k}{30}.
+\]
+The cases $k_j=0,k$ are identities. The spatial reciprocals sum to $1/2$;
+five $L^5_\sigma$ norms give an $L^1_\sigma$ product. Unitarity of
+$T_{-\sigma}$ proves the highest-derivative part of~\eqref{eq:tame}.
+For its $L^2$ part use one $L^{30/11}_x$ factor and four $L^{30}_x$ factors.
+Summing the lower derivatives proves~\eqref{eq:tame}. The admissibility
+condition is $2/5+3/(30/11)=3/2$.
+
+For the weights, set $J_\sigma=x+2i\sigma\nabla$ and $F(z)=z^3\bar z^2$.
+The identities
+\[
+ J_\sigma T_\sigma f=T_\sigma(xf),\qquad
+ J_\sigma F(h)=3h^2\bar h^2J_\sigma h
+                 -2h^3\bar h\,\overline{J_\sigma h}
+\]
+and the $H^k$ algebra property, $k\ge2$, yield
+\begin{equation}\label{eq:firstweight}
+ \|xQ_1(f)\|_{H^k}\le C_k\|f\|_{H^k}^4\|xf\|_{H^k}.
+\end{equation}
+Expanding $\sum_{j=1}^3(x_j+2i\sigma\partial_j)^2F(T_\sigma f)$ also gives
+\begin{equation}\label{eq:secondweight}
+ \||x|^2Q_1(f)\|_{H^k}\le C_{k,R}(1+\||x|^2f\|_{H^k})
+ \quad\text{if }\|f\|_{H^{k+2}}+\|xf\|_{H^{k+1}}\le R.
+\end{equation}
+To see the dependence in this estimate, the free position commutator bounds
+$\||x|^2T_\sigma f\|_{H^k}$ by a constant times
+$\||x|^2f\|_{H^k}+\|xf\|_{H^{k+1}}+\|f\|_{H^{k+2}}$ for $0\le\sigma\le1$.
+The terms with $x\nabla F$ contain one weighted factor, and those with
+$\Delta F$ contain at most two further derivatives.
+
+Local contraction can be run in the sum-norm space
+$H^{k+2}\cap\{xf\in H^{k+1},\ |x|^2f\in H^k\}$; the corresponding
+polynomial difference estimates give local Lipschitz continuity.
+This solution lies in $\Sigma$ and is identified with the global solution above.
+On a compact interval,~\eqref{eq:tame} and the $H^1$ bound first control all
+higher Sobolev norms by Gronwall. The commutators
+\[
+ [\Delta,x]=2\nabla,\qquad [\Delta,|x|^2]=4x\cdot\nabla+6
+\]
+then let~\eqref{eq:firstweight} control the first weight, followed by
+\eqref{eq:secondweight} for the second. These bounds give continuation in the
+same weighted space. Sobolev embedding and the equation give smoothness in
+space and time.
+\end{proof}
+
+The first estimate controls the positive term that will appear in the variance
+identity. A small fractional norm leaves most of the mass below a suitable
+frequency cutoff; its position norm stays bounded during a short free evolution.
+
+\begin{lemma}[Free mass localization]\label{lem:localization}
+Fix $M,Y>0$ and $0<s<1$. There is $c=c(M,Y,s)>0$ such that, for $S\ge1$ and
+$f\in H^1(\R^3)$ satisfying $\|f\|_2^2=M$ and $\|xf\|_2\le Y$,
+\begin{equation}\label{eq:staticlower}
+ W_S(f):=\int_0^S\sigma\|T_\sigma f\|_6^6\,d\sigma
+ \ge c(1+\|f\|_{\dot H^s})^{-2/s}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Choose $\chi\in C_c^\infty(\R^3)$ with $0\le\chi\le1$, $\chi=1$ on
+$\{|\xi|\le1\}$, and $\chi=0$ on $\{|\xi|\ge2\}$. Let $P_N$ be the Fourier
+multiplier with symbol $\chi(\xi/N)$, and set $f_N=P_Nf$. Put
+$B=\|f\|_{\dot H^s}$ and
+\[
+ N=\max\{1,[16(1+B)/\sqrt M]^{1/s}\}.
+\]
+Plancherel gives
+\[
+ \|f-f_N\|_2\le N^{-s}B\le\frac{\sqrt M}{16},
+ \qquad \|f_N\|_2\ge\frac{15\sqrt M}{16}.
+\]
+Differentiating the cutoff in frequency gives
+\[
+ \|xf_N\|_2\le Y+C_\chi\frac{\sqrt M}{N},
+ \qquad \|\nabla f_N\|_2\le2N\sqrt M.
+\]
+Since $xT_\sigma=T_\sigma(x-2i\sigma\nabla)$, for $0\le\sigma\le1/N$,
+\[
+ \|xT_\sigma f_N\|_2\le Y+(C_\chi+4)\sqrt M=:Y_*.
+\]
+Fix $R\ge1$ so that $Y_*/R\le\sqrt M/8$. The mass outside the ball then
+satisfies $\|\mathbf1_{|x|>R}T_\sigma f_N\|_2\le\sqrt M/8$. Subtracting
+this tail and the high-frequency remainder gives
+\[
+ \|\mathbf1_{|x|\le R}T_\sigma f\|_2
+ \ge(15/16-1/8-1/16)\sqrt M\ge\sqrt M/2.
+\]
+H\"older on the ball $B_R=\{|x|\le R\}$ yields
+\[
+ \|T_\sigma f\|_6^6\ge\frac{(M/4)^3}{|B_R|^2}=:c_*.
+\]
+The interval $[0,1/N]$ lies in $[0,S]$, so $W_S(f)\ge c_*/(2N^2)$.
+Finally $N\le C_{M,s}(1+B)^{1/s}$ proves~\eqref{eq:staticlower}.
+The cutoff is fixed once; all constants are independent of $f$ and $S$.
+\end{proof}
+
+We next keep track of the finite upper endpoint in the averaged nonlinearity.
+For $S>0$ write
+\[
+ Q_S(f)=\int_0^S T_{-\sigma}(|T_\sigma f|^4T_\sigma f)\,d\sigma.
+\]
+For a solution of
+\begin{equation}\label{eq:scaled}
+ iw_\tau-\beta\Delta w+Q_S(w)=0,\qquad \beta>0,
+\end{equation}
+let
+\[
+ V=\|xw\|_2^2,\qquad
+ D=\operatorname{Im}\int_{\R^3}\bar w\,x\cdot\nabla w\,dx,
+ \qquad G(\sigma,\tau)=\|T_\sigma w(\tau)\|_6^6,
+\]
+\[
+ P(\tau)=\int_0^S G(\sigma,\tau)\,d\sigma,
+ \qquad W(\tau)=W_S(w(\tau)).
+\]
+Here $V$ is the second spatial moment and $D$ is its dilation moment.
+The mass and positive energy are
+\begin{equation}\label{eq:energy}
+ M=\|w\|_2^2,\qquad
+ E=\frac\beta2\|\nabla w\|_2^2+\frac16P.
+\end{equation}
+
+\begin{lemma}[Finite-interval virial identities]\label{lem:virial}
+Suppose $w$ solves~\eqref{eq:scaled} on a time interval $I$ and
+$w,xw,|x|^2w\in C(I;H^k)$ for every integer $k\ge0$.
+Then $M,E$ are constant and
+\begin{align}
+ V'&=-4\beta D+\frac{16}{3}W+\frac43S^2G(S,\tau),\label{eq:Vprime}\\
+ D'&=-2\beta\|\nabla w\|_2^2-\frac43P-\frac23SG(S,\tau)
+     =-4E-\frac23P-\frac23SG(S,\tau).\label{eq:Dprime}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Unitarity gives $\langle w,Q_S(w)\rangle=P\in\R$, which proves mass
+conservation. In the real $L^2$ pairing, the derivative of $E$ is
+$-\beta\Delta w+Q_S(w)$. Equation~\eqref{eq:scaled} reads
+$w_\tau=i(-\beta\Delta w+Q_S(w))$, so $E'=0$.
+
+For the variance calculation set $h=T_\sigma w$. The position commutator gives
+\[
+ T_\sigma|x|^2w=(|x|^2+4i\sigma x\cdot\nabla+6i\sigma-4\sigma^2\Delta)h.
+\]
+The nonlinear part of $V'$ is $-2$ times the imaginary part of the pairing
+of this expression with $|h|^4h$. Integration by parts gives
+\[
+ \operatorname{Re}\int x\cdot\nabla\bar h\,|h|^4h=-G/2,
+ \qquad \partial_\sigma G=6\operatorname{Im}\int\Delta\bar h\,|h|^4h.
+\]
+Its integrand is therefore $8\sigma G+(4/3)\sigma^2\partial_\sigma G$.
+After integration in $\sigma$ this becomes
+$(16/3)W+(4/3)S^2G(S,\tau)$. The linear contribution is $-4\beta D$,
+proving~\eqref{eq:Vprime}.
+
+For~\eqref{eq:Dprime}, use $w_\lambda(x)=\lambda^{3/2}w(\lambda x)$.
+Then
+\[
+ P(w_\lambda)=\lambda^4\int_0^{\lambda^2S}G(\sigma,\tau)\,d\sigma,
+ \qquad \left.\frac{d}{d\lambda}P(w_\lambda)\right|_{\lambda=1}
+       =4P+2SG(S,\tau).
+\]
+The generator $\mathcal A=x\cdot\nabla+3/2$ is skew-adjoint, and
+$D=\operatorname{Im}\langle w,\mathcal Aw\rangle$. Consequently
+\[
+ D'=2\operatorname{Im}\langle w_\tau,\mathcal Aw\rangle
+    =-2\left.\frac{d}{d\lambda}E(w_\lambda)\right|_{\lambda=1}.
+\]
+Differentiating the kinetic term and the preceding formula for $P$ gives
+\eqref{eq:Dprime}. The assumed weighted regularity justifies these pairings,
+dilations and finite-interval integrations by parts.
+\end{proof}
+
+\section{Proof of norm inflation}\label{sec:proof}
+
+Let $\phi(y)=e^{-|y|^2/4}$, and, for $g\ge2$, choose
+\begin{equation}\label{eq:parameters}
+ L=g^{-9/4},\qquad A=g^{11/4},\qquad u_{g,0}(x)=A\phi(x/L).
+\end{equation}
+Let $u_g$ be the smooth solution given by Lemma~\ref{lem:smooth}. Define
+\[
+ w_g(\tau,y)=A^{-1}u_g(\tau/(A^4L^2),Ly).
+\]
+For a scaled function, $T_\sigma[A f(\cdot/L)](x)=A(T_{\sigma/L^2}f)(x/L)$.
+Changing the integration variable gives
+\[
+ Q_1[A f(\cdot/L)](x)=A^5L^2(Q_{L^{-2}}f)(x/L).
+\]
+Thus $w_g$ satisfies~\eqref{eq:scaled} exactly, with
+\begin{equation}\label{eq:scales}
+ \beta=(AL)^{-4}=g^{-2},\qquad S=L^{-2}=g^{9/2},
+ \qquad \tau=g^{13/2}t,\qquad w_g(0)=\phi.
+\end{equation}
+The averaging interval remains finite. Fourier scaling also gives
+\begin{equation}\label{eq:normscale}
+ \|u_g(t)\|_{\dot H^{1/4}}
+ =AL^{5/4}\|w_g(\tau)\|_{\dot H^{1/4}}
+ =g^{-1/16}\|w_g(\tau)\|_{\dot H^{1/4}}.
+\end{equation}
+
+We use the variance and energy of $w_g$ on $[-g,0]$. Suppress its index, and set
+$M_0=\|\phi\|_2^2>0$ and $V_0=\|y\phi\|_2^2$. The free Gaussian satisfies
+\[
+ T_\sigma\phi=(1+i\sigma)^{-3/2}
+    \exp\left(-\frac{|y|^2}{4(1+i\sigma)}\right),
+ \qquad
+ \|T_\sigma\phi\|_6^6=(2\pi/3)^{3/2}(1+\sigma^2)^{-3}.
+\]
+Since $\int_0^\infty(1+\sigma^2)^{-3}d\sigma=3\pi/16$, the initial energy,
+and hence the conserved energy, is bounded independently of $g$ by
+\begin{equation}\label{eq:Estar}
+ E\le E_*:=\tfrac12\|\nabla\phi\|_2^2+\frac{\pi}{32}(2\pi/3)^{3/2}.
+\end{equation}
+
+The Gaussian is real, so $D(0)=0$. Since $0\le P\le6E$,
+\eqref{eq:Dprime} gives $D'\ge-8E-(2/3)SG(S,\tau)$. For $\tau\le r\le0$,
+\[
+ D(r)\le-8Er+\frac23S\int_r^0G(S,q)\,dq.
+\]
+Integrating~\eqref{eq:Vprime} backwards gives
+\[
+ V(\tau)=V_0+4\beta\int_\tau^0D(r)\,dr
+ -\int_\tau^0\left(\frac{16}{3}W(r)+\frac43S^2G(S,r)\right)dr.
+\]
+The double integral of $G(S,q)$ equals $\int_\tau^0(q-\tau)G(S,q)dq$.
+Combining these formulas yields
+\begin{align}\label{eq:backward}
+ V(\tau)\le {}&V_0+16\beta E\tau^2-\frac{16}{3}\int_\tau^0W(r)\,dr\nonumber\\
+ &+\frac43S\int_\tau^0[2\beta(r-\tau)-S]G(S,r)\,dr.
+\end{align}
+For $-g\le\tau\le0$, we have $2\beta g\le S$ and $\beta\tau^2\le1$.
+Both integral terms on the right are nonpositive. Therefore
+\begin{equation}\label{eq:Vstar}
+ V(\tau)\le V_*:=V_0+16E_*,\qquad -g\le\tau\le0.
+\end{equation}
+Energy and Cauchy--Schwarz now give
+\[
+ \|\nabla w(\tau)\|_2\le\sqrt{2E_*}\,g,
+ \qquad |D(\tau)|\le C_Dg,\qquad C_D=\sqrt{2E_*V_*}.
+\]
+In the integral of~\eqref{eq:Vprime} from $-g$ to zero the endpoint
+term is nonnegative. Using $V(-g)\ge0$, we obtain the uniform bound
+\begin{equation}\label{eq:Wupper}
+ \frac{16}{3}\int_{-g}^0W(r)\,dr
+ \le V_0+4\beta\int_{-g}^0D(r)\,dr
+ \le V_0+4C_D=:\frac{16}{3}C_W.
+\end{equation}
+
+Let $B_g=\max_{-g\le\tau\le0}\|w_g(\tau)\|_{\dot H^{1/4}}$.
+This maximum is finite and attained by $H^1$ continuity. Lemma~\ref{lem:localization}
+applies at every time with the same mass $M_0$, position bound $\sqrt{V_*}$,
+and $s=1/4$. Its constant is independent of $g$, and it gives
+\[
+ cg(1+B_g)^{-8}\le\int_{-g}^0W(r)\,dr\le C_W.
+\]
+Thus, for all sufficiently large $g$,
+\begin{equation}\label{eq:Bg}
+ B_g\ge(cg/C_W)^{1/8}-1\ge c_1g^{1/8},
+\end{equation}
+where $c_1>0$ is fixed. A maximizing time $\tau_g$ is different from zero
+once this lower bound exceeds $\|\phi\|_{\dot H^{1/4}}$. Set
+$t_g=\tau_g g^{-13/2}<0$. Equations~\eqref{eq:normscale} and~\eqref{eq:Bg}
+then give
+\[
+ \|u_{g,0}\|_{\dot H^{1/4}}=g^{-1/16}\|\phi\|_{\dot H^{1/4}},
+ \qquad\|u_g(t_g)\|_{\dot H^{1/4}}\ge c_1g^{1/16},
+ \qquad 0<|t_g|\le g^{-11/2}.
+\]
+Choosing $g$ large enough makes the first norm less than $\varepsilon$, the
+second larger than $\varepsilon^{-1}$, and the nonzero time less than
+$\varepsilon$ in absolute value. This proves Theorem~\ref{thm:inflation}.
+
+The construction can be recorded without the rescaled quantities.
+\begin{corollary}[Gaussian construction]\label{cor:construction}
+There are constants $c>0$ and $g_0\ge2$ such that, for every real $g\ge g_0$,
+the global smooth solution of~\eqref{eq:GT} with
+\[
+ u_{g,0}(x)=g^{11/4}\exp(-g^{9/2}|x|^2/4),\qquad x\in\R^3,
+\]
+has a time $-g^{-11/2}\le t_g<0$ satisfying
+\[
+ \|u_{g,0}\|_{\dot H^{1/4}}=C_\phi g^{-1/16},\qquad
+ \|u_g(t_g)\|_{\dot H^{1/4}}\ge cg^{1/16}.
+\]
+Here $C_\phi=\|e^{-|\cdot|^2/4}\|_{\dot H^{1/4}}$, $u_g(0)=u_{g,0}$,
+and $c,g_0$ depend only on the fixed Gaussian and the fixed cutoff in
+Lemma~\ref{lem:localization}.
+\end{corollary}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted the exploration of the argument, algebraic checks,
+drafting, and manuscript review. The author is responsible for the mathematical
+claims and the final text.
+
+\begin{thebibliography}{9}
+\bibitem{KM}
+Jumpei Kawakami and Jason Murphy,
+\emph{Small and large data scattering for the dispersion-managed NLS},
+arXiv:2407.11151v1 (2024),
+\url{https://arxiv.org/abs/2407.11151v1}.
+
+\bibitem{KT}
+Markus Keel and Terence Tao,
+\emph{Endpoint Strichartz estimates},
+American Journal of Mathematics \textbf{120} (1998), 955--980.
+
+\bibitem{K}
+Matthew Kowalski,
+\emph{On ill-posedness for the Gabitov--Turitsyn equation},
+arXiv:2510.11887v1 (2025),
+\url{https://arxiv.org/abs/2510.11887v1}.
+
+\bibitem{N}
+L. Nirenberg,
+\emph{On elliptic partial differential equations},
+Annali della Scuola Normale Superiore di Pisa, Classe di Scienze,
+Series 3, \textbf{13} (1959), no.~2, 115--162.
+\end{thebibliography}
+\end{document}
