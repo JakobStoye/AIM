@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "package_name": "aim-571-half-integral-collinear-count",
+  "package_version": "1.0.0",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "manuscript": {
+    "source": "paper/manuscript.tex",
+    "source_sha256": "27d1759f59b1c7d2fce1c026e631541f0658c76d75d1486eeaa4c7ac937f7c67",
+    "pdf": "paper/manuscript.pdf",
+    "pdf_sha256": "9f751a6486068f9afe74320d82fa8639f711d02a04a4f18d5015f4af9c43bc5b"
+  },
+  "supplement_identity": {
+    "version": "1.0.0",
+    "archive_filename": "aim-571-half-integral-collinear-count-v1.0.0.zip",
+    "distinct_complete_inputs": 608,
+    "original_cell_members": 618,
+    "full_rational_results": true
+  },
+  "review": {
+    "path": "AI_REVIEW.md",
+    "scope": "manuscript and cited primary sources only; computational artifacts excluded",
+    "reviewed_source_sha256": "27d1759f59b1c7d2fce1c026e631541f0658c76d75d1486eeaa4c7ac937f7c67",
+    "reviewed_pdf_sha256": "9f751a6486068f9afe74320d82fa8639f711d02a04a4f18d5015f4af9c43bc5b"
+  },
+  "computational_boundary": "Trusted exact software and ordinary runtime/hardware; no independent counting implementation or checked decomposition certificate; bounded degree types and ordinary LLL remain",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Generated caches, local environment, build and disposable replay output exclusions",
+      "bytes": 59,
+      "sha256": "1484efeb08c01179b25b39f97baa6ecdaf04972b3525cc2e3604915853745789"
+    },
+    {
+      "path": "AI_REVIEW.md",
+      "purpose": "Actual fresh-context manuscript-only referee report for these exact source/PDF bytes",
+      "bytes": 5973,
+      "sha256": "5c8a5d98352bf3e02fb336fdc93c0c11c8f7757362c43603a2c2f7a2716d6bb7"
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "purpose": "Recorded Python/platform/wheel/native hashes and arithmetic options/limits",
+      "bytes": 1892,
+      "sha256": "3c4949bf3c63b0a345e20d30c3ae0b551ea227ac885b5d4af6d289a520398327"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Versioned supplement identity, verification and reproduction commands, trust and AI disclosure",
+      "bytes": 6439,
+      "sha256": "bdde79fba7b24cac8ec0249602d9305c357e079f3255756faaafec444439c59b"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target correspondence from the final manuscript",
+      "bytes": 2154,
+      "sha256": "d6d82a72eeeef7f0256dbb105aa31b14bbebeb3a5880afc3c4ddb6bf313aa734"
+    },
+    {
+      "path": "numerical_case/exact_series.json",
+      "purpose": "Essential complete compact 608-input, 618-member matrices, gradings and whole rational outputs",
+      "bytes": 244058,
+      "sha256": "bd22e0775a0475fe485349483dec748c0045fa3b4e2b0f066a716a3b031bdc21"
+    },
+    {
+      "path": "numerical_case/replay.py",
+      "purpose": "Optional trusted-software recomputation driver, selected cell or all inputs",
+      "bytes": 3144,
+      "sha256": "04e0eef61823601b3cd5d9f87519a04128d45193aa024ceed7f274c79c291077"
+    },
+    {
+      "path": "numerical_case/verify.py",
+      "purpose": "Regenerate and verify stored input/member/grade and complete rational/polynomial identities",
+      "bytes": 2581,
+      "sha256": "c276a8dfe449c2f3ad3c808d4fcc2b6a0b1a5cd4238f997471f225743373ec61"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Frozen nine-page manuscript PDF reviewed in the final referee pass",
+      "bytes": 292763,
+      "sha256": "9f751a6486068f9afe74320d82fa8639f711d02a04a4f18d5015f4af9c43bc5b"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Complete standalone reader-facing mathematical manuscript source",
+      "bytes": 24681,
+      "sha256": "27d1759f59b1c7d2fce1c026e631541f0658c76d75d1486eeaa4c7ac937f7c67"
+    },
+    {
+      "path": "requirements.txt",
+      "purpose": "Pinned PyNormaliz dependency",
+      "bytes": 17,
+      "sha256": "ea97b350649dc6d8ad3edbd727641c1cb1dc5215109e0beacbf808d097a0ca59"
+    },
+    {
+      "path": "src/chain_models.py",
+      "purpose": "Exact chain and fixed-class integer-system generator",
+      "bytes": 5482,
+      "sha256": "19e214370cb93d61800387c731d459cf64651d576464100495720203c1b48f77"
+    },
+    {
+      "path": "src/exact_algebra.py",
+      "purpose": "Integer-only polynomial/rational arithmetic",
+      "bytes": 3448,
+      "sha256": "eda23675d786928cf65db0539d42d2d93c1317b5afef4308d4a4e382b3cddf9a"
+    },
+    {
+      "path": "test/test_export_verifier.py",
+      "purpose": "Export-verifier rejection controls for corrupted data",
+      "bytes": 1384,
+      "sha256": "c7be55f4427ced6e302fefe48b9fb905f1e9477c75418e5ab2bea2eea5cdb998"
+    },
+    {
+      "path": "test/test_geometry_controls.py",
+      "purpose": "Independent finite integer-geometry controls",
+      "bytes": 8817,
+      "sha256": "0e6b7584d750430a0f772be25ee0e954b872cdfd4220bbc74e3c7967185d4aac"
+    }
+  ],
+  "manifest_integrity": "SHA256SUMS fixes this manifest and every payload file; SHA256SUMS excludes itself"
+}

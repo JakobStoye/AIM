@@ -1,0 +1,31 @@
+{
+  "package_version": "1.0.0",
+  "python_version": "3.13.3",
+  "platform": "macOS arm64",
+  "pynormaliz_version": "2.24",
+  "wheel_filename": "pynormaliz-2.24-cp313-cp313-macosx_11_0_arm64.whl",
+  "wheel_sha256": "32d00ce5f24397947076046032e66d48124ece6436309087c9d54c98c758011c",
+  "wheel_url": "https://files.pythonhosted.org/packages/22/4b/248d4918e80030d89a51ca5a34df9eb73fb9d63f0c79bfd0a1bd7c4b3d5b/pynormaliz-2.24-cp313-cp313-macosx_11_0_arm64.whl",
+  "wrapper_and_native_sha256": {
+    "PyNormaliz.py": "595c3fc605d3e3b4599ef23621f3f408de40572e1295e2cd922a84550030bc2f",
+    "PyNormaliz_cpp.cpython-313-darwin.so": "ecb08b9eeb70c463e126a6c9c1cf062673401d8d48fe19d68e8e2599ba25d7b9",
+    "pynormaliz.dylibs/libgmpxx.4.dylib": "942b56a253454e83a0898ebb037432ef35fd2ee93f3f1d81a52e0efd49017284",
+    "pynormaliz.dylibs/libeantic.3.dylib": "7bb0c64af9c75139d9a6278690e0f2d9ca4616a8b67f5c7d7cb1410ff608c2e7",
+    "pynormaliz.dylibs/libnormaliz.3.dylib": "13fcc377b5d9d271b5dc08fbf06481ff8284b4d396cc7ed08b8437e692f5deb4",
+    "pynormaliz.dylibs/libflint.22.0.dylib": "7a4ac176a397b23f916b085940ab68d9c56aaf44ac3c9675ba9eca6dd1a801ef",
+    "pynormaliz.dylibs/libeanticxx.3.dylib": "268a4ead342e440b1d859fa25a04ee080625b44c9a053a20c8d92ff7fc4fb70c",
+    "pynormaliz.dylibs/libgmp.10.dylib": "816e30ea46c751ed724bdd83da205496f09f3710adc76651a268c4d528c8ed26",
+    "pynormaliz.dylibs/libmpfr.6.dylib": "fb9de2d813bf60f8e6bbfc0f0b3baf86691e98be5c7f9523042b166e821280e4"
+  },
+  "normaliz_compiled_minor_version": "not exposed; not inferred from manual",
+  "normaliz_manual_version": "3.11.1",
+  "compute_options": [
+    "HilbertSeries",
+    "BigInt",
+    "NoGradingDenom"
+  ],
+  "normaliz_threads": 1,
+  "NoLLL": false,
+  "degree_type_bits_observed": 64,
+  "trust_boundary": "Trusted exact software and ordinary hardware/runtime; no independent counting or checked decomposition certificate."
+}
