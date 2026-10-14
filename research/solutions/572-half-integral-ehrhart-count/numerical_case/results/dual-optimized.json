@@ -1,0 +1,115 @@
+{
+  "dual": {
+    "status": "EXACT_RATIONAL_INEQUALITIES_VERIFIED",
+    "cases": [
+      {
+        "pattern": "EE",
+        "n": 2,
+        "bound": "-4"
+      },
+      {
+        "pattern": "EE",
+        "n": 3,
+        "bound": "-17/3"
+      },
+      {
+        "pattern": "EE",
+        "n": 4,
+        "bound": "-9/2"
+      },
+      {
+        "pattern": "EE",
+        "n": 5,
+        "bound": "-11/5"
+      },
+      {
+        "pattern": "EE",
+        "n": 6,
+        "bound": "2/3"
+      },
+      {
+        "pattern": "EE",
+        "n": 7,
+        "bound": "7/3"
+      },
+      {
+        "pattern": "EE",
+        "n": 8,
+        "bound": "9/2"
+      },
+      {
+        "pattern": "EO",
+        "n": 2,
+        "bound": "-5"
+      },
+      {
+        "pattern": "EO",
+        "n": 3,
+        "bound": "-20/3"
+      },
+      {
+        "pattern": "EO",
+        "n": 4,
+        "bound": "-11/2"
+      },
+      {
+        "pattern": "EO",
+        "n": 5,
+        "bound": "-16/5"
+      },
+      {
+        "pattern": "EO",
+        "n": 6,
+        "bound": "-1/3"
+      },
+      {
+        "pattern": "EO",
+        "n": 7,
+        "bound": "8/3"
+      },
+      {
+        "pattern": "EO",
+        "n": 8,
+        "bound": "94/21"
+      },
+      {
+        "pattern": "OO",
+        "n": 2,
+        "bound": "-6"
+      },
+      {
+        "pattern": "OO",
+        "n": 3,
+        "bound": "-23/3"
+      },
+      {
+        "pattern": "OO",
+        "n": 4,
+        "bound": "-13/2"
+      },
+      {
+        "pattern": "OO",
+        "n": 5,
+        "bound": "-21/5"
+      },
+      {
+        "pattern": "OO",
+        "n": 6,
+        "bound": "-4/3"
+      },
+      {
+        "pattern": "OO",
+        "n": 7,
+        "bound": "5/3"
+      },
+      {
+        "pattern": "OO",
+        "n": 8,
+        "bound": "7/2"
+      }
+    ]
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "integer_arithmetic": "Python integers and fractions.Fraction",
+  "assertions_disabled": true
+}

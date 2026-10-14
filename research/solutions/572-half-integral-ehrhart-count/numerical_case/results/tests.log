@@ -1,0 +1,24 @@
+test_duplicate_case (test_verification.CertificateTests.test_duplicate_case) ... ok
+test_false_claimed_bound (test_verification.CertificateTests.test_false_claimed_bound) ... ok
+test_float_weight (test_verification.CertificateTests.test_float_weight) ... ok
+test_ineffective_zero_combination (test_verification.CertificateTests.test_ineffective_zero_combination) ... ok
+test_missing_case (test_verification.CertificateTests.test_missing_case) ... ok
+test_negative_weight (test_verification.CertificateTests.test_negative_weight) ... ok
+test_unknown_label (test_verification.CertificateTests.test_unknown_label) ... ok
+test_valid_all_width_patterns (test_verification.CertificateTests.test_valid_all_width_patterns) ... ok
+test_duplicate_function_rejected (test_verification.DecoderTests.test_duplicate_function_rejected) ... ok
+test_float_schema_rejected (test_verification.DecoderTests.test_float_schema_rejected) ... ok
+test_integer_residue_normalization (test_verification.DecoderTests.test_integer_residue_normalization) ... ok
+test_wrong_area_group_rejected (test_verification.DecoderTests.test_wrong_area_group_rejected) ... ok
+test_wrong_original_interior_count (test_verification.DecoderTests.test_wrong_original_interior_count) ... ok
+test_complete_small_sets_against_geometry (test_verification.WitnessTests.test_complete_small_sets_against_geometry) ... ok
+test_dilation_counts (test_verification.WitnessTests.test_dilation_counts) ... ok
+test_invalid_domain_and_signatures (test_verification.WitnessTests.test_invalid_domain_and_signatures) ... ok
+test_large_parameter_endpoints (test_verification.WitnessTests.test_large_parameter_endpoints) ... ok
+test_line_and_body_period_collapse_are_distinct (test_verification.WitnessTests.test_line_and_body_period_collapse_are_distinct) ... ok
+test_merged_edge_boundary_point (test_verification.WitnessTests.test_merged_edge_boundary_point) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.121s
+
+OK

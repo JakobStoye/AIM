@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "problem_id": "572",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "Full-target analytic argument with exact verification inputs and cited published classification dependencies",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 160,
+      "sha256": "9cf02cc517625abbfdc9f1f61d22c72f06d6b26a177bf2df1d369542629ec1ec",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3920,
+      "sha256": "026eec8453c6d2d54d516391f6ddeb17142e666fa3d978a6fdbbdb3677b36bb2",
+      "purpose": "Public documentation or exact content checksums"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2369,
+      "sha256": "c307314b66de5fb29c1d5c90732cf567cadc353bc607ae5fbea6bf48f1b32f60",
+      "purpose": "Public documentation or exact content checksums"
+    },
+    {
+      "path": "VERIFICATION_MANIFEST.sha256",
+      "bytes": 2376,
+      "sha256": "5e279477765f7b4cc1f3aa54195883ae78bdecccc416e9e1aad0921ce8ff13b0",
+      "purpose": "Public documentation or exact content checksums"
+    },
+    {
+      "path": "half-integral-ehrhart-verification.zip",
+      "bytes": 392739,
+      "sha256": "fe8e74da1bc3cdb11e1d67a204a0926cbd98ed91ab5679d6518cac53127decd4",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/README.md",
+      "bytes": 1693,
+      "sha256": "ed3c2e0227d6540fa91273738b23ecc5d34abfed1f84421386e5def152d99394",
+      "purpose": "Public documentation or exact content checksums"
+    },
+    {
+      "path": "numerical_case/certificates/dual_weights.json",
+      "bytes": 27354,
+      "sha256": "65d569db82a356ea8ad0490cf829302359f7a916c06a3faf7c4cc03691175d87",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/fetch_inputs.py",
+      "bytes": 1516,
+      "sha256": "fd598f1a29e76b33b0d1ccffd846ee22b5914aa2575b7bf63e1ee77063693850",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/input_manifest.json",
+      "bytes": 4735,
+      "sha256": "25fa220681353e29fb92814c8ba39bcc23decd988d0967be1195279e0eba0a39",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/requirements-data.txt",
+      "bytes": 26,
+      "sha256": "bfbd6dc3a361fd0e868187c33ad7faa50a3bf985023d7c3b3fe01fbb345ed81a",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/results/dual-optimized.json",
+      "bytes": 1979,
+      "sha256": "2cefc96934bcf967a92dc032c2cc8c63199a3ae4ab935a0c53f726adbda7112a",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/results/tests-optimized.log",
+      "bytes": 2001,
+      "sha256": "ab51c10003ab81bfb4c7ecc4cdd17f40cf1225fd8436041e8fea7c086587177e",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/results/tests.log",
+      "bytes": 2001,
+      "sha256": "b22f4569ae2f5f21dc45e86e44c770cc49bbbe0fa7737357161f74256658daad",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/results/validation_summary.json",
+      "bytes": 622,
+      "sha256": "63f3bf21dea682d6dca41154ee12cda7fc41b73316c51460117b37743b95dc7b",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/results/verification.json",
+      "bytes": 5882,
+      "sha256": "7d8de93ffc5301e1c443ae462092d15263606d48f650fd267a24a2a56aeb0d52",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "numerical_case/verify.py",
+      "bytes": 1190,
+      "sha256": "be7c1e4c4797238a2d7095883d596afbf86a74383012d0da47584d2c8eae3cdf",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 359277,
+      "sha256": "5428f9e2dd8aeddbe40f9f75d533092a1278ab80780cab76a2cf235f35ae9083",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 45229,
+      "sha256": "bf9b909c89f4aaa7edc5a018d9d4c9d44f790757e0acaa424b5bdd494bf6d773",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/__init__.py",
+      "bytes": 202,
+      "sha256": "d5baa3fcc2708cb32f2fc6ce8eedcb855c02f90f95f84b5ec7c465f5f241f861",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/body.py",
+      "bytes": 4287,
+      "sha256": "c14b5ee33b462141c208f2d21d0faef691c59984d423b334d8f9ef3ee10d547e",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/certificates.py",
+      "bytes": 1801,
+      "sha256": "199e3b23fbd0ce95225eda5b090acb004db49468ee8e2f964ee2561fe75eb56a",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/geometry.py",
+      "bytes": 4957,
+      "sha256": "da660f5fc0fab9f10432cf1530891faad96a8bf8c7a1396f671709d3e4d987ad",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/section_model.py",
+      "bytes": 2537,
+      "sha256": "86192096b31d36c4a20ba73c545ffe0da4acd07d8f2d1938adea8bc998774992",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/signatures.py",
+      "bytes": 2855,
+      "sha256": "8342af07374fb4d276ec45aeeea02142f8bf9dbf5cda1a121a1f9cbdc52a7317",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/source_data.py",
+      "bytes": 3281,
+      "sha256": "032b4417bd711752d7a7fb22a0279e227edb7b98d4e2ae71da3f7e5d68e460be",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "src/half_integral_ehrhart/top.py",
+      "bytes": 1161,
+      "sha256": "defbef8d7397218c4f162c1ef1369b466dd02a08f8ba9a9a51ab0aa5d4ebae1e",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    },
+    {
+      "path": "test/test_verification.py",
+      "bytes": 6109,
+      "sha256": "b3510f8aa266e9a3c8e78b6a9ee0bb9eebbd03a080b2134b1060f1439b371be4",
+      "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
+    }
+  ],
+  "AI_use": "Disclosed in manuscript; no human, formal, novelty or acceptance certification claimed"
+}
