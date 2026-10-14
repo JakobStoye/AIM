@@ -1,0 +1,625 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\aff}{\operatorname{aff}}
+\newcommand{\relint}{\operatorname{relint}}
+\newcommand{\vol}{\operatorname{vol}}
+\title{Connectivity when isolated vertices disappear\newline in a convex polytope}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $X_1,\ldots,X_n$ be independent uniform points in a fixed compact convex
+polytope $A\subset\R^d$ with nonempty interior, where $d\geq3$. Let $L_n$ be
+the largest nearest-neighbour distance and let $M_n$ be the connectivity
+radius of their Euclidean random geometric graph. We prove that
+$\Pp(L_n=M_n)\to1$. The argument retains the contribution of every face at a
+deterministic radius slightly below the leading connectivity scale. A linear
+gain in cone-ball volume excludes small components, and a positive collar
+surplus excludes medium separated sets. A fixed spatial net then excludes two
+large components simultaneously at every larger radius. An isolated vertex
+persists at the chosen lower radius, so these estimates apply at the random
+radius $L_n$.
+\end{abstract}
+
+\section{Introduction}
+For a finite set $\mathcal X\subset\R^d$ and $r\geq0$, let $G(\mathcal X,r)$
+join two distinct points when their Euclidean distance is at most $r$.
+Suppose that $A\subset\R^d$ is a compact convex polytope with nonempty interior
+and that $X_1,X_2,\ldots$ are independent and uniform in $A$. Write
+$\mathcal X_n=\{X_1,\ldots,X_n\}$ and, for $n\geq2$, put
+\begin{equation}\label{eq:thresholds}
+ L_n=\max_{1\leq i\leq n}\min_{j\ne i}\|X_i-X_j\|,
+ \qquad
+ M_n=\inf\{r\geq0:G(\mathcal X_n,r)\text{ is connected}\}.
+\end{equation}
+The sample points are distinct almost surely. The first quantity is the
+radius at which the last isolated vertex disappears. The second is the
+radius at which all components merge. Always $L_n\leq M_n$.
+
+\begin{theorem}\label{thm:main}
+For every fixed integer $d\geq3$ and every fixed compact convex polytope
+$A\subset\R^d$ with nonempty interior, the uniform sample satisfies
+\[
+ \lim_{n\to\infty}\Pp(L_n=M_n)=1.
+\]
+\end{theorem}
+
+Penrose, Yang and Higgs \cite{PYH} obtained a common almost-sure leading
+scale for the largest nearest-neighbour link and the connectivity threshold
+in a polytope. That scale depends on the dimensions and solid angles of its
+faces. Their Remark~2.9 distinguishes this result from exact equality of the
+two thresholds with high probability for a general polytope. Penrose and
+Yang \cite[Theorem~1.1 and equation~(1.5)]{PY} prove such equality for smooth
+domains and, in dimension two, convex polygons. Theorem~\ref{thm:main}
+addresses uniform samples in arbitrary fixed convex polytopes of dimension
+at least three. It makes no claim about nonuniform densities, higher
+connectivity, or uniformity over varying polytopes.
+
+We choose a deterministic radius $r_n$ just below the leading scale and
+prove four estimates. At $r_n$ there are no small non-singleton components,
+but there is still an isolated vertex. A face-by-face empty-shell estimate
+rules out medium separated subsets. A separator and a fixed net rule out two
+large components at every radius $s\geq r_n$. These estimates imply that a
+disconnected graph at any such radius has an isolated vertex. Applying this
+statement at $s=L_n$ proves the theorem without a limit law for $L_n$.
+
+\section{Face geometry and cone volume}
+Throughout, $B_r(x)$ is the closed Euclidean ball. We use $|E|$ for
+$d$-dimensional Lebesgue measure, $\|x\|$ for Euclidean norm, and natural
+logarithms. Set $f_0=|A|^{-1}$, and write
+$U_r=(U+B_r(0))\cap A$ for $U\subset A$, where $+$ denotes Minkowski addition.
+Constants may depend on the fixed polytope, the dimension, and auxiliary
+parameters explicitly fixed in a lemma. They do not depend on $n$ or on a
+radius in a stated uniform range. We write $a_n\asymp b_n$ when their ratio is
+bounded above and below by positive constants for all sufficiently large $n$.
+
+Let $F$ range over all nonempty faces, including $A$ itself. Put
+\[
+ k_F=\dim F,\qquad q_F=d-k_F,\qquad H_F=\operatorname{lin}(F-F).
+\]
+The tangent cone at a point of $\relint F$, translated to the origin, is
+denoted by $K_F$. It is a full-dimensional convex polyhedral cone with
+lineality $H_F$. Its unit-ball volume is
+\[
+ \rho_F=|K_F\cap B_1(0)|>0.
+\]
+For the interior face, $K_A=\R^d$ and $\rho_A=\omega_d$, the volume of the
+unit ball. Active facet inequalities have the form $a_i\cdot v\geq0$, with
+common kernel $H_F$. Thus $K_F+H_F=K_F$, and
+$K_F\cap H_F^\perp$ is full-dimensional in the $q_F$-dimensional normal space.
+If $z,z'\in\aff F$, then $z+K_F=z'+K_F$. We may therefore use a fixed origin
+in $\aff F$ in all normal-coordinate integrals.
+
+\subsection{Face territories}
+We recall the face territories of \cite[results~3.13--3.17]{PYH} in a form
+needed below. For every fixed $S\geq1$ and all sufficiently small $r>0$, there
+is a deterministic partition $\{T_F(r)\}$ of $A$ with the following properties:
+\begin{enumerate}
+\item If $x\in T_F(r)$, then $\dist(x,F)\leq D_F r$ for a fixed $D_F$.
+Its tangential projection lies in a bounded set independent of $r$.
+\item For $x\in T_F(r)$ and any $z\in\aff F$,
+\begin{equation}\label{eq:localcone}
+ A\cap B_{Sr}(x)=(z+K_F)\cap B_{Sr}(x).
+\end{equation}
+\item For each fixed $\eta>0$, the number of grid cubes of side $\eta r$
+meeting $T_F(r)$ is $O(r^{-k_F})$.
+\end{enumerate}
+Here the territories and their constants depend on $S$.
+
+For clarity, the construction uses the finite constant $K(A)$ in
+\cite[Lemma~3.13]{PYH}. Choose $K_1=1$ and
+$K_{j+1}>(2K(A)+1)K_j$. At scale $u=Sr$, the territory of a proper face $F$ is
+\[
+ F_{uK_{d-k_F}}\setminus
+ \bigcup_{F'\text{ a proper face of }F}F'_{uK_{d-k_{F'}}},
+\]
+and the interior territory is the remainder. These territories partition
+$A$ for small $u$. The published construction bounds their distance to $F$
+and excludes every facet not containing $F$ from $B_u(x)$.
+This proves \eqref{eq:localcone}: a segment from $x$ to a point of the cone
+inside that ball could leave $A$ only through an inactive facet. The active
+inequalities hold on the whole segment. Conversely, the active inequalities
+hold throughout $A$.
+
+A cube meeting $T_F(r)$ lies in a tube of thickness $O(r)$ about the bounded
+$k_F$-dimensional face. The tube has volume $O(r^{q_F})$, whereas the cube has
+volume $(\eta r)^d$, proving the cube count. Orthogonal normal coordinates and
+Tonelli's theorem also give, for $\lambda>0$,
+\begin{equation}\label{eq:depthintegral}
+ \int_{T_F(r)}e^{-\lambda\dist(x,\aff F)}\,dx
+ \leq c\lambda^{-q_F}.
+\end{equation}
+Indeed the tangential factor is bounded and the normal integral is bounded
+by that over $\R^{q_F}$. Dilation reduces it to the finite integral of
+$e^{-\|w\|}$; a zero-dimensional integral equals one.
+
+\subsection{Three cone estimates}
+\begin{lemma}\label{lem:translate}
+Let $C\subset\R^d$ be a fixed full-dimensional closed convex cone and let
+$\rho=|C\cap B_1(0)|$. For each fixed $R>0$ there is $c>0$ such that,
+whenever $x,y\in C$ and $\|x-y\|\leq R$,
+\[
+ |(B_1(x)\cup B_1(y))\cap C|\geq\rho+c\min(\|x-y\|,1).
+\]
+\end{lemma}
+\begin{proof}
+The convex body $K=C\cap B_1(0)$ contains a ball of some radius $a>0$.
+Also $x+K\subset C\cap B_1(x)$ and $y+K\subset C\cap B_1(y)$.
+Take fibres parallel to $y-x$. Above a $(d-1)$-dimensional disk of radius
+$a/2$ through the inscribed ball's centre, the fibres of $K$ are intervals of
+length at least $a$. Translating an interval by $s=\|x-y\|$ increases the
+length of its union with its translate by the smaller of $s$ and its length.
+Integration gives
+\[
+ |(x+K)\cup(y+K)|\geq |K|+
+ \omega_{d-1}(a/2)^{d-1}\min(s,a).
+\]
+Decreasing the constant proves the claim; $x=y$ is immediate. The direction
+of translation need not lie in the cone.
+\end{proof}
+
+\begin{lemma}\label{lem:depth}
+Let $C$ be a fixed full-dimensional convex polyhedral cone with lineality
+$H$. For each fixed $D<\infty$ with $D\geq0$ there is $c_D>0$ such that
+\[
+ |B_1(x)\cap C|\geq |B_1(0)\cap C|+c_D\dist(x,H)
+ \quad(x\in C,\ \dist(x,H)\leq D).
+\]
+\end{lemma}
+\begin{proof}
+The claim is immediate if $C=\R^d$ or $D=0$. Otherwise write an irredundant
+representation $C=\{v:a_i\cdot v\geq0,\ 1\leq i\leq m\}$ with unit inward
+facet normals. Set $w=\operatorname{proj}_{H^\perp}x$. Then
+$w\in C\cap H^\perp$. On its compact set of unit vectors,
+$\max_i a_i\cdot w$ has a positive minimum: if all products vanished, the
+unit vector would lie in $H$. Hence some $i$ satisfies
+$a_i\cdot w\geq c\|w\|$.
+
+For each facet choose a positive-area closed disk $Q_i$ in its relative
+interior and inside $B_{1/2}(0)$. All other facet inequalities have a positive
+margin on $Q_i$; when there is only one facet this condition is empty.
+For $v\in Q_i$ and $0<t<a_i\cdot w$, the point $v-t a_i$ is outside $C$,
+but is in $C-w$ when $\|w\|$ is sufficiently small. In fact its $i$th
+inequality after adding $w$ is nonnegative, and each other one is at least
+its margin minus $\|w\|$. These points also lie in $B_1(0)$.
+The resulting prism has volume $|Q_i|_{d-1}(a_i\cdot w)$.
+Since $C\subset C-w$, this proves a linear gain for all sufficiently small
+$\|w\|$, uniformly over the finitely many facets.
+
+For larger $\|w\|\leq D$, the sets $C-tw$ increase as $t\geq0$ increases.
+The gain at a fixed small displacement in the direction of $w$ supplies a
+positive lower bound, which is at least a constant times $\|w\|/D$.
+Finally $C+H=C$, so translating the ball centre by its tangential component
+does not change the volume. This gives the asserted estimate.
+\end{proof}
+
+\begin{lemma}\label{lem:collar}
+For a fixed full-dimensional closed convex cone $C$ and fixed
+$0<\epsilon<R<\infty$, there is $\gamma>0$ such that every nonempty compact
+$E\subset C$ with $\epsilon r\leq\diam E\leq Rr$ satisfies
+\[
+ |((E+B_r(0))\cap C)\setminus E|
+ \geq (|C\cap B_1(0)|+\gamma)r^d.
+\]
+\end{lemma}
+\begin{proof}
+Scale to $r=1$ and put $K=C\cap B_1(0)$, $\rho=|K|$.
+A diameter pair in $E$ and Lemma~\ref{lem:translate} give
+$|E+K|\geq\rho+g$ for a fixed $g>0$. If $|E|\leq g/2$, subtracting $E$
+leaves at least $\rho+g/2$. If $|E|>g/2$, the full Brunn--Minkowski inequality
+for nonempty compact sets \cite[Theorem~4.1 and equation~(11)]{Gardner} gives
+\[
+ |E+K|-|E|\geq
+ (|E|^{1/d}+\rho^{1/d})^d-|E|
+ \geq\rho+d\rho^{(d-1)/d}(g/2)^{1/d}.
+\]
+Since $E+K\subset C\cap(E+B_1(0))$, these two cases give a common positive
+surplus. No convexity or connectedness of $E$ is needed, and $E$ may have
+zero volume.
+\end{proof}
+
+\section{A lower radius and three local estimates}
+Define the face-dependent quantities
+\begin{equation}\label{eq:critical}
+ \beta=\max_F\frac{k_F}{d\rho_F},\quad
+ \mathcal I=\left\{F:\frac{k_F}{d\rho_F}=\beta\right\},\quad
+ b_F=\frac{(d-k_F)(d-1)}d,\quad
+ a_* =\min_{F\in\mathcal I}\frac{b_F}{\rho_F}.
+\end{equation}
+The interior face implies $\beta>0$. Thus every critical face
+$F\in\mathcal I$ has $k_F>0$. Fix $\varepsilon>0$ so small that
+$\varepsilon\max_F\rho_F<(d-1)/2$, and put $a=a_*+\varepsilon$.
+For all sufficiently large $n$, let
+\begin{equation}\label{eq:lower}
+ t_n=\beta\log n-a\log\log n,\qquad
+ r_n=\left(\frac{t_n}{nf_0}\right)^{1/d}.
+\end{equation}
+Then $t_n>0$, $r_n\to0$, and $t_n/\log n\to\beta$.
+The quantity
+\begin{equation}\label{eq:Q}
+ Q_F(n)=n^{k_F/d}t_n^{-b_F}e^{-\rho_Ft_n}
+\end{equation}
+will record the contribution of face $F$. For critical faces,
+$Q_F(n)\asymp(\log n)^{a\rho_F-b_F}$ and
+$a\rho_F-b_F\leq\varepsilon\rho_F$. For noncritical faces, $Q_F(n)$ is a
+negative power of $n$ times a fixed power of $\log n$ and tends to zero.
+For a critical face attaining the minimum in $a_*$,
+$Q_F(n)\asymp(\log n)^{\varepsilon\rho_F}\to\infty$.
+
+\subsection{Small components}
+\begin{proposition}\label{prop:small}
+There is a fixed $\delta\in(0,1)$ such that, with probability tending to one,
+$G(\mathcal X_n,r_n)$ has no non-singleton component of diameter at most
+$\delta r_n$.
+\end{proposition}
+\begin{proof}
+First let $r$ be small with $t=nf_0r^d\asymp\log n$.
+If $x$ is a vertex of such a component and $y$ a furthest vertex from $x$,
+put $s=\|y-x\|\leq\delta r$. All component vertices lie in $B_s(x)$ and all
+other sample points avoid
+\[
+ D(x,y)=\big[(B_r(x)\cup B_r(y))\setminus B_s(x)\big]\cap A.
+\]
+Use the territories with $S=3$. For $x\in T_F(r)$, the configuration agrees
+with the face cone. Write $h_x=\dist(x,\aff F)$; its ratio to $r$ is bounded.
+Scaling Lemmas~\ref{lem:translate} and \ref{lem:depth}, and taking half the
+smaller gain, yields
+\[
+ |(B_r(x)\cup B_r(y))\cap A|
+ \geq\rho_Fr^d+c r^{d-1}(h_x+s).
+\]
+The same $c>0$ works for all faces after taking a finite minimum.
+Subtracting $B_s(x)$ loses at most $\omega_ds^d$. Choose $\delta$ sufficiently
+small to absorb this loss in the term proportional to $s$. Thus
+\begin{equation}\label{eq:smallvoid}
+ |D(x,y)|\geq\rho_Fr^d+c' r^{d-1}(h_x+s).
+\end{equation}
+
+Count every ordered labelled pair as a possible witness. Conditional on
+that pair, the other $n-2$ vertices avoid $D(x,y)$ with probability at most
+$\exp[-(n-2)f_0|D(x,y)|]$. The expected number of witnesses is bounded by
+\[
+ n(n-1)f_0^2\sum_F\int_{T_F(r)}
+ \int_{A\cap B_{\delta r}(x)}
+ e^{-(n-2)f_0|D(x,y)|}\,dy\,dx.
+\]
+Apply \eqref{eq:smallvoid} on this domain before enlarging the integration
+region of its exponential majorant to $\R^d$. The resulting inner integral
+is $O((nr^{d-1})^{-d})$.
+The depth integral \eqref{eq:depthintegral} contributes
+$O((nr^{d-1})^{-q_F})$. Replacing $n-2$ by $n$ in the baseline exponential
+costs a bounded factor tending to one. Substitution of $r^d=t/(nf_0)$ gives
+the bound
+\begin{equation}\label{eq:smallcount}
+ c\sum_F n^{k_F/d}t^{-b_F-(d-1)}e^{-\rho_Ft}.
+\end{equation}
+At $t=t_n$, its critical summands are
+$O((\log n)^{\varepsilon\rho_F-(d-1)})=o(1)$, and its noncritical summands
+also vanish. Markov's inequality completes the proof. This count includes
+every possible furthest pair, so it does not condition on an adaptively
+chosen centre.
+\end{proof}
+
+\subsection{Medium separated subsets}
+\begin{proposition}\label{prop:medium}
+For each fixed $R>\delta$, with probability tending to one there is no
+nonempty subset $U\subset\mathcal X_n$ with nonempty complement such that
+\[
+ \delta r_n\leq\diam U\leq Rr_n,
+ \qquad \dist(U,\mathcal X_n\setminus U)>r_n.
+\]
+Connectedness of $U$ is not required.
+\end{proposition}
+\begin{proof}
+Write $r=r_n$. Take a fixed grid of closed cubes of side $\eta r$, with
+$\eta>0$ to be chosen. Let $B$ be the union of all cubes meeting $U$,
+intersected with $A$. It is compact, contains $U$, and has diameter at most
+$(R+2\sqrt d\eta)r$. Every point of $B$ lies within $\sqrt d\eta r$ of $U$.
+Consequently the deterministic shell
+\[
+ H_B=\big[(B+B_{(1-\sqrt d\eta)r}(0))\cap A\big]\setminus B
+\]
+contains no sample point. A point outside $B$ in that shell would be within
+$r$ of $U$, contradicting the assumed separation.
+
+Choose $S=2(R+3)$ and initially $\eta\leq1/(2\sqrt d)$.
+An anchor $x\in U$ belongs to one territory $T_F(r)$. The whole set $B$ and
+its shell lie in $B_{Sr}(x)$ and hence agree with the local cone.
+Set $s_0=1-\sqrt d\eta\in[1/2,1]$. Lemma~\ref{lem:collar}, at radius
+$s_0r$ and with dimensionless diameter bounds $\delta$ and $2(R+2)$,
+gives a surplus $\gamma_F>0$ independent of $\eta$ in this range.
+Since there are finitely many faces, decrease $\eta$ so that for some
+$\gamma'>0$ and every $F$,
+\[
+ (\rho_F+\gamma_F)s_0^d\geq\rho_F+\gamma'.
+\]
+It follows that $|H_B|\geq(\rho_F+\gamma')r^d$.
+
+For a fixed anchor cube, only finitely many shapes for $B$ are possible,
+with a bound independent of $n$: every cube in the shape lies within a
+fixed multiple of $r$ of that cube. There are $O(r^{-k_F})$ anchor cubes
+meeting $T_F(r)$. In this enumeration retain only shapes with the required
+diameter bounds, containing the anchor cube after intersection with $A$,
+and meeting that territory. The volume estimate applies to each such
+deterministic shape by choosing a point of its intersection with $T_F(r)$.
+Overlaps on grid boundaries add only a bounded number of possible cubes.
+The binomial void bound and a union bound now give
+\begin{equation}\label{eq:mediumvoid}
+ \Pp(\text{a stated separated subset exists})
+ \leq c\sum_F r^{-k_F}e^{-(\rho_F+\gamma')t_n}=o(1).
+\end{equation}
+Indeed $\beta\rho_F\geq k_F/d$, so every term is at most a fixed power of
+$\log n$ times $n^{-\beta\gamma'}$. The estimate concerns all separated
+subsets at one deterministic scale. It will therefore apply to components
+at every larger radius.
+\end{proof}
+
+\subsection{An isolated vertex at the lower radius}
+\begin{proposition}\label{prop:isolate}
+The radius in \eqref{eq:lower} satisfies $\Pp(L_n>r_n)\to1$.
+\end{proposition}
+\begin{proof}
+Choose a critical face $F$ with $b_F/\rho_F=a_*$. Its dimension is positive.
+Let $P\subset\relint F$ be a compact patch of positive $k_F$-dimensional
+volume, away from the relative boundary; for $F=A$ use an interior patch.
+With $C_\perp=K_F\cap H_F^\perp$, define
+\[
+ S_n=\{z+w:z\in P,\ w\in C_\perp,\ \|w\|\leq r_n/t_n\}.
+\]
+If $q_F=0$, the normal factor has zero-dimensional volume one.
+For large $n$, $S_n\subset A$ and radius-$3r_n$ neighbourhoods of its points
+agree with the face cone. Its volume is
+$v_n=c_P(r_n/t_n)^{q_F}$, with $c_P>0$.
+
+Put $r=r_n$ and $t=t_n$. Cone inclusion gives the lower bound below.
+For the upper bound, translating a ball by $w$ changes its intersection
+volume by at most $c r^{d-1}\|w\|$: integrate interval fibres parallel to
+$w$, whose changed length is at most a constant times $\|w\|$.
+Uniformly for $x\in S_n$,
+\[
+ \rho_Fr^d\leq|B_r(x)\cap A|\leq\rho_Fr^d+c r^d/t.
+\]
+Let $Z_n$ count vertices in $S_n$ isolated at radius $r$. Given $X_i=x$,
+its isolation probability is
+$p(x)=(1-u(x))^{n-1}$, where $u(x)=f_0|B_r(x)\cap A|$.
+We have $u=O(t/n)$ and $nu\in[\rho_Ft,\rho_Ft+O(1)]$.
+The elementary bound
+\[
+ |\log(1-u)+u|\leq2u^2\quad(0\leq u\leq1/2)
+\]
+follows by integrating $v/(1-v)$ from $0$ to $u$.
+Since $nu^2=O(t^2/n)=o(1)$, it implies
+\begin{equation}\label{eq:isolatemean}
+ \lambda_n=\E Z_n=nf_0\int_{S_n}p(x)\,dx
+ \asymp n v_n e^{-\rho_Ft}
+ \asymp Q_F(n)\asymp(\log n)^{\varepsilon\rho_F}\longrightarrow\infty.
+\end{equation}
+
+For the second factorial moment condition on two specified vertices
+$x,y\in S_n$. At distance at most $r$ they cannot both be isolated.
+For $r<\|x-y\|\leq2r$, Lemma~\ref{lem:translate} and the local cone
+give a fixed $c_1>0$ such that their two ball neighbourhoods have union
+volume at least $(\rho_F+c_1)r^d$. The contribution from these ordered pairs
+is at most
+\[
+ c n^2v_n r^d e^{-(\rho_F+c_1)t}
+ \leq c\lambda_n(nr^d)e^{-c_1t}=o(\lambda_n^2).
+\]
+Here $nr^d=O(\log n)$, whereas $e^{-c_1t}$ is a negative power of $n$
+times a fixed logarithmic factor. The use of $n-2$ rather than $n$ in the
+conditional void bound costs a factor tending to one.
+
+At distance greater than $2r$ the balls are disjoint. The joint isolation
+probability is $(1-u(x)-u(y))^{n-2}$. The logarithm bound gives, uniformly,
+\[
+ \frac{(1-u(x)-u(y))^{n-2}}{p(x)p(y)}=1+o(1),
+\]
+since $u(x),u(y)=O(\log n/n)$. Thus their contribution is at most
+$(1+o(1))\lambda_n^2$. Combining the two ranges yields
+$\operatorname{Var}Z_n=o(\lambda_n^2)$. Chebyshev's inequality proves
+$\Pp(Z_n=0)\to0$. An isolated vertex at the closed radius $r$ has
+nearest-neighbour distance strictly greater than $r$, as required.
+\end{proof}
+
+\section{Large components at all larger radii}
+We first record a deterministic separation argument. We use two geometric
+facts from \cite[Lemma~3.14 and Proposition~3.15]{PYH}: $A$ is unicoherent,
+and there are constants $\delta_1>0$ and $K_0>1$ such that, for $x\in A$
+and $0<b<\delta_1$, $A\setminus B_b(x)$ has at most two components; if
+there are two, one has diameter at most $K_0b$. Unicoherence means that the
+intersection of two closed connected sets whose union is $A$ is connected.
+The following argument expands the deterministic part of
+\cite[proof of Lemma~3.12, equation~(3.18)]{PYH}; no probabilistic conclusion
+of that lemma is used.
+
+\begin{lemma}\label{lem:separator}
+There is $c_A>0$ such that, whenever nonempty finite sets $U,W\subset A$
+satisfy $\dist(U,W)>s>0$ and both $G(U,s)$ and $G(W,s)$ are connected,
+there is a nonempty compact connected set $S\subset A$ separating every
+continuous path from $U$ to $W$ and satisfying
+\[
+ \dist(z,U)=s/2\quad(z\in S),\qquad
+ \diam S\geq c_A\min(\delta_1,\diam U,\diam W).
+\]
+\end{lemma}
+\begin{proof}
+Put $K=U_{s/2}$. It is compact and connected: its finitely many convex ball
+sections connect along graph edges, whose midpoints lie in $A$.
+Similarly $W_{s/2}$ is connected and disjoint from $K$.
+The relative open set $A\setminus K$ is locally path connected, because a
+sufficiently small relative ball about any of its points is convex and stays
+in the set. Its components are consequently open and path connected.
+Let $V$ be the component containing $W_{s/2}$, and set $U'=A\setminus V$.
+
+Every component $Q$ of $A\setminus K$ has boundary in $K$ and its closure
+meets $K$. The first assertion follows from its relative closedness in
+$A\setminus K$ and the openness of the other components. Otherwise $Q$
+would be a nonempty proper clopen subset of connected $A$.
+Hence $U'$ is the union of $K$ and the closures of all components other
+than $V$, each attached to $K$, and is connected. Both $U'$ and
+$\overline V$ are closed and connected, and their union is $A$.
+Unicoherence makes $S=\overline V\cap U'$ compact and connected.
+It is nonempty and every path from $U$ to $W$ crosses it. Every point of
+$S$ lies in $K$ and has distance exactly $s/2$ from $U$: a point of smaller
+distance has a relative neighbourhood contained in $K$, disjoint from $V$.
+
+Set $m=\min(\delta_1,\diam U,\diam W)$ and
+$c_A=1/[6(K_0+1)]$. If $m=0$ the diameter bound is immediate.
+Otherwise, if it failed, choose a positive $b$ with
+$\diam S<b<c_A m$ and $z_0\in S$. Then $S\subset B_b(z_0)$ and both
+$U$ and $W$ have diameter greater than $6(K_0+1)b$.
+Choose $u\in U$ and $w\in W$ outside that ball. If its complement in $A$
+had one component, a path there would join $u$ to $w$ without meeting $S$.
+Thus it has two components, with $u,w$ in different ones.
+One, say that containing $u$, has diameter at most $K_0b$.
+A path in convex $A$ from $u$ to $w$ first exits this component at a point
+of its closure in $B_b(z_0)$, so $\dist(u,B_b(z_0))\leq K_0b$.
+
+There is $u'\in U$ with $\|u-u'\|>(2K_0+2)b$; otherwise
+$\diam U\leq(4K_0+4)b$, a contradiction. This point is outside both the
+small component and the ball: points of the ball are at distance at most
+$(K_0+2)b$ from $u$. It therefore lies in the component containing $w$,
+and a path there again contradicts separation by $S$. This proves the
+diameter bound, including a possible zero-diameter separator by the choice
+of a positive enclosing radius $b$.
+\end{proof}
+
+We also need uniform local volume: there is $c_0>0$ such that
+\begin{equation}\label{eq:localmass}
+ |A\cap B_h(x)|\geq c_0h^d\qquad(x\in A, h\text{ sufficiently small}).
+\end{equation}
+Here is a direct proof. Fix $B_e(c)\subset A$ with $e>0$ and
+$D\geq\sup_{x\in A}\|c-x\|$. For $\alpha=h/(D+e)<1$, convexity places
+$(1-\alpha)x+\alpha B_e(c)$ inside both $A$ and $B_h(x)$.
+Its volume is $\omega_d[eh/(D+e)]^d$.
+
+\begin{proposition}\label{prop:large}
+For some fixed $R<\infty$, with probability tending to one no graph
+$G(\mathcal X_n,s)$ with $s\geq r_n$ has two distinct components each of
+diameter at least $Rr_n$.
+\end{proposition}
+\begin{proof}
+Write $r=r_n$. Fix $\eta\in(0,1/20)$ and $h=\eta r$, and take a deterministic
+maximal $h$-separated net $\mathcal L\subset A$.
+Its $h$-balls cover $A$; disjoint ambient $h/3$-balls show that its cardinality
+$N$ is $O(h^{-d})$. The graph on $\mathcal L$ joining sites at distance at
+most $2h$ has degree bounded in terms of $d$ alone. For a fixed constant
+$D_0$, the number of its connected $q$-site subsets is at most $ND_0^q$.
+Indeed each can be traversed by a depth-first walk of length $2(q-1)$,
+and counting all such walks overcounts the subsets.
+
+Suppose two components $U,W$ of $G(\mathcal X_n,s)$ have diameter at least
+$Rr$ for some $s\geq r$. For large $n$, $Rr<\delta_1$.
+Lemma~\ref{lem:separator} supplies $S$ with $\diam S\geq c_ARr$.
+Let
+\[
+ D_S=\{z\in\mathcal L:\dist(z,S)\leq h\}.
+\]
+Its radius-$h$ ball sections cover $S$, are connected, and each meets $S$.
+Their union is connected, so $D_S$ is connected in the net graph.
+A connected union of $q$ balls of radius $h$ has diameter at most $2hq$;
+therefore $q=|D_S|\geq c_AR/(2\eta)$.
+
+The set
+\[
+ V_{D_S}=\bigcup_{z\in D_S}(B_{h/3}(z)\cap A)
+\]
+contains no sample point. For a point $v$ there, the Lipschitz property of
+distance to $U$ and the separator identity give
+\[
+ s/2-4h/3\leq\dist(v,U)\leq s/2+4h/3.
+\]
+Since $s\geq r$ and $\eta<1/20$, these bounds lie strictly between $0$ and
+$s$. Such a sample point would neither belong to $U$ nor be allowed outside
+its graph component.
+
+For every deterministic $q$-site set $D\subset\mathcal L$, the ambient
+$h/3$-balls are disjoint and \eqref{eq:localmass} yields
+$|V_D|\geq c_2qh^d$. Its void probability is at most
+$\exp(-nf_0c_2qh^d)$. A union bound over the one fixed net gives
+\begin{equation}\label{eq:largevoid}
+ \Pp(\text{two stated large components exist at some }s\geq r_n)
+ \leq N\sum_{q\geq c_AR/(2\eta)}D_0^q e^{-nf_0c_2qh^d}.
+\end{equation}
+Now $nf_0h^d=\eta^dt_n\geq(\eta^d\beta/2)\log n$ for large $n$, and
+$N=O(n/\log n)$. Choose a fixed $R$ large enough that the lower bound on
+$q$ makes this geometric series, including $N$, $O(n^{-2})$.
+This proves the result simultaneously for all $s\geq r_n$.
+There is no union bound over a continuum of radii: each separator produces
+an empty subset of the same deterministic net. The event is measurable
+because a finite sample graph changes only at finitely many pair distances.
+\end{proof}
+
+\section{Proof of the hitting-time equality}
+Take $\delta$ from Proposition~\ref{prop:small} and enlarge $R$ from
+Proposition~\ref{prop:large} if necessary so that $R>\delta$.
+Apply Proposition~\ref{prop:medium} with this fixed $R$.
+On the intersection of these three events, fix any $s\geq r_n$ for which
+$G(\mathcal X_n,s)$ is disconnected.
+
+A non-singleton component $U$ cannot have diameter less than $\delta r_n$.
+Its vertices would already form a complete graph at $r_n$, since $\delta<1$,
+and would have no neighbours outside $U$ at $r_n$. This would contradict
+Proposition~\ref{prop:small}. Nor can its diameter lie between $\delta r_n$
+and $Rr_n$: its distance from its nonempty complement is strictly greater
+than $s\geq r_n$, contrary to Proposition~\ref{prop:medium}.
+Thus every non-singleton component has diameter greater than $Rr_n$.
+Proposition~\ref{prop:large} allows at most one such component. A disconnected
+graph must therefore have an isolated vertex.
+
+By Proposition~\ref{prop:isolate}, also $L_n>r_n$ with probability tending to
+one. At the closed radius $s=L_n$, every vertex has a neighbour by
+\eqref{eq:thresholds}. The uniform conclusion just proved forces
+$G(\mathcal X_n,L_n)$ to be connected. Hence $M_n\leq L_n$, and the
+deterministic reverse inequality gives $L_n=M_n$.
+The four propositions each fail with probability tending to zero, so their
+finite intersection proves Theorem~\ref{thm:main}.
+
+The conclusion is exact equality with high probability for every fixed
+$d\geq3$ and every fixed full-dimensional compact convex polytope.
+The constants in the auxiliary radius and cone estimates depend on that
+polytope; no uniform claim is made when its angles or shape vary.
+
+\subsection*{AI use statement}
+AI assistance through OpenAI Codex was used to develop and write the
+argument, check mathematical and bibliographic dependencies, and prepare
+this manuscript. The resulting solution claim requires independent
+mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{Gardner}
+R. J. Gardner, \emph{The Brunn--Minkowski inequality},
+Bulletin of the American Mathematical Society (New Series)
+\textbf{39} (2002), no.~3, 355--405.
+\href{https://doi.org/10.1090/S0273-0979-02-00941-2}{doi:10.1090/S0273-0979-02-00941-2}.
+
+\bibitem{PYH}
+M. D. Penrose, X. Yang and F. Higgs,
+\emph{Largest nearest-neighbour link and connectivity threshold in a
+polytopal random sample}, Journal of Applied and Computational Topology
+\textbf{8} (2024), 1723--1750.
+\href{https://doi.org/10.1007/s41468-023-00154-5}{doi:10.1007/s41468-023-00154-5}.
+
+\bibitem{PY}
+M. D. Penrose and X. Yang,
+\emph{Fluctuations of the connectivity threshold and largest
+nearest-neighbour link}, arXiv:2406.00647v3 (2024).
+\href{https://arxiv.org/abs/2406.00647v3}{https://arxiv.org/abs/2406.00647v3}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "package_version": "2026-10-14-v2",
+  "title": "Connectivity when isolated vertices disappear in a convex polytope",
+  "problem_id": "647",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/647-polytopal-connectivity-last-isolated-point.md",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, claim scope, build instructions and AI disclosure.",
+      "sha256": "f11819bdfc376b1f40cd20a0276d7cc1411327c9084c249e54fa778648e7c8d3",
+      "bytes": 2512
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target correspondence using the manuscript and public sources.",
+      "sha256": "330047458f05d0bb336ee8f4a51b859d753517a946598abd8002e4dcbe0086b5",
+      "bytes": 4617
+    },
+    {
+      "path": "paper/connectivity-polytope.tex",
+      "purpose": "Complete editable manuscript source.",
+      "sha256": "5e098e1399b1545e9074d61ab63205f758485c09ebf8009e7a39b6363943662c",
+      "bytes": 29254
+    },
+    {
+      "path": "paper/connectivity-polytope.pdf",
+      "purpose": "Complete compiled manuscript.",
+      "sha256": "e8585f6b60496ce588faa3c9c85d37be8d5e82984abfbade3c423041d738373e",
+      "bytes": 337564
+    }
+  ],
+  "manifest_integrity": "PUBLIC_MANIFEST.json is bound by SHA256SUMS; neither checksum file recursively hashes itself.",
+  "claim_status": "Complete solution claim; independent mathematical review requested."
+}
