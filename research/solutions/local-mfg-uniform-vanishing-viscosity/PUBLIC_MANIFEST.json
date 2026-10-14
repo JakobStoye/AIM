@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "title": "Uniform vanishing-viscosity convergence for a local quadratic mean field game",
+  "content_type": "analytic manuscript",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public mathematical entry point and author/AI disclosure",
+      "bytes": 2280,
+      "sha256": "27095b5a0a0f9a8049d07eecc95e72cf2cf4beed84612d76f314cfb38461b2a7"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete standalone editable manuscript",
+      "bytes": 39801,
+      "sha256": "e2f5eb2de380d09f87c25c64bdd0eb949463a04f89d08023cc676a0aa3411739"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete compiled 12-page manuscript",
+      "bytes": 358460,
+      "sha256": "f59b31bde9235dc1ceeb47125e8cee9c539e14b707c76b363ce3e000535a2cb2"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Fresh comparison with the fixed original problem",
+      "bytes": 3795,
+      "sha256": "910f4ead91ee39d58f5f8c13ad6fa2f0540278e53709b370bb1fddf2cfbf7a48"
+    },
+    {
+      "path": "BUILD.md",
+      "purpose": "Portable compilation and integrity instructions",
+      "bytes": 1537,
+      "sha256": "42c18ef58bd3dea0ae4ea5c569bb02adf6f44b6f788ea8de4ed752ee02977ca1"
+    }
+  ],
+  "integrity": {
+    "checksum_file": "SHA256SUMS",
+    "checksum_scope": "The five content files and PUBLIC_MANIFEST.json; SHA256SUMS excludes itself"
+  }
+}
