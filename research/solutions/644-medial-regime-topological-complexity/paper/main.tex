@@ -1,0 +1,358 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\TC}{\mathrm{TC}}
+\newcommand{\ind}{\mathbf 1}
+\title{Topological complexity two in the homogeneous lower model}
+\author{Kaiwen Jin\\[2pt]\small\texttt{yui.ui.siki@gmail.com}}
+\date{14 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+In the lower multiparameter model of random simplicial complexes, a simplex
+is retained when all its nonempty subfaces pass independent Bernoulli trials.
+We prove that, when every trial has the same fixed probability in $(0,1)$,
+the resulting complex is path-connected and has reduced topological
+complexity two with probability tending to one along all ambient sample
+sizes. Thus three continuous local motion-planning rules are necessary and
+sufficient. This removes the density-one restriction in the result of
+Barmak and Farber. The new step is an anti-concentration estimate for the
+Euler characteristic: after the other variables are exposed, many remaining
+face trials independently add or remove a single maximal simplex.
+\end{abstract}
+
+\section{Statement and topological reduction}
+
+Topological complexity measures the number of continuous local rules needed
+to plan paths between pairs of points. We use its reduced convention:
+for a path-connected space $Y$, $\TC(Y)$ is the least $k\ge0$ such that
+$Y\times Y$ admits an open cover by $k+1$ sets, each with a continuous
+local section of
+\[
+Y^{[0,1]}\longrightarrow Y\times Y,\qquad
+\gamma\longmapsto(\gamma(0),\gamma(1)).
+\]
+
+Fix $p\in(0,1)$. For each nonempty $\sigma\subseteq[n]=\{1,\ldots,n\}$,
+let $\xi_\sigma$ be an independent Bernoulli variable with success
+probability $p$, and define
+\begin{equation}\label{eq:model}
+X_n=\{\varnothing\ne\sigma\subseteq[n]:
+\xi_\tau=1\text{ for every }\varnothing\ne\tau\subseteq\sigma\}.
+\end{equation}
+Vertices are sampled as well as higher-dimensional faces. This is the
+homogeneous medial regime of the lower model studied in
+\cite{BF2026}. We distinguish the ambient sample size $n$ from the
+random number of retained vertices.
+
+Farber proposed the value two for medial-regime random complexes in
+\cite[Remark~8.2]{Farber2024}. Barmak and Farber proved the upper bound
+$\TC\le2$ along all sample sizes and equality along a subset of integers
+of natural density one \cite[Theorems~16 and~19]{BF2026}. Their lower
+bound uses a face number that exceeds its two neighbouring face numbers.
+Near transitions where adjacent counts are comparable, this argument
+does not supply the lower bound. They ask whether the sample-size
+restriction can be removed \cite[\S10, Question~2]{BF2026}.
+
+\begin{theorem}\label{thm:main}
+For every fixed $p\in(0,1)$, the complex \eqref{eq:model} satisfies
+\[
+\Prob\{|X_n|\text{ is path-connected and }\TC(|X_n|)=2\}
+\longrightarrow1
+\quad\text{as }n\longrightarrow\infty
+\]
+through all positive integers.
+\end{theorem}
+
+The upper bound and connectivity are inherited from \cite{BF2026}.
+We obtain the lower bound by showing that the Euler characteristic has
+no point mass of asymptotically positive size. This avoids choosing a
+dimension in which homology must dominate. All limits below hold for
+fixed $p$; constants and eventual thresholds may depend on $p$.
+
+For a finite simplicial complex $K$, write
+\[
+\chi(K)=\sum_{\sigma\in K}(-1)^{|\sigma|-1},
+\qquad b_j(K)=\dim_{\mathbb Q}H_j(K;\mathbb Q).
+\]
+The next observation explains the role of the Euler characteristic.
+
+\begin{lemma}\label{lem:chi}
+If $K$ has path-connected realization and $\chi(K)\notin\{0,1\}$, then
+$\TC(|K|)\ge2$.
+\end{lemma}
+\begin{proof}
+By \cite[Lemma~17]{BF2026}, each of the following implies $\TC\ge2$:
+a nonzero Betti number in a positive even degree, an odd-degree Betti
+number at least two, or nonzero Betti numbers in two distinct positive
+odd degrees. If none occurs, $b_0=1$, every positive even Betti number
+vanishes, and the sum of the odd Betti numbers is at most one.
+The Euler--Poincare identity then gives $\chi(K)\in\{0,1\}$.
+Taking the contrapositive proves the lemma.
+\end{proof}
+
+\section{Anti-concentration of the Euler characteristic}
+
+\begin{theorem}\label{thm:atoms}
+For the complex \eqref{eq:model} with fixed $p\in(0,1)$,
+\begin{equation}\label{eq:atoms}
+\sup_{z\in\mathbb Z}\Prob\{\chi(X_n)=z\}\longrightarrow0
+\quad\text{as }n\longrightarrow\infty
+\end{equation}
+through all positive integers.
+\end{theorem}
+
+We select many faces whose raw variables will remain unexposed. They
+will have successful boundaries and blocked cofaces, so each remaining
+trial changes the Euler characteristic by exactly one, with a common sign.
+The separation of the selected faces ensures that the coface tests do
+not examine any of their raw variables.
+
+\subsection{A separated family of faces}
+
+Put $q=1/p$ and, for sufficiently large $n$, choose
+\begin{equation}\label{eq:level}
+r=\lceil\log_2(2\log_q n)\rceil.
+\end{equation}
+Here $r$ is the number of vertices of a selected simplex, not its
+dimension. This level makes cofaces rare while leaving many successful
+boundaries. Indeed,
+\begin{equation}\label{eq:powers}
+2\log_q n\le2^r<4\log_q n,\qquad
+n^{-4}<p^{2^r}\le n^{-2}.
+\end{equation}
+Also $r\to\infty$ and $r=O_p(\log\log n)$. We work beyond a threshold
+where $r\ge6$ and $n\ge4r$; only finitely many initial sample sizes are
+therefore omitted from the estimates.
+
+Colour every $r$-element subset of $[n]$ by the sum of its vertices
+modulo $n$, and choose a largest colour class $F$. Resolve ties by
+the smallest residue. If $m=|F|$ and $N=\binom nr$, then $m\ge N/n$.
+Two distinct members of $F$ cannot share $r-1$ vertices: their sums
+would differ by two distinct labels, whose nonzero difference has
+absolute value less than $n$. Consequently every $(r+1)$-element
+set contains at most one member of $F$.
+
+For fixed $\sigma\in F$, let $M_i(\sigma)$ count the members $\tau\in F$
+with $|\sigma\cap\tau|=i$. For $0\le i\le r-2$,
+\begin{equation}\label{eq:completion}
+M_i(\sigma)\le
+\binom ri\frac{\binom{n-r}{r-i-1}}{r-i}
+=\frac{\binom ri\binom{n-r}{r-i}}{n-2r+i+1}.
+\end{equation}
+To prove this, choose the intersection and put $s=r-i$. For an
+$(s-1)$-subset outside $\sigma$, the required residue determines
+the missing vertex uniquely in $[n]$. Each admissible $s$-subset is
+counted $s$ times by deleting one element; inadmissible completions
+only decrease the count. This argument applies also to composite $n$.
+
+\subsection{Successful boundaries}
+
+For $\sigma\in F$, let
+\[
+A_\sigma=\prod_{\varnothing\ne\tau\subsetneq\sigma}\xi_\tau,
+\qquad a=p^{2^r-2},\qquad
+W=\sum_{\sigma\in F}A_\sigma,\qquad \mu=\E W=ma.
+\]
+Thus $A_\sigma$ records whether the entire proper boundary succeeds,
+including all singleton variables. None of the variables indexed by
+$F$ has been used. Since $\binom nr\ge(n/r)^r$,
+\begin{equation}\label{eq:mean}
+\mu\ge p^{-2}n^{r-5}/r^r\longrightarrow\infty.
+\end{equation}
+For the limit, $\log r/\log n\to0$ and $r\to\infty$, so
+$(r-5)\log n-r\log r\to\infty$.
+
+Distinct $\sigma,\tau\in F$ with intersection size $i$ share exactly
+$2^i-1$ proper-boundary variables. Hence
+\[
+\E(A_\sigma A_\tau)=a^2q^{2^i-1}.
+\]
+Disjoint pairs have zero covariance, and pairs with $i=r-1$ do not
+occur. Set
+\[
+H_i=\frac{\binom ri\binom{n-r}{r-i}}{\binom nr}.
+\]
+By \eqref{eq:completion}, $M_i(\sigma)/m\le2H_i$, because
+$n/(n-2r+i+1)\le2$. Summing ordered pairs and the diagonal gives
+\begin{equation}\label{eq:variance}
+v_n:=\frac{\Var W}{\mu^2}
+\le\frac1\mu+2\sum_{i=1}^{r-2}H_i(q^{2^i-1}-1).
+\end{equation}
+We have
+\begin{equation}\label{eq:overlap}
+H_i\le\left(\frac{r^2}{n-r+1}\right)^i
+\le(2r^2/n)^i.
+\end{equation}
+For the first inequality, replace $\binom{n-r}{r-i}$ by
+$\binom{n-i}{r-i}$, whose ratio to $\binom nr$ is $(r)_i/(n)_i$,
+where $(u)_i=u(u-1)\cdots(u-i+1)$. Then use
+$\binom ri\le r^i$ and $(r)_i/(n)_i\le[r/(n-r+1)]^i$.
+
+The sequence $2^i/i$ increases for $i\ge2$. Thus, uniformly for
+$2\le i\le r-2$,
+\[
+4\,2^{i-r}\le\frac{i}{r-2}\le\frac i2,
+\qquad q^{2^i}\le n^{4\,2^{i-r}}\le n^{i/2},
+\]
+where \eqref{eq:powers} supplies $q^{2^r}<n^4$.
+Put $y=2r^2/\sqrt n\to0$. For sufficiently large $n$, $y<1$,
+and \eqref{eq:variance}--\eqref{eq:overlap} yield
+\begin{equation}\label{eq:smallvariance}
+v_n\le\frac1\mu+\frac{4(q-1)r^2}{n}
++\frac{2y^2}{1-y}\longrightarrow0.
+\end{equation}
+This controls the whole changing overlap range, not only each fixed $i$.
+Chebyshev's inequality now gives
+$\Prob\{W<\mu/2\}\le4v_n$.
+
+\subsection{Cofaces and conditioning}
+
+Let $\mathcal G$ be the sigma-field generated by all raw variables whose indices are
+outside the deterministic family $F$. The successful-boundary indicators
+are $\mathcal G$-measurable. For $\sigma\in F$ and $v\notin\sigma$, set
+$\rho=\sigma\cup\{v\}$ and
+\[
+U_{\sigma,v}
+=\prod_{\substack{\varnothing\ne\tau\subseteq\rho\\\tau\ne\sigma}}\xi_\tau.
+\]
+This product examines every variable needed to retain $\rho$ except
+$\xi_\sigma$. It is $\mathcal G$-measurable: $\rho$ contains at most
+one member of $F$, and that member is $\sigma$.
+
+Let $T$ count the members of $F$ having successful boundaries and at least
+one $v$ for which $U_{\sigma,v}=1$. Given $A_\sigma=1$, a fixed coface
+requires exactly $2^r$ new independent variables, namely the subsets
+containing $v$, including $\rho$ itself. Therefore a union bound gives
+\begin{equation}\label{eq:cofaces}
+\E T\le ma(n-r)p^{2^r}\le\mu/n.
+\end{equation}
+Define
+\[
+S=\{\sigma\in F:A_\sigma=1,\ U_{\sigma,v}=0
+       \text{ for every }v\notin\sigma\},\qquad K=|S|=W-T.
+\]
+The set $S$ is determined by $\mathcal G$. By Markov's and Chebyshev's
+inequalities,
+\begin{equation}\label{eq:safe}
+\Prob\{K<\mu/4\}\le4v_n+4/n\longrightarrow0.
+\end{equation}
+Indeed $W\ge\mu/2$ and $T\le\mu/4$ imply $K\ge\mu/4$.
+
+For $\sigma\in S$, its proper subfaces are present and all immediate
+cofaces are blocked by failed variables outside $F$. They remain absent
+for every completion of the unexposed variables. A larger coface would
+contain an immediate coface, so is absent as well. Changing
+$\xi_\sigma$ therefore changes membership of $\sigma$ alone, and
+changes the Euler characteristic by $(-1)^{r-1}$.
+
+Condition on $\mathcal G$, then expose the variables indexed by $F\setminus S$.
+For each positive-probability $\mathcal G$-atom the set $S$ is fixed.
+The original product law still factors on the unexposed coordinates,
+so these $K$ variables are independent Bernoulli$(p)$ trials. Thus,
+conditionally,
+\begin{equation}\label{eq:binomial}
+\chi(X_n)=C+(-1)^{r-1}B_K,\qquad B_K\sim\operatorname{Bin}(K,p),
+\end{equation}
+where $C$ is fixed by the exposed data. The choice of $S$ has not used
+any coordinate that remains unexposed.
+
+\subsection{Point masses}
+
+For $B_k\sim\operatorname{Bin}(k,p)$ with $k\ge1$ and any integer $j$, expanding the finite
+polynomial $(1-p+pe^{it})^k$ and integrating its integer frequencies gives
+\[
+\Prob\{B_k=j\}
+=\frac1{2\pi}\int_{-\pi}^{\pi}
+ e^{-ijt}(1-p+pe^{it})^k\,dt .
+\]
+For $|t|\le\pi$,
+\[
+|1-p+pe^{it}|^2=1-4p(1-p)\sin^2(t/2),\qquad
+\sin(|t|/2)\ge|t|/\pi.
+\]
+Using $1-u\le e^{-u}$ and extending a positive Gaussian integral,
+whose value follows from \cite[\S7.2(i)]{DLMF}, we obtain
+\begin{align}
+\sup_j\Prob\{B_k=j\}
+&\le\frac1{2\pi}\int_{-\pi}^{\pi}
+ \exp[-2kp(1-p)t^2/\pi^2]\,dt \notag\\
+&\le\frac{\sqrt\pi}{2\sqrt{2kp(1-p)}}
+=\frac{C_p}{\sqrt k},
+\qquad C_p=\frac{\sqrt\pi}{2\sqrt{2p(1-p)}}.
+\label{eq:binbound}
+\end{align}
+
+Since $\mu\to\infty$, the event $K\ge\mu/4$ eventually ensures $K\ge1$.
+On that event, \eqref{eq:binomial}--\eqref{eq:binbound} bound every
+conditional point mass of $\chi(X_n)$ by $2C_p/\sqrt\mu$.
+Use the bound one on its complement and \eqref{eq:safe} to conclude
+\[
+\sup_{z\in\mathbb Z}\Prob\{\chi(X_n)=z\}
+\le4v_n+4/n+2C_p/\sqrt\mu\longrightarrow0.
+\]
+This proves Theorem~\ref{thm:atoms}.
+
+\section{Proof of the topological complexity statement}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For every simplicial subcomplex $L$ on $[n]$, \eqref{eq:model} retains
+all its simplices exactly when their raw Bernoulli$(p)$ trials succeed,
+because $L$ contains every required nonempty subface. Independence gives
+$\Prob\{L\subseteq X_n\}=p^{\#L}$, where $\#L$ is the number of nonempty
+faces of $L$. Thus $X_n$ has precisely the homogeneous lower-model law of
+\cite[\S3.1 and \S6.1]{BF2026}, including random vertices.
+Its parameters $p_\sigma=p$ satisfy the fixed bounds
+\[
+0<p_-=p/2\le p_\sigma\le p_+=(1+p)/2<1,
+\]
+which are the medial-regime hypotheses. The uniform positive lower bound
+also satisfies the hypothesis of Corollary~10 of \cite{BF2026},
+which gives path connectivity with
+probability tending to one along all $n$, since its connectivity level
+tends to infinity. Theorem~16 of the same source gives the reduced upper
+bound $\TC\le2$ with probability tending to one along all $n$.
+
+By Theorem~\ref{thm:atoms}, the probability of
+$\chi(X_n)\in\{0,1\}$ tends to zero. On the intersection of the connectivity
+event, the upper-bound event, and $\chi(X_n)\notin\{0,1\}$,
+Lemma~\ref{lem:chi} gives $\TC\ge2$. This intersection has probability
+tending to one, proving the theorem.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{BF2026}
+J. A. Barmak and M. Farber,
+\emph{Topology of medial regime random simplicial complexes},
+arXiv:2608.07969v1 (2026).
+\url{https://arxiv.org/abs/2608.07969v1}.
+
+\bibitem{Farber2024}
+M. Farber,
+\emph{Large simplicial complexes: universality, randomness, and ampleness},
+J. Appl. Comput. Topol. \textbf{8} (2024), 1551--1574.
+\href{https://doi.org/10.1007/s41468-023-00134-9}
+{doi:10.1007/s41468-023-00134-9}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions,
+\S7.2(i), equations 7.2.1 and 7.2.2.
+\url{https://dlmf.nist.gov/7.2}.
+Accessed 14 October 2026.
+\end{thebibliography}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted in developing the argument, checking calculations
+and cited sources, and preparing the manuscript. The mathematical checks
+performed during preparation were AI checks; no independent human review
+is claimed.
+\end{document}
