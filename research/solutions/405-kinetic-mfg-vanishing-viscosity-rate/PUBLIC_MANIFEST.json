@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "title": "A half-power vanishing-noise estimate for a quadratic kinetic mean-field game",
+  "contribution": "Complete analytic solution claim; independent mathematical review requested",
+  "target": {
+    "repository": "https://github.com/MColbrook/AIM",
+    "problem_id": "405",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "statement_path": "problems/405-kinetic-mfg-vanishing-viscosity-rate.md"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Entry point, theorem scope and manuscript build command",
+      "sha256": "8af2c60e26ca18926c1d686dc4f6095e6375e3093e5d76080f16135db9562ddc"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable analytic manuscript with embedded bibliography",
+      "sha256": "94bde276fbdd99e38fd894299ae888c3fe81634d0ad62c2c2cf6fb9755fefdf7"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Compiled complete seven-page manuscript",
+      "sha256": "e089d7a728b043cd24889251da143d535492b1f8f113b5d82aebf2d0511ec06d"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Finished-manuscript correspondence with the pinned public problem",
+      "sha256": "71074bceea4438c88a0045f5592e0ea9bb0ec6f40050f65f7dac8867d3ab0c0d"
+    },
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI-use and draft-review disclosure",
+      "sha256": "d4e3e55b57182002f9958d7cf402209f04ec71da4ec6ce1ab6baa1d4e05f269b"
+    }
+  ],
+  "checksum_scope": "SHA256SUMS covers the five payload files and this manifest; the checksum file does not hash itself."
+}

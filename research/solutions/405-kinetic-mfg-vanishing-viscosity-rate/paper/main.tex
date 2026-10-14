@@ -1,0 +1,541 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\T}{\mathbb T}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\mi}{m_{\mathrm{in}}}
+\newcommand{\A}{\mathcal A}
+\newcommand{\J}{\mathcal J}
+\newcommand{\G}{\mathcal G}
+\newcommand{\D}{D}
+\title{A half-power vanishing-noise estimate for a\\
+quadratic kinetic mean-field game}
+\author{Kaiwen Jin\\
+\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consider a variational kinetic mean-field game with quadratic acceleration
+cost, local quadratic congestion, and quadratic terminal congestion on
+$\T^d\times\R^d$. For a smooth, compactly supported probability datum, the
+density minimizers at velocity diffusivity $\nu$ and at zero diffusivity
+are at distance $O(\nu^{1/2})$ in spacetime $L^2$ and terminal $L^2$, in
+every dimension. The proof compares the two minimum values using kinetic
+Gaussian averaging and an entropy identity for the current flux.
+A positive convolution commuting with kinetic transport justifies this
+identity in the original weak admissible class, including the noncompact
+velocity domain and possible vacuum.
+\end{abstract}
+
+\section{The variational problem and the estimate}
+
+Let $d\geq1$, $T>0$, and
+\[
+ Q=\T^d\times\R^d,\qquad S=(0,T)\times Q,\qquad
+ \D=\partial_t+v\cdot\nabla_x.
+\]
+We use the unit-period torus with volume-one Haar measure.
+Fix a smooth, nonnegative probability density $\mi$ on $Q$, compactly
+supported in velocity. For $\nu\in[0,1]$, consider the minimum of
+\begin{equation}\label{eq:cost}
+ \J(m,a)=\A(m,a)+\G(m),\qquad
+ \A(m,a)=\int_S\frac{|a|^2}{2m},\qquad
+ \G(m)=\frac12\int_Sm^2+\frac12\int_Qm(T)^2,
+\end{equation}
+under
+\begin{equation}\label{eq:pde}
+ \D m-\nu\Delta_vm+\operatorname{div}_va=0,\qquad m(0)=\mi.
+\end{equation}
+The acceleration flux $a$ takes values in $\R^d$.
+At vacuum, $|a|^2/m$ is zero when $a=0$ and infinite otherwise.
+The density $m(t)$ is a narrowly continuous curve of probability densities,
+has finite second velocity moment at every time, and satisfies
+\eqref{eq:pde} distributionally; the cost \eqref{eq:cost} is finite.
+In particular, the endpoint densities in \eqref{eq:cost} are the actual
+narrow traces. The weak equation, including these traces, reads
+\begin{equation}\label{eq:weak}
+ \int_Qm(T)\phi(T)-\int_Q\mi\phi(0)
+ =\int_S\left[
+ m(\partial_t\phi+v\cdot\nabla_x\phi+\nu\Delta_v\phi)
+ +a\cdot\nabla_v\phi\right]
+\end{equation}
+for smooth tests periodic in $x$ and compactly supported in $v$.
+We write $(m_\nu,a_\nu)$ for minimizing pairs in this class and
+$E_\nu=\J(m_\nu,a_\nu)$. All conclusions below hold for any such pairs.
+
+Vanishing-viscosity rates for kinetic mean-field games are raised by
+Tang and Zhang \cite[Section~7, item~4(b)]{TZ}. First-order kinetic games
+with local couplings have a variational theory on the noncompact velocity
+domain \cite[Abstract]{GPM}. Here we treat the specific quadratic problem
+\eqref{eq:cost}--\eqref{eq:pde}. The comparison uses the entropy and
+current-velocity action identity appearing in the elliptic setting in
+Benamou, Carlier, Di Marino, and Nenna \cite[eqs.~(2.9)--(2.10)]{BCDN}.
+We derive its kinetic version directly, without assuming differentiability
+or Fisher information of an optimizer.
+
+\begin{theorem}\label{thm:main}
+For every integer $d\geq1$, every $T>0$, and every smooth, nonnegative,
+compactly supported probability density $\mi$ on $Q$, the minimizing
+densities defined above satisfy
+\begin{equation}\label{eq:main}
+ \|m_\nu-m_0\|_{L^2(S)}^2+
+ \|m_\nu(T)-m_0(T)\|_{L^2(Q)}^2\leq4L\nu
+ \qquad(0<\nu\leq1).
+\end{equation}
+Here the finite constant $L$, independent of $\nu$, can be chosen as
+\begin{equation}\label{eq:constants}
+ \begin{split}
+ B&=\frac{T+1}{2}\|\mi\|_{L^2(Q)}^2,\qquad
+ M_{\mathrm{in}}=\int_Q|v|^2\mi,\\
+ K&=e^T(M_{\mathrm{in}}+2B+2dT),\\
+ L&=|H_{\mathrm{in}}|+\frac d2\log(2\pi)+\frac{K+d}{2}+1,
+ \qquad H_{\mathrm{in}}=\int_Q\mi\log\mi .
+ \end{split}
+\end{equation}
+We use $0\log0=0$. In particular,
+$\|m_\nu-m_0\|_{L^2(S)}\leq2\sqrt L\,\nu^{1/2}$.
+\end{theorem}
+
+The theorem is an estimate for the stipulated minimizing pairs.
+No existence theorem for a classical value function is needed.
+The exponent is independent of dimension; we do not assert its optimality.
+
+Kinetic Gaussian averaging turns an inviscid pair into a noisy pair while
+decreasing its cost. For the reverse comparison, the entropy identity
+produces an inviscid competitor with the noisy minimizer's density and an
+excess cost bounded by $L\nu$. We justify this construction by positive
+convolution and restore the original datum before using minimality.
+Strict convexity of the two density costs then bounds the squared $L^2$
+distance by the same order.
+
+\section{Moments and the noisy comparison}
+
+Averaging a finite-action pair against a probability measure of translations
+does not increase its action or either density-square cost. Indeed, weighted
+Cauchy--Schwarz gives
+\begin{equation}\label{eq:jensen}
+ \frac{|\overline a|^2}{\overline m}
+ \leq\overline{\frac{|a|^2}{m}},\qquad
+ \overline m^{\,2}\leq\overline{m^2}.
+\end{equation}
+If $\overline m=0$, nonnegativity and finite action imply
+$\overline a=0$, so the stated vacuum convention is preserved.
+Also, finite action and total spacetime mass $T$ give
+\begin{equation}\label{eq:flux-l1}
+ \int_S|a|\leq\sqrt{2T\A(m,a)}.
+\end{equation}
+
+\begin{lemma}\label{lem:moment}
+Every admissible pair with $0\leq\nu\leq1$ satisfies
+\[
+ \sup_{0\leq t\leq T}\int_Q|v|^2m(t)
+ \leq e^T\left(M_{\mathrm{in}}+2\A(m,a)+2dT\right).
+\]
+\end{lemma}
+
+\begin{proof}
+Put $\psi_R(v)=|v|^2/(1+|v|^2/R^2)$ and
+$Y_R(t)=\int_Q\psi_Rm(t)$. Direct differentiation gives
+$|\nabla\psi_R|^2\leq4\psi_R$ and
+\[
+ \Delta\psi_R=
+ \frac{2d}{(1+|v|^2/R^2)^2}
+ -\frac{8|v|^2/R^2}{(1+|v|^2/R^2)^3}\leq2d.
+\]
+For fixed $R$, use $\psi_R$ in \eqref{eq:weak} after multiplication
+by a velocity cutoff at radius $r$, and then let $r\to\infty$.
+The extra flux term is bounded by
+$CR^2r^{-1}\int_{\{|v|\geq r\}}|a|$, which vanishes by
+\eqref{eq:flux-l1}. The diffusion cutoff terms are bounded by a constant
+depending on $R$ times $r^{-1}$ or $r^{-2}$ times the integrated mass.
+Endpoint terms pass by bounded convergence. Thus $Y_R$ is absolutely
+continuous, with its representative fixed by narrow continuity, and
+\[
+ Y_R'\leq
+ 2\sqrt{Y_R}\left(\int_Q\frac{|a|^2}{m}\right)^{1/2}+2d
+ \leq Y_R+\int_Q\frac{|a|^2}{m}+2d
+ \quad\hbox{a.e.}
+\]
+Integrating after multiplication by $e^{-t}$ gives the claimed bound for
+$Y_R(t)$. Finally $\psi_R\uparrow|v|^2$, so monotone convergence proves
+the bound at every time. This argument does not require a previously
+known time-integrable second moment.
+\end{proof}
+
+For $\nu>0$ and $t>0$, define the probability Gaussian on $\R^{2d}$
+\begin{equation}\label{eq:kinetic-kernel}
+ k_{\nu,t}(y,w)=
+ \left(\frac{\sqrt3}{2\pi\nu t^2}\right)^d
+ \exp\left(-\frac{|w|^2}{4\nu t}
+           -\frac{3|y-tw/2|^2}{\nu t^3}\right).
+\end{equation}
+Its covariance blocks are
+$\operatorname{Cov}(y)=2\nu t^3I_d/3$,
+$\operatorname{Cov}(y,w)=\nu t^2I_d$, and
+$\operatorname{Cov}(w)=2\nu tI_d$.
+These follow by first integrating the conditional Gaussian in $y$,
+of mean $tw/2$ and covariance $\nu t^3I_d/6$, then the Gaussian in $w$.
+Direct differentiation shows
+\[
+ \partial_t k_{\nu,t}+w\cdot\nabla_yk_{\nu,t}
+ -\nu\Delta_wk_{\nu,t}=0.
+\]
+Periodize $y$ on the torus, and denote convolution with this kernel by
+$C_\nu(t)$, with $C_\nu(0)$ the identity. Integration by parts in the
+shift variables yields
+\begin{equation}\label{eq:noisy-operator}
+ \D(C_\nu(t)f)=C_\nu(t)(\D f)+\nu\Delta_v(C_\nu(t)f).
+\end{equation}
+The identity holds distributionally as well: apply the adjoint convolution
+to a smooth compact-velocity test and use the kernel equation.
+Cutting off this adjoint test is justified by its Gaussian tails,
+Lemma~\ref{lem:moment}, and \eqref{eq:flux-l1}.
+The covariance tends to zero at $t=0$, so the original initial trace
+is preserved.
+
+The free-transport density $g(t,x,v)=\mi(x-tv,v)$ has constant $L^2$
+norm and zero flux. Equation~\eqref{eq:noisy-operator} makes
+$(C_\nu(t)g,0)$ an admissible noisy competitor. Together with
+\eqref{eq:jensen}, this proves
+\begin{equation}\label{eq:energy-bounds}
+ 0\leq E_\nu\leq B\quad(0\leq\nu\leq1),\qquad E_\nu\leq E_0.
+\end{equation}
+For the second inequality, use
+$(C_\nu(t)m_0,C_\nu(t)a_0)$ instead. The averaged density is a
+narrowly continuous probability curve and has velocity moment
+$\int_Q|v|^2m_0(t)+2\nu dt$.
+Narrow continuity follows by testing against bounded continuous functions:
+the original curve is uniformly tight on $[0,T]$, and the Gaussian
+shift law varies continuously, including its point-mass limit at zero.
+All terms of the cost, including the terminal term, decrease under
+this averaging.
+Lemma~\ref{lem:moment} and \eqref{eq:energy-bounds} give the uniform bound
+\begin{equation}\label{eq:uniform-moment}
+ \sup_{0\leq t\leq T}\int_Q|v|^2m_\nu(t)\leq K
+ \qquad(0\leq\nu\leq1),
+\end{equation}
+where $B$ and $K$ are defined in \eqref{eq:constants}.
+
+For later use, set $H(f)=\int_Q f\log f$ for probability densities of
+finite absolute entropy. If $f\in L^2(Q)$ and
+$M(f)=\int_Q|v|^2f<\infty$, this entropy is absolutely finite.
+The positive part is bounded by $f^2$. With
+$\gamma(x,v)=(2\pi)^{-d/2}e^{-|v|^2/2}$ and
+$c_\gamma=d\log(2\pi)/2$, the negative part on $\{f\leq1\}$ obeys
+\[
+ -f\log f\leq\gamma/e+f(c_\gamma+|v|^2/2).
+\]
+Integrating $r\log r-r+1\geq0$ against $\gamma$, with $r=f/\gamma$,
+also gives
+\begin{equation}\label{eq:entropy-lower}
+ H(f)\geq-c_\gamma-\tfrac12M(f).
+\end{equation}
+
+\section{The entropy comparison in the weak class}
+
+Fix $0<\nu\leq1$. Let $\theta_\varepsilon$ be the centered Gaussian
+on $\R^d$ with covariance $\varepsilon^2I_d$, and let
+$\rho_\varepsilon$ be its periodization on $\T^d$. Define
+\begin{equation}\label{eq:shear-convolution}
+ R_\varepsilon f(t,x,v)=
+ \int_{\T^d\times\R^d}
+ \rho_\varepsilon(y)\theta_\varepsilon(w)
+ f(t,x-y-tw,v-w)\dd y\dd w,
+ \quad
+ q_\varepsilon=R_\varepsilon m_\nu,\quad
+ c_\varepsilon=R_\varepsilon a_\nu .
+\end{equation}
+The shear $tw$ makes this convolution commute with kinetic transport:
+for fixed $(y,w)$,
+\[
+ \D[f(t,x-y-tw,v-w)]=(\D f)(t,x-y-tw,v-w).
+\]
+It also commutes with velocity derivatives. Hence, distributionally,
+\begin{equation}\label{eq:smoothed-pde}
+ \D q_\varepsilon-\nu\Delta_vq_\varepsilon
+ +\operatorname{div}_vc_\varepsilon=0.
+\end{equation}
+The density is smooth and positive in $(x,v)$ and has mass one.
+The translations have unit Jacobian, so
+\begin{equation}\label{eq:smoothed-bounds}
+ \A(q_\varepsilon,c_\varepsilon)\leq\A(m_\nu,a_\nu),\qquad
+ \G(q_\varepsilon)\leq\G(m_\nu),\qquad
+ M(q_\varepsilon(t))=M(m_\nu(t))+d\varepsilon^2 .
+\end{equation}
+Its initial density is $R_\varepsilon\mi$ at $t=0$.
+We will recover $\mi$ by taking $\varepsilon\to0$ before using
+inviscid minimality.
+
+We first justify the entropy identity for this positive density.
+In physical variables the convolution kernel is
+\[
+ \kappa_{\varepsilon,t}(x,v)
+ =\rho_\varepsilon(x-tv)\theta_\varepsilon(v).
+\]
+Weighted Cauchy--Schwarz in the periodizing sum gives
+$I(\rho_\varepsilon):=\int_{\T^d}
+|\nabla\rho_\varepsilon|^2/\rho_\varepsilon\leq d/\varepsilon^2$.
+The velocity score of $\kappa_{\varepsilon,t}$ is
+$-t\nabla\log\rho_\varepsilon(x-tv)+\nabla\log\theta_\varepsilon(v)$.
+The integrated cross term is zero since
+$\int_{\T^d}\nabla\rho_\varepsilon=0$.
+Applying the same weighted inequality to the convolution gradient gives
+\begin{equation}\label{eq:fisher}
+ F_\varepsilon:=\int_S\frac{|\nabla_vq_\varepsilon|^2}{q_\varepsilon}
+ \leq\frac{d(T+T^3/3)}{\varepsilon^2}<\infty .
+\end{equation}
+
+For fixed $\varepsilon$, the kernel is bounded, so $q_\varepsilon$
+is uniformly bounded above. By \eqref{eq:uniform-moment}, at least half
+the mass of $m_\nu(t)$ lies in one fixed velocity ball at every time.
+The positive periodic kernel $\rho_\varepsilon$ has a positive minimum.
+Restricting the convolution to that ball therefore gives
+\begin{equation}\label{eq:log}
+ q_\varepsilon(t,x,v)\geq
+ c_{\varepsilon,*}e^{-C_\varepsilon(1+|v|^2)},\qquad
+ |\log q_\varepsilon(t,x,v)|\leq C_\varepsilon(1+|v|^2),
+\end{equation}
+with positive constants depending on $\varepsilon$.
+All kernel derivatives are bounded on $[0,T]$.
+On each compact velocity set, \eqref{eq:smoothed-pde} thus puts
+$\partial_tq_\varepsilon$ in $L^1_tL^\infty_{x,v}$, using
+\eqref{eq:flux-l1}. The continuous representative furnished by convolution
+agrees with the weak representative, including at the endpoints.
+Positivity and the one-dimensional $W^{1,1}$ chain rule
+\cite[Section~8.2]{Brezis} now justify differentiating
+$q_\varepsilon\log q_\varepsilon$ on such compact sets.
+
+Let $\chi_R(v)$ equal one on $|v|\leq R$, vanish on $|v|\geq2R$,
+and satisfy $|\nabla\chi_R|\leq C/R$, where $R\geq1$.
+Multiply \eqref{eq:smoothed-pde} by
+$\chi_R(1+\log q_\varepsilon)$ and integrate.
+The $x$-transport integrates to zero by periodicity.
+The velocity integration by parts produces the principal mixed and Fisher
+terms and the two boundary terms
+\[
+ \int_S(1+\log q_\varepsilon)c_\varepsilon\cdot\nabla\chi_R,\qquad
+ -\nu\int_S(1+\log q_\varepsilon)
+                  \nabla_vq_\varepsilon\cdot\nabla\chi_R.
+\]
+On the annulus supporting these terms,
+$(1+|v|^2)/R\leq C(R^{-1}+|v|)$.
+Both terms tend to zero because
+\[
+ \begin{split}
+ \int_S|v||c_\varepsilon|
+ &\leq\sqrt{2\A(q_\varepsilon,c_\varepsilon)}
+            \left(\int_S|v|^2q_\varepsilon\right)^{1/2},\\
+ \int_S|v||\nabla_vq_\varepsilon|
+ &\leq\sqrt{F_\varepsilon}
+            \left(\int_S|v|^2q_\varepsilon\right)^{1/2}
+ \end{split}
+\]
+are finite; the corresponding unweighted integrals are finite as well.
+The principal mixed term is absolutely integrable by
+Cauchy--Schwarz and \eqref{eq:fisher}. Endpoint entropies pass by absolute
+integrability, as established above. We obtain
+\begin{equation}\label{eq:entropy-identity}
+ H(q_\varepsilon(T))-H(q_\varepsilon(0))
+ =\int_S c_\varepsilon\cdot\nabla_v\log q_\varepsilon
+ -\nu F_\varepsilon .
+\end{equation}
+Only the smoothed density has been used in this chain rule.
+
+Define the current flux
+$b_\varepsilon=c_\varepsilon-\nu\nabla_vq_\varepsilon$.
+Then $\D q_\varepsilon+\operatorname{div}_vb_\varepsilon=0$.
+Its action is finite by \eqref{eq:smoothed-bounds} and \eqref{eq:fisher}.
+Expanding the square and using \eqref{eq:entropy-identity} gives
+\begin{equation}\label{eq:current-action}
+ \A(q_\varepsilon,b_\varepsilon)
+ =\A(q_\varepsilon,c_\varepsilon)
+ -\nu[H(q_\varepsilon(T))-H(q_\varepsilon(0))]
+ -\frac{\nu^2}{2}F_\varepsilon .
+\end{equation}
+Initial convolution decreases entropy by convexity of $s\log s$.
+The terminal entropy is bounded below by \eqref{eq:entropy-lower}
+and \eqref{eq:smoothed-bounds}. For $0<\varepsilon\leq1$, these give
+\[
+ H(q_\varepsilon(0))-H(q_\varepsilon(T))
+ \leq H_{\mathrm{in}}+c_\gamma+(K+d)/2\leq L.
+\]
+Keeping the negative Fisher term in \eqref{eq:current-action} until
+this point, and then discarding it, yields
+\begin{equation}\label{eq:excess}
+ \J(q_\varepsilon,b_\varepsilon)\leq E_\nu+L\nu
+ \qquad(0<\varepsilon\leq1),
+\end{equation}
+with the constant $L$ in \eqref{eq:constants}.
+This estimate is uniform in smoothing, although \eqref{eq:fisher}
+itself is not.
+
+\section{Removing the convolution and proving the rate}
+
+We remove smoothing with $\nu$ fixed. Translation continuity and the
+Gaussian shift moments in \eqref{eq:shear-convolution} imply
+\begin{equation}\label{eq:density-limits}
+ \begin{aligned}
+ q_\varepsilon&\longrightarrow m_\nu
+       &&\text{in }L^1(S)\cap L^2(S),\\
+ q_\varepsilon(T)&\longrightarrow m_\nu(T)
+       &&\text{in }L^2(Q),\\
+ q_\varepsilon(0)&\longrightarrow\mi
+       &&\text{in }L^1(Q).
+ \end{aligned}
+\end{equation}
+For spacetime convergence, apply translation continuity at almost every
+time and dominated convergence to the contracted $L^p$ norms.
+The bounded shear on $[0,T]$ makes the shift size tend to zero uniformly
+in probability.
+
+H\"older's inequality gives the flux bound
+\begin{equation}\label{eq:flux-compactness}
+ \int_S|b_\varepsilon|^{4/3}
+ \leq
+ \left(\int_S\frac{|b_\varepsilon|^2}{q_\varepsilon}\right)^{2/3}
+ \left(\int_Sq_\varepsilon^2\right)^{1/3}.
+\end{equation}
+Both factors are uniformly bounded by \eqref{eq:excess} and
+\eqref{eq:smoothed-bounds}. Choose a sequence
+$\varepsilon_n\downarrow0$ realizing the lower action limit $A_*$.
+Reflexivity and weak sequential compactness in $L^{4/3}(S;\R^d)$
+\cite[Theorems~3.18 and~4.10]{Brezis} give, along a subsequence,
+$b_{\varepsilon_n}\rightharpoonup b$.
+These spaces are defined on the full noncompact domain.
+For example, the velocity tails also satisfy
+\[
+ \int_{\{|v|>R\}}|b_\varepsilon|
+ \leq\sqrt{2\A(q_\varepsilon,b_\varepsilon)}
+           \sqrt{T(K+d)/R^2}\qquad(0<\varepsilon\leq1).
+\]
+
+We check that the limiting flux has finite action with precisely the
+original vacuum convention.
+For every compactly supported continuous vector field $z$ on $S$,
+completing a square and passing to the limit give
+\begin{equation}\label{eq:dual-action}
+ \Phi(z)-\frac12\|z\|_{L^2(\mu)}^2\leq A_*,
+ \qquad
+ \Phi(z)=\int_Sz\cdot b,\qquad
+ \dd\mu=m_\nu\dd t\dd x\dd v .
+\end{equation}
+Replacing $z$ by each real multiple of itself shows
+$|\Phi(z)|\leq\sqrt{2A_*}\|z\|_{L^2(\mu)}$.
+Continuous compactly supported fields are dense in this weighted space.
+To see this without a lower bound on $m_\nu$, first truncate a weighted
+$L^2$ field in size and support. Approximate the resulting bounded field
+in Lebesgue $L^2$ by continuous compactly supported fields and clip the
+approximants to a common size bound. On $\{m_\nu\leq R\}$ the weighted
+error is at most $R$ times the Lebesgue squared error; the remaining
+error is bounded by a constant times
+$\int_{\{m_\nu>R\}}m_\nu$, which tends to zero.
+Lebesgue density on the torus follows by approximation in a fundamental
+cell and periodization; the Euclidean density result is
+\cite[Theorem~4.12]{Brezis}.
+
+Consequently $\Phi$ extends to the Hilbert space $L^2(\mu;\R^d)$.
+The Riesz representation theorem \cite[Theorem~5.5]{Brezis}
+provides $u$ in that space with norm at most $\sqrt{2A_*}$ and
+$\Phi(z)=\int_Sz\cdot u\dd\mu$.
+Both $b$ and $um_\nu$ are locally integrable; equality against compact
+smooth tests identifies them almost everywhere. Hence $b=um_\nu$,
+including $b=0$ on $\{m_\nu=0\}$, and
+\begin{equation}\label{eq:action-lower}
+ \A(m_\nu,b)\leq A_*=
+ \liminf_n\A(q_{\varepsilon_n},b_{\varepsilon_n}).
+\end{equation}
+In particular, $b$ is integrable by \eqref{eq:flux-l1}.
+
+Now pass to the inviscid weak equation for $(q_{\varepsilon_n},
+b_{\varepsilon_n})$. The gradient of any smooth compact-velocity test
+belongs to $L^4(S)$, so the flux pairing passes under the weak convergence
+above, including for tests reaching a time endpoint.
+All density and endpoint terms pass by \eqref{eq:density-limits}.
+The result is \eqref{eq:weak} with $\nu=0$, initial density exactly $\mi$,
+and density curve $m_\nu$. The narrow continuity, probability property,
+and finite moments are those of this original curve.
+Strong convergence of both square costs and \eqref{eq:action-lower}
+therefore show that $(m_\nu,b)$ is an inviscid admissible pair with
+\begin{equation}\label{eq:inviscid-cost}
+ \J(m_\nu,b)\leq E_\nu+L\nu\leq E_0+L\nu .
+\end{equation}
+The construction also identifies
+$b=a_\nu-\nu\nabla_vm_\nu$ distributionally. No differentiability of
+$m_\nu$ was assumed to construct it.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The midpoint of $(m_0,a_0)$ and $(m_\nu,b)$ is admissible for zero
+diffusivity: the weak equation is linear, the initial traces agree, and
+the probability and moment conditions are preserved.
+Perspective convexity and the exact square identity in both density costs
+give
+\[
+ \begin{split}
+ E_0
+ &\leq \J\left(\frac{m_0+m_\nu}{2},\frac{a_0+b}{2}\right)\\
+ &\leq\frac{E_0+\J(m_\nu,b)}{2}
+ -\frac18\|m_\nu-m_0\|_{L^2(S)}^2
+ -\frac18\|m_\nu(T)-m_0(T)\|_{L^2(Q)}^2 .
+ \end{split}
+\]
+Insert \eqref{eq:inviscid-cost} and rearrange to obtain
+\eqref{eq:main}. In particular, for every stipulated minimizing pair
+and every $0<\nu\leq1$,
+\[
+ \|m_\nu-m_0\|_{L^2((0,T)\times\T^d\times\R^d)}
+ \leq2\sqrt L\,\nu^{1/2}.
+\]
+Here $L$ is given by \eqref{eq:constants}: it depends only on $d$, $T$,
+the initial $L^2$ norm, second velocity moment, and entropy.
+All are finite for the stated datum, and none depends on $\nu$.
+Thus the exponent $\eta(d)=1/2$ applies in every dimension.
+\end{proof}
+
+\paragraph{AI-use disclosure.}
+OpenAI Codex was used to develop the argument, examine sources, and prepare
+this manuscript. Two additional fresh Codex contexts supplied reader and
+referee feedback on an earlier frozen draft, followed by revision with Codex.
+These AI readings used the same vendor and a shared filesystem; they do not
+constitute independent human review or formal proof verification.
+The argument is presented in full for mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{TZ}
+W.~Tang and Y.~P.~Zhang,
+\emph{The convergence rate of vanishing viscosity approximations for
+mean field games},
+SIAM Journal on Mathematical Analysis \textbf{57} (2025), 3217--3254.
+\href{https://doi.org/10.1137/24M1640008}{doi:10.1137/24M1640008}.
+
+\bibitem{GPM}
+M.~Griffin-Pickering and A.~R.~M\'esz\'aros,
+\emph{A variational approach to first order kinetic mean field games
+with local couplings},
+\href{https://arxiv.org/abs/2112.03141v3}{arXiv:2112.03141v3},
+11 July 2022.
+
+\bibitem{BCDN}
+J.-D.~Benamou, G.~Carlier, S.~Di Marino, and L.~Nenna,
+\emph{An entropy minimization approach to second-order variational
+mean-field games},
+\href{https://arxiv.org/abs/1807.09078v2}{arXiv:1807.09078v2},
+29 March 2019.
+
+\bibitem{Brezis}
+H.~Brezis,
+\emph{Functional Analysis, Sobolev Spaces and Partial Differential Equations},
+Universitext, Springer, 2011.
+\href{https://doi.org/10.1007/978-0-387-70914-7}
+{doi:10.1007/978-0-387-70914-7}.
+\end{thebibliography}
+\end{document}
