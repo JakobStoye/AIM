@@ -1,0 +1,628 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Sph}{\mathbb S}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\A}{\mathcal A}
+\title{Bounded flat transversals for fat convex bodies}
+\author{Kaiwen Jin\thanks{\texttt{yui.ui.siki@gmail.com}}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fix \(d\geq3\), \(1\leq k\leq d-2\), \(p\geq k+2\), and a fatness
+parameter \(\rho\geq1\). We prove that a finite family of \(\rho\)-fat
+compact convex bodies in \(\R^d\) can be intersected by a bounded number
+of affine \(k\)-flats whenever every \(p\) members contain \(k+2\) members
+with a common \(k\)-flat transversal. The bound depends only on
+\(d,k,p,\rho\); the bodies may have arbitrary sizes and convex boundaries.
+The missing rounding step is obtained by grouping bodies around members
+of minimum radius, then reducing the dimension of their transversals
+on the sphere. A finite family of perturbations turns the resulting
+approximate transversals into exact ones at the scale of the smallest
+body in each group.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Geometric transversal questions ask how a condition on small subfamilies
+controls the number of probes needed to reach an entire family.
+For affine subspaces of intermediate dimension, the shape of the sets
+matters. Here we consider convex bodies with a fixed bound on their
+eccentricity but with no restriction on their individual sizes.
+
+A compact convex body \(K\subset\R^d\) is \(\rho\)-fat if there are a
+center \(x_K\) and positive radii \(r_K,R_K\) such that
+\begin{equation}
+ B(x_K,r_K)\subseteq K\subseteq B(x_K,R_K),
+ \qquad R_K\leq\rho r_K.
+ \label{eq:fatness}
+\end{equation}
+All balls are closed. The radii in \eqref{eq:fatness} are allowed to vary
+from one body to another. A \(k\)-flat is a \(k\)-dimensional affine
+subspace, and a \(k\)-transversal of a subfamily is one \(k\)-flat meeting
+every member of that subfamily.
+
+Jung and P\'alv\"olgyi proved a fractional Helly theorem for
+\(k\)-transversals of fat convex sets \cite[Theorem~5]{JP}.
+Combined with the fractional transversal theorem of Alon, Kalai,
+Matou\v{s}ek and Meshulam \cite{AKMM}, in the published formulation of
+\cite[Theorem~22]{JP}, this bounds the fractional number of probes under
+the local condition considered below.
+Jung and P\'alv\"olgyi also proved the corresponding integer bound for
+balls and for families having common inner and outer radius bounds
+\cite[Theorem~7 and Corollary~8]{JP}.
+Their Conjecture~1 asks for the extension to general fat convex sets.
+The remaining question is whether a fractional cover can be replaced by
+a bounded family of flats when the radii vary freely.
+
+\begin{theorem}
+\label{thm:main}
+Let \(d\geq3\), \(1\leq k\leq d-2\), \(p\geq k+2\) be integers,
+and let \(\rho\geq1\).
+There is a constant \(C=C(d,k,p,\rho)\) with the following property.
+If \(\mathcal F\) is a finite family of \(\rho\)-fat compact convex bodies
+in \(\R^d\), and every \(p\) members of \(\mathcal F\) contain \(k+2\)
+members with a common \(k\)-transversal, then at most \(C\) \(k\)-flats
+together intersect every member of \(\mathcal F\).
+\end{theorem}
+
+Thus the theorem gives the finite-family form of
+\cite[Conjecture~1]{JP}, with the same fatness convention and local
+condition. The constant is independent of the number of bodies, their
+locations, their global size ratio, and their boundary description
+complexity.
+
+The proof uses the fractional cover only at the end. We first prove a
+uniform weak-net statement for a finite family of bodies that are each
+hit with positive probability by a finite distribution of flats.
+Bodies are grouped by their overlap with a body of minimum outer radius.
+There are boundedly many groups, and within each group a fixed
+positive amount of probe mass hits both the smallest body and any
+specified member. Moving those probes through the center of the smallest
+body allows a radial projection and decreases the dimension of the
+transversals.
+
+The movement introduces an absolute error equal to the radius of that
+smallest body. Every other member of the group is at least as large.
+Convexity and fatness then give a ball of comparable radius near each
+approximate probe, so a fixed finite collection of perturbations reaches
+all the original bodies. On the sphere this correction is made in
+finitely many gnomonic charts. The argument retains tangential
+incidences and allows new probes outside the support of the original
+distribution. The resulting bounds are not optimized.
+
+Section~\ref{sec:geometry} gives the grouping and geometric facts.
+Section~\ref{sec:weaknets} proves the spherical and affine weak-net
+statements and then Theorem~\ref{thm:main}.
+
+\section{Grouping and geometric facts}
+\label{sec:geometry}
+
+All probability measures below have finite support, and expectations
+are finite weighted sums. Families are indexed, so labels are retained
+when bodies or projected images coincide.
+
+\subsection{Grouping sets of positive measure}
+
+The following elementary observation lets us use one smallest scale
+within each group.
+
+\begin{lemma}
+\label{lem:grouping}
+Let \(A_1,\ldots,A_n\) be measurable sets in a finite probability space
+with measure \(\mu\), and suppose that \(\mu(A_i)\geq\eps>0\).
+Assign a positive number \(R_i\) to each label.
+There is a partition of the labels into at most
+\[
+ M(\eps)=\lceil2/\eps^2\rceil
+\]
+groups, with a distinguished label \(i_\ell\) in each group \(I_\ell\),
+such that, for every \(i\in I_\ell\),
+\[
+ R_i\geq R_{i_\ell},
+ \qquad \mu(A_i\cap A_{i_\ell})\geq\delta,
+ \qquad \delta=\eps^2/2.
+\]
+\end{lemma}
+
+\begin{proof}
+Choose a label of minimum \(R_i\) among those remaining and remove as
+its group every remaining label whose overlap with it is at least
+\(\delta\). Repeat, breaking ties arbitrarily.
+The minimum-radius condition is immediate, and every chosen label
+removes itself.
+
+If \(i_1,\ldots,i_t\) are the chosen labels, then their pairwise overlaps
+are less than \(\delta\). For
+\(Z=\sum_{\ell=1}^t1_{A_{i_\ell}}\), the nonnegativity of its variance
+gives
+\[
+ t^2\eps^2\leq(\mathbb E_\mu Z)^2
+ \leq\mathbb E_\mu Z^2
+ \leq t+t(t-1)\delta.
+\]
+Hence \(t(\eps^2-\delta)\leq1-\delta\), which implies
+\(t\leq2/\eps^2\).
+\end{proof}
+
+Conditioning \(\mu\) on \(A_{i_\ell}\) is legitimate because its measure
+is positive. In that conditional probability, every group member has
+overlap mass at least
+\(\delta/\mu(A_{i_\ell})\geq\delta\).
+The grouping itself always uses the original measure.
+
+\subsection{Perturbing an affine transversal}
+
+An approximate transversal at one fixed absolute scale can be replaced
+by a finite family of exact transversals.
+
+\begin{lemma}
+\label{lem:euclidean-rounding}
+Fix \(0\leq j<m\), \(\sigma\geq1\), \(a\geq0\), \(s>0\), and an affine
+\(j\)-flat \(F\subset\R^m\).
+Every family of \(\sigma\)-fat compact convex bodies with specified
+outer radii \(R_K\geq s\) and
+\(\dist(K,F)\leq as\) can be hit by at most
+\begin{equation}
+ Q(m-j,\sigma,a),\qquad
+ Q(b,\sigma,a)=
+ \bigl(2\lceil4\sigma\sqrt b(a+1)\rceil+1\bigr)^b
+ \label{eq:Q}
+\end{equation}
+\(j\)-flats parallel to \(F\).
+\end{lemma}
+
+\begin{proof}
+Translate the origin onto \(F\), and project orthogonally onto its normal
+space of dimension \(b=m-j\). Each image \(A\) is convex and has the same
+concentric inner and outer radius bounds as its original body.
+Choose \(y\in A\) with \(|y|\leq as\), and let \(c\) be the projected
+center. With
+\(\lambda=s/(2R_K)\) and \(z=(1-\lambda)y+\lambda c\), convexity gives
+\[
+ B(z,\lambda r_K)\subseteq A,\qquad
+ \lambda r_K\geq\frac{s}{2\sigma},\qquad
+ |z-y|\leq\frac{s}{2}.
+\]
+Here \(\lambda\leq1/2\), and \(y\in B(c,R_K)\).
+Thus \(|z|\leq(a+1/2)s\).
+
+In an orthonormal coordinate system on the normal space, take grid
+points with spacing \(h=s/(4\sigma\sqrt b)\) and coordinate indices
+\(|q_\nu|\leq\lceil(a+1)s/h\rceil\).
+A nearest grid point to \(z\) lies in this finite grid and has distance
+at most \(\sqrt b\,h/2=s/(8\sigma)\) from \(z\).
+It therefore belongs to \(A\).
+There are at most \(Q(b,\sigma,a)\) grid points, and the corresponding
+parallel flats hit every original body.
+\end{proof}
+
+The lower bound \(R_K\geq s\) is essential to this use of a common grid.
+The error in the lemma is \(as\), not \(aR_K\).
+
+\subsection{Spherical projections}
+
+On the unit sphere \(\Sph^m\subset\R^{m+1}\), distances and cap radii
+are geodesic. A proper spherical convex body is a compact set with
+positive inradius, contained in an open hemisphere and closed under
+the shorter great-circle arcs. We also allow the whole sphere.
+Spherical \(\sigma\)-fatness means concentric cap bounds
+\[
+ B(x_K,r_K)\subseteq K\subseteq B(x_K,R_K),
+ \qquad 0<r_K\leq R_K\leq\sigma r_K,\quad R_K\leq\pi.
+\]
+A great \(j\)-sphere is the intersection with a linear
+\((j+1)\)-dimensional subspace. For \(j=0\) it is an antipodal pair.
+We fix
+\[
+ \gamma=\pi/100.
+\]
+
+For \(w\in\Sph^m\), the gnomonic map to
+\(P_w=\{z:w\cdot z=1\}\) is
+\begin{equation}
+ g_w(u)=\frac{u}{w\cdot u},\qquad
+ g_w^{-1}(w+x)=\frac{w+x}{\sqrt{1+|x|^2}},
+ \quad x\perp w.
+ \label{eq:gnomonic}
+\end{equation}
+It is defined on the open hemisphere centered at \(w\) and maps
+great-circle arcs to line segments.
+Its inverse has differential norm at most \(1\).
+On \(B(w,\pi/4)\), the differential of \(g_w\) has radial factor
+\(\sec^2 t\) and transverse factor \(\sec t\), where \(t=\dist(u,w)\);
+both are at most \(2\).
+Since this cap is geodesically convex,
+\begin{equation}
+ \dist(g_w^{-1}(z),g_w^{-1}(z'))\leq|z-z'|,
+ \qquad |g_w(u)-g_w(v)|\leq2\dist(u,v)
+ \label{eq:gnomonic-bounds}
+\end{equation}
+in the respective domains.
+Consequently a \(\sigma\)-fat body contained in that cap has a convex
+image with concentric Euclidean radii \(r_K,2R_K\), and is
+\(2\sigma\)-fat.
+
+\begin{lemma}
+\label{lem:spherical-fattening}
+Suppose \(R_K<\gamma\) and \(0<s\leq R_K\), and let \(K^s\) be the
+closed \(s\)-neighborhood of \(K\) on the sphere.
+Then \(D=\conv_{\Sph}(K^s)\) is a compact \(\sigma\)-fat spherical body,
+with concentric radii \(r_K+s,R_K+s\), and
+\[
+ D\subseteq K^{2s}.
+\]
+\end{lemma}
+
+\begin{proof}
+The neighborhood contains \(B(x_K,r_K+s)\) and is contained in
+\(B(x_K,R_K+s)\). The latter cap has radius below \(2\gamma<\pi/4\)
+and is convex, so it contains \(D\). Moreover
+\[
+ \frac{R_K+s}{r_K+s}\leq\frac{R_K}{r_K}\leq\sigma.
+\]
+Use \(g_{x_K}\) on this cap. Each point of \(g_{x_K}(K^s)\) is within
+\(2s\) of the convex set \(g_{x_K}(K)\), by
+\eqref{eq:gnomonic-bounds}. Taking convex hulls gives
+\[
+ g_{x_K}(D)\subseteq g_{x_K}(K)+B(0,2s).
+\]
+The inverse bound in \eqref{eq:gnomonic-bounds} proves
+\(D\subseteq K^{2s}\). The Euclidean convex hull in this chart is compact,
+which also proves compactness of \(D\).
+\end{proof}
+
+\begin{lemma}
+\label{lem:pole-projection}
+Let \(D\subset\Sph^m\) be a \(\sigma\)-fat spherical convex body with
+specified outer radius \(R<\pi/4\), and let \(\omega\in\Sph^m\).
+If \(D\) avoids both \(\omega\) and \(-\omega\), then
+\[
+ \Pi_\omega(y)=
+ \frac{y-(y\cdot\omega)\omega}
+ {|y-(y\cdot\omega)\omega|}
+\]
+maps \(D\) to a compact spherical convex
+\(\pi^2\sigma\)-fat body in the equatorial sphere
+\(\Sph^{m-1}\subset\omega^\perp\).
+Great \(j\)-spheres through \(\omega\), for \(j\geq1\), project to
+great \((j-1)\)-spheres, and their incidences with \(D\) lift exactly.
+\end{lemma}
+
+\begin{proof}
+Write \(x,r,R\) for the concentric cap data, put
+\(t=\dist(x,\omega)\), \(s_0=\min(t,\pi-t)\), and
+\(w=\Pi_\omega(x)\).
+Since the inner cap avoids both poles, \(r<s_0\).
+For \(u<s_0\), the image of \(B(x,u)\) is the cap centered at \(w\)
+of radius
+\begin{equation}
+ \alpha_u=\arcsin\!\left(\frac{\sin u}{\sin t}\right).
+ \label{eq:cap-projection}
+\end{equation}
+To see this, fix a direction \(v\in\omega^\perp\) and consider
+\(y=\sin\theta\,v+\cos\theta\,\omega\), \(0<\theta<\pi\).
+Maximizing \(y\cdot x\) shows that this semicircle reaches \(B(x,u)\)
+exactly when
+\(\angle(v,w)\leq\arcsin(\sin u/\sin t)\).
+The condition \(u<s_0\) excludes the two endpoint poles.
+
+If \(R<s_0\), both projected cap bounds have the same center and
+\[
+ \frac{\alpha_R}{\alpha_r}
+ \leq\frac{\pi}{2}\frac{\sin R}{\sin r}
+ \leq\frac{\pi^2}{4}\frac{R}{r}
+ \leq\frac{\pi^2}{4}\sigma.
+\]
+If \(R\geq s_0\), then
+\[
+ \alpha_r\geq\frac{\sin r}{\sin t}
+ \geq\frac{2r}{\pi s_0}\geq\frac{2}{\pi\sigma}.
+\]
+Use the whole equatorial sphere as an outer cap of radius \(\pi\),
+centered at \(w\). Its radius ratio is at most \(\pi^2\sigma/2\).
+Both cases give the stated conservative bound.
+
+The image is compact because \(D\) avoids the poles.
+Projection preserves positive combinations, followed by normalization,
+so the image is spherically convex.
+For completeness, its Euclidean convex hull cannot contain zero:
+a vanishing positive combination of projected directions, after dividing
+the coefficients by the positive projection lengths, would lift to a
+nonzero positive combination of points of \(D\) whose transverse
+component vanishes. Normalizing that combination gives a pole in \(D\).
+It cannot be zero because \(D\) lies in one cap of radius below
+\(\pi/4\).
+A minimum-norm point of the compact convex hull strictly separates it
+from zero, so the image lies in an open hemisphere.
+
+If a linear \((j+1)\)-space contains \(\omega\), its intersection with
+\(\omega^\perp\) has dimension \(j\).
+Conversely, spanning such a \(j\)-space with \(\omega\) restores the
+original dimension. A point of \(D\) belongs to the lifted space
+precisely when its projected direction belongs to the equatorial space.
+\end{proof}
+
+\subsection{Perturbing a great-sphere transversal}
+
+\begin{lemma}
+\label{lem:spherical-rounding}
+Fix \(0\leq j<m\), \(\sigma\geq1\), \(s>0\), and a great
+\(j\)-sphere \(F\subset\Sph^m\).
+Every family of \(\sigma\)-fat spherical bodies with
+\[
+ s\leq R_K<\gamma,\qquad \dist(K,F)\leq2s
+\]
+can be intersected by at most \(B(m,j,\sigma)\) great \(j\)-spheres,
+where \(B\) is independent of \(s\) and the family.
+\end{lemma}
+
+\begin{proof}
+Fix a \(\gamma\)-net on \(F\) of cardinality \(A_j\), depending only
+on \(j\) and the fixed \(\gamma\).
+For a body \(K\), choose \(y\in K\), \(f\in F\) with
+\(\dist(y,f)\leq2s\), and a net point \(w\) with
+\(\dist(f,w)\leq\gamma\).
+Every point of \(K\) lies within
+\[
+ 2R_K+2s+\gamma<5\gamma<\pi/4
+\]
+of \(w\).
+
+In the chart \(g_w\), \(F\) becomes an affine \(j\)-flat.
+The image body is \(2\sigma\)-fat, has specified outer radius
+\(2R_K\geq s\), and is within \(4s\) of that affine flat.
+Lemma~\ref{lem:euclidean-rounding} gives at most
+\(Q(m-j,2\sigma,4)\) parallel affine flats hitting all bodies
+assigned to this chart.
+Every affine \(j\)-flat in \(P_w\) spans a linear
+\((j+1)\)-space with the origin, so its inverse image lies on a
+great \(j\)-sphere. These lifted spheres hit the original bodies.
+Thus we may take
+\begin{equation}
+ B(m,j,\sigma)=A_jQ(m-j,2\sigma,4).
+ \label{eq:B}
+\end{equation}
+For \(j=0\), use the two points of \(F\) as its net; every chart point
+lifts to an antipodal pair.
+\end{proof}
+
+\section{Weak nets and the bounded transversal theorem}
+\label{sec:weaknets}
+
+\subsection{Great-sphere transversals}
+
+We first prove the spherical statement needed for the affine problem.
+For a spherical body \(K\), write \(H_j(K)\) for the family of great
+\(j\)-spheres meeting it.
+
+\begin{theorem}
+\label{thm:spherical-net}
+For \(m\geq1\), \(0\leq j<m\), \(\sigma\geq1\), and
+\(\eps\in(0,1]\), there is a finite
+\(S(m,j,\sigma,\eps)\) such that the following holds.
+If \(\mu\) is a finitely supported probability measure on great
+\(j\)-spheres and \(\mathcal F\) is a finite family of
+\(\sigma\)-fat spherical convex bodies satisfying
+\(\mu(H_j(K))\geq\eps\) for all \(K\in\mathcal F\), then at most
+\(S(m,j,\sigma,\eps)\) great \(j\)-spheres hit the whole family.
+\end{theorem}
+
+\begin{proof}
+We induct on \(j\), for all \(m>j\).
+Bodies with \(R_K\geq\gamma\) contain caps of radius at least
+\(\gamma/\sigma\), so a fixed metric net of \(\Sph^m\) with mesh
+\(\gamma/(2\sigma)\) hits all of them.
+Extend its points to great \(j\)-spheres.
+Let \(G(m,\sigma)\) be the cardinality of this fixed net, and remove
+these large bodies.
+
+Apply Lemma~\ref{lem:grouping} to the remaining incidence ranges and
+their specified outer radii. There are at most \(M(\eps)\) groups.
+In one group, let the distinguished body have center \(\omega\) and
+outer radius \(s\). Every group member has \(s\leq R_K<\gamma\).
+Put \(\delta=\eps^2/2\).
+
+For \(j=0\), a positive overlap means that some antipodal pair hits
+both the distinguished body and \(K\). Hence
+\(\dist(K,\{\omega,-\omega\})\leq s\).
+Lemma~\ref{lem:spherical-rounding} covers the group by at most
+\(B(m,0,\sigma)\) antipodal pairs. This proves the base case.
+
+Now let \(j\geq1\), and condition \(\mu\) on probes hitting the
+distinguished body.
+Each such great sphere \(F\) has distance at most \(s\) from \(\omega\).
+Normalize the orthogonal projection of \(\omega\) onto its linear space,
+obtaining \(v\in F\), and rotate in \(\Span(v,\omega)\) to send \(v\)
+to \(\omega\), fixing the orthogonal complement.
+The rotation angle is at most \(s\).
+If \(v=\omega\), take the identity rotation.
+Every point moves by at most \(s\): for a rotation of angle \(\theta\),
+the dot product of a unit vector with its rotated image is at least
+\(\cos\theta\).
+
+For a group member put \(D_K=\conv_{\Sph}(K^s)\).
+Lemma~\ref{lem:spherical-fattening} makes it \(\sigma\)-fat, with
+outer radius \(R_K+s<2\gamma\), and gives \(D_K\subseteq K^{2s}\).
+A probe hitting both \(K\) and the distinguished body becomes a great
+sphere through \(\omega\) hitting \(D_K\).
+
+Project the rotated probes onto \(\omega^\perp\).
+This defines one finitely supported probability measure \(\nu\) on
+great \((j-1)\)-spheres, independently of the choice of \(K\).
+For each \(D_K\) avoiding the poles, Lemma~\ref{lem:pole-projection}
+gives a \(\pi^2\sigma\)-fat projected body, and
+\[
+ \nu\bigl(H_{j-1}(\Pi_\omega D_K)\bigr)
+ \geq\frac{\mu(H_j(K)\cap H_j(K_i))}{\mu(H_j(K_i))}
+ \geq\delta,
+\]
+where \(K_i\) denotes the distinguished body.
+The induction hypothesis supplies
+\(S(m-1,j-1,\pi^2\sigma,\delta)\) equatorial probes.
+Lift them through \(\omega\). They hit all the corresponding
+\(D_K\), and also all \(D_K\) containing a pole.
+If no projected bodies remain, choose one arbitrary great
+\(j\)-sphere through \(\omega\).
+
+Each \(K\) is now within \(2s\) of one lifted sphere.
+Apply Lemma~\ref{lem:spherical-rounding} to the subfamily assigned
+to each lifted sphere; all its members have \(R_K\geq s\).
+This covers the group by boundedly many exact probes.
+
+More explicitly, define the finite bounds recursively by
+\begin{align}
+ S(m,0,\sigma,\eps)
+ &=G(m,\sigma)+M(\eps)B(m,0,\sigma),\notag\\
+ S(m,j,\sigma,\eps)
+ &=G(m,\sigma)+M(\eps)B(m,j,\sigma)
+ \max\{1,S(m-1,j-1,\pi^2\sigma,\eps^2/2)\},
+ \quad j\geq1.
+ \label{eq:S}
+\end{align}
+The recursion terminates at \(j=0\).
+\end{proof}
+
+\subsection{Affine transversals}
+
+Let \(\A_{d,k}\) be the space of affine \(k\)-flats in \(\R^d\), and
+write \(H_k(K)=\{L\in\A_{d,k}:L\cap K\ne\varnothing\}\).
+
+We use one radial projection fact.
+If a compact convex \(\sigma\)-fat Euclidean body avoids the origin,
+its radial image is a compact spherical convex
+\(\pi\sigma\)-fat body.
+Indeed, for its concentric data \(x,r,R\), put \(t=|x|>r\).
+The inner ball projects to the cap centered at \(x/t\) with radius
+\(\arcsin(r/t)\).
+If \(t>R\), the corresponding outer radius is \(\arcsin(R/t)\),
+and the ratio is at most \((\pi/2)R/r\).
+If \(t\leq R\), the inner radius is at least \(r/t\geq1/\sigma\);
+use an outer cap of radius \(\pi\) with the same center.
+Radial projection preserves normalized positive combinations.
+The image lies in an open hemisphere: a nearest point \(y\) of the
+body to the origin satisfies \(y\cdot z\geq|y|^2>0\) for every
+point \(z\) of the body.
+Compactness follows from avoidance of the origin.
+
+\begin{theorem}
+\label{thm:affine-net}
+Fix \(d\geq2\), \(1\leq k<d\), \(\rho\geq1\), and \(\eps\in(0,1]\).
+There is a finite \(W(d,k,\rho,\eps)\) such that, for every finitely
+supported probability measure \(\mu\) on \(\A_{d,k}\), every finite
+family of \(\rho\)-fat compact convex bodies satisfying
+\(\mu(H_k(K))\geq\eps\) is hit by at most \(W(d,k,\rho,\eps)\)
+affine \(k\)-flats.
+\end{theorem}
+
+\begin{proof}
+Apply Lemma~\ref{lem:grouping} to the incidence ranges with sizes \(R_K\).
+For one group let the distinguished body have center \(a\) and
+outer radius \(s\), and condition the measure on its hitting flats.
+Translate each such flat through \(a\) by the shortest displacement,
+whose length is at most \(s\).
+
+Set \(D_K=K+B(0,s)\). It has concentric radii \(r_K+s,R_K+s\)
+and remains \(\rho\)-fat.
+Every original probe hitting both \(K\) and the distinguished body
+becomes a flat through \(a\) hitting \(D_K\).
+Take \(a\) as the origin and push the conditional measure to the
+great \((k-1)\)-spheres given by these linear \(k\)-spaces.
+This measure hits the radial image of each \(D_K\) avoiding \(a\)
+with probability at least \(\delta=\eps^2/2\).
+Those images are \(\pi\rho\)-fat by the radial fact just proved.
+
+Theorem~\ref{thm:spherical-net} gives at most
+\(S(d-1,k-1,\pi\rho,\delta)\) probes on \(\Sph^{d-1}\).
+Their linear lifts through \(a\) also hit every \(D_K\) containing \(a\).
+If every \(D_K\) contains \(a\), choose one arbitrary \(k\)-flat through it.
+Each original \(K\) is at distance at most \(s\) from one of these
+lifted flats, and all group members have \(R_K\geq s\).
+Lemma~\ref{lem:euclidean-rounding}, with \(a=1\), replaces each lifted
+flat by at most \(Q(d-k,\rho,1)\) exact probes.
+Taking all groups, a valid bound is
+\begin{equation}
+ W(d,k,\rho,\eps)=M(\eps)Q(d-k,\rho,1)
+ \max\{1,S(d-1,k-1,\pi\rho,\eps^2/2)\}.
+ \label{eq:W}
+\end{equation}
+\end{proof}
+
+\subsection{Proof of the main theorem}
+
+The published fractional results give the following precise input.
+For fixed \(d,k,p,\rho\) in Theorem~\ref{thm:main}, there is
+\(T=T(d,k,p,\rho)\geq1\) such that every nonempty family under its
+hypotheses has finitely many flats \(L_1,\ldots,L_N\) and nonnegative
+weights \(w_1,\ldots,w_N\) satisfying
+\begin{equation}
+ \sum_{\nu=1}^N w_\nu\leq T,\qquad
+ \sum_{\nu:L_\nu\cap K\ne\varnothing}w_\nu\geq1
+ \quad(K\in\mathcal F).
+ \label{eq:fractional-cover}
+\end{equation}
+To obtain this, use \cite[Theorem~5]{JP} on the flat-incidence ranges and
+\cite[Theorem~22]{JP}, which credits the fractional transversal theorem
+to Alon, Kalai, Matou\v{s}ek and Meshulam \cite{AKMM}.
+In the latter theorem take \(q=k+2\). Its hypotheses are therefore the
+original local condition and the published fat-body fractional Helly
+property.
+Finite support in \eqref{eq:fractional-cover} causes no restriction:
+on a finite body family there are only finitely many realizable
+incidence patterns. Choose one representative flat for each pattern
+and collect its weights. The resulting finite cover problem attains
+its optimum.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+If \(|\mathcal F|<p\), one flat through a point of each body gives at
+most \(p-1\) probes.
+Otherwise normalize the weights in \eqref{eq:fractional-cover}
+by their total. That total is positive, and every body has hitting
+probability at least \(1/T\).
+Apply Theorem~\ref{thm:affine-net} with \(\eps=1/T\).
+Thus a valid choice is
+\[
+ C(d,k,p,\rho)=\max\{p-1,W(d,k,\rho,1/T(d,k,p,\rho))\}.
+\]
+The definitions \eqref{eq:Q}, \eqref{eq:B}, \eqref{eq:S},
+and \eqref{eq:W} show that every bound is finite and depends only on
+the displayed fixed parameters.
+\end{proof}
+
+\paragraph{AI-use statement.}
+This manuscript was prepared with substantial assistance from OpenAI
+Codex, including proof exploration, source checking, and drafting.
+The mathematical claims are submitted for independent review.
+
+\begin{thebibliography}{9}
+\bibitem{AKMM}
+N. Alon, G. Kalai, J. Matou\v{s}ek, and R. Meshulam,
+\emph{Transversal numbers for hypergraphs arising in geometry},
+Advances in Applied Mathematics \textbf{29} (2002), no.~1, 79--101.
+\url{https://doi.org/10.1016/S0196-8858(02)00003-9}.
+\href{https://web.math.princeton.edu/~nalon/PDFS/akmm6.pdf}{Author manuscript (21~May~2001).}
+
+\bibitem{JP}
+A. Jung and D. P\'alv\"olgyi,
+\emph{k-Dimensional Transversals For Fat Convex Sets},
+Discrete \& Computational Geometry (2026).
+\url{https://doi.org/10.1007/s00454-026-00852-8}.
+\end{thebibliography}
+\end{document}
