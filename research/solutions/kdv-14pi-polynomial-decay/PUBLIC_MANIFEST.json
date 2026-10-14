@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "title": "Polynomial decay for the Korteweg–de Vries equation at length 14π",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "claim_status": "Complete analytic solution claim; independent mathematical review requested.",
+  "target": {
+    "id": "396",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "statement_sha256": "4c457a84d346a182d2f3dc28a92e7efd39af97efc6c4089dc6b2b3b504b1ac45",
+    "url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/396-critical-kdv-odd-mode-polynomial-decay.md"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, scope, contact, AI-use disclosure and build entry point.",
+      "sha256": "1bbfee460cf2eab9c83ef54d066fb789fac41095f1cbb77bad756cfd6c034f2d",
+      "bytes": 1720
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original target mapped to the public manuscript.",
+      "sha256": "c2a81f40f8c2f8e8f477dbf944887fc5f1cd8f97ff2780dd76dfb0cad9b9eead",
+      "bytes": 2939
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Complete standalone manuscript source and bibliography.",
+      "sha256": "69065329c838a99b1c102d2a2d698a76607b6544d3e85382ede6f3d3c343f301",
+      "bytes": 32401
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Compiled 10-page manuscript.",
+      "sha256": "2d252d388394a061aae07e1e63489da86491a49656fbed8ec2eb05049c984053",
+      "bytes": 363810
+    }
+  ],
+  "integrity_note": "This manifest lists four content files. SHA256SUMS covers those files and this manifest; neither integrity file lists its own digest."
+}
