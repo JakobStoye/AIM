@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "problem_id": "649",
+  "package_version": "v1",
+  "evidence_type": "analytic theorem",
+  "files": [
+    {
+      "path": "AI_USE.md",
+      "sha256": "312bde39cedc5e4fc5e554419cf2c6293f2756fc16055bcb894c55aca3722e3f",
+      "bytes": 1078,
+      "purpose": "Public submission context"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8f7d29941a5f9cc64eb68621a9c6e82d6a52f62e4c52cd42eb57845a0f430131",
+      "bytes": 1859,
+      "purpose": "Public submission context"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "7c961a6ffed6ce5fb450539603f308ceb5d72142db194177b501941852e61b87",
+      "bytes": 2235,
+      "purpose": "Public submission context"
+    },
+    {
+      "path": "paper/path_homology_vanishing.pdf",
+      "sha256": "b67e3cb90e3d8b1858fba649b9a8ced490a5d131a4f91222ce5f3882914babdb",
+      "bytes": 273191,
+      "purpose": "Standalone manuscript"
+    },
+    {
+      "path": "paper/path_homology_vanishing.tex",
+      "sha256": "2ef31853e42a06d399cc3a13546d77deeaaabfd9e866b1647baee4d16298fff5",
+      "bytes": 29937,
+      "purpose": "Standalone manuscript"
+    }
+  ]
+}

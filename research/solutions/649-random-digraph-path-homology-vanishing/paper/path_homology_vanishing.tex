@@ -1,0 +1,698 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Vanishing of first path homology above the\texorpdfstring{\\}{ }random-digraph exponent $-2/3$}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $G(n,p)$ be the loop-free random digraph in which every ordered edge is
+present independently with probability $p$, with reciprocal edges permitted.
+We prove that its first non-regular path homology over $\Q$ vanishes with
+probability tending to one if $n^2p^3/\log^4(2n)\to\infty$.
+Consequently, vanishing holds for $p=n^\alpha$ for every fixed
+$-2/3<\alpha\leq0$, as conjectured by Chaplin.
+The proof uses only boundaries of directed diamonds and transitive triangles.
+A uniform estimate for the diamond quadratic form shows that its annihilator
+consists of vertex gradients and the constant edge cochain. A transitive
+triangle removes the latter direction. The estimates retain the independent
+ordered-edge model and the non-regular boundary convention throughout.
+\end{abstract}
+
+\section{Introduction}
+
+Path homology records cycles in a directed graph using relations supplied by
+allowed directed paths. For random directed graphs it can therefore distinguish
+directed-network structure from an independent-edge null model.
+Chaplin~\cite{Chaplin} studied the first path Betti number in this model and
+proved its vanishing when $p\gg(\log n/n)^{1/3}$; see
+Proposition~4.17 of that paper. Conjecture~B.1 predicts vanishing throughout the
+larger power-law range $p=n^\alpha$, $\alpha>-2/3$.
+The present paper proves this prediction for non-regular path homology over
+$\Q$ by controlling all edge cochains at once.
+
+We first specify the chain convention. For a digraph $G$ on $[n]=\{1,\ldots,n\}$,
+let $\Lambda_k(\Q)$ have as basis all vertex sequences
+$[v_0,\ldots,v_k]$, allowing repetitions, with boundary
+\[
+ \partial[v_0,\ldots,v_k]
+ =\sum_{j=0}^k(-1)^j[v_0,\ldots,\widehat v_j,\ldots,v_k].
+\]
+Let $A_k$ be the subspace spanned by paths whose successive ordered edges
+belong to $G$. Put $\Omega_0=A_0$ and
+$\Omega_k=A_k\cap\partial^{-1}(A_{k-1})$ for $k\geq1$.
+No boundary term with repeated consecutive vertices is discarded.
+The first non-regular path Betti number over $\Q$ is
+\[
+ \beta_1^{\rm nr}(G)
+ =\dim_\Q\frac{\ker(\partial:\Omega_1\to\Omega_0)}{\partial\Omega_2}.
+\]
+Since $G$ has no loops, $\Omega_1=A_1$ is the vector space on its ordered
+edges. The identity $\partial^2=0$ gives the indicated quotient.
+
+Write $G(n,p)$ for the digraph with adjacency variables $A_{ab}$,
+$a\ne b$, independent Bernoulli$(p)$, and $A_{aa}=0$. In particular
+$A_{ab}$ and $A_{ba}$ are independent. All asymptotics below concern
+deterministic sequences of probabilities as $n\to\infty$.
+
+\begin{theorem}\label{thm:main}
+Suppose $0<p_n\leq1$ and
+\begin{equation}\label{eq:condition}
+ \frac{n^2p_n^3}{\log^4(2n)}\longrightarrow\infty.
+\end{equation}
+Then
+$\Prob\{\beta_1^{\rm nr}(G(n,p_n))=0\}\longrightarrow1$.
+\end{theorem}
+
+\begin{corollary}\label{cor:power}
+For every fixed $-2/3<\alpha\leq0$, a digraph with independent ordered
+edges of probability $p_n=n^\alpha$ satisfies
+$\Prob\{\beta_1^{\rm nr}(G(n,p_n))=0\}\to1$.
+\end{corollary}
+\begin{proof}
+Here $n^2p_n^3=n^{2+3\alpha}$ has a strictly positive exponent and hence
+dominates $\log^4(2n)$. Apply Theorem~\ref{thm:main}.
+\end{proof}
+
+The sufficient condition~\eqref{eq:condition} identifies the conjectured
+power-law exponent without determining the optimal logarithmic factor.
+Neither the critical exponent $\alpha=-2/3$ nor convergence uniform in
+$\alpha$ is asserted. The conclusion concerns rational homology; it does
+not assert the absence of integral torsion.
+
+The mechanism is visible from two elementary boundaries. A directed diamond
+has two length-two paths with the same endpoints; subtracting them cancels
+the possibly missing shortcut edge. Its boundary equates the two path sums.
+Vertex gradients satisfy every such relation, as does the cochain that is
+one on each edge. We show that these are the only solutions with high
+probability. A single transitive triangle then excludes the constant cochain.
+The main difficulty is uniformity: a cochain under examination can depend
+on the entire graph. Operator estimates, rather than estimates for a fixed
+cochain, provide the required simultaneous conclusion.
+
+\section{The diamond quadratic form}
+
+In this section $G$ is a fixed loop-free digraph, with edge set
+$E=\{(a,b):A_{ab}=1\}$. We work first over $\R$.
+For an edge cochain $f\in\R^E$ and a vertex function $h\in\R^n$, define
+$(\delta h)_{ab}=h_b-h_a$. The space left undetected by the diamond
+relations will be
+\begin{equation}\label{eq:W}
+ W=\im\delta+\R\one_E.
+\end{equation}
+All vector norms and inner products are Euclidean, and all matrix norms
+are their induced operator norms. The letter $J$ denotes an all-one matrix
+of the dimensions specified by its indices.
+
+A diamond consists of four distinct vertices $a,b,c,e$ and edges
+$a\to b$, $b\to e$, $a\to c$, $c\to e$. It is counted once for ordered
+endpoints $(a,e)$ and an unordered pair of middle vertices $\{b,c\}$.
+Its boundary row and energy are
+\[
+ q_{a;b,c;e}=[a,b]+[b,e]-[a,c]-[c,e],\qquad
+ \mathcal E_G(f)=\sum_{\text{diamonds}}\ip{q_{a;b,c;e}}{f}^{\,2}.
+\]
+The sign chosen for the unordered middle pair is immaterial.
+The row is the literal boundary of $[a,b,e]-[a,c,e]$:
+the two occurrences of $[a,e]$ cancel. Thus this two-chain belongs to
+the non-regular $\Omega_2$, whether or not $a\to e$ is an edge.
+Every row annihilates $W$ by telescoping and by $1+1-1-1=0$.
+
+To expand the energy, put
+\[
+ O_v=\{b:A_{vb}=1\},\quad I_v=\{a:A_{av}=1\},\quad
+ x_v=(f_{vb})_{b\in O_v},\quad y_v=(f_{av})_{a\in I_v}.
+\]
+Their sums will be denoted by
+$r_v=\sum_{b\in O_v}f_{vb}$, $c_v=\sum_{a\in I_v}f_{av}$,
+and $s=\sum_{(a,b)\in E}f_{ab}$. Empty vectors and sums are interpreted
+as zero. Let $D_{ab}$ be the number of diamonds containing an edge $(a,b)$.
+The two fork matrices have zero diagonal and, off the diagonal, entries
+\begin{align}
+ (P_a)_{b,c}&=\sum_{e\notin\{a,b,c\}}A_{be}A_{ce}
+       &&(b,c\in O_a,\ b\ne c),\label{eq:P}\\
+ (Q_e)_{b,c}&=\sum_{a\notin\{e,b,c\}}A_{ab}A_{ac}
+       &&(b,c\in I_e,\ b\ne c).\label{eq:Q}
+\end{align}
+For an adjacent pair of edges through $v$, use the rectangular matrix
+\begin{equation}\label{eq:C}
+ (C_v)_{a,b}=\one_{a\ne b}
+       \sum_{c\notin\{a,b,v\}}A_{ac}A_{cb}
+       \quad(a\in I_v,\ b\in O_v).
+\end{equation}
+Finally the opposite-edge matrix, indexed by actual edges, is
+\begin{equation}\label{eq:H}
+ H_{(a,b),(c,e)}=
+ \one_{\{a,b,c,e\}\text{ has size }4}\,A_{ac}A_{be}
+       \quad((a,b),(c,e)\in E).
+\end{equation}
+This matrix need not be symmetric; its operator norm will suffice.
+
+\begin{lemma}\label{lem:identity}
+For every real edge cochain,
+\begin{equation}\label{eq:identity}
+ \mathcal E_G(f)=\sum_E D_{ab}f_{ab}^2
+  -\sum_v x_v^TP_vx_v-\sum_v y_v^TQ_vy_v
+  +2\sum_v y_v^TC_vx_v-2f^THf.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For one diamond write its four values as $x=f_{ab}$, $y=f_{be}$,
+$u=f_{ac}$, $z=f_{ce}$. Expansion of $(x+y-u-z)^2$ gives diagonal
+squares, positive adjacent products $2xy+2uz$, negative source and sink
+products $-2xu-2yz$, and negative opposite products $-2xz-2yu$.
+The diagonal multiplicity is $D_{ab}$. Each fork matrix counts both orders
+of its two middle vertices, producing its coefficient $-2$.
+The matrix $C_v$ counts each adjacent product once. The two orders of
+$(b,c)$ in $H$ produce the two opposite products. These are precisely
+the five terms in~\eqref{eq:identity}.
+\end{proof}
+
+We will prove that~\eqref{eq:identity} is close, uniformly in $f$, to a
+quadratic form depending only on $\norm f$, $r-c$ and $s$.
+The needed estimates account for the dependence between a selected edge
+and its neighboring diamond relations.
+
+\section{Concentration ingredients}
+
+Fix a sequence satisfying~\eqref{eq:condition}, and abbreviate
+\begin{equation}\label{eq:scales}
+ \ell=\log(2n),\qquad d=n^2p^3,\qquad \mu=(n-3)p^2,
+ \qquad
+ \varepsilon_n=\sqrt d\,\ell^2
+     +d\sqrt{\frac{\ell}{np}}+np^2\ell^2+\ell^3.
+\end{equation}
+In particular $d\to\infty$ and $np=(nd)^{1/3}$ grows faster than every
+fixed power of $\ell$. Constants denoted $C_L$ depend only on a fixed
+positive number $L$ and may increase finitely many times. A failure bound
+$O_L(n^{-L})$ has this same uniformity in $n$, $p$ and the fixed vertex
+sets under consideration.
+
+The only external concentration input is matrix Bernstein in the following
+two forms~\cite[Theorems 1.4 and 1.6 of the author preprint]{Tropp}.
+For independent mean-zero self-adjoint $q\times q$ matrices $X_i$ with
+$\norm{X_i}\leq R$, put $\sigma^2=\norm{\sum_i\E X_i^2}$. Then
+\begin{equation}\label{eq:bernstein}
+ \Prob\left\{\norm{\sum_iX_i}\geq t\right\}
+ \leq2q\exp\left\{-\frac{t^2}{2(\sigma^2+Rt/3)}\right\}\qquad(t\geq0).
+\end{equation}
+The two-sided form follows by applying the source's upper-eigenvalue
+bound to both $X_i$ and $-X_i$.
+For independent mean-zero $q_1\times q_2$ matrices $Z_i$ with
+$\norm{Z_i}\leq R$, the norm bound has prefactor $q_1+q_2$ and the
+same exponent, with
+\[
+ \sigma^2=\max\left\{\norm{\sum_i\E Z_iZ_i^T},
+                          \norm{\sum_i\E Z_i^TZ_i}\right\}.
+\]
+Taking dimension one gives, for a sum of independent Bernoulli variables
+with mean $M$, deviation at most $C_L(\sqrt{M\ell}+\ell)$ with failure
+$O_L(n^{-L})$. Throughout the proof dimensions are at most $n^2$, so
+the logarithmic factor absorbs the dimension prefactors and polynomial
+union bounds by choosing $L$ larger at the outset.
+
+\subsection{Independent row and column restrictions}
+
+The next lemma gains a factor $p$ when both coordinate sets are sampled.
+It will be used only where the sampled edge families are independent of
+the matrix being restricted.
+
+\begin{lemma}\label{lem:restriction}
+Let $M$ be a deterministic real matrix with both dimensions at most $n^2$.
+Let $R$ and $S$ be independent diagonal matrices whose diagonal entries
+are independent Bernoulli$(p)$ variables. If
+\[
+ a=\norm M,\quad u=\max_i\norm{M_{i,*}}_2,\quad
+ v=\max_j\norm{M_{*,j}}_2,\quad b=\max_{i,j}|M_{ij}|,
+\]
+then, with failure $O_L(n^{-L})$,
+\begin{equation}\label{eq:restriction}
+ \norm{RMS}\leq pa+C_L\sqrt{p\ell}(u+v)+C_L\ell b.
+\end{equation}
+The same conclusion holds conditionally for a random $M$ independent of
+$R$ and $S$.
+\end{lemma}
+\begin{proof}
+First consider row selection of a fixed matrix $B$ with rows $b_i$.
+Writing $u_B=\max_i\norm{b_i}_2$, the centered Gram matrix is
+\[
+ B^TRB-pB^TB=\sum_i(\xi_i-p)b_i^Tb_i.
+\]
+Its independent summands have norm at most $u_B^2$. Since
+$(b_i^Tb_i)^2=\norm{b_i}_2^2 b_i^Tb_i$, their variance matrix has norm
+at most $p u_B^2\norm B^2$. The upper-eigenvalue bound in
+\eqref{eq:bernstein} gives
+\[
+ \norm{RB}^2\leq p\norm B^2
+       +C_L u_B\sqrt{p\ell}\norm B+C_L\ell u_B^2.
+\]
+Taking square roots and enlarging $C_L$ yields
+\begin{equation}\label{eq:one-sided}
+ \norm{RB}\leq\sqrt p\norm B+C_L\sqrt\ell\,u_B.
+\end{equation}
+Apply~\eqref{eq:one-sided} to $M^T$ to obtain
+$\norm{MS}\leq\sqrt p\,a+C_L\sqrt\ell\,v$.
+For a fixed row, $\norm{(MS)_{i,*}}_2^2=\sum_j\zeta_j|M_{ij}|^2$.
+The centered summands are bounded by $b^2$ and have total variance at most
+$pb^2u^2$. Scalar Bernstein and a union bound over the rows give
+\[
+ \max_i\norm{(MS)_{i,*}}_2\leq\sqrt p\,u+C_L\sqrt\ell\,b.
+\]
+Conditional on $S$, apply~\eqref{eq:one-sided} to $MS$ using independent
+$R$. Substituting the preceding two inequalities proves
+\eqref{eq:restriction}. Conditioning on an independent random $M$
+proves the last assertion.
+\end{proof}
+
+\subsection{Products on disjoint vertex blocks}
+
+For disjoint vertex sets $V_i$, write $B_{ij}=(A_{ab})_{a\in V_i,b\in V_j}$.
+The entries of each block are independent Bernoulli$(p)$; blocks with
+different ordered source--target sets are independent.
+
+\begin{lemma}\label{lem:blocks}
+Fix three disjoint vertex sets of sizes at most $n$, and put
+$M=B_{12}B_{23}-|V_2|p^2J$. For independent Bernoulli$(p)$ coordinate
+selectors $R,S$, also independent of the blocks,
+\begin{equation}\label{eq:product-bound}
+ \norm{RMS}\leq C_L\varepsilon_n
+\end{equation}
+with failure $O_L(n^{-L})$.
+For four disjoint vertex sets the same bound holds with
+$M=B_{13}\otimes B_{24}-p^2J$, where the row coordinates are pairs
+in $V_1\times V_2$ and the column coordinates are pairs in
+$V_3\times V_4$.
+\end{lemma}
+\begin{proof}
+For any one of these blocks let $X=B-pJ$. Entrywise rectangular
+Bernstein has summand norm at most $1$ and variance at most $np$, giving
+\begin{equation}\label{eq:block-spectral}
+ \norm X\leq C_L\sqrt{np\ell}
+\end{equation}
+because $np\gg\ell$. Scalar Bernstein and union bounds give degrees at
+most $C_Lnp$ and absolute centered row and column sums at most
+$C_L\sqrt{np\ell}$. Each row and column of $B$ and $X$ has norm at most
+$C_L\sqrt{np}$: for $X$, use
+$\sum_j(B_{ij}-p)^2\leq2\sum_jB_{ij}+2np^2$.
+These bounds are uniform in every fixed choice of the vertex sets,
+including empty sets.
+
+For three sets, the centered product is
+\[
+ M=pJX_{23}+pX_{12}J+X_{12}X_{23}.
+\]
+Using~\eqref{eq:block-spectral} and $\norm J\leq n$ gives
+\begin{equation}\label{eq:full-product}
+ \norm M\leq C_L\bigl(np\ell+n^{3/2}p^{3/2}\sqrt\ell\bigr).
+\end{equation}
+For each row the three terms are bounded respectively by
+$p\sqrt n\norm{X_{23}}$, $p\sqrt n$ times the magnitude of a row
+sum of $X_{12}$, and a row norm of $X_{12}$ times
+$\norm{X_{23}}$. Columns satisfy the reversed estimates. Thus
+\begin{equation}\label{eq:product-rows}
+ \max\{\text{row norms, column norms of }M\}
+       \leq C_Lnp\sqrt\ell.
+\end{equation}
+Each entry of $B_{12}B_{23}$ is Binomial$(|V_2|,p^2)$: different middle
+vertices use distinct edges of the two disjoint blocks. Consequently
+\begin{equation}\label{eq:product-entries}
+ \max|M_{ij}|\leq C_L\bigl(\sqrt{np^2\ell}+\ell\bigr)
+                   \leq C_L(np^2+\ell).
+\end{equation}
+Lemma~\ref{lem:restriction} applied to
+\eqref{eq:full-product}--\eqref{eq:product-entries} now yields
+\[
+ \norm{RMS}\leq C_L\left(
+ np^2\ell+n^{3/2}p^{5/2}\sqrt\ell+\sqrt d\,\ell+\ell^2\right)
+ \leq C_L\varepsilon_n.
+\]
+Here $n^{3/2}p^{5/2}\sqrt\ell=d\sqrt{\ell/(np)}$.
+
+For the tensor product expand instead
+\[
+ M=X_{13}\otimes X_{24}+pJ\otimes X_{24}+pX_{13}\otimes J.
+\]
+The inequality $\norm{U\otimes V}\leq\norm U\norm V$ gives
+\eqref{eq:full-product} again. The uncentered tensor has row and column
+norms bounded by products of two block row or column norms, at most
+$C_Lnp$. A row or column of the subtracted matrix $p^2J$ has norm
+at most $np^2\leq np$. Entry magnitudes of $M$ are at most $2$.
+Lemma~\ref{lem:restriction} therefore gives
+\[
+ \norm{RMS}\leq C_L\left(
+ np^2\ell+n^{3/2}p^{5/2}\sqrt\ell+\sqrt{d\ell}+\ell\right)
+ \leq C_L\varepsilon_n.
+\]
+The tensor norm inequality follows, for example, by reshaping a vector
+as a matrix and using $\norm{UZV}_F\leq\norm U\norm Z_F\norm V$.
+\end{proof}
+
+\subsection{Averaging the cuts}
+
+We use random vertex labels to place the selected edges and connector edges
+in independent blocks. The following finite averaging observation recovers
+the original matrix without demanding that every partition be good.
+
+\begin{lemma}\label{lem:averaging}
+Let $k,t$ be fixed positive integers. Suppose a graph-dependent matrix $T$
+and matrices $T_\chi$ associated with independent uniform $k$-labels on
+vertices satisfy $T=k^t\E_\chi T_\chi$. The matrices are embedded in a
+common coordinate space for each fixed graph. Suppose every
+$\norm{T_\chi}\leq2n^2$, and for each fixed labeling
+\[
+ \Prob_G\{\norm{T_\chi}>C_L\varepsilon_n\}\leq O_L(n^{-L}).
+\]
+Then, except with probability $O_L(n^{-L/2})$,
+\[
+ \norm T\leq k^t\bigl(C_L\varepsilon_n+2n^{2-L/2}\bigr).
+\]
+\end{lemma}
+\begin{proof}
+Let $h(G)$ be the fraction of labelings with
+$\norm{T_\chi}>C_L\varepsilon_n$. Finite-sum interchange gives
+$\E_G h(G)\leq O_L(n^{-L})$.
+By Markov's inequality, $h(G)\leq n^{-L/2}$ outside an event of
+probability $O_L(n^{-L/2})$. On that complement the triangle inequality
+for the finite average gives the stated bound.
+\end{proof}
+
+\section{Uniform diamond estimates}
+
+We now return to the matrices~\eqref{eq:P}--\eqref{eq:H} indexed by the
+random neighborhoods or edge set of $G(n,p)$.
+
+\begin{proposition}\label{prop:matrices}
+Under~\eqref{eq:condition}, with probability tending to one, the following
+bounds hold simultaneously:
+\begin{align}
+ \max_{(a,b)\in E}|D_{ab}-2d|&\leq C\varepsilon_n,\label{eq:D-bound}\\
+ \max_a\norm{P_a-\mu(J-I)}+
+ \max_e\norm{Q_e-\mu(J-I)}&\leq C\varepsilon_n,\label{eq:fork-bound}\\
+ \max_v\norm{C_v-\mu J}&\leq C\varepsilon_n,\label{eq:C-bound}\\
+ \norm{H-p^2J_{E,E}}&\leq C\varepsilon_n.\label{eq:H-bound}
+\end{align}
+Here $C$ is an absolute constant.
+\end{proposition}
+
+We prove the mixed and opposite bounds first, then the fork and diagonal
+bounds. Take, for example, $L=100$ in the concentration ingredients;
+enlarging initial tail exponents accommodates all finite union bounds.
+
+\subsection{Mixed terms and opposite edges}
+
+Fix a vertex $v$ and assign the other vertices independent uniform labels
+from $\{1,2,3\}$. Let $V_i$ be their label classes. Retain in $C_v$
+only triples $(a,c,b)$ of labels $(1,2,3)$, and subtract
+$|V_2|p^2$ in the retained endpoint rectangle. This centered cut is the
+restriction
+\[
+ R_{I_v}\bigl(B_{12}B_{23}-|V_2|p^2J\bigr)R_{O_v}.
+\]
+The row selectors are $A_{av}$ for $a\in V_1$, the column selectors
+are $A_{vb}$ for $b\in V_3$. These two families are mutually independent
+and independent of $B_{12},B_{23}$, since the latter blocks avoid $v$.
+Lemma~\ref{lem:blocks} applies for each fixed labeling.
+
+For a fixed graph, pad this cut with zero rows and columns into the
+coordinate space $I_v\times O_v$ and average. Each distinct triple
+$(a,c,b)$ has the prescribed labels with probability $1/27$.
+Consequently $27$ times the average centered cut is exactly
+\[
+ C_v-\mu(J-F_v),
+\]
+where $(F_v)_{a,b}=\one_{a=b}$ on $I_v\times O_v$.
+Indeed, for $a\ne b$ there are $n-3$ eligible middle vertices; for
+$a=b$ the label requirements are impossible. The deterministic cut norm
+is at most $2n^2$, because its dimensions are at most $n$ and its entry
+magnitudes at most $2n$. Lemma~\ref{lem:averaging} and a union bound over
+$v$ yield $\max_v\norm{C_v-\mu(J-F_v)}\leq C\varepsilon_n$.
+Since $\norm{F_v}\leq1$ and $\mu\leq np^2\leq\varepsilon_n$,
+this proves~\eqref{eq:C-bound}.
+
+For $H$ use four labels, assigning $(a,b,c,e)$ the labels $(1,2,3,4)$.
+The connector matrix is $B_{13}\otimes B_{24}$, indexed by pairs
+$(a,b)$ and $(c,e)$. Restriction to actual edge pairs uses independent
+selectors $A_{ab}$ in block $12$ and $A_{ce}$ in block $34$.
+They are mutually independent and independent of connector blocks
+$13$ and $24$. Thus Lemma~\ref{lem:blocks} applies to the centered cut
+$B_{13}\otimes B_{24}-p^2J$ with these pair-coordinate selectors.
+After zero-padding in the edge coordinate space, each four-distinct
+tuple occurs with probability $1/256$ and the cut norm is at most $2n^2$.
+Lemma~\ref{lem:averaging} gives
+\[
+ \norm{H-p^2J^{(4)}_{E,E}}\leq C\varepsilon_n,
+\]
+where $J^{(4)}$ is one for edge pairs with four distinct vertices and
+zero otherwise.
+
+With probability $1-O_L(n^{-L})$, all in- and out-degrees are at most
+$C_Lnp$, by scalar Bernstein. On this event each actual edge shares
+a vertex with at most $C_Lnp$ other actual edges. Hence the symmetric
+nonnegative matrix $J_{E,E}-J^{(4)}_{E,E}$ has maximum row sum at most
+$C_Lnp$, and its norm has the same upper bound. Multiplication by $p^2$
+costs at most $C_Lnp^3\leq C_L\varepsilon_n$, proving
+\eqref{eq:H-bound}. For completeness, a matrix with entry magnitudes
+having row sums at most $R$ and column sums at most $S$ has norm at most
+$\sqrt{RS}$, by weighted Cauchy--Schwarz. This justifies the row-sum
+bound without a symmetry assumption on $H$ itself.
+
+\subsection{Forks}
+
+Fix $a$ and condition only on its outgoing neighborhood $O_a=S$.
+On the degree event, $m=|S|\leq C_Lnp$. For $e\ne a$ let
+$u_e=(A_{be})_{b\in S}$ and
+$Z_e=u_eu_e^T-\diag(u_e)$. These columns are independent:
+their edges have distinct ordered target vertices and none has source $a$.
+When $e\in S$ its self-loop coordinate is deterministically zero; the
+remaining coordinates are independent Bernoulli$(p)$.
+Reciprocal edges in different columns remain independent. We have
+\[
+ P_a=\sum_{e\ne a}Z_e,\qquad \E(P_a\mid S)=\mu(J-I).
+\]
+For each off-diagonal pair $(b,c)$ the $n-3$ permissible witnesses exclude
+$a,b,c$, which explains the exact mean.
+
+For one such column, the diagonal entries of $\E Z_e^2$ are at most
+$mp^2$, and the off-diagonal entries are at most $mp^3$.
+This follows from $(Z_e)_{ij}=(u_e)_i(u_e)_j$ for $i\ne j$:
+a diagonal square uses two distinct Bernoulli coordinates, while an
+off-diagonal square uses three. The entries are nonnegative, so their
+maximum row sum is at most $mp^2+m^2p^3$.
+
+Truncate each $Z_e$ separately to zero if the column support satisfies
+$|\supp u_e|>C_L(mp+\ell)$, and call the result $\widetilde Z_e$.
+Scalar Bernstein bounds the probability of each truncation by
+$O_L(n^{-L})$. Truncation preserves column independence, and the total
+mean lost has norm at most $O_L(nm\,n^{-L})$, since $\norm{Z_e}\leq m$.
+Every entry of $\E\widetilde Z_e^2$ is bounded by the corresponding
+nonnegative entry of $\E Z_e^2$. Thus its norm is at most
+$mp^2+m^2p^3$, by the same row-sum bound. In addition,
+\[
+ \E(\widetilde Z_e-\E\widetilde Z_e)^2
+ =\E\widetilde Z_e^2-(\E\widetilde Z_e)^2
+ \preccurlyeq\E\widetilde Z_e^2.
+\]
+The centered variance sum therefore has norm at most
+\[
+ n(mp^2+m^2p^3)\leq C_Ld(1+np^2).
+\]
+Each centered summand has norm at most $C_L(np^2+\ell)$, because the
+retained support count bounds $\norm{\widetilde Z_e}$ and
+$mp\leq C_Lnp^2$. Applying~\eqref{eq:bernstein} gives
+\begin{equation}\label{eq:fork-deviation}
+ \norm{P_a-\mu(J-I)}
+ \leq C_L\left(\sqrt{d(1+np^2)\ell}+(np^2+\ell)\ell\right)+o(1)
+ \leq C_L\varepsilon_n.
+\end{equation}
+Here $\sqrt{d\,np^2\ell}=d\sqrt{\ell/(np)}$.
+The truncated and untruncated sums differ only on the union of the
+column truncation events. The conditional estimates are uniform in
+every $S$ of the permitted size, so they may be averaged over $S$ and
+union bounded over $a$. Empty or singleton neighborhoods cause no
+difficulty. Reversing all arrows gives the corresponding bound for
+$Q_e$. This proves~\eqref{eq:fork-bound}.
+
+\subsection{Diagonal multiplicities}
+
+Fix $(a,b)$ and condition on $A_{ab}=1$. The diamonds in which this edge
+is on the first step are counted by
+\[
+ \sum_{\substack{c,e\notin\{a,b\}\\c\ne e}}
+             A_{ac}A_{be}A_{ce}.
+\]
+Expose just the outgoing rows of $a,b$, and put
+$S=O_a\setminus\{b\}$ and $T=O_b\setminus\{a\}$.
+The remaining edges $c\to e$ with $(c,e)\in S\times T$, $c\ne e$,
+have source different from $a,b$. They are unexposed independent
+Bernoulli$(p)$ variables. The conditional count is consequently
+\[
+ \operatorname{Binomial}\bigl(|S||T|-|S\cap T|,p\bigr).
+\]
+Under $A_{ab}=1$, scalar Bernstein for the other row entries gives
+\[
+ |S|,|T|=np+O_L(\sqrt{np\ell}+\ell+1)
+\]
+outside an event of probability $O_L(n^{-L})$.
+Since $|S\cap T|\leq\min(|S|,|T|)$ and $np\gg\ell$, the conditional
+mean differs from $d$ by at most $C_Ld\sqrt{\ell/(np)}$.
+Another conditional scalar Bernstein bound contributes at most
+$C_L(\sqrt{d\ell}+\ell)$. The first-step count is therefore
+$d+O_L(\varepsilon_n)$.
+
+For diamonds in which $(a,b)$ is on the second step, expose instead the
+incoming edge families of $a,b$. The remaining connectors have target
+different from $a,b$, so the same conditional calculation gives
+$d+O_L(\varepsilon_n)$. These two types are disjoint and their sum is
+$D_{ab}$; they need not be independent. The failure bound is uniform
+conditional on every possible present edge, and a union bound over
+at most $n^2$ edges proves~\eqref{eq:D-bound}.
+No conditioning on a global degree event is added to the conditional
+binomial law. This finishes the proof of Proposition~\ref{prop:matrices}.
+
+\subsection{The uniform quadratic-form estimate}
+
+The estimates just proved hold on a single graph event and therefore
+apply simultaneously to graph-dependent cochains.
+
+\begin{proposition}\label{prop:energy}
+With probability tending to one under~\eqref{eq:condition}, every
+$f\in\R^E$ satisfies
+\begin{equation}\label{eq:energy-bound}
+ \left|\mathcal E_G(f)-
+ \bigl((2d+2\mu)\norm f^2-\mu\norm{r-c}^2-2p^2s^2\bigr)\right|
+ \leq C\varepsilon_n\norm f^2.
+\end{equation}
+In particular, on that event and for all sufficiently large $n$,
+\begin{equation}\label{eq:coercivity}
+ f\perp W\quad\Longrightarrow\quad
+          \mathcal E_G(f)\geq d\norm f^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+In~\eqref{eq:identity}, replacing the five matrix families by their main
+terms in Proposition~\ref{prop:matrices} gives respectively
+\[
+ 2d\norm f^2,\quad
+ -\mu(\norm r^2-\norm f^2),\quad
+ -\mu(\norm c^2-\norm f^2),\quad
+ 2\mu\ip c r,\quad -2p^2s^2.
+\]
+Their sum is the main form in~\eqref{eq:energy-bound}.
+For each fork family, the error is at most $C\varepsilon_n\norm f^2$
+because every edge appears in exactly one outgoing vector and exactly
+one incoming vector. For the mixed term use
+\[
+ \sum_v\norm{x_v}\norm{y_v}
+ \leq\left(\sum_v\norm{x_v}^2\right)^{1/2}
+      \left(\sum_v\norm{y_v}^2\right)^{1/2}=\norm f^2.
+\]
+The diagonal and opposite-edge errors have the same bound by
+\eqref{eq:D-bound} and~\eqref{eq:H-bound}. This proves
+\eqref{eq:energy-bound} uniformly in $f$.
+
+For $f\perp W$, pairing with gradients gives
+$\ip f{\delta h}=\sum_vh_v(c_v-r_v)=0$ for every $h$, so $r=c$.
+Pairing with $\one_E$ gives $s=0$. Finally
+\[
+ \frac{\varepsilon_n}{d}
+ =\frac{\ell^2}{\sqrt d}+\sqrt{\frac{\ell}{np}}
+        +\frac{\ell^2}{np}+\frac{\ell^3}{d}\longrightarrow0
+\]
+by~\eqref{eq:condition} and $np=(nd)^{1/3}$.
+Thus $(2d+2\mu)-C\varepsilon_n\geq d$ for all sufficiently large $n$,
+which proves~\eqref{eq:coercivity}.
+\end{proof}
+
+\section[Rational homology vanishes]{\hspace{0.6em}Rational homology vanishes}
+
+We complete the proof of Theorem~\ref{thm:main}.
+Let $K$ be the space of real edge cochains annihilating every diamond
+row. We already have $W\subseteq K$. On the event of
+Proposition~\ref{prop:energy}, any $f\in K\setminus W$ would have a
+nonzero orthogonal component $f_0\in W^\perp$. Since subtracting a
+member of $W$ preserves all diamond evaluations, $f_0\in K$ and
+$\mathcal E_G(f_0)=0$. This contradicts~\eqref{eq:coercivity}.
+Consequently
+\begin{equation}\label{eq:annihilator}
+ K=\im\delta+\R\one_E
+\end{equation}
+with probability tending to one.
+
+The graph also contains a transitive triangle with probability tending
+to one. To see this, fix $v=1$. Scalar Bernstein gives
+$|O_v|=(1+o(1))np$ with high probability. Conditional on $O_v$, all
+ordered edges between distinct vertices of $O_v$ are independent
+Bernoulli$(p)$: none has source $v$. Their probability of all being absent
+is at most
+\[
+ (1-p)^{|O_v|(|O_v|-1)}
+ \leq \exp\{-p|O_v|(|O_v|-1)\}
+ =\exp\{-(1+o(1))d\}\longrightarrow0.
+\]
+An edge $a\to b$ inside $O_v$ supplies $v\to a$, $a\to b$, $v\to b$.
+The allowed two-path $[v,a,b]$ has allowed boundary
+\[
+ [a,b]-[v,b]+[v,a].
+\]
+Every gradient evaluates to zero on this row, whereas $\one_E$ evaluates
+to $1$. Combining this triangle with~\eqref{eq:annihilator}, the common
+annihilator of the diamond and transitive-triangle rows is exactly
+$\im\delta$.
+
+Let $\mathcal B\subseteq\R^E$ be the span of these rows and let
+$\partial_1:\R^E\to\R^n$ be the vertex-incidence boundary.
+All the rows are cycles, and
+\[
+ \mathcal B^\perp=\im\delta=(\ker\partial_1)^\perp.
+\]
+Finite-dimensional duality yields $\mathcal B=\ker\partial_1$.
+The incidence matrix and the matrix of the displayed boundary rows have
+integer entries, so each has the same rank over $\Q$ and $\R$:
+rank is the largest order of a nonzero minor. Therefore the rational span
+of these valid non-regular boundaries is the full rational edge-cycle
+space. It is contained in $\partial\Omega_2$, which is itself contained
+in $\ker\partial_1$. Their equality proves
+$\beta_1^{\rm nr}(G(n,p_n))=0$ on an event of probability tending to one,
+as required.
+
+\paragraph{AI assistance.}
+OpenAI Codex was used substantially for proof exploration, manuscript
+drafting, and automated mathematical checking. Automated checks do not
+constitute independent human peer review. The paper supplies the full
+argument and its external concentration input for further verification.
+
+\begin{thebibliography}{9}
+\bibitem{Chaplin}
+T. Chaplin,
+\emph{First Betti number of the path homology of random directed graphs},
+Journal of Applied and Computational Topology \textbf{8} (2024), 1503--1549.
+\href{https://doi.org/10.1007/s41468-022-00108-3}{doi:10.1007/s41468-022-00108-3}.
+
+\bibitem{Tropp}
+J. A. Tropp,
+\emph{User-Friendly Tail Bounds for Sums of Random Matrices},
+Foundations of Computational Mathematics \textbf{12} (2012), 389--434.
+\href{https://doi.org/10.1007/s10208-011-9099-z}{doi:10.1007/s10208-011-9099-z}.
+Author preprint, revised June 15, 2011,
+\href{https://tropp.caltech.edu/papers/Tro11-User-Friendly-preprint.pdf}{Theorems 1.4 and 1.6}.
+\end{thebibliography}
+\end{document}
