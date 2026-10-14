@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\usepackage{needspace}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\F}{\mathbb F_2}
+\newcommand{\R}{\mathbb R}
+\newcommand{\triangleop}{\mathbin{\triangle}}
+\DeclareMathOperator{\area}{area}
+\title{Small mod-two area four-cycles in drawings\protect\\ with bounded pairwise intersections}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+\hypersetup{pdftitle={Small mod-two area four-cycles in drawings with bounded pairwise intersections},pdfauthor={Kaiwen Jin}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Fix a bound on the number of meetings between any two edges of a complete graph drawn in the unit square. We prove that, as the number of vertices tends to infinity, some nonzero mod-two cycle has area tending to zero, uniformly over all such drawings. For at least four vertices the cycle can be chosen to be an abstract four-cycle, although its drawing may cross itself. The proof compares triangles through a common edge. Their parity regions have bounded shattering dimension, because a union of a fixed number of these triangles has only quadratically many complementary faces. An elementary sampling argument then finds two regions with small symmetric difference. We give an explicit, nonoptimal bound.
+\end{abstract}
+
+\section{The problem and the result}
+
+Small-area questions for straight-line complete graphs have topological counterparts in which edges may curve and cross. Hubard and Suk study these questions in connection with disjoint faces and show that, without a uniform bound on edge-pair intersections, every nonzero mod-two cycle can have area bounded below by an absolute positive constant \cite[Section~5, Proposition~5.1]{HS}. For simple drawings, in which any two edges meet at most once including a common endpoint, Zeng proves an $O(1/n)$ bound for a four-cycle enclosing a face \cite[Theorem~1.1 and Corollary~1.2]{Zeng}. We consider a fixed meeting bound $k\ge2$, allowing repeated crossings. The conclusion uses crossing parity and does not require a Jordan curve. This is the target of AIM problem~635 \cite{AIM}.
+
+Write $Q=[0,1]^2$. An admissible drawing of $K_n$ has distinct vertices in $Q$ and represents every edge by a continuous injective piecewise smooth arc in $Q$. Arcs avoid other vertices. Interior meetings are transverse crossings, and each pair of distinct edges has at most $k$ meeting points, counting a common endpoint. Multiple arcs may meet at one point.
+
+A cycle over $\F$ is a subset of the original graph edges with even degree at every original vertex. It is nonzero if the subset is nonempty, and it may be disconnected. For such a cycle $z$, its odd-parity region consists of points whose generic path to the unbounded complementary component crosses $z$ an odd number of times. Let $A(z)$ be the planar Lebesgue measure of this region. This is the mod-two interior area, also when the drawing of $z$ crosses itself. Values on the drawn arcs do not affect area.
+
+\Needspace{10\baselineskip}
+\begin{theorem}\label{thm:main}
+Fix $k\ge2$. Choose an integer $s\ge1$ such that $2^s>10ks^2$, and put $D=2^s-1$. For integers $n\ge3$, set $m=n-2$ and
+\begin{equation}\label{eq:epsilon}
+\varepsilon_k(n)=
+\begin{cases}
+1,&m<4^D,\\[2pt]
+\displaystyle\min\left\{1,\frac{12\log m}{m^{1/D}}\right\},&m\ge4^D.
+\end{cases}
+\end{equation}
+Every admissible drawing contains a nonzero original $\F$-cycle $z$ with $A(z)\le\varepsilon_k(n)$. If $n\ge4$, $z$ can be chosen to be an abstract four-cycle. For fixed $k$, $\varepsilon_k(n)\to0$ as $n\to\infty$, uniformly over drawings.
+\end{theorem}
+
+Here $\log$ is the natural logarithm, and $s,D$ depend only on $k$. Such an $s$ exists since $2^s/s^2$ is unbounded: for $s\ge4$ its consecutive ratio is at least $32/25$. The bound in \eqref{eq:epsilon} is weak and gives neither an optimal rate nor a geometrically simple cycle. The argument uses classical set-system duality and trace counting \cite[Lemma~1.8 and Proposition~2.12]{Assouad}; the forms needed below are proved in full.
+
+The useful comparison is between two triangles sharing an edge. That edge cancels over $\F$, and the difference is a four-cycle of original edges. The meeting bound controls how many parity patterns several triangles can realize, even when their individual regions have complicated shapes.
+
+\section{Parity regions and finite trace counting}
+
+Let $\Gamma$ be the union of all drawn edges, and let $X=Q\setminus\Gamma$. Then $X$ has Lebesgue measure one. Indeed, a $C^1$ arc on a compact parameter interval is Lipschitz. Dividing that interval into $N$ equal pieces covers its image by $N$ squares with total area $O(1/N)$, proving zero area. If derivatives are unbounded at a smooth piece's endpoints, exhaust its interior by compact subintervals and add the endpoint images. Countable subadditivity gives the same conclusion. Finite unions handle all pieces and all original edges. Thus no uniform length or derivative bound is required. We denote Lebesgue measure by $\mu$, with $\mu(Q)=1$; the elementary measure properties used here are recorded in \cite[Section~1.2]{Tao}.
+
+For any cycle $z$, write $p_z(x)\in\F$ for its crossing parity at $x\in X$. It is constant on each face of its support: a path within that face adds no crossing before a path to infinity. Faces are open, so the odd-parity set is measurable. Outside $Q$ parity is zero, and consequently $A(z)\le1$ for every cycle. Counting along a common generic path gives
+\begin{equation}\label{eq:parity}
+p_{z+z'}=p_z+p_{z'}\quad\text{on }X,
+\end{equation}
+where $z+z'$ is symmetric difference of original edge subsets.
+
+Choose vertices $a,b$ and label the others $v_1,\ldots,v_m$. Let
+\[
+t_i=\{ab,av_i,bv_i\},\qquad R_i=\{x\in X:p_{t_i}(x)=1\}.
+\]
+For $i\ne j$, equation~\eqref{eq:parity} implies
+\begin{equation}\label{eq:distance}
+A(t_i+t_j)=\mu(R_i\triangleop R_j).
+\end{equation}
+The common edge $ab$ cancels, leaving the four distinct original edges $av_i,bv_i,av_j,bv_j$. Their degrees are two at $a,b,v_i,v_j$ and zero elsewhere. Hence this is a nonzero original four-cycle, even if its parity area is zero.
+
+\begin{lemma}\label{lem:patterns}
+For any $r\ge1$ distinct indices from $\{1,\ldots,m\}$, the number of their membership vectors realized by points of $X$ is at most $10kr^2$.
+\end{lemma}
+\begin{proof}
+Their triangles use $q=2r+1$ distinct original arcs, counting $ab$ once. Let $I$ be the sum of pairwise meeting counts among these arcs. Then $I\le kq(q-1)/2$. Subdivide the actual union at all endpoints and interior meetings. If $u_e$ is the number of distinct interior subdivision points on an original arc $e$, then
+\[
+\sum_e u_e\le2I.
+\]
+At a meeting of $h\ge2$ arcs, the number of arc incidences $h$ is at most $2\binom h2$; common endpoints contribute to $I$ without adding interior subdivisions. The number of resulting subarcs therefore satisfies
+\[
+E=\sum_e(u_e+1)\le q+2I\le q+kq(q-1).
+\]
+All intersections have become vertices. Injectivity and finite pairwise meetings ensure that the subarc interiors are disjoint, so this is a finite plane multigraph, with possible parallel edges. It is connected through $a,b$ and $ab$. Euler's formula for connected plane multigraphs \cite[Theorem~15.2.1]{Morris} gives $F=E-V+2\le E+1$ for the number of complementary faces including the unbounded one.
+
+Every selected parity bit is constant on a face of this union. Other edges of the full drawing may remove or split parts of that face within $X$, but cannot change those bits. Thus the number of realized vectors is at most
+\[
+F\le2r+2+k(2r+1)(2r)\le10kr^2,
+\]
+since $2r+2\le4r^2$, $(2r+1)(2r)\le6r^2$, and $k\ge1$.
+\end{proof}
+
+A family of subsets of $X$ \emph{shatters} a finite set $S$ if its traces on $S$ comprise all subsets of $S$. It has shattering dimension at most $d$ if no set of $d+1$ points is shattered. Duplicate members do not affect this property.
+
+\begin{lemma}\label{lem:dimension}
+The family $\{R_i:1\le i\le m\}$ has shattering dimension at most $D=2^s-1$.
+\end{lemma}
+\begin{proof}
+Suppose that $2^s$ distinct points are shattered, and label them $x_w$ for $w\in\{0,1\}^s$. For each coordinate $j$ choose a member whose trace is precisely $\{x_w:w_j=1\}$. These $s$ traces are distinct, so the member indices are distinct. Their vectors at the points $x_w$ realize all $2^s$ binary words. Lemma~\ref{lem:patterns} bounds this number by $10ks^2<2^s$, a contradiction. A larger shattered set would contain a shattered subset of size $2^s$.
+\end{proof}
+
+We next pass from this point-shattering bound to a bound on the number of traces. This is the classical finite trace inequality, followed by a convenient elementary estimate.
+
+\begin{lemma}\label{lem:sauer}
+A family of subsets of a $t$-element set with shattering dimension at most $d\ge0$ has at most $\sum_{j=0}^d\binom tj$ distinct members, where $\binom tj=0$ for $j>t$. Consequently, the sets $R_i$ have at most $(t+1)^D$ distinct traces on any set of at most $t$ points.
+\end{lemma}
+\begin{proof}
+Write $B(t,d)=\sum_{j=0}^d\binom tj$. For $t=0$ the bound is one. For $d=0$, two distinct subsets differ at a point and shatter that singleton, so there is at most one member.
+
+For $t,d\ge1$, remove a point $x$. Let $H_0,H_1$ be the trace families of members omitting and containing $x$, respectively. Their union has shattering dimension at most $d$, and their intersection has dimension at most $d-1$: shattering $d$ points in both forms would shatter those points together with $x$. Counting gives $|H|=|H_0\cup H_1|+|H_0\cap H_1|$. Induction on $t$ and Pascal's identity give $|H|\le B(t-1,d)+B(t-1,d-1)=B(t,d)$. Empty intersections cause no exception.
+
+For $D\ge1$, encode a subset of $\{1,\ldots,t\}$ of size at most $D$ by its increasing indices padded with zeros to a $D$-tuple. This injection gives $B(t,D)\le(t+1)^D$. Lemma~\ref{lem:dimension} now proves the asserted trace bound, also for fewer than $t$ points.
+\end{proof}
+
+\section{A close pair and the original cycle}
+
+We complete the proof of Theorem~\ref{thm:main}. Suppose first that $m\ge4^D$. Set
+\[
+u=m^{1/D}\ge4,\qquad t=\lfloor u/2\rfloor,\qquad \delta=12\log m/u.
+\]
+Then $t\ge u/4$ and $t+1\le u/2+1<u$, so
+\begin{equation}\label{eq:strict}
+(t+1)^D<m.
+\end{equation}
+If $\delta\ge1$, the area bound $A(z)\le1$ suffices. Otherwise suppose, towards a contradiction, that $d_{ij}:=\mu(R_i\triangleop R_j)>\delta$ for every $i\ne j$.
+
+Partition $X$ into the finitely many cells with prescribed membership vector in all $m$ sets. Give a cell weight equal to its measure. These weights sum to one. Discard zero-weight cells and choose a representative of every positive-weight cell. Give a $t$-tuple of such cells the product of their weights; finite distributivity shows that the tuple weights also sum to one.
+
+For a fixed pair $i,j$, cells on which their bits agree have total weight $1-d_{ij}$. The total weight of tuples on which their two traces agree is therefore exactly $(1-d_{ij})^t$. Since $1-v\le e^{-v}$ for $v\ge0$,
+\[
+(1-d_{ij})^t\le e^{-\delta t}\le e^{-3\log m}=m^{-3}.
+\]
+The total weight of tuples having any trace collision is at most
+\[
+\binom m2 m^{-3}=\frac{m-1}{2m^2}<1.
+\]
+Thus some positive-weight tuple has all $m$ traces distinct on its representative points. Repeated representatives are harmless: its set of distinct points has size at most $t$, and all $m$ traces remain distinct there. This contradicts Lemma~\ref{lem:sauer} and \eqref{eq:strict}. Some pair therefore has $d_{ij}\le\delta$. Equation~\eqref{eq:distance} supplies the required original four-cycle.
+
+For $m<4^D$, use the triangle when $n=3$ and any original four-cycle when $n\ge4$; their area is at most one. This also handles the $\delta\ge1$ case above. All branches of \eqref{eq:epsilon}, including equality at the thresholds, are covered.
+
+Finally fix $k$, and hence $D$. Put $\alpha=1/D>0$. For $m\ge1$,
+\[
+\log m=\int_1^m x^{-1}\,dx
+\le\int_1^m x^{-1+\alpha/2}\,dx
+=\frac{2}{\alpha}(m^{\alpha/2}-1).
+\]
+It follows that $\log m/m^{1/D}\to0$. The finite initial branch disappears as $n\to\infty$, proving the stated uniform limit.\hfill$\square$
+
+\paragraph{AI-use statement.}
+OpenAI Codex assisted in developing the argument, checking sources, and drafting and reviewing this manuscript. The mathematical claim is submitted for independent review.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{Assouad} P. Assouad, \emph{Densit\'e et dimension}, Annales de l'Institut Fourier \textbf{33}(3) (1983), 233--282. \href{https://doi.org/10.5802/aif.938}{doi:10.5802/aif.938}.
+\bibitem{HS} A. Hubard and A. Suk, \emph{Disjoint faces in simple drawings of the complete graph and topological Heilbronn problems}, arXiv:2212.01311v1 (2022). \url{https://arxiv.org/abs/2212.01311v1}.
+\bibitem{Zeng} J. Zeng, \emph{Note on disjoint faces in simple topological graphs}, arXiv:2308.04742v3. \url{https://arxiv.org/abs/2308.04742v3}.
+\bibitem{Morris} J. Morris, \emph{Combinatorics: an upper-level introductory course in enumeration, graph theory, and design theory}, version 2.1.1, March 2023, Section 15.2. \href{https://www.cs.uleth.ca/~morris/Combinatorics/html/sect_planar-EulerFla.html}{Author-hosted online text}.
+\bibitem{Tao} T. Tao, \emph{An Introduction to Measure Theory}, Graduate Studies in Mathematics 126, American Mathematical Society, 2011. \href{https://terrytao.wordpress.com/books/an-introduction-to-measure-theory/}{Author's preliminary version}.
+\bibitem{AIM} AIM problem catalogue, \emph{635. Small mod-two area cycles in drawings with bounded pairwise intersections}, revision a153f469ee0ea64e876b2ad97c79d252c19a3e22. \href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/635-bounded-crossing-heilbronn.md}{Pinned problem statement}.
+\end{thebibliography}
+\end{document}
