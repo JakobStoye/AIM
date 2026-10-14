@@ -1,0 +1,290 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A counterexample to the facet bound for reflexive polytopes},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\inte}{\operatorname{int}}
+\newcommand{\vertices}{\operatorname{Vert}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{A counterexample to the facet bound\newline for reflexive polytopes}
+\author{Kaiwen Jin\\[2pt]\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A lattice polytope is reflexive if it contains the origin in its interior
+and its polar is also a lattice polytope.
+We construct a $45$-dimensional reflexive lattice polytope with
+$2^{32}\binom{40}{8}+5$ facets, exceeding $6^{45/2}$.
+This disproves the unrestricted facet bound conjectured by Nill.
+The construction starts with a lattice polytope having many vertices and
+a polar whose denominators divide $32$. Five successive pyramids multiply
+the original polar coordinates by $32$ while adding only five vertices.
+Taking the polar gives the required counterexample.
+\end{abstract}
+
+\section{The facet bound}
+
+A lattice polytope in $\mathbb R^d$ is the convex hull of finitely many
+points of $\mathbb Z^d$. A full-dimensional lattice polytope $P$ is
+\emph{reflexive} if $0\in\inte P$ and its polar
+\[
+ P^*=\{y\in\mathbb R^d:\langle x,y\rangle\leq1
+                         \text{ for every }x\in P\}
+\]
+is also a lattice polytope. Here interior always means ordinary Euclidean
+interior. Reflexive polytopes occur in the study of Gorenstein toric Fano
+varieties; their face numbers describe part of the associated combinatorial
+complexity \cite{Nill}.
+
+Nill conjectured that a $d$-dimensional reflexive polytope has at most
+$6^{d/2}$ vertices \cite[Conjecture~5.2]{Nill}. Polarity interchanges vertices
+and facets and preserves reflexivity, so this is equivalent to
+\begin{equation}\label{eq:bound}
+ f_{d-1}(P)\leq6^{d/2},
+\end{equation}
+where $f_{d-1}(P)$ is the number of facets of $P$.
+Mori, Mori and Ohsugi restate this facet conjecture and prove the bound for
+twinned chain polytopes \cite[Conjecture~1.1 and Theorem~1.2]{MMO}.
+The unrestricted statement is false.
+
+\begin{theorem}\label{thm:main}
+There exists a $45$-dimensional reflexive lattice polytope $P$ such that
+\[
+ f_{44}(P)=330303106984181765>6^{45/2}.
+\]
+\end{theorem}
+
+The construction uses a cube cut by a bound on the sum of the absolute
+coordinates. It has many integral vertices, but its polar is initially
+rational. A pyramid with base at height $1$ and apex at height $-1$ doubles
+the old polar coordinates. Repeating this operation clears the denominators
+at a cost of only one dimension and one vertex per step.
+The general idea of realizing lattice polytopes as faces of reflexive
+polytopes predates this construction: Haase and Melnikov prove that every
+lattice polytope has such an embedding \cite[Proposition~2.2]{HM}.
+Here the explicit dimension and vertex count give the strict violation
+of \eqref{eq:bound}. We do not determine the smallest dimension in which
+that bound fails.
+
+\section{A clipped cube and its pyramids}
+
+For a polytope $K$, write $\vertices(K)$ for its vertex set and
+$h_K(y)=\max_{x\in K}\langle x,y\rangle$ for its support function.
+We use the elementary identity $K^{**}=K$ for a full-dimensional
+polytope containing $0$ in its interior. One direct justification is as
+follows. If $z\notin K$, choose a nearest point $q\in K$ and set $a=z-q$.
+Minimality along every segment from $q$ to $x\in K$ gives
+$\langle a,x-q\rangle\leq0$. Thus
+$h_K(a)=\langle a,q\rangle<\langle a,z\rangle$.
+An interior ball implies $h_K(a)>0$, so $a/h_K(a)\in K^*$ separates $z$
+from $K^{**}$. The other inclusion follows from the definition.
+An interior ball in $K$ bounds $K^*$, and boundedness of $K$ supplies an
+interior ball in $K^*$; in particular both polars have full dimension.
+
+For integers $m\geq2$ and $1\leq r<m$, define
+\begin{equation}\label{eq:base}
+ R_{m,r}=\left\{x\in\mathbb R^m:
+           |x_i|\leq1\ (1\leq i\leq m),\quad
+           \sum_{i=1}^m|x_i|\leq r\right\}.
+\end{equation}
+Let $e_i$ denote the $i$th coordinate unit vector, and write
+$\supp v=\{i:v_i\neq0\}$ for $v\in\mathbb R^m$.
+
+\begin{lemma}\label{lem:base}
+The polytope $R_{m,r}$ has $0$ in its interior and
+\begin{align}
+ \vertices(R_{m,r})&=\{v\in\{-1,0,1\}^m:|\supp v|=r\},
+                                                    \label{eq:basevertices}\\
+ |\vertices(R_{m,r})|&=2^r\binom mr,                     \label{eq:basecount}\\
+ R_{m,r}^*&=\conv\left(\{\pm e_i:1\leq i\leq m\}
+                    \cup\{s/r:s\in\{-1,1\}^m\}\right).
+                                                    \label{eq:basepolar}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The last constraint in \eqref{eq:base} is equivalent to
+$\langle s,x\rangle\leq r$ for every $s\in\{-1,1\}^m$.
+Hence $R_{m,r}$ is a bounded intersection of finitely many halfspaces.
+All inequalities are strict in a neighborhood of $0$.
+
+In any fixed orthant, set $z_i=|x_i|$. The constraints become
+$0\leq z_i\leq1$ and $\sum_i z_i\leq r$.
+If the sum constraint is inactive, a fractional coordinate can be perturbed
+in both directions. If it is active and two coordinates are fractional,
+they can be perturbed in opposite directions. Exactly one fractional
+coordinate is impossible when the sum is the integer $r$ and the other
+coordinates are $0$ or $1$. Thus every vertex of the orthant section has
+only $0$ and $1$ coordinates. A vertex of the whole polytope must be a
+vertex of each orthant section containing it, so it is ternary with at most
+$r$ nonzero coordinates.
+
+If a ternary vector has fewer than $r$ nonzero coordinates, choose a zero
+coordinate $j$. The vector is the midpoint of $x+e_j$ and $x-e_j$, both
+in $R_{m,r}$, and therefore is not a vertex. Conversely, a ternary vector
+$v$ with exactly $r$ nonzero coordinates uniquely maximizes
+$\langle v,x\rangle$: equality with the maximum $r$ fixes all supported
+coordinates, and the sum bound forces the remaining coordinates to vanish.
+This proves \eqref{eq:basevertices}; choosing the support and its signs
+gives \eqref{eq:basecount}.
+
+Let $K$ be the convex hull on the right of \eqref{eq:basepolar}.
+It contains $\conv\{\pm e_i\}$ and thus has $0$ in its interior.
+Its polar inequalities are exactly \eqref{eq:base}, so $K^*=R_{m,r}$.
+Bipolarity gives \eqref{eq:basepolar}. The displayed list is a generating
+set; its points need not all be vertices.
+\end{proof}
+
+For any full-dimensional polytope $R\subset\mathbb R^a$ containing $0$ in
+its interior, form the pyramid
+\begin{equation}\label{eq:pyramid}
+ T(R)=\conv\big((R\times\{1\})\cup\{(0,-1)\}\big).
+\end{equation}
+
+\begin{lemma}\label{lem:pyramid}
+The polytope $T(R)$ has dimension $a+1$, contains $0$ in its interior,
+and has the vertices $(v,1)$ for $v\in\vertices(R)$ together with $(0,-1)$.
+Moreover,
+\begin{equation}\label{eq:pyramidpolar}
+ T(R)^*=\conv\big((2R^*\times\{-1\})\cup\{(0,1)\}\big).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The base is an $a$-dimensional exposed face, and the apex lies outside its
+affine hull. At height $t\in(-1,1)$ the section is $\frac{1+t}{2}R$.
+An interior ball in $R$ therefore supplies a neighborhood of $(0,0)$
+in $T(R)$. The base vertices remain vertices, since any decomposition at
+height $1$ stays in the base. The apex uniquely minimizes the last
+coordinate, and a finite convex hull has no vertices outside its generators.
+
+Testing the base and apex in the polar definition gives
+\[
+ (y,t)\in T(R)^*\quad\Longleftrightarrow\quad
+ t\geq-1,\qquad h_R(y)+t\leq1.
+\]
+Since $h_R(y)\geq0$, one also has $t\leq1$. For $t<1$ set
+$\lambda=(1-t)/2$ and $u=y/(1-t)$. Then $u\in R^*$ and
+\[
+ (y,t)=\lambda(2u,-1)+(1-\lambda)(0,1),\qquad 0<\lambda\leq1.
+\]
+At $t=1$, the inequality $h_R(y)\leq0$ and an interior ball force $y=0$.
+Conversely, every $(2u,-1)$ with $u\in R^*$ and the point $(0,1)$ satisfy
+the polar inequalities. This proves \eqref{eq:pyramidpolar}.
+\end{proof}
+
+\section{An integral polar and the counterexample}
+
+Fix integers $k\geq1$ and $m>2^k$, put $r=2^k$, and define
+$Q_0=R_{m,r}$ and $Q_j=T(Q_{j-1})$ for $1\leq j\leq k$.
+The base polar in \eqref{eq:basepolar} has denominators dividing $2^k$.
+Formula \eqref{eq:pyramidpolar} doubles every old coordinate at each step.
+We record also the new apex coordinates to check integrality of the whole
+polar.
+
+\begin{proposition}\label{prop:family}
+The polytope $Q_k$ is reflexive, has dimension $m+k$, and has
+\[
+ |\vertices(Q_k)|=2^{2^k}\binom{m}{2^k}+k.
+\]
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:base} gives integral base vertices, and
+Lemma~\ref{lem:pyramid} preserves them while adding one integral apex per
+step. All $Q_j$ are full-dimensional and contain $0$ in their interiors.
+More explicitly, the vertices of $Q_k$ are
+\[
+ (v,1,\ldots,1)\quad(v\in\vertices(R_{m,r})),\qquad
+ (0^m,0^{j-1},-1,1^{k-j})\quad(1\leq j\leq k),
+\]
+where $0^b$ and $1^b$ mean strings of $b$ zeros and ones, respectively;
+a string of length zero is omitted. These points are distinct, giving
+the asserted count.
+
+Put $c_i=-2^{k-i}$ for $1\leq i\leq k$.
+Iterating \eqref{eq:pyramidpolar} and using $r=2^k$ gives a generating set
+of $Q_k^*$ consisting of
+\begin{align*}
+ &(\pm2^k e_i,c_1,\ldots,c_k) &&(1\leq i\leq m),\\
+ &(s,c_1,\ldots,c_k) &&(s\in\{-1,1\}^m),\\
+ &b_j=(0^m,0^{j-1},2^{k-j},c_{j+1},\ldots,c_k)
+                                      &&(1\leq j\leq k).
+\end{align*}
+Indeed, each step doubles all old coordinates and appends $-1$.
+The polar apex introduced at step $j$ is then doubled $k-j$ times,
+which gives $b_j$. This accounts for every generator by induction.
+All displayed coordinates are integers, so $Q_k^*$ is a lattice polytope.
+Together with the already established properties of $Q_k$, this proves
+reflexivity. No intermediate polar is assumed integral.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Take $m=40$, $r=32$, $k=5$ and $P=Q_5^*$.
+Proposition~\ref{prop:family} shows that $Q_5$ and $P$ are lattice
+polytopes. Both have dimension $45$ and contain $0$ in their interiors,
+and $P^*=Q_5$. Thus $P$ is reflexive in the standard integer lattice.
+
+For completeness, each vertex $q$ of a full-dimensional polytope $Q$ with
+$0\in\inte Q$ gives a facet $\langle q,y\rangle=1$ of $Q^*$.
+Separate $q$ strictly from the convex hull of the other vertices to obtain
+a functional $c$ uniquely maximized at $q$. Its support value is positive,
+so $y=c/h_Q(c)$ satisfies this one polar inequality with equality and all
+other vertex inequalities strictly. Small perturbations within that
+hyperplane remain feasible, proving that the face has dimension
+$\dim Q-1$. Conversely, take $\dim Q$ affinely independent points of a
+facet of $Q^*$ and average them. At least one vertex inequality is active
+at the average; averaging shows it is active at all the chosen points.
+Its hyperplane is the facet's affine hull. Distinct vertices give distinct
+hyperplanes, so this correspondence is a bijection.
+
+Consequently,
+\[
+ F:=f_{44}(P)=|\vertices(Q_5)|
+   =2^{32}\binom{40}{32}+5
+   =2^{32}\binom{40}{8}+5
+   =330303106984181765.
+\]
+The calculation uses $\binom{40}{8}=76904685$ and $2^{32}=4294967296$.
+The comparison can be made entirely with integers:
+\begin{align*}
+ F^2&=109100142483403824664737926558515225,\\
+ 6^{45}&=103945637534048876111514866313854976,\\
+ F^2-6^{45}&=5154504949354948553223060244660249>0.
+\end{align*}
+Both quantities being compared are positive, so $F>6^{45/2}$.
+This proves the theorem.
+\end{proof}
+
+\begin{thebibliography}{3}
+\bibitem{HM}
+Christian Haase and Ilarion V. Melnikov,
+\emph{The reflexive dimension of a lattice polytope},
+arXiv:math/0406485v1 (2004).
+\href{https://arxiv.org/abs/math/0406485v1}{arXiv:math/0406485v1}.
+
+\bibitem{MMO}
+Aki Mori, Kenta Mori and Hidefumi Ohsugi,
+\emph{Facet Numbers of Non-Centrally Symmetric Reflexive Polytopes Arising
+from Posets}, Discrete \& Computational Geometry (2026).
+\href{https://doi.org/10.1007/s00454-026-00879-x}{doi:10.1007/s00454-026-00879-x}.
+
+\bibitem{Nill}
+Benjamin Nill, \emph{Gorenstein toric Fano varieties},
+arXiv:math/0405448v1 (2004).
+\href{https://arxiv.org/abs/math/0405448v1}{arXiv:math/0405448v1}.
+\end{thebibliography}
+
+\paragraph{AI use.}
+OpenAI Codex assisted the mathematical exploration and proof development,
+manuscript drafting, literature checks, and exact-arithmetic checks.
+\end{document}
