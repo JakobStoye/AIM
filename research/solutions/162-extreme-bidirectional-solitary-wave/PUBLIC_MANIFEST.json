@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "title": "An extreme solitary wave for the bidirectional Whitham system",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "date": "2026-10-15",
+  "problem": {
+    "id": "162",
+    "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/162-extreme-bidirectional-solitary-wave.md"
+  },
+  "evidence_type": "Analytic theorem; complete affirmative solution claim for review",
+  "files": [
+    {
+      "path": "Makefile",
+      "purpose": "Self-contained LaTeX build entry point with shell escape disabled",
+      "bytes": 173,
+      "sha256": "760b8f61fb8ab10728eb2377daea4b3728e613ceda6a037f135459311cfe1f77"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Result scope, material links, build and factual AI-use/review disclosure",
+      "bytes": 2684,
+      "sha256": "2c1a540956bb12ce9d7d43fe2a8d3c54708580c8baaa36d3192a258e80f135d6"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Comparison of the finished paper with the pinned public problem and public source roles",
+      "bytes": 3558,
+      "sha256": "83c200b47db60574cbe07d1bf441653d6fcf980646de9e6f33d1f8dbc7f4ce4b"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Complete eleven-page mathematical manuscript",
+      "bytes": 337697,
+      "sha256": "8445bf95c144e1a3e6cb0309631b2152a96d38f0836c4a516c74748e9b600368"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Complete editable mathematical manuscript and bibliography",
+      "bytes": 36333,
+      "sha256": "dec4315c329e8b7679ef7c0f10c9822aa3f655c33887e5e016fca0f367bb329f"
+    }
+  ]
+}
