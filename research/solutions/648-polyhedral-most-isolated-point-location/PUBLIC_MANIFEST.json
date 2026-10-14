@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "AIM 648: polyhedral isolation location",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic proof claim",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, AI disclosure and compilation instructions",
+      "sha256": "810f935a02e3d42fa7fa21d6ae8d125591e9a62b49ba689b47b243b117e79ce5"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original public target to manuscript correspondence",
+      "sha256": "478405433348536a7767fcfa9cf367c94cc947d31a17f14c23c346f5563c48f5"
+    },
+    {
+      "path": "paper/polyhedral_isolation.tex",
+      "purpose": "Complete standalone mathematical manuscript source",
+      "sha256": "d1287a0f645889d729ab0c19ce9925433a7a35fb43a15fd0be9efd4f47478b6f"
+    },
+    {
+      "path": "paper/polyhedral_isolation.pdf",
+      "purpose": "Eight-page mathematical manuscript PDF",
+      "sha256": "8c113ab24b6ea4327aa04a92b5304297f2723ae6b04197657ca0f394aa29fde1"
+    }
+  ]
+}
