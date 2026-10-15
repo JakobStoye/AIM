@@ -1,0 +1,578 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{aliascnt}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\E}{\mathcal E}
+\newcommand{\vol}{\operatorname{Vol}}
+\title{Large Steklov eigenvalues with a prescribed embedded boundary}
+\author{Kaiwen Jin\\[2pt]\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+\hypersetup{pdftitle={Large Steklov eigenvalues with a prescribed embedded boundary},pdfauthor={Kaiwen Jin},pdfsubject={Geometric spectral theory}}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For every smooth compact connected embedded boundary of positive dimension,
+the first positive Steklov eigenvalue of its smooth embedded fillings is
+unbounded, provided the ambient codimension is at least two and a filling
+exists. The boundary remains fixed pointwise, and the fillings carry their
+induced Euclidean metrics; volume and topology are unrestricted. We give a
+detailed proof using intrinsic large-eigenvalue constructions and relative
+smooth approximation of short embeddings. This follows the relative
+Nash--Kuiper mechanism announced by Girouard and Polymerakis, with the
+boundary and arbitrary-curve applications written out explicitly.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+The Steklov spectrum measures harmonic functions through their boundary
+values. On a smooth compact connected Riemannian manifold $(M,g)$ with
+nonempty boundary, it is the spectrum of
+\[
+ \Delta_g u=0\quad\hbox{in }M,\qquad
+ \partial_\nu u=\sigma u\quad\hbox{on }\partial M,
+\]
+where $\nu$ is the outward unit normal. We write
+$0=\sigma_0<\sigma_1\leq\sigma_2\leq\cdots$.
+Fixing the boundary metric still leaves considerable freedom in the
+interior: in dimensions at least three, conformal changes can make
+$\sigma_1$ arbitrarily large while leaving that boundary metric unchanged
+\cite{CEG}. Requiring the whole manifold to be embedded in one Euclidean
+space, with a prescribed embedded boundary, imposes an additional
+geometric constraint.
+
+Colbois--Girouard--Gittins \cite[Theorem~1.1]{CGG} bound the Steklov
+eigenvalues of such submanifolds in terms of their fixed boundary and
+their volume. They ask in \cite[Remark~1.7]{CGG} whether the first
+positive eigenvalue can nevertheless tend to infinity when the boundary
+is fixed and the volume is free. Girouard, reporting joint work with
+Polymerakis, subsequently announced a relative Nash--Kuiper construction
+for transferring intrinsic examples to embedded ones, and described the
+case of a circle in $\R^3$ \cite[p.~2075]{GP}. We follow that mechanism.
+The purpose of this note is to give a detailed relative approximation
+argument and to carry out its application to every admissible smooth
+embedded boundary, including arbitrary embedded curves.
+
+\begin{theorem}\label{thm:main}
+Let $d\geq1$ and $m\geq d+2$ be integers. Let
+$\Sigma^d\subset\R^m$ be a smooth compact connected embedded submanifold
+without boundary which bounds at least one smooth compact connected
+embedded $(d+1)$-dimensional submanifold. For every $A>0$ there is a
+smooth compact connected embedded filling $\Omega\subset\R^m$ such that
+\[
+ \partial\Omega=\Sigma,\qquad \sigma_1(\Omega)>A,
+\]
+where $\Omega$ has its induced Euclidean metric.
+\end{theorem}
+
+Thus, if $\mathcal F(\Sigma)$ denotes the entire class of these fillings,
+$\sup_{\Omega\in\mathcal F(\Sigma)}\sigma_1(\Omega)=\infty$.
+The theorem fixes the boundary as an ambient subset, rather than merely
+its intrinsic isometry class. It allows both volume and topology to vary.
+The volume dependence in the upper bound of \cite{CGG} is consequently
+necessary in this setting.
+
+An intrinsic large-eigenvalue metric is generally not the metric induced
+by the chosen embedding. We first match it to the induced metric on a
+shrinking boundary collar. We then enlarge it conformally in the interior,
+making the original embedding short: its induced metric is no larger
+than the target metric. This does not lower the Steklov eigenvalue.
+Finitely many local primitive-metric additions approximate
+the enlarged metric by the metric of a smooth embedding fixed on that
+collar. Uniform metric approximation controls the energy quotient and
+therefore retains the large eigenvalue. For surfaces, conformal
+enlargement leaves this energy unchanged; the intrinsic eigenvalues
+instead become large by allowing genus to increase, using the
+connected-boundary examples of \cite{CGR}.
+
+Section~\ref{sec:relative} proves the relative approximation and spectral
+comparison. Section~\ref{sec:proof} applies them in the two filling
+dimensions $n=d+1\geq3$ and $n=2$. All embeddings below take values in
+the original ambient $\R^m$, and $\sigma_1$ always means the first
+positive eigenvalue.
+
+\section{Relative approximation and the Steklov quotient}\label{sec:relative}
+
+Throughout this section, $M$ is a smooth compact connected manifold of
+dimension $n\geq2$ with nonempty boundary. Metrics and maps are smooth up to
+the boundary. We use Riemannian volume densities, so orientability is not
+assumed. For a metric $g$, put
+\[
+ \E_g(u)=\int_M |\mathrm du|_g^2\dd V_g.
+\]
+The first positive Steklov eigenvalue has the characterization
+\begin{equation}\label{eq:quotient}
+ \sigma_1(M,g)=
+ \inf_{\substack{u\in C^\infty(M),\ \int_{\partial M}u\dd S_g=0\\
+                         \int_{\partial M}u^2\dd S_g>0}}
+ \frac{\E_g(u)}{\int_{\partial M}u^2\dd S_g}.
+\end{equation}
+This follows from the smooth min--max formula in
+\cite[Section~2, equation~(2)]{CEG}. Indeed, on the span of $1$ and a
+mean-zero function the maximum quotient is the quotient of that function.
+Conversely, every two-dimensional subspace contains a nonzero function
+with zero boundary mean. A zero boundary norm is assigned infinite
+quotient. The sources \cite{CEG,CGR} number the zero eigenvalue as
+$\sigma_1$; their $\sigma_2$ is our $\sigma_1$.
+
+\subsection{Metric comparison}
+
+\begin{lemma}\label{lem:comparison}
+Suppose $q$ and $h$ have the same tangential boundary metric and
+\[
+ (1-t)h\leq q\leq(1+t)h,\qquad 0<t<1.
+\]
+Then
+\begin{equation}\label{eq:comparison}
+ \sigma_1(M,q)\geq c_n(t)\sigma_1(M,h),
+ \qquad c_n(t)=\frac{(1-t)^{n/2}}{1+t}.
+\end{equation}
+If $h=\lambda^2k$, where $\lambda\geq1$ and
+$\lambda=1$ on $\partial M$, then
+\begin{equation}\label{eq:conformal}
+ \sigma_1(M,h)\geq\sigma_1(M,k).
+\end{equation}
+For $n=2$, equality holds in \eqref{eq:conformal}.
+\end{lemma}
+
+\begin{proof}
+The inverse metrics and volume densities satisfy
+\[
+ q^{-1}\geq(1+t)^{-1}h^{-1},\qquad
+ \dd V_q\geq(1-t)^{n/2}\dd V_h.
+\]
+Thus $\E_q(u)\geq c_n(t)\E_h(u)$. The boundary measures,
+mean-zero condition and denominators in \eqref{eq:quotient} are identical,
+which proves \eqref{eq:comparison}. For the second assertion,
+\[
+ \E_{\lambda^2 k}(u)
+   =\int_M\lambda^{n-2}|\mathrm du|_k^2\dd V_k.
+\]
+The boundary measure is again unchanged. The factor in the integrand is
+at least one for $n\geq2$, and is exactly one for $n=2$.
+\end{proof}
+
+\subsection{Smooth embeddings fixed near the boundary}
+
+The approximation required below concerns the induced metric uniformly,
+and therefore only first derivatives of the embedding. We recall the local
+construction that also keeps a boundary collar fixed. A \emph{primitive
+metric} on a coordinate chart is a tensor $a^2(\mathrm d\ell)^2$, where
+$a$ is smooth with compact support in that chart and $\ell$ is linear in
+its coordinates.
+
+For a symmetric tensor $T$ and a positive metric $h$, write
+\[
+ \|T\|_h=
+ \sup_{x\in M}\sup_{0\ne v\in T_xM}
+             \frac{|T_x(v,v)|}{h_x(v,v)}.
+\]
+
+\begin{lemma}\label{lem:relative-approximation}
+Let $f:M^n\to\R^m$ be a smooth embedding, $m>n$, and let
+$e=f^*g_{\mathrm E}$ be its induced Euclidean metric. Suppose
+\begin{equation}\label{eq:factored-defect}
+ h-e=\psi^2B,
+\end{equation}
+where $B$ is a smooth positive definite metric and $\psi$ is smooth with
+compact support in the interior of $M$. For every $\epsilon\in(0,1)$ there
+is a smooth embedding $F:M\to\R^m$, equal to $f$ near the whole boundary,
+such that
+\begin{equation}\label{eq:near-isometry}
+ (1-\epsilon)h\leq F^*g_{\mathrm E}\leq(1+\epsilon)h.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We use the primitive addition lemma of Eliashberg--Mishachev
+\cite[Lemma~21.6.1, pp.~196--197]{EM}. In ambient dimension $m>n$,
+an embedding whose metric defect is one primitive metric can be
+approximated arbitrarily closely in $C^0$ by embeddings whose induced
+metrics approximate the target metric arbitrarily closely. We need the
+relative form of this finite construction; it follows from the
+parametric one-dimensional lemma used in that proof, as described next.
+
+Work first in an interior coordinate box with primitive defect
+$a^2(\mathrm d\ell)^2$, and put
+$g=f^*g_{\mathrm E}+a^2(\mathrm d\ell)^2$. The source construction uses the
+leaves of $\ker\mathrm d\ell$ as transverse parameters and their
+$g$-normal curves as the longitudinal variable. A local Euclidean unit
+normal field $\nu$ to the image suffices. If $v$ is the longitudinal
+$g$-unit vector, the formal longitudinal derivative
+\[
+ f_*v+a\,\mathrm d\ell(v)\nu
+\]
+has Euclidean squared norm
+$e(v,v)+a^2\mathrm d\ell(v)^2=g(v,v)=1$. It depends smoothly on the data
+and is the genuine derivative wherever $a=0$.
+Lemma~17.5.1(c),(d) and the first remark after it in \cite[pp.~161--162]{EM}
+keep the construction fixed near the transverse faces and the longitudinal
+endpoints when the data there are already genuine. Since $a$ vanishes
+near the box boundary, the resulting perturbation is fixed near all its
+faces. Refining the support into smaller boxes, if needed, gives the
+same statement on an interior chart. This is an application of the
+relative parameter clauses to the proof of primitive addition, rather
+than an assumption of a smooth exactly isometric embedding.
+
+The local output is an embedding by the same primitive addition lemma.
+To retain global injectivity, let $K$ contain the compact support of one
+perturbation and choose a slightly larger chart $U$ with $K\subset U$.
+For the current embedding, $f(K)$ and $f(M\setminus U)$ are disjoint
+compact sets, with positive Euclidean separation. Make the available
+$C^0$ error less than half that separation. Points in $K$ cannot meet
+the complement of $U$; pairs in $U$ are protected by the local embedding,
+and all other pairs are unchanged. The perturbation therefore extends
+by $f$ to a global embedding. Coordinate boxes require only local normal
+fields, even when the global normal bundle is nontrivial.
+
+We now decompose \eqref{eq:factored-defect}. The positive-cone argument
+in \cite[Lemma~21.3.1, p.~193]{EM}, applied to $B$ on compact interior
+chart supports, and a smooth square partition of unity give
+\begin{equation}\label{eq:primitive-sum}
+ \psi^2 B=\sum_{j=1}^N p_j,
+ \qquad p_j=a_j^2(\mathrm d\ell_j)^2.
+\end{equation}
+Here every $a_j$ is smooth and supported compactly in one interior chart.
+For clarity, the square amplitudes can be obtained by first writing the
+positive matrix $B(x)$, locally, as a positive smooth combination of
+finitely many constant positive matrices. Choose these matrices as
+vertices of a small polytope containing the compact range under
+consideration, and split each vertex into squares of linear forms.
+The coefficients are strictly positive on smaller chart supports.
+Multiplication by $\psi$ and the square-partition functions then gives
+$a_j=\psi\rho_j\sqrt{\beta_j}$ with smooth positive $\beta_j$.
+There is no square root of a vanishing arbitrary coefficient to regularize.
+
+Starting from $f_0=f$, at step $j$ use the target
+\[
+ g_j=f_{j-1}^*g_{\mathrm E}+p_j.
+\]
+The initial map at that step is short for $g_j$ exactly. Choose the
+new metric error
+$E_j=f_j^*g_{\mathrm E}-g_j$ so that $\|E_j\|_h<\epsilon/N$,
+along with the $C^0$ tolerance just described. This is possible because
+$g_j\leq C_jh$ for some finite $C_j$ on compact $M$, so relative
+$g_j$ error less than $\epsilon/(NC_j)$ suffices. The finite construction
+telescopes to
+\[
+ f_N^*g_{\mathrm E}
+   =e+\sum_{j=1}^Np_j+\sum_{j=1}^NE_j
+   =h+\sum_{j=1}^NE_j,
+\]
+which proves \eqref{eq:near-isometry}.
+
+All modifications are supported away from $\partial M$, and the
+intersection of their finitely many unchanged collars is still a
+boundary collar. The finite smooth constructions above give a smooth
+map. One may also use a $C^1$ formulation of the primitive lemma and
+then smooth relative to that collar with arbitrarily small $C^1$ error.
+Embeddings of a compact manifold are open in $C^1$: local graph estimates
+preserve injectivity on finitely many small charts, and compact separation
+handles the remaining pairs. Such smoothing preserves the embedding and
+changes its induced metric arbitrarily little. Reserving part of each
+error tolerance for smoothing gives the same conclusion.
+\end{proof}
+
+\subsection{Passing from an intrinsic metric to an embedded filling}
+
+The intrinsic metric need not initially dominate the induced metric.
+A conformal enlargement can arrange this without decreasing the
+Steklov quotient. We first make it agree with the induced metric on a
+small collar.
+
+\Needspace{8\baselineskip}
+\begin{proposition}\label{prop:transfer}
+Let $f:M^n\to\R^m$ be a smooth embedding, $n\geq2$, $m>n$, and
+let $k$ be any smooth metric whose tangential boundary restriction
+equals that of $e=f^*g_{\mathrm E}$. For every $\theta\in(0,1)$ there is
+a smooth embedding $F:M\to\R^m$, equal to $f$ near $\partial M$, with
+\begin{equation}\label{eq:transfer}
+ \sigma_1(F(M))\geq(1-\theta)\sigma_1(M,k).
+\end{equation}
+The image carries its induced Euclidean metric.
+\end{proposition}
+
+\begin{proof}
+Equality of tangential metrics does not match their normal components.
+Let $C_e$ and $C_k$ be collars obtained by flowing extensions of the
+inward unit normal fields of $e$ and $k$. At the boundary,
+$C_k\circ C_e^{-1}$ fixes tangent vectors and sends the $e$-unit inward
+normal to the $k$-unit inward normal. It therefore pulls $k$ back to $e$
+as a full tensor on $TM|_{\partial M}$.
+
+This collar map extends to a boundary-fixing diffeomorphism of $M$.
+Indeed, interpolate the two inward transverse fields linearly. Their
+flows give an isotopy of collars on a common short interval, by
+compactness. On the image of a smaller collar its velocity in the
+isotopy parameter is a smooth time-dependent vector field, zero at
+boundary points. Cut it off inside a larger collar and integrate.
+Its flow agrees with the collar isotopy near the boundary and is
+the identity away from the larger collar. These flow and collar facts
+are the usual smooth constructions; see \cite[Section~6.2]{Hirsch}.
+Pulling back $k$ by this diffeomorphism preserves its Steklov spectrum.
+Thus we may assume
+\begin{equation}\label{eq:full-boundary}
+ k=e\quad\hbox{on }TM|_{\partial M}.
+\end{equation}
+
+In an $e$-normal flow collar, let $t\geq0$ be the inward coordinate.
+Choose $0\leq\psi_\delta\leq1$, smooth, equal to zero for $t\leq\delta$
+and one for $t\geq2\delta$, extended as one over the remainder of $M$.
+Set $\chi=\psi_\delta^2$ and
+\[
+ k_\delta=(1-\chi)e+\chi k.
+\]
+By \eqref{eq:full-boundary}, the uniform $e$-norm of $k-e$ is $O(t)$
+in the collar. Since $k_\delta-k$ is supported where $t<2\delta$,
+$k_\delta\to k$ uniformly. For any fixed $\eta\in(0,1)$ we can choose
+$\delta>0$ so that
+\[
+ (1-\eta)k\leq k_\delta\leq(1+\eta)k,
+ \qquad
+ \sigma_1(M,k_\delta)\geq c_n(\eta)\sigma_1(M,k).
+\]
+The last inequality is \cref{lem:comparison}. This collar width is
+chosen separately for the given $k$.
+
+Choose $c\in(0,1]$ such that $k\geq ce$ on $M$, and then
+$K>(1-c)/c$. Put
+\[
+ h=(1+K\chi)k_\delta.
+\]
+The conformal factor is at least one and equals one on the boundary
+collar. Thus $\sigma_1(M,h)\geq\sigma_1(M,k_\delta)$, including
+dimension two. Moreover,
+\begin{align*}
+ h-e&=\chi B,\\
+ B&=Ke+(1+K\chi)(k-e)
+    \geq\bigl[Kc-(1-c)\bigr]e>0.
+\end{align*}
+The displayed formula defines a smooth positive $B$ even at $\chi=0$.
+Consequently $h-e=\psi_\delta^2 B$ has the form required by
+\cref{lem:relative-approximation}.
+
+Apply that lemma with tolerance $\epsilon$. The induced metric
+$q=F^*g_{\mathrm E}$ satisfies \eqref{eq:near-isometry} and has exactly
+the boundary metric of $h$. Hence
+\[
+ \sigma_1(F(M))
+ \geq c_n(\epsilon)\sigma_1(M,h)
+ \geq c_n(\epsilon)c_n(\eta)\sigma_1(M,k).
+\]
+For this fixed $n$, choose $\eta,\epsilon$ small enough that the product
+exceeds $1-\theta$. This proves \eqref{eq:transfer}.
+\end{proof}
+
+\section{Proof of the prescribed-boundary theorem}\label{sec:proof}
+
+Put $n=d+1$. We use \cref{prop:transfer} first on a fixed filling in
+dimensions $n\geq3$, and then on a family of embedded surfaces when
+$n=2$.
+
+\subsection{Filling dimension at least three}
+
+Choose any smooth compact connected embedded filling $M$ of $\Sigma$
+and let $e$ be its induced Euclidean metric. Colbois--El Soufi--Girouard
+\cite[Theorem~1.1(ii)]{CEG} prove that on every compact connected
+Riemannian manifold of dimension at least three with nonempty boundary,
+there are smooth conformal metrics equal to the original metric on the
+boundary whose first positive Steklov eigenvalues tend to infinity.
+In particular, for $A>0$ choose such a metric $k$ with
+$\sigma_1(M,k)>2A$.
+Applying \cref{prop:transfer} to the inclusion $M\hookrightarrow\R^m$
+with $\theta=1/2$ gives a smooth compact connected embedded image
+$\Omega$ with $\partial\Omega=\Sigma$ and $\sigma_1(\Omega)>A$.
+No orientability assumption on $M$ enters the argument.
+
+\subsection{Surface fillings of an arbitrary embedded curve}
+
+Now $d=1$ and $m\geq3$. Since $\Sigma$ is a compact connected smooth
+one-manifold without boundary, it is a circle. We first construct
+orientable embedded fillings of every sufficiently large genus.
+
+When $m=3$, Seifert's construction gives an orientable spanning surface
+for the knot $\Sigma$ \cite[Section~1, pp.~572--573]{Seifert}.
+To pass from its polygonal formulation to the smooth original curve,
+take a sufficiently fine polygon in a normal tubular neighborhood of
+$\Sigma$ and smooth its vertices. The resulting curve is a normal graph
+over $\Sigma$, and interpolation of its normal displacement is a smooth
+isotopy. The finite disks and bands in Seifert's construction can be
+smoothed. Extending the knot isotopy to the ambient space transports
+this surface to one whose boundary is exactly the original $\Sigma$;
+see \cite[Theorems~4.5.1 and~8.1.3]{Hirsch} for tubular neighborhoods
+and isotopy extension.
+
+For $m>3$ there is a rank-three linear map
+$\pi:\R^m\to\R^3$ which embeds $\Sigma$. Here is the general-position
+argument. On the open space of rank-three linear maps, the evaluation
+\[
+ (P,x,y)\longmapsto P(x-y),\qquad x,y\in\Sigma,\quad x\ne y,
+\]
+is a submersion, since $x-y\ne0$. Parametric transversality
+\cite[Theorem~3.2.7]{Hirsch} gives a residual set of $P$ for which its
+restriction to the two-dimensional pair space is transverse to zero
+in $\R^3$, and therefore has no zero. The same argument on the
+one-dimensional unit tangent bundle of $\Sigma$, using $(P,x,v)\mapsto
+P(v)$, gives immersion. The intersection of these residual sets is
+nonempty; a compact injective immersion is an embedding.
+
+Let $\Gamma=\pi(\Sigma)$, and choose a smooth orientable Seifert surface
+$S$ for $\Gamma$ in $\R^3$. A linear splitting of $\pi$ identifies the
+ambient vector space with $\R^3\times\R^{m-3}$, in which $\Sigma$ is the
+graph of a smooth function $z:\Gamma\to\R^{m-3}$. Extend $z$ over $S$
+by multiplying its collar extension by a cutoff which vanishes in the
+interior. The graph over $S$ of this extension is embedded and has
+boundary $\Sigma$. Inverting the linear splitting gives a smooth
+orientable filling in the original $\R^m$. The splitting is used only
+for this topological construction; all induced metrics are taken in
+the original Euclidean coordinates.
+
+Let $S_0$ be an orientable filling obtained in this way, of genus $g_0$.
+In a ball around an interior disk, disjoint from the rest of the surface
+and its boundary, replace a smaller disk by a punctured torus joined
+along a thin annulus. In local ambient coordinates this is the usual
+embedded connected sum in a three-dimensional slice, available for
+every $m\geq3$. It is smooth after rounding the seams, preserves
+orientability and the outer disk collar, and decreases Euler
+characteristic by two. Repetition gives an embedded orientable filling
+$M_g$ of genus $g$ for every $g\geq g_0$, with boundary exactly $\Sigma$.
+
+Colbois--Girouard--Raveendran \cite[Theorem~7]{CGR} construct compact
+surfaces $(S_l,k_l)$ of genus $1+l$, with connected boundary, such that
+\begin{equation}\label{eq:surface-source}
+ \sigma_1(S_l,k_l)\,\operatorname{length}_{k_l}(\partial S_l)
+       \geq Cl,
+\end{equation}
+where $C>0$ is independent of $l$. Their construction can be chosen
+orientable. Section~6.4 starts from a connected four-regular expander
+graph $G_l$, placing a genus-zero block with four identical product
+boundary collars at each vertex and pairing circles along graph edges.
+Orientation-reversing identifications of paired circles give an
+orientable closed surface. A maximal tree in $G_l$ is embedded in this
+surface by joining points in the blocks through the corresponding
+collars. Its regular neighborhood is a disk; removing it leaves one
+boundary component. To keep the geometry uniform, the source implements
+this removal with the four carved piece types in its Figure~5, selected
+according to the vertex degrees $1,2,3,4$ in the maximal tree.
+Orientations can be chosen along
+the tree first, and the remaining full circles glued by
+orientation-reversing collar isometries. These choices leave the pieces
+and their metric estimates unchanged; the freedom in gluing and its
+irrelevance to the spectral conclusion are discussed in
+\cite[Remark~37]{CGR}.
+
+Let $L=\operatorname{length}_{g_{\mathrm E}}(\Sigma)>0$ and
+$L_l=\operatorname{length}_{k_l}(\partial S_l)$. Rescale the intrinsic
+metrics by
+\[
+ k'_l=(L/L_l)^2k_l.
+\]
+For a constant $a>0$, boundary length scales by $a$ and Steklov
+eigenvalues by $a^{-1}$ under $k\mapsto a^2k$. Thus
+\begin{equation}\label{eq:surface-scaled}
+ \operatorname{length}_{k'_l}(\partial S_l)=L,
+ \qquad \sigma_1(S_l,k'_l)\geq Cl/L.
+\end{equation}
+
+For sufficiently large $l$, the embedded filling $M_{1+l}$ exists and
+is diffeomorphic to $S_l$, since both are compact connected orientable
+surfaces with the same genus and one boundary component
+\cite[Theorem~9.3.7]{Hirsch}. The boundary value of the diffeomorphism
+may be chosen to be an arclength isometry. To see this explicitly,
+start with a surface diffeomorphism $T:M_{1+l}\to S_l$, choose compatible
+orientations, and let $b:\Sigma\to\partial S_l$ be an orientation-compatible
+arclength isometry for $k'_l$. The discrepancy
+$(T|_\Sigma)^{-1}\circ b$ is an orientation-preserving circle
+diffeomorphism. In the arclength coordinate of period $L$, lift it to
+a smooth increasing function $\beta$ with
+$\beta(s+L)=\beta(s)+L$. The functions
+\[
+ \beta_t(s)=(1-t)s+t\beta(s),\qquad 0\leq t\leq1,
+\]
+have positive derivative. On a boundary collar use
+$(s,r)\mapsto(\beta_{\tau(r)}(s),r)$, where $\tau=1$ near the boundary
+and $\tau=0$ near the inner edge. This is a diffeomorphism, extends by
+identity, and adjusts $T$ to have boundary value $b$.
+
+Pull $k'_l$ back by this adjusted diffeomorphism to a metric $k$ on
+the actual embedded filling $M_{1+l}$. Its tangential boundary metric
+is exactly the Euclidean metric on $\Sigma$. By
+\eqref{eq:surface-scaled}, choose $l$ so that $\sigma_1(M_{1+l},k)>2A$.
+Apply \cref{prop:transfer} to the inclusion of this surface with
+$\theta=1/2$. Its smooth embedded image $\Omega$ has
+$\partial\Omega=\Sigma$ and $\sigma_1(\Omega)>A$.
+This proves the theorem in the remaining dimension and hence for all
+the stated $d,m,\Sigma$ and $A$.\qed
+
+\section*{AI-use statement}
+OpenAI's Codex assisted with the mathematical argument, source checking,
+and manuscript preparation. An earlier draft was examined in separate
+fresh Codex contexts for reader comprehension and referee-style
+objections. Codex then assisted with revision and final checks.
+No independent human review or formal verification is claimed.
+
+\begin{thebibliography}{9}
+
+\bibitem{CEG}
+B.~Colbois, A.~El Soufi and A.~Girouard,
+\emph{Compact manifolds with fixed boundary and large Steklov eigenvalues},
+\href{https://arxiv.org/abs/1701.04125v2}{arXiv:1701.04125v2} (2018).
+
+\bibitem{CGG}
+B.~Colbois, A.~Girouard and K.~Gittins,
+\emph{Steklov eigenvalues of submanifolds with prescribed boundary in
+Euclidean space},
+\href{https://arxiv.org/abs/1711.06458v2}{arXiv:1711.06458v2} (2018).
+
+\bibitem{CGR}
+B.~Colbois, A.~Girouard and B.~Raveendran,
+\emph{The Steklov spectrum and coarse discretizations of manifolds with
+boundary},
+\href{https://arxiv.org/abs/1612.07665v1}{arXiv:1612.07665v1} (2016).
+
+\bibitem{EM}
+Y.~Eliashberg and N.~Mishachev,
+\emph{Introduction to the $h$-Principle},
+Graduate Studies in Mathematics~48, American Mathematical Society, 2002.
+\href{https://doi.org/10.1090/gsm/048}{doi:10.1090/gsm/048}.
+Page references to this work use the
+\href{https://virtualmath1.stanford.edu/~eliash/Public/257B-2020/intro.pdf}{author-hosted text}.
+
+\bibitem{GP}
+A.~Girouard,
+\emph{Manifolds with arbitrarily large Steklov eigenvalues}
+(joint work with P.~Polymerakis), in \emph{Geometric Spectral Theory},
+Oberwolfach Report~36/2023, pp.~2074--2076.
+\href{https://doi.org/10.4171/OWR/2023/36}{doi:10.4171/OWR/2023/36}.
+
+\bibitem{Hirsch}
+M.~W.~Hirsch,
+\emph{Differential Topology},
+Graduate Texts in Mathematics~33, Springer-Verlag, 1976.
+\href{https://doi.org/10.1007/978-1-4684-9449-5}{doi:10.1007/978-1-4684-9449-5}.
+
+\bibitem{Seifert}
+H.~Seifert,
+\emph{\"Uber das Geschlecht von Knoten},
+Mathematische Annalen~110 (1935), 571--592.
+\href{https://doi.org/10.1007/BF01448044}{doi:10.1007/BF01448044}.
+
+\end{thebibliography}
+\end{document}
