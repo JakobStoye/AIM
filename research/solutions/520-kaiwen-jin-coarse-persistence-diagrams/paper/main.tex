@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\D}{\mathcal D}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{No coarse Hilbert embedding for unrestricted persistence diagrams}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that the space of all finite persistence diagrams, with no common cardinality or coordinate bound, does not coarsely embed into Hilbert space for any Wasserstein exponent \(1\le p\le2\). The metric uses the usual \(\ell^\infty\) ground distance and matching to the diagonal. For each finite family of rational signed measures on a square grid, a sufficiently large common background lets unit transports be matched through intermediate grid points. After scaling and translation, the resulting diagram distances are exactly the \(1/p\) powers of the signed transportation distances. A finite-subset criterion then transfers a hypothetical coarse embedding to the signed planar grids, contradicting the theorem of Naor and Schechtman.
+\end{abstract}
+
+\section{Introduction}
+
+Persistence diagrams are finite multisets of birth and death pairs, with points allowed to disappear by matching to the diagonal. A Hilbert-space representation is useful only if its control of distances is suited to the intended task. Coarse embeddability asks for an upper bound at each finite distance scale and a lower bound tending to infinity at large scales.
+
+Pritchard and Weighill \cite{pw} describe the coarse Hilbert embedding question for persistence diagrams as open for \(1\le p\le2\). They relate it to the analogous planar Wasserstein question. Their discussion also distinguishes the positive results for diagrams with a fixed cardinality bound from the negative results for \(p>2\). We settle the unrestricted diagram question in the remaining interval.
+
+Let \(\D\) be the set of all finite multisets of points \((b,d)\in\R^2\) with \(b<d\), including the empty multiset. There is no common bound on cardinalities or coordinates. Write
+\(\Delta=\{(t,t):t\in\R\}\), and use the \(\ell^\infty\) distance in the plane. For \(1\le p\le2\), set
+\begin{align}
+ W_p(D,E)^p
+ =\min_{\substack{D'\subseteq D,\ E'\subseteq E\\
+                    \phi:D'\to E'\ {\rm bijective}}}
+ \biggl(&\sum_{x\in D'}\norm{x-\phi(x)}_\infty^p
+       +\sum_{x\in D\setminus D'}\operatorname{dist}_\infty(x,\Delta)^p
+       +\sum_{y\in E\setminus E'}\operatorname{dist}_\infty(y,\Delta)^p\biggr).
+ \label{eq:diagram}
+\end{align}
+Subsets and bijections respect multiplicity. In particular,
+\(\operatorname{dist}_\infty((b,d),\Delta)=(d-b)/2\).
+A coarse Hilbert embedding is a map \(F:\D\to H\) into a real or complex Hilbert space for which there are finite-valued nondecreasing functions
+\(\rho_-,\rho_+:[0,\infty)\to[0,\infty)\) satisfying
+\begin{equation}
+ \lim_{t\to\infty}\rho_-(t)=\infty,\qquad
+ \rho_-(W_p(D,E))\le\norm{F(D)-F(E)}_H\le\rho_+(W_p(D,E))
+ \quad(D,E\in\D).
+ \label{eq:coarse}
+\end{equation}
+Neither continuity of \(F\) nor a quantitative growth rate for \(\rho_-\) is assumed.
+
+\begin{theorem}\label{thm:main}
+For every \(p\in[1,2]\), the metric space \((\D,W_p)\) admits no coarse embedding into any Hilbert space.
+\end{theorem}
+
+The obstruction comes from the signed transportation spaces on planar grids. Naor and Schechtman proved that these spaces cannot have coarse Hilbert embeddings with controls uniform over the grids \cite[Theorem~3.7]{ns}. The step needed here is to realize finite subsets of their \(1/p\)-snowflakes, meaning their transportation metric raised to the power \(1/p\), by diagrams. Adding many common points at every grid vertex permits a long shipment to be replaced by unit shipments through intermediate vertices. A unit step has the same cost before and after taking its \(p\)th power. The number of background points can depend on the finite subset, but the resulting distance identity does not.
+
+This construction is related to the observation of Austin and Naor, reported in \cite[Section~1.5, p.~8]{ann}, that finite subsets of the half-snowflake of planar \(W_1\) embed with bounded distortion into planar \(W_2\). We give the finite grid argument explicitly and keep track of the diagonal matching rule and the common coarse controls. The finite-subset theorem of Nowak \cite[Theorem~3.4]{nowak} then gives the contradiction. The unrestricted cardinality is essential to this argument: its common background is not bounded uniformly over finite families.
+
+Section~2 proves the finite realization, and Section~3 applies the two coarse-embedding results. All transportation costs below are unnormalized costs for measures of equal finite mass.
+
+\section{Finite signed transport and diagrams}
+
+For a finite metric space \((Q,d)\) and a real vector \(u:Q\to\R\) with \(\sum_xu(x)=0\), write \(u_+(x)=\max\{u(x),0\}\) and \(u_-(x)=\max\{-u(x),0\}\). Define
+\begin{equation}
+ \tau_d(u)=
+ \inf_{\substack{\pi\ge0\\
+             \sum_y\pi(x,y)=u_+(x)\\
+             \sum_x\pi(x,y)=u_-(y)}}
+             \sum_{x,y\in Q}d(x,y)\pi(x,y).
+ \label{eq:transport}
+\end{equation}
+The common mass of \(u_+\) and \(u_-\) is \(\frac12\sum_x|u(x)|\).
+If this mass is \(M>0\), then \(\pi(x,y)=u_+(x)u_-(y)/M\) has the required row and column sums and proves feasibility. The zero vector has cost zero.
+
+\begin{lemma}\label{lem:finite}
+The function \(\tau_d\) is a norm on the balanced vectors on \(Q\). If \(A,B\ge0\) have the same total mass, then
+\begin{equation}
+ \tau_d(A-B)=\inf_{\pi\ {\rm coupling}\ A,B}\sum_{x,y}d(x,y)\pi(x,y).
+ \label{eq:cancel}
+\end{equation}
+If the marginals are nonnegative integers, the infimum of any finite linear coupling cost is attained by an integer coupling.
+\end{lemma}
+
+\begin{proof}
+For one inequality in \eqref{eq:cancel}, add diagonal mass \(\min\{A(x),B(x)\}\) to a coupling of \((A-B)_+\) and \((A-B)_-\). For the other, view a coupling of \(A,B\) as a directed flow of divergence \(u=A-B\). Subtract the minimum edge weight on each positive directed cycle, including self-loops, until the positive-edge graph is acyclic. This preserves divergence and does not increase cost; each subtraction removes an edge.
+
+Add a supersource with edges of weights \(u_+(x)\) into \(Q\) and a supersink with edges of weights \(u_-(x)\) out of it. Every original vertex is balanced. A path starting at the supersource along positive edges must reach the supersink: balance prevents it from stopping at an original vertex, and acyclicity prevents repetition. Extract its minimum edge weight and repeat. Each extraction removes an edge. After the supersource edges are exhausted, a remaining nonzero balanced acyclic flow is impossible, since it would have a vertex with positive outflow and no positive inflow. The extracted paths therefore use precisely the two required marginals. Compressing each path to a direct shipment cannot increase cost, by the triangle inequality.
+
+The same path decomposition applied to the sum of flows for \(u\) and \(v\) proves \(\tau_d(u+v)\le\tau_d(u)+\tau_d(v)\), after taking infima. Transposition and scaling prove symmetry and homogeneity. For a nonzero balanced vector the two signs have disjoint supports and positive mass, so every coupling costs at least that mass times the minimum positive distance in \(Q\). This proves definiteness. If \(Q\) is a singleton, the balanced space is zero.
+
+To prove integrality, start with any real feasible coupling and consider the bipartite graph of its noninteger entries. A vertex cannot have exactly one such entry, because its marginal is integral. Thus a nonempty fractional graph has a cycle, necessarily even. Perturb its entries alternately up and down. Choose the direction in which the linear cost does not increase, and move until the first affected entry reaches its next integer. No entry crosses an integer or becomes negative. The number of noninteger entries strictly decreases, and previously integer entries are untouched. Repeating produces an integer coupling of no greater cost. The feasible integer matrices form a nonempty finite set, since every entry is bounded by its row marginal. Its minimum cost is consequently at most every real feasible cost, proving the claim.
+\end{proof}
+
+For an integer coupling, expanding the marginals into point multisets turns the coupling into a bijective matching of the multiset occurrences.
+
+Let \(Q_n=\{0,\ldots,n\}^2\), where \(n\ge1\). We write \(\tau_\infty\) and \(\tau_2\) for \eqref{eq:transport} with the \(\ell^\infty\) and Euclidean ground metrics on this grid.
+
+\begin{lemma}\label{lem:relay}
+Fix \(p\in[1,2]\) and a finite family \(u_1,\ldots,u_k\) of integer balanced vectors on \(Q_n\). There is a positive integer \(B\) such that the multisets with multiplicities \(A_i(x)=B+u_i(x)\) all have the same cardinality and satisfy
+\begin{equation}
+ \min_{\phi:A_i\to A_j\ {\rm bijective}}
+       \sum_{x\in A_i}\norm{x-\phi(x)}_\infty^p
+       =\tau_\infty(u_i-u_j)
+ \quad(1\le i,j\le k).
+ \label{eq:relay}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put
+\[
+ G=\max_{i,x}\max\{0,-u_i(x)\},\qquad
+ T=\max_{i,j}\sum_x(u_i(x)-u_j(x))_+,\qquad B=G+T+1.
+\]
+Then \(A_i(x)\ge T+1\), and every \(A_i\) has total mass \(B|Q_n|\).
+
+For a fixed pair, take an optimal integer coupling of \((u_i-u_j)_+\) and \((u_i-u_j)_-\), using Lemma~\ref{lem:finite}. Route each of its unit shipments along a simple path in \(Q_n\) of exactly \(\norm{x-y}_\infty\) nearest-neighbor steps. Such a path first changes both coordinates diagonally while both differ, then changes the remaining coordinate. It stays inside the coordinate rectangle and every step has length one.
+
+Let \(f(x,y)\) be the resulting directed edge flow. Its divergence is \(u_i-u_j\), and
+\(\sum_{x,y}f(x,y)=\tau_\infty(u_i-u_j)\).
+There are at most \(T\) unit paths, each visiting a vertex at most once, so the outflow at a vertex is at most \(T\). Define an integer coupling by
+\[
+ \Pi(x,y)=f(x,y)\quad(x\ne y),\qquad
+ \Pi(x,x)=A_i(x)-\sum_y f(x,y).
+\]
+Its entries are nonnegative. The row marginal is \(A_i\), while the column marginal at \(x\) is
+\[
+ A_i(x)-\operatorname{outflow}(x)+\operatorname{inflow}(x)=A_j(x).
+\]
+All nonzero off-diagonal shipments have length one. Hence its \(p\)-power cost is \(\tau_\infty(u_i-u_j)\).
+
+Conversely, distances between distinct integer grid points are at least one, so \(d_\infty(x,y)^p\ge d_\infty(x,y)\) for \(p\ge1\). By \eqref{eq:cancel}, every coupling of \(A_i,A_j\) has \(p\)-power cost at least \(\tau_\infty(u_i-u_j)\). The integer coupling above is a matching of the expanded multisets, proving \eqref{eq:relay}. The same \(B\) works for every pair.
+\end{proof}
+
+\begin{proposition}\label{prop:realization}
+For every \(n\ge1\), \(p\in[1,2]\), and finite family \(v_1,\ldots,v_k\) of rational balanced vectors on \(Q_n\), there are finite diagrams \(D_1,\ldots,D_k\) such that
+\begin{equation}
+ W_p(D_i,D_j)=\tau_\infty(v_i-v_j)^{1/p}
+ \quad(1\le i,j\le k).
+ \label{eq:realization}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Choose a positive integer \(L\) clearing all denominators and apply Lemma~\ref{lem:relay} to \(u_i=Lv_i\). Scale every grid coordinate by \(\lambda=L^{-1/p}\). Homogeneity gives the minimum perfect matching cost
+\[
+ \lambda^p\tau_\infty(L(v_i-v_j))=\tau_\infty(v_i-v_j).
+\]
+All multisets have equal cardinality and lie in a square of \(\ell^\infty\) diameter \(r=\lambda n\).
+
+Now translate every point by \((-R,R)\), with \(R=2r+1\). The deletion distance of a point \((\lambda x-R,\lambda y+R)\) is
+\[
+ R+\frac{\lambda(y-x)}2\ge R-\frac r2>r.
+\]
+In particular every point lies strictly above the diagonal. A nonperfect partial matching leaves equal numbers of unmatched occurrences in the two multisets. Pair them arbitrarily. Each added pair costs at most \(r^p\), whereas its two deletions cost more than \(2r^p\). Thus every minimum-cost partial matching is perfect, and \eqref{eq:realization} follows.
+\end{proof}
+
+\begin{remark}
+The common background may be large and depends on the finite family. A zero signed vector maps to that background diagram, which need not be empty. Neither feature affects the exact distances in \eqref{eq:realization}.
+\end{remark}
+
+\section{The coarse obstruction}
+
+In this section, \(L^2\) denotes \(L^2([0,1])\) with Lebesgue measure. Let \(X_n\) be the real balanced vectors on \(Q_n\), with norm \(\tau_2\). The following is the coarse branch of the signed-grid obstruction of Naor and Schechtman \cite[Theorem~3.7]{ns}.
+
+\begin{theorem}[Naor--Schechtman]\label{thm:ns}
+There are no finite-valued nondecreasing functions \(a,b:[0,\infty)\to[0,\infty)\), with \(a(t)\to\infty\), and maps \(f_n:X_n\to L^2\), for all \(n\ge1\), such that
+\[
+ a(\tau_2(u-v))\le\norm{f_n(u)-f_n(v)}_2\le b(\tau_2(u-v))
+ \quad(u,v\in X_n,\ n\ge1).
+\]
+\end{theorem}
+
+We also use Nowak's finite-subset criterion \cite[Theorem~3.4]{nowak}: if every finite subset of a metric space has a map into \(\ell^2\) with one fixed pair of coarse controls, then the whole space has a map into a Hilbert space with those controls. Retention of the controls follows from the squared bounds on the limiting negative-definite kernel in his proof. The space need not be locally finite.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix \(p\in[1,2]\) and suppose that \(F:\D\to H\) has fixed lower and upper controls \(\rho_-,\rho_+\) for \(W_p\) as in \eqref{eq:coarse}. Realify \(H\) if necessary, preserving its norm. Taking equal diagrams gives \(\rho_-(0)=0\).
+
+Let \(Y_n\subseteq X_n\) be the rational balanced vectors. The two ground norms give, for every balanced \(w\),
+\begin{equation}
+ \frac{\tau_2(w)}{\sqrt2}\le\tau_\infty(w)\le\tau_2(w),
+ \label{eq:comparison}
+\end{equation}
+by applying the plane norm inequalities to each coupling and taking infima.
+Every finite subset of \(Y_n\) has a realization from Proposition~\ref{prop:realization}. Composing it with \(F\), and identifying its finite-dimensional image span with a subspace of \(\ell^2\), gives the common controls
+\begin{equation}
+ a_0(t)=\rho_-\bigl((t/\sqrt2)^{1/p}\bigr),\qquad
+ b_0(t)=\rho_+(t^{1/p}).
+ \label{eq:controls0}
+\end{equation}
+They are independent of \(n\), the finite subset, and its background and denominator. They are finite and nondecreasing, and \(a_0(t)\to\infty\).
+Nowak's criterion supplies \(g_n:Y_n\to H_n\) with these same controls.
+
+Since \(Y_n\) is countable, we can put this map in \(L^2([0,1])\). Here is an explicit identification. Subtract \(g_n(0)\), enumerate the image, and apply finite Gram--Schmidt, omitting zero residuals. The resulting finite or countable orthonormal sequence spans densely the closed image span. Its finite orthogonal projections converge to each vector by the best-approximation inequality and density. Pythagoras therefore identifies that span isometrically with a subspace of \(\ell^2\), padding with zeros in the finite-dimensional case. For \(a=(a_j)\in\ell^2\), the function
+\[
+ U_a(t)=2^{j/2}a_j\quad\hbox{on }(2^{-j},2^{1-j}],\qquad U_a(0)=0,
+\]
+is measurable and satisfies
+\[
+ \int_0^1|U_a(t)|^2\,dt=\sum_{j=1}^\infty |a_j|^2.
+\]
+This identity follows directly from the nonnegative integral: finite truncations give one inequality, and countable additivity on the disjoint intervals bounds every dominated simple function for the other. Applying it to \(a-b\) proves the isometry. Retain the notation \(g_n\) for the resulting \(L^2\)-valued map.
+
+Rational balanced vectors are dense in \(X_n\). Indeed, approximate all but one coefficient by rationals and choose the last to preserve balance. For the balanced approximation error \(e\), put \(\varepsilon=\sum_{x\in Q_n}|e(x)|\). Its positive and negative parts each have mass \(\varepsilon/2\), so its transportation cost is at most \(\frac12\operatorname{diam}(Q_n)\varepsilon\). Thus for every \(u\in X_n\) choose \(q_n(u)\in Y_n\) with \(\tau_2(u-q_n(u))<1\), and put \(f_n(u)=g_n(q_n(u))\). The triangle inequality gives
+\[
+ \max\{\tau_2(u-v)-2,0\}
+ \le\tau_2(q_n(u)-q_n(v))
+ \le\tau_2(u-v)+2.
+\]
+Consequently all the maps \(f_n\) have the controls
+\[
+ a(t)=a_0(\max\{t-2,0\}),\qquad b(t)=b_0(t+2).
+\]
+These are finite-valued, nondecreasing and common to every grid, with \(a(t)\to\infty\). This contradicts Theorem~\ref{thm:ns}.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{ann}
+A. Andoni, A. Naor and O. Neiman,
+\emph{Snowflake universality of Wasserstein spaces},
+arXiv:1509.08677 (2015).
+\url{https://arxiv.org/abs/1509.08677}.
+\bibitem{ns}
+A. Naor and G. Schechtman,
+\emph{Planar earthmover is not in \(L_1\)},
+SIAM J. Comput. \textbf{37}(3) (2007), 804--826.
+\href{https://doi.org/10.1137/05064206X}{doi:10.1137/05064206X}.
+Theorem~3.7; \href{https://web.math.princeton.edu/~naor/homepage%20files/planar-earthmover.pdf}{author-hosted version}.
+\bibitem{nowak}
+P. W. Nowak,
+\emph{Coarse embeddings of metric spaces into Banach spaces},
+Proc. Amer. Math. Soc. \textbf{133}(9) (2005), 2589--2596.
+\href{https://doi.org/10.1090/S0002-9939-05-08150-5}{doi:10.1090/S0002-9939-05-08150-5}.
+Theorem~3.4; \href{https://arxiv.org/abs/math/0404401}{arXiv version}.
+\bibitem{pw}
+N. Pritchard and T. Weighill,
+\emph{Coarse Embeddability of Wasserstein Space and the Space of Persistence Diagrams},
+Discrete Comput. Geom. \textbf{74} (2025), 358--373.
+\href{https://doi.org/10.1007/s00454-024-00674-6}{doi:10.1007/s00454-024-00674-6}.
+\end{thebibliography}
+
+\paragraph{Artificial intelligence use.}
+OpenAI Codex assisted with mathematical exploration, proof drafting, source retrieval, and manuscript editing.
+
+\end{document}

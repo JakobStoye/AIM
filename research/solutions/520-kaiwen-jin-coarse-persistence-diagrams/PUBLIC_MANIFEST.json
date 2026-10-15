@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "problem_id": "520",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic theorem",
+  "submission_status": "complete solution claim for independent mathematical review",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package entry and reproduction instructions",
+      "sha256": "429e6691f0d7aab391b05073a5c662b97571052c65a14920b0dee4a336b433a9"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence with the full original target",
+      "sha256": "d76c0df264e9f21b970e330b3426f8c22dac87eebc31dc386873c2c4279ecb6a"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Standalone editable manuscript with full proof and bibliography",
+      "sha256": "96619d2e8d5c1f8f63d63ddd2065fc450b57bbd857339d46afdabe5274d7a203"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete rendered manuscript",
+      "sha256": "340c09e73ddbe0d130741cddcb495d98f780840877be490da2776ae6b73b6248"
+    }
+  ]
+}
