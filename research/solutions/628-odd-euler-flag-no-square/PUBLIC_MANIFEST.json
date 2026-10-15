@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "title": "Odd Euler characteristic for flag-no-square four-manifolds",
+  "problem_id": "628",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic construction with cited public dependencies",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package entry and reproduction",
+      "sha256": "d11e4b71d26d82511a50c864807509c45c7bcbeae5c0e4617fc2c53fb7b9e568"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original target correspondence",
+      "sha256": "1b961db77efb8351d1e95dca61be9e8dbbc556e304632cca334f27c9bd3e083c"
+    },
+    {
+      "path": "paper/odd_euler_flag_no_square.tex",
+      "purpose": "Editable complete mathematical source",
+      "sha256": "4646abdd346f3ff5035128852c361aad5e40869531321d1b0fcaef04fe3cd085"
+    },
+    {
+      "path": "paper/odd_euler_flag_no_square.pdf",
+      "purpose": "Five-page complete manuscript",
+      "sha256": "f85c190ae94a9d866b75eb351611ae6f074ebaf1b45df439ba67cfabb93427ec"
+    }
+  ]
+}
