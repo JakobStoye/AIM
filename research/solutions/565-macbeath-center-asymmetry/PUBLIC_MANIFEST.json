@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "problem_id": "565",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, exact counterexample and factual AI-use/review disclosure",
+      "sha256": "7071340094cbb3a300419a06448df3243fbda2d7a4919c57263f31f65aba29a8"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence between the original public target and the finished manuscript",
+      "sha256": "cbe904574f99560ee64b634005e2acb7d9969ce19594c75fb777ba9720f0ced7"
+    },
+    {
+      "path": "paper/macbeath_counterexample.tex",
+      "purpose": "Complete editable analytic proof",
+      "sha256": "d33c7dac3aebe1c8c15b9a17fd87284d5344021610c75a3923e44f1394b0afcb"
+    },
+    {
+      "path": "paper/macbeath_counterexample.pdf",
+      "purpose": "Complete two-page manuscript",
+      "sha256": "046f27bd27133cde36c65e1871c7168163e9f4e8b9d7dccb6a844f9c4fb90353"
+    }
+  ],
+  "manifest_scope": "Lists all payload files; this manifest and SHA256SUMS are the two package metadata files."
+}

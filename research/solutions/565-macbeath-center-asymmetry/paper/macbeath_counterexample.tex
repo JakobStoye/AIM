@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newcommand{\vol}{\operatorname{vol}}
+\hypersetup{pdftitle={A counterexample to the Macbeath point inclusion},
+  pdfauthor={Kaiwen Jin},pdfsubject={A square pyramid and its maximum symmetric intersection}}
+\title{A counterexample to the Macbeath point inclusion}
+\author{Kaiwen Jin\thanks{\texttt{yui.ui.siki@gmail.com}}}
+\date{October 14, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The center of a largest centrally symmetric subset of a convex body need
+not satisfy the usual dimension bound on asymmetry. We compute this center
+for a square pyramid in $\mathbb R^3$ and show that reflection about it,
+followed by shrinking by a factor of three, takes the apex outside the
+pyramid. This gives a counterexample to Ivanov's Macbeath point inclusion
+conjecture.
+\end{abstract}
+
+For a compact convex body $K\subset\mathbb R^d$ with nonempty interior,
+its Macbeath point is the unique point $p$ maximizing
+\[
+ x\longmapsto\vol_d\bigl(K\cap(2x-K)\bigr),
+ \qquad 2x-K=\{2x-y:y\in K\}.
+\]
+The intersection is the largest centrally symmetric subset of $K$ with
+center $x$: every such subset lies in both $K$ and $2x-K$.
+Ivanov asked whether this prescribed center always satisfies
+$K-p\subseteq-d(K-p)$ \cite[Conjecture~2.1]{Ivanov}.
+The following square pyramid disproves that assertion.
+
+\begin{theorem}\label{thm:counterexample}
+Let
+\begin{equation}\label{eq:body}
+ K=\bigl\{(u,v,z)\in\mathbb R^3:
+  0\le z\le1,\ |u|\le1-z,\ |v|\le1-z\bigr\},
+ \qquad \alpha=\frac{3-\sqrt2}{7}.
+\end{equation}
+Then $K$ is compact and convex with nonempty interior, and its Macbeath
+point is $p=(0,0,\alpha)$. For the apex $y=(0,0,1)\in K$,
+\begin{equation}\label{eq:witness}
+ p-\frac{y-p}{3}
+ =\left(0,0,\frac{5-4\sqrt2}{21}\right)\notin K.
+\end{equation}
+Consequently $K-p\nsubseteq-3(K-p)$.
+\end{theorem}
+
+\begin{proof}
+The defining conditions in \eqref{eq:body} are closed linear inequalities,
+and $K\subset[-1,1]^2\times[0,1]$. Thus $K$ is compact and convex.
+The open box
+$(-1/8,1/8)^2\times(3/8,5/8)$ lies in $K$, so its interior is nonempty.
+
+We first show that moving a center away from the axis decreases the overlap
+volume. Write a center as $x=(a,b,t)$ and put
+\[
+ F(a,b,t)=\vol_3\bigl(K\cap(2x-K)\bigr),\qquad V(t)=F(0,0,t).
+\]
+The common heights of $K$ and $2x-K$ form the interval
+\[
+ J_t=[0,1]\cap[2t-1,2t].
+\]
+At a height $z\in J_t$, their sections are squares of radii
+$r_1=1-z$ and $r_2=1-2t+z$, centered at $(0,0)$ and $(2a,2b)$.
+In each coordinate their intersection has length at most
+$2\min\{r_1,r_2\}$. The section area is therefore at most
+$4\min\{r_1,r_2\}^2$, with equality when $a=b=0$.
+Integrating the section areas gives
+\begin{equation}\label{eq:axial}
+ F(a,b,t)\le V(t).
+\end{equation}
+
+If $0<t<1$ and $(a,b)\ne(0,0)$, the inequality is strict.
+Indeed, at $z=t$ the two radii both equal $r=1-t>0$.
+The intersection length in a coordinate with displacement $c$ is
+$\max\{2r-2|c|,0\}$. At least one of the two lengths is strictly
+less than $2r$, so the intersection area is strictly less than $4r^2$.
+Intersection lengths are continuous in $z$, and $t$ is in the interior
+of $J_t$. The strict area deficit thus persists on an interval of positive
+length, making \eqref{eq:axial} strict after integration.
+For $t\notin[0,1]$ the interval $J_t$ is empty; for $t=0$ or $1$ it
+has zero length. Those centers all give zero volume.
+
+It remains to maximize $V$. The smaller radius is $r_2$ for $z\le t$
+and $r_1$ for $z\ge t$. For $0\le t\le1/2$, $J_t=[0,2t]$, so
+\begin{align}
+ V(t)
+ &=4\int_0^t(1-2t+z)^2\,dz
+   +4\int_t^{2t}(1-z)^2\,dz\notag\\
+ &=\frac83\bigl((1-t)^3-(1-2t)^3\bigr).
+ \label{eq:first}
+\end{align}
+For $1/2\le t\le1$, $J_t=[2t-1,1]$, giving
+\begin{align}
+ V(t)
+ &=4\int_{2t-1}^t(1-2t+z)^2\,dz
+   +4\int_t^1(1-z)^2\,dz\notag\\
+ &=\frac83(1-t)^3.
+ \label{eq:second}
+\end{align}
+The two formulas agree at $t=1/2$.
+
+Since $5/4<\sqrt2<3$, we have $0<\alpha<1/4$.
+On $[0,1/2]$, expanding \eqref{eq:first} yields
+$V(t)=8t-24t^2+(56/3)t^3$ and the exact identity
+\begin{equation}\label{eq:maximum}
+ V(\alpha)-V(t)
+ =\frac83(t-\alpha)^2\bigl(3+2\sqrt2-7t\bigr).
+\end{equation}
+The last factor is at least $2\sqrt2-1/2>0$. Hence $\alpha$ is the
+unique maximizer on $[0,1/2]$.
+For $1/2\le t\le1$, \eqref{eq:second} gives
+$V(t)\le V(1/2)<V(\alpha)$.
+Outside $[0,1]$ the volume is zero, while $V(\alpha)>0$ by
+\eqref{eq:first}. Thus $\alpha$ is the unique global maximizing height.
+Together with the strict comparison for nonaxial centers, this proves
+that $p=(0,0,\alpha)$ is the actual unique maximizer of the prescribed
+volume functional.
+
+Finally, $y=(0,0,1)$ satisfies \eqref{eq:body}.
+Its required image is the point in \eqref{eq:witness}, whose height is
+negative because $4\sqrt2>5$.
+Thus $y-p\notin-3(K-p)$, although $y-p\in K-p$.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex derived the counterexample, assisted with symbolic checks,
+and drafted the exposition. The argument above is analytic and does not
+depend on numerical optimization. Independent mathematical review is
+requested.
+
+\begin{thebibliography}{1}
+\bibitem{Ivanov}
+G.~Ivanov,
+\emph{Quantitative Steinitz theorem and polarity},
+arXiv:2403.14761v3 [math.MG], 10 May 2025,
+\href{https://arxiv.org/html/2403.14761v3}{\texttt{arxiv.org/abs/2403.14761v3}}.
+\end{thebibliography}
+\end{document}
