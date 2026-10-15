@@ -1,0 +1,1390 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Ptwo}{\mathcal P_2(\R^d)}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\esssup}{\operatorname*{ess\,sup}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\Cpsi}{\mathcal C_\psi}
+\newcommand{\Dpsi}{\mathcal D_\psi}
+\title{Finite propagation in fourth-order aggregation--diffusion}
+\author{Kaiwen Jin\thanks{\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove finite propagation for a fourth-order aggregation--diffusion equation
+with linear mobility and quadratic attraction on $\R^d$.
+For every $d\ge2$, every positive attraction coefficient and every compactly
+supported nonnegative $H^1$ probability density, there is one global weak
+solution whose support remains in a bounded ball on each finite time interval.
+The solution has the same $L^\infty H^1\cap L^2H^2$ regularity and integrated
+weak formulation as the variational existence theory.
+A localized power-entropy estimate is proved on the same minimizing
+movements by a bounded-derivative auxiliary flow. The resulting superlinear
+inequality for the exterior spacetime tail forces that tail to vanish at a
+finite radius, in every finite dimension.
+\end{abstract}
+
+\section{Introduction and main theorem}\label{sec:introduction}
+We study the degenerate fourth-order equation
+\begin{equation}\label{eq:PDE}
+ \partial_t\rho=-\Div(\rho\nabla\Delta\rho)-\chi\Delta(\rho^2)
+       \quad\hbox{on }(0,\infty)\times\R^d,\qquad \chi>0.
+\end{equation}
+It describes local aggregation competing with fourth-order diffusion.
+The factor $\rho$ in the highest-order flux makes the equation degenerate
+at vacuum, while the quadratic term is attractive second-order diffusion.
+A basic qualitative question is whether a compact aggregate retains a
+bounded edge during its evolution. This does not follow from regularity or
+moment bounds alone, and a fourth-order equation has no comparison principle
+of the usual second-order kind.
+
+Carrillo, Esposito, Falc\'o and Fern\'andez-Jim\'enez~\cite{CEFF} construct
+global probability-valued weak solutions for a family of such equations.
+The quadratic attraction in \eqref{eq:PDE} lies in their subcritical range
+in every finite dimension. Their construction gives finite second moments
+and $H^1,H^2$ control on finite time intervals. In the Introduction of that
+work, preservation of compact support is posed as a further question,
+supported there by numerical observations. We prove this property for
+\eqref{eq:PDE}, retaining their weak formulation and data class.
+
+Finite propagation for thin-film equations is closely connected with
+localized entropy estimates. For example, Novick-Cohen and
+Shishkov~\cite{NCS} obtain such results for one-dimensional equations with
+backwards second-order diffusion. Their interval problem and entropy-solution
+construction differ from the whole-space variational weak solution considered
+here. The issue is to obtain a sufficiently strong local estimate for that
+same weak solution, uniformly in the approximations and without an
+upper restriction on the spatial dimension.
+
+Write $\Ptwo$ for probability measures with finite second moment.
+Narrow continuity means continuity against every bounded continuous
+spatial test. Our main result is the following.
+
+\begin{theorem}\label{thm:main}
+Let $d\ge2$ be an integer, $\chi>0$, and let
+$\rho_0\in H^1(\R^d)$ be nonnegative, compactly supported, and have
+$\int_{\R^d}\rho_0\dd x=1$.
+There exists one global narrowly continuous curve
+$\rho:[0,\infty)\to\Ptwo$, with $\rho(0)=\rho_0$, represented by
+nonnegative probability densities, such that for every finite $T>0$,
+\[
+ \rho\in L^\infty(0,T;H^1(\R^d))\cap L^2(0,T;H^2(\R^d)).
+\]
+For every $\phi\in C_c^2(\R^d)$ and every $0\le t_1<t_2<\infty$,
+\begin{align}\label{eq:weak}
+ \int\phi[\rho(t_2)-\rho(t_1)]\dd x
+  =-\int_{t_1}^{t_2}\!\int
+   [\rho\Delta\rho\Delta\phi
+       +\Delta\rho\nabla\rho\cdot\nabla\phi
+                      +\chi\rho^2\Delta\phi]\dd x\dd t.
+\end{align}
+For each such $T$ there is $R_T<\infty$ for which
+\[
+ \rho(t,x)=0\quad\hbox{for almost every }
+ (t,x)\in(0,T)\times(\R^d\setminus B_{R_T}).
+\]
+The same curve has these properties for all finite horizons.
+\end{theorem}
+
+Here $B_R$ is the Euclidean ball centered at zero. The radius may depend
+on the datum, $d,\chi$ and $T$. The new conclusion concerns the support
+of a selected global solution; it gives neither uniqueness of the
+fourth-order weak equation nor a quantitative growth law for $R_T$.
+The theorem retains the integrated weak identity and the
+$L^\infty H^1\cap L^2H^2$ bounds of~\cite[Definition~2.1]{CEFF}
+at $m=2$.\footnote{Definition~2.1(i) of the pinned preprint also writes
+$p=2^*=\infty$ in dimension two. We do not assert that endpoint.
+The construction estimates used here are the displayed $H^1/H^2$ bounds
+and their consequences for finite spatial exponents.}
+The support conclusion is established with precisely the solution
+requirements stated above.
+
+The proof uses a power entropy with exponent slightly above one. Its
+localized dissipation controls a weighted Hessian and a weighted quartic
+gradient. Interpolation turns these into a superlinear estimate for the
+exterior spacetime tail. Because that tail tends to zero far away, an
+elementary iteration makes it identically zero beyond a finite radius.
+
+At the available weak regularity, direct nonlinear testing does not justify
+the entropy calculation. Instead we use the flow-interchange principle
+of Matthes, McCann and Savar\'e~\cite{MMS} on the original variational
+approximations. A convex density entropy with bounded derivative admits
+a spatially weighted metric flow in the sense of Ambrosio, Gigli and
+Savar\'e~\cite{AGS}. We establish its energy estimate by renormalization,
+positive implicit approximation and comparison in a common energy class.
+The resulting local inequality therefore holds for the same original
+solution, rather than for a separately chosen entropy solution.
+
+Section~\ref{sec:entropies} introduces these auxiliary entropies and their
+spatial estimates. Section~\ref{sec:dissipation} proves the rough-data
+auxiliary dissipation. Section~\ref{sec:propagation} obtains the local
+inequality and proves the theorem. The two interpolation estimates are
+included in Appendix~\ref{app:interpolation}.
+Throughout, $H^j=W^{j,2}(\R^d)$ has its inhomogeneous norm;
+$\nabla^2u$ is the Hessian with Frobenius norm. Integrals without a domain
+are over $\R^d$, or over the explicitly specified periodic cube in the
+auxiliary construction. Time suprema are essential suprema. Products
+with a negative density power are assigned zero at vacuum; the limiting
+arguments below justify each use.
+
+\section{Weighted auxiliary entropies}\label{sec:entropies}
+
+\subsection{The original weak solution and its approximations}
+Let
+\begin{equation}\label{eq:F}
+ F(u)=\frac12\int_{\R^d}|\nabla u|^2\dd x
+             -\chi\int_{\R^d}u^2\dd x
+\end{equation}
+for an $H^1$ probability density, and set $F=+\infty$ otherwise.
+The minimizing movement construction of Carrillo, Esposito, Falc\'o and
+Fern\'andez-Jim\'enez~\cite[Definition~2.1, Theorem~2.2 and Section~4]{CEFF}
+applies to this energy. In their notation $m=2<2+2/d$, for every finite $d$.
+Their weak identity has exactly the coefficient $\chi$ in
+\eqref{eq:weak}. We recall the estimates of the construction because our
+localization will be applied to the same minimizers.
+
+Write $W_2$ for the quadratic Wasserstein distance on $\Ptwo$,
+\[
+ W_2^2(\mu,\nu)=\inf_{\pi\in\Gamma(\mu,\nu)}
+       \int_{\R^d\times\R^d}|x-y|^2\dd\pi(x,y),
+\]
+where $\Gamma(\mu,\nu)$ is the set of probability measures with marginals
+$\mu,\nu$. For $\tau>0$ choose
+\begin{equation}\label{eq:JKO}
+ u_k\in\operatorname*{argmin}_{v\in\Ptwo}
+ \left\{F(v)+\frac{W_2^2(v,u_{k-1})}{2\tau}\right\},
+ \qquad u_0=\rho_0,
+\end{equation}
+and write $u_\tau(t)=u_k$ on $((k-1)\tau,k\tau]$.
+For every finite $T$, the source estimates give
+\begin{align}
+ \sup_{\tau,t\le T}\bigl(\norm{u_\tau(t)}_{H^1}^2
+           +\textstyle\int |x|^2u_\tau(t)\dd x\bigr)&\le C_T,
+                    \label{eq:JKO-H1}\\
+ \int_0^T\norm{u_\tau(t)}_{H^2}^2\dd t&\le C_T,
+ &\sum_{k\tau\le T}W_2^2(u_k,u_{k-1})&\le C_T\tau.
+                    \label{eq:JKO-H2}
+\end{align}
+Each $u_k$ has finite entropy and belongs to $H^2$; the latter follows from
+the heat-flow estimate in~\cite[Lemma~4.2]{CEFF}. A subsequence converges to
+the source weak solution, strongly in spacetime $L^2$. Interpolating this
+convergence with \eqref{eq:JKO-H2} gives strong convergence in
+$L^2(0,T;H^1)$. A diagonal choice over integer $T$ gives one global curve.
+We fix that choice throughout.
+
+Choose the small exponent
+\begin{equation}\label{eq:exponents}
+ a=\frac1{100(d+1)},\qquad p=1+a,\qquad r=2+3a,\qquad r_1=2+4a.
+\end{equation}
+For $d>2$ we have $r_1<2d/(d-2)$, while for $d=2$ all these exponents
+are finite. The usual Sobolev inequality and mass interpolation therefore
+give uniform $L^{r_1}$ bounds. Interpolating with strong $L^2$ convergence
+gives strong spacetime $L^r$ convergence along the same subsequence.
+Only finite-exponent Sobolev embeddings are used when $d=2$.
+
+\subsection{A bounded derivative and an actual metric flow}
+The power entropy $u^p$ has the right localization estimates, but its
+unbounded derivative is inconvenient in a spatially weighted transport
+flow. We first use a convex approximation with bounded derivative.
+For $M\ge1$ and $z\ge0$ define
+\begin{equation}\label{eq:scalar}
+ q_M(z)=\frac{z^a}{1+(z/M)^{2a}},\qquad
+ f_M'(z)=\frac{M^a}{a}\arctan((z/M)^a),\qquad f_M(0)=0.
+\end{equation}
+Thus $f_M''(z)=q_M(z)/z$ for $z>0$. Put
+\begin{equation}\label{eq:pressure}
+ P_M(z)=zf_M'(z)-f_M(z)=\int_0^z q_M(y)\dd y,
+ \qquad L_M=\frac{\pi M^a}{2a}.
+\end{equation}
+The elementary bounds needed below are
+\begin{gather}
+ |zq_M'(z)|\le a q_M(z),\qquad
+ 0\le f_M(z)\le L_M z,\qquad 0\le f_M'(z)\le L_M,
+                                                   \label{eq:scalar-bounds}\\
+ zq_M(z)\ge(1-a)P_M(z),\qquad
+ zq_M(z)-(1-1/d)P_M(z)\ge(1/d-a)P_M(z),              \label{eq:pressure-bound}\\
+ \frac{f_M'(z)^2}{q_M(z)}\le C_a z^a,\qquad
+ \frac{f_M'(z)^4}{q_M(z)^3}\le C_a(z^a+z^{3a}).       \label{eq:ratios}
+\end{gather}
+For \eqref{eq:pressure-bound}, integrate
+$q_M(y)\le q_M(z)(z/y)^a$ over $0<y<z$.
+For \eqref{eq:ratios}, on $z\le M$ use
+$f_M'(z)\le z^a/a$ and $q_M(z)\ge z^a/2$.
+On $z\ge M$ use $f_M'\le L_M$ and
+$q_M(z)\ge M^{2a}z^{-a}/2$; the remaining factor $M^{-2a}$ is at most one.
+Also $q_M\uparrow z^a$ and $f_M\uparrow z^p/(ap)$ as $M\to\infty$.
+
+Let $0\le\zeta\le1$ be smooth and constant outside a compact set, and set
+$\psi=\zeta^4$. For $0<\epsilon\le1$ consider
+\begin{equation}\label{eq:G}
+ G_{M,\epsilon}(u)=\int\psi f_M(u)\dd x
+                       +\epsilon\int u\log u\dd x.
+\end{equation}
+Here $0\log0=0$ and the value is $+\infty$ on singular measures.
+The weight will eventually vanish on an inner ball and equal one far away.
+The fourth power makes all derivative quotients used below bounded.
+For a finite-energy density $u$, the descending metric slope is
+\[
+ |\partial G_{M,\epsilon}|(u)
+ =\limsup_{\substack{v\to u\\v\ne u}}
+    \frac{[G_{M,\epsilon}(u)-G_{M,\epsilon}(v)]_+}{W_2(u,v)}.
+\]
+Here convergence is in $W_2$, and $[\cdot]_+$ denotes the positive part.
+
+\begin{proposition}\label{prop:metric-flow}
+For fixed $M,\epsilon,\psi$, the functional \eqref{eq:G} has an
+$\lambda_M$-gradient-flow semigroup $S_s$ on its finite-energy domain in
+$\Ptwo$, where
+\begin{equation}\label{eq:lambda}
+ \lambda_M=-L_M\left(\norm{\nabla^2\psi}_\infty
+   +(1/d-a)^{-1}\norm{\frac{|\nabla\psi|^2}{\psi}}_\infty\right).
+\end{equation}
+The quotient at $\psi=0$ is assigned zero. The curve $U_s=S_su$ is
+$W_2$-continuous at zero and satisfies the evolution variational inequality
+\begin{equation}\label{eq:EVI}
+ \frac12\frac{\mathrm d}{\mathrm ds}W_2^2(U_s,v)
+      +\frac{\lambda_M}{2}W_2^2(U_s,v)
+       \le G_{M,\epsilon}(v)-G_{M,\epsilon}(U_s)
+\end{equation}
+for almost every $s>0$ and every finite-energy $v$.
+For finite initial energy its tangent velocity $v_s$ satisfies
+$\partial_sU+\Div(Uv)=0$ and the energy/action identity
+\[
+ G_{M,\epsilon}(U_s)+\int_0^s\!\int|v_t|^2U_t\dd x\dd t
+       =G_{M,\epsilon}(u),\qquad
+ \norm{v_s}_{L^2(U_s)}=|\partial G_{M,\epsilon}|(U_s)
+\]
+with the norm equality holding almost everywhere.
+\end{proposition}
+
+\begin{proof}
+Abbreviate $G=G_{M,\epsilon}$. We check the hypotheses
+of~\cite[Theorem~11.2.1]{AGS}.
+For the normalized Gaussian $\gamma$, nonnegativity of relative entropy gives
+\begin{equation}\label{eq:entropy-lower}
+ \int u\log u\dd x\ge-\frac12\int|x|^2u\dd x-\frac d2\log(2\pi).
+\end{equation}
+Thus $G$ is bounded below on each second-moment ball and a Gaussian is a
+finite-energy test. These are properness and the literal coercivity
+condition (11.2.1b) of that theorem.
+
+For completeness the negative entropy tail is uniform on such a ball.
+Choose $0<\alpha<2$ and split $\{0<u\le1,\ |x|>R\}$ at
+$u=\exp(-|x|^\alpha)$. For large $R$,
+\begin{equation}\label{eq:entropy-tail}
+ \int_{|x|>R}(u\log u)^-\dd x
+ \le R^{\alpha-2}\int|x|^2u\dd x
+       +\int_{|x|>R}|x|^\alpha e^{-|x|^\alpha}\dd x.
+\end{equation}
+Local convex-integral lower semicontinuity consequently extends to the
+whole entropy. The nonnegative weighted convex integral in \eqref{eq:G}
+is lower semicontinuous as a relaxed integral; the entropy makes its value
+infinite on singular measures. One may also use local weak $L^1$
+compactness from the entropy bound and weak lower semicontinuity of the
+Lipschitz convex functional $u\mapsto\int\psi f_M(u)$;
+see~\cite[Corollary~3.9 and Theorem~4.30]{Brezis}.
+
+It remains to verify the precise transport convexity required by the source.
+Let $\mu_1=m(x)\dd x$ be a finite-energy base and let $T_2,T_3$ be its
+optimal maps to finite-energy endpoints $\mu_2,\mu_3$. The generalized
+geodesic under consideration is
+\[
+ T_t=(1-t)T_2+tT_3,\qquad \mu_t=(T_t)_\#\mu_1,\qquad0\le t\le1,
+\]
+where the push-forward notation means $\mu_t(E)=\mu_1(T_t^{-1}(E))$.
+By~\cite[Lemma~5.5.3 and Proposition~6.2.12]{AGS}, on a common full
+base-measure set the maps have positive definite almost-everywhere
+Jacobians $A_i=DT_i(x)$, are essentially strictly monotone, and obey the
+density-change formula. Put
+\[
+ A_t=(1-t)A_2+tA_3,\quad D=A_3-A_2=D^{\mathsf T},\quad
+ J_t=\det A_t>0.
+\]
+The interpolated map remains essentially injective. At $y=T_t(x)$ its
+density, transported velocity and deformation matrix are respectively
+\[
+ z_t(y)=m(x)/J_t,\qquad v_t(y)=T_3(x)-T_2(x),\qquad B_t(y)=DA_t^{-1}.
+\]
+Pulling the entropy back to the base gives the scalar integrand
+\[
+ K_x(t)=J_t\psi(T_t(x))f_M(m(x)/J_t)
+                       +\epsilon m(x)\log(m(x)/J_t).
+\]
+For regular transport data, the second variation of the weighted energy is
+\begin{align}\label{eq:second-variation}
+ \int\bigl[\psi\{(zq_M-P_M)(\operatorname{tr}B)^2
+                +P_M\operatorname{tr}(B^2)\}
+  -2P_M\operatorname{tr}B\,\nabla\psi\cdot v
+             +f_M\nabla^2\psi[v,v]\bigr]\dd y,
+\end{align}
+where $z=z_t(y)$, $v=v_t(y)$, $B=B_t(y)$, and the scalar functions are
+evaluated at $z$. The matrix $B$ is similar to the symmetric matrix
+$A_t^{-1/2}DA_t^{-1/2}$, so
+$\operatorname{tr}(B^2)\ge(\operatorname{tr}B)^2/d$.
+By \eqref{eq:pressure-bound} and completion of a square,
+\eqref{eq:second-variation} is at least $\lambda_M\int z|v|^2\dd y$.
+The entropy has nonnegative second variation.
+
+The same algebra applies pointwise to $K_x$ on the common full set,
+before any differentiation is passed through a spatial integral.
+It yields $K_x''(t)\ge\lambda_Mm(x)|T_3(x)-T_2(x)|^2$ also for the
+nonsmooth transport maps. Integrating first in $t$ and then in $x$ yields
+\begin{equation}\label{eq:generalized-convexity}
+ G(\mu_t)\le(1-t)G(\mu_2)+tG(\mu_3)
+ -\frac{\lambda_M}{2}t(1-t)
+         \int|T_3-T_2|^2\dd\mu_1.
+\end{equation}
+The endpoint energies and induced cost are finite; the negative entropy
+part is integrable by \eqref{eq:entropy-tail}. This justifies the integration
+also before positive intermediate entropy integrability is known.
+
+The cost in \eqref{eq:generalized-convexity} is the induced three-plan cost.
+For negative $\lambda_M$ it is retained in that form.
+This is exactly~\cite[Definition~9.2.4 and (11.2.1a)]{AGS}; the distinction
+from endpoint cost is explained in its Remark~9.2.6. The generation theorem
+itself yields the endpoint-distance inequality \eqref{eq:EVI} and the
+energy/action and slope identities (11.2.4), (11.2.9).
+\end{proof}
+
+\subsection{A weighted spatial coercivity estimate}
+We next compute the decay of $F$ for the auxiliary equation. Its rigorous
+application to the rough curve $S_su$ occupies Section~\ref{sec:dissipation}.
+For a positive smooth periodic density write $q=q_M(u)$, $f'=f_M'(u)$ and
+\begin{equation}\label{eq:CD}
+ \Cpsi(u)=\int\psi q|\nabla^2u|^2,\qquad
+ \Dpsi(u)=\int\psi\frac q{u^2}|\nabla u|^4.
+\end{equation}
+The formulas below also define these nonnegative quantities on rough
+whole-space densities, with vacuum values zero. Set
+\begin{align}
+ E_M(u)&=C_d\int u^2\left[
+  \left(q+\frac{f'^4}{q^3}\right)\frac{|\nabla\psi|^4}{\psi^3}
+       +\frac{f'^2}{q}\frac{|\Delta\psi|^2}{\psi}\right],
+                                                    \label{eq:EM}\\
+ B_M(u)&=E_M(u)+C_d\chi^2\int\psi q_M(u)u^2
+                   +C_d\chi\int u^{2+a}|\Delta\psi|.  \label{eq:BM}
+\end{align}
+Here and below a sufficiently large $C_d$ can be fixed once; it is
+independent of $M,\epsilon$ and the periodic box. These errors have growth
+through $u^{2+a}+u^{2+3a}$, by \eqref{eq:ratios}.
+
+\begin{lemma}\label{lem:spatial}
+Let $\psi$ be constant near the boundary of a periodic cube and let
+$u>0$ be smooth and periodic. For
+\begin{equation}\label{eq:aux-flux}
+ J(u)=(\epsilon+\psi q_M(u))\nabla u
+                          +u f_M'(u)\nabla\psi,
+\end{equation}
+there is $c_d>0$, independent of $M,\epsilon$ and the cube, such that
+\begin{align}\label{eq:spatial-dissipation}
+ -\int(-\Delta u-2\chi u)\Div J(u)
+ &\ge c_d\bigl(\Cpsi(u)+\Dpsi(u)\bigr)
+                +\frac\epsilon2\norm{\Delta u}_2^2\notag\\
+ &\hspace{12mm}-B_M(u)-2\chi\epsilon\norm{\nabla u}_2^2.
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Put $g=\nabla u$ and $H=\nabla^2u$. Integrating
+$\Div[\psi(q/u)|g|^2g]$ and using $|uq'|\le aq$ gives
+\[
+ (1-a)\Dpsi\le(2+\sqrt d)\sqrt{\Cpsi\Dpsi}
+       +\Dpsi^{3/4}\left(\int qu^2
+                        \frac{|\nabla\psi|^4}{\psi^3}\right)^{1/4}.
+\]
+Consequently
+\begin{equation}\label{eq:D-by-C}
+ \Dpsi\le\frac{4(2+\sqrt d)^2}{(1-a)^2}\Cpsi
+              +C_d\int qu^2\frac{|\nabla\psi|^4}{\psi^3}.
+\end{equation}
+A second integration by parts gives
+\begin{align}\label{eq:Hessian-identity}
+ \int\psi\{q(\Delta u)^2+q'|g|^2\Delta u\}
+ =\Cpsi+\int\psi q'H[g,g]
+       +\int q\nabla\psi\cdot Hg-\int q\Delta u\nabla\psi\cdot g.
+\end{align}
+Expanding $\int\Delta u\Div J(u)$ and using
+\eqref{eq:Hessian-identity}, its non-heat terms are
+\begin{equation}\label{eq:fourth-spatial}
+ \Cpsi+\int\psi q'H[g,g]+
+ \int q\nabla\psi\cdot Hg
+ +\int(f'+q)\Delta u\nabla\psi\cdot g
+ +\int uf'\Delta\psi\Delta u.
+\end{equation}
+The first error is at least $-a\sqrt{\Cpsi\Dpsi}$.
+Our choice of $a$ satisfies
+$2a(2+\sqrt d)/(1-a)<1/4$. Combining \eqref{eq:D-by-C}
+with Young's inequality retains a fixed positive multiple of
+$\Cpsi+\Dpsi$.
+The next two terms in \eqref{eq:fourth-spatial} are first absorbed into
+$\Cpsi$ and then into $\Dpsi$. Their remainders are bounded by
+$C_du^2(q+f'^4/q^3)|\nabla\psi|^4/\psi^3$ after integration.
+The final term leaves $C_du^2 f'^2|\Delta\psi|^2/(q\psi)$.
+These are exactly the terms in \eqref{eq:EM}.
+
+The attraction contributes
+\[
+ -2\chi\int\psi q|g|^2-2\chi\int uf'\nabla\psi\cdot g.
+\]
+The first term is absorbed into a fraction of $\Dpsi$ with remainder
+$C_d\chi^2\int\psi qu^2$. For the second use
+$H_M(z)=\int_0^z y f_M'(y)\dd y\le z^{2+a}/[a(2+a)]$.
+It equals $2\chi\int H_M(u)\Delta\psi$ and is bounded below by the
+last error in \eqref{eq:BM}. The heat contribution is
+$\epsilon\norm{\Delta u}_2^2-2\chi\epsilon\norm{\nabla u}_2^2$.
+Decreasing $c_d$ once and retaining half the positive heat term proves
+\eqref{eq:spatial-dissipation}.
+\end{proof}
+
+\section{Dissipation along the auxiliary flow}\label{sec:dissipation}
+
+Fix $M,\epsilon,\psi$ for this section and abbreviate $G=G_{M,\epsilon}$.
+The preceding spatial calculation must be established along the actual
+flow generated by Proposition~\ref{prop:metric-flow}, starting from a rough
+density. We prove the following statement.
+
+\begin{proposition}\label{prop:auxiliary-energy}
+Let $\bar u\in H^1(\R^d)$ be a nonnegative probability density in $\Ptwo$,
+and let $U_s=S_s\bar u$. For every finite $S$, this curve belongs to
+$L^\infty(0,S;H^1)\cap L^2(0,S;H^2)$ and satisfies, for every $s\ge0$,
+\begin{align}\label{eq:aux-energy}
+ F(U_s)+\int_0^s\left[c_d(\Cpsi(U_t)+\Dpsi(U_t))
+                     +\frac\epsilon2\norm{\Delta U_t}_2^2\right]\dd t
+ \le F(\bar u)+\int_0^s
+       [B_M(U_t)+2\chi\epsilon\norm{\nabla U_t}_2^2]\dd t.
+\end{align}
+The constants and errors are those of Lemma~\ref{lem:spatial}.
+Moreover $U_s\to\bar u$ strongly in $H^1$ and $L^r$ as $s\downarrow0$, and
+\begin{align}\label{eq:initial-dissipation}
+ \liminf_{s\downarrow0}\frac{F(\bar u)-F(S_s\bar u)}s
+ &\ge c_d(\Cpsi(\bar u)+\Dpsi(\bar u))
+       +\frac\epsilon2\norm{\Delta\bar u}_2^2\notag\\
+ &\hspace{8mm}-B_M(\bar u)-2\chi\epsilon\norm{\nabla\bar u}_2^2.
+\end{align}
+The positive terms on the right may initially have value $+\infty$.
+\end{proposition}
+
+We first obtain a common energy class for the actual metric flow. We then
+construct positive periodic approximations for which the spatial estimate
+is legitimate. A direct comparison in $H^{-1}$ identifies their limit with
+the metric flow and permits the energy inequality to pass to it.
+
+\subsection{The flux and a renormalized identity}
+Set
+\begin{equation}\label{eq:A}
+ \mathcal A(x,z)=\epsilon z+\psi(x)P_M(z),\qquad
+ \kappa(x,z)=\epsilon+\psi(x)q_M(z).
+\end{equation}
+Thus $\epsilon\le\partial_z\mathcal A=\kappa\le\Lambda$,
+where $\Lambda=\epsilon+\norm{q_M}_\infty$.
+
+\begin{lemma}\label{lem:actual-flux}
+The curve $U=S_s\bar u$ satisfies
+\begin{equation}\label{eq:auxiliary-PDE}
+ \partial_s U=\Div J,\qquad
+ J=\kappa(x,U)\nabla U+Uf_M'(U)\nabla\psi
+   =\nabla\mathcal A(x,U)+f_M(U)\nabla\psi.
+\end{equation}
+On every finite interval, both $J/\sqrt U$ and $\nabla U/\sqrt U$ belong
+to spacetime $L^2$, with value zero at vacuum.
+\end{lemma}
+
+\begin{proof}
+At almost every positive time the metric-flow velocity $v$ is tangent,
+$\eta=-v$ is a subgradient, and
+$\norm{\eta}_{L^2(U)}=|\partial G|(U)=:\sigma$.
+These are the conclusions of~\cite[Definition~11.1.1 and
+Theorem~11.2.1]{AGS}. At an absolutely continuous measure, the reduced
+subgradient agrees with the ordinary one by its Remark~10.3.3.
+For clarity, at an absolutely continuous finite-slope density the ordinary
+subgradient condition is~\cite[Definition~10.1.1, (10.1.3)]{AGS}
+\[
+ G(\nu)-G(U)\ge\int\eta(x)\cdot(X(x)-x)U(x)\dd x
+                          +o(W_2(U,\nu))\quad\text{as }\nu\to U,
+\]
+where $X$ is the optimal transport map from $U$ to the finite-energy
+measure $\nu$, and convergence is in $W_2$. Only optimal perturbations
+will be used in this inequality.
+The tangent space is the $L^2(U)$ closure of compact smooth gradients;
+the cylindrical formulation in~\cite[Definition~8.4.1]{AGS} is equivalent
+in $\R^d$ by multiplying a bounded cylindrical function by cutoffs tending
+to one. The gradient error tends to zero in $L^2(U)$.
+
+For $\xi\in C_c^\infty(\R^d;\R^d)$, direct change of variables gives
+\begin{equation}\label{eq:transport-variation}
+ \mathcal L(\xi):=\left.\frac{\mathrm d}{\mathrm dh}
+       G((\mathrm{Id}+h\xi)_\#U)\right|_{h=0}
+ =\int f_M(U)\nabla\psi\cdot\xi
+        -\int[\psi P_M(U)+\epsilon U]\Div\xi.
+\end{equation}
+Both signs of small $h$ give diffeomorphisms. The derivative is dominated
+by an integrable multiple of $U$, using $f_M\le L_MU$,
+$P_M\le L_MU$ and the bounded logarithmic Jacobian for the entropy.
+The metric descending-slope definition and
+$W_2(U,(\mathrm{Id}+h\xi)_\#U)\le|h|\norm{\xi}_{L^2(U)}$ give
+\[
+ |\mathcal L(\xi)|\le\sigma\norm{\xi}_{L^2(U)}.
+\]
+Choose the sign decreasing the differentiable energy to obtain this bound.
+If the norm is zero, the pushforward is the identity $U$-almost everywhere.
+By density and Riesz representation,
+$\mathcal L(\xi)=\int z\cdot\xi\,U$ for some
+$z\in L^2(U)$ with $\norm z\le\sigma$.
+
+For $\xi=\nabla\phi$, $\phi\in C_c^\infty$, the map
+$\mathrm{Id}+h\nabla\phi$ is optimal for both sufficiently small signs:
+it is the gradient of the convex function $|x|^2/2+h\phi$.
+Fenchel's inequality proves optimality, since equality holds on its graph
+and both the potential and its conjugate differ from a quadratic by a
+bounded function. Their marginal integrals are finite in $\Ptwo$.
+The ordinary subgradient inequality can therefore be applied for those
+gradient perturbations and yields
+$\mathcal L(\nabla\phi)=\int\eta\cdot\nabla\phi\,U$.
+The tangent projection of $z$ is consequently $\eta$.
+Since $\norm\eta=\sigma\ge\norm z$, orthogonal norm decomposition forces
+$z=\eta$. Thus, for all vector tests, \eqref{eq:transport-variation} says
+\[
+ U\eta=\nabla[\epsilon U+\psi P_M(U)]+f_M(U)\nabla\psi.
+\]
+The velocity is $v=-\eta$, so its continuity equation has exactly the sign
+in \eqref{eq:auxiliary-PDE}. The energy/action identity gives
+$J/\sqrt U\in L^2$. Unit mass then gives $J\in L^1$ in spacetime.
+
+The increasing inverse $\mathcal T(x,V)$ of $\mathcal A(x,z)$ has
+$|\mathcal T_V|\le\epsilon^{-1}$ and
+$|\mathcal T_x|\le C|V|$.
+Since $\mathcal A(x,U)$ and its distributional gradient are $L^1$,
+the spatial chain rule, first on truncated $V$ and then by these integrable
+bounds, gives $U\in W^{1,1}$ in space and the first flux formula in
+\eqref{eq:auxiliary-PDE}. At vacuum both $J$ and $\nabla U$ vanish
+almost everywhere. Finally
+\begin{equation}\label{eq:Fisher}
+ \int_0^S\!\int\frac{|\nabla U|^2}{U}
+ \le\frac2{\epsilon^2}
+       \left[\int_0^S\!\int\frac{|J|^2}{U}
+                    +S L_M^2\norm{\nabla\psi}_\infty^2\right]<\infty.
+\end{equation}
+\end{proof}
+
+\begin{lemma}\label{lem:renormalization}
+If $\ell\ge2$ and $\bar u\in L^\ell$, then for every $0\le s\le t\le S$,
+\begin{align}\label{eq:Lp-identity}
+ \norm{U_t}_\ell^\ell
+ +\ell(\ell-1)\int_s^t\!\int U^{\ell-2}\kappa(x,U)|\nabla U|^2
+ &=\norm{U_s}_\ell^\ell+\int_s^t\!\int H_\ell(U)\Delta\psi,
+\end{align}
+where $H_\ell(z)=\ell(\ell-1)\int_0^z y^{\ell-1}f_M'(y)\dd y$.
+In particular
+\begin{equation}\label{eq:actual-Lp}
+ \norm{U_t}_\ell^\ell\le
+ e^{(\ell-1)L_M\norm{\Delta\psi}_\infty t}\norm{\bar u}_\ell^\ell.
+\end{equation}
+Thus $U\in L^\infty L^2\cap L^2H^1$, its flux is $L^2$, and
+$\partial_s U\in L^2H^{-1}$ on finite intervals.
+\end{lemma}
+
+\begin{proof}
+The time chain rule is proved before removing a density truncation. Define
+\[
+ \beta_n(z)=\begin{cases}
+ z^\ell,&0\le z\le n,\\
+ \ell n^{\ell-1}z-(\ell-1)n^\ell,&z>n.
+ \end{cases}
+\]
+Its first derivative and $z\beta_n''(z)$ are bounded for fixed $n$;
+the latter has only one jump, at $n$. Put
+$H_n(z)=\int_0^z y f_M'(y)\beta_n''(y)\dd y$.
+We claim the exact identity
+\begin{equation}\label{eq:truncated-chain}
+ \int\beta_n(U_t)+\int_s^t\!\int\beta_n''(U)\kappa(x,U)|\nabla U|^2
+ =\int\beta_n(U_s)+\int_s^t\!\int H_n(U)\Delta\psi.
+\end{equation}
+
+Here are the convolution and trace details. Let $\eta_\delta$ be a
+nonnegative spatial mollifier and $U_\delta=\eta_\delta*U$.
+For any $V$ vanishing at vacuum with $|V|^2/U\in L^1$, weighted
+Cauchy--Schwarz gives
+\begin{equation}\label{eq:weighted-convolution}
+ \frac{|\eta_\delta*V|^2}{U_\delta}
+          \le\eta_\delta*\left(\frac{|V|^2}{U}\right).
+\end{equation}
+Choose a common subsequence of approximate identities converging almost
+everywhere for $U$, $V$ and $|V|^2/U$. On $\{U>0\}$ the quotient vector converges
+to $V/\sqrt U$. On vacuum its square is bounded by a quantity tending
+to zero in \eqref{eq:weighted-convolution}. Fatou and the integrated upper
+bound show convergence of its $L^2$ norm. Weak compactness identifies its
+weak limit, hence the convergence is strong. Applying this to $J$ and
+$\nabla U$, allowed by Lemma~\ref{lem:actual-flux}, gives
+\begin{equation}\label{eq:weighted-strong}
+ \frac{J_\delta}{\sqrt{U_\delta}}\longrightarrow\frac J{\sqrt U},
+ \qquad
+ \frac{\nabla U_\delta}{\sqrt{U_\delta}}
+                \longrightarrow\frac{\nabla U}{\sqrt U}
+ \quad\hbox{strongly in spacetime }L^2.
+\end{equation}
+
+For fixed $\delta$,
+$\partial_s U_\delta=(\nabla\eta_\delta)*J\in L^1$ in spacetime.
+Thus $U_\delta$ has an absolutely continuous $L^1$ representative.
+It agrees at every time with $\eta_\delta*U_s$: both are distributionally
+continuous in time, the latter by narrow continuity. Its initial value is
+exactly $\eta_\delta*\bar u$.
+One may now convolve in time on an interior interval, apply the scalar
+chain rule for $\beta_n$, and pass back. The derivative difference is
+$L^1$, and the remaining factor converges against that fixed derivative
+because $\beta_n'$ is bounded and continuous. The Lipschitz bound of
+$\beta_n$ passes endpoints. Absolute continuity extends the identity to
+$s=0$ and $t=S$.
+
+Multiply the smoothed equation by
+$\chi_R\beta_n'(U_\delta)$, where $\chi_R$ is a compact cutoff with
+$|\nabla\chi_R|\le C/R$, and integrate in space and time. The boundary
+term is at most
+$C R^{-1}\norm{\beta_n'}_\infty\int_0^S\int|J|$ and vanishes.
+The other integrand is
+\[
+ [U_\delta\beta_n''(U_\delta)]
+       \frac{\nabla U_\delta}{\sqrt{U_\delta}}
+                  \cdot\frac{J_\delta}{\sqrt{U_\delta}}.
+\]
+The product of the weighted vectors converges strongly in $L^1$ by
+\eqref{eq:weighted-strong}. Away from $U=n$ its bounded multiplier
+converges pointwise. On $U=n$, $\nabla U=0$ almost everywhere by Sobolev
+locality, so the limiting product is zero and the jump leaves no error.
+This proves strong $L^1$ convergence of the integrand.
+At each endpoint, spatial convolution converges in $L^1$ for its actual
+density. Consequently
+\[
+ \int\beta_n(U_t)-\int\beta_n(U_s)
+             =-\int_s^t\!\int\beta_n''(U)\nabla U\cdot J
+\]
+for every endpoint pair, on the same convolution subsequence. Substitution
+of \eqref{eq:auxiliary-PDE} and
+$\nabla H_n(U)=Uf_M'(U)\beta_n''(U)\nabla U$ gives
+\eqref{eq:truncated-chain} by integration against compactly supported
+$\nabla\psi$.
+
+The estimate uniform in $n$ is
+\[
+ 0\le H_n(z)\le L_M[z\beta_n'(z)-\beta_n(z)]
+                 \le L_M(\ell-1)\beta_n(z).
+\]
+Below $n$ the pressure is $(\ell-1)z^\ell$; above $n$ it is
+$(\ell-1)n^\ell$, while $\beta_n(z)\ge n^\ell$.
+Gronwall first gives
+$\int\beta_n(U_t)\le e^{(\ell-1)L_M\norm{\Delta\psi}_\infty t}
+\int\bar u^\ell$.
+The functions $\beta_n$ increase to $z^\ell$, so monotone convergence
+proves \eqref{eq:actual-Lp} and spacetime $L^\ell$ integrability.
+Now $H_n(U)\le L_M(\ell-1)U^\ell$ is an integrable majorant for the
+drift. The positive diffusion integrand increases at positive densities.
+Dominated and monotone convergence in \eqref{eq:truncated-chain} prove
+\eqref{eq:Lp-identity}. Taking $\ell=2$ proves the stated energy class;
+bounded coefficients in the flux then give its $L^2$ bound and the
+$H^{-1}$ time derivative. Taking $\ell=r_1$ is justified by
+\eqref{eq:exponents} and the initial $H^1$ norm.
+\end{proof}
+
+\subsection{Comparison in the energy class}
+We will construct a second solution of \eqref{eq:auxiliary-PDE} with an
+energy inequality. The following elementary comparison identifies it.
+
+\begin{lemma}\label{lem:comparison}
+Two nonnegative narrowly continuous probability-density solutions of
+\[
+ \partial_s U=\Delta\mathcal A(x,U)+\Div(f_M(U)\nabla\psi)
+\]
+with the same initial measure and in $L^\infty L^2\cap L^2H^1$ on finite
+intervals coincide.
+\end{lemma}
+
+\begin{proof}
+For two solutions $U,W$ put
+$w=U-W$, $C=\mathcal A(x,U)-\mathcal A(x,W)$, and
+$D=(f_M(U)-f_M(W))\nabla\psi$.
+The coefficient bounds give $C\in L^2H^1$, $D\in L^2$, and
+$w_s=\Delta C+\Div D\in L^2H^{-1}$.
+Thus $w$ is an $H^1$ time curve in the Hilbert space $H^{-1}$.
+Its continuous representative has zero initial trace: narrow continuity
+identifies that trace in distributions.
+
+Define the inhomogeneous resolvent $R=(I-\Delta)^{-1}$ variationally by
+\[
+ Z=Rw\in H^1,\qquad
+ \int Z\phi+\nabla Z\cdot\nabla\phi=\langle w,\phi\rangle
+ \quad(\phi\in H^1).
+\]
+This is Riesz representation for the $H^1$ inner product.
+For $E=\norm w_{H^{-1}}^2=\norm Z_2^2+\norm{\nabla Z}_2^2$,
+the Hilbert time chain rule and the resolvent equation tested with $C$ give
+\[
+ \frac{E'}2=-\int\nabla C\cdot\nabla Z-\int D\cdot\nabla Z
+             =\int CZ-\int Cw-\int D\cdot\nabla Z.
+\]
+Monotonicity and Lipschitzness yield
+$\int Cw\ge\epsilon\norm w_2^2$,
+$\norm C_2\le\Lambda\norm w_2$ and
+$\norm D_2\le L_M\norm{\nabla\psi}_\infty\norm w_2$.
+Therefore
+\[
+ \frac{E'}2\le-\frac\epsilon2\norm w_2^2
+       +\frac{(\Lambda+L_M\norm{\nabla\psi}_\infty)^2}{2\epsilon}E.
+\]
+Since $E(0)=0$, Gronwall gives $w=0$. Narrow continuity identifies the
+representatives at every time.
+\end{proof}
+
+\subsection{Positive implicit approximations}
+Let $Q_L=(-L,L)^d$ be periodic, with $L\ge1$ large enough that $\psi$ is
+constant near its boundary. The derivatives of its periodic restriction
+have the original bounds. Extend $P_M,q_M,f_M$ by zero for negative
+arguments, so $\mathcal A(x,z)=\epsilon z$ there. The increasing inverse
+$\mathcal T$ has slopes between $\Lambda^{-1}$ and $\epsilon^{-1}$.
+Also $B(z):=zf_M'(z)$ is globally Lipschitz with constant at most
+$L_M+\norm{q_M}_\infty$.
+
+Given a nonnegative periodic previous density $w\in L^2(Q_L)$, an implicit step is
+\begin{equation}\label{eq:implicit-step}
+ u-h\Delta\mathcal A(x,u)-h\Div(f_M(u)\nabla\psi)=w.
+\end{equation}
+Here $h$ is an auxiliary construction step. It is separate from the
+original minimizing movement step $\tau$ in \eqref{eq:JKO}.
+
+\begin{lemma}\label{lem:implicit-existence}
+Let $w\in L^2(Q_L)$ be nonnegative and periodic.
+For all sufficiently small $h>0$, depending only on the fixed
+$M,\epsilon,\psi$, equation \eqref{eq:implicit-step} has a unique
+periodic $H^1$ solution. It is nonnegative and preserves mass.
+If $0<k_{\rm old}\le w\le K_{\rm old}<\infty$, its solution satisfies
+\begin{equation}\label{eq:barriers}
+ \frac{k_{\rm old}}{1+hC_0}\le u\le
+       \frac{K_{\rm old}}{1-hC_0},\qquad
+ C_0=L_M\norm{\Delta\psi}_\infty,
+\end{equation}
+and belongs to $H^2(Q_L)$. The restriction on $h$ is independent of
+$L,k_{\rm old},K_{\rm old}$.
+\end{lemma}
+
+\begin{proof}
+Use the variable $V=\mathcal A(x,u)$ and the Hilbert norm
+$\norm V_h^2=\norm V_2^2+h\norm{\nabla V}_2^2$ on periodic $H^1$.
+The transformed operator is
+\[
+ \langle K_h(V),\phi\rangle
+   =\int\mathcal T(x,V)\phi+h\nabla V\cdot\nabla\phi
+                     +h f_M(\mathcal T(x,V))\nabla\psi\cdot\nabla\phi.
+\]
+For $D=V-W$ its monotonicity estimate is
+\begin{align*}
+ \langle K_h(V)-K_h(W),D\rangle
+ &\ge\left[\frac1\Lambda
+       -\frac{hL_M^2\norm{\nabla\psi}_\infty^2}{2\epsilon^2}\right]
+                   \norm D_2^2+\frac h2\norm{\nabla D}_2^2\\
+ &\ge c\norm D_h^2,\qquad
+ c=\min\{1/(2\Lambda),1/2\}>0
+\end{align*}
+for small $h$. Its dual Lipschitz constant in this norm is at most
+$K=\epsilon^{-1}+1+\sqrt h L_M\norm{\nabla\psi}_\infty/\epsilon$.
+Let $R_h=I-h\Delta$ be the Riesz map for this Hilbert norm.
+The map
+$V\mapsto V-\delta R_h^{-1}(K_h(V)-w)$ is a contraction for
+$0<\delta<2c/K^2$, as follows by expanding its squared norm.
+The contraction theorem gives the solution of $K_h(V)=w$.
+The inverse chain gives $u\in H^1$, because $\mathcal T_V$ is bounded and
+$|\mathcal T_x(x,V)|\le C|V|$.
+
+Testing with $\min(V,0)$ eliminates the drift on the negative set,
+where $\mathcal T=V/\epsilon$. The resulting nonnegative sum is at most
+zero, so $V,u\ge0$. Testing with one gives mass conservation.
+The step can also be written as
+\[
+ u-h\Div[\kappa(x,u)\nabla u+B(u)\nabla\psi]=w.
+\]
+The upper constant in \eqref{eq:barriers} is a supersolution and the lower
+constant is a subsolution. Subtract the supersolution and test with
+$z=(u-K)_+$. With $K_B=L_M+\norm{q_M}_\infty$,
+\[
+ \norm z_2^2+h\epsilon\norm{\nabla z}_2^2
+       \le hK_B\norm{\nabla\psi}_\infty\norm z_2\norm{\nabla z}_2.
+\]
+Small $h$ and Young's inequality force $z=0$. The lower barrier follows
+by the negative-part test. Thus on $jh\le S$ the successive densities
+stay between $k_{\rm initial}e^{-C_0S}$ and
+$K_{\rm initial}e^{2C_0S}$, provided $hC_0\le1/2$.
+
+The transformed equation gives
+\[
+ -\Delta V=(w-u)/h+\Div(f_M(u)\nabla\psi)\in L^2.
+\]
+Periodic Fourier expansion gives $V\in H^2$, and
+$0\le V\le\Lambda u$ makes it bounded. For any bounded periodic $H^2$
+function $V$,
+\begin{equation}\label{eq:bounded-H2}
+ \norm{\nabla V}_4^2
+             \le(2+\sqrt d)\norm V_\infty\norm{\nabla^2V}_2.
+\end{equation}
+For smooth $V$ this follows by integrating
+$\Div(V|\nabla V|^2\nabla V)$ and applying Cauchy--Schwarz.
+Periodic convolution, preserving the $L^\infty$ bound, proves the general
+case. On the positive bounded range of $u$ the inverse $\mathcal T$ has
+bounded derivatives through order two. Its second derivative is now
+legitimate since $\nabla^2V$ and $|\nabla V|^2$ are $L^2$.
+Hence $u\in H^2$, and \eqref{eq:bounded-H2} also gives $\nabla u\in L^4$.
+Positive periodic convolution then extends every identity in
+Lemma~\ref{lem:spatial} to these steps. In particular, the gradients converge
+in $L^4$: apply \eqref{eq:bounded-H2} to the convolution difference, whose
+$L^\infty$ norm is bounded and whose Hessian tends to zero in $L^2$.
+\end{proof}
+
+The estimates needed to remove the boxes and positive floors do not use
+their maximum and minimum. For each fixed $\ell\ge2$, convexity and
+testing the step with $\ell u^{\ell-1}$ give
+\begin{align}\label{eq:discrete-Lp}
+ \norm u_\ell^\ell-\norm w_\ell^\ell
+  +h\ell(\ell-1)\int u^{\ell-2}\kappa(x,u)|\nabla u|^2
+ &\le h\int H_\ell(u)\Delta\psi\notag\\
+ &\le h(\ell-1)L_M\norm{\Delta\psi}_\infty\norm u_\ell^\ell.
+\end{align}
+For small $h$, iteration gives the uniform bound
+$\sup_{jh\le S}\norm{u_j}_\ell^\ell\le
+e^{2(\ell-1)L_M\norm{\Delta\psi}_\infty S}\norm{u_0}_\ell^\ell$.
+In particular, $\ell=2$ gives
+\begin{equation}\label{eq:discrete-flux-bound}
+ \sum_{jh\le S}h\norm{\nabla u_j}_2^2\le C_S,
+ \qquad \sum_{jh\le S}h\norm{J(u_j)}_2^2\le C_S.
+\end{equation}
+
+For moment tightness use the genuinely periodic test
+\[
+ Z_L(x)=\sum_{i=1}^d(2L/\pi)^2\sin^2(\pi x_i/(2L)).
+\]
+On $Q_L$ it satisfies
+$(4/\pi^2)|x|^2\le Z_L(x)\le|x|^2$,
+$|\Delta Z_L|\le2d$ and $|\nabla Z_L|\le2|x|$.
+Equation \eqref{eq:implicit-step}, $\mathcal A(x,u)\le\Lambda u$ and
+mass one imply
+\begin{equation}\label{eq:periodic-moment}
+ \int Z_L(u_j-u_{j-1})
+ \le h\left[2d\Lambda+
+       2L_M\sup_{\operatorname{supp}\nabla\psi}|x||\nabla\psi(x)|\right].
+\end{equation}
+The physical second moments of the densities restricted to $Q_L$ are
+therefore uniformly bounded. Convexity of the entropy and the test
+$1+\log u_j$ give
+\begin{equation}\label{eq:discrete-entropy}
+ H(u_j)-H(u_{j-1})+h\epsilon\int\frac{|\nabla u_j|^2}{u_j}
+ \le h\int f_M(u_j)\Delta\psi\le hL_M\norm{\Delta\psi}_\infty.
+\end{equation}
+Their zero extensions, considered only as densities and not Sobolev
+extensions, obey \eqref{eq:entropy-lower}. Thus \eqref{eq:periodic-moment}
+and bounded initial entropy give uniform Fisher information summed in
+time, and also
+\begin{equation}\label{eq:discrete-action}
+ \sum_{jh\le S}h\int\frac{|J(u_j)|^2}{u_j}\le C_S.
+\end{equation}
+
+We retain the time-discretization defect in the nonconvex energy $F$.
+Let $z=u-w=h\Div J(u)$, which has mean zero. Periodic Fourier duality gives
+\[
+ \norm z_2^2\le\norm z_{\dot H^{-1}}\norm{\nabla z}_2,
+ \qquad \norm z_{\dot H^{-1}}\le h\norm{J(u)}_2.
+\]
+Here the homogeneous norm uses frequencies $\pi n/L$, with the zero mode
+omitted. The exact quadratic identity yields
+\begin{align}\label{eq:quadratic-defect}
+ F(u)-F(w)
+ &=\langle-\Delta u-2\chi u,z\rangle
+            -\frac12\norm{\nabla z}_2^2+\chi\norm z_2^2\notag\\
+ &\le h\langle-\Delta u-2\chi u,\Div J(u)\rangle
+                              +\chi^2h^2\norm{J(u)}_2^2.
+\end{align}
+The pairing is an $L^2$ pairing: the step equation gives
+$\Div J=(u-w)/h\in L^2$ and $u\in H^2$.
+Lemma~\ref{lem:spatial} now gives
+\begin{align}\label{eq:discrete-F}
+ F(u)+h\left[c_d(\Cpsi(u)+\Dpsi(u))
+                      +\frac\epsilon2\norm{\Delta u}_2^2\right]
+ \le F(w)+h[B_M(u)+2\chi\epsilon\norm{\nabla u}_2^2]
+                        +\chi^2h^2\norm{J(u)}_2^2.
+\end{align}
+The sum of the final terms is $O(h)$ by
+\eqref{eq:discrete-flux-bound}. The density errors are bounded using
+\eqref{eq:discrete-Lp} with $\ell=r_1$, and the gradient error by
+\eqref{eq:discrete-flux-bound}. The periodic mass-one coercivity estimate
+\begin{equation}\label{eq:periodic-coercivity}
+ F(u)\ge\tfrac14\norm{\nabla u}_2^2-C_{d,\chi},\qquad L\ge1,
+\end{equation}
+proved in Lemma~\ref{lem:periodic-coercivity}, is uniform in the box.
+Summing \eqref{eq:discrete-F} gives uniform $\sup H^1$,
+$\sum h\norm{u_j}_{H^2}^2$ and weighted positive dissipation bounds.
+All constants in these construction bounds may depend on the fixed
+$M,\epsilon,\psi,S$; none depends on the floor or box size.
+
+\subsection{Whole-space convergence and the initial dissipation}
+Choose $L_j\to\infty$ and smooth compactly supported probability densities
+$\rho_j$, supported well inside $Q_{L_j}$, converging to $\bar u$ in
+$H^1,L^{r_1}$ and second moment. Smooth expanding cutoffs, normalization,
+and a sufficiently fine centered convolution give these approximations.
+Set $\alpha_j=L_j^{-4}$ and
+\[
+ u_{0,j}=(1-\alpha_j)\rho_j+\frac{\alpha_j}{(2L_j)^d}.
+\]
+The floors have second moment $O(\alpha_jL_j^2)\to0$, zero gradient and
+vanishing $L^2$ norm. Thus $F(u_{0,j})\to F(\bar u)$; initial moments,
+$L^{r_1}$ norms and entropy bounds are uniform.
+Choose $h_j\to0$ small enough for the preceding restrictions and construct
+steps through $S+1$. Write $u_j$ for their piecewise constant density,
+$J_j$ for its flux, and $v_j$ for the piecewise affine interpolation.
+As fields or measures only, extend them by zero outside the physical cube.
+The estimates above are
+\begin{gather}
+ \sup_{j,t}\left[\norm{u_j(t)}_{H^1(Q_{L_j})}
+      +\norm{u_j(t)}_{r_1}+\int|x|^2u_j(t)\dd x\right]\le C,\notag\\
+ \int_0^{S+1}\!\int_{Q_{L_j}}
+    \left[|\nabla^2u_j|^2+|J_j|^2+\frac{|J_j|^2}{u_j}\right]\dd x\dd t
+       \le C.\label{eq:approx-bounds}
+\end{gather}
+Both interpolations have mass one and the same uniform moment and spatial
+norm bounds, while $\partial_t v_j=\Div J_j$ on each step.
+For a compact smooth test $\phi$, eventually supported inside the cube,
+\[
+ \left|\int\phi[v_j(t)-v_j(s)]\right|
+ \le\norm{\nabla\phi}_\infty\sqrt{|t-s|}
+                 \left(\int_s^t\!\int\frac{|J_j|^2}{u_j}\right)^{1/2}.
+\]
+Tightness and a diagonal Arzel\`a argument for a countable determining
+family of tests give one narrowly continuous probability curve $W_t$ with
+initial density $\bar u$ and bounded second moment.
+
+Here the local strong convergence can be seen directly. Fix a smooth
+compact cutoff $\eta$ and place $\eta v_j$ on one fixed periodic box.
+It is bounded in $L^2H^1$, and
+$\partial_t(\eta v_j)=\Div(\eta J_j)-\nabla\eta\cdot J_j$
+is bounded in $L^2H^{-1}$. The spacetime $L^2$ norm squared of Fourier
+modes above frequency $K$ is at most $CK^{-2}$. Each retained coefficient
+is bounded in time $H^1$ and hence has a uniform one-half H\"older modulus.
+Finite-dimensional compactness followed by $K\to\infty$ proves local
+strong $L^2$ convergence. On each step
+$\norm{v_j-u_j}_{H^{-1}_{\rm loc}}\le Ch_j\norm{J_j}_2$.
+The Fourier interpolation inequality between $H^{-1}$ and $H^1$ shows
+that $u_j$ has the same local strong $L^2$ limit. The local $L^2H^2$
+bound then gives strong local gradients. A subsequence converges almost
+everywhere in density and gradient. At every fixed time the uniform
+$H^1,L^{r_1}$ bounds and the prescribed narrow limit give a density $W_t$
+with those same bounds.
+
+To pass the energy errors, local convergence is insufficient. Put
+$\vartheta=(r_1-2)/(r_1-1)>0$. Mass interpolation and the moment bound give
+\begin{equation}\label{eq:density-tail}
+ \int_{|x|>R}u_j^2
+ \le\left(\int_{|x|>R}u_j\right)^\vartheta
+         \left(\int u_j^{r_1}\right)^{1/(r_1-1)}
+ \le CR^{-2\vartheta}.
+\end{equation}
+The same holds for $W$, so the densities converge strongly in global
+spacetime $L^2$ and, by interpolation, in $L^r$.
+For gradients choose $\theta_R=0$ on $B_{R/2}$ and $\theta_R=1$ outside
+$B_R$, with $|\nabla\theta_R|\le C/R$. When $L_j>2R$ it is constant
+near the periodic boundary. Periodic integration by parts gives
+\begin{equation}\label{eq:gradient-tail}
+ \int\theta_R^2|\nabla u_j|^2
+ \le2\norm{\theta_Ru_j}_2\norm{\theta_R\Delta u_j}_2
+                +CR^{-2}\int_{|x|>R/2}u_j^2.
+\end{equation}
+After time integration, \eqref{eq:approx-bounds} and
+\eqref{eq:density-tail} make this tail tend to zero uniformly.
+The Hessian fields, extended as $L^2$ fields, have a global weak limit
+identified with $\nabla^2W$ by interior compact tests. Hence $W\in L^2H^2$
+and the analogous gradient-tail bound holds for it. Combining local
+gradient convergence with these tails gives global strong gradient
+convergence. This reasoning does not differentiate a zero extension.
+
+Bounded continuity of $q_M$ and Lipschitzness of $B(z)=zf_M'(z)$ now give
+\[
+ J_j\longrightarrow\kappa(x,W)\nabla W+Wf_M'(W)\nabla\psi
+       \quad\hbox{strongly in global spacetime }L^2.
+\]
+Pass the compact-test equation to obtain \eqref{eq:auxiliary-PDE} for $W$,
+with its initial measure. Both $W$ and the actual $U$ belong to the class
+of Lemma~\ref{lem:comparison}; thus $W=U$ at every time.
+
+Sum \eqref{eq:discrete-F} and pass to this limit. At almost every endpoint
+$t$, the densities converge in global $L^2$ and the gradients are weakly
+compact, so $F(U_t)\le\liminf F(u_j(t))$. For the positive spacetime terms,
+$\sqrt{q_M(u_j)}$ is bounded and converges almost everywhere; multiplying
+an $L^2$ test therefore converges strongly, which gives weighted Hessian
+lower semicontinuity. Fatou passes the quartic term on $\{U>0\}$, and
+its target value at vacuum is zero. The heat term is weakly lower
+semicontinuous.
+
+Each density integrand in $B_M$ is continuous at zero, has growth bounded
+by $C(z^{2+a}+z^{2+3a})$, and converges in $L^1$ by the global strong
+$L^2,L^r$ convergence. On bounded density ranges its derivative is bounded
+by $C_Kz$; the remaining tails are uniformly integrable by strong $L^r$.
+The positive gradient error on the right converges by the global strong
+gradient result \eqref{eq:gradient-tail}. The summed defect is $O(h_j)$.
+An endpoint shift by at most $h_j$ tends to zero after the $L^1$ convergence
+of the right-hand integrands. These facts prove \eqref{eq:aux-energy}
+at almost every endpoint.
+
+It holds at every endpoint. Along any sequence $t_k\to t$, the uniform
+$H^1,L^{r_1}$ and moment bounds give global strong $L^2$ compactness;
+narrow continuity identifies its limit with $U_t$. Weak gradient
+compactness gives $F(U_t)\le\liminf F(U_{t_k})$. Choose $t_k$ from the
+full-measure endpoint set and use continuity of the indefinite $L^1$
+integrals. This extends \eqref{eq:aux-energy} to all $t$, including zero.
+
+Near zero its right-hand error is $O(t)$ by the uniform $H^1,L^{r_1}$
+bounds. Thus $\limsup_{t\downarrow0}F(U_t)\le F(\bar u)$.
+The preceding compactness and narrow continuity give strong $L^2$
+convergence and the reverse lower semicontinuity, hence $F(U_t)\to F(\bar u)$.
+The gradient norms then converge, proving strong $H^1$ at zero.
+Interpolation with the uniform $L^{r_1}$ bound gives strong $L^r$.
+
+Finally set
+\[
+ \mathfrak D(w)=c_d(\Cpsi(w)+\Dpsi(w))
+                         +\frac\epsilon2\norm{\Delta w}_2^2,
+ \qquad
+ \mathfrak E(w)=B_M(w)+2\chi\epsilon\norm{\nabla w}_2^2.
+\]
+The errors $\mathfrak E(U_t)$ converge to $\mathfrak E(\bar u)$ at zero.
+The extended nonnegative functional $\mathfrak D$ is lower semicontinuous
+under this strong $H^1$ convergence: a finite liminf controls $H^2$ since
+$\epsilon>0$, the weighted Hessian passes weakly, and the quartic term
+passes by Fatou and almost-everywhere gradients.
+Rearranging \eqref{eq:aux-energy} gives
+\[
+ \frac{F(\bar u)-F(U_t)}t
+       \ge\frac1t\int_0^t[\mathfrak D(U_s)-\mathfrak E(U_s)]\dd s.
+\]
+Lower semicontinuity and error continuity prove
+\eqref{eq:initial-dissipation}, also when $\mathfrak D(\bar u)=+\infty$.
+This completes the proof of Proposition~\ref{prop:auxiliary-energy}.
+\section{Localized entropy and finite propagation}\label{sec:propagation}
+
+We return to the original minimizing movements \eqref{eq:JKO}. All
+auxiliary steps and periodic boxes used in Section~\ref{sec:dissipation}
+have already been removed.
+
+\begin{proposition}\label{prop:local-entropy}
+The original global weak curve can be selected so that, for each cutoff
+$\zeta$ in any prescribed countable family of smooth functions taking
+values in $[0,1]$ and constant outside compact sets, and almost every $t>0$,
+\begin{align}\label{eq:local-entropy}
+ \int\zeta^4u(t)^p
+ &+c_d\int_0^t\!\int\zeta^4
+       [u^a|\nabla^2u|^2+u^{a-2}|\nabla u|^4]\notag\\
+ &\le\int\zeta^4\rho_0^p
+ +C_d\int_0^t\!\int u^{p+1}
+       [|\nabla\zeta|^4+\zeta^2|\nabla^2\zeta|^2+\chi^2\zeta^4].
+\end{align}
+The positive constants depend only on $d$ through the fixed exponent
+\eqref{eq:exponents}; they are independent of the cutoff radius, width,
+time and approximation parameters.
+\end{proposition}
+
+\begin{proof}
+Use the flow-interchange inequality
+of~\cite[Theorem~3.2, (3.21)]{MMS}. For the actual $\lambda_M$-flow of $G$,
+with
+$D^GF(v)=\limsup_{s\downarrow0}[F(v)-F(S_sv)]/s$, it reads
+\[
+ G(u_k)+\tau D^GF(u_k)
+       +\frac{\lambda_M}{2}W_2^2(u_k,u_{k-1})\le G(u_{k-1}).
+\]
+Every $u_k$ is an $H^1$ density in $\Ptwo$ with finite entropy, so all
+domains match. Proposition~\ref{prop:auxiliary-energy} bounds this
+dissipation from below. Its possibly infinite positive terms must then
+be finite at a minimizer, since the displayed upper bound is finite.
+Summation, dropping the positive $\epsilon H^2$ term, gives
+\begin{align}\label{eq:interchange}
+ G(u_N)+c_d\tau\sum_{k=1}^N[\Cpsi(u_k)+\Dpsi(u_k)]
+ &\le G(\rho_0)
+   +\tau\sum_{k=1}^N[B_M(u_k)+2\chi\epsilon\norm{\nabla u_k}_2^2]
+       \notag\\
+ &\quad+\frac{|\lambda_M|}{2}\sum_{k=1}^NW_2^2(u_k,u_{k-1}).
+\end{align}
+At fixed $M,\epsilon$ the final term is $O_M(\tau)$ by
+\eqref{eq:JKO-H2}.
+
+First let $\tau\to0$ along the original global subsequence. Strong
+spacetime $H^1,L^r$ convergence passes the density and gradient errors.
+For the positive terms use the bounded continuous weight $q_M$ with weak
+Hessians, and almost-everywhere gradient convergence with Fatou for the
+quartic term. At almost every endpoint the lower semicontinuity of $G$
+and the common moment bound apply. These bounds also give a uniform lower
+entropy bound. Letting $\epsilon\to0$ next therefore removes the entropy
+and heat error and leaves the weighted $f_M$ inequality for the same
+original curve.
+
+Finally $M\to\infty$. The functions $q_M,f_M$ increase to $u^a,u^p/(ap)$.
+The error coefficients in \eqref{eq:EM} converge pointwise to constants
+times $u^a$ and are dominated using \eqref{eq:ratios} by
+$C_d(u^{2+a}+u^{2+3a})$. Monotone convergence on positive terms and
+dominated convergence on errors are thus legitimate. Multiplication by
+$ap$ gives \eqref{eq:local-entropy}. Indeed
+\[
+ \frac{|\nabla\psi|^4}{\psi^3}=256|\nabla\zeta|^4,\qquad
+ \frac{|\Delta\psi|^2}{\psi}
+       \le C_d(|\nabla\zeta|^4+\zeta^2|\nabla^2\zeta|^2),
+\]
+and Young's inequality bounds $\chi|\Delta\psi|$ by the same cutoff
+terms plus $C_d\chi^2\zeta^4$.
+Countable cutoff families, integer horizons, integer $M$ and a sequence
+$\epsilon\downarrow0$ suffice, so a common refinement preserves one
+global original curve and all its source weak-solution properties.
+\end{proof}
+
+Fix in Proposition~\ref{prop:local-entropy} the countable family of radial
+cutoffs with inner radius $s=m+1-2^{-j}$ and width $\delta=2^{-j-1}$,
+for integers $m\ge1$ and $j\ge0$. Each is zero on $B_s$, one outside
+$B_{s+\delta}$, and satisfies $|\nabla\zeta|\le C_d\delta^{-1}$ and
+$|\nabla^2\zeta|\le C_d\delta^{-2}$. These bounds are uniform for $s\ge1$.
+Only these pairs $(s,\delta)$ are needed below.
+
+Fix $T>0$ and choose $R_0\ge1$ containing the essential support of
+$\rho_0$. For $s\ge R_0$ let
+\begin{equation}\label{eq:tail}
+ A(s)=\int_0^T\!\int_{|x|>s}u^{p+1}\dd x\dd t.
+\end{equation}
+It is finite and tends to zero as $s\to\infty$, by the uniform $H^1$
+bound and the strict subcritical exponent. For any of the fixed pairs
+$(s,\delta)$ with $s\ge R_0$, use the corresponding cutoff $\zeta$.
+The initial term in \eqref{eq:local-entropy} vanishes, giving
+\begin{align}\label{eq:tail-energy}
+ \esssup_{0<t<T}\int\zeta^4u^p
+ +\int_0^T\!\int\zeta^4
+       [u^a|\nabla^2u|^2+u^{a-2}|\nabla u|^4]
+ \le C_d(\delta^{-4}+\chi^2)A(s).
+\end{align}
+For the time integral, let admissible endpoints tend to $T$.
+
+\begin{lemma}\label{lem:power-chain}
+Put
+\begin{equation}\label{eq:power-choices}
+ b=\frac{p+1}{2}=1+\frac a2,\qquad
+ q=\frac{2p}{p+1},\qquad k=\frac{2(p+1)}p>2,\qquad
+ w=\zeta^k u^b.
+\end{equation}
+Then $w\in L^2(0,T;H^2(\R^d))$ and
+\begin{equation}\label{eq:w-bound}
+ \esssup_{t<T}\norm{w(t)}_q^q
+             +\int_0^T\norm{\nabla^2w(t)}_2^2\dd t
+        \le C_d(\delta^{-4}+\chi^2)A(s).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The identities $kq=4$, $bq=p$ give $|w|^q=\zeta^4u^p$.
+We supply the second-order chain justification because no unweighted
+$L^4$ gradient embedding is available in high dimension.
+Regularize the power at zero by
+$\Phi_\eta(z)=(z+\eta)^b-\eta^b$.
+Multiply its derivative by a smooth upper cutoff $\theta(z/K)$, equal to
+one below $K$ and zero above $2K$, and integrate from zero, with $K\ge\eta$.
+The resulting $\Phi_{\eta,K}$ has bounded first and second derivatives,
+vanishes at zero, and satisfies, with constants independent of $\eta,K$,
+\begin{gather*}
+ |\Phi'|^2\le C_d(z^a+\eta^a),\qquad
+ |\Phi''|^2\le C_d z^{a-2}\quad(z>0),\\
+ |\Phi(z)|^2\le C_d(z^{2+a}+\eta^a z^2).
+\end{gather*}
+On $K<z<2K$ the added second derivative has the same bound since $z$
+is comparable to $K$.
+Writing $\sigma=\zeta^k$, the distributional identity is
+\begin{align}\label{eq:power-Hessian}
+ \nabla^2[\sigma\Phi(u)]
+ &=\sigma\Phi'(u)\nabla^2u
+   +\sigma\Phi''(u)\nabla u\otimes\nabla u\notag\\
+ &\quad+2\operatorname{sym}[\nabla\sigma\otimes\Phi'(u)\nabla u]
+                       +\Phi(u)\nabla^2\sigma.
+\end{align}
+Initially this is an $L^1_{\rm loc}$ chain/product identity: the truncated
+first derivative is bounded in spatial $W^{1,2}_{\rm loc}$, and its
+product with $\nabla u\in H^1$ is in $W^{1,1}_{\rm loc}$.
+The estimates now show that its right side is $L^2$.
+
+Since $2k\ge4$, the first two squared terms are bounded in spacetime by
+\[
+ C_d\int_0^T\!\int\zeta^4
+       [u^a|\nabla^2u|^2+u^{a-2}|\nabla u|^4]
+            +C_d\eta^a\int_0^T\!\int|\nabla^2u|^2.
+\]
+For the cross term use
+\[
+ \zeta^{2k-2}|\nabla\zeta|^2u^a|\nabla u|^2
+ \le c\zeta^4u^{a-2}|\nabla u|^4
+          +C_{d,c}\zeta^{4k-8}|\nabla\zeta|^4u^{a+2}.
+\]
+Here $4k-8>0$. The $\eta^a$ part is bounded by a vanishing multiple
+of $\int_0^T\norm{\nabla u}_2^2$.
+Finally
+\[
+ |\nabla^2\sigma|^2\le C_d[
+     \zeta^{2k-4}|\nabla\zeta|^4
+                   +\zeta^{2k-2}|\nabla^2\zeta|^2].
+\]
+This is supported in the transition annulus and bounded by
+$C_d\delta^{-4}$. Its contribution is at most
+$C_d\delta^{-4}A(s)$ plus a vanishing $\eta^a$ multiple of
+$\int_0^T\norm u_2^2$.
+First let $K\to\infty$ and then $\eta\downarrow0$.
+The powers converge in spacetime $L^2$ and the Hessians are weakly
+compact in $L^2$; all $\eta^a$ terms vanish by the original $H^1,H^2$
+bounds. Thus the Hessian estimate passes to $w$.
+Global $L^2$ and Hessian $L^2$ imply inhomogeneous $H^2$ by derivative
+interpolation. Combining with \eqref{eq:tail-energy} proves
+\eqref{eq:w-bound}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For the exponent $q$ in \eqref{eq:power-choices},
+Lemma~\ref{lem:GN} gives
+\[
+ \norm w_2\le C_d\norm{\nabla^2w}_2^\theta\norm w_q^{1-\theta},
+ \qquad \theta=\frac d{d+4p}.
+\]
+Integrate its square in time, use H\"older and \eqref{eq:w-bound}, and note
+that $w=u^b$ outside $B_{s+\delta}$. We obtain
+\begin{equation}\label{eq:tail-recurrence}
+ A(s+\delta)\le C_d T^\gamma
+      (\delta^{-4}+\chi^2)^\beta A(s)^\beta,
+ \qquad
+ \gamma=\frac{4p}{d+4p},\qquad
+ \beta=1+\frac4{d+4p}>1.
+\end{equation}
+Indeed $\gamma=1-\theta$ and
+$\theta+2(1-\theta)/q=\beta$.
+
+To see exactly how this forces a zero tail, choose an integer
+$s_*\ge R_0$ and put
+$s_j=s_*+1-2^{-j}$, $\delta_j=2^{-j-1}$, $y_j=A(s_j)$ for $j\ge0$.
+Equation \eqref{eq:tail-recurrence} implies
+\[
+ y_{j+1}\le KB^j y_j^\beta,\qquad
+ K=C_dT^\gamma(1+\chi^2)^\beta2^{4\beta},\quad B=2^{4\beta}.
+\]
+If $y_0\le K^{-1/(\beta-1)}B^{-1/(\beta-1)^2}$, induction gives
+\[
+ y_j\le K^{-1/(\beta-1)}
+          B^{-j/(\beta-1)-1/(\beta-1)^2}\longrightarrow0.
+\]
+Such a finite integer $s_*$ exists because $A(s)\to0$.
+Monotonicity then gives $A(s_*+1)=0$.
+Nonnegativity implies that $u=0$ almost everywhere on
+$(0,T)\times(\R^d\setminus B_{s_*+1})$.
+
+This uses only the countable family fixed before the tail estimate.
+Taking integer time horizons in the preceding argument gives the support
+property for the same original global curve on all those horizons;
+any finite $T$ is contained in a larger integer horizon. Its narrow continuity, probability and moment properties,
+regularity and exact weak identity are the unchanged CEFF conclusions
+from Section~\ref{sec:entropies}. This proves every clause of
+Theorem~\ref{thm:main}.
+\end{proof}
+\appendix
+\section{Two interpolation estimates}\label{app:interpolation}
+
+\begin{lemma}\label{lem:GN}
+If $1\le q<2$ and $w\in H^2(\R^d)\cap L^q(\R^d)$, then
+\[
+ \norm w_2\le C_{d,q}\norm{\nabla^2w}_2^\theta\norm w_q^{1-\theta},
+ \qquad
+ \theta=\frac{d(1/q-1/2)}{2+d(1/q-1/2)}.
+\]
+\end{lemma}
+\begin{proof}
+Choose an even nonnegative smooth unit kernel $\eta_h$ and put
+$s=d(1/q-1/2)$, $L=\norm w_q$, $D=\norm{\nabla^2w}_2$.
+Convolution is $L^q$-contractive and
+$\norm{\eta_h*w}_\infty\le C h^{-d/q}L$.
+Interpolating these two bounds gives
+$\norm{\eta_h*w}_2\le C h^{-s}L$.
+The first moment of the kernel is zero, so Taylor's integral remainder
+and translation continuity in $L^2$ give
+$\norm{w-\eta_h*w}_2\le C h^2D$.
+This is first proved for smooth $w$ and passed by $H^2$ approximation.
+Thus $\norm w_2\le C(h^{-s}L+h^2D)$ for every $h>0$.
+If either norm is zero, the conclusion follows directly, letting
+$h\to\infty$ when $D=0$. Otherwise choose
+$h=(L/D)^{1/(s+2)}$. This proves the formula; for
+$q=2p/(p+1)$ it gives $\theta=d/(d+4p)$ in every finite dimension.
+\end{proof}
+
+\begin{lemma}\label{lem:periodic-coercivity}
+For a nonnegative periodic $H^1(Q_L)$ density of mass one and $L\ge1$,
+\[
+ \frac12\norm{\nabla u}_2^2-\chi\norm u_2^2
+                      \ge\frac14\norm{\nabla u}_2^2-C_{d,\chi}.
+\]
+\end{lemma}
+\begin{proof}
+Let $c_n=(2L)^{-d}\int_{Q_L}u(x)e^{-i\pi n\cdot x/L}\dd x$.
+Mass one gives $|c_n|\le(2L)^{-d}$.
+Splitting Parseval's sum at physical frequency $K>0$, a lattice count
+and the gradient norm give
+\[
+ \norm u_2^2\le C_d(K^d+L^{-d})+K^{-2}\norm{\nabla u}_2^2.
+\]
+With $E=\norm{\nabla u}_2^2>0$ choose $K=E^{1/(d+2)}$ to obtain
+$\norm u_2^2\le C_dE^{d/(d+2)}+C_dL^{-d}$.
+The constant-density case $E=0$ has the same bound.
+Since $d/(d+2)<1$, scalar Young's inequality proves the assertion
+uniformly for $L\ge1$.
+\end{proof}
+
+\section*{AI-use statement}
+This manuscript was developed with substantial AI assistance in mathematical
+exploration, proof drafting, source checking and exposition. Two fresh AI
+contexts provided reader and referee-style feedback on a frozen draft,
+followed by author revision. These AI checks do not constitute independent
+human review or formal verification. Independent mathematical assessment
+of the argument is requested.
+\begin{thebibliography}{9}
+\bibitem{AGS}
+L. Ambrosio, N. Gigli and G. Savar\'e,
+\emph{Gradient Flows in Metric Spaces and in the Space of Probability Measures},
+first edition, Birkh\"auser, 2005.
+\href{https://www2.stat.duke.edu/~sayan/ambrosio.pdf}{Institutional copy}.
+
+\bibitem{Brezis}
+H. Brezis, \emph{Functional Analysis, Sobolev Spaces and Partial Differential
+Equations}, Springer, 2011.
+\href{https://doi.org/10.1007/978-0-387-70914-7}{doi:10.1007/978-0-387-70914-7}.
+
+\bibitem{CEFF}
+J. A. Carrillo, A. Esposito, C. Falc\'o and A. Fern\'andez-Jim\'enez,
+Competing effects in fourth-order aggregation--diffusion equations,
+\emph{Proc. Lond. Math. Soc.} \textbf{129} (2024), e12623.
+\href{https://doi.org/10.1112/plms.12623}{doi:10.1112/plms.12623}.
+Theorem and section numbering used here is from
+\href{https://arxiv.org/abs/2307.14706v1}{arXiv:2307.14706v1}.
+
+\bibitem{MMS}
+D. Matthes, R. J. McCann and G. Savar\'e,
+A family of nonlinear fourth order equations of gradient flow type,
+\emph{Comm. Partial Differential Equations} \textbf{34} (2009), 1352--1397.
+\href{https://www.math.toronto.edu/mccann/papers/MattesMcCannSavare.pdf}{Author copy}.
+
+\bibitem{NCS}
+A. Novick-Cohen and A. Shishkov,
+The thin film equation with backwards second order diffusion,
+\emph{Interfaces Free Bound.} \textbf{12} (2010), 463--496.
+\href{https://doi.org/10.4171/IFB/242}{doi:10.4171/IFB/242}.
+\end{thebibliography}
+\end{document}
