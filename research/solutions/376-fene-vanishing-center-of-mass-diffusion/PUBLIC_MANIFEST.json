@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "problem_id": "376",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package scope, links, build command and factual AI-use disclosure",
+      "bytes": 2102,
+      "sha256": "99004ca97cdb5f79e317c496600075f41819fd46fa17a1b9f473f575a0dfd728"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original problem requirements mapped to manuscript locations",
+      "bytes": 3748,
+      "sha256": "c955c82a78a787ba78744ac224b1014e0fd7a77456f7591639fb9ec0b6d8e34a"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete analytic manuscript",
+      "bytes": 436476,
+      "sha256": "43b88e176f823594cbad8021df55c27b3824fd94fc16a140f8c51ea1004208f9"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Self-contained editable manuscript source",
+      "bytes": 65710,
+      "sha256": "27a4041206516e9b049b88f67fc51fa8c5fe14b6f01f483747de5661f32762b5"
+    }
+  ],
+  "checksums_file": "SHA256SUMS",
+  "scope": "Proposed complete analytic resolution, submitted for independent review"
+}
