@@ -1,0 +1,994 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{aliascnt}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\DeclareMathOperator{\Op}{Op}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ord}{ord}
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\theoremstyle{remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\numberwithin{equation}{section}
+
+\title{A sharp Weyl remainder for constant-index transmission eigenvalues}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}.}}
+\date{}
+\hypersetup{pdftitle={A sharp Weyl remainder for constant-index transmission eigenvalues},pdfauthor={Kaiwen Jin}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove a Weyl formula with remainder $O(r^{d-1})$ for the interior
+transmission problem with a constant refractive index $n>1$ in an arbitrary
+bounded smooth domain in $\mathbb R^d$, $d\ge2$. The count includes every
+nonzero complex energy of modulus at most $r^2$, with its algebraic
+multiplicity for the original maximal-domain transmission operator.
+The leading coefficient is
+$\omega_d(2\pi)^{-d}|\Omega|(1+n^{d/2})$.
+The argument combines the known Dirichlet-to-Neumann approximation with a
+sector estimate for a normalized boundary family. At inverse frequency scale $h$, its trace-class part
+has norm $O(h^{1-d})$ at scaled energy height $h$, and the sector estimate controls an
+actual logarithm of its determinant. Pole cancellation in a strip then
+gives the same order for the contour argument, including the endpoint
+contribution at every counting radius. No convexity assumption is used.
+\end{abstract}
+
+\section{Introduction}
+
+The interior transmission problem asks when two Helmholtz fields with
+different wave speeds can have the same Cauchy data on the boundary.
+For a constant refractive index $n>1$, it takes the form
+\begin{equation}\label{eq:transmission}
+ \Delta u+n\lambda u=0,\qquad \Delta v+\lambda v=0
+ \quad\hbox{in }\Omega,\qquad
+ u=v,\quad \partial_\nu u=\partial_\nu v
+ \quad\hbox{on }\partial\Omega.
+\end{equation}
+The coupling makes the spectral problem nonselfadjoint. Its high-energy
+count is nevertheless expected to be the sum of the two scalar
+Dirichlet counts, up to an error of boundary order. The main difficulty
+is to control the argument of a meromorphic boundary determinant close
+to the real spectrum, where the two Dirichlet spectra may meet the
+transmission spectrum.
+
+Petkov and Vodev \cite{PV} relate the transmission count, with algebraic
+multiplicity, to the scalar Dirichlet counts through an exact boundary
+index formula. Their construction reduces the counting remainder to
+estimates for a meromorphic Dirichlet-to-Neumann family. Vodev's
+high-frequency approximation \cite{Vdn} supplies, in the isotropic case,
+a fixed eigenvalue-free strip in the wave-number plane and a counting
+remainder $O_\epsilon(r^{d-1+\epsilon})$ for every $\epsilon>0$.
+The boundary-order remainder $O(r^{d-1})$ is the conjectured endpoint
+\cite[Section~7, Conjecture~1, (19)]{Vsurvey}. We prove that endpoint
+for the constant-index problem \eqref{eq:transmission} on every smooth
+bounded domain.
+
+We first specify the realization and the count. All spaces are complex.
+Let $\Omega\subset\mathbb R^d$ be bounded and connected, with
+$C^\infty$ boundary. On $\mathcal H=L^2(\Omega)\oplus L^2(\Omega)$,
+let
+\begin{equation}\label{eq:A-domain}
+ A(u,v)=(-n^{-1}\Delta u,-\Delta v),\qquad
+ \begin{aligned}
+ \mathcal D(A)=\{(u,v)\in\mathcal H:\;&\Delta u,\Delta v\in L^2(\Omega),\\
+ &\gamma_0u=\gamma_0v,\quad\gamma_1u=\gamma_1v\}.
+ \end{aligned}
+\end{equation}
+Here the Laplacians are distributional and $\gamma_0,\gamma_1$ are
+the generalized Dirichlet and normal traces on the maximal Laplace
+graph domain. Either common choice of normal gives this same domain.
+This is the closed transmission realization used throughout the paper.
+Its nonzero eigenvalues are isolated and have finite algebraic
+multiplicity. For a small positively oriented circle $C_\lambda$
+enclosing one such eigenvalue, set
+\begin{equation}\label{eq:count-definition}
+ m_T(\lambda)=\operatorname{rank}
+ \frac{1}{2\pi i}\int_{C_\lambda}(z-A)^{-1}\,dz,
+ \qquad
+ N(r)=\sum_{0<|\lambda|\le r^2}m_T(\lambda).
+\end{equation}
+Thus $N(r)$ counts energies, including nonreal energies, with the Riesz
+multiplicity of the original operator. It does not count the two square
+roots of an energy separately. Finiteness near zero is established in
+\cref{lem:regularity}.
+
+\begin{theorem}\label{thm:main}
+Let $d\ge2$, let $\Omega\subset\mathbb R^d$ be a bounded connected
+domain with $C^\infty$ boundary, and fix a constant $n>1$.
+For the operator \eqref{eq:A-domain} and count
+\eqref{eq:count-definition},
+\begin{equation}\label{eq:main}
+ N(r)=\frac{\omega_d}{(2\pi)^d}|\Omega|(1+n^{d/2})r^d
+       +O_{\Omega,n}(r^{d-1})\qquad(r\longrightarrow\infty).
+\end{equation}
+Here $\omega_d$ is the volume of the unit ball in $\mathbb R^d$ and
+$|\Omega|$ is the volume of $\Omega$. The estimate holds for every
+sufficiently large real radius $r$, including radii through
+eigenvalues.
+\end{theorem}
+
+The boundary may have several components; no convexity or other
+geometric restriction is imposed. The index $n$ is fixed, and the
+constant in the remainder may deteriorate as $n\downarrow1$.
+The theorem is the constant-index isotropic case of the conjecture
+cited above. It makes no assertion for variable refractive indices or
+anisotropic principal parts.
+
+The proof retains the Poisson construction and the exact Riesz/index
+identity of \cite{PV}, and the approximation of \cite{Vdn}. The
+additional estimate concerns the determinant's phase at the critical
+height $|\Im\zeta|\asymp h$ in the scaled energy $\zeta=h^2\lambda$,
+where $h\asymp r^{-1}$ is the inverse counting scale. After multiplication by one tangential
+derivative and a scalar factor, the difference of the two
+Dirichlet-to-Neumann maps has principal symbol
+\[
+ \frac{2\sqrt{1+r_0}}{
+ \sqrt{r_0-n\zeta}+\sqrt{r_0-\zeta}},
+\]
+with square roots of positive real part in the upper half-plane.
+Here $r_0$ is the symbol of the positive boundary Laplacian.
+This symbol stays in a fixed sector and tends to one at high tangential
+frequency. The full approximation in its one-derivative output norm
+therefore gives a uniformly coercive boundary family at height $Ch$.
+A holomorphic high-frequency normalization leaves a trace-class
+perturbation of the identity of size $O(h^{1-d})$. Coercivity along the
+straight-line homotopy to the identity bounds an analytic logarithm
+of its determinant, including its imaginary part. This is the
+phase estimate needed at the endpoint.
+
+The determinant still has Dirichlet poles inside the thin strip.
+We cancel their divisors with finite strip factors and use a harmonic
+barrier to transfer the horizontal bound into the strip. Jensen's
+formula bounds the local transmission multiplicity by $O(h^{1-d})$;
+a disk factorization then bounds the argument on each short vertical
+side by the same order. The index formula gives the annular count,
+and the local estimate removes contour shifts at exact endpoints.
+Dyadic summation yields \eqref{eq:main}.
+
+\Cref{sec:prelim} records the realization, scaling and external boundary
+estimates. \Cref{sec:det} constructs the normalized determinant and its
+logarithm, and \cref{sec:strip} proves the thin-strip estimates.
+\Cref{sec:count} completes the count. The radial calculation in
+\cref{app:ball}, related to the constant-index models in \cite{PS},
+illustrates why common Dirichlet values must retain their original
+algebraic multiplicity.
+
+
+\section{Spectral and boundary preliminaries}\label{sec:prelim}
+
+Throughout the proof, $d$, $\Omega$ and $n$ satisfy the hypotheses of
+\cref{thm:main}, and $q=d-1$. Constants may depend on these fixed data and on
+fixed cutoffs and compact energy sets. They are independent of the small
+parameter $h$ and of the spectral point in the region stated. No uniformity
+as $n\downarrow1$ is asserted.
+
+\subsection{The realization and the two spectral parameters}
+The realization of the transmission operator used by Petkov and Vodev
+\cite[Section~3]{PV} acts on
+$L^2(\Omega,n\,dx)\oplus L^2(\Omega,dx)$ with the same maximal graph
+domain as $A$. The identity map to $L^2(\Omega)^2$ is a bounded
+isomorphism, since $n$ is constant. It conjugates the operators and their
+resolvents, so it preserves Riesz projection ranks. We shall use their
+counting identity with precisely this multiplicity.
+
+We write $\lambda$ for an energy eigenvalue and use
+\begin{equation}\label{eq:scales}
+ \zeta=h^2\lambda,\qquad k=\sqrt\lambda,\qquad \Re k\ge0.
+\end{equation}
+The wave number $k$ is used only to locate the spectrum. The counting
+function always counts energies, once each.
+
+\begin{lemma}\label{lem:regularity}
+Every eigenfunction of $A$ at a nonzero eigenvalue is smooth up to the
+boundary. There is a punctured neighborhood of zero containing no nonzero
+eigenvalues. In particular, the nonzero counting function is finite on
+bounded intervals of radii.
+\end{lemma}
+\begin{proof}
+Let $(u,v)$ be an eigenfunction at $\lambda\ne0$, and set $w=u-v$.
+Then $w,\Delta w\in L^2(\Omega)$ and both generalized Cauchy traces of
+$w$ vanish. Zero-Dirichlet elliptic regularity gives $w\in H^2(\Omega)$;
+the two zero traces then give $w\in H_0^2(\Omega)$. To apply the regularity
+statement at this initial graph regularity, subtract the zero-Dirichlet
+solution with the same $(1-\Delta)w$. The remaining homogeneous solution
+has zero generalized Dirichlet trace and vanishes by Green's identity
+against smooth Dirichlet inverse test functions. The usual regularity
+theorem therefore applies. We use the trace and elliptic regularity
+statements in \cite[Chapter~11, especially Theorem~11.14]{Grubb}.
+
+The equations imply
+\begin{equation}\label{eq:w-reconstruction}
+ u=-\frac{\Delta w+\lambda w}{(n-1)\lambda},\qquad
+ v=-\frac{\Delta w+n\lambda w}{(n-1)\lambda},
+\end{equation}
+and hence
+\begin{equation}\label{eq:clamped-pencil}
+ \Delta^2w+(n+1)\lambda\Delta w+n\lambda^2w=0,
+ \qquad w\in H_0^2(\Omega).
+\end{equation}
+Here $w\ne0$, since $u=v$ would force $(n-1)\lambda u=0$.
+The right-hand side of the fourth-order equation is initially in $L^2$.
+Clamped elliptic regularity gives $w\in H^4$ and then, by iteration,
+$w\in C^\infty(\overline\Omega)$. Formula \eqref{eq:w-reconstruction}
+gives the same conclusion for $u,v$.
+
+On $H_0^2(\Omega)$, the norm $\|\Delta w\|_2$ is equivalent to the
+$H^2$ norm. Indeed, integration by parts for compactly supported smooth
+approximants gives $\sum_{i,j}\|\partial_i\partial_jw\|_2^2
+=\|\Delta w\|_2^2$, and Poincare's inequality controls the lower
+derivatives. Testing \eqref{eq:clamped-pencil} against $w$ therefore shows
+that it has no nonzero solution for sufficiently small $|\lambda|$.
+Equivalently, its weak form is an invertible form at $\lambda=0$ plus
+$\lambda C_1+\lambda^2C_2$, with $C_1,C_2$ bounded in that Hilbert norm.
+Away from zero we use the qualitative discreteness and finite-rank
+meromorphic resolvent construction of \cite[Theorem~1.1 and Section~3]{PV}.
+This proves the bounded-radius assertion. No compact-resolvent assertion
+for $A$ at zero is needed.
+\end{proof}
+
+Vodev's eigenvalue-free region applies to the smooth eigenfunctions just
+obtained. In the isotropic case, \cite[Theorem~2.1 and the following
+remark]{Vdn} gives a constant $C_k$ such that all sufficiently large
+transmission wave numbers satisfy
+\begin{equation}\label{eq:wave-strip}
+ |\Im k|\le C_k.
+\end{equation}
+The remark is used for $0\le\Re k\le1$; Theorem~2.1 supplies the region
+$\Re k>1$. Thus \eqref{eq:wave-strip} covers all large complex energies,
+including the exclusion of a large negative-energy branch.
+
+For $m=1,n$, let $G_{m,D}=-m^{-1}\Delta_D$ be the positive Dirichlet
+operator, and let $D_m(t)$ count its eigenvalues at most $t$.
+The sharp scalar Dirichlet Weyl estimate \cite[(0.1)]{PTL} gives
+\begin{equation}\label{eq:scalar-weyl}
+ D_m(t)=\tau_m t^{d/2}+O(t^{q/2}),\qquad
+ \tau_m=\frac{\omega_d}{(2\pi)^d}|\Omega|m^{d/2}.
+\end{equation}
+The scaling follows from $D_m(t)=D_1(mt)$. Consequently, in a fixed
+compact positive scaled-energy interval, every interval of length $Ch$
+has combined scaled Dirichlet multiplicity $O(h^{-q})$, for fixed $C$.
+To see this, subtract \eqref{eq:scalar-weyl} at the endpoints divided by
+$h^2$. The leading difference and both remainders are $O(h^{-q})$.
+Enlarging the interval by $h$ proves the same assertion for closed
+endpoints and for a single eigenvalue's multiplicity.
+
+\subsection{Dirichlet-to-Neumann maps and the source approximation}
+Let $\Gamma=\partial\Omega$, and use the inner unit normal on $\Gamma$.
+For $\zeta$ outside the two scaled Dirichlet spectra, define
+\begin{equation}\label{eq:DN}
+ \mathcal N_m(\zeta,h)f=h\partial_{\nu_{\rm in}}u|_\Gamma,
+ \qquad (h^2\Delta+m\zeta)u=0,\quad u|_\Gamma=f.
+\end{equation}
+The families extend meromorphically, with simple finite-rank poles at
+scaled Dirichlet values. Put
+\begin{equation}\label{eq:Lambda}
+ \Lambda_h=(I-h^2\Delta_\Gamma)^{1/2},\qquad
+ \|f\|_{H_h^1(\Gamma)}=\|\Lambda_hf\|_{L^2(\Gamma)}.
+\end{equation}
+This norm is uniformly equivalent to the local semiclassical Sobolev
+norm. The boundary Laplacian is nonpositive; the square root is its
+positive spectral one. Write $r_0(x',\xi')$ for the principal symbol of
+$-\Delta_\Gamma$, and $\ell=(1+r_0)^{1/2}$.
+
+We use semiclassical quantization with local phase
+$e^{-i\langle x'-y',\xi'\rangle/h}$ and factor $(2\pi h)^{-q}$,
+as in \cite{Vdn}. The opposite phase is obtained by
+$\xi'\mapsto-\xi'$. It gives the same symbol estimates and the same
+principal symbols here, since $r_0$ is even in $\xi'$. We use a linear
+partition-of-unity quantization with $\Op_h(1)=I$.
+
+The approximation from \cite[Theorem~1.2]{Vdn} will be used in its full
+mapping norm. Work first with a semiclassical parameter $h_e$ such that
+$\Re((h_e k)^2)=1$. For every fixed sufficiently small $\delta>0$, let
+$\chi_{m,\delta}$ be the source cutoff equal to one in a
+$\delta^2$ neighborhood of the glancing set $\{r_0=m\}$ and supported
+in a slightly larger such neighborhood. With
+\[
+ \rho_m=\sqrt{r_0-m(h_e k)^2},\qquad \Re\rho_m<0,
+\]
+the source gives
+\begin{equation}\label{eq:Vodev-interface}
+ \left\|h_eN(k;m)-\Op_{h_e}
+ \big(\rho_m(1-\chi_{m,\delta})+h_e b\big)\right\|_{L^2\to H_{h_e}^1}
+ \le C\delta.
+\end{equation}
+Here $N(k;m)$ is the unscaled inner-normal map for
+$(\Delta+mk^2)u=0$. Here $S_0^0$ denotes symbols of order zero with standard symbol
+seminorms uniform in the semiclassical parameter. The symbol $b\in S_0^0$
+is independent of both $k$ and the index function. For each $0<\epsilon<1$, the estimate holds when
+\[
+ C_\delta\le|\Im k|\le(\Re k)^{1-\epsilon},\qquad
+ \Re k\ge C_{\epsilon,\delta}.
+\]
+The domain may be any smooth bounded domain. No concavity is part of
+this theorem. The index independence of $b$ and the $H^1$ output in
+\eqref{eq:Vodev-interface} are both needed below.
+
+We also use the closed-manifold symbol calculus, boundedness and Garding
+estimates, in the conventions of \cite[Chapter~4 and Appendix~E]{EZ}.
+For fixed cutoffs, their symbol seminorms are uniform in $h$.
+The positive operator in \eqref{eq:Lambda} has symbol $\ell+hS^0$.
+One way to justify this for the unbounded square root is to start from
+the norm-convergent integral
+\begin{equation}\label{eq:square-root-integral}
+ (I-h^2\Delta_\Gamma)^{-1/2}
+ =\frac2\pi\int_0^\infty(I-h^2\Delta_\Gamma+t^2)^{-1}\,dt.
+\end{equation}
+The elliptic inverse starts with $(1+r_0+t^2)^{-1}$. Its coefficient at
+order $h^j$ has joint order $-2-j$ in $(\xi',t)$, by the usual
+composition recursion. Integrating in $t$ gives order $-1-j$, with
+principal symbol $\ell^{-1}$. An arbitrarily long recursion makes the
+remainder integrable in any fixed Sobolev seminorm; the exact positive
+resolvent bounds the correction. Multiplication by
+$I-h^2\Delta_\Gamma$ gives the stated symbol of $\Lambda_h$.
+In particular, $\Lambda_h:H_h^1\to L^2$ has norm one, and
+$\Lambda_h:H^{s+1}\to H^s$ is bounded uniformly for $h\le1$ at each
+fixed ordinary Sobolev order.
+
+\section{A normalized boundary determinant}\label{sec:det}
+
+The normalization is chosen so that its principal symbol lies in a fixed
+sector and tends to one at high tangential frequency. The first property
+will control the logarithm; the second will make its trace-class part
+have boundary-order size. Define
+\begin{equation}\label{eq:B}
+ T_h=\mathcal N_n-\mathcal N_1,\qquad
+ B_h(\zeta)=\frac{2}{(n-1)\zeta}\Lambda_hT_h(\zeta).
+\end{equation}
+For each fixed $h$, this is a bounded meromorphic family on boundary
+$L^2$. Its high-frequency order is zero, since the first-order terms of
+the two Dirichlet-to-Neumann maps cancel. Fix a compact rectangle
+$\mathcal D$ inside
+$\{1/2<\Re\zeta<3,\ |\Im\zeta|<9/10\}$, whose interior contains
+$[3/5,14/5]$. Every later contour lies in its interior for small $h$.
+
+\subsection{A uniform sector at height \texorpdfstring{$h$}{h}}
+\begin{lemma}\label{lem:sector}
+There are constants $C_*,c_B,C_B>0$ such that, for every fixed $H>C_*$
+and sufficiently small $h$, the following estimates hold uniformly for
+$3/5\le x=\Re\zeta\le14/5$ and $C_*h\le|y|=|\Im\zeta|\le Hh$:
+\begin{equation}\label{eq:sector-operator}
+ \|B_h(\zeta)\|\le C_B,\qquad
+ \Re\big(e^{-i\theta}\langle B_h(\zeta)v,v\rangle\big)
+ \ge c_B\|v\|_2^2,\quad \theta=\sgn(y)\pi/4.
+\end{equation}
+The constants $C_*,c_B,C_B$ can be fixed before $H$; the smallness
+threshold for $h$ may then depend on $H$.
+\end{lemma}
+\begin{proof}
+Suppose first that $y>0$, and choose
+\[
+ \alpha_m=\sqrt{r_0-m\zeta},\qquad \Re\alpha_m>0,\quad\Im\alpha_m<0.
+\]
+The inner-normal principal symbol is $-\alpha_m$. Thus the principal
+symbol of \eqref{eq:B} is
+\begin{equation}\label{eq:a}
+ a=\frac{2\ell(\alpha_1-\alpha_n)}{(n-1)\zeta}
+   =\frac{2\ell}{\alpha_n+\alpha_1}.
+\end{equation}
+The two roots lie in the fourth quadrant, so $a$ lies in the first.
+Moreover,
+\begin{equation}\label{eq:scalar-sector}
+ 0<c_0\le|a|\le C_0,\qquad
+ \Re(e^{-i\pi/4}a)\ge c_0/\sqrt2.
+\end{equation}
+For large $r_0$, the denominator is comparable to $2\sqrt{r_0}$.
+On a bounded frequency set, the identity
+$\alpha_1^2-\alpha_n^2=(n-1)\zeta$ bounds at least one root away
+from zero. Vectors in the same quadrant cannot cancel, proving the
+remaining bounds in \eqref{eq:scalar-sector}.
+
+For $x$ in the stated compact interval, put $h_e=h/\sqrt x$ in
+\eqref{eq:Vodev-interface}. Then $\Re((h_e k)^2)=1$. The change
+$\xi'=\sqrt x\eta$ gives
+$\Op_{h_e}(c(\eta))=\Op_h(c(\xi'/\sqrt x))$.
+Multiplication of \eqref{eq:Vodev-interface} by $\sqrt x$ transforms
+its root to $-\alpha_m$ and its common correction to
+$hb(x',\xi'/\sqrt x)$. This correction cancels between the two
+indices. The two $H^1$ norms are uniformly equivalent. Also
+\[
+ \Im k=\frac{y}{2h\Re\sqrt\zeta}.
+\]
+Choosing $C_*$ sufficiently large meets the lower source bound; for
+fixed $H$ the upper source bound holds for small $h$, for example with
+$\epsilon=1/2$.
+
+On a deleted neighborhood $|r_0-mx|\le C\delta^2$, one has
+$|\alpha_m|\le C(\delta+\sqrt{Hh})$. For fixed $\delta$ and small
+$h$, deleting it therefore changes the symbol in \eqref{eq:a} by
+$O(\delta)$ in supremum norm. The deleted frequencies are bounded.
+Outside them the cut symbols have uniform $h$ seminorms, with constants
+depending on $\delta$. Their difference has order $-1$ at infinity.
+Compose with $\Lambda_h$ and use the actual $L^2\to H_h^1$ error
+in \eqref{eq:Vodev-interface}. It becomes an $O(\delta)$ error on
+$L^2$. Composition and Garding for the smooth cut symbol give
+\[
+ \Re(e^{-i\pi/4}\langle B_hv,v\rangle)
+ \ge(c_0/\sqrt2-C\delta-C_\delta h)\|v\|_2^2,
+\]
+as well as the upper norm bound. Fix $\delta$ first and then $h$.
+Conjugating the real-coefficient boundary problems gives the lower-half
+estimate with angle $-\pi/4$. The auxiliary cut symbols need not be
+holomorphic: the estimates concern the exact family $B_h$.
+\end{proof}
+
+\subsection{Holomorphic normalization and trace norm}
+Let $\chi_h=\Op_h(\chi)$, where $\chi$ equals one for $r_0\le R$
+and zero for $r_0\ge2R$. The fixed $R$ is chosen above all glancing
+frequencies on $\mathcal D$. The elliptic Poisson construction in
+\cite[Section~2, (2.7), (2.9), (2.13)]{PV}, at an arbitrarily large
+fixed order $J$, gives a holomorphic approximation $Q_h$ to
+$B_h(I-\chi_h)$. We take the actual composition with $\Lambda_h$,
+without discarding any further composition remainder, and set
+\begin{equation}\label{eq:P}
+ P_h=Q_h+\chi_h.
+\end{equation}
+The local Poisson coordinate in that construction is $x_1>0$ inward.
+With $D_{x_1}=-ih\partial_{x_1}$, our inner derivative is
+$h\partial_{x_1}=iD_{x_1}$. The source phase has
+$\rho=i\sqrt{r_0-m\zeta}$, and hence its actual inner-normal symbol
+is $i\rho=-\sqrt{r_0-m\zeta}$. This convention fixes the sign in
+\eqref{eq:a}; the common change of normal in the transmission index
+identity has no effect.
+
+The leading symbol of $P_h$ is $a(1-\chi)+\chi$. At high frequency
+$a=1+O(r_0^{-1})$, with the same decay under the finite derivatives
+needed for boundedness. The first subprincipal difference of the two
+Poisson boundary symbols has order $-2$ when both leading differential
+coefficients are one; see the statement in the proof of
+\cite[Lemma~3.3, p.~18, using (2.8)]{PV}. The coefficient at $h^j$, $j\ge2$, has order at
+most $1-j$. After $\Lambda_h$ all these terms are bounded and carry
+a positive power of $h$. It follows that
+\begin{equation}\label{eq:P-close}
+ \|P_h-I\|\le\varepsilon_R+C_Rh,\qquad\varepsilon_R\longrightarrow0
+ \quad(R\longrightarrow\infty),
+\end{equation}
+uniformly on $\mathcal D$. Choose $R$ and then $h$ so that this norm
+is less than $\varepsilon_0<1/2$, where
+$2C_B\varepsilon_0<c_B/2$. The Neumann series makes $P_h^{-1}$
+holomorphic on the full rectangle and uniformly bounded by two.
+
+We next keep the smoothing error separate from the low frequencies.
+Let
+\[
+ \delta_D(\zeta,h)=\min\{1,\operatorname{dist}
+ (\zeta,h^2\spec G_{1,D}\cup h^2\spec G_{n,D})\}.
+\]
+The $L^2$ spectral theorem and ordinary zero-Dirichlet regularity give,
+for every fixed integer $j\ge1$,
+\begin{equation}\label{eq:rough-resolvent}
+ \|(h^2G_{m,D}-\zeta)^{-1}f\|_{H^{2j}}
+ \le C_jh^{-2j}\delta_D^{-1}\|f\|_{H^{2j-2}}.
+\end{equation}
+Indeed the $L^2$ norm is at most $\delta_D^{-1}$, and iteration of
+\[
+ G_{m,D}(h^2G_{m,D}-\zeta)^{-1}f
+ =h^{-2}\big(f+\zeta(h^2G_{m,D}-\zeta)^{-1}f\big)
+\]
+costs $h^{-2}$ at each step of the elliptic estimate. It does not add
+another distance factor. In particular, this argument does not require
+a higher ordinary-Sobolev resolvent bound uniform in $h$.\footnote{We
+do not use (2.3) of \cite{PV}. Its displayed $h$ factor fails for the
+single Dirichlet-to-Neumann map on the unit three-ball at scaled energy
+$-1$ with boundary datum $1$: the solution is
+$\sinh(r/h)/(r\sinh(1/h))$, and the convention
+$-ih\partial_{\nu_{\rm out}}$ gives
+$-i(\coth(1/h)-h)$. The truncated distance to the positive Dirichlet
+spectrum is one, but this value does not tend to zero. Only the pure
+Poisson construction, before that auxiliary estimate, is used here.}
+
+The exact corrected Poisson solution gives
+\begin{equation}\label{eq:exact-residual}
+ B_h-P_h=(B_h-I)\chi_h+E_{J,h}.
+\end{equation}
+Fix an integer $s>q/2$. The pure interior error in
+\cite[(2.13)]{PV}, with its index $s+1$, maps boundary $L^2$ to
+$H^{2s+7/2}(\Omega)$ with norm
+$O(h^{J-2s-2-\ell_1})$, where $\ell_1$ is independent of $s,J$ and
+$s+1\le J/4$. Embed into $H^{2s+2}$ and use
+\eqref{eq:rough-resolvent} with $j=s+2$. The result is in
+$H^{2s+4}(\Omega)$, at a cost $h^{-2s-4}\delta_D^{-1}$.
+The scaled normal trace has output $H^{2s+5/2}(\Gamma)$ and adds a
+factor $h$. Finally $\Lambda_h$ maps to $H^{2s+3/2}(\Gamma)$, which
+embeds into $H^{2s}(\Gamma)$. Thus
+\begin{equation}\label{eq:smoothing-error}
+ \|E_{J,h}\|_{L^2\to H^{2s}}
+ \le C_{s,J}h^{J-4s-5-\ell_1}\delta_D^{-1}.
+\end{equation}
+Choose $J\ge4(s+1)$ and $J>4s+6+\ell_1$. At height $|y|\ge C_*h$,
+the right-hand side is bounded. The embedding $H^{2s}(\Gamma)\to L^2$
+is trace class, since $2s>q$.
+
+The low-frequency cutoff has
+\begin{equation}\label{eq:cutoff-trace}
+ \|\chi_h\|_1=O(h^{-q}).
+\end{equation}
+For completeness, its norm on $L^2$ is $O(1)$ and its norm into
+$H^{2s}$ is $O(h^{-2s})$. The singular values of the fixed embedding
+are $O(j^{-2s/q})$; see \cite[(2.11)]{PV} or
+\cite[Appendix~E]{EZ}. Hence
+$s_j(\chi_h)\le C_s\min(1,h^{-2s}j^{-2s/q})$.
+Summing below and above $j\asymp h^{-q}$ proves
+\eqref{eq:cutoff-trace}.
+
+Combining \cref{lem:sector} with \eqref{eq:exact-residual}--
+\eqref{eq:cutoff-trace}, define
+\begin{equation}\label{eq:Fredholm}
+ F_h=B_hP_h^{-1}=I+K_h,\qquad g_h=\det(I+K_h),\qquad M=h^{-q}.
+\end{equation}
+On the critical strips $C_*h\le|y|\le Hh$,
+\begin{equation}\label{eq:trace-sector}
+ \|K_h\|_1\le CM,\qquad
+ \Re\big(e^{-i\theta}\langle F_hv,v\rangle\big)
+ \ge(c_B/2)\|v\|_2^2.
+\end{equation}
+For the second estimate use
+$\|F_h-B_h\|\le2C_B\varepsilon_0<c_B/2$.
+The family is meromorphic in trace norm throughout $\mathcal D$,
+with finite-rank principal parts. We shall also use a coarse bound
+\begin{equation}\label{eq:coarse}
+ \log|g_h(\zeta)|\le\|K_h(\zeta)\|_1
+ \le Ch^{-A_0}\delta_D^{-1}
+\end{equation}
+for one fixed finite $A_0$. To obtain it, apply a fixed smooth boundary
+extension to $\chi_hf$, subtract the Dirichlet resolvent of its equation
+residual, and use \eqref{eq:rough-resolvent} at a fixed sufficiently
+large order. Cutoff differentiation and each fixed trace cost only
+finitely many powers of $h^{-1}$. The high-frequency remainder is
+already covered by \eqref{eq:smoothing-error}. Factoring through the
+trace-class Sobolev embedding gives \eqref{eq:coarse}. Only this
+polynomial form will be needed at remote vertical edges.
+
+\subsection{A complex logarithm and the divisor identity}
+The trace norm in \eqref{eq:trace-sector} controls a particular analytic
+logarithm, including its imaginary part.
+\begin{lemma}\label{lem:log}
+On each of the upper and lower critical strips there is a holomorphic
+function $L_h^\pm$ such that
+\begin{equation}\label{eq:canonical-log}
+ e^{L_h^\pm}=g_h,\qquad |L_h^\pm|\le CM,\qquad
+ (L_h^\pm)'=g_h'/g_h.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $0\le t\le1$, $I+tK_h=(1-t)I+tF_h$. Its rotated real part is
+bounded below by $\min(\cos\theta,c_B/2)\|v\|_2^2$.
+This gives injectivity and closed range; the corresponding conjugate
+rotation for the adjoint gives dense range. Thus its inverse is
+uniformly bounded. Set
+\[
+ L_h^\pm(\zeta)=\int_0^1\Tr\big((I+tK_h)^{-1}K_h\big)\,dt.
+\]
+The integrand is holomorphic and uniformly bounded in trace norm by
+$CM$. The determinant differentiation formula, integrated from $t=0$
+where the determinant is one, proves \eqref{eq:canonical-log}.
+These trace-class formulas can also be obtained directly by finite-rank
+approximation: the exterior-power determinant series is absolutely
+bounded by $e^{\|K_h\|_1}$, converges locally uniformly in trace norm,
+and has the finite-dimensional differentiation formula where invertible.
+Cauchy's formula passes its derivatives to the limit.
+\end{proof}
+
+For a scaled Dirichlet value $p$, let $m_D(p)$ be the sum of its two
+Dirichlet multiplicities. Let $m_T(p)$ be the Riesz multiplicity of
+$p/h^2$ for $A$, or zero if it is not a transmission eigenvalue.
+Away from the Dirichlet spectra put $m_D=0$ as well. Orders of zeros
+are positive and orders of poles negative.
+
+\begin{proposition}\label{prop:index}
+The determinant in \eqref{eq:Fredholm} satisfies
+\begin{equation}\label{eq:divisor}
+ \ord_p g_h=m_T(p)-m_D(p).
+\end{equation}
+Equivalently, for every simple positively oriented contour $\gamma$
+in $\mathcal D$ avoiding the transmission and Dirichlet spectra,
+\begin{equation}\label{eq:index}
+ \#_T(\gamma)=\#_{D,1}(\gamma)+\#_{D,n}(\gamma)
+ +\frac1{2\pi i}\int_\gamma\frac{g_h'}{g_h}\,d\zeta.
+\end{equation}
+All transmission counts here use the original Riesz ranks, including at
+common Dirichlet values.
+\end{proposition}
+\begin{proof}
+The original-operator trace identity is
+\cite[Proposition~3.1, Corollary~3.2 and Lemma~3.6]{PV}. Its
+meromorphic Fredholm hypothesis holds here by
+\eqref{eq:exact-residual} and the invertible critical-strip values in
+\eqref{eq:trace-sector}. The identity between the constant-weighted source Hilbert space and our
+unweighted $L^2$ space is a bounded conjugacy, so it preserves the
+resolvents and Riesz ranks; see \cref{sec:prelim}.
+
+It remains to check the normalizations. Passing to $B_h$ multiplies
+the boundary difference on the left by a holomorphic nonzero scalar,
+a fixed common normal sign and the invertible map
+$\Lambda_h:H_h^1\to L^2$. Passing to $F_h$ multiplies it on the right
+by the holomorphic invertible $P_h^{-1}$. None changes the local
+meromorphic index. Indeed, finite-dimensional projections separate an
+invertible complementary block from the finite singular block of a
+Fredholm family. Holomorphic invertible changes multiply its Schur
+complement by holomorphic invertible factors, whose determinant orders
+are zero. For an identity-plus-trace-class representative the remaining
+order is that of its Fredholm determinant. The source identity therefore
+gives \eqref{eq:index}, and small circles give \eqref{eq:divisor}.
+In particular, pole order is at most $m_D(p)$, even when a transmission
+point coincides with one or both Dirichlet spectra.
+\end{proof}
+
+\section{Pole cancellation in a thin strip}\label{sec:strip}
+
+We now use $g_h=\det(I+K_h)$ from \eqref{eq:Fredholm} and
+$M=h^{1-d}$. Its only possible poles are real Dirichlet values; its
+upper and lower logarithms are bounded by $CM$ at imaginary height
+comparable to $h$. The purpose of the pole factors is to use those two
+bounds across the real axis.
+
+Fix
+\begin{equation}\label{eq:heights}
+ L>\max\{2C_*,8(C_k+1)\},\qquad H>20L.
+\end{equation}
+These constants are chosen before reducing $h$. Recall from
+\eqref{eq:wave-strip} that $|\Im\sqrt\lambda|\le C_k$ and
+$\zeta=h^2\lambda$. In the band $\Re\zeta\le3$ this gives
+\[
+ |\Im\zeta|\le2C_k\sqrt{3+C_k^2h^2}\,h<(L/2)h
+\]
+for all sufficiently large eigenvalues and small $h$.
+Choose $a_h\in[3/5,7/10]$ and $b_h\in[27/10,14/5]$ at distance
+at least $h^{d+2}$ from the scaled Dirichlet spectra. Such choices exist:
+there are $O(h^{-d})$ relevant Dirichlet values counted with multiplicity,
+so the excluded intervals have total length $O(h^2)$. Set
+\[
+ S_h=\{a_h<\Re\zeta<b_h,\ |\Im\zeta|<Hh\},\qquad
+ b_p(\zeta)=\tanh\frac{\pi(\zeta-p)}{4Hh},
+\]
+and form the finite product
+\begin{equation}\label{eq:pole-product}
+ \mathcal B_h(\zeta)=\prod_{a_h<p<b_h}b_p(\zeta)^{m_D(p)},\qquad
+ f_h=g_h\mathcal B_h.
+\end{equation}
+Each factor is analytic in the strip, has just the simple zero $p$
+there, and satisfies $|b_p|\le1$ inside and $|b_p|=1$ on its horizontal
+edges. These assertions follow from
+\begin{equation}\label{eq:tanh-modulus}
+ |\tanh(u+iv)|^2=
+ \frac{\sinh^2u+\sin^2v}{\sinh^2u+\cos^2v},\qquad |v|\le\pi/4.
+\end{equation}
+The nearest poles are at $p\pm2iHh$. By \eqref{eq:divisor}, $f_h$
+is holomorphic on a neighborhood of the closed rectangle. Its zero
+orders at all transmission points, including common Dirichlet points,
+are exactly $m_T$.
+
+\subsection{Upper bounds and local counts}
+On the horizontal edges \cref{lem:log} gives
+$\log|f_h|\le CM$. On the vertical edges \eqref{eq:coarse} and the
+chosen distance give the coarser bound $Ch^{-A_0-d-2}$.
+This large bound has exponentially small influence in the interior.
+For a direct comparison, put $\kappa=\pi/(4Hh)$ and
+\[
+ v_h(x+iy)=\sqrt2\big(e^{-\kappa(x-a_h)}
+                  +e^{-\kappa(b_h-x)}\big)\cos(\kappa y).
+\]
+It is harmonic and nonnegative on $S_h$, and is at least one on both
+vertical edges. Therefore $CM+Ch^{-A_0-d-2}v_h$ majorizes
+$\log|f_h|$. To justify this even at zeros, take a holomorphic function
+whose real part is the harmonic majorant and apply the maximum-modulus
+principle to $f_h$ times its negative exponential. If
+$4/5\le x\le11/5$, then $v_h\le Ce^{-c/h}$. Hence
+\begin{equation}\label{eq:interior-upper}
+ \log|f_h(\zeta)|\le CM,
+ \qquad 4/5\le\Re\zeta\le11/5,\quad |\Im\zeta|\le Hh.
+\end{equation}
+
+For $a$ in a fixed compact inner interval containing $[1,2]$, let
+$z_a=a+iLh$. The lower bound in \eqref{eq:canonical-log} gives
+$\log|g_h(z_a)|\ge-CM$. Formula \eqref{eq:tanh-modulus} also gives
+\begin{equation}\label{eq:pole-weight}
+ 0\le-\log|b_p(z_a)|\le Ce^{-c|a-p|/h}.
+\end{equation}
+For bounded $|a-p|/h$, the fixed positive imaginary argument
+$\pi L/(4H)$ bounds the modulus away from zero. For larger separation,
+use the exponential convergence of $\tanh$ to $1$ or $-1$.
+Each interval of length $h$ has combined scaled Dirichlet multiplicity
+$O(M)$, by \eqref{eq:scalar-weyl}. Partitioning the real axis into
+these intervals and summing the exponential weights yields
+\begin{equation}\label{eq:center-lower}
+ -\log|\mathcal B_h(z_a)|\le CM,\qquad
+ \log|f_h(z_a)|\ge-CM.
+\end{equation}
+The constants are uniform in $a$.
+
+For small $h$, the disk of radius $8Lh$ about $z_a$ lies in the region
+of \eqref{eq:interior-upper}. Jensen's formula and
+\eqref{eq:center-lower} bound the number of its zeros in radius $7Lh$
+by $CM$: each such zero contributes at least $\log(8/7)$ to the
+Jensen sum. If the outer circle contains zeros, use nearby radii tending
+to $8Lh$. The smaller disk $|\zeta-a|\le2Lh$ lies inside that disk.
+Since the zeros of $f_h$ have precisely the transmission orders, we obtain
+\begin{equation}\label{eq:local-TE}
+ \sum_{|\zeta-a|\le2Lh}m_T(\zeta)\le CM.
+\end{equation}
+In particular, this bound holds at every real endpoint, without a
+spacing assumption. The elementary disk formulas used here and below
+follow from Cauchy's formula, the maximum principle and Schwarz's lemma;
+see \cite[Sections~6--8, 13 and 17]{Bonk}.
+
+\subsection{The argument on a short vertical segment}
+\begin{lemma}\label{lem:vertical}
+For every such $a$, there is an $a'$ with $|a'-a|<h/10$ such that
+the segment $\gamma_{a'}=[a'-iLh,a'+iLh]$ avoids both spectra and
+\begin{equation}\label{eq:vertical-argument}
+ \left|\Im\int_{\gamma_{a'}}\frac{g_h'}{g_h}\,d\zeta\right|\le CM.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose $R_a\in[6Lh,7Lh]$ so that its circle about $z_a$ contains no
+zero of $f_h$. Factor the zeros in this disk by its disk Blaschke
+product $\mathcal Z_h$, and write
+\[
+ f_h=\mathcal Z_h e^{w_h}.
+\]
+The quotient is zero-free on a neighborhood of the closed disk, so its
+holomorphic logarithm $w_h$ exists there. There are $O(M)$ factors.
+They have unit modulus on the circle and modulus at most one inside.
+Thus \eqref{eq:interior-upper} and \eqref{eq:center-lower} imply
+\[
+ \Re w_h\le CM,\qquad \Re w_h(z_a)\ge-CM.
+\]
+The usual real-part form of the Cauchy estimate gives
+\begin{equation}\label{eq:zero-free-derivative}
+ |w_h'(\zeta)|\le CM/h\quad\text{for }|\zeta-z_a|\le4Lh.
+\end{equation}
+For clarity, it follows by setting
+$W=U-w_h+i\Im w_h(z_a)$ with $U\ge\sup\Re w_h$.
+If $W(z_a)>0$, the function
+$(W-W(z_a))/(W+W(z_a))$ maps the disk to the unit disk and vanishes
+at its center. Schwarz's lemma bounds $W$ on a smaller disk by a
+constant times $W(z_a)$, and Cauchy's estimate bounds its derivative.
+If $W(z_a)=0$, the real-part minimum principle makes it constant.
+The fixed radius ratios give \eqref{eq:zero-free-derivative}.
+
+Choose $|a'-a|<h/10$ avoiding the finitely many real parts of local
+zeros and all real Dirichlet values. The resulting segment is inside
+$|\zeta-z_a|<4Lh$. For a linear zero factor $\zeta-w$, the change of argument is the
+angle subtended by a straight segment, so
+\[
+ \left|\Im\int_{\gamma_{a'}}\frac{d\zeta}{\zeta-w}\right|\le\pi.
+\] In the coordinate
+$z=\zeta-z_a$, a disk factor has denominator
+$R_a^2-\overline{w-z_a}\,z$; on the inner disk its logarithmic
+derivative is $O(h^{-1})$, uniformly in the zero. Its integral is
+therefore $O(1)$. Summing the $O(M)$ factors and
+\eqref{eq:zero-free-derivative} proves
+\[
+ \left|\Im\int_{\gamma_{a'}}f_h'/f_h\,d\zeta\right|\le CM.
+\]
+
+It remains to subtract $\mathcal B_h'/\mathcal B_h$.
+For $|p-a|\le10Hh$, the difference
+$b_p'/b_p-(\zeta-p)^{-1}$ is $O(h^{-1})$ on the segment,
+uniformly even as $a'-p$ tends to zero. This follows by scaling by
+$h$ and removing its simple pole; the other zeros and poles lie
+outside the strip. There are $O(M)$ near factors. Their removed
+linear terms contribute at most $\pi$ each. For the remaining factors,
+\[
+ |b_p'/b_p|\le Ch^{-1}e^{-c|a-p|/h}.
+\]
+The length-$h$ Dirichlet bound and summation of this exponential tail,
+followed by integration over length $2Lh$, give $O(M)$ again.
+Using \eqref{eq:pole-product} proves \eqref{eq:vertical-argument}.
+\end{proof}
+
+\section{The Weyl formula}\label{sec:count}
+
+We can now compare the transmission and scalar Dirichlet counts with
+boundary-order error. Apply \cref{lem:vertical} at $1$ and $2$ to
+choose $a'=1+O(h)$ and $b'=2+O(h)$, with shifts less than $h/10$.
+Let $\mathcal R_h$ be the positively oriented rectangle with these
+vertical sides and horizontal sides at $\pm Lh$. Its boundary avoids
+the two spectra, including common Dirichlet/transmission points.
+On a horizontal side,
+\[
+ \int g_h'/g_h\,d\zeta=L_h^\pm(\text{end})-L_h^\pm(\text{start})
+ =O(M)
+\]
+by the actual analytic branch in \cref{lem:log}. The two short vertical
+sides satisfy \eqref{eq:vertical-argument}. Since the complete contour
+integral divided by $2\pi i$ is real, these imaginary-part estimates
+and \cref{prop:index} give
+\begin{equation}\label{eq:rect-count}
+ \#_T(\mathcal R_h)-\#_{D,1}(\mathcal R_h)-\#_{D,n}(\mathcal R_h)
+ =O(h^{1-d}).
+\end{equation}
+
+For every sufficiently large transmission energy in a fixed positive
+scaled band, \eqref{eq:wave-strip} implies
+\begin{equation}\label{eq:radial-real}
+ |\Im\zeta|=O(h),\qquad
+ |\zeta|-\Re\zeta=
+ \frac{(\Im\zeta)^2}{|\zeta|+\Re\zeta}=O(h^2).
+\end{equation}
+The choice \eqref{eq:heights} places all of them below $Lh/2$.
+Replacing $\mathcal R_h$ by the exact annulus
+$1<|\zeta|\le2$ can therefore change only points inside the
+$2Lh$ disks about $1$ and $2$. Their total transmission multiplicity
+is $O(M)$ by \eqref{eq:local-TE}. This includes values lying exactly
+on a counting circle. The scalar endpoint contribution is also $O(M)$ by
+\eqref{eq:scalar-weyl}. Thus \eqref{eq:rect-count} becomes
+\begin{equation}\label{eq:annular}
+ N(\sqrt2/h)-N(1/h)
+ =(2^{d/2}-1)(\tau_1+\tau_n)h^{-d}+O(h^{1-d}).
+\end{equation}
+Here $\tau_1+\tau_n=\omega_d(2\pi)^{-d}|\Omega|(1+n^{d/2})$ is
+the combined scalar Weyl coefficient. Every sufficiently small real $h$ is allowed: the auxiliary vertical
+sides were chosen for each $h$, and the local count removes their
+effect at the exact radii.
+
+\begin{proof}[Proof of \cref{thm:main}]
+Put $c=\tau_1+\tau_n$ and $h=\sqrt2/r$ in \eqref{eq:annular}.
+For every sufficiently large real $r$,
+\[
+ N(r)-N(r/\sqrt2)=(1-2^{-d/2})cr^d+O(r^{d-1}).
+\]
+Sum over $r,r/\sqrt2,r/2,\ldots$ until the last radius belongs to
+a fixed bounded interval. The leading terms telescope, and the error
+sum is bounded by
+\[
+ Cr^{d-1}\sum_{j\ge0}2^{-j(d-1)/2}=O(r^{d-1}),
+\]
+since $d\ge2$. The remaining bounded-radius count is finite by
+\cref{lem:regularity}. Its contribution, and its leading volume term,
+are $O(1)$. Substitution of the two constants in
+\eqref{eq:scalar-weyl} proves the stated formula.
+\end{proof}
+
+\appendix
+\section{Common Dirichlet values in a ball}\label{app:ball}
+
+The original algebraic multiplicity matters even in a simple radial
+example. Consider the unit ball in $\mathbb R^3$ with $n=4$, restricted
+to radial fields. The map $(u,v)\mapsto(f,g)=(ru,rv)$ is unitary up to
+a fixed scalar, and the radial operator is
+\[
+ \mathcal A(f,g)=(-\tfrac14 f'',-g''),\qquad
+ f(0)=g(0)=0,\quad f(1)=g(1),\quad f'(1)=g'(1),
+\]
+on $H^2(0,1)^2$. The zero condition at the origin excludes the
+$1/r$ term, whose Laplacian has a delta mass and is not in the original
+graph domain. The radial subspace is a reducing block, since rotational
+averaging commutes with the operator and traces. This finite-interval
+realization has compact resolvent.
+
+At energy $\lambda=k^2\ne0$, its solutions have the form
+$f=a\sin(2kr)$ and $g=b\sin(kr)$. The boundary matrix is
+\begin{equation}\label{eq:ball-matrix}
+ \begin{pmatrix}\sin2k&-\sin k\\2k\cos2k&-k\cos k\end{pmatrix},
+ \qquad\det=-2k\sin^3k.
+\end{equation}
+Compare the corresponding model determinant in
+\cite[Section~2]{PS}. Thus the nonzero energies are
+$\lambda_m=(m\pi)^2$, $m\ge1$, and each eigenspace has dimension one.
+We check its Riesz multiplicity directly rather than identify it merely
+with a determinant root order.
+
+Near $\lambda_0=k_0^2$, $k_0=m\pi>0$, choose the analytic root $k(\lambda)$.
+The analytic pair
+\[
+ W(\lambda,r)=\left(\sin(2k(\lambda)r),
+ \frac{2\cos(2k(\lambda))}{\cos k(\lambda)}\sin(k(\lambda)r)\right)
+\]
+solves the differential equations and all but the value-matching
+condition. Its value mismatch is
+$2\sin^3 k(\lambda)/\cos k(\lambda)$, of exact order three.
+The family is an identity for the differential expression, not an
+assertion that $W(\lambda)$ lies in the transmission domain for all
+$\lambda$. Its Taylor coefficients $W_0,W_1,W_2$ do lie in that
+domain and satisfy
+\[
+ (\mathcal A-\lambda_0)W_0=0,\quad
+ (\mathcal A-\lambda_0)W_1=W_0,\quad
+ (\mathcal A-\lambda_0)W_2=W_1.
+\]
+There is no chain of length $\ell\ge4$. Its formal Taylor polynomial
+would solve the two initial-value ODEs modulo
+$(\lambda-\lambda_0)^\ell$, hence have the form
+$a(\lambda)\sin(2k(\lambda)r),b(\lambda)\sin(k(\lambda)r)$ modulo
+that order. The leading eigenvector has $a(\lambda_0)\ne0$.
+Derivative matching forces
+$b=2a\cos2k/\cos k$; value matching would then require
+$2a\sin^3k/\cos k=O((\lambda-\lambda_0)^\ell)$, a contradiction.
+The one-dimensional eigenspace therefore belongs to one Jordan block
+of size three. Its original Riesz multiplicity is three.
+
+For constant boundary values, the outward DN difference is
+\[
+ 2k\cot2k-k\cot k=-k\tan k.
+\]
+At $k=m\pi$ its order is one, while $m_D=2$ and $m_T=3$;
+thus $1=3-2$ in \eqref{eq:divisor}. At a nonzero half-integer
+multiple of $\pi$ it has a simple pole and $-1=0-1$.
+The exact radial count is
+\[
+ N_{\rm rad}(r)=3\lfloor r/\pi\rfloor,
+\]
+and the sum of the radial Dirichlet counts is
+$\lfloor r/\pi\rfloor+\lfloor2r/\pi\rfloor$. Their difference is
+always zero or minus one, including thresholds. This calculation concerns
+only the radial block; it is not the full three-dimensional volume count
+and is not used in the proof of \cref{thm:main}.
+
+\begin{thebibliography}{8}
+
+\bibitem{Bonk}
+M.~Bonk, \emph{Complex Analysis}, course notes for Math~246A and 246B,
+University of California, Los Angeles,
+\url{https://www.math.ucla.edu/~mbonk/complana.pdf}.
+
+\bibitem{EZ}
+L.~C. Evans and M.~Zworski,
+\emph{Lectures on Semiclassical Analysis}, version~0.2,
+University of California, Berkeley,
+\url{https://math.mit.edu/~vwg/semiclassicalEvansZworski.pdf}.
+
+\bibitem{Grubb}
+G.~Grubb, \emph{Distributions and Operators},
+Chapter~11, Pseudodifferential methods for boundary value problems,
+author-hosted chapter excerpt,
+\url{https://web.math.ku.dk/~grubb/dist11n.pdf}.
+
+\bibitem{PV}
+V.~Petkov and G.~Vodev,
+Asymptotics of the number of the interior transmission eigenvalues,
+\emph{J. Spectr. Theory} \textbf{7} (2017), 1--31,
+\href{https://doi.org/10.4171/JST/154}{doi:10.4171/JST/154}.
+
+\bibitem{PS}
+H.~Pham and P.~Stefanov,
+\emph{Weyl asymptotics of the transmission eigenvalues for a constant
+index of refraction}, arXiv:1309.3616v2,
+\url{https://arxiv.org/abs/1309.3616v2}.
+
+\bibitem{PTL}
+Pham The Lai,
+Meilleures estimations asymptotiques des restes de la fonction spectrale
+et des valeurs propres relatifs au laplacien,
+\emph{Math. Scand.} \textbf{48} (1981), 5--38,
+\href{https://doi.org/10.7146/math.scand.a-11895}{doi:10.7146/math.scand.a-11895}.
+
+\bibitem{Vsurvey}
+G.~Vodev, Asymptotic behavior of the transmission eigenvalues,
+\emph{RIMS K\^oky\^uroku} \textbf{2045} (2017), 61--66,
+\url{https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2045-04.pdf}.
+
+\bibitem{Vdn}
+G.~Vodev,
+High-frequency approximation of the interior Dirichlet-to-Neumann map
+and applications to the transmission eigenvalues,
+\emph{Anal. PDE} \textbf{11} (2018), 213--236,
+\href{https://doi.org/10.2140/apde.2018.11.213}{doi:10.2140/apde.2018.11.213}.
+
+\end{thebibliography}
+
+\section*{AI-use disclosure}
+OpenAI Codex was used extensively in the literature and source review,
+development and checking of the arguments, and preparation of this
+manuscript. One reader simulation and one referee-style review were
+conducted in fresh AI contexts on a shared host, and their feedback informed
+one revision. These uses do not constitute independent human verification
+or formal proof certification. Independent mathematical review is requested.
+
+\end{document}
