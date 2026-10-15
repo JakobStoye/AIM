@@ -1,0 +1,85 @@
+\section{Introduction}\label{sec:introduction}
+
+In a shape optimization problem for thermal insulation, one may choose
+both the heated body and the region surrounding it. The question is
+whether a spherical body with a concentric insulating layer uses a
+given amount of material most efficiently. For a stationary model
+with quadratic bulk energy, the boundary loss is described by a
+nonnegative potential of the temperature. The choice of that
+potential distinguishes convective and radiative boundary laws
+\cite{BNNT}.
+
+Bucur, Nahon, Nitsch and Trombetti \cite{BNNT} proved concentric-ball
+optimality for the quadratic boundary potential. They also obtained
+general results for a volume penalty and certain constrained cases
+with inactive volume constraint. Their question after Remark~4 asks
+whether the concentric comparison holds for more general boundary
+potentials, including the radiative law in their equation~(3).
+The penalized comparison does not by itself give the constrained
+comparison at every prescribed volume. We prove that comparison
+for the full radiative potential, with all its parameters retained.
+
+Here is the precise problem. Fix an integer \(n\ge2\), numbers
+\(\beta>0\), \(\gamma\ge0\), and \(R>1\), and set
+\begin{equation}\label{eq:theta}
+ \Theta(s)=\beta\left(\frac{s^5}{5}+\gamma s^4+
+                                  2\gamma^2s^3+2\gamma^3s^2\right).
+\end{equation}
+For a bounded Lipschitz open set \(\Omega\subset\R^n\) and a measurable
+set \(K\subset\Omega\), let
+\begin{equation}\label{eq:energy}
+ E_\Theta(K,\Omega)=
+ \min_{\substack{v\in H^1(\Omega),\ 0\le v\le1\\
+                         v=1\ {\rm a.e.\ on}\ K}}
+ \left\{\int_\Omega|\nabla v|^2\dd x+
+          \int_{\partial\Omega}\Theta(\Tr v)\dd\mathcal H^{n-1}\right\}.
+\end{equation}
+The interval bounds are understood almost everywhere, and \(\Tr v\)
+is the interior trace. Write the expression in braces as
+\(\mathcal E_\Omega(v)\). We use the unit ball \(B_1\) to normalize
+the heated volume and write \(\omega_n=|B_1|\).
+
+\begin{theorem}\label{thm:main}
+For every choice of \(n\ge2,\beta>0,\gamma\ge0,R>1\) above, every bounded
+Lipschitz open \(\Omega\subset\R^n\), and every measurable \(K\subset\Omega\)
+satisfying
+\[
+ |K|=\omega_n,\qquad |\Omega|\le\omega_nR^n,
+\]
+one has
+\begin{equation}\label{eq:main}
+ E_\Theta(K,\Omega)\ge\min_{1\le r\le R}E_\Theta(B_1,B_r).
+\end{equation}
+At \(r=1\), the pair is \(K=\Omega=B_1\).
+\end{theorem}
+
+Here \(B_r\) denotes the ball of radius \(r\) with the same center as
+\(B_1\), and the energy on the right is the same trace energy
+\eqref{eq:energy}. No connectedness of \(\Omega\) or regularity of
+\(K\) is required. The minimum includes the bare ball and can use
+less than the full available outer volume. This is the radiative
+case of the constrained concentric-ball question, with the
+upper-volume convention used in \cite{BNNT}.
+We make no assertion here for an arbitrary increasing boundary potential.
+
+The proof uses the boundary potential itself as the rearranged
+variable. Extending that potential by zero records the outer
+boundary loss as variation. Isoperimetry then gives a radial lower
+cost, but the radial profiles may have jumps and need not represent
+admissible \(H^1\) temperatures. We approximate their cost by profiles
+with finitely many jumps. For the radiative polynomial, multiplying
+the potential on the entire tail after a jump has a concave total
+cost. One endpoint of the allowed multiplication interval removes
+the jump, or removes the whole tail, without raising the energy.
+Repeating this operation leaves a genuine concentric-ball competitor.
+The possibility of shortening the tail explains why smaller outer
+radii, including the bare ball, belong in \eqref{eq:main}.
+
+Section~\ref{sec:radial} gives the radial energy formula and the scalar
+concavity property. Section~\ref{sec:rearrangement} proves the radial
+lower comparison with all singular variation retained.
+Section~\ref{sec:jumps} constructs the finite-jump approximation,
+removes the jumps, and proves the theorem.
+All functions are real, all volume integrals use Lebesgue measure,
+and Hausdorff measure is normalized by
+\(\mathcal H^{n-1}(\partial B_r)=n\omega_n r^{n-1}\).

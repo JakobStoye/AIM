@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,d}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Per}{Per}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\title{Concentric balls for thermal insulation\\with a radiative boundary law}
+\author{Kaiwen Jin\\[2pt]\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{15 October 2026}
+\hypersetup{pdftitle={Concentric balls for thermal insulation with a radiative boundary law},pdfauthor={Kaiwen Jin}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider a thermal insulation energy with a quadratic Dirichlet term
+and the nonlinear boundary potential associated with radiative heat
+transfer. Both the heated set and the surrounding domain may vary,
+with heated volume normalized to that of the unit ball and an upper
+bound on the total volume. We prove that the minimum is achieved within the family of
+concentric balls, allowing a smaller outer radius and the bare heated
+ball. The comparison holds in every dimension \(n\ge2\), for every
+positive boundary coefficient and every nonnegative ambient parameter.
+The proof rearranges the boundary potential and retains its singular
+variation. A concavity property of the radiative law then removes
+the resulting interior jumps without increasing the energy.
+\end{abstract}
+\input{sections/introduction}
+\input{sections/radial}
+\input{sections/rearrangement}
+\input{sections/jumps}
+\section*{AI-use disclosure}
+OpenAI Codex was used to assist in developing and checking the argument,
+checking algebra and references, and drafting this manuscript.
+The manuscript is presented as an AI-assisted mathematical argument
+for independent assessment.
+\input{references}
+\end{document}

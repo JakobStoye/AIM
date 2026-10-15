@@ -1,0 +1,177 @@
+\section{Radial energies and the radiation potential}\label{sec:radial}
+
+Throughout the proof the parameters \(n,\beta,\gamma,R\) are fixed as in
+Theorem~\ref{thm:main}. We write
+\[
+ S=n\omega_n,\qquad A(r)=r^{n-1},\qquad Y=\Theta(1).
+\]
+Thus \(S A(r)\) is the area of the sphere of radius \(r\).
+
+The interior trace on a bounded Lipschitz open set is a bounded linear
+map from \(BV\) into boundary \(L^1\). With outward normal \(\nu\),
+Gauss--Green reads
+\[
+ \int_\Omega f\,\operatorname{div}X+\int_\Omega X\cdot\dd Df
+ =\int_{\partial\Omega}\Tr f\,X\cdot\nu\,\dd\mathcal H^{n-1}.
+\]
+This is the inner-normal formula of \cite[Theorem~2.9]{LV} with its sign
+converted. We use the absolute-mean characterization
+\[
+ \lim_{\rho\downarrow0}\frac1{|B_\rho(x)\cap\Omega|}
+ \int_{B_\rho(x)\cap\Omega}|f-\Tr f(x)|\dd y=0
+ \quad\text{for }\mathcal H^{n-1}\text{-a.e. }x\in\partial\Omega
+\]
+from \cite[Corollary~1.29]{Gorny}.\footnote{The proof of this
+corollary is omitted in the lecture notes, whose publication date is
+not specified. The point in \cite[(2.5)]{LV} is printed as \(x\in\Omega\),
+whereas \cite[(2.6)]{LV} is written on \(\partial\Omega\). The
+absolute-mean statement used here is the boundary statement in
+\cite[Corollary~1.29]{Gorny}.}
+If a connected domain is required in that characterization, apply it
+in one-sided Lipschitz chart cylinders. On smaller boundary patches the
+small-ball intersections agree with those in \(\Omega\), and uniqueness
+of the local trace gives the stated formula without connectedness of
+\(\Omega\).
+
+
+We first justify the minimum in the definition of the energy. An admissible
+minimizing sequence is bounded in \(H^1(\Omega)\), since its values lie in
+\([0,1]\). Pass to a weakly convergent subsequence. Tests by indicators show
+that the limit still lies in \([0,1]\) and equals 1 almost everywhere on \(K\).
+The bounded trace map gives
+\[
+ \|\Tr f\|_{L^1(\partial\Omega)}
+ \le C_\Omega\bigl(\|f\|_{L^1(\Omega)}+\|\nabla f\|_{L^1(\Omega)}\bigr).
+\]
+Consequently every pairing of the trace with a bounded boundary function
+is a continuous linear functional on \(H^1(\Omega)\). Traces of admissible
+temperatures also lie in \([0,1]\). Since
+\(\Theta''(s)=4\beta(s+\gamma)^3\ge0\), the supporting-line inequality at
+the limiting trace proves weak lower semicontinuity of the boundary
+integral. The gradient integral has the same property. The constant
+temperature 1 is an admissible finite-energy test, so the minimum is attained.
+
+\begin{lemma}\label{lem:radial}
+For \(r>1\), let \(I_n(r)=\int_1^r \rho^{1-n}\dd\rho\). Then
+\begin{equation}\label{eq:radial}
+ \frac{E_\Theta(B_1,B_r)}{S}
+ =\min_{0\le t\le1}\left\{\frac{(1-t)^2}{I_n(r)}+
+                                      r^{n-1}\Theta(t)\right\}.
+\end{equation}
+The energy is continuous on \([1,R]\) when its value at 1 is defined
+by the bare ball, \(E_\Theta(B_1,B_1)=S Y\). In particular its minimum
+on this interval is attained.
+\end{lemma}
+
+\begin{proof}
+For an admissible \(v\) on \(B_r\), let
+\[
+ m(\rho)=\frac1S\int_{\partial B_1}v(\rho\theta)
+                                      \dd\mathcal H^{n-1}(\theta).
+\]
+Radial tests in the weak-derivative identity give
+\(m'(\rho)=S^{-1}\int_{\partial B_1}\nabla v(\rho\theta)\cdot\theta
+\dd\mathcal H^{n-1}(\theta)\). Cauchy--Schwarz therefore yields
+\[
+ S\int_1^r A(\rho)|m'(\rho)|^2\dd\rho
+ \le\int_{B_r\setminus B_1}|\nabla v|^2\dd x.
+\]
+In particular \(m\) has an absolutely continuous representative on
+\([1,r]\). Applying the same argument across radius 1 shows \(m(1)=1\).
+Its value \(m(r)\) is the mean of the actual boundary trace. To see this
+without selecting a boundary slice, use Gauss--Green with the radial
+field \(f(\rho)\theta\), zero near the origin. Polar integration turns
+its left side into
+\[
+ S\int_0^r\bigl[m(Af)'+m'Af\bigr]\dd\rho
+       =S A(r)f(r)m(r),
+\]
+whereas its boundary side is
+\(f(r)\int_{\partial B_r}\Tr v\,\dd\mathcal H^{n-1}\).
+Here \(m'=0\) in the core.
+
+Put \(t=m(r)\in[0,1]\). Weighted Cauchy--Schwarz gives
+\((1-t)^2\le I_n(r)\int_1^r A|m'|^2\).
+The supporting line for \(\Theta\) at the boundary mean gives
+\(\int_{\partial B_r}\Theta(\Tr v)\ge S A(r)\Theta(t)\).
+Conversely the radial temperature
+\[
+ u(\rho)=1-(1-t)\frac{I_n(\rho)}{I_n(r)},\qquad 1\le\rho\le r,
+\]
+extended by 1 in the core, has exactly the cost on the right of
+\eqref{eq:radial}. This proves the formula.
+
+Compact minimization in \(t\) gives continuity for \(r>1\).
+For a minimizing \(t_r\), the test \(t=1\) implies
+\[
+ (1-t_r)^2\le I_n(r)r^{n-1}Y\longrightarrow0\qquad(r\downarrow1).
+\]
+Thus its boundary term tends to \(Y\), while the entire expression
+is at most \(r^{n-1}Y\to Y\). This proves continuity at 1 and the
+assertion about the minimum. The integral definition includes
+\(I_2(r)=\log r\), so no separate singular formula occurs in dimension two.
+\end{proof}
+
+We next identify the scalar property used to remove jumps. The potential
+\(\Theta\) is strictly increasing on \([0,1]\), because
+\(\Theta'(s)>0\) for \(s>0\). Let \(Q:[0,Y]\to[0,1]\) be its continuous
+inverse, and define
+\begin{equation}\label{eq:GH}
+ G(y)=\frac{\Theta'(Q(y))^2}{4},\qquad
+ H(y)=\frac{y^2}{G(y)}\quad(y>0),\qquad G(0)=H(0)=0.
+\end{equation}
+In potential variables \(y=\Theta(u)\), the Dirichlet density is
+\(|y'|^2/(4G(y))\). The function \(H\) appears when this potential
+is multiplied by a constant.
+
+\begin{lemma}\label{lem:concavity}
+The function \(G\) is Lipschitz on \([0,Y]\), positive on \((0,Y]\),
+and \(H\) is concave on \([0,Y]\).
+\end{lemma}
+
+\begin{proof}
+For \(y>0\), inverse differentiation gives
+\[
+ G'(y)=\frac{\Theta''(Q(y))}{2}
+       =2\beta(Q(y)+\gamma)^3.
+\]
+This is bounded by \(2\beta(1+\gamma)^3\), and \(G\) is continuous at
+zero. The Lipschitz assertion follows.
+If \(\gamma=0\), then
+\[
+ H(y)=\frac4{25}\left(\frac{5y}{\beta}\right)^{2/5},
+\]
+which has the required concavity. Suppose \(\gamma>0\), put \(z=s/\gamma\),
+and set
+\[
+ P(z)=z^5/5+z^4+2z^3+2z^2.
+\]
+Then \(\Theta(s)=\beta\gamma^5P(z)\) and
+\(H(\Theta(s))=4\gamma^2P(z)^2/P'(z)^2\).
+For \(h=4P^2/P'^2\), differentiation gives
+\[
+ h'=8P/P'-8P^2P''/P'^3,\qquad
+ h''=8-24PP''/P'^2-8P^2P'''/P'^3+24P^2P''^2/P'^4,
+\]
+and hence
+\begin{equation}\label{eq:concavitynumerator}
+ h''P'-h'P''=-\frac{8}{P'^3}
+          \bigl[P^2P'P'''-(P'^2-2PP'')^2\bigr].
+\end{equation}
+The second derivative of \(h\) with respect to \(P\) is the left
+side of \eqref{eq:concavitynumerator} divided by \(P'^3\).
+For \(q=5P=z^5+5z^4+10z^3+10z^2\), direct multiplication gives
+\begin{align}
+ q^2q'q'''-(q'^2-2qq'')^2
+ =25z^5\bigl(&3z^{11}+48z^{10}+360z^9+1680z^8+5508z^7 \notag\\
+ &+13584z^6+26136z^5+39600z^4+46080z^3 \notag\\
+ &+38400z^2+20000z+4800\bigr). \label{eq:positivepoly}
+\end{align}
+All coefficients are positive. The expression in brackets in
+\eqref{eq:concavitynumerator} is \(1/625\) times the left side of
+\eqref{eq:positivepoly}. Since \(P'>0\), this proves strict concavity
+at positive potential values; all changes of scale have positive factors.
+Finally \(P(z)\sim2z^2\), \(P'(z)\sim4z\), so
+\(H(\Theta(s))\sim s^2\to0\) as \(s\downarrow0\).
+The continuous zero extension preserves concavity.
+\end{proof}

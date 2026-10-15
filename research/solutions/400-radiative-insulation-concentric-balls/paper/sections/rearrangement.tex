@@ -1,0 +1,212 @@
+\section{Rearranging the boundary potential}\label{sec:rearrangement}
+
+The boundary term becomes linear in the variable \(U=\Theta(v)\).
+After zero extension this potential is a \(BV\) function, and may have
+a boundary jump. Rearrangement must therefore retain singular variation.
+We recall the formulas used below, with
+\(\Per(E)=|D\mathbf1_E|(\R^n)\).
+For nonnegative \(V\in BV(\R^n)\) of bounded support, coarea gives
+\[
+ |DV|(\R^n)=\int_0^\infty\Per(\{V>t\})\dd t;
+\]
+the converse holds when the right side is finite and \(V\in L^1\).
+We use its Borel-set version as well
+\cite[Theorem~1.19]{Gorny}; see also
+\cite[Theorem~2.6]{LV}.
+Euclidean isoperimetry in this normalization is
+\[
+ \Per(E)\ge n\omega_n^{1/n}|E|^{(n-1)/n}
+\]
+for bounded measurable sets, with equality for balls
+\cite[Theorem~2.1]{AGNT}.
+
+For \(f\in W^{1,1}(\Omega)\), Gauss--Green gives the zero-extension
+identity
+\begin{equation}\label{eq:zeroextension}
+ D(f\mathbf1_\Omega)=\nabla f\,\dd x|_\Omega-
+                     \Tr f\,\nu\,\mathcal H^{n-1}|_{\partial\Omega},
+ \qquad
+ |D(f\mathbf1_\Omega)|(\R^n)=\int_\Omega|\nabla f|+
+                                          \int_{\partial\Omega}|\Tr f|.
+\end{equation}
+The volume and boundary measures are mutually singular.
+The absolute-mean characterization also shows that the trace commutes
+with a Lipschitz scalar composition.
+
+For a Borel \(p:[0,Y]\to[0,1]\), let \(B(t)=\int_0^t p(a)\dd a\).
+This is a nondecreasing 1-Lipschitz function. The Sobolev chain rule gives
+\(\nabla B(U)=p(U)\nabla U\) inside \(\Omega\); the \(C^1\) version is
+\cite[Proposition~3.21(2)]{Hunter}, and we spell out the representative
+issue. Sobolev functions have absolutely continuous representatives on
+almost every coordinate line: product tests and Fubini give the
+one-dimensional weak derivative, whose integral differs from the
+function by a constant \cite[Proposition~3.6]{Hunter}.
+For an absolutely continuous real \(f\) and a real null Borel set \(N\),
+\(f'=0\) a.e. on \(f^{-1}(N)\). Indeed, points with nonzero derivative
+can be grouped into countably many sets on which the inverse
+restriction of \(f\) is Lipschitz: group by integers \(k,l\) for which
+\(|f(y)-f(x)|\ge |y-x|/k\) when \(0<|y-x|<1/l\), and then by intervals
+of length less than \(1/l\). Their points over \(N\) are null, since
+a Lipschitz map sends null sets to null sets. Apply this to the
+exceptional levels of \(B'\). The ordinary chain rule holds elsewhere,
+and the Lipschitz bound gives derivative zero where \(f'=0\).
+Fubini proves the asserted weak chain rule with the chosen Borel \(p\).
+
+We will also use the weighted coarea identity
+\begin{equation}\label{eq:weightedcoarea}
+ |D(B(V))|(\R^n)=\int_0^Y p(t)\Per(\{V>t\})\dd t
+\end{equation}
+for \(0\le V\le Y\) in \(BV\) of bounded support. To include flat pieces
+of \(B\), put
+\(\tau(q)=\sup\{t\in[0,Y]:B(t)\le q\}\) for \(0<q<B(Y)\).
+Then \(\{B(V)>q\}=\{V>\tau(q)\}\). The one-dimensional area formula
+\cite[Theorem~2.8]{LV}, first on indicator functions and then on
+nonnegative measurable weights, changes \(dq\) to \(p(t)\dd t\).
+Non-singleton fibers of \(B\) have only countably many distinct values.
+This proves \eqref{eq:weightedcoarea}; its finite right side first
+justifies \(B(V)\in BV\) by the coarea converse. If \(B(Y)=0\), both
+sides are zero.
+
+The scalar cost of an absolutely continuous potential drop will be
+\begin{equation}\label{eq:psi}
+ \psi(y,z)=\sup_{0\le p\le1}\{pz-G(y)p^2\},\qquad0\le y\le Y,\quad z\ge0.
+\end{equation}
+For \(G(y)>0\) this is
+\[
+ \psi(y,z)=
+ \begin{cases}
+ z^2/(4G(y)),&z\le2G(y),\\
+ z-G(y),&z\ge2G(y).
+ \end{cases}
+\]
+At \(y=0\) it is \(z\). The supremum formula shows that it is convex,
+nondecreasing and 1-Lipschitz in \(z\), that \(0\le\psi(y,z)\le z\),
+and that its recession slope is 1. Writing
+\(\psi_g(z)=\sup_{0\le p\le1}(pz-gp^2)\), we have
+\begin{equation}\label{eq:psilip}
+ |\psi_{g_1}(z)-\psi_{g_2}(z)|\le |g_1-g_2| .
+\end{equation}
+
+Let \(w\) be a nonincreasing profile on \((1,R)\), taking values in
+\([0,Y]\). Augment it by \(Y\) to the left of 1 and by 0 to the right
+of \(R\). Its positive drop measure \(\mu=-Dw\) on \([1,R]\) has total
+mass \(Y\), including the atoms \(Y-w(1+)\) at 1 and \(w(R-)\) at \(R\).
+Decompose it as
+\(\mu=z(r)\dd r+\mu_s\), with \(\mu_s\perp\dd r\), and define
+\begin{equation}\label{eq:F}
+ F(w)=\int_1^R A(r)\psi(w(r),z(r))\dd r+
+                              \int_{[1,R]}A(r)\dd\mu_s(r).
+\end{equation}
+The singular coefficient is the recession slope of \(\psi\).
+It includes jump and Cantor variation.
+
+\begin{proposition}\label{prop:lower}
+For every original admissible temperature \(v\), there is such a
+profile \(w\) for which
+\begin{equation}\label{eq:lower}
+ \mathcal E_\Omega(v)\ge S F(w).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Extend \(U=\Theta(v)\) by zero outside \(\Omega\). The \(C^1\) chain
+rule and \eqref{eq:zeroextension} put \(U\) in \(BV(\R^n)\).
+Completing a square gives
+\[
+ |\nabla v|^2\ge p(U)|\nabla U|-G(U)p(U)^2 .
+\]
+Since \(B(\Theta(\Tr v))\le\Theta(\Tr v)\), we obtain
+\begin{equation}\label{eq:dualoriginal}
+ \mathcal E_\Omega(v)\ge |D(B(U))|(\R^n)-
+                                       \int_{\R^n}G(U)p(U)^2\dd x.
+\end{equation}
+Let \(U^*(x)=w(|x|)\) be the decreasing spherical rearrangement.
+Explicitly, for \(m(t)=|\{U>t\}|\), take
+\[
+ w(r)=\sup\{t\in[0,Y]:m(t)>\omega_n r^n\},
+\]
+with empty supremum 0. Right continuity of \(m\) shows that
+\(\{U^*>t\}\) is the ball of volume \(m(t)\).
+Isoperimetry and the coarea converse give \(U^*\in BV\).
+By \eqref{eq:weightedcoarea}, the variation of \(B(U^*)\) does not
+exceed that of \(B(U)\); equimeasurability preserves the bulk term
+in \eqref{eq:dualoriginal}, since its integrand vanishes at zero.
+Moreover \(U=Y\) on \(K\) and its support has volume at most
+\(\omega_nR^n\). Thus \(w=Y\) on \(r<1\) and \(w=0\) on \(r>R\), and
+\begin{equation}\label{eq:radialdual}
+ \mathcal E_\Omega(v)\ge
+ \sup_p\left\{|D(B(U^*))|-\int_{\R^n}G(U^*)p(U^*)^2\dd x\right\}.
+\end{equation}
+
+We compute this supremum without assuming an absolutely continuous
+inverse distribution. Complete the monotone graph of \(w\) by filling
+all vertical jumps, including the endpoint jumps. From \((1,Y)\)
+to \((R,0)\), use the parameter
+\[
+ s=r+Y-t,\qquad1\le s\le R+Y.
+\]
+An increase in \(s\) is exactly the radial increase plus the potential
+drop. Hence its coordinate maps \(r(s),t(s)\) are 1-Lipschitz,
+and, almost everywhere,
+\[
+ a=r'(s)\ge0,\qquad b=-t'(s)\ge0,\qquad a+b=1.
+\]
+There are no missing parameters: the jumps of the strictly increasing
+map \(r\mapsto r+Y-w(r)\) are precisely the inserted vertical segments,
+and its generalized inverse supplies the rest of the graph.
+The one-dimensional area formula gives
+\begin{equation}\label{eq:pushforwards}
+ r_\#(a\,\dd s)=\dd r,\qquad
+ t_\#(b\,\dd s)=\dd t|_{(0,Y)},\qquad r_\#(b\,\dd s)=\mu.
+\end{equation}
+For the last equality, a radial interval traverses exactly the drop
+of \(w\) on it, with its endpoint vertical segments. The area formula
+for \(t\) measures that drop. Equality on intervals determines the
+finite measures, and nonnegative simple functions give all weights.
+
+On \(a>0\), the radial inverse is unique except at countably many jump
+radii; the drop density is \(b/a\). The image of \(a=0\) under \(r\)
+is Lebesgue-null. Uniqueness of the Lebesgue decomposition therefore
+identifies these as the absolutely continuous and singular parts of
+\(\mu\), respectively. At a nonjump radius \(t(s)=w(r(s))\); a vertical
+fiber has \(a=0\). Consequently
+\begin{equation}\label{eq:graphcost}
+ F(w)=\int_1^{R+Y}A(r(s))
+       \sup_{0\le p\le1}\{p b(s)-G(t(s))p^2a(s)\}\dd s.
+\end{equation}
+For \(a>0\) the integrand is \(a\psi(t,b/a)\), and for \(a=0\) it
+is \(b\), retaining the whole singular cost.
+
+The radial dual in \eqref{eq:radialdual}, divided by \(S\), equals
+\begin{equation}\label{eq:graphdual}
+ \int_1^{R+Y}A(r(s))
+       [p(t(s))b(s)-G(t(s))p(t(s))^2a(s)]\dd s
+                                  -\frac{G(Y)p(Y)^2}{n}.
+\end{equation}
+The last term is the contribution of the core \(B_1\).
+Indeed \eqref{eq:weightedcoarea} integrates the spherical crossing
+radius against \(p(t)\dd t\), while polar volume is
+\(S A(r)\dd r\); \eqref{eq:pushforwards} gives the two graph integrals.
+
+It remains to choose a single Borel function of the level which
+maximizes them. Choose Borel representatives of \(a,b\). A null
+Borel set \(N\subset[0,Y]\) can contain \(0,Y\), the image under \(t\)
+of \(b=0\), and the image of the parameter-null set where derivatives
+are undefined. The area formula and the Lipschitz bound make these
+images null. Outside \(N\), \(t\) has a unique inverse parameter
+\(s(t)\); otherwise its fiber would contain a horizontal interval.
+This generalized inverse is Borel. Set \(p=0\) on \(N\) and elsewhere
+choose
+\[
+ p(t)=\min\{b(s(t))/(2G(t)a(s(t))),1\}\quad\text{if }a(s(t))>0,
+ \qquad p(t)=1\quad\text{if }a(s(t))=0.
+\]
+Here \(G(t)>0\). On \(b=0\), zero is the maximizer. The part of
+\(b>0\) with \(t(s)\in N\) has zero parameter measure, since its
+strictly positive \(b\)-weighted integral is zero by
+\eqref{eq:pushforwards}. Everywhere else the choice is a pointwise
+maximizer. It also has \(p(Y)=0\), eliminating the core term.
+Conversely every \(p\) gives at most the integral in
+\eqref{eq:graphcost}, with a nonpositive core term.
+Thus the supremum is exactly \(S F(w)\), proving \eqref{eq:lower}.
+\end{proof}
