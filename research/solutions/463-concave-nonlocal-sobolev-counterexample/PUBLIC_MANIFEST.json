@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "title": "Failure of uniform Sobolev estimates for concave nonlocal equations with rough kernels",
+  "author": "Kaiwen Jin",
+  "date": "2026-10-15",
+  "problem_id": "463",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "claim_status": "Analytic counterexample claim; independent mathematical review requested",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Entry point, scope, rebuild instructions and AI-use/review disclosure",
+      "sha256": "1998dc9fe37d26cf4aa647af45a80d144f93df8bd1d462a145549a6bd12fc972",
+      "bytes": 2697
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Exact target requirements mapped to the submitted manuscript",
+      "sha256": "559d2e065caf0f7751744f69d562b8f886575d191ceab352ec50cb586465c125",
+      "bytes": 2979
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Editable standalone manuscript source",
+      "sha256": "68260d3bc18e336facb74975c9882d1c0bbe72cc44e22de1ff2e07a162a0d5b8",
+      "bytes": 24307
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Complete analytic counterexample manuscript",
+      "sha256": "9dc1e365d68c2b138f5f8c7405c2142e4c1b8e6ecf0757998e0f4af9abf20524",
+      "bytes": 326433
+    }
+  ],
+  "checksum_scope": "SHA256SUMS covers these files and this manifest; the checksum file does not hash itself."
+}

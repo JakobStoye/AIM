@@ -1,0 +1,556 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\Cb}{C_b^\infty(\R^n)}
+\DeclareMathOperator{\PV}{PV}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\begin{document}
+\title{Failure of uniform Sobolev estimates for concave nonlocal equations with rough kernels}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{15 October 2026}
+\maketitle
+\begin{abstract}
+We consider interior full-order Sobolev estimates for concave,
+translation-invariant nonlocal equations with even kernels comparable
+to that of the fractional Laplacian. Such estimates are required to be
+uniform over the kernel family and to depend on the forcing only
+through its $L^p$ norm. We show that they fail for every strict ellipticity
+ratio and every finite $p>\max\{2,n/\sigma\}$, where $0<\sigma<2$ is the
+order of the equation. The counterexamples have smooth bounded
+solutions, smooth bounded forcing, and kernels smooth away from the
+origin. Independent controls on disjoint jump annuli convert small
+oscillations into a prescribed nonlinear average, while the linear
+oscillations tend to zero in $L^p$. Concentrated negative Riesz
+potentials then contradict the proposed uniform Sobolev bound.
+\end{abstract}
+
+\section{Introduction}
+Concave integro-differential equations describe diffusion under a choice
+of jump law and form a natural nonlocal counterpart of concave fully
+nonlinear elliptic equations. Pointwise comparability of their kernels
+with the fractional Laplacian gives a common order and ellipticity
+scale. A basic regularity question is whether these assumptions also
+give an interior Sobolev estimate at the full operator order when the
+forcing is controlled in an integrable norm.
+
+Fix $n\ge2$, $0<\sigma<2$ and $0<\lambda\le\Lambda$. For an arbitrary
+family of even measurable kernels satisfying
+\begin{equation}\label{eq:originalclass}
+ \lambda |y|^{-n-\sigma}\le K_a(y)\le\Lambda |y|^{-n-\sigma},
+\end{equation}
+write
+\begin{equation}\label{eq:originaloperator}
+ L_a u(x)=\PV\int_{\R^n}[u(x)-u(x+y)]K_a(y)\dd y,
+ \qquad Iu=\inf_a(-L_a u).
+\end{equation}
+For bounded viscosity solutions of $Iu=f$ in $B_1$, the estimate in
+question is
+\begin{equation}\label{eq:question}
+ \norm u_{W^{\sigma,p}(B_{1/2})}
+ \le C\bigl(\norm u_{L^\infty(\R^n)}+\norm f_{L^p(B_1)}\bigr),
+\end{equation}
+with $C$ depending only on $n,\sigma,p,\lambda,\Lambda$, for all
+sufficiently large finite $p$. Here $B_r$ is the ball of radius $r$
+centered at the origin. We use the Slobodeckij space when $\sigma$ is
+noninteger and ordinary $W^{1,p}$ when $\sigma=1$.
+Thus, for $0<t<1$,
+\[
+ [v]_{W^{t,p}(D)}^p=\int_{D\times D}
+             \frac{|v(x)-v(y)|^p}{|x-y|^{n+tp}}\dd x\dd y;
+\]
+for $1<\sigma<2$ the corresponding fractional seminorm is applied to
+$\nabla v$ at order $\sigma-1$, together with the usual lower-order
+$L^p$ norms.
+
+A qualitative full-order Sobolev question appears as Open Question~3.2 in
+Fern\'andez-Real and Ros-Oton~\cite[Section 3.6.2]{Book}.
+Here we consider the uniform quantitative estimate \eqref{eq:question}.
+A positive benchmark is Kitano's estimate for the fractional Hessian
+under a quadratic-angular matrix restriction on the kernels and the
+coefficient hypotheses in~\cite[Theorem 4.1]{Kitano}. Its Riesz-potential reduction uses that
+special representation. For arbitrary rough kernels, Serra's higher
+H\"older estimates require global H\"older control of the solution,
+and bounded exterior data admit counterexamples to stronger
+$C^{\sigma+\alpha}$ estimates~\cite{Serra}. Vivas obtains $C^\sigma$
+interior estimates for noninteger $\sigma$ with bounded continuous
+forcing~\cite{Vivas}. Control of increments at that order alone does
+not provide the scale summability or the $L^p$-forcing dependence in
+\eqref{eq:question}.
+
+We show that the kernel-uniform estimate \eqref{eq:question} is false.
+Smooth forcing does not restore it.
+\begin{theorem}\label{thm:main}
+Let $n\ge2$, $0<\sigma<2$, $0<\lambda<\Lambda$, and
+$\max\{2,n/\sigma\}<p<\infty$. For every $C>0$ there are a family
+of kernels satisfying \eqref{eq:originalclass} and functions
+$u,f\in C_b^\infty(\R^n)$ such that $Iu=f$ on $\R^n$ and
+\[
+ \norm u_{W^{\sigma,p}(B_{1/2})}
+ > C\bigl(\norm u_{L^\infty(\R^n)}+\norm f_{L^p(B_1)}\bigr).
+\]
+Every kernel in the family may be chosen smooth away from the origin.
+\end{theorem}
+In particular, with $\sigma=2s$, no finite threshold
+$p_*(n,s,\lambda,\Lambda)$ can give the proposed estimate for the full
+class at a strict ellipticity tuple. The equal-constant case
+$\lambda=\Lambda$ is outside the negative assertion. The theorem
+concerns uniformity over the whole kernel class; individual operators
+may have estimates depending on additional kernel regularity.
+
+The construction uses the freedom to choose the kernel independently
+on disjoint annuli of jump lengths. Minimization then produces a sum
+of norms of annular operators. Two prescribed cosine moments keep
+these norms strictly positive, so the resulting scalar forcing is
+smooth. A long sum of small oscillations has a nonzero nonlinear
+average, whereas its normalized linear oscillations tend to zero in
+$L^p(B_1)$ for every finite $p\ge2$. Modulating these oscillations
+produces solutions with forcing tending to zero and with any prescribed
+smooth bounded uniform limit $w$ satisfying
+$-(-\Delta)^{\sigma/2}w\ge0$ on $\R^n$; see
+Proposition~\ref{prop:relaxation}. If \eqref{eq:question} held, it would bound the Sobolev
+norm of every such limit by its supremum norm. Negative Riesz
+potentials concentrated at small scales violate that bound.
+
+Related failures of finite-$p$ maximum estimates for kernels depending
+on the spatial point were recently constructed by Jiang and
+Xu~\cite{JiangXu}. Their use of successively smaller jump scales
+motivates the scale separation here. The present construction concerns
+translation-invariant Bellman operators and the full-order Sobolev
+estimate \eqref{eq:question}, including its global supremum term; it
+does not invoke their variable-coefficient theorem.
+
+Section~\ref{sec:annular} constructs the admissible Bellman family.
+Section~\ref{sec:oscillation} supplies the scale estimates and averaging.
+The prescribed-limit construction is proved in
+Section~\ref{sec:limits}, and concentration finishes the argument in
+Section~\ref{sec:concentration}.
+
+\section{Annular operators and a Bellman family}\label{sec:annular}
+Throughout the proof, $n\ge2$ and $0<\sigma<2$ are fixed. The notation
+$C_b^\infty$ requires the function and each of its derivatives to be bounded.
+Write
+\[
+ \delta_y v(x)=v(x+y)+v(x-y)-2v(x),\qquad
+ \A v(x)=\frac12\int_{\R^n}\delta_yv(x)\frac{\dd y}{|y|^{n+\sigma}}.
+\]
+These integrals converge absolutely for $v\in\Cb$. We first construct
+annular operators that distinguish two frequencies. The second frequency
+will prevent a zero in the nonlinear term and ensure a smooth forcing.
+
+\begin{lemma}\label{lem:moments}
+There are even real functions $b_1,b_2\in C_c^\infty(\{1<|y|<2\})$ such that,
+for
+\[
+ m_\ell(t)=\int_{\R^n}(\cos(ty_1)-1)b_\ell(y)|y|^{-n-\sigma}\dd y,
+\]
+\[
+ (m_1(1),m_2(1))=(1,0),\qquad (m_1(2),m_2(2))=(0,1).
+\]
+Moreover $|m_\ell(t)|\le C\min\{t^2,1\}$ for every real $t$.
+\end{lemma}
+\begin{proof}
+Choose a nonnegative radial $\chi\in C_c^\infty(\{1<|y|<2\})$ that is
+positive on an open annulus. Set $q_1(y)=\cos y_1-1$, $q_2(y)=\cos(2y_1)-1$
+and
+\[
+ G_{ab}=\int_{\R^n}\chi q_aq_b|y|^{-n-\sigma}\dd y,\qquad a,b\in\{1,2\}.
+\]
+The matrix $G$ is positive definite. Indeed, a zero quadratic form would
+force $c_1q_1+c_2q_2=0$ on the open annulus. Since
+$q_2=2(\cos y_1+1)q_1$ and $y_1$ ranges through an interval, this forces
+$c_1=c_2=0$. Define
+\[
+ b_\ell(y)=\chi(y)\sum_{a=1}^2(G^{-1})_{a\ell}q_a(y).
+\]
+Multiplication by $G$ gives the four moment identities. The last estimate
+follows by integrating $|\cos(ty_1)-1|\le\min\{t^2|y|^2/2,2\}$ on the
+fixed annular support.
+\end{proof}
+
+Fix these functions once and for all, and put
+\begin{equation}\label{eq:ellconstants}
+ M=\sup_y\sqrt{b_1(y)^2+b_2(y)^2}>0,\qquad
+ \kappa=\frac{\lambda+\Lambda}{2},\qquad
+ \varepsilon=\frac{\Lambda-\lambda}{2M}>0.
+\end{equation}
+Let $R\ge5$ and $k_0\ge1$ be integers and $N\ge1$. Define
+\[
+ k_j=k_0R^{j-1},\qquad
+ \B_j^\ell v(x)=\frac12\int_{\R^n}\delta_yv(x)b_\ell(k_jy)|y|^{-n-\sigma}\dd y,
+ \qquad 1\le j\le N,
+\]
+and write $\B_jv=(\B_j^1v,\B_j^2v)\in\R^2$.
+For $a=(a_1,\ldots,a_N)\in(\overline B_1^{\R^2})^N$, set
+\begin{equation}\label{eq:kernel}
+ K_a(y)=\left(\kappa+\varepsilon\sum_{j=1}^N a_j\cdot
+                  (b_1(k_jy),b_2(k_jy))\right)|y|^{-n-\sigma}.
+\end{equation}
+The supports for distinct $j$ are disjoint. Thus the coefficient in
+parentheses lies in $[\lambda,\Lambda]$ for every $y\ne0$ and every $a$.
+Each $K_a$ is even, independent of $x$, and smooth away from the origin.
+With the positive-operator convention for $L_a$ in the Introduction,
+independent minimization on the disks gives the exact identity
+\begin{equation}\label{eq:bellman}
+ I_{N,R,k_0}v=\inf_a(-L_av)
+       =\kappa\A v-\varepsilon\sum_{j=1}^N|\B_jv|.
+\end{equation}
+The control set is compact and finite dimensional. Its minimizing index
+can vary with $x$; every member of the kernel family remains translation
+invariant.
+
+\section{Oscillations at separated scales}\label{sec:oscillation}
+The constants in this section may depend on $n,\sigma,b_1,b_2$, but are
+uniform in $N$, $R\ge5$, $k_0\ge1$ and $1\le j\le N$. We will specify
+any additional dependence on a smooth amplitude.
+
+\begin{lemma}\label{lem:annular}
+Let $g\in\Cb$ and set
+\[
+ V_N(x)=\frac1N\sum_{i=1}^N k_i^{-\sigma}
+                  \bigl(\cos(k_ix_1)+\cos(2k_ix_1)\bigr),\quad
+ v_N=gV_N,\quad z(t)=(\cos t,\cos 2t).
+\]
+For $\alpha=\min\{\sigma,2-\sigma\}>0$,
+\begin{equation}\label{eq:pairerror}
+ \norm{\B_jv_N-\tfrac gN z(k_jx_1)}_\infty
+ \le \frac{C\norm g_\infty R^{-\alpha}+C_g/k_0}{N},
+\end{equation}
+where $C_g$ depends only on bounded first and second derivatives of $g$.
+For $w\in\Cb$ one also has
+\begin{equation}\label{eq:background}
+ \norm{\B_jw}_\infty\le C\norm{D^2w}_\infty k_0^{\sigma-2},
+ \qquad
+ \norm{v_N}_\infty\le\frac{C\norm g_\infty k_0^{-\sigma}}{N}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Scaling gives
+\[
+ \B_j^\ell\cos(tk_ix_1)
+   =k_j^\sigma m_\ell(tk_i/k_j)\cos(tk_ix_1).
+\]
+For constant $g$, the terms with $i=j$ give precisely $g z(k_jx_1)/N$.
+For $i<j$, the normalized action is bounded by
+$C(k_i/k_j)^{2-\sigma}$; for $i>j$ it is bounded by
+$C(k_j/k_i)^\sigma$. The two geometric sums are at most $CR^{-\alpha}$.
+
+To include the amplitude, expand the product before estimating:
+\begin{align*}
+ &\delta_y(g\cos(kx_1))-g(x)\delta_y\cos(kx_1)\\
+ &\quad=\cos(kx_1)\cos(ky_1)\delta_yg(x)
+ -\sin(kx_1)\sin(ky_1)\bigl(g(x+y)-g(x-y)\bigr).
+\end{align*}
+On the $j$th annulus, the error from the $i$th normalized mode is bounded by
+\begin{equation}\label{eq:modsum}
+ C k_i^{-\sigma}\left(
+ k_j^{\sigma-2}\norm{D^2g}_\infty
+ +k_j^{\sigma-1}\min\{1,k_i/k_j\}\norm{\nabla g}_\infty\right).
+\end{equation}
+The sum of the first terms is at most $Ck_0^{-2}\norm{D^2g}_\infty$.
+For the coarser-frequency part of the second term, use
+\[
+ k_j^{\sigma-2}\sum_{i\le j}k_i^{1-\sigma}\le C/k_0.
+\]
+For $\sigma<1$ the sum is controlled by its largest term, and for
+$\sigma>1$ by its first term. When $\sigma=1$, the bound is
+$j/k_j\le C/k_0$. The finer-frequency sum is at most $C/k_j$.
+Dividing the summed errors by $N$ proves \eqref{eq:pairerror}.
+Taylor's formula on the annular support proves the first estimate in
+\eqref{eq:background}; the second is the geometric sum defining $V_N$.
+\end{proof}
+
+\begin{lemma}\label{lem:isotropic}
+Put
+\[
+ c_\sigma=\int_{\R^n}(1-\cos y_1)|y|^{-n-\sigma}\dd y>0,
+ \qquad T(t)=\cos t+2^\sigma\cos 2t.
+\]
+For each fixed $g\in\Cb$ there is a function $\eta_g(K)\to0$ as
+$K\to\infty$ such that
+\begin{equation}\label{eq:isotropic}
+ \A(gV_N)=-c_\sigma g(x)\frac1N\sum_{j=1}^N T(k_jx_1)+e_N(x),
+ \qquad \norm{e_N}_\infty\le\eta_g(k_0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The defining integral for $c_\sigma$ is finite because $0<\sigma<2$.
+Scaling and evenness give $\A\cos(kx_1)=-c_\sigma k^\sigma\cos(kx_1)$.
+We claim that
+\[
+ k^{-\sigma}\norm{\A(g\cos(kx_1))-g\A\cos(kx_1)}_\infty\longrightarrow0.
+\]
+In the integral for this difference set $y=z/k$. The product expansion in
+the previous proof gives the integrable majorant
+$C_g\min\{|z|^2,1\}|z|^{-n-\sigma}$, uniformly in $x$ and $k\ge1$.
+For each fixed $z$, uniform continuity of $g$ makes the supremum in $x$
+of the integrand's coefficient tend to zero. The supremum is measurable,
+since it can be taken over rational $x$. Dominated convergence proves
+the claim. Apply it also to the second harmonic. A tail supremum of these
+two commutator errors defines $\eta_g$ and proves \eqref{eq:isotropic}.
+\end{proof}
+
+\begin{lemma}\label{lem:averaging}
+Let $F$ be a smooth $2\pi$-periodic function with mean $\overline F$, and
+fix an integer $R\ge5$. For every finite $p\ge2$,
+\begin{equation}\label{eq:average}
+ \left\|\frac1N\sum_{j=1}^N
+        \bigl(F(k_0R^{j-1}x_1)-\overline F\bigr)\right\|_{L^p(B_1)}
+ \longrightarrow0,
+\end{equation}
+uniformly over integers $k_0\ge1$.
+\end{lemma}
+\begin{proof}
+First take a mean-zero trigonometric polynomial $P$ of degree $D$.
+Fourier orthogonality on a period shows that scales $i,j$ can overlap
+only if $mR^i=\ell R^j$ for nonzero integers $m,\ell$ of magnitude at
+most $D$. Consequently $|i-j|\le\log_R D$ and
+\[
+ \left\|\frac1N\sum_{j=1}^N P(R^{j-1}t)\right\|_{L^2(0,2\pi)}^2
+ \le C_{P,R}/N.
+\]
+Uniform trigonometric approximation extends this convergence to
+$F-\overline F$. The averages are uniformly bounded, so their $L^p$
+norms tend to zero for each finite $p\ge2$, by
+$\norm S_p^p\le\norm S_\infty^{p-2}\norm S_2^2$.
+For any periodic $S$, covering $[-k_0,k_0]$ by full periods and at most
+two additional periods gives
+\[
+ \int_{-1}^1|S(k_0t)|^p\dd t\le C\int_0^{2\pi}|S(t)|^p\dd t,
+\]
+with $C$ independent of $k_0\ge1$. Integration of the bounded cross
+sections of $B_1$ now proves \eqref{eq:average}.
+\end{proof}
+
+The particular nonlinear average that we need is
+\begin{equation}\label{eq:H}
+ H(t)=|z(t)|=\sqrt{\cos^2t+\cos^2(2t)},\qquad
+ \mu=\frac1{2\pi}\int_0^{2\pi}H(t)\dd t>0.
+\end{equation}
+It is smooth and has the lower bound
+\begin{equation}\label{eq:Hlower}
+ H(t)^2=4\cos^4t-3\cos^2t+1\ge7/16.
+\end{equation}
+This lower bound is the reason for using two separated moments rather
+than one absolute cosine.
+
+\section{Small smooth forcing and a prescribed limit}\label{sec:limits}
+The previous lemmas let us choose a smooth amplitude so that the
+nonlinear oscillations cancel the generator of a prescribed background.
+
+\begin{proposition}\label{prop:relaxation}
+Let $w\in\Cb$ satisfy $\A w\ge0$ on $\R^n$, and let $2\le p<\infty$.
+There are operators $I_m$ of the form \eqref{eq:bellman}, with the same
+$n,\sigma,\lambda,\Lambda$, and functions $u_m,f_m\in\Cb$ such that
+\begin{equation}\label{eq:relaxation}
+ I_mu_m=f_m\quad\hbox{on }\R^n,\qquad
+ \norm{f_m}_{L^p(B_1)}\to0,\qquad
+ \norm{u_m-w}_{L^\infty(\R^n)}\to0.
+\end{equation}
+The choices can also ensure uniform convergence of first derivatives
+when $\sigma>1$, and convergence in ordinary $W^{1,p}(B_1)$ when
+$\sigma=1$.
+\end{proposition}
+\begin{proof}
+Put $q=\A w\ge0$. Differentiation under the integral, using Taylor's
+formula near zero and bounded derivatives at infinity, gives
+$q\in\Cb$. Given $\delta>0$, fix the positive amplitude
+\begin{equation}\label{eq:g}
+ g(x)=\frac{\kappa q(x)+\delta}{\varepsilon\mu},
+ \qquad g_{\min}=\frac{\delta}{\varepsilon\mu}>0.
+\end{equation}
+Set $u_N=w+gV_N$ and $f_N=I_{N,R,k_0}u_N$. From
+\eqref{eq:pairerror}--\eqref{eq:background},
+\begin{align}
+ \sum_{j=1}^N\norm{\B_ju_N-\tfrac gN z(k_jx_1)}_\infty
+ &\le CN\norm{D^2w}_\infty k_0^{\sigma-2}
+       +C\norm g_\infty R^{-\alpha}+C_g/k_0\notag\\
+ &=:\mathcal E.\label{eq:totalerror}
+\end{align}
+Using the 1-Lipschitz property of the Euclidean norm and
+$\kappa q-\varepsilon\mu g=-\delta$, we obtain
+\begin{align}
+ f_N={}&-\delta-\kappa c_\sigma g(x)\frac1N\sum_jT(k_jx_1)\notag\\
+ &-\varepsilon g(x)\left(\frac1N\sum_jH(k_jx_1)-\mu\right)+r_N,
+ \label{eq:forcing}\\
+ \norm{r_N}_\infty&\le\kappa\eta_g(k_0)+\varepsilon\mathcal E.\notag
+\end{align}
+
+The order of choices matters. First choose the integer $R\ge5$ so that
+$C\norm g_\infty R^{-\alpha}$ is sufficiently small compared with
+$\delta$ and $g_{\min}\sqrt7/4$. Keep $R$ and $g$ fixed and use
+Lemma~\ref{lem:averaging} to choose $N$ so that both oscillatory terms
+in \eqref{eq:forcing} have $L^p(B_1)$ norm at most $\delta$.
+We may require $N$ to be arbitrarily large. Finally choose the integer
+$k_0$ sufficiently large that $\kappa\eta_g(k_0)$,
+$CN\norm{D^2w}_\infty k_0^{\sigma-2}$, $C_g/k_0$ and
+$\norm{gV_N}_\infty$ are as small as needed. These requirements are
+compatible because $\sigma<2$ and the averaging estimate is uniform in
+$k_0$.
+
+We also impose a pointwise condition to make the forcing smooth.
+The individual error satisfies
+\[
+ \norm{\B_ju_N-\tfrac gN z(k_jx_1)}_\infty
+ \le C\norm{D^2w}_\infty k_0^{\sigma-2}
+       +\frac{C\norm g_\infty R^{-\alpha}+C_g/k_0}{N}.
+\]
+In the first choice take the $R$ term below $g_{\min}\sqrt7/16$;
+in the last choice take the sum of the other two terms, after
+multiplication by $N$, below the same number. Then
+\[
+ |\B_ju_N(x)|\ge \frac{g_{\min}\sqrt7}{8N}>0
+       \qquad (x\in\R^n,\ 1\le j\le N).
+\]
+Thus each $|\B_ju_N|$ is smooth with bounded derivatives for this finite
+construction. The same holds for $\A u_N$, so $f_N\in\Cb$ exactly.
+Sending $\delta\downarrow0$ with these successive choices, and requiring
+$N,k_0\to\infty$, proves \eqref{eq:relaxation}.
+
+It remains to record the derivative convergence. The amplitudes
+$g_\delta$ have uniformly bounded derivatives as $0<\delta\le1$.
+For $\sigma>1$, differentiating the finite sum gives
+\[
+ \norm{\nabla(gV_N)}_\infty
+ \le\frac C N\left(\norm{\nabla g}_\infty k_0^{-\sigma}
+                   +\norm g_\infty k_0^{1-\sigma}\right)\to0.
+\]
+For $\sigma=1$, transverse derivatives tend to zero uniformly and
+\[
+ \partial_1(gV_N)=(\partial_1g)V_N
+ -\frac gN\sum_j\bigl(\sin(k_jx_1)+2\sin(2k_jx_1)\bigr).
+\]
+The sine average has pairwise disjoint frequencies for $R\ge5$.
+Its periodic $L^2$ norm is $O(N^{-1/2})$ and its supremum is at most $3$.
+It therefore tends to zero in each finite $L^p(B_1)$, uniformly under
+the subsequent choice of $k_0$, by the period-covering argument above.
+This proves the last assertion.
+\end{proof}
+
+Every equality in Proposition~\ref{prop:relaxation} is classical. It is
+also a viscosity equality in the original convention: replacing $u$ near
+an upper contact by a touching test function increases every $-L_a$, and
+at a lower contact decreases them, because every kernel is nonnegative.
+
+\section{Concentration and failure of the estimate}\label{sec:concentration}
+We finish by applying the prescribed-limit construction to concentrated
+negative potentials. The required sign and regularity can be checked
+directly.
+
+\begin{lemma}\label{lem:potential}
+There is a nonzero nonconstant $V\in\Cb$ that tends to zero at infinity
+and satisfies $\A V=-c_\sigma\psi$ for some nonzero
+$0\le\psi\in C_c^\infty(\R^n)$, where $c_\sigma>0$ is the constant
+defined in Lemma~\ref{lem:isotropic}.
+\end{lemma}
+\begin{proof}
+Here $n>\sigma$. With $h_t(x)=(4\pi t)^{-n/2}e^{-|x|^2/(4t)}$, set
+\[
+ R_\sigma(x)=\frac1{\Gamma(\sigma/2)}\int_0^\infty
+                 t^{\sigma/2-1}h_t(x)\dd t
+ =\frac{\Gamma((n-\sigma)/2)}{2^\sigma\pi^{n/2}\Gamma(\sigma/2)}
+                 |x|^{\sigma-n}\quad(x\ne0),
+\]
+and $V=R_\sigma*\psi$, where $\psi$ is any such nonnegative smooth function.
+The kernel is locally integrable and positive. Moving derivatives onto
+$\psi$ shows that $V\in\Cb$; compact support gives
+$V(x)=O(|x|^{\sigma-n})$ at infinity. Thus $V$ is nonzero and nonconstant.
+
+For the sign, use the Fourier convention
+$\widehat\psi(\xi)=\int e^{-ix\cdot\xi}\psi(x)\dd x$.
+The Gaussian formula $\widehat h_t(\xi)=e^{-t|\xi|^2}$ and the positive
+heat representation give
+\[
+ V(x)=(2\pi)^{-n}\int_{\R^n}e^{ix\cdot\xi}|\xi|^{-\sigma}
+                                  \widehat\psi(\xi)\dd\xi.
+\]
+All interchanges are absolute: the integral over $(t,\xi)$ is bounded by
+$\Gamma(\sigma/2)\int |\xi|^{-\sigma}|\widehat\psi(\xi)|\dd\xi<\infty$,
+using $n>\sigma$ near zero and rapid decay at infinity. Isotropy gives
+$\A e^{ix\cdot\xi}=-c_\sigma|\xi|^\sigma e^{ix\cdot\xi}$.
+The absolute double integral for applying $\A$ to this representation is
+bounded by $c_\sigma\int|\widehat\psi|<\infty$. Hence Fubini and Fourier
+inversion give $\A V=-c_\sigma\psi$ pointwise. This also verifies the
+normalization directly; compare \cite[Definition 2.12]{Kwasnicki}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose the proposed estimate holds with a constant $C$ uniform over the
+kernel families. Fix any $w\in\Cb$ with $\A w\ge0$ and apply it to
+Proposition~\ref{prop:relaxation}. If $0<\sigma<1$, Fatou's lemma applied
+to the Slobodeckij difference-quotient density gives a lower bound for
+the limit norm. If $1<\sigma<2$, use the uniform gradient convergence
+and apply Fatou at order $\sigma-1$ to the gradients. At $\sigma=1$,
+use the asserted ordinary $W^{1,p}$ convergence. In all cases,
+\begin{equation}\label{eq:forcedbound}
+ \norm w_{W^{\sigma,p}(B_{1/2})}\le C\norm w_{L^\infty(\R^n)}.
+\end{equation}
+
+Take $V$ from Lemma~\ref{lem:potential} and $w_r(x)=-V(x/r)$.
+Then $\norm{w_r}_\infty=\norm V_\infty$, while
+$\A w_r=c_\sigma r^{-\sigma}\psi(x/r)\ge0$.
+For $0<\sigma<1$, choose a fixed ball on which $V$ has a positive
+Slobodeckij seminorm. Restricting the norm of $w_r$ to its rescaled ball
+inside $B_{1/2}$ and changing variables gives
+\[
+ [w_r]_{W^{\sigma,p}(B_{1/2})}\ge c r^{n/p-\sigma}.
+\]
+For $1<\sigma<2$, the same change of variables for the gradient at order
+$\sigma-1$ gives the identical power. The corresponding seminorm is
+positive on some ball, since a nonzero decaying $V$ cannot be affine.
+For $\sigma=1$, choose a ball where $\nabla V$ is nonzero and obtain
+$\norm{\nabla w_r}_{L^p(B_{1/2})}\ge c r^{n/p-1}$.
+Since $p>n/\sigma$, each lower bound tends to infinity as $r\downarrow0$,
+contradicting \eqref{eq:forcedbound}.
+\end{proof}
+
+
+\begin{thebibliography}{9}
+\bibitem{Book}
+X. Fern\'andez-Real and X. Ros-Oton,
+\emph{Integro-Differential Elliptic Equations},
+Progress in Mathematics 350, Birkh\"auser, 2024.
+\href{https://doi.org/10.1007/978-3-031-54242-8}{doi:10.1007/978-3-031-54242-8}.
+Author manuscript: \href{https://arxiv.org/abs/2411.12455v1}{arXiv:2411.12455v1}.
+\bibitem{Kitano}
+S. Kitano, \emph{$W^{\sigma,p}$ a priori estimates for fully nonlinear
+integro-differential equations}, 2022.
+\href{https://arxiv.org/abs/2207.06728v1}{arXiv:2207.06728v1}.
+\bibitem{Serra}
+J. Serra, \emph{$C^{\sigma+\alpha}$ regularity for concave nonlocal fully
+nonlinear elliptic equations with rough kernels}, 2015.
+\href{https://arxiv.org/abs/1405.0930v3}{arXiv:1405.0930v3}.
+\bibitem{Vivas}
+H. Vivas, \emph{$C^{2s}$ regularity for fully nonlinear nonlocal equations
+with bounded right hand side}, 2019.
+\href{https://arxiv.org/abs/1907.02455v3}{arXiv:1907.02455v3}.
+\bibitem{JiangXu}
+Y. Jiang and L. Xu, \emph{A counterexample to integral
+Aleksandrov--Bakelman--Pucci estimates for a nonlocal operator}, 2026.
+\href{https://arxiv.org/abs/2610.16162v1}{arXiv:2610.16162v1}.
+\bibitem{Kwasnicki}
+M. Kwa\'snicki, \emph{Ten equivalent definitions of the fractional
+Laplace operator}, 2015.
+\href{https://arxiv.org/abs/1507.07356v2}{arXiv:1507.07356v2}.
+\end{thebibliography}
+
+\section*{AI-use statement}
+This manuscript was prepared with assistance from OpenAI Codex in proof
+development, checking, exposition, and internal manuscript reviews.
+Independent mathematical review is requested.
+
+\end{document}
