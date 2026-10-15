@@ -1,0 +1,28 @@
+{
+  "title": "Rectangular grids in crossing segment arrangements",
+  "problem_id": "593",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic proof claim",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Problem, result, materials, source attribution, AI-use/review scope and manuscript reproduction.",
+      "sha256": "8da01fa2fc26dd6ec0e7cecf2ef3b98cf209ef9ab56244b69b9d7f0b1744709d"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the pinned original AIM 593 statement.",
+      "sha256": "34b427774013fdc07df1200c723860a285b2b130e2ad1a229d9ba50f7542881e"
+    },
+    {
+      "path": "paper/segment_grids.tex",
+      "purpose": "Complete standalone editable mathematical manuscript.",
+      "sha256": "ffa262f13891d4b101821d31f761d55df9c7b7603938e92778f42377f3f6aef7"
+    },
+    {
+      "path": "paper/segment_grids.pdf",
+      "purpose": "Complete four-page mathematical manuscript.",
+      "sha256": "8ee7481352b553ebad5f94d7aa8bbcb37382463639d5da7d890b33f1f7b1083a"
+    }
+  ]
+}
