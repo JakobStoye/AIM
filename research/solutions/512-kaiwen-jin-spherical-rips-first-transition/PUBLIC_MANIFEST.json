@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "problem_id": "512",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/512-spherical-rips-first-transition.md",
+  "manuscript_author": "Kaiwen Jin",
+  "manuscript_contact": "yui.ui.siki@gmail.com",
+  "contribution": "analytic proof",
+  "claim": "complete affirmative solution claim submitted for mathematical review",
+  "main_result": "Theorem 1.1",
+  "pdf_pages": 8,
+  "ai_assistance": "OpenAI Codex: literature retrieval, proof development, mathematical checking and exposition",
+  "human_mathematical_review": "requested",
+  "detailed_ai_report": "none",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "adf74bc3e7d5e918ee5df0bfdcd7116e4db801fd069278b27ef8753e2b9dfb39",
+      "bytes": 73
+    },
+    {
+      "path": "README.md",
+      "sha256": "1af671befe7056c92ff89c8f768640f8b815ba34905329dd294131cabf9dbbc8",
+      "bytes": 1468
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "ad5cfd1d4f341705aa5df118c5e00cc4cb269f1bdf6e2ba1f43bb498cdcfcd9d",
+      "bytes": 2863
+    },
+    {
+      "path": "VERIFICATION.md",
+      "sha256": "e4528fb5db62f49abb6021765b273c095b901807ef43f7f0f9c68e699df5bef7",
+      "bytes": 1367
+    },
+    {
+      "path": "paper/main.tex",
+      "sha256": "1bd06a7976ead7ac09b03db6b4649ed336ff1765c6db87f3def1dc165abd890a",
+      "bytes": 24562
+    },
+    {
+      "path": "paper/main.pdf",
+      "sha256": "3f0a719da19c66f2ddf2db04ba4a7212c30703d572c8d286996c5f02548c51e0",
+      "bytes": 332783
+    }
+  ],
+  "build": {
+    "tool": "pdfTeX 1.40.27 (TeX Live 2025); latexmk 4.86a",
+    "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build paper/main.tex",
+    "isolated_build": "PASSED: only exported source and standard TeX files, eight-page text identical to distributed PDF; final log without warnings"
+  },
+  "ai_review_scope": "complete manuscript and cited theorem applications"
+}

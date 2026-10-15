@@ -1,0 +1,407 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\R}{\mathbb R}
+\newcommand{\fat}[1]{\lVert #1\rVert}
+\newcommand{\Dconf}{\mathcal D}
+\newcommand{\Cconf}{\mathcal C}
+\newcommand{\Aconf}{\mathcal A}
+\newcommand{\Rconf}{\mathcal R}
+\title{The first Vietoris--Rips homotopy transition of round spheres}
+\author{Kaiwen Jin\\[3pt]\small\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every \(n\geq3\), we identify the homotopy type of the strict Vietoris--Rips complex of the unit round sphere on an interval immediately above the regular-simplex threshold
+\(r_n=\arccos(-1/(n+1))\).
+It is the join of \(S^n\) with \(\SO(n+1)/A_{n+2}\), where \(A_{n+2}\) acts by the rotational symmetries of the simplex. This proves the first-transition interval conjecture for higher-dimensional spheres. A recent critical-diameter theorem supplies a common interval without further stationary configurations. We compute a closed labelled configuration realization at the threshold and use compact definable sublevel collars to transfer its homotopy type to the strict complexes.
+\end{abstract}
+
+\section{The first transition}
+The Vietoris--Rips complex of a metric space \(X\) at scale \(r>0\) has a simplex for every nonempty finite subset of diameter strictly less than \(r\). We write \(K_n(r)\) for its ordinary CW realization when \(X=S^n\subset\R^{n+1}\) carries the geodesic metric
+\[
+d(x,y)=\arccos\langle x,y\rangle.
+\]
+Understanding these complexes beyond the scales that recover the underlying manifold is a basic problem in persistent topology. On a round sphere, the first configuration enclosing the origin is a regular simplex.
+
+Put
+\[
+r_n=\arccos\!\left(-\frac1{n+1}\right).
+\]
+The orientation-preserving symmetries of a regular inscribed \((n+1)\)-simplex form \(A_{n+2}\subset\SO(n+1)\). Its unordered rotational family is
+\[
+Q_n=\SO(n+1)/A_{n+2}.
+\]
+For spaces \(X,Y\), the join \(X*Y\) is the quotient of \(X\times Y\times[0,1]\) that collapses the \(Y\) coordinate at one endpoint and the \(X\) coordinate at the other.
+
+\begin{theorem}\label{thm:main}
+For every integer \(n\geq3\), there is an
+\(\varepsilon_n\in(0,\pi-r_n)\) such that
+\[
+K_n(r)\simeq S^n*Q_n
+\qquad\text{for every }r_n<r<r_n+\varepsilon_n .
+\]
+\end{theorem}
+
+The interval formula was conjectured by Adamaszek, Adams and Frick \cite[Conjecture~5.7]{AAF}, and appears in \cite[Conjecture~7.2]{ABV} and \cite[Conjecture~7.8]{LMO}. The dimensions one and two are known; the latter follows from the Kuratowski-neighborhood calculation recalled in \cite[Corollary~7.5]{LMO}. The regular-simplex attaching description also occurs in the metric-thickening calculation of \cite[Section~5]{AAF}.
+
+M\'emoli and Wang \cite{MW} recently related diameter-decreasing configuration deformations to the canonical maps of strict Rips complexes. Their spherical stationary spectrum is locally finite below \(\arccos(-1/n)\). Consequently the homotopy type is constant on some right interval above \(r_n\). The additional question is its identification.
+
+We compute the fat realization of closed \emph{labelled} diameter sublevels at \(r_n\). At each number of labels, the complete regular simplices form isolated components. The remaining configurations give a sphere, while the regular components attach an \((n+1)\)-disk family parametrized by \(Q_n\). Compact definable collars compare this closed labelled model with every strict scale in a common right interval. The collars may depend on the number of labels; the interval does not.
+
+\section{Labelled configurations and diameter deformation}
+Fix \(n\geq3\), and abbreviate
+\[
+d=n+1,\qquad r_0=r_n.
+\]
+For \(p\geq0\) and \(t>0\), define
+\[
+\Dconf_p(t)=
+\{(x_0,\ldots,x_p)\in(S^n)^{p+1}:\diam\{x_0,\ldots,x_p\}<t\}.
+\]
+Repeated entries are permitted. Deleting an entry gives the face maps of a semisimplicial space. The product metric is the maximum of the geodesic distances of corresponding entries.
+
+For a semisimplicial space \(T_\bullet\), its fat realization is
+\[
+\fat{T_\bullet}=
+\left(\coprod_{p\geq0}T_p\times\Delta^p\right)\big/\sim ,
+\]
+where a zero barycentric coordinate is removed together with its entry. There are no additional identifications for repeated or permuted entries. We use compactly generated Hausdorff spaces throughout.
+
+\begin{proposition}[{\cite[Propositions~2.6 and~2.9]{MW}}]\label{prop:comparison}
+For every nonempty metric space \(X\) and \(t>0\), the fat realization of its strict labelled diameter sublevels is connected by a zigzag of weak homotopy equivalences to the ordinary CW realization of \(\operatorname{VR}(X;t)\). The comparison maps are natural up to homotopy with respect to increasing scale.
+\end{proposition}
+The intermediate space in \cite{MW} is the open \(t/2\)-neighborhood of the Kuratowski embedding in an injective metric space. Thus the scale in Proposition~\ref{prop:comparison} is the simplex \emph{diameter} bound \(t\).
+
+We recall the notion of weak slope used for the diameter function. If \(f:M\to\R\) is continuous on a metric space, \(|\mathrm df|(z)\) is the supremum of the rates \(\sigma\geq0\) for which there are a \(\delta>0\) and a continuous map
+\(\eta:B_\delta(z)\times[0,\delta]\to M\) satisfying
+\[
+d_M(\eta(y,u),y)\leq u,\qquad
+f(\eta(y,u))\leq f(y)-\sigma u.
+\]
+A point is weak-slope stationary when this supremum is zero.
+
+\begin{lemma}\label{lem:spectrum}
+On the unit geodesic \(S^n\), the following statements hold.
+\begin{enumerate}
+\item There is no positive weak-slope stationary diameter below \(r_0\). A stationary tuple of diameter \(r_0\) has as its distinct entries exactly the vertices of a centered regular \(d\)-simplex.
+\item There is an \(s\) with \(r_0<s<\arccos(-1/n)\) such that no finite labelled tuple has a weak-slope stationary diameter in \((r_0,s]\).
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The first assertion, including the equality case and repetitions, is \cite[Theorem~4.5]{MW}. Choose
+\(b\in(r_0,\arccos(-1/n))\). By \cite[Theorem~5.1]{MW}, the union of positive Clarke critical diameter values at \emph{all} finite label numbers, restricted to \((0,b]\), is finite. Weak-slope stationarity implies Clarke criticality by \cite[Proposition~3.9]{MW}. The least positive value is \(r_0\). Choosing \(s\in(r_0,b)\) before the next value proves the second assertion.
+\end{proof}
+
+We also use Corvellec's deformation theorem \cite[Theorem~2.4]{Cor}. If \(M\) is complete, \(f:M\to\R\) is continuous, and its weak slope is bounded below by a positive constant on a band
+\(a-\delta\leq f\leq b+\delta\), then there is a homotopy on \(M\) that never increases \(f\) and sends its closed \(b\)-sublevel into its closed \(a\)-sublevel. The weak slope is lower semicontinuous: a rate witnessed on a ball is witnessed at nearby points after restricting to a smaller ball. Compactness therefore gives a uniform positive bound on a band containing no stationary point.
+
+\section{The closed labelled model}
+Define the closed endpoint spaces and their fat realization by
+\[
+\Cconf_p=\{(x_0,\ldots,x_p)\in(S^n)^{p+1}:\diam\{x_0,\ldots,x_p\}\leq r_0\},
+\qquad Z=\fat{\Cconf_\bullet}.
+\]
+We first isolate the configurations responsible for the change.
+
+\subsection{Rigidity and the noncritical part}
+\begin{lemma}\label{lem:rigidity}
+If a finite \(P\subset S^{d-1}\) has pairwise inner products at least \(-1/d\) and \(0\in\conv(P)\), then \(P\) is exactly the vertex set of a centered regular \(d\)-simplex.
+\end{lemma}
+\begin{proof}
+Choose a convex zero relation with minimal support,
+\(\sum_{i=1}^k a_i x_i=0\), \(a_i>0\), \(\sum_i a_i=1\).
+This support is affinely independent: a nonzero affine dependence lets one vary the coefficients until a coefficient vanishes, contradicting minimality. Hence \(k\leq d+1\), and
+\[
+0=\left\|\sum_i a_i x_i\right\|^2
+\geq \left(1+\frac1d\right)\sum_i a_i^2-\frac1d
+\geq \frac{1+1/d}{k}-\frac1d
+\geq0.
+\]
+Equality forces \(k=d+1\), \(a_i=1/(d+1)\), and
+\(\langle x_i,x_j\rangle=-1/d\) for \(i\ne j\).
+Write these vertices as \(v_0,\ldots,v_d\). Their Gram matrix gives
+\[
+\sum_i v_i=0,\qquad
+\sum_i v_i v_i^{\mathsf T}=\frac{d+1}{d}I.
+\]
+For any further \(x\in P\), set
+\(b_i=(d\langle x,v_i\rangle+1)/(d+1)\).
+Then \(b_i\geq0\), \(\sum_i b_i=1\), and the frame identities give
+\(\sum_i b_i^2=1\).
+A nonnegative probability vector has sum of squares one only when one entry is one. The corresponding inner product is one, so \(x\) is that vertex.
+\end{proof}
+
+Let \(\Rconf_p\subset\Cconf_p\) consist of tuples whose distinct entries are a complete regular simplex, and put
+\[
+\Aconf_p=\Cconf_p\setminus\Rconf_p,\qquad A=\fat{\Aconf_\bullet}.
+\]
+The spaces \(\Rconf_p\) are compact, being finite unions of rotated labelled regular simplices. They are also open in \(\Cconf_p\). Indeed, at a regular tuple choose \(d+1\) entries spanning its simplex. The origin remains in the interior of their convex hull under sufficiently small perturbations. Lemma~\ref{lem:rigidity} then forces every nearby tuple in \(\Cconf_p\) to remain regular. Thus \(\Rconf_p\) is clopen, \(\Aconf_p\) is compact, and deletion of entries preserves \(\Aconf_p\).
+
+Lemma~\ref{lem:rigidity} also shows that every convex combination of a tuple in \(\Aconf_p\) is nonzero. Consequently the radial barycenter defines a continuous map
+\[
+\beta:A\longrightarrow S^n,\qquad
+[(x_0,\ldots,x_p);\lambda]\longmapsto
+\frac{\sum_i\lambda_i x_i}{\|\sum_i\lambda_i x_i\|}.
+\]
+
+\begin{lemma}\label{lem:noncritical}
+The map \(\beta:A\to S^n\) is a weak homotopy equivalence.
+\end{lemma}
+\begin{proof}
+Fix \(0<\rho<\pi/2\). At any positive-diameter tuple in \(\Aconf_p\), the ambient diameter weak slope is positive by Lemma~\ref{lem:spectrum}. Its local decreasing deformation restricts to \(\Aconf_p\): at positive time the new diameter is less than its initial value, hence is below \(r_0\), and at time zero the tuple is unchanged. The displacement estimate is preserved. The restricted weak slope is therefore positive.
+
+Choose \(0<a<\rho\). The compact band
+\(a/2\leq\diam\leq r_0\) in the complete space \(\Aconf_p\) has a uniform positive weak slope. In applying Corvellec's theorem, take a margin less than \(a/2\); the upper part of the band beyond \(r_0\) is empty. The resulting nonincreasing homotopy sends \(\Aconf_p\) to diameter at most \(a\), and restricts to a homotopy within \(\Dconf_p(\rho)\). Thus
+\[
+\Dconf_p(\rho)\hookrightarrow\Aconf_p
+\]
+is a homotopy equivalence. If the band is empty the tuples already have diameter below \(a/2\); the same conclusion follows directly. Degree zero is the identity of \(S^n\).
+The inclusions commute with faces, so realization homotopy invariance \cite[Theorem~2.2]{ERW} gives a weak equivalence
+\(\fat{\Dconf_\bullet(\rho)}\to A\).
+
+On \(\fat{\Dconf_\bullet(\rho)}\), \(\beta\) is a homotopy equivalence with inverse the vertex inclusion. To see this, let \(b=\sum_i\lambda_i x_i\). For every original entry \(x_j\),
+\[
+\langle x_j,b\rangle>\cos\rho>0,\qquad
+\left\langle x_j,\frac b{\|b\|}\right\rangle>\cos\rho,
+\]
+because \(\|b\|\leq1\). We may append \(b/\|b\|\) to the tuple and transfer the barycentric weight to this new entry. This remains within the strict diameter bound, including for original entries of zero weight. The formula is continuous on every defining simplex and respects removal of zero coordinates; it homotopes the identity to the vertex inclusion composed with \(\beta\).
+Two-out-of-three proves the asserted weak equivalence on \(A\).
+\end{proof}
+
+\subsection{The regular simplex family}
+Fix \(V=\{v_0,\ldots,v_d\}\), the reference regular vertex set. Put
+\[
+G=\SO(d),\qquad H=A_{d+1},\qquad Q=G/H=Q_n.
+\]
+Every unordered regular simplex is in this rotational orbit. Indeed, its Gram matrix gives an orthogonal congruence, and an odd vertex permutation corrects an orientation-reversing congruence. A permutation has determinant equal to its sign on the \(d\)-dimensional hyperplane orthogonal to the all-ones vector, so the rotational stabilizer is exactly \(H\).
+
+Let \(E\) be the fat realization of the semisimplicial set with \(p\)-simplices \(V^{p+1}\), all ordered words on \(V\), and face maps deleting letters. Let \(L\subset E\) be the subcomplex of words omitting at least one vertex. Equivalently, a point lies in \(L\) when its total barycentric mass on some vertex is zero.
+Aggregation of repeated-letter weights gives an \(H\)-equivariant map of pairs
+\[
+\alpha:(E,L)\longrightarrow(\Delta^d,\partial\Delta^d).
+\]
+
+\begin{lemma}\label{lem:words}
+Aggregation is a homotopy equivalence of pairs.
+\end{lemma}
+\begin{proof}
+Choose an ordering of \(V\) and let \(s:\Delta^d\to E\) be its single ordered simplex. Then \(\alpha s=\mathrm{id}\).
+Given an arbitrary word with weights \(\lambda\), concatenate it with that fixed ordered word. Give the old letters weights \((1-u)\lambda\) and the new ones weights \(u\alpha(\lambda)\). At \(u=0\) this is the original point and at \(u=1\) it is \(s\alpha\). Total mass at each vertex is unchanged, so \(L\) is preserved. The formula is compatible with the face identifications and continuous. The chosen homotopy need not be \(H\)-equivariant; aggregation itself is.
+\end{proof}
+
+Form the associated bundles
+\[
+B=G\times_H E,\quad J=G\times_H L,\qquad
+D=G\times_H\Delta^d,\quad \partial D=G\times_H\partial\Delta^d.
+\]
+They are locally trivial over \(Q\). Aggregation gives weak equivalences
+\[
+B\longrightarrow D,\qquad J\longrightarrow\partial D.
+\]
+This follows from Lemma~\ref{lem:words} on each fibre and the long exact homotopy sequences of the bundles \cite[Theorem~4.41 and Proposition~4.48]{Hat}. The fibres are connected; for \(J\) and \(\partial D\) they have the simply connected homotopy type of \(S^n\), while the other fibres are contractible.
+
+The inclusion \(J\hookrightarrow B\) is a cofibration. The fat word realization is a CW complex. A word using every vertex has trivial \(H\) stabilizer. Starting from \(J\), the remaining cells in increasing word length therefore attach domains \(G\times\Delta^p\) along \(G\times\partial\Delta^p\), one for each \(H\)-orbit of full words. Homotopy extension on each product pair follows from that for \((\Delta^p,\partial\Delta^p)\), using a retraction of the simplex cylinder onto its bottom and side. These extensions agree on the skeleta and hence on the fat realization. Products with the compact homotopy interval respect this final topology.
+
+\subsection{The endpoint attachment}
+A proper word in a rotated \(V\) is noncritical. It therefore defines a continuous attaching map
+\[
+g:J\longrightarrow A.
+\]
+
+\begin{proposition}\label{prop:pushout}
+There is a homeomorphism
+\[
+Z\cong A\cup_g B.
+\]
+\end{proposition}
+\begin{proof}
+The natural map from the indicated pushout to \(Z\) is bijective. To check its topology, use the clopen decomposition
+\(\Cconf_p=\Aconf_p\sqcup\Rconf_p\) in each degree.
+On the first piece the inverse is the evident map into \(A\).
+A tuple in \(\Rconf_p\) determines a unique unordered regular simplex. Locally choose its rotation from \(V\) and read its ordered letters, producing a point of \(B\). Changing the rotation by \(H\) changes neither its associated-bundle point nor continuity.
+
+These maps respect every zero-coordinate face. If a vertex is lost, the word lies in \(J\) and is identified with its image in \(A\). If all vertices remain, the face stays in the same regular family. The quotient defining the fat realization thus gives the continuous inverse.
+\end{proof}
+
+Radial projection from the center of a regular simplex is a homeomorphism of its boundary with \(S^n\). It defines
+\(h:\partial D\to S^n\).
+The attaching maps satisfy the exact identity
+\[
+\beta g=h\alpha.
+\]
+Consequently we have a commutative map of spans, all of whose vertical arrows are weak equivalences,
+\[
+\begin{array}{ccccc}
+A&\longleftarrow&J&\longrightarrow&B\\
+\downarrow\beta&&\downarrow\alpha&&\downarrow\alpha\\
+S^n&\longleftarrow&\partial D&\longrightarrow&D.
+\end{array}
+\]
+
+\begin{lemma}\label{lem:span}
+This map of spans induces a zigzag of weak equivalences between
+\(Z\) and \(S^n\cup_h D\).
+\end{lemma}
+\begin{proof}
+A double mapping cylinder is the fat realization of the semisimplicial space whose degree zero is the disjoint union of the end spaces, whose degree one is the middle space, and which is empty in higher degrees. Realization homotopy invariance \cite[Theorem~2.2]{ERW} therefore compares these double cylinders by a weak equivalence.
+
+A double mapping cylinder collapses by a homotopy equivalence to the pushout when its right leg is a cofibration. For completeness, write the cylinder coordinate as \(t=0\) on the left and \(t=1\) on the right. Homotopy extension on the right space extends the motion \(j\mapsto(j,1-u)\) of its attached subspace. Its time-one map agrees with the left space on the subspace and gives an inverse of the collapse. One composite is homotopic to the identity by the collapsed extension; the other is homotopic by the reverse extension on the right and \((j,t)\mapsto(j,ut)\) on the cylinder. The formulas agree at both ends. This is the homotopy-extension argument of Chapter~0 of \cite{Hat}.
+
+We have proved \(J\hookrightarrow B\) is a cofibration. The target boundary inclusion is also a cofibration, as follows from the disk-bundle trivialization in Proposition~\ref{prop:join} below. Proposition~\ref{prop:pushout} identifies the first ordinary pushout with \(Z\), proving the claim.
+\end{proof}
+
+\begin{proposition}\label{prop:join}
+The pushout \(S^n\cup_h D\) is homeomorphic to \(S^n*Q\).
+\end{proposition}
+\begin{proof}
+For \(q=RH\in Q\), the Euclidean convex hull of the regular simplex with vertices \(Rv_i\) is
+\[
+\{b\in\R^d:\langle b,Rv_i\rangle\geq-1/d\ \text{for all }i\}.
+\]
+Recall the rotated frame identities
+\[
+\sum_i Rv_i=0,\qquad
+\sum_i (Rv_i)(Rv_i)^{\mathsf T}=\frac{d+1}{d}I.
+\]
+The affine coordinates are therefore
+\(\lambda_i=(d\langle b,Rv_i\rangle+1)/(d+1)\).
+For \(u\in S^n\), put
+\[
+m_q(u)=\min_i\langle u,Rv_i\rangle,\qquad
+R_q(u)=-\frac1{d\,m_q(u)}.
+\]
+These are independent of the representative \(R\).
+If every \(\langle u,Rv_i\rangle\geq-1/d\), Lemma~\ref{lem:rigidity} applied to the rotated vertices together with \(u\) forces \(u\) to be a vertex. Its minimum inner product is then \(-1/d\). Thus \(m_q(u)\leq-1/d\). Also \(m_q(u)\geq-1\), so
+\[
+\frac1d\leq R_q(u)\leq1.
+\]
+The function \(R_q(u)\) is continuous and is the radial boundary distance of the simplex.
+
+Send a vector barycenter \(b\ne0\) in the simplex to
+\(b/R_q(b/\|b\|)\) in the unit \(d\)-disk, and send zero to zero. The inverse sends \(x\ne0\) to \(R_q(x/\|x\|)x\).
+The bounds above give continuity at zero in both directions. We obtain a homeomorphism
+\[
+(D,\partial D)\cong(D^d\times Q,S^n\times Q)
+\]
+under which \(h\) is projection to \(S^n\). In particular the boundary inclusion is a cofibration.
+Thus
+\[
+S^n\cup_h D\cong
+S^n\cup_{\operatorname{pr}_1}(D^d\times Q)\cong S^n*Q.
+\]
+Indeed, view \(D^d\) as the cone on \(S^n\). Its cone point retains the \(Q\) coordinate and its boundary collapses that coordinate, which are the two join identifications.
+\end{proof}
+
+\section{Transfer to the strict right interval}
+The closed labelled model is useful because each finite-labelled sublevel has a controlled right neighborhood.
+
+\begin{lemma}\label{lem:collar}
+For each \(p\geq0\), there is a \(u_p>r_0\) such that
+\[
+\Cconf_p\hookrightarrow\Dconf_p(t)
+\]
+is a homotopy equivalence for every \(r_0<t<u_p\).
+\end{lemma}
+\begin{proof}
+Degree zero is the identity. In positive degree use the continuous semialgebraic function
+\[
+f_p(x_0,\ldots,x_p)=\max_{i<j}\|x_i-x_j\|^2
+\]
+on the compact algebraic space \((S^n)^{p+1}\).
+Geodesic scale \(t\in(0,\pi)\) corresponds exactly to the strict sublevel
+\(f_p<2-2\cos t\).
+Put \(a_0=2+2/d\) and apply \cite[Lemma~4.3]{JM} to
+\(\max(f_p-a_0,0)\), whose zero set is \(\Cconf_p\).
+The lemma expresses a sufficiently small closed right collar as a mapping cylinder, with collar coordinate equal to the function value. Its deformation to the zero set multiplies that coordinate by \(1-u\). It therefore preserves each smaller open collar as well. Strict monotonicity of \(2-2\cos t\) proves the assertion.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Choose \(s>r_0\) from Lemma~\ref{lem:spectrum}, independently of the number of labels, and fix any \(r\in(r_0,s)\).
+For each \(p\), choose \(t_p\in(r_0,r)\) sufficiently small for Lemma~\ref{lem:collar}.
+The interval \([t_p,r]\) has no weak-slope stationary diameter. The fixed-label noncritical deformation \cite[Proposition~2.5]{MW} therefore makes
+\(\Dconf_p(t_p)\hookrightarrow\Dconf_p(r)\) a homotopy equivalence. Composing with the collar equivalence shows that
+\[
+\Cconf_p\hookrightarrow\Dconf_p(r)
+\]
+is a homotopy equivalence for every \(p\).
+The inclusions commute with faces; the independently chosen inverse homotopies need not. By \cite[Theorem~2.2]{ERW},
+\[
+Z\longrightarrow\fat{\Dconf_\bullet(r)}
+\]
+is a weak equivalence.
+
+Lemmas~\ref{lem:span} and Proposition~\ref{prop:join} identify \(Z\) up to weak equivalence with \(S^n*Q_n\). Proposition~\ref{prop:comparison} compares the strict realization with \(K_n(r)\). This gives a zigzag of weak equivalences between \(K_n(r)\) and \(S^n*Q_n\).
+The quotient \(Q_n\) is a compact smooth manifold and has CW type \cite[Corollary~A.12]{Hat}; its join with \(S^n\) also has CW type. Apply natural singular CW approximation \cite[Lemma~1.11]{ERW} along the zigzag and Whitehead's theorem \cite[Theorem~4.5]{Hat}. Its end spaces are consequently homotopy equivalent.
+Finally set \(\varepsilon_n=s-r_n\). Since \(r_n<s<\arccos(-1/n)<\pi\), this lies in \((0,\pi-r_n)\). The same proof applies to every \(r\) in the asserted interval.
+\end{proof}
+
+\paragraph{AI-use declaration.}
+This manuscript was prepared with substantial assistance from OpenAI's Codex, including literature retrieval, proof development, mathematical checking and exposition. The argument uses the cited primary mathematical results. Independent mathematical review of the submission is requested.
+
+\begin{thebibliography}{9}
+\bibitem{AAF}
+Micha{\l} Adamaszek, Henry Adams and Florian Frick,
+\emph{Metric reconstruction via optimal transport},
+arXiv:1706.04876v2 (2018).
+\href{https://arxiv.org/abs/1706.04876v2}{arXiv:1706.04876v2}.
+
+\bibitem{ABV}
+Henry Adams, Johnathan Bush and {\v Z}iga Virk,
+\emph{The connectivity of Vietoris--Rips complexes of spheres},
+arXiv:2407.15818v2 (2024).
+\href{https://arxiv.org/abs/2407.15818v2}{arXiv:2407.15818v2}.
+
+\bibitem{Cor}
+Jean-No\"el Corvellec,
+\emph{Quantitative deformation theorems and critical point theory},
+Pacific Journal of Mathematics \textbf{187}(2) (1999), 263--279.
+\href{https://msp.org/pjm/1999/187-2/pjm-v187-n2-p04-s.pdf}{Primary text}.
+
+\bibitem{ERW}
+Johannes Ebert and Oscar Randal-Williams,
+\emph{Semi-simplicial spaces},
+arXiv:1705.03774v2 (2018).
+\href{https://arxiv.org/abs/1705.03774v2}{arXiv:1705.03774v2}.
+
+\bibitem{Hat}
+Allen Hatcher,
+\emph{Algebraic Topology},
+Cambridge University Press, 2002.
+\href{https://math.uchicago.edu/~farb/algtop2023/Hatcher.pdf}{Textbook copy}.
+
+\bibitem{JM}
+Mattie Ji and Kun Meng,
+\emph{Euler Characteristics and Homotopy Types of Definable Sublevel Sets, with Applications to Topological Data Analysis},
+arXiv:2309.03142v3 (2025).
+\href{https://arxiv.org/abs/2309.03142v3}{arXiv:2309.03142v3}.
+
+\bibitem{LMO}
+Sunhyuk Lim, Facundo M\'emoli and Osman Berat Okutan,
+\emph{Vietoris--Rips persistent homology, injective metric spaces, and the filling radius},
+Algebraic \& Geometric Topology \textbf{24}(2) (2024), 1019--1100.
+\href{https://msp.org/agt/2024/24-2/agt-v24-n2-p10-s.pdf}{Primary text}.
+
+\bibitem{MW}
+Facundo M\'emoli and Qingsong Wang,
+\emph{Critical Diameters and Vietoris-Rips Filtrations},
+arXiv:2609.33009v1 (2026).
+\href{https://arxiv.org/abs/2609.33009v1}{arXiv:2609.33009v1}.
+\end{thebibliography}
+\end{document}
