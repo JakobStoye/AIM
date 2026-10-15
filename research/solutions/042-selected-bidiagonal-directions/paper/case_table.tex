@@ -1,0 +1,14 @@
+\begin{table}[ht]
+\centering
+\begin{tabular}{llrrr}\toprule
+Case & Profile & Core bits & Solve (s) & Exact check (s)\\\midrule
+coupled2 & auto & 220224 & 23.728 & 0.0012\\
+coupled2 & proof & 220224 & 23.905 & 0.0006\\
+coupled2 & diagnostic & 4096 & 0.129 & 0.0007\\
+rank\_deficient3 & auto & 220224 & 42.427 & 0.0007\\
+rank\_deficient3 & proof & 220224 & 42.969 & 0.0008\\
+rank\_deficient3 & diagnostic & 4096 & 0.212 & 0.0007\\
+\bottomrule\end{tabular}
+\caption{Fixed matched inputs at $p=53$. All six exact instance checks passed. Times are individual observations, with build/cache costs recorded separately in the source distribution. Diagnostic precision has a different general guarantee.}
+\label{tab:cases}
+\end{table}

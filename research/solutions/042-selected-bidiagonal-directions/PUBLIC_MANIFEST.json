@@ -1,0 +1,52 @@
+{
+  "title": "Selected bidiagonal singular directions",
+  "problem_id": "042",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Entry point, scope, immutable software version and reproduction links",
+      "bytes": 3094,
+      "sha256": "6d93a452b671771ed8f162936e1c9979eeff4472aa5c7ca5d1f997c57e02e724"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Finished manuscript compared with the public original problem",
+      "bytes": 3415,
+      "sha256": "a6ebd0b9da0eca1a4564f6ee55be2fc84a497483fd9e4d3452c686346445b0c3"
+    },
+    {
+      "path": "paper/case_table.tex",
+      "purpose": "Fixed-case numerical table",
+      "bytes": 726,
+      "sha256": "eb2ab168185c3093be9eb0f802a9598aa1c58e0b6e30997bab0b7d41790f1269"
+    },
+    {
+      "path": "paper/figures/residuals.pdf",
+      "purpose": "Fixed-case residual figure",
+      "bytes": 18245,
+      "sha256": "99f3aad2fd79f8fac4bf7f9b05c734ee863b803e8f58b79aa68f2f42ebc6d2ed"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete 15-page final manuscript",
+      "bytes": 450002,
+      "sha256": "8543281744c989f048b15c3c37ec0e9397b370d95abe338e111c7f0aa9915ca2"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable manuscript",
+      "bytes": 52393,
+      "sha256": "9705c09ee9d4ea8ee3b84420ca25996c6e0dd148defb48476d4fd04ca39ef68c"
+    }
+  ],
+  "external_software": {
+    "repository": "https://github.com/yuiyuiui/rational-bidiagonal-svd",
+    "commit": "627f07a898376e12ddba1e40d1d84c0610af639a",
+    "release": "https://github.com/yuiyuiui/rational-bidiagonal-svd/releases/tag/v0.1.0"
+  },
+  "manifest_exclusions": {
+    "PUBLIC_MANIFEST.json": "This manifest does not hash itself.",
+    "SHA256SUMS": "The checksum list hashes all other files, including the manifest."
+  }
+}
