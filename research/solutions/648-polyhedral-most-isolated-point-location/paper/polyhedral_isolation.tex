@@ -1,0 +1,580 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+  pdftitle={The location of the most isolated point in a polyhedral sample},
+  pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\DeclareMathOperator{\dist}{dist}
+\title{The location of the most isolated point\ in a polyhedral sample}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $A$ be a compact convex polyhedron in $\mathbb R^3$ with nonempty
+interior, and sample independent uniform points in $A$. We prove that the
+point with the largest nearest-neighbour distance converges in distribution
+to normalized surface area on $\partial A$ when every interior dihedral
+angle exceeds $\pi/2$. When the smallest angle is less than $\pi/2$, its
+limit is normalized length on the union of all edges with that angle.
+The proof computes spatial empty-ball intensities and joint exceedance
+probabilities for the fixed-size sample. The critical angle is excluded.
+\end{abstract}
+
+\section{The location question}
+
+In a geometric graph with connection radius $r$, a sample point is isolated
+precisely when its nearest-neighbour distance exceeds $r$. The point whose
+isolation persists longest therefore has the largest such distance. The
+boundary affects both the size of this distance and the location of the
+point attaining it: an empty ball costs less near a face or an edge, but
+fewer sample points are available there.
+
+Let $A\subset\mathbb R^3$ be a fixed compact convex polyhedron with nonempty
+interior, and write $V=|A|$ for its volume. Let $X_1,X_2,\ldots$ be
+independent uniform points in $A$. For $n\geq2$ put
+\[
+ R_{n,i}=\min_{\substack{1\leq j\leq n\\j\ne i}}\norm{X_i-X_j},
+ \qquad L_n=\max_{1\leq i\leq n}R_{n,i},
+ \qquad I_n=\min\{i:R_{n,i}=L_n\},\qquad Z_n=X_{I_n}.
+\]
+For an edge $e$, let $\alpha_e\in(0,\pi)$ denote its interior dihedral
+angle, and set
+\[
+ \alpha=\min_e\alpha_e,\qquad
+ E_* =\bigcup_{\alpha_e=\alpha}e,\qquad
+ S=\HH^2(\partial A),\qquad L=\HH^1(E_*).
+\]
+Here $\HH^j$ has the usual Euclidean normalization, so these are surface
+area and edge length. Both $S$ and $L$ are positive and finite.
+
+Penrose, Yang and Higgs proved the leading strong law
+\[
+ \frac{nL_n^3}{V\log n}\longrightarrow
+ \max\left\{\frac1\pi,\frac1{2\alpha}\right\}
+ \quad\hbox{almost surely}
+\]
+and proposed the corresponding spatial limits
+\cite[Introduction, p.~1724; Corollary~2.3]{PYH}.
+Their strong law identifies the competition between faces and sharp edges,
+but does not determine the spatial distribution of the maximizer. Later
+fluctuation results of Penrose and Yang treat smooth domains and planar
+polygons \cite[arXiv v3, Theorem~1.1]{PY}; general three-dimensional polyhedra are
+outside that theorem's hypotheses. We prove the two proposed spatial limits.
+
+\begin{theorem}\label{thm:location}
+For every compact convex polyhedron $A\subset\mathbb R^3$ with nonempty
+interior, the point $Z_n$ defined above satisfies
+\[
+ Z_n\ \xrightarrow{\ d\ }\
+ \begin{cases}
+   \HH^2|_{\partial A}/S,&\alpha>\pi/2,\\[2mm]
+   \HH^1|_{E_*}/L,&\alpha<\pi/2.
+ \end{cases}
+\]
+The statement includes all minimum-angle edges and the specified
+smallest-index rule for ties. The case $\alpha=\pi/2$ is not considered.
+\end{theorem}
+
+We first compute the intensity of points with an empty neighbourhood at an
+extreme radius. Its spatial weight is constant per unit area on a facet,
+and constant per unit length on edges with the same angle. To identify the
+maximizer, we also need joint probabilities. A convex-geometric volume
+increment makes nearby simultaneous extreme events negligible; factorial
+moments then give joint no-exceedance limits. Comparing maxima in a set and
+its complement proves Theorem~\ref{thm:location}.
+
+All estimates below concern this fixed $A$. Constants may also depend on a
+fixed finite set of thresholds or a fixed moment order. Balls are Euclidean
+and closed. We use the elementary product-integration and convergence
+results in \cite[Sections~1.5, 1.7 and 3.10]{Durrett}, and the linear
+volume transformation formula in \cite[Section~2.8]{Hunter}.
+
+\section{Local polyhedral geometry}
+
+For $x\in A$ and $r>0$, write
+\[
+ v_r(x)=|A\cap B(x,r)|.
+\]
+Two estimates will control the vertices and the dependence between nearby
+empty-ball events.
+
+\begin{lemma}\label{lem:union}
+There is $b>0$ such that $v_r(x)\geq br^3$ for every $x\in A$ and all
+sufficiently small $r$. Moreover, for every fixed $M\geq1$ there are
+$c>0$ and $r_0>0$ such that
+\begin{equation}\label{eq:union}
+ |A\cap(B(x,r)\cup B(y,r))|
+ \geq\min\{v_r(x),v_r(y)\}+cr^3
+\end{equation}
+whenever $0<r<r_0$ and $r\leq\norm{x-y}\leq Mr$.
+\end{lemma}
+
+\begin{proof}
+Choose $z\in A$, $\rho>0$ and $D\geq\sup_{x\in A}\norm{z-x}+\rho$ with
+$B(z,\rho)\subset A$. Convexity gives
+\begin{equation}\label{eq:inball}
+ B(x+u(z-x),u\rho)\subset A\qquad(0\leq u\leq1).
+\end{equation}
+For $u=r/(2D)$ this ball is contained in $B(x,r)$, proving the first
+assertion with $b=(4\pi/3)(\rho/(2D))^3$.
+
+For the second assertion let $d=\norm{x-y}$, $q=(x+y)/2$ and
+$u=(y-x)/d$. If $\norm{q-z}<\rho/2$, then for $r$ sufficiently small
+both radius-$r$ balls lie inside $B(z,\rho)$. The ball
+$B(y+(r/2)u,r/8)$ lies in $B(y,r)$ and outside $B(x,r)$.
+
+Suppose instead that $\norm{q-z}\geq\rho/2$. Choose $w=y$ if
+$u\cdot(z-q)\geq0$, and $w=x$ otherwise. Let $w'$ be the other point,
+$u_w=(w-w')/d$, $\theta=r/(4D)$, and $p=w+\theta(z-w)$. Then
+$u_w\cdot(z-q)\geq0$, $B(p,\theta\rho)\subset A$, and $\norm{p-w}\leq r/4$.
+Also
+\begin{align*}
+ \norm{p-w'}^2
+ &=\norm{(1-\theta/2)d u_w+\theta(z-q)}^2\\
+ &\geq(1-\theta)d^2+\theta^2\rho^2/4\\
+ &\geq r^2-\frac{M^2r^3}{4D}+\frac{\rho^2r^2}{64D^2}.
+\end{align*}
+For small $r$, this is at least $(1+\rho^2/(128D^2))r^2$.
+Hence $\norm{p-w'}\geq r+\eta_0r$ for some $\eta_0>0$ depending on $A$.
+Choose
+$0<\eta<\min\{\eta_0/2,\rho/(8D),1/8\}$.
+The ball $B(p,\eta r)$ lies in $A\cap B(w,r)$ and outside $B(w',r)$.
+
+In either case the union contains one of the clipped balls and an
+exclusive ball of volume at least a fixed positive multiple of $r^3$.
+Subtracting the smaller individual volume proves \eqref{eq:union}.
+\end{proof}
+
+We will also use \eqref{eq:union} for radii between $r_-$ and $r_+$ with
+$r_+/r_-\to1$. The volume change in increasing a radius from $r_-$ to
+$r_+$ is at most $(4\pi/3)(r_+^3-r_-^3)=o(r_-^3)$. Consequently, if
+$\max\{r_i,r_j\}\leq\norm{x-y}\leq Mr_+$, then for large $n$
+\begin{equation}\label{eq:mixed-union}
+ |A\cap(B(x,r_i)\cup B(y,r_j))|
+ \geq\min\{v_{r_i}(x),v_{r_j}(y)\}+c'r_-^3.
+\end{equation}
+Here Lemma~\ref{lem:union} is applied at $r_-$, with a fixed enlargement
+of $M$, and half its increment absorbs the shell-volume error.
+
+We next partition $A$ into regions where a small ball sees a full space,
+a half-space or a wedge. Let $\mathcal F$, $\mathcal E$ and $\mathcal V$
+be the facets, edges and vertices of $A$. For $f\in\mathcal F$, let
+$d_f$ be the affine inward signed distance to its supporting plane.
+Thus $A=\{x:d_f(x)\geq0\text{ for all }f\in\mathcal F\}$, with
+irredundant facet inequalities.
+
+\begin{lemma}\label{lem:layers}
+There are $C>0$ and $r_0>0$ such that, for $0<r<r_0$, outside
+$\bigcup_{v\in\mathcal V}B(v,Cr)$ the set
+\[
+ J_r(x)=\{f\in\mathcal F:d_f(x)<r\}
+\]
+is empty, a singleton, or the two facets incident to an edge.
+The singleton region for $f$ lies between the coordinate domains
+$f'_r\times[0,r]$ and $f\times[0,r]$, with
+$\HH^2(f\setminus f'_r)=O(r)$. The two-facet region for $e$ lies between
+$e'_r\times[0,r]^2$ and $e\times[0,r]^2$, with
+$\HH^1(e\setminus e'_r)=O(r)$. In the edge coordinates $(y,h_1,h_2)$,
+where $y\in e$ is orthogonal projection and $h_i$ is inward face distance,
+\begin{equation}\label{eq:jacobian}
+ dx=\frac{d\HH^1(y)\,dh_1\,dh_2}{\sin\alpha_e}.
+\end{equation}
+All domain inclusions are understood up to null boundaries.
+\end{lemma}
+
+\begin{proof}
+A point of a positive-dimensional face is a convex combination of its
+vertices: a maximal line segment through a point in its minimal face has
+endpoints on proper subfaces, and induction on face dimension gives the
+assertion. The vertices are finite because the facet planes are finite.
+
+For a nonempty subset $J\subset\mathcal F$, let
+$F_J=A\cap\{d_f=0:f\in J\}$ and $D_J=\sum_{f\in J}d_f$.
+If $F_J\ne\varnothing$, $D_J$ vanishes on its vertices and is strictly
+positive at every other vertex. Let $\delta_J>0$ be the minimum of these
+positive values. In a vertex convex combination for $x$, the total weight
+$\beta$ on vertices outside $F_J$ is at most $D_J(x)/\delta_J$.
+When this is less than one, normalizing the remaining weights gives a
+point of $F_J$ within distance $\operatorname{diam}(A)\beta$ of $x$.
+Thus
+\[
+ \dist(x,F_J)\leq C_JD_J(x)\qquad\text{when }D_J(x)\text{ is small}.
+\]
+If $F_J$ is empty, $D_J$ has a positive minimum on compact $A$.
+There are finitely many $J$, so an active subset $J_r(x)$ has nonempty
+common face and puts $x$ within $O(r)$ of that face.
+
+Outside sufficiently large $Cr$ vertex balls, the common face has
+positive dimension. A facet is specified by a single irredundant
+inequality. An edge has exactly two incident maximal facets, since a
+transverse slice at a relative-interior edge point is a planar wedge
+with two boundary rays. Three distinct maximal facets cannot contain an
+edge. This proves the asserted alternatives and includes nonsimple vertices.
+
+For a singleton $f$, write $x=y+h u_f$ with $u_f$ its inward unit normal
+and $0\leq h<r$. Every other slack is at least $r$, so
+$d_g(y)\geq d_g(x)-h\geq0$ and $y\in f$.
+For a lower domain take those $y\in f$ with $d_g(y)\geq2r$ for all
+$g\ne f$ and $\dist(y,\mathcal V)\geq(C+1)r$.
+These conditions ensure that only $f$ is active and the vertex balls
+are avoided. Each nonconstant affine restriction $d_g|_f$ removes a
+strip of width $O(r)$ from a bounded polygon; constant restrictions are
+strictly positive. Vertex disks remove $O(r^2)$ area. The total area lost is
+$O(r)$.
+
+For an edge $e$, the map from transverse orthonormal coordinates to the
+two inward face distances has determinant of absolute value
+$\sin\alpha_e$, because the inward normals have angle $\pi-\alpha_e$.
+This proves \eqref{eq:jacobian}. If $0\leq h_i<r$, the transverse
+displacement is at most $C_er$. The face-distance bound also gives
+$\dist(x,e)\leq C'_er$. A projection beyond an endpoint would therefore
+put $x$ in an $O(r)$ vertex ball; enlarge $C$ to exclude it.
+For a lower domain trim $O(r)$ length from the ends of $e$, so all
+nonincident slacks at $y$ exceed $(C_e+1)r$ and
+$\dist(y,\mathcal V)>(C+C_e)r$. Each such slack is affine and positive
+in the relative interior, so the required trimming has size $O(r)$.
+The transverse displacement preserves slack at least $r$ and distance
+greater than $Cr$ from the vertices. This proves the lower inclusion.
+All constants may be chosen simultaneously over the finitely many faces.
+\end{proof}
+
+\section{Spatial empty-ball intensities}
+
+Put $\lambda_n=n/V$. The conditional probability that a sample point
+at $x$ has no other point within distance $r$ is
+$(1-v_r(x)/V)^{n-1}$. At the radii used below it is uniformly asymptotic
+to $e^{-\lambda_nv_r(x)}$. We begin with the latter expression.
+
+For fixed $s\in\mathbb R$, define $r_n(s)>0$ for sufficiently large $n$
+by $t_n(s)=\lambda_nr_n(s)^3$, where
+\begin{equation}\label{eq:thresholds}
+ t_n(s)=
+ \begin{cases}
+  \pi^{-1}(\log n-\log\log n)+(3/(2\pi))s,&\alpha>\pi/2,\\[1mm]
+  (2\alpha)^{-1}(\log n-4\log\log n)+(3/(2\alpha))s,&\alpha<\pi/2.
+ \end{cases}
+\end{equation}
+Set
+\begin{equation}\label{eq:weights}
+ (\nu,K)=
+ \begin{cases}
+  \left(\HH^2|_{\partial A}/S,\ S/(\pi^{1/3}V^{2/3})\right),&\alpha>\pi/2,\\[1mm]
+  \left(\HH^1|_{E_*}/L,\ 4(2\alpha)^{4/3}L/(\pi^2\sin\alpha\,V^{1/3})\right),&\alpha<\pi/2.
+ \end{cases}
+\end{equation}
+
+\begin{proposition}\label{prop:intensity}
+For every fixed $s\in\mathbb R$, the finite measures on $A$
+\[
+ \mu_{n,s}(dx)=\lambda_ne^{-\lambda_nv_{r_n(s)}(x)}\,dx
+\]
+converge weakly to $Ke^{-s}\nu$. The same limit holds on every
+$\nu$-continuity Borel set $B\subset A$ for the expected number of indices
+with $X_i\in B$ and $R_{n,i}>r_n(s)$.
+\end{proposition}
+
+\begin{proof}
+Let $r=r_n(s)$, $t=\lambda_nr^3$, and let $\psi$ be continuous on $A$.
+In a half-space the unit-ball volume at inward center distance $u\in[0,1]$
+is
+\[
+ g_F(u)=\frac{2\pi}3+\pi u-\frac{\pi}3u^3.
+\]
+This follows by integrating the disk sections from height $-u$ to $1$.
+Since $g_F(u)-g_F(0)\geq(2\pi/3)u$ and $g_F'(0)=\pi$, rescaling
+$u=w/t$ gives
+\begin{equation}\label{eq:face-laplace}
+ \int_0^1e^{-tg_F(u)}\,du
+ \sim\frac{e^{-2\pi t/3}}{\pi t}.
+\end{equation}
+The rescaled integrand is dominated on $\mathbb R_+$ by
+$e^{-(2\pi/3)w}$ and tends to $e^{-\pi w}$.
+
+For an edge of angle $\beta\in(0,\pi)$ let $a_1,a_2$ be its inward
+unit normals and define
+\[
+ g_\beta(u_1,u_2)=
+ \left|\{z\in B(0,1):a_i\cdot z\geq-u_i,\ i=1,2\}\right|.
+\]
+At $(0,0)$ the wedge occupies fraction $\beta/(2\pi)$ of the ball, so
+$g_\beta(0,0)=2\beta/3$. Relaxing one inequality adds a slab whose
+cross-sectional area tends to half a unit disk, $\pi/2$.
+The remaining doubly negative region has third-coordinate length at most
+$2$ and face-distance area at most $u_1u_2/\sin\beta$. It follows that
+\begin{equation}\label{eq:wedge-expansion}
+ g_\beta(u_1,u_2)=\frac{2\beta}3+
+ \frac\pi2(u_1+u_2)+o(u_1+u_2).
+\end{equation}
+Slice-area continuity follows from dominated convergence, since the limiting
+straight-line boundary has area zero. The function $g_\beta$ is continuous
+and coordinatewise nondecreasing, and an increase of either coordinate
+from zero adds positive volume. Compactness of $[0,1]^2$ and
+\eqref{eq:wedge-expansion} give
+\[
+ g_\beta(u_1,u_2)-\frac{2\beta}3\geq c_\beta(u_1+u_2)
+ \qquad(0\leq u_i\leq1)
+\]
+for some $c_\beta>0$. Rescaling both coordinates by $t$ and using this
+integrable exponential bound yields
+\begin{equation}\label{eq:edge-laplace}
+ \int_{[0,1]^2}e^{-tg_\beta(u_1,u_2)}\,du_1du_2
+ \sim\frac{4e^{-2\beta t/3}}{\pi^2t^2}.
+\end{equation}
+
+Apply Lemma~\ref{lem:layers}. Replacing $\psi(x)$ by its facet or edge
+projection changes it by at most its modulus of continuity at $C_Ar$.
+The upper and lower domains differ by $O(r)$ area or length, multiplied
+by the same positive transverse integral. Thus the contribution of a
+facet $f$ is
+\begin{equation}\label{eq:face-contribution}
+ \frac{\lambda_nr e^{-2\pi t/3}}{\pi t}
+ \left(\int_f\psi\,d\HH^2+o(1)\right)(1+o(1)),
+\end{equation}
+and that of an edge $e$ of angle $\beta$ is
+\begin{equation}\label{eq:edge-contribution}
+ \frac{4\lambda_nr^2 e^{-2\beta t/3}}{\pi^2\sin\beta\,t^2}
+ \left(\int_e\psi\,d\HH^1+o(1)\right)(1+o(1)).
+\end{equation}
+These estimates also hold for signed $\psi$ by the same absolute error
+bound. The full-ball region contributes at most
+$\norm{\psi}_\infty n e^{-4\pi t/3}$ in absolute value. The vertex
+region has volume $O(r^3)$, and Lemma~\ref{lem:union} bounds its contribution
+by $C_A\norm{\psi}_\infty t e^{-bt}$.
+
+In the face regime, $t\sim\pi^{-1}\log n$. The prefactor in
+\eqref{eq:face-contribution} tends to $\pi^{-1/3}V^{-2/3}e^{-s}$.
+The full-ball term is $O_s(n^{-1/3}(\log n)^{4/3})$, and the vertex term
+tends to zero. For an edge of angle $\beta$, its prefactor in
+\eqref{eq:edge-contribution} is a constant times
+\[
+ n^{1/3-2\beta/(3\pi)}(\log n)^{-4/3+2\beta/(3\pi)}.
+\]
+Every $\beta\geq\alpha>\pi/2$, so these terms vanish. Summing the facet
+integrals gives $Ke^{-s}\int\psi\,d\nu$ with the first row of
+\eqref{eq:weights}.
+
+In the edge regime, $t\sim(2\alpha)^{-1}\log n$. A minimum-angle edge
+has prefactor tending to
+$4(2\alpha)^{4/3}e^{-s}/(\pi^2\sin\alpha\,V^{1/3})$.
+For another edge the power of $n$ is $1/3-\beta/(3\alpha)<0$.
+For facets it is $2/3-\pi/(3\alpha)<0$, and for the full-ball region it
+is $1-2\pi/(3\alpha)<0$. All accompanying logarithmic powers are fixed.
+The vertex term again vanishes. Only edges of angle $\alpha$ remain,
+and their identical prefactors give the second row of \eqref{eq:weights}.
+This proves the finite-measure weak limit.
+
+Finally, $v_r(x)\leq(4\pi/3)r^3=O(\log n/n)$ uniformly. For fixed $k$,
+\begin{equation}\label{eq:binomial-approximation}
+ (1-v_r(x)/V)^{n-k}
+ =e^{-\lambda_nv_r(x)}(1+o(1)),
+\end{equation}
+uniformly, since the logarithm error is $O_k((\log n)^2/n)$.
+Taking $k=1$ identifies the actual first moments. The total mass of
+$\mu_{n,s}$ tends to $Ke^{-s}>0$; normalizing it gives probability
+measures converging weakly to $\nu$. The continuity-set characterization
+of weak convergence, followed by multiplication by the total mass, proves
+the asserted limits on $B$.
+\end{proof}
+
+\section{Joint no-exceedance limits}
+
+We now keep the spatial categories while calculating the joint events in
+the original sample of exactly $n$ points.
+
+\begin{proposition}\label{prop:void}
+Let $B_1,\ldots,B_m$ be pairwise disjoint $\nu$-continuity Borel subsets of
+$A$, and let $s_1,\ldots,s_m\in\mathbb R$ be fixed. If $W_n$ counts the
+indices $i$ for which $X_i\in B_j$ and $R_{n,i}>r_n(s_j)$ for some $j$, then
+\begin{equation}\label{eq:void}
+ \PP(W_n=0)\longrightarrow
+ \exp\left(-K\sum_{j=1}^m\nu(B_j)e^{-s_j}\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Fix $k\geq1$ and take $n>k$. Expand the falling factorial moment $\EE[(W_n)_k]$ over
+the spatial categories of $k$ ordered selected indices. For one such
+assignment let $r_i$ be the radius of the category of $x_i$. Conditional
+on these locations, the joint exceedance event is impossible unless
+\begin{equation}\label{eq:compatibility}
+ \norm{x_i-x_l}>\max\{r_i,r_l\}\qquad(i\ne l).
+\end{equation}
+When this holds, the remaining $n-k$ points must avoid the ball union,
+so the corresponding factorial integral is
+\begin{equation}\label{eq:factorial-integral}
+ \frac{(n)_k}{V^k}\int_{B_{j_1}\times\cdots\times B_{j_k}}
+ \mathbf1_{\eqref{eq:compatibility}}
+ \left(1-\frac{|A\cap\bigcup_{i=1}^kB(x_i,r_i)|}{V}\right)^{n-k}
+ dx_1\cdots dx_k.
+\end{equation}
+Here $(w)_k=w(w-1)\cdots(w-k+1)$ and $(w)_0=1$ for nonnegative integers $w$. The indicator in \eqref{eq:factorial-integral} enforces \eqref{eq:compatibility}. Let $r_-$ and $r_+$ be the smallest
+and largest of the finitely many $r_n(s_j)$. Their ratio tends to one,
+and $\lambda_nr_\pm^3$ is asymptotic to a positive multiple of $\log n$.
+
+If all pair distances exceed $2r_+$, the balls are disjoint. Their union
+volume is $O_k(\log n/n)$, so the same logarithm estimate as in
+\eqref{eq:binomial-approximation} changes the probability in
+\eqref{eq:factorial-integral}, uniformly, to
+\[
+ (1+o(1))\prod_{i=1}^k e^{-\lambda_nv_{r_i}(x_i)}.
+\]
+The unrestricted product integral has limit
+$\prod_i Ke^{-s_{j_i}}\nu(B_{j_i})$, by
+Proposition~\ref{prop:intensity} and $(n)_k/n^k\to1$.
+The part removed from this product by a pair at distance at most $2r_+$
+is $o(1)$. Indeed one point has a scaled integral $O(1)$, its partner
+is integrated over volume $O(r_+^3)$ and has exponential weight at most
+$e^{-b\lambda_nr_-^3}$, and all other scaled integrals are $O(1)$.
+The resulting bound is
+\begin{equation}\label{eq:product-near}
+ C_k\lambda_nr_+^3e^{-b\lambda_nr_-^3}=o(1).
+\end{equation}
+
+It remains to bound compatible configurations with a close pair in the
+actual integral \eqref{eq:factorial-integral}. Join two of the $k$ centers
+when their distance is at most $2r_+$. Balls in distinct connected
+components are disjoint. In each component choose a root with the smallest
+individual volume $v_{r_i}(x_i)$; there are only finitely many possible root
+choices. A component with at least two vertices has an edge satisfying
+\eqref{eq:compatibility}. By \eqref{eq:mixed-union}, its union volume is
+at least the root volume plus $c r_-^3$: the smaller volume of this pair
+is at least the minimum over the component.
+
+Every center of a component lies within $2(k-1)r_+$ of its root.
+If it has $q$ vertices, integration of its other $q-1$ coordinates costs
+at most $C_kr_+^{3(q-1)}$. Put $\lambda'_n=(n-k)/V$, and use
+$(1-u)^{n-k}\leq e^{-(n-k)u}$ in the original conditional probability.
+Each root satisfies
+\[
+ \lambda_n\int_Ae^{-\lambda'_nv_{r_i}(x)}\,dx=O(1),
+\]
+because replacing $\lambda_n$ by $\lambda'_n$ changes its integrand by
+$1+o(1)$ uniformly. If there are $\ell$ components and at least one is
+nontrivial, the scaled contribution is therefore at most
+\begin{equation}\label{eq:cluster-bound}
+ C_k(\lambda_nr_+^3)^{k-\ell}e^{-c\lambda'_nr_-^3}=o(1).
+\end{equation}
+For fixed $k$, the number of component partitions and root choices is
+finite. The exponential in \eqref{eq:cluster-bound} is a negative power of
+$n$, while its prefactor is a fixed power of $\log n$. Category and
+separation constraints can be dropped when bounding the nonroot volumes
+and root integrals. Summing all assignments gives, with
+$a=K\sum_j\nu(B_j)e^{-s_j}$,
+\[
+ \EE[(W_n)_k]\longrightarrow a^k\qquad\text{for every fixed }k\geq0.
+\]
+
+For an integer $w\geq1$, Pascal's identity gives
+\[
+ \sum_{k=0}^h(-1)^k\binom wk=(-1)^h\binom{w-1}h,
+\]
+with terms above $w$ taken as zero. For $w=0$ the sum is one.
+Its odd truncations bound $\mathbf1_{\{w=0\}}$ from below and its even
+truncations from above. Hence, for every fixed $h\geq0$,
+\[
+ \sum_{k=0}^{2h+1}\frac{(-1)^k\EE[(W_n)_k]}{k!}
+ \leq\PP(W_n=0)\leq
+ \sum_{k=0}^{2h}\frac{(-1)^k\EE[(W_n)_k]}{k!}.
+\]
+First send $n$ to infinity, and then $h$ to infinity. Both exponential
+series converge to $e^{-a}$, proving \eqref{eq:void}.
+\end{proof}
+
+\section{The maximizing point}
+
+\begin{proof}[Proof of Theorem~\ref{thm:location}]
+The increasing score whose level $s$ corresponds to $r_n(s)$ is
+\[
+ T_n(r)=
+ \begin{cases}
+  (2\pi/3)\lambda_nr^3-(2/3)\log n+(2/3)\log\log n,&\alpha>\pi/2,\\
+  (2\alpha/3)\lambda_nr^3-(1/3)\log n+(4/3)\log\log n,&\alpha<\pi/2.
+ \end{cases}
+\]
+Let $B$ be a $\nu$-continuity Borel subset of $A$, and put $q=\nu(B)$.
+Suppose first that $0<q<1$. Let $M_{n,B}$ be the maximum of
+$T_n(R_{n,i})$ over points in $B$, with empty maximum $-\infty$, and
+define $M_{n,A\setminus B}$ in the same way. Proposition~\ref{prop:void}
+at thresholds $s,t$ gives
+\begin{equation}\label{eq:joint-maxima}
+ \PP(M_{n,B}\leq s,\ M_{n,A\setminus B}\leq t)
+ \longrightarrow e^{-Kq e^{-s}}e^{-K(1-q)e^{-t}}.
+\end{equation}
+An empty maximum in $B$ is at most $-H$ for every fixed $H>0$; its
+limsup probability is consequently at most $e^{-Kq e^H}$, which tends
+to zero as $H\to\infty$. The same holds for the complement. Replacing
+empty maxima by zero changes any joint CDF or comparison probability by
+$o(1)$. Thus the multivariate CDF criterion applies to real-valued maxima
+and yields a pair of independent continuous limiting variables $G_B,G_C$
+with the CDF in \eqref{eq:joint-maxima}.
+
+The variables $e^{-G_B}$ and $e^{-G_C}$ are independent exponentials
+with rates $Kq$ and $K(1-q)$. Therefore
+\[
+ \PP(G_B>G_C)=
+ \int_0^\infty Kq\,e^{-Kq u}e^{-K(1-q)u}\,du=q,
+ \qquad \PP(G_B=G_C)=0.
+\]
+The strict and nonstrict comparison sets in $\mathbb R^2$ have this
+zero-mass diagonal boundary. Since the score is increasing,
+\[
+ \PP(M_{n,B}>M_{n,A\setminus B})
+ \leq\PP(Z_n\in B)\leq
+ \PP(M_{n,B}\geq M_{n,A\setminus B}).
+\]
+Both bounds tend to $q$. This retains the specified tie rule, including
+the possibility that mutual nearest neighbours have the same distance.
+
+If $q=0$, for every fixed $s$ the event $Z_n\in B$ implies either an
+exceedance in $B$ above $r_n(s)$, or $L_n\leq r_n(s)$. The first probability
+is bounded by its expected count, which tends to zero. The second tends to
+$e^{-Ke^{-s}}$ by Proposition~\ref{prop:void} with $B_1=A$. Sending
+$s\to-\infty$ after $n\to\infty$ gives $\PP(Z_n\in B)\to0$.
+For $q=1$ apply this argument to the complement. Thus the probabilities
+converge to $\nu(B)$ for every continuity set, proving weak convergence
+on $A$ and hence on $\mathbb R^3$.
+\end{proof}
+
+\paragraph{AI-use statement.}
+The mathematical argument, source checks and manuscript were prepared with
+OpenAI Codex. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{PYH}
+M.~D. Penrose, X. Yang and F. Higgs,
+\emph{Largest nearest-neighbour link and connectivity threshold in a polytopal
+random sample}, Journal of Applied and Computational Topology \textbf{8}
+(2024), 1723--1750.
+\href{https://doi.org/10.1007/s41468-023-00154-5}{doi:10.1007/s41468-023-00154-5}.
+
+\bibitem{PY}
+M.~D. Penrose and X. Yang,
+\emph{Fluctuations of the connectivity threshold and largest nearest-neighbour
+link}, The Annals of Applied Probability \textbf{35}(6) (2025), 3906--3941.
+\href{https://doi.org/10.1214/25-AAP2210}{doi:10.1214/25-AAP2210}.
+Preprint (version 3): \url{https://arxiv.org/abs/2406.00647v3}.
+
+\bibitem{Durrett}
+R. Durrett, \emph{Probability: Theory and Examples}, fifth edition,
+Cambridge University Press, 2019. Author version dated January 11, 2019:
+\url{https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf}.
+
+\bibitem{Hunter}
+J.~K. Hunter, \emph{Measure Theory}, University of California at Davis
+lecture notes, 2011.
+\url{https://www.math.ucdavis.edu/~hunter/measure_theory/measure_notes_old.pdf}.
+\end{thebibliography}
+\end{document}
