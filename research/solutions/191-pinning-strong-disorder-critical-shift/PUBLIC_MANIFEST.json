@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "title": "Strong disorder and critical-point shift for a Gaussian pinning model",
+  "author": "Kaiwen Jin",
+  "evidence_type": "analytic theorem, proposed complete fixed-target solution",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Ignore local build output",
+      "bytes": 7,
+      "sha256": "181314065df2f2fdaf920b1a8b5311daa216a2d6489a06ada5b49cc514d89417"
+    },
+    {
+      "path": "Makefile",
+      "purpose": "Rebuild the standalone manuscript",
+      "bytes": 129,
+      "sha256": "a0e09cdc4a78f826a02f40672c45b9ac164ce9dd1561b78e01bb95be09531c29"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Reader-facing package entry",
+      "bytes": 1965,
+      "sha256": "6297714db7472bea3540a9412624aaa3c032bc2132283b945575a51a0f676a71"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Finished-manuscript to immutable public target correspondence",
+      "bytes": 3566,
+      "sha256": "ec7fe40160e6adefd5d35ce1d1d0223cebabc492b714c57cb18e011c33c48fce"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Final rendered 11-page paper",
+      "bytes": 425704,
+      "sha256": "78191c6ff40715060ebc705b757ab05479ddbbb6a10424942e8335949f50b3c0"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Complete editable English mathematical paper",
+      "bytes": 33299,
+      "sha256": "10e3e8ef44a72fdd462be8e8b5b8a97000ab53984fe0ac8b82bbfa9d90d722e1"
+    }
+  ],
+  "integrity_files": [
+    {
+      "path": "PUBLIC_MANIFEST.json",
+      "purpose": "Lists payload paths, purposes and hashes; covered by SHA256SUMS"
+    },
+    {
+      "path": "SHA256SUMS",
+      "purpose": "SHA-256 for all other package files; excludes itself"
+    }
+  ]
+}
