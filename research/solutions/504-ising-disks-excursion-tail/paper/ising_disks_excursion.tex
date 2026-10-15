@@ -1,0 +1,311 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\capT}{\operatorname{cap}_T}
+\title{The exponential excursion-height rate of planar Ising disks}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the exponential rate at which a topology-preserving planar
+Ising disk reaches a large area during one excursion from a single square.
+For addition rate $\beta$, deletion rate $1$, and every
+$0<\beta<1/\kappa$, the excursion maximum $\xi$ satisfies
+$\lim_{T\to\infty}\Prob(\xi\ge T)^{1/T}=\kappa\beta$, where $\kappa$ is
+the area growth constant of square-lattice self-avoiding polygons.
+This proves Conjecture 7.11 of Baryshnikov and Onaran.
+The lower bound comes from concatenating arbitrary fixed-area disks with
+one connector square and distributing a unit flow over the resulting
+growth paths. Cumulative column areas recover each completed prefix,
+which bounds congestion without requiring disjoint paths within a block.
+\end{abstract}
+
+\section{The model and the result}
+
+The topology-preserving dynamics of Baryshnikov and Onaran~\cite{BO}
+samples finite square-lattice disks by adding and deleting squares while
+preserving both contractibility and local regularity. Their planar
+ergodicity theorem identifies the subcritical fugacity range. For rare
+large excursions, Lemma 7.10 of~\cite{BO} gives an upper bound on the
+exponential tail rate, and Conjecture 7.11 asks whether this bound is exact.
+The question concerns an excursion probability rather than an equilibrium
+count: many shapes may be reached through the same small set of transitions.
+
+For $z\in\mathbb Z^2$, let $Q_z=z+[-1/2,1/2]^2$. A finite collection
+$C$ of these squares is a \emph{clump} if its geometric union $|C|$ is
+contractible and regular. Here regularity means that every $x\in|C|$ is
+either an interior point or has
+$(B_\varepsilon(x)\cap|C|)\setminus\{x\}$ contractible for all sufficiently
+small $\varepsilon>0$. Write $\#C$ for its number of squares and
+$o=\{Q_0\}$ for the initial state.
+
+A deletion of $Q\ne Q_0$ is legal when $C\setminus\{Q\}$ is a clump and
+there is a strong deformation retraction $H$ of $|C|$ onto
+$|C\setminus\{Q\}|$ with $H(Q\times[0,1])\subseteq Q$. Addition is the
+inverse move. Starting at $o$, let $C_t$ be the continuous-time chain with
+rate $\beta$ for each legal addition and rate $1$ for each legal deletion.
+Let $\zeta$ be its first return to $o$ after departure, and define
+\[
+ \xi=\sup_{0\le t<\zeta}\#C_t,\qquad p_T=\Prob(\xi\ge T).
+\]
+Let $a_n$ count square-lattice self-avoiding polygons of area $n$ up to
+translation, with orientations retained, and let
+$\kappa=\lim_{n\to\infty}a_n^{1/n}$ be their area growth constant.
+
+\begin{theorem}\label{thm:main}
+For every fixed $0<\beta<1/\kappa$,
+\begin{equation}\label{eq:rate}
+ \lim_{\substack{T\to\infty\\T\in\mathbb N}}p_T^{1/T}=\kappa\beta.
+\end{equation}
+Moreover, with $\mu=\E\zeta\in(0,\infty)$ and $\eta_T=\mu/p_T$,
+$\lim_{T\to\infty,\,T\in\mathbb N}\eta_T^{1/T}=1/(\kappa\beta)$.
+\end{theorem}
+
+Thus the area entropy and the fugacity give the exact exponential scale
+for large excursions. The assertion is pointwise in $\beta$ throughout
+the open subcritical interval; it does not prescribe a prefactor or a
+uniform rate of convergence in $\beta$.
+
+We use two planar facts from~\cite{BO}. Theorem 5.1 states that every
+nonsingleton clump has two distinct squares whose deletions leave clumps
+through strong deformation retractions supported inside the removed
+squares. This geometric statement imposes no distinguished-square
+exclusion. The source homotopy condition holds for $t<1$; closedness and
+continuity give it at $t=1$ as well. A clump containing $Q_0$ can therefore
+be reduced by legal deletions to $o$: at each stage one of the two
+geometrically deletable squares differs from $Q_0$. Reversing this sequence
+gives a legal monotone growth path retaining $Q_0$. Remark 6.3 and equation (4)
+of~\cite{BO} identify unrooted planar clumps with the polygons counted by
+$a_n$ and bound the number of origin-containing size-$n$ clumps by $na_n$.
+
+Theorem 6.5 of~\cite{BO} gives nonexplosion and ergodicity in the stated
+range, and its Definition 7.2 records the resulting positive finite mean
+return time. The source parameters $p_\downarrow=1$ and
+$p_\uparrow=\beta$ give exactly our rates. They are admissible since a
+straight strip gives $a_n\ge1$, hence $\kappa\ge1$ and $\beta<1$.
+We use the defining growth limit for $\kappa$; no additional enumeration
+inequality is needed.
+
+\section{Excursions and conductance}
+
+Fix an integer $T\ge2$. Retain all origin-containing clumps with at most
+$T$ squares and all legal edges between them. Regard the size-$T$ states
+as the terminal set $A_T$. This is a finite graph, and every nonterminal
+state has a path to $o$ by the deletion argument above. Give an edge from
+a size-$n$ state to a size-$(n+1)$ state the conductance
+\begin{equation}\label{eq:conductance}
+ c(C,C')=\beta^n.
+\end{equation}
+Indeed, the reversible weight $w(C)=\beta^{\#C-1}$ gives this conductance
+from either direction using the specified rates. At states below size $T$,
+the conductance ratios are exactly the actual jump probabilities of the
+original chain stopped at $o$ or $A_T$.
+
+Let $v$ be $1$ at $o$, $0$ on $A_T$, and, at other states, the probability
+of hitting $o$ before $A_T$. Absorption is almost sure: in the finite
+stopped graph, each state has a positive-probability path to an absorbing
+state, and a uniform positive lower bound over these finitely many paths
+can be applied in repeated bounded blocks of jumps. The first-step
+equation makes $v$ harmonic off the boundary. Put
+\[
+ \capT=\sum_{C\sim o}c(o,C)(1-v(C)).
+\]
+There are exactly four legal exits from $o$, its four edge-neighbor
+additions, each of conductance $\beta$. Corner-only contacts are not
+regular. Conditioning on the first actual jump therefore gives
+\begin{equation}\label{eq:escape}
+ p_T=\frac{\capT}{4\beta}.
+\end{equation}
+Holding times do not affect this event. Finite summation by parts gives
+\begin{equation}\label{eq:voltage-energy}
+ \capT=\sum_{\{x,y\}}c(x,y)(v(x)-v(y))^2,
+\end{equation}
+where undirected edges are counted once: the interior terms vanish by
+harmonicity, the terminal terms by $v=0$, and only the term at $o$ remains.
+
+For completeness, the two variational bounds needed below follow directly
+from this identity. If $f(o)=1$ and $f=0$ on $A_T$, writing $f=v+g$ and
+summing the cross term by parts gives
+\[
+ \sum_{\{x,y\}}c(x,y)(f(x)-f(y))^2
+ =\capT+\sum_{\{x,y\}}c(x,y)(g(x)-g(y))^2\ge\capT.
+\]
+Choose $f=1$ below size $T$ and $f=0$ at size $T$. There are at most
+$T$ downward edges from each of at most $Ta_T$ terminal states, so
+\begin{equation}\label{eq:upper}
+ \capT\le T^2a_T\beta^{T-1},\qquad
+ p_T\le\tfrac14 T^2a_T\beta^{T-2}.
+\end{equation}
+Taking $T$th roots proves
+$\limsup_{T\to\infty}p_T^{1/T}\le\kappa\beta$.
+
+For the lower bound, orient each graph edge once. A unit flow $F$ from
+$o$ to $A_T$ has divergence $1$ at $o$, zero off the boundary, and total
+divergence $-1$ on $A_T$. Its energy is
+\[
+ \mathcal E(F)=\sum_e\frac{F(e)^2}{c(e)}.
+\]
+Summation by parts and then Cauchy--Schwarz yield
+\[
+ 1=\sum_e F(e)(v(\operatorname{tail}e)-v(\operatorname{head}e)),
+ \qquad 1\le\mathcal E(F)\capT.
+\]
+Thus any such flow proves $\capT\ge1/\mathcal E(F)$.
+
+\section{Concatenated disks and the lower bound}
+
+We construct many growth paths with controlled congestion by appending
+arbitrary disks in disjoint columns. Fix an integer $m\ge1$. Normalize
+each translation class of $m$-square clumps so that the lowest square in
+its leftmost occupied column is $Q_0$. Denote these representatives by
+$D_1,\ldots,D_N$, where $N=a_m$, and put $L=m+1$.
+For each $D_i$ choose one legal growth path from its port $Q_0$ to $D_i$,
+retaining that port throughout.
+
+\begin{lemma}\label{lem:join}
+Let $(r,s)$ be the lowest center in the rightmost occupied column of a
+clump $P$ containing $Q_0$. Then
+\[
+ P*D_i=P\cup\{Q_{(r+1,s)}\}\cup(D_i+(r+2,s))
+\]
+is a clump. It can be reached from $P$ by exactly $L$ legal additions,
+all strictly to the right of the rightmost column of $P$.
+\end{lemma}
+
+\begin{proof}
+Add the bridge $B=Q_{(r+1,s)}$, then the new port
+$Q_{(r+2,s)}$, and then follow the chosen growth path of the translated
+block. The bridge meets each component in one full vertical port edge;
+possible contacts with an above-port square are endpoints of that same
+edge. No square lies below either port in its extreme column, and the
+old component and new block have no contact with each other.
+
+At every stage the union is regular. Away from the bridge edges this is
+the regularity of the individual components. At a lower bridge endpoint
+the occupied sectors are two adjacent quadrants. At an upper endpoint
+they are two adjacent quadrants or three consecutive quadrants, according
+to whether the square above the port is present. Each punctured local
+neighborhood is contractible; points inside a shared edge become interior.
+
+The partial block retracts to its port by reversing its rooted growth
+sequence. Each homotopy fixes the port, so it extends by the identity on
+$P\cup\{B\}$. The port and then the bridge retract horizontally onto
+their attached edges. Hence the union retracts onto $P$ and is contractible.
+
+These are also legal single-square moves. For an internal block deletion,
+extend its strong deformation retraction by the identity on the old
+component and bridge. Any contact of the deleted square with the bridge
+is in the retained port, so the definitions agree on the intersection.
+Finite closed-set pasting gives a continuous homotopy, and the homotopy
+still stays inside the deleted square. The bridge and initial-port moves
+use the explicit horizontal retractions just described. Every intermediate
+union and every deletion result is a clump. Since $P$ contains $Q_0$,
+we have $r\ge0$, and every newly added square has first coordinate larger
+than $r$. Thus none is $Q_0$; extending the translated block homotopies
+by the identity on $P$ retains the actual pinned square. There are
+$1+m=L$ additions.
+\end{proof}
+
+Starting from $o$, a completed word of $j$ blocks has size $n_j=1+jL$.
+The following observation permits shared paths within a block while
+preventing confusion between different completed parents.
+
+\begin{lemma}\label{lem:prefix}
+Different block words give different completed clumps. During stage $j$,
+growth paths from different completed parents of size $n_j$ have no
+common state or upward edge.
+\end{lemma}
+
+\begin{proof}
+Every clump in these paths occupies consecutive columns beginning at zero.
+For such a clump $C$, define its cumulative column count by
+\[
+ S_C(x)=\#\{Q_{(u,v)}\in C:u\le x\}.
+\]
+This count strictly increases across occupied integer columns. If $C$
+lies on a stage-$j$ path after parent $P$, all squares added in that
+stage have larger first coordinate than the rightmost column $r$ of $P$.
+Thus $S_C(r)=n_j$, and this is the unique occupied column with that
+count. Restricting $C$ to columns at most $r$ recovers its parent.
+The lower endpoint of an upward edge therefore identifies its stage
+and parent as well.
+
+For a completed word, repeat this recovery at counts
+$n_0,\ldots,n_{j-1}$. Between two successive cuts the first column is the
+bridge, and the remaining $m$ squares give the normalized block after
+translation. Thus the entire word is recovered uniquely.
+\end{proof}
+
+We now send a unit flow to area $n_k=1+kL$. Choose $k$ block labels
+independently and uniformly from $\{1,\ldots,N\}$, and assign each
+resulting monotone path mass $N^{-k}$. Summing these path flows gives a
+unit flow $F_k$ in the size-$n_k$ stopped graph; set it equal to zero on
+unused edges.
+
+There are $N^j$ distinct stage-$j$ parents, each receiving mass $N^{-j}$.
+Within one parent's stage, every edge has flow at most $N^{-j}$ and the
+sum of edge flows is $L N^{-j}$, since every continuation has $L$ edges.
+Therefore its sum of squared edge flows is at most $L N^{-2j}$.
+Lemma~\ref{lem:prefix} makes the edge sets for different parents disjoint.
+This estimate allows different next-block choices within the same parent
+to share or merge their microscopic growth paths.
+
+The lower size of a stage-$j$ edge lies between $1+jL$ and $(j+1)L$.
+Since $\beta<1$, equation~\eqref{eq:conductance} gives
+$c(e)\ge\beta^{(j+1)L}$. Consequently
+\begin{equation}\label{eq:flow-energy}
+ \mathcal E(F_k)
+ \le L\beta^{-L}\sum_{j=0}^{k-1}(N\beta^L)^{-j}.
+\end{equation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Set $r_m=a_m\beta^{m+1}$. Its $(m+1)$st root tends to
+$\kappa\beta<1$, so $r_m<1$ for every sufficiently large $m$.
+Fix any such $m$, and write $r=r_m$. The geometric sum satisfies
+\[
+ \sum_{j=0}^{k-1}r^{-j}\le\frac{r^{-(k-1)}}{1-r}.
+\]
+The unit-flow bound, equations~\eqref{eq:escape} and
+\eqref{eq:flow-energy}, give
+\begin{equation}\label{eq:quantitative}
+ p_{1+kL}\ge
+ \frac{(1-r)\beta^{L-1}}{4L}\,r^{k-1},\qquad k\ge1.
+\end{equation}
+For any integer $T\ge2$, take $k=\lceil(T-1)/L\rceil$. Since
+$1+kL\ge T$, the decreasing tail satisfies $p_T\ge p_{1+kL}$.
+The positive prefactor in~\eqref{eq:quantitative} is fixed, and
+$(k-1)/T\to1/L$. Taking $T$th roots yields
+\[
+ \liminf_{T\to\infty}p_T^{1/T}
+ \ge r_m^{1/(m+1)}=\beta a_m^{1/(m+1)}.
+\]
+This holds for each sufficiently large fixed $m$. Letting $m\to\infty$
+improves the same lower bound to $\kappa\beta$. Together with
+\eqref{eq:upper}, it proves~\eqref{eq:rate} for the arbitrary fixed
+admissible $\beta$. Finally, $\mu^{1/T}\to1$ because $0<\mu<\infty$,
+so $\eta_T^{1/T}=\mu^{1/T}/p_T^{1/T}\to1/(\kappa\beta)$.
+\end{proof}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with argument development, checking cited sources,
+and preparing the manuscript. The submitted proof is analytic and uses no
+computational data. Independent mathematical review is requested.
+
+\begin{thebibliography}{1}
+\bibitem{BO}
+Y.~Baryshnikov and E.~Onaran,
+\emph{Ising disks: topology preserving Glauber dynamics},
+Journal of Applied and Computational Topology \textbf{10} (2026), article~16.
+\href{https://doi.org/10.1007/s41468-026-00248-w}{doi:10.1007/s41468-026-00248-w}.
+Author preprint: \href{https://arxiv.org/abs/2410.22611}{arXiv:2410.22611}.
+\end{thebibliography}
+\end{document}

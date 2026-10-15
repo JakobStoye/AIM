@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "problem_id": "504",
+  "target_revision": "1b7c7fd251c1643bb41f0e3cef38704bcef410fd",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package description and public reproduction instructions",
+      "sha256": "9eed95868bc2eee5a9294446dd881ea54e4327617ebc7260ca14f03e5a472c88"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the original problem",
+      "sha256": "180ad0bb7a3bf58d7fd7cc7be545ff110b8921eb0088b877cecdebae61db0219"
+    },
+    {
+      "path": "paper/ising_disks_excursion.pdf",
+      "purpose": "Compiled five-page manuscript",
+      "sha256": "59b31969905dd57f2cbb4b3eda8c004ce4d625695b7592b3f4a8f150fa57cd5d"
+    },
+    {
+      "path": "paper/ising_disks_excursion.tex",
+      "purpose": "Complete editable analytic manuscript",
+      "sha256": "f7ff4dbb4734b7614cc57d8becfa29fe8ed2766a8b5a1e16415917850a942ca3"
+    }
+  ]
+}
