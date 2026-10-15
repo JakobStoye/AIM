@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "package_version": "2026-10-14-v2",
+  "problem_id": "635",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic theorem; complete solution claim awaiting independent review",
+  "allowed_paths": [
+    "README.md",
+    "TARGET_COMPARISON.md",
+    "paper/main.tex",
+    "paper/main.pdf",
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, material links, reproduction and AI-use disclosure",
+      "bytes": 2477,
+      "sha256": "2019fe9202a2590b4031c84b8d1dbecf6cbc43d5eb0d7a13d0d125bbf4e13178"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause correspondence with the pinned public target",
+      "bytes": 4863,
+      "sha256": "c57f49e3b3bfe306364dc193e6c7ed2f89434036dfd73cfdee509c074a81b459"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Standalone editable final manuscript source",
+      "bytes": 14094,
+      "sha256": "c841ee21f0aa09fabdd2f5c4452ffed54361373204b3d38d5eed41bd1e5f3799"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Compiled five-page final manuscript",
+      "bytes": 315506,
+      "sha256": "532330e9360189f52b3a957ffc797fd73a4230af6cee543f3d52bafd8faeee0e"
+    }
+  ],
+  "hash_convention": "The manifest hashes the four content files. SHA256SUMS additionally binds this manifest and excludes itself."
+}
