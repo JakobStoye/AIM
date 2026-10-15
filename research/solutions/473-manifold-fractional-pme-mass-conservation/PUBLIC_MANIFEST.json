@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "problem_id": "473",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/473-manifold-fractional-pme-mass-conservation.md",
+  "contribution_type": "Analytic theorem; proposed complete resolution for independent review",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public entry point, contribution scope, AI disclosure and rebuild command",
+      "bytes": 2227,
+      "sha256": "abb5ac6fbf5f001d5c147f71216d429a15ed99b9639981d9d4cac1a96cd808d6"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target correspondence derived from the public statement and manuscript",
+      "bytes": 4320,
+      "sha256": "2746b8e830e2859891474be40395cd32ab0a80504aa11aef02580714bc5ef819"
+    },
+    {
+      "path": "paper/mass_conservation.tex",
+      "purpose": "Complete standalone manuscript source with all proofs and references",
+      "bytes": 24837,
+      "sha256": "70ffe865f5f21bb27b4f83d2a08dea860f778ed144178911ac4c21ff32651dad"
+    },
+    {
+      "path": "paper/mass_conservation.pdf",
+      "purpose": "Compiled complete eight-page manuscript",
+      "bytes": 316264,
+      "sha256": "f8600d330ce3b01d1ca770042e355233f73dc5ce634f02551804d6830c522d57"
+    }
+  ],
+  "integrity_metadata": {
+    "PUBLIC_MANIFEST.json": "This manifest; omitted from its own payload hashes to avoid self-reference",
+    "SHA256SUMS": "Hashes all four payload files and this manifest; checksum file omits itself"
+  },
+  "limits": "Content hashes identify bytes, not mathematical validity, formal verification or maintainer acceptance."
+}
