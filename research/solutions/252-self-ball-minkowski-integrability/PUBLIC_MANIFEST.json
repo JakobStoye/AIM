@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "problem_id": 252,
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_statement_sha256": "b155a9b0b84724118410b4a0dcbfc9d27a697729066ebf5d9ebd7e32b2f71f33",
+  "target_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/252-self-ball-minkowski-integrability.md",
+  "result_status": "Complete analytic solution claim awaiting independent mathematical review",
+  "manuscript_title": "Total integrability of a Minkowski billiard in its unit ball",
+  "author": "Kaiwen Jin",
+  "files": {
+    "README.md": {
+      "purpose": "Public entry point, claim scope, build instructions and factual AI-use/review disclosure",
+      "sha256": "5c050719652933ca3bc391372d7bf03af4c67791c6b0c18f45fe524921b97528",
+      "bytes": 2577
+    },
+    "TARGET_COMPARISON.md": {
+      "purpose": "Clause-by-clause comparison with the fixed original target",
+      "sha256": "dd7e69dcd85685f7b417cb2f74a1e7e13929e2d7d7d7eba9253e79db445f5cc4",
+      "bytes": 3113
+    },
+    "paper/minkowski_integrability.tex": {
+      "purpose": "Complete editable mathematical manuscript",
+      "sha256": "614ff72e627f771ed5c7bf8c5cc696df1ebd2f169a2bc43fa3047aa045bdaf9d",
+      "bytes": 18053
+    },
+    "paper/minkowski_integrability.pdf": {
+      "purpose": "Final six-page rendered manuscript",
+      "sha256": "87d463fa370f20f4e04a5801a6244b304ec800384c821da617ec78cb3ab8831f",
+      "bytes": 249873
+    }
+  },
+  "integrity_files": {
+    "PUBLIC_MANIFEST.json": "This content manifest is hashed in SHA256SUMS; no self hash is asserted.",
+    "SHA256SUMS": "SHA256 hashes for the four content files and this manifest; the checksum file excludes itself."
+  },
+  "build": {
+    "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build paper/minkowski_integrability.tex",
+    "pdftex": "1.40.27 (TeX Live 2025)",
+    "latexmk": "4.86a"
+  },
+  "evidence_type": "Analytic argument with cited theorem inputs; no numerical certificate or formal proof project",
+  "review_scope": "Two fresh AI contexts reviewed the complete pre-revision manuscript; only local exposition and PDF metadata changed afterward. No human review or formal verification is claimed."
+}
