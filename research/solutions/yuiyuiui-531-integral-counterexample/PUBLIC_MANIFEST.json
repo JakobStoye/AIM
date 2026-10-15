@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "title": "The fourth integral Betti number of a torus-grid Rips complex",
+  "problem_id": "531",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "fd71f409a1937e791fe92369211fa5b657a3848b30e479b95873c62c4ddcce05",
+      "bytes": 57,
+      "purpose": "Public explanation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9aa08fca2609ddfaf0a434e35033f3c6f7b29c0c871319d450b0950f6dcbd087",
+      "bytes": 2158,
+      "purpose": "Public explanation"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "af5e444a62f8bbae0e8347329a7f41a731453c3a6de43aad9acf1ae4401f7986",
+      "bytes": 2200,
+      "purpose": "Public explanation"
+    },
+    {
+      "path": "numerical_case/README.md",
+      "sha256": "a3d98951dd74973475d5586d18cdcbe9980c6d31cb76e255596d8d6470c9fe68",
+      "bytes": 1835,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "numerical_case/certificates/k5_certificate.json",
+      "sha256": "d8ef28ef0c1fd0850b6e7f2fa24195175d4112d0f843a276214a9d447da7d038",
+      "bytes": 334081,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "numerical_case/generate_certificate.py",
+      "sha256": "f9b9e9a64cc12e62300355d62a72e5ccdfb4fe5943d030be537f4d630c75d2d9",
+      "bytes": 782,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "numerical_case/verification/independent_replay.json",
+      "sha256": "f734ea0db9f898243105c8e401823af0a1c67e7866f46d7da42b75dcc1e4bc6f",
+      "bytes": 832,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "paper/torus_grid_counterexample.pdf",
+      "sha256": "c24418b311a744b0d3706ce752d436aeee9633ea32c6f4e27dce329e8fa378eb",
+      "bytes": 247620,
+      "purpose": "Manuscript"
+    },
+    {
+      "path": "paper/torus_grid_counterexample.tex",
+      "sha256": "495bab4b02d7f291f620b4e6f5c089af2d2663997397219124456746a6fe662b",
+      "bytes": 16080,
+      "purpose": "Manuscript"
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "262611efadb457770976d7a38cbe2aa2c77ddb10c41afd193fe978eb34408a59",
+      "bytes": 69,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "src/torusgrid_certificate.py",
+      "sha256": "34848a88135cee10c336a88f5932207f54c535024bf09c0795ed5bd4529eb404",
+      "bytes": 7831,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "src/verify_certificate.py",
+      "sha256": "47e61706501c4d2ec75ed29f274d0bd9796fc82fa047d0b85f22f7ff3550ae12",
+      "bytes": 10527,
+      "purpose": "Exact proof verification"
+    },
+    {
+      "path": "test/test_certificate.py",
+      "sha256": "28c0ed2c1c495006e65182ec37a66d8aba3283f0072fbb02a3d419d0b7acbac5",
+      "bytes": 3763,
+      "purpose": "Exact proof verification"
+    }
+  ]
+}

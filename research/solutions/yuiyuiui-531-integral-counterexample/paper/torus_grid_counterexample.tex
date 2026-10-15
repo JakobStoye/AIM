@@ -1,0 +1,343 @@
+\documentclass[11pt]{amsart}
+\usepackage[OT1]{fontenc}
+\renewcommand{\rmdefault}{cmr}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\rank}{\operatorname{rank}}
+\title{The fourth integral Betti number of a torus-grid Rips complex}
+\author{Kaiwen Jin}
+\email{yui.ui.siki@gmail.com}
+\date{October 14, 2026}
+\subjclass[2020]{Primary 55N31; Secondary 05E45, 55U10}
+\keywords{Vietoris--Rips complex, torus grid, integral homology, exact certificate}
+\hypersetup{pdftitle={The fourth integral Betti number of a torus-grid Rips complex},pdfauthor={Kaiwen Jin}}
+
+\begin{document}
+\begin{abstract}
+We compute the fourth integral Betti number of the closed radius-five
+Vietoris--Rips complex on the thirteen-by-thirteen torus grid with its
+periodic Manhattan metric. It is two, giving a counterexample to the
+integer-rank formula in AIM Problem 531, which predicts twenty-six for this
+grid. The proof separates a subcomplex with the homotopy type of the torus
+from the simplices that cannot be lifted to the plane. A signed integer
+chain certificate computes the resulting relative homology. Its nonzero
+even boundary coefficients explain the difference from the published
+mod-two data.
+\end{abstract}
+\maketitle
+
+\section{The coefficient distinction}
+For a periodic grid, the Vietoris--Rips construction can detect topology
+beyond that of the underlying torus. Adams, Adetowubo, Barriga-Acosta, Feng
+and Sterling~\cite{torus} determine several infinite families of torus-grid
+Rips complexes and tabulate homology in the intermediate-scale range.
+Their Question~8.4 concerns grids of side length $3k-2$ at scale $k$.
+The tables use coefficients in $\Z/2$, whereas their section~3.6 defines
+Betti numbers as ranks of integral homology. This distinction matters in
+the integral formulation of AIM Problem~531~\cite{aim}.
+
+For $n\geq3$, let $T_n=(\Z/n\Z)^2$, with
+\[
+ d_n((a,b),(c,e))=\delta_n(a,c)+\delta_n(b,e),\qquad
+ \delta_n(a,c)=\min\{|a-c|,n-|a-c|\},
+\]
+where coordinates in the last formula lie in $\{0,\ldots,n-1\}$.
+Let $K_n(r)$ consist of all subsets of $T_n$ of diameter at most $r$.
+Thus equality with the scale is included. Write
+$\beta_i(K)=\rank H_i(K;\Z)$.
+
+The integral assertion in Problem~531 includes, for every integer $k\geq5$,
+\begin{equation}\label{eq:prediction}
+ \beta_4(K_{3k-2}(k))=6k-3+(-1)^k.
+\end{equation}
+The following single admissible case disproves that universal assertion.
+
+\begin{theorem}\label{thm:main}
+For the closed complex $K=K_{13}(5)$ with the metric above,
+\[
+ \rank H_4(K;\Z)=2.
+\]
+In particular, \eqref{eq:prediction} fails at $k=5$, where its right-hand
+side is $26$.
+\end{theorem}
+
+The proof is computer-assisted. It uses an exact finite certificate, with
+complete enumeration and integer elementary operations, together with a
+geometric identification of a torus subcomplex. The certificate and a
+separate reconstruction and replay program accompany the paper. The result
+concerns the integral assertion at this one parameter; the mod-two pattern
+in Question~8.4 remains a separate question.
+
+\section{A subcomplex with the homotopy type of the torus}
+From now on $n=13$ and the scale is five. Let
+$\pi:\mathbb R^2\to\mathbb R^2/(13\Z)^2$ be the quotient map, and give
+the plane and torus their Manhattan metrics. Define $M\subseteq K$ to
+contain those simplices whose vertices have lifts to $\Z^2$ of diameter
+at most five. Taking subsets preserves this property, so $M$ is a
+subcomplex.
+
+\begin{lemma}\label{lem:core}
+There is a homotopy equivalence $M\simeq\mathbb R^2/(13\Z)^2$.
+Consequently,
+\[
+ H_3(M;\Z)=H_4(M;\Z)=0,
+ \qquad H_4(K;\Z)\cong H_4(K,M;\Z).
+\]
+\end{lemma}
+
+\begin{proof}
+Use the open radius-three torus balls centered at the 169 grid vertices.
+They cover the torus, since every point has a grid vertex at distance at
+most one. We first identify their nerve with $M$.
+
+In the plane, set $u=x+y$ and $v=x-y$. For two points, Manhattan distance
+equals $\max\{|\Delta u|,|\Delta v|\}$. A set of integer points has
+diameter at most five precisely when both coordinate ranges have width
+at most five. In that case the intervals
+\[
+ (\max u-3,\min u+3),\qquad
+ (\max v-3,\min v+3)
+\]
+are nonempty, so its open radius-three balls have a common point.
+Conversely, a common point gives pairwise distance less than six, which
+is at most five for integer points.
+
+Now take a nonempty intersection of torus balls, choose one grid center
+and fix its plane lift $z_0$. Every point of the intersection has a unique
+lift $w$ with $\|w-z_0\|_1<3$. For each other center choose a lift $z_i$
+with $\|z_i-w\|_1<3$. Then $\|z_i-z_0\|_1<6$.
+This lift of the center is independent of $w$: two different lifts are
+at least thirteen apart, while two such choices would be less than twelve
+apart. Thus the torus intersection is exactly the projection of the
+fixed convex intersection $\bigcap_i B(z_i,3)$.
+Projection is injective there, because it lies in $B(z_0,3)$.
+Every nonempty intersection is therefore contractible, and the preceding
+plane observation identifies the nerve with $M$.
+The open-cover nerve theorem~\cite[Theorem~3.1]{torus} gives the claimed
+homotopy equivalence.
+
+The torus has a two-dimensional CW structure. Homotopy invariance, cellular
+homology and the comparison with simplicial homology give the two
+vanishing statements~\cite[Corollary~2.11 and Theorems~2.27,
+2.35]{hatcher}. For completeness, the fourth-homology isomorphism can be
+seen directly on quotient chains. A relative four-cycle lifts to a
+four-chain whose boundary is a three-cycle in $M$; subtracting a four-chain
+in $M$ with that boundary gives an absolute cycle. If an absolute cycle is
+a relative boundary, subtract that boundary to leave a four-cycle in $M$,
+which bounds in $M$. These operations prove surjectivity and injectivity.
+\end{proof}
+
+We also need an explicit way to recognize $M$ in a finite enumeration.
+It is generated by the 338 projected closed diamonds of radius $5/2$
+with centers
+\begin{equation}\label{eq:diamonds}
+ (a+\tfrac12,b),\qquad (a,b+\tfrac12),\qquad a,b\in\Z/13\Z.
+\end{equation}
+Indeed, for a lifted simplex choose the center in $(u,v)$ coordinates to
+be $(\min u+5/2,\min v+5/2)$. Both coordinate ranges lie within distance
+$5/2$ of this center. The corresponding $(x,y)$ center has one integral
+and one half-integral coordinate, so it is of the form
+\eqref{eq:diamonds}. Conversely, every such diamond has diameter five.
+This is the scale-five instance of the planar facet geometry in
+\cite[Proposition~4.2]{torus}; the argument above proves the membership
+test used here.
+
+\section{The signed relative chain calculation}
+We use the relative simplicial chain groups
+$C_q(K,M;\Z)=C_q(K;\Z)/C_q(M;\Z)$. Their basis consists of the simplices
+of $K$ that are not in $M$. Label a vertex $(a,b)$ by $13a+b$, orient every
+simplex by increasing labels, and order the basis lexicographically in
+each degree. Its boundary is the alternating sum of faces, omitting those
+in $M$.
+
+\subsection{Complete enumeration}
+Every edge of $K$ has a unique shortest plane displacement, because its
+length is at most five and $13>10$. Fix a vertex of a clique as anchor and
+lift its other vertices by these displacements. The clique lies in $M$
+if and only if all pairwise distances of these lifts are at most five.
+If the test fails, a triangle containing the anchor has nonzero total
+edge displacement in $(13\Z)^2$. To see this, suppose every anchored
+triangle has zero displacement sum. Then every difference between two
+anchored lifts is the unique displacement of their edge and has length
+at most five, contrary to failure of the test.
+
+This gives a finite exhaustive enumeration: list all nonliftable triangles
+through $(0,0)$, extend each by all cliques in its common-neighbor set,
+translate by every element of $T_{13}$, and remove duplicates. Every
+nonliftable simplex contains one of these translated triangles, and every
+extension remains nonliftable. There is no degree cutoff in this
+enumeration. It returns 24 origin triangles, at most eight possible
+extension vertices per triangle, and no nonliftable simplex with more
+than seven vertices.
+
+An alternative reconstruction starts with the full neighbor graph and
+recursively lists cliques through $(0,0)$ in increasing label order.
+It tests membership in the diamonds~\eqref{eq:diamonds}, without using
+the triangle criterion. A branch is skipped only when the union of the
+current clique and all its possible extension vertices lies in one
+diamond. Every descendant then belongs to $M$. Translating the retained
+cliques gives exactly the same relative bases.
+
+\medskip
+\noindent\textbf{Finite verification procedure.}
+The input is the closed metric graph on $T_{13}$ and the fixed cancellation
+certificate. The output is its relative fourth-homology free rank.
+\begin{enumerate}
+\item Enumerate all noncore cliques by either reconstruction above.
+\item Form the signed relative boundary matrices in the prescribed bases,
+      and check that every consecutive boundary composition is zero.
+\item Replay the recorded unit cancellations, checking each pivot and both
+      adjacent chain identities.
+\item Compare the complete residual integer matrix and count its nonzero
+      columns; compute its rank modulo three.
+\item Use the matching minor and column bounds to determine its rational
+      rank, and subtract that rank from the residual fourth chain rank.
+\end{enumerate}
+The triangle construction considers at most $24\cdot2^8$ anchored
+extension subsets and 169 translates per subset before deduplication.
+The stored relative basis has 12168 simplices, each with at most seven
+vertices, and each initial boundary has at most seven terms.
+The recorded elimination has 6056 unit pivots. These are bounds and counts
+for the fixed input, not a complexity assertion for arbitrary torus grids.
+
+\subsection{Integral cancellation}
+The following elementary fact accounts for every elimination step.
+
+\begin{lemma}\label{lem:cancellation}
+In a chain complex of finite free abelian groups, a boundary entry equal
+to $1$ or $-1$ can be cancelled. If, after permuting bases, that boundary is
+\[
+ A=\begin{pmatrix}a&\beta\\ \gamma&D\end{pmatrix},\qquad a\in\{1,-1\},
+\]
+the remaining boundary is $D-\gamma a^{-1}\beta$. The resulting chain
+complex has the same integral homology.
+\end{lemma}
+
+\begin{proof}
+The integer invertible matrices
+\[
+ L=\begin{pmatrix}a^{-1}&0\\-\gamma a^{-1}&I\end{pmatrix},\qquad
+ S=\begin{pmatrix}1&-a^{-1}\beta\\0&I\end{pmatrix}
+\]
+give $LAS=\operatorname{diag}(1,D-\gamma a^{-1}\beta)$.
+Change the adjacent differentials by the corresponding inverse basis
+changes. The chain identities force the coefficient in the distinguished
+upper-boundary row and the distinguished lower-boundary column to vanish.
+The changed complex therefore splits off a two-term summand
+$\Z\xrightarrow{1}\Z$, whose homology is zero.
+Deleting this summand proves the assertion.
+\end{proof}
+
+In a recorded step, let $r$ be the pivot row and $c$ the pivot column,
+with entry $a=\pm1$. A column with entry $b$ in row $r$ is replaced by
+itself minus $(b/a)$ times column $c$. Delete $r$ and $c$, together with
+their corresponding column and row in the adjacent differentials.
+Indices remain as labels for the changed bases. The replay program checks
+that the adjacent directions vanish after the basis changes, as in the
+lemma. In particular, a coefficient of absolute value two is never used
+as a unit pivot.
+
+\begin{proposition}\label{prop:finite}
+The fixed certificate reduces $C_*(K,M;\Z)$ to a complex with nonzero
+chain groups only in degrees $2,3,4$, of ranks $2,28,26$, respectively.
+Its only nonzero differential is an integer matrix
+$A_4:\Z^{26}\to\Z^{28}$ with exactly 24 nonzero columns and
+\[
+ \rank_{\Q} A_4=24.
+\]
+\end{proposition}
+
+\begin{proof}
+Complete reconstruction gives the initial chain ranks in
+Table~\ref{tab:chains}. Signed boundary squares vanish over $\Z$.
+The two enumerations agree on every basis simplex, and the independent
+replay checks all 6056 pivots of the certificate using
+Lemma~\ref{lem:cancellation}. The counts in the table leave exactly the
+stated residual chain groups.
+
+\begin{table}[ht]
+\centering
+\caption{Exact relative chain ranks and recorded unit cancellations.
+A degree-$q$ cancellation removes one generator in degrees $q$ and $q-1$.}
+\label{tab:chains}
+\begin{tabular}{rrrr}
+\toprule
+Degree $q$ & Initial rank & Degree-$q$ cancellations & Residual rank\\
+\midrule
+2 & 1352 & 0 & 2\\
+3 & 4394 & 1350 & 28\\
+4 & 4394 & 3016 & 26\\
+5 & 1690 & 1352 & 0\\
+6 & 338 & 338 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The certificate contains the entire residual $28\times26$ matrix.
+All its nonzero entries are $2$ or $-2$, and exactly 24 columns are
+nonzero. This bounds its rational rank above by 24. Exact row reduction
+modulo three gives rank 24; consequently some $24\times24$ integral
+minor is nonzero modulo three, hence nonzero over $\Q$. This gives the
+matching lower bound and proves the proposition.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+After the homology-preserving cancellations, the fifth chain group is
+zero, so $H_4(K,M;\Z)$ is the integral kernel of $A_4$.
+The rational span of this kernel equals $\ker(A_4:\Q^{26}\to\Q^{28})$:
+clear denominators in any rational kernel vector. Thus its free rank is
+$26-24=2$. Lemma~\ref{lem:core} transfers this rank to $H_4(K;\Z)$.
+Since $13=3\cdot5-2$ and $6\cdot5-3+(-1)^5=26$, this is an admissible
+counterexample to \eqref{eq:prediction}.
+\end{proof}
+
+\section*{Reproducibility}
+The accompanying files contain a deterministic generator,
+\path{src/torusgrid_certificate.py}, the independent reconstruction and
+replay program \path{src/verify_certificate.py}, and the proof-critical
+input \path{numerical_case/certificates/k5_certificate.json}.
+Python 3.10 or later with its standard library suffices. From the artifact
+root, run
+\begin{verbatim}
+python3 src/verify_certificate.py \
+  numerical_case/certificates/k5_certificate.json
+python3 -m unittest discover -s test -v
+python3 numerical_case/generate_certificate.py \
+  --output /tmp/k5-regenerated.json
+\end{verbatim}
+The generator requires a fresh output path. Its output contains no
+timestamps or platform-dependent values and can be compared directly with
+the fixed certificate. The verifier imports no generator code. It checks
+the finite calculation; the geometric core and the transfer to the original
+complex are proved above. The tests include a four-sphere boundary and a
+triangulation of the real projective plane, checking in particular that even
+boundary coefficients are preserved. The zero reduction of $A_4$ modulo
+two accounts for the larger fourth dimension in the mod-two calculation.
+
+\section*{Automated assistance}
+OpenAI Codex was used for proof exploration, exact verification software,
+source checking and manuscript preparation. The argument and certificate
+are submitted for independent mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{torus}
+H.~Adams, A.~Y.~Adetowubo, H.~Barriga-Acosta, Z.~Feng and J.~Sterling,
+\emph{Vietoris--Rips Complexes of Torus Grids},
+Mediterranean Journal of Mathematics \textbf{22} (2025), article 173,
+\href{https://doi.org/10.1007/s00009-025-02945-9}{doi:10.1007/s00009-025-02945-9}.
+Author version: \href{https://arxiv.org/abs/2502.07134v2}{arXiv:2502.07134v2}.
+\bibitem{hatcher}
+A.~Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002.
+\bibitem{aim}
+\emph{AIM problem collection}, GitHub repository \texttt{MColbrook/AIM}, Problem 531,
+``Homology at the second transition of torus-grid Rips complexes'',
+revision \texttt{a153f469ee0ea64e876b2ad97c79d252c19a3e22},
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/531-torus-grid-transition-homology.md}{immutable problem statement}.
+\end{thebibliography}
+\end{document}
