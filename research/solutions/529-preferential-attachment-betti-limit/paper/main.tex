@@ -1,0 +1,755 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\essinf}{ess\,inf}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\fall}[2]{#1^{\underline{#2}}}
+\newcommand{\rise}[2]{(#1)^{\overline{#2}}}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cF}{\mathcal F}
+\title{Limiting Betti-number distributions in preferential-attachment clique complexes}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}
+\date{October 14, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the finite clique complexes of sequential affine preferential-attachment graphs.
+For every $q\ge2$, $m\ge2q$ and $\delta>-m$ with
+$x=(m+\delta)/(2m+\delta)<1/(2q)$, the $q$th rational Betti number,
+divided by its expectation, converges to a nondegenerate random variable.
+We identify its law as a normalized sum of products of attachment weights
+over induced octahedral subgraphs in an explicit independent-Beta construction.
+The limit is positive almost surely, has zero essential infimum and has every
+positive moment. In particular, its upper tail is not regularly varying with
+any finite positive exponent. The proof compares all octahedral link
+contributions with finite-time homology; larger link cores have lower order,
+and an earlier cone makes each fixed base contribute to subsequent births.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+Preferential attachment produces growing graphs in which vertices of large
+degree attract more edges. Their clique complexes record higher-order
+connections: a complete subgraph is filled by a simplex, and the Betti numbers
+measure the homology that remains. The variability of these numbers across
+independently generated graphs is a different question from their average
+growth.
+
+In the affine model, each new vertex adds $m$ edges and the attraction of
+an old vertex is its current degree plus $\delta$. Write
+$x=(m+\delta)/(2m+\delta)$.
+For the sequential version considered here, Siu, Samorodnitsky, Yu and
+He~\cite{ssyh} proved that the expected $q$th Betti number has order
+$T^{1-2qx}$ when $q\ge2$, $m\ge2q$ and $x<1/(2q)$. Siu~\cite{siu}
+then obtained matching upper and lower bounds in probability, up to any
+diverging multiplicative factor. The latter proof counts common neighbors of
+a fixed induced octahedral sphere and controls lower-order killing terms.
+These bounds locate the scale but leave the limiting distribution unidentified.
+In Section~1.2 of the author preprint~\cite{siu}, mean-normalized convergence
+and a power-law tail were suggested by numerical simulations.
+
+We prove the convergence throughout this strict polynomial-growth regime.
+The limit is an explicit random series over all induced octahedral bases,
+and it has every positive moment. This gives a nonconstant limiting law while
+refuting regular variation with a finite positive exponent. The normalization
+is the ensemble expectation of the Betti number, as in the distributional
+question; no empirical normalization is involved.
+
+Two issues separate a distributional result from the existing order bounds.
+The count must include all base spheres, with a summable bound on their large
+labels. It must also track whether their link homology actually produces
+new homology in the finite complex. We use the independent-Beta description
+of the attachment process to control the first issue. For the second,
+deleting vertices of small degree reduces a typical link to a single
+octahedral sphere. Every fixed base eventually acquires an earlier cone,
+after which its one-dimensional link homology maps to zero in the old complex
+and contributes one birth. The remaining link cores require an additional
+neighbor and have lower order.
+
+Random environments also describe non-Gaussian triangle-count limits in the
+same attachment model, as shown recently by Dey and Terlov~\cite{dey-terlov};
+their triangle observable counts edge multiplicity.
+Here the coefficient additionally retains the induced graph on the base
+vertices. Joint weight and edge estimates handle that dependence, including
+overlapping bases in every fixed moment. A conditional estimate obtained by
+taking one Beta variable close to one shows that the coefficient can be
+arbitrarily small with positive probability, proving nondegeneracy.
+
+Section~\ref{sec:model} states the exact model and the limiting law.
+Section~\ref{sec:environment} establishes the weight and counting estimates.
+Section~\ref{sec:homology} compares the counts with finite homology, and
+Section~\ref{sec:tail} proves nondegeneracy and the tail conclusion.
+Homology is over $\Q$ throughout. Constants may depend on the fixed model
+parameters and, where indicated, on a fixed moment order; they do not depend
+on time or vertex labels.
+
+\section{The model and the limiting law}\label{sec:model}
+Fix integers $q\ge2$, $m\ge2q$ and a real number $\delta>-m$ such that
+\begin{equation}\label{eq:parameters}
+ a=m+\delta>0,\qquad c=2m+\delta=m+a,\qquad
+ x=\frac ac<\frac1{2q},\qquad k=2q,\qquad \rho=1-kx>0.
+\end{equation}
+The graph $G_2$ consists of two vertices joined by $m$ parallel edges.
+At each time $t\ge3$, vertex $t$ adds $m$ edges, one at a time, to old
+vertices. After the first $b-1$ edges, the next endpoint $v<t$ is chosen
+with probability
+\begin{equation}\label{eq:sequential}
+ \frac{d_{t,b-1}(v)+\delta}
+ {2m(t-2)+(t-1)\delta+(b-1)},\qquad 1\le b\le m.
+\end{equation}
+Degrees count multiplicity. There are no self-loops. Write $X_T$ for the
+clique complex of the underlying simple graph, and
+$\beta_q(T)=\dim_\Q H_q(X_T;\Q)$.
+
+The following construction puts all times on one probability space.
+Let $\psi_1=1$ and let
+\begin{equation}\label{eq:beta}
+ \psi_j\sim\operatorname{Beta}(a,b_j),\qquad
+ b_j=c(j-1)-m,\qquad j\ge2,
+\end{equation}
+be independent; $b_2=a$ and all $b_j$ are positive.
+Given $(\psi_j)$, every edge from $t$ chooses its old endpoint independently
+with probabilities
+\begin{equation}\label{eq:kernel}
+ p(v,t)=\psi_v\prod_{v<j<t}(1-\psi_j),\qquad v<t.
+\end{equation}
+Their sum is one by telescoping. Independent uniform variables on $(0,1)$
+can be used to make these choices. At $t=2$, all endpoints are $1$.
+Denote this infinite graph by $G$ and use its simple graph when speaking
+of induced subgraphs.
+
+\begin{lemma}\label{lem:model}
+The restrictions of this construction have exactly the joint sequential
+graph law in~\eqref{eq:sequential}.
+\end{lemma}
+\begin{proof}
+This is the P\'olya representation used in~\cite[Definition~5.1 and
+Theorem~5.2 of the author preprint]{siu}. We include the verification to fix
+the precise variant. At the completion of the birth of vertex $j$, the
+total weight of the vertices before $j$ is
+\[
+ 2m(j-2)+(j-1)\delta+m=c(j-1)-m=b_j,
+\]
+and vertex $j$ has weight $a$. A later endpoint at $j$ contributes $\psi_j$
+to the likelihood. An endpoint before $j$ from a later vertex contributes
+$1-\psi_j$; other endpoints do not change its factor. Conditional on any
+finite endpoint history, the variables belonging to eligible vertices
+therefore remain independent, with posterior law
+$\operatorname{Beta}(w_j,W_{j-1})$, where $w_j$ is the current weight
+of $j$ and $W_i=\sum_{v\le i}w_v$.
+This holds during a partial new birth as well. Taking the posterior
+expectation in~\eqref{eq:kernel} yields
+\[
+ \frac{w_v}{W_v}\prod_{v<j<t}\frac{W_{j-1}}{W_j}
+ =\frac{w_v}{W_{t-1}}.
+\]
+The denominator after $b-1$ new edges is precisely the one
+in~\eqref{eq:sequential}. Initially $w_1=w_2=a$ and
+$\psi_2\sim\operatorname{Beta}(a,a)$, while the $m$ initial edges are
+deterministic. This proves the claim for every finite ordered history.
+\end{proof}
+
+We will show that the following limits exist and are positive almost surely:
+\begin{equation}\label{eq:weights}
+ R_v=\lim_{n\to\infty}n^x\prod_{v<j\le n}(1-\psi_j),
+ \qquad D_v=\psi_v R_v.
+\end{equation}
+They describe the fixed-vertex attachment probabilities:
+$t^x p(v,t)\to D_v$.
+Let $\cO_q$ be the graph $K_{2q}$ with a perfect matching removed.
+Its clique complex is the join of $q$ two-point spaces, an octahedral
+$(q-1)$-sphere. For every $k$-element set $S\subset\N$, put
+\begin{equation}\label{eq:coefficient}
+ I_S=\ind\{G[S]\cong\cO_q\},\qquad
+ A=\sum_{\substack{S\subset\N\\ |S|=k}} I_S\prod_{v\in S}D_v.
+\end{equation}
+Here $G[S]$ is the induced simple graph, so $I_S$ imposes the missing
+matching as well as the present edges. The series is initially understood
+as a nonnegative extended random variable; its finiteness is part of the result.
+
+\begin{theorem}\label{thm:main}
+For every parameter triple in~\eqref{eq:parameters}, the weights
+in~\eqref{eq:weights} are positive and finite almost surely, and
+\[
+ A>0\ \text{almost surely},\qquad
+ \essinf A=0,\qquad 0<\E A<\infty,\qquad
+ \E A^p<\infty\quad (p>0).
+\]
+In the construction~\eqref{eq:beta}--\eqref{eq:kernel},
+\begin{equation}\label{eq:betti-limit}
+ \frac{\beta_q(T)}{T^\rho}
+ \xrightarrow{L^1}\frac{\fall{m}{k}}{\rho}A,
+ \qquad
+ \frac{\E\beta_q(T)}{T^\rho}
+ \longrightarrow\frac{\fall{m}{k}}{\rho}\E A,
+\end{equation}
+where $\fall{m}{k}=m(m-1)\cdots(m-k+1)$.
+Consequently the mean-normalized Betti number converges in distribution to
+\begin{equation}\label{eq:law}
+ W_{q,m,\delta}=\frac{A}{\E A},
+\end{equation}
+a nondegenerate random variable with mean one. Its upper tail does not satisfy
+\begin{equation}\label{eq:rv}
+ \lim_{z\to\infty}\frac{\Prob(W_{q,m,\delta}>uz)}
+ {\Prob(W_{q,m,\delta}>z)}=u^{-\alpha},\qquad u>0,
+\end{equation}
+for any finite $\alpha>0$.
+\end{theorem}
+
+The law in~\eqref{eq:law} is specified by independent Beta variables,
+independent endpoint uniforms and the convergent series~\eqref{eq:coefficient}.
+All parameters are fixed before $T\to\infty$.
+
+\section{Attachment weights and octahedral counts}\label{sec:environment}
+\subsection{Joint moments}
+We first obtain bounds uniform in all vertex labels. For a directed simple
+graph $F$ whose edges point from larger to smaller labels, let $d_-(v)$
+and $d_+(v)$ be its incoming and outgoing degrees, respectively.
+The event $F\subset G$ requires its edges and places no restriction on
+other edges. The number of vertices and edges in this lemma is fixed.
+
+\begin{lemma}\label{lem:mixed}
+All the limits in~\eqref{eq:weights} exist and are positive almost surely.
+For nonnegative integers $r_v$ on a finite set $V$ containing the vertices
+of $F$,
+\begin{equation}\label{eq:mixed}
+ \E\left[\ind\{F\subset G\}\prod_{v\in V}D_v^{r_v}\right]
+ \le C\prod_{v\in V}
+ v^{-(1-x)(r_v+d_-(v))-x d_+(v)}.
+\end{equation}
+The constant depends only on $m,\delta$, the finite size bounds and
+$\sum_v r_v$, not the labels. Extend $r_v,d_\pm(v)$ by zero outside $V$.
+For $K\ge2$, define
+\[
+ \ell_K=r_K+d_-(K),\qquad
+ h_K=\sum_{v<K}r_v+\#\{u\to v\in F:v<K<u\}.
+\]
+The conditional version of~\eqref{eq:mixed}, with $\psi_K=z\in(0,1)$,
+holds with the additional factor $C K^{\ell_K}(1-z)^{h_K}$, uniformly in
+$K$ and $z$.
+\end{lemma}
+\begin{proof}
+Write $Y_j=-\log(1-\psi_j)$. For $0\le u<1$,
+\[
+ 0\le-\log(1-u)-u\le\frac{u^2}{1-u},\qquad
+ [-\log(1-u)]^2\le\frac{u^2}{(1-u)^2}.
+\]
+For all sufficiently large $j$, beta integrals give
+\begin{align*}
+ \E\psi_j&=\frac{a}{cj-2m}=\frac{x}{j}+O(j^{-2}),\\
+ \E\frac{\psi_j^2}{1-\psi_j}
+ &=\frac{a(a+1)}{(a+b_j)(b_j-1)}=O(j^{-2}),\\
+ \E\frac{\psi_j^2}{(1-\psi_j)^2}
+ &=\frac{a(a+1)}{(b_j-1)(b_j-2)}=O(j^{-2}).
+\end{align*}
+Thus $\E Y_j=x/j+O(j^{-2})$ and $\Var(Y_j)=O(j^{-2})$.
+The finitely many early indices have finite squared logarithmic moments,
+since $b_j>0$. The independent series criterion
+\cite[Theorem~2.5.6]{durrett} shows that
+$\sum_{j\ge2}(Y_j-\E Y_j)$ converges almost surely.
+The summable expectation error and the convergence of the harmonic sum
+minus $\log n$ now prove~\eqref{eq:weights}. A countable intersection
+handles every $v$.
+
+Given the environment, assign distinct edge slots to the required older
+neighbors of each vertex of $F$. A union bound gives
+\begin{equation}\label{eq:edge-bound}
+ \Prob(F\subset G\mid(\psi_j))
+ \le m^{|E(F)|}\prod_{u\to v\in F}p(v,u).
+\end{equation}
+If a required outdegree exceeds $m$, the event is empty. To estimate the
+right side multiplied by the weight product, first use
+$D_{v,n}=\psi_v n^x\prod_{v<j\le n}(1-\psi_j)$, with $n$ larger than
+all labels. Independence reduces the expectation to beta factors
+\begin{equation}\label{eq:beta-factor}
+ \E[\psi_j^{\ell_j}(1-\psi_j)^{h_j}]
+ =\frac{\rise{a}{\ell_j}\rise{b_j}{h_j}}
+ {\rise{a+b_j}{\ell_j+h_j}},
+\end{equation}
+where a rising factorial is indicated by an overline, and
+\[
+ \ell_j=r_j+d_-(j),\qquad
+ h_j=\sum_{v<j}r_v+\#\{u\to v\in F:v<j<u\}.
+\]
+Both exponents have a fixed bound. At the finitely many sites with
+$\ell_j>0$, the factor is at most
+$Cj^{-\ell_j}\exp(-xh_j/j)$. At other sites its logarithm is
+$-xh_j/j+O(j^{-2})$. These statements follow by taking logarithms of the
+finite products in~\eqref{eq:beta-factor}; the constants also cover the
+finitely many small indices. Consequently the complete product is bounded by
+\begin{align*}
+ Cn^{x\sum_vr_v}\prod_vv^{-r_v-d_-(v)}
+ \exp\left(-x\sum_{j=2}^n\frac{h_j}{j}\right).
+\end{align*}
+For each weight, the harmonic sum is $\log(n/v)+O(1/v)$, and for an edge
+$u\to v$ it is $\log(u/v)+O(1/v)$. Substitution gives
+\[
+ Cn^{x\sum_vr_v}\prod_vv^{-r_v-d_-(v)}
+ \prod_v(n/v)^{-xr_v}\prod_{u\to v}(u/v)^{-x},
+\]
+which is the product in~\eqref{eq:mixed}. Vertex $1$ has $\psi_1=1$ and
+label $1$, so it introduces no beta factor or label power.
+Fatou's lemma passes to the limiting weights.
+
+For the conditional assertion take $n\ge K$ as well. Only the $K$th
+factor changes, to $z^{\ell_K}(1-z)^{h_K}$.
+The beta integral~\eqref{eq:beta-factor} has the uniform lower bound
+$C^{-1}K^{-\ell_K}$ at that site, for fixed exponent bounds.
+Its replacement therefore costs at most
+$C K^{\ell_K}(1-z)^{h_K}$. Fatou's lemma applies with $z$ fixed,
+proving the stated conditional estimate.
+\end{proof}
+
+\subsection{Summing the labels}
+The following elementary observation is what makes early bases dominate.
+It will also control unions of overlapping bases.
+
+\begin{lemma}\label{lem:sums}
+Let $F$ be an ordered simple graph with minimum degree at least $d\ge2$,
+and let $r_v\ge1$ be integers. Put
+\[
+ \gamma_v=-(1-x)(r_v+d_-(v))-x d_+(v).
+\]
+If $0<x<1/2$, the sum of $\prod_vv^{\gamma_v}$ over all increasing
+positive vertex labels is finite. For any fixed ordered exponent sequence
+$\gamma_1,\ldots,\gamma_h$ obtained this way,
+\begin{align}
+ \sum_{K<v_1<\cdots<v_h}\prod_i v_i^{\gamma_i}
+ &\le C K^{h+\sum_i\gamma_i},\label{eq:anchored-all}\\
+ \sum_{K=v_1<v_2<\cdots<v_h}\prod_i v_i^{\gamma_i}
+ &\le C K^{h-1+\sum_i\gamma_i}.\label{eq:anchored-one}
+\end{align}
+\end{lemma}
+\begin{proof}
+For a nonempty terminal segment $U$ of the ordered vertices, all edges
+crossing its boundary point toward earlier vertices outside $U$. Hence
+\begin{align}
+ \sum_{v\in U}(\gamma_v+1)
+ &=|U|-(1-x)\sum_{v\in U}r_v-|E(U)|-x|E(U,U^c)|\notag\\
+ &\le x|U|-|E(U)|-x|E(U,U^c)|\notag\\
+ &\le-(d-1)x|U|-(1-2x)|E(U)|<0.\label{eq:suffix}
+\end{align}
+The last step uses $2|E(U)|+|E(U,U^c)|\ge d|U|$.
+Place $v_i$ in the dyadic interval $[2^{n_i},2^{n_i+1})$.
+The sum in those intervals is at most a constant times
+$2^{\sum_i(\gamma_i+1)n_i}$, with $n_1\le\cdots\le n_h$.
+Writing the $n_i$ as successive nonnegative differences turns the full sum
+into a product of geometric sums, whose exponents are precisely the
+negative suffix sums~\eqref{eq:suffix}.
+For~\eqref{eq:anchored-all}, start the dyadic intervals at $K$; their
+initial factor is $K^{h+\sum_i\gamma_i}$.
+For~\eqref{eq:anchored-one}, fix the first label and sum the remaining
+$h-1$ labels in the same way. All their suffix sums are still negative,
+and the initial factor is $K^{h-1+\sum_i\gamma_i}$.
+\end{proof}
+
+For an octahedral graph $F$ on ordered labels $v_1<\cdots<v_k$, write
+\begin{equation}\label{eq:f-base}
+ f_F(v_1,\ldots,v_k)
+ =\prod_{i=1}^k v_i^{-(1-x)(1+d_-(v_i))-x d_+(v_i)}.
+\end{equation}
+There are finitely many perfect matchings on $k$ ordered positions.
+Lemma~\ref{lem:mixed} and Lemma~\ref{lem:sums}, with $d=k-2\ge2$,
+give a summable bound on $\E[I_S\prod_{v\in S}D_v]$.
+In particular $\E A<\infty$.
+
+\begin{proposition}\label{prop:moments}
+The series $A$ has every positive moment.
+\end{proposition}
+\begin{proof}
+For an integer $p\ge1$, expand the $p$th power of finite partial sums
+of~\eqref{eq:coefficient}. Classify the $p$ bases by their overlap pattern
+and by their missing matchings. There are finitely many such patterns at
+fixed $p$ and $k$. In each pattern, the union of the required edges forms
+a graph $F$ of minimum degree at least $k-2$, because every vertex belongs
+to an octahedral base. Its weight multiplicity $r_v$ is the number of bases
+containing it, so $1\le r_v\le p$.
+Ignoring extra nonedge requirements only increases the probability; an
+inconsistent pattern or a required outdegree larger than $m$ contributes
+zero. Otherwise~\eqref{eq:mixed} bounds the weighted expectation, and
+Lemma~\ref{lem:sums} sums its labels. This bound is finite for every
+pattern. Monotone convergence proves $\E A^p<\infty$.
+For an arbitrary real $p>0$, use $A^p\le1+A^{\lceil p\rceil}$.
+\end{proof}
+
+\subsection{Common neighbors and the complete count}
+For a fixed $k$-set $S$ and $t>\max S$, let $Y_{S,t}$ indicate that $t$
+is joined to every vertex of $S$. Put
+$N_S(T)=\sum_{\max S<t\le T}Y_{S,t}$.
+
+\begin{lemma}\label{lem:neighbors}
+For every fixed $S$,
+\begin{equation}\label{eq:fixed-count}
+ \frac{N_S(T)}{T^\rho}
+ \longrightarrow \frac{\fall{m}{k}}\rho\prod_{v\in S}D_v
+ \quad\text{almost surely and in }L^1.
+\end{equation}
+Moreover $\sup_T\E[(N_S(T)/T^\rho)^2]<\infty$.
+\end{lemma}
+\begin{proof}
+Condition on the whole environment. Distinct apex labels use independent
+edge uniforms. There are $\fall{m}{k}$ injective assignments of edge slots
+to the vertices of $S$. A union bound and the two-term Bonferroni inequality
+give
+\begin{equation}\label{eq:occupancy}
+ \Prob(Y_{S,t}=1\mid(\psi_j))
+ =\fall{m}{k}\prod_{v\in S}p(v,t)
+ +O_m\left(\max_{v\in S}p(v,t)\prod_{v\in S}p(v,t)\right).
+\end{equation}
+Indeed, two distinct compatible assignments specify at least one extra
+edge; incompatible assignments have zero intersection probability.
+Since $t^xp(v,t)\to D_v$, the conditional mean of $N_S(T)$ is
+asymptotic to $\fall{m}{k}\prod D_v\,T^\rho/\rho$.
+This follows by bounding the probabilities above and below by constant
+multiples of $t^{-kx}$ after any fixed accuracy threshold and summing
+$\sum_{t\le T}t^{-kx}\sim T^\rho/\rho$.
+
+The centered variables
+$(Y_{S,t}-\E[Y_{S,t}\mid(\psi_j)])/t^\rho$ are independent for this fixed
+environment, and their variance sum is bounded, apart from a finite prefix,
+by $C(\psi)\sum_t t^{kx-2}<\infty$.
+The independent series criterion and Kronecker's lemma
+\cite[Theorems~2.5.6 and~2.5.9]{durrett} show that the centered partial
+sum is $o(T^\rho)$ almost surely. Fubini transfers this conclusion to the
+joint probability space.
+
+For the second moment, two distinct apices $t,s>\max S$ joined to the
+same fixed set have probability at most $C_S t^{-kx}s^{-kx}$ by
+Lemma~\ref{lem:mixed} with zero weight multiplicities. The diagonal
+probabilities are at most $C_S t^{-kx}$. Summing proves the uniform
+second-moment assertion. An almost-surely convergent family $Z_T$ with
+bounded second moments converges in $L^1$: Fatou bounds the second moment
+of its limit $Z$, and Cauchy--Schwarz gives
+\[
+ \E|Z_T-Z|\le\varepsilon+
+ (\E|Z_T-Z|^2)^{1/2}\Prob(|Z_T-Z|>\varepsilon)^{1/2}.
+\]
+The probability tends to zero and then $\varepsilon$ can decrease to zero.
+This proves~\eqref{eq:fixed-count}.
+\end{proof}
+
+Let $C_t$ count the induced octahedral $k$-sets in the graph on the
+distinct older neighbors of $t$, and let $C(T)=\sum_{3\le t\le T}C_t$.
+These counts use only finite graphs, and
+$C(T)=\sum_S I_S N_S(T)$.
+For a cutoff $K$, let $C^K(T)$ retain bases $S\subset[K]$ and apices $t>K$,
+and let $A_K=\sum_{S\subset[K],\,|S|=k}I_S\prod_{v\in S}D_v$.
+
+\begin{proposition}\label{prop:count}
+The complete count satisfies
+\begin{equation}\label{eq:count-limit}
+ \frac{C(T)}{T^\rho}\xrightarrow{L^1}\frac{\fall{m}{k}}\rho A.
+\end{equation}
+\end{proposition}
+\begin{proof}
+At fixed $K$, Lemma~\ref{lem:neighbors}, multiplied by each bounded
+$I_S$, proves $C^K(T)/T^\rho\to\fall{m}{k}A_K/\rho$ in $L^1$.
+No independence between $I_S$ and the weights is required.
+The required base edges and the $k$ apex edges give
+\[
+ \Prob(I_S=1,Y_{S,t}=1)\le C t^{-kx} f_F(S),
+\]
+summed over the finitely many matchings $F$ on $S$. Therefore
+\begin{equation}\label{eq:cutoff-count}
+ \limsup_{T\to\infty}\E\frac{C(T)-C^K(T)}{T^\rho}
+ \le C\sum_F\sum_{\max S>K} f_F(S).
+\end{equation}
+The omitted apices $t\le K$ have count at most
+$K\binom{m}{k}$, which disappears before the displayed limsup.
+The right side tends to zero by Lemma~\ref{lem:sums}, and
+$A_K\uparrow A$ in $L^1$. Taking $T\to\infty$ first and then
+$K\to\infty$ proves~\eqref{eq:count-limit}.
+\end{proof}
+
+\section{Finite homology and link cores}\label{sec:homology}
+For vertex $t$, let $L_t$ be its link in $X_t$, the clique complex of the
+simple graph on its older neighbors. It has at most $m$ vertices.
+The inclusions $L_t\subset X_{t-1}$ induce maps $f_{j,t}$ on $H_j$.
+The decomposition $X_t=X_{t-1}\cup\operatorname{St}_{X_t}(t)$ gives
+\begin{equation}\label{eq:rank-increment}
+ \beta_q(t)-\beta_q(t-1)
+ =\dim\ker f_{q-1,t}-\rank f_{q,t}.
+\end{equation}
+This is the link-rank identity used in~\cite[Proposition~14 of the
+author preprint]{ssyh}.
+For completeness, the rational simplicial-chain sequence for a union of
+subcomplexes $\mathcal K=\mathcal U\cup\mathcal V$, $\mathcal L=\mathcal U\cap\mathcal V$, is
+\[
+ 0\longrightarrow C_*(\mathcal L)\xrightarrow{\zeta\mapsto(\zeta,-\zeta)}
+ C_*(\mathcal U)\oplus C_*(\mathcal V)\xrightarrow{(\xi,\eta)\mapsto\xi+\eta}
+ C_*(\mathcal K)\longrightarrow0.
+\]
+It is exact degree by degree because the simplex bases shared by $\mathcal U$ and
+$\mathcal V$ are exactly those of $\mathcal L$. If a cycle in $\mathcal K$ is lifted to $(\xi,\eta)$,
+its boundary has the form $(\zeta,-\zeta)$, with $\zeta$ a $\mathcal L$-cycle. The class of
+$\zeta$ is unchanged by a different lift or a homologous cycle. This gives the
+connecting map; a zero connecting class is exactly a lift that can be
+modified into two cycles. The other two exact positions follow by lifting
+a bounding chain and subtracting it. Thus the sequence yields the homology
+exact sequence. A cone has zero reduced homology: adjoining its apex to
+an augmented simplex gives a chain homotopy $h$ with $dh+hd=\mathrm{id}$.
+Applying the sequence with $\mathcal V$ the star of $t$ gives the exact segment
+\[
+ H_q(L_t)\xrightarrow{f_{q,t}}H_q(X_{t-1})\longrightarrow H_q(X_t)
+ \longrightarrow H_{q-1}(L_t)\xrightarrow{f_{q-1,t}}H_{q-1}(X_{t-1}).
+\]
+Exactness at the middle terms gives
+\[
+ \dim H_q(X_t)=\beta_q(t-1)-\rank f_{q,t}+\dim\ker f_{q-1,t},
+\]
+which is~\eqref{eq:rank-increment}. The same calculation will keep track of the inclusion
+maps when vertices are deleted from a link.
+
+\subsection{The typical link}
+Put $d=k-2=2q-2$. Delete, repeatedly, vertices of a link graph whose
+current degree is less than $d$. The remaining graph is its $d$-core.
+Call $L_t$ exceptional if this core has at least $k+1$ vertices.
+Let $B(T)$ be the number of exceptional links up to time $T$.
+In homology expressions, an octahedral base $S$ denotes its induced clique
+complex, rather than only its vertex set.
+
+\begin{lemma}\label{lem:core}
+If $L_t$ is not exceptional, then
+\[
+ \dim H_{q-1}(L_t)=C_t\in\{0,1\},\qquad H_q(L_t)=0.
+\]
+When $C_t=1$, its unique octahedral base $S$ induces an isomorphism
+$H_{q-1}(S)\to H_{q-1}(L_t)$.
+\end{lemma}
+\begin{proof}
+A flag complex with nonzero reduced $H_j$ has at least $2j+2$ vertices.
+For $j=0$ this is disconnectedness. For $j\ge1$, take an induced subcomplex
+minimal by vertices with nonzero $H_j$. Deleting any vertex makes $H_j$
+zero, so the homology exact sequence injects $H_j$ into reduced
+$H_{j-1}$ of its link. Induction gives at least $2j$ neighbors for each
+vertex. A universal vertex would make the complex a cone; hence there is
+also a nonneighbor, proving the lower bound $2j+2$.
+
+A vertex of degree below $2q-2$ has a link on at most $2q-3$ vertices.
+Its reduced $H_{q-2}$ and $H_{q-1}$ vanish by the support bound. The exact
+sequence therefore shows that its deletion induces an isomorphism on
+$H_{q-1}$. It also induces an isomorphism on $H_q$, by the same bound
+in the next degree. Every induced octahedral base survives the deletions,
+since all its internal degrees are $k-2$.
+
+If the remaining core has fewer than $k$ vertices, both the relevant
+homology and its octahedral count vanish. With exactly $k$ vertices,
+either there is a universal vertex, and the complex is a cone, or all
+degrees are $k-2$. In the latter case its complement is a perfect matching,
+so it is the unique octahedral base. Its clique complex is a join of $q$
+two-point spaces: splitting at one missing pair expresses it as two cones
+over the $(q-1)$-fold join. The reduced exact sequence shifts homology by
+one. Starting with two points shows that $H_{q-1}$ is one-dimensional
+and $H_q=0$. The isomorphisms under deletion give the asserted inclusion map.
+\end{proof}
+
+\begin{lemma}\label{lem:exceptional}
+The exceptional links have $\E B(T)=o(T^\rho)$.
+\end{lemma}
+\begin{proof}
+An exceptional link contains a graph $F$ on $h$ vertices of minimum degree
+at least $d$, where $k+1\le h\le m$, and $t$ is joined to all these
+vertices. There are finitely many ordered graph patterns for fixed $m$.
+The $h$ apex edges add one incoming edge to each base vertex.
+Lemma~\ref{lem:mixed}, with zero weight multiplicities, therefore bounds
+the probability of a specified occurrence by
+\[
+ C t^{-hx}\prod_{v\in F}v^{-(1-x)(1+d_-(v))-x d_+(v)}.
+\]
+Lemma~\ref{lem:sums} sums the base labels. Summing the patterns gives
+$\Prob(L_t\text{ exceptional})\le C t^{-(k+1)x}$.
+Thus $\E B(T)$ is $O(T^{1-(k+1)x})$, $O(\log T)$ or $O(1)$ according
+as $1-(k+1)x$ is positive, zero or negative. Each is $o(T^{1-kx})$.
+For $m=k$, no exceptional link is possible.
+\end{proof}
+
+\subsection{Earlier cones and the Betti limit}
+\begin{lemma}\label{lem:cones}
+Almost surely $A>0$. For every $K$, each existing octahedral base
+$S\subset[K]$ has a common neighbor $s_S>K$ at a finite random time.
+The maximum of their finitely many first such times is finite almost surely.
+\end{lemma}
+\begin{proof}
+The occupancy calculation~\eqref{eq:occupancy} applies to any fixed
+$h$-set with $h\le k$, and its conditional common-neighbor probability
+is asymptotic to a positive multiple of $t^{-hx}$.
+It has divergent sum because $hx<1$. Conditional independence and the
+second Borel--Cantelli lemma~\cite[Theorem~2.3.7]{durrett} give infinitely
+many common neighbors. If one fixed extra vertex is forbidden, the
+probability of also joining it is $O(t^{-(h+1)x})$, whenever $h+1\le m$,
+so there are still infinitely many common neighbors avoiding it.
+These statements hold simultaneously for all fixed finite sets and extra
+vertices, by countability and Fubini.
+
+A nonadjacent pair exists once a new vertex has more than $m$ old vertices
+available. Starting from this two-point sphere, choose a common neighbor
+of the current octahedral sphere, then a second common neighbor avoiding
+the first. The two new vertices give its suspension as an induced
+subgraph. Repeat until there are $k$ vertices. At each step the current
+sphere has at most $k-2$ vertices, so the required edges and the avoidance
+condition are within $m$. Edges between old vertices are never added later.
+This constructs an induced octahedral base. Its weights are positive,
+hence $A>0$.
+
+For a fixed $K$ there are finitely many bases in $[K]$. Each has a common
+neighbor $s>K$ almost surely. Let $\tau_K$ be the largest of their first
+such labels, or $K$ if no base exists. Then $\tau_K<\infty$ almost surely.
+The star of each such $s$ contains the cone on its base, so the map from
+that base's homology into $H_{q-1}(X_{t-1})$ is zero for $t>\tau_K$.
+\end{proof}
+
+\begin{proposition}\label{prop:betti}
+The limits in~\eqref{eq:betti-limit} hold.
+\end{proposition}
+\begin{proof}
+On a nonexceptional link after $\tau_K$, if its unique base is in $[K]$,
+Lemma~\ref{lem:core} identifies its entire $H_{q-1}$ with that of the
+base. The latter maps to zero in the old complex by Lemma~\ref{lem:cones}.
+Equation~\eqref{eq:rank-increment} therefore gives a birth of dimension one,
+and there is no death because $H_q(L_t)=0$. All other nonexceptional links
+give nonnegative increments. On exceptional links both homology dimensions
+and base counts have a bound depending only on $m,q$, since the link has
+at most $m$ vertices. Summing~\eqref{eq:rank-increment} gives, for a fixed
+constant $M$,
+\begin{align}
+ \beta_q(T)&\le C(T)+M B(T),\label{eq:hom-upper}\\
+ \beta_q(T)&\ge C^K(T)-C^K(\min(T,\tau_K))-M B(T).
+ \label{eq:hom-lower}
+\end{align}
+The prefix term divided by $T^\rho$ tends to zero almost surely, because
+$\tau_K$ is finite. It tends to zero in $L^1$ as well: it is bounded by
+$C^K(T)/T^\rho$, and the latter has uniformly bounded second moments by
+Lemma~\ref{lem:neighbors} and the finite number of bases in $[K]$.
+The Cauchy--Schwarz estimate in that lemma applies. No expectation bound
+on $\tau_K$ is needed.
+
+It follows from~\eqref{eq:hom-upper}--\eqref{eq:hom-lower} that
+\[
+ |\beta_q(T)-C(T)|
+ \le C(T)-C^K(T)+C^K(\min(T,\tau_K))+M B(T).
+\]
+Use~\eqref{eq:cutoff-count} and Lemma~\ref{lem:exceptional}, taking
+$T\to\infty$ at fixed $K$ and then $K\to\infty$. This difference is
+$o(T^\rho)$ in $L^1$. Proposition~\ref{prop:count} proves the first
+limit in~\eqref{eq:betti-limit}; taking expectations proves the second.
+Its limiting constant is positive by Lemma~\ref{lem:cones}.
+Dividing by that deterministic mean, which is positive for sufficiently
+large $T$, yields $L^1$ convergence of the
+mean-normalized variables to $A/\E A$ in this coupling, and hence the
+asserted convergence in distribution.
+\end{proof}
+
+\section{Nondegeneracy and the upper tail}\label{sec:tail}
+The coefficient retains random early structure. Its nonconstancy can be
+seen by making the weights of every vertex before a large fixed label
+small at the same time.
+
+\begin{proposition}\label{prop:support}
+The coefficient $A$ has essential infimum zero.
+\end{proposition}
+\begin{proof}
+Let $d=k-2$ and $e=k(q-1)$, the degree and edge count of an octahedral
+base. Condition on $\psi_K=z$, for $K\ge2$, and split the series into
+bases with a label below $K$, bases with minimum $K$, and bases entirely
+after $K$.
+
+Recall that $\ell_K=r_K+d_-(K)$, while $h_K$ counts weights below $K$
+and required edges crossing $K$ in Lemma~\ref{lem:mixed}. For a single base,
+$r_K$ is one if $K$ belongs to it and zero otherwise.
+In the first group, at least one weight contains $1-\psi_K$, so $h_K\ge1$.
+Also $\ell_K\le d+1$. Summing its conditional bound using the same
+summable base weights~\eqref{eq:f-base} gives
+\begin{equation}\label{eq:old-support}
+ \E[A_{\mathrm{old}}\mid\psi_K=z]
+ \le C(1+K^{d+1})(1-z).
+\end{equation}
+For a base with minimum exactly $K$, the vertex $K$ has weight
+multiplicity one, incoming degree $d$ and outgoing degree zero. The
+conditional cost is at most $C K^{d+1}$.
+The sum of all base exponents in~\eqref{eq:f-base} is $-(1-x)k-e$.
+Using~\eqref{eq:anchored-one},
+\begin{align}
+ \E[A_{\min=K}\mid\psi_K=z]
+ &\le C K^{d+1}K^{k-1-(1-x)k-e}\notag\\
+ &=C K^{kx-e+d}=C K^{kx-2(q-1)^2}.\label{eq:min-support}
+\end{align}
+Bases entirely after $K$, including their weights, are independent of
+$\psi_K$. Equation~\eqref{eq:anchored-all} gives
+\begin{equation}\label{eq:after-support}
+ \E[A_{\min>K}\mid\psi_K=z]\le C K^{kx-e}.
+\end{equation}
+Both exponents in~\eqref{eq:min-support}--\eqref{eq:after-support} are
+negative, since $kx<1$, $e-d=2(q-1)^2\ge2$ and $e\ge4$.
+Given $\varepsilon>0$, first choose $K$ so that their sum is below
+$\varepsilon/2$, and then $\eta\in(0,1)$ so that the right side
+of~\eqref{eq:old-support} is below $\varepsilon/2$ when
+$1-\eta<z<1$. This Beta interval has positive probability.
+The conditional mean of $A$ on the interval is below $\varepsilon$;
+Markov's inequality therefore gives
+$\Prob(A\le2\varepsilon)>0$. This proves $\essinf A=0$.
+\end{proof}
+
+Together with $A>0$ almost surely and $0<\E A<\infty$, this proves that
+$W=A/\E A$ is nondegenerate.
+Proposition~\ref{prop:moments} gives every positive moment of $W$.
+For every $p>0$ its survival function is $O_p(z^{-p})$, by Markov's
+inequality. To finish Theorem~\ref{thm:main}, suppose~\eqref{eq:rv} held
+with a finite $\alpha>0$. Its survival function must be positive
+eventually. For any $\epsilon>0$, the ratio at $u=2$ is at least
+$2^{-(\alpha+\epsilon)}$ for large $z$. Iteration gives a dyadic lower
+bound, and monotonicity extends it to
+$\Prob(W>y)\ge C y^{-(\alpha+\epsilon)}$ for all sufficiently large $y$.
+An integer $p>\alpha+\epsilon$ then satisfies
+\[
+ \E W^p=p\int_0^\infty y^{p-1}\Prob(W>y)\,dy=\infty,
+\]
+by nonnegative Fubini, contradicting Proposition~\ref{prop:moments}.
+A bounded survival support also cannot satisfy~\eqref{eq:rv}.
+Thus no finite positive regular-variation exponent occurs in the strict
+regime of the theorem.
+
+\section*{AI-use statement}
+OpenAI Codex was used extensively for literature review, development and
+checking of the arguments, and preparation of this manuscript. The
+mathematical claims are offered for independent review.
+
+\begin{thebibliography}{9}
+\bibitem{dey-terlov}
+P.~S.~Dey and G.~Terlov,
+\emph{Limiting distributions of triangle counts in linear preferential attachment models},
+preprint, arXiv:2605.28776v1, 2026.
+\url{https://arxiv.org/abs/2605.28776v1}.
+
+\bibitem{durrett}
+R.~Durrett, \emph{Probability: Theory and Examples}, fifth edition,
+Cambridge University Press, 2019.
+Author draft, Version January 11, 2019:
+\url{https://services.math.duke.edu/~rtd/PTE/PTE5_011119.pdf}.
+
+\bibitem{siu}
+C.~Siu, \emph{The Topological Behavior of Preferential Attachment Graphs},
+SIAM Journal on Applied Algebra and Geometry \textbf{9}(2) (2025), 432--455.
+\href{https://doi.org/10.1137/24M1693179}{doi:10.1137/24M1693179}.
+Author preprint: \url{https://arxiv.org/abs/2406.17619v2}.
+
+\bibitem{ssyh}
+C.~Siu, G.~Samorodnitsky, C.~L.~Yu and R.~He,
+\emph{The asymptotics of the expected Betti numbers of preferential attachment clique complexes},
+Advances in Applied Probability \textbf{57}(3) (2025), 940--968.
+\href{https://doi.org/10.1017/apr.2024.66}{doi:10.1017/apr.2024.66}.
+Author preprint: \url{https://arxiv.org/abs/2305.11259v3}.
+\end{thebibliography}
+\end{document}
