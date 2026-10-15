@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "title": "Failure of finite-jet determination for small-time local controllability",
+  "date": "2026-10-15",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package entry point and scoped analytic result",
+      "bytes": 1593,
+      "sha256": "f23e1edab1619f3eb115d6dc27b185b6cca46816e42743e9eb79090d8dbd1e54"
+    },
+    {
+      "path": "REPRODUCTION.md",
+      "purpose": "Commands and runtime for rebuilding the paper",
+      "bytes": 903,
+      "sha256": "e9b1d47b4e98bf2e535e139047b2214b3487451d2578f65fc59e2c51a426e025"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Comparison with the pinned original target",
+      "bytes": 2374,
+      "sha256": "be0d07db363a7c924c99e7f4f1b7950ee8bd04dad2586035fac40f48b2660265"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable mathematical manuscript",
+      "bytes": 10241,
+      "sha256": "3a4b3d3fb93b81d212f96ae7e48de6d78385e3e47030537d9feb4d0d22a0801e"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete final four-page manuscript",
+      "bytes": 235312,
+      "sha256": "db97b6934daf216bd8b332ec1e27ba64caee616eaa0c84ab501edb8632bab11b"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Reach}{\mathcal{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\title{Failure of finite-jet determination for small-time local controllability}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Small-time local controllability asks whether a system can reach a
+neighborhood of an equilibrium in arbitrarily short time.
+We give a negative answer to the finite-jet determination question for
+real-analytic systems with bounded measurable controls.
+Starting from a previously constructed five-dimensional polynomial system
+with two controls, we show that adding a positive polynomial term of
+arbitrarily high order destroys this property.
+The original system is fixed independently of the prescribed jet order.
+The proof compares a logarithmic bound for closed trajectories with the
+positive integral cost of an auxiliary coordinate's excursion.
+\end{abstract}
+
+\section{The finite-jet question and the example}
+
+Consider real-analytic vector fields $X_0,\ldots,X_m$ near $0\in\R^n$,
+with $X_0(0)=0$, and the control-affine system
+\[
+ \dot x=X_0(x)+\sum_{j=1}^m u_j(t)X_j(x),\qquad x(0)=0,
+ \qquad u(t)\in[-1,1]^m.
+\]
+Controls are measurable and trajectories are absolutely continuous
+solutions of the equations almost everywhere.
+Write $\Reach_{\le t}(0)$ for the endpoints reachable in a duration at most
+$t$. The system is small-time locally controllable at zero if
+$\Reach_{\le t}(0)$ contains a Euclidean neighborhood of zero for every
+sufficiently small $t>0$.
+
+The finite-jet question asks whether, for each such controllable system,
+there is an integer $N$ such that every real-analytic tuple with the same
+Taylor coefficients through order $N$ at zero is again small-time locally
+controllable with the same control set.
+This is Conjecture~1.1 in the v7 preprint of Jafarpour~\cite{Jafarpour}.
+His Theorem~7.1 proves finite-jet stability under a polynomial lower bound
+on reachable neighborhoods.
+Jin~\cite{Jin} constructed a polynomial system that is small-time locally
+controllable without such a lower bound.
+We show that the same system has no finite jet guaranteeing controllability.
+The system and the logarithmic estimate used below are from~\cite{Jin};
+the additional argument controls the positive cost of a high-order
+perturbation for every admissible control.
+
+Let $e_j$ denote the $j$th standard coordinate vector in $\R^5$.
+The original system is
+\begin{equation}\label{eq:original}
+\begin{aligned}
+ \dot x_1&=u, & \dot x_2&=x_1, & \dot x_3&=x_2,\\
+ \dot x_4&=x_1^2x_3^2-\left(\frac19+x_5^2\right)x_2^4,
+ &\dot x_5&=v,
+\end{aligned}
+\end{equation}
+with measurable $|u|,|v|\le1$.
+Denote its drift by $X_0$ and its controlled fields by $X_1=e_1$ and
+$X_2=e_5$. All three fields are polynomial and $X_0(0)=0$.
+
+\begin{theorem}\label{thm:main}
+The fixed system~\eqref{eq:original} is small-time locally controllable at
+zero. For every integer $N\ge0$, there is an integer $k\ge1$ with $2k>N$
+such that the polynomial tuple
+\begin{equation}\label{eq:perturbation}
+ Y_0=X_0+x_5^{2k}e_4,\qquad Y_1=X_1,\qquad Y_2=X_2
+\end{equation}
+is not small-time locally controllable at zero with the same control set
+$[-1,1]^2$, although
+\[
+ D^\alpha Y_j(0)=D^\alpha X_j(0)
+ \qquad (0\le j\le2,\ |\alpha|\le N).
+\]
+Here $\alpha$ is a multi-index and $|\alpha|$ its total order.
+This five-dimensional example disproves the universal finite-jet
+implication for real-analytic systems in dimensions at least three.
+\end{theorem}
+
+The five-dimensional example suffices for this universal question.
+No separate conclusion in dimensions three or four is asserted.
+The perturbation in~\eqref{eq:perturbation} adds a nonnegative term to the
+fourth equation. Its integral is positive whenever the fifth coordinate
+leaves zero, and this contribution will dominate every possible negative fourth
+displacement in sufficiently small time.
+
+\section{Positive perturbations of arbitrarily high order}
+
+Theorem~1 of~\cite{Jin} proves the controllability of
+\eqref{eq:original}. Its proof constructs trajectories that return the first three and fifth
+coordinates to zero while producing either sign of fourth displacement,
+and then steers the other four coordinates,
+reaching a full neighborhood in a duration at most $5t/8$ for each $t>0$.
+We also use the following estimate, stated here with its full hypotheses.
+
+\begin{lemma}[{\cite[Lemma~2]{Jin}}]\label{lem:log}
+Let $T>0$ and let $f\in C^2([0,T])$ have Lipschitz second derivative,
+$\|f'''\|_{L^\infty}\le1$, and
+\[
+ f(0)=f'(0)=f''(0)=f(T)=f'(T)=f''(T)=0.
+\]
+Set
+\[
+ A=\int_0^T f'^4\dd s,\qquad
+ E=\int_0^T\left(ff''+\frac13f'^2\right)^2\dd s.
+\]
+Then
+\begin{equation}\label{eq:critical}
+ E=\int_0^T f^2f''^2\dd s-\frac19A.
+\end{equation}
+If $A>0$, then $A\le T^9/16$ and
+\begin{equation}\label{eq:log}
+ E\ge\frac{A}{36\log^2(T^9/(4A))}.
+\end{equation}
+\end{lemma}
+
+The identity~\eqref{eq:critical} follows by integration by parts.
+The quantitative lower bound~\eqref{eq:log} is the logarithmic estimate
+proved in~\cite{Jin}. We retain the original normalization of $f,A,E$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The original system's controllability is the cited Theorem~1 of~\cite{Jin}.
+Fix an integer $k\ge1$ and consider the perturbed tuple
+\eqref{eq:perturbation}. Its first, second, third and fifth equations are
+unchanged, while
+\[
+ \dot y_4=y_1^2y_3^2-\left(\frac19+y_5^2\right)y_2^4+y_5^{2k}.
+\]
+Successive integration gives a unique trajectory on every finite interval
+for each bounded measurable control. In particular, no existence or
+finite-time escape restriction enters the argument.
+We use the usual integral calculus for absolutely continuous functions
+\cite[Appendix~3.A, Example~3.59 and Theorems~3.60, 3.62]{Hunter}.
+
+Take any control of duration $T>0$ whose trajectory ends on the fourth
+axis, and put $f=y_3$ and $g=y_5$.
+The unchanged equations give $f'=y_2$, $f''=y_1$ and $f'''=u$ almost
+everywhere. Thus $f$ satisfies every hypothesis of Lemma~\ref{lem:log},
+including the six zero endpoint jets.
+Also $g(0)=g(T)=0$ and $g$ is $1$-Lipschitz, since $g'=v$ almost everywhere.
+Define
+\[
+ a=\max_{0\le s\le T}|g(s)|\le T,\qquad
+ P_k=\int_0^T g(s)^{2k}\dd s.
+\]
+The fourth displacement is exactly
+\begin{equation}\label{eq:displacement}
+ y_4(T)=E-\int_0^T g^2f'^4\dd s+P_k,
+\end{equation}
+by~\eqref{eq:critical}.
+
+If $a=0$, this displacement is $E\ge0$.
+If $A=0$, continuity gives $f'=0$, hence $f=0$, $E=0$, and
+$y_4(T)=P_k\ge0$.
+If $E\ge a^2A$, then~\eqref{eq:displacement} also gives $y_4(T)\ge0$.
+It remains to consider $a>0$, $A>0$ and $E<a^2A$.
+Since $A\le T^9/16$, the logarithm in~\eqref{eq:log} is positive.
+That estimate now gives
+\[
+ \frac{1}{36\log^2(T^9/(4A))}\le\frac EA<a^2,
+\]
+and therefore
+\begin{equation}\label{eq:small-A}
+ A<\frac{T^9}{4}\exp\left(-\frac1{6a}\right).
+\end{equation}
+
+The excursion in $g$ also forces a positive lower bound for $P_k$.
+Choose $s_*\in[0,T]$ with $|g(s_*)|=a$.
+The Lipschitz bound and $g(0)=0$ imply $s_*\ge a$ and
+\[
+ |g(s)|\ge a-(s_*-s)\qquad (s_*-a\le s\le s_*).
+\]
+This estimate holds whether $g(s_*)$ is positive or negative. Hence
+\begin{equation}\label{eq:cost}
+ P_k\ge\int_{s_*-a}^{s_*}(a-s_*+s)^{2k}\dd s
+       =\frac{a^{2k+1}}{2k+1}.
+\end{equation}
+Combining~\eqref{eq:displacement}, \eqref{eq:small-A} and
+\eqref{eq:cost}, we obtain
+\begin{equation}\label{eq:comparison}
+ y_4(T)>\frac{a^{2k+1}}{2k+1}
+          -\frac{T^9a^2}{4}\exp\left(-\frac1{6a}\right).
+\end{equation}
+The positive power series for the exponential gives
+\[
+ \exp\left(-\frac1{6a}\right)
+ \le (2k)!6^{2k}a^{2k}.
+\]
+Writing $C_k=(2k)!6^{2k}$ and using $a\le T$, the comparison becomes
+\[
+ y_4(T)>a^{2k+1}\left(\frac1{2k+1}-\frac{C_kT^{10}}4\right).
+\]
+Set
+\begin{equation}\label{eq:tau}
+ \tau_k=\min\left\{1,
+       \left(\frac{2}{(2k+1)C_k}\right)^{1/10}\right\}>0.
+\end{equation}
+For $0<T\le\tau_k$, the expression in parentheses is at least
+$1/(2(2k+1))>0$.
+Together with the previous cases, this proves that every fourth-axis
+endpoint in every such duration has nonnegative fourth coordinate.
+
+For each $0<t\le\tau_k$, the union of endpoints over all durations
+$0\le T\le t$ therefore excludes every point $-r e_4$ with $r>0$.
+Every neighborhood of zero contains such a point, so the perturbed system
+is not small-time locally controllable.
+
+Finally, given any finite $N\ge0$, choose $k\ge1$ with $2k>N$.
+The only changed field component is $x_5^{2k}$ in the drift.
+Every partial derivative of this monomial of total order at most $N$
+vanishes at zero: a derivative in another coordinate is identically zero,
+and derivatives only in $x_5$ retain a positive power of $x_5$.
+The controlled fields are unchanged and $Y_0(0)=0$.
+The tuple $X$ has been fixed throughout, completing the asserted
+finite-jet counterexample.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used for mathematical development, source checks, drafting
+and internal manuscript review.
+
+\begin{thebibliography}{9}
+\bibitem{Jafarpour}
+S.~Jafarpour,
+\emph{On small-time local controllability},
+SIAM Journal on Control and Optimization \textbf{58} (2020), 425--446.
+\href{https://doi.org/10.1137/16M1068797}{doi:10.1137/16M1068797}.
+The conjecture and theorem locators refer to the
+\href{https://arxiv.org/abs/1604.02432v7}{v7 preprint} (2019).
+
+\bibitem{Jin}
+K.~Jin,
+\emph{Small-time controllability without polynomial reachable neighborhoods},
+research note, October 12, 2026.
+\href{https://github.com/yuiyuiui/AIM/blob/fff30eeb072395341d9944e4c75d5267b770f3b8/research/solutions/417-polynomial-reachable-growth-counterexample/paper/main.pdf}{Versioned public note},
+Theorem~1, Lemma~2 and Section~3.
+
+\bibitem{Hunter}
+J.~K.~Hunter,
+\emph{Notes on Partial Differential Equations}, Appendix~3.A,
+\href{https://www.math.ucdavis.edu/~hunter/pdes/ch3A.pdf}{Absolutely continuous functions},
+Example~3.59 and Theorems~3.60, 3.62, p.~79.
+\end{thebibliography}
+\end{document}
