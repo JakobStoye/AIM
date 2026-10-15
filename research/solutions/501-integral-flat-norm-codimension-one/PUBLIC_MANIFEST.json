@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "problem_id": "501",
+  "target_revision": "1b7c7fd251c1643bb41f0e3cef38704bcef410fd",
+  "evidence_type": "analytic theorem",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Exclude local manuscript build products",
+      "sha256": "d2c274ded215a315fc87489292f988bd9266a3779db71d65de2b60cdd5c5bfc6"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Public package description and build instructions",
+      "sha256": "d96c8aa9d0d6262096e9f859ae8e05fdca9ecd726d5922e7b35bda1edb2b26f5"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original-target comparison",
+      "sha256": "5deefd068c3ec61a884742a6c7e1ee366f8f325994885fb91e82e02068a66f88"
+    },
+    {
+      "path": "paper/integral_flat_norm.pdf",
+      "purpose": "Complete rendered manuscript",
+      "sha256": "7a5c7af6ae44a2823a5987431ceeb65c7c926b1307ca2d6f3b6d44b91f13d1a8"
+    },
+    {
+      "path": "paper/integral_flat_norm.tex",
+      "purpose": "Standalone complete manuscript source",
+      "sha256": "e1df875b570fd417215ab0edb73f9a9ef9857ef3511ee1122e4b764a95adf12a"
+    }
+  ]
+}
