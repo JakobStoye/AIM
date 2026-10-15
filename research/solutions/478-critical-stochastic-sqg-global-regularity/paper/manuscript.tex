@@ -1,0 +1,877 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage{hyperref}
+\usepackage{xurl}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+ pdftitle={Global regularity for critical stochastic SQG with finite-dimensional nonlinear noise},
+ pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\T}{\mathbb T}
+\newcommand{\R}{\mathbb R}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\fint}{\mathchoice{\displaystyle\int\!\!\!\!-}{\int\!\!\!-}{\int\!-}{\int\!-}}
+\title[Critical stochastic SQG]{Global regularity for critical stochastic SQG
+with finite-dimensional nonlinear noise}
+\author{Kaiwen Jin}
+\thanks{Contact: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}
+\date{October 2026}
+\keywords{Surface quasi-geostrophic equation, critical dissipation, nonlinear multiplicative noise, global regularity}
+\begin{document}
+\begin{abstract}
+We prove almost-sure global regularity and pathwise uniqueness for the critical
+surface quasi-geostrophic equation on the two-dimensional torus with a finite
+collection of smooth nonlinear state-dependent It\^o noise coefficients.
+For every deterministic smooth datum, globally scalar-Lipschitz coefficients
+with bounded positive-order derivatives give a global adapted solution
+continuous in $H^3$ on every finite time interval, with the integral equation
+holding in $H^1$. There is no smallness, mean-zero or affine-noise condition.
+The proof integrates finite powers of spatial increments. A dissipation bound
+proportional to the power permits a spatial exponent independent of that power,
+so a sufficiently large finite power controls a positive H\"older norm.
+A fractional stochastic truncation argument bounds the amplitude, and a tame
+$H^3$ estimate then prevents finite-time blowup.
+\end{abstract}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+The surface quasi-geostrophic equation is a nonlocal active scalar model in
+geophysical fluid dynamics. Its velocity is recovered from the temperature by
+Riesz transforms. With order-one dissipation, transport and diffusion act at the
+same differential order, and an energy estimate alone does not control smooth
+solutions. Deterministic critical SQG nevertheless has global regularity;
+Constantin, Tarfulea and Vicol \cite{CTV}, for example, obtain it by estimating
+spatial increments and propagating a small positive H\"older exponent from an
+amplitude bound.
+
+We consider the It\^o equation
+\begin{equation}\label{eq:sqg}
+ \dd\theta+\big(R^\perp\theta\cdot\nabla\theta+\Lambda\theta\big)\dd t
+       =\sum_{k=1}^K g_k(x,\theta)\dd W^k_t,
+ \qquad \theta(0)=\theta_0,
+\end{equation}
+on $\T^2$, where $\Lambda=(-\Delta)^{1/2}$ and
+$R^\perp=(-R_2,R_1)$, with zero Fourier multipliers on constants.
+The $W^k$ are independent standard Brownian motions on a prescribed filtered
+probability space satisfying the usual conditions. The datum $\theta_0$ is any
+deterministic smooth real periodic function. We assume that the finite family
+$g_k\in C^\infty(\T^2\times\R;\R)$ is globally Lipschitz in its scalar
+argument, uniformly in $x$, that $g_k(\cdot,0)$ is bounded, and that
+\begin{equation}\label{eq:coefficients}
+ \sup_{x,r}|\partial_x^\beta\partial_r^j g_k(x,r)|<\infty
+ \qquad\text{whenever }|\beta|+j\geq1.
+\end{equation}
+Each derivative may have its own bound. In particular the noise can depend
+nonlinearly on the temperature and smoothly on space.
+
+Local pathwise theory for stochastic fractional SQG is available from
+R\"ockner, Zhu and Zhu \cite{RZZ}. Global results at subcritical dissipation
+are discussed in Agresti and Veraar \cite[Theorem 8.22]{AV}; their
+Remark 8.23 identifies the critical endpoint as a remaining question for the
+general coefficient class there. More recently, Chen and Zhang
+\cite[Section 6]{CZ} proved critical stochastic well-posedness on $\R^2$ with
+additive Brownian forcing. A direct replacement of that additive forcing by
+$g(x,\theta)$ would require an a priori spatial regularity bound for the
+composed coefficient, which the energy estimate does not provide.
+The finite smooth nonlinear class \eqref{eq:coefficients} gives a concrete
+critical problem beyond this additive setting. It is the class specified in
+Problem 478 of the AIM catalogue \cite{AIM478}.
+
+\begin{theorem}\label{thm:main}
+For every datum and finite coefficient family just described, equation
+\eqref{eq:sqg} has a pathwise unique global adapted solution on the prescribed
+stochastic basis. Almost surely, simultaneously for every finite $T$,
+\[
+ \theta\in C([0,T];H^3(\T^2)),
+\]
+and, for all $t\in[0,T]$, the integral identity
+\[
+ \theta(t)=\theta_0-
+ \int_0^t\big(R^\perp\theta(s)\cdot\nabla\theta(s)+\Lambda\theta(s)\big)\dd s
+ +\sum_{k=1}^K\int_0^t g_k(\cdot,\theta(s))\dd W^k_s
+\]
+holds in $H^1(\T^2)$. No smallness or condition on the spatial mean is imposed.
+\end{theorem}
+
+The theorem gives a negative answer to finite-time blowup with positive
+probability in the full smooth finite-noise class of \cite{AIM478}.
+In particular, no affine or additive restriction on $g_k$ is introduced.
+The conclusion concerns this stated class; the broader rough or
+infinite-dimensional coefficient classes in \cite{AV} are not asserted here.
+
+The deterministic increment estimates in \cite{CTV} suggest propagating a
+weighted pointwise supremum. For It\^o paths, their direct time-differentiation
+argument is unavailable. We instead integrate a finite power of the weighted
+increments over space and separation. The scalar convexity remainder retains
+a factor proportional to that power. It can therefore absorb the transport of
+the weight with a spatial exponent chosen independently of the power. Taking
+the power large, but finite, then gives a positive H\"older exponent by a
+fractional Sobolev estimate. The stochastic trace and bracket are controlled by
+the same integrated quantity.
+
+Before fixing an amplitude level, a fractional stochastic truncation argument
+shows that the amplitude is finite up to the possible maximal lifetime. This
+uses the martingale first-failure method of Hsu, Wang and Wang \cite{HWW},
+with the order-one dissipation and the periodic $H^{1/2}\to L^4$ inequality
+included explicitly. The positive H\"older bound then makes transport
+absorbable in an $H^3$ energy estimate. A tame chain rule controls the nonlinear
+noise using the amplitude, and logarithmic energy bounds exclude a finite
+maximal lifetime.
+
+Section~\ref{sec:local} gives the maximal local solution and the martingale
+bounds. Section~\ref{sec:amplitude} proves the amplitude estimate.
+Section~\ref{sec:regularity} establishes the integrated increment estimate
+and completes the continuation argument. We use
+$\T^2=(\R/(2\pi\mathbb Z))^2$ with ordinary Lebesgue measure and
+$\widehat v(m)=(2\pi)^{-2}\int_{\T^2}v(x)e^{-im\cdot x}\dd x$.
+The symbols of $\Lambda$ and $R_j$ are $|m|$ and $im_j/|m|$ for $m\ne0$,
+and zero for $m=0$.
+
+\section{Local solutions and stochastic estimates}\label{sec:local}
+
+We use real inhomogeneous Sobolev spaces on the torus. Their norms are
+\[
+ \norm{v}_{H^s}^2=(2\pi)^2\sum_{m\in\mathbb Z^2}
+ (1+|m|^2)^s|\widehat v(m)|^2.
+\]
+The norm in $C^\gamma$, $0<\gamma<1$, includes the supremum and the
+$\gamma$-H\"older seminorm. All constants may depend on the fixed coefficient
+family and the torus. Other dependencies are indicated locally. Constants in
+estimates at a local stopping time will be independent of its level unless
+explicitly stated otherwise.
+
+\subsection{The maximal local solution}
+
+The constant mode must remain in the solution space because the noise need not
+preserve the mean. The abstract local theorem of R\"ockner, Zhu and Zhu
+\cite[Theorem 3.2 and Definition 3.1]{RZZ} accommodates this directly.
+
+\begin{proposition}\label{prop:local}
+Under the hypotheses of Theorem~\ref{thm:main}, there is a pathwise unique
+maximal local solution $\theta$ on the prescribed stochastic basis, with lifetime
+$\tau_*>0$ almost surely. It satisfies
+\[
+ \theta\in C([0,\tau_*);H^3),\qquad
+ \theta\in L^2_{\mathrm{loc}}([0,\tau_*);H^{7/2})
+ \quad\hbox{almost surely}.
+\]
+There are increasing local norm stopping times $\tau_n\uparrow\tau_*$,
+with deterministic $H^3$ bounds at each fixed level. If $\tau_*<\infty$,
+then $\sup_{t<\tau_*}\norm{\theta(t)}_{H^3}=\infty$.
+\end{proposition}
+
+\begin{proof}
+Let $P_0$ denote orthogonal projection onto constants in $L^2(\T^2)$ and set
+\begin{equation}\label{eq:localrealization}
+ A=-\Delta+P_0,\qquad
+ f(v)=R^\perp v\cdot\nabla v-P_0v,\qquad
+ G(v)e_k=g_k(\cdot,v).
+\end{equation}
+The operator $A$ is positive self-adjoint on full $L^2$, has domain $H^2$
+and compact inverse, and $A^{1/2}=\Lambda+P_0$. Its spectral Sobolev norms
+are equivalent to the inhomogeneous norms, including the constant mode.
+Thus the source equation $\dd\theta+(f(\theta)+A^{1/2}\theta)\dd t
+=G(\theta)\dd W$ is precisely \eqref{eq:sqg}. In the notation of that
+theorem the regularity index is $s_0=3$ and the dissipation exponent is $1/2$.
+
+We verify the drift and noise hypotheses. The periodic product, commutator and
+Sobolev inequalities in \cite[Lemmas 5.1--5.3 and Section 5.2]{RZZ} give, for
+$s\in[3,4]$ and $u=R^\perp v$,
+\begin{align}
+ |\langle\Lambda^s(u\cdot\nabla v),\Lambda^sv\rangle|
+ &\leq C\norm{v}_{H^s}
+ \big(\norm{\nabla u}_4\norm{\Lambda^sv}_4
+       +\norm{\Lambda^su}_4\norm{\nabla v}_4\big)\notag\\
+ &\leq C\norm{v}_{H^{3/2}}\norm{v}_{H^s}\norm{v}_{H^{s+1/2}}\notag\\
+ &\leq\varepsilon\norm{v}_{H^{s+1/2}}^2
+   +C_\varepsilon\norm{v}_{H^3}^2\norm{v}_{H^s}^2.
+ \label{eq:localcoercive}
+\end{align}
+The first line uses transport cancellation and commutator exponents all equal
+to $4$; $H^{1/2}\hookrightarrow L^4$ applies to the differentiated,
+zero-mean factors. The mean of $u\cdot\nabla v$ is zero, so its exact
+$A$-spectral energy equals the homogeneous pairing, while the additional drift
+in \eqref{eq:localrealization} contributes $-\norm{P_0v}_2^2$.
+This proves the source coercivity condition in its explicitly stated equivalent
+form. For $s=2,3$, the same product estimate gives
+\[
+ \norm{f(v)}_{H^s}\leq C(1+\norm{v}_{H^3})\norm{v}_{H^{s+3/2}}.
+\]
+These bounds also give the required continuous drift maps and smooth-test
+pairings. For $q=v_1-v_2$, divergence-free transport cancels and leaves
+$\langle q,R^\perp q\cdot\nabla v_1\rangle$ and the bounded mean term.
+Consequently the local $L^2$ monotonicity condition follows from
+$\norm{\nabla v_1}_\infty\leq C\norm{v_1}_{H^3}$ and the Riesz $L^2$ bound.
+
+The coefficient assumptions imply
+\begin{equation}\label{eq:localcomposition}
+ \sum_k\norm{g_k(\cdot,v)}_{H^s}^2
+ \leq C(\norm{v}_{H^3})(1+\norm{v}_{H^s}^2),\qquad 3\leq s\leq4,
+\end{equation}
+with a locally bounded coefficient, as well as the global $L^2$ Lipschitz
+bound for $G$. Here is a verification of \eqref{eq:localcomposition} allowing
+full spatial and scalar dependence. Write $s=3+\sigma$, $0\leq\sigma\leq1$.
+Every third spatial derivative of $g(x,v(x))$ has the form
+$g_r(x,v)D^3v+F$, where $F$ is a sum of bounded-coefficient products of
+$DvD^2v$, $(Dv)^3$, $D^2v$, $(Dv)^2$, $Dv$ and a bounded function.
+On an $H^3$ ball, $Dv\in L^\infty$, $D^2v\in L^4$ and $D^3v\in L^2$.
+Differentiating $F$ once, including the product $(D^2v)^2$, therefore shows
+$\norm{F}_{H^1}\leq C(\norm{v}_{H^3})$.
+Also $a(x)=g_r(x,v(x))$ has $H^3$ norm bounded on that ball by the integer
+chain rule. Fourier convolution gives, uniformly for $0\leq\sigma\leq1$,
+\[
+ \norm{az}_{H^\sigma}\leq
+ C\Big(\sum_m(1+|m|)^\sigma|\widehat a(m)|\Big)\norm{z}_{H^\sigma}
+ \leq C\norm{a}_{H^3}\norm{z}_{H^\sigma}.
+\]
+The last sum is controlled by Cauchy--Schwarz since
+$\sum_m(1+|m|)^{-6+2\sigma}<\infty$ uniformly in this interval.
+This proves \eqref{eq:localcomposition}; lower derivatives and the $L^2$ term
+follow from the same chain rule and linear growth. Finiteness of the family
+removes any summability issue. The $L^2$ Lipschitz bound follows directly from
+scalar Lipschitz continuity.
+
+All hypotheses of the cited abstract theorem now hold on the original basis.
+The datum is deterministic and has finite $H^3$ norm. The theorem and its
+maximal-solution definition yield the asserted lifetime and pathwise uniqueness.
+Intersecting its local exhaustion with the first $H^3$ level-$n$ hit, if
+necessary, gives the indicated norm stops without changing the lifetime.
+\end{proof}
+
+The regularity in Proposition~\ref{prop:local} justifies the calculations below
+at each fixed local stop. In particular $H^3(\T^2)\hookrightarrow C^{1,\beta}$
+for every $0<\beta<1$, for both $\theta$ and $u$. This follows directly from
+Cauchy--Schwarz in the Fourier sum with weight
+$(1+|m|^2)^{-3}|m|^{2+2\beta}$. No higher local smoothness is required.
+
+\subsection{Martingale bounds}
+
+We use the following two forms of the continuous martingale estimate.
+
+\begin{lemma}\label{lem:martingale}
+If $M$ is a continuous local martingale, $a,b>0$ and $S<\infty$, then
+\begin{equation}\label{eq:oscillation}
+ \PP\left\{\sup_{0\leq s\leq t\leq S}(M_t-M_s)>a,
+                  [M]_S\leq b\right\}
+ \leq C\exp(-ca^2/b)
+\end{equation}
+for universal positive constants. Suppose nonnegative continuous semimartingales
+$X_n$ have a common deterministic initial value and, before prescribed stops,
+\begin{equation}\label{eq:genericlog}
+ \dd X_n\leq C(1+X_n)\dd t+\dd M_n,\qquad
+ \dd[M_n]_t\leq C(1+X_n)^2\dd t,
+\end{equation}
+with $C$ independent of $n$. On every fixed horizon, the suprema of the stopped
+$\log(1+X_n)$ have a common tail tending to zero, and all finite moments of
+the stopped $\sup X_n$ are bounded uniformly in $n$.
+\end{lemma}
+
+\begin{proof}
+Estimate \eqref{eq:oscillation} is the continuous local martingale oscillation
+bound of Hsu, Wang and Wang \cite[Lemma 3.1, arXiv version 3]{HWW}; only unspecified universal
+constants are needed here. Applying It\^o's formula to \eqref{eq:genericlog}
+gives, on $[0,S]$,
+\[
+ \log(1+X_n(t))\leq\log(1+X_n(0))+CS+L_n(t),\qquad [L_n]_S\leq CS.
+\]
+The second derivative term has nonpositive sign. Formula
+\eqref{eq:oscillation}, with the initial time included, gives a Gaussian
+upper tail for $\sup L_n$. Its exponential moments of every finite order
+are finite, proving both assertions. A zero bracket gives the same statements
+directly. Auxiliary martingale stops can first be inserted and then removed.
+\end{proof}
+
+We apply finite-dimensional or scalar It\^o calculus before taking spatial
+limits; see \cite[Theorem 2.4]{BVNVW}. The finite family and the local $H^3$
+bounds ensure the required integrability. Stochastic integrals commute with
+the spatial integrals below by approximation with simple functions and the
+stopped $L^2$ isometry. For an indicator before a stopping time one can use
+the predictable version $1_{t\leq\tau_n}$, which gives the same Brownian
+integral as $1_{t<\tau_n}$.
+
+\section{An amplitude bound before the maximal lifetime}\label{sec:amplitude}
+
+The coefficient assumptions give
+\begin{equation}\label{eq:growth}
+ \sum_k|g_k(x,r)|^2\leq C(1+r^2).
+\end{equation}
+We first prove an amplitude estimate using only this growth bound and the
+divergence-free property of the drift. In particular, its constants do not
+involve an assumed amplitude bound.
+
+\begin{proposition}\label{prop:amplitude}
+For $0<\varepsilon<S<\infty$ and every finite $q\geq1$,
+\begin{equation}\label{eq:amplitudemoments}
+ \sup_n\EE\left[\sup_{\varepsilon\leq t\leq S,\ t<\tau_n}
+             \norm{\theta(t)}_\infty^q\right]<\infty,
+\end{equation}
+where an empty supremum is zero. Almost surely, for every finite $S$,
+\begin{equation}\label{eq:amplitudeaslifetime}
+ \sup_{0\leq t<S\wedge\tau_*}\norm{\theta(t)}_\infty<\infty.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The $L^2$ It\^o identity, transport cancellation and \eqref{eq:growth} imply
+\begin{equation}\label{eq:L2moments}
+ \sup_n\EE\sup_{t\leq S\wedge\tau_n}
+       (1+\norm{\theta(t)}_2^2)^q<\infty
+ \quad(S<\infty, q<\infty).
+\end{equation}
+Indeed the drift of $X=\norm{\theta}_2^2$ is at most $C(1+X)$ after dropping
+$2\norm{\Lambda^{1/2}\theta}_2^2$, and the energy martingale has bracket
+at most $C(1+X)^2\dd t$. Lemma~\ref{lem:martingale} applies.
+
+Fix $n$. Set $\widehat\theta_n(t)=\theta(t)$ for $t<\tau_n$ and
+$\widehat\theta_n(t)=0$ afterwards. For $a\geq0$ the energy of
+$z=(\widehat\theta_n-a)_+$ has a downward jump at the killing time.
+Before that time its truncation inequality is
+\begin{equation}\label{eq:truncation}
+ \dd\norm{z}_2^2+2\norm{\Lambda^{1/2}z}_2^2\dd t
+ \leq C\int_{\theta>a}(1+\theta^2)\dd x\dd t
+       +2\sum_j\left(\int z g_j(x,\theta)\dd x\right)\dd W^j.
+\end{equation}
+Every integrand is understood to vanish after killing. The transport term is
+$\int u\cdot\nabla(z^2)/2=0$. For the fractional term, integrate
+\[
+ (r-s)\big((r-a)_+-(s-a)_+\big)
+       \geq\big|(r-a)_+-(s-a)_+\big|^2
+\]
+against the symmetric positive kernel of $\Lambda$.
+
+To justify the nonsmooth truncation, take smooth convex functions $\phi_\eta$
+vanishing on $(-\infty,a]$, with $0\leq\phi_\eta''\leq2$ and
+$\phi_\eta'\to2(r-a)_+$ uniformly on bounded scalar intervals. Pointwise
+It\^o's formula, followed by spatial integration, applies at a fixed $H^3$
+stop. The fractional bilinear forms converge by the local Lipschitz bound,
+the trace terms are dominated by $C(1+\theta^2)$, and the stochastic terms
+converge by the stopped $L^2$ isometry. This proves \eqref{eq:truncation}.
+Its integrated version holds at all time pairs for a continuous martingale
+version. Killing only subtracts the left truncation energy. After killing,
+$z=0$, so its dissipation also vanishes on the rest of a deterministic interval.
+
+We carry out the fractional version of the probability iteration in
+\cite[Sections 2--3]{HWW}. Fix $T>0$, $a\geq1$, and let
+\[
+ I_k=[(1-2^{-k})T,2T],\quad a_k=a(1-2^{-k}),\quad
+ z_k=(\widehat\theta_n-a_k)_+,\quad
+ U_k=\left(\int_{I_k}\norm{z_k(t)}_2^4\dd t\right)^{1/2}.
+\]
+For $k\geq1$, on $\{z_k>0\}$ one has
+$z_{k-1}\geq a2^{-k}$ and $1+|\theta|\leq C2^kz_{k-1}$.
+Let $X_{k-1}^*$ be the supremum of increments over time pairs in $I_{k-1}$
+of the continuous martingale
+\[
+ X(t)=\sum_j\int_0^t\left(\int z_k g_j(x,\theta)\dd x\right)\dd W^j.
+\]
+Averaging the initial $L^2$ energy in
+$I_{k-1}\setminus I_k$, whose length is $2^{-k}T$, and then integrating
+\eqref{eq:truncation} gives
+\begin{equation}\label{eq:iterationenergy}
+ \sup_{I_k}\norm{z_k}_2^2+
+ \int_{I_k}\norm{\Lambda^{1/2}z_k}_2^2\dd t
+ \leq C_T^k(U_{k-1}+X_{k-1}^*).
+\end{equation}
+For this averaging, $\int_{I_{k-1}}\norm{z_{k-1}}_2^2\dd t
+\leq(2T)^{1/2}U_{k-1}$. The trace drift is bounded by $C^k$ times that
+integral, and every martingale difference is bounded by $X_{k-1}^*$.
+Thus the selected initial time is chosen pathwise; it need not be a stopping
+time.
+
+The inhomogeneous periodic Sobolev inequality is
+\begin{equation}\label{eq:fractionalSobolev}
+ \norm{z}_4^2\leq C\big(\norm{\Lambda^{1/2}z}_2^2+\norm{z}_2^2\big).
+\end{equation}
+It follows from the homogeneous $H^{1/2}$ inequality after subtracting the
+mean. The extra $L^2$ term is bounded in time by $(2T)^{1/2}U_{k-1}$.
+Chebyshev's inequality gives
+$|\{z_k(t)>0\}|\leq(2^k/a)^2\norm{z_{k-1}(t)}_2^2$.
+Spatial H\"older, followed by time H\"older, therefore yields
+\[
+ U_k\leq(2^k/a)^{2/5}
+       \norm{z_k}_{L^5(I_k;L^{5/2})}^2 U_{k-1}^{1/5}.
+\]
+The interpolation
+$\norm{z}_{L^5_tL^{5/2}_x}
+\leq\norm{z}_{L^\infty_tL^2_x}^{3/5}
+     \norm{z}_{L^2_tL^4_x}^{2/5}$,
+together with \eqref{eq:iterationenergy}--\eqref{eq:fractionalSobolev}, proves
+\begin{equation}\label{eq:recurrence}
+ U_k\leq C_T^k a^{-2\delta}
+             (U_{k-1}+X_{k-1}^*)U_{k-1}^\delta,
+ \qquad\delta=\frac15.
+\end{equation}
+This value uses the actual order-one fractional dissipation in dimension two.
+
+By \eqref{eq:growth} and Cauchy--Schwarz in space, the bracket of $X$ over
+$I_{k-1}$ is bounded by $C^k U_{k-1}^2$. Start this martingale at the
+deterministic left endpoint of that interval. Lemma~\ref{lem:martingale} gives
+\begin{equation}\label{eq:iterationprob}
+ \PP\{X_{k-1}^*>\ell b,\ U_{k-1}\leq b\}
+ \leq C\exp(-\ell^2/C^k),\qquad b,\ell>0.
+\end{equation}
+Only the implication from $U_{k-1}\leq b$ to the bracket bound is used.
+
+Here is the threshold choice for \eqref{eq:recurrence}. Enlarge $B\geq2$
+so the bracket constants are at most $B^k$, and set
+\[
+ b_k=a^2\lambda^k/\varrho^2,\qquad
+ \ell_k=(2B)^{k/2}\varrho^\delta.
+\]
+Choose $\lambda\in(0,1)$ so that
+$C_T(2B)^{1/2}\lambda^\delta\leq1/4$, and then choose
+$\varrho\geq\varrho_0(T)$ sufficiently large. If
+$U_{k-1}\leq b_{k-1}$ and $X_{k-1}^*\leq\ell_kb_{k-1}$, division of
+\eqref{eq:recurrence} by $b_k$ bounds the result by
+\[
+ C_T^k(1+\ell_k)\lambda^{\delta(k-1)-1}\varrho^{-2\delta}
+ \leq C\lambda^{-1-\delta}\varrho^{-\delta}\leq1.
+\]
+On $U_0\leq a^2/\varrho^2$, the first failed level must therefore lie in
+an event in \eqref{eq:iterationprob}. Their probabilities sum to at most
+$C\sum_{k\geq1}\exp(-c2^k\varrho^{2\delta})$. If none fails,
+$U_k\to0$, which forces $(\widehat\theta_n-a)_+=0$ almost everywhere on
+$[T,2T]\times\T^2$. Hence
+\begin{equation}\label{eq:amplitudetail}
+ \PP\left\{\norm{\widehat\theta_n^+}_{L^\infty([T,2T]\times\T^2)}>a,
+                 \ \varrho U_0^{1/2}\leq a\right\}
+ \leq C\exp(-c\varrho^\delta).
+\end{equation}
+All these constants are independent of $n$.
+
+Take $\varrho=\sqrt a$ for sufficiently large $a$.
+By \eqref{eq:L2moments}, $U_0$ has moments of every finite order, uniformly
+in $n$. The probability in the complementary event is
+$\PP\{U_0>a\}$, so \eqref{eq:amplitudetail} yields amplitude moments of
+every finite order. Apply the same calculation to $-\theta$.
+Continuity before killing turns the essential bounds into pointwise time and
+space suprema. A finite covering by positive-time intervals proves
+\eqref{eq:amplitudemoments}.
+
+Monotone exhaustion of $\tau_n$ gives finite amplitude on
+$[\varepsilon,S\wedge\tau_*)$ almost surely, simultaneously for rational
+$\varepsilon>0$ and integer $S$. Since $\tau_*>0$, each sample admits an
+integer $m$ with $1/m<\tau_*$. Local $H^3$ continuity bounds the solution
+on $[0,1/m]$; the positive-time estimate bounds the remaining interval.
+This proves \eqref{eq:amplitudeaslifetime}.
+\end{proof}
+
+\section{Spatial regularity and global continuation}\label{sec:regularity}
+
+We now fix an integer amplitude level $M\geq1$. All estimates in this section
+are initially stopped both at $\tau_n$ and at
+$\sigma_M=\inf\{t<\tau_*:\norm{\theta(t)}_\infty\geq M\}$,
+with the infimum of the empty set equal to infinity.
+The exponents below are chosen deterministically for that $M$.
+
+\subsection{Dissipation of finite powers of increments}
+
+Write $u=R^\perp\theta$, $w(x,h)=\delta_h\theta(x)=\theta(x+h)-\theta(x)$,
+using periodic extension in $h\in\R^2$. Then
+\begin{equation}\label{eq:increment}
+ \dd w+(u(x)\cdot\nabla_x+\delta_hu(x)\cdot\nabla_h+\Lambda_x)w\dd t
+       =\sum_k\delta_hg_k\dd W^k,
+\end{equation}
+where $\delta_hg_k=g_k(x+h,\theta(x+h))-g_k(x,\theta(x))$.
+Both transport fields are divergence free in their integration variables.
+The bounded scalar and spatial derivatives imply
+\begin{equation}\label{eq:noiseincrement}
+ \left(\sum_k|\delta_hg_k|^2\right)^{1/2}\leq L_0|w|+B_0|h|.
+\end{equation}
+The constants are independent of derivatives of $\theta$.
+
+The following elementary scalar inequality preserves the dependence on $p$
+needed to choose a spatial exponent before selecting a large finite $p$.
+
+\begin{lemma}\label{lem:convexity}
+For real $a,b$ and $p\geq2$,
+\begin{equation}\label{eq:convexity}
+ |b|^p-|a|^p-p|a|^{p-2}a(b-a)
+       \geq\frac p2|a|^{p-2}(a-b)^2.
+\end{equation}
+Consequently, with
+\[
+ D[w](x)=\frac1{2\pi}\int_{\R^2}
+           \frac{|w(x)-w(x+y)|^2}{|y|^3}\dd y,
+\]
+one has
+\begin{equation}\label{eq:pdissipation}
+ p|w|^{p-2}w\Lambda w-\Lambda(|w|^p)
+       \geq\frac p2|w|^{p-2}D[w].
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $a\ne0$ divide by $|a|^p$ and put $t=b/a$. If $t\geq0$, then
+\[
+ t^p-1-p(t-1)-(p-1)(t-1)^2
+ =t\big(t^{p-1}-(p-1)t+p-2\big)\geq0
+\]
+by convexity, and $p-1\geq p/2$. If $t=-s\leq0$, convexity of
+$q\mapsto q^{p/2}$ gives $s^p\geq(p/2)s^2+1-p/2$ and hence
+\[
+ s^p+ps+p-1\geq(p/2)(s+1)^2.
+\]
+The case $a=0$ follows directly; at $p=2$ interpret $|a|^0=1$,
+and the inequality is an equality.
+Integrate \eqref{eq:convexity} against the positive kernel of $\Lambda$ to
+obtain \eqref{eq:pdissipation}.
+\end{proof}
+
+We recall the spatial estimates of Constantin, Tarfulea and Vicol
+\cite[(4.15)--(4.25), August 2, 2013 author version]{CTV}:
+\begin{equation}\label{eq:kernelbounds}
+ D[w]\geq c_0\frac{|w|^3}{M|h|},\qquad
+ |\delta_hu|\leq C_0\left(\sqrt{rD[w]}+\frac{M|h|}{r}\right),
+ \qquad r\geq4|h|.
+\end{equation}
+Their whole-$\R^2$ periodic-kernel proof also makes the role of the mean and
+of large splitting radii explicit. For a radial cutoff $\eta$ equal to one
+on $[0,1]$ and zero beyond $2$, put
+$F_r(y)=(1-\eta(|y|/r))|y|^{-3}$. Expanding the square in $D$ and shifting
+the finite difference in the cross term gives
+\[
+ D[w]\geq c|w|^2/r-C|w|M|h|/r^2,
+ \qquad \norm{\delta_{-h}F_r}_1\leq C|h|/r^2.
+\]
+Selecting $r=c_{\rm r}M|h|/|w|$, with a sufficiently large universal
+$c_{\rm r}$, proves the lower bound. For the velocity split the Riesz kernel
+$y^\perp/(2\pi|y|^3)$ at radius $r$. The radial inner kernel has zero
+integral. Subtracting $w(x)$ and applying Cauchy--Schwarz gives
+$C\sqrt{rD[w]}$. In the outer part, shift $\delta_h$ to the kernel; its
+derivative has $L^1$ norm at most $C/r$, giving $CM|h|/r$.
+The far scalar kernel is integrable, and the shifted Riesz kernel is
+integrable. With a large outer cutoff of radius $L$, the shift error is
+$O(M|h|/L)$ and disappears as $L\to\infty$. These bounds hold for every
+$r\geq4|h|$, including radii beyond a fundamental period. Constants cancel
+in the increments, so no zero-mean condition is involved. Vanishing $w$ is
+treated separately before division.
+
+Take now $r=c_{\rm r}M|h|/|w|$ with a fixed $c_{\rm r}\geq8$. Since
+$|w|\leq2M$, this radius is admissible. Young's inequality gives
+\[
+ \alpha\frac{|\delta_hu|}{|h|}|w|^2
+ \leq\frac18D[w]+C\left(\alpha^2c_{\rm r}M+\frac\alpha{c_{\rm r}}\right)
+                       \frac{|w|^3}{|h|}.
+\]
+The lower bound in \eqref{eq:kernelbounds} shows that a sufficiently small
+universal $c_*>0$ allows
+\begin{equation}\label{eq:absorption}
+ 0<\alpha<\min\{1/4,c_*/M\},\qquad
+ \alpha\frac{|\delta_hu|}{|h|}|w|^2\leq\frac14D[w].
+\end{equation}
+The choice of $\alpha$ is independent of $p$. Multiplication by
+$p|w|^{p-2}$ lets \eqref{eq:pdissipation} absorb the derivative of the
+singular increment weight for any finite $p$.
+
+\subsection{An integrated increment estimate}
+
+Choose a nonnegative $\chi\in C_c^\infty(\R^2)$ equal to one near zero,
+with support in a small ball. For a fixed even integer $p>8/\alpha$ define
+\begin{equation}\label{eq:Y}
+ Y(t)=\int_{\T^2}\int_{\R^2}
+       \chi(h)\frac{|\delta_h\theta(x,t)|^p}{|h|^{\alpha p}}\dd h\dd x.
+\end{equation}
+The measure in $h$ is ordinary Lebesgue measure. Thus $Y$ is a truncated
+fractional Sobolev seminorm of order $s=\alpha-2/p$, and the H\"older exponent
+it controls in dimension two is
+\begin{equation}\label{eq:gamma}
+ \gamma=\alpha-4/p>0.
+\end{equation}
+
+\begin{proposition}\label{prop:holder}
+For each fixed $M$ and the deterministic exponents in
+\eqref{eq:absorption}--\eqref{eq:gamma}, the pre-lifetime $C^\gamma$ norm
+is almost surely bounded on every finite horizon before the amplitude-$M$ stop.
+The bounds obtained by local stopping are uniform in $n$.
+\end{proposition}
+
+\begin{proof}
+Apply It\^o's formula to $|w|^p$ in \eqref{eq:increment} and integrate against
+$\chi(h)|h|^{-\alpha p}$. Spatial transport integrates to zero, as does
+$\int\Lambda_x(|w|^p)\dd x$. The weight's transport derivative contributes
+\[
+ -\alpha p\int\chi(h)|w|^p|h|^{-\alpha p-2}\delta_hu\cdot h\dd h\dd x,
+\]
+which is absorbed using \eqref{eq:pdissipation} and \eqref{eq:absorption}.
+The derivative of $\chi$ is supported away from zero and has bounded
+contribution depending on $M,p$, since $|w|\leq2M$ and
+$\norm{\delta_hu}_1\leq C\norm{\theta}_2\leq CM$.
+
+Let $J=\int\chi(h)|h|^{p(1-\alpha)}\dd h\dd x<\infty$.
+By \eqref{eq:noiseincrement} and H\"older, the It\^o trace correction is
+at most
+\[
+ C_p\left(Y+Y^{(p-2)/p}J^{2/p}\right)\leq C_p(1+Y),
+\]
+and the Euclidean norm of the integrated martingale coefficient is at most
+\[
+ pL_0Y+pB_0Y^{(p-1)/p}J^{1/p}\leq C_p(1+Y).
+\]
+We have therefore proved
+\begin{equation}\label{eq:Yenergy}
+ \dd Y\leq C_{M,p}(1+Y)\dd t+\dd\mathcal N,
+ \qquad\dd[\mathcal N]_t\leq C_p(1+Y)^2\dd t.
+\end{equation}
+
+For completeness, all integrations are first carried out with $|h|>\epsilon$
+at a fixed local $H^3$ stop. Then $w=O(|h|)$ and $\delta_hu=O(|h|)$,
+so the inner boundary flux is $O(\epsilon^{2+p(1-\alpha)})$.
+Choose $1/2<\beta<1$. Local $C^{1,\beta}$ regularity gives
+\[
+ |\delta_yw|\leq C_n|h|\min\{|y|^\beta,1\},\qquad D[w]\leq C_n|h|^2.
+\]
+Here the near-$y$ integral is bounded by
+$\int_0^1 r^{2\beta-2}\dd r<\infty$. After spatial cancellation, the
+remaining drift and dissipation have integrable bounds of order
+$|h|^{p(1-\alpha)}$; the noise terms have the same integrable powers.
+Dominated convergence and the stopped stochastic isometry remove $\epsilon$
+before any uniform limit in $n$ is taken. Thus \eqref{eq:Yenergy} holds for
+$Y$ itself at the local and amplitude stops.
+
+The datum is smooth, so $Y(0)<\infty$. Lemma~\ref{lem:martingale} supplies
+a tail tending to zero for its stopped supremum uniformly in $n$. The
+suprema on the increasing stopped intervals are increasing, so their limit
+is finite almost surely.
+
+We spell out the embedding to keep track of the loss in \eqref{eq:gamma}.
+For a sufficiently small torus ball $B_r$, all pairwise differences lie where
+$\chi=1$. Jensen's inequality and \eqref{eq:Y} give
+\[
+ \fint_{B_r}|\theta-\theta_{B_r}|^p
+ \leq |B_r|^{-2}\int_{B_r}\int_{B_r}|\theta(x)-\theta(y)|^p\dd x\dd y
+ \leq C r^{\alpha p-4}Y=C r^{p\gamma}Y.
+\]
+Differences of averages on concentric radii $r,r/2$ are bounded by
+$Cr^\gamma Y^{1/p}$. Sum the geometric series and use local continuity to
+obtain $|\theta(x)-\theta_{B_r(x)}|\leq Cr^\gamma Y^{1/p}$.
+For $|x-y|=r$, compare these averages in a common ball of radius $3r$.
+For larger distances use the amplitude bound. Consequently
+\begin{equation}\label{eq:holderembedding}
+ \norm{\theta}_{C^\gamma}\leq C_{\alpha,p,\chi}(M+Y^{1/p}),
+\end{equation}
+which proves the proposition.
+\end{proof}
+
+\subsection{The high-regularity estimate}
+
+We need a continuation bound that uses only a positive H\"older exponent and
+the amplitude. Fix a periodic inhomogeneous Littlewood--Paley decomposition
+$(\Delta_j)_{j\geq-1}$ and put
+$E_s=\sum_{j\geq-1}2^{2sj}\norm{\Delta_j\theta}_2^2\asymp\norm{\theta}_{H^s}^2$.
+The low block includes the constant mode.
+
+\begin{lemma}\label{lem:transport}
+For smooth real periodic $\theta$, $u=R^\perp\theta$, $0<\gamma<1$
+and $s\geq3$,
+\begin{equation}\label{eq:dyadictransport}
+ \left|\sum_j2^{2sj}
+  \langle\Delta_j(u\cdot\nabla\theta),\Delta_j\theta\rangle\right|
+ \leq C_{s,\gamma}\norm{\theta}_{C^\gamma}
+                    \norm{\theta}_{H^{s+(1-\gamma)/2}}^2.
+\end{equation}
+For $\norm{\theta}_\infty\leq M$, one also has
+\begin{equation}\label{eq:tameH3}
+ \sum_k\norm{g_k(\cdot,\theta)}_{H^3}^2
+       \leq C_M(1+\norm{\theta}_{H^3}^2).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $\mathcal K=\norm{\theta}_{C^\gamma}$, and write $\theta_j=\Delta_j\theta$
+and $S_{j-1}=\sum_{\ell\leq j-2}\Delta_\ell$. The periodic block kernels
+are periodizations of Schwartz kernels; their $L^1$ norms are bounded and
+their first moments are $O(2^{-j})$. Their zero average, also for the smooth
+annular multiplier $R\Delta_j$, gives
+\[
+ \norm{\theta_j}_\infty+\norm{u_j}_\infty
+       \leq C\mathcal K2^{-\gamma j},\qquad
+ \norm{\nabla S_{j-1}u}_\infty+
+ \norm{\nabla S_{j-1}\theta}_\infty
+       \leq C_\gamma\mathcal K2^{(1-\gamma)j}.
+\]
+The finitely many low modes satisfy the corresponding bound directly.
+
+Decompose the product into low--high, high--low and neighboring high--high
+terms. In low--high interactions $|k-j|\leq C$. Commuting $\Delta_j$
+past $S_{k-1}u\cdot\nabla$ costs
+\[
+ C2^{-j}\norm{\nabla S_{k-1}u}_\infty\,2^k\norm{\theta_k}_2.
+\]
+The remaining principal transport is $S_{j-1}u\cdot\nabla\theta_j$,
+whose energy pairing is zero. Its difference from $S_{k-1}u$ costs
+$C\mathcal K2^{-\gamma j}$ times the derivative of the neighboring block.
+High--low terms cost
+$\norm{u_k}_2\norm{\nabla S_{k-1}\theta}_\infty$ for the same neighboring
+indices. These terms are bounded by
+$C\mathcal K\norm{\theta}_{H^{s+(1-\gamma)/2}}^2$.
+
+For high--high terms use $u\cdot\nabla\theta=\nabla\cdot(u\theta)$.
+The block norm is bounded by
+\[
+ C\mathcal K2^j\sum_{k\geq j-C}2^{-\gamma k}\norm{\theta_k}_2.
+\]
+Set $\sigma=s+(1-\gamma)/2$ and $b_j=2^{\sigma j}\norm{\theta_j}_2$.
+The weighted pairings sum to at most
+\[
+ C\mathcal K\sum_{j\geq-1}\sum_{k\geq j-C}
+       2^{-(s+(1+\gamma)/2)(k-j)}b_jb_k
+       \leq C\mathcal K\sum_jb_j^2.
+\]
+The convolution is summable. The low block costs at most $C\mathcal K E_s$.
+This proves \eqref{eq:dyadictransport}; the proof also bounds the sum of
+absolute block pairings after the indicated cancellations.
+
+For \eqref{eq:tameH3}, the third-derivative chain rule contains only the
+nonlinear highest-order products $D\theta D^2\theta$ and $(D\theta)^3$.
+Let $\mathfrak a=\norm{D\theta}_6$, $\mathfrak b=\norm{D^2\theta}_3$
+and $\mathfrak c=\norm{D^3\theta}_2$. Periodic integration by parts gives
+\[
+ \mathfrak a^6\leq CM\mathfrak a^4\mathfrak b,
+ \qquad \mathfrak b^3\leq C\mathfrak a\mathfrak b\mathfrak c.
+\]
+For the first inequality integrate
+$\operatorname{div}(|D\theta|^4D\theta)$ against $\theta$.
+For the second integrate one derivative in
+$\sum_{i,j}\int\theta_{ij}^2|D^2\theta|$, and use
+$1/6+1/3+1/2=1$; a smooth regularization of the Hessian length justifies
+its value at zero. Unless one of the derivative norms vanishes, in which
+case the estimates are immediate, these inequalities imply
+\[
+ \mathfrak a\leq CM^{2/3}\mathfrak c^{1/3},\qquad
+ \mathfrak b\leq CM^{1/3}\mathfrak c^{2/3}.
+\]
+Thus $\norm{D\theta D^2\theta}_2\leq\mathfrak a\mathfrak b\leq C_M\mathfrak c$
+and $\norm{(D\theta)^3}_2=\mathfrak a^3\leq C_M\mathfrak c$.
+All mixed spatial coefficient derivatives are bounded by assumption; lower
+products obey the same bounds and finite-volume H\"older. Finally
+$\norm{g_k(\cdot,\theta)}_2\leq C(1+M)$, proving \eqref{eq:tameH3}.
+\end{proof}
+
+Apply It\^o's formula to $E_3$, first summing only finitely many whole dyadic
+blocks. Each such block has finite Fourier support on the torus. At a local
+$H^3$ stop, the nonlinear pairings converge absolutely in time by the preceding
+proof and $\theta\in L^2_tH^{7/2}$; the dissipation converges monotonically.
+The trace and martingale terms converge by \eqref{eq:tameH3} and the stopped
+isometry. This proves the energy formula for $E_3$ without assuming an
+$H^3$-valued drift.
+
+The dissipation bounds the high-frequency $H^{7/2}$ norm. The finitely many
+low modes cost $CE_3$, including the nondissipated constant mode.
+Interpolation and Young's inequality give
+\[
+ C\mathcal K\norm{\theta}_{H^{3+(1-\gamma)/2}}^2
+ \leq\varepsilon\norm{\theta}_{H^{7/2}}^2
+       +C_{\gamma,\varepsilon}\mathcal K^{1/\gamma}\norm{\theta}_{H^3}^2.
+\]
+Consequently, before the amplitude-$M$ and $C^\gamma$ level-$R$ stops,
+\begin{equation}\label{eq:H3energy}
+ \dd E_3\leq C_{M,R,\gamma}(1+E_3)\dd t+\dd\mathcal M,
+ \qquad \dd[\mathcal M]_t\leq C_M(1+E_3)^2\dd t.
+\end{equation}
+For the bracket use Cauchy--Schwarz in the dyadic Hilbert norm and
+\eqref{eq:tameH3}. Lemma~\ref{lem:martingale} now bounds the stopped
+$\sup E_3$ by tails independent of the local level $n$.
+
+\subsection{Exclusion of a finite lifetime}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For each integer $M\geq1$ fix deterministic $\alpha_M$ satisfying
+\eqref{eq:absorption}, and then an even integer $p_M>8/\alpha_M$.
+Put $\gamma_M=\alpha_M-4/p_M>0$. Proposition~\ref{prop:holder} yields a
+finite pre-lifetime $C^{\gamma_M}$ supremum at the amplitude-$M$ stop on
+every finite horizon. The uniform local-stop tail and monotone exhaustion
+justify this assertion. Take a common probability-one event over integers
+$M$, finite integer horizons, and the later H\"older levels $R$ in
+\eqref{eq:H3energy}.
+
+On a sample with finite $\tau_*$, Proposition~\ref{prop:amplitude} supplies
+a finite amplitude supremum up to that lifetime. Some integer $M$ strictly
+exceeds it. For this deterministic family member, the H\"older supremum is
+finite, so some integer $R$ strictly exceeds it. Neither of these two stops
+is then reached before $\tau_*$. The uniform $H^3$ tail in
+\eqref{eq:H3energy}, exhausted monotonically in $n$, gives a finite
+pre-lifetime $H^3$ supremum. This contradicts Proposition~\ref{prop:local}.
+Hence $\PP\{\tau_*<\infty\}=0$.
+
+Every exponent was fixed before its It\^o estimate. The sample-dependent
+choice of one integer $M$, and then $R$, occurs only after the countable
+intersection and introduces no anticipating stochastic integrand.
+
+On every finite interval the patched local solution is continuous in $H^3$
+and adapted to the original basis. Local pathwise uniqueness gives global
+pathwise uniqueness by increasing common norm stops. Its drift is continuous
+in $H^2$, since $H^2(\T^2)$ is an algebra. Its noise is predictable and
+locally square integrable in $H^3$, so its stochastic integral has a continuous
+$H^3$ version \cite[Proposition 2.1]{BVNVW}. The local weak identity holds
+on a countable Fourier basis and rational times. Both sides are continuous
+in $H^2$, so Fourier completeness and time continuity give the integral
+identity at every time in $H^2$, hence in $H^1$. This proves all the assertions
+of the theorem.
+\end{proof}
+
+
+\begin{thebibliography}{9}
+\bibitem{AV}
+A. Agresti and M. Veraar,
+\emph{Nonlinear SPDEs and maximal regularity: an extended survey},
+NoDEA Nonlinear Differential Equations Appl. \textbf{32} (2025), article 123.
+\href{https://doi.org/10.1007/s00030-025-01090-2}{doi:10.1007/s00030-025-01090-2}.
+
+\bibitem{BVNVW}
+Z. Brze\'zniak, J. M. A. M. van Neerven, M. C. Veraar and L. Weis,
+\emph{It\^o's formula in UMD Banach spaces and regularity of solutions of the Zakai equation},
+J. Differential Equations \textbf{245} (2008), 30--58.
+\href{https://doi.org/10.1016/j.jde.2008.03.026}{doi:10.1016/j.jde.2008.03.026}.
+\href{https://arxiv.org/abs/0804.0302v1}{arXiv:0804.0302v1}.
+
+\bibitem{CZ}
+Z.-Q. Chen and X. Zhang,
+\emph{Harnack inequalities for nonlocal operators with supercritical drifts and their applications},
+preprint (2025), \href{https://arxiv.org/abs/2511.13012v1}{arXiv:2511.13012v1}.
+
+\bibitem{CTV}
+P. Constantin, A. Tarfulea and V. Vicol,
+\emph{Long time dynamics of forced critical SQG},
+Comm. Math. Phys. \textbf{335} (2015), 93--141.
+\href{https://doi.org/10.1007/s00220-014-2129-3}{doi:10.1007/s00220-014-2129-3}.
+The equation numbers cited here refer to the
+\href{https://cims.nyu.edu/~vicol/CTV2.pdf}{August 2, 2013 author preprint}.
+
+\bibitem{HWW}
+E. P. Hsu, Y. Wang and Z. Wang,
+\emph{Stochastic De Giorgi iteration and regularity of stochastic partial differential equations},
+Ann. Probab. \textbf{45} (2017), no. 5, 2855--2866.
+\href{https://doi.org/10.1214/16-AOP1126}{doi:10.1214/16-AOP1126}.
+\href{https://arxiv.org/abs/1312.3311v3}{arXiv:1312.3311v3}.
+
+\bibitem{RZZ}
+M. R\"ockner, R. Zhu and X. Zhu,
+\emph{Local existence and non-explosion of solutions for stochastic fractional partial differential equations driven by multiplicative noise},
+Stochastic Process. Appl. \textbf{124} (2014), 1974--2002.
+\href{https://doi.org/10.1016/j.spa.2014.01.010}{doi:10.1016/j.spa.2014.01.010}.
+The source version used for theorem numbering is
+\href{https://arxiv.org/abs/1307.4392v1}{arXiv:1307.4392v1}.
+
+\bibitem{AIM478}
+AIM problem catalogue,
+\emph{478. Global regularity for critical SQG with state-dependent noise},
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/478-critical-stochastic-sqg-global-regularity.md}{immutable problem statement, revision \texttt{a153f469ee0e}}.
+\end{thebibliography}
+
+\section*{AI use}
+OpenAI Codex was used in the literature search, development and checking of
+the mathematical argument, and preparation of this manuscript. Fresh-context
+AI reader and referee reviews were used for exposition and source checking.
+The author is responsible for the mathematical claims and citations.
+
+\end{document}

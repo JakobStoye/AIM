@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "problem_id": 478,
+  "title": "Global regularity for critical stochastic SQG with finite-dimensional nonlinear noise",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "status": "SOLUTION_CLAIMED_PENDING_INDEPENDENT_MATHEMATICAL_REVIEW",
+  "target": {
+    "repository": "MColbrook/AIM",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "path": "problems/478-critical-stochastic-sqg-global-regularity.md",
+    "sha256": "203ebfcc4882ea6b19d198ec03f2beed7624e544cbc7c82ef0af2872567a1aea"
+  },
+  "members": [
+    "README.md",
+    "TARGET_COMPARISON.md",
+    "paper/manuscript.tex",
+    "paper/manuscript.pdf",
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "payload_files": [
+    {
+      "path": "README.md",
+      "bytes": 3119,
+      "sha256": "f2e60dc09b1773dffb5b13c946a5725b335ee528c40de49bcfd579744c0d17ea"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2975,
+      "sha256": "1dec185972848f35620ba383bb5a75c33abba57af8d38ede8a00d15746eaecf0"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "bytes": 40725,
+      "sha256": "963ac62da339fc85aae4d7860950d77b5d227edf54045d0ca9e50f108319c997"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "bytes": 338894,
+      "sha256": "6795f6fcd91d348be85e8842dba6357121f9a7fe0b20b96cc86cd09ac50431b6"
+    }
+  ],
+  "checksum_convention": "SHA256SUMS covers the four payload files and this manifest. The checksums file does not hash itself.",
+  "paper_pages": 11,
+  "evidence_type": "Complete analytic proof claim; no numerical or formal proof claim",
+  "catalogue_status_modified": false
+}
