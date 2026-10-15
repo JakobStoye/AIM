@@ -1,0 +1,537 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\dd}{\,d\mu}
+\newcommand{\E}{\mathcal E}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\supp}{supp}
+\title{Point-source solutions for fractional porous medium diffusion on complete manifolds}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct solutions of the spectral fractional porous medium equation
+starting from a point mass on a complete noncompact Riemannian manifold.
+The assumptions are a lower Ricci curvature bound and a uniform
+Euclidean Faber--Krahn inequality. Every exponent $m>1$, fractional order
+$0<s<1$, prescribed source point and positive mass is allowed. The solution
+is strongly continuous in $L^1$ at positive times, locally bounded, and
+has the prescribed initial trace against every bounded continuous function.
+The construction combines the known smoothing estimates for integrable
+data with averages of the linear heat semigroup. These averages have small
+fractional Laplacian uniformly in their spatial cutoff, which controls mass
+at infinity while passing to a point-source limit.
+\end{abstract}
+
+\section{Introduction and main result}
+
+The porous medium equation with fractional diffusion describes slow
+nonlocal spreading of a concentration. A point-source solution starts with
+all the material concentrated at one location. On a manifold the geometry
+affects the diffusion, and the existence question can be asked without a
+radial coordinate or a spatial scaling symmetry.
+
+For the Euclidean fractional porous medium equation, finite nonnegative
+measure data are covered by Grillo, Muratori and Punzo
+\cite[Theorem~3.2]{GMP}. Berchio, Bonforte, Grillo and Muratori
+\cite{BBGM} developed a theory on complete noncompact manifolds with a
+Ricci lower bound and a uniform Faber--Krahn inequality. Their construction
+gives weak dual solutions for integrable functions and for a larger
+weighted class, together with smoothing estimates. Existence for a Dirac
+initial datum is listed among the questions in \cite[Section~7]{BBGM}
+and in Grillo's 2025 workshop report \cite{OWR}. Here we prove existence
+in the distributional class stated below.
+
+Throughout, $(M,g)$ is a smooth complete, connected, noncompact Riemannian
+manifold of dimension $N\ge2$, with Riemannian volume $\mu$. Assume that
+\begin{equation}\label{eq:geometry}
+ \Ric\ge-(N-1)k\quad\text{for some }k\ge0,
+ \qquad \lambda_1(D)\ge c\Vol(D)^{-2/N}
+\end{equation}
+for some $c>0$ and every relatively compact smooth domain $D\subset M$.
+Here $\lambda_1(D)$ is the first Dirichlet eigenvalue of $-\Delta_M$.
+Let $L$ be the nonnegative Friedrichs realization of $-\Delta_M$ on
+$L^2(M)$ and let $B=L^s$, defined by the spectral calculus, where $0<s<1$.
+We consider
+\begin{equation}\label{eq:pde}
+ \partial_tu+B(u^m)=0,\qquad m>1.
+\end{equation}
+The spaces $L^p(M)$ use $\mu$, and $C_b(M)$ denotes bounded continuous
+functions. The distributional equation means
+\begin{equation}\label{eq:weak}
+ \int_0^\infty\!\int_M u\,\partial_t\phi\dd\,dt
+ =\int_0^\infty\!\int_M u^m B\phi\dd\,dt,
+ \qquad \phi\in C_c^\infty((0,\infty)\times M),
+\end{equation}
+with an absolutely integrable right side.
+
+\begin{theorem}\label{thm:main}
+Assume \eqref{eq:geometry}. For every $m>1$, $0<s<1$, $o\in M$ and
+$A>0$, there is a nonnegative solution of \eqref{eq:weak} such that
+\begin{equation}\label{eq:regularity}
+ u\in C((0,\infty);L^1(M))\cap L^\infty_{\mathrm{loc}}((0,\infty)\times M),
+ \qquad u^m\in L^1_{\mathrm{loc}}((0,\infty)\times M),
+\end{equation}
+and, for every $T>0$,
+\begin{equation}\label{eq:mass}
+ \sup_{0<t<T}\norm{u(t)}_1=A>0.
+\end{equation}
+Its initial trace is $A\delta_o$ in the sense that
+\begin{equation}\label{eq:trace}
+ \lim_{t\downarrow0}\int_Mu(t)\psi\dd=A\psi(o)
+ \qquad\text{for every }\psi\in C_b(M).
+\end{equation}
+\end{theorem}
+
+The assertion concerns existence on each manifold satisfying
+\eqref{eq:geometry}. Uniqueness and a common large-time profile are separate
+questions. The proof uses the integrable-data semigroup and smoothing
+estimate of \cite{BBGM}. The additional step is to pass from concentrating
+initial functions to a curve in the global space $L^1(M)$.
+
+To do this, we first obtain local compactness at positive times from an
+energy estimate for $u^m$. Averages of the linear heat semigroup then give
+tightness over each finite time interval. At suitable positive times these
+two facts yield convergence in $L^1(M)$, and the contraction of the same
+nonlinear semigroup propagates that convergence to all later times. Finally,
+the smoothing estimate makes the nonlinear flux integrable down to time
+zero, which identifies the trace. The argument does not use a Green-potential
+uniqueness theorem.
+
+\section{Bounded-data solutions and their estimates}
+
+Write $P_r=e^{-rL}$ for the linear heat semigroup. Under
+\eqref{eq:geometry}, its symmetric kernel $p_r(x,y)$ satisfies
+\begin{equation}\label{eq:heatkernel}
+ 0\le p_r(x,y)\le C r^{-N/2}
+       \exp\!\left(-\frac{d(x,y)^2}{Cr}\right),\qquad r>0,
+\end{equation}
+by \cite[Assumption~2.1 and (2.3)]{BBGM}. Constants denoted by $C$ may
+change from line to line. The Ricci bound also implies stochastic
+completeness, so $P_r1=1$; see \cite[Theorem~15.4(a)]{Gri}. For example,
+the radial curvature condition there holds with
+$q(r)=\sqrt{k}+1+r$, and $\int^\infty dr/q(r)=\infty$.
+
+The Faber--Krahn assumption in \cite{BBGM} is stated for arbitrary
+relatively compact open sets. This follows from \eqref{eq:geometry} by
+the Rayleigh characterization. Indeed, enclose the support of a smooth
+compactly supported test function in finitely many smooth components
+$D_i$ inside the given open set $\Omega$. Applying
+\eqref{eq:geometry} on each component gives
+\[
+ \int_\Omega |\nabla\varphi|^2\dd
+ \ge \sum_i c\Vol(D_i)^{-2/N}\int_{D_i}|\varphi|^2\dd
+ \ge c\Vol(\Omega)^{-2/N}\int_\Omega|\varphi|^2\dd.
+\]
+Thus the source assumptions apply also with the smooth-domain convention
+used here. When $k=0$, a larger positive Ricci-bound constant meets the
+source's convention.
+
+We use the following results for bounded integrable data. Set
+\begin{equation}\label{eq:exponents}
+ \alpha=\frac{N}{2s+N(m-1)},\qquad
+ \beta=\frac{2s}{2s+N(m-1)}.
+\end{equation}
+
+\begin{lemma}[The bounded-data semigroup]\label{lem:semigroup}
+For every nonnegative $v\in L^1(M)\cap L^\infty(M)$ there is a mild
+solution $S_tv\in C([0,\infty);L^1(M))$ of \eqref{eq:pde}.
+These solutions form a positivity-preserving semigroup and, for every
+pair of such data $v,z$, satisfy
+\begin{equation}\label{eq:contraction}
+ \norm{S_tv-S_tz}_1\le\norm{v-z}_1,
+ \qquad \norm{S_tv}_p\le\norm v_p\quad(1\le p\le\infty),
+\end{equation}
+and obey
+\begin{equation}\label{eq:smoothing}
+ \norm{S_tv}_\infty\le C_0
+   \max\{t^{-\alpha}\norm v_1^\beta,\norm v_1\},\qquad t>0,
+\end{equation}
+where $C_0=C_0(N,k,c,s,m)$. Their implicit Euler approximations satisfy
+\begin{equation}\label{eq:euler}
+ z_j+hB(z_j^m)=z_{j-1},\qquad z_j^m\in D(B\text{ on }L^2(M)),
+\end{equation}
+and converge uniformly on each finite time interval in $L^1(M)$.
+\end{lemma}
+
+\begin{proof}
+The semigroup, contraction, norm estimates and Euler construction are
+\cite[Proposition~5.1 and (5.5)--(5.7)]{BBGM}. In particular, the proof
+there establishes the stated $L^2$ operator domain after a positive
+zeroth-order regularization. Proposition~5.3 identifies these mild
+solutions as weak dual solutions. The construction in Section~6.1 starts
+from $\mathbf1_{B_j}(v\wedge j)$, where $B_j$ is the geodesic ball of
+radius $j$ about a fixed point. For bounded compactly supported $v$
+this sequence is eventually $v$. For general bounded integrable $v$,
+the contraction identifies the limit with $S_tv$.
+Consequently \cite[Theorem~2.6, (2.13)]{BBGM} gives
+\eqref{eq:smoothing} for this same semigroup. The numbered source
+statements here refer to the version specified in the bibliography.
+\end{proof}
+
+For the energy and time estimates, put
+\[
+ V=D(L^{s/2}),\qquad
+ \norm v_V^2=\norm v_2^2+\norm{L^{s/2}v}_2^2,
+ \qquad \E(v,z)=\langle L^{s/2}v,L^{s/2}z\rangle_2.
+\]
+The form defines $B:V\to V^*$ using the $L^2$ pivot space. On its
+operator domain this is the spectral operator already defined above.
+
+\begin{lemma}[Energy and scalar testing]\label{lem:energy}
+Let $u(t)=S_tv$ for nonnegative $v\in L^1\cap L^\infty$. For
+$0\le a<b<\infty$,
+\begin{equation}\label{eq:energy}
+ \int_a^b\E(u^m,u^m)\,dt+
+ \frac{\norm{u(b)}_{m+1}^{m+1}}{m+1}
+ \le\frac{\norm{u(a)}_{m+1}^{m+1}}{m+1}.
+\end{equation}
+In particular $u^m\in L^2((a,b);V)$ and
+$\partial_tu=-B(u^m)$ in $L^2((a,b);V^*)$.
+For every $f\in D(B)\cap L^\infty(M)$ such that $Bf\in L^\infty(M)$,
+\begin{equation}\label{eq:scalar}
+ \langle u(t)-v,f\rangle
+   =-\int_0^t\langle u(r)^m,Bf\rangle\,dr,\qquad t\ge0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The domain assertion in \eqref{eq:euler} permits an $L^2$ pairing with
+$z_j^m$. Convexity gives
+\[
+ \frac{\norm{z_j}_{m+1}^{m+1}-\norm{z_{j-1}}_{m+1}^{m+1}}{m+1}
+       +h\E(z_j^m,z_j^m)\le0.
+\]
+For this fixed datum the Euler curves have a common bound
+$K_v=\norm v_\infty$. Uniform $L^1$ convergence and
+$\int|z-u|^p\le(2K_v)^{p-1}\norm{z-u}_1$ give convergence in every finite
+$L^p$, uniformly on bounded time intervals. The powers therefore converge
+strongly in space-time $L^2$. Their form-energy bound gives a weak limit
+in $L^2((a,b);V)$, necessarily $u^m$. Lower semicontinuity proves
+\eqref{eq:energy}, first from time zero and then after a semigroup restart.
+The $L^2$ part of the $V$ norm is bounded by
+$\norm{u(t)^m}_2^2\le\norm{u(t)}_1\norm{u(t)}_\infty^{2m-1}$.
+
+The piecewise affine Euler interpolation has derivative $-B(z_j^m)$.
+Its difference from the piecewise constant interpolation tends to zero
+in $L^2((a,b);V^*)$, by integrating that derivative on each step.
+Testing in time against smooth scalar functions and in space against $V$
+identifies the limit derivative as $-B(u^m)$.
+
+For \eqref{eq:scalar}, pair the exact Euler equations directly with $f$.
+Self-adjointness gives
+$\langle z_j-z_{j-1},f\rangle=-h\langle z_j^m,Bf\rangle$.
+The power map is Lipschitz on $[0,K_v]$, so the right sums converge in
+$L^1$ against the bounded function $Bf$. An incomplete last time step
+has absolute value at most
+$h\norm{Bf}_\infty K_v^{m-1}\norm v_1$.
+The left side converges against bounded $f$. This proves
+\eqref{eq:scalar} at every time, by $L^1$ continuity.
+\end{proof}
+
+For later use, if $f\in D(L)$, spectral calculus gives
+\begin{equation}\label{eq:fractional}
+ Bf=c_s\int_0^\infty(f-P_rf)\frac{dr}{r^{1+s}},
+ \qquad c_s=\frac{s}{\Gamma(1-s)}.
+\end{equation}
+The integral converges in $L^2$. If also $f,Lf$ are bounded, then
+\[
+ \norm{f-P_rf}_\infty
+ \le\min\{2\norm f_\infty,r\norm{Lf}_\infty\}
+\]
+shows that $Bf$ is bounded. In particular every $C_c^\infty(M)$ function
+is permitted in \eqref{eq:scalar}. This also gives the distributional
+equation \eqref{eq:weak} for the bounded-data solutions.
+
+Choose nonnegative $v_n\in C_c^\infty(M)$ of integral $A$, supported
+in a neighborhood of $o$ of radius tending to zero, all within one
+compact set $K_0$. A normalized bump in a fixed coordinate chart gives
+such a sequence. Let
+\[
+ u_n(t)=S_tv_n,\qquad w_n=u_n^m,
+ \qquad M_A(t)=C_0\max\{A^\beta t^{-\alpha},A\}.
+\]
+Then $\norm{u_n(t)}_1\le A$ and $\norm{u_n(t)}_\infty\le M_A(t)$.
+Since $1-\alpha(m-1)=\beta>0$, we have the uniform estimate
+\begin{equation}\label{eq:flux}
+ \int_0^t\norm{w_n(r)}_1\,dr\le F_A(t):=
+ C_0^{m-1}\left(
+ \frac{A^{1+\beta(m-1)}}{\beta}t^\beta+A^mt\right),
+ \qquad F_A(t)\longrightarrow0\quad(t\downarrow0).
+\end{equation}
+For every fixed $0<a<b$, Lemma~\ref{lem:energy} and smoothing also give
+\begin{equation}\label{eq:uniformenergy}
+ \sup_n\left(\norm{w_n}_{L^2(a,b;V)}+
+       \norm{\partial_tu_n}_{L^2(a,b;V^*)}\right)<\infty.
+\end{equation}
+
+\section{Spatial tightness from the linear heat flow}
+
+Local convergence on $M$ leaves open the possibility that part of the
+approximating mass escapes to infinity. We obtain tightness by testing
+with functions whose fractional Laplacian is uniformly small.
+
+\begin{lemma}\label{lem:averages}
+Let $0\le\chi_j\le1$ be smooth compactly supported functions increasing
+to one. For $H>0$ define
+\begin{equation}\label{eq:average}
+ f_{H,j}=\frac1H\int_0^H P_r\chi_j\,dr.
+\end{equation}
+Then $f_{H,j}\in D(L)\cap C_0(M)$, $0\le f_{H,j}\le1$, and
+\begin{equation}\label{eq:averagebound}
+ \norm{Bf_{H,j}}_\infty\le C_s H^{-s},
+ \qquad C_s=c_s\left(\frac1{1-s}+\frac1s\right).
+\end{equation}
+For fixed $H$, the functions $f_{H,j}$ increase to one uniformly on
+each compact subset of $M$.
+\end{lemma}
+
+\begin{proof}
+In the spectral calculus, the average in \eqref{eq:average} has multiplier
+$(1-e^{-H\lambda})/(H\lambda)$, with value one at zero. This multiplier
+and its product with $\lambda$ are bounded. Thus
+\[
+ f_{H,j}\in D(L),\qquad
+ Lf_{H,j}=\frac{\chi_j-P_H\chi_j}{H},\qquad
+ \norm{Lf_{H,j}}_\infty\le H^{-1}.
+\]
+Positivity and contraction give $0\le f_{H,j},P_rf_{H,j}\le1$.
+The semigroup law gives
+\[
+ P_rf_{H,j}-f_{H,j}
+ =\frac1H\left(\int_H^{H+r}P_\tau\chi_j\,d\tau
+                     -\int_0^rP_\tau\chi_j\,d\tau\right),
+\]
+so $\norm{f_{H,j}-P_rf_{H,j}}_\infty\le\min\{1,r/H\}$.
+Splitting \eqref{eq:fractional} at $r=H$ proves
+\eqref{eq:averagebound}. In particular these functions belong to the
+test class of Lemma~\ref{lem:energy}.
+
+Continuity follows by integrating the continuous heat flow over
+$[\eta,H]$ and then letting $\eta\downarrow0$, with uniform error at
+most $\eta/H$. If $R=d(x,\supp\chi_j)$, \eqref{eq:heatkernel} gives
+\[
+ f_{H,j}(x)\le \frac{C\norm{\chi_j}_1}{H}
+           \int_0^H r^{-N/2}e^{-R^2/(Cr)}\,dr.
+\]
+For $R\ge1$, the last integral is at most
+\[
+ e^{-R^2/(2CH)}\int_0^H r^{-N/2}e^{-1/(2Cr)}\,dr,
+\]
+which tends to zero as $R\to\infty$. Completeness makes bounded closed
+neighborhoods of a compact set compact, so $f_{H,j}\in C_0(M)$.
+Finally $P_r1=1$ and monotone convergence give $f_{H,j}\uparrow1$.
+For any $\eta>0$, the increasing open sets
+$\{f_{H,j}>1-\eta\}$ cover a given compact set; a finite subcover gives
+the stated uniform convergence.
+\end{proof}
+
+\begin{proposition}\label{prop:tightness}
+For every $T<\infty$ and $\varepsilon>0$, there is a compact set
+$K\subset M$ such that
+\begin{equation}\label{eq:tightness}
+ \sup_n\sup_{0\le t\le T}\int_{M\setminus K}u_n(t)\dd\le\varepsilon.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Choose $H$ so large that $C_sH^{-s}F_A(T)\le\varepsilon/4$.
+Then choose $j$ so large that
+$A\sup_{K_0}(1-f_{H,j})\le\varepsilon/4$.
+Using \eqref{eq:scalar}, \eqref{eq:flux} and
+\eqref{eq:averagebound}, for all $n$ and $t\le T$ we get
+\[
+ \int_Mu_n(t)(1-f_{H,j})\dd
+ \le A-\int_Mu_n(t)f_{H,j}\dd\le\varepsilon/2.
+\]
+There is a compact $K$ outside which $f_{H,j}\le1/2$.
+This proves \eqref{eq:tightness}.
+\end{proof}
+
+\section{Compactness and the initial trace}
+
+\begin{lemma}\label{lem:compactness}
+A subsequence of $u_n$ converges locally in space-time $L^{2m}$ on
+$(0,\infty)\times M$. There is one set of full measure in positive time
+on which the same subsequence converges in $L^1$ on every compact subset
+of $M$.
+\end{lemma}
+
+\begin{proof}
+Fix $0<a<b$. From \eqref{eq:uniformenergy}, for $0<h<b-a$,
+\[
+ \norm{u_n(\cdot+h)-u_n}_{L^2(a,b-h;V^*)}\le Ch.
+\]
+Pair this difference with $w_n(t+h)-w_n(t)$ in $V$ and use
+Cauchy--Schwarz to get
+\begin{equation}\label{eq:pairedshift}
+ 0\le \int_a^{b-h}\!\int_M
+ (u_n(t+h)-u_n(t))(w_n(t+h)-w_n(t))\dd\,dt\le Ch.
+\end{equation}
+The pairing is the usual integral, since $u_n(t)\in L^2(M)$.
+On the common range $[0,M_A(a)]$,
+\[
+ |p^m-q^m|^2\le mM_A(a)^{m-1}(p-q)(p^m-q^m).
+\]
+Consequently the powers satisfy the global time-translation bound
+\begin{equation}\label{eq:timeshift}
+ \int_a^{b-h}\norm{w_n(t+h)-w_n(t)}_2^2\,dt\le Ch.
+\end{equation}
+
+For a compact set $K$ and $\delta>0$, the heat map
+$P_\delta:L^2(M)\to L^2(K)$ has square-integrable kernel, because
+\[
+ \int_K\int_Mp_\delta(x,y)^2\dd(y)\dd(x)
+       =\int_Kp_{2\delta}(x,x)\dd(x)<\infty.
+\]
+It can therefore be approximated in operator norm by finite-rank maps:
+approximate the kernel in product $L^2$ by finite sums of separated
+functions and apply Cauchy--Schwarz. On the other hand, the scalar
+inequality $|1-e^{-x}|^2\le C_sx^s$ gives
+\begin{equation}\label{eq:heatsmooth}
+ \norm{v-P_\delta v}_2^2\le C_s\delta^s\E(v,v),\qquad v\in V.
+\end{equation}
+Thus $w_n$ is uniformly approximated in $L^2((a,b)\times K)$ by the
+heat-smoothed family and then by a finite-rank family. Its coefficients
+inherit \eqref{eq:timeshift}, since they are bounded linear functionals
+on the global space $L^2(M)$.
+
+For completeness, a coefficient vector $q(t)$ can be replaced by its
+averages $q_I$ on equal time intervals of length $\ell$ dividing $b-a$.
+Its squared approximation error satisfies
+\[
+ \sum_I\int_I|q-q_I|^2
+ =\sum_I\frac1{2\ell}\int_I\int_I|q(t)-q(r)|^2\,dt\,dr
+ \le\frac1\ell\int_0^\ell\int_a^{b-h}|q(t+h)-q(t)|^2\,dt\,dh
+ \le C\ell.
+\]
+For a fixed partition these averages form a bounded finite-dimensional
+family. Choosing successively $\delta$, spatial rank and $\ell$ proves
+local space-time $L^2$ precompactness of $w_n$.
+
+A diagonal argument over compact spatial sets and positive compact time
+intervals gives $w_n\to w$ locally in $L^2$ and almost everywhere.
+The inequality $|p-q|^m\le|p^m-q^m|$ for $p,q\ge0$ shows that
+$u_n\to u=w^{1/m}$ locally in $L^{2m}$.
+Choose a further subsequence with summable $L^1$ errors on every member
+of a countable space-time exhaustion. Fubini then gives a single
+full-measure set of times with local spatial $L^1$ convergence on all
+compact sets. Intersecting with the full-measure set of time slices of
+the almost-everywhere space-time convergence preserves this property.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+At every good time $t$ of Lemma~\ref{lem:compactness}, local $L^1$
+convergence and Proposition~\ref{prop:tightness} imply global $L^1$
+convergence. Indeed, Fatou gives the same small tail for the limit, and
+the two tails can be made arbitrarily small before using convergence on
+the remaining compact set.
+Choose good times $a_j\downarrow0$. The semigroup property and
+\eqref{eq:contraction} give
+\[
+ \sup_{t\ge a_j}\norm{u_n(t)-u_\ell(t)}_1
+ \le\norm{u_n(a_j)-u_\ell(a_j)}_1\longrightarrow0.
+\]
+Completeness of $C([a_j,T];L^1(M))$ therefore gives consistent limits
+on overlapping intervals. They define one curve
+$u\in C((0,\infty);L^1(M))$, agreeing with the local limit, and
+\begin{equation}\label{eq:globalconv}
+ u_n\longrightarrow u\quad\text{uniformly in }L^1(M)
+            \text{ on every }[a,T]\subset(0,\infty).
+\end{equation}
+Nonnegativity, $\norm{u(t)}_1\le A$ and
+$\norm{u(t)}_\infty\le M_A(t)$ pass to this representative for every
+$t>0$. On $[a,T]$ the power map has a common Lipschitz constant, so
+\eqref{eq:globalconv} also holds globally in $L^1$ for $u_n^m\to u^m$.
+
+For $\phi\in C_c^\infty((0,\infty)\times M)$, its time support lies
+in some $[a,T]$. Equation~\eqref{eq:fractional} gives
+\[
+ \sup_t\norm{B\phi(t)}_\infty<\infty.
+\]
+We can therefore pass to the limit
+in the approximate distributional equations using the global power
+convergence. This proves \eqref{eq:weak}. The right side is absolutely
+integrable, since $\norm{u(t)^m}_1\le A M_A(a)^{m-1}$ on $[a,T]$.
+The same bounds give all the local integrability and boundedness in
+\eqref{eq:regularity}.
+
+For a fixed $\psi\in C_c^\infty(M)$, \eqref{eq:scalar} and
+\eqref{eq:flux} imply
+\[
+ \left|\int_Mu_n(t)\psi\dd-\int_Mv_n\psi\dd\right|
+       \le\norm{B\psi}_\infty F_A(t).
+\]
+Let $n\to\infty$ at fixed $t>0$, using \eqref{eq:globalconv} and the
+initial concentration at $o$. Then let $t\downarrow0$. Since
+$F_A(t)\to0$, we obtain
+$\int_Mu(t)\psi\dd\to A\psi(o)$.
+Uniform approximation of compact continuous functions by smooth compact
+functions extends this trace to $C_c(M)$, because the mass is bounded by
+$A$ at every positive time.
+
+Fix $0\le\chi\le1$, $\chi\in C_c^\infty(M)$, equal to one near $o$.
+The compact-test trace and positivity give
+\[
+ \int_Mu(t)\chi\dd\longrightarrow A,\qquad
+ 0\le\int_Mu(t)(1-\chi)\dd
+       \le A-\int_Mu(t)\chi\dd\longrightarrow0.
+\]
+For any prescribed $\psi\in C_b(M)$, apply the compact-continuous trace
+to $\psi\chi$ and bound the remaining integral by
+$\norm\psi_\infty\int_Mu(t)(1-\chi)\dd$. This proves
+\eqref{eq:trace} as an actual limit. The same inequalities give
+$\norm{u(t)}_1\to A$ as $t\downarrow0$; together with its upper bound
+this proves \eqref{eq:mass} for every $T>0$.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex assisted with proof development, source checks, manuscript
+drafting and internal AI review. The mathematical claims are submitted for
+independent review.
+
+\begin{thebibliography}{9}
+\bibitem{BBGM}
+E.~Berchio, M.~Bonforte, G.~Grillo and M.~Muratori,
+\emph{The fractional porous medium equation on noncompact Riemannian manifolds},
+Mathematische Annalen \textbf{389} (2024), 3603--3651.
+\href{https://doi.org/10.1007/s00208-023-02731-6}{doi:10.1007/s00208-023-02731-6}.
+The numbered source statements used here are in
+\href{https://arxiv.org/abs/2109.10732v2}{arXiv:2109.10732v2} (2023).
+
+\bibitem{Gri}
+A.~Grigor'yan,
+\emph{Analytic and geometric background of recurrence and non-explosion
+of the Brownian motion on Riemannian manifolds},
+Bulletin of the American Mathematical Society \textbf{36} (1999), 135--249.
+\href{https://www.math.uni-bielefeld.de/~grigor/recor.pdf}{Author's version}.
+
+\bibitem{GMP}
+G.~Grillo, M.~Muratori and F.~Punzo,
+\emph{Fractional porous media equations: existence and uniqueness of weak
+solutions with measure data},
+Calculus of Variations and Partial Differential Equations \textbf{54}
+(2015), 3303--3335.
+\href{https://doi.org/10.1007/s00526-015-0904-4}{doi:10.1007/s00526-015-0904-4}.
+\href{https://arxiv.org/abs/1312.6076v3}{arXiv:1312.6076v3}.
+
+\bibitem{OWR}
+G.~Grillo,
+\emph{Fractional nonlinear diffusions on manifolds: well-posedness and
+smoothing effects}, contribution to \emph{Mini-Workshop: Hardy Inequalities
+in Discrete and Continuum Settings}, Oberwolfach Report 14/2025,
+597--598.
+\href{https://ems.press/content/serial-article-files/51358?nt=1}{Workshop report}.
+\end{thebibliography}
+\end{document}
