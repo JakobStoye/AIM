@@ -1,0 +1,44 @@
+{
+  "problem_id": "481",
+  "status": "Solution claimed; independent mathematical review requested",
+  "original_statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/481-fourth-order-aggregation-finite-propagation.md",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "manuscript_pages": 18,
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Entry point, claim scope, rebuild instructions and review limits",
+      "bytes": 2157,
+      "sha256": "884be8565bafa4b980923244567f7e9a7c8f8caa070c3179a525364d99164657"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the original fixed AIM 481 statement",
+      "bytes": 2924,
+      "sha256": "ea17264f7961b86e936b4e3aa3442ec567354a137c4a04b3941f8df25061999d"
+    },
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI-assistance and review disclosure",
+      "bytes": 716,
+      "sha256": "ed88814a8ff639369a1ab9d70fa036f13e49fd17636e378fe978a44629fd6a4b"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable analytic manuscript with its bibliography",
+      "bytes": 61961,
+      "sha256": "9547621b8a3e4f45cc4e8e298b3a643f0b970dfff5af4c54de8f9a0c7c86b3ee"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Final manuscript (18 pages)",
+      "bytes": 479763,
+      "sha256": "b317ee2db72130e93f81723f21f4bdb8173e018fada4afc3ad50707c85616377"
+    }
+  ],
+  "integrity_metadata": {
+    "PUBLIC_MANIFEST.json": "This payload manifest",
+    "SHA256SUMS": "Checksums of all payloads and the manifest; the checksum file does not hash itself"
+  }
+}
