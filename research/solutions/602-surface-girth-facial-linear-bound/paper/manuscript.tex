@@ -1,0 +1,573 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=29mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A uniform linear bound for facial cycles on surfaces},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\girth}{girth}
+\title{A uniform linear bound for facial cycles on surfaces}
+\author{Kaiwen Jin\\ \small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $G$ be a finite simple graph of girth at least $\ell\ge3$, maximal
+in its fixed crossing-free embedding on an orientable surface with
+$g\ge1$ handles or a nonorientable surface with $g\ge1$ crosscaps.
+We prove that every simple cycle forming the entire boundary of a face
+has length at most $100000g\ell$. The same constant works for both
+surface types, including noncellular embeddings.
+The proof bounds the patterns of equal-radius balls along one facial
+cycle by counting alternating disjoint trees. Published hypergraph
+covering estimates then provide few centers, whose boundary runs are
+short by the girth condition.
+\end{abstract}
+
+\section{Introduction}
+
+Fix a graph embedded without crossings on a surface and an integer
+$\ell\ge3$. An embedding is maximal subject to girth at least $\ell$
+if adding any edge between previously nonadjacent vertices without
+crossings creates a cycle of length less than $\ell$. This condition
+restricts the geometry of a face even when the number of vertices in
+the graph is unrestricted. We consider a simple cycle whose image is
+the entire boundary of one face, and call it a facial cycle.
+
+Axenovich, Kie{\ss}le, Sagdeev and Zhukovskii
+\cite[Theorem~2]{Axenovich} proved the upper bound
+$24(2g+1)\ell^2$ for a surface with $g$ handles or $g$ crosscaps.
+P\'alv\"olgyi and Z\'olomy \cite[Theorem~3]{PalvolgyiZolomy} proved that
+for each fixed orientable genus the length is at most $c_g\ell$.
+The joint-parameter question in \cite[Question~2]{Axenovich} asks
+whether an absolute constant bounds the length by $Cg\ell$.
+We give such a bound for both types of surface.
+
+\begin{theorem}\label{thm:main}
+Let $g\ge1$ and $\ell\ge3$ be integers, and let $\Sigma$ be a connected
+closed surface that is either orientable with $g$ handles or
+nonorientable with $g$ crosscaps. Let $G$ be a finite simple graph
+embedded without crossings on $\Sigma$, of girth at least $\ell$ and
+maximal for this fixed embedding subject to that girth constraint.
+Every simple cycle $C$ forming the entire boundary of a face satisfies
+\[
+|C|\le100000g\ell.
+\]
+\end{theorem}
+
+The graph may be disconnected and the embedding may be noncellular.
+The boundary is understood as a point set; the proof also covers the
+one-sided case permitted by this interpretation. In particular it
+includes the usual case of a simple facial boundary walk.
+
+Saturation makes the graph distance between any two vertices of a
+facial cycle at most $\ell-2$. A bound on distance does not yet give a
+bound on the number of boundary vertices. Following the ball-piercing
+and nearest-center strategy of \cite[Section~4]{PalvolgyiZolomy}, we
+cover the boundary by a small number of metric balls and count the
+consecutive boundary runs associated with their centers.
+The genus dependence comes from an estimate on ball patterns on the
+one designated face. Many changes of a fixed site witness would give
+two disjoint shortest-path trees meeting that face alternately; Euler's
+formula limits the number of such alternations. The resulting cubic
+trace count gives a logarithmic VC bound. Together with the fractional
+ball-packing theorem of \cite{Bousquet} and the covering bound of
+\cite{DSW}, it supplies a number of centers bounded by an absolute
+multiple of $g$.
+
+After one subdivision of every edge, the balls have enough radius to
+meet pairwise, while the girth makes each induced ball a tree.
+Each boundary run is then short. The same topological count bounds
+how often the center regions can alternate and yields the theorem.
+Sections~\ref{sec:topology} and \ref{sec:balls} give the two counting
+estimates and the covering argument; Section~\ref{sec:main-proof}
+finishes the proof.
+
+\section{Disjoint subgraphs on one face}\label{sec:topology}
+
+Surfaces are connected and closed unless a boundary is specified.
+Graphs are finite, undirected and unweighted. They are simple except for
+auxiliary multigraphs explicitly allowed below. A face is a component of
+the complement of the embedded graph. A disk face with a simple boundary
+means that its closure is a closed disk with that cycle as boundary.
+The length of a simple cycle is its
+number of edges, which also equals its number of vertices. We write $d_J$
+for graph distance in $J$ and
+\[
+B_J(x,r)=\{y\in V(J):d_J(x,y)\le r\}
+\]
+for an integer radius $r\ge0$. The Euler genus of a connected closed surface
+is $\kappa=2-\chi$, where $\chi$ is its Euler characteristic. It is twice the
+number of handles in the orientable case and the number of crosscaps in the
+nonorientable case.
+The girth is the length of a shortest simple cycle, and is infinite for
+an acyclic graph.
+
+We first record the surface calculation used in both counting arguments.
+The classification of closed surfaces and Euler's formula apply to both
+types of surface; see \cite[Corollary 6.4 and Theorem 6.5]{Erickson}.
+Capping the $b$ boundary circles of a compact connected surface $S$ gives a
+closed surface $\widehat S$ and
+\begin{equation}\label{eq:boundary-euler}
+\chi(S)=2-\kappa(\widehat S)-b\le2-b.
+\end{equation}
+Indeed, each added disk increases the Euler characteristic by one.
+Gluing along a circle adds Euler characteristics, since a circle has
+Euler characteristic zero.
+
+\begin{lemma}\label{lem:cap}
+Let a connected finite graph, possibly with loops and parallel edges, be
+embedded on a connected closed surface of Euler
+genus $\kappa$. Capping the boundary circles of a connected regular
+neighborhood of the graph produces a cellular embedding on a closed
+surface of Euler genus at most $\kappa$, with the same local cyclic orders.
+\end{lemma}
+\begin{proof}
+Build the neighborhood $N$ from small vertex disks and thin strips along
+edges. Let it have $b$ boundary circles. The complementary surfaces $S_i$
+have $b_i\ge1$ boundary circles, with $\sum_i b_i=b$. The capped surface
+has Euler genus
+\[
+\kappa_N=2-\chi(N)-b
+ =\kappa+\sum_i\bigl(\chi(S_i)-b_i\bigr)\le\kappa,
+\]
+by \eqref{eq:boundary-euler}. Each boundary circle follows a facial boundary
+walk of the graph. Its collar and the added cap form a disk face.
+The vertex disks, and hence their cyclic orders, are unchanged.
+\end{proof}
+
+In such a disk-and-strip neighborhood, every edge contributes two sides
+to the facial boundary walks. A walk turns between neighboring halfedges
+in a vertex disk. This remains true for a twisted strip: with a local
+orientation the turn is a successor or a predecessor in the cyclic order.
+
+\begin{lemma}\label{lem:hub}
+Suppose that a graph embedded on a closed surface of Euler genus $\kappa$
+has a disk face bounded by a simple cycle $D$. Let $q\ge2$ pairwise
+vertex-disjoint connected subgraphs contain $R$ distinct selected vertices
+of $D$, with at least one selected vertex in each subgraph.
+If neighboring selected vertices in circular order have different
+subgraph labels, including the last and first, then
+\begin{equation}\label{eq:hub}
+R\le2q+2\kappa-2.
+\end{equation}
+In particular, if two disjoint trees meet $D$ at $b$ positive and $b$
+negative selected vertices in alternating order, then $b\le\kappa+1$.
+\end{lemma}
+\begin{proof}
+Replace each connected subgraph by a tree joining its selected vertices.
+Place a new vertex $h$ in the disk face and draw $R$ disjoint spokes from
+$h$ to the selected vertices, in their circular order. Retain only the
+trees and spokes, and contract each tree to one vertex. These contractions
+are possible inside disk neighborhoods of the trees and do not involve
+$h$. We obtain a connected bipartite multigraph $M$ with $q+1$ vertices
+and $R$ edges, all incident with $h$. Its cyclic neighbor word at $h$ has
+no adjacent equal labels. Parallel spokes are allowed; there are no loops.
+
+Apply Lemma~\ref{lem:cap} to $M$, obtaining a cellular embedding of Euler
+genus $\kappa_M\le\kappa$. Every facial boundary walk has positive even
+length. A walk of length two would have the form $h,a,h$. If it used two
+different spokes, they would have the same label $a$ and would be neighbors
+at $h$, contrary to the cyclic word. If it used one spoke twice, the turn
+at $h$ would have to return from that halfedge to itself, which requires
+$\deg(h)=1$. Here $\deg(h)=R\ge q\ge2$. Thus a doubled bridge also cannot
+give a length-two face. The argument concerns corners in the local disk
+at $h$, so it also holds on a nonorientable surface.
+
+If there are $f$ faces, it follows that $4f\le2R$. Euler's formula gives
+$(q+1)-R+f=2-\kappa_M$, and therefore
+$R\le2q+2\kappa_M-2\le2q+2\kappa-2$.
+For the last assertion use $q=2$ and $R=2b$.
+\end{proof}
+
+\section{Balls centered on the boundary}\label{sec:balls}
+
+The next estimate controls the patterns that equal-radius balls can realize
+when their centers lie on one facial cycle. No girth assumption is needed here.
+
+\begin{lemma}\label{lem:traces}
+Let $J$ be a connected graph with a disk face bounded by a simple cycle $D$
+on a surface of Euler genus $\kappa$. For $m\ge1$ distinct sites
+$S\subseteq V(J)$ and an integer $r\ge0$, put
+\[
+I(v)=\{s\in S:d_J(s,v)\le r\}\qquad(v\in V(D)).
+\]
+The number of distinct traces $I(v)$ is at most
+\begin{equation}\label{eq:traces}
+1+m^2\bigl[1+(\kappa+1)(m-1)\bigr].
+\end{equation}
+For $m\ge2$ this is at most $(\kappa+2)m^3$.
+\end{lemma}
+\begin{proof}
+Choose one boundary representative for each distinct nonempty trace, and
+fix an order on $S$. Group the representatives by their trace cardinality
+$j$ and the site $a$ farthest from the representative among sites in its
+trace, resolving ties by the fixed order. There are at most $m^2$ groups.
+Within one group the traces are distinct $j$-sets containing $a$.
+
+A singleton group contributes one representative. In any other group, let
+$q$ be the immediate predecessor of a representative $p$ in the group's
+circular order. The set $I(p)\setminus I(q)$ is nonempty, since the two
+traces are distinct and have equal cardinality. Assign $p$ to one site
+$b$ in this difference. Since $a$ belongs to both traces, $b\ne a$.
+
+Fix $a$ and a site $b$ assigned $t\ge1$ times. Denote the corresponding
+positive representatives by $p_i$ and their negative predecessors by $q_i$.
+The $q_i$ are distinct, because the predecessor operation is a bijection
+on the full group. No $q_i$ can equal any $p_j$, since $b$ is absent from
+negative traces and present in positive traces. Each pair $q_i,p_i$ is
+consecutive within the group, so these $2t$ vertices alternate in their
+induced circular order. We have
+\begin{equation}\label{eq:positive-negative}
+d_J(a,q_i)\le r<d_J(b,q_i),\qquad
+d_J(b,p_i)\le d_J(a,p_i)\le r.
+\end{equation}
+
+Take the subtree of a fixed breadth-first search tree rooted at $a$
+joining all $q_i$, and the corresponding subtree rooted at $b$ joining all
+$p_i$. Their root paths are shortest paths in $J$. The two subtrees are
+vertex-disjoint. Indeed, if an $a,q_i$-path and a $b,p_j$-path shared $z$,
+then
+\[
+d_J(b,z)+d_J(z,q_i)\ge d_J(b,q_i)>r
+ \ge d_J(a,q_i)=d_J(a,z)+d_J(z,q_i).
+\]
+Hence $d_J(b,z)>d_J(a,z)$, and the positive path would give
+\[
+d_J(a,p_j)\le d_J(a,z)+d_J(z,p_j)
+ <d_J(b,z)+d_J(z,p_j)=d_J(b,p_j),
+\]
+contradicting \eqref{eq:positive-negative}.
+Lemma~\ref{lem:hub} now yields $t\le\kappa+1$.
+
+There are $m-1$ possible sites $b\ne a$. Thus a nonsingleton group has at
+most $(\kappa+1)(m-1)$ members, and the bound
+$1+(\kappa+1)(m-1)$ also covers singleton groups. Sum over the at most
+$m^2$ groups and allow one empty trace to obtain \eqref{eq:traces}.
+For $m\ge2$,
+\[
+1+m^2[1+(\kappa+1)(m-1)]
+ =1+(\kappa+1)m^3-\kappa m^2\le(\kappa+2)m^3.
+\]
+\end{proof}
+
+\subsection{VC dimension}
+
+A finite hypergraph consists of a vertex set $V$ and a set of edges
+$\mathcal E\subseteq2^V$. Its VC dimension is the largest cardinality of a
+set $S\subseteq V$ for which the intersections $E\cap S$, $E\in\mathcal E$,
+give every subset of $S$. Repeated edges are identified.
+For the graph and facial cycle of Lemma~\ref{lem:traces}, consider the
+hypergraph $\mathcal B_{D,r}$ with vertex set $V(J)$ and edge set
+$\{B_J(v,r):v\in V(D)\}$. Its vertices can lie anywhere in $J$.
+
+\begin{corollary}\label{cor:vc}
+The VC dimension of $\mathcal B_{D,r}$ satisfies
+\begin{equation}\label{eq:vc}
+\delta(\mathcal B_{D,r})<16\log_2(\kappa+2).
+\end{equation}
+\end{corollary}
+\begin{proof}
+If $m\ge2$ sites are shattered, symmetry of graph distance identifies
+$B_J(v,r)\cap S$ with the trace $I(v)$ of Lemma~\ref{lem:traces}. Hence
+$2^m\le(\kappa+2)m^3$. Put $a=\log_2(\kappa+2)\ge1$.
+At $m=16a$, the ratio of $2^m$ to $(\kappa+2)m^3$ is
+$2^{15a}/(16a)^3$. It is $8$ at $a=1$, and its logarithmic derivative
+$15\ln2-3/a$ is positive for $a\ge1$. Also $2^m/m^3$ is increasing for
+$m\ge16$, since $\ln2-3/m>0$. These inequalities follow already from
+$\ln2>2/3$; an explicit verification is
+\begin{equation}\label{eq:ln2}
+\ln2=\int_1^2\frac{dx}{x}>
+\int_1^2\left(\frac43-\frac{4x}{9}\right)dx=\frac23,
+\end{equation}
+where the difference of the two integrands is $(2x-3)^2/(9x)$.
+Thus shattering is impossible for $m\ge16a$. Dimensions zero and one also
+satisfy \eqref{eq:vc}. This is the VC dimension of the hypergraph on $V(J)$,
+as required for a vertex transversal.
+\end{proof}
+
+\subsection{A transversal}
+
+For a hypergraph with nonempty edges, let $\nu$ be the maximum number of
+pairwise disjoint edges and let $\tau$ be the minimum cardinality of a set
+meeting every edge. Their fractional versions are
+\begin{align*}
+\nu^*&=\max\left\{\sum_{E\in\mathcal E}w_E:
+ w_E\ge0,\ \sum_{E\ni v}w_E\le1\quad(v\in V)\right\},\\
+\tau^*&=\min\left\{\sum_{v\in V}x_v:
+ x_v\ge0,\ \sum_{v\in E}x_v\ge1\quad(E\in\mathcal E)\right\}.
+\end{align*}
+Finite linear-program duality gives $\nu^*=\tau^*$; see
+\cite[p.~1]{Bousquet}. We write $e=\exp(1)$, and $\ln$ denotes the natural
+logarithm throughout.
+
+The following density estimate makes the genus dependence in the
+fractional ball bound explicit.
+\begin{lemma}\label{lem:density}
+Every simple minor of a graph embedded on a closed surface of Euler genus
+$\kappa$ has average degree at most $6+\sqrt{6\kappa}$.
+\end{lemma}
+\begin{proof}
+Deleting edges and contracting edges with distinct endpoints preserve
+embeddability on the surface; delete loops and parallel duplicates to
+obtain a simple minor. Consider a connected minor with $n\ge3$ vertices
+and $t$ edges. By Lemma~\ref{lem:cap} it has a cellular embedding of Euler
+genus at most $\kappa$. Its facial walks have length at least three.
+A walk of length one requires a loop; a length-two walk using different
+edges requires parallels. A length-two walk using the same edge requires
+degree one at both endpoints, so the connected graph would be a single
+edge, contrary to $n\ge3$.
+
+Euler's formula and $3f\le2t$ give $t\le3n-6+3\kappa$.
+Simplicity also gives $2t/n\le n-1$. Thus
+\[
+\frac{2t}{n}\le\min\left\{n-1,\ 6+\frac{6\kappa}{n}\right\}
+ \le6+\sqrt{6\kappa}.
+\]
+For the last inequality, if $n\le\sqrt{6\kappa}+1$ use $n-1$.
+Otherwise use the second bound; the case $\kappa=0$ gives $6$ directly.
+Components of order one or two have average degree at most one.
+For a disconnected minor take the vertex-weighted average of the
+component averages.
+\end{proof}
+
+We use the following two published hypergraph estimates.
+
+\begin{proposition}[Bousquet et al.]\label{prop:packing}
+Let $J$ be a finite simple graph with an edge, and let $d$ be the maximum
+average degree of a simple minor of $J$. If $\mathcal F$ has vertex set
+$V(J)$ and each of its edges is a ball of $J$, then
+\begin{equation}\label{eq:fractional-packing}
+\nu^*(\mathcal F)\le e d\,\nu(\mathcal F).
+\end{equation}
+\end{proposition}
+This is the non-edgeless case of \cite[Theorem~4]{Bousquet}. A ball
+subfamily is allowed: it need not consist of all balls of $J$.
+
+\begin{proposition}[Ding--Seymour--Winkler]\label{prop:dsw}
+Let $\mathcal F$ be a finite hypergraph with at least two distinct nonempty
+edges and VC dimension $\delta$. Then
+\begin{equation}\label{eq:dsw}
+\tau(\mathcal F)\le
+2\delta\,\tau^*(\mathcal F)\log_2\bigl(11\tau^*(\mathcal F)\bigr).
+\end{equation}
+\end{proposition}
+We use \cite[(5.4), printed p.~10]{DSW}, with the base-two logarithms
+specified in its Section~5. The fractional form comes from integer copies
+of vertices of a rational optimal cover. If its value is $\lambda$, choose
+$N$ so that all $Nx_v$ are integers, and give $v$ that many copies.
+There are $N\lambda$ vertices in total, while every duplicated edge has
+at least $N$ vertices. Copies of one vertex cannot be distinguished by
+edges, so duplication does not increase VC dimension
+\cite[(5.3)]{DSW}. A transversal of the duplicated hypergraph maps to one
+of the original. If duplication leaves just one distinct edge, a
+transversal of size one suffices; otherwise the uniform bound
+\cite[(5.1)]{DSW} applies with $\varepsilon=1/\lambda$.
+If the original hypergraph has one nonempty edge, we instead use
+$\tau=\tau^*=1$ directly.
+
+\begin{lemma}\label{lem:cover}
+Let $g\ge1$ be an integer. Suppose that a connected graph $J$ has a disk
+face bounded by a simple cycle $D$ on a closed surface of Euler genus
+$\kappa\le2g$. If $r\ge0$ is an integer and
+$d_J(u,v)\le2r$ for all $u,v\in V(D)$, then there is a vertex set $Z$
+meeting every ball $B_J(v,r)$, $v\in V(D)$, with
+\begin{equation}\label{eq:cover}
+|Z|<35840g.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The midpoint vertex of a shortest path of length at most $2r$ belongs to
+both balls centered at its endpoints. Hence the nonempty hypergraph
+$\mathcal B_{D,r}$ has $\nu=1$. The graph $J$ contains $D$, so it has an
+edge and Proposition~\ref{prop:packing} applies.
+By Lemma~\ref{lem:density} and $g\ge1$,
+\[
+d\le6+\sqrt{6\kappa}\le6+\sqrt{12g}\le10\sqrt g.
+\]
+Consequently its fractional cover value satisfies
+$1\le\lambda=\tau^*=\nu^*\le10e\sqrt g$.
+
+Choose a minimum transversal $Z$ and set $k=|Z|$.
+If there is only one distinct edge, $k=1$ proves \eqref{eq:cover}.
+Otherwise Proposition~\ref{prop:dsw} and Corollary~\ref{cor:vc} apply.
+The function $x\ln(11x)$ is increasing for $x\ge1$, and $\kappa+2\le4g$.
+Converting both base-two logarithms gives
+\begin{equation}\label{eq:logarithmic-cover}
+k\le\frac{320e}{(\ln2)^2}\sqrt g\,\ln(4g)\ln(110e\sqrt g).
+\end{equation}
+
+For an explicit uniform bound, put $u=\ln g\ge0$ and $B=\ln(110e)$.
+We have $2<B<7$. Indeed, $5/2<e<3$ and $110<(5/2)^6$ give these
+inequalities. The coarse bounds on $e$ can be checked by the chord and
+tangent bounds for $1/x$:
+\[
+\ln(5/2)\le\frac5{12}+\frac7{24}+\frac9{40}
+ =\frac{14}{15}<1,\qquad
+\ln3\ge\frac23+\frac25=\frac{16}{15}>1.
+\]
+The first uses the chords on $[1,3/2]$, $[3/2,2]$ and $[2,5/2]$;
+the second uses tangents at $3/2$ and $5/2$ on $[1,2]$ and $[2,3]$.
+
+We also have $\ln2<1$ by integrating $1/x<1$ on $(1,2]$, so $\ln4<2$.
+The derivative
+\[
+\frac{d}{du}\bigl[(u+\ln4)e^{-u/4}\bigr]
+ =e^{-u/4}\left(1-\frac{u+\ln4}{4}\right)
+\]
+changes from positive to negative at $u=4-\ln4>0$. Hence the maximum
+is $4\sqrt2/e$. Also $e^{u/4}\ge1+u/4$ and $B>2$
+give $B+u/2\le B e^{u/4}<7e^{u/4}$. Thus \eqref{eq:logarithmic-cover} yields
+\[
+k<\frac{8960\sqrt2}{(\ln2)^2}g
+ <30240g<35840g,
+\]
+using $\sqrt2<3/2$ and \eqref{eq:ln2}.
+\end{proof}
+
+\section{Proof of the main theorem}\label{sec:main-proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix an arbitrary facial cycle $C$, and let $F$ be its face.
+Any two vertices $x,y$ of $C$ satisfy
+\begin{equation}\label{eq:original-distance}
+d_G(x,y)\le\ell-2.
+\end{equation}
+For equal or adjacent vertices this is immediate. Otherwise, join them
+by a simple arc through the connected face $F$ and add the missing edge.
+Such an arc exists by taking short arcs into incident face sectors and
+joining their interior endpoints in $F$. Maximality forces a cycle of
+length below $\ell$ through the new edge. Removing that edge gives the
+path in \eqref{eq:original-distance}. This is also the boundary-distance
+observation of \cite[Lemma~1]{Axenovich}.
+
+Since the entire boundary of $F$ is $C$, the face is open and closed
+relative to $\Sigma\setminus C$, and is therefore a whole component of
+that complement. If $C$ does not separate $\Sigma$, then
+$F=\Sigma\setminus C$ and $G=C$. Equation~\eqref{eq:original-distance}
+gives $\lfloor|C|/2\rfloor\le\ell-2$, so $|C|\le2\ell-3$.
+This also handles a one-sided curve under the point-set boundary
+interpretation: its Moebius-band collar, minus the core curve, is
+connected, so the curve is nonseparating.
+
+Now suppose that $C$ separates. Its two sides have compact closures $S$
+and $\overline F$, each with one boundary circle $C$, and the interior
+of $\overline F$ contains no graph. Replace this side by a disk, capping
+$S$. Capping both sides and gluing along $C$ gives
+\[
+\kappa(\widehat S)+\kappa(\widehat{\overline F})=\kappa(\Sigma).
+\]
+Both summands are nonnegative. Thus the same graph, with the same graph
+distances, is now embedded with a disk face bounded by $C$ on a closed
+surface of Euler genus $\kappa\le\kappa(\Sigma)\le2g$.
+We retain \eqref{eq:original-distance} for the remainder of the proof.
+
+Subdivide every edge once, and let $H$ be the component containing the
+doubled cycle $C^*$. Removing other components changes no relevant
+distance or boundary ball. The disk face persists,
+$|C^*|=2|C|$, and $\girth(H)\ge2\ell$, since every subdivided simple cycle
+projects to an original simple cycle of half its length. Distances between
+old vertices are doubled. Every boundary vertex is within one edge of
+an old vertex of $C$, so
+\begin{equation}\label{eq:subdivided-distance}
+d_H(u,v)\le1+2(\ell-2)+1=2\ell-2
+ \qquad(u,v\in V(C^*)).
+\end{equation}
+Put $r=\ell-1$. Then the boundary diameter is at most $2r$, and
+$\girth(H)\ge2r+2$. Lemma~\ref{lem:cover} gives a transversal
+$Z=\{z_1,\dots,z_k\}$ of its boundary-centered radius-$r$ balls, with
+$k<35840g$.
+
+Every induced radius-$r$ ball of $H$ is a tree. It is connected, since
+root geodesics stay in the ball. A breadth-first search tree rooted at
+its center has depth at most $r$. Any other induced edge, together with
+the unique tree path between its endpoints, would create a simple cycle
+of length at most $2r+1$, contradicting the girth.
+
+Assign every vertex of $H$ to a nearest $z_j$, breaking ties by the
+smallest index. A shortest path from a vertex $v$ to its assigned center
+$z_j$ stays in the same region. Indeed, for a vertex $u$ on that path,
+if another center were nearer at $u$, or tied there with a smaller index,
+the inequality
+\[
+d_H(v,z_i)\le d_H(v,u)+d_H(u,z_i)
+ \le d_H(v,u)+d_H(u,z_j)=d_H(v,z_j)
+\]
+would give a better choice at $v$, with a strict inequality in the
+nearer case. Thus each region contains shortest paths to its center.
+For each label used on $C^*$, take the subtree of a fixed rooted
+shortest-path tree joining all its assigned boundary vertices.
+These trees are pairwise vertex-disjoint.
+
+Because $Z$ meets $B_H(v,r)$ for every $v$ on $C^*$, every boundary
+vertex is within $r$ of its assigned center. A proper circular run of
+one label is consequently a simple path in the induced ball of that
+center. In a tree its length is at most the sum of the distances from
+the center to its endpoints, hence at most $2r$ edges or $2r+1$ vertices.
+The whole cycle cannot have one label, as that would put $C^*$ in an
+induced tree ball.
+
+Let $q\ge2$ be the number of labels used on $C^*$ and let $R$ be the
+number of maximal circular runs, including the last/first adjacency.
+Choose one boundary vertex from each run. Their neighboring labels
+differ, so Lemma~\ref{lem:hub}, applied to the $q$ disjoint trees, gives
+$R\le2q+2\kappa-2\le2k+4g-2$. Summing the disjoint run vertex counts,
+\[
+|C^*|\le(2k+4g-2)(2r+1)
+ =(2k+4g-2)(2\ell-1)<71684g(2\ell).
+\]
+Finally $|C^*|=2|C|$ gives $|C|<71684g\ell\le100000g\ell$, completing
+the proof for both surface types and all the stated parameters.
+\end{proof}
+
+\section*{AI assistance}
+OpenAI Codex was used for literature searches, developing the argument,
+drafting, and checking the mathematical text.
+
+\begin{thebibliography}{9}
+\bibitem{Axenovich}
+M.~Axenovich, L.~Kie{\ss}le, A.~Sagdeev, and M.~Zhukovskii,
+\emph{Faces in girth-saturated graphs on surfaces},
+Discrete \& Computational Geometry \textbf{76} (2026), 1503--1523.
+\href{https://doi.org/10.1007/s00454-026-00833-x}{doi:10.1007/s00454-026-00833-x}.
+The theorem and question locators used here refer to
+\href{https://arxiv.org/abs/2410.13481v3}{arXiv:2410.13481v3}.
+
+\bibitem{Bousquet}
+N.~Bousquet, W.~Cames van Batenburg, L.~Esperet, G.~Joret,
+W.~Lochet, C.~Muller, and F.~Pirot,
+\emph{Packing and covering balls in graphs excluding a minor},
+Combinatorica \textbf{41} (2021), 299--318.
+\href{https://doi.org/10.1007/s00493-020-4423-3}{doi:10.1007/s00493-020-4423-3}.
+Theorem~4 and page locators refer to
+\href{https://arxiv.org/abs/2001.04517v3}{arXiv:2001.04517v3}.
+
+\bibitem{DSW}
+G.-L.~Ding, P.~Seymour, and P.~Winkler,
+\emph{Bounding the vertex cover number of a hypergraph},
+Combinatorica \textbf{14} (1994), 23--34.
+\href{https://doi.org/10.1007/BF01305948}{doi:10.1007/BF01305948}.
+Statements (5.1), (5.3), and (5.4) and printed page numbers refer to the
+\href{https://math.dartmouth.edu/~pw/papers/hyperg.ps}{author-hosted original}.
+
+\bibitem{Erickson}
+J.~Erickson, \emph{Surface classification}, lecture~6 of
+\emph{Computational Topology}, author course notes, 2009,
+distributed in the 2017 course archive.
+\url{https://jeffe.cs.illinois.edu/teaching/comptop/2017/notes/surface-classification.pdf}.
+
+\bibitem{PalvolgyiZolomy}
+D.~P\'alv\"olgyi and K.~Z\'olomy,
+\emph{Stabbing non-piercing sets and face lengths in large girth plane graphs},
+2025.
+\href{https://arxiv.org/abs/2504.10618v2}{arXiv:2504.10618v2}.
+\end{thebibliography}
+\end{document}
