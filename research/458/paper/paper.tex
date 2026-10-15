@@ -1,0 +1,1497 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\divg}{\operatorname{div}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\calE}{\mathcal E}
+\newcommand{\calX}{\mathcal X}
+\newcommand{\calM}{\mathcal M}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\argu}{arg}
+\DeclareMathOperator{\Dom}{D}
+\title{Local no-slip Navier--Stokes equations under stochastic parabolicity}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consider the three-dimensional incompressible Navier--Stokes equation
+on a bounded smooth domain with no-slip boundary condition and finitely
+many smooth, divergence-free, boundary-tangent transport noises. We prove
+local pathwise well-posedness under the stochastic parabolicity condition
+$\nu I-\frac12\sum_k b_k\otimes b_k\geq\delta I>0$, without an
+additional smallness assumption on the noise. For smooth compatible
+initial data the solution is continuous in $B^{1/2}_{4,4}$ and belongs
+locally to $L^4$ in time with values in $W^{1,4}_0$. Uniqueness holds
+in this entire path class, and the solutions depend continuously in
+probability on the initial data after common stopping. The proof first
+controls constant transport on periodic channels and full interior
+tori. Localization through the Stokes energy form preserves the weak
+Dirichlet scale; a quantitative square-root comparison makes its errors
+small enough to recover the physical-domain estimate.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Consider the It\^o equation
+\begin{equation}\label{eq:NS}
+ du=\bigl[\nu\PP_D\Delta u-\PP_D\divg(u\otimes u)\bigr]dt
+ +\sum_{k=1}^K\PP_D[(b_k\cdot\nabla)u]\,dW^k_t,
+ \qquad \divg u=0,\quad u|_{\partial D}=0.
+\end{equation}
+Here $D\subset\R^3$ is bounded and smooth, $\nu>0$ is the viscosity,
+$\PP_D$ is the Helmholtz projection, and the finite family $b_k$ is
+smooth, solenoidal, and tangent to the wall. Transport noise acts at
+the same differential order as the square root of viscosity. Its
+quadratic variation therefore changes the coercive second-order part
+of an energy estimate. The natural positivity condition is
+\[
+ \nu I-\tfrac12\sum_kb_k(x)\otimes b_k(x)\geq\delta I>0
+ \qquad(x\in\overline D).
+\]
+The question is whether this positivity suffices for a strong local
+theory with no-slip walls, even when the transport cannot be treated
+as a small perturbation.
+
+The deterministic weak Stokes scale places convection in a negative
+Sobolev space and reduces local existence to an estimate for the
+linear equation. Pr\"uss and Wilke \cite[Section 5]{PW} develop this
+formulation for deterministic Navier--Stokes equations. Stochastic
+maximal regularity gives an analogous route once the linear noise
+has been controlled; see Agresti and Veraar \cite{AV}. Their survey
+distinguishes the whole-space non-small transport theory from the
+no-slip boundary question, which appears as Open Problem 9. In the
+presence of walls, pressure and the zero vector trace interact with
+localization. In particular, Helmholtz projection enforces the normal
+constraint but does not in general preserve the tangential zero trace.
+
+Boundary results also depend on the precise equation and solution
+class. Goodair's strong two-dimensional theory uses Navier boundary
+conditions \cite{GoodairNavier}; its discussion explains the difficulty
+of the corresponding no-slip estimates. His no-slip channel
+inviscid-limit result \cite{GoodairPlates} uses weak martingale
+solutions and a transport-stretching model. These are different
+questions from pathwise local well-posedness for \eqref{eq:NS} on
+arbitrary smooth three-dimensional domains. We address the finite
+smooth-coefficient formulation in AIM Problem 458 \cite{AIM458}.
+This is a specified part of the broader no-slip problem in \cite{AV}.
+
+Let
+\[
+ \calE=\{h\in B^{1/2}_{4,4}(D;\R^3):\divg h=0,\ \Tr h=0\},
+ \qquad V_4=W^{1,4}_{0,\sigma}(D),\qquad
+ Y_4=(W^{1,4/3}_{0,\sigma}(D))^*.
+\]
+The trace in $\calE$ is well defined since $1/2>1/4$.
+Equation \eqref{eq:NS} is understood as a weak solenoidal integral
+identity in $Y_4$. In particular convection is paired against
+$\varphi\in W^{1,4/3}_{0,\sigma}$ by
+$\int_D(u\otimes u):\nabla\varphi$.
+
+\begin{theorem}\label{thm:main}
+Let $D\subset\R^3$ be any bounded smooth domain and $\nu>0$.
+Let $b_1,\ldots,b_K\in C^\infty(\overline D;\R^3)$ be
+divergence-free, tangent to $\partial D$, and satisfy the displayed
+positivity condition for some $\delta>0$. On any filtered probability
+space satisfying the usual conditions, with independent standard
+Brownian motions $W^1,\ldots,W^K$, every deterministic smooth
+solenoidal datum $h$ with zero vector trace admits an almost surely
+positive stopping time $\tau$ and an adapted solution of
+\eqref{eq:NS}, $u(0)=h$, with paths in
+\begin{equation}\label{eq:main-class}
+ C([0,\tau];B^{1/2}_{4,4}(D;\R^3))
+ \cap L^4(0,\tau;W^{1,4}_0(D;\R^3)).
+\end{equation}
+Any two adapted solutions in this entire class with the same data
+and Brownian motions agree up to their common lifetime.
+
+Fixing the domain, coefficients, and Brownian coupling, let smooth
+admissible $h_n\to h$ in $\calE$. The corresponding solutions can be
+chosen with a positive base time $\tau$ and positive pairwise common
+stops $\sigma_n\leq\tau$ such that, for each $\epsilon>0$,
+\begin{align}\label{eq:main-dependence}
+ \PP\!\left\{\sup_{t\leq\sigma_n}\norm{u_n(t)-u(t)}_{\calE}
+ +\left(\int_0^{\sigma_n}\norm{u_n-u}_{V_4}^4\,dt\right)^{1/4}
+ >\epsilon\right\}&\longrightarrow0,\\
+ \PP\{\sigma_n<\tau\}&\longrightarrow0.\notag
+\end{align}
+\end{theorem}
+
+Thus perturbations reach the same base interval with probability
+tending to one, and converge in the full asserted path topology on
+their common intervals. The theorem imposes no amplitude smallness
+beyond stochastic parabolicity and no planar-span restriction on
+the interior noise. It is local in time; it makes no assertion of
+global three-dimensional regularity. The proof uses smooth finite
+noise families and does not establish the broader rough or
+infinite-noise formulations of the no-slip question.
+
+The main work is linear. In a flat channel, constant tangential
+transport is removed by random translation, leaving an anisotropic
+Stokes operator. Its pressure and heat roots can coincide even at
+a positive resolvent parameter. Divided differences keep the
+resolvent regular there. The matrix imposing the two wall conditions
+has a uniformly bounded inverse, also after weighting the normal
+component. These two bounds preserve the smaller normal trace of the
+forcing and the factor $k/a$ in the slow tangential response, where
+$k$ and $a$ are the pressure and heat frequency scales. They give the
+required operator-valued multiplier bounds. Interior points instead use
+a full three-dimensional torus,
+so their frozen vectors may have arbitrary rank.
+
+To pass to a curved wall, we localize the Stokes energy form between
+the physical and flat domains. This preserves both the no-slip
+positive space and its weak dual. Comparing it with Piola transport
+requires control of the nonorthogonal pressure term. Negative-order
+pressure estimates and the perturbation theorem of Kalton,
+Kunstmann, and Weis \cite{KKW} give a quantitative square-root
+comparison. Its smallness survives summation over the cover; compact
+errors reduce to the physical $L^2$ energy estimate. A finite
+continuation in the noise amplitude then constructs the linear
+solution operator throughout the parabolicity range. An adapted
+state cutoff gives the nonlinear solution, while a separately
+stopped energy argument proves uniqueness without moment assumptions
+on the competing paths.
+
+Section~\ref{sec:framework} fixes the weak formulation and states the
+linear estimate. Section~\ref{sec:models} proves the flat estimates;
+Sections~\ref{sec:localization} and \ref{sec:physical-linear} localize
+and construct the physical linear solution. Section~\ref{sec:nonlinear}
+proves the nonlinear assertions. Throughout, Fourier modes are
+$e^{i\xi\cdot x}$, positive Stokes operators have sign $-\PP\Delta$,
+and complex square roots have positive real part. Constants may
+depend on the fixed domain and coefficients and need not stay
+bounded as $\delta\downarrow0$.
+
+\section{Weak Stokes formulation and the linear estimate}\label{sec:framework}
+
+Let $D\subset\R^3$ be bounded with smooth boundary. We use the ordinary
+Helmholtz projection $\PP_D$ and set, for $1<q<\infty$,
+\[
+ H_q=L^q_\sigma(D),\qquad V_q=W^{1,q}_{0,\sigma}(D),
+ \qquad Y_q=(V_{q'})^*,\qquad q'=q/(q-1).
+\]
+Here $H_q$ consists of solenoidal fields with zero weak normal trace;
+$V_q$ has zero vector trace. Duals use the integral pairing. Let
+$A_D=-\PP_D\Delta$ be the positive strong Dirichlet Stokes operator,
+with domain $W^{2,q}(D;\R^3)\cap V_q$. Its weak realization, denoted
+$A_{D,w}$, is the form
+\begin{equation}\label{eq:weak-stokes}
+ \ip{A_{D,w}u}{v}=\int_D\nabla u:\nabla v,
+ \qquad u\in V_q,\quad v\in V_{q'}.
+\end{equation}
+For the equation in this paper the trace space is
+\begin{equation}\label{eq:trace-space}
+ \calE=(Y_4,V_4)_{3/4,4}
+ =\{h\in B^{1/2}_{4,4}(D;\R^3):\divg h=0,\ \Tr h=0\}.
+\end{equation}
+The trace on the right is the Besov trace. We write $[X_0,X_1]_s$
+for complex interpolation and $(X_0,X_1)_{s,p}$ for real interpolation.
+All spatial norms are inhomogeneous. The weak Stokes identifications in
+\cite[Section 5, Proposition 5.1]{PW} give \eqref{eq:trace-space} and
+$[Y_q,V_q]_{1/2}=H_q$. They follow from the isotropic Stokes
+square-root scale; they will not be assumed for an anisotropic operator.
+The strong isotropic operator has a bounded $H^\infty$ calculus on
+$H_q$ by \cite[Theorem 9.17]{KKW}. The negative-half identification
+\[
+ J_q=(1+A_D)^{-1/2}:Y_q\longrightarrow H_q
+\]
+is an isomorphism, with $J_q(V_q)=\Dom(A_D)$ and
+$J_qA_{D,w}J_q^{-1}=A_D$. Thus the weak operator is similar to the
+strong one. We also use the resulting fractional-domain and
+interpolation identities for $1+A_D$.
+
+Fix a filtered probability space satisfying the usual conditions and
+independent real Brownian motions $W^1,\ldots,W^K$. For predictable
+processes write
+\[
+ \calM_T=C([0,T];\calE)\cap L^4(0,T;V_4),\qquad
+ \calX_T=L^4(\Omega;\calM_T),
+\]
+with sum norms. The noise norm $\gamma(\R^K,H_4)$ is equivalent to
+$\norm{(\sum_k|g_k|^2)^{1/2}}_{L^4}$, with constants independent of
+finite-dimensional Hilbert indices. No boundary trace is imposed on $g$.
+Stochastic integrals below have their usual UMD-space meaning; the
+integral estimate used is \cite[Proposition 2.4]{AV}.
+
+Let $b_k\in C^\infty(\overline D;\R^3)$ be solenoidal and tangent to
+$\partial D$, and suppose
+\begin{equation}\label{eq:parabolicity}
+ Q(x):=\nu I-\tfrac12\sum_{k=1}^K b_k(x)\otimes b_k(x)
+ \ \geq\delta I>0,\qquad \nu>0.
+\end{equation}
+Set $B_ku=\PP_D[(b_k\cdot\nabla)u]$. This is bounded
+$V_4\to H_4$. The main analytic estimate is the following.
+
+\begin{theorem}\label{thm:linear}
+For each fixed $T_0<\infty$, every $0<T\leq T_0$, every
+$\mathcal F_0$-measurable $h\in L^4(\Omega;\calE)$, and predictable
+\[
+ f\in L^4(\Omega\times(0,T);Y_4),\qquad
+ g\in L^4(\Omega\times(0,T);\gamma(\R^K,H_4)),
+\]
+there is a unique predictable $u\in\calX_T$ solving
+\begin{equation}\label{eq:linear}
+ du+\nu A_{D,w}u\,dt=f\,dt+\sum_k(B_ku+g_k)\,dW^k,
+ \qquad u(0)=h,
+\end{equation}
+as an integral identity in $Y_4$. It satisfies
+\begin{equation}\label{eq:linear-bound}
+ \norm{u}_{\calX_T}\leq C\left(
+ \norm{h}_{L^4(\Omega;\calE)}+
+ \norm{f}_{L^4(\Omega\times(0,T);Y_4)}+
+ \norm{g}_{L^4(\Omega\times(0,T);\gamma(\R^K,H_4))}\right).
+\end{equation}
+The constant depends on $D,\nu,\delta$, the fixed finite smooth family
+$b$, and $T_0$, and is uniform in $T\leq T_0$. The solution map is
+causal and the same bound holds on common stopping intervals.
+\end{theorem}
+
+The additive stochastic theorem that we use is
+\cite[Theorem 3.14]{AV}: if $X_0$ is isomorphic to a closed subspace
+of $L^q$, $q\geq2$, and a shift of $A$ has bounded $H^\infty$
+calculus of angle less than $\pi/2$, then $(A,0)$ has stochastic
+maximal $L^p$ regularity for $p>2$ and the permitted weights. Here
+$p=4$, the weight is zero, $X_0=Y_4$, $\Dom(A)=V_4$, and the
+noise space is $[Y_4,V_4]_{1/2}=H_4$. The trace estimate follows from
+\cite[Proposition 2.1, Definitions 3.7--3.8]{AV}, using temporal
+smoothness $3/8\in(1/4,1/2)$. More explicitly, the estimate supplies
+\[
+ L^4(0,T_0;V_4)\cap
+ H^{3/8,4}(0,T_0;[Y_4,V_4]_{5/8})
+ \hookrightarrow C\bigl([0,T_0];([Y_4,V_4]_{5/8},V_4)_{1/3,4}\bigr).
+\]
+The trace space on the right is $(Y_4,V_4)_{3/4,4}=\calE$, since
+$5/8+(1/3)(1-5/8)=3/4$. This gives the $C\calE$ norm as well
+as the $L^4V_4$ norm. We always obtain these estimates on a fixed
+interval $[0,T_0]$ and then restrict them, so their constants do not
+come from a short-interval trace embedding. This is an additive theorem;
+the non-small transport in \eqref{eq:linear} requires the arguments below.
+
+\section{Flat transport models}\label{sec:models}
+
+At a boundary point a tangent vector field freezes to a horizontal
+constant vector. The corresponding model is a fixed periodic channel.
+Interior points require a three-dimensional torus, since the frozen
+vectors there may span all of $\R^3$. We first prove the channel
+estimate, retaining its pressure equation.
+
+\subsection{Channel resolvent and the colliding roots}\label{sec:channel}
+
+Let $O=(\R^2/\Gamma)\times(0,h)$, where $\Gamma$ is a fixed
+full-rank lattice. Write $H_q(O)=L^q_\sigma(O)$,
+$V_q(O)=W^{1,q}_{0,\sigma}(O)$, and $Y_q(O)=(V_{q'}(O))^*$,
+with periodic horizontal directions and zero vector trace at both walls
+in $V_q(O)$. Its horizontal dual frequencies satisfy
+$\xi\cdot\gamma\in2\pi\mathbb Z$. Let
+\[
+ Q=\diag(Q_\tau,\nu),\qquad \delta I\leq Q_\tau\leq\nu I,
+ \qquad A_Q=-\PP_O\divg(Q\nabla).
+\]
+The projection and the pressure gradient are the ordinary ones. One
+could normalize diffusion by $x=Ly$, $L=\diag(Q_\tau^{1/2},\sqrt\nu)$,
+while leaving velocity components unchanged. Then both gradient and
+divergence contain $L^{-1}\nabla_y$, and the lattice becomes
+$Q_\tau^{-1/2}\Gamma$. Thus this normalization cannot remove the two
+horizontal weights while retaining the original projection. We work in
+the original coordinates.
+
+For $\xi\ne0$ put
+\begin{equation}\label{eq:roots}
+ k=|\xi|,\quad d_\xi=\xi^TQ_\tau\xi,\quad
+ \alpha=\sqrt{(\lambda+d_\xi)/\nu},\quad \Rea\alpha>0,
+ \quad a=|\alpha|.
+\end{equation}
+On $|\argu\lambda|\leq\pi-\varepsilon$ we have
+$a\geq ck$, $\Rea\alpha\geq ca$, and
+$|\lambda|+k^2\asymp a^2$. Constants may depend on the fixed
+$\varepsilon,\delta,\nu,h,\Gamma$. The nonzero lattice has $k\geq k_0>0$.
+For velocity $(v,w)$ and forcing $(f_\tau,f_3)$ the mode equations are
+\begin{align}\label{eq:mode}
+ (\lambda+d_\xi-\nu\partial_z^2)v+i\xi p&=f_\tau,&
+ (\lambda+d_\xi-\nu\partial_z^2)w+p'&=f_3,\\
+ i\xi\cdot v+w'&=0,&(v,w)|_{0,h}&=0.\notag
+\end{align}
+The transverse component is a scalar Dirichlet resolvent. Eliminating
+pressure in the remaining components gives
+\begin{equation}\label{eq:clamped}
+ \nu(\partial_z^2-k^2)(\partial_z^2-\alpha^2)w
+ =k^2f_3+i\xi\cdot f_\tau',\qquad w=w'=0\quad(z=0,h),
+\end{equation}
+with $v_\parallel=i\xi w'/k^2$ and
+$p=-((\lambda+d_\xi-\nu\partial_z^2)w'+i\xi\cdot f_\tau)/k^2$.
+At $\xi=0$ the equation is instead $w=0$, $p'=f_3$, and the
+tangential scalar Dirichlet problem. This mode has a spectral gap.
+
+The roots $\alpha$ and $k$ collide at $\lambda=\nu k^2-d_\xi$,
+which can be positive. Put $\Delta=\alpha^2-k^2$ and use
+\[
+ \phi_3(z)=\frac{\cosh(\alpha z)-\cosh(kz)}{\Delta},\qquad
+ \phi_4(z)=\frac{\sinh(\alpha z)/\alpha-\sinh(kz)/k}{\Delta}.
+\]
+The removable values are understood analytically. After the two bottom
+conditions the remaining boundary matrix is
+\[
+ M=\begin{pmatrix}\phi_3(h)&\phi_4(h)\\
+ \phi_3'(h)&\phi_3(h)\end{pmatrix},\quad
+ \det M=\frac{(\alpha/k+k/\alpha)\sinh(\alpha h)\sinh(kh)
+ -2(\cosh(\alpha h)\cosh(kh)-1)}{\Delta^2}.
+\]
+At collision,
+\begin{equation}\label{eq:confluent}
+ \det M=\frac{\sinh^2(kh)-(kh)^2}{4k^4}>0.
+\end{equation}
+Indeed the three entries are respectively
+$h\sinh(kh)/(2k)$,
+$(kh\cosh(kh)-\sinh(kh))/(2k^3)$, and
+$(\sinh(kh)+kh\cosh(kh))/(2k)$. The limiting determinant as
+$k\to0$ is $h^4/12$; the actual zero mode was treated separately.
+For all other parameters, the homogeneous energy identity
+\[
+ \lambda\norm{u}_2^2+d_\xi\norm{u}_2^2+\nu\norm{u'}_2^2=0
+\]
+excludes a nonzero solution in the stated sector. Multiplication by
+$e^{-i\argu(\lambda)/2}$ also gives the coercive forced estimate.
+
+For the kernel estimates use the divided difference
+\[
+ D_\alpha(r)=\frac{e^{-\alpha r}-e^{-kr}}{\alpha-k},\qquad
+ D_k(r)=-r e^{-kr},\qquad \Pi=\xi\xi^T/k^2.
+\]
+The decaying half-channel Poisson matrix is
+\begin{equation}\label{eq:poisson}
+ H_+(r)=\begin{pmatrix}
+ e^{-\alpha r}I_2+kD_\alpha(r)\Pi&(i\xi/k)\alpha D_\alpha(r)\\
+ i\xi^TD_\alpha(r)&e^{-kr}-kD_\alpha(r)
+ \end{pmatrix}.
+\end{equation}
+It equals $I_3$ at zero and satisfies \eqref{eq:mode} homogeneously.
+Let $J=\diag(1,1,-1)$ and define
+\[
+ R_+=H_+(h),\quad R_-=JH_+(h)J,\quad
+ L=\begin{pmatrix}I&R_-\\R_+&I\end{pmatrix},\quad B=L^{-1}.
+\]
+Thus prescribed boundary values are obtained from
+$u(z)=H_+(z)c+JH_+(h-z)Je$ by solving $L(c,e)^T=(g_0,g_h)^T$.
+
+Both $B$ and $\diag(W,W)B\diag(W,W)^{-1}$ are uniformly bounded,
+where $W=\diag(I_2,a/k)$. To see this, for comparable $a,k$ use
+coercivity and compactness. For $k\to\infty$ both versions of $R_\pm$
+tend to zero. For bounded $k$ and $a\to\infty$, putting $\vartheta=a/\alpha$,
+\[
+ R_+\to e^{-kh}\begin{pmatrix}0&-i\widehat\xi\\0&1\end{pmatrix},
+ \qquad WR_+W^{-1}\to e^{-kh}
+ \begin{pmatrix}0&0\\-i\vartheta\widehat\xi^T&1\end{pmatrix}.
+\]
+The reflected limits use $J$. The only possible nonzero eigenvalue
+of their product is $e^{-2kh}<1$, uniformly away from one for
+$k\geq k_0$. On the remaining compact parameter set, the homogeneous
+boundary-value problem has no nonzero solution, so its boundary
+matrix is invertible. Consequently every boundary block of $B$ has size
+\begin{equation}\label{eq:B-block}
+ B_{ee'}=\begin{pmatrix}O(1)&O(1)\\O(k/a)&O(1)\end{pmatrix}.
+\end{equation}
+The lower-left bound uses the weighted inverse, the upper-right bound
+the unweighted inverse. A regular normalized determinant, useful also
+at collision, is
+\[
+ (1-e^{-(\alpha+k)h})^2-(\alpha+k)^2
+ \left(\frac{e^{-kh}-e^{-\alpha h}}{\alpha-k}\right)^2.
+\]
+Its collision value is $4e^{-2kh}(\sinh^2(kh)-(kh)^2)>0$.
+
+\subsection{Kernel derivatives and \texorpdfstring{$R$}{R}-bounds}\label{sec:kernels}
+
+Here all horizontal derivatives keep $\lambda$ fixed. For $c=Q_\tau\xi$,
+\begin{equation}\label{eq:root-jets}
+ k_i=\xi_i/k,\quad k_{ij}=\delta_{ij}/k-\xi_i\xi_j/k^3,\quad
+ \alpha_i=\frac{c_i}{\nu\alpha},\quad
+ \alpha_{ij}=\frac{Q_{ij}}{\nu\alpha}-\frac{c_ic_j}{\nu^2\alpha^3}.
+\end{equation}
+In particular $k^m\partial^\beta\alpha=O(k^2/a)$ for
+$m=|\beta|=1,2$. If $E_t(r)=e^{-tr}$, then
+\begin{align}\label{eq:exponential-jets}
+ \partial_i(t^mE_t)&=E_t(mt^{m-1}-rt^m)t_i,\\
+ \partial_{ij}(t^mE_t)&=E_t\bigl[
+ (m(m-1)t^{m-2}-2mr t^{m-1}+r^2t^m)t_it_j
+ +(mt^{m-1}-rt^m)t_{ij}\bigr].\notag
+\end{align}
+This also holds for $m=-1$. The angular derivatives are, with $N=\xi\xi^T$,
+\begin{align}\label{eq:angular-jets}
+ \Pi_i&=(e_i\xi^T+\xi e_i^T)/k^2-2\xi_iN/k^4,\\
+ \Pi_{ij}&=(e_ie_j^T+e_je_i^T)/k^2
+ -2\{\xi_j(e_i\xi^T+\xi e_i^T)+\xi_i(e_j\xi^T+\xi e_j^T)
+ +\delta_{ij}N\}/k^4+8\xi_i\xi_jN/k^6.\notag
+\end{align}
+For comparable roots put $t_s=(1-s)k+s\alpha$. Then
+\begin{align}\label{eq:divided-jets}
+ D_\alpha&=-r\int_0^1e^{-t_sr}\,ds,&
+ (D_\alpha)_i&=r^2\int_0^1e^{-t_sr}(t_s)_i\,ds,\\
+ (D_\alpha)_{ij}&=r^2\int_0^1e^{-t_sr}(t_s)_{ij}\,ds
+ -r^3\int_0^1e^{-t_sr}(t_s)_i(t_s)_j\,ds.\notag
+\end{align}
+For $a\geq2k$ the denominator $|\alpha-k|\geq a/2$ is safe:
+if $A=e^{-\alpha r}-e^{-kr}$, $C=\alpha-k$, then
+$D_i=(A_i-DC_i)/C$ and
+$D_{ij}=(A_{ij}-DC_{ij}-D_iC_j-D_jC_i)/C$.
+These formulas, with ordinary product differentiation, give all pure
+and mixed second derivatives in \eqref{eq:poisson}.
+
+Let primes now denote distributional derivatives in $z$, and put
+\[
+ K_\alpha(r)=e^{-\alpha|r|}/(2\alpha),\qquad
+ G(r)=\frac{e^{-k|r|}/(2k)-e^{-\alpha|r|}/(2\alpha)}{\Delta}.
+\]
+The full-line particular velocity kernel is
+\begin{equation}\label{eq:full-line}
+ R^0(r)=\nu^{-1}\begin{pmatrix}
+ K_\alpha(I_2-\Pi)-G''\Pi&i\xi G'\\
+ i\xi^TG'&k^2G
+ \end{pmatrix}.
+\end{equation}
+Its crucial distributional identities are
+\begin{equation}\label{eq:delta-identity}
+ G''''=\delta_0+\frac{k^3e^{-k|r|}-\alpha^3e^{-\alpha|r|}}{2\Delta},
+ \qquad K_\alpha''=\alpha^2K_\alpha-\delta_0.
+\end{equation}
+Thus $\partial_z^2R^0$ contains exactly
+$-\nu^{-1}\diag(I_2,0)\delta_0$. The derivatives of its two angular
+projections cancel. Away from zero,
+$G^{(j)}$ is the signed version of
+$(-1)^j(k^{j-1}e^{-k|r|}-\alpha^{j-1}e^{-\alpha|r|})/(2\Delta)$,
+with the parity sign on crossing zero.
+
+For $a\geq2k$ use $|\Delta|\geq3a^2/4$ and
+\eqref{eq:root-jets}--\eqref{eq:exponential-jets}. Derivatives of
+$\Delta^{-1}$ are
+$-\Delta_i/\Delta^2$ and
+$2\Delta_i\Delta_j/\Delta^3-\Delta_{ij}/\Delta^2$, where
+$\Delta_i=2c_i/\nu-2\xi_i$ and
+$\Delta_{ij}=2Q_{ij}/\nu-2\delta_{ij}$.
+For comparable roots use the nonsingular expression
+\[
+ G(r)=\frac1{2(\alpha+k)}\int_0^1
+ e^{-t_s|r|}\left(\frac{|r|}{t_s}+\frac1{t_s^2}\right)ds.
+\]
+Since $\Rea t_s\geq ck$, its derivatives of vertical order $j\leq3$
+are bounded by $Ck^{j-3}(1+k|r|)^M e^{-ck|r|}$; order four uses
+\eqref{eq:delta-identity}. In both regimes the kernels of
+\begin{equation}\label{eq:four-families}
+ k^{|\beta|}\partial_\xi^\beta
+ \{\lambda R^0,\ k^2R^0,\ k\partial_zR^0,\ \partial_z^2R^0\},
+ \qquad |\beta|\leq2,
+\end{equation}
+are bounded by $Cke^{-ck|r|}+Cae^{-ca|r|}$, together with the
+identity term just described. Polynomial factors are absorbed by reducing $c$.
+
+For the boundary correction set
+\[
+ P(z)=[H_+(z),JH_+(h-z)J],\qquad
+ T(s)=\operatorname{col}(R^0(-s),R^0(h-s)).
+\]
+The complete channel resolvent is
+\begin{equation}\label{eq:channel-resolvent}
+ R(\lambda,\xi;z,s)=R^0(z-s)-P(z)BT(s).
+\end{equation}
+Put $\mu=|\lambda|+k^2$. At either endpoint, with $d_e(s)$ its distance,
+the tangential and normal rows of the trace kernel obey
+\begin{align}\label{eq:trace-rows}
+ |k^{|\beta|}\partial^\beta T_\tau(s)|
+ &\leq C\mu^{-1}(ae^{-ca d_e(s)}+ke^{-ckd_e(s)}),\\
+ |k^{|\beta|}\partial^\beta T_3(s)|
+ &\leq C\mu^{-1}k(e^{-ca d_e(s)}+e^{-ckd_e(s)}),\quad |\beta|\leq2.
+ \notag
+\end{align}
+These follow separately from $k^2G,kG',G''$ in \eqref{eq:full-line}.
+For $a\geq2k$, the Poisson blocks have sizes
+\begin{equation}\label{eq:poisson-sizes}
+ \begin{aligned}
+ H_{\tau\tau}&=O(E_a+(k/a)E_k),& H_{\tau3}&=O(E_a+E_k),\\
+ H_{3\tau}&=O((k/a)(E_a+E_k)),& H_{33}&=O(E_k+(k/a)E_a),
+ \end{aligned}
+\end{equation}
+where $E_b=e^{-cb r}$. They retain these sizes under normalized
+horizontal derivatives. In particular the slow response to a tangential
+input has the factor $k/a$.
+
+For completeness, inverse differentiation gives
+\[
+ B_i=-BL_iB,\qquad
+ B_{ij}=BL_jBL_iB+BL_iBL_jB-BL_{ij}B.
+\]
+Differentiating $WLW^{-1}$ and using
+$k\partial_iW\,W^{-1}$ and its second analogues, which are bounded
+by \eqref{eq:root-jets}, proves \eqref{eq:B-block} for all the
+normalized first and second horizontal derivatives of $B$. The second
+derivative of the reflected
+product has all nine terms
+\begin{align}\label{eq:nine-terms}
+ &(PBT)_{ij}=P_{ij}BT+P_iB_jT+P_iBT_j+P_jB_iT+PB_{ij}T\notag\\
+ &\hspace{35mm}{}+PB_iT_j+P_jBT_i+PB_jT_i+PBT_{ij}.
+\end{align}
+For vertical order $j_0=0,1,2$ replace $P$ by $\partial_z^{j_0}P$;
+multiply by $\lambda$ or by $k^{2-j_0}$ as appropriate in
+\eqref{eq:four-families}. Fast parts gain $a^{j_0}$, slow parts
+$k^{j_0}$. The fast factor $k^{2-j_0}a^{j_0}\leq Ca^2$ cancels
+$\mu^{-1}$. Whenever an $a$-sized tangential trace enters a slow
+output, \eqref{eq:poisson-sizes} and \eqref{eq:B-block} supply $k/a$.
+For example, a fast tangential trace entering a slow tangential output
+in $\lambda PBT$ is bounded by
+\[
+ C|\lambda|\frac{k}{a}\frac{a}{\mu}
+ e^{-ckd_e(z)-ca d_{e'}(s)}
+ \leq Ck e^{-c'k(d_e(z)+d_{e'}(s))}
+ \leq\frac{C}{d_e(z)+d_{e'}(s)}.
+\]
+Here $|\lambda|/\mu\leq1$ and $a\geq ck$. For the second spatial
+families the slow output contributes $k^2$, giving
+$k^3/\mu\leq Ck$ instead. Fast--fast terms are bounded by
+$Ca e^{-ca(d_e(z)+d_{e'}(s))}$; a fast output with a slow input
+has size at most $Ck$ with decay at least at scale $k$ on both sides.
+The block bounds for $B$ preserve these estimates, and the smaller
+normal row in \eqref{eq:trace-rows} handles the remaining columns.
+The same reasoning applies to the normalized derivatives just listed.
+Every resulting boundary kernel is bounded by
+\begin{equation}\label{eq:hardy-bound}
+ C\sum_{e,e'\in\{0,h\}}
+ \frac1{d_e(z)+d_{e'}(s)}.
+\end{equation}
+For comparable roots $a\asymp k$, \eqref{eq:divided-jets} gives
+polynomials in $kd_e(z)$ and $kd_{e'}(s)$ times the same
+exponentials; absorbing the polynomials by a smaller exponential
+constant gives the same estimate.
+This accounts for pure and mixed jets, the reflected product, and the
+distributional identity; individual mode energy bounds alone would not suffice.
+
+Each positive kernel in \eqref{eq:hardy-bound} is bounded on $L^q(0,h)$:
+split $1/(z+s)$ at $s=z$ into the two Hardy operators, and reflect for
+the other endpoints. Minkowski's inequality in $\ell^2$ therefore
+gives the same bound for diagonal families. The full-line exponential
+kernels are dominated by the one-dimensional Hardy--Littlewood maximal
+operator. Its vector-valued estimate
+\cite[Theorem 1]{DK}, with outer exponent $q$ and sequence exponent two,
+gives the corresponding $\ell^2$ bounds. These arguments work on
+$L^q(0,h;\ell^2_N)$ uniformly in $N$ and with another Hilbert index.
+Recall that a family $\mathcal T\subset\mathcal L(X)$ is
+$R$-bounded if, for independent symmetric signs $r_\ell$,
+\[
+ \left(\EE_r\left\Vert\sum_\ell r_\ell T_\ell x_\ell\right\Vert_X^2\right)^{1/2}
+ \leq C\left(\EE_r\left\Vert\sum_\ell r_\ell x_\ell\right\Vert_X^2\right)^{1/2}
+ \quad(T_\ell\in\mathcal T).
+\]
+On $L^q$, Khintchine's inequality identifies these randomized norms
+with the corresponding $\ell^2$ square-function norms. The preceding
+bounds therefore show that the families in \eqref{eq:four-families},
+now for $R$, are $R$-bounded, including arbitrary finite collections
+of $\lambda$'s.
+
+\subsection{Domains, multipliers, and stochastic estimates}\label{sec:channel-consumer}
+
+The multiplier theorem \cite[Corollary 4.4]{GW} applies to UMD spaces
+of Fourier type $r>1$ when all normalized total derivatives through
+$\lfloor n/r\rfloor+1$ are $R$-bounded. The spaces
+$L^q(0,h;\C^3\otimes\ell^2_N)$ have Fourier type
+$\min(q,q')$ and UMD constants uniform in $N$, by the Rademacher
+embedding into $L^q$; see \cite[Remarks 2.3, 2.6, 2.10]{GW}.
+In horizontal dimension two, second derivatives suffice for every
+fixed finite $q>1$. Apply the theorem to the diagonal symbol with
+entries $\lambda_jR(\lambda_j,\xi)$. The preceding estimates have the
+additional Hilbert-index uniformity required to do this. We obtain
+the $R$-resolvent bound on $L^q(\R^2\times(0,h))$, and the spatial
+domain bounds from the other three families.
+
+Here is the periodic restriction needed for this application. First
+take the standard lattice; the fixed linear change for general
+$\Gamma$ is addressed below. Cut off
+the symbol smoothly below $k_0/2$, with value one at every nonzero
+lattice frequency. For a finite trigonometric polynomial
+$F(x)=\sum_j e^{ij\cdot x}x_j$, multiply by $\phi(\epsilon x)$,
+where $\widehat\phi$ is smooth and compactly supported. For each
+frequency $j$, after $y=\epsilon x$, the Fourier error is
+$[m(j+\epsilon\xi)-m(j)]\widehat\phi(\xi)$.
+It tends uniformly to zero with its first two derivatives. Two
+integrations by parts bound its inverse transform by
+$o(1)(1+|y|)^{-2}$, whose $q$th power is integrable in $\R^2$.
+Thus the error in the original $L^q$ norm is $o(\epsilon^{-2/q})$.
+Periodic averaging transfers the Euclidean multiplier bound to the
+samples. The constants are uniform in the Hilbert index; density
+finishes the restriction. A fixed lattice change uses the pure as
+well as mixed second derivatives already proved. Add the separately
+solved scalar zero mode.
+
+At $\lambda=1$ the spatial bounds imply that the constructed resolvent
+maps full $L^q$ forcing into
+$\Dom_q=W^{2,q}(O;\C^3)\cap V_q(O)$. Its pressure gradient follows
+from \eqref{eq:mode}. Conversely $f=(1+A_Q)u$ for $u\in\Dom_q$
+has this solution by mode uniqueness. It is the ordinary projected
+resolvent on solenoidal forcing, so $A_Q$ is closed, densely defined,
+and has exactly this domain. The zero-mode gap and the nonzero-mode
+bounds give invertibility at zero. Resolvent sectors give a causal
+analytic semigroup. For the time symbol
+$M(t)=A_Q(it+A_Q)^{-1}$, both $M$ and
+$tM'=-itA_Q(it+A_Q)^{-2}$ are $R$-bounded. The dimension-one case
+of \cite[Corollary 4.4]{GW} gives deterministic maximal $L^p$
+regularity, $1<p<\infty$. Semigroup causality and zero extension of
+forcing give constants uniform in $T\leq T_0$. In particular this
+holds at $q=4,4/3,8,8/7$.
+
+We next need the isotropic channel calculus; a bounded Euclidean-domain
+Stokes theorem does not directly have this geometry. Reflect tangential
+components evenly and normal components oddly into the doubled torus,
+apply its Helmholtz projection, and restrict. The result fixes
+solenoidal zero-normal fields and annihilates gradients, hence is
+$\PP_O$. Fourier multipliers give its $L^q$ bounds and consistent
+adjoints, and reflection gives $H^{s,2}$ bounds for $0<s<1/2$.
+Let $A_0$ be the isotropic channel Stokes operator. The elliptic
+projection
+\[
+ \widetilde Q=A_0^{-1}\PP_O(-\Delta_D)
+\]
+is bounded on full $L^q$: its adjoint is
+$(-\Delta_D)A_{0,q'}^{-1}\PP_O$, bounded by the strong-domain estimate.
+It fixes $H_q$ and maps full-vector $W^{2,q}\cap W^{1,q}_0$ into
+$\Dom_q$. Interpolating this retraction gives
+$[H_q,\Dom_q]_{1/2}=V_q$. The componentwise Dirichlet Laplacian is
+the odd part of the doubled-torus Laplacian and has its scalar
+$H^\infty$ calculus.
+
+We spell out the comparison criterion \cite[Theorem 8.2]{KKW}.
+Let $(X_0,X_1)$ be a reflexive B-convex interpolation couple,
+$Y_j\subset X_j$ complemented by compatible projections $P_j$,
+and let $\mathsf A_j,\mathsf B_j$ be consistent sectorial families
+on these spaces. Assume that $\mathsf A_j$ has $H^\infty$ calculus
+and $\mathsf B_j$ is almost $R$-sectorial. If $\alpha<0<\beta$ and
+\[
+ P_0(\dot X_{0,\alpha,\mathsf A_0})
+ =\dot Y_{0,\alpha,\mathsf B_0},\qquad
+ P_1(\dot X_{1,\beta,\mathsf A_1})
+ =\dot Y_{1,\beta,\mathsf B_1},
+\]
+then $\mathsf B$ has $H^\infty$ calculus on $[Y_0,Y_1]_t$ for
+$0<t<1$. The dots denote the homogeneous fractional scales of the
+specified operators.
+
+As in \cite[Propositions 9.14--9.16, Theorem 9.17]{KKW}, apply this to inverse
+operators. Put $p_0=2$, take $p_1=8$ or $8/7$, and set
+\[
+ X_j=L^{p_j}(O;\C^3),\quad Y_j=H_{p_j}(O),\quad P_j=\PP_O,
+ \qquad
+ \mathsf A_j=(-\Delta_{\mathrm{Dir},p_j})^{-1},\quad
+ \mathsf B_j=A_{0,p_j}^{-1}.
+\]
+Here $-\Delta_{\mathrm{Dir},p_j}$ is the componentwise Dirichlet
+Laplacian. Choose $\alpha=-s$, $0<s<1/4$, and $\beta=1$.
+Inversion exchanges the fractional signs. Thus the first image
+condition reads
+\[
+ \PP_O\Dom((-\Delta_{\mathrm{Dir},2})^s)
+ =\PP_OH^{2s,2}=H^{2s,2}_\sigma=\Dom(A_{0,2}^s).
+\]
+The retraction and subtrace reflection bounds above give this identity.
+For the second, write
+\[
+ Z_{\Delta,p_1}=(W^{2,p_1'}\cap W^{1,p_1'}_0)^*,\qquad
+ Z_{A,p_1}=(\Dom_{p_1'})^*.
+\]
+It is precisely $\PP_OZ_{\Delta,p_1}=Z_{A,p_1}$.
+The strong-domain inclusion
+$\Dom_{p_1'}\subset W^{2,p_1'}\cap W^{1,p_1'}_0$
+with its graph norm, followed by duality and Hahn--Banach extension,
+gives this surjection consistently with the ordinary projection.
+The scalar calculus was proved above; the explicit resolvent bounds
+give $R$-sectoriality of $A_0$ and its inverse and consistency across
+these exponents. All spaces in the couple are reflexive and B-convex.
+The criterion at $t=2/3$ therefore gives calculus on $H_4$ from
+$p_1=8$, and on $H_{4/3}$ from $p_1=8/7$. Calculus for the inverse
+is equivalent to calculus for $A_0$ by $F(z)\mapsto F(1/z)$.
+This proves existence of isotropic $H^\infty$ calculus. Its angle is
+less than $\pi/2$ by the already
+proved $R$-sectorial bounds and the angle comparison in
+\cite[Theorem 4.1, Corollary 4.4]{KKW}. This angle comparison is used
+only after calculus existence has been established.
+
+The resulting negative-half scale identifies
+$Y_q=(V_{q'})^*$ and gives $[Y_q,V_q]_{1/2}=H_q$.
+For general $Q$, the same causal zero-initial solution map has the
+consistent endpoint bounds, for $1<p<\infty$,
+\[
+ \begin{aligned}
+ L^p(0,T;H_q)&\longrightarrow
+ W^{1,p}(0,T;H_q)\cap L^p(0,T;\Dom_q),\\
+ L^p(0,T;Z_q)&\longrightarrow
+ W^{1,p}(0,T;Z_q)\cap L^p(0,T;H_q),
+ \qquad Z_q=(\Dom_{q'})^*.
+ \end{aligned}
+\]
+The second line is the one-step extrapolation, equivalently obtained
+by duality from the adjoint strong estimate. The isotropic retraction
+identities give
+\[
+ [Z_q,H_q]_{1/2}=Y_q,\qquad [H_q,\Dom_q]_{1/2}=V_q.
+\]
+Interpolate the solution and its time derivative at parameter $1/2$.
+This proves deterministic maximal regularity of the weak form with
+domain $V_q$ on $Y_q$. Integration by parts identifies the form with
+$\int Q\nabla u:\nabla v$. No general-$Q$ root identity is required.
+The real trace is $(Y_4,V_4)_{3/4,4}=B^{1/2}_{4,4,0,\sigma}$,
+obtained by interpolating isotropic levels on either side of spatial
+smoothness $1/2$, both above the trace threshold $1/4$.
+
+For this model set
+$\calE_O=(Y_4(O),V_4(O))_{3/4,4}$ and
+$\calX_T(O)=L^4(\Omega;C([0,T];\calE_O)\cap L^4(0,T;V_4(O)))$.
+The additive stochastic theorem stated in Section~\ref{sec:framework}
+applies to the isotropic weak operator: $Y_4$ is similar to the closed
+subspace $H_4$ of $L^4$. For general $Q$, solve the zero-initial
+isotropic stochastic equation for $z_g$, then correct it with the
+zero-initial deterministic $A_Q$ solution forced by
+$(A_{0,w}-A_{Q,w})z_g+f$. The form difference is bounded
+$V_4\to Y_4$. For nonzero $h\in\calE$, first extend by
+$z_h=e^{-tA_{0,w}}h$ and use the same deterministic correction on
+$(A_{0,w}-A_{Q,w})z_h$. The isotropic real trace estimate bounds
+$z_h$ in $C\calE\cap L^4V_4$. Both corrections have this trace by
+deterministic maximal regularity. These maps are causal and preserve
+predictability. They prove the full additive channel estimate, including
+random $\mathcal F_0$-measurable initial data, on the required spaces.
+
+\subsection{Interior torus and removal of constant transport}\label{sec:torus}
+
+On a fixed full three-dimensional torus put
+$H_q=L^q_\sigma$, $V_q=W^{1,q}_\sigma$, $Y_q=(V_{q'})^*$,
+and $\calE_O=(Y_4,V_4)_{3/4,4}=B^{1/2}_{4,4,\sigma}$.
+These norms include constants. For arbitrary constant vectors
+$\beta_1,\ldots,\beta_K\in\R^3$ set
+\[
+ T_k=\beta_k\cdot\nabla,\qquad
+ Q=\nu I-\tfrac12\sum_k\beta_k\otimes\beta_k\geq\delta I,
+ \qquad A_Q=-\divg(Q\nabla).
+\]
+Here $\PP(0)=I$, and $\PP(\xi)=I-\xi\xi^T/|\xi|^2$ otherwise.
+Let $J_0=(1-\Delta)^{1/2}$. It is an isomorphism from $H_q$ to
+$Y_q$, and $J_0^{-1}$ sends $V_q$ to $W^{2,q}_\sigma$.
+For bounded holomorphic $F$, Cauchy's estimates give all normalized
+frequency derivatives through order four of
+$F(1+\xi^TQ\xi)$. Scalar multipliers, or the scalar case of
+\cite[Corollary 4.4]{GW}, give a bounded $H^\infty$ calculus for
+$1+A_Q$ on $H_q$, with domain $W^{2,q}_\sigma$. Similarity by
+$J_0^{-1}$ gives its weak calculus with domain $V_q$ on $Y_q$.
+
+The three-dimensional restriction can be proved by the same window
+argument as above. This time differentiate the compact Fourier error
+through order four and apply $(1-\Delta_\xi)^2$. The inverse transform
+is $o(1)(1+|y|^2)^{-2}$, integrable to the $q$th power for
+$q=4,4/3$ in $\R^3$. Periodic averaging and density finish the proof
+for a fixed, possibly rotated lattice. The scalar multiplier is smooth
+at zero; the projection's constant mode is kept separately.
+The calculus constants are uniform for $\delta I\leq Q\leq\nu I$.
+The additive stochastic theorem therefore applies on $Y_4$.
+One fixed shift handles the mean and is removed by an exponential
+change of unknown on $[0,T_0]$.
+
+On either flat geometry consider
+\begin{equation}\label{eq:flat-transport}
+ du+A u\,dt=f\,dt+\sum_k(T_ku+g_k)\,dW^k,
+ \qquad A=-\nu\PP_O\Delta.
+\end{equation}
+In the channel the $\beta_k$ are horizontal; on the torus they are
+arbitrary. Translations
+$U_tv(x)=v(x+\sum_k\beta_kW^k(t))$ are isometries of all the
+spaces just defined and commute with $A,T_k$. Since
+$A_Q=A+\frac12\sum_kT_k^2$, It\^o's product rule gives
+\begin{equation}\label{eq:translation}
+ dv+A_Qv\,dt=
+ \left(U_t^{-1}f-\sum_k T_kU_t^{-1}g_k\right)dt
+ +\sum_kU_t^{-1}g_k\,dW^k,\qquad v=U_t^{-1}u.
+\end{equation}
+The correction involving $g$ is essential. Each $T_k:H_4\to Y_4$
+is bounded by integration by parts. Thus all the transformed data
+are in the additive data spaces. Smooth horizontal regularization in
+the channel, and Fourier regularization on the torus, commute with
+these operators. They prove \eqref{eq:translation} first for smooth
+approximants. The $\calX_T$ and stochastic integral bounds then pass
+to the weak equation for rough data. This proves the flat transport
+estimate, uniqueness, and causality.
+
+On the torus the mean satisfies exactly
+\[
+ \overline u(t)=\overline h+\int_0^t\overline f(s)\,ds
+ +\sum_k\int_0^t\overline g_k(s)\,dW^k(s).
+\]
+Its finite-dimensional estimate controls its contribution to the full
+$W^{1,4}$ norm. There is no restriction on the rank of the family
+$\beta$. For a common stopping interval, extend only the inhomogeneous
+data by zero to $[0,T_0]$ and restrict the causal solution. The
+multiplicative coefficients still define the full-interval equation;
+uniqueness identifies the restrictions. Constants are uniform in
+$T\leq T_0$ and, for bounded $\beta$, in all covariances between
+$\delta I$ and $\nu I$.
+
+\section{Localization on the weak Stokes scale}\label{sec:localization}
+
+A cutoff followed by Helmholtz projection need not preserve zero vector
+trace. To localize simultaneously on $V_q$ and $Y_q$ we instead use
+the isotropic Stokes energy form. All roots in this section belong
+to isotropic operators. For either model domain $O$ we use
+$H_q(O),V_q(O),Y_q(O)$ as above, with no wall trace on the full
+torus, and write $\calE_O=(Y_4(O),V_4(O))_{3/4,4}$.
+
+\subsection{Energy-form localizers}\label{sec:energy-localizers}
+
+For a physical domain $D$ and a model $O$ write $M_D=1+A_D$,
+$M_O=1+A_{0,O}$, and use the same letters for their consistent
+extrapolations. On the torus the shift includes constants. Let
+$\mathsf E$ be a smooth cutoff and coordinate map on full vector
+fields. Suppose $\mathsf E,\mathsf E^*$ are $L^q$ bounded and
+preserve full-vector $W^{1,q}_0$ and $W^{2,q}\cap W^{1,q}_0$.
+The latter means zero value trace, without a condition on derivative
+traces. The actual charts below have these properties for each fixed
+radius. Define
+\begin{equation}\label{eq:cross-form}
+ \ip{Cu}{v}=\int_O\bigl(\nabla(\mathsf E u):\nabla v
+ +(\mathsf E u)\cdot v\bigr),\qquad
+ T=M_O^{-1/2}CM_D^{-1/2}.
+\end{equation}
+The form is bounded $V_q(D)\to Y_q(O)$, so $T:H_q(D)\to H_q(O)$.
+For $u\in\Dom(A_D)$ its strong representative is
+$Cu=\PP_O(1-\Delta_O)\mathsf E u\in H_q(O)$. Since
+$M_D^{-1/2}:V_q\to\Dom(A_D)$, this proves $T:V_q(D)\to V_q(O)$.
+Similarly
+\[
+ C^*v=\PP_D\mathsf E^*(1-\Delta_O)v,
+ \qquad v\in\Dom(A_{0,O}),
+\]
+gives $T^*:V_{q'}(O)\to V_{q'}(D)$. Duality extends $T$ consistently
+to $Y_q(D)\to Y_q(O)$. We use both $q=4$ and $q=4/3$.
+
+Define the elliptic projection on full vector fields by
+\begin{equation}\label{eq:elliptic-projection}
+ Q_O=M_O^{-1}\PP_O(1-\Delta_O),\qquad S=Q_O\mathsf E.
+\end{equation}
+Its full $L^q$ extension follows by duality from the strong Stokes
+estimate, as in Section~\ref{sec:channel-consumer}. It fixes
+solenoidal fields and preserves zero-value-trace orders one and two.
+Equations \eqref{eq:cross-form}--\eqref{eq:elliptic-projection} give
+\begin{equation}\label{eq:T-S}
+ T=M_O^{1/2}SM_D^{-1/2}.
+\end{equation}
+We will compare this map with ordinary Piola localization, rather than
+assume that the latter acts on the weak dual scale.
+
+\subsection{Geometry, divergence correction, and pressure}\label{sec:geometry}
+
+Choose a regular radius-$r$ cover of $D$ with bounded overlap,
+$N\leq Cr^{-3}$, and partition $\sum_j\chi_j=1$. The two model
+cells are fixed independently of $r$: a full three-dimensional torus
+for interior patches and a periodic channel for boundary patches.
+Interior charts are affine rotations. Boundary charts, centered on
+$\partial D$, are volume-preserving graph shears
+\begin{equation}\label{eq:charts}
+ F_j(y)=x_j+O_j(y',y_3+\psi_j(y')),\quad O_j\in SO(3),\quad
+ G_j=DF_j,\quad R_j=G_j^{-1},\quad
+ \mathsf E_ju=\chi_jR_j(u\circ F_j).
+\end{equation}
+In the chart formula, $\chi_j$ denotes the pulled-back cutoff
+$\chi_j\circ F_j$. Cutting off the graph outside a $Cr$ neighborhood gives
+$\norm{\psi_j}_\infty\leq Cr^2$,
+$\norm{\nabla\psi_j}_\infty\leq Cr$,
+$\norm{D^2\psi_j}_\infty\leq C$, and uniform bi-Lipschitz bounds.
+Also $|\partial^m\chi_j|\leq C_mr^{-m}$. Smooth composition and
+multiplication show the value-trace and strong-domain properties
+used above for both $\mathsf E_j$ and its integral adjoint.
+The frozen vectors are $\beta_{j,k}=O_j^Tb_k(x_j)$. They are
+horizontal at a boundary center and arbitrary at an interior center.
+Orthogonal freezing preserves \eqref{eq:parabolicity}.
+
+We need a negative-order pressure estimate to compare the physical and
+flat Laplacians. Put
+\begin{equation}\label{eq:buffers}
+ \eta=1/8,\qquad d=1/16,\qquad \zeta=3/16,\qquad
+ \theta=1-d=15/16.
+\end{equation}
+These are fixed proof parameters. The value $\eta$ lies strictly
+inside both pressure and subtrace windows, $2d=\eta$ matches spatial
+and fractional orders, and $\theta=1-d$ yields a lower-order gain
+$\rho^{-d}$. The margin $\eta<\zeta<1/4$ permits multiplication
+at order $-\eta$ and leaves
+$1-\zeta-3/4=1/16>0$ after summing the cover; see
+Section~\ref{sec:reconstruction}.
+The ordinary Neumann gradient projection in
+\cite[Theorem 4.38, Proposition 4.39]{BG} is bounded on $H^{s,q}$
+for $-1+1/q<s<1/q$ on smooth bounded domains. Take $s=\pm\eta$
+and $q=4,4/3$, strictly inside these intervals. If
+$\nabla p_u=(I-\PP_D)\Delta u$, fixing its mean on each component,
+the projection bound and the Ne\v cas estimate
+\cite[Lemma 2.12]{BG} give
+\begin{equation}\label{eq:negative-pressure}
+ \norm{p_u}_{H^{1-\eta,q}/\R}
+ +\norm{\nabla p_u}_{H^{-\eta,q}}
+ \leq C\norm{\Delta u}_{H^{-\eta,q}}.
+\end{equation}
+The potential estimate extends from smooth fields by density.
+The cited result is used in its fixed preprint version.
+For $G=D$ or a model $O$, use the isotropic scale
+$X_{s,G}=\Dom(M_{G,q}^s)$ for $s\geq0$, and
+$X_{-s,G}=(\Dom(M_{G,q'}^s))^*$ for $s>0$, with the integral
+pairing extending the $H_q,H_{q'}$ duality. This is equivalently the
+completion in the norm $\norm{M_{G,q}^{-s}\,\cdot\,}_{H_q}$.
+The isotropic fractional scale then gives
+\[
+ \Dom(M_D^\theta)=H^{2-\eta,q}\cap V_q,
+ \qquad X_{-d,O}=\PP_OH^{-\eta,q},
+\]
+the latter consistently by duality from
+$\Dom(M_{O,q'}^d)=H^{\eta,q'}_\sigma$, below the trace thresholds.
+Canonical zero extension at order $-\eta$ is bounded by
+\cite[Proposition 2.4]{BG}; its strict window contains our exponents.
+In what follows we extend $\partial_{il}u$ and $\nabla p_u$
+themselves, rather than differentiate the zero extension of $u$.
+
+Fix one convex Euclidean box in each model coordinate cell, the
+boundary box having its bottom on the wall. It contains every small
+cutoff of that type. The regularized supported divergence solver of
+\cite[formula (3.13), Theorem 3.2, Corollary 3.4, Remark 3.5]{CM}
+uses one smoothing kernel on each box and satisfies
+\begin{equation}\label{eq:bogovskii}
+ \divg\mathcal R_B g=g-\vartheta\int g,\qquad
+ \mathcal R_B:H^{s,q}_{\mathrm{supp}}\to
+ H^{s+1,q}_{\mathrm{supp}},\quad s=-1/8,0,1.
+\end{equation}
+Here $\int\vartheta=1$. The same operator acts consistently at all
+these exponents and orders. Its supported outputs extend into the
+model; at order one they have zero value trace, and at order two
+the supported extension also has zero derivative traces. We use the
+Euclidean result on these fixed boxes, not a presumed torus version.
+
+For solenoidal $f$, the Piola identity gives
+$\divg\mathsf E_jf=\nabla\chi_j\cdot R_j(f\circ F_j)$, of mean
+zero. This follows first from the weak zero-normal identity and then
+by density on $X_{-d,D}$, using the consistent distributional
+extensions of the same Piola map and divergence correction. Consequently,
+suppressing $j$,
+\begin{align}\label{eq:divergence-comparison}
+ (\PP_O-Q_O)\mathsf E f
+ &=(\PP_O-Q_O)\mathcal R_B\divg\mathsf E f,\\
+ (S-\mathsf E)f&=(Q_O-I)\mathcal R_B\divg\mathsf E f.\notag
+\end{align}
+On the channel, even tangential and odd normal reflection, followed
+by full-torus multipliers, bounds $\PP_O$ on the supported positive
+spaces here; zero vector trace makes reflection bounded through
+order one. On the torus use its Fourier projection. Thus, for fixed $r$,
+$S-\mathsf E:H_q\to W^{1,q}$ and $S-\mathsf E:V_q\to W^{2,q}$.
+It is compact at orders zero and one, respectively. For an
+$H^{-1/8,q}$ input, the same correction gains one order before
+$\PP_O,Q_O$ are applied.
+
+\subsection{Two defect estimates and square roots}\label{sec:roots}
+
+With $S=Q_O\mathsf E$ define $K=M_OS-SM_D$. For a strong-domain
+field the exact identity is
+\begin{equation}\label{eq:defect}
+ Ku=(\PP_O-Q_O)\mathsf E M_Du
+ +\PP_O\bigl[(1-\Delta_y)\mathsf E u
+ -\mathsf E(1-\Delta_x)u-\mathsf E\nabla p_u\bigr].
+\end{equation}
+Using \eqref{eq:charts}, the principal second-order and pressure terms are
+\begin{equation}\label{eq:principal-defect}
+ \PP_O\left[-\chi R(GG^T-I)_{il}(\partial_{il}u)\circ F
+ +\chi(G^T-R)(\nabla p_u)\circ F\right].
+\end{equation}
+The nonorthogonal pressure term is retained. Both coefficients have
+supremum $Cr$ and Lipschitz norm $C$, including cutoff derivatives.
+Their $C^\zeta$ norms are therefore at most $Cr^{1-\zeta}=Cr^{13/16}$.
+Composition with the extended shear is bounded on $H^{-\eta,q}$,
+uniformly in $r$, by duality and interpolation of its $L^{q'}$ and
+$W^{1,q'}$ bounds. Multiplication by $C^\zeta$ functions is bounded
+at order $-\eta$: the heat-kernel formula for
+$[J_0^\eta,a]$ has near-zero integral
+$\int_0^1t^{-1+(\zeta-\eta)/2}\,dt<\infty$, and duality gives the
+negative-order bound. Together with \eqref{eq:negative-pressure},
+\eqref{eq:principal-defect} is bounded by $Cr^{13/16}$ both as
+$\Dom(M_D)\to H_q(O)$ and as
+$\Dom(M_D^\theta)\to X_{-d,O}$.
+
+The other Laplacian terms are
+\[
+ -(\Delta(\chi R))u\circ F
+ -2\partial_a(\chi R)G_{ia}(\partial_i u)\circ F
+ -\chi R(\Delta F_i)(\partial_i u)\circ F.
+\]
+The pressure remainder is $(\nabla\chi)p_u\circ F$, since
+$\PP_O$ annihilates the flat gradient. They map
+$\Dom(M_D^\theta)\to H_q(O)$ with bound $C_r$. The first term of
+\eqref{eq:defect} has the same bound by
+\eqref{eq:divergence-comparison} applied to $M_Du$ at order $-\eta$.
+
+For $M_{i,\rho}=M_i+\rho$, $\rho\geq1$, we have proved both estimates
+\begin{equation}\label{eq:two-norms}
+ \norm{KM_{D,\rho}^{-1}}+
+ \norm{M_{O,\rho}^{-d}KM_{D,\rho}^{d-1}}
+ \leq Cr^{13/16}+C_r\rho^{-d}.
+\end{equation}
+For the lower-order term the first norm gains $\rho^{-d}$ from
+$M_D^\theta M_{D,\rho}^{-1}$, the second from its left factor.
+The principal terms are bounded on both fractional scales. Choose
+$r$ first, then one $\rho(r)$ for all finitely many charts and both
+dual exponents, so that the right side is at most
+$a(r)=Cr^{13/16}$. The coefficient $C$ in this rate is uniform in $r$.
+
+We give the root comparison quantitatively, since smallness on $H_q$
+alone is insufficient for the trace reconstruction. Apply
+\cite[Theorem 6.1, Lemma 6.2]{KKW} to
+$\mathcal A=\diag(M_{D,\rho},M_{O,\rho})$ and the lower
+off-diagonal perturbation $zK$. Its range condition is automatic
+for the shifted invertible diagonal. The two smallness conditions
+are exactly \eqref{eq:two-norms}. For $|z|a(r)<c$, the resolvent
+series gives uniform $H^\infty$ bounds, and the small strong relative
+bound gives uniform graph norms. Bounded imaginary powers and complex
+interpolation \cite[Proposition 2.2]{KKW} give uniform square-root
+norms on the shifted $V$ spaces. Explicitly, for $G=D,O$ set
+\[
+ \norm{v}_{V_{q,\rho}(G)}=\norm{M_{G,\rho}^{1/2}v}_{H_q(G)}
+ \asymp\norm{v}_{V_q(G)}+\rho^{1/2}\norm{v}_{H_q(G)},\qquad\rho\geq1.
+\]
+The equivalence is uniform in $\rho$ by the isotropic calculus.
+
+Conjugation of $\mathcal A$ by the triangular matrix with lower entry
+$-zS$ gives the perturbation with lower entry $zK$. Its square root
+has lower entry $zF_\rho$, where
+\[
+ F_\rho=M_{O,\rho}^{1/2}S-SM_{D,\rho}^{1/2},\qquad
+ D_\rho=F_\rho M_{D,\rho}^{-1/2}.
+\]
+Taking $|z|$ comparable to $a(r)^{-1}$ in the uniform root bound gives
+$\norm{D_\rho}_{H_q\to H_q}\leq Ca(r)$. The exact identity
+\begin{equation}\label{eq:root-V}
+ M_{O,\rho}^{1/2}D_\rho M_{D,\rho}^{-1/2}
+ =KM_{D,\rho}^{-1}-D_\rho
+\end{equation}
+also gives $Ca(r)$ on the shifted $V_q$ norm. For $q=4$ the shifted
+real interpolation norm satisfies, uniformly in $\rho$,
+\[
+ \norm{v}_{(H_4,V_{4,\rho})_{1/2,4}}
+ \asymp\norm{v}_{\calE}+\rho^{1/4}\norm{v}_{H_4}.
+\]
+This follows by splitting the $K$-functional integral at
+$\rho^{-1/2}$. Interpolation yields
+\begin{equation}\label{eq:root-E}
+ \norm{D_\rho v}_{\calE_O}
+ \leq Ca(r)\norm{v}_{\calE}+C_r\norm{v}_{H_4},
+\end{equation}
+and the analogous $V_4$ estimate with a lower $H_4$ term.
+
+Let $T_\rho=M_{O,\rho}^{1/2}SM_{D,\rho}^{-1/2}$.
+Then $T-\mathsf E=D_\rho+\mathcal K_r$, with
+$\mathcal K_r=(T-T_\rho)+(S-\mathsf E)$. To justify compactness at
+the positive levels, keep the fixed shift and write
+\begin{align}\label{eq:shift-difference}
+ T-T_\rho={}&(M_O^{1/2}-M_{O,\rho}^{1/2})SM_D^{-1/2}\notag\\
+ &+M_{O,\rho}^{1/2}S(M_D^{-1/2}-M_{D,\rho}^{-1/2}).
+\end{align}
+The first root difference equals
+$-\rho(M_O^{1/2}+M_{O,\rho}^{1/2})^{-1}$ and gains one spatial
+order. Since $S:V_q\to V_q$, its term maps $H_q$ into
+$\Dom(M_O)$, compactly into $V_q(O)$. The inverse-root difference
+in the second term maps $H_q$ to $\Dom(M_D^{3/2})$, compactly into
+$\Dom(M_D)$. The strong-domain bound on $S$ then gives compactness
+$H_q(D)\to V_q(O)$ for that term too. Together with
+\eqref{eq:divergence-comparison} this makes $\mathcal K_r$ compact
+on $H_q,V_q$ and, by interpolation, on $\calE$. These are statements
+for the fixed selected $\rho$, with no uniform compactness assertion
+as $\rho\to\infty$. The adjoint form argument in
+Section~\ref{sec:energy-localizers} gives the consistent $Y_4$ action.
+
+\subsection{Noise, drift, and reconstruction}\label{sec:reconstruction}
+
+Write $B_{D,k}=\PP_D(b_k\cdot\nabla)$ and
+$B_{j,k}=\beta_{j,k}\cdot\nabla$. For a no-slip solenoidal field,
+\begin{equation}\label{eq:noise-pressure}
+ B_{D,k}u=(b_k\cdot\nabla)u
+ -(I-\PP_D)((u\cdot\nabla)b_k).
+\end{equation}
+The two unprojected derivatives have the same divergence and zero
+normal component: this follows from $\divg b_k=\divg u=0$,
+tangency of $b_k$, and the zero vector trace of $u$. Their difference
+is solenoidal. The second term in \eqref{eq:noise-pressure} is bounded
+on $H_4$; density gives the identity on $V_4$.
+
+The exact commutator decomposition is
+\begin{align}\label{eq:noise-commutator}
+ T_jB_{D,k}-B_{j,k}T_j={}&(T_j-\mathsf E_j)B_{D,k}
+ +(\mathsf E_jB_{D,k}-\beta_{j,k}\cdot\nabla\mathsf E_j)\notag\\
+ &+\beta_{j,k}\cdot\nabla(\mathsf E_j-T_j).
+\end{align}
+The full constant derivative is used on the unprojected
+$\mathsf E_ju$. The middle leading term is
+$\chi_jR_j[(b_k\circ F_j)-G_j\beta_{j,k}]\cdot(\nabla u)\circ F_j$,
+bounded by $Cr\norm{u}_{V_4}$. Cutoff, chart, and pressure terms
+are bounded by $C_r\norm{u}_{H_4}$. The first and last terms use
+the $H_4$ and $V_4$ bounds of $T_j-\mathsf E_j$, respectively.
+Their compact remainders are compact $V_4\to H_4$, also after the
+displayed derivatives. Summing the finite noise index in its
+$\gamma$ norm gives a $C(a(r)+r)$ leading bound, modulo compact
+$V_4\to H_4$ maps and lower $H_4$ norms.
+
+The drift has the exact normalized identity
+\begin{equation}\label{eq:drift-commutator}
+ M_j^{-1/2}(M_{j,w}T_j-T_jM_{D,w})M_D^{-1/2}
+ =K_jM_D^{-1}.
+\end{equation}
+It is small $V_4\to Y_4$, modulo a compact remainder: for the lower
+term use $M_D^{-1/2}:V_4\to\Dom(M_D)$ followed by the compact
+inclusion into $\Dom(M_D^\theta)$. Identity shifts cancel.
+
+The partition and bounded overlap give
+\begin{align}\label{eq:reconstruct-E}
+ \norm{u}_{V_4}&\leq C\Bigl(\sum_j\norm{\mathsf E_ju}_{W^{1,4}}^4\Bigr)^{1/4}
+ +C_r\norm{u}_{H_4},\\
+ \norm{u}_{\calE}&\leq C\Bigl(\sum_j\norm{\mathsf E_ju}_{B^{1/2}_{4,4}}^4\Bigr)^{1/4}
+ +C_r\norm{u}_{H_4}.\notag
+\end{align}
+For the second inequality use the $W^{1/2,4}=B^{1/2}_{4,4}$
+difference integral. Pairs at distance less than $cr$ are reconstructed
+from a uniformly bounded family of enlarged patches. The charts are
+uniformly bi-Lipschitz and their Piola matrices uniformly Lipschitz.
+Pairs at distance at least $cr$ cost only $C_r\norm{u}_{L^4}^4$.
+This proves the uniform principal constant in \eqref{eq:reconstruct-E}.
+
+Replacing $\mathsf E_j$ by $T_j$ costs at most
+\begin{equation}\label{eq:count-absorption}
+ CN^{1/4}a(r)\leq Cr^{-3/4}r^{13/16}=Cr^{1/16}\longrightarrow0.
+\end{equation}
+The leading noise and drift errors have the same bound. Choose $r$
+small, then the common $\rho(r)$ of \eqref{eq:two-norms}. There
+remain finitely many compact maps and lower $H_4$ norms. Ehrling's
+inequality, with the continuous embedding into $L^2$, bounds them by
+$\epsilon\norm{u}_{V_4}+C_{r,\epsilon}\norm{u}_{L^2}$, or at trace
+level by $\epsilon\norm{u}_{\calE}+C_{r,\epsilon}\norm{u}_{L^2}$.
+Here $\calE$ embeds compactly into $H_4$. Absorbing these terms
+proves both reconstruction inequalities with $T_j$ and an $L^2$
+remainder. For the continuous time norm use
+$\sup_t\sum_j a_j(t)^4\leq\sum_j\sup_t a_j(t)^4$;
+for the integral norm use Fubini. Thus the same reconstruction works
+in $\calX_T$, including its actual continuous Besov trace.
+
+\section{The physical linear equation}\label{sec:physical-linear}
+
+We now prove Theorem~\ref{thm:linear}. Scale the physical noise to
+$sB$, $0\leq s\leq1$. The covariances of every frozen model remain
+between $\delta I$ and $\nu I$, and the vectors remain bounded.
+The channel matrix limits, kernel and multiplier estimates, and
+interior calculus are uniform on this compact parameter set. The
+isotropic transfers do not depend on $s$. Thus the radius and common
+shift in Section~\ref{sec:localization} can be fixed before choosing $s$.
+
+For a solution already in $\calX_T$, apply the flat-model estimate to
+$v_j=T_ju$. Its drift data are
+$T_jf+\nu(A_{j,w}T_j-T_jA_{D,w})u$, and its noise is
+\[
+ sB_jv_j+(T_jsB_D-sB_jT_j)u+T_jg.
+\]
+The maps $T_j$ act consistently on $Y_4,H_4,\calE$ and preserve
+predictability. Using \eqref{eq:noise-commutator}--\eqref{eq:count-absorption},
+then the compact-error absorption, gives
+\begin{equation}\label{eq:linear-apriori-lower}
+ \norm{u}_{\calX_T}\leq C_r\bigl(\norm{h}_{L^4\calE}
+ +\norm{f}_{L^4Y_4}+\norm{g}_{L^4\gamma(H_4)}\bigr)
+ +C_r\norm{u}_{L^4(\Omega;C([0,T];L^2))}.
+\end{equation}
+The abbreviated data norms here and below are those of
+Theorem~\ref{thm:linear}.
+
+The remaining norm is controlled by physical energy. Orthogonality
+of $\PP_D$ on $L^2$ and tangency and solenoidality of $b_k$ give
+$(u,B_{D,k}u)_2=0$ and
+\begin{equation}\label{eq:energy-coercivity}
+ 2\nu\norm{\nabla u}_2^2-s^2\sum_k\norm{B_{D,k}u}_2^2
+ \geq2\delta\norm{\nabla u}_2^2.
+\end{equation}
+On bounded $D$, $V_2\hookrightarrow V_{4/3}$, so $Y_4\hookrightarrow V_2^*$;
+also $H_4\hookrightarrow H_2$. The variational It\^o identity is
+therefore applicable with the triple $V_2,H_2,V_2^*$. It can equally
+be obtained by isotropic $L^2$ Stokes spectral projections, using
+their uniform boundedness on $V_2,V_2^*$ and the drift and noise
+$L^2$ bounds. The cross term with $g$ in the quadratic variation is
+absorbed by $\delta\norm{\nabla u}_2^2$. The homogeneous-noise
+martingale vanishes; the remaining martingale contains $(u,g_k)_2$.
+The stochastic maximal inequality, followed by Young's inequality,
+gives
+\begin{equation}\label{eq:lower-energy}
+ \norm{u}_{L^4(\Omega;CL^2)}\leq C_{T_0}
+ \left[\norm{h}_{L^4(\Omega;L^2)}
+ +T_0^{1/4}\bigl(\norm{f}_{L^4Y_4}+\norm{g}_{L^4\gamma(H_4)}\bigr)\right].
+\end{equation}
+The time factor follows from $L^4(0,T)\hookrightarrow L^2(0,T)$.
+The estimate is uniform in $s$. Combining
+\eqref{eq:linear-apriori-lower} and \eqref{eq:lower-energy} proves
+\eqref{eq:linear-bound} as an a priori estimate. The choices were
+$r$, then $\rho$, then the compact-error constants; none depends
+on the solution, $T\leq T_0$, or $s$.
+
+Existence follows by a finite continuation in $s$. At $s=0$, the
+physical isotropic weak Stokes calculus and the additive theorem in
+Section~\ref{sec:framework} give a causal solution operator $\mathcal S_0$.
+If $\mathcal S_s$ exists, solve
+\[
+ u=\mathcal S_s(h,f,g+\Delta s\,B_Du)
+\]
+by contraction in predictable $\calX_T$. The constant is at most
+$C\Delta s\norm{B_D}_{V_4\to\gamma(\R^K,H_4)}$, with the uniform
+$C$ just proved. Choose one positive step making this less than
+$1/2$; finitely many steps reach $s=1$. The deterministic and
+stochastic integral estimates pass the limits to the equation in
+$CY_4$. Energy proves linear uniqueness. Each step preserves
+causality and restriction to common stopping times. This constructs
+the operator asserted in Theorem~\ref{thm:linear}, rather than
+inferring existence from an a priori bound.\qed
+
+\section{The nonlinear equation}\label{sec:nonlinear}
+
+The remaining argument uses only the physical spaces in
+Section~\ref{sec:framework} and the constructed linear solution
+operator. Define the convection term on $\calE$ by
+\begin{equation}\label{eq:nonlinearity}
+ \ip{F(u)}{\varphi}=\int_D(u\otimes u):\nabla\varphi,
+ \qquad \varphi\in V_{4/3}.
+\end{equation}
+This is precisely $-\PP_D\divg(u\otimes u)$ in the weak formulation.
+
+\subsection{Product bound and adapted local construction}\label{sec:cutoff}
+
+We use $\calE\hookrightarrow L^8(D)$. A bounded extension of
+$W^{1/2,4}(D)=B^{1/2}_{4,4}(D)$ to $\R^3$ is obtained from a
+finite smooth atlas and even reflection. For cross-boundary pairs,
+reflection only decreases the distance between the two reflected
+points, so the fractional difference integral is bounded by the
+half-space integral. Smooth bi-Lipschitz changes and cutoffs preserve
+this bound. If $\Delta_jh$ is a dyadic decomposition of the extension,
+Bernstein and H\"older give
+\[
+ \norm{h}_8\leq C\sum_{j\geq-1}2^{-j/8}
+ (2^{j/2}\norm{\Delta_jh}_4)
+ \leq C\norm{h}_{B^{1/2}_{4,4}},
+\]
+since $\sum_{j\geq-1}2^{-j/6}<\infty$. Consequently
+\begin{equation}\label{eq:product}
+ \norm{F(u)}_{Y_4}\leq C\norm{u}_{\calE}^2,\qquad
+ \norm{F(u)-F(v)}_{Y_4}
+ \leq C(\norm{u}_{\calE}+\norm{v}_{\calE})\norm{u-v}_{\calE}.
+\end{equation}
+This avoids any assertion that $\PP_D$ preserves zero vector trace
+on $W^{1,4}$.
+
+Choose a Lipschitz $\chi:[0,\infty)\to[0,1]$, equal to one on
+$[0,1]$ and zero on $[2,\infty)$, and let
+$F_R(u)=\chi(\norm{u}_{\calE}/R)F(u)$. It is bounded by $CR^2$
+and globally Lipschitz with constant $L_R\leq CR$. Indeed, if
+$\norm{u-v}_{\calE}<R$ and one cutoff is nonzero, both states have
+norm less than $3R$; expand the cutoff difference and use
+\eqref{eq:product}. If their distance is at least $R$, use the
+$CR^2$ bound. If both cutoffs vanish there is nothing to prove.
+For an adapted $\calE$-continuous process this is a predictable
+state cutoff.
+
+Let $\mathcal S_T$ denote the solution map in
+Theorem~\ref{thm:linear}. In the closed Banach space of predictable
+$\calX_T$ processes set $\Phi(u)=\mathcal S_T(h,F_R(u),0)$.
+For deterministic $h,k\in\calE$ its estimates give
+\[
+ \norm{\Phi(u)-\Phi(v)}_{\calX_T}
+ \leq C_L L_R T^{1/4}\norm{u-v}_{\calX_T}.
+\]
+Choose
+\begin{equation}\label{eq:T-R}
+ T_R=\min\{T_0,(2C_L\max(1,L_R))^{-4}\}.
+\end{equation}
+Contraction yields a predictable $U_R^h\in\calX_{T_R}$ and
+\begin{equation}\label{eq:cutoff-lipschitz}
+ \norm{U_R^h-U_R^k}_{\calX_{T_R}}\leq2C_L\norm{h-k}_{\calE}.
+\end{equation}
+The integral estimates pass the fixed-point limit to the truncated
+equation in $CY_4$. For $R>\norm{h}_{\calE}$ set
+\[
+ \tau_R^h=\inf\{t\leq T_R:\norm{U_R^h(t)}_{\calE}\geq R\}\wedge T_R,
+ \qquad \inf\varnothing=\infty.
+\]
+This stopping time is almost surely positive by continuity. On its
+closed interval the cutoff is one, including at norm $R$, so
+$u^h=U_R^h|_{[0,\tau_R^h]}$ solves the original equation. Its paths
+have the desired Besov continuity and $L^4W^{1,4}_0$ regularity;
+no $V_4$ value at the exit time is required.
+
+\subsection{Uniqueness in the entire path class}\label{sec:uniqueness}
+
+Let $u,v$ be any two adapted local solutions in
+$CB^{1/2}_{4,4}\cap L^4W^{1,4}_0$, with the same initial datum and
+Brownian motions, on lifetimes $\tau_u,\tau_v$. They have
+$\calE$-continuous paths: the divergence and trace constraints hold
+at almost every time from $V_4$, and then at every time by continuity
+and closedness. No moments are assumed for these paths.
+For deterministic $T$ stop at $\tau_u\wedge\tau_v\wedge T$ and
+when the continuous running quantity
+\[
+ \norm{u(t)}_{\calE}+\norm{v(t)}_{\calE}
+ +\int_0^t(\norm{u(s)}_{V_4}^4+\norm{v(s)}_{V_4}^4)\,ds
+\]
+first reaches $N$. Denote the resulting stopping time by $\sigma_N$.
+These times increase to the common lifetime capped by $T$.
+
+On the stopped interval $w=u-v$ belongs to $CH_2\cap L^2V_2$.
+Convection lies in $L^2V_2^*$, since both states are bounded in
+time in $L^4$, and $B_Dw\in L^2H_2$. The required second moments
+are finite after this norm stopping. Apply It\^o's
+formula to finite isotropic $L^2$ Stokes spectral projections until
+$\sigma_N$. They converge on $V_2,V_2^*$ and are uniformly bounded
+there; the drift pairings converge by the $L^2$ dual estimates,
+quadratic variations by $L^2H_2$ convergence, and the martingales
+by the isometry and maximal inequality. The $CH_2$ bound permits
+uniform passage in time and then an almost sure subsequence.
+This proves the variational identity until $\sigma_N$, as also
+formulated in \cite[Lemma A.5]{AV}. It does not extend the stopped
+state as a $V_4$-valued constant after $\sigma_N$.
+
+By \eqref{eq:energy-coercivity} the noise correction leaves
+$2\delta\norm{\nabla w}_2^2$. Also $(w,B_{D,k}w)_2=0$.
+Convection by $u$ is skew. Integrating the derivative off $v$ in
+the remaining term and using Young's inequality gives, for
+$t\leq\sigma_N$,
+\begin{equation}\label{eq:difference-energy}
+ \norm{w(t)}_2^2+\delta\int_0^t\norm{\nabla w}_2^2\,ds
+ \leq\norm{w(0)}_2^2+
+ \delta^{-1}\int_0^t\norm{v}_\infty^2\norm{w}_2^2\,ds.
+\end{equation}
+The limiting martingale vanishes identically. Since
+$W^{1,4}(D)\hookrightarrow L^\infty(D)$ and $L^4(0,T)\hookrightarrow L^2(0,T)$,
+the Gronwall coefficient is finite pathwise. Equal initial data
+give $w=0$ until $\sigma_N$. Let $N$ and then $T$ increase through
+integers; path continuity includes the endpoints. This proves
+uniqueness in the entire asserted class and identifies constructions
+with different cutoff radii on their common lifetimes.
+
+\subsection{Dependence after common stopping}\label{sec:dependence}
+
+Fix $h$ and $R$ with $\norm{h}_{\calE}<R/4$. If smooth admissible
+$h_n\to h$ in $\calE$, the same bound holds eventually for $h_n$.
+Use one $T_R$, probability space, filtration, coefficient family and
+Brownian coupling to construct $U=U_R^h$ and $U_n=U_R^{h_n}$. Set
+\begin{align}\label{eq:common-stops}
+ \tau&=\inf\{t\leq T_R:\norm{U(t)}_{\calE}\geq R/2\}\wedge T_R,\\
+ \tau_n&=\inf\{t\leq T_R:\norm{U_n(t)}_{\calE}\geq R\}\wedge T_R,
+ \qquad\sigma_n=\tau\wedge\tau_n.\notag
+\end{align}
+These stopping times are almost surely positive. Both restrictions
+solve the original equation up to $\sigma_n$. For paths on this
+interval define
+\begin{equation}\label{eq:path-distance}
+ d_\sigma(u,v)=\sup_{t\leq\sigma}\norm{u(t)-v(t)}_{\calE}
+ +\left(\int_0^\sigma\norm{u-v}_{V_4}^4\,dt\right)^{1/4}.
+\end{equation}
+Restriction of \eqref{eq:cutoff-lipschitz} and Markov's inequality give
+\begin{equation}\label{eq:dependence-bound}
+ \PP\{d_{\sigma_n}(U_n,U)>\epsilon\}
+ \leq C\epsilon^{-4}\norm{h_n-h}_{\calE}^4\longrightarrow0.
+\end{equation}
+If $\tau_n<\tau$, the perturbed path reached $R$ while the base
+path had norm at most $R/2$. Its full-interval distance from $U$
+was therefore at least $R/2$, and
+\begin{equation}\label{eq:availability}
+ \PP\{\sigma_n<\tau\}\leq CR^{-4}\norm{h_n-h}_{\calE}^4
+ \longrightarrow0.
+\end{equation}
+The constants depend on the fixed coefficients, domain, $T_0,R$,
+and not on $n$. On the event $\sigma_n=\tau$, both original
+solutions reach the same base time $\tau$. Equations
+\eqref{eq:dependence-bound}--\eqref{eq:availability} give continuity
+in probability in the full path topology. The perturbed solution
+reaches the base stopping time with probability tending to one.
+No positivity of an infinite
+infimum of exit times is needed. Together with whole-class uniqueness
+and the local construction, this proves the main result.\qed
+
+\paragraph{Use of artificial intelligence.}
+OpenAI Codex was used extensively to develop the argument, inspect primary
+sources, draft the manuscript, and perform internal mathematical and
+editorial checks. Two additional Codex contexts read a fixed draft,
+one as a reader and one as a referee, without the author checks or
+each other's report. These same-provider AI reviews and the author
+checks do not constitute human peer review or acceptance by the
+problem repository.
+
+\begin{thebibliography}{10}
+\bibitem{AV}
+A. Agresti and M. Veraar,
+\emph{Nonlinear SPDEs and maximal regularity: an extended survey},
+NoDEA Nonlinear Differential Equations Appl. \textbf{32} (2025), article 123.
+\href{https://doi.org/10.1007/s00030-025-01090-2}{doi:10.1007/s00030-025-01090-2}.
+
+\bibitem{AIM458}
+AIM problem repository,
+\emph{458. Local no-slip Navier--Stokes theory under non-small transport noise},
+fixed problem statement.
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/458-stochastic-navier-stokes-no-slip-local.md}{Problem statement}.
+
+\bibitem{BG}
+D. Breit and A. Gaudin,
+\emph{Optimal regularity results for the Stokes--Dirichlet problem},
+preprint, \href{https://arxiv.org/abs/2511.19091v1}{arXiv:2511.19091v1} (2025).
+
+\bibitem{CM}
+M. Costabel and A. McIntosh,
+\emph{On Bogovski\u\i{} and regularized Poincar\'e integral operators for de Rham
+complexes on Lipschitz domains}, author version, 29 December 2008.
+\href{https://costabel.perso.math.cnrs.fr/publis/PoiBogdeRhv2.pdf}{Author manuscript}.
+
+\bibitem{DK}
+L. Deleaval and C. Kriegler,
+\emph{Dimension free bounds for the vector-valued Hardy--Littlewood maximal operator},
+preprint, \href{https://arxiv.org/abs/1703.08327v1}{arXiv:1703.08327v1} (2017).
+
+\bibitem{GW}
+M. Girardi and L. Weis,
+\emph{Operator-valued Fourier multiplier theorems on $L^p(X)$ and geometry
+of Banach spaces}, author version, 30 July 2002.
+\href{https://people.math.sc.edu/girardi/papers/22.pdf}{Author manuscript}.
+
+\bibitem{GoodairNavier}
+D. Goodair,
+\emph{Navier--Stokes Equations with Navier Boundary Conditions and Stochastic
+Lie Transport: Well-Posedness and Inviscid Limit},
+\href{https://arxiv.org/abs/2308.04290v2}{arXiv:2308.04290v2} (2023).
+
+\bibitem{GoodairPlates}
+D. Goodair,
+\emph{Anisotropic Inviscid Limit for the Navier--Stokes Equations with
+Transport Noise Between Two Plates},
+preprint, \href{https://arxiv.org/abs/2603.13199v2}{arXiv:2603.13199v2} (2026).
+
+\bibitem{KKW}
+N. Kalton, P. Kunstmann, and L. Weis,
+\emph{Perturbation and interpolation theorems for the $H^\infty$-calculus
+with applications to differential operators},
+Math. Ann. \textbf{336} (2006), 747--801.
+\href{https://doi.org/10.1007/s00208-005-0742-3}{doi:10.1007/s00208-005-0742-3}.
+
+\bibitem{PW}
+J. Pr\"uss and M. Wilke,
+\emph{On critical spaces for the Navier--Stokes equations},
+\href{https://arxiv.org/abs/1703.08714v1}{arXiv:1703.08714v1} (2017).
+\end{thebibliography}
+\end{document}
