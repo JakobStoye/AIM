@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newcommand{\RA}{\operatorname{RA}}
+\newcommand{\Prob}{\mathbb P}
+\hypersetup{pdftitle={A three-leaf counterexample for Fitch reconstruction under a molecular clock},pdfauthor={Kaiwen Jin}}
+\title{A three-leaf counterexample for Fitch reconstruction\protect\\ under a molecular clock}
+\author{Kaiwen Jin\thanks{\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Does Fitch parsimony on a tree whose leaves are all the same distance from the
+root reconstruct the root state at least as accurately as any single leaf?
+We give a negative answer for the symmetric twenty-state model. A rooted binary
+tree with three leaves and strictly positive edge lengths has Fitch accuracy
+$38829/400000$, whereas each leaf agrees with the root with probability
+$39/400$. The strict deficit is $171/400000$. The proof is an exact calculation
+over four types of Fitch set and includes uniform final tie breaking.
+\end{abstract}
+
+\section{Model and result}
+
+Ancestral-state reconstruction estimates a character at a common ancestor from
+its observed values at present-day leaves. Li, Steel and Zhang
+\cite[p.~652]{LSZ08} conjectured that, under a symmetric model on an ultrametric
+tree, Fitch parsimony using all leaves is at least as accurate as using any one
+leaf. Here ultrametric means that every root-to-leaf path has the same total
+length. The two-state case was proved by Fischer and Thatte
+\cite[author version, Theorem~2]{FT09}, and the three- and four-state cases by Herbst and Fischer
+\cite[author version, Theorems~1--2]{HF18}. We exhibit a twenty-state counterexample. It negates
+the universal assertion over alphabet sizes $r\geq5$, without asserting failure
+at each such size.
+
+Let $r\geq2$ be an integer. On the alphabet $\{1,\ldots,r\}$, choose the
+state at the root $\rho$ uniformly, and evolve states independently down
+branches conditional on their parent states. Write $\sigma_x$ for the state
+at a vertex $x$. An edge
+of length $\ell\geq0$ uses the continuous-time Markov generator
+\begin{equation}\label{eq:generator}
+ Q_{ij}=\begin{cases}-1,&i=j,\\1/(r-1),&i\ne j.\end{cases}
+\end{equation}
+Thus the expected substitution rate is one. If every leaf has height $H$,
+the probability that a specified leaf has the root state is
+\begin{equation}\label{eq:benchmark}
+ q_r(H)=\frac1r+\frac{r-1}{r}\exp\!\left(-\frac{rH}{r-1}\right).
+\end{equation}
+
+The Fitch set at a leaf is its observed singleton. At each internal vertex,
+take the intersection of the two child sets when it is nonempty and their union
+otherwise. Choose the root estimate $\widehat\sigma_\rho$ uniformly from the
+resulting root set. Write
+$\RA=\Prob(\widehat\sigma_\rho=\sigma_\rho)$, including this final random choice.
+Only the topology and leaf states enter the set recursion.
+
+\begin{theorem}\label{thm:counterexample}
+Let $r=20$. Let the root $\rho$ have children $a,v$, and let $v$ have children
+$b,c$, so that the leaves are $a,b,c$. Give the edges the lengths
+\begin{equation}\label{eq:lengths}
+ \ell_{\rho a}=\frac{19}{20}\log20,\qquad
+ \ell_{\rho v}=\frac{19}{20}\log16,\qquad
+ \ell_{vb}=\ell_{vc}=\frac{19}{20}\log\frac54.
+\end{equation}
+All four lengths are finite and strictly positive, and every leaf has height
+$H=(19/20)\log20$. Under \eqref{eq:generator} and the uniform root and tie-breaking
+conventions above,
+\begin{equation}\label{eq:result}
+ \RA=\frac{38829}{400000}
+   <\frac{39}{400}=q_{20}(H),\qquad
+ q_{20}(H)-\RA=\frac{171}{400000}.
+\end{equation}
+\end{theorem}
+
+\section{Exact calculation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:counterexample}]
+All logarithms are natural. The clock condition follows from
+$\log16+\log(5/4)=\log20$. To obtain the edge probabilities with the stated rate,
+let $\Pi$ be the matrix all of whose entries are $1/r$. Since $\Pi^2=\Pi$ and
+$Q=-r(I-\Pi)/(r-1)$, the exponential series gives
+\begin{equation}\label{eq:channel}
+ e^{\ell Q}=\Pi+\lambda(I-\Pi),\qquad
+ \lambda=\exp\!\left(-\frac{r\ell}{r-1}\right).
+\end{equation}
+In particular, an edge preserves its input state with probability
+$(1+(r-1)\lambda)/r$ and changes it to each specified different state with
+probability $(1-\lambda)/r$.
+
+Condition for now on $\sigma_\rho=1$. The values of $\lambda$ on the edges
+$\rho a$, $\rho v$, $vb$ and $vc$ are $1/20$, $1/16$, $4/5$ and $4/5$,
+respectively. Hence
+\begin{equation}\label{eq:primitive}
+ \begin{aligned}
+ q:=\Prob(\sigma_a=1\mid\sigma_\rho=1)&=\frac{39}{400},&
+ \Prob(\sigma_a=j\mid\sigma_\rho=1)&=\frac{19}{400}=:p\quad(j\ne1),\\
+ \Prob(\sigma_v=1\mid\sigma_\rho=1)&=\frac7{64},&
+ \Prob(\sigma_v\ne1\mid\sigma_\rho=1)&=\frac{57}{64}.
+ \end{aligned}
+\end{equation}
+Given any state at $v$, each of $b,c$ equals that state with probability
+$u=81/100$ and equals each specified different state with probability
+$w=1/100$. The two terminal evolutions are independent conditional on
+$\sigma_v$.
+
+Let $B$ be the Fitch set at $v$. It is a singleton when $\sigma_b=\sigma_c$
+and a two-element set otherwise. Its total singleton probability is
+$u^2+19w^2=329/500$, independent of the state at $v$. Denote the probabilities
+of the four possibilities by $c_1,n_1,c_2,n_2$, where $c_k$ corresponds to
+$|B|=k$ and $1\in B$, and $n_k$ to $|B|=k$ and $1\notin B$. All probabilities
+in the next calculation remain conditional on $\sigma_\rho=1$. We have
+\begin{equation}\label{eq:cherry}
+ \begin{aligned}
+ c_1&=\frac7{64}u^2+\frac{57}{64}w^2=\frac{1437}{20000},&
+ n_1&=\frac{329}{500}-c_1=\frac{11723}{20000},\\
+ c_2&=\frac7{64}\,2u(1-u)+\frac{57}{64}\,2w(1-w)
+       =\frac{513}{10000},&
+ n_2&=1-\frac{329}{500}-c_2=\frac{2907}{10000}.
+ \end{aligned}
+\end{equation}
+Indeed, $c_1$ is the probability that both terminal states equal 1, and $c_2$
+is the probability that exactly one of them equals 1. These four events are
+disjoint, exhaustive and have probabilities summing to one.
+
+Conditional on the root, the leaf $a$ is independent of the entire subtree
+below $v$, and therefore independent of $B$. Fix a possible set $B$ of size
+$k\in\{1,2\}$. If $1\in B$, the value $\sigma_a=1$ produces a correct singleton
+at the root. A value in $B\setminus\{1\}$ produces an incorrect singleton.
+Each of the $20-k$ states outside $B$ produces the union $B\cup\{\sigma_a\}$
+of size $k+1$, with success probability $1/(k+1)$. Thus the conditional
+success probability is
+\begin{equation}\label{eq:payoffs}
+ \begin{cases}
+ q+(20-k)p/(k+1),&1\in B,\\
+ q/(k+1),&1\notin B.
+ \end{cases}
+\end{equation}
+For the second case, only $\sigma_a=1$ can yield success, and it yields a
+union of size $k+1$. No state is randomly selected at $v$; the full set $B$
+is used in this merge.
+
+Substituting $k=1,2$ into \eqref{eq:payoffs}, then averaging the four events
+in \eqref{eq:cherry}, gives
+\begin{align}
+ \Prob(\widehat\sigma_\rho=1\mid\sigma_\rho=1)
+ &=c_1\frac{439}{800}+n_1\frac{39}{800}
+   +c_2\frac{153}{400}+n_2\frac{13}{400}\notag\\
+ &=\frac{630843+457197+313956+151164}{16000000}
+  =\frac{38829}{400000}.\label{eq:accuracy}
+\end{align}
+Permuting all state labels preserves the transition probabilities, the Fitch
+set operations and the uniform final choice. The same conditional accuracy
+therefore holds for every root state, and averaging the uniform root law
+gives the asserted value of $\RA$.
+
+Finally, \eqref{eq:benchmark} and $\exp(-20H/19)=1/20$ give
+$q_{20}(H)=39/400=39000/400000$. Subtraction proves the strict deficit in
+\eqref{eq:result}. The tree and lengths in \eqref{eq:lengths} satisfy every
+premise of the proposed universal inequality, so this single example disproves
+that assertion.
+\end{proof}
+
+\paragraph{Verification material.}
+The accompanying script \texttt{code/exact\_three\_leaf.py} independently
+sums over all $20^4$ assignments to the four non-root vertices and applies the
+literal Fitch recursion. From the package root, run
+\texttt{python3 code/exact\_three\_leaf.py} with Python 3.10 or newer; only
+the standard library is needed. The displayed finite calculation is the proof;
+the script provides a reproducible check.
+
+\paragraph{AI assistance.}
+An AI assistant was used to develop and check the construction, prepare the
+verification script, and draft the text. Two fresh-context AI reviews, one
+focused on reading and one on mathematical objections, informed a single
+revision. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{LSZ08}
+G.~Li, M.~Steel and L.~Zhang,
+More Taxa Are Not Necessarily Better for the Reconstruction of Ancestral
+Character States,
+\emph{Systematic Biology} \textbf{57}(4) (2008), 647--653.
+\href{https://doi.org/10.1080/10635150802203898}{doi:10.1080/10635150802203898}.
+
+\bibitem{FT09}
+M.~Fischer and B.~D.~Thatte,
+Maximum Parsimony on Subsets of Taxa,
+\emph{Journal of Theoretical Biology} \textbf{260}(2) (2009), 290--293.
+\href{https://doi.org/10.1016/j.jtbi.2009.06.010}{doi:10.1016/j.jtbi.2009.06.010}.
+Author manuscript: \href{https://arxiv.org/abs/0809.3653v2}{arXiv:0809.3653v2}.
+
+\bibitem{HF18}
+L.~Herbst and M.~Fischer,
+On the Accuracy of Ancestral Sequence Reconstruction for Ultrametric Trees
+with Parsimony,
+\emph{Bulletin of Mathematical Biology} \textbf{80} (2018), 864--879.
+\href{https://doi.org/10.1007/s11538-018-0407-5}{doi:10.1007/s11538-018-0407-5}.
+Author manuscript: \href{https://arxiv.org/abs/1706.06085v1}{arXiv:1706.06085v1}.
+\end{thebibliography}
+\end{document}

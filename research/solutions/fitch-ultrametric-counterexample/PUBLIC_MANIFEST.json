@@ -1,0 +1,41 @@
+{
+  "title": "A three-leaf counterexample for Fitch reconstruction under a molecular clock",
+  "problem_id": "328",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "result": "Exact admissible r=20 counterexample; no classification for other alphabet sizes.",
+  "files": [
+    {
+      "path": "AI_USE.md",
+      "bytes": 970,
+      "sha256": "5dbd119d08f490bdc91652aac7062f2182cee37e31e1ba02a0c4f1f00dfd67b1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1800,
+      "sha256": "d70a633a600078bb7e710319eddd873eaae5bb9f806ea5de5b67fa1364130f26"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2466,
+      "sha256": "b7609fd2ef3b3cbcb875f5a38224bf3cd41da5720b5a1daf4f247997aa789460"
+    },
+    {
+      "path": "code/exact_three_leaf.py",
+      "bytes": 3509,
+      "sha256": "f622b2ca75502449a341c6be6b9f3f26a8510040906ad4766f3482272ed458f6"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 185713,
+      "sha256": "86c691c303030ef8dbad5a5a375094dc46fc9712755333b59a7865c314235c26"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 9552,
+      "sha256": "701b36dfcb21de3f9f899b1d6ab906423aa43ca8373ef595998dcbb759ebd673"
+    }
+  ],
+  "reproduce": "python3 code/exact_three_leaf.py",
+  "requirements": "Python >=3.10; standard library only",
+  "manifest_excludes": "PUBLIC_MANIFEST.json and SHA256SUMS to avoid self-reference"
+}
