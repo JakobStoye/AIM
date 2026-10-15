@@ -1,0 +1,789 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{aliascnt}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\theoremstyle{remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\numberwithin{equation}{section}
+\newcommand{\N}{\mathbb N}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Penv}{\mathbb P}
+\title{Strong disorder and critical-point shift\\for a Gaussian pinning model}
+\author{Kaiwen Jin\thanks{Email: \texttt{yui.ui.siki@gmail.com}.}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study renewal pinning with independent standard Gaussian disorder and gap
+law $K(n)=n^{-5/4}/\zeta(5/4)$. For every inverse temperature $\beta>0$,
+we prove that almost-sure extinction of the normalized free partition
+function at the annealed field $-\beta^2/2$ implies a strictly larger quenched
+critical field. The decreasing renewal hazard allows us to control future
+intersections through the polymer's age distribution. Under strong disorder,
+this gives a $1/t$ lower tail for the maximum constrained partition function.
+Testing favorable stretches along a planted renewal, while retaining the
+final renewal endpoint, then gives summable fractional moments and a positive
+change of field with zero free energy. A quantitative estimate of Alexander
+and Berger excludes extinction at and below the second-moment boundary.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+In a renewal pinning model, the contact times of a polymer with a defect
+line form a renewal process. Random rewards at the contacts compete with the
+entropy of long excursions. The critical field marks the onset of positive
+free energy, while the normalized partition function at the annealed field
+provides a martingale test for disorder. These two descriptions of the
+transition need not coincide for a general disordered system.
+
+We consider the following fixed renewal law. Let
+$\tau=\{0=\tau_0<\tau_1<\cdots\}$ have iid gaps with
+\begin{equation}\label{eq:K}
+ K(n):=P_\tau(\tau_1=n)=\frac{n^{-5/4}}{\zeta(5/4)},\qquad n\ge1,
+ \quad \zeta(5/4)=\sum_{m\ge1}m^{-5/4}.
+\end{equation}
+Let $(\omega_n)_{n\ge1}$ be iid standard real Gaussians, independent of
+$\tau$, and write $\Penv,\E$ for their law and expectation. For
+$\beta>0$ and $h\in\mathbb R$, define the free partition function
+\begin{equation}\label{eq:model}
+ Z_{N,h}^{\beta,\omega}=E_\tau\exp\!\left(
+        \sum_{n=1}^N(\beta\omega_n+h)1_{\{n\in\tau\}}\right),
+ \qquad
+ F(\beta,h)=\lim_{N\to\infty}\frac1N\E\log Z_{N,h}^{\beta,\omega},
+\end{equation}
+and $h_c(\beta)=\inf\{h:F(\beta,h)>0\}$. The endpoint at $N$ is not
+constrained to be a contact. The annealed critical field is
+$h_a(\beta)=-\beta^2/2$. The process
+$W_N=Z_{N,h_a}^{\beta,\omega}$ is a nonnegative mean-one martingale,
+as follows by averaging the next Gaussian contact weight. Write $W_\infty$
+for its almost-sure limit. We call
+$\Penv(W_\infty=0)=1$ strong disorder.
+
+The martingale approach establishes disorder irrelevance in a small-disorder
+range for renewal exponents below $1/2$; see Lacoin~\cite{Lacoin}.
+Fractional-moment estimates give a strict critical-point shift for
+sufficiently large Gaussian disorder~\cite{Toninelli}. Neither statement
+alone identifies what happens at every inverse temperature for which the
+martingale becomes extinct. Berger~\cite[Conjecture~4.9]{Berger} asks whether
+strong disorder forces a strict critical-point shift for pinning laws with
+nonzero renewal exponent. Our result treats the exact law \eqref{eq:K}.
+
+\begin{theorem}\label{thm:main}
+For the renewal law \eqref{eq:K} and independent standard Gaussian disorder,
+for every $\beta>0$,
+\[
+ \Penv(W_\infty=0)=1
+ \quad\Longrightarrow\quad h_c(\beta)>-\beta^2/2.
+\]
+More precisely, under this premise there is $\Delta_\beta>0$ such that
+$F(\beta,-\beta^2/2+\Delta_\beta)=0$.
+\end{theorem}
+
+Thus extinction at the annealed field is accompanied by a genuine interval
+of zero free energy above that field. The positive interval may depend on
+$\beta$. The theorem uses the exact normalized power law; it makes no claim
+for arbitrary slowly varying modifications of its tail.
+
+The proof follows the strategy of finding large partition weights and
+detecting them under size bias, as used for bulk directed polymers by Junk
+and Lacoin~\cite{JL}. In renewal pinning, however, the disorder is collected
+only at contacts, and long excursions have polynomial probabilities. To
+control where the polymer can collect disorder, we use its age since the
+last contact. The decreasing hazard in \eqref{eq:K} makes the squared future
+contact probabilities uniformly small when the next contact probability is
+small. Above the second-moment boundary, their conditional drift forces a
+large constrained weight before a high martingale level is reached.
+
+Such weights can be found in logarithmic windows. Under a Gaussian size
+bias, the environment contains a planted renewal. Tests begun at its renewal
+times have iid failure-and-length pairs. Keeping the final planted endpoint
+in this calculation preserves the power $K(N)$; this is what makes the
+resulting fractional moments summable and permits a strictly positive change
+of field. The second-moment boundary itself is handled separately, using
+the quantitative coarse-graining estimate for one renewal pinned on another
+in Alexander and Berger~\cite{AB}.
+
+Section~\ref{sec:age} develops the age estimate, and
+Section~\ref{sec:tail} proves the large-weight bound.
+Section~\ref{sec:field} obtains the positive field change.
+Section~\ref{sec:boundary} treats the remaining boundary and completes the
+proof. Constants may depend on the fixed $\beta$ and on explicitly fixed
+auxiliary exponents. We suppress $\beta,\omega$ from partition functions
+when no ambiguity is possible.
+
+\section{The age process and future intersections}\label{sec:age}
+
+Throughout the proof, $s=5/4$, $\alpha=s-1=1/4$ and
+$c=\zeta(s)^{-1}$, so $K(n)=cn^{-s}$. Write
+\[
+ \eta_n=e^{\beta\omega_n-\beta^2/2},\qquad
+ \xi_n=\eta_n-1,\qquad \chi=\E\xi_n^2=e^{\beta^2}-1,
+ \qquad \mathcal F_n=\sigma(\omega_1,\ldots,\omega_n).
+\]
+All absolute moments of $\xi_n$ are finite and $\xi_n>-1$.
+Let $C_n$ be the partition function constrained to have a contact at $n$,
+at field $h_a=-\beta^2/2$. Then
+\begin{equation}\label{eq:renewal-recursion}
+ C_0=1,\qquad C_n=\eta_n\sum_{j=0}^{n-1}K(n-j)C_j,
+ \qquad W_N=\sum_{j=0}^N C_j\overline K(N-j),
+ \quad \overline K(a)=\sum_{m>a}K(m).
+\end{equation}
+In particular, $C_n\le W_n$, $\E C_n=u(n):=P_\tau(n\in\tau)$,
+and $u(0)=\overline K(0)=1$. The renewal theorem
+\cite[Theorem~3.16]{Berger} gives $u(n)\asymp n^{-3/4}$. Hence
+\begin{equation}\label{eq:R}
+ 0<R:=\sum_{n\ge1}u(n)^2<\infty,\qquad
+ \beta_2^2:=\log(1+1/R).
+\end{equation}
+The strict inequality $\beta>\beta_2$ is equivalent to $\chi R>1$.
+We first prove the critical-point shift in that range under strong disorder.
+Section~\ref{sec:boundary} will exclude strong disorder at and below $\beta_2$.
+
+The age of a renewal is the time elapsed since its last contact. Its
+transition matrix $T$ on $\N_0$ resets age $a$ to zero with probability
+\[
+ r(a)=\frac{K(a+1)}{\overline K(a)}
+\]
+and otherwise moves to $a+1$. The following property of the exact law will
+control contacts far into the future.
+
+\begin{lemma}\label{lem:age}
+The hazard $r(a)$ decreases to zero and satisfies $r(a)\le\alpha/(a+1)$.
+For $u_a(k):=T^k(a,0)$, $k\ge1$, one has
+\[
+ 0\le u_a(k)\le u(k),\qquad
+ \sum_{k\ge1}u_a(k)^2\longrightarrow0\quad(a\to\infty).
+\]
+\end{lemma}
+\begin{proof}
+With $m=a+1$,
+\[
+ r(a)^{-1}=\sum_{j\ge0}\left(\frac{m}{m+j}\right)^s.
+\]
+Each summand increases with $m$. Also
+$\sum_{n=m}^\infty n^{-s}\ge\int_m^\infty x^{-s}\,dx$,
+which gives the asserted upper bound on $r$.
+Couple chains begun at ages $a$ and zero with the same uniform variables.
+The larger age remains larger: whenever it resets, the smaller age resets
+as well, and the chains then agree. Thus $u_a(k)\le u_0(k)=u(k)$.
+For fixed $k$, a reset before time $k$ has probability at most $kr(a)$,
+so $u_a(k)\to0$. Dominated summation using \eqref{eq:R} proves the last claim.
+\end{proof}
+
+For a probability mass $\mu$ on ages, put
+\begin{equation}\label{eq:potential}
+ f_\mu(k)=(\mu T^k)(0),\quad k\ge1,\qquad
+ U(\mu)=\sum_{k\ge1}f_\mu(k)^2.
+\end{equation}
+This quantity measures the expected future overlap of two independent
+renewals begun with age law $\mu$. We use the same linear definition of
+$f_\mu$ for differences of the probability masses appearing below.
+By \cref{lem:age}, $\|f_{\delta_a}\|_2\le\sqrt R$, so these sums are
+well defined and $0\le U(\mu)\le R$.
+
+\begin{lemma}\label{lem:compactness}
+If $q=(\mu T)(0)$ tends to zero, then $U(\mu)$ and $U(\mu T)$ tend
+to zero uniformly over all probability masses $\mu$. Moreover,
+\begin{equation}\label{eq:potential-shift}
+ U(\mu T)=U(\mu)-q^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For every integer $A\ge0$, monotonicity of the hazard gives
+\[
+ \mu([0,A])\le q/r(A),\qquad
+ \|f_\mu\|_2\le\sqrt R\,q/r(A)
+                  +\sup_{a>A}\|f_{\delta_a}\|_2.
+\]
+Choose $A$ large by \cref{lem:age}, and then choose $q$ small. This proves
+uniform convergence. Finally $f_{\mu T}(k)=f_\mu(k+1)$, giving
+\eqref{eq:potential-shift} and the assertion for $\mu T$.
+\end{proof}
+
+Under the polymer measure at time $n$, the age law is
+\[
+ \mu_n(a)=\frac{C_{n-a}\overline K(a)}{W_n},\qquad 0\le a\le n.
+\]
+Given the past, let $v=\mu_{n-1}T$, $q_n=v(0)$ and
+$z=q_n\xi_n/(1+q_n\xi_n)$. Prediction by $T$, followed by reweighting the
+mass at zero by $\eta_n$, gives the exact identities
+\begin{equation}\label{eq:age-update}
+ \frac{W_n}{W_{n-1}}=1+q_n\xi_n,\qquad
+ \mu_n=v+z(\delta_0-v).
+\end{equation}
+Here $0<q_n\le1/4$ and $q_n$ is $\mathcal F_{n-1}$-measurable.
+Let $\Delta U_n=U(\mu_n)-U(\mu_{n-1})$. Expanding the square in
+\eqref{eq:potential} gives
+\begin{equation}\label{eq:deltaU}
+ \Delta U_n=-q_n^2+2zH+z^2J,
+ \quad H=\langle f_v,f_{\delta_0-v}\rangle,
+ \quad J=\|f_{\delta_0-v}\|_2^2.
+\end{equation}
+
+\begin{lemma}\label{lem:exponential}
+Suppose $\beta>\beta_2$. Set $\gamma=(\chi R-1)/2>0$. For every
+$\lambda>0$ there is $\delta>0$ such that, whenever $q_n\le\delta$,
+\begin{equation}\label{eq:exponential}
+ \E[e^{-\lambda\Delta U_n}\mid\mathcal F_{n-1}]
+ \le e^{-a q_n^2},\qquad a=\lambda\gamma/2.
+\end{equation}
+Thus $a$ can be made arbitrarily large, with a corresponding smaller $\delta$.
+\end{lemma}
+\begin{proof}
+For $q=q_n\le1/4$, the denominator $1+q\xi_n$ is at least $3/4$.
+Conditionally on the past,
+\[
+ |z|\le\tfrac43q|\xi_n|,\quad |z|\le1,\quad
+ \E z=-q^2\E\frac{\xi_n^2}{1+q\xi_n}=O(q^2),\quad
+ \E z^2=\chi q^2+O(q^3),\quad \E|z|^4=O(q^4).
+\]
+The error in the second moment follows by bounding
+$|(1+x)^{-2}-1|\le C|x|$ for $x\ge-1/4$.
+By \cref{lem:compactness}, uniformly as $q\downarrow0$,
+\[
+ |H|\le\sqrt{U(v)}(\sqrt R+\sqrt{U(v)})\longrightarrow0,
+ \qquad J\longrightarrow R,\qquad 0\le J\le4R.
+\]
+Equation~\eqref{eq:deltaU} therefore implies
+\begin{equation}\label{eq:drift}
+ \frac{\E[\Delta U_n\mid\mathcal F_{n-1}]}{q^2}\longrightarrow\chi R-1,
+ \qquad
+ \frac{\E[(\Delta U_n)^2\mid\mathcal F_{n-1}]}{q^2}\longrightarrow0.
+\end{equation}
+For the latter assertion use
+$(\Delta U_n)^2\le3q^4+12H^2z^2+3J^2z^4$.
+Also $\Delta U_n\ge-q^2-2|H|\ge-b(\delta)$ for $q\le\delta$,
+where $b(\delta)\to0$.
+For $x\ge-b$ the exponential remainder satisfies
+\[
+ e^{-\lambda x}\le1-\lambda x+\tfrac12\lambda^2e^{\lambda b}x^2.
+\]
+Choose $\delta$ so the first conditional mean in \eqref{eq:drift} is at
+least $\gamma q^2$ and the remainder contributes at most
+$\lambda\gamma q^2/2$. Then the conditional expectation is at most
+$1-aq^2\le e^{-aq^2}$.
+\end{proof}
+
+In particular, before a step with $q_n>\delta$,
+\begin{equation}\label{eq:potential-martingale}
+ \exp\!\left\{-\lambda U(\mu_n)+a\sum_{i\le n}q_i^2\right\}
+\end{equation}
+is a nonnegative supermartingale. This stopping is legitimate before the
+exceptional step because $q_n$ is known at time $n-1$.
+
+\section{Large constrained weights}\label{sec:tail}
+
+In this section assume strong disorder, $\Penv(W_\infty=0)=1$, and
+$\beta>\beta_2$. The aim is a $1/t$ lower bound for the tail of
+$\sup_n C_n$. This will produce detectable favorable stretches whose
+length is only logarithmic in their weight.
+
+\begin{lemma}\label{lem:overshoot}
+Let $\tau_x=\inf\{n\ge0:W_n\ge x\}$, with $\inf\varnothing=\infty$.
+For every fixed $p\ge1$ there is $M_p<\infty$ such that, for $x\ge1$,
+\begin{equation}\label{eq:hitting}
+ \frac1{M_1x}\le\Penv(\tau_x<\infty)\le\frac1x,\qquad
+ \E[W_{\tau_x}^p;\tau_x<\infty]\le M_p x^{p-1}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+First, lognormal relative overshoots have uniformly bounded moments:
+\begin{equation}\label{eq:relative-overshoot}
+ \sup_{t\ge1}\E[(\eta_1/t)^p\mid\eta_1\ge t]<\infty.
+\end{equation}
+Indeed, with $b=(\log t+\beta^2/2)/\beta\ge\beta/2$, the conditional
+expectation equals
+\[
+ \frac{\int_0^\infty e^{p\beta y-by-y^2/2}\,dy}
+      {\int_0^\infty e^{-by-y^2/2}\,dy}.
+\]
+For $b\ge\max(1,2p\beta)$ the numerator is at most $(b-p\beta)^{-1}$
+and the denominator is at least $e^{-3/2}/b$, by restricting to $[0,1/b]$.
+On the remaining bounded interval, the numerator is uniformly finite and
+the denominator is bounded away from zero.
+
+At a first crossing of $x>1$, conditional on the past, the condition is
+$\eta_n\ge t=(x/W_{n-1}-1+q_n)/q_n>1$. By \eqref{eq:age-update},
+\[
+ \frac{W_n}{x}=\frac{1-q_n+q_n\eta_n}{1-q_n+q_nt}\le\eta_n/t.
+\]
+Apply \eqref{eq:relative-overshoot} conditionally and sum over the disjoint
+first-crossing times. This gives
+\[
+ \E[W_{\tau_x}^p;\tau_x<\infty]\le M_p x^p\Penv(\tau_x<\infty).
+\]
+The nonnegative martingale maximal inequality gives the upper probability
+bound in \eqref{eq:hitting}. Bounded optional stopping yields
+\[
+ 1=\E[W_{\tau_x};\tau_x\le n]+\E[W_n;\tau_x>n].
+\]
+The second term tends to zero by strong disorder and domination by $x$.
+Thus $\E[W_{\tau_x};\tau_x<\infty]=1$, proving the lower probability
+bound and then the moment bound. For $x=1$, $\tau_1=0$; enlarge the constants
+to include this case.
+\end{proof}
+
+\begin{proposition}\label{prop:highC}
+There is $c_\beta>0$ such that
+\begin{equation}\label{eq:highC}
+ \Penv\left(\sup_{n\ge0}C_n\ge t\right)\ge c_\beta/t,
+ \qquad t\ge1.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Expanding the fourth power in \eqref{eq:age-update}, using $\E\xi_n=0$,
+gives a constant $D>0$ with
+\[
+ \E(1+q\xi_n)^4\le e^{Dq^2}\quad(0\le q\le1/4).
+\]
+Hence $W_n^4\exp(-D\sum_{i\le n}q_i^2)$ is a nonnegative
+supermartingale. Choose $\varepsilon_0>0$ so $4-D\varepsilon_0\ge3$.
+Choose $\lambda$, then $\delta$, in \cref{lem:exponential} so that
+$a\varepsilon_0\ge3$.
+
+Let $B>1$ be a level multiplier, to be fixed below. On the event that
+$\tau_{Bx}<\infty$, write $A=\sum_{n=\tau_x+1}^{\tau_{Bx}}q_n^2$.
+The sum is empty if a single overshoot crosses both levels. Stopping the
+fourth-moment supermartingale after $\tau_x$ and using
+\cref{lem:overshoot} gives
+\begin{equation}\label{eq:small-budget}
+ \Penv(\tau_{Bx}<\infty,A\le\varepsilon_0\log B)
+ \le M_4x^{-1}B^{-4+D\varepsilon_0}\le M_4x^{-1}B^{-3}.
+\end{equation}
+At the terminal crossing, its fourth-power factor is at least $(Bx)^4$
+and its compensator at least $B^{-D\varepsilon_0}$, whereas the initial
+expected fourth power is at most $M_4x^3$.
+
+Similarly \eqref{eq:potential-martingale} and $0\le U\le R$ imply
+\begin{equation}\label{eq:large-budget}
+ \Penv\left(\tau_{Bx}<\infty,A\ge\varepsilon_0\log B,
+       q_n\le\delta\ \forall\,\tau_x<n\le\tau_{Bx}\right)
+ \le x^{-1}e^{\lambda R}B^{-a\varepsilon_0}
+ \le x^{-1}e^{\lambda R}B^{-3}.
+\end{equation}
+To obtain this bound, condition at $\tau_x$ and stop before the first
+$q_n>\delta$; the terminal exponential on the indicated event is at least
+$e^{-\lambda R}B^{a\varepsilon_0}$ times its initial value. Multiply the
+conditional probability bound by $\Penv(\tau_x<\infty)\le1/x$.
+Both stopping estimates follow first at bounded horizons and then by Fatou.
+
+Let $\sigma=\inf\{n\ge\tau_x:W_n\le x/B\}$. Conditional on a dip
+before the upper hit, the probability of a later passage to $Bx$ is at most
+$W_\sigma/(Bx)\le B^{-2}$. Therefore
+\begin{equation}\label{eq:no-dip}
+ \Penv(\sigma<\tau_{Bx}<\infty)\le x^{-1}B^{-2}.
+\end{equation}
+By \eqref{eq:hitting}, $\Penv(\tau_{Bx}<\infty)\ge(M_1Bx)^{-1}$.
+Fix $B$ sufficiently large that subtracting
+\eqref{eq:small-budget}--\eqref{eq:no-dip} leaves a probability at least
+$c_*/x>0$. On the remaining event some $\tau_x<n\le\tau_{Bx}$ has
+$q_n>\delta$, and $W_{n-1}\ge x/B$. Thus
+\[
+ \max_{i<n}C_i\ge\sum_{i<n}K(n-i)C_i=q_nW_{n-1}\ge\delta x/B,
+\]
+where the first inequality uses $\sum_{i<n}K(n-i)\le1$.
+Taking $x=Bt/\delta$ proves \eqref{eq:highC}.
+\end{proof}
+
+\begin{lemma}\label{lem:log-window}
+For every $\varepsilon>0$ there is $D_\varepsilon<\infty$ such that, for
+all sufficiently large $t$, with $L=\lceil D_\varepsilon\log t\rceil$,
+\begin{equation}\label{eq:log-window}
+ E_{t,L}:=\{\max_{0\le n\le L}C_n\ge t\},\qquad
+ \Penv(E_{t,L})\ge t^{-1-\varepsilon}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Constrained concatenation gives
+$C_{n+m}(\omega)\ge C_n(\omega)C_m(\vartheta^n\omega)$, where
+$(\vartheta^n\omega)_j=\omega_{n+j}$. Choose a large fixed $v>1$ with
+$c_\beta/(2v)\ge v^{-1-\varepsilon/2}$, then a finite $M$ with
+$\Penv(\max_{n\le M}C_n\ge v)\ge c_\beta/(2v)$, by
+\cref{prop:highC}. Repeat this success at its first hitting time, using fresh
+future Gaussian coordinates. The probability of $k$ successive successes
+is at least $v^{-k(1+\varepsilon/2)}$, their total time is at most $kM$,
+and concatenation gives a value at least $v^k$.
+Take $k=\lceil\log_v t\rceil$. For large $t$ the fixed extra factor is
+absorbed in $t^{-\varepsilon/2}$, and $kM\le D_\varepsilon\log t$ after
+enlarging $D_\varepsilon$.
+\end{proof}
+
+\section{A positive field shift}\label{sec:field}
+
+We use a change of environment law that makes favorable stretches more
+likely. Sample a renewal $\sigma$ with law $P_\tau$ and independent standard
+Gaussians $(G_n)$, and set
+\[
+ \omega_n=G_n+\beta1_{\{n\in\sigma\}}.
+\]
+Denote the resulting joint law by $Q$. Completing the square in the Gaussian
+density gives, for every nonnegative measurable function $f$ of the first
+$N$ environment coordinates,
+\begin{equation}\label{eq:planting}
+ E_Qf(\omega)=\E[W_Nf(\omega)],\qquad
+ E_Q[1_{\{N\in\sigma\}}f(\omega)]=\E[C_Nf(\omega)].
+\end{equation}
+These are finite-dimensional identities. For $E_{t,L}$ in
+\cref{lem:log-window}, stop $W$ at the first constrained crossing of $t$,
+truncated at $L$. On success its stopped value is at least $t$. Therefore
+\begin{equation}\label{eq:planted-success}
+ p:=Q(E_{t,L})=\E[W_L;E_{t,L}]
+ \ge t\Penv(E_{t,L})\ge t^{-\varepsilon}.
+\end{equation}
+On the original environment law, the martingale maximal inequality and
+$C_n\le W_n$ give $\Penv(E_{t,L})\le1/t$.
+
+\begin{lemma}\label{lem:failed-tests}
+Let $\mathcal A_N$ be the event that $E_{t,L}$ occurs in some window
+starting at an integer in $[0,N-L]$. Then
+\begin{equation}\label{eq:failed-tests}
+ \Penv(\mathcal A_N)\le(N+1)/t,\qquad
+ \E[C_N;\mathcal A_N^c]\le C L^{s+1}p^{-(s+2)}K(N)
+ \quad(N\ge2L).
+\end{equation}
+Here $C$ depends only on the renewal law.
+\end{lemma}
+\begin{proof}
+The first bound is a union bound over deterministic window starts.
+Under $Q$, begin a test at the planted renewal zero, use the next $L$
+coordinates, and start the next test at
+$T_L=\min\{\sigma_j:\sigma_j\ge L\}$. Iterate this rule.
+At each start, the future renewal gaps and the Gaussian coordinates strictly
+after that start are fresh. The pairs consisting of the failure indicator
+and the next regeneration length are consequently iid. Failure may depend
+on that length; we retain this dependence in
+\[
+ g(n)=Q(E_{t,L}^c,T_L=n),\qquad n\ge L,\qquad
+ \sum_n g(n)=1-p.
+\]
+The test uses no Gaussian coordinate after its next regeneration, and a
+subsequent test excludes the coordinate at its own start. Thus even when
+$T_L=L$, the two tests use disjoint noise. Independence follows by
+conditioning on each possible renewal-gap index and physical regeneration
+time and applying iid independence.
+
+The last renewal before $L$ gives
+\begin{equation}\label{eq:g-envelope}
+ g(n)\le P_\sigma(T_L=n)
+   =\sum_{j=0}^{L-1}u(j)K(n-j)\le B_LK(n),
+ \qquad B_L\le C L^s.
+\end{equation}
+For $n\ge2L$ use $K(n-j)\le2^sK(n)$ and $\sum_{j<L}u(j)\le L$.
+For $L\le n<2L$, the probability is at most one whereas
+$K(n)\ge c(2L)^{-s}$.
+
+For any nonnegative kernel $g$ of mass $1-p$ bounded by $BK$, one has
+\begin{equation}\label{eq:defective-convolution}
+ g^{*m}(n)\le Bm^{s+1}(1-p)^{m-1}K(n),\qquad
+ \sum_{m\ge1}g^{*m}(n)\le C_s Bp^{-(s+2)}K(n).
+\end{equation}
+Indeed one of the $m$ summands of a composition of $n$ is at least $n/m$.
+Its factor is at most $Bm^sK(n)$. Sum the other factors using their total
+mass and then sum over the $m$ possible positions. Finally
+$\sum_{m\ge1}m^{s+1}(1-p)^{m-1}\le C_s p^{-(s+2)}$:
+for $p\le1/2$ compare with a polynomial-exponential integral, and for
+$p\ge1/2$ use a convergent geometric majorant. The case $p=1$, $g=0$,
+is immediate.
+
+On $\{N\in\sigma\}\cap\mathcal A_N^c$, every test starting at or
+before $N-L$ fails. Its next regeneration is at most $N$, since $N$ itself
+is a renewal at least $L$ beyond that start. The remaining distance $r$ after
+the last test therefore satisfies $0\le r<L$. Set
+$h_L(r)=u(r)1_{\{0\le r<L\}}$, with $g^{*0}$ the unit mass at zero.
+By regeneration and \eqref{eq:planting},
+\[
+ \E[C_N;\mathcal A_N^c]=Q(N\in\sigma,\mathcal A_N^c)
+ \le\sum_{m\ge0}(g^{*m}*h_L)(N).
+\]
+For $N\ge2L$ the $m=0$ term vanishes. In the other terms,
+$N-r\ge N/2$, so $K(N-r)\le2^sK(N)$ and $\sum_rh_L(r)\le L$.
+Apply \eqref{eq:defective-convolution} and \eqref{eq:g-envelope}.
+\end{proof}
+
+The factor $K(N)$ in \eqref{eq:failed-tests} supplies the summable power
+needed below. It comes from retaining the planted endpoint $N\in\sigma$.
+
+\begin{proposition}\label{prop:fractional-sum}
+For some $\theta\in(4/5,1)$,
+\begin{equation}\label{eq:fractional-sum}
+ \sum_{N\ge0}\E C_N^\theta<\infty.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Choose $\theta\in(1/s,1)$, then $b>1+1/(1-\theta)$ and
+$\varepsilon>0$ so small that $\theta[s-b\varepsilon(s+2)]>1$.
+Take $t=N^b$ and $L=\lceil D_\varepsilon\log t\rceil$. For all large
+$N$, $N\ge2L$ and \eqref{eq:planted-success} gives $p\ge t^{-\varepsilon}$.
+H\"older's inequality on $\mathcal A_N$ and its complement, together with
+$\E C_N=u(N)\le1$, yields
+\begin{equation}\label{eq:frac-bound}
+ \E C_N^\theta\le
+ \left(\frac{N+1}{t}\right)^{1-\theta}
+ +\left[C L^{s+1}t^{\varepsilon(s+2)}K(N)\right]^\theta.
+\end{equation}
+The powers of $N$ are respectively $-(b-1)(1-\theta)<-1$ and
+$-\theta[s-b\varepsilon(s+2)]<-1$, with only a fixed logarithmic factor
+in the second term. Both series converge. The finitely many remaining
+moments are finite by the lognormal moment formula.
+\end{proof}
+
+We finish this range of beta by turning \eqref{eq:fractional-sum} into an
+actual positive change of field. Let $C_n^{(\Delta)}$ be the constrained
+partition at $h_a+\Delta$, and put
+$A_n(\Delta)=\E[(C_n^{(\Delta)})^\theta]$, $A_0(\Delta)=1$.
+
+\begin{proposition}\label{prop:positive-field}
+Under strong disorder and $\beta>\beta_2$, there exists $\Delta>0$ such
+that $F(\beta,h_a+\Delta)=0$.
+\end{proposition}
+\begin{proof}
+Fix an integer $k\ge1$. Decompose a path constrained at $N\ge k$ by its
+last contact $j<k$ and first contact $i\ge k$. The factors
+$C_j^{(\Delta)}$, $K(i-j)e^\Delta\eta_i$, and
+$C_{N-i}^{(\Delta)}\circ\vartheta^i$ use disjoint environment coordinates.
+Since $(\sum x_j)^\theta\le\sum x_j^\theta$ for nonnegative $x_j$,
+\begin{align}
+ A_N(\Delta)&\le\sum_{i=k}^N Q_i(\Delta)A_{N-i}(\Delta),
+ \label{eq:finite-volume}\\
+ Q_i(\Delta)&=\E\eta_1^\theta\,e^{\theta\Delta}
+     \sum_{j<k}K(i-j)^\theta A_j(\Delta).
+ \nonumber
+\end{align}
+By \cref{prop:fractional-sum} and $s\theta>1$,
+\[
+ \rho_k(0):=\sum_{i\ge k}Q_i(0)
+ =\E\eta_1^\theta\sum_{j<k}A_j(0)
+                         \sum_{r\ge k-j}K(r)^\theta\longrightarrow0.
+\]
+For each fixed $j$ the inner tail tends to zero and it is uniformly bounded
+by $\sum_rK(r)^\theta<\infty$, so dominated summation applies.
+Choose $k$ with $\rho_k(0)<1$. Since a path at $j$ has at most $j$
+contacts, $A_j(\Delta)\le e^{\theta\Delta j}A_j(0)$, and hence
+\[
+ \rho_k(\Delta)\le e^{\theta\Delta k}\rho_k(0)<1
+\]
+for a sufficiently small, strictly positive $\Delta$.
+Sum \eqref{eq:finite-volume} only up to a finite $M$ before rearranging:
+\[
+ \sum_{n\le M}A_n(\Delta)
+ \le\frac{\sum_{j<k}A_j(\Delta)}{1-\rho_k(\Delta)}.
+\]
+It follows that $\sum_nA_n(\Delta)<\infty$.
+The last-contact formula \eqref{eq:renewal-recursion}, with the additional
+reward $e^\Delta$ at each contact, now gives
+\[
+ \E Z_{N,h_a+\Delta}^{\theta}
+ \le\sum_{j\le N}A_j(\Delta)\overline K(N-j)^\theta
+ \le\sum_{j\ge0}A_j(\Delta).
+\]
+Jensen's inequality bounds $\E\log Z_{N,h_a+\Delta}$ uniformly from above.
+The no-contact paths give $\log Z_{N,h_a+\Delta}\ge\log\overline K(N)$,
+whose ratio to $N$ tends to zero. Thus $F(\beta,h_a+\Delta)=0$.
+\end{proof}
+
+\section{The second-moment boundary}\label{sec:boundary}
+
+We must still exclude strong disorder when $0<\beta\le\beta_2$.
+We use a quantitative estimate for a renewal pinned on another renewal
+from Alexander and Berger~\cite{AB}. Its fractional-moment form is important:
+a statement only about a free-energy critical point would not give the
+infinite partition function used here.
+
+Let $\sigma$ and $\tau$ be independent renewals with gap law $K$. For
+$\lambda>0$, define the partition constrained at the $j$th spine renewal by
+\[
+ V_j^\sigma(\lambda)=E_\tau\left[
+ e^{\lambda\sum_{i=1}^j1_{\{\sigma_i\in\tau\}}};\ \sigma_j\in\tau\right],
+ \qquad V_0^\sigma=1.
+\]
+The contact at zero is excluded. Put $z=e^\lambda-1$. Expansion over the
+selected contacts gives
+\begin{equation}\label{eq:chaos}
+ \mathcal V_j^\sigma(\lambda):=(1-e^{-\lambda})V_j^\sigma(\lambda)
+ =\sum_{m=1}^j z^m
+   \sum_{0=i_0<i_1<\cdots<i_m=j}
+       \prod_{a=1}^m u(\sigma_{i_a}-\sigma_{i_{a-1}}).
+\end{equation}
+The fixed factor is necessary because the forced endpoint has weight
+$e^\lambda$ in $V$, but weight $z$ in the selected-contact expansion.
+We retain it when using the chaos estimate in \cite[Section~4]{AB}, whose
+displayed identification of the two constrained partitions omits that factor.
+
+Tonelli's theorem gives
+\[
+ \sum_{j\ge1}E_\sigma u(\sigma_j)=\sum_{n\ge1}u(n)^2=R.
+\]
+Thus the reference kernel in \cite[(4.2)]{AB} is
+$K^*(j)=R^{-1}E_\sigma u(\sigma_j)$, and the critical value of $z$ is
+$z_0=1/R$, as also follows from \cite[Proposition~1.3]{AB}.
+Write $\lambda_0=\log(1+1/R)=\beta_2^2$.
+
+Here is the source estimate in the notation needed for the proof. For an
+integer $L$, let $B_a=\{(a-1)L+1,\ldots,aL\}$. If
+$I=\{1\le b_1<\cdots<b_\ell=n\}$, $b_0=0$, put
+\begin{equation}\label{eq:restricted-chaos}
+ Z_I^\sigma=\sum_{m=1}^{nL} R^{-m}
+  \sum_{\substack{0=i_0<i_1<\cdots<i_m=nL\\
+        \{\lceil i_a/L\rceil:1\le a\le m\}=I}}
+       \prod_{a=1}^m u(\sigma_{i_a}-\sigma_{i_{a-1}}).
+\end{equation}
+This agrees with the restricted partition in \cite[(4.10)]{AB}: its
+between-contact factor, written $K^*(b-a)w(\sigma,a,b)$ there, is exactly
+$R^{-1}u(\sigma_b-\sigma_a)$.
+
+\begin{proposition}[Alexander--Berger]\label{prop:AB}
+Let $\zeta=3/4$. For every $\delta>0$ there is $L_0$ such that, for
+every integer $L\ge L_0$, every $n\ge1$ and every such $I$,
+\begin{equation}\label{eq:AB}
+ E_\sigma[(Z_I^\sigma)^\zeta]
+ \le\delta^\ell\prod_{a=1}^\ell(b_a-b_{a-1})^{-3/2}.
+\end{equation}
+\end{proposition}
+
+This is \cite[(4.12)]{AB}, in the explicitly cited arXiv version.
+Its hypotheses (1.5) hold with both slowly varying functions equal to $c$
+and both exponents equal to $1/4$. In their notation,
+$\alpha_*=(1-\alpha-\widetilde\alpha)/\widetilde\alpha=2>1/2$ and
+$\zeta=(1+\alpha_*/4)/(1+\alpha_*/2)=3/4$; the exponent on block gaps
+is $1+\alpha_*/4=3/2$. The arbitrary-small-$\delta$ assertion follows
+there from Lemma~4.2 and (4.22), and is not restricted to a particular
+mass-one normalization.
+
+\begin{lemma}\label{lem:spine-sum}
+There is $\lambda_1>\lambda_0$ such that
+\begin{equation}\label{eq:spine-sum}
+ \sum_{j\ge1}E_\sigma[V_j^\sigma(\lambda_1)^{3/4}]<\infty,
+ \qquad \sum_{j\ge1}V_j^\sigma(\lambda_1)<\infty
+ \quad P_\sigma\text{-a.s.}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose $\delta>0$ so the kernel
+$q(a)=e^\zeta\delta a^{-3/2}$ has mass $\rho<1$.
+Fix an allowed $L$ in \cref{prop:AB} and put
+$\lambda_1=\log(1+R^{-1}e^{1/L})>\lambda_0$.
+In a term visiting $\ell$ blocks, at most $L\ell$ contacts are selected.
+Changing $z_0$ to $z_0e^{1/L}$ therefore increases that term by at most
+$e^\ell$. By the fractional-sum inequality, \eqref{eq:chaos} and
+\eqref{eq:AB},
+\[
+ E_\sigma[V_{nL}^\sigma(\lambda_1)^\zeta]
+ \le(1-e^{-\lambda_1})^{-\zeta}
+            \sum_{\ell\ge1}q^{*\ell}(n).
+\]
+Summation over $n$ bounds the total by
+$(1-e^{-\lambda_1})^{-\zeta}\rho/(1-\rho)<\infty$.
+
+For an arbitrary spine index $j$, let $M=L(\lfloor j/L\rfloor+1)$.
+A direct tau gap from $\sigma_j$ to $\sigma_M$ gives
+\[
+ V_M^\sigma(\lambda_1)\ge V_j^\sigma(\lambda_1)
+                    e^{\lambda_1}K(\sigma_M-\sigma_j).
+\]
+The last factor uses only the next $M-j\in\{1,\ldots,L\}$ spine gaps,
+independently of $V_j$. The minimum of the $L$ positive finite expectations
+$E_\sigma[(e^{\lambda_1}K(\sigma_r))^\zeta]$, $1\le r\le L$, is positive.
+Hence summability at multiples of $L$ implies summability at every $j$,
+each multiple being used at most $L$ times. Tonelli gives a finite sum of
+the $\zeta$ powers almost surely, and then a finite sum of $V_j$, since
+eventually $V_j\le1$ and $V_j\le V_j^\zeta$.
+\end{proof}
+
+\begin{proposition}\label{prop:UI}
+For every $0<\beta\le\beta_2$, the martingale $(W_N)$ is uniformly
+integrable and $\E W_\infty=1$.
+\end{proposition}
+\begin{proof}
+Expanding a finite product by its last selected factor and then increasing
+the cutoff gives
+\begin{equation}\label{eq:free-spine}
+ V_\infty^{\sigma,\mathrm{free}}(\lambda_1)
+ :=E_\tau e^{\lambda_1\sum_{j\ge1}1_{\{\sigma_j\in\tau\}}}
+ =1+(1-e^{-\lambda_1})\sum_{j\ge1}V_j^\sigma(\lambda_1)<\infty
+ \quad P_\sigma\text{-a.s.}
+\end{equation}
+Indeed $\prod_{i=1}^M e^{\lambda I_i}
+=1+\sum_{j=1}^M(e^\lambda-1)I_j\prod_{i<j}e^{\lambda I_i}$;
+on $I_j=1$, the missing endpoint reward converts the coefficient to
+$1-e^{-\lambda}$. Monotone convergence and \cref{lem:spine-sum} apply.
+
+Recall that under $Q$, $\omega=G+\beta1_\sigma$, where $G$ is iid standard
+Gaussian and independent of $\sigma$. For every $\beta^2\le\lambda_1$, average
+$W_N$ over $G$ as in \eqref{eq:planting}. The Gaussian moment formula gives
+\[
+ E_G[W_N(G+\beta1_\sigma)\mid\sigma]
+   =E_\tau e^{\beta^2|\tau\cap\sigma\cap[1,N]|}
+   \le V_\infty^{\sigma,\mathrm{free}}(\lambda_1).
+\]
+Conditional Markov's inequality and \eqref{eq:planting} imply, uniformly
+in physical time $N$,
+\[
+ \E[W_N;W_N>A]=Q(W_N>A)
+ \le E_\sigma\min\{1,V_\infty^{\sigma,\mathrm{free}}(\lambda_1)/A\}
+ \longrightarrow0\quad(A\to\infty).
+\]
+The last limit is dominated convergence. Thus $W_N$ is uniformly
+integrable and its almost-sure limit has mean one. Since
+$\lambda_1>\beta_2^2$, this covers the asserted interval, including its
+endpoint.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:main}]
+Fix $\beta>0$ with $\Penv(W_\infty=0)=1$. By \cref{prop:UI},
+$\beta>\beta_2$. Proposition~\ref{prop:positive-field} then gives a
+$\Delta>0$ with $F(\beta,h_a+\Delta)=0$. The free partition increases
+with $h$, so $h_c(\beta)\ge h_a+\Delta>h_a$.
+\end{proof}
+
+\section*{AI assistance}
+OpenAI Codex was used substantially in developing the mathematical argument,
+checking source applications, and preparing the text. AI reader and
+referee-style feedback was used in revising the text. Such feedback is not
+independent human mathematical validation.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{AB}
+K.~S. Alexander and Q.~Berger,
+\emph{Pinning of a renewal on a quenched renewal},
+arXiv:1608.03265v2, 26 April 2017.
+\url{https://arxiv.org/abs/1608.03265v2}.
+
+\bibitem{Berger}
+Q.~Berger,
+\emph{Random Interfaces and Pinning Models}, lecture notes, 4 March 2026.
+\url{https://www.math.univ-paris13.fr/~quentin.berger/documents/Random-Interfaces.pdf}.
+
+\bibitem{JL}
+S.~Junk and H.~Lacoin,
+\emph{Coincidence of critical points for directed polymers for general
+environments and random walks}, arXiv:2502.04113v2, 2025.
+\url{https://arxiv.org/abs/2502.04113v2}.
+
+\bibitem{Lacoin}
+H.~Lacoin,
+\emph{The martingale approach to disorder irrelevance for pinning models},
+arXiv:1002.4753v2, 14 March 2011.
+\url{https://arxiv.org/abs/1002.4753v2}.
+
+\bibitem{Toninelli}
+F.~L. Toninelli,
+\emph{Disordered pinning models and copolymers: beyond annealed bounds},
+Annals of Applied Probability \textbf{18} (2008), 1569--1587.
+\url{https://doi.org/10.1214/07-AAP496}.
+\end{thebibliography}
+\end{document}
