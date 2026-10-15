@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "title": "Nonuniqueness for a reversible cubic reaction-diffusion system",
+  "problem_id": "482",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/482-entropy-reaction-diffusion-renormalized-uniqueness.md",
+  "claim": "Complete counterexample claim for independent review",
+  "evidence_type": "Analytic proof; no numerical or formal certificate",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package entry point, build command and factual AI-use disclosure",
+      "sha256": "0985f246048378e0f8232ce225e1bc952ef469eea9a874d83039367c61814754",
+      "bytes": 1257
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Complete original-target correspondence and scope",
+      "sha256": "8c7eff4a06513be7138ff65d75144eca1830a80cff0b926bf134cc2ba17e08db",
+      "bytes": 2331
+    },
+    {
+      "path": "paper.pdf",
+      "purpose": "Anonymous final analytic manuscript",
+      "sha256": "6f50db9bd4bf21477e493fe8748a2163810360f432ac50fd62d1b35bea7be48c",
+      "bytes": 313735
+    },
+    {
+      "path": "paper.tex",
+      "purpose": "Editable anonymous self-contained manuscript source",
+      "sha256": "466ed9f8046f056b469ba8c5063c375b6d010dc58f8ff51603541538439e4693",
+      "bytes": 19568
+    }
+  ],
+  "manifest_policy": "The manifest describes the four content files. SHA256SUMS binds those files and this manifest; the checksum list excludes itself."
+}

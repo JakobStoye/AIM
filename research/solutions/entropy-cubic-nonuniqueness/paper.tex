@@ -1,0 +1,429 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Nonuniqueness for a reversible cubic reaction-diffusion system},pdfauthor={}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\Om}{\Omega}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,dx}
+\newcommand{\dt}{\,dt}
+\newcommand{\ub}{\underline b}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Nonuniqueness for a reversible cubic reaction--diffusion system}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct two global renormalized solutions with the same nonnegative
+finite-entropy initial data for the reversible cubic reaction
+$A+2B\rightleftharpoons3B$ on a three-dimensional ball. The two diffusion
+coefficients are equal. One species starts from zero, while the other has an
+integrable $|x|^{-1}$ singularity. The zero-species solution coexists with a
+second solution obtained from seeds whose initial masses tend to zero.
+A compact self-similar subsolution keeps the second solution nonzero.
+We prove its exact initial trace and the square-root Sobolev bounds needed
+for the full renormalized formulation. Thus entropy dissipation and local
+Lipschitz continuity of the reaction do not imply uniqueness for all
+nonnegative finite-entropy initial data.
+\end{abstract}
+
+\section{Introduction and main result}
+
+Reaction--diffusion systems describe concentrations transported by diffusion
+and changed by local reactions. Their entropy inequalities often remain
+available when the concentrations are too irregular to make the reaction
+terms integrable. Renormalized solutions express the equations after smooth
+cutoffs in concentration space. For entropy-dissipating reactions, Fischer
+proved that these solutions coincide with a sufficiently regular comparison
+solution whose concentrations are bounded above and bounded away from zero
+uniformly \cite[Definition~2 and Theorem~7, preprint version]{Fischer2017}. The distinction between this
+weak--strong statement and uniqueness of arbitrary renormalized solutions
+is also discussed in \cite[Remark~1.4]{FFKT2023}.
+
+Here we consider nonnegative initial concentrations of finite entropy,
+allowing an unbounded concentration and an initially absent species. In this
+class, a reversible cubic reaction already gives nonuniqueness. Let
+$\Om=B_1(0)\subset\R^3$ and consider
+\begin{equation}\label{eq:system}
+ \begin{cases}
+ a_t=\Delta a-b^2(a-b),\\
+ b_t=\Delta b+b^2(a-b),
+ \end{cases}
+ \qquad \partial_\nu a=\partial_\nu b=0\quad\hbox{on }\partial\Om.
+\end{equation}
+The reaction $A+2B\rightleftharpoons3B$, with unit forward and reverse
+rates, has reaction vector
+\begin{equation}\label{eq:reaction}
+ f(a,b)=\bigl(-b^2(a-b),\ b^2(a-b)\bigr).
+\end{equation}
+It preserves the nonnegative quadrant and satisfies, for every $a,b>0$,
+\begin{equation}\label{eq:entropy-sign}
+ f_1(a,b)\log a+f_2(a,b)\log b
+   =-b^2(a-b)(\log a-\log b)\le0.
+\end{equation}
+For entropy variables $\log u_i+\mu_i$, where the $\mu_i$ are fixed real
+constants, this gives the entropy sign with $\mu_1=\mu_2=0$.
+
+We use the following precise solution class. As usual, $0\log0=0$.
+\begin{definition}\label{def:renormalized}
+A nonnegative vector $u=(u_1,u_2)=(a,b)$ is a global renormalized solution
+of \eqref{eq:system} with initial data $u_0$ if, for every $T<\infty$,
+\begin{equation}\label{eq:class}
+ u_i\in L^\infty(0,T;L^1(\Om)),\qquad
+ \sqrt{u_i}\in L^2(0,T;H^1(\Om)),\quad i=1,2,
+\end{equation}
+and the following identity holds for every smooth
+$\xi:[0,\infty)^2\to\R$ with compactly supported derivative $D\xi$, every
+smooth $\psi$ on $\overline\Om\times[0,T]$, and almost every terminal time $T$:
+\begin{align}\label{eq:renormalized}
+ &\int_\Om\xi(u(T))\psi(T)\dd-\int_\Om\xi(u_0)\psi(0)\dd
+       -\int_0^T\!\int_\Om\xi(u)\partial_t\psi\dd\dt\notag\\
+ &\quad=-\sum_{i,j=1}^2\int_0^T\!\int_\Om
+             \psi\xi_{ij}(u)\nabla u_i\cdot\nabla u_j\dd\dt
+       -\sum_{i=1}^2\int_0^T\!\int_\Om
+             \xi_i(u)\nabla u_i\cdot\nabla\psi\dd\dt\notag\\
+ &\qquad\quad+\sum_{i=1}^2\int_0^T\!\int_\Om
+             \xi_i(u)f_i(u)\psi\dd\dt.
+\end{align}
+Here $\nabla u_i=2\sqrt{u_i}\nabla\sqrt{u_i}$ in the gradient products.
+\end{definition}
+
+\begin{theorem}\label{thm:main}
+Set $C=10000$ and
+\begin{equation}\label{eq:data}
+ a_0(x)=\frac C{|x|}\quad(x\ne0),\qquad b_0(x)=0,
+\end{equation}
+with any finite nonnegative value assigned to $a_0(0)$. These data satisfy
+\[
+ \sum_{i=1}^2\int_\Om u_{i,0}(1+|\log u_{i,0}|)\dd<\infty.
+\]
+System \eqref{eq:system} has at least two different global renormalized
+solutions with these initial data. If $m$ is the Neumann heat evolution of
+$a_0$, one solution is $(m,0)$. Another is $(m-b,b)$, where
+\begin{equation}\label{eq:nonzero-bound}
+ 0\le b\le\frac m2\quad(t>0),\qquad
+ b(t,x)\ge t^{-1/2}\left(1-\frac{|x|^2}{t}\right)_+^2
+       \quad\left(0<t\le\frac14\right).
+\end{equation}
+Both solutions have the strong $L^1$ initial trace $(a_0,0)$ and are regular
+on every compact positive-time interval.
+\end{theorem}
+
+The polynomial vector field is locally Lipschitz, and its boundary signs
+are $f_1(0,b)=b^3\ge0$ and $f_2(a,0)=0$. Thus the theorem gives an instance
+of an entropy-dissipating system with positive constant diffusivities in
+the usual finite-entropy comparison class. The singular initial
+concentration in \eqref{eq:data} is part of the construction.
+Theorem~\ref{thm:main} gives a negative answer to Problem~482 in the AIM
+collection~\cite{AIM2026}, for its stated class of nonnegative finite-entropy
+data.
+
+Equal diffusion is useful here: the total concentration $m=a+b$ solves a
+linear heat equation. It therefore bounds the nonlinear evolution globally,
+while its initial singularity permits a nonzero catalyst concentration to
+grow from a sequence of seeds with vanishing mass. The main point at the
+initial time is to show that this limiting concentration still has trace
+zero. A localized estimate away from the singular point proves that trace;
+the entropy estimate then gives \eqref{eq:class}.
+
+\section{A heat profile and a compact subsolution}
+
+Let $S(t)$ denote the Neumann heat semigroup on $\Om$, and put
+$m(t)=S(t)a_0$. Since $a_0\in L^2(\Om)$, positivity, strong continuity and
+positive-time regularity of the heat semigroup apply
+\cite[Example~5.2]{SchnaubeltLinear}. In particular $m$ is bounded on each
+$[\delta,T]\times\overline\Om$, $\delta>0$, and
+\begin{equation}\label{eq:heat-trace}
+ m(t)\longrightarrow a_0\text{ in }L^1(\Om),\qquad
+ \int_\Om m(t)\dd=2\pi C.
+\end{equation}
+The following explicit bounds control the behavior near the initial time.
+
+\begin{lemma}\label{lem:heat}
+For $t>0$ and $x\ne0$,
+\begin{equation}\label{eq:heat-bounds}
+ \frac C{\sqrt{6t+|x|^2}}\le m(t,x)
+       \le\frac C{|x|}+\frac C2|x|^2+3Ct.
+\end{equation}
+Consequently, for each finite $T$,
+\begin{equation}\label{eq:small-ball}
+ \lim_{\rho\downarrow0}\sup_{0<t\le T}
+          \int_{B_{2\rho}}m(t,x)\dd=0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $\eta>0$ set $m_{0,\eta}=C(|x|^2+\eta)^{-1/2}$ and
+$m_\eta=S(t)m_{0,\eta}$. The function
+$\ell_\eta=C(6t+|x|^2+\eta)^{-1/2}$ satisfies
+\[
+ (\partial_t-\Delta)\ell_\eta
+       =-3C|x|^2(6t+|x|^2+\eta)^{-5/2}\le0,
+ \qquad\partial_\nu\ell_\eta\le0.
+\]
+Its initial value is $m_{0,\eta}$, so $\ell_\eta\le m_\eta$ by comparison.
+For the upper bound, define
+\[
+ w_\eta=C(|x|^2+\eta)^{-1/2}
+             +\frac{C|x|^2}{2(1+\eta)^{3/2}}.
+\]
+Then $\partial_\nu w_\eta=0$ on $\partial\Om$, $w_\eta\ge m_{0,\eta}$,
+and
+\[
+ \Delta w_\eta=-3C\eta(|x|^2+\eta)^{-5/2}
+                  +3C(1+\eta)^{-3/2}\le3C.
+\]
+Hence $m_\eta\le w_\eta+3Ct$. These comparisons follow by testing the
+positive part of the heat-equation difference; the boundary term for
+$\ell_\eta-m_\eta$ is nonpositive. They only use strong $L^2$ initial
+traces of the regularized data. Letting $\eta\downarrow0$ proves
+\eqref{eq:heat-bounds}, since $m_{0,\eta}\to a_0$ in $L^2$. Its upper
+bound has integral $O(\rho^2)+O_T(\rho^3)$ on $B_{2\rho}$, which proves
+\eqref{eq:small-ball}.
+\end{proof}
+
+The lower bound in \eqref{eq:heat-bounds} has the same parabolic scale as
+the following compactly supported function.
+\begin{lemma}\label{lem:subsolution}
+For $0<t\le T_0:=1/4$, let
+\[
+ \ub(t,x)=t^{-1/2}\Phi(x/\sqrt t),\qquad
+ \Phi(y)=(1-|y|^2)_+^2.
+\]
+Then $0\le\ub\le m/2$, its support is contained in $\overline{B_{1/2}}$,
+and it is a
+weak subsolution of
+\begin{equation}\label{eq:scalar}
+ b_t=\Delta b+b^2(m-2b)
+\end{equation}
+with zero Neumann boundary flux.
+\end{lemma}
+\begin{proof}
+Write $s=|y|^2$ and
+$\mathcal L=\Delta_y+\frac12 y\cdot\nabla_y+\frac12$. Direct calculation
+on $s<1$ gives
+\[
+ \mathcal L\Phi=-\frac{23}{2}+17s+\frac52s^2,
+ \qquad(\partial_t-\Delta)\ub=-t^{-3/2}\mathcal L\Phi.
+\]
+Also $m(t,x)\ge t^{-1/2}C/\sqrt{6+s}$ on the support of $\ub$. Thus the
+desired subsolution inequality follows from
+\begin{equation}\label{eq:profile-ineq}
+ -\mathcal L\Phi\le\Phi^2
+                \left(\frac C{\sqrt{6+s}}-2\Phi\right).
+\end{equation}
+For $s\le3/4$, the left side is at most $23/2$ and the right side is at
+least $(C/3-2)/256>23/2$. For $3/4\le s<1$, one has
+$\mathcal L\Phi\ge85/32>0$, while the right side is nonnegative.
+Moreover $2\Phi\le2<C/\sqrt7$, proving $\ub\le m/2$.
+At $s=1$ both $\Phi$ and its first derivatives vanish. The extension by
+zero therefore has no surface measure in its distributional Laplacian,
+and \eqref{eq:profile-ineq} proves the weak inequality across the moving
+front. The support radius is $\sqrt t\le1/2$, so the outer boundary flux
+is zero.
+\end{proof}
+
+\section{A second solution and its initial trace}
+
+For $0<\varepsilon<T_0$, start \eqref{eq:system} at time $\varepsilon$ with
+\begin{equation}\label{eq:seed-data}
+ (a_\varepsilon,b_\varepsilon)(\varepsilon)
+       =\bigl(m(\varepsilon)-\ub(\varepsilon),\ub(\varepsilon)\bigr).
+\end{equation}
+These data belong to $W^{2,p}(\Om)^2$ with zero Neumann trace for every
+finite $p$. Indeed, the compact seed is $C^1$, has bounded piecewise second
+derivatives, and vanishes near $\partial\Om$. Bounded-data semilinear
+Neumann theory gives a maximal regular solution
+\cite[Example~3.7 and Theorem~3.9]{SchnaubeltNonlinear}.
+Its total is $m$, by uniqueness of the scalar heat equation. Thus
+$b_\varepsilon$ solves \eqref{eq:scalar}.
+
+On each interval bounded away from zero the scalar reaction is locally
+Lipschitz in $b$. Both $0$ and $m/2$ solve \eqref{eq:scalar}; comparison
+and Lemma~\ref{lem:subsolution} yield
+\begin{equation}\label{eq:approx-bounds}
+ 0\le b_\varepsilon(t)\le m(t)/2\quad(t\ge\varepsilon),\qquad
+ b_\varepsilon(t)\ge\ub(t)\quad(\varepsilon\le t\le T_0).
+\end{equation}
+For the subsolution comparison, testing the positive part of the difference
+gives its squared $L^2$ norm a differential inequality with a finite local
+Lipschitz constant. No bound on this constant as $\varepsilon\downarrow0$
+is needed. Since $a_\varepsilon=m-b_\varepsilon$, the bound by $m$ excludes
+finite-time blowup of either component. Each seeded solution is global.
+
+We spell out the positive-time compactness used to remove the seed time.
+Fix $0<\delta<T$ and $\varepsilon<\delta/2$. The states and their polynomial
+reaction terms are uniformly bounded on $[\delta/2,T]$. Put
+$X=L^6(\Om)^2$, let $A=\operatorname{diag}(\Delta_N,\Delta_N)$, and write
+$X_\theta=D_A(\theta,6)$ for its real interpolation spaces. The mild formula
+and analytic smoothing imply
+\begin{align*}
+ \norm{(a_\varepsilon,b_\varepsilon)(\delta)}_{X_{2/3}}
+ &\le K_\delta\norm{(a_\varepsilon,b_\varepsilon)(\delta/2)}_X\\
+ &\quad+K_\delta\int_{\delta/2}^\delta(\delta-s)^{-2/3}
+                 \norm{f(a_\varepsilon(s),b_\varepsilon(s))}_X\,ds.
+\end{align*}
+The right side is uniform in $\varepsilon$. The embedding
+$X_{2/3}\hookrightarrow X_{1/2}$ is compact and
+$X_{1/2}\hookrightarrow C(\overline\Om)^2$ is continuous; see
+\cite[Proposition~2.13, Theorem~2.14 and Example~3.7]{SchnaubeltNonlinear}.
+Extract a convergent subsequence at $\delta$, then use continuous dependence
+for the bounded positive-time problem. Its limit remains bounded by $m$,
+so it extends to all later times. Nested subsequences at times decreasing
+to zero agree on overlaps and give one global regular solution
+\begin{equation}\label{eq:limit}
+ (a,b)=(m-b,b),\qquad0\le b\le m/2,
+ \qquad b\ge\ub\quad(0<t\le T_0).
+\end{equation}
+The convergence at each positive time is uniform on $\overline\Om$.
+
+\begin{lemma}\label{lem:trace}
+The solution in \eqref{eq:limit} satisfies
+$b(t)\to0$ and $a(t)\to a_0$ in $L^1(\Om)$ as $t\downarrow0$.
+\end{lemma}
+\begin{proof}
+Fix $0<\rho<1/4$ and a smooth $0\le\chi_\rho\le1$ which is zero on
+$B_\rho$ and one outside $B_{2\rho}$. It is constant near $\partial\Om$.
+For each finite $T$, Lemma~\ref{lem:heat} bounds $m$ by some
+$M_{\rho,T}$ on $0<t\le T$, $|x|\ge\rho$. Set
+$Y_\varepsilon(t)=\int_\Om b_\varepsilon(t)\chi_\rho\dd$.
+Since $b_\varepsilon^2(m-2b_\varepsilon)\le m^2b_\varepsilon$,
+\[
+ Y_\varepsilon'(t)\le K_\rho+M_{\rho,T}^2Y_\varepsilon(t),\qquad
+ K_\rho=\tfrac12\norm{\Delta\chi_\rho}_\infty\int_\Om a_0\dd.
+\]
+The diffusion term is $\int b_\varepsilon\Delta\chi_\rho$; both boundary
+terms vanish. If $\varepsilon<\rho^2$, the seed is supported in $B_\rho$,
+so $Y_\varepsilon(\varepsilon)=0$. Hence
+$Y_\varepsilon(t)\le K_\rho t\exp(M_{\rho,T}^2t)$.
+Pass to the limit at fixed $t>0$ to obtain
+\[
+ \int_\Om b(t)\dd\le\frac12\int_{B_{2\rho}}m(t)\dd
+                    +K_\rho t\exp(M_{\rho,T}^2t).
+\]
+First let $t\downarrow0$ with $\rho$ fixed, and then let $\rho\downarrow0$
+using \eqref{eq:small-ball}. This proves the zero trace of $b$. The trace
+of $a=m-b$ follows from \eqref{eq:heat-trace}.
+\end{proof}
+
+\section{Entropy and the renormalized identity}
+
+Let $h(s)=s\log s-s+1$ for $s>0$, with $h(0)=1$, and put
+$H(t)=\int_\Om[h(a(t))+h(b(t))]\dd$.
+Since $a+b=m$, one has
+\begin{equation}\label{eq:entropy-upper}
+ 0\le h(a)+h(b)\le h(m)+1.
+\end{equation}
+For any fixed finite $T$, \eqref{eq:heat-bounds} dominates the right side
+on $0<t\le T$ by a constant multiple of
+$1+|x|^{-1}\log(2+|x|^{-1})$, an integrable function on the ball.
+Lemma~\ref{lem:trace}, continuity of $h$ and dominated convergence therefore
+give
+\begin{equation}\label{eq:entropy-trace}
+ H(t)\longrightarrow H_0:=\int_\Om[h(a_0)+h(0)]\dd<\infty.
+\end{equation}
+For clarity, apply dominated convergence along an almost-everywhere
+subsequence of any sequence converging to zero in time. Every such sequence
+has this subsequence by the strong $L^1$ trace, so the full limit follows.
+
+For $\eta>0$ use the smooth entropy $h_\eta(s)=h(s+\eta)$ on
+$[\delta,T]$, where $\delta>0$. Write $H_\eta(t)=\sum_i\int h(u_i(t)+\eta)$.
+The equations and the Neumann condition give
+\begin{align}\label{eq:regularized-entropy}
+ H_\eta(T)&+\sum_{i=1}^2\int_\delta^T\!\int_\Om
+                      \frac{|\nabla u_i|^2}{u_i+\eta}\dd\dt\notag\\
+ &+\int_\delta^T\!\int_\Om b^2(a-b)
+              \bigl[\log(a+\eta)-\log(b+\eta)\bigr]\dd\dt
+       =H_\eta(\delta).
+\end{align}
+The last integrand is nonnegative because $a\ge b$. This calculation is
+valid even where $b=0$. It bounds $\sqrt{u_i+\eta}$ in
+$L^2(\delta,T;H^1(\Om))$, while
+$|\sqrt{u_i+\eta}-\sqrt{u_i}|\le\sqrt\eta$ gives strong $L^2$ convergence.
+Weak compactness and lower semicontinuity, followed by $\eta\downarrow0$,
+yield
+\[
+ 4\sum_{i=1}^2\int_\delta^T\!\int_\Om|\nabla\sqrt{u_i}|^2\dd\dt
+       \le H(\delta)-H(T).
+\]
+Now let $\delta\downarrow0$ and use \eqref{eq:entropy-trace}. Together
+with $a+b=m$ and its conserved mass, this proves \eqref{eq:class} for every
+finite $T$.
+The gradient identity used in Definition~\ref{def:renormalized} follows as
+well: test $\nabla u_i=2\sqrt{u_i+\eta}\nabla\sqrt{u_i+\eta}$ on a
+fixed positive-time strip, and pass to the limit using strong $L^2$
+convergence of the first factor and weak $L^2$ convergence of the second.
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The initial entropy in \eqref{eq:data} is finite, since its radial integral
+is a constant multiple of $\int_0^1 r[1+\log(C/r)]\,dr$.
+The construction above gives a global solution $(m-b,b)$ with the required
+initial trace and square-root Sobolev bounds. It remains to check the full
+identity \eqref{eq:renormalized} at the initial time.
+
+For fixed $\delta>0$, the smooth chain rule gives that identity on
+$[\delta,T]$. On the common compact support of $D\xi$ and $D^2\xi$, the
+components $u_i$ are bounded by some $R$. The identity
+$\nabla u_i=2\sqrt{u_i}\nabla\sqrt{u_i}$ then bounds every Hessian term by
+a constant times
+$|\nabla\sqrt{u_i}|\,|\nabla\sqrt{u_j}|$ and every flux term by a constant
+times $|\nabla\sqrt{u_i}|$. These terms are integrable on $(0,T)\times\Om$.
+The cutoff reaction term is bounded. Also $\xi$ is globally Lipschitz, so
+the strong $L^1$ initial trace gives $\xi(u(\delta))\to\xi(u_0)$ in $L^1$.
+Letting $\delta\downarrow0$ therefore proves \eqref{eq:renormalized} for
+every permitted $\xi$ and $\psi$, in fact for every $T>0$.
+
+The second solution $(m,0)$ has zero reaction, the same strong initial
+trace, and the same entropy dominator \eqref{eq:entropy-upper}. The
+regularized entropy calculation \eqref{eq:regularized-entropy} applies to
+it with zero reaction term, giving its Fisher bound without testing
+$\log0$. The identical chain-rule passage proves
+\eqref{eq:renormalized} for this solution as well.
+Finally $b\ge\ub>0$ on $0<t<T_0$, $|x|<\sqrt t$, a set of positive
+space-time measure. The two renormalized solutions are different.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{Fischer2017}
+J.~Fischer, \emph{Weak--strong uniqueness of solutions to entropy-dissipating
+reaction--diffusion equations}, Nonlinear Analysis \textbf{159} (2017),
+181--207. \href{https://doi.org/10.1016/j.na.2017.03.001}{doi:10.1016/j.na.2017.03.001}.
+The theorem numbering used here is from the preprint version
+\href{https://arxiv.org/abs/1703.00730v1}{arXiv:1703.00730v1}.
+
+\bibitem{FFKT2023}
+K.~Fellner, J.~Fischer, M.~Kniely and B.~Q.~Tang,
+\emph{Global renormalised solutions and equilibration of reaction--diffusion
+systems with nonlinear diffusion}, Journal of Nonlinear Science
+\textbf{33} (2023), article 66.
+\href{https://doi.org/10.1007/s00332-023-09926-w}{doi:10.1007/s00332-023-09926-w}.
+
+\bibitem{SchnaubeltLinear}
+R.~Schnaubelt, \emph{Evolution Equations}, lecture notes, Karlsruhe Institute
+of Technology, version March 19, 2026.
+\url{https://iana.math.kit.edu/downloads/iana3/schnaubelt/Skripten/evgl-skript.pdf}.
+
+\bibitem{SchnaubeltNonlinear}
+R.~Schnaubelt, \emph{Nonlinear Evolution Equations}, lecture notes,
+Karlsruhe Institute of Technology, version October 8, 2025.
+\url{https://iana.math.kit.edu/downloads/iana3/schnaubelt/Skripten/nevgl-skript.pdf}.
+\bibitem{AIM2026}
+S.~Brunton, M.~J.~Colbrook, M.~V.~de~Hoop, G.~Stepaniants, A.~Townsend and
+R.~Ward, \emph{AIM---Open Applied Problems}, GitHub repository (2026).
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/482-entropy-reaction-diffusion-renormalized-uniqueness.md}{Problem~482},
+revision \texttt{a153f469ee0ea64e876b2ad97c79d252c19a3e22}.
+\end{thebibliography}
+
+\section*{AI assistance}
+OpenAI Codex assisted with developing the construction, checking calculations,
+locating references and drafting this manuscript. Independent mathematical
+review is requested.
+\end{document}
