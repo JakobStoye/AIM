@@ -1,0 +1,36 @@
+{
+  "manifest_version": 1,
+  "problem_id": "383",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "claim_status": "Complete analytic solution claim awaiting independent review",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package overview, build instructions and factual AI use/review scope",
+      "sha256": "e60ced51a8e377c59f082e4c371ebd7c0ab846a8b8abdbaf862537d02768188f",
+      "bytes": 2235
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original-target correspondence",
+      "sha256": "47fa9711425dfbb13b0bc2072a2dab72937be4324edcd6995a50ff3a30a98d51",
+      "bytes": 2847
+    },
+    {
+      "path": "paper/flory_onset.tex",
+      "purpose": "Standalone editable manuscript with the complete analytic proof",
+      "sha256": "307eda27f31dd5076ab5dcac8a2bada23e3decd9371a3da1d31e67a48a5e6f97",
+      "bytes": 17143
+    },
+    {
+      "path": "paper/flory_onset.pdf",
+      "purpose": "Six-page rendered manuscript",
+      "sha256": "37a8602b8d59c78972779c954d60c93c6376d9072a7abb7927b6917c20f7c66c",
+      "bytes": 320218
+    }
+  ],
+  "integrity_metadata": {
+    "PUBLIC_MANIFEST.json": "This manifest lists the four substantive payload files; its own hash is in SHA256SUMS.",
+    "SHA256SUMS": "Hashes the four substantive payload files and PUBLIC_MANIFEST.json; excludes itself to avoid recursion."
+  }
+}

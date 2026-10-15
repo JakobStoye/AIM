@@ -1,0 +1,297 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Rplus}{(0,\infty)}
+\newcommand{\pair}[2]{\langle #1,#2\rangle}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\dd}{\,\mathrm{d}}
+\DeclareMathOperator{\TV}{TV}
+\title{Continuity of finite-cluster mass at the onset of Flory gelation}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove continuity of the finite-cluster mass at the gelation time for every weak Flory solution with a continuous symmetric kernel comparable to $x^\alpha y+xy^\alpha$, where $0<\alpha<1$, and a finite initial measure of unit first moment. No higher initial moment is required. A hypothetical jump forces a positive amount of mass into a finite band at sizes of order $(T_g-t)^{-1/\alpha}$. A time-dependent exponential test shows that a fixed positive fraction of this band mass remains in finite clusters at $T_g$, contradicting the vanishing tails of the finite mass measure at that time.
+\end{abstract}
+
+\section{The equation and the result}\label{sec:intro}
+
+The Flory coagulation equation describes the evolution of finite clusters while allowing them to interact with a gel. The first moment of the finite-cluster distribution can decrease; the missing mass is the gel mass. Weak continuity of the distribution does not by itself imply continuity of this first moment, since mass can move to arbitrarily large sizes.
+
+For kernels comparable to $x^\alpha y+xy^\alpha$ with $0<\alpha<1$, Fournier and Lauren\c{c}ot proved that the finite-cluster mass of a Flory solution is continuous strictly after gelation \cite[Proposition~2.3]{FL}. They explicitly asked whether continuity also holds at the gelation time. Their postgelation estimate uses a positive gel mass and does not give the endpoint conclusion when the gel mass tends to zero. We prove that endpoint conclusion under the same kernel assumptions, for every solution in the weak formulation below.
+
+Write $E=\Rplus$ and $\pair{\mu}{f}=\int_E f(x)\mu(\dd x)$. Fix $0<\alpha<1$. Let $K:E^2\to[0,\infty)$ be continuous and symmetric, and let $\ell:E\to(0,\infty)$ be continuous. Suppose that constants $0<c<C<\infty$ satisfy
+\begin{align}
+ c(x^\alpha y+xy^\alpha)&\le K(x,y)\le C(x^\alpha y+xy^\alpha),\qquad x,y>0,\label{eq:kernel}\\
+ \lim_{y\to\infty}\frac{K(x,y)}y&=\ell(x),\qquad
+ cx^\alpha\le\ell(x)\le Cx^\alpha.\label{eq:ell}
+\end{align}
+Let $\mu_0$ be a finite nonnegative Borel measure on $E$ with $\pair{\mu_0}{x}=1$. A weak Flory solution is a family $(\mu_t)_{t\ge0}$ of finite nonnegative Borel measures such that the particle number $\pair{\mu_t}{1}$ and the mass
+\[
+ m(t)=\pair{\mu_t}{x}
+\]
+are nonincreasing, and, for every $\phi\in C_c([0,\infty))$ and $t\ge0$,
+\begin{align}
+ \pair{\mu_t}{\phi}
+ &=\pair{\mu_0}{\phi}
+ +\frac12\int_0^t\iint_{E^2}K(x,y)\Delta\phi(x,y)\mu_r(\dd x)\mu_r(\dd y)\dd r\notag\\
+ &\quad-\int_0^t(1-m(r))\pair{\mu_r}{\ell\phi}\dd r,
+ \qquad \Delta\phi(x,y)=\phi(x+y)-\phi(x)-\phi(y).
+ \label{eq:flory}
+\end{align}
+Functions on $[0,\infty)$ are restricted to $E$ when integrated. All time integrals are Lebesgue integrals.
+
+\begin{theorem}\label{thm:main}
+Under \eqref{eq:kernel}--\eqref{eq:ell}, let $(\mu_t)_{t\ge0}$ be any weak Flory solution just defined, with $\mu_0(E)<\infty$ and $m(0)=1$. If
+\[
+ 0<T_g:=\inf\{t\ge0:m(t)<1\}<\infty,
+\]
+then $m$ is continuous at $T_g$ and
+\[
+ m(T_g)=\lim_{t\downarrow T_g}m(t)=1.
+\]
+\end{theorem}
+
+The argument uses three estimates at the same size scale. A bounded first-moment cutoff turns a putative jump into a lower bound on the mass above size $R$ shortly before $T_g$. Concave-test dissipation, following the method in \cite[proof of Proposition~2.3]{FL}, bounds the mass above a much larger size $AR$. The resulting mass in $[R,AR]$ cannot disappear completely over a time interval of length $O(R^{-\alpha})$: an explicit exponential test gives a positive lower bound independent of $R$. Section~\ref{sec:estimates} establishes the cutoff and dissipation estimates; Section~\ref{sec:retention} proves this last estimate and Theorem~\ref{thm:main}.
+
+\section{Bounded tests and tail estimates}\label{sec:estimates}
+
+Throughout the proof, put
+\[
+ N_0=\mu_0(E),\qquad g(t)=1-m(t),\qquad Q_t(\dd x)=x\mu_t(\dd x),
+ \qquad H_R(t)=Q_t([R,\infty)).
+\]
+Thus $0\le m,g\le1$, $m+g=1$, and $Q_t$ is a finite measure. Also
+\begin{equation}\label{eq:rates}
+ \pair{\mu_t}{x^\alpha}\le N_0+1,\qquad
+ \iint K(x,y)\mu_t(\dd x)\mu_t(\dd y)\le2C(N_0+1),\qquad
+ g(t)\pair{\mu_t}{\ell}\le C(N_0+1).
+\end{equation}
+Indeed $x^\alpha\le1+x$, and the two latter bounds follow from \eqref{eq:kernel}--\eqref{eq:ell} and $m\le1$.
+
+\begin{lemma}\label{lem:tests}
+The identity \eqref{eq:flory}, and its difference between any two times $s<t$, hold for every bounded Borel test. Moreover
+\begin{equation}\label{eq:tv}
+ \|\mu_t-\mu_s\|_{\TV}\le L(t-s),\qquad L=4C(N_0+1),
+\end{equation}
+where the norm is the supremum over Borel tests of supremum norm at most one. If $r\mapsto\phi_r$ is $C^1$ in the supremum norm of bounded Borel functions on $[s,t]$, then
+\begin{align}
+ \pair{\mu_t}{\phi_t}-\pair{\mu_s}{\phi_s}
+ &=\int_s^t\pair{\mu_r}{\partial_r\phi_r}\dd r
+ +\frac12\int_s^t\iint K\Delta\phi_r\dd\mu_r\dd\mu_r\dd r\notag\\
+ &\quad-\int_s^t g(r)\pair{\mu_r}{\ell\phi_r}\dd r.
+ \label{eq:time-tests}
+\end{align}
+\end{lemma}
+\begin{proof}
+The rate bounds give continuity of $t\mapsto\pair{\mu_t}{\phi}$ for each original continuous compactly supported test. Increasing continuous cutoffs of bounded open intervals, and the cutoffs $(1-x/n)_+$ of $E$, show that $t\mapsto\mu_t(B)$ is measurable first on intervals and $E$, and then on all Borel sets by the monotone-class theorem. Thus $(\mu_t)$ is a measure kernel. The same argument for rectangles gives the kernel $\mu_t\otimes\mu_t$. Nonnegative Borel integrands can consequently be integrated in time and size; simple-function approximation justifies the corresponding time-space measures.
+
+For each $r$, define the finite gain, coagulation-loss and gel-loss measures by
+\[
+ \begin{split}
+ A_r(B)&=\frac12\iint K(x,y)\ind_B(x+y)\mu_r(\dd x)\mu_r(\dd y),\\
+ L_r(B)&=\iint K(x,y)\ind_B(x)\mu_r(\dd x)\mu_r(\dd y),\\
+ G_r(B)&=g(r)\int_B\ell(x)\mu_r(\dd x).
+ \end{split}
+\]
+Their masses are at most $C(N_0+1)$, $2C(N_0+1)$ and $C(N_0+1)$. Subtracting \eqref{eq:flory} at $s$ and $t$ gives equality of the finite positive measures
+\begin{equation}\label{eq:measure}
+ \mu_t+\int_s^t(L_r+G_r)\dd r
+ =\mu_s+\int_s^t A_r\dd r.
+\end{equation}
+To see this from the original tests, use the same continuous cutoffs to obtain equality on intervals and on $E$, then apply the uniqueness theorem for finite measures. Hence \eqref{eq:measure} holds on every Borel set and against every bounded Borel function. The sum of the three rate bounds gives \eqref{eq:tv}.
+
+For completeness, telescope $\pair{\mu_r}{\phi_r}$ along a partition of $[s,t]$. Apply the fixed-test identity on each subinterval with the test at its left endpoint, and use the fundamental theorem of calculus for the change of test. Replacing the fixed tests by $\phi_r$ in the rate integrals has error at most $L(t-s)$ times their supremum-norm modulus of continuity over the mesh. Replacing the right-endpoint measure by $\mu_r$ in the derivative integrals has error at most
+\[
+ L(t-s)\,|\text{mesh}|\sup_{s\le r\le t}\|\partial_r\phi_r\|_\infty.
+\]
+Both errors tend to zero. All integrands are measurable and bounded in absolute integral by \eqref{eq:rates} and the uniform test and derivative bounds. This proves \eqref{eq:time-tests}.
+\end{proof}
+
+Let $f_R(x)=\min(x,R)$ and $J_R(t)=\pair{\mu_t}{f_R}$. Lemma~\ref{lem:tests} makes $J_R$ continuous. Monotone convergence gives $m(t)=\sup_R J_R(t)$, so $m$ is lower semicontinuous. Since $m$ is nonincreasing, it follows that
+\begin{equation}\label{eq:right}
+ \lim_{u\downarrow t}m(u)=m(t),\qquad t\ge0.
+\end{equation}
+Thus it remains to exclude a downward jump from the left at $T_g$.
+
+\begin{lemma}\label{lem:cutoff}
+For every $R>0$ and $s<t$,
+\begin{equation}\label{eq:cutoff}
+ 0\le J_R(s)-J_R(t)\le CR^\alpha(t-s).
+\end{equation}
+If $T=T_g$ and $\delta=1-m(T)>0$, then, for $0<h<T$,
+\begin{equation}\label{eq:lower}
+ H_R(T-h)\ge\delta-ChR^\alpha.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The defect $D_R(x,y)=f_R(x)+f_R(y)-f_R(x+y)$ is nonnegative. For $x\le y$,
+\[
+ D_R(x,y)\le\min(x,R),\qquad K(x,y)\le2Cx^\alpha y,
+ \qquad x^\alpha\min(x,R)\le R^\alpha x.
+\]
+Symmetry therefore gives $KD_R\le2CR^\alpha xy$ for all $x,y$. Likewise $\ell(x)f_R(x)\le CR^\alpha x$. The bounded-test identity yields
+\[
+ 0\le J_R(s)-J_R(t)
+ \le CR^\alpha\int_s^t\bigl(m(r)^2+g(r)m(r)\bigr)\dd r
+ \le CR^\alpha(t-s),
+\]
+since $m^2+gm=m$. Before $T$, the definition of $T$ and monotonicity give $m=1$. At $s=T-h$,
+\[
+ H_R(s)\ge\int_E(x-R)_+\mu_s(\dd x)=1-J_R(s),
+ \qquad J_R(T)\le1-\delta.
+\]
+Combining these inequalities with \eqref{eq:cutoff} proves \eqref{eq:lower}.
+\end{proof}
+
+\begin{lemma}\label{lem:concave}
+Set $\kappa=c(1-2^{-\alpha})>0$. For all $R>0$ and $s<t$,
+\begin{equation}\label{eq:dissipation}
+ \kappa\int_s^t H_R(r)^2\dd r\le R^{-\alpha}.
+\end{equation}
+Consequently, for $s<T=T_g$,
+\begin{equation}\label{eq:upper}
+ H_R(s)\le\bigl[\kappa(T-s)R^\alpha\bigr]^{-1/2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Define the increasing concave function, with value zero at zero,
+\[
+ \psi_R(x)=
+ \begin{cases}R^{-\alpha}x,&0\le x\le R,\\
+ x^{1-\alpha},&x\ge R.
+ \end{cases}
+\]
+Its derivative drops at $R$ from $R^{-\alpha}$ to $(1-\alpha)R^{-\alpha}$ and then decreases. A nonnegative concave function vanishing at zero is subadditive, by applying concavity to $x$ and $y$ as fractions of $x+y$. The functions $\psi_R\wedge n$ are also increasing, concave and subadditive. For $x\le y$, their nonnegative subadditivity defects are at most $\psi_R(x)$. Since
+\[
+ x^\alpha\psi_R(x)\le x,\qquad \psi_R(x)\le R^{-\alpha}x,
+\]
+we have, for every $n$,
+\[
+ K(x,y)|\Delta(\psi_R\wedge n)(x,y)|\le2Cxy,
+ \qquad \ell(x)(\psi_R\wedge n)(x)\le Cx.
+\]
+Use these bounded tests in Lemma~\ref{lem:tests} and send $n$ to infinity. At each time endpoint, $R^{-\alpha}x$ dominates the tests. In the time-space integrals the displayed bounds have integrals at most $2C(t-s)$ and $C(t-s)$, respectively. Dominated convergence thus gives the exact weak identity for $\psi_R$.
+
+Put $p=1-\alpha$. For $R\le x\le y$,
+\[
+ \psi_R(x)+\psi_R(y)-\psi_R(x+y)
+ =x^p+y^p-(x+y)^p\ge(2-2^p)x^p.
+\]
+Indeed $1+z^p-(1+z)^p$ is increasing for $z\ge1$, as its derivative is $p[z^{p-1}-(1+z)^{p-1}]\ge0$. Also $K(x,y)x^p\ge cxy$. Discarding the remaining nonnegative dissipation and the gel-loss term gives
+\[
+ \kappa\int_s^t\left(\int_{[R,\infty)}x\mu_r(\dd x)\right)^2\dd r
+ \le\pair{\mu_s}{\psi_R}\le R^{-\alpha}m(s)\le R^{-\alpha},
+\]
+which is \eqref{eq:dissipation}.
+
+The bounded Borel test $b_R(x)=x\ind_{(0,R)}(x)$ has $\Delta b_R\le0$: if $x+y<R$ the increment is zero, and otherwise it is the negative sum of the parent contributions below $R$. Thus $\pair{\mu_r}{b_R}$ is nonincreasing. For $r<T$, mass conservation gives
+\[
+ H_R(r)=1-\pair{\mu_r}{b_R},
+\]
+so $H_R$ is nondecreasing on $[0,T)$. Applying \eqref{eq:dissipation} on $[s,T]$ yields
+\[
+ \kappa(T-s)H_R(s)^2\le R^{-\alpha},
+\]
+since the possible different value at the single endpoint $T$ has zero time measure. This proves \eqref{eq:upper} without assuming continuity at $T$. The complementary intervals $(0,R)$ and $[R,\infty)$ include any atom at $R$ exactly once.
+\end{proof}
+
+\section{An exponential tail estimate and continuity at onset}\label{sec:retention}
+
+We next bound the part of a finite size band that remains in the tail over a short interval. The estimate applies across the gelation time as well as before it.
+
+\begin{lemma}\label{lem:retention}
+For every $A>1$, $d>0$, $R>0$ and $s<t$ with $(t-s)R^\alpha\le d$,
+\begin{equation}\label{eq:retention}
+ H_R(t)\ge\eta\,Q_s([R,AR]),\qquad
+ \eta=\exp\{-A\exp(2Cd)\}>0.
+\end{equation}
+In particular, $\eta$ is independent of $R$, $s$, $t$, and any higher moment.
+\end{lemma}
+\begin{proof}
+For a bounded Borel function $f$ such that $xf(x)$ is bounded, the bounded-test identity and symmetry give
+\begin{align}
+ \pair{Q_t}{f}-\pair{Q_s}{f}
+ &=\int_s^t\int_E\left(\int_E K(x,y)[f(x+y)-f(x)]\mu_r(\dd y)
+       -g(r)\ell(x)f(x)\right)Q_r(\dd x)\dd r.
+ \label{eq:mass-test}
+\end{align}
+The symmetry replaces half the $(x+y)$ gain by the $x$ gain and combines the two equal parent losses. All separate terms are integrable: if $U=\sup_x|xf(x)|$, then $x|f(x+y)|\le U$ and $x|f(x)|\le U$, so \eqref{eq:rates} bounds the gain and loss integrals. If $r\mapsto xf_r(x)$ is $C^1$ in supremum norm, \eqref{eq:time-tests} adds $\int_s^t\pair{Q_r}{\partial_r f_r}\dd r$ to \eqref{eq:mass-test}.
+
+For $s\le r\le t$, choose
+\[
+ a(r)=\exp\{2C(t-r)R^\alpha\},\qquad q(r)=\frac{a(r)}R,
+ \qquad f_r(x)=\ind_{[R,\infty)}(x)e^{-q(r)x}.
+\]
+For fixed $R,s,t$, the functions $xf_r$ have uniformly bounded first and second time derivatives. These derivatives are polynomials in $x$ times $e^{-q(r)x}$, with bounded coefficients and $q(r)\ge1/R$. Taylor's remainder therefore proves the required $C^1$ dependence in supremum norm. These derivative bounds may depend on $R$; the constant in \eqref{eq:retention} will not.
+
+For $q,y>0$,
+\begin{equation}\label{eq:exp-bound}
+ y^\alpha(1-e^{-qy})\le q^{1-\alpha}y.
+\end{equation}
+To verify it, set $z=qy$ and use $1-e^{-z}\le\min(z,1)$. If $z\le1$, then $z^{\alpha-1}(1-e^{-z})\le z^\alpha\le1$; if $z\ge1$, it is at most $z^{\alpha-1}\le1$.
+
+For $x\ge R$, adding $y$ stays in the support of $f_r$, and $f_r(x+y)/f_r(x)=e^{-q(r)y}$. The combined loss coefficient in \eqref{eq:mass-test} satisfies
+\begin{align}
+ &\int_E K(x,y)(1-e^{-q(r)y})\mu_r(\dd y)+g(r)\ell(x)\notag\\
+ &\quad\le Cx^\alpha\left(\int_E y(1-e^{-q(r)y})\mu_r(\dd y)+g(r)\right)
+       +Cx\int_E y^\alpha(1-e^{-q(r)y})\mu_r(\dd y)\notag\\
+ &\quad\le C\bigl[x^\alpha+xq(r)^{1-\alpha}\bigr].\label{eq:loss}
+\end{align}
+Here we used \eqref{eq:exp-bound}, $m+g=1$ and $m\le1$. Writing $z=x/R\ge1$ and $a=a(r)\ge1$, we have
+\[
+ \frac{\partial_r f_r(x)}{f_r(x)}=2CR^\alpha az,
+ \qquad C\bigl[x^\alpha+xq(r)^{1-\alpha}\bigr]
+ =CR^\alpha\bigl[z^\alpha+za^{1-\alpha}\bigr]\le2CR^\alpha az.
+\]
+Consequently, for $x\ge R$,
+\begin{equation}\label{eq:subsolution}
+ \partial_r f_r(x)+\int_E K(x,y)[f_r(x+y)-f_r(x)]\mu_r(\dd y)
+       -g(r)\ell(x)f_r(x)\ge0.
+\end{equation}
+For $x<R$, the test and its time derivative vanish, and the remaining gain is nonnegative. Thus \eqref{eq:subsolution} holds for every $x>0$, including $x=R$. Its terms are separately integrable by the bounds for \eqref{eq:mass-test} and for the time derivative. Integrating against $Q_r$ and in time now gives
+\[
+ \pair{Q_t}{\ind_{[R,\infty)}e^{-x/R}}
+ \ge\pair{Q_s}{\ind_{[R,\infty)}
+                 e^{-\exp\{2C(t-s)R^\alpha\}x/R}}.
+\]
+The left side is at most $H_R(t)$, and the weight on $[R,AR]$ on the right is at least $\exp\{-A\exp(2Cd)\}$. This proves \eqref{eq:retention}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Write $T=T_g$. Suppose for contradiction that $\delta=1-m(T)>0$, and set $d=\delta/(2C)$. Fix $A>1$ large enough that
+\[
+ A^\alpha\ge\frac{16}{\kappa d\delta^2},
+ \qquad \kappa=c(1-2^{-\alpha}).
+\]
+For every sufficiently large $R$, take $h=dR^{-\alpha}<T$ and $s=T-h$. Lemma~\ref{lem:cutoff} gives $H_R(s)\ge\delta/2$, while Lemma~\ref{lem:concave}, applied at size $AR$, gives
+\[
+ H_{AR}(s)\le(\kappa dA^\alpha)^{-1/2}\le\delta/4.
+\]
+Hence $Q_s([R,AR])\ge H_R(s)-H_{AR}(s)\ge\delta/4$. Applying Lemma~\ref{lem:retention} with the fixed endpoint $t=T$ yields
+\[
+ Q_T([R,\infty))\ge\frac\delta4\exp\{-A\exp(2Cd)\}>0
+\]
+for all sufficiently large $R$, with a lower bound independent of $R$. This contradicts $Q_T([R,\infty))\to0$, since $Q_T$ is a fixed finite measure. Thus $m(T)=1$. Equation~\eqref{eq:right} gives the right limit, and $m=1$ on $[0,T)$ gives the left limit. The mass is therefore continuous at $T$.
+\end{proof}
+
+\begin{remark}
+The proof uses the two-sided estimate on $K$, its symmetry, and the bound $0\le\ell(x)\le Cx^\alpha$. The continuity and asymptotic assumptions in \eqref{eq:ell} are retained to state the result for the original Flory kernel class. No uniqueness, approximation by particle systems, or moment beyond finiteness of $\mu_0$ and its first moment is used.
+\end{remark}
+
+\paragraph{AI use.} AI tools assisted the development and checking of the proof and the preparation of the text.
+
+\begin{thebibliography}{9}
+\bibitem{FL} N. Fournier and P. Lauren\c{c}ot,
+\emph{Marcus--Lushnikov processes, Smoluchowski's and Flory's models},
+Stochastic Processes and their Applications \textbf{119} (2009), 167--189.
+\href{https://arxiv.org/abs/0706.2057v1}{arXiv:0706.2057v1}.
+\end{thebibliography}
+\end{document}
