@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -42,6 +42,10 @@ A positive answer would establish a general decision method, potentially with pr
 7. Min Wu, Zhengfeng Yang and Wang Lin, *Exact Asymptotic Stability Analysis and Region-of-Attraction Estimation for Nonlinear Systems*, Abstract and Applied Analysis **2013**, Article 146137. [Publisher full text](https://onlinelibrary.wiley.com/doi/10.1155/2013/146137), published April 4, 2013; §3.1 and §4.3, Algorithm 9.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-338). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-18)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-10-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -33,6 +33,10 @@ Polygonal billiards model collision transport without curved focusing or dispers
 - OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf), result family 150 (2026). Statement locator: `Theorem 1.1, PDF page 1; Introduction theorem label thm:main, normalized measure immediately preceding.`.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-142). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-10-13)
 
 **Known cases:** Every irrational-angle Euclidean triangle is weakly mixing, hence ergodic, for the specified Liouville billiard measure. This rules out a nonergodic example with three sides.
 

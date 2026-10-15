@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-10-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -35,6 +35,10 @@ The inequality would give a mathematically uniform limit on how many additional 
 - OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf), result family 263 (2026). Statement locator: `build/sections/01-introduction.tex, thm:main and following threshold caveat`.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-098). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-10-13)
 
 **Known cases:** The stated excess-charge bound holds for strictly bound molecular sectors: $`E_N<E_{N-1}`$ implies $`N\le Z+CM`$ with a universal constant.
 

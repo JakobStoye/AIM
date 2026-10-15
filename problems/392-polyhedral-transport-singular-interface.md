@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -26,6 +26,10 @@ Optimal transport to complex polyhedral geometries underlies mesh generation and
 2. S. Chen and J. Liu, *Regularity of singular set in optimal transportation*, Inventiones Mathematicae 242 (2025), 1–44, introduction and principal regularity theorems. [DOI](https://doi.org/10.1007/s00222-025-01353-w); [preprint](https://arxiv.org/abs/2210.13841).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-392). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

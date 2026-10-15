@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -39,6 +39,10 @@ Advection carries a contaminant or temperature perturbation out of a channel in 
 3. P. Lissy, *Explicit lower bounds for the cost of fast controls for some 1-D parabolic or dispersive equations, and a new lower bound concerning the uniform controllability of the 1-D transport-diffusion equation*, Journal of Differential Equations 259 (2015), 5331–5352, Theorem 1.3 and comparison with positive transport. [Author PDF](https://cermics.enpc.fr/~lissyp/Publi/chal.pdf).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-412). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

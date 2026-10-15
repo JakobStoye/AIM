@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-19
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -42,6 +42,10 @@ Resampling lets a particle population approximate the distribution of a diffusio
 - [Lucas Journel and Pierre Monmarché, *Uniform convergence of the Fleming–Viot process in a hard killing metastable case*, Annals of Applied Probability 35 (2025), 1019–1048; arXiv:2207.02030v3, November 21, 2024](https://arxiv.org/pdf/2207.02030v3), Assumptions 1–2 and Theorems 1–2.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-348). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-19)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

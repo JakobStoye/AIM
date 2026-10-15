@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-10-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -30,6 +30,10 @@ A dimension-free spectral gap would strengthen guarantees for sampling log-conca
 - OpenAI, [manuscript PDF](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf), result family 093 (2026). Statement locator: `Theorem thm:main; subgaussian condition eq:intro-subgaussian`.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-092). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-10-13)
 
 **Known cases:** A dimension-free logarithmic Sobolev bound gives the required Poincare bound for isotropic log-concave measures with an absolute bound on their linear subgaussian parameter.
 

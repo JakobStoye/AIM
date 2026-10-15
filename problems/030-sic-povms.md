@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -26,6 +26,10 @@ A SIC gives a minimal, highly symmetric informationally complete measurement for
 2. C. Butucea, J. Johannes and H. Stein, [Locally Gentle State Certification for High Dimensional Quantum Systems](https://arxiv.org/abs/2602.04550), 2026, v3. Recent measurement application and discussion of SIC existence.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-030). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Literature check:** Open in cited literature; no later resolution located
 

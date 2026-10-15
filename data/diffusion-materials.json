@@ -128,7 +128,7 @@
     "area": "Curved-film micromagnetics",
     "file": "problems/241-spherical-ferromagnet-profile-uniqueness.md",
     "status": "Open",
-    "last_checked": "2026-09-13"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "304",
@@ -291,7 +291,7 @@
     "area": "Fully nonlinear nonlocal PDEs; maximum principles",
     "file": "problems/462-nonlocal-pucci-finite-integrability-abp.md",
     "status": "Open",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "463",

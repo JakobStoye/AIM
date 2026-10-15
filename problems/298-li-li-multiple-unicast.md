@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-17
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -38,6 +38,10 @@ The question determines whether routers can increase sustained data-transfer rat
 6. Cheuk Ting Li, *Undecidability of Network Coding, Conditional Information Inequalities, and Conditional Independence Implication*, IEEE Transactions on Information Theory 69(6), 2023, 3493–3510, DOI [10.1109/TIT.2023.3247570](https://doi.org/10.1109/TIT.2023.3247570). Scope checked in [arXiv:2205.11461v3](https://arxiv.org/pdf/2205.11461v3), §IV, Theorems 22–23.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-298). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-17)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

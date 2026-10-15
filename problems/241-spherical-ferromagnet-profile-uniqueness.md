@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -40,6 +40,10 @@ Curvature can support magnetic configurations that differ from planar-film patte
 - Giovanni Di Fratta, Valeriy Slastikov and Arghir Zarnescu, [*On a sharp Poincaré-type inequality on the 2-sphere and its application in micromagnetics*](https://arxiv.org/abs/1901.04334) (2019), §1 and Theorem 2: comparison with radial ground states for the spherical micromagnetic energy.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-241). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-13)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

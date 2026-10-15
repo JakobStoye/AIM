@@ -155,7 +155,7 @@
     "area": "Applied topology and geometric data analysis",
     "file": "problems/521-six-point-sphere-persistence.md",
     "status": "Open",
-    "last_checked": "2026-09-24"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "524",
@@ -508,7 +508,7 @@
     "area": "Topological graph theory and rigidity",
     "file": "problems/619-spanning-holed-sphere-triangulation.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "624",

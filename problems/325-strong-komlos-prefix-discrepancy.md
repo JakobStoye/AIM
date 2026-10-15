@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -36,6 +36,10 @@ View each vector as the feature or resource contributions of one indivisible ite
 6. Gleb Smirnov and Roman Vershynin, *Discrepancy and Fisher information*, [arXiv:2605.13107v1](https://arxiv.org/html/2605.13107v1), May 13, 2026, preprint, §§1.1–1.4 and Theorem 1.1.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-325). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-18)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

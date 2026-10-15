@@ -59,7 +59,7 @@
     "area": "Diffusion in diluted networks",
     "file": "problems/175-percolation-preserves-transience.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "176",
@@ -252,7 +252,7 @@
     "area": "Interacting particles and conditioned diffusion",
     "file": "problems/348-brownian-fleming-viot-nonexplosion.md",
     "status": "Open",
-    "last_checked": "2026-09-19"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "489",

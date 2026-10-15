@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -29,6 +29,10 @@ Singular trajectories are the exceptional motions that evade ordinary first-orde
 2. A. Belotto da Silva, A. Figalli, A. Parusiński and L. Rifford, *Strong Sard conjecture and regularity of singular minimizing geodesics for analytic sub-Riemannian structures in dimension 3* (2022), [Inventiones Mathematicae](https://doi.org/10.1007/s00222-022-01111-2), main theorems. Resolves an analytic three-dimensional setting.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-123). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Known cases:** The null-endpoint conclusion is established for rank-three distributions in dimension four and for the cited generic corank-one class.
 

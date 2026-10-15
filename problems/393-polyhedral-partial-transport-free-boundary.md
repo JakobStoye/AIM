@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -21,6 +21,10 @@ Partial transport selects which material to move when supply and demand need not
 2. L. A. Caffarelli and R. J. McCann, *Free boundaries in optimal transport and Monge–Ampère obstacle problems*, Annals of Mathematics 171 (2010), 673–730, formulation and free-boundary regularity theory. [DOI](https://doi.org/10.4007/annals.2010.171.673).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-393). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

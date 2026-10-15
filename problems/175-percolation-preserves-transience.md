@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -20,6 +20,10 @@ Random deletion of conducting bonds can create trapping and bottlenecks. The que
 - [Itai Benjamini, Russell Lyons and Oded Schramm, *Percolation Perturbations in Potential Theory and Random Walks* (1999)](https://arxiv.org/abs/math/9804010), original general questions and partial results.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-175). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Known cases:** Supercritical percolation preserves transience on Euclidean lattices in transient dimensions and on the cited nonamenable classes.
 

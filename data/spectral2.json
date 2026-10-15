@@ -37,7 +37,7 @@
     "area": "Many-electron quantum mechanics",
     "file": "problems/098-maximal-molecular-ionization.md",
     "status": "Partially resolved",
-    "last_checked": "2026-10-13"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "099",
@@ -120,7 +120,7 @@
     "area": "Capillary surfaces and spectral geometry",
     "file": "problems/108-critical-catenoid-uniqueness.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "109",
@@ -136,7 +136,7 @@
     "area": "Boundary-driven wave patterns",
     "file": "problems/110-steklov-bulk-nodal-volume.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "111",
@@ -144,7 +144,7 @@
     "area": "Boundary-mode degeneracy",
     "file": "problems/111-steklov-fixed-boundary-multiplicity.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "112",
@@ -232,7 +232,7 @@
     "area": "Periodic wave media and nonselfadjoint spectral theory",
     "file": "problems/425-complex-hill-excess-multiplicity.md",
     "status": "Open",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "428",

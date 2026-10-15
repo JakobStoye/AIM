@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -26,6 +26,10 @@ This asks whether arbitrarily many lowest boundary-vibration modes can coincide 
 2. M. Karpukhin, G. Kokarev and I. Polterovich, [Multiplicity bounds for Steklov eigenvalues on Riemannian surfaces](https://doi.org/10.5802/aif.2918), Annales de l’Institut Fourier 64 (2014), Theorem 1: topological upper bounds.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-111). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -34,3 +34,5 @@ This would give a uniformly convergent multilevel solver for a broad class of di
 Checked on **2026-09-08**. Problem 2.3 explicitly requests this AMG guarantee. General nearly linear Laplacian solvers do not automatically provide the specified multigrid structure. No subsequent solution was located.
 
 Searches included: `SWCDDM multigrid 2026`; `SWCDDM multigrid`; `algebraic multigrid universal diagonally dominant open problem`. This is a documented literature check, not a certification that no solution exists.
+
+**Qualified resolution-source report (2026-10-16):** [Public-source composition and exact locators](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-040). The AI-prepared comparison allows high-probability randomized setup and non-Galerkin coarse matrices in exact randomized real arithmetic. The probability convention is an explicit interpretation, not a condition quoted from Problem 2.3, which the workshop source still lists as open. The report specifies the source-to-target translation and its limits; a deterministic guarantee is not established. The original statement and Open badge remain for maintainer review.

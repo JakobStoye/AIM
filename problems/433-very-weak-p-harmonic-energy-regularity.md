@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 ## Problem statement
 
 Let $`d\ge3`$, $`p>2`$, and $`\Omega\subset\mathbb R^d`$ be open. If $`u\in W^{1,p-1}_{\mathrm{loc}}(\Omega)`$ satisfies
@@ -25,6 +25,10 @@ Nonlinear conduction laws naturally provide flux information before energy bound
 2. J. L. Lewis, [On very weak solutions of certain elliptic systems](https://doi.org/10.1080/03605309308820984), *Communications in PDE* **18** (1993), 1515–1537, higher-integrability results.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-433). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

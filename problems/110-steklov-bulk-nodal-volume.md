@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -34,6 +34,10 @@ Nodal interfaces partition the interior of a boundary-loaded vibrating medium. T
 4. X. Huang, Y. Sire, X. Wang and C. Zhang, [Sharp $`L^p`$ estimates for generalized Steklov eigenfunctions with an application to nodal sets](https://doi.org/10.4171/JST/598), Journal of Spectral Theory 16 (2026), §4 and Theorem 2: later boundary-nodal estimates.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-110). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Known cases:** The two-sided linear interior nodal-length estimate is established for real-analytic Riemannian surfaces.
 

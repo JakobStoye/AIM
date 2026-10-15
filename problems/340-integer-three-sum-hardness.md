@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-19
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -53,6 +53,10 @@ Integer 3SUM is a reference problem for the limits of exact combinatorial algori
 12. Luis Barba, Jean Cardinal, John Iacono, Stefan Langerman, Aurélien Ooms and Noam Solomon, *Subquadratic Algorithms for Algebraic Generalizations of 3SUM*, SoCG 2017, LIPIcs 77, Article 13, [published full text](https://drops.dagstuhl.de/storage/00lipics/lipics-vol077-socg2017/LIPIcs.SoCG.2017.13/LIPIcs.SoCG.2017.13.pdf). §1.2 defines the models; Theorems 8, 13, 15 and 16 separate their guarantees.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-340). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-19)
 
 **Literature check:** Open in cited literature; no later resolution located as of 2026-09-19.
 

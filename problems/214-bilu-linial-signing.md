@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -33,6 +33,10 @@ A signing defines a two-sheeted graph lift: positive edges stay in the same shee
 3. Vaibhav Suvagiya, [*Parity families and a kernel-averaged L-function for near-Ramanujan signings*](https://arxiv.org/abs/2607.17343), preprint, 19 July 2026, abstract and main results. Approximate bounds under additional graph hypotheses.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-214). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-13)
 
 **Known cases:** The optimal two-sided spectral signing bound is established for bipartite regular graphs.
 

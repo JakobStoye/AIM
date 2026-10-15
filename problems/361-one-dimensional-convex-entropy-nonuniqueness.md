@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -33,6 +33,10 @@ An entropy inequality encodes the second law or energy dissipation in continuum 
 3. A. Bressan and G. Guerra, [*Unique solutions to hyperbolic conservation laws with a strictly convex entropy*](https://arxiv.org/abs/2305.10737), Journal of Differential Equations (2024), Theorem 1.1, uniqueness in the small-BV semigroup domain.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-361). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 
