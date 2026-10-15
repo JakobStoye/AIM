@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "problem_id": "416",
+  "claim": "Complete analytical solution claim; independent mathematical review requested",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/416-catalytic-reaction-diffusion-positive-attractor.md",
+  "manuscript_theorem": "Theorem 1.1",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "a1140220dd5ced578ff5e196592823a92f5c53a4d43385c413e35ba00806f524",
+      "bytes": 1923
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "d7df011551731dde362e273558bd20e2668671e9aca985f2bb0f2fae151b80ca",
+      "bytes": 2637
+    },
+    {
+      "path": "AI_DISCLOSURE.md",
+      "sha256": "22c2f79e06a4349cb351e12150207ca50720513274d08d046e1702b8360d1d85",
+      "bytes": 1103
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "sha256": "b8f8c6f11d4c319dd3d546089c010522907a778990950f32239c792ab6bd2079",
+      "bytes": 17992
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "sha256": "baf32cf6879e8e530a8448295d8e0ec7a42bfc60a2e99b0cb13157563d320094",
+      "bytes": 332536
+    }
+  ],
+  "integrity_files": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "hash_convention": "Payload hashes are recorded here. SHA256SUMS covers all files except itself."
+}
