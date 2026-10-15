@@ -1,0 +1,529 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tikz-cd}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Maximal topological complexity of connected sums of aspherical manifolds},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\TC}{\operatorname{TC}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\bigsq}{\bigsqcup}
+\title{Maximal topological complexity of connected sums\\of aspherical manifolds}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(M\) and \(N\) be closed, connected, oriented aspherical manifolds of the
+same dimension \(n\geq 3\). We prove that their connected sum has ordinary
+unreduced topological complexity \(2n+1\). Thus joining two aspherical
+summands always attains the dimensional upper bound, although the connected
+sum is not required to be aspherical. The proof detects the two ordered
+cross products of the summands' fundamental classes in a quotient of the
+left-right join of their free-product fundamental group. A decomposition
+into factor and cyclic cosets shows that these mixed classes survive, and
+their survival obstructs a motion planner with \(2n\) domains.
+\end{abstract}
+
+\section{Introduction}
+
+The topological complexity of a path-connected space measures how many
+continuous rules are needed to choose a path between arbitrary endpoints.
+Following Farber~\cite{Farber}, we use the unreduced convention: \(\TC(X)\)
+is the least number of open sets covering \(X\times X\) on which
+\[
+ e:X^{[0,1]}\longrightarrow X\times X,\qquad
+ e(\gamma)=(\gamma(0),\gamma(1)),
+\]
+has continuous sections. The path space has the compact-open topology.
+For a connected \(n\)-manifold the dimensional upper bound is \(2n+1\).
+
+Connected sums offer a natural test of how motion-planning complexity
+changes under gluing. For aspherical summands the fundamental group of the
+sum is a free product, and the corresponding classifying space is a wedge.
+The free-product formula of Dranishnikov and Sadykov~\cite{DSfree} gives
+\(\TC(M\vee N)=2n+1\) when \(M,N\) are closed oriented aspherical
+\(n\)-manifolds, \(n\geq3\). This computation does not give a lower bound
+for the connected sum: the fundamental-group isomorphism induced by
+pinching the neck does not make the connected sum aspherical.
+
+Neofytidis~\cite[Question 5.5(b)]{Neofytidis} asks whether
+\(\TC(M\#N)=2n+1\) always holds in this setting. His Corollary 1.3
+establishes the maximum for certain four-dimensional sums with a negatively
+curved summand. The revised work of Daundkar, Santhanam and
+Thandar~\cite[Proposition 5.3]{DST} computes the value \(7\) for wedges
+of closed oriented aspherical three-manifolds and gives bounds for
+specified connected sums. The question for connected sums therefore
+requires an obstruction that survives on their own fundamental class.
+
+\begin{theorem}\label{thm:main}
+For every pair of closed, connected, oriented aspherical manifolds \(M,N\)
+of the same dimension \(n\geq3\),
+\[
+ \TC(M\#N)=2n+1.
+\]
+\end{theorem}
+
+The theorem includes summands with nontrivial center and aspherical
+rational homology spheres. There is no curvature or intermediate
+cohomology hypothesis. In particular, it gives
+\(\TC(M\#M)=7\) for every closed oriented aspherical three-manifold \(M\),
+including the torus and the examples in~\cite[Question 5.10]{Neofytidis}.
+
+The argument uses the diagonal covering and left-right join construction
+of Farber, Grant, Lupton and Oprea~\cite{FGLO}. We study its orbit space
+rather than transfer the wedge computation directly. In the free product,
+every simplex with nontrivial stabilizer has all its group labels in a
+single factor coset or a hyperbolic cyclic coset. Distinct such cosets
+intersect in at most one label. Their Borel constructions can contribute
+only the two same-summand products in top homology. The two ordered mixed
+products consequently survive in the orbit space, where a planner with
+\(2n\) domains would force them to vanish.
+
+We first describe this homological obstruction, then prove the coset
+decomposition and its homology consequence. The final section applies it
+to the connected-sum fundamental class. All homology below has coefficients
+\(\Q\). Products and infinite CW constructions use the compactly generated
+convention; see~\cite[Chapters 5 and 10]{May}.
+
+\section{A homological obstruction from the diagonal covering}
+
+Let \(G\) be a discrete group and put \(P=G\times G\). For a nonempty set
+\(S\), let
+\[
+ E(S)=S*S*S*\cdots
+\]
+be the join of countably many copies of \(S\). Its vertices are
+\((i,s)\), \(i\geq1\), and a simplex contains at most one vertex at each
+level \(i\). We give it the weak CW topology. This infinite join is
+contractible: a sphere map has compact image in a finite subcomplex, and
+that image can be coned to a vertex at an unused level. The CW Whitehead
+theorem then applies.
+
+Set \(E=E(G)\). The left-right action
+\[
+ (u,v)\cdot(i,g)=(i,ugv^{-1})
+\]
+makes \(E\) a \(P\)-CW complex. An element that stabilizes a simplex fixes
+it pointwise because it preserves the levels. Write \(E_m\) for the join
+of the first \(m\) copies of \(G\), of dimension \(m-1\).
+These are the join models in~\cite[Sections 2.5--2.9]{FGLO}.
+
+Choose a contractible free \(P\)-CW complex \(EP\). For a \(P\)-space \(W\)
+write \(W_{hP}=(EP\times W)/P\), with diagonal action, for its Borel
+construction. The maps
+\[
+ \pi:E_{hP}\longrightarrow BP=EP/P,\qquad
+ \rho:E_{hP}\longrightarrow E/P
+\]
+forget the \(E\) and \(EP\) coordinates, respectively. The first is an
+associated bundle with contractible fiber, so it induces a homology
+isomorphism. We shall use
+\begin{equation}\label{eq:tau}
+ \tau_d=\rho_*(\pi_*)^{-1}:
+ H_d(P)\longrightarrow H_d(E/P),
+\end{equation}
+identifying group homology with the homology of \(BP\).
+
+\begin{lemma}\label{lem:planner}
+Let \(Y\) be a closed connected manifold with fundamental group \(G\),
+and let \(c_Y:Y\to BG\) be a classifying map. If \(\TC(Y)\leq m\), then
+for every \(d\geq m\) and \(z\in H_d(Y\times Y)\),
+\[
+ \tau_d\big((c_Y\times c_Y)_*z\big)=0.
+\]
+Here \(H_d(BG\times BG)\) is identified with \(H_d(P)\) through the
+classifying homotopy equivalence inducing the identity on \(P\).
+\end{lemma}
+
+\begin{proof}
+Let \(\widetilde Y\to Y\) be the universal cover. Lifting a path and taking
+its two lifted endpoints modulo simultaneous deck transformations gives
+a continuous map from \(Y^{[0,1]}\) to the diagonal covering
+\[
+ q:(\widetilde Y\times\widetilde Y)/\Delta G
+       \longrightarrow Y\times Y,
+\]
+over the endpoint map. The map is independent of the chosen lift.
+Continuity follows from local trivializations and path lifting; the
+compact interval can be covered by finitely many trivializing
+neighborhoods along each path. Thus every local motion planner gives a
+local section of \(q\).
+
+The covering \(q\) is associated to the principal \(P\)-cover
+\(\widetilde Y\times\widetilde Y\to Y\times Y\) with fiber \(G\)
+and action \(ugv^{-1}\); compare~\cite[proof of Theorem 2.1]{FGLO}.
+Choose a partition of unity for the \(m\) section domains, with each
+closed support contained in its domain. The weighted join of the local
+sections is a section of the associated bundle with fiber \(E_m\).
+It is continuous in the weak join topology: near a point, each nonzero
+section label is locally constant in a covering trivialization, while
+the weights whose supports miss that point vanish on a neighborhood.
+The section is equivalently a \(P\)-equivariant map
+\[
+ f:\widetilde Y\times\widetilde Y\longrightarrow E_m.
+\]
+
+Choose a \(P\)-equivariant classifying map
+\(j:\widetilde Y\times\widetilde Y\to EP\).
+The map
+\[
+ b:Y\times Y\longrightarrow E_{hP},\qquad
+ b([y_0,y_1])=[j(y_0,y_1),f(y_0,y_1)]
+\]
+projects to the classifying map of the principal \(P\)-cover, homotopic
+to \(c_Y\times c_Y\) after the stated identification. Hence
+\(\pi_*b_*=(c_Y\times c_Y)_*\). Its composition with \(\rho\) factors
+through \(E_m/P\), a CW complex of dimension \(m-1\).
+It vanishes on \(H_d\) for \(d\geq m\), which proves the lemma by
+\eqref{eq:tau}. The universal cover of \(Y\) was not assumed contractible.
+\end{proof}
+
+\section{Cosets in the free-product join}
+
+For the remainder of the argument let \(G=A*B\), where \(A,B\) are
+nontrivial torsion-free groups. The factors are distinguished by their
+inclusions even if they are abstractly isomorphic.
+The free-product tree has vertices \(G/A\sqcup G/B\) and an edge \(g\)
+joining \(gA\) to \(gB\), with \(G\) acting by left translation.
+An element is called \emph{hyperbolic} if it fixes no vertex of this tree.
+
+\begin{lemma}\label{lem:tree}
+The conjugates of \(A,B\), together with the maximal cyclic subgroups
+generated by hyperbolic elements of the free-product tree, satisfy:
+\begin{enumerate}
+\item two distinct subgroups in this collection intersect trivially;
+\item the normalizer of every subgroup in the collection is itself;
+\item the centralizer of a nonidentity element is contained in one
+      subgroup in the collection.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Reduced alternating words show that the free-product graph is
+connected and has no circuits. Edge stabilizers are trivial; vertex
+stabilizers are conjugates of the factors; the action preserves the
+two vertex types and has no inversions.
+
+A nonidentity element that fixes a vertex fixes no other vertex,
+since otherwise it fixes an edge in the segment between them.
+Its centralizer preserves its unique fixed vertex and lies in that
+vertex stabilizer. Distinct vertex stabilizers therefore intersect
+trivially. A normalizer of a vertex stabilizer preserves that vertex:
+choose any nonidentity element of the stabilizer and use uniqueness
+of its fixed vertex. This proves the normalizer assertion for factors.
+
+A hyperbolic element \(g\) translates a unique axis, a bi-infinite geodesic.
+To see this, choose a vertex \(v\) minimizing \(\ell=d(v,gv)>0\).
+If \([v,gv]\) and \([gv,g^2v]\) backtrack at \(gv\), let \(w\) be the
+neighbor of \(v\) toward \(gv\). Then \(gw\) is the neighbor of \(gv\)
+toward \(v\). For \(\ell\geq2\) this gives \(d(w,gw)=\ell-2\), contrary
+to minimality. For \(\ell=1\), the element exchanges the endpoints of
+an edge, contrary to the absence of inversions. The translates therefore
+concatenate without backtracking and give the axis, characterized by
+minimum displacement, which also establishes its uniqueness.
+
+The stabilizer of an axis acts faithfully on it, since an element in
+the kernel fixes an edge. A reflection has square in this kernel and
+would be an element of order two. Torsion freeness excludes it.
+The axis stabilizer is thus a nonzero subgroup of the translations of
+a simplicial line, so is infinite cyclic. It is the centralizer of
+every nonidentity translation on that axis and the maximal cyclic
+subgroup containing it.
+
+Two such cyclic groups sharing a nonidentity element have the same
+axis and equal its stabilizer. If \(hCh^{-1}\) meets \(C\) nontrivially,
+their axes agree, so \(h\) belongs to the axis stabilizer \(C\).
+This proves malnormality and the normalizer assertion for these
+cyclic groups. They meet no vertex stabilizer nontrivially because
+their nonidentity elements are translations. All assertions follow.
+\end{proof}
+
+Let \(\mathcal H\) contain \(A,B\) and one representative of each conjugacy
+class of maximal hyperbolic cyclic subgroups. Call a subset
+\[
+ D=uHv^{-1}\subset G,\qquad H\in\mathcal H,\quad u,v\in G,
+\]
+a \emph{block}, and identify duplicate subsets. Let \(\mathcal B\) be the
+set of blocks, and put
+\[
+ Z=\bigcup_{D\in\mathcal B}E(D)\subset E.
+\]
+For \(g\in G\), write \(F_g=E(\{g\})\). This is a contractible infinite
+simplex, consisting of all simplices with the same group label \(g\)
+at their different levels. Every \(F_g\) lies in \(Z\).
+
+\begin{lemma}\label{lem:blocks}
+Two distinct blocks intersect in at most one group element. Every cell
+of \(E\) outside \(Z\) has trivial \(P\)-stabilizer. The setwise stabilizer
+of the block \(H\) is \(H\times H\); it acts transitively on the labels of
+that block, with stabilizer \(\Delta H\) at \(1\). The stabilizer of
+the label \(1\) in all of \(G\) is \(\Delta G\).
+\end{lemma}
+
+\begin{proof}
+A block is a left coset of a conjugate of \(H\). If two blocks contain
+distinct \(g,h\), then \(g^{-1}h\) is a nonidentity element of both
+associated subgroups. Lemma~\ref{lem:tree} identifies the subgroups,
+and the common element \(g\) identifies their cosets.
+
+For a simplex with nontrivial stabilizer, send one label to \(1\) by
+the left-right action. A stabilizer element then has the form \((w,w)\),
+where \(w\) centralizes all its labels. A nonidentity such \(w\) has
+centralizer in a factor conjugate or an axis cyclic group, by
+Lemma~\ref{lem:tree}. All the labels lie in that subgroup, so the
+original simplex lies in one block. Constant-label simplices also
+lie in \(Z\).
+
+If \(uHv^{-1}=H\), then \(uv^{-1}=h\in H\). Substituting \(u=hv\)
+shows that \(v\) normalizes \(H\), so \(u,v\in H\).
+The converse and the asserted transitivity are immediate from the
+action. Stabilizing the label \(1\) means \(u=v\), giving the two
+diagonal subgroups as stated.
+\end{proof}
+
+\section{The mixed top classes survive}
+
+We first record the relative comparison used to pass from Borel homology
+to orbit homology.
+
+\begin{lemma}\label{lem:relative}
+For the pair \((E,Z)\) just constructed, the projection induces an
+isomorphism
+\[
+ H_*(E_{hP},Z_{hP})\longrightarrow H_*(E/P,Z/P).
+\]
+\end{lemma}
+
+\begin{proof}
+Filter the pairs by \(Z\) together with the cell skeleta of \(E\).
+By Lemma~\ref{lem:blocks}, each relative cell orbit is free.
+For a \(k\)-cell its Borel relative piece is
+\(EP\times(D^k,S^{k-1})\), and its orbit piece is
+\((D^k,S^{k-1})\). Their projection is an isomorphism on relative
+homology because \(EP\) is contractible.
+
+For completeness, apply the same filtration to the mapping cone
+of the cellular chain map induced by projection. Each associated
+graded complex is a direct sum of mapping cones of the free-cell
+projections above, hence is acyclic. A cycle of fixed total degree
+has finite cellular support. Its component in the largest
+filtration degree is a boundary in that graded complex.
+Subtracting a lift of that boundary lowers the largest degree.
+After finitely many repetitions the cycle is filled. The filtration
+is bounded below, and the cell degrees and \(EP\)-chain degrees are
+nonnegative, so no unbounded filtration enters a fixed total degree.
+The mapping cone is acyclic, proving the homology isomorphism.
+\end{proof}
+
+Assume now that \(A,B\) admit classifying spaces with homology zero in
+degrees greater than \(n\), where \(n\geq3\). In \(H_{2n}(P)\) define
+\[
+ V=\im H_{2n}(A\times A)+\im H_{2n}(B\times B),
+\]
+where the maps are induced by the two inclusions into \(G\times G\).
+
+\begin{proposition}\label{prop:image}
+The image of \(H_{2n}(Z_{hP})\) in \(H_{2n}(P)\) is contained in \(V\).
+\end{proposition}
+
+\begin{proof}
+The block intersections give a \(P\)-equivariant pushout
+\begin{equation}\label{eq:pushout}
+\begin{tikzcd}[column sep=large,row sep=large]
+ \displaystyle\bigsq_{D\in\mathcal B}\bigsq_{g\in D} F_g
+       \arrow[r] \arrow[d] &
+ \displaystyle\bigsq_{D\in\mathcal B}E(D) \arrow[d]\\
+ \displaystyle\bigsq_{g\in G}F_g \arrow[r] & Z .
+\end{tikzcd}
+\end{equation}
+Indeed, a simplex of \(Z\) with two distinct labels lies in exactly one
+block. Distinct blocks are identified precisely along the \(F_g\)
+they share. The top arrow is a CW cofibration, since in each block
+the union of its constant-label subcomplexes is a subcomplex.
+Thus this is a homotopy pushout.
+
+One can take its explicit equivariant mapping-cylinder model before
+forming Borel constructions. Products with \(EP\) and passage to
+\(P\)-orbits commute with these identifications, and the subcomplex
+inclusion remains a cofibration. The result is an ordinary homotopy
+pushout. The blocks have one \(P\)-orbit for each \(H\in\mathcal H\),
+with stabilizer \(H\times H\). Incidences within a representative
+block form one orbit with stabilizer \(\Delta H\), and all labels
+form one orbit with stabilizer \(\Delta G\). Since the joins in
+the three input spaces are contractible, their Borel homotopy
+types are
+\begin{equation}\label{eq:borel-pushout}
+\begin{tikzcd}[column sep=large,row sep=large]
+ \displaystyle\bigsq_{H\in\mathcal H} B(\Delta H)
+       \arrow[r] \arrow[d] &
+ \displaystyle\bigsq_{H\in\mathcal H} B(H\times H) \arrow[d]\\
+ B(\Delta G) \arrow[r] & Z_{hP}.
+\end{tikzcd}
+\end{equation}
+Only these homotopy types are asserted in \eqref{eq:borel-pushout}.
+Their maps to \(BP\) are the classifying maps of the corresponding
+subgroup inclusions, up to conjugation.
+
+Put \(d=2n\). For \(H=A,B\), the assumed homology bound gives
+\(H_{d-1}(B\Delta H)=0\), because \(2n-1>n\).
+For the remaining \(H\), the classifying space \(BH\) is a circle,
+so the same vanishing holds. Also
+\(H_d(B\Delta G)=0\): a classifying space for the free product is
+\(BA\vee BB\), with no homology above \(n\).
+Mayer--Vietoris for \eqref{eq:borel-pushout} therefore gives a surjection
+\[
+ \bigoplus_{H\in\mathcal H}H_d(H\times H)
+       \longrightarrow H_d(Z_{hP}).
+\]
+The cyclic terms vanish in degree \(d\geq6\), since their product
+classifying spaces are two-tori. The only possible contributions
+come from \(A\times A\) and \(B\times B\), with exactly the inclusion
+maps defining \(V\). Inner conjugation induces a homotopically
+trivial change of a classifying-space map and does not enlarge
+their images. This proves the proposition.
+\end{proof}
+
+\begin{proposition}\label{prop:survival}
+If \(z\in H_{2n}(P)\) does not belong to \(V\), then
+\(\tau_{2n}(z)\neq0\).
+\end{proposition}
+
+\begin{proof}
+The exact homology sequence of \((E_{hP},Z_{hP})\), together with
+Proposition~\ref{prop:image}, shows that \((\pi_*)^{-1}z\) has a
+nonzero relative image. The commutative diagram
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ H_{2n}(E_{hP}) \arrow[r] \arrow[d,"\rho_*"] &
+ H_{2n}(E_{hP},Z_{hP}) \arrow[d,"\cong"]\\
+ H_{2n}(E/P) \arrow[r] & H_{2n}(E/P,Z/P)
+\end{tikzcd}
+\]
+has an isomorphism on the right by Lemma~\ref{lem:relative}.
+Thus \(\rho_*(\pi_*)^{-1}z\) has a nonzero relative image as well,
+and is nonzero in absolute homology.
+\end{proof}
+
+\section{The connected-sum fundamental class}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Put \(X=M\#N\), \(A=\pi_1(M)\), \(B=\pi_1(N)\).
+Closed topological manifolds have finite CW type, and the fundamental
+group of an aspherical finite-dimensional CW complex is torsion free;
+see~\cite[Theorem 5.3 and Lemma 3.1]{Luck}. Each factor is nontrivial:
+a closed oriented contractible manifold would have both zero top
+homology and a nonzero fundamental class. The free product \(G=A*B\)
+is torsion free, since an element of finite order is conjugate into
+a factor. In reduced-word terms, every other element is conjugate
+to a cyclically reduced alternating word of length at least two,
+whose positive powers have increasing length.
+
+The wedge \(M\vee N\) is a classifying space for \(G\).
+On based CW models its universal cover is a tree of the contractible
+universal covers of the summands. Attaching points are cofibrations.
+A finite subtree of contractible vertex spaces is contractible by
+successive homotopy pushouts. A sphere map into the entire cover
+has compact image in a finite CW subcomplex, so meets only finitely
+many pieces and is null-homotopic in a finite subtree. Whitehead's
+theorem makes the full cover contractible.
+
+For \(n\geq3\), pinching the connecting sphere gives a classifying
+map
+\[
+ c:X\longrightarrow M\vee N\simeq BG
+\]
+inducing the free-product fundamental-group isomorphism.
+This is the usual connected-sum pinch map; compare the proof of
+Lemma 3.2 in~\cite{Luck}. One may first collapse the neck and then
+identify each punctured summand with its boundary collapsed with
+the closed summand up to homotopy. The latter operation collapses
+a contractible closed-ball cofibration.
+
+Let \(a,b\in H_n(BG)\) be the separate images of \([M]\) and \([N]\).
+Both projections of \(c\) onto a summand have degree \(+1\):
+away from the removed ball each is the oriented identity near a
+point with a single preimage, hence sends its local orientation
+class to the positive generator. The two projections determine
+the top homology of the wedge, so
+\[
+ c_*[X]=a+b.
+\]
+The rational K\"unneth theorem~\cite[Chapter 17, Section 2]{May} gives
+\[
+ H_{2n}(P)
+   =\Q\{a\times a,\ a\times b,\ b\times a,\ b\times b\},
+ \qquad V=\Q\{a\times a,\ b\times b\},
+\]
+since the homology of each summand vanishes above \(n\).
+Naturality of the cross product yields
+\[
+ (c\times c)_*[X\times X]
+   =a\times a+a\times b+b\times a+b\times b\notin V.
+\]
+The two mixed terms are independent ordered coordinates. They
+remain distinct also when \(M=N\) or \(n\) is odd.
+
+Proposition~\ref{prop:survival} now gives
+\[
+ \tau_{2n}\big((c\times c)_*[X\times X]\big)\neq0.
+\]
+If \(\TC(X)\leq2n\), Lemma~\ref{lem:planner} gives the opposite
+conclusion in degree \(2n\). Hence \(\TC(X)\geq2n+1\).
+Farber's dimension bound~\cite[Theorem 4]{Farber} gives the reverse
+inequality, completing the proof.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex assisted with literature retrieval, mathematical development,
+checking and manuscript preparation. Independent mathematical review is
+requested.
+
+\begin{thebibliography}{9}
+
+\bibitem{Farber}
+M. Farber, \emph{Topological complexity of motion planning},
+Discrete \& Computational Geometry \textbf{29} (2003), 211--221.
+\href{https://doi.org/10.1007/s00454-002-0760-9}{doi:10.1007/s00454-002-0760-9}.
+Preprint \href{https://arxiv.org/abs/math/0111197v1}{arXiv:math/0111197v1}.
+
+\bibitem{DSfree}
+A. Dranishnikov and R. Sadykov,
+\emph{The topological complexity of the free product},
+\href{https://arxiv.org/abs/1710.04711v2}{arXiv:1710.04711v2} (2017).
+
+\bibitem{Neofytidis}
+C. Neofytidis, \emph{Topological complexity, asphericity and connected sums},
+\href{https://arxiv.org/abs/2212.08962v2}{arXiv:2212.08962v2} (2023).
+
+\bibitem{DST}
+N. Daundkar, R. Santhanam and S. Thandar,
+\emph{Higher topological complexity of Seifert fibered manifolds},
+\href{https://arxiv.org/abs/2304.01274v3}{arXiv:2304.01274v3} (2026).
+
+\bibitem{FGLO}
+M. Farber, M. Grant, G. Lupton and J. Oprea,
+\emph{Bredon cohomology and robot motion planning},
+\href{https://arxiv.org/abs/1711.10132v2}{arXiv:1711.10132v2} (2018).
+
+\bibitem{Luck}
+W. L\"uck, \emph{Survey on aspherical manifolds},
+\href{https://arxiv.org/abs/0902.2480v3}{arXiv:0902.2480v3} (2009).
+
+\bibitem{May}
+J. P. May, \emph{A Concise Course in Algebraic Topology},
+University of Chicago Press, 1999.
+\href{https://www.math.uchicago.edu/~may/CONCISE/ConciseRevised.pdf}{Author's revised text}.
+
+\end{thebibliography}
+\end{document}

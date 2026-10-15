@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "title": "Maximal topological complexity of connected sums of aspherical manifolds",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "language": "en",
+  "contribution": "Complete natural-language solution claim; independent mathematical review requested",
+  "target": {
+    "id": "514",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/514-aspherical-connected-sum-complexity.md",
+    "scope": "All closed connected oriented aspherical same-dimensional manifolds M,N, n>=3; ordinary unreduced TC(M#N)=2n+1; the connected sum need not be aspherical"
+  },
+  "created_at": "2026-10-13T15:52:43.827799+00:00",
+  "mathematical_evidence": "Full proof printed in the manuscript and public cited dependencies; no Lean or numerical component",
+  "ai_disclosure": "OpenAI Codex assisted with literature retrieval, mathematical development, checking and manuscript preparation. Fresh contexts checked a complete manuscript draft on a shared workspace; the authoring agent checked the final exposition changes. No human review or formal verification is claimed. No separate detailed AI report is included.",
+  "validation": {
+    "standalone_source_compile": "PASS",
+    "pages": 7,
+    "complete_rendered_page_coverage": "PASS",
+    "reference_resolution": "PASS",
+    "public_payload_file_checks": "PASS"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Submission overview, reproducible artifact build and factual review disclosure",
+      "sha256": "3ee9c8f606b83147aaf702be70ef367bdbb6e1342b11e1d2767d76597ea547ce",
+      "bytes": 2384
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the full public target",
+      "sha256": "a106cbd9498b391b772ba78429c8c80055da149632d610b18f5b131b2f1cbefd",
+      "bytes": 3583
+    },
+    {
+      "path": "paper/aspherical-connected-sums.pdf",
+      "purpose": "Complete seven-page manuscript",
+      "sha256": "99c78b09e87198fabc0a0e376b8680275af6f03ca7f10f9092bcdf73dc319d52",
+      "bytes": 263651
+    },
+    {
+      "path": "paper/aspherical-connected-sums.tex",
+      "purpose": "Complete editable standalone LaTeX manuscript",
+      "sha256": "8c4c00734a332b57146e9d7a0fddc52af683eb49bf6c2167480eca80572959ee",
+      "bytes": 23173
+    }
+  ],
+  "manifest_hash_policy": "This manifest hashes the four payload files. SHA256SUMS also hashes the manifest and omits itself."
+}
