@@ -1,0 +1,623 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\spec}{\sigma}
+\title{A smooth counterexample to critical--subcritical heat-kernel comparison}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct two nonnegative Schr\"odinger operators on the line with smooth
+bounded potentials and spectral bottom zero. One is subcritical and the other
+null-critical, while the quotient of their diagonal heat kernels has infinite
+limsup. This gives a negative answer to the heat-kernel comparison question
+without an ordering assumption on the potentials. The construction preserves
+small heat-kernel values of successive operators with positive spectral gaps,
+then restores criticality by adding distant intervals on which a positive
+zero-energy solution equals one.
+\end{abstract}
+
+\section{The comparison question}
+
+The distinction between critical and subcritical Schr\"odinger operators can be
+read from the time integral of the positive heat kernel. It is natural to ask
+whether this distinction also orders their decay at large times. Fraas,
+Krej\v{c}i\v{r}\'ik and Pinchover formulated such a comparison in
+\cite[Conjecture 1]{FKP}; its self-adjoint heat-kernel version appears again in
+\cite[Conjecture 2]{Krejcirik}. Their conditional results include an additional
+global heat-kernel comparison hypothesis \cite[Theorem 3.1]{FKP} and
+nonnegative potential perturbations \cite[Corollary 1]{FKP}.
+
+We consider the formulation in AIM Problem 217 \cite{AIM217}. On a connected,
+complete, noncompact smooth Riemannian manifold without boundary, let
+$H_j=-\Delta_g+V_j$, $j\in\{0,+\}$, be the Friedrichs operators for smooth
+real potentials bounded below. Assume $H_j\geq0$ and $\inf\spec(H_j)=0$.
+Write $k_j(t,x,y)>0$ for the heat kernel of $e^{-tH_j}$. At some fixed
+distinct points $x_*,y_*$, suppose that
+\begin{equation}\label{eq:original-integrals}
+ \int_0^\infty k_+(t,x_*,y_*)\dd t<\infty,
+ \qquad
+ \int_0^\infty k_0(t,x_*,y_*)\dd t=\infty,
+ \qquad \ker_{L^2}H_0=\{0\}.
+\end{equation}
+These are the subcritical and null-critical cases, respectively. With no
+pointwise ordering of $V_+$ and $V_0$, the question is whether
+\begin{equation}\label{eq:question}
+ \lim_{t\to\infty}\sup_{(x,y)\in K}
+       \frac{k_+(t,x,y)}{k_0(t,x,y)}=0
+ \quad\text{for every compact }K\subset M\times M.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+There are real potentials $V_+,V_0\in C^\infty(\R)\cap L^\infty(\R)$ such
+that their Friedrichs operators $H_j=-\mathrm d^2/\mathrm dx^2+V_j$ on
+$L^2(\R,\mathrm dx)$ satisfy
+\[
+ H_j\geq0,\qquad \inf\spec(H_j)=0,\qquad \ker_{L^2}H_0=\{0\},
+\]
+and their positive heat kernels satisfy
+\begin{equation}\label{eq:main-integrals}
+ \int_0^\infty k_+(t,0,1)\dd t<\infty,
+ \qquad \int_0^\infty k_0(t,0,1)\dd t=\infty,
+\end{equation}
+but
+\begin{equation}\label{eq:main-ratio}
+ \limsup_{t\to\infty}\frac{k_+(t,0,0)}{k_0(t,0,0)}=\infty.
+\end{equation}
+\end{theorem}
+
+The Euclidean line is an admissible manifold. The compact singleton
+$K=\{(0,0)\}$ therefore disproves \eqref{eq:question}; the distinctness of
+the points in \eqref{eq:original-integrals} imposes no restriction on this $K$.
+
+The numerator will be a fixed nonzero nonnegative compactly supported bump.
+Its diagonal heat kernel is bounded below by $ct^{-3/2}$. For the reference
+operator we use a positive zero-energy solution $h=e^w$ and set
+$V_0=w''+(w')^2$. A finite construction with $w'=1$ on its positive tail has
+a strictly positive spectral gap, so its heat kernel is eventually much
+smaller than $ct^{-3/2}$. We choose one such time, then a radius so large
+that later changes outside that radius preserve the estimate. Beyond the
+radius we let $w$ return to zero on a unit interval. Repeating this produces
+one fixed potential with infinitely many such intervals. They make the
+reference Green integral infinite without losing the selected small kernel
+values. The analytic estimates are given in Section~\ref{sec:estimates};
+Section~\ref{sec:construction} carries out the construction. The
+one-dimensional Dirichlet and Green-kernel justification is proved in
+Appendix~\ref{sec:dirichlet}.
+
+\section{Heat-kernel estimates}\label{sec:estimates}
+
+For a bounded real continuous potential $U$, write
+$H_U=-\mathrm d^2/\mathrm dx^2+U$. Its self-adjoint domain is $H^2(\R)$,
+its form domain is $H^1(\R)$, and its Friedrichs form is
+\begin{equation}\label{eq:form}
+ Q_U[u]=\int_\R \bigl(|u'|^2+U|u|^2\bigr)\dd x.
+\end{equation}
+These identifications follow from the free operator and bounded perturbation
+\cite[Theorems 6.4 and 7.8, Lemma 7.9]{Teschl}. One can check the form core
+directly: first multiply an $H^1$ function by smooth cutoffs whose derivatives
+are $O(R^{-1})$, then mollify. Both the function and its weak derivative
+converge in $L^2$, so $C_c^\infty(\R)$ is a form core.
+
+Our free kernel and Brownian-bridge convention are
+\begin{equation}\label{eq:fk}
+ \begin{split}
+ p(t,x,y)&=(4\pi t)^{-1/2}e^{-(x-y)^2/(4t)},\\
+ k_U(t,x,y)&=p(t,x,y)\,
+  \mathbb E\exp\left(-t\int_0^1 U(b_r)\dd r\right),\\
+ b_r&=(1-r)x+ry+\sqrt{2t}\,\beta_r,
+ \end{split}
+\end{equation}
+where $\beta$ is the standard unit-time Brownian bridge. This is the
+Feynman--Kac formula \cite[Theorem 1.1]{Simon}, applied to $U/2$ at time
+$2t$. In particular, $k_U$ is strictly positive and continuous for $t>0$.
+If $U\geq-B$, then $k_U\leq e^{Bt}p$. The symmetry and semigroup identities
+hold for these continuous representatives, and their convolution integrals
+are controlled by the Gaussian bound.
+
+\begin{lemma}\label{lem:locality}
+If bounded continuous real potentials $U,W\geq-B$ agree on $[-R,R]$, then
+\begin{equation}\label{eq:locality}
+ |k_U(t,0,0)-k_W(t,0,0)|
+ \leq 4e^{Bt}(4\pi t)^{-1/2}e^{-R^2/t},\qquad t>0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Reflection of Brownian paths at their first hit of a level preserves Wiener
+law \cite[Proposition 4]{Lalley}. For the variance-two bridge from $x$ to
+$y$, with $x,y<a$, division of the reflected endpoint density by the free
+endpoint density gives
+\begin{equation}\label{eq:reflection}
+ \mathbb P\{\max b_r\geq a\}
+   =\frac{p(t,x,2a-y)}{p(t,x,y)}
+   =e^{-(a-x)(a-y)/t}.
+\end{equation}
+The lower-level formula follows by negating the path. A bridge from zero to
+zero thus exits $[-R,R]$ with probability at most $2e^{-R^2/t}$. On paths
+that do not exit, the two weights in \eqref{eq:fk} coincide; on the remaining
+paths their difference has absolute value at most $2e^{Bt}$. Multiplying
+these bounds by $p(t,0,0)$ proves \eqref{eq:locality}.
+\end{proof}
+
+We also need an exact formula for the time-integrated kernel. We state it
+here and prove the Dirichlet identification and exhaustion in
+Appendix~\ref{sec:dirichlet}, so that the construction can be read separately
+from that operator argument.
+
+\begin{lemma}\label{lem:green}
+Let $U$ be smooth and bounded on $\R$, and let $h>0$ solve $-h''+Uh=0$.
+Put $s(x)=\int_0^x h(r)^{-2}\dd r$. For $a>\max(|x|,|y|)$, define
+\begin{equation}\label{eq:green}
+ G_a(x,y)=h(x)h(y)
+ \frac{[s(\min(x,y))-s(-a)]
+       [s(a)-s(\max(x,y))]}{s(a)-s(-a)}.
+\end{equation}
+Then
+\begin{equation}\label{eq:green-exhaustion}
+ \int_0^\infty k_U(t,x,y)\dd t
+    =\lim_{a\to\infty}G_a(x,y),
+\end{equation}
+where the limit may be infinite and may be taken along increasing integers.
+If $D=(a,\infty)$ and $U=0$ on $D$, its Dirichlet kernel is
+\begin{equation}\label{eq:image}
+ p_D(t,u,v)=p(t,u,v)-p(t,u,2a-v),\qquad u,v>a,
+\end{equation}
+and $0\leq p_D(t,u,v)\leq k_U(t,u,v)$.
+\end{lemma}
+
+\begin{lemma}\label{lem:numerator}
+Set
+\[
+ q(x)=\begin{cases}e^{-1/(1-x^2)},&|x|<1,\\0,&|x|\geq1.\end{cases}
+\]
+For $H_+=H_q$, one has $H_+\geq0$, $\inf\spec(H_+)=0$ and
+$\int_0^\infty k_+(t,0,1)\dd t<\infty$. There is a fixed $c>0$ such that
+\begin{equation}\label{eq:numerator-lower}
+ k_+(t,0,0)\geq ct^{-3/2}\qquad(t\geq3).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The bump is smooth, even and nonnegative, so $H_+\geq0$. Take
+$\psi\in C_c^\infty((1,2))$ with $\|\psi\|_2=1$ and set
+$\psi_L(x)=L^{-1/2}\psi((x-2)/L)$ for $L\geq1$. These functions are
+supported where $q=0$ and have Rayleigh quotient
+$L^{-2}\|\psi'\|_2^2$. Hence $\inf\spec(H_+)=0$.
+
+Let $h_+''=qh_+$, with $h_+(0)=1$, $h_+'(0)=0$. For completeness, the
+Volterra equation
+\[
+ h_+(x)=1+\int_0^x(x-r)q(r)h_+(r)\dd r\quad(x\geq0)
+\]
+constructs this solution: its $m$th iterated term is bounded by
+$\|q\|_\infty^m x^{2m}/(2m)!$ on compact intervals. The series and its
+differentiated series converge there, and the same bound for a difference
+gives uniqueness. All terms are nonnegative. Thus $h_+\geq1$,
+$h_+'\geq0$, and $b=h_+'(1)>0$. Even reflection gives the global smooth
+positive solution. If $A=h_+(1)$, then for $x\geq1$,
+\[
+ h_+(x)=A+b(x-1),\qquad
+ S_+:=\int_0^\infty h_+^{-2}
+     =\int_0^1 h_+^{-2}+\frac1{bA}<\infty.
+\]
+In \eqref{eq:green}, $s$ is odd and tends to $\pm S_+$ at the two ends.
+Every factor at $(x,y)=(0,1)$ has a finite limit, and the denominator tends
+to $2S_+>0$. Equation~\eqref{eq:green-exhaustion} proves the finite integral.
+
+To obtain a lower bound, let $I=[2,3]$, $D=(1,\infty)$ and
+$m=\min_{u\in I}k_+(1,0,u)>0$. The semigroup identity, positivity, and
+Lemma~\ref{lem:green} give, for $s=t-2\geq1$,
+\[
+ k_+(t,0,0)\geq m^2\int_I\int_I p_D(s,u,v)\dd u\dd v.
+\]
+On $I^2$, the image formula becomes
+\[
+ p_D(s,u,v)=(4\pi s)^{-1/2}e^{-(u-v)^2/(4s)}
+                 \bigl[1-e^{-(u-1)(v-1)/s}\bigr].
+\]
+Here $|u-v|\leq1$, $(u-1)(v-1)\geq1$, and concavity gives
+$1-e^{-1/s}\geq(1-e^{-1})/s$. Since $s\leq t$ and $I^2$ has area one,
+\eqref{eq:numerator-lower} follows with
+\begin{equation}\label{eq:constant-c}
+ c=\frac{m^2e^{-1/4}(1-e^{-1})}{\sqrt{4\pi}}>0.
+\end{equation}
+\end{proof}
+
+\section{Construction of the reference potential}\label{sec:construction}
+
+We use one fixed smooth step
+\begin{equation}\label{eq:theta}
+ \theta(r)=\frac{e^{-1/r}}{e^{-1/r}+e^{-1/(1-r)}}\quad(0<r<1),
+ \qquad \theta=0\ (r\leq0),\quad \theta=1\ (r\geq1).
+\end{equation}
+It is flat at both endpoints, strictly increasing on $(0,1)$, and satisfies
+$\theta(1-r)=1-\theta(r)$. In particular,
+$\int_0^1\theta=1/2$ and $B:=\|\theta'\|_\infty<\infty$. Consider smooth,
+even, nonnegative functions $w$ with
+\begin{equation}\label{eq:w-bounds}
+ |w'|\leq1,\qquad |w''|\leq B.
+\end{equation}
+For each such function set $U_w=w''+(w')^2$ and $h=e^w$. Direct integration
+by parts on compactly supported smooth functions gives
+\begin{equation}\label{eq:factorization}
+ Q_{U_w}[u]=\|u'-w'u\|_2^2\geq0.
+\end{equation}
+Indeed, the cross term is $-\int w'(|u|^2)'=\int w''|u|^2$, also for
+complex $u$. The bounds \eqref{eq:w-bounds} and the form-core approximation
+extend \eqref{eq:factorization} to $H^1(\R)$. Thus $H_{U_w}\geq0$ and
+$-h''+U_wh=0$. Any $L^2$ zero mode belongs to $H^2$ and satisfies
+$u'-w'u=0$, whence $(u/h)'=0$ on each compact interval and $u=Ch$.
+In particular, $h\notin L^2$ excludes every nonzero $L^2$ zero mode.
+
+\begin{lemma}\label{lem:gap}
+If, in addition, $w'=1$ for all sufficiently large positive $x$, then
+$\lambda(w):=\inf\spec(H_{U_w})>0$. For $t\geq1$,
+\begin{equation}\label{eq:gap-kernel}
+ k_{U_w}(t,0,0)\leq M e^{-\lambda(w)(t-1)},
+ \qquad M=\frac{e^B}{\sqrt{4\pi}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Evenness implies $U_w=1$ outside a compact interval, and $e^w$ grows
+exponentially at both ends. If the spectral bottom were zero, the spectral
+form characterization \cite[Theorem 3.7 and equations (3.50)--(3.51)]{Teschl}
+would give $u_\ell\in H^1$ with $\|u_\ell\|_2=1$ and
+$Q_{U_w}[u_\ell]\to0$. Since $U_w\geq-B$, this sequence is bounded in
+$H^1$. Pass to a weakly convergent subsequence there
+\cite[Lemma 1.13]{Teschl}, with limit $u$, and to a further subsequence
+converging strongly in $L^2$ on every compact interval. The last assertion
+can be checked in one dimension as follows. On any fixed interval,
+\[
+ |v(x)-v(y)|\leq\|v'\|_2|x-y|^{1/2};
+\]
+together with a point where $|v|$ is at most its $L^2$ average, this gives
+uniform bounds and a common modulus of continuity. Successively finer finite
+grids give a subsequence converging uniformly on that interval. A diagonal
+choice over $[-j,j]$, $j\in\N$, proves the stated local convergence.
+
+If $u=0$, compact support and boundedness of $U_w-1$ would give
+\[
+ Q_{U_w}[u_\ell]=\|u_\ell'\|_2^2+1+
+                 \int(U_w-1)|u_\ell|^2\geq1+o(1),
+\]
+a contradiction. Thus $u\ne0$. But \eqref{eq:factorization} implies
+$u_\ell'-w'u_\ell\to0$ strongly in $L^2$, so its weak limit is
+$u'-w'u=0$. This forces $u=Ce^w$, impossible for a nonzero $L^2$ function.
+The gap is therefore strictly positive.
+
+For $f(z)=k_{U_w}(1/2,z,0)$, the Gaussian bound gives $f\in L^2$ and
+$\|f\|_2^2=k_{U_w}(1,0,0)$. The semigroup identity and spectral bound give
+\[
+ k_{U_w}(t,0,0)\leq e^{-\lambda(w)(t-1)}\|f\|_2^2
+       \leq e^{-\lambda(w)(t-1)}e^B(4\pi)^{-1/2}.
+\]
+The constant $M$ is common to these functions; their positive gaps need not
+have a common lower bound.
+\end{proof}
+
+The next extension lets a function with an outward slope return to height
+zero. Suppose $R$ lies on the slope-one tail and $a=w(R)\geq1/2$. Keep $w$
+on $[-R,R]$ and prescribe its derivative on the positive side as follows:
+\begin{enumerate}
+\item On $[R,R+2]$, use $1-2\theta((x-R)/2)$. The slope turns from one
+to minus one, with total height change zero; throughout this turn the height
+is at least $a$.
+\item Continue with slope $-1$ for length $a-1/2$, reaching height $1/2$.
+\item On the next unit interval, with local coordinate $r\in[0,1]$, use
+derivative $-1+\theta(r)$. The height decreases by $1/2$ and reaches zero.
+\item Keep height zero on a unit interval $J$.
+\item On the next unit interval use derivative $\theta(r)$, reaching
+height $1/2$ with slope one, and continue with slope one thereafter.
+\end{enumerate}
+Every piece stays nonnegative. Flatness of $\theta$ matches all jets, even
+when the straight descent has zero length. The second derivative in the
+first turn is $-\theta'((x-R)/2)$ and in each unit turn has absolute value
+at most $B$. Thus \eqref{eq:w-bounds} is preserved. Reflect on the negative
+side; the central part is unchanged. Denote this extension by $w_{\rm new}$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $V_+=q$ and the constant $c$ of Lemma~\ref{lem:numerator}. Start from
+\[
+ w_1(x)=\int_0^{|x|}\theta(r-1)\dd r.
+\]
+This function is smooth and zero on $[-1,1]$, obeys
+\eqref{eq:w-bounds}, and has positive-side slope one for $x\geq2$.
+Set $t_0=R_0=0$.
+
+Given $w_n$, let $U_n=w_n''+(w_n')^2$ and
+$\lambda_n=\inf\spec(H_{U_n})>0$, using Lemma~\ref{lem:gap}. First choose
+an integer $t_n$ such that
+\begin{equation}\label{eq:time-choice}
+ t_n\geq\max(n+3,t_{n-1}+1),\qquad
+ M e^{-\lambda_n(t_n-1)}\leq\frac{c}{2n}t_n^{-3/2}.
+\end{equation}
+This is possible because $\lambda_n$ is positive for this fixed $w_n$.
+Next choose an integer $R_n$ on its slope-one tail, beyond every earlier
+valley, with $R_n>\max(n,R_{n-1}+1)$ and $w_n(R_n)\geq1$, such that
+\begin{equation}\label{eq:radius-choice}
+ 4e^{Bt_n}(4\pi t_n)^{-1/2}e^{-R_n^2/t_n}
+       \leq\frac{c}{2n}t_n^{-3/2}.
+\end{equation}
+Take $R_n$ at least one unit beyond the beginning of that tail as well.
+All these conditions involve finitely many fixed quantities, and the left
+side of \eqref{eq:radius-choice} tends to zero as $R_n$ increases.
+Apply the extension just described at $R_n$ to obtain $w_{n+1}$ and its new
+unit zero interval $J_n$. If desired, taking the first admissible integers
+at both choices makes the construction fully specified without a numerical
+evaluation of $\lambda_n$.
+
+We have $w_{n+1}=w_n$ on $[-R_n,R_n]$, with $R_n\to\infty$. Every compact
+neighborhood is therefore eventually unchanged, with all derivatives. Its
+eventual value defines one smooth even nonnegative function $w$ obeying
+\eqref{eq:w-bounds}. It is zero on $[-1,1]$ and on all the disjoint unit
+intervals $J_n$ and $-J_n$. Define the single final potential and solution
+\begin{equation}\label{eq:final-potential}
+ V_0=w''+(w')^2,\qquad h_0=e^w.
+\end{equation}
+Then $-B\leq V_0\leq B+1$, $H_0\geq0$ by
+\eqref{eq:factorization}, and $\ker_{L^2}H_0=\{0\}$ because $h_0\geq1$.
+
+The preserved unit zero intervals give
+\begin{equation}\label{eq:infinite-resistance}
+ \int_0^\infty h_0^{-2}=\int_{-\infty}^0 h_0^{-2}=\infty.
+\end{equation}
+Put $s(x)=\int_0^x h_0^{-2}$ and $S=s(a)$. Evenness makes $s$ odd, and
+$S\to\infty$ as $a\to\infty$. On the central interval $h_0=1$, so
+$s(1)=1$. For $a>1$, \eqref{eq:green} at $(0,1)$ reads
+\[
+ G_a(0,1)=\frac{S-1}{2}.
+\]
+Lemma~\ref{lem:green} proves the infinite reference integral in
+\eqref{eq:main-integrals}. The finite numerator integral has already been
+proved at the same distinct pair.
+
+For the spectral bottom, use the compactly supported $H^1$ function
+\[
+ u_a(x)=h_0(x)\max\left(0,1-\frac{|s(x)|}{S}\right).
+\]
+It vanishes outside $[-a,a]$, and its zero endpoint values ensure that its
+zero extension is in $H^1$. Equation~\eqref{eq:factorization} yields
+\[
+ Q_0[u_a]=\frac1{S^2}\int_{-a}^a h_0^{-2}\dd x=\frac2S.
+\]
+If $S\geq2$, its square is at least $1/4$ on $[-1,1]$, whence
+$\|u_a\|_2^2\geq1/2$. The Rayleigh quotients are at most $4/S\to0$;
+together with nonnegativity, this gives $\inf\spec(H_0)=0$.
+
+Finally, $V_0=U_n$ on $[-R_n,R_n]$, and both have the same lower bound
+$-B$. Lemmas~\ref{lem:locality} and~\ref{lem:gap}, followed by
+\eqref{eq:time-choice}--\eqref{eq:radius-choice}, give
+\[
+ 0<k_0(t_n,0,0)\leq k_{U_n}(t_n,0,0)+\frac{c}{2n}t_n^{-3/2}
+                  \leq\frac cn t_n^{-3/2}.
+\]
+The same fixed $c$ appears in \eqref{eq:numerator-lower}. Consequently
+\[
+ \frac{k_+(t_n,0,0)}{k_0(t_n,0,0)}\geq n,
+\]
+which proves \eqref{eq:main-ratio}. Both potentials are fixed; only the
+comparison times tend to infinity.
+\end{proof}
+
+The constructed potentials are unordered. At the middle of each length-two
+downward turn, $w'=0$ and $w''=-\theta'(1/2)<0$, so $V_0<0$ outside the
+support of $q$. On a retained slope-one segment $V_0=1$ while $q=0$.
+Thus $q-V_0$ takes both signs, as is consistent with the nonnegative
+perturbation result in \cite[Corollary 1]{FKP}.
+
+\appendix
+\section{Dirichlet kernels and Green functions}\label{sec:dirichlet}
+
+We prove Lemma~\ref{lem:green}, including the identification of killed paths
+with the one-dimensional Friedrichs Dirichlet operator. Only the whole-line
+formula \eqref{eq:fk} is imported from \cite{Simon}. The form, weak compactness,
+spectral calculus and uniform polynomial approximation used below are given
+in \cite[Theorems 2.12--2.13, Lemma 1.13, Theorems 3.1, 3.7 and 1.15]{Teschl}.
+
+\subsection*{The killed semigroup}
+Let $I$ be a finite open interval or a half-line, and let $U\geq-B$ be
+bounded, real and continuous on $\R$. Define $H_U^I$ on $L^2(I)$ by the
+closed form $Q_I[u]=\int_I(|u'|^2+U|u|^2)$ with domain $H^1_0(I)$.
+Set
+\[
+ F(x)=\min\{1,\operatorname{dist}(x,\overline I)^2\},\quad
+ H_m=H_{U+mF},\quad \alpha=B+1.
+\]
+The shifted forms
+\[
+ a_m[u]=\int_\R\bigl(|u'|^2+(U+\alpha)|u|^2+mF|u|^2\bigr)
+          \geq\|u\|_{H^1}^2
+\]
+are coercive. For $f\in L^2(\R)$, put $u_m=(H_m+\alpha)^{-1}f$.
+Testing its variational equation with $u_m$ gives
+\[
+ \|u_m\|_{H^1}\leq\|f\|_2,\qquad
+ m\int F|u_m|^2\leq\|f\|_2^2.
+\]
+A weak $H^1$ subsequential limit $u$ vanishes outside $\overline I$, since
+on every compact set where $F\geq\delta>0$ the local $L^2$ norm tends to
+zero. An $H^1$ function in one dimension is locally absolutely continuous:
+integrate its weak derivative and subtract, leaving a distribution with
+derivative zero. Thus $u$ has zero trace at every finite endpoint of $I$.
+
+These zero extensions are precisely $H^1_0(I)$. To check the needed density
+at an endpoint $a$, use $u(a)=0$ and
+\[
+ |u(x)|^2\leq |x-a|\int_{\min(a,x)}^{\max(a,x)}|u'|^2.
+\]
+A cutoff vanishing within distance $\delta$ of $a$ and equal to one beyond
+$2\delta$ has derivative-of-cutoff error bounded by a constant times
+$\int_{|x-a|<2\delta}|u'|^2$, which tends to zero. Ordinary cutoffs at
+infinity, followed by mollification away from the endpoints, complete the
+$H^1$ approximation. Translation continuity in $L^2$ justifies convergence
+for both $u$ and $u'$; equivalently this follows from the Fourier and weak
+derivative description \cite[Section 7.1, (7.12)--(7.15)]{Teschl}.
+
+Tests compactly supported in $I$ remove the term $mF$ from the variational
+equation. Passing to the weak limit and using this density identifies
+$u=(H_U^I+\alpha)^{-1}(f|_I)$, extended by zero. The solution is unique, so
+every weak subsequential limit is the same. Since $Fu=0$, the variational
+equations give the exact identity
+\[
+ a_m[u_m-u]=\operatorname{Re}\langle f,u_m-u\rangle\longrightarrow0.
+\]
+Hence $u_m\to u$ strongly in $H^1$ and $L^2$. In particular, the bounded
+positive resolvents $R_m=(H_m+\alpha)^{-1}$ converge strongly to the
+Dirichlet resolvent on $L^2(I)$, extended by zero on $L^2(I^c)$; call this
+limit $R_\infty$.
+
+The limiting resolvent vanishes on $L^2(I^c)$, so we pass to semigroups
+through bounded continuous calculus. For fixed $t>0$, the
+function
+\[
+ f_t(r)=e^{-t(1/r-\alpha)}\quad(r>0),\qquad f_t(0)=0
+\]
+is continuous on $[0,1]$. The spectra of $R_m$ and $R_\infty$ lie in that
+interval. Strong convergence and uniform boundedness give convergence of
+every finite power. Uniform polynomial approximation then gives
+$f_t(R_m)\to f_t(R_\infty)$ strongly. The spectral calculus identifies this
+as convergence of $e^{-tH_m}$ to $e^{-tH_U^I}$ extended by zero.
+
+For the passage from the penalized kernels, recall the variance-two bridge
+and its free prefactor:
+\[
+ b_r=(1-r)x+ry+\sqrt{2t}\,\beta_r,\qquad
+ p(t,x,y)=(4\pi t)^{-1/2}e^{-(x-y)^2/(4t)},
+\]
+where $\beta$ is the standard unit-time bridge. In the full-line formula
+\eqref{eq:fk} for $U+mF$, the weights decrease to
+\[
+ \exp\left(-t\int_0^1 U(b_r)\dd r\right)
+       \mathbf1_{\{b_r\in\overline I\ \text{for all }r\}}.
+\]
+Continuity of each path identifies the zero integral of $F$ with this
+event. For an upper level $z>\max(x,y)$, the reflection formula
+\eqref{eq:reflection} reads
+\[
+ \mathbb P\{\max_{0\leq r\leq1}b_r\geq z\}
+       =e^{-(z-x)(z-y)/t}.
+\]
+Its continuity in $z$ excludes atoms of the maximum above both endpoints;
+negating the path gives the corresponding statement for the minimum.
+Thus replacing $\overline I$ by $I$ changes a null
+event for interior endpoints. The Gaussian bound allows passage to the
+limit against compactly supported $L^2$ tests, identifying the strong
+semigroup limit. We obtain the killed kernel
+\begin{equation}\label{eq:killed}
+ k_U^I(t,x,y)=p(t,x,y)\,
+  \mathbb E\left[
+   e^{-t\int_0^1U(b_r)\dd r}
+   \mathbf1_{\{b_r\in I\ \text{for all }r\}}\right].
+\end{equation}
+This identity is pointwise: coupling bridges with the same $\beta$ proves
+continuity at interior $(t,x,y)$ by dominated convergence, since failure of
+convergence of the survival indicator requires a boundary maximum or
+minimum. In particular, $0\leq k_U^I\leq k_U$ and $k_U^I\leq e^{Bt}p$.
+For $I=(a,\infty)$ and $U=0$ on $I$, reflection gives the image formula
+\eqref{eq:image}. For $I=(-a,a)$ increasing to $\R$, every bridge has
+bounded range, and its survival indicators increase to one. Hence
+\begin{equation}\label{eq:heat-exhaustion}
+ k_U^{(-a,a)}(t,x,y)\uparrow k_U(t,x,y)
+ \quad\text{at each fixed }t>0,x,y.
+\end{equation}
+
+\subsection*{The interval inverse and its time integral}
+Now suppose $U$ is smooth and bounded, and $h>0$ solves $-h''+Uh=0$.
+On $(-a,a)$ put $m_a=\min h>0$, $M_a=\max h$, and
+$s(x)=\int_0^xh^{-2}$. Multiplication and division by $h$ preserve
+$H^1_0(-a,a)$. For $u=hv$, integration by parts and density give
+\[
+ Q_I[u]=\int_Ih^2|v'|^2
+ \geq\frac{m_a^2}{4a^2M_a^2}\|u\|_2^2.
+\]
+Here $\|v\|_2^2\leq4a^2\|v'\|_2^2$ follows by integrating
+$v(x)=\int_{-a}^xv'$. Thus the Dirichlet operator has a positive gap
+$\lambda_a=m_a^2/(4a^2M_a^2)$, allowed to depend on $a$.
+
+The homogeneous solutions
+$\ell(x)=h(x)[s(x)-s(-a)]$ and $r(x)=h(x)[s(a)-s(x)]$ satisfy
+\[
+ \ell'r-\ell r'=s(a)-s(-a)>0.
+\]
+Their Green function is
+\[
+ G_a(x,y)=\frac{\ell(\min(x,y))r(\max(x,y))}{s(a)-s(-a)},
+\]
+which is exactly \eqref{eq:green}. It is continuous, zero at the
+endpoints, and its $x$ derivative has jump $-1$ at $x=y$. Thus
+$H_U^I G_a(\cdot,y)=\delta_y$. Integration against a smooth compactly
+supported function gives the Dirichlet inverse, whose uniqueness follows
+from the positive gap.
+
+Spectral integration on $[\lambda_a,\infty)$ gives
+$\int_0^\infty e^{-tH_U^I}\dd t=(H_U^I)^{-1}$. The kernel equality also
+holds at every point. For $0<t\leq1$, \eqref{eq:killed} is bounded by
+$e^B(4\pi t)^{-1/2}$, integrable at zero in dimension one. For $t\geq1$,
+the time-$1/2$ kernel vectors and the spectral bound give
+\[
+ |k_U^I(t,x,y)|
+ \leq e^{-\lambda_a(t-1)}
+       \sqrt{k_U^I(1,x,x)k_U^I(1,y,y)}
+ \leq\frac{e^B}{\sqrt{4\pi}}e^{-\lambda_a(t-1)}.
+\]
+These bounds make the time-integrated kernel continuous, including on the
+diagonal. Its equality with the inverse kernel, initially almost everywhere,
+therefore holds everywhere. Finally, monotone convergence in
+\eqref{eq:heat-exhaustion} gives
+\[
+ \int_0^\infty k_U(t,x,y)\dd t
+  =\lim_{a\to\infty}\int_0^\infty k_U^{(-a,a)}(t,x,y)\dd t
+  =\lim_{a\to\infty}G_a(x,y),
+\]
+with infinity allowed. This proves Lemma~\ref{lem:green}.
+
+\section*{AI-use statement}
+OpenAI's Codex assisted in developing and writing the argument, checking
+cited passages, and conducting internal AI reviews of the proof and
+manuscript. The mathematical claims are submitted for independent review.
+
+\begin{thebibliography}{9}
+\bibitem{FKP}
+M.~Fraas, D.~Krej\v{c}i\v{r}\'ik, and Y.~Pinchover,
+\emph{On some Strong Ratio Limit Theorems for Heat Kernels},
+arXiv:0912.4337v3 (2010).
+\url{https://arxiv.org/abs/0912.4337v3}.
+
+\bibitem{Krejcirik}
+D.~Krej\v{c}i\v{r}\'ik,
+\emph{Large-time behavior of the heat equation: subcriticality versus criticality},
+AIM problem contribution (2015).
+\url{https://nsa.fjfi.cvut.cz/problems/04_AIM_2015/2015-18/2015-18_AIM_Krejcirik_2.pdf}.
+
+\bibitem{AIM217}
+MColbrook/AIM, \emph{217. Does subcritical heat flow always decay faster?},
+problem statement at
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/217-critical-subcritical-heat-ratio.md}{revision \texttt{a153f469}}.
+
+\bibitem{Simon}
+B.~Simon, \emph{A Feynman-Kac Formula for Unbounded Semigroups},
+arXiv:math-ph/9907022v1 (1999).
+\url{https://arxiv.org/abs/math-ph/9907022v1}.
+
+\bibitem{Teschl}
+G.~Teschl, \emph{Mathematical Methods in Quantum Mechanics: With Applications
+to Schr\"odinger Operators}, Graduate Studies in Mathematics 99,
+American Mathematical Society, online version of February 12,
+2009. \url{https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf}.
+
+\bibitem{Lalley}
+S.~Lalley, \emph{Lecture 5: Brownian Motion}, online lecture notes,
+Proposition 4.
+\url{https://www.stat.uchicago.edu/~lalley/Courses/390/Lecture5.pdf}.
+\end{thebibliography}
+\end{document}

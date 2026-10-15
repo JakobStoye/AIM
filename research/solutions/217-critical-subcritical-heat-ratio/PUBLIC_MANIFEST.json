@@ -1,0 +1,38 @@
+{
+  "format": 1,
+  "problem_id": 217,
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 39,
+      "sha256": "56617adda4bd58624576815076df1326b992cb232469d9e680df2c54e53e5952",
+      "purpose": "Local build exclusions"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3638,
+      "sha256": "e9a25f05797cfbb4032c506555f741d3ca766a64de5b5f01219cb4209d9d1d27",
+      "purpose": "Entry point, result scope, rebuild instructions and factual AI disclosure"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 3435,
+      "sha256": "1567942b9fd0bbc23bc3a5be6462a3082b08c0a6b586d109ae2299c8a4b645dd",
+      "purpose": "Every original hypothesis and failed conclusion mapped to the complete manuscript"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 338790,
+      "sha256": "7011080e8958a09286eeb63d97fcbfaad38c6ed853f4e38fad400f9f6b0b9095",
+      "purpose": "Rendered nine-page manuscript"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 27350,
+      "sha256": "a4853b634ebf78bb06c1282c1a5c4b15136763a9dfb923bd1065653aa086842b",
+      "purpose": "Complete standalone editable manuscript"
+    }
+  ],
+  "manifest_scope": "All package files except this manifest itself. Its fixed Git commit identifies the complete package."
+}
