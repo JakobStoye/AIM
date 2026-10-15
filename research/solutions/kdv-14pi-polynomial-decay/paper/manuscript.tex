@@ -1,0 +1,677 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Polynomial decay for the Korteweg-de Vries equation at length 14 pi},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\title{Polynomial decay for the Korteweg--de Vries equation at length $14\pi$}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove uniform small-data polynomial decay for the real Korteweg--de Vries
+equation on an interval of length $14\pi$, with homogeneous Dirichlet boundary
+conditions and zero Neumann datum at the right endpoint. This critical length
+has three undamped linear modes, including a zero frequency. Every sufficiently
+small real $L^2$ energy solution satisfies $\|y(t)\|_2\le C(1+t)^{-1/2}$,
+with constants independent of the datum. The quadratic response is made
+periodic only on the exponentially stable subspace. Resonant terms in the
+undamped subspace may grow, but their boundary observation vanishes. An explicit
+nonzero double-frequency observation then gives a uniform quartic energy loss,
+which yields the all-time decay estimate.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+The Korteweg--de Vries equation on a bounded interval is a basic example in
+the boundary control of dispersive equations. Homogeneous boundary conditions
+can dissipate its $L^2$ energy, even though the equation has no interior damping.
+The obstruction to linear stabilization is particularly concrete: at certain
+interval lengths a finite-dimensional space of linear solutions has zero
+boundary loss. These critical lengths, identified in Rosier's controllability
+analysis \cite{Rosier}, are
+\[
+ \mathcal N=\left\{2\pi\sqrt{\frac{k^2+k\ell+\ell^2}{3}}:
+ k,\ell\in\mathbb N^*\right\}.
+\]
+Small nonlinear solutions are globally well posed in the usual energy class;
+we use the realization of Coron--Cr\'epeau \cite{CC} and the global statement
+in \cite[Lemma 3.2]{NX25}. The issue here is a quantitative decay rate for
+that flow when linear boundary loss misses some directions.
+
+Nguyen \cite[Theorem 1.1]{Nguyen} obtains decay at least of order $t^{-1/2}$
+when the undamped space has dimension one, and for certain even-dimensional
+undamped spaces satisfying a nondegeneracy condition. His argument expands
+the flow over a fixed time interval and detects a quadratic boundary response.
+A zero critical frequency interacting with a nonzero one can prevent the full
+quadratically forced solution from having a bounded separated form
+\cite[Remark 2.6]{Nguyen}. The case of odd undamped dimension greater than one lies outside those decay theorems. Polynomial decay in that case is explicitly
+left open in \cite[Section 2.4.5]{NX25}. Recent estimates near critical lengths
+\cite[Theorem 1.6]{NX26} exclude the exact critical value in that theorem and
+do not settle the present question.
+
+We consider the concrete length $L=14\pi$. Its critical pairs are
+$(7,7),(2,11),(11,2)$, giving one stationary mode and a conjugate oscillatory
+pair. For the real equation
+\begin{equation}\label{eq:kdv}
+ \begin{cases}
+ y_t+y_x+y_{xxx}+yy_x=0,&t>0,\quad 0<x<L,\\
+ y(t,0)=y(t,L)=y_x(t,L)=0,&t>0,\\
+ y(0,x)=y_0(x),&0<x<L,
+ \end{cases}
+\end{equation}
+we prove the following uniform bound. An energy solution means the usual
+mild solution in
+$C([0,\infty);L^2(0,L))\cap L^2_{\mathrm{loc}}([0,\infty);H^1_0(0,L))$;
+Neumann boundary values are interpreted through the standard $L^2$-in-time
+hidden trace, recalled in Section~\ref{sec:linear}.
+
+\begin{theorem}\label{thm:main}
+Let $L=14\pi$. There exist $\delta,C>0$ such that every real energy solution
+of \eqref{eq:kdv} with $\|y_0\|_{L^2(0,L)}\le\delta$ satisfies
+\begin{equation}\label{eq:main}
+ \|y(t)\|_{L^2(0,L)}\le C(1+t)^{-1/2}\qquad\text{for every }t\ge0.
+\end{equation}
+The constants are chosen independently of the initial datum.
+\end{theorem}
+
+This supplies polynomial decay at an exact critical length with a
+three-dimensional undamped space. The estimate allows every sufficiently
+small real $L^2$ datum, including arbitrary mixtures of the stationary,
+oscillatory and stable components. In particular it gives an affirmative
+answer at $14\pi$ to the odd-dimensional decay question above. We do not
+claim the same conclusion for all critical lengths or an optimal rate.
+
+The mixed resonance is dealt with by retaining the entire center forcing
+through Duhamel's formula. Only the stable part of the quadratic response is
+chosen periodic. The remaining center motion can have secular growth, but
+its boundary derivative is identically zero. The observation is therefore a
+finite temporal Fourier sum. Its constant term detects the stationary mode;
+an explicit double-frequency coefficient detects the oscillatory pair.
+Orthogonality over one period gives a positive lower bound uniformly over
+all real center directions. A fixed late window removes the stable
+homogeneous transient. The quadratic expansion has a cubic remainder in the
+boundary observation norm for rough $L^2$ data, giving a quartic energy loss
+on a single, datum-independent interval. Iterating that loss proves
+\eqref{eq:main}. The fixed-window comparison follows Nguyen's approach
+\cite[Section 5]{Nguyen}; allowing the invisible resonant response is the
+change needed here.
+
+Section~\ref{sec:linear} determines the undamped subspace and proves
+exponential decay on its orthogonal complement. Section~\ref{sec:quadratic}
+constructs the quadratic observation and proves its uniform lower bound.
+Section~\ref{sec:nonlinear} establishes the nonlinear energy loss and proves
+the theorem. All spatial norms below are on $(0,L)$; complex notation is used
+only for linear calculations, and $\langle f,g\rangle=\int f\overline g$.
+\section{Linear evolution and its undamped subspace}\label{sec:linear}
+Put $L=14\pi$, and write $H=L^2(0,L;\mathbb C)$ with inner product
+$\langle f,g\rangle=\int_0^L f\overline g\,dx$, linear in its first argument.
+The real subspace will be used for the nonlinear equation. Let
+\begin{equation}\label{eq:generator}
+ Av=-v'-v''',\qquad D(A)=\{v\in H^3(0,L):v(0)=v(L)=v'(L)=0\}.
+\end{equation}
+Rosier's Proposition 3.1 \cite{Rosier} gives a contraction semigroup $S(t)$
+on the real $L^2$ space. Extending it by real and imaginary parts gives the
+complex contraction semigroup with precisely the domain in \eqref{eq:generator}.
+On $D(A)$ define $\mathcal Bv=v'(0)$. Integration by parts gives
+\begin{equation}\label{eq:dissipative}
+ \operatorname{Re}\langle Av,v\rangle=-\tfrac12|\mathcal Bv|^2.
+\end{equation}
+The adjoint is $A^*v=v'+v'''$ on $\{v\in H^3:v(0)=v(L)=v'(0)=0\}$.
+The semigroup difference quotient shows that $S(t)$ preserves $D(A)$,
+commutes there with $A$, and evolves an eigenvector $Av=\lambda v$ as
+$S(t)v=e^{\lambda t}v$.
+
+\subsection{Mild solutions and boundary estimates}
+For a fixed $T>0$ set
+\[
+ X_T=C([0,T];H)\cap L^2(0,T;H^1_0(0,L)),\qquad
+ \|v\|_{X_T}=\|v\|_{C_tH}+\|v\|_{L^2_tH^1}.
+\]
+Proposition 7 of Coron--Cr\'epeau \cite{CC} provides continuous linear maps
+from $H\times L^1(0,T;H)$ to the mild solution $v\in X_T$ of
+$v_t=Av+f$, $v(0)=h$, and to its left derivative in $L^2(0,T)$, with zero
+right Neumann datum. The latter map defines $\mathcal Bv$ for rough data.
+It agrees with the actual derivative for classical solutions. In particular,
+\begin{equation}\label{eq:forced-estimate}
+ \|v\|_{X_T}+\|\mathcal Bv\|_{L^2(0,T)}
+ \le K_T\bigl(\|h\|_2+\|f\|_{L^1_tH}\bigr).
+\end{equation}
+Here and below $\|\cdot\|_2$ is the spatial $L^2$ norm.
+The identities behind this estimate are
+\begin{align}
+ \|v(t)\|_2^2+\int_0^t|\mathcal Bv(s)|^2\,ds
+ &=\|h\|_2^2+2\operatorname{Re}\int_0^t\langle f(s),v(s)\rangle\,ds,
+ \label{eq:energy-linear}\\
+ \frac{d}{dt}\int_0^L x|v|^2\,dx+3\|v_x\|_2^2
+ &=\|v\|_2^2+2\operatorname{Re}\int_0^L xf\overline v\,dx.
+ \label{eq:multiplier}
+\end{align}
+For smooth data these follow by integration by parts. The first gives
+$\sup_t\|v(t)\|_2\le\|h\|_2+\|f\|_{L^1_tH}$ and the trace bound;
+the integrated second identity gives the spatial derivative bound.
+To pass to mild data, approximate $h$ in $H$ by $C^\infty_c(0,L)$ and
+$f$ in $L^1_tH$ by finite sums of smooth time functions with spatial values
+in $C^\infty_c(0,L)$. The continuous maps of \cite[Proposition 7]{CC} give
+strong convergence in $C_tH$, $L^2_tH^1$ and $L^2$ for the left trace.
+Every term in the integrated identities converges, uniformly in its upper
+endpoint. Zero Dirichlet traces pass in $H^1$, so the limit belongs to $X_T$.
+Thus \eqref{eq:energy-linear} holds for every $t\in[0,T]$, and
+\eqref{eq:multiplier} holds in its integrated form and almost everywhere.
+This also identifies the mild solution with
+$S(t)h+\int_0^t S(t-s)f(s)\,ds$.
+The hidden trace respects time shifts: prove
+$\mathcal BS(s)S(t)h=\mathcal BS(s+t)h$ first for $h\in D(A)$ and then use
+its continuous extension in $L^2(0,T)$. We shall use this identity for fixed
+$t\ge0$, without assigning a boundary derivative to an arbitrary state in $H$.
+
+We also need graph-domain control of this observation. If $f=-Av=v'''+v'$,
+then, with $a=v'(0)$ and $b=v''(0)$,
+\[
+ v(x)=a\sin x+b(1-\cos x)+F(x),\qquad
+ F(x)=\int_0^x(1-\cos(x-s))f(s)\,ds.
+\]
+This formula has the prescribed three initial derivatives and satisfies the
+ODE. Uniqueness with zero initial derivatives follows by differentiating
+$|v'|^2+|v''|^2$ for the homogeneous equation.
+The convolution kernels bound $F,F',F''$ in $L^2$, and $F'''=f-F'$.
+The Gram matrix of $\sin x$ and $1-\cos x$ is invertible, hence their
+coefficients are bounded by $C_L(\|v\|_2+\|F\|_2)$. Consequently
+\begin{equation}\label{eq:graph}
+ \|v\|_{H^3}+|\mathcal Bv|\le C_L(\|Av\|_2+\|v\|_2),\qquad v\in D(A).
+\end{equation}
+All endpoint values here use the continuous one-dimensional Sobolev
+representatives; the corresponding Sobolev facts may be found in
+\cite[Theorems 8.2, 8.8 and 8.12]{Brezis}.
+
+\subsection{The three undamped modes}
+The following explicit spectral description will also identify the subspace
+on which linear decay fails.
+\begin{lemma}\label{lem:modes}
+The only imaginary eigenvalues of $A$ are $0,\pm ip$, where
+\begin{equation}\label{eq:modes}
+ p=\frac{120}{343},\qquad \phi(x)=1-\cos x,\qquad
+ \psi(x)=2e^{-8ix/7}-13e^{3ix/7}+11e^{5ix/7}.
+\end{equation}
+Their eigenspaces span $M=\operatorname{span}_{\mathbb C}\{\phi,\psi,\overline\psi\}$.
+They are mutually orthogonal and have zero derivative at both endpoints.
+Every real trajectory in $M$ is
+\begin{equation}\label{eq:U}
+ U(t)=c\phi+ze^{-ipt}\psi+\overline z e^{ipt}\overline\psi,
+ \qquad c\in\mathbb R,\quad z\in\mathbb C,
+\end{equation}
+with
+\begin{equation}\label{eq:center-norm}
+ \|U(0)\|_2^2=\frac{3L}{2}c^2+588L|z|^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+If $Av=-i\omega v$, $\omega\in\mathbb R$, then
+\eqref{eq:dissipative} also gives $v'(0)=0$.
+The spatial roots satisfy $\lambda^3+\lambda-i\omega=0$.
+For distinct roots, the coefficients of $v=\sum a_j e^{\lambda_jx}$ and
+of its endpoint values both lie in the one-dimensional nullspace of the
+rows $(1,1,1)$ and $(\lambda_1,\lambda_2,\lambda_3)$.
+Each coordinate of its null vector is nonzero. Thus
+$e^{\lambda_1L}=e^{\lambda_2L}=e^{\lambda_3L}$.
+Their real parts must be equal, and their sum is zero, so all roots are purely
+imaginary. At a repeated root the roots are $ir,ir,-2ir$, with
+$r=\pm1/\sqrt3$. The zero initial value and derivative give
+$v=a e^{-2irx}+(-a+3ira x)e^{irx}$.
+If $a\ne0$, its endpoint value requires
+$e^{-3irL}=1-3irL$, impossible by absolute values. The remaining solution is zero.
+These exponential descriptions exhaust the ODE solutions: the initial-jet
+matrix is a Vandermonde matrix (or its double-root version), and a solution
+with all initial jets zero vanishes by the differential inequality
+$\frac d{dx}|(v,v',v'')|^2\le(1+|\omega|)|(v,v',v'')|^2$.
+
+Write the three distinct roots as $iq_1,iq_2,iq_3$ in increasing order.
+The common endpoint phase implies
+$q_2-q_1=2\pi k/L$, $q_3-q_2=2\pi\ell/L$ for positive integers $k,\ell$.
+Vi\`ete's relations give
+$L=2\pi\sqrt{(k^2+k\ell+\ell^2)/3}$.
+At $L=14\pi$ this is $k^2+k\ell+\ell^2=147$.
+Here $k\le12$, and the discriminants for $k=1,\ldots,12$ are
+\[
+585,576,561,540,513,480,441,396,345,288,225,156.
+\]
+Only $576=24^2$, $441=21^2$ and $225=15^2$ are squares, giving
+$(k,\ell)=(2,11),(7,7),(11,2)$. Each eigenspace has dimension one by the
+same endpoint nullspace. Differentiating \eqref{eq:modes} gives
+$A\phi=0$ and $A\psi=-ip\psi$, with all four endpoint values zero.
+Finally every nonconstant exponential of frequency an integer multiple of
+$1/7$ integrates to zero over $(0,14\pi)$. This proves the orthogonality and
+\eqref{eq:center-norm}, since $2^2+13^2+11^2=294$.
+\end{proof}
+
+\subsection{Decay on the orthogonal complement}
+Let $P$ be the orthogonal projection onto $M$ and $Q=I-P$.
+\begin{lemma}\label{lem:stable}
+The spaces $M$ and $M^\perp$ reduce $S(t)$. There are $K_s\ge1$ and
+$\gamma>0$, depending only on $L$, such that
+\begin{equation}\label{eq:stable}
+ \|S(t)Q\|_{H\to H}\le K_s e^{-\gamma t}\qquad(t\ge0).
+\end{equation}
+Moreover $Q$ preserves $D(A)$ and $AQ=QA$ there.
+\end{lemma}
+\begin{proof}
+For $T>0$ put $N_T=\{h\in H:\mathcal BS(\cdot)h=0\text{ in }L^2(0,T)\}$.
+First, bounded initial states give a relatively compact family
+$S(\cdot)h$ in $L^2(0,T;H)$. Indeed \eqref{eq:forced-estimate} bounds
+these trajectories in $L^2_tH^1_0$.
+For each $a>0$ compact spatial embedding and smooth density give a finite-dimensional
+subspace $E_a\subset C^\infty_c(0,L)$ with
+$\|u-P_{E_a}u\|_2\le a\|u\|_{H^1}$ for every $u\in H^1_0$.
+For a smooth basis test $\varphi$ of this space the coefficient
+$b(t)=\langle S(t)h,\varphi\rangle$ satisfies
+$b'=-\langle (S(t)h)_x,\varphi+\varphi''\rangle$ in distributions.
+It is bounded in $H^1(0,T)$ and hence compact in $C([0,T])$.
+The finitely many coefficients are therefore compact, while the spatial
+remainder is at most $a\|S(\cdot)h\|_{L^2_tH^1}$.
+A diagonal subsequence as $a\downarrow0$ proves the assertion.
+
+The kernel $N_T$ is closed by trace continuity. On this kernel
+\eqref{eq:energy-linear} makes $h\mapsto S(\cdot)h$ an isometry up to
+$\sqrt T$. Thus its unit ball is compact and $\dim N_T<\infty$.
+The nonincreasing integer sequence $\dim N_n$ eventually stabilizes.
+The nested subspaces $N_n\subset N_1$ therefore stabilize, so for some integer $T_0$,
+\[
+ N_{T_0}=\bigcap_{T>0}N_T=:E.
+\]
+Trace shifts give $S(t)E\subset E$. On this finite-dimensional space $S(t)$ is an
+isometry, hence onto. We must also know that $E\subset D(A)$.
+The averaged operators $T_h=h^{-1}\int_0^h S(s)|_E\,ds$ converge to $I$
+in operator norm, because strong continuity is uniform in finite dimension.
+They are invertible for small $h$, and the semigroup difference quotient gives
+$T_hv\in D(A)$ and $AT_hv=(S(h)v-v)/h$.
+Surjectivity yields the desired domain inclusion.
+The real generator $D=A|_{E\cap H_{\mathbb R}}$ is skew-adjoint by
+polarization of the norm identity. The self-adjoint nonnegative matrix
+$-D^2$ has an orthonormal eigenbasis. On a positive eigenspace with eigenvalue
+$\lambda$, a unit vector $u$ and $Du/\sqrt\lambda$ form a rotation plane;
+its orthogonal complement is $D$-invariant. The zero eigenspace is the kernel
+of $D$. Thus the complexification of $E$ has imaginary eigenvectors of $A$,
+and Lemma~\ref{lem:modes} implies $E\subset M$. The reverse inclusion
+follows from the zero observations of the explicit modes, so $E=M$.
+
+There is consequently a $\theta>0$ such that
+\begin{equation}\label{eq:observability}
+ \|\mathcal BS(\cdot)h\|_{L^2(0,T_0)}\ge\theta\|h\|_2
+ \qquad(h\in M^\perp).
+\end{equation}
+Otherwise take unit $h_n\in M^\perp$ whose observations tend to zero.
+By the compactness just proved their trajectories have a Cauchy subsequence.
+Applying the time-averaged energy identity to $h_n-h_m$ gives
+\[
+ \|h_n-h_m\|_2^2\le T_0^{-1}\|S(\cdot)(h_n-h_m)\|_{L^2_tH}^2
+ +\|\mathcal BS(\cdot)(h_n-h_m)\|_{L^2(0,T_0)}^2.
+\]
+The initial states converge to a unit vector in $M^\perp\cap N_{T_0}$,
+which is impossible.
+Because $S(t)$ is contractive and unitary on $M$, applying contractivity to
+$m+ah$ for every $a\in\mathbb C$, $m\in M$, $h\in M^\perp$, forces
+$\langle S(t)m,S(t)h\rangle=0$. This proves the reducing property.
+Decrease $\theta$ if necessary to $0<\theta\le1/2$. Energy and
+\eqref{eq:observability} give $\|S(T_0)Q\|\le q:=\sqrt{1-\theta^2}<1$.
+Iteration and contractivity between these times give \eqref{eq:stable},
+with $K_s=q^{-1}$ and $\gamma=-\log q/T_0$.
+Commutation of $P,Q$ with $S(t)$ and the generator difference quotient prove
+the last assertion.
+\end{proof}
+
+\section{A coercive quadratic boundary observation}\label{sec:quadratic}
+The linear trajectories in $M$ lose no energy. Their quadratic forcing must
+therefore produce the first observable loss. We construct a response whose
+boundary derivative is periodic, while allowing its unobserved part to grow.
+
+\subsection{Separating the stable response from the center motion}
+Recall the real trajectory $U(t)=c\phi+ze^{-ipt}\psi+\overline z e^{ipt}\overline\psi$ from \eqref{eq:U}, with $c\in\mathbb R$ and $z\in\mathbb C$. Put
+\begin{equation}\label{eq:force}
+ F=-UU_x=\sum_{j=-2}^2e^{-ijpt}F_j.
+\end{equation}
+The coefficients are smooth functions, quadratic in $c,z,\overline z$.
+For $j=-2,\ldots,2$ define
+\begin{equation}\label{eq:resolvent}
+ R_j f=\int_0^\infty e^{ijpt}S(t)Qf\,dt.
+\end{equation}
+The stable estimate makes this a norm-convergent integral in $QH$, bounded
+by $K_s\gamma^{-1}\|Qf\|_2$. Its graph-domain meaning follows directly from
+\[
+ S(h)R_jf=e^{-ijph}\left(R_jf-\int_0^h e^{ijps}S(s)Qf\,ds\right).
+\]
+Taking the right difference quotient proves
+\begin{equation}\label{eq:inverse}
+ R_jf\in QD(A),\qquad (-ijp-A)R_jf=Qf.
+\end{equation}
+This inverse is unique on $QH$, since a nonzero homogeneous solution would
+contradict \eqref{eq:stable}. Estimate \eqref{eq:graph} bounds its boundary
+trace, and $R_{-j}(\overline f)=\overline{R_jf}$.
+
+Set
+\begin{equation}\label{eq:response}
+ W_s(t)=\sum_{j=-2}^2e^{-ijpt}R_jF_j,\qquad
+ W_c(t)=\int_0^tS(t-s)PF(s)\,ds,\qquad W=W_s+W_c.
+\end{equation}
+These graph-domain functions solve $W_t=AW+F$.
+Although $W_c$ can have secular terms, it lies in $M$ and
+$\mathcal BW_c=0$. Therefore
+\begin{equation}\label{eq:G}
+ G(t)=\mathcal BW(t)=\sum_{j=-2}^2e^{-ijpt}\mathcal BR_jF_j
+\end{equation}
+is periodic with period $P_0=2\pi/p$.
+Moreover $W(0)=W_s(0)$ is bounded in $H$, uniformly for $\|U(0)\|_2\le1$.
+Only this initial bound, rather than an all-time bound on $W_c$, will be needed.
+
+\subsection{The constant and double-frequency coefficients}
+The zero-mode self-interaction has a stationary response
+\begin{equation}\label{eq:w00}
+ w_{00}(x)=\tfrac12(x-L)\sin x+\tfrac1{12}(\cos2x-1).
+\end{equation}
+It belongs to $D(A)$ and satisfies
+$w_{00}'''+w_{00}'=-\phi\phi'$, $\mathcal Bw_{00}=-L/2$.
+Its forcing is orthogonal to $M$: integer frequencies do not meet those of
+$\psi,\overline\psi$, and $\int\phi^2\phi'=0$.
+Thus $Qw_{00}$ is its stable response and has the same boundary derivative.
+
+The oscillatory mean forcing is $-|z|^2(|\psi|^2)'$, where
+\begin{equation}\label{eq:psi-square}
+ |\psi|^2=294-52\cos(11x/7)+44\cos(13x/7)-286\cos(2x/7).
+\end{equation}
+The differentiated frequencies $\pm2/7,\pm11/7,\pm13/7$ are disjoint from
+those of every element of $M$, so this forcing is orthogonal to $M$.
+Writing $|\psi|^2=\sum d_qe^{iqx}$, the function
+\[
+ h(x)=\sum_{q\ne0}\frac{-d_q}{1-q^2}(e^{iqx}-1)
+\]
+satisfies $h'''+h'=-(|\psi|^2)'$ and all three domain boundary conditions.
+Indeed $qL\in2\pi\mathbb Z$, and $d_q=d_{-q}\in\mathbb R$ makes its endpoint
+derivative sum vanish. Hence $\mathcal Bh=0$, and projection onto $QH$
+does not change this observation. The constant term of $G$ is exactly $-Lc^2/2$.
+
+At frequency $2p$, let $v_2$ be the solution of
+\begin{equation}\label{eq:v2}
+ v_2'''+v_2'-2ip v_2=-\psi\psi',\qquad
+ v_2(0)=v_2(L)=v_2'(L)=0,
+\end{equation}
+and set $\beta_2=\mathcal Bv_2$.
+Existence and uniqueness follow by combining \eqref{eq:inverse} on $M^\perp$
+with the invertible center block, whose factors are $-2ip,-ip,-3ip$.
+Its full solution and its stable component have the same observation.
+Also put $\beta_1=\mathcal BR_1[-(\phi\psi)']$, a finite number by
+\eqref{eq:graph}. Expansion of \eqref{eq:force} now gives
+\begin{equation}\label{eq:G-coefficients}
+ G(t)=-\tfrac L2c^2+cz\beta_1e^{-ipt}
+ +c\overline z\,\overline{\beta_1}e^{ipt}
+ +z^2\beta_2e^{-2ipt}+\overline z^{\,2}\overline{\beta_2}e^{2ipt}.
+\end{equation}
+We need no nonvanishing assertion for $\beta_1$.
+
+\begin{lemma}\label{lem:beta}
+The coefficient $\beta_2$ is nonzero.
+\end{lemma}
+\begin{proof}
+Write $q=(-8/7,3/7,5/7)$ and $a=(2,-13,11)$.
+Since $q_j-q_j^3=p$, a particular solution of \eqref{eq:v2} is
+\[
+ \chi(x)=\frac16\left(\sum_{j=1}^3\frac{a_j}{q_j}e^{iq_jx}\right)^2.
+\]
+For verification, if $\xi=q_j+q_k$ then
+$\xi-\xi^3-2p=-3q_jq_k(q_j+q_k)$; applying the differential operator to the
+ordered quadratic sum gives precisely $-\psi\psi'$.
+At both endpoints $\chi=d$ and $\chi'=0$, with
+\begin{equation}\label{eq:d}
+ d=\frac16\left(-\frac74-\frac{91}3+\frac{77}5\right)^2
+ =\frac{1002001}{21600}>0.
+\end{equation}
+Let $\rho>1$ solve $\rho^3-\rho=240/343$. Monotonicity and rational
+substitution give
+\begin{equation}\label{eq:rho}
+ \frac{31}{25}<\rho<\frac54.
+\end{equation}
+The spatial roots of \eqref{eq:v2} are
+$\lambda_0=-i\rho$ and $\lambda_\pm=\pm\sigma+i\rho/2$, where
+$\sigma=\sqrt{3\rho^2/4-1}>0$. Put $E_j=e^{\lambda_jL}$; their product is one.
+The homogeneous correction $v_2-\chi=\sum b_je^{\lambda_jx}$ satisfies
+\[
+ \mathsf Qb=(-d,-d,0)^T,\qquad
+ \mathsf Q=\begin{pmatrix}
+ 1&1&1\\ E_0&E_+&E_-\\
+ \lambda_0E_0&\lambda_+E_+&\lambda_-E_-
+ \end{pmatrix}.
+\]
+This matrix is invertible by the uniqueness already established for
+\eqref{eq:v2}. Expanding its adjugate and using $E_0E_+E_-=1$ gives
+\begin{equation}\label{eq:beta-formula}
+ \beta_2=-\frac d{\det\mathsf Q}
+ \sum_{j=0}^2\lambda_j(\lambda_{j+2}-\lambda_{j+1})(E_j+E_j^{-1}),
+\end{equation}
+where indices are cyclic in the order $(0,+,-)$.
+To examine the numerator, put $\vartheta=\rho L/2=7\pi\rho$,
+$v=\sigma L$ and $K=3\rho^2/2-1$. The three cyclic prefactors in
+\eqref{eq:beta-formula} are $2i\rho\sigma$, $K-i\rho\sigma$ and
+$-K-i\rho\sigma$. Since
+$E_0+E_0^{-1}=2\cos(2\vartheta)$ and
+$E_\pm+E_\pm^{-1}=2\cosh(\pm v+i\vartheta)$, the sum is
+\begin{equation}\label{eq:bracket}
+ 4i\bigl[\rho\sigma\cos(2\vartheta)
+ +K\sinh(v)\sin\vartheta-\rho\sigma\cosh(v)\cos\vartheta\bigr].
+\end{equation}
+By \eqref{eq:rho}, $\vartheta$ modulo $2\pi$ is $\pi(7\rho-8)$, with
+$17/25<7\rho-8<3/4$. Thus $\sin\vartheta>1/2$ and $\cos\vartheta<0$.
+Furthermore $\sigma^2>383/2500$, so $v>2$;
+$\sigma<1/2$ and $\rho\sigma<5/8$; and
+$K>1633/1250>13/10$.
+The real bracket in \eqref{eq:bracket} is therefore larger than
+\[
+ -\frac58+\frac{13}{10}\cdot1\cdot\frac12=\frac1{40}>0.
+\]
+Thus \eqref{eq:beta-formula} cannot vanish.
+\end{proof}
+
+\begin{proposition}\label{prop:coercivity}
+There is an $\eta>0$ such that every real center trajectory with
+$1/2\le\|U(0)\|_2\le1$ satisfies
+\begin{equation}\label{eq:coercivity}
+ \|G\|_{L^2(T,T+P_0)}\ge\eta\qquad\text{for every }T\ge0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Integrating \eqref{eq:G-coefficients} over a full period gives
+\[
+ \int_T^{T+P_0}|G(t)|^2\,dt
+ =P_0\left(\frac{L^2}{4}c^4+2|\beta_1|^2c^2|z|^2
+                 +2|\beta_2|^2|z|^4\right).
+\]
+The cross terms have distinct temporal frequencies, hence their integrals
+vanish for every starting time $T$. By \eqref{eq:center-norm}, the lower
+shell bound gives $c^2+|z|^2\ge1/(4\cdot588L)$. Since
+$c^4+|z|^4\ge(c^2+|z|^2)^2/2$, one may choose
+\[
+ \eta^2=\frac{P_0}{32(588L)^2}\min\{L^2/4,2|\beta_2|^2\}>0.
+\]
+This one constant covers the zero mode, the oscillatory pair, and every
+mixed direction and phase.
+\end{proof}
+
+\section{Uniform nonlinear energy loss and decay}\label{sec:nonlinear}
+We now compare a small nonlinear solution with the quadratic responses on
+one fixed time interval. All observation times will be chosen before the
+smallness threshold and the initial datum.
+
+Small-data global well-posedness in the usual energy class is given by
+\cite[Lemma 3.2]{NX25} with zero Neumann control. The mild realization is the
+one in \cite[Proposition 7 and Appendix A]{CC}: on each finite interval,
+$y=S(\cdot)y_0-\int_0^{\cdot}S(\cdot-s)(yy_x)(s)\,ds$.
+The source's usual energy solution has precisely this meaning; see also
+\cite[Lemma 5.4]{CKN}. Only existence and uniqueness are used from the
+nonlinear well-posedness statement.
+
+For such a real solution $yy_x\in L^1_tH$ on every finite interval, by
+$H^1\hookrightarrow L^\infty$ and time H\"older. We may apply the linear
+identities with this exact force. Since
+$\int_0^L y^2y_x\,dx=0$ for $y\in H^1_0$, we obtain
+\begin{equation}\label{eq:energy-nonlinear}
+ E(t)+\int_0^t|\mathcal By(s)|^2\,ds=E(0),\qquad E(t)=\|y(t)\|_2^2.
+\end{equation}
+The weighted identity becomes
+\[
+ \frac d{dt}\int_0^L xy^2\,dx+3\|y_x\|_2^2
+ =\|y\|_2^2+\frac23\int_0^L y^3\,dx.
+\]
+These polynomial integration-by-parts identities hold for $H^1_0$ by its
+smooth density and the continuous $H^1\to L^\infty$ embedding.
+If $\varepsilon=\|y_0\|_2\le1$, energy and
+$\left|\int y^3\right|\le\sqrt L\,\varepsilon^2\|y_x\|_2$, followed by
+Young's inequality, give for each fixed $T$
+\begin{equation}\label{eq:nonlinear-bound}
+ \|y\|_{X_T}\le D_T\varepsilon.
+\end{equation}
+In particular this estimate requires no initial Sobolev regularity.
+The bilinear estimate
+\begin{equation}\label{eq:product}
+ \|ab_x\|_{L^1(0,T;H)}
+ \le C_L\|a\|_{L^2_tH^1}\|b\|_{L^2_tH^1}
+\end{equation}
+and \eqref{eq:forced-estimate} yield
+\begin{equation}\label{eq:first-expansion}
+ \|y-S(\cdot)y_0\|_{X_T}
+ +\|\mathcal B(y-S(\cdot)y_0)\|_{L^2(0,T)}
+ \le D'_T\varepsilon^2.
+\end{equation}
+
+\begin{proposition}\label{prop:loss}
+There exist $T_*>0$, $\delta>0$ and $\kappa>0$, depending only on $L$,
+such that every real solution with $\|y_0\|_2\le\delta$ satisfies
+\begin{equation}\label{eq:loss}
+ E(T_*)\le E(0)-\kappa E(0)^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The zero datum is immediate from \eqref{eq:energy-nonlinear}; assume
+$\varepsilon>0$. Choose $T_1$ so large that energy and \eqref{eq:stable} give
+$\|\mathcal BS(\cdot)h\|_{L^2(0,T_1)}\ge\frac12\|h\|_2$ for $h\in M^\perp$.
+Choose $\beta>4D'_{T_1}$. The scale $\beta\varepsilon^2$ separates initial
+stable components already visible in the linear approximation from data whose
+first relevant boundary signal is quadratic.
+
+If $\|Qy_0\|_2\ge\beta\varepsilon^2$, then \eqref{eq:first-expansion} gives
+\begin{equation}\label{eq:case-one}
+ \|\mathcal By\|_{L^2(0,T_1)}
+ \ge\tfrac12\|Qy_0\|_2-D'_{T_1}\varepsilon^2
+ \ge\tfrac\beta4\varepsilon^2.
+\end{equation}
+Here $\mathcal BS(t)Py_0=0$.
+
+Suppose instead that $\|Qy_0\|_2<\beta\varepsilon^2$, and put
+\[
+ U(t)=\varepsilon^{-1}S(t)Py_0,\qquad r=\varepsilon^{-2}Qy_0.
+\]
+For $\varepsilon\le1/(2\beta)$, orthogonality gives
+$1/2\le\|U(0)\|_2\le1$ and $\|r\|_2\le\beta$.
+Let $V_t=AV-UU_x$, $V(0)=r$. The response \eqref{eq:response} gives
+\begin{equation}\label{eq:V}
+ V(t)=W(t)+S(t)(r-W(0)).
+\end{equation}
+Both $r$ and $W(0)$ lie in $M^\perp$.
+Let $A_0$ bound $\|W(0)\|_2$ on the shell above.
+Choose a fixed $T_2$ such that
+$K_s e^{-\gamma T_2}(\beta+A_0)\le\eta/2$.
+The boundary trace of the homogeneous term in \eqref{eq:V} on
+$(T_2,T_2+P_0)$ is at most its state norm at $T_2$, by the shifted energy
+identity. Proposition~\ref{prop:coercivity} therefore gives
+\begin{equation}\label{eq:V-trace}
+ \|\mathcal BV\|_{L^2(T_2,T_2+P_0)}\ge\eta/2.
+\end{equation}
+
+Set $T_* =\max\{T_1,T_2+P_0\}$.
+Equations \eqref{eq:first-expansion} and \eqref{eq:forced-estimate} imply
+$\|y-\varepsilon U\|_{X_{T_*}}\le C\varepsilon^2$, uniformly on this case.
+Indeed the omitted linear term is $S(t)Qy_0$ with initial norm at most
+$\beta\varepsilon^2$. Using \eqref{eq:product} on
+$(y-\varepsilon U)y_x+\varepsilon U(y-\varepsilon U)_x$ gives
+\[
+ \|yy_x-\varepsilon^2UU_x\|_{L^1(0,T_*;H)}\le C\varepsilon^3.
+\]
+The function $y-\varepsilon U-\varepsilon^2V$ has zero initial value and this
+force with the opposite sign. Estimate \eqref{eq:forced-estimate} thus bounds
+its boundary trace by $D\varepsilon^3$, for one $D\ge1$ fixed in advance.
+Since $\mathcal BU=0$, \eqref{eq:V-trace} implies, if
+$\varepsilon\le\eta/(4D)$,
+\begin{equation}\label{eq:case-two}
+ \|\mathcal By\|_{L^2(0,T_*)}\ge\eta\varepsilon^2/4.
+\end{equation}
+The possible secular growth of $W_c$ causes no additional estimate: this
+comparison uses a fixed interval, and its observation vanishes exactly.
+
+Choose $\kappa=\min\{\beta^2/16,\eta^2/16\}>0$.
+Choose $\delta$ smaller than the global well-posedness threshold, $1$,
+$1/(2\beta)$, $\eta/(4D)$ and $1/\sqrt{2\kappa}$.
+Every constant and time has now been fixed independently of the initial
+datum. Squaring \eqref{eq:case-one} or \eqref{eq:case-two} and using
+\eqref{eq:energy-nonlinear} proves \eqref{eq:loss}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Energy keeps every shifted trajectory inside the same small ball, and the
+equation is autonomous. Thus $E_n=E(nT_*)$ satisfies
+$E_{n+1}\le E_n(1-\kappa E_n)$.
+If some $E_n=0$, the solution subsequently vanishes by
+\eqref{eq:energy-nonlinear}. Otherwise, since $\kappa\delta^2\le1/2$,
+\[
+ \frac1{E_{n+1}}\ge\frac1{E_n}+\kappa,\qquad
+ E_n\le\frac{E_0}{1+\kappa nE_0}\le\frac1{\kappa n}\quad(n\ge1).
+\]
+For $t\ge2T_*$, $n=\lfloor t/T_*\rfloor\ge t/(2T_*)$ and monotonicity gives
+$E(t)\le2T_*/(\kappa t)$. On $[0,2T_*]$ we have $E(t)\le\delta^2$.
+Hence the theorem holds with
+\[
+ C=\max\{\delta\sqrt{1+2T_*},\sqrt{(2T_*+1)/\kappa}\}.
+\]
+This includes zero data, arbitrarily small nonzero data, and every time
+between the observation windows.
+\end{proof}
+\section*{AI-use statement}
+Substantial OpenAI Codex assistance was used in mathematical exploration,
+calculations, source checking and preparation of this manuscript. Two additional
+fresh-context Codex agents supplied reader and referee reports, followed by an
+author revision. All three agents used the same vendor and shared host filesystem.
+Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{Brezis}
+H. Brezis, \emph{Functional Analysis, Sobolev Spaces and Partial Differential
+Equations}, Springer, 2011. \href{https://doi.org/10.1007/978-0-387-70914-7}{doi:10.1007/978-0-387-70914-7}.
+\bibitem{CC}
+J.-M. Coron and E. Cr\'epeau, Exact boundary controllability of a nonlinear
+KdV equation with critical lengths, \emph{J. Eur. Math. Soc.} \textbf{6}
+(2004), 367--398. \href{https://doi.org/10.4171/JEMS/13}{doi:10.4171/JEMS/13}.
+\bibitem{CKN}
+J.-M. Coron, A. Koenig and H.-M. Nguyen, On the small-time local
+controllability of a KdV system for critical lengths,
+\emph{J. Eur. Math. Soc.} \textbf{26} (2024), no. 4, 1193--1253. \href{https://doi.org/10.4171/JEMS/1307}{doi:10.4171/JEMS/1307}.
+Numbered source locations refer to the \href{https://ems.press/content/serial-article-files/31384}{EMS online-first version}.
+\bibitem{Nguyen}
+H.-M. Nguyen, Decay for the nonlinear KdV equations at critical lengths,
+\emph{J. Differential Equations} \textbf{295} (2021), 249--291.
+\href{https://doi.org/10.1016/j.jde.2021.05.057}{doi:10.1016/j.jde.2021.05.057}.
+Numbered source locations refer to
+\href{https://arxiv.org/abs/2012.08792v1}{arXiv:2012.08792v1} (2020).
+\bibitem{NX25}
+J. Niu and S. Xiang, Small-time local controllability of a KdV system for all
+critical lengths, \href{https://arxiv.org/abs/2501.13640v2}{arXiv:2501.13640v2}
+(2025), version of 16 December 2025.
+\bibitem{NX26}
+J. Niu and S. Xiang, Stability of a Korteweg--de Vries equation close to critical
+lengths, \href{https://arxiv.org/abs/2603.27605v1}{arXiv:2603.27605v1} (2026).
+\bibitem{Rosier}
+L. Rosier, Exact boundary controllability for the Korteweg--de Vries equation
+on a bounded domain, \emph{ESAIM Control Optim. Calc. Var.} \textbf{2}
+(1997), 33--55. \href{https://doi.org/10.1051/cocv:1997102}{doi:10.1051/cocv:1997102}.
+\end{thebibliography}
+\end{document}
