@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "title": "Nonclosedness of an ordinary Sobolev restriction of a magnetic Airy operator",
+  "scope": "For every fixed real c the explicitly ordinary H1_0 restriction is nonclosed. Its spectrum is C under the declared bounded-inverse convention. This does not resolve the all-parameter spectral problem for the distinct natural closed magnetic Dirichlet realization.",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package scope, author/contact, analytic-evidence and build instructions",
+      "bytes": 2120,
+      "sha256": "e54866842c6fd0f9040726f66dabcafc586567e2551ff004504d8cd6385c3fa1"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Literal-domain coverage and explicit natural-closed-realization limitations",
+      "bytes": 3138,
+      "sha256": "4fc1a8e3aca2b8ba705374964a9d9ef2778394fccae13a9258d6d686c8d5de71"
+    },
+    {
+      "path": "paper/domain-correction.pdf",
+      "purpose": "Complete three-page manuscript",
+      "bytes": 215401,
+      "sha256": "8d50e0b08a9189df5460fe2971e1ed6925c01c1d2e096ea970c8c30760800db3"
+    },
+    {
+      "path": "paper/domain-correction.tex",
+      "purpose": "Complete standalone editable manuscript source",
+      "bytes": 10342,
+      "sha256": "e71afa5bff484366e2c2d3a6b2550a058a9a225fb64d30ed6a11d818ecd19efd"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=1in,right=1in,top=0.85in,bottom=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\title{Nonclosedness of an ordinary Sobolev restriction
+of a magnetic Airy operator}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}.}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+An ordinary Sobolev domain need not give a closed realization of a magnetic
+differential expression on an unbounded set. For a half-plane magnetic
+complex Airy expression, we construct an explicit graph limit showing that
+the restriction printed with the ordinary $H^1_0$ domain is nonclosed for
+every fixed real parameter. Under the bounded-inverse definition of the
+resolvent, its spectrum is all of $\mathbb C$; if spectrum is reserved for
+closed operators, the domain fails the prerequisite. This domain correction
+leaves the all-parameter spectral question for the natural closed magnetic
+Dirichlet realization unanswered.
+\end{abstract}
+
+Almog's half-plane magnetic Airy problem \cite{Almog2015} is printed with an
+ordinary $H^1_0$ domain. The spectral problem in Almog--Helffer
+\cite[pp.~1--2 and~6]{AlmogHelffer} concerns a closed magnetic realization, whose
+Sobolev norm uses covariant derivatives. This note distinguishes these domain
+prescriptions by an explicit graph limit for the ordinary restriction.
+
+The construction places increasingly oscillatory functions at large $x$.
+Their $y$ frequency cancels the vector potential near the center, making
+the graph norm grow more slowly than the ordinary $y$ derivative.
+A disjoint sum then converges in graph norm while leaving ordinary $H^1$.
+
+\section{The ordinary Sobolev restriction}
+\label{sec:operator}
+
+Let $\Omega=\{(x,y)\in\mathbb R^2:y>0\}$ and, for a fixed $c\in\mathbb R$, write
+\begin{equation}
+ \mathcal A_c=-\partial_x^2-\left(\partial_y-\frac{ix^2}{2}\right)^2+icy.
+ \label{eq:expression}
+\end{equation}
+All functions are complex-valued. We distinguish this differential expression
+from the operator $T_c$ on $L^2(\Omega)$ with domain
+\begin{equation}
+ D(T_c)=H^1_0(\Omega)\cap
+ \{u\in L^2(\Omega):\mathcal A_cu\in L^2(\Omega)\},
+ \qquad T_cu=\mathcal A_cu.
+ \label{eq:domain}
+\end{equation}
+The expression in the domain is understood distributionally. Here $H^1_0$
+is the closure of $C_c^\infty(\Omega)$ in the \emph{ordinary} Sobolev norm,
+which includes both $\|\partial_xu\|_2$ and $\|\partial_yu\|_2$.
+
+For a possibly nonclosed operator $T$ on a Hilbert space $H$, let
+$\rho(T)$ consist of the numbers $z\in\mathbb C$ for which
+$T-z:D(T)\to H$ is bijective and its inverse is bounded as a map from $H$
+to $H$. We then set
+\begin{equation}
+ \sigma(T)=\mathbb C\setminus\rho(T).
+ \label{eq:resolvent}
+\end{equation}
+If spectrum is defined only for closed operators, the nonclosedness assertion
+below says instead that \eqref{eq:domain} does not meet that definition's
+prerequisite.
+
+\begin{proposition}
+\label{prop:main}
+For every $c\in\mathbb R$, the operator $T_c$ in \eqref{eq:domain} is densely
+defined and nonclosed. With convention \eqref{eq:resolvent},
+$\rho(T_c)=\varnothing$ and $\sigma(T_c)=\mathbb C$.
+\end{proposition}
+
+Density follows from $C_c^\infty(\Omega)\subset D(T_c)$ and the density of test
+functions in $L^2$ \cite[Corollary~4.23]{Brezis}. Every polynomial coefficient
+is bounded on the support of a test function, so the inclusion uses exactly
+the domain in \eqref{eq:domain}. The proof of nonclosedness is given next;
+the resolvent consequence is established in Section~\ref{sec:consequences}.
+
+\section{An explicit graph limit}
+\label{sec:construction}
+
+Choose real functions
+$\phi\in C_c^\infty((-1/4,1/4))$ and
+$\psi\in C_c^\infty((1,2))$ with $\|\phi\|_2=\|\psi\|_2=1$.
+Norms of one-dimensional functions are taken on $\mathbb R$; all other
+norms in this section are on $\Omega$.
+For $R\geq1$ set
+\begin{equation}
+ t=\sqrt R(x-R),\qquad k_R=\frac{R^2}{2},\qquad
+ v_R(x,y)=R^{1/4}\phi(t)\psi(y)e^{ik_Ry}.
+ \label{eq:packet}
+\end{equation}
+These are smooth compactly supported functions in $\Omega$, and
+$\|v_R\|_2=1$ by the substitution $dx=R^{-1/2}dt$.
+The carrier frequency $k_R$ cancels the vector potential at $x=R$.
+More precisely, on the support of $v_R$,
+\begin{equation}
+ q_R(x):=k_R-\frac{x^2}{2}
+       =-\sqrt R\,t-\frac{t^2}{2R},\qquad
+ |q_R(x)|\leq Q\sqrt R,\qquad Q=\frac9{32}.
+ \label{eq:mismatch}
+\end{equation}
+Since $q_R$ is independent of $y$, direct differentiation gives
+\begin{equation}
+\begin{split}
+ \mathcal A_cv_R=R^{1/4}e^{ik_Ry}\bigl[
+ &-R\phi''(t)\psi(y)-\phi(t)\psi''(y)
+       -2iq_R(x)\phi(t)\psi'(y)\\
+ &+q_R(x)^2\phi(t)\psi(y)+icy\phi(t)\psi(y)\bigr].
+\end{split}
+\label{eq:image}
+\end{equation}
+Thus
+\begin{equation}
+ \|T_cv_R\|_2
+ \leq R\|\phi''\|_2+\|\psi''\|_2
+       +2Q\sqrt R\|\psi'\|_2+Q^2R+2|c|
+ \leq C_cR,
+ \label{eq:graphbound}
+\end{equation}
+where one may take
+$C_c=\|\phi''\|_2+\|\psi''\|_2+2Q\|\psi'\|_2+Q^2+2|c|$.
+It is finite for every fixed $c$ and independent of $R$.
+In contrast, the ordinary derivative has norm
+\begin{equation}
+ \|\partial_yv_R\|_2^2
+ =\|\psi'+ik_R\psi\|_2^2
+ =\|\psi'\|_2^2+\frac{R^4}{4}.
+ \label{eq:ordinary}
+\end{equation}
+The last equality uses the reality of $\psi$ and $\psi'$, which makes the
+cross term zero.
+
+Now let $R_n=4^n$ and $a_n=R_n^{-3/2}$ for $n\geq1$, and put
+\begin{equation}
+ u_N=\sum_{n=1}^N a_nv_{R_n},\qquad
+ u=\sum_{n=1}^\infty a_nv_{R_n},\qquad
+ f_c=\sum_{n=1}^\infty a_nT_cv_{R_n}.
+ \label{eq:series}
+\end{equation}
+The $x$ support of $v_{R_n}$ lies in
+$I_n=(R_n-1/(4\sqrt{R_n}),R_n+1/(4\sqrt{R_n}))$.
+These intervals are pairwise disjoint: successive centers are separated by
+$3R_n$, whereas the sum of the two half-widths is $3/(8\sqrt{R_n})$.
+Derivatives and multiplication by the coefficients of $\mathcal A_c$ do not
+enlarge support, so the images in \eqref{eq:series} are disjoint as well.
+
+Every compact subset of $\Omega$ meets only finitely many of these supports.
+The two infinite sums therefore define actual locally smooth functions.
+Disjointness and \eqref{eq:graphbound} show that they belong to $L^2(\Omega)$,
+with the explicit tails
+\begin{align}
+ \|u-u_N\|_2^2
+ &=\sum_{n>N}4^{-3n}
+   =\frac{4^{-3(N+1)}}{1-4^{-3}}\longrightarrow0,
+ \label{eq:utail}\\
+ \|f_c-T_cu_N\|_2^2
+ &\leq C_c^2\sum_{n>N}4^{-n}
+   =\frac{C_c^2\,4^{-(N+1)}}{1-4^{-1}}\longrightarrow0.
+ \label{eq:ftail}
+\end{align}
+The squared-norm identities for the infinite sums follow from monotone
+convergence applied to the nonnegative disjoint terms.
+Local finiteness also gives $\mathcal A_cu=f_c$ distributionally: a compactly
+supported test function sees only finitely many terms of \eqref{eq:series}.
+
+Nevertheless $u\notin H^1(\Omega)$. Indeed, if $g\in L^2(\Omega)$ were its
+ordinary weak $y$ derivative, then on the open strip $I_n\times(0,\infty)$
+the weak derivative identity would give
+$g=a_n\partial_yv_{R_n}$ almost everywhere. Uniqueness here is the usual
+uniqueness of a locally integrable distribution
+\cite[Corollary~4.24]{Brezis}.
+For every $M\geq1$, \eqref{eq:ordinary} would then imply
+\begin{equation}
+ \|g\|_2^2\geq
+ \sum_{n=1}^M a_n^2\|\partial_yv_{R_n}\|_2^2
+ \geq\frac14\sum_{n=1}^M R_n
+ \geq\frac{4^M}{4},
+ \label{eq:divergence}
+\end{equation}
+a contradiction. Thus $u\notin D(T_c)$, although
+$u_N\to u$ and $T_cu_N\to f_c$ strongly in $L^2$.
+Since every $u_N$ belongs to $C_c^\infty(\Omega)\subset D(T_c)$, this proves
+that the graph is not closed. The functions are supported in $1<y<2$; the
+failure occurs at spatial infinity, away from the boundary.
+
+\section{The resolvent and the closed magnetic realization}
+\label{sec:consequences}
+
+For completeness, a bounded everywhere-defined inverse of a bijective shift
+forces an operator to be closed. To see this, suppose $B=(T-z)^{-1}:H\to H$
+has these properties, and take $w_j\in D(T)$ with
+$w_j\to w$ and $Tw_j\to h$ in $H$. Boundedness gives
+\[
+ w_j=B(Tw_j-zw_j)\longrightarrow B(h-zw).
+\]
+Hence $w=B(h-zw)\in D(T)$ and $Tw=h$.
+Applied to the nonclosed $T_c$, this proves $\rho(T_c)=\varnothing$ under
+\eqref{eq:resolvent}, completing the proof of Proposition~\ref{prop:main}.
+The statement $\sigma(T_c)=\mathbb C$ does not assert that every complex
+number is an eigenvalue.
+
+The domain distinction is important for interpreting this conclusion.
+The closed realization discussed in \cite[pp.~6 and~12,
+equations~(2.3), (2.4), and~(2.24)]{AlmogHelffer} is defined using the
+magnetic space $H^1_{0,A}(\Omega)$, the closure of $C_c^\infty(\Omega)$ for
+the norm
+\[
+ \left(\|u\|_2^2+\|\partial_xu\|_2^2+
+ \left\|\left(\partial_y-\frac{ix^2}{2}\right)u\right\|_2^2\right)^{1/2}.
+\]
+For $c\ne0$, its form domain also requires $y^{1/2}u\in L^2(\Omega)$;
+the operator domain is then obtained by requiring the distributional
+expression to lie in $L^2$. This prescription uses the covariant derivative
+rather than the ordinary $\partial_y$ norm in \eqref{eq:ordinary}.
+
+The result above concerns only the ordinary restriction \eqref{eq:domain},
+which is nonclosed. It identifies a defect in that printed domain, or gives
+the convention-dependent spectrum stated in Proposition~\ref{prop:main}.
+It provides no conclusion about spectral nonemptiness, eigenvalues, or a
+spectral threshold for the distinct natural closed magnetic
+Dirichlet realization. That all-parameter spectral question is left
+unanswered by this note.
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with the mathematical construction, source checks,
+writing and two draft reviews. These AI reviews do not constitute independent
+human peer review.
+
+\begin{thebibliography}{9}
+\bibitem{Almog2015}
+Y.~Almog, \emph{Magnetic Schr\"odinger operator}, AIM problem sheet,
+2015, p.~1.
+\href{https://nsa.fjfi.cvut.cz/problems/04_AIM_2015/2015-02/2015-02_AIM_Almog_2.pdf}{AIM problem sheet}.
+
+\bibitem{AlmogHelffer}
+Y.~Almog and B.~Helffer, \emph{On the spectrum of non-selfadjoint
+Schr\"odinger operators with compact resolvent},
+\href{https://arxiv.org/abs/1410.5122v1}{arXiv:1410.5122v1}, 2014.
+
+\bibitem{Brezis}
+H.~Brezis, \emph{Functional Analysis, Sobolev Spaces and Partial Differential
+Equations}, Universitext, Springer, 2011.
+\href{https://doi.org/10.1007/978-0-387-70914-7}{doi:10.1007/978-0-387-70914-7}.
+\end{thebibliography}
+\end{document}
