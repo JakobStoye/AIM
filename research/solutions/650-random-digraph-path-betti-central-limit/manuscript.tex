@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Q}{\mathbb Q}
+\title{A central limit theorem for the first path Betti number of a random digraph}
+\author{Kaiwen Jin\thanks{\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove a central limit theorem for the first non-regular path Betti number of a random digraph with independent ordered edges of probability $p_n$, in the full range $np_n\to\infty$ and $n^{2/3}p_n\to0$. This establishes Chaplin's Conjecture B.2. The variance is asymptotic to $n(n-1)p_n(1-p_n)$. The proof compares centered Betti numbers with the edge count: a monotone family of short two-chain generators controls the variance of the boundary rank, while a component estimate handles graphs that need not be connected.
+\end{abstract}
+
+\section{The model and the result}
+
+Path homology records directed paths and the relations among them. For a digraph $G$ on $[n]$, let $\Lambda_k$ be the vector space over $\Q$ with basis all vertex sequences $[v_0,\ldots,v_k]$, including sequences with repeated vertices. Its boundary is
+\[
+ \partial[v_0,\ldots,v_k]
+ =\sum_{i=0}^k(-1)^i[v_0,\ldots,\widehat v_i,\ldots,v_k].
+\]
+Let $A_k$ be spanned by sequences whose successive directed edges are present in $G$, and set
+\[
+ \Omega_0=A_0,\qquad
+ \Omega_k=A_k\cap\partial^{-1}(A_{k-1})\quad(k\ge1).
+\]
+We use the non-regular convention: no diagonal term is discarded. In particular,
+$\partial[a,b,a]=[b,a]-[a,a]+[a,b]$, so a single reciprocal path $[a,b,a]$ is not in $\Omega_2$ when the graph has no loops. The first path Betti number is
+\[
+ B(G)=\dim_{\Q}\frac{\ker(\partial:\Omega_1\to\Omega_0)}{\partial\Omega_2}.
+\]
+
+Let $G_n$ be the loop-free random digraph in which each ordered edge $(u,v)$, $u\ne v$, is present independently with probability $p_n$. The two opposite orientations are independent and may both occur. Chaplin studied this model and conjectured the normal limit below in the indicated density range \cite[Conjecture B.2]{chaplin}.
+
+\begin{theorem}\label{thm:main}
+For every sequence $(p_n)$ in $[0,1]$ satisfying
+\begin{equation}\label{eq:window}
+ np_n\longrightarrow\infty,\qquad n^{2/3}p_n\longrightarrow0,
+\end{equation}
+write $B_n=B(G_n)$. Then
+\begin{equation}\label{eq:result}
+ \Var B_n\sim n(n-1)p_n(1-p_n),\qquad
+ \frac{B_n-\E B_n}{\sqrt{\Var B_n}}
+ \xrightarrow{\ d\ }\mathcal N(0,1).
+\end{equation}
+In particular, $\Var B_n>0$ for all sufficiently large $n$.
+\end{theorem}
+
+Here $\E B_n$ and $\Var B_n$ are the actual expectation and variance under the random digraph law, and $\mathcal N(0,1)$ is the real normal law with mean zero and variance one. No monotonicity or power-law form is imposed on $p_n$.
+
+The edge count will supply the leading fluctuations. Let $M(G)$ be the number of directed edges, $C(G)$ the number of weak components including isolated vertices, and $R(G)=\dim_{\Q}\partial\Omega_2(G)$. The edge incidence map sends $[u,v]$ to $[v]-[u]$. Its image consists of vertex vectors whose sum on each weak component is zero: signed paths in a spanning tree generate that subspace. Its rank is therefore $n-C(G)$. Since $\Omega_1=A_1$ and $\partial_1\partial_2=0$, rank-nullity gives the exact identity
+\begin{equation}\label{eq:identity}
+ B(G)=M(G)-n+C(G)-R(G).
+\end{equation}
+We will show that the last two terms have negligible variance relative to the edge count. Their expectations need not be negligible at its standard-deviation scale. Also, $np_n\to\infty$ does not require the graph to be connected, so we retain the component count throughout.
+
+\section{The variance of the boundary rank}
+
+We first record the variance inequality used for both correction terms. For independent Bernoulli$(p)$ variables $X_1,\ldots,X_N$ and a real function $f$, put
+\[
+ \Delta_i f=f(X_1,\ldots,1,\ldots,X_N)
+              -f(X_1,\ldots,0,\ldots,X_N).
+\]
+Then
+\begin{equation}\label{eq:tensor}
+ \Var f\le p(1-p)\sum_{i=1}^N\E(\Delta_i f)^2,
+\end{equation}
+where each expectation on the right is over the other coordinates. Indeed, let $F_i=\E[f\mid X_1,\ldots,X_i]$. The differences $F_i-F_{i-1}$ are orthogonal and sum to $f-\E f$. Conditional on the first $i-1$ coordinates, the variance of $F_i$ is $p(1-p)$ times the squared difference of its two possible conditional values. That difference is the conditional expectation over the future coordinates of $\Delta_i f$. Jensen's inequality and summation prove \eqref{eq:tensor}. These expectations are finite sums.
+
+\begin{lemma}\label{lem:generators}
+For any loop-free digraph, $\Omega_2$ is spanned by the following chains:
+\begin{enumerate}
+\item $[a,b,c]$, for distinct $a,b,c$ with $a\to b$, $b\to c$, $a\to c$;
+\item $[a,b,c]-[a,d,c]$, for distinct $a,b,c,d$ with $a\to b$, $b\to c$, $a\to d$, $d\to c$;
+\item $[a,b,a]-[a,d,a]$, for distinct $a,b,d$ with $a\leftrightarrow b$ and $a\leftrightarrow d$.
+\end{enumerate}
+The second type is included whether or not $a\to c$ is present.
+\end{lemma}
+
+\begin{proof}
+For an allowed two-path,
+\begin{equation}\label{eq:two-boundary}
+ \partial[a,b,c]=[b,c]-[a,c]+[a,b].
+\end{equation}
+The first and last terms are already allowed. Group the coefficients of a two-chain by the ordered endpoint pair $(a,c)$. If $a\to c$ is present, there is no condition on that group, and its basis paths are of the first type. If it is absent, including $a=c$, the coefficient of $[a,c]$ must vanish; the coefficients in this group must sum to zero. Such a group is spanned by differences of two basis paths. Distinct endpoints give the second type, and equal endpoints give the third. All listed chains have allowed boundary, so they span $\Omega_2$. This also explains why single reciprocal paths cannot replace the third type. The corresponding distinction between regular and non-regular generators is discussed in \cite[Section 3.3]{chaplin}.
+\end{proof}
+
+Fix a directed edge $e=(u,v)$ and let $G^-$ and $G^+$ be the same graph with that edge forced absent and present. Compare boundary images inside the fixed vector space spanned by all non-loop ordered pairs. Every generator of Lemma~\ref{lem:generators} present in $G^-$ remains present in $G^+$. Thus the rank increment is nonnegative and is at most the number of new generators. Let $T_e,S_e,J_e$ count the three listed types whose required edge sets contain $e$ and whose other edges are present. Orderings are counted exactly as listed in the lemma; the family may be linearly dependent. We have
+\begin{equation}\label{eq:rank-increment}
+ 0\le R(G^+)-R(G^-)\le T_e+S_e+J_e.
+\end{equation}
+In a triangle, the required edge set includes the shortcut, so a new triangle caused by adding only its shortcut is counted as well.
+
+\begin{lemma}\label{lem:rooted}
+There is an absolute constant $K$ such that, with $e$ forced present and all other directed edges independent Bernoulli$(p)$,
+\begin{equation}\label{eq:rooted}
+ \E(T_e+S_e+J_e)^2\le K(\lambda+\lambda^2),
+ \qquad \lambda=np^2+n^2p^3.
+\end{equation}
+The constant is independent of $n$, $p$ and the edge $e$.
+\end{lemma}
+
+\begin{proof}
+A rooted triangle has one free vertex, three possible positions for the root, and two remaining required directed edges. Two such triangles with different free vertices require four distinct remaining edges; with the same free vertex their union requires at least two. Hence
+\begin{equation}\label{eq:triangles}
+ \E T_e^2\le9np^2+9n^2p^4.
+\end{equation}
+
+Call the second type a diamond. A rooted diamond has two ordered free vertices, four root positions and three remaining required edges. For ordered pairs of diamonds, separate the cases of two, one or zero shared free vertices. There are at most $32n^2$, $64n^3$ and $16n^4$ such pairs, respectively: for the first diamond there are at most $4n^2$ choices, and for the second there are at most $8$, $16n$ and $4n^2$ choices in the three cases.
+
+With two shared free vertices, the union requires at least three non-root edges. With one shared free vertex $w$, each undirected support is a simple four-cycle containing $\{u,v\}$. On the common vertices $u,v,w$, it has the root edge and at most one other edge, since a four-cycle contains no triangle. Thus the motifs share at most one directed edge besides the root and require at least five non-root edges. With no shared free vertices, all six remaining edges are distinct. A reverse orientation is a different random coordinate. We obtain
+\begin{equation}\label{eq:diamonds}
+ \E S_e^2\le32n^2p^3+64n^3p^5+16n^4p^6.
+\end{equation}
+
+For the third type, denote the directed-edge indicators by $X_{ij}$ and put
+\[
+ D_e=\sum_{w\notin\{u,v\}}
+       (X_{uw}X_{wu}+X_{vw}X_{wv}).
+\]
+Its $2(n-2)$ summands use disjoint edge coordinates and are independent Bernoulli$(p^2)$. Also, $D_e$ is independent of $X_{vu}$. A generator containing $e$ has base $u$ or $v$, and there are two orders of its middle vertices, so $J_e=2X_{vu}D_e$. The binomial second moment gives
+\begin{equation}\label{eq:reciprocal}
+ \E J_e^2\le8np^3+16n^2p^5.
+\end{equation}
+
+Now set $a=np^2$ and $b=n^2p^3$. The powers $n^2p^4,n^3p^5,n^4p^6$ equal $a^2,ab,b^2$, while $np^3\le a$ and $n^2p^5\le a^2$. Combining \eqref{eq:triangles}--\eqref{eq:reciprocal} with $(x+y+z)^2\le3(x^2+y^2+z^2)$ proves \eqref{eq:rooted}. No independence between the three counts is required.
+\end{proof}
+
+Write $R_n=R(G_n)$ and set
+\begin{equation}\label{eq:scale}
+ N_n=n(n-1),\qquad s_n^2=N_np_n(1-p_n),\qquad
+ \lambda_n=np_n^2+n^2p_n^3.
+\end{equation}
+The upper condition in \eqref{eq:window} gives
+$n^2p_n^3=(n^{2/3}p_n)^3\to0$ and
+$np_n^2=n^{-1/3}(n^{2/3}p_n)^2\to0$.
+Equations~\eqref{eq:tensor}, \eqref{eq:rank-increment} and \eqref{eq:rooted} therefore imply
+\begin{equation}\label{eq:rank-var}
+ \Var R_n\le s_n^2K(\lambda_n+\lambda_n^2)=o(s_n^2).
+\end{equation}
+
+\section{Weak components}
+
+Let $C_n=C(G_n)$. Forgetting orientations gives an undirected graph $H\sim G(n,q)$ with independent unordered edges, where
+\[
+ q=1-(1-p)^2=2p-p^2,\qquad d=nq.
+\]
+We use this notation with $p=p_n$. Under \eqref{eq:window}, $q\to0$ and $d\to\infty$.
+
+For a fixed vertex $u$, let $\mathcal C_H(u)$ be its component. If it has $k$ vertices, with $2\le k\le n/2$, choose the other $k-1$ vertices and a spanning tree on them, and require the $k(n-k)$ cut edges to be absent. Rooting a tree at $u$ encodes it by the parent chosen for each other vertex, so at most $k^{k-1}$ trees are possible. The tree and cut use disjoint edges. Consequently
+\begin{align}
+ \mathbb P(|\mathcal C_H(u)|=k)
+ &\le \binom{n-1}{k-1}k^{k-1}q^{k-1}(1-q)^{k(n-k)}\notag\\
+ &\le e(ed)^{k-1}e^{-dk/2}.
+ \label{eq:component-size}
+\end{align}
+Here $\binom{n-1}{k-1}\le(en/(k-1))^{k-1}$,
+$(k/(k-1))^{k-1}\le e$ and $n-k\ge n/2$.
+For $k=1$, the probability is $(1-q)^{n-1}\le e e^{-d}$. The geometric ratio $ed e^{-d/2}$ tends to zero and is eventually at most $1/2$, so
+\begin{equation}\label{eq:small-component}
+ \mathbb P(|\mathcal C_H(u)|\le n/2)\le2e e^{-d/2}\longrightarrow0.
+\end{equation}
+Only a fixed-vertex component estimate is asserted; the graph may still be disconnected.
+
+Adding a directed edge $e=(u,v)$ changes the weak-component count by $-1$ if its endpoints were disconnected, and by zero otherwise. In the weak graph obtained with this directed edge forced absent, the reverse edge still gives the unordered pair $\{u,v\}$ probability $p$. Remove that unordered pair as well to obtain $H^-$. All other pairs have probability $q$, so $H^-$ has the law of $H$ conditioned on $\{u,v\}$ being absent. The forced-directed-edge-absent weak graph contains $H^-$.
+
+If $u,v$ are disconnected, one of their components has size at most $n/2$. Removing the unordered pair can only make components smaller. By a union bound, exchangeability of the unconditioned $H$, and
+$\mathbb P(A\mid\{u,v\}\text{ absent})\le\mathbb P(A)/(1-q)$,
+\begin{equation}\label{eq:component-increment}
+ \E(\Delta_e C)^2
+ \le\frac{2}{1-q}\mathbb P(|\mathcal C_H(u)|\le n/2)
+ \longrightarrow0.
+\end{equation}
+This bound is uniform over the directed edge. Since $q\to0$, applying \eqref{eq:tensor} to all $N_n$ edge coordinates yields
+\begin{equation}\label{eq:component-var}
+ \Var C_n=o(s_n^2).
+\end{equation}
+
+\section{The normal limit}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $M_n=M(G_n)$ and $Z_n=C_n-R_n$. From \eqref{eq:rank-var} and \eqref{eq:component-var},
+\[
+ \Var Z_n\le2\Var C_n+2\Var R_n=o(s_n^2).
+\]
+The exact identity \eqref{eq:identity}, with true centering, gives
+\begin{equation}\label{eq:L2}
+ \left\|\frac{(B_n-\E B_n)-(M_n-\E M_n)}{s_n}\right\|_{L^2}
+ =\frac{\sqrt{\Var Z_n}}{s_n}\longrightarrow0.
+\end{equation}
+Since $M_n$ is binomial with parameters $N_n,p_n$, its variance is $s_n^2$. The reverse triangle inequality in $L^2$ implies
+\begin{equation}\label{eq:variance-ratio}
+ r_n:=\frac{\sqrt{\Var B_n}}{s_n}\longrightarrow1.
+\end{equation}
+Here $s_n\to\infty$ because $p_n\to0$ and $np_n\to\infty$. Thus $s_n$ and the actual standard deviation are positive for all sufficiently large $n$.
+
+For completeness, consider the centered binomial characteristic function directly. Fix $t\in\mathbb R$ and put $\theta=t/s_n$. Its logarithm is
+\[
+ N_n\log(1-p_n+p_ne^{i\theta})-iN_np_n\theta.
+\]
+For $p_n\le1/4$, let $h(\theta)=1-p_n+p_ne^{i\theta}$ and choose the logarithm equal to zero at $\theta=0$. The image is in the right half-plane and $|h|\ge1/2$. The first two derivatives of $\log h$ at zero are $ip_n$ and $-p_n(1-p_n)$. Moreover
+\[
+ (\log h)'''=\frac{h'''}h-\frac{3h''h'}{h^2}+\frac{2(h')^3}{h^3},
+ \qquad |(\log h)'''|\le2p_n+12p_n^2+16p_n^3\le6p_n.
+\]
+Taylor's formula therefore gives
+\begin{equation}\label{eq:binomial-cf}
+ N_n\log(1-p_n+p_ne^{i\theta})-iN_np_n\theta
+ =-\frac{t^2}{2}+O\!\left(\frac{N_np_n|t|^3}{s_n^3}\right)
+ \longrightarrow-\frac{t^2}{2},
+\end{equation}
+as $N_np_n/s_n^3=1/((1-p_n)s_n)\to0$. The remainder constant is absolute.
+
+Write $X_n=(M_n-\E M_n)/s_n$ and $Y_n=(B_n-\E B_n)/s_n$. By $|e^{ix}-e^{iy}|\le|x-y|$ and \eqref{eq:L2},
+\[
+ |\E e^{itY_n}-\E e^{itX_n}|
+ \le|t|\E|Y_n-X_n|\longrightarrow0.
+\]
+Also $\E|Y_n|\le\sqrt{\E Y_n^2}=r_n$, so
+\[
+ |\E e^{itY_n/r_n}-\E e^{itY_n}|
+ \le|t|\,|1/r_n-1|\,\E|Y_n|
+ \le|t|\,|1-r_n|\longrightarrow0.
+\]
+Hence the characteristic function of the actual variance-standardized Betti number tends at every real $t$ to $e^{-t^2/2}$, the characteristic function of $\mathcal N(0,1)$ \cite[Proposition 5.11.1]{chatterjee}. L\'evy's continuity theorem states that probability laws on the real Borel line converge weakly when their characteristic functions converge pointwise to the characteristic function of the proposed limiting probability law \cite[Theorem 1.1]{doebler}. It applies here and proves \eqref{eq:result}.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{chaplin}
+T. Chaplin, \emph{First Betti number of the path homology of random directed graphs}, Journal of Applied and Computational Topology \textbf{8} (2024), 1503--1549.
+\href{https://doi.org/10.1007/s41468-022-00108-3}{doi:10.1007/s41468-022-00108-3}.
+
+\bibitem{chatterjee}
+S. Chatterjee, \emph{Stats 310A (Math 230A) Lecture notes}, Section 5.11, Proposition 5.11.1, pp.~53--54. Author-hosted lecture notes, accessed 14 October 2026.
+\url{https://souravchatterjee.su.domains/stat310a-lecture-notes.pdf}.
+
+\bibitem{doebler}
+C. D\"obler, \emph{A short proof of L\'evy's continuity theorem without using tightness}, arXiv:2111.01603v1 (2021), Theorem 1.1.
+\url{https://arxiv.org/abs/2111.01603v1}.
+\end{thebibliography}
+
+\paragraph{AI-use statement.}
+AI tools assisted proof development, algebraic checks, manuscript drafting, and manuscript review. The mathematical claims are supported by the argument and cited sources presented here.
+\end{document}
