@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "package_version": "2026-10-14-v1",
+  "title": "A degree-three counterexample for the normalized upper Laplacian",
+  "contribution": "analytic counterexample claim to both assertions in AIM643",
+  "problem_id": "643",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/643-low-degree-simplicial-zero-spectrum.md",
+  "author": "Kaiwen Jin",
+  "manuscript_contact": "yui.ui.siki@gmail.com",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Ignore local manuscript build products",
+      "sha256": "8276c7cb448d1026b586c5920288ea9a8ebe57f35552af6be71b57c868c61ec6",
+      "bytes": 46
+    },
+    {
+      "path": "AI_REVIEW.md",
+      "purpose": "New manuscript-only AI referee report",
+      "sha256": "856a01a04041eb0d39114d69916166b47aa91e5af4ce6fd805fd460e63fc60e2",
+      "bytes": 12714
+    },
+    {
+      "path": "README.md",
+      "purpose": "Public package entry point and rebuild instructions",
+      "sha256": "5f6aaf9e7bdc8764f44bede49916c7c3c632b935e767b7761604dce945ed5f76",
+      "bytes": 2419
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full target-to-manuscript comparison",
+      "sha256": "2e972c2a47b9d18590d93832e09d47ef3ddf25022440e57d24d5e5b68e9fc3ea",
+      "bytes": 3338
+    },
+    {
+      "path": "paper/degree_three_counterexample.pdf",
+      "purpose": "Six-page final manuscript PDF",
+      "sha256": "04ab95ce34fe237151970387cc21295d7c3f9d2f438ed2cdf6792f701a4c1572",
+      "bytes": 282266
+    },
+    {
+      "path": "paper/degree_three_counterexample.tex",
+      "purpose": "Standalone editable final manuscript",
+      "sha256": "f5180d8c41ce247f208d06ce9083e5d857766605330a93112c76b37d64a59404",
+      "bytes": 17409
+    }
+  ],
+  "checksum_scope": "SHA256SUMS also covers this manifest; neither checksum file nor manifest hashes itself",
+  "proof_evidence": "Complete analytic argument in manuscript; no computational premise",
+  "review_scope": "New same-vendor fresh-context manuscript-only AI review; shared workspace, no enforced filesystem isolation; no human/formal/novelty certification"
+}

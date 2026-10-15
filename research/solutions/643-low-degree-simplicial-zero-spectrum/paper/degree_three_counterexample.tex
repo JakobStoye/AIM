@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A degree-three counterexample for the normalized upper Laplacian},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\degf}{\operatorname{deg}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\begin{document}
+
+\title{A degree-three counterexample for the normalized upper Laplacian}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}
+\date{14 October 2026}
+\maketitle
+
+\begin{abstract}
+Does a low codimension-one degree force zero into the spectrum of the
+normalized upper Laplacian of an infinite simplicial complex? We construct a
+countable pure three-dimensional complex with maximum triangle degree three
+whose upper Laplacian has spectrum bounded away from zero on the full
+degree-weighted triangle cochain space. This disproves both assertions in
+AIM Problem 643, including the stronger claim that degree at most the
+dimension forces a nonzero square-summable kernel. Every edge of the example
+has infinite triangle incidence. The proof uses disjoint square-summable
+fillings to control selected triangle values, then the gradient estimate on
+a binary tree to control all remaining coordinates.
+\end{abstract}
+
+\section{The endpoint questions}\label{sec:introduction}
+
+The upper simplicial Laplacian measures the failure of a cochain to be a
+cocycle. Its normalized form also arises in the expected signed particle
+counts of simplicial branching random walks. Rosenthal computes the spectral
+measure on regular arboreal complexes and asks whether the corresponding
+endpoint eigenvalue persists for general low-degree complexes
+\cite[Theorem 1.1 and Conjecture 4.3]{Rosenthal}.
+
+We use the precise formulation in AIM Problem 643~\cite{AIM643}.
+For a nonempty pure $d$-dimensional simplicial complex $X$, with $d\geq2$,
+let $\degf(F)$ be the number of $d$-simplices containing a $(d-1)$-simplex
+$F$, and set $D=\sup_F\degf(F)$. The full cochain spaces are
+\[
+ H=\ell^2(X^{d-1},\degf),\qquad K=\ell^2(X^d),\qquad
+ \norm{f}_H^2=\sum_F\degf(F)|f(F)|^2,
+\]
+using one orientation per simplex and counting measure in $K$. The usual
+coboundary is
+\[
+ (\delta f)([x_0,\ldots,x_d])
+   =\sum_{i=0}^d(-1)^if([x_0,\ldots,\widehat x_i,\ldots,x_d]),
+ \qquad L=\delta^*\delta.
+\]
+The two assertions are that $D\leq d+1$ forces $0\in\Spec(L)$, and that
+$D\leq d$ forces $\ker L\ne\{0\}$. The complex may be infinite, and no
+finite-incidence condition is imposed on lower-dimensional faces.
+
+\begin{theorem}\label{thm:main}
+There exists a countable nonempty pure three-dimensional simplicial complex
+$X$ with one triangle of degree one and every other triangle of degree three.
+Every edge belongs to infinitely many triangles. For its full spaces
+$H=\ell^2(X^2,\degf)$ and $K=\ell^2(X^3)$, the usual coboundary satisfies
+\[
+ \norm{f}_H^2\leq C\norm{\delta f}_K^2\quad(f\in H),\qquad
+ C=12+\frac{3(1+2\sqrt3)^2}{(\sqrt2-1)^2}.
+\]
+Consequently
+\[
+ \Spec(\delta^*\delta)\subset[C^{-1},4],\qquad
+ \ker(\delta^*\delta)=\{0\}.
+\]
+\end{theorem}
+
+Here $D=3\leq d+1=4$, while zero is absent from the spectrum. Also
+$D=3\leq d=3$, while the square-summable kernel is zero. Thus the same
+example disproves each universal assertion separately.
+
+The construction repeatedly attaches copies of an apex triangle and a
+binary tree. A unit flux splits equally at each tree vertex, giving a
+square-summable filling of the apex triangle. The fresh vertices make these
+fillings orthogonal across copies. Their pairings with $\delta f$ control
+the triangle values used as attachment targets. The body coboundary equations
+then express the remaining triangle values through tree gradients, which
+have a uniform lower bound. This last step gives control of the full cochain
+space rather than only the target coordinates.
+
+\section{Construction and face degrees}\label{sec:construction}
+
+Let $W=\{0,1\}^{<\omega}$ be the finite binary words, including the empty
+word $o$. The rooted binary tree $G$ has oriented edges $w\to ws$, where
+$s\in\{0,1\}$. Its root has degree two and every other vertex has degree
+three; every vertex has two children. Write $|w|$ for word length.
+
+We first describe one part of the construction. Given an ordered triangle
+$A=(a,b,c)$ and a fresh copy of $G$, with vertices $v_w$, insert
+\begin{equation}\label{eq:tetrahedra}
+ [a,b,v_w,v_{ws}],\quad [b,c,v_w,v_{ws}],\quad
+ [c,a,v_w,v_{ws}]
+ \qquad(w\in W,\ s\in\{0,1\}),
+\end{equation}
+and the single tetrahedron $[a,b,c,v_o]$. The first three families will be
+called body tetrahedra and the last one the bridge. Each triangle
+$[p,v_w,v_{ws}]$, with $p\in\{a,b,c\}$, is then used as the ordered apex
+triangle of a new copy of this construction. This is repeated at every
+generation.
+
+Here is a precise vertex labeling for the recursion. Set
+\[
+ \mathcal B=\{0,1,2\}\times W\times\{0,1\},
+ \qquad \mathcal I=\mathcal B^{<\omega}.
+\]
+For every $J\in\mathcal I$ and $w\in W$, take a distinct vertex $v_{J,w}$.
+Take three further vertices $r_0,r_1,r_2$, with different tags. Define ordered
+apex triples recursively by
+\begin{equation}\label{eq:recursion}
+ A_{\varnothing}=(r_0,r_1,r_2),\qquad
+ A_{J*(p,w,s)}=(a_{J,p},v_{J,w},v_{J,ws}),
+ \quad A_J=(a_{J,0},a_{J,1},a_{J,2}).
+\end{equation}
+The apex vertices of $J$ come from smaller generations, so they are distinct
+from its fresh vertices $v_{J,w}$; the three apex vertices are distinct by
+induction. Let $X$ be the downward closure of the tetrahedra in
+\eqref{eq:tetrahedra}, using $A_J$ and $v_{J,w}$ for every $J$, together with
+their bridges. No higher-dimensional simplices are added. Thus $X$ is a
+countable, nonempty, pure three-dimensional abstract simplicial complex.
+
+The triangles first appearing in copy $J$ have two forms:
+\begin{align}
+ E(J,p,w,s)&=[a_{J,p},v_{J,w},v_{J,ws}],\label{eq:E}\\
+ V(J,pq,w)&=[a_{J,p},a_{J,q},v_{J,w}],
+       \qquad pq\in\{01,12,20\}.\label{eq:V}
+\end{align}
+The bridge has the additional triangle $F_J=[A_J]$. For $J=\varnothing$ this
+is $F_0=[r_0,r_1,r_2]$; otherwise it is the $E$ triangle specified by the last
+letter of $J$. We use \eqref{eq:E}--\eqref{eq:V} as global triangle
+orientations. An inherited target $F_J$ keeps its existing orientation, as
+prescribed by \eqref{eq:recursion}. The displayed tetrahedra fix their own
+orientations. Other orderings have the usual alternating sign.
+
+\begin{lemma}\label{lem:degrees}
+Every triangle of $X$ has a unique first appearance as $F_0$, $E$, or $V$.
+The tetrahedron sets of different copies are disjoint. Each $E$ triangle is
+the target $F_J$ of exactly one child copy. The triangle $F_0$ has degree one
+and all $E$ and $V$ triangles have degree three. Every edge of $X$ belongs to
+infinitely many triangles.
+\end{lemma}
+\begin{proof}
+A new $E$ or $V$ triangle contains a vertex with the current copy label $J$.
+No smaller-generation copy contains that vertex. New faces in a different
+copy of the same generation have its different label, while their apex
+vertices come from smaller generations. New faces at later generations
+contain later labels. Within one copy, an $E$ triangle has two new vertices
+and a $V$ triangle has one; the apex vertex or edge and tree coordinates
+distinguish them. The only old triangle in a copy is its bridge target.
+The same argument distinguishes tetrahedra: bodies have two new vertices,
+bridges have one, and different tree edges and apex edges distinguish bodies.
+Formula \eqref{eq:recursion} therefore gives a bijection between $E$
+triangles and noninitial copy targets. No $V$ triangle is targeted.
+
+An $E$ triangle has two body cofaces in its birth copy and one bridge coface
+in its child. A $V$ triangle at the tree root has two body cofaces and the
+bridge; away from the root it has three body cofaces. These are all cofaces,
+since a later tetrahedron can contain an old triangle only as its bridge
+target. The initial triangle has only the initial bridge coface.
+
+Every apex edge has the distinct $V$ cofaces indexed by all $w\in W$.
+A tree edge, or an edge joining an apex vertex to a tree vertex, lies in an
+$E$ triangle and hence becomes an apex edge in the corresponding child.
+These exhaust the edge types in $X$, proving the last assertion.
+\end{proof}
+
+\section{Square-summable fillings}\label{sec:fillings}
+
+Put $m(F)=\degf(F)$. Let $H$ be the full space of complex triangle cochains
+with degree-weighted norm, and let $K$ be the counting $\ell^2$ space of
+tetrahedron cochains. Lemma~\ref{lem:degrees} gives
+\begin{equation}\label{eq:Hpartition}
+ \norm{f}_H^2=|f(F_0)|^2+3\sum_E|f(E)|^2+3\sum_V|f(V)|^2.
+\end{equation}
+All sums use one chosen orientation per simplex. Inner products are linear
+in the first variable. On finitely supported cochains, Cauchy--Schwarz on
+the four facets of a tetrahedron gives
+\begin{equation}\label{eq:bounded}
+ \norm{\delta f}_K^2\leq4\sum_Fm(F)|f(F)|^2=4\norm{f}_H^2.
+\end{equation}
+Consequently $\delta$ extends to all $H$ with norm at most two. Continuous
+coordinate evaluations show that its extension is still the usual
+alternating facet sum. Its bounded adjoint is
+\begin{equation}\label{eq:adjoint}
+ (\delta^*h)(F)=\frac1{m(F)}
+     \sum_{T\supset F}\epsilon(T,F)h(T),
+\end{equation}
+where $\epsilon(T,F)$ is the boundary incidence sign. Each sum has at most
+three terms. To verify membership in $H$ without any lower-face assumption,
+pair the right side with finitely supported $f$. The finite rearrangement
+equals $\ip{\delta f}{h}_K$ and is bounded by
+$2\norm{f}_H\norm{h}_K$. Taking $f$ to be finite restrictions of that right
+side shows its $H$ norm is at most $2\norm{h}_K$; density then proves
+\eqref{eq:adjoint}. In particular $L=\delta^*\delta$ is bounded,
+self-adjoint and positive, with $\norm{L}\leq4$.
+
+We next fill the target $F_J$ in its own copy. Fix $J$ temporarily, suppress
+its label, and write $A=[a,b,c]$ and
+$z=[a,b]+[b,c]+[c,a]$. For $N\geq0$, let $c_N$ be the finite tree
+one-chain having coefficient $2^{-n}$ on every edge whose child has depth
+$n\leq N$. With counting norms on graph edges,
+\begin{equation}\label{eq:treeflow}
+ \partial c_N=-[v_o]+2^{-N}\sum_{|w|=N}[v_w],
+ \qquad \norm{c_N}^2=\sum_{n=1}^N2^{-n}=1-2^{-N}.
+\end{equation}
+This includes $c_0=0$. At an interior vertex the incoming coefficient equals
+the sum of the two outgoing coefficients.
+
+For finite chains, use $*$ to concatenate ordered vertices, extending
+bilinearly. Directly,
+\[
+ \partial[p,q,u,v]=[q,u,v]-[p,u,v]+[p,q,v]-[p,q,u].
+\]
+Summing over the three apex cycle edges cancels the first two terms. Also
+$\partial[a,b,c,v_o]=z*[v_o]-A$. Therefore the finite top chain
+$h_{J,N}=-z*c_N-A*[v_o]$, identified with a cochain in $K$, satisfies
+\begin{equation}\label{eq:finitefilling}
+ \partial h_{J,N}=F_J-2^{-N}z*\sum_{|w|=N}[v_w],
+ \qquad \norm{h_{J,N}}_K^2=4-3\,2^{-N}.
+\end{equation}
+Only finite formal boundaries have been used. The tail squared norm after
+depth $N$ is $3\,2^{-N}$, so $h_{J,N}$ converges strongly in $K$ to a
+cochain $h_J$ with $\norm{h_J}_K^2=4$.
+
+The $3\cdot2^N$ leaf triangles in \eqref{eq:finitefilling} are distinct $V$
+triangles of actual final degree three, also when $N=0$. If $\mathbf1_F$
+denotes the cochain supported at $F$ with value one, \eqref{eq:adjoint} gives
+\[
+ \delta^*h_{J,N}=\frac{\mathbf1_{F_J}}{m(F_J)}+r_{J,N},
+ \qquad
+ \norm{r_{J,N}}_H^2
+   =(3\cdot2^N)\,3\left(\frac{2^{-N}}3\right)^2=2^{-N}.
+\]
+The boundedness of $\delta^*$ now proves
+\begin{equation}\label{eq:fillinglimit}
+ \delta^*h_J=\frac{\mathbf1_{F_J}}{m(F_J)},\qquad
+ \norm{h_J}_K^2=4.
+\end{equation}
+Thus no formal boundary at an infinitely incident edge is needed.
+
+\section{A lower bound on the full cochain space}\label{sec:estimate}
+
+The cochains $h_J$ have disjoint tetrahedron supports by
+Lemma~\ref{lem:degrees}. Hence $h_J/2$ form an orthonormal family in $K$.
+For every $f\in H$, \eqref{eq:fillinglimit} gives
+\[
+ \ip{\delta f}{h_J}_K
+   =\ip{f}{\mathbf1_{F_J}/m(F_J)}_H=f(F_J).
+\]
+Subtracting the orthogonal projection onto any finite subfamily from
+$\delta f$ and expanding its squared norm gives the finite Bessel inequality.
+Increasing those finite sets to all $J$, and recalling that the targets are
+exactly $F_0$ and all $E$ triangles, yields
+\begin{align}
+ |f(F_0)|^2+\sum_E|f(E)|^2&\leq4\norm{\delta f}_K^2,
+       \label{eq:targets}\\
+ |f(F_0)|^2+3\sum_E|f(E)|^2&\leq12\norm{\delta f}_K^2.
+       \label{eq:weightedtargets}
+\end{align}
+
+It remains to control the $V$ coordinates. Within each copy, pull tree
+coordinates back along $w\mapsto v_{J,w}$ and write
+\[
+ e_p(w,ws)=f([a_{J,p},v_{J,w},v_{J,ws}]),\qquad
+ g_{pq}(w)=f([a_{J,p},a_{J,q},v_{J,w}]),
+ \quad pq\in\{01,12,20\}.
+\]
+Let $e$ and $g$ denote their counting $\ell^2$ direct sums over all copies
+and indicated apex vertices or edges. The unique first appearances of the
+faces ensure that these are precisely the $E$ and $V$ coordinates, without
+duplication. In particular \eqref{eq:targets} gives
+$\norm{e}\leq2\norm{\delta f}_K$.
+
+Let $y$ be $\delta f$ restricted to body tetrahedra, so
+$\norm{y}\leq\norm{\delta f}_K$. Their alternating boundaries give
+\begin{equation}\label{eq:bodyidentity}
+ y_{pq}(w,ws)=g_{pq}(ws)-g_{pq}(w)+e_q(w,ws)-e_p(w,ws).
+\end{equation}
+For each tree edge, the last three apex differences are the matrix
+\[
+ B=\begin{pmatrix}-1&1&0\\0&-1&1\\1&0&-1\end{pmatrix}
+\]
+applied to $(e_0,e_1,e_2)$. Multiplication gives
+$B^*B=3I-\mathbf{J}_3$, where $\mathbf{J}_3$ is the all-ones matrix. Thus
+$\norm{Bv}^2=3\norm{v}^2-|v_0+v_1+v_2|^2\leq3\norm{v}^2$.
+Taking the direct sum of these matrices in \eqref{eq:bodyidentity}, we obtain
+\begin{equation}\label{eq:gradientupper}
+ \norm{\nabla g}\leq\norm{y}+\norm{Be}
+    \leq(1+2\sqrt3)\norm{\delta f}_K,
+ \qquad (\nabla g)_{pq}(w,ws)=g_{pq}(ws)-g_{pq}(w).
+\end{equation}
+
+For a scalar $\ell^2(W)$ function $q$, index tree edges by their child and
+let $Sq$ and $Tq$ be the child and parent values respectively. Then
+\[
+ \norm{Sq}^2=\norm{q}^2-|q(o)|^2,\qquad
+ \norm{Tq}^2=2\norm{q}^2.
+\]
+The reverse triangle inequality implies
+$\norm{Sq-Tq}\geq(\sqrt2-1)\norm{q}$. The same identities hold on the
+direct sum over all copies and apex edges, with the root terms summed. Hence
+\begin{equation}\label{eq:Vbound}
+ 3\sum_V|f(V)|^2=3\norm{g}^2
+ \leq\frac{3(1+2\sqrt3)^2}{(\sqrt2-1)^2}\norm{\delta f}_K^2.
+\end{equation}
+Combining \eqref{eq:Hpartition}, \eqref{eq:weightedtargets} and
+\eqref{eq:Vbound} proves
+\begin{equation}\label{eq:coercivity}
+ \norm{f}_H^2\leq C\norm{\delta f}_K^2\quad\text{for every }f\in H,
+ \qquad C=12+\frac{3(1+2\sqrt3)^2}{(\sqrt2-1)^2}.
+\end{equation}
+All direct-sum maps above are bounded and all estimates use the actual final
+face degrees. In particular the estimate applies to the whole $H$.
+
+\begin{proof}[Completion of the proof of Theorem~\ref{thm:main}]
+Put $\alpha=C^{-1}$. Equations \eqref{eq:bounded} and \eqref{eq:coercivity}
+give
+\begin{equation}\label{eq:formbounds}
+ \alpha\norm{f}_H^2\leq\ip{Lf}{f}_H\leq4\norm{f}_H^2.
+\end{equation}
+For completeness we verify the resolvent conclusion directly. A bounded
+Hilbert-space operator $T$ satisfying positive lower bounds for both $T$ and
+$T^*$ is invertible: a convergent sequence $Tx_n$ makes $x_n$ Cauchy, so the
+range is closed, and $(\operatorname{ran}T)^\perp=\ker T^*=\{0\}$.
+A closed subspace with zero orthogonal complement is the whole space. Indeed,
+for a proper closed subspace $M$ and $v\notin M$, let
+$\rho=\inf_{m\in M}\norm{v-m}>0$ and choose a minimizing sequence $m_n$,
+with $a_n=\norm{v-m_n}\to\rho$. The parallelogram identity gives
+\[
+ \norm{m_n-m_\ell}^2
+ \leq2(a_n^2-\rho^2)+2(a_\ell^2-\rho^2).
+\]
+It therefore converges to $m\in M$ with $\norm{v-m}=\rho$. Varying $m$ by
+real and imaginary multiples of a vector in $M$ shows that $v-m$ is a
+nonzero vector in $M^\perp$. The lower bound for $T$ also bounds its inverse.
+
+For nonreal $\lambda$, the imaginary part of
+$\ip{(L-\lambda I)f}{f}_H$ gives a lower bound
+$|\operatorname{Im}\lambda|\norm{f}_H$ for
+$\norm{(L-\lambda I)f}_H$, and likewise for its adjoint
+$L-\overline\lambda I$. For real $\lambda<\alpha$, \eqref{eq:formbounds}
+gives the lower bound $\alpha-\lambda$ for $L-\lambda I$ and its adjoint;
+for $\lambda>4$ it gives the bound $\lambda-4$ for $\lambda I-L$.
+The criterion just proved shows that all such $\lambda$ are resolvent
+points. Thus $\Spec(L)\subset[\alpha,4]$ and $\ker L=\{0\}$.
+Lemma~\ref{lem:degrees} supplies all remaining geometric assertions.
+\end{proof}
+
+\begin{thebibliography}{2}
+\bibitem{AIM643}
+MColbrook/AIM problem repository,
+\emph{643. Zero in the upper-Laplacian spectrum of low-degree simplicial
+complexes}, statement at revision \texttt{a153f469},
+\url{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/643-low-degree-simplicial-zero-spectrum.md}.
+\bibitem{Rosenthal}
+R. Rosenthal,
+\emph{Simplicial branching random walks and their applications},
+arXiv:1412.5406v1 (2014),
+\url{https://arxiv.org/abs/1412.5406v1}.
+\end{thebibliography}
+
+\paragraph{AI use.}
+The construction, proof development and manuscript preparation used
+OpenAI Codex. Natural-language checking was also AI-assisted. Independent
+mathematical review is requested.
+
+\end{document}
