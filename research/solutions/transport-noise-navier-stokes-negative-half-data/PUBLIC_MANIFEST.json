@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "title": "Transport-noise Navier--Stokes with negative-half Besov data",
+  "target": {
+    "problem_id": "457",
+    "repository": "MColbrook/AIM",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "statement": "problems/457-stochastic-navier-stokes-negative-half-critical-data.md"
+  },
+  "evidence_status": "Solution claimed; independent mathematical review pending",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Reader entry, theorem scope, build instructions and factual AI disclosure",
+      "sha256": "eb75dcf1551234df9c33b9319b735115dca8c2a622f02a4645e66e8ccc638c24",
+      "bytes": 2571
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Comparison with the immutable original written target",
+      "sha256": "f1f3968d3357ef3853795a056446ea474d96094ad567b1c76cb52e360dd3ba6f",
+      "bytes": 3075
+    },
+    {
+      "path": "paper/paper.tex",
+      "purpose": "Complete editable manuscript, with all proof text and bibliography",
+      "sha256": "cb8e50bc344de8f60caae26979f66a78e79532c45a727dc73bde00b750a9f156",
+      "bytes": 27357
+    },
+    {
+      "path": "paper/paper.pdf",
+      "purpose": "Complete rendered manuscript",
+      "sha256": "a40e93a82e172e5ffa605fc6bd31b877317a8147888ea725b09565e761dca992",
+      "bytes": 380240
+    }
+  ],
+  "checksum_scope": "SHA256SUMS covers these four payload files and this manifest; the checksum file does not hash itself."
+}

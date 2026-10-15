@@ -1,0 +1,601 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\renewcommand{\Pr}{\mathbb P\!\operatorname{r}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\numberwithin{equation}{section}
+\title{Local well-posedness for transport-noise Navier--Stokes\protect\\
+with $B^{-1/2}_{6,4}(\R^3)$ initial data}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove local well-posedness of the three-dimensional incompressible
+Navier--Stokes equation with prescribed smooth, compactly supported,
+divergence-free Ito transport noise and deterministic initial velocity in
+the inhomogeneous space $B^{-1/2}_{6,4}(\R^3)$. Under strict stochastic
+parabolicity, with no further smallness assumption, the solution is heat-mild
+and belongs almost surely to $C_tB^{-1/2}_{6,4}\cap L^4_tL^6_x$ up to a
+positive stopping time. Pathwise uniqueness holds in this entire class, and
+initial-data dependence is continuous in probability in both norms on common
+local intervals. The proof combines the published linear stochastic Stokes
+maximal-regularity theorem of Agresti and Veraar with a cutoff depending on
+the accumulated $L^4_tL^6_x$ norm. This gives a nonlinear local theory at the
+negative-half endpoint without treating the derivative noise as a small
+perturbation.
+\end{abstract}
+
+\section{Introduction and main result}
+The transport-noise Navier--Stokes equation replaces part of the advecting
+velocity by random spatial fields. After projecting onto incompressible
+velocities, the Ito equation on $\R^3$ takes the form
+\begin{equation}\label{eq:NS}
+ du=\big[\nu\Delta u-\Pp\operatorname{div}(u\otimes u)\big]dt
+       +\sum_{k=1}^K\Pp[(b_k\cdot\nabla)u]\,dW_t^k.
+\end{equation}
+Here $\nu>0$ is viscosity, $\Pp$ is the Helmholtz projection, and $W^k$
+are independent standard real Brownian motions. We consider real fields
+$b_k\in C_c^\infty(\R^3;\R^3)$ with $\operatorname{div}b_k=0$ and assume
+that, for some $\delta>0$,
+\begin{equation}\label{eq:parabolic}
+ \nu I-\frac12\sum_{k=1}^Kb_k(x)\otimes b_k(x)\geq\delta I
+ \qquad (x\in\R^3).
+\end{equation}
+This is the strict stochastic parabolicity condition. It permits the
+first-order noise to enter the principal linear equation, with constants
+depending on the prescribed fields.
+
+Rough initial velocities require a solution theory compatible with viscous
+smoothing. The Navier--Stokes scaling assigns spatial smoothness $-1+3/q$
+at integrability $q$. At $q=6$ this is $-1/2$, while the corresponding
+space-time norm is $L^4_tL^6_x$. These are high-frequency critical indices;
+the Besov space used here is inhomogeneous.
+Agresti and Veraar developed stochastic Stokes maximal regularity and
+critical-space nonlinear theory for transport-noise equations
+\cite{AV24}. Their nonlinear theorem covers spatial integrability below
+six at the lowest smoothness. The endpoint is part of the rough-data
+question discussed in \cite[Theorem 8.26 and Open Problem 10]{AV25}.
+The linear theorem itself allows the Sobolev shift needed at $q=6$.
+Its nonlinear conclusion cannot simply be evaluated there: the critical
+time weight reaches the excluded boundary of the stochastic
+maximal-regularity range. We use that linear theorem and a separate
+heat-mild quadratic estimate to obtain the endpoint.
+
+Write $X=B^{-1/2}_{6,4,\sigma}(\R^3)$, with $\sigma$ denoting divergence-free
+distributions. Work on any complete right-continuous filtered probability
+space carrying the Brownian motions above. By an adapted heat-mild solution
+on $[0,\tau]$ we mean an adapted continuous $X$ process, with a progressive
+$L^6$ representative at almost every positive time, satisfying
+\begin{align}\label{eq:mild}
+ u(t)={}&e^{\nu t\Delta}u_0
+ -\int_0^te^{\nu(t-s)\Delta}\Pp\operatorname{div}(u\otimes u)(s)\,ds\notag\\
+ &+\sum_{k=1}^K\int_0^te^{\nu(t-s)\Delta}
+                  \Pp[(b_k\cdot\nabla)u(s)]\,dW_s^k,
+ \qquad 0\leq t\leq\tau.
+\end{align}
+The identity is in distributions, equivalently in $H^{-2,6}$, with the
+continuous versions of the convolutions. Stochastic integrals are first
+defined at deterministic times after localization and then restricted to the
+stopped interval. This specifies the heat semigroup in both convolutions.
+
+\begin{theorem}\label{thm:main}
+Let $\nu>0$ and let the finite family $(b_k)_{k=1}^K$ satisfy the assumptions
+above, including \eqref{eq:parabolic}. For every deterministic $u_0\in X$
+there exist a stopping time $0<\tau\leq1$ almost surely and an adapted
+heat-mild solution of \eqref{eq:NS} such that
+\[
+ u\in C([0,\tau];X)\cap L^4(0,\tau;L^6(\R^3))
+ \quad\text{almost surely}.
+\]
+Any two heat-mild solutions in this class with the same initial value and
+Brownian motions agree on their common lifetime.
+
+If deterministic $u_{0,n}\to u_0$ in $X$, the solutions can be chosen on the
+same Brownian space with positive lifetimes $\tau_n,\tau\leq1$ so that
+\[
+ \|u_n-u\|_{C([0,\tau_n\wedge\tau];X)}
+ +\|u_n-u\|_{L^4(0,\tau_n\wedge\tau;L^6)}\longrightarrow0
+ \quad\text{in probability}.
+\]
+There is also a stopping time $0<\rho\leq\tau$ almost surely with
+$\Pr(\tau_n<\rho)\to0$. No extra smallness of $u_0$ or of the fields is
+assumed.
+\end{theorem}
+
+The result addresses the specified $B^{-1/2}_{6,4}$ case of the rough-data
+question, for all the prescribed compactly supported fields satisfying
+\eqref{eq:parabolic}. It does not assert global existence or determine the
+largest possible critical initial space.
+
+The proof treats the full linear derivative noise before the quadratic
+term. The published linear estimate yields a bounded causal inverse for
+the identity minus the heat stochastic-convolution operator on
+$L^4(\Omega;L^4_tL^6_x)$. A cutoff depending on the past accumulated
+$L^4_tL^6_x$ norm then makes the drift globally Lipschitz with an arbitrarily
+small constant. Stopping before the cutoff acts recovers the original
+equation. For uniqueness among solutions with only almost-sure norms,
+we use bounded-norm random slabs and the stopped linear estimate.
+
+Section~\ref{sec:estimates} proves the heat estimates and specifies the
+published linear input, including the stopping-time inverse.
+Section~\ref{sec:proof} constructs the local solution and proves uniqueness
+and stability. We use $\widehat f(\xi)=\int e^{-ix\cdot\xi}f(x)\,dx$;
+$\Pp$ has symbol $I-\xi\otimes\xi/|\xi|^2$. All Besov and Sobolev spaces
+are inhomogeneous, and $\|\cdot\|_q$ denotes the spatial $L^q$ norm.
+\section{Heat estimates and the linear stochastic equation}\label{sec:estimates}
+
+All spaces below are on $\R^3$, with vector or tensor values as appropriate.
+Write $J=(1-\Delta)^{1/2}$ and
+$H^{s,q}=\{f:J^sf\in L^q\}$. Fix an inhomogeneous smooth dyadic
+partition $(\Delta_j)_{j\geq-1}$, with one low-frequency block and annuli
+of size $2^j$ for $j\geq0$. We use the norm
+\begin{equation}\label{eq:Xnorm}
+ \|f\|_X=\Big(\sum_{j\geq-1}2^{-2j}\|\Delta_jf\|_6^4\Big)^{1/4},
+ \qquad X=B^{-1/2}_{6,4,\sigma}.
+\end{equation}
+The subscript $\sigma$ denotes the distributional kernel of divergence.
+Different admissible partitions give equivalent norms by finite overlap and
+uniform $L^1$ bounds for their convolution kernels. The space $X$ is a
+separable Banach space and embeds continuously into $H^{-2,6}_\sigma$.
+Indeed, if $a_j=2^{-j/2}\|\Delta_jf\|_6$, the high-frequency contribution
+to the latter norm is bounded by
+$C\sum_{j\geq0}2^{-3j/2}a_j\leq C\|(a_j)\|_{\ell^4}$.
+Completeness follows by compatible dyadic block limits, and separability by
+the closed embedding into $\ell^4(L^6)$.
+
+For $0<T<\infty$ set
+\[
+ E_T=L^4(0,T;L^6_\sigma),\qquad
+ \mathcal E_T=L^4(\Omega;E_T)_{\mathrm{prog}}.
+\]
+Here the second space consists of progressively measurable processes. It is
+a closed Banach subspace of the indicated Bochner space. For a stopping time
+$\gamma\leq T$, $\|v\|_{E_\gamma}$ means
+$(\int_0^\gamma\|v(s)\|_6^4\,ds)^{1/4}$. Constants can depend on $T$,
+$\nu$, the fixed fields and the parabolicity margin; no uniformity over
+coefficient families is asserted.
+
+\subsection{Deterministic heat estimates}
+Let $S(t)=e^{\nu t\Delta}$ and, for tensor-valued $F$, define
+\[
+ (DF)(t)=\int_0^tS(t-s)\Pp\operatorname{div}F(s)\,ds.
+\]
+The following estimates include the time-continuous trace that will be
+needed for the stopping construction.
+
+\begin{lemma}\label{lem:heat}
+For each finite $T$ there are finite constants such that
+\begin{align}
+ \|DF\|_{E_T}&\leq C_D\|F\|_{L^2(0,T;L^3)},\label{eq:D-E}\\
+ \|DF\|_{C([0,T];X)}&\leq C_X(T)\|F\|_{L^2(0,T;L^3)},
+ \qquad DF(0)=0,\label{eq:D-X}\\
+ \|S(\cdot)f\|_{E_T}+\|S(\cdot)f\|_{C([0,T];X)}
+ &\leq C_0(T)\|f\|_X.\label{eq:initial}
+\end{align}
+Moreover $\Pp\operatorname{div}:L^3\to H^{-2,6}_\sigma$ is bounded.
+The constant $C_D$ can be chosen independently of $T$.
+\end{lemma}
+
+\begin{proof}
+The Gaussian derivative bound, Young's inequality and boundedness of $\Pp$
+on $L^6$ give
+\begin{equation}\label{eq:heatkernel}
+ \|S(t)\Pp\operatorname{div}F\|_6\leq Ct^{-3/4}\|F\|_3.
+\end{equation}
+The derivative contributes $t^{-1/2}$ and the $L^3$ to $L^6$ estimate
+contributes $t^{-1/4}$. Extend $\|F(t)\|_3$ by zero outside $(0,T)$.
+The one-dimensional Hardy--Littlewood--Sobolev inequality with fractional
+order $1/4$ maps $L^2(\R)$ to $L^4(\R)$ and proves \eqref{eq:D-E}.
+We use the finite-exponent forms of these inequalities; see
+\cite[Corollary 6.3 and Theorem 6.4]{Tao2}.
+
+For the trace, choose enlarged blocks $\widetilde\Delta_j$ equal to one on
+the support of $\Delta_j$. The localized heat kernel satisfies, for $j\geq0$,
+\[
+ \|\Delta_jDF(t)\|_6\leq C2^{3j/2}
+ \int_0^t e^{-c\nu2^{2j}(t-s)}
+          \|\widetilde\Delta_jF(s)\|_3\,ds.
+\]
+To obtain this bound, scale the multiplier to a fixed annulus. Its smooth
+kernel has $L^{6/5}$ norm at most
+$C2^{3j/2}e^{-c\nu2^{2j}(t-s)}$: the derivative costs $2^j$, the spatial
+integrability change costs $2^{j/2}$, and integration by parts absorbs the
+polynomial factors in $\nu2^{2j}(t-s)$ into the exponential.
+Cauchy--Schwarz in time therefore yields
+\begin{equation}\label{eq:blocktrace}
+ \sup_{t\leq T}2^{-j/2}\|\Delta_jDF(t)\|_6
+ \leq C\|\widetilde\Delta_jF\|_{L^2(0,T;L^3)}.
+\end{equation}
+The low block is bounded by
+$C\sqrt T\|\widetilde\Delta_{-1}F\|_{L^2L^3}$, using its fixed Fourier
+support and heat contraction. For the high blocks, mixed-norm interchange
+and the upper Littlewood--Paley estimate give
+\begin{align*}
+ \Big\|\big(\|\widetilde\Delta_jF\|_{L^2L^3}\big)_{j\geq0}\Big\|_{\ell^4}
+ &\leq\Big\|\big(\|\widetilde\Delta_jF\|_{L^2L^3}\big)_{j\geq0}\Big\|_{\ell^3}\\
+ &\leq\left\|\Big(\sum_{j\geq0}|\widetilde\Delta_jF|^3\Big)^{1/3}
+        \right\|_{L^2L^3}\\
+ &\leq\left\|\Big(\sum_{j\geq0}|\widetilde\Delta_jF|^2\Big)^{1/2}
+        \right\|_{L^2L^3}
+ \leq C\|F\|_{L^2L^3}.
+\end{align*}
+The mixed-norm direction uses $3\geq2$; the last estimate is the upper
+square-function bound at spatial exponent $3$
+\cite[Proposition 4.1]{Tao2}, \cite[Proposition 5.3]{Tao4}.
+Together with \eqref{eq:blocktrace}, this proves the uniform $X$ bound.
+Approximation by smooth functions in $L^2L^3$ gives continuity into $X$ and
+zero initial trace, proving \eqref{eq:D-X}.
+
+For \eqref{eq:initial}, first let $T=1$. The low block is in $L^6$.
+For the high blocks put $a_j=2^{-j/2}\|\Delta_jf\|_6$.
+On $2^{-2(n+1)}<t\leq2^{-2n}$, $n\geq0$, the annular heat bound implies
+\[
+ 2^{-n/2}\left\|S(t)\sum_{j\geq0}\Delta_jf\right\|_6
+ \leq C\sum_{j\geq0}2^{(j-n)/2}
+                  e^{-c\nu2^{2(j-n-1)}}a_j.
+\]
+The sequence $2^{\ell/2}e^{-c\nu2^{2(\ell-1)}}$ lies in $\ell^1(\Z)$.
+Integration over these time intervals and discrete Young's inequality give
+the $E_1$ bound. For continuity in $X$ at zero, each
+$(S(t)-I)\Delta_jf$ tends to zero in $L^6$ and is bounded by
+$2\|\Delta_jf\|_6$. Dominated convergence in \eqref{eq:Xnorm} proves the
+claim. Commutation with the blocks gives the uniform $X$ bound and continuity
+at later times. If $T>1$, heat contraction after time $1$ gives finite
+$T$-dependent constants.
+
+Finally the heat representation of $J^{-2}$ and \eqref{eq:heatkernel} with
+viscosity one give
+\[
+ \|\Pp\operatorname{div}F\|_{H^{-2,6}}
+ \leq C\int_0^\infty e^{-s}s^{-3/4}\,ds\,\|F\|_3
+ \leq C\|F\|_3.
+\]
+\end{proof}
+
+\subsection{The published linear estimate}
+The tensor convention is $(v\otimes b)_{ij}=v_i b_j$ and
+$(\operatorname{div}F)_i=\sum_j\partial_jF_{ij}$. Thus $\operatorname{div}b_k=0$
+implies
+\begin{equation}\label{eq:Bbound}
+ B_kv:=\Pp[(b_k\cdot\nabla)v]=\Pp\operatorname{div}(v\otimes b_k),
+ \qquad
+ \|Bv\|_{H^{-1,6}(\ell^2)}\leq C_b\|v\|_6.
+\end{equation}
+Here $Bv=(B_kv)_{k=1}^K$, and the bound follows from the bounded multiplier
+$J^{-1}\partial_j$ on $L^6$ and boundedness of the fields.
+The projection remains outside the variable coefficient derivative.
+
+\begin{proposition}[Agresti--Veraar, specialized]\label{prop:linear}
+For every finite $T$ and progressive
+$g\in L^4(\Omega;L^4(0,T;H^{-1,6}_\sigma(\ell^2)))$, the equation
+\begin{equation}\label{eq:linear}
+ dz=\nu\Delta z\,dt+(Bz+g)\,dW,\qquad z(0)=0,
+\end{equation}
+has a unique strong solution with
+\begin{equation}\label{eq:linearbound}
+ \|z\|_{\mathcal E_T}
+ +\|z\|_{L^4(\Omega;C([0,T];X))}
+ \leq C_L(T)\|g\|_{L^4(\Omega;L^4(0,T;H^{-1,6}(\ell^2)))}.
+\end{equation}
+The same assertion holds with $B=0$. The strong identity is in $H^{-2,6}$.
+It admits stopping-time restriction and pathwise-integrability localization;
+in particular, two local strong solutions with the same forcing and zero
+initial value agree before a common stopping time whenever their $E$ norms
+are almost surely finite.
+\end{proposition}
+
+\begin{proof}[Source and parameter verification]
+Use \cite[Assumption 3.1, Theorem 3.2 and Remark 3.3]{AV24} with
+\[
+ (p,q,\kappa,\eta)=(4,6,0,-1),\qquad
+ X_0=H^{-2,6}_\sigma,\quad X_1=L^6_\sigma,
+ \quad X_{1/2}=H^{-1,6}_\sigma.
+\]
+Here $\eta$ denotes the spatial shift called $\delta$ in that source;
+it is unrelated to the positive margin $\delta$ in \eqref{eq:parabolic}.
+The source linear assumption allows every real spatial shift. Its trace is
+\[
+ (X_0,X_1)_{3/4,4}=B^{-1/2}_{6,4,\sigma}=X,
+ \qquad 1+\eta-2(1+\kappa)/p=-1/2.
+\]
+Take $a^{ij}=\nu\delta_{ij}$ and the source coefficients $c=h=0$.
+The additional pressure-dependent drift in its general Stokes system then
+vanishes. The noise operator is exactly $\Pp(b_k\cdot\nabla)$.
+The source coefficient Sobolev regularity may be chosen of order $2$ and
+integrability $6$: $2>1=-\eta$ and $2>3/6$. Smooth compactly supported
+$b_k$ satisfy this condition. For the whole-space version, Remark 3.3
+permits a constant background at infinity: $a=\nu I$ is that background
+and $b=0$ outside a compact set. No global $L^6$ integrability of the
+nonzero constant matrix is needed. Its strict stochastic parabolicity
+condition is precisely \eqref{eq:parabolic}. Extend the finite noise family
+by zeros in $\ell^2$.
+
+Theorem 3.2 now gives \eqref{eq:linearbound}, including its continuous trace.
+The stopped and localized statement is the corresponding stochastic maximal
+regularity assertion: the proof of that theorem establishes the
+$\mathrm{SMR}^{\bullet}_{p,\kappa}$ property, and its Lemma 3.7 gives the
+stopped a priori estimate. Apply the pathwise-data localization in
+\cite[Definitions 3.7--3.8 and Proposition 3.11]{AV25} to this couple.
+This gives the stated local strong uniqueness as well as the deterministic
+interval estimate. These are linear results; no nonlinear endpoint theorem
+is being imported.
+\end{proof}
+
+\subsection{Heat stochastic convolutions and a causal inverse}
+For $v\in\mathcal E_T$ define, initially at deterministic times,
+\begin{equation}\label{eq:K}
+ (Kv)(t)=\sum_{k=1}^K\int_0^tS(t-s)B_kv(s)\,dW_s^k.
+\end{equation}
+The integral is well defined in $H^{-1,6}$, since \eqref{eq:Bbound} and the
+finite-horizon embedding $L^4_t\subset L^2_t$ apply. The usual Banach-space
+Ito integration on these Sobolev spaces is available; see
+\cite[Section 2.5 and Proposition 2.4]{AV25}.
+The heat-only case of Proposition~\ref{prop:linear} shows that $K$ has a
+continuous $X$ version and
+\begin{equation}\label{eq:Kbound}
+ \|Kv\|_{\mathcal E_T}+\|Kv\|_{L^4(\Omega;C([0,T];X))}
+ \leq C_K(T)\|v\|_{\mathcal E_T},\qquad Kv(0)=0.
+\end{equation}
+
+For clarity, the strong and heat-mild identities agree at this regularity.
+If $Z$ solves the heat-only equation with forcing $g=Bv$, pair it, at time
+$s$, with $S(t-s)\phi$ for a Schwartz field $\phi$ and deterministic $t$.
+The derivative of the test field is $-\nu\Delta S(t-s)\phi$, so the
+Laplacian pairings cancel and
+\begin{equation}\label{eq:test}
+ \langle Z(t),\phi\rangle
+ =\sum_k\int_0^t\langle B_kv(s),S(t-s)\phi\rangle\,dW_s^k.
+\end{equation}
+This testing rule follows from deterministic time partitions and summation
+by parts. Drift errors converge in $L^1_tH^{-2,6}$ and stochastic errors by
+the scalar Ito isometry after localization. Thus \eqref{eq:test} identifies
+$Z$ with \eqref{eq:K}, proving \eqref{eq:Kbound}. A countable dense set of
+tests and rational times identifies their continuous versions. The same
+argument for \eqref{eq:linear} gives $z=Kz+K_g$, with $K_g$ the heat
+stochastic convolution of $g$.
+
+These identities also hold after stopping the cumulative $E$ norm, for
+processes whose $E$ norm is only almost surely finite.
+The deterministic terms satisfy the corresponding strong identities in
+$H^{-2,6}$: $\Delta S(\cdot)f\in L^4_tH^{-2,6}$ and, by
+Lemma~\ref{lem:heat}, $\Delta DF\in L^4_tH^{-2,6}$ and
+$\Pp\operatorname{div}F\in L^2_tH^{-2,6}$.
+Consequently a heat-mild solution in $E\cap C X$ is a strong
+$H^{-2,6}$ solution. The nonlinear drift is only required to be
+$L^1_tH^{-2,6}$; it is not used as $L^4$ drift forcing in
+Proposition~\ref{prop:linear}. Evaluation of the continuous convolution at
+a stopping time means restriction of this version, not an Ito integral
+with a random terminal-time kernel.
+
+\begin{lemma}\label{lem:inverse}
+On $\mathcal E_T$, $I-K$ has a bounded linear causal inverse $R_T$.
+There is a finite $M_T\geq1$ such that, for every stopping time
+$\gamma\leq T$ and progressive $w,v$ satisfying $w-Kw=v$ on $[0,\gamma]$
+with finite $L^4(\Omega;E_\gamma)$ norms,
+\begin{equation}\label{eq:stoppedinverse}
+ \|w\|_{L^4(\Omega;E_\gamma)}
+ \leq M_T\|v\|_{L^4(\Omega;E_\gamma)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Given $v\in\mathcal E_T$, solve \eqref{eq:linear} with $g=Bv$ and put
+$R_Tv=v+z$. Then
+$\|R_Tv\|_{\mathcal E_T}\leq(1+C_L(T)C_b)\|v\|_{\mathcal E_T}$.
+The identity $z=Kz+Kv$ gives $(I-K)R_Tv=v$.
+Conversely, if $w-Kw=v$, then $z=w-v=Kw$ is the zero-initial strong solution
+of \eqref{eq:linear} with forcing $Bv$, because $Bz+Bv=Bw$.
+Linear uniqueness gives $w=R_Tv$. Equal inputs through a stopping time give
+equal forcing there; local linear uniqueness proves causality.
+
+For the stopped estimate, $z=w-v=Kw$ solves \eqref{eq:linear} up to
+$\gamma$ with $g=Bv$. Extend \emph{this forcing} by zero after $\gamma$
+and solve the linear equation on $[0,T]$. Local uniqueness in
+Proposition~\ref{prop:linear} identifies its restriction with $z$.
+Restrict \eqref{eq:linearbound} and add $v$ to obtain
+\eqref{eq:stoppedinverse} with $M_T=1+C_L(T)C_b$.
+The solution itself is not extended by zero, so no jump at $\gamma$ is
+introduced. This construction does not require $\|K\|<1$ or a bounded
+pathwise inverse.
+\end{proof}
+
+\section{Local solutions, uniqueness and stability}\label{sec:proof}
+
+\subsection{A cutoff depending on the past}
+For a path $u\in E_T$ let
+\[
+ A_u(t)=\Big(\int_0^t\|u(s)\|_6^4\,ds\Big)^{1/4}.
+\]
+It is continuous, nondecreasing, starts at zero, and satisfies
+$|A_u(t)-A_v(t)|\leq\|u-v\|_{E_t}$. For a progressive process it is
+adapted. Fix a nonincreasing Lipschitz function $\theta:[0,\infty)\to[0,1]$
+with $\theta=1$ on $[0,1]$ and $\theta=0$ on $[2,\infty)$. Write
+$L_\theta$ for its Lipschitz constant. To truncate the quadratic drift
+without using future values, set
+\[
+ F_r(u)(t)=\theta(A_u(t)/r)\,u(t)\otimes u(t),\qquad r>0.
+\]
+
+\begin{lemma}\label{lem:cutoff}
+For all $u,v\in E_T$,
+\begin{align}
+ \|F_r(u)\|_{L^2L^3}&\leq4r^2,\label{eq:cutoffbound}\\
+ \|F_r(u)-F_r(v)\|_{L^2L^3}
+ &\leq C_\theta r\|u-v\|_{E_T},
+ \qquad C_\theta=\max\{8,6+9L_\theta\}.\label{eq:cutofflip}
+\end{align}
+These bounds are pathwise, and $F_r$ preserves progressive measurability.
+\end{lemma}
+
+\begin{proof}
+The support of the cutoff lies before $A_u$ reaches $2r$, where the
+$E$ norm is at most $2r$; Holder's inequality gives
+\eqref{eq:cutoffbound}. Put $d=\|u-v\|_{E_T}$.
+If $d\geq r$, the sum of the two bounds is $8r^2\leq8rd$.
+If $d<r$, then on the union $J_*$ of the cutoff supports both cumulative
+norms are less than $3r$. Hence
+$\|\mathbf1_{J_*}u\|_{E_T},\|\mathbf1_{J_*}v\|_{E_T}\leq3r$.
+With $\theta_u(t)=\theta(A_u(t)/r)$, decompose
+\[
+ F_r(u)-F_r(v)
+ =\theta_u(u\otimes u-v\otimes v)
+   +(\theta_u-\theta_v)v\otimes v.
+\]
+The two $L^2L^3$ bounds are $6rd$ and $9L_\theta rd$, respectively.
+Outside $J_*$ the difference is zero. This proves \eqref{eq:cutofflip}.
+The measurability claim follows from adaptedness and continuity of $A_u$.
+\end{proof}
+
+\subsection{Construction and positive lifetime}
+Use $T=1$ and abbreviate $M=M_1$ and $C_0=C_0(1)$. Enlarge the positive
+constants if necessary and choose
+\begin{equation}\label{eq:radius}
+ r=(4MC_DC_\theta)^{-1}.
+\end{equation}
+For deterministic $f\in X$ consider the map on the whole space
+$\mathcal E_1$
+\[
+ \Phi_f(u)=R_1\big[S(\cdot)f-DF_r(u)\big].
+\]
+Lemmas~\ref{lem:heat}, \ref{lem:inverse} and \ref{lem:cutoff} imply
+\[
+ \|\Phi_f(u)-\Phi_f(v)\|_{\mathcal E_1}
+ \leq MC_DC_\theta r\|u-v\|_{\mathcal E_1}
+ =\tfrac14\|u-v\|_{\mathcal E_1}.
+\]
+The map takes $\mathcal E_1$ into itself. In particular, the pathwise bound
+\eqref{eq:cutoffbound} gives the necessary fourth probability moment of
+the truncated forcing. Picard iteration converges in this Banach space to
+a unique fixed point $U_f$, for every size of $f$. Its equation is
+\begin{equation}\label{eq:truncated}
+ U_f=S(\cdot)f-DF_r(U_f)+KU_f.
+\end{equation}
+Equations~\eqref{eq:D-X}, \eqref{eq:initial} and \eqref{eq:Kbound} supply
+an adapted continuous $X$ version with $U_f(0)=f$. It agrees with the
+progressive $L^6$ representative almost everywhere. Separability of $X$
+and the usual completion of the filtration permit one common null-set
+modification for the continuous identity.
+
+Define
+\begin{equation}\label{eq:lifetime}
+ \tau_f=\inf\{t\in[0,1]:A_{U_f}(t)\geq r\}\wedge1,
+ \qquad \inf\varnothing=1.
+\end{equation}
+Continuity and adaptedness make this a stopping time, and
+$A_{U_f}(0)=0$ implies $\tau_f>0$ almost surely.
+On $[0,\tau_f]$ the cutoff equals one. Thus
+$u_f=U_f|_{[0,\tau_f]}$ solves \eqref{eq:mild} with paths in
+$C([0,\tau_f];X)\cap E_{\tau_f}$. Only positive-time $L^6$ values are
+used in the quadratic term; no $L^6$ initial datum is required.
+
+\subsection{Uniqueness in the whole stated class}
+Let $u,v$ be any two solutions in the class of Theorem~\ref{thm:main},
+with the same initial value and Brownian motions. Fix an integer $m\geq1$
+and put $\gamma=\tau_u\wedge\tau_v\wedge m$.
+Set $\varepsilon=(4M_mC_D)^{-1}$. Starting at $s_0=0$, define
+\[
+ s_{j+1}=\inf\left\{t\geq s_j:
+   \int_{s_j}^t(\|u(a)\|_6+\|v(a)\|_6)^4\,da
+                      \geq\varepsilon^4\right\}\wedge\gamma.
+\]
+The norm integrands are zero after $\gamma$ for this definition.
+These are stopping times because the accumulated adapted integrals are
+continuous. Every completed threshold consumes $\varepsilon^4$ of a finite
+pathwise integral, so almost every path reaches $\gamma$ in finitely many
+slabs.
+
+Assume inductively that $u=v$ through $s_j$. On $[0,s_{j+1}]$ put $w=u-v$;
+it is zero before $s_j$. Extend the tensor integrand
+\[
+ F=\mathbf1_{(s_j,s_{j+1}]}(u\otimes u-v\otimes v)
+\]
+by zero outside its slab and put $v_0=-DF$. Subtracting the mild equations
+gives $w-Kw=v_0$ up to $s_{j+1}$. By \eqref{eq:D-E} and Holder,
+\begin{equation}\label{eq:slabbound}
+ \|v_0\|_{E_{s_{j+1}}}
+ \leq2C_D\varepsilon\|w\|_{E_{s_{j+1}}}.
+\end{equation}
+The stopped norm of $w$ is at most $2\varepsilon$, since its past is zero.
+Thus $w$ and $v_0$ have finite fourth probability moments on this stopped
+interval, although the original solutions have no assumed moments.
+Apply \eqref{eq:stoppedinverse} and then \eqref{eq:slabbound}:
+\[
+ \|w\|_{L^4(\Omega;E_{s_{j+1}})}
+ \leq2M_mC_D\varepsilon\|w\|_{L^4(\Omega;E_{s_{j+1}})}
+ =\tfrac12\|w\|_{L^4(\Omega;E_{s_{j+1}})}.
+\]
+Hence $w=0$ almost everywhere, and continuity in $X$ gives equality at
+every time through $s_{j+1}$. A countable intersection over $j$ and then
+$m$ proves equality on the entire common lifetime. The estimate starts at
+time zero with an already vanishing past; it uses no random restart theorem.
+
+\subsection{Continuous dependence on common local intervals}
+The same $\theta,r$ work for every deterministic datum. The fixed-point
+estimate gives
+\begin{equation}\label{eq:Estability}
+ \|U_f-U_g\|_{\mathcal E_1}
+ \leq MC_0\|f-g\|_X+\tfrac14\|U_f-U_g\|_{\mathcal E_1}.
+\end{equation}
+In particular, absorbing the last term yields
+$\|U_f-U_g\|_{\mathcal E_1}\leq2MC_0\|f-g\|_X$.
+Subtracting \eqref{eq:truncated} and using the continuous-trace estimates
+for $S,D,K$ and \eqref{eq:cutofflip} then gives
+\begin{equation}\label{eq:Xstability}
+ \|U_f-U_g\|_{L^4(\Omega;C([0,1];X))}\leq C\|f-g\|_X.
+\end{equation}
+
+Suppose $f_n\to f$ in $X$. Restriction of these estimates to
+$[0,\tau_{f_n}\wedge\tau_f]$ proves fourth-moment convergence in the sum
+of the two norms asserted in the theorem, hence convergence in probability.
+To show that the common intervals do not collapse, let
+\[
+ \rho=\inf\{t\in[0,1]:A_{U_f}(t)\geq r/2\}\wedge1.
+\]
+Then $0<\rho\leq\tau_f$ almost surely. If $\tau_{f_n}<\rho$, continuity
+gives $A_{U_{f_n}}(\tau_{f_n})=r$ and
+$A_{U_f}(\tau_{f_n})<r/2$. The reverse triangle inequality implies
+$\|U_{f_n}-U_f\|_{E_1}\geq r/2$, and therefore
+\[
+ \Pr(\tau_{f_n}<\rho)
+ \leq16r^{-4}\E\|U_{f_n}-U_f\|_{E_1}^4\longrightarrow0.
+\]
+This proves the stability assertion and completes the proof of
+Theorem~\ref{thm:main}.
+
+\section*{AI-use declaration}
+OpenAI Codex was used to develop the argument, check source applications,
+draft the text, and perform internal AI reviews and revisions. These reviews
+do not constitute independent human verification.
+
+\begin{thebibliography}{9}
+\bibitem{AV24}
+A. Agresti and M. Veraar,
+\emph{Stochastic Navier--Stokes equations for turbulent flows in critical spaces},
+Communications in Mathematical Physics \textbf{405}, article 43 (2024).
+\href{https://doi.org/10.1007/s00220-023-04867-7}{doi:10.1007/s00220-023-04867-7}.
+
+\bibitem{AV25}
+A. Agresti and M. Veraar,
+\emph{Nonlinear SPDEs and maximal regularity: an extended survey},
+Nonlinear Differential Equations and Applications NoDEA \textbf{32},
+article 123 (2025).
+\href{https://doi.org/10.1007/s00030-025-01090-2}{doi:10.1007/s00030-025-01090-2}.
+
+\bibitem{Tao2}
+T. Tao, \emph{Lecture notes 2 for 247A}, UCLA (2006).
+\url{https://www.math.ucla.edu/~tao/247a.1.06f/notes2.pdf}.
+
+\bibitem{Tao4}
+T. Tao, \emph{Lecture notes 4 for 247A}, UCLA (2006).
+\url{https://www.math.ucla.edu/~tao/247a.1.06f/notes4.pdf}.
+\end{thebibliography}
+\end{document}
