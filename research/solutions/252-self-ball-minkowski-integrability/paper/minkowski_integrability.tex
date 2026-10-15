@@ -1,0 +1,453 @@
+\documentclass[11pt]{amsart}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Total integrability of a Minkowski billiard in its unit ball},
+pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\dd}{\,d}
+\title{Total integrability of a Minkowski billiard in its unit ball}
+\author{Kaiwen Jin}
+\email{yui.ui.siki@gmail.com}
+\date{October 15, 2026}
+\subjclass[2020]{37E40, 52A10, 53A15}
+\keywords{Minkowski billiards, total integrability, convex curves}
+\begin{document}
+\begin{abstract}
+Let a smooth strongly convex norm on the plane define both a billiard
+table and the length of its chords. We prove that if the entire billiard
+phase annulus is foliated by continuous essential invariant curves, then
+the norm comes from an inner product. No finite symmetry beyond central
+symmetry is assumed. The proof retains the support point of each chord
+as an independent variable, converts length variations into alternating
+area variations, and averages over the two resulting phase annuli.
+A centro-affine boundary parameter and the Blaschke--Santal\'o inequality
+then force the unit ball to be an ellipse.
+\end{abstract}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+In a Minkowski billiard, straight chords are measured by a norm and the
+reflection law is obtained by stationarity of their total norm length.
+When the table is the unit ball of that same norm, one may ask whether
+a foliation of all reflected trajectories detects an inner-product norm.
+This is the rigidity question attributed to
+Y.~Ostrover in \cite[Section 9.5, Question 1]{BM}.
+
+Let $N:\R^2\to[0,\infty)$ be a norm, smooth away from zero, with
+$D^2(N^2)$ positive definite there, and put $K=\{N\leq1\}$.
+Let $\gamma(s)$ parametrize $\partial K$ by positive $N$-arclength,
+with period $T$. The billiard map acts on ordered distinct boundary
+points, represented by $s<t<s+T$, and has generating function
+\[
+L(s,t)=N(\gamma(t)-\gamma(s)).
+\]
+Its consecutive parameters satisfy
+\[
+L_2(s_{j-1},s_j)+L_1(s_j,s_{j+1})=0.
+\]
+We use \emph{total integrability} to mean that this entire phase annulus
+is foliated by continuous invariant simple closed curves winding once
+around it.
+
+Bialy and Tsodikovich proved rigidity under an additional finite linear
+symmetry of order at least three
+\cite[Theorem 5]{BT}; their formulation uses a $C^1$ foliation.
+Their argument uses periodic invariant curves to produce progressively
+more symmetries. A general norm ball has central symmetry, of order two,
+which does not supply that initial higher-order symmetry.
+The following theorem proves the rigidity implication for continuous
+invariant foliations without the additional assumption.
+
+\begin{theorem}\label{thm:main}
+For every norm $N$ as above, if its billiard in $K=\{N\leq1\}$ is totally
+integrable, then $K$ is an origin-centered ellipse. Equivalently, there
+exists a real symmetric positive-definite matrix $Q$ such that
+\[
+N(v)=\sqrt{v^TQv}\qquad\text{for every }v\in\R^2.
+\]
+\end{theorem}
+
+The proof uses an area variational description in position and momentum.
+This description and its relation to symplectic billiards were studied
+by Albers, Chavez Caliz, and Tabachnikov \cite[Sections 2--3]{ACT}.
+For a single symplectic billiard table, total-integrability rigidity
+was proved by Baracco and Bernardi \cite[Theorem 1.1]{BB}.
+Here the position curve and the rotated polar momentum curve need not
+coincide, so a single-table rigidity theorem does not directly apply.
+Instead, each norm chord is the maximum of an area expression over its
+support point. This maximum transfers finite variational inequalities
+to an alternating sequence on the two curves. Averaging requires both
+alternating phase annuli.
+
+The remaining estimate is geometric. We choose a boundary parameter for
+which the signed area integral of the derivative curve equals that of
+the original curve. Its period is at most $2\pi$ by the
+Blaschke--Santal\'o inequality. The averaged variational inequality and
+an energy lower bound then force equality in that inequality.
+The assumption concerns the whole phase annulus; integrability only
+near its boundary is outside the theorem.
+Section~\ref{sec:area} develops the alternating variational inequality,
+and Section~\ref{sec:affine} proves the geometric estimates and the theorem.
+
+\section{From norm length to alternating area}\label{sec:area}
+
+Throughout, set
+\[
+\omega(x,y)=x_1y_2-x_2y_1,\qquad J(x_1,x_2)=(-x_2,x_1).
+\]
+For a convex body containing the origin, its polar is
+$C^*=\{p:p\cdot x\leq1\text{ for every }x\in C\}$.
+Let
+\begin{equation}\label{eq:bodies}
+P=-JK^*,\qquad A=\area(K),\qquad B=\area(P)=\area(K^*).
+\end{equation}
+Both boundaries are smooth, have positive curvature, and are centrally
+symmetric. All boundary parameters increase counterclockwise.
+
+\subsection{Support points and finite variations}
+
+Keeping the support point of a chord as a separate variable turns its norm
+length into a sum of two signed areas.
+\begin{lemma}\label{lem:support}
+For distinct $x,z\in\partial K$,
+\begin{equation}\label{eq:support}
+N(z-x)=\max_{y\in\partial P}
+\{\omega(x,y)+\omega(y,z)\}.
+\end{equation}
+The maximizer is unique and has strictly negative second derivative in
+any regular boundary parameter of $P$.
+\end{lemma}
+\begin{proof}
+The expression being maximized is $(z-x)\cdot Jy$, and $JP=K^*$.
+The support function of $K^*$ is $N$. For instance, convexity and
+homogeneity show that $DN(z-x)\in K^*$ and
+$DN(z-x)\cdot(z-x)=N(z-x)$.
+Positive curvature of the polar gives uniqueness and nondegeneracy:
+at the supporting point a nonzero outward supporting functional has
+strictly negative second derivative along the boundary.
+\end{proof}
+
+We first record the variational consequence of total integrability.
+For a positive regular parameter $\gamma$ on $\partial K$, put
+$w=\gamma(t)-\gamma(s)$. Convexity and homogeneity give
+$D^2N(w)w=0$. Moreover $D^2N(w)$ is positive on every direction
+transverse to $w$. Otherwise, subtracting a multiple of $w$ would
+give a nonzero $u$ with $DN(w)u=0$ and
+$D^2(N^2)(w)[u,u]=0$. Thus, in the plane,
+\[
+D^2N(w)[u,v]=\lambda(w)\omega(w,u)\omega(w,v),
+\qquad \lambda(w)>0.
+\]
+At the two endpoints of a chord,
+$\omega(\gamma'(s),w)>0$ and $\omega(\gamma'(t),w)<0$.
+Consequently the norm-length generating function has
+\begin{equation}\label{eq:twist}
+L_{12}(s,t)=-D^2N(w)[\gamma'(s),\gamma'(t)]>0.
+\end{equation}
+In the original $N$-arclength parameter, $-L_1(s,t)$ decreases from
+$1$ to $-1$ as $t$ runs from $s$ to $s+T$. These coordinates
+identify the ordered-point annulus with the usual symplectic twist
+cylinder.
+
+For this sign convention, every orbit on a continuous essential invariant
+curve is locally maximizing for the action with fixed endpoints; see
+\cite[Section 3, paragraph after Theorem 3.1, p.~5]{Bialy}.
+The hypothesis of Theorem~\ref{thm:main} therefore makes the Hessian
+of every finite length action negative semidefinite. This property
+is unchanged by a smooth increasing boundary reparametrization:
+at a stationary action its Hessian changes by diagonal congruence.
+
+For even vertices $q_i\in\partial K$ and odd vertices $p_i\in\partial P$,
+consider
+\begin{equation}\label{eq:alternating}
+\sum_i\{\omega(q_i,p_i)+\omega(p_i,q_{i+1})\}.
+\end{equation}
+At the supporting $p_i$, maximizing each odd variable in
+\eqref{eq:alternating} gives exactly the original length action.
+The odd-variable Hessian is diagonal negative definite by
+Lemma~\ref{lem:support}. If the full finite Hessian is
+$\begin{pmatrix}U&V\\V^T&W\end{pmatrix}$, its Schur complement
+$U-VW^{-1}V^T$ is the Hessian of that length action. Completing the square,
+\[
+\begin{pmatrix}\xi\\\eta\end{pmatrix}^{\!T}
+\begin{pmatrix}U&V\\V^T&W\end{pmatrix}
+\begin{pmatrix}\xi\\\eta\end{pmatrix}
+=\xi^T(U-VW^{-1}V^T)\xi
++(\eta+W^{-1}V^T\xi)^TW(\eta+W^{-1}V^T\xi)\leq0.
+\]
+Every finitely supported alternating variation can be enclosed between
+fixed even endpoints. Hence all its second variations are nonpositive.
+
+\subsection{The two half maps}
+
+Let $c(s)$ and $d(t)$ be positive regular parametrizations of
+$\partial K$ and $\partial P$. Define the two annuli
+\[
+\mathcal D_{KP}=\{(s,t):\omega(c'(s),d'(t))>0\},\qquad
+\mathcal D_{PK}=\{(t,s):\omega(d'(t),c'(s))>0\}.
+\]
+For $(q,p)=(c(s),d(t))\in\mathcal D_{KP}$, let $z$ be the other
+intersection of $\partial K$ with the ray $q+u d'(t)$, $u>0$, and set
+$S(q,p)=(p,z)$. The determinant condition means the ray enters $K$.
+It exits transversely at $z$, where
+$\omega(d'(t),c'(z))>0$; here $c'(z)$ denotes the positive tangent at $z$.
+Thus the image belongs to $\mathcal D_{PK}$.
+On this component define $S(p,z)=(z,p_+)$ using the other intersection
+of $P$ with the ray from $p$ in the positive tangent direction at $z$.
+Reverse chords give the inverse half maps. Transversality makes them smooth.
+We regard $S$ as one invertible map of the disjoint union
+$\mathcal D=\mathcal D_{KP}\sqcup\mathcal D_{PK}$.
+
+The point $p$ is the maximizer for $N(z-q)$ in \eqref{eq:support}.
+Indeed the outward normal to $P$ at $p$ is a positive multiple of
+$-Jd'(t)$, and $z-q$ is a positive multiple of $d'(t)$.
+Conversely every ordered distinct $q,z$ determines exactly such a $p$.
+At the next even vertex, the stationarity equation
+\[
+\omega(c'(z),p_+-p)=0
+\]
+is, by differentiation of \eqref{eq:support}, the norm-length reflection
+equation. Its outgoing branch is the other intersection $p_+\ne p$:
+the equal intersection would continue the incoming chord out of $K$.
+Therefore $S^2$ on $\mathcal D_{KP}$ is conjugate to the original
+Minkowski billiard. Every edge in either component lies on an alternating
+lift of an original orbit. The finite second-variation conclusion above
+holds on the whole union.
+
+On each component use $H(u,v)=\omega(u,v)$, differentiating in its
+respective boundary parameters, and write $b=H_{12}>0$.
+The measure
+\begin{equation}\label{eq:measure}
+\dd\mu=b\dd s\dd t
+\end{equation}
+on each component is finite and the combined measure on $\mathcal D$
+is invariant under $S$. To see this directly, differentiate
+$H_2(s,t)+H_1(t,s_+)=0$ and wedge with $\dd t$:
+\[
+H_{12}(s,t)\dd s\wedge\dd t
+=H_{12}(t,s_+)\dd t\wedge\dd s_+.
+\]
+Both densities are positive on their corresponding annuli.
+Finiteness follows from bounded derivatives on the compact parameter tori.
+
+\subsection{An averaged inequality}
+
+At $n$ consecutive interior vertices choose variation $1$, with variation
+$0$ at the two external endpoints. The nonpositive second variation is
+\[
+\sum_{j=1}^n\{H_{22}(u_{j-1},u_j)+H_{11}(u_j,u_{j+1})\}
++2\sum_{j=1}^{n-1}H_{12}(u_j,u_{j+1})\leq0.
+\]
+Integrate over the initial edge in the invariant union $\mathcal D$.
+There are $n$ diagonal terms and $n-1$ adjacent pairs, so invariance gives
+\[
+n\int_{\mathcal D}(H_{11}+H_{22})\dd\mu
++2(n-1)\int_{\mathcal D}H_{12}\dd\mu\leq0.
+\]
+All integrands are bounded and the measure is finite. Dividing by $n$
+and letting $n\to\infty$ yields
+\begin{equation}\label{eq:average}
+\int_{\mathcal D}(H_{11}+2H_{12}+H_{22})H_{12}\dd s\dd t\leq0.
+\end{equation}
+
+Choose the parameters to respect antipodes:
+$c(s+\ell_c/2)=-c(s)$ and $d(t+\ell_d/2)=-d(t)$.
+Such parameters will be constructed in Lemma~\ref{lem:parameter}.
+Replacing one endpoint by its antipode reverses every second derivative
+of $H$. It leaves the quadratic integrand in \eqref{eq:average}
+unchanged and exchanges the positive- and negative-determinant domains.
+The determinant-zero integrand vanishes. Thus each component integral is
+half of its full product-torus integral. Interchanging the two bodies
+negates $H$, interchanges $H_{11},H_{22}$, and leaves that product
+unchanged. The two full integrals agree. Consequently
+\eqref{eq:average} is precisely
+\begin{equation}\label{eq:fulltorus}
+\iint\{\omega(c'',d)+2\omega(c',d')+\omega(c,d'')\}
+\omega(c',d')\dd s\dd t\leq0,
+\end{equation}
+with both parameters running through full periods.
+
+We express this in terms of the energy matrices
+\begin{equation}\label{eq:energies}
+\begin{split}
+M_c&=\int c'c'^T\dd s,\qquad M_d=\int d'd'^T\dd t,\\
+C_c&=\int\omega(c',c'')\dd s,\qquad
+C_d=\int\omega(d',d'')\dd t,\\
+D&=\iint\omega(c',d')^2\dd s\dd t
+=\tr(M_cJM_dJ^T).
+\end{split}
+\end{equation}
+Recall that $A=\area(K)$ and $B=\area(P)=\area(K^*)$.
+Periodic integration by parts and the area formula give
+$\int d d'^T\dd t=-BJ$ and $\int c c'^T\dd s=-AJ$.
+At fixed $s$ the first term in \eqref{eq:fulltorus} therefore integrates
+to $-B\omega(c',c'')$; interchanging the bodies gives the other term.
+It follows that
+\begin{equation}\label{eq:hopf}
+2D\leq BC_c+AC_d.
+\end{equation}
+
+\section{Affine estimates and the equality case}\label{sec:affine}
+
+To use \eqref{eq:hopf}, we choose parameters for which each derivative
+integral $C_c,C_d$ is twice the area of its original body.
+The same parameters have a universal period bound.
+
+\begin{lemma}\label{lem:parameter}
+Let $C=-C$ be a smooth planar convex body with positive curvature
+and area $a>0$. There is a positive boundary parameter $\sigma$,
+of period $\Omega_C\leq2\pi$, such that
+\begin{equation}\label{eq:derivativearea}
+\int_0^{\Omega_C}\omega(q_\sigma,q_{\sigma\sigma})\dd\sigma=2a.
+\end{equation}
+Antipodal points differ by $\Omega_C/2$ in this parameter.
+\end{lemma}
+\begin{proof}
+First use the centro-affine area parameter $r$, defined by
+$\omega(q,q_r)=1$. It exists because the origin is strictly interior;
+its full period is $2a$. Differentiation and positive curvature give
+\[
+q_{rr}=-k(r)q,\qquad k(r)>0.
+\]
+The polar boundary is $v=-Jq_r$. Indeed $v$ is the outward supporting
+covector at $q$ and $v\cdot q=1$. Since $v_r=kJq$,
+$\omega(v,v_r)=k$, so, with $a^*=\area(C^*)$,
+\[
+\int k(r)\dd r=2a^*.
+\]
+Set
+\[
+\dd\sigma=\sqrt{k(r)}\dd r,\qquad
+\Omega_C=\int\sqrt{k(r)}\dd r.
+\]
+Cauchy--Schwarz and the symmetric Blaschke--Santalo inequality
+\cite[Theorem 1]{BK} give
+\begin{equation}\label{eq:period}
+\Omega_C^2\leq4aa^*\leq4\pi^2.
+\end{equation}
+Direct differentiation gives
+\[
+q_\sigma=\frac{q_r}{\sqrt{k}},\qquad
+q_{\sigma\sigma}=-q-\frac{k_r}{2k^2}q_r,\qquad
+\omega(q_\sigma,q_{\sigma\sigma})=\frac1{\sqrt{k}}.
+\]
+Integrating proves \eqref{eq:derivativearea}.
+Central symmetry gives $q(r+a)=-q(r)$ and $k(r+a)=k(r)$,
+so antipodes are half a $\sigma$ period apart.
+\end{proof}
+
+\begin{lemma}\label{lem:energy}
+Let $q$ be a smooth regular simple closed planar curve, enclosing area
+$a>0$, in a parameter of period $\ell$. Then its energy matrix
+$M=\int q'q'^T$ satisfies
+\begin{equation}\label{eq:detbound}
+\sqrt{\det M}\geq\frac{2\pi a}{\ell}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The matrix $M$ is positive definite: a vector in its kernel would make
+one component of $q$ constant and put the curve in a line.
+The area-preserving linear map
+$T=(\det M)^{1/4}M^{-1/2}$ satisfies
+$TMT^T=\sqrt{\det M}\,I$. If $l$ is the Euclidean perimeter of $Tq$,
+Cauchy--Schwarz and ordinary isoperimetry
+\cite[Section 1, equation (1.5)]{Osserman} imply
+\[
+4\pi a\leq l^2
+\leq\ell\int|Tq'|^2
+=2\ell\sqrt{\det M}.
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Parametrize both boundaries by Lemma~\ref{lem:parameter}.
+In \eqref{eq:energies} this gives $C_c=2A$, $C_d=2B$,
+with periods $\Omega_K,\Omega_P\leq2\pi$.
+The variational inequality \eqref{eq:hopf} becomes
+\begin{equation}\label{eq:upper}
+D\leq2AB.
+\end{equation}
+On the other hand, for positive-definite $2$ by $2$ matrices $U,V$,
+\[
+\tr(UV)\geq2\sqrt{\det U\det V},
+\]
+by the arithmetic--geometric mean inequality for the eigenvalues
+of $U^{1/2}VU^{1/2}$.
+Lemma~\ref{lem:energy} applied separately to $c,d$ therefore gives
+\begin{equation}\label{eq:lower}
+D=\tr(M_cJM_dJ^T)
+\geq2\sqrt{\det M_c\det M_d}
+\geq\frac{8\pi^2AB}{\Omega_K\Omega_P}
+\geq2AB.
+\end{equation}
+The separate linear maps used to prove \eqref{eq:detbound} establish
+scalar determinant bounds; the mixed trace in \eqref{eq:lower}
+is computed in the original coordinates.
+
+Since $A,B>0$, \eqref{eq:upper}--\eqref{eq:lower} force
+$\Omega_K\Omega_P=4\pi^2$ and hence $\Omega_K=\Omega_P=2\pi$.
+Since $B=\area(K^*)$, applying \eqref{eq:period} to $C=K$ yields
+$4\pi^2\leq4AB\leq4\pi^2$.
+Equality in the symmetric Blaschke--Santalo inequality makes $K$
+an origin-centered ellipse. Its gauge is
+$N(v)=\sqrt{v^TQv}$ for a real symmetric positive-definite matrix $Q$,
+including $v=0$.
+\end{proof}
+
+\subsection*{AI use}
+OpenAI Codex was used to develop candidate arguments, retrieve and check
+references, and draft and revise the manuscript.
+Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{ACT}
+P. Albers, A. Chavez Caliz, and S. Tabachnikov,
+\emph{Symplectic billiards as Minkowski billiards},
+arXiv:2607.05986v1 (2026).
+\url{https://arxiv.org/abs/2607.05986v1}.
+
+\bibitem{BB}
+L. Baracco and O. Bernardi,
+\emph{Totally integrable symplectic billiards are ellipses},
+arXiv:2305.19701v1 (2023).
+\url{https://arxiv.org/abs/2305.19701v1}.
+
+\bibitem{Bialy}
+M. Bialy,
+\emph{Hopf rigidity for convex billiards on the Hemisphere and Hyperbolic Plane},
+arXiv:1205.3873v2 (2012).
+\url{https://arxiv.org/abs/1205.3873v2}.
+
+\bibitem{BM}
+M. Bialy and A. E. Mironov,
+\emph{Integrable Billiards and Related Topics},
+arXiv:2510.03790v2 (2025).
+\url{https://arxiv.org/abs/2510.03790v2}.
+
+\bibitem{BT}
+M. Bialy and D. Tsodikovich,
+\emph{Billiard tables with rotational symmetry},
+arXiv:2106.06956v2 (2021).
+\url{https://arxiv.org/abs/2106.06956v2}.
+
+\bibitem{BK}
+G. Bianchi and M. Kelly,
+\emph{The Blaschke--Santal\'o Inequality},
+arXiv:1312.0244v3 (2014).
+\url{https://arxiv.org/abs/1312.0244v3}.
+
+\bibitem{Osserman}
+R. Osserman,
+\emph{The isoperimetric inequality},
+Bull. Amer. Math. Soc. \textbf{84} (1978), no.~6, 1182--1238.
+\url{https://doi.org/10.1090/S0002-9904-1978-14553-4}.
+\end{thebibliography}
+\end{document}
