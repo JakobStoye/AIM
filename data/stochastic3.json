@@ -261,8 +261,11 @@
     "title": "The sharp matroid secretary conjecture",
     "area": "Online selection and resource allocation",
     "file": "problems/330-sharp-matroid-secretary.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative",
+    "proof": "https://arxiv.org/pdf/2609.30421v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "333",
@@ -320,8 +323,11 @@
     "title": "A deterministic Hölder exponent for smooth-transport parabolic SPDEs",
     "area": "Stochastic parabolic PDEs; quantitative regularity",
     "file": "problems/455-smooth-transport-spde-deterministic-holder-exponent.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The entire smooth-transport variational SPDE class has a deterministic positive parabolic Hölder exponent on each positive-time strip.",
+    "proof": "research/solutions/455-smooth-transport-spde-deterministic-holder-exponent/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/455-review.md"
   },
   {
     "id": "456",
@@ -336,16 +342,22 @@
     "title": "Transport-noise Navier–Stokes at critical smoothness minus one half",
     "area": "Stochastic fluid PDEs; rough initial velocity",
     "file": "problems/457-stochastic-navier-stokes-negative-half-critical-data.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Local well-posedness holds at the exact inhomogeneous B^(-1/2)_(6,4) endpoint for all prescribed transport families in AIM457.",
+    "proof": "research/solutions/transport-noise-navier-stokes-negative-half-data/paper/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/457-review.md"
   },
   {
     "id": "458",
     "title": "Local no-slip Navier–Stokes theory under non-small transport noise",
     "area": "Stochastic fluid PDEs; solid boundaries",
     "file": "problems/458-stochastic-navier-stokes-no-slip-local.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Partially resolved",
+    "last_checked": "2026-10-15",
+    "outcome": "Partial progress: conditional pathwise uniqueness and perturbative cases; full non-small-noise local theory has an unverified channel-calculus input.",
+    "proof": "research/458/paper/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/458-review.md"
   },
   {
     "id": "477",
@@ -360,8 +372,11 @@
     "title": "Global regularity for critical SQG with state-dependent noise",
     "area": "Stochastic PDEs; geophysical fluid dynamics",
     "file": "problems/478-critical-stochastic-sqg-global-regularity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The critical stochastic SQG equation has the required pathwise unique global adapted H3 solution for the full specified nonlinear finite-noise class.",
+    "proof": "research/solutions/478-critical-stochastic-sqg-global-regularity/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/478-review.md"
   },
   {
     "id": "487",

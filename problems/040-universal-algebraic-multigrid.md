@@ -2,9 +2,9 @@
 
 **Area:** Numerical PDE solvers and preconditioning
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -29,10 +29,22 @@ This would give a uniformly convergent multilevel solver for a broad class of di
 
 ## Status review
 
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Qualified randomized AMG construction; deterministic/unqualified target remains.
+
+[Proof or source](https://arxiv.org/pdf/1506.08204v2) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Known cases:** A fixed input admits the reported high-probability symmetric non-Galerkin cycle with near-linear setup and linear application under the explicitly stated conventions.
+
+**Remaining target:** An unconditional guarantee in the original unstated probability convention is not established; in particular this is not a deterministic or all-random-seeds construction.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
 **Literature check:** Open in cited literature; no later resolution located
 
 Checked on **2026-09-08**. Problem 2.3 explicitly requests this AMG guarantee. General nearly linear Laplacian solvers do not automatically provide the specified multigrid structure. No subsequent solution was located.
 
 Searches included: `SWCDDM multigrid 2026`; `SWCDDM multigrid`; `algebraic multigrid universal diagonally dominant open problem`. This is a documented literature check, not a certification that no solution exists.
 
-**Qualified resolution-source report (2026-10-16):** [Public-source composition and exact locators](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-040). The AI-prepared comparison allows high-probability randomized setup and non-Galerkin coarse matrices in exact randomized real arithmetic. The probability convention is an explicit interpretation, not a condition quoted from Problem 2.3, which the workshop source still lists as open. The report specifies the source-to-target translation and its limits; a deterministic guarantee is not established. The original statement and Open badge remain for maintainer review.
+**Qualified resolution-source report (2026-10-15):** [Public-source composition and exact locators](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-040). The AI-prepared comparison allows high-probability randomized setup and non-Galerkin coarse matrices in exact randomized real arithmetic. The probability convention is an explicit interpretation, not a condition quoted from Problem 2.3, which the workshop source still lists as open. The report specifies the source-to-target translation and its limits; a deterministic guarantee is not established. The original statement and Open badge remain for maintainer review.

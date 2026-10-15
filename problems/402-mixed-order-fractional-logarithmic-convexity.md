@@ -2,9 +2,9 @@
 
 **Area:** Fractional PDE systems / inverse problems
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ Coupled materials or chemical species can have different memory exponents. An in
 2. S.-E. Chorfi, L. Maniar and M. Yamamoto, *The backward problem for time-fractional evolution equations*, Applicable Analysis 103 (2024), 2194–2212, logarithmic convexity and conditional stability theorems. [DOI](https://doi.org/10.1080/00036811.2023.2290273); [arXiv:2211.16493](https://arxiv.org/abs/2211.16493).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #159](https://github.com/MColbrook/AIM/pull/159). The exact product-L2 logarithmic interpolation inequality holds for the two distinct Caputo orders and every initial pair.
+
+[Proof or source](../research/solutions/402-mixed-order-fractional-logarithmic-convexity/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/402-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The exact product-L2 logarithmic interpolation inequality holds for the two distinct Caputo orders and every initial pair.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

@@ -2,9 +2,9 @@
 
 **Area:** Nonlinear water-wave models
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -31,6 +31,16 @@ The question asks whether this bidirectional model has a solitary wave at its li
 2. Dag Nilsson and Yuexun Wang, *Solitary wave solutions to a class of Whitham–Boussinesq systems*, Zeitschrift für angewandte Mathematik und Physik 70 (2019), article 70. [Paper](https://arxiv.org/abs/1810.03405). Main theorem constructs small solitary waves.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #126](https://github.com/MColbrook/AIM/pull/126). An extreme solitary wave exists for the exact bidirectional Whitham model.
+
+[Proof or source](../research/solutions/162-extreme-bidirectional-solitary-wave/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/162-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The full prescribed positive, symmetric, monotone, zero-tail critical-crest traveling profile exists.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

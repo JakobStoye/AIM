@@ -55,8 +55,11 @@
     "title": "Sharp barrier-parameter growth for hyperbolic balls",
     "area": "Numerical optimization on manifolds",
     "file": "problems/540-hyperbolic-ball-barrier-parameter.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The infimum of full-tensor barrier parameters has quadratic growth in the hyperbolic radius, without any symmetry assumption.",
+    "proof": "research/solutions/540-hyperbolic-ball-barrier-parameter/paper/hyperbolic_ball_barriers.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/540-review.md"
   },
   {
     "id": "551",
@@ -122,8 +125,11 @@
     "title": "A linear genus–girth bound for facial cycles",
     "area": "Graph theory and topological graph embeddings",
     "file": "problems/602-surface-girth-facial-linear-bound.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A facial-cycle bound 100000 times genus times girth holds uniformly for both closed-surface types, including the stated noncellular embeddings.",
+    "proof": "research/solutions/602-surface-girth-facial-linear-bound/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/602-review.md"
   },
   {
     "id": "603",
@@ -202,8 +208,11 @@
     "title": "Smallest orders for periodic multidimensional Costas arrays",
     "area": "Combinatorial signal design",
     "file": "problems/627-periodic-costas.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A six-point periodic four-dimensional Costas array disproves the universal order restriction.",
+    "proof": "research/solutions/627-periodic-costas/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/627-review.md"
   },
   {
     "id": "632",

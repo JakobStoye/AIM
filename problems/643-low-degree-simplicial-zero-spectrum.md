@@ -1,8 +1,8 @@
 # 643. Zero in the upper-Laplacian spectrum of low-degree simplicial complexes
 
 **Area:** Applied topology / spectral theory
-**Status:** 🟡 PARTIAL
-**Last checked:** 2026-09-24
+**Status:** ✅ SOLVED
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -43,6 +43,16 @@ The operator $`A_0`$ governs expected signed particle counts in simplicial branc
 1. R. Rosenthal, [Simplicial branching random walks](https://doi.org/10.1007/s41468-023-00148-3), Journal of Applied and Computational Topology **8** (2024), 1751–1791, Conjecture 4.2 and Theorem 1.2; §§2 and 3.1 define the operator. [Earlier preprint](https://arxiv.org/abs/1412.5406).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #115](https://github.com/MColbrook/AIM/pull/115). Counterexample on a countable pure three-complex: maximum triangle degree three, coercive normalized upper Laplacian on the full weighted space, and trivial kernel.
+
+[Proof or source](../research/solutions/643-low-degree-simplicial-zero-spectrum/paper/degree_three_counterexample.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/643-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Counterexample on a countable pure three-complex: maximum triangle degree three, coercive normalized upper Laplacian on the full weighted space, and trivial kernel.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The source establishes both conclusions for regular arboreal complexes. For finite complexes, nonzero coboundaries already lie in the upper-Laplacian kernel. More generally, a $`(d-2)`$-face incident to finitely many $`(d-1)`$-faces supplies such a finitely supported coboundary.
 

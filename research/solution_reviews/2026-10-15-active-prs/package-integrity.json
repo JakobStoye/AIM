@@ -1,0 +1,660 @@
+{
+  "date": "2026-10-15",
+  "snapshot": "staged Git tree with canonical LF text",
+  "packages": 81,
+  "checks": 850,
+  "errors": 0,
+  "verification_archive_matches_expanded_files": true,
+  "results": [
+    {
+      "pr": 169,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 168,
+      "payload_and_checksum_checks": 10,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [
+        "problems/478-critical-stochastic-sqg-global-regularity.md"
+      ],
+      "errors": []
+    },
+    {
+      "pr": 167,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 166,
+      "payload_and_checksum_checks": 5,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 165,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 164,
+      "payload_and_checksum_checks": 5,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 163,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 162,
+      "payload_and_checksum_checks": 0,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 161,
+      "payload_and_checksum_checks": 13,
+      "checksum_rows": 7,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 160,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 159,
+      "payload_and_checksum_checks": 0,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 158,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 157,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 156,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 155,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 154,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 153,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 152,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 151,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 150,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 149,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 148,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 147,
+      "payload_and_checksum_checks": 5,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 146,
+      "payload_and_checksum_checks": 13,
+      "checksum_rows": 7,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 145,
+      "payload_and_checksum_checks": 13,
+      "checksum_rows": 7,
+      "python_sources_parsed": 1,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 144,
+      "payload_and_checksum_checks": 4,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 143,
+      "payload_and_checksum_checks": 4,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 142,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 141,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 140,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 139,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 138,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 137,
+      "payload_and_checksum_checks": 21,
+      "checksum_rows": 11,
+      "python_sources_parsed": 1,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 136,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 135,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 134,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 133,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 132,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 131,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 130,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 129,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 128,
+      "payload_and_checksum_checks": 21,
+      "checksum_rows": 11,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 127,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 126,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 125,
+      "payload_and_checksum_checks": 79,
+      "checksum_rows": 52,
+      "python_sources_parsed": 11,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 124,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 123,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 122,
+      "payload_and_checksum_checks": 31,
+      "checksum_rows": 16,
+      "python_sources_parsed": 6,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 121,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 120,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 119,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 118,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 117,
+      "payload_and_checksum_checks": 0,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 116,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 115,
+      "payload_and_checksum_checks": 13,
+      "checksum_rows": 7,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 114,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 113,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 112,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 111,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 110,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 109,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 108,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 107,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 106,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 105,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 104,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 103,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 102,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 101,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 100,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 99,
+      "payload_and_checksum_checks": 27,
+      "checksum_rows": 14,
+      "python_sources_parsed": 5,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 98,
+      "payload_and_checksum_checks": 4,
+      "checksum_rows": 0,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 97,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 96,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 95,
+      "payload_and_checksum_checks": 13,
+      "checksum_rows": 7,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 94,
+      "payload_and_checksum_checks": 4,
+      "checksum_rows": 4,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 93,
+      "payload_and_checksum_checks": 6,
+      "checksum_rows": 0,
+      "python_sources_parsed": 2,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 92,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 91,
+      "payload_and_checksum_checks": 11,
+      "checksum_rows": 6,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 90,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    },
+    {
+      "pr": 171,
+      "payload_and_checksum_checks": 9,
+      "checksum_rows": 5,
+      "python_sources_parsed": 0,
+      "pinned_original_targets": [],
+      "errors": []
+    }
+  ]
+}

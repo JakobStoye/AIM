@@ -2,9 +2,9 @@
 
 **Area:** Applied and computational topology
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -36,6 +36,16 @@ Rips filtrations model the topology inferred from data as the distance threshold
 2. S. Lim, F. Mémoli and O. B. Okutan, [Vietoris–Rips persistent homology, injective metric spaces, and the filling radius](https://msp.org/agt/2024/24-2/agt-v24-n2-p10-s.pdf), Algebraic & Geometric Topology **24** (2024). Conjecture 7.8, p.1047, explicitly records the known cases $`n=1,2`$.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #95](https://github.com/MColbrook/AIM/pull/95). The proposed join is the homotopy type of the ordinary strict spherical Rips complex throughout a nonempty interval after the first transition.
+
+[Proof or source](../research/solutions/512-kaiwen-jin-spherical-rips-first-transition/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/512-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every n>=3, an epsilon_n>0 gives VR(S^n;r) homotopy equivalent to S^n*(SO(n+1)/A_(n+2)) for every r in the stated strict interval.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The displayed target excludes the known dimensions one and two. The identification at exactly $`r_n`$ for a non-strict metric thickening, recalled in [1, §2.5], does not identify the strict simplicial complexes on an interval beyond $`r_n`$. Reference [1] retains that interval statement as a conjecture.
 

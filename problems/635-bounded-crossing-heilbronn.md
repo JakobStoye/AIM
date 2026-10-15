@@ -2,9 +2,9 @@
 
 **Area:** Topological graph theory and discrete geometry
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -30,6 +30,16 @@ This extends small-area phenomena in geometric point configurations to graph dra
 2. J. Zeng, [Note on disjoint faces in simple topological graphs](https://arxiv.org/abs/2308.04742), 2023.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #114](https://github.com/MColbrook/AIM/pull/114). Bounded pairwise intersections force a mod-two area four-cycle with area tending uniformly to zero.
+
+[Proof or source](../research/solutions/635-bounded-crossing-heilbronn/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/635-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every fixed intersection bound k, the manuscript gives an explicit epsilon_k(n) tending to zero and a nonzero original-edge four-cycle for n>=4, under the full piecewise-smooth curved-edge target.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** For simple drawings, corresponding to $`k=1`$, Zeng proves an $`O(1/n)`$ area bound for a non-self-intersecting four-cycle. Without a uniform bound on intersections, Hubard and Suk construct drawings in which every nonzero mod-two cycle has area bounded below by a positive constant.
 

@@ -2,9 +2,9 @@
 
 **Area:** Convex geometry and geometric approximation
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -33,6 +33,16 @@ The inclusion would make the volume-maximizing symmetric intersection a quantita
 1. G. Ivanov, [Quantitative Steinitz theorem and polarity](https://doi.org/10.1007/s00454-025-00743-4), *Discrete & Computational Geometry* **75** (2026), 1405–1413, Section 2, Conjecture 2.1. [arXiv:2403.14761](https://arxiv.org/abs/2403.14761).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #105](https://github.com/MColbrook/AIM/pull/105). A square pyramid is a counterexample to the proposed Macbeath-center asymmetry inclusion.
+
+[Proof or source](../research/solutions/565-macbeath-center-asymmetry/paper/macbeath_counterexample.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/565-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The explicit three-dimensional convex body has a unique Macbeath center whose reflected apex violates the proposed factor-three containment.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The journal article defines this center using Macbeath's uniqueness theorem and states the displayed inclusion as Conjecture 2.1. Its proved polarity-center theorem concerns a center at which the vertices of a polar polytope sum to zero; it does not identify that center with the Macbeath point.
 

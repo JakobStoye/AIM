@@ -2,9 +2,9 @@
 
 **Area:** Dispersive PDEs and nonlinear optics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 ## Problem statement
 
 Write $`x=(x_1,x_2,z)\in\mathbb R^3`$. Fix $`\varepsilon,c,c_g,\alpha_4>0`$, $`\alpha_5\ge0`$, and an integer $`K\ge2`$. Consider a complex envelope $`u`$ and real electron density $`\rho`$ satisfying
@@ -26,6 +26,16 @@ Ionization depletes and defocuses an intense optical pulse. Establishing global 
 2. A. Couairon and A. Mysyrowicz, [Femtosecond filamentation in transparent media](https://www.teramobile.org/publications/couairon_mysy_filaments.pdf), *Physics Reports* **441** (2007), 47–189, sections on propagation models and plasma generation; [DOI](https://doi.org/10.1016/j.physrep.2006.12.005).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #137](https://github.com/MColbrook/AIM/pull/137). Counterexample to universal global regularity: finite-time gradient blowup for the actual coupled three-dimensional ionization system from smooth compactly supported optical data and zero nonnegative density, with one admissible positive photoionization coefficient.
+
+[Proof or source](../research/solutions/441-ionization-blowup/paper/ionization_blowup.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/441-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Full negation of the universal target by an admissible Cauchy solution of the original coupled model; the scalar computer-assisted construction and linear spectral estimates are identified external theorem dependencies.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

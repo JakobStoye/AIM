@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and inverse persistent homology
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -42,6 +42,16 @@ The fiber describes the collection of filtrations that produce the same persiste
 2. H. A. Harrington, U. Tillmann and M. Torras-Pérez, [The fiber of multiparameter persistent homology for simplicial complexes](https://arxiv.org/abs/2608.04640v1), version 1 (2026), Theorem 5.3 and Proposition 5.9.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #101](https://github.com/MColbrook/AIM/pull/101). The prescribed no-finite-bar persistence fibre has the same F2 homology as the underlying simplicial complex.
+
+[Proof or source](../research/solutions/537-persistence-fiber-betti-numbers/paper/persistence_fiber.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/537-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Every finite simplicial complex and every degree, including ordinary H0 and the empty-complex convention in the target, is covered.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 Reference [1] proposes the equality from computed examples. The formulation uses the connected-complex setting preceding the conjecture and its stated $`\mathbb F_2`$ computations, with the compact filter interval normalized as in §1.2.
 

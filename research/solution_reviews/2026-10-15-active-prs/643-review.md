@@ -1,0 +1,17 @@
+# AIM 643: degree-three upper-Laplacian counterexample
+
+**PR:** [115](https://github.com/MColbrook/AIM/pull/115). **Head:** `bdbc3d0176c1c4e59be4db5b3d58a02ae27300c5`. **Review date:** 2026-10-15. **Decision:** Solved by counterexample.
+
+Independent Codex AI review in the maintainer's session; this reviewer did not prepare the submission. No human review or Lean verification is claimed. The complete source, six PDF pages, README, target comparison and submitted AI report were examined. The latter report is evidence about its own review, not a substitute for the examination below. The pinned and current AIM statements agree in the relevant hypotheses.
+
+[Proof](../../solutions/643-low-degree-simplicial-zero-spectrum/paper/degree_three_counterexample.pdf).
+
+The recursive labels give distinct fresh vertices in every copy. Each body tetrahedron has two fresh vertices and only two old vertices, so later bodies cannot acquire an old triangle as a facet. The bridge has exactly its prescribed old target. This proves the complete first-appearance partition into the initial face, E faces and V faces, without an uncounted later coface. An E face has two original cofaces and one child bridge. At a tree root a V face has two bodies plus the bridge; elsewhere it has three bodies. All edges become apex edges in some copy and hence have infinite triangle incidence. This is allowed by the target.
+
+I reconstructed the signs of the finite filling boundary using the three oriented apex edges. Its top-chain squared norm is $`4-3\,2^{-N}`$; the final-degree-weighted leaf remainder has squared norm $`2^{-N}`$. Passing through the bounded top adjoint is legitimate even though the lower boundary need not be bounded. The limiting filling pairs with the coboundary to give exactly the target face value, with the required degree division. Copies have disjoint top supports, so Bessel's inequality gives the stated bound on all E values and the initial value.
+
+This alone would not control the full space. The body equations give the tree gradient of V values plus the three-cycle matrix applied to E values. Its squared norm is bounded by three times the E norm squared. On the counting binary tree the parent map has norm square-root two and the child map norm at most one; their difference is bounded below by square-root two minus one. The direct sum controls every V coordinate, yielding exactly the displayed positive coercivity constant on the whole prescribed Hilbert space. Bounded self-adjointness and the closed-range/adjoint argument then exclude zero from the spectrum, as well as from the kernel. With dimension three and maximum triangle degree three, both universal assertions fail.
+
+Both references were checked. The immutable AIM link specifies the actual target. [Rosenthal's cited v1](https://arxiv.org/pdf/1412.5406v1) has the printed title, author and 2014 date; Theorem 1.1 supplies the regular arboreal background, Section 2 the weighting and Conjecture 4.3 the degree-at-most-d endpoint claim. Its proof is not imported by the new counterexample. There is no missing proof-critical citation. All six rendered PDF pages are legible, and the displayed construction, estimates and conclusion agree with the source. Build and byte-integrity evidence are maintained separately by the integrating reviewer.
+
+No unresolved mathematical gap was identified in this full argument audit. The conclusion does not assert a locally finite example, examples in every dimension, or a formal proof.

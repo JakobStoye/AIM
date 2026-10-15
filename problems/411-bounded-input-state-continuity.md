@@ -2,9 +2,9 @@
 
 **Area:** Infinite-dimensional control / evolution equations
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -27,6 +27,16 @@ Boundary actuators for evolution PDEs are often unbounded operators on the state
 3. P. Preußler and F. L. Schwenninger, *Implications of structured continuous maximal regularity*, preprint (2026), §4.4, Corollary 4.10 and following discussion. [Full text](https://arxiv.org/html/2605.12121v1).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #162](https://github.com/MColbrook/AIM/pull/162). Admissibility for all strongly measurable bounded inputs implies zero-class admissibility and norm-continuous convolution states on every closed finite interval.
+
+[Proof or source](../research/solutions/411-bounded-input-state-continuity/paper/continuity.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/411-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Full affirmative answer for arbitrary real or complex Banach state and input spaces in the stated extrapolation representation.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The cited partial theorem establishes continuity in reflexive-space cases and several further Banach-space classes.
 

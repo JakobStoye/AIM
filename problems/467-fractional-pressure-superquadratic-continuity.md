@@ -2,9 +2,9 @@
 
 **Area:** Nonlocal PDEs; degenerate diffusion regularity
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -43,6 +43,16 @@ Continuity would justify a well-defined evolving density and interface for nonlo
 3. F. del Teso and E. R. Jakobsen, *A Convergent Finite Difference-Quadrature Scheme for the Porous Medium Equation with Nonlocal Pressure*, Found. Comput. Math. (2026), §2's review of the PDE theory. [Article](https://doi.org/10.1007/s10208-026-09752-y).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #153](https://github.com/MColbrook/AIM/pull/153). For 1/2<s<1 and m>2 an existing bounded energy weak solution cannot have the requested global jointly continuous representative.
+
+[Proof or source](../research/solutions/467-fractional-pressure-continuity-counterexample/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/467-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Full negative answer; a concrete admissible parameter/data witness is N=2,m=3,s=3/4,u0=indicator of the unit ball.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

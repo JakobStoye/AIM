@@ -2,9 +2,9 @@
 
 **Area:** Nonlocal elliptic PDEs; free-boundary blow-up profiles
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -33,6 +33,16 @@ Uniqueness of these profiles is an ingredient in classifying contact interfaces 
 2. X. Ros-Oton and M. Weidner, *Obstacle problems with singular kernels*, Ann. Scuola Norm. Sup. Pisa Cl. Sci. **27** (2026), 535–588, Introduction and angular integrability assumptions. [Article](https://doi.org/10.2422/2036-2145.202309_010); [preprint](https://arxiv.org/abs/2308.01695).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #156](https://github.com/MColbrook/AIM/pull/156). Positive integrable-growth harmonic profiles outside every admitted convex cone are proportional, including singular spectral measures.
+
+[Proof or source](../research/solutions/460-singular-stable-cone-positive-solution-uniqueness/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/460-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Positive integrable-growth harmonic profiles outside every admitted convex cone are proportional, including singular spectral measures.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

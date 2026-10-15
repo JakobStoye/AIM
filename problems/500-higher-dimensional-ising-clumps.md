@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and Markov-chain sampling
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -35,6 +35,16 @@ These dynamics sample random geometric shapes while preserving topology. Irreduc
 1. Y. Baryshnikov and E. Onaran, [Ising disks: topology preserving Glauber dynamics](https://doi.org/10.1007/s41468-026-00248-w), Journal of Applied and Computational Topology **10** (2026), article 16. Definitions 3.1–3.2 and 4.1–4.4, Lemma 4.3, §6, Theorem 6.5 and Conjecture 6.9; [author preprint](https://arxiv.org/abs/2410.22611).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #94](https://github.com/MColbrook/AIM/pull/94). A dimension-four counterexample refutes all-state irreducibility of the higher-dimensional clump dynamics.
+
+[Proof or source](../research/solutions/500-higher-dimensional-ising-clumps/paper/cube_dynamics.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/500-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every positive choice of allowed rates, an admissible contractible regular four-dimensional clump has boundary group different from the singleton and lies in a distinct move component.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** Theorem 6.5 of [1] proves the planar case. Lemma 4.3 and Corollary 4.5 show that the permitted removal and addition tests can be expressed locally.
 

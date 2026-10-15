@@ -2,9 +2,9 @@
 
 **Area:** Boundary-driven wave patterns
 
-**Status:** 🟡 PARTIAL
+**Status:** 🟠 SOLUTION CLAIMED
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -35,7 +35,17 @@ Nodal interfaces partition the interior of a boundary-loaded vibrating medium. T
 
 ## Status review
 
-**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-110). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Claim: steklov counterexample claim; product reduction checked, underlying nodal-growth theorem awaiting independent review.
+
+[Proof or source](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Review boundary:** Independent review of the complete external argument remains outstanding; the source claims the full target and no specific mathematical gap was established by this applicability audit.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
+**Resolution-source report (2026-10-15):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-110). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
 
 ### Earlier status review (2026-09-08)
 

@@ -2,9 +2,9 @@
 
 **Area:** Geometric design of boundary-loaded media
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -27,6 +27,16 @@ The boundary’s position and geometry are fixed, while the interior material su
 3. B. Colbois, A. Girouard and A. Métras, [Hypersurfaces of Euclidean space with prescribed boundary and small Steklov eigenvalues](https://arxiv.org/abs/1811.11463), preprint (2018), abstract and main theorem: the opposite, small-eigenvalue construction.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #135](https://github.com/MColbrook/AIM/pull/135). The affirmative result covers every admissible prescribed embedded boundary, including curves and filling codimension one.
+
+[Proof or source](../research/solutions/112-fixed-embedded-boundary-steklov/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/112-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every d>=1 and m>=d+2, every fixed admissible embedded boundary admits smooth Euclidean-induced fillings with arbitrarily large first positive Steklov eigenvalue.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

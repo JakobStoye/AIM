@@ -2,9 +2,9 @@
 
 **Area:** Mathematical phylogenetics and ancestral-state inference
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -57,6 +57,16 @@ Ancestral-state inference estimates a trait or a sequence position of a common a
 5. Sebastien Roch and Kun-Chieh Wang, *Sufficient condition for root reconstruction by parsimony on binary trees with general weights*, Electronic Communications in Probability 26 (2021), article 55, 1–13, [DOI](https://doi.org/10.1214/21-ECP423); [published PDF](https://par.nsf.gov/servlets/purl/10342268). Section 1, Theorems 1.2 and 1.5, treats two-state reconstruction uniformly over tree depths.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #145](https://github.com/MColbrook/AIM/pull/145). An exact positive-edge ultrametric three-leaf example for the symmetric twenty-state model violates the proposed Fitch accuracy inequality.
+
+[Proof or source](../research/solutions/fitch-ultrametric-counterexample/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/328-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Full negative answer to the assertion over all alphabet sizes r>=5; strict deficit 171/400000.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

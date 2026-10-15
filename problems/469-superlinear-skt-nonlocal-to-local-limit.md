@@ -2,9 +2,9 @@
 
 **Area:** Cross-diffusion PDEs; population dispersal
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -48,6 +48,16 @@ The limit would justify replacing finite-range population dispersal by a local S
 2. G. Galiano and J. Velasco, *Convergence of solutions of a rescaled evolution nonlocal cross-diffusion problem to its local diffusion counterpart*, Rev. R. Acad. Cienc. Exactas Fís. Nat. Ser. A Math. **116**, 93 (2022), the two-species $`s=1`$ result. [Article](https://doi.org/10.1007/s13398-022-01231-7).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #155](https://github.com/MColbrook/AIM/pull/155). The regional superlinear SKT strong solutions converge along one global subsequence to a genuine no-flux local weak solution for every fixed s>1.
+
+[Proof or source](../research/solutions/superlinear-skt-localization/paper/localization.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/469-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The regional superlinear SKT strong solutions converge along one global subsequence to a genuine no-flux local weak solution for every fixed s>1.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

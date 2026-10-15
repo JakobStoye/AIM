@@ -2,9 +2,9 @@
 
 **Area:** Curved-film micromagnetics
 
-**Status:** 🔵 OPEN
+**Status:** 🟠 SOLUTION CLAIMED
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -41,7 +41,17 @@ Curvature can support magnetic configurations that differ from planar-film patte
 
 ## Status review
 
-**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-241). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Claim: two-profile counterexample claim; public dependency closure inspected, local Lean replay pending.
+
+[Proof or source](https://prove2.me/theorems/2f49ead8-433f-4b5e-9fc9-c44349429863) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Review boundary:** A frozen installable project with complete dependency pins, a successful local Lean replay and transitive axiom output remain unverified; all 19 public custom imports were retrieved and inspected, with no concrete assumption gap found.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
+**Resolution-source report (2026-10-15):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-241). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
 
 ### Earlier status review (2026-09-13)
 

@@ -1,0 +1,401 @@
+[
+  {
+    "pr": 170,
+    "id": "030",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative existence in every dimension",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Radchenko–Wheeler, Hexagon 2610.00186v1, Proposition 7 and following deduction, Section 9.2, p.17",
+      "Radchenko–Wheeler, arXiv:2609.21892v2, Theorem 7, Section 4.4 pp.20–21; Remark 7 p.22",
+      "Appleby–Flammia–Kopp, arXiv:2501.03970v2, Theorem 1.46; Section 5.6 pp.87–88"
+    ],
+    "proof": [
+      "https://hexagonmath.org/pdf/2610.00186v1",
+      "https://arxiv.org/pdf/2609.21892v2",
+      "https://arxiv.org/pdf/2501.03970v2"
+    ],
+    "sources": [
+      {
+        "url": "https://hexagonmath.org/pdf/2610.00186v1",
+        "sha256": "e31ed15bfbe9c2efd47b2f44b585c35be68ed28a15c361c6bf5f1db9f60982c9",
+        "pages": 22
+      },
+      {
+        "url": "https://arxiv.org/pdf/2609.21892v2",
+        "sha256": "aae135b3cb875ab24d64e0042cb10ced98b64171dd8a760a4c2a96fe88ba7e71",
+        "pages": 36
+      },
+      {
+        "url": "https://arxiv.org/pdf/2501.03970v2",
+        "sha256": "d469d975f14501d7593fcd9160c1175026a9159eff2d0b2dbb57d58831a42443",
+        "pages": 177
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-030",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM030. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "044",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative bit-complexity bound",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Kelner, arXiv:2609.38101v1, Theorem 1.1 p.3",
+      "Theorem 3.3 p.10; Lemma 3.4 and Section 3.3 pp.11–12; Section 4 pp.12–14"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2609.38101v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2609.38101v1",
+        "sha256": "5903800d274b9ce68046cf2972f4cf26142f99c2476ade4671ef8a74ea6b4795",
+        "pages": 16
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-044",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM044. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "092",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative dimension-free Poincare inequality",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Bizeul–Klartag–Lehec, arXiv:2610.05474v1, definition (5) and Theorem 1.1 p.2",
+      "Balasubramanian–Kasiviswanathan, arXiv:2610.07728v1, Theorem 1.1 p.3; conclusion of Section 8 pp.23–24; Appendix F"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2610.05474v1",
+      "https://arxiv.org/pdf/2610.07728v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2610.05474v1",
+        "sha256": "86824722318f2213daf5ae624391b41f76bb4d41118b1657db9ab00d2d1bb0db",
+        "pages": 32
+      },
+      {
+        "url": "https://arxiv.org/pdf/2610.07728v1",
+        "sha256": "6f19dd815c69127c4a3ed75abb69aa54a1e6d7c42bcb5c06b2e4769661667ada",
+        "pages": 53
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-092",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM092. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "108",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative uniqueness of the critical catenoid",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Chodosh–Gianocca, arXiv:2609.13054v1, Theorem 1.1 and Corollary 1.2; concluding proof p.10",
+      "Parise–Zhu, arXiv:2609.17512v1, Theorems 1.1, 1.3 and 1.4"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2609.13054v1",
+      "https://arxiv.org/pdf/2609.17512v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2609.13054v1",
+        "sha256": "a31bc9c6e5652279c2f1c9c234800c6393eb223fe86dd02a80802660f6391549",
+        "pages": 13
+      },
+      {
+        "url": "https://arxiv.org/pdf/2609.17512v1",
+        "sha256": "ec8af2384bd3fff71a00787ddb6d55c3a3bd7fbe797c59f3feaf45d563e1eb7f",
+        "pages": 28
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-108",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM108. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "111",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative unbounded first Steklov multiplicity",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Nifa, Zenodo record 22949635, Theorem A and Corollary 1.1 pp.2–3; ordinary Steklov formulation in the introduction"
+    ],
+    "proof": [
+      "https://zenodo.org/api/records/22949635/files/Prescribed_Steklov_Spectra_nifa.pdf/content"
+    ],
+    "sources": [
+      {
+        "url": "https://zenodo.org/api/records/22949635/files/Prescribed_Steklov_Spectra_nifa.pdf/content",
+        "sha256": "b4214e8895f8c9e9cd9c300dd89d5d1d1b98a77ada4b7095b9ffe885ec325fe7",
+        "pages": 33
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-111",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM111. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "123",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Negative: smooth bracket-generating counterexample",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Lerario–Rizzi–Tiberio, arXiv:2609.05991v1, Theorem 1.1(i) p.2",
+      "Lemma 2.1 pp.5–6; Lemma 3.1 pp.7–8; Proposition 3.2 pp.8–9",
+      "Proposition 4.1 pp.9–10; Lemma 4.3 and Proposition 4.4 pp.11–12"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2609.05991v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2609.05991v1",
+        "sha256": "4877b5bc4ae5c9ffba4c4924cbb3100b96e3b2f6fe7721edf2a52a2bb9f94588",
+        "pages": 15
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-123",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM123. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "125",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Negative: branching analytic equiregular minimizers",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Rossi–Schiavoni Piazza–Socionovo, arXiv:2603.23068v3, Theorems 1.1–1.3 pp.3–4",
+      "Section 10 pp.35–36, especially projection (10.1) and equality of controls on the initial interval"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2603.23068v3"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2603.23068v3",
+        "sha256": "1dfd32699fb2f7d6ef9f37ddb947cab6f54507ce8ee37976bc9a994a02c18697",
+        "pages": 37
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-125",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM125. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "126",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative sharp Heisenberg isoperimetry",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Chen–Kao–Lien, arXiv:2610.07632v1, frame p.1; bubble (1.1), Theorem 1.1 and constants (1.3) p.2",
+      "Proposition 3.1 pp.13–17; Proposition 4.7 and final proof pp.27–28"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2610.07632v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2610.07632v1",
+        "sha256": "89bb39f2ce771609e55627e27dc1a49c7e95dfcb691fdf3be84dd11f6bb0276c",
+        "pages": 29
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-126",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM126. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "348",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Negative: finite-time Brownian branching explosion",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Lin–Lu, arXiv:2610.18802v1, Theorem 1.1 p.3",
+      "Section 7 pp.49–55: common-clock construction, Lemma 7.2, Proposition 7.3, geometry and final proof"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2610.18802v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2610.18802v1",
+        "sha256": "05e9604467dcf946512f0314b9bba274601d9209309050c1406d3d7b342340c1",
+        "pages": 86
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-348",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM348. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "392",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative codimension-two transport-interface regularity",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Chen–Li–Li–Liu–Wu, arXiv:2610.18756v1, polyhedral convention and Theorem 1.1 p.2",
+      "Proposition 5.3 pp.23–24; Lemma 5.4 and proof of Theorem 1.1 pp.24–25"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2610.18756v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2610.18756v1",
+        "sha256": "d52c8ae09efd57f1668005971d84a083862f28958aa49951edf885a62bfb557f",
+        "pages": 31
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-392",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM392. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "393",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative codimension-two partial-transport regularity",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "Chen–Li–Li–Liu–Wu, arXiv:2610.18756v1, Theorem 1.2 p.3",
+      "Section 6 p.25, obstacle relation (6.2); Proposition 6.4 and final proof pp.27–28"
+    ],
+    "proof": [
+      "https://arxiv.org/pdf/2610.18756v1"
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2610.18756v1",
+        "sha256": "d52c8ae09efd57f1668005971d84a083862f28958aa49951edf885a62bfb557f",
+        "pages": 31
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-393",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM393. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. ",
+    "evidence_class": "pure public complete claim"
+  },
+  {
+    "pr": 170,
+    "id": "394",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "status": "Solution claimed",
+    "status_basis": "Public complete proof claim with a full theorem/interface-to-target match. No peer-reviewed publication or complete independent proof audit was established by this applicability review.",
+    "outcome": "Affirmative convex injectivity domains under weak MTW",
+    "source_match": "full",
+    "reviewer": "OpenAI Codex; independent AI applicability review",
+    "audit_scope": "Read the entire submitted entry and exact target; checked the primary theorem and named technical interfaces below. No new complete proof audit of the external paper is claimed.",
+    "source_locations": [
+      "OpenAI, pinned math repository fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, paper dated 25 September 2026, equations (1.1)–(1.3) and Theorem 1.1 p.2",
+      "Theorem 4.8 pp.16–17; Corollary 4.9 p.17; Corollary 4.10 pp.17–18; Proposition 4.11 pp.18–19"
+    ],
+    "proof": [
+      "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf"
+    ],
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf",
+        "sha256": "e16087753fc93a840bd357fe203ffd1d7a511245db91f5e629132e91db440724",
+        "pages": 24
+      }
+    ],
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-394",
+    "verified_progress": "The cited public theorem and checked interfaces cover the full written catalogue target, subject to correctness of the external published argument.",
+    "remaining_target": "The public source claims the full target. Its complete argument has not received an independent audit here, and a peer-reviewed published resolution was not established by this review; the source-to-target comparison alone is not full proof verification.",
+    "required_corrections": [
+      "Replace AIM394's locator 'Theorems 4.8–4.11' with 'Theorem 4.8, Corollaries 4.9–4.10 and Proposition 4.11' (or 'results 4.8–4.11')."
+    ],
+    "reply_summary": "A separate AI source-to-target comparison found the cited full theorem covers AIM394. It remains Solution claimed on this review evidence: the source is a public preprint and this review does not establish peer-reviewed publication or a complete independent proof audit. Replace AIM394's locator 'Theorems 4.8–4.11' with 'Theorem 4.8, Corollaries 4.9–4.10 and Proposition 4.11' (or 'results 4.8–4.11').",
+    "evidence_class": "pure public complete claim"
+  }
+]

@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and geometric reconstruction
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -41,6 +41,16 @@ A Rips complex is built from pairwise distance information, while its shadow lie
 3. K. Kawamura, S. Majhi and A. Mitra, [The Shadow of Vietoris–Rips Complexes in Limits](https://arxiv.org/abs/2601.01359), preprint (2026), §4.3, Assumption (H) and Theorem 4.11.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #93](https://github.com/MColbrook/AIM/pull/93). Six-point counterexample to injectivity of the Rips shadow map.
+
+[Proof or source](../research/resolved/499-rips-shadow-fundamental-group/paper/rips_shadow_counterexample.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/499-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** An admissible rational six-point Euclidean sample has abstract fundamental group Z and contractible affine shadow, in every ambient dimension at least three and every positive scale.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** In the plane the shadow map induces an isomorphism on fundamental groups [2], also covering subsets of a line. In three-dimensional ambient space, [1] proves surjectivity; injectivity is the missing assertion.
 

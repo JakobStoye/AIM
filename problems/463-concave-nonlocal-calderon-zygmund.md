@@ -2,9 +2,9 @@
 
 **Area:** Fully nonlinear nonlocal PDEs; integrable forcing
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -35,6 +35,16 @@ The estimate would quantify spatial regularity under integrable forcing for nonl
 2. S. Kitano, *$`W^{\sigma,p}`$ a priori estimates for fully nonlinear integro-differential equations* (2022), Introduction and kernel hypotheses. [Author preprint](https://arxiv.org/abs/2207.06728).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #150](https://github.com/MColbrook/AIM/pull/150). The proposed kernel-uniform full-order Sobolev estimate fails at every finite sufficiently large p for strict ellipticity pairs.
+
+[Proof or source](../research/solutions/463-concave-nonlocal-sobolev-counterexample/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/463-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The proposed kernel-uniform full-order Sobolev estimate fails at every finite sufficiently large p for strict ellipticity pairs.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

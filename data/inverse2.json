@@ -36,8 +36,11 @@
     "title": "Sard conjecture for smooth bracket-generating distributions",
     "area": "Nonholonomic control / sub-Riemannian geometry",
     "file": "problems/123-sard-conjecture-endpoint-map.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative: smooth bracket-generating counterexample",
+    "proof": "https://arxiv.org/pdf/2609.05991v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "124",
@@ -52,16 +55,22 @@
     "title": "Nonbranching of analytic equiregular sub-Riemannian geodesics",
     "area": "Nonholonomic geometry / optimal transport",
     "file": "problems/125-equiregular-analytic-nonbranching.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative: branching analytic equiregular minimizers",
+    "proof": "https://arxiv.org/pdf/2603.23068v3",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "126",
     "title": "Pansu's isoperimetric conjecture in the Heisenberg group",
     "area": "Sub-Riemannian geometric optimization",
     "file": "problems/126-pansu-heisenberg-isoperimetry.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative sharp Heisenberg isoperimetry",
+    "proof": "https://arxiv.org/pdf/2610.07632v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "127",
@@ -189,16 +198,22 @@
     "title": "Finite-jet determination of small-time local controllability",
     "area": "Nonlinear control / local system identification",
     "file": "problems/141-finite-jet-small-time-control.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A fixed five-dimensional polynomial STLC system has no finite jet guaranteeing STLC with the same bounded controls.",
+    "proof": "research/solutions/141-finite-jet-control-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/141-review.md"
   },
   {
     "id": "142",
     "title": "An irrational polygon with nonergodic billiard flow",
     "area": "Billiard dynamics / transport and ergodicity",
     "file": "problems/142-irrational-nonergodic-polygon.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "No irrational simple polygon with nonergodic full billiard flow, by the zero-frequency proof extension.",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/142-independent-zero-frequency-review.md"
   },
   {
     "id": "143",
@@ -237,8 +252,11 @@
     "title": "Decidability of local asymptotic stability for polynomial ODEs",
     "area": "Nonlinear control and algorithmic verification",
     "file": "problems/338-polynomial-local-stability-decidability.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative",
+    "proof": "https://arxiv.org/pdf/2610.12434v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "491",

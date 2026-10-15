@@ -1,0 +1,28 @@
+[
+  {
+    "pr": 135,
+    "id": 112,
+    "outcome": "The affirmative result covers every admissible prescribed embedded boundary, including curves and filling codimension one.",
+    "proof": "research/solutions/112-fixed-embedded-boundary-steklov/paper/manuscript.pdf",
+    "verified_progress": "For every d>=1 and m>=d+2, every fixed admissible embedded boundary admits smooth Euclidean-induced fillings with arbitrarily large first positive Steklov eigenvalue.",
+    "reply_summary": "An independent AI audit reconstructed the exact-boundary metric transfer, relative smooth embedding approximation, higher-dimensional conformal construction and arbitrary-curve/high-genus case. These cover the complete stated target, including filling codimension one. All eight PDF pages and the source/target correspondence were checked. The repository records this as Solved on the basis of the documented audit; no human or Lean verification is asserted.",
+    "pinned_head": "2d843e8dc4c0ce3b341bbcf44a9d7fc36c744bfa",
+    "review": "research/solution_reviews/2026-10-15-active-prs/112-review.md",
+    "required_corrections": [],
+    "remaining_target": "",
+    "status": "Solved"
+  },
+  {
+    "pr": 138,
+    "id": 376,
+    "outcome": "The conditional-density argument establishes a subsequential vanishing-center-of-mass-diffusion limit for the complete stated periodic three-dimensional FENE target.",
+    "proof": "research/solutions/376-fene-vanishing-center-of-mass-diffusion/paper/main.pdf",
+    "verified_progress": "For arbitrary prescribed data in the stated smooth bounded-positive normalized class, every nu>0 and k>2, selected global positive-diffusion solutions have a subsequence converging to the identical full noncorotational zero-diffusion system, with strong L2 velocity, strong L1 density and stress, the original fluxes, initial data and initial-time entropy inequality.",
+    "reply_summary": "The complete manuscript received an independent AI audit, including its conditional Brownian representation and fixed-diffusion uniqueness, cutoff work limit, retained Fisher/coercivity inequality and normalized entropy-defect closure. Primary source hypotheses, the complete target correspondence and all 19 PDF pages were checked. The argument covers the full stated target; the repository records it as Solved on the documented audit. This is an analytic result, with no human peer review or Lean verification asserted.",
+    "pinned_head": "3a7c9c8907582924bf038c24b6225b0685943bc2",
+    "review": "research/solution_reviews/2026-10-15-active-prs/376-review.md",
+    "required_corrections": [],
+    "remaining_target": "",
+    "status": "Solved"
+  }
+]

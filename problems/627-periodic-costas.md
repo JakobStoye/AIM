@@ -2,9 +2,9 @@
 
 **Area:** Combinatorial signal design
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -46,6 +46,16 @@ Distinct displacement vectors limit ambiguity in multidimensional correlation pa
 2. I. Rubio and J. Torres, [Circular Costas maps: a multidimensional analog of circular Costas sequences](https://arxiv.org/abs/2210.16661), *Cryptography and Communications* **15** (2023), 941–958. The circular-map results concern a different injection-based definition.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #124](https://github.com/MColbrook/AIM/pull/124). A six-point periodic four-dimensional Costas array disproves the universal order restriction.
+
+[Proof or source](../research/solutions/627-periodic-costas/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/627-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** A six-point periodic four-dimensional Costas array disproves the universal order restriction.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The assertion holds in dimensions two and three. Odd orders cannot satisfy the periodic condition in any dimension. The source also supplies nonexistence criteria for additional even-order shapes and examples of periodic arrays of size $`2\times2\times4`$.
 

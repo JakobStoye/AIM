@@ -1,0 +1,1298 @@
+[
+  {
+    "pr": 90,
+    "head": "d3d08ea6cb9b28c84245712fd29c50f5c091b370",
+    "manuscripts": [
+      {
+        "source": "research/solutions/kaiwen-jin-577/paper/repeated_gue_three_legs.tex",
+        "pdf": "research/solutions/kaiwen-jin-577/paper/repeated_gue_three_legs.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 91,
+    "head": "557794107a8a12577008cf5ffa010b6fccbca0d3",
+    "manuscripts": [
+      {
+        "source": "research/solutions/501-integral-flat-norm-codimension-one/paper/integral_flat_norm.tex",
+        "pdf": "research/solutions/501-integral-flat-norm-codimension-one/paper/integral_flat_norm.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 92,
+    "head": "01f7a36c56ffb3d94bf103a68c387ef6ac9efe9b",
+    "manuscripts": [
+      {
+        "source": "research/solutions/504-ising-disks-excursion-tail/paper/ising_disks_excursion.tex",
+        "pdf": "research/solutions/504-ising-disks-excursion-tail/paper/ising_disks_excursion.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 93,
+    "head": "9cd0516e31464c112e8d66a9c0bfd7e172e68f14",
+    "manuscripts": [
+      {
+        "source": "research/resolved/499-rips-shadow-fundamental-group/paper/rips_shadow_counterexample.tex",
+        "pdf": "research/resolved/499-rips-shadow-fundamental-group/paper/rips_shadow_counterexample.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 94,
+    "head": "a82eec0914141bb1e5bc5eb75f9abbf30e44bfec",
+    "manuscripts": [
+      {
+        "source": "research/solutions/500-higher-dimensional-ising-clumps/paper/cube_dynamics.tex",
+        "pdf": "research/solutions/500-higher-dimensional-ising-clumps/paper/cube_dynamics.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 95,
+    "head": "566560482b63bbfcaf289efdf231991f9b4c2a7c",
+    "manuscripts": [
+      {
+        "source": "research/solutions/512-kaiwen-jin-spherical-rips-first-transition/paper/main.tex",
+        "pdf": "research/solutions/512-kaiwen-jin-spherical-rips-first-transition/paper/main.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 96,
+    "head": "4655a5f9b31788994fe60892844b8c3cec0f337b",
+    "manuscripts": [
+      {
+        "source": "research/solutions/513-kaiwen-jin-flat-counterexample/paper/main.tex",
+        "pdf": "research/solutions/513-kaiwen-jin-flat-counterexample/paper/main.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 97,
+    "head": "5d53c3a78588eb1cb31362a337ab5b0e146eee91",
+    "manuscripts": [
+      {
+        "source": "research/solutions/514-kaiwen-jin-aspherical-connected-sums/paper/aspherical-connected-sums.tex",
+        "pdf": "research/solutions/514-kaiwen-jin-aspherical-connected-sums/paper/aspherical-connected-sums.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 98,
+    "head": "71a40d1b23893948a5e9e6f800130b198ee70f07",
+    "manuscripts": [
+      {
+        "source": "research/solutions/525-positive-norm-tc-weight/paper/counterexample.tex",
+        "pdf": "research/solutions/525-positive-norm-tc-weight/paper/counterexample.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 99,
+    "head": "e2dea2b4ec0c80368c680466fe1d7dded861212c",
+    "manuscripts": [
+      {
+        "source": "research/solutions/yuiyuiui-531-integral-counterexample/paper/torus_grid_counterexample.tex",
+        "pdf": "research/solutions/yuiyuiui-531-integral-counterexample/paper/torus_grid_counterexample.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 100,
+    "head": "0da42f3f8c186fa9b965b3e6c0745f3b12885086",
+    "manuscripts": [
+      {
+        "source": "research/solutions/529-preferential-attachment-betti-limit/paper/main.tex",
+        "pdf": "research/solutions/529-preferential-attachment-betti-limit/paper/main.pdf",
+        "pages": 11,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 101,
+    "head": "ed0c8eff31e6a22c9bc5509c0413e9e513aeff8e",
+    "manuscripts": [
+      {
+        "source": "research/solutions/537-persistence-fiber-betti-numbers/paper/persistence_fiber.tex",
+        "pdf": "research/solutions/537-persistence-fiber-betti-numbers/paper/persistence_fiber.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 102,
+    "head": "cdebeeb97d00ca40e2250d85b557598789db7b1b",
+    "manuscripts": [
+      {
+        "source": "research/solutions/532-torus-grid-half-diameter-homotopy/paper/main.tex",
+        "pdf": "research/solutions/532-torus-grid-half-diameter-homotopy/paper/torus-grid-half-diameter.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 103,
+    "head": "de58527e481c71125a9a1868c56b5843b76826da",
+    "manuscripts": [
+      {
+        "source": "research/solutions/520-kaiwen-jin-coarse-persistence-diagrams/paper/main.tex",
+        "pdf": "research/solutions/520-kaiwen-jin-coarse-persistence-diagrams/paper/main.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 104,
+    "head": "78e2c3a174f566dcdb63a2c3579ffafb34e28a4c",
+    "manuscripts": [
+      {
+        "source": "research/solutions/547-minimal-persistence-grid-morse-bound/paper/grid_morse_bound.tex",
+        "pdf": "research/solutions/547-minimal-persistence-grid-morse-bound/paper/grid_morse_bound.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 105,
+    "head": "b5f09f361de0b7d745f3412dc392507fc4c30039",
+    "manuscripts": [
+      {
+        "source": "research/solutions/565-macbeath-center-asymmetry/paper/macbeath_counterexample.tex",
+        "pdf": "research/solutions/565-macbeath-center-asymmetry/paper/macbeath_counterexample.pdf",
+        "pages": 2,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 106,
+    "head": "f3f7506966f071d9591f0169e7c07f5a1df2a767",
+    "manuscripts": [
+      {
+        "source": "research/solutions/aim-593-segment-grids/paper/segment_grids.tex",
+        "pdf": "research/solutions/aim-593-segment-grids/paper/segment_grids.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 107,
+    "head": "b8c005ee5480e2030ae189b2035d3eb9e24401a2",
+    "manuscripts": [
+      {
+        "source": "research/solutions/aim-610-reflexive-facet-counterexample/paper/manuscript.tex",
+        "pdf": "research/solutions/aim-610-reflexive-facet-counterexample/paper/manuscript.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 108,
+    "head": "b0f3f707f434785784adc3792bfd93a4c2a5597a",
+    "manuscripts": [
+      {
+        "source": "research/solutions/aim-596-fat-convex-transversals/paper/main.tex",
+        "pdf": "research/solutions/aim-596-fat-convex-transversals/paper/main.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 109,
+    "head": "5301ae4e418e9268de0680487b4741ee9bbcca08",
+    "manuscripts": [
+      {
+        "source": "research/solutions/aim-630-extrapolation-relative-density/paper/relative_density.tex",
+        "pdf": "research/solutions/aim-630-extrapolation-relative-density/paper/relative_density.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 110,
+    "head": "d80c3a8d997fdead30bedef850ee5d7360974f39",
+    "manuscripts": [
+      {
+        "source": "research/solutions/628-odd-euler-flag-no-square/paper/odd_euler_flag_no_square.tex",
+        "pdf": "research/solutions/628-odd-euler-flag-no-square/paper/odd_euler_flag_no_square.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 111,
+    "head": "c1f79e312f2b7bae2636469c506376a873100691",
+    "manuscripts": [
+      {
+        "source": "research/solutions/629-extrapolation-discreteness/paper/extrapolation_discreteness.tex",
+        "pdf": "research/solutions/629-extrapolation-discreteness/paper/extrapolation_discreteness.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 112,
+    "head": "3d9df8678f27469a74af9ca2d81ec5ec11157316",
+    "manuscripts": [
+      {
+        "source": "research/solutions/640-random-balanced-cayley-obstruction/paper/main.tex",
+        "pdf": "research/solutions/640-random-balanced-cayley-obstruction/paper/main.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 113,
+    "head": "fbad49f5635de525a998198814613a1bbf8b91f5",
+    "manuscripts": [
+      {
+        "source": "research/solutions/644-medial-regime-topological-complexity/paper/main.tex",
+        "pdf": "research/solutions/644-medial-regime-topological-complexity/paper/main.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 114,
+    "head": "062917a6f33965d876974e7d9df3e22ae6feec33",
+    "manuscripts": [
+      {
+        "source": "research/solutions/635-bounded-crossing-heilbronn/paper/main.tex",
+        "pdf": "research/solutions/635-bounded-crossing-heilbronn/paper/main.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 115,
+    "head": "bdbc3d0176c1c4e59be4db5b3d58a02ae27300c5",
+    "manuscripts": [
+      {
+        "source": "research/solutions/643-low-degree-simplicial-zero-spectrum/paper/degree_three_counterexample.tex",
+        "pdf": "research/solutions/643-low-degree-simplicial-zero-spectrum/paper/degree_three_counterexample.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 116,
+    "head": "c70ec0a591029633fd15aa2568c3b71e9adbd3fe",
+    "manuscripts": [
+      {
+        "source": "research/solutions/645-finite-three-ample-nonsimply-connected/paper/finite_three_ample.tex",
+        "pdf": "research/solutions/645-finite-three-ample-nonsimply-connected/paper/finite_three_ample.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 117,
+    "head": "6dd971c850a3088134f2fccb747b26a1a027eef2",
+    "manuscripts": [
+      {
+        "source": "research/solutions/650-random-digraph-path-betti-central-limit/manuscript.tex",
+        "pdf": "research/solutions/650-random-digraph-path-betti-central-limit/manuscript.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 118,
+    "head": "fe73ab8e534dc819c44fd54cf355fe123805030c",
+    "manuscripts": [
+      {
+        "source": "research/solutions/648-polyhedral-most-isolated-point-location/paper/polyhedral_isolation.tex",
+        "pdf": "research/solutions/648-polyhedral-most-isolated-point-location/paper/polyhedral_isolation.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 119,
+    "head": "de7478fb7a79bf2b815e447c7aa60e645a8f4630",
+    "manuscripts": [
+      {
+        "source": "research/solutions/540-hyperbolic-ball-barrier-parameter/paper/hyperbolic_ball_barriers.tex",
+        "pdf": "research/solutions/540-hyperbolic-ball-barrier-parameter/paper/hyperbolic_ball_barriers.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 120,
+    "head": "33832cdd99c080db769f5f069da150cd0ef3cd5d",
+    "manuscripts": [
+      {
+        "source": "research/solutions/649-random-digraph-path-homology-vanishing/paper/path_homology_vanishing.tex",
+        "pdf": "research/solutions/649-random-digraph-path-homology-vanishing/paper/path_homology_vanishing.pdf",
+        "pages": 10,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 121,
+    "head": "06fcc7689bee3a0d73076bcf3bf9643ac3b234d2",
+    "manuscripts": [
+      {
+        "source": "research/solutions/647-polytopal-connectivity-last-isolated-point/paper/connectivity-polytope.tex",
+        "pdf": "research/solutions/647-polytopal-connectivity-last-isolated-point/paper/connectivity-polytope.pdf",
+        "pages": 9,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 122,
+    "head": "c6ec4842bef76b3ef16cf783628d5ea669396046",
+    "manuscripts": [
+      {
+        "source": "research/solutions/571-half-integral-collinear-count/paper/manuscript.tex",
+        "pdf": "research/solutions/571-half-integral-collinear-count/paper/manuscript.pdf",
+        "pages": 9,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 123,
+    "head": "7cbd266c5b2d93272de8fa9450155ceba814a8f0",
+    "manuscripts": [
+      {
+        "source": "research/solutions/602-surface-girth-facial-linear-bound/paper/manuscript.tex",
+        "pdf": "research/solutions/602-surface-girth-facial-linear-bound/paper/manuscript.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 124,
+    "head": "dd18040eb5e89b0fd13c6a233839e40783332b9c",
+    "manuscripts": [
+      {
+        "source": "research/solutions/627-periodic-costas/paper/main.tex",
+        "pdf": "research/solutions/627-periodic-costas/paper/main.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 125,
+    "head": "905240cb576dd1e0562bf200eccd6085685471da",
+    "manuscripts": [
+      {
+        "source": "research/solutions/572-half-integral-ehrhart-count/paper/main.tex",
+        "pdf": "research/solutions/572-half-integral-ehrhart-count/paper/main.pdf",
+        "pages": 14,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 126,
+    "head": "0537bbe23dca05b81c88df11e85b6c51a460e771",
+    "manuscripts": [
+      {
+        "source": "research/solutions/162-extreme-bidirectional-solitary-wave/paper/manuscript.tex",
+        "pdf": "research/solutions/162-extreme-bidirectional-solitary-wave/paper/manuscript.pdf",
+        "pages": 11,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 127,
+    "head": "70f61fc9f49ac9ac53f07333308710e0984fc892",
+    "manuscripts": [
+      {
+        "source": "research/solutions/405-kinetic-mfg-vanishing-viscosity-rate/paper/main.tex",
+        "pdf": "research/solutions/405-kinetic-mfg-vanishing-viscosity-rate/paper/main.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 128,
+    "head": "e9d45c98722999ecb5b4aeb19c2c4ba872631448",
+    "manuscripts": [
+      {
+        "source": "research/solutions/400-radiative-insulation-concentric-balls/paper/main.tex",
+        "pdf": "research/solutions/400-radiative-insulation-concentric-balls/paper/main.pdf",
+        "pages": 10,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 129,
+    "head": "ab5d6f736be7486c9b57bf3ef27f0477bbfac3c5",
+    "manuscripts": [
+      {
+        "source": "research/solutions/416-catalytic-reaction-diffusion-positive-attractor/paper/manuscript.tex",
+        "pdf": "research/solutions/416-catalytic-reaction-diffusion-positive-attractor/paper/manuscript.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 130,
+    "head": "0ca93304d829a56ae9970fde75c210f29f92e9f9",
+    "manuscripts": [
+      {
+        "source": "research/solutions/kdv-14pi-polynomial-decay/paper/manuscript.tex",
+        "pdf": "research/solutions/kdv-14pi-polynomial-decay/paper/manuscript.pdf",
+        "pages": 10,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 131,
+    "head": "2e20884b440d5804c1f2de740ae219239c8d4b0e",
+    "manuscripts": [
+      {
+        "source": "research/solutions/local-mfg-uniform-vanishing-viscosity/paper/main.tex",
+        "pdf": "research/solutions/local-mfg-uniform-vanishing-viscosity/paper/main.pdf",
+        "pages": 12,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 132,
+    "head": "44a397b2c3577679229767a914922db8c8ddf390",
+    "manuscripts": [
+      {
+        "source": "research/solutions/413-intercritical-dispersion-managed-norm-inflation/paper/main.tex",
+        "pdf": "research/solutions/413-intercritical-dispersion-managed-norm-inflation/paper/main.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 133,
+    "head": "92de46d2190e6af89c3ac751be6746b3b429b17f",
+    "manuscripts": [
+      {
+        "source": "research/solutions/367-hyperbolic-error-counterexample/paper/paper.tex",
+        "pdf": "research/solutions/367-hyperbolic-error-counterexample/paper/paper.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 134,
+    "head": "a8adb802e6890282b62c5118ae84d8f54ffcde89",
+    "manuscripts": [
+      {
+        "source": "research/solutions/390-planar-monge-ampere-sharp-hessian-integrability/paper/main.tex",
+        "pdf": "research/solutions/390-planar-monge-ampere-sharp-hessian-integrability/paper/main.pdf",
+        "pages": 10,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 135,
+    "head": "2d843e8dc4c0ce3b341bbcf44a9d7fc36c744bfa",
+    "manuscripts": [
+      {
+        "source": "research/solutions/112-fixed-embedded-boundary-steklov/paper/manuscript.tex",
+        "pdf": "research/solutions/112-fixed-embedded-boundary-steklov/paper/manuscript.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 136,
+    "head": "fb98d423513524bc2a4443454e5401a80a55d4c9",
+    "manuscripts": [
+      {
+        "source": "research/solutions/423-ordinary-sobolev-magnetic-airy-domain-clarification/paper/domain-correction.tex",
+        "pdf": "research/solutions/423-ordinary-sobolev-magnetic-airy-domain-clarification/paper/domain-correction.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 137,
+    "head": "2588b6e13e0d21cc0ab51545d89c79fa4d057f0a",
+    "manuscripts": [
+      {
+        "source": "research/solutions/441-ionization-blowup/paper/ionization_blowup.tex",
+        "pdf": "research/solutions/441-ionization-blowup/paper/ionization_blowup.pdf",
+        "pages": 15,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 138,
+    "head": "3a7c9c8907582924bf038c24b6225b0685943bc2",
+    "manuscripts": [
+      {
+        "source": "research/solutions/376-fene-vanishing-center-of-mass-diffusion/paper/main.tex",
+        "pdf": "research/solutions/376-fene-vanishing-center-of-mass-diffusion/paper/main.pdf",
+        "pages": 19,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 139,
+    "head": "2fe247eaa2e8a2b96f41343ee7138013a70e1e56",
+    "manuscripts": [
+      {
+        "source": "research/solutions/424-spherical-pt-robin-real-spectrum/paper/spherical_robin_real_spectrum.tex",
+        "pdf": "research/solutions/424-spherical-pt-robin-real-spectrum/paper/spherical_robin_real_spectrum.pdf",
+        "pages": 9,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 140,
+    "head": "42bc75eb7969fa727113d0fb216c8083ea36b39f",
+    "manuscripts": [
+      {
+        "source": "research/solutions/366-cutoff-boltzmann-rapid-decay/paper/main.tex",
+        "pdf": "research/solutions/366-cutoff-boltzmann-rapid-decay/paper/main.pdf",
+        "pages": 12,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 141,
+    "head": "bc5fd6bac773c5e925e18853bfc4b647fe22a090",
+    "manuscripts": [
+      {
+        "source": "research/solutions/141-finite-jet-control-counterexample/paper/main.tex",
+        "pdf": "research/solutions/141-finite-jet-control-counterexample/paper/main.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 142,
+    "head": "6cfcf05e1f41032113617cc16e174569d19ae9bb",
+    "manuscripts": [
+      {
+        "source": "research/solutions/429-transmission-eigenvalue-sharp-weyl-remainder/weyl_remainder.tex",
+        "pdf": "research/solutions/429-transmission-eigenvalue-sharp-weyl-remainder/weyl_remainder.pdf",
+        "pages": 13,
+        "build_passed": true,
+        "text_matches_rebuild": false,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 143,
+    "head": "a2832f5f06a368e44102573e64db48fc80cca2db",
+    "manuscripts": [
+      {
+        "source": "research/solutions/193-directed-polymer-moment-spectrum/paper.tex",
+        "pdf": "research/solutions/193-directed-polymer-moment-spectrum/paper.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 144,
+    "head": "189bc466d46e119d7c7765bce1d41618746062fd",
+    "manuscripts": [
+      {
+        "source": "research/solutions/185-catalytic-carbon-monoxide-poisoning/paper/manuscript.tex",
+        "pdf": "research/solutions/185-catalytic-carbon-monoxide-poisoning/paper/manuscript.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 145,
+    "head": "54df545617bc9696104d2802bc3a91eb903445b2",
+    "manuscripts": [
+      {
+        "source": "research/solutions/fitch-ultrametric-counterexample/paper/main.tex",
+        "pdf": "research/solutions/fitch-ultrametric-counterexample/paper/main.pdf",
+        "pages": 3,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 146,
+    "head": "b2f9fc098cd461dc364b7b62f4760c6f1143072c",
+    "manuscripts": [
+      {
+        "source": "research/solutions/191-pinning-strong-disorder-critical-shift/paper/manuscript.tex",
+        "pdf": "research/solutions/191-pinning-strong-disorder-critical-shift/paper/manuscript.pdf",
+        "pages": 11,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 147,
+    "head": "96149f92d7f66bfb1772aec423a32f676e2dc1d1",
+    "manuscripts": [
+      {
+        "source": "research/solutions/217-critical-subcritical-heat-ratio/paper/main.tex",
+        "pdf": "research/solutions/217-critical-subcritical-heat-ratio/paper/main.pdf",
+        "pages": 9,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 148,
+    "head": "09b60bb381c35eb5567fb251c6cf6a33f13ba220",
+    "manuscripts": [
+      {
+        "source": "research/solutions/383-flory-gelation-mass-continuity/paper/flory_onset.tex",
+        "pdf": "research/solutions/383-flory-gelation-mass-continuity/paper/flory_onset.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 149,
+    "head": "a9c98123bb0710a93ebaf1422f62b631e776189a",
+    "manuscripts": [
+      {
+        "source": "research/solutions/379-uniform-kpp-multiplicity/paper/main.tex",
+        "pdf": "research/solutions/379-uniform-kpp-multiplicity/paper/main.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 150,
+    "head": "3f046208c5834b548da08c6253c1508c25c90644",
+    "manuscripts": [
+      {
+        "source": "research/solutions/463-concave-nonlocal-sobolev-counterexample/paper/manuscript.tex",
+        "pdf": "research/solutions/463-concave-nonlocal-sobolev-counterexample/paper/manuscript.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 151,
+    "head": "0f1a72e90159ed4a58c53276e05ffd91632d2936",
+    "manuscripts": [
+      {
+        "source": "research/solutions/380-critical-kpp-counterexample/paper/main.tex",
+        "pdf": "research/solutions/380-critical-kpp-counterexample/paper/main.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 152,
+    "head": "f42708c58003e4f7663f6f9edda17626921cd27f",
+    "manuscripts": [
+      {
+        "source": "research/solutions/384-two-disk-monostable-counterexample/paper/main.tex",
+        "pdf": "research/solutions/384-two-disk-monostable-counterexample/paper/main.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 153,
+    "head": "e8620ac7479efe6ff3de2e8fe2b963325886f82d",
+    "manuscripts": [
+      {
+        "source": "research/solutions/467-fractional-pressure-continuity-counterexample/paper/main.tex",
+        "pdf": "research/solutions/467-fractional-pressure-continuity-counterexample/paper/main.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 154,
+    "head": "70a827b3bf2a2a810f7f378d6945dcce7e84def3",
+    "manuscripts": [
+      {
+        "source": "research/solutions/461-relaxed-infinity-fractional-comparison/paper.tex",
+        "pdf": "research/solutions/461-relaxed-infinity-fractional-comparison/paper.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 155,
+    "head": "13ab904c45cb6205f534546826d0b88208834692",
+    "manuscripts": [
+      {
+        "source": "research/solutions/superlinear-skt-localization/paper/localization.tex",
+        "pdf": "research/solutions/superlinear-skt-localization/paper/localization.pdf",
+        "pages": 10,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 156,
+    "head": "21242c912966a018dfa8f0f48f61f493b67f1cda",
+    "manuscripts": [
+      {
+        "source": "research/solutions/460-singular-stable-cone-positive-solution-uniqueness/paper/manuscript.tex",
+        "pdf": "research/solutions/460-singular-stable-cone-positive-solution-uniqueness/paper/manuscript.pdf",
+        "pages": 10,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 157,
+    "head": "8a377b721755a4909aa7608b893abf0cc9c03c41",
+    "manuscripts": [
+      {
+        "source": "research/solutions/474-manifold-fractional-pme-point-source/paper/manuscript.tex",
+        "pdf": "research/solutions/474-manifold-fractional-pme-point-source/paper/manuscript.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 158,
+    "head": "60a2396440ccdeab2c3a0090c91d1164433845a5",
+    "manuscripts": [
+      {
+        "source": "research/solutions/473-manifold-fractional-pme-mass-conservation/paper/mass_conservation.tex",
+        "pdf": "research/solutions/473-manifold-fractional-pme-mass-conservation/paper/mass_conservation.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 159,
+    "head": "404bb40f6a5f795b8c61ff2abc0b3914dd003e0b",
+    "manuscripts": [
+      {
+        "source": "research/solutions/402-mixed-order-fractional-logarithmic-convexity/manuscript.tex",
+        "pdf": "research/solutions/402-mixed-order-fractional-logarithmic-convexity/manuscript.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 160,
+    "head": "1957fa687fa60c26c51fd16017b91f43c4e60e14",
+    "manuscripts": [
+      {
+        "source": "research/solutions/403-schrodinger-control-lower-bound/paper/main.tex",
+        "pdf": "research/solutions/403-schrodinger-control-lower-bound/paper/main.pdf",
+        "pages": 4,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 161,
+    "head": "951b78861d0a47ad35322f10454e51614d7691dd",
+    "manuscripts": [
+      {
+        "source": "research/solutions/042-selected-bidiagonal-directions/paper/main.tex",
+        "pdf": "research/solutions/042-selected-bidiagonal-directions/paper/main.pdf",
+        "pages": 15,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 162,
+    "head": "b9b2b7c64b7a18bc805acca39e40aca6c0ab53b9",
+    "manuscripts": [
+      {
+        "source": "research/solutions/411-bounded-input-state-continuity/paper/continuity.tex",
+        "pdf": "research/solutions/411-bounded-input-state-continuity/paper/continuity.pdf",
+        "pages": 5,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 163,
+    "head": "9aabeaaf7407f10ca578391fa632de4f2b1d3c32",
+    "manuscripts": [
+      {
+        "source": "research/solutions/entropy-cubic-nonuniqueness/paper.tex",
+        "pdf": "research/solutions/entropy-cubic-nonuniqueness/paper.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 164,
+    "head": "ec0a45a8a976049a4fdd6f52af3f618868f414ed",
+    "manuscripts": [
+      {
+        "source": "research/solutions/252-self-ball-minkowski-integrability/paper/minkowski_integrability.tex",
+        "pdf": "research/solutions/252-self-ball-minkowski-integrability/paper/minkowski_integrability.pdf",
+        "pages": 6,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 165,
+    "head": "5c6c10c9a57fed12f0c6e703029d6c7c50e4c289",
+    "manuscripts": [
+      {
+        "source": "research/solutions/485-general-stable-obstacle-optimal-regularity/paper/main.tex",
+        "pdf": "research/solutions/485-general-stable-obstacle-optimal-regularity/paper/main.pdf",
+        "pages": 15,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 166,
+    "head": "cfac7195abf3194016de5c355177b472df8859f2",
+    "manuscripts": [
+      {
+        "source": "research/solutions/455-smooth-transport-spde-deterministic-holder-exponent/manuscript.tex",
+        "pdf": "research/solutions/455-smooth-transport-spde-deterministic-holder-exponent/manuscript.pdf",
+        "pages": 7,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 167,
+    "head": "b673e462dea5019dccd17d70a2f292501c6e6958",
+    "manuscripts": [
+      {
+        "source": "research/solutions/transport-noise-navier-stokes-negative-half-data/paper/paper.tex",
+        "pdf": "research/solutions/transport-noise-navier-stokes-negative-half-data/paper/paper.pdf",
+        "pages": 8,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 168,
+    "head": "8b2504c4a03a1097ea45cec49d2bbc5ef057dce9",
+    "manuscripts": [
+      {
+        "source": "research/solutions/478-critical-stochastic-sqg-global-regularity/paper/manuscript.tex",
+        "pdf": "research/solutions/478-critical-stochastic-sqg-global-regularity/paper/manuscript.pdf",
+        "pages": 11,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 169,
+    "head": "b6b71783ccda5a22cefcc844c321ecfd85d89a74",
+    "manuscripts": [
+      {
+        "source": "research/solutions/481-fourth-order-aggregation-finite-propagation/paper/main.tex",
+        "pdf": "research/solutions/481-fourth-order-aggregation-finite-propagation/paper/main.pdf",
+        "pages": 18,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  },
+  {
+    "pr": 171,
+    "head": "6c858215bd4128df0ddd0dbc457903e70d1825a8",
+    "manuscripts": [
+      {
+        "source": "research/458/paper/paper.tex",
+        "pdf": "research/458/paper/paper.pdf",
+        "pages": 20,
+        "build_passed": true,
+        "text_matches_rebuild": true,
+        "missing_citation_keys": [],
+        "blank_pages": [],
+        "unresolved_pdf_references": false
+      }
+    ]
+  }
+]

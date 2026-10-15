@@ -2,9 +2,9 @@
 
 **Area:** Degenerate parabolic PDEs; moving tissue boundaries
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -40,6 +40,16 @@ This would justify a genuine moving edge for compact tissue aggregates in a four
 2. C. Falcó, R. E. Baker and J. A. Carrillo, *A nonlocal-to-local approach to aggregation-diffusion equations*, SIAM Review **67** (2025), 353–372, §4. [Article](https://doi.org/10.1137/25M1726248).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #169](https://github.com/MColbrook/AIM/pull/169). Every stated compactly supported H1 probability datum admits one global fourth-order weak curve with bounded support on each finite horizon.
+
+[Proof or source](../research/solutions/481-fourth-order-aggregation-finite-propagation/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/481-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Every stated compactly supported H1 probability datum admits one global fourth-order weak curve with bounded support on each finite horizon.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

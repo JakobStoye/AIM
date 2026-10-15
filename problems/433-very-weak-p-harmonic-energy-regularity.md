@@ -2,9 +2,9 @@
 
 **Area:** Degenerate elliptic PDEs and nonlinear potential theory
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 ## Problem statement
 
 Let $`d\ge3`$, $`p>2`$, and $`\Omega\subset\mathbb R^d`$ be open. If $`u\in W^{1,p-1}_{\mathrm{loc}}(\Omega)`$ satisfies
@@ -26,7 +26,17 @@ Nonlinear conduction laws naturally provide flux information before energy bound
 
 ## Status review
 
-**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-433). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Negative example for every p>2 and d>=3
+
+[Proof or source](https://ems.press/content/serial-article-files/51447) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The actual theorem supplies, for every p>1 other than2, a continuous planar distributional p-harmonic u in W^(1,p-1+epsilon), with infinite p-energy on every nonempty open subdomain. In particular for p>2 its local gradient and u belong to L^(p-1), and the nonlinear flux is L1. Theorem9.4 repeats the same claim; its strong-gradient limit and constitutive-inclusion passage have the stated interface. To match d>=3 choose Omega=B×(0,1)^(d-2) and U(x,z)=u(x), where B is the source ball. The weak gradient is (grad u,0); finite local product measure gives W^(1,p-1)_loc. For any smooth compactly supported test, integration over z produces a smooth compactly supported planar test; Fubini is valid for the L1 flux and reduces the equation exactly to the planar distributional equation. A product of compactly contained nonempty open sets has p-energy equal to its positive transverse volume times the infinite planar energy by Tonelli. Thus U is not locally W^(1,p), and changing representatives cannot change its weak gradient. There is no dimension or endpoint-integrability mismatch. This is an actual published counterexample plus an elementary extension, not an unreviewed new endpoint conjecture.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
+**Resolution-source report (2026-10-15):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-433). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
 
 ### Earlier status review (2026-09-22)
 

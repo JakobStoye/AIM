@@ -1,10 +1,14 @@
 # Prior-resolution reports for 38 Open or Partial catalogue targets
 
-**Evidence review date:** 2026-10-16
+**Evidence review date:** 2026-10-15
 
 **Prepared by:** OpenAI Codex at the request of Kaiwen Jin (yui.ui.siki@gmail.com). The source comparisons, summaries and editorial assembly were performed by AI. The original mathematical results are credited to the linked sources.
 
 **Catalogue snapshot:** [`a153f469ee0ea64e876b2ad97c79d252c19a3e22`](https://github.com/MColbrook/AIM/tree/a153f469ee0ea64e876b2ad97c79d252c19a3e22). The IDs and target comparisons below refer to this revision.
+
+## Maintainer assessment, 15 October 2026
+
+The [individual independent AI reviews](../solution_reviews/2026-10-15-active-prs/README.md) record the current decisions: nine full resolutions, one partial result and 28 complete claims awaiting verification. AIM040 has a substantive probability qualification. Unpublished complete claims whose entire arguments were not independently reviewed are not counted as solved. The badges below describe the original snapshot, not the final catalogue. No new Lean verification is established by this report.
 
 ## Scope and review status
 
@@ -12,11 +16,11 @@ The initial review of 85 previously identified prior-resolution records found 48
 
 Each entry identifies a public proof or counterexample, its relevant theorem or proof location, and the correspondence with the full catalogue target. Applicability comparisons reuse readings of theorem statements and the named proof interfaces made on 12–15 October 2026; the target snapshot and public source availability were checked again for this report. These readings do not constitute a new independent audit of every argument or imported dependency.
 
-The source evidence varies: recent preprints, an explicitly labeled candidate proof, a public formal-proof claim, and applications of published results. Under the [contribution policy](../../CONTRIBUTING.md#status-and-evidence), a complete claim awaiting independent review belongs in Solution claimed; Solved requires the specified publication or independent audit evidence. This evidence report leaves final catalogue status decisions to that review. Current badges are recorded below, and the earlier dated search notes are preserved on the problem pages.
+The source evidence varies: recent preprints, an explicitly labeled candidate proof, a public formal-proof claim, and applications of published results. Under the [contribution policy](../../CONTRIBUTING.md#status-and-evidence), a complete claim awaiting independent review belongs in Solution claimed; Solved requires the specified publication or independent audit evidence. This evidence report leaves final catalogue status decisions to that review. Snapshot badges are recorded below, and the earlier dated search notes are preserved on the problem pages.
 
 ## Index
 
-| ID | Target | Current badge | Reported direction |
+| ID | Target | Snapshot badge | Reported direction |
 | --- | --- | --- | --- |
 | [030](#aim-030) | [SIC measurements in every finite dimension](../../problems/030-sic-povms.md) | 🔵 OPEN | Reported affirmative full-target resolution |
 | [040](#aim-040) | [Uniformly effective algebraic multigrid for diagonally dominant systems](../../problems/040-universal-algebraic-multigrid.md) | 🔵 OPEN | Qualified affirmative public-source composition with randomized setup and non-Galerkin coarse matrices |
@@ -624,7 +628,7 @@ For probability relative to the original dimension $`n`$, stop at a bottom block
 
 **Primary source:** [OpenAI, Global Support and Convex Injectivity Domains under Weak MTW, 25 September 2026](https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf).
 
-**Location:** Theorem 1.1 and equations (1.2)–(1.3); Section 4, Theorems 4.8–4.11.
+**Location:** Theorem 1.1 and equations (1.2)–(1.3); Section 4, Theorem 4.8, Corollaries 4.9–4.10 and Proposition 4.11.
 
 **Reported answer:** Affirmative convex injectivity domains.
 

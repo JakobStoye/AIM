@@ -1,0 +1,17 @@
+# AIM 193: independent audit of PR #143
+
+Date: 2026-10-15. Reviewer: independent OpenAI Codex AI context; no human or Lean verification is claimed.
+
+Pinned submission: [a2832f5f06a368e44102573e64db48fc80cca2db](https://github.com/MColbrook/AIM/pull/143), compared with the original a153f469ee0ea64e876b2ad97c79d252c19a3e22 target and current problem page.
+
+**Decision:** Solved. The Gaussian three-dimensional polymer moment threshold is a continuous strictly decreasing bijection onto [5/3,infinity).
+
+**Scope:** The entire manuscript, bibliography, package README, target comparison, AI disclosure and ancillary build/manifest material were read. The analytic proof was independently reconstructed; submission-internal AI reviews were not treated as evidence of correctness. Every submitted PDF page was visually inspected in the maintainer-rendered contact sheets. No clipping, missing mathematics, unreadable glyphs or broken cross-reference was found. Package hash and independent rebuild results are recorded separately by the maintainer.
+
+Theorem 1.1 has exactly the Gaussian walk, normalized partition function and supremum-of-uniform-moments definition of AIM193. It does not assert boundedness at the threshold itself. The endpoint is one-sided and the argument includes critical weak disorder.
+
+The new part is Proposition 3.1, upward-temperature stability for moment orders above two. I reconstructed its common future field, its joint association argument, the Gaussian differentiation and its uniform concavity deficit. The terminal fields are correlated; the proof retains their joint law. With 2<s<p<q<p*(beta), the function H=h^(s/p) has 1<=h<=C_p. Differentiating the fresh Gaussian layer bounds its perturbation by C times the predicted endpoint overlap I. The normalized density D has a bounded q/p moment and a Gaussian covariance bounded below by p beta sqrt(I)/C_p. Cauchy-Schwarz with the square-root density then gives a Hellinger deficit at least cI. The scalar concavity inequality transfers this to the strict Jensen deficit. Both estimates use the same I, so a sufficiently small upward perturbation is absorbed uniformly over every finitely supported endpoint law. Iteration gives a nonnegative supermartingale bounding every finite-length s moment. This is not an illicit endpoint or independent-terminal-field argument.
+
+The exact Mehler identity on each finite polymer and Gaussian hypercontractivity give the threshold comparison 1+(beta/b)^2(p*(beta)-1), strictly separating any two weak-disorder temperatures. Weak-disorder lower bounds, finite disorder upper bounds, the new high-order stability and the existing low-order continuity cover all interior points. Left continuity at the critical point and its value 5/3 complete the intermediate-value argument.
+
+The primary texts [Junk, arXiv:2307.05097v3](https://arxiv.org/html/2307.05097v3), Theorem 1.2(i), [Junk–Lacoin, arXiv:2405.04335v3](https://arxiv.org/html/2405.04335v3), Corollary 2.11(i), and [arXiv:2502.04113v2](https://arxiv.org/html/2502.04113v2), Theorem 2.1 and Corollary 2.5, support the imported continuity and endpoint facts with Gaussian disorder. Crucially, the manuscript does not use Junk's finite-support-only strictness statement for Gaussian disorder. Berger's cited conjecture and the cited Mehler/hypercontractive formulas are credited as context and standard inputs. No extra unproved strictness theorem is hidden in the conclusion.

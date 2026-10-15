@@ -2,9 +2,9 @@
 
 **Area:** Discrepancy, cumulative allocation and integer optimization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -37,7 +37,17 @@ View each vector as the feature or resource contributions of one indivisible ite
 
 ## Status review
 
-**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-325). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Negative
+
+[Proof or source](https://eccc.weizmann.ac.il/report/2026/242/download) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The source explicitly allows offline signs for each physical column occurrence, fixes the order in advance and defines prefix discrepancy with one common sign assignment. Its stronger offset-robust property P_E(M,a) quantifies over arbitrary starting vectors and coefficients in E. Original columns alter coordinate-pair means only; detector columns alter pair differences only. The nested word lets a post hoc witness choose one child at each depth where a large mean is frozen. The final fixed detector list includes every possible row tuple, so the matching detector traces the original M-path with arbitrary offset. It forces a large tracker at a time when its ancestor mean is still large; max(|h+z|,|h−z|)=|h|+|z| doubles the guarantee. This is not an adaptive change to the submitted sequence. Starting M0=[1] and E={|c|>=1} gives P(M0,1/2); recurrence doubles a and column sparsity, and d_(k+1)=2d_k² yields d_k=2^(2^k−1). Scaling each column by1/sqrt(2^k) gives Euclidean norm1 and discrepancy at least2^(k/2−1), unbounded. With zero offset that positive witness cannot be the empty prefix. Thus the exact main countertheorem needed by AIM325 follows; no efficiency or ordinary terminal-sum claim is substituted.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
+**Resolution-source report (2026-10-15):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-325). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
 
 ### Earlier status review (2026-09-18)
 

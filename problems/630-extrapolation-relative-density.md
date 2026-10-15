@@ -2,9 +2,9 @@
 
 **Area:** Discrete geometry and aperiodic order
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -28,6 +28,16 @@ Relative density prevents arbitrarily large holes in a generated point pattern. 
 2. S. Fenner, F. Green and S. Homer, [Extended manuscript](https://arxiv.org/abs/1212.2889).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #109](https://github.com/MColbrook/AIM/pull/109). Every fixed extrapolation parameter outside[0,1] produces a relatively dense set in its full real or complex ambient space.
+
+[Proof or source](../research/solutions/aim-630-extrapolation-relative-density/paper/relative_density.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/630-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The generated set Q_lambda itself, using only finite operations, has uniformly bounded holes for every real lambda outside[0,1] and every nonreal lambda.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The source establishes relative density for multiple explicit real and nonreal algebraic parameters using covering and affine-embedding methods. Any parameter for which $`Q_\lambda`$ is dense in its ambient space also satisfies the requested property.
 

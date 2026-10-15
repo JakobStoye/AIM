@@ -2,9 +2,9 @@
 
 **Area:** Applied topology, geometric measure theory and shape comparison
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -33,6 +33,16 @@ The flat norm compares oriented shapes by balancing a residual against a filling
 1. S. Ibrahim, B. Krishnamoorthy and K. R. Vixie, [Flat norm decomposition of integral currents](https://doi.org/10.20382/jocg.v7i1a14), Journal of Computational Geometry **7**(1) (2016), 285–307. §1.1, Theorem 3.7, Corollary 3.8 and §5; [author preprint](https://arxiv.org/abs/1411.0882).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #91](https://github.com/MColbrook/AIM/pull/91). An integral optimum exists for every compactly supported integral codimension-one current, including noncycles.
+
+[Proof or source](../research/solutions/501-integral-flat-norm-codimension-one/paper/integral_flat_norm.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/501-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Equality of the real flat norm with an attained integral decomposition in every ambient dimension d+1, d>=1.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** Corollary 3.8 of [1] proves the result for integral one-currents in the plane. The introduction records the known case of codimension-one boundaries. Theorem 3.7 gives a conditional extension through the subdivision/approximation statement associated with Conjecture 3.4.
 

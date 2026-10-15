@@ -63,8 +63,11 @@
     "title": "SIC measurements in every finite dimension",
     "area": "Quantum measurement and frame theory",
     "file": "problems/030-sic-povms.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative existence in every dimension",
+    "proof": "https://hexagonmath.org/pdf/2610.00186v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "031",
@@ -155,8 +158,11 @@
     "title": "Uniformly effective algebraic multigrid for diagonally dominant systems",
     "area": "Numerical PDE solvers and preconditioning",
     "file": "problems/040-universal-algebraic-multigrid.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Partially resolved",
+    "last_checked": "2026-10-15",
+    "outcome": "Qualified randomized AMG construction; deterministic/unqualified target remains.",
+    "proof": "https://arxiv.org/pdf/1506.08204v2",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "041",
@@ -171,8 +177,11 @@
     "title": "Accurate selected bidiagonal singular vectors in O(kn) work",
     "area": "Numerical linear algebra and low-rank approximation",
     "file": "problems/042-accurate-bidiagonal-svd.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Selected bidiagonal triplets with fixed-format O(nk) work and gap-independent accuracy.",
+    "proof": "research/solutions/042-selected-bidiagonal-directions/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/042-review.md"
   },
   {
     "id": "043",
@@ -190,8 +199,11 @@
     "title": "Quadratic-scale bit complexity for well-conditioned sparse systems",
     "area": "Sparse numerical linear algebra",
     "file": "problems/044-sparse-linear-solve-bit-complexity.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative bit-complexity bound",
+    "proof": "https://arxiv.org/pdf/2609.38101v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "045",
@@ -233,8 +245,11 @@
     "title": "A constant bound for fixed-order prefix discrepancy",
     "area": "Discrepancy, cumulative allocation and integer optimization",
     "file": "problems/325-strong-komlos-prefix-discrepancy.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Negative",
+    "proof": "https://eccc.weizmann.ac.il/report/2026/242/download",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "327",
@@ -249,8 +264,11 @@
     "title": "The modern integer 3SUM conjecture",
     "area": "Exact algorithms and computational complexity",
     "file": "problems/340-integer-three-sum-hardness.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative",
+    "proof": "https://arxiv.org/pdf/2610.06783v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "426",
@@ -276,8 +294,11 @@
     "title": "The sharp Beurling–Ahlfors bound for planar elliptic systems",
     "area": "Planar elliptic PDEs and singular integral operators",
     "file": "problems/446-beurling-ahlfors-sharp-norm.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative sharp bound, claimed",
+    "proof": "https://arxiv.org/pdf/2609.28311v2",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md"
   },
   {
     "id": "447",

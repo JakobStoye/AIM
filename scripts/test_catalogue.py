@@ -86,6 +86,21 @@ class ResolutionPresentationTests(unittest.TestCase):
         self.assertNotIn('## Withdrawn\n', text)
         self.assertIn('| Counterexample | 2026-01-01 | [Proof](research/proof.md) | [Review](research/review.md)', text)
 
+    def test_claim_keeps_original_page_and_is_not_counted_as_solved(self):
+        claim = {**self.claim, 'file': 'problems/003-claim.md'}
+        source_manifest = {**self.manifest, 'retired': []}
+        opened, presented = presentation_records([*self.entries, claim], source_manifest)
+        self.assertEqual([row['id'] for row in opened], ['001'])
+        self.assertEqual(presented['retired'][0]['record'], claim['file'])
+        self.assertEqual(presented['retired'][0]['status'], 'Solution claimed')
+        self.assertNotIn('| 003 |', render_readme(opened, presented))
+        self.assertIn('[0](CATALOG.md#first-solved)',
+                      '\n'.join(subject_index(opened, presented, 'CATALOG.md')))
+        catalogue = render_catalog(opened, presented)
+        self.assertIn('| 003 |', catalogue.split('### Solution claimed', 1)[1])
+        self.assertIn('[An outstanding claim](problems/003-claim.md)',
+                      render_resolved(presented))
+
 
 class NumberAllocationTests(unittest.TestCase):
     def test_next_id_follows_current_collection(self):

@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and robot motion planning
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -40,6 +40,16 @@ Topological complexity measures the minimum number of continuous local rules nee
 2. N. Daundkar, R. Santhanam and S. Thandar, [Higher topological complexity of Seifert fibered manifolds](https://arxiv.org/abs/2304.01274v3), revised 30 January 2026; Proceedings of the Royal Society of Edinburgh Section A, published online 16 February 2026.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #96](https://github.com/MColbrook/AIM/pull/96). An oriented flat five-manifold contradicts the universal centre-rank TC formula.
+
+[Proof or source](../research/solutions/513-kaiwen-jin-flat-counterexample/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/513-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** An admissible closed oriented aspherical5-manifold has centre rank2 but unreduced TC at least10, exceeding the predicted9.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 Reference [1] records supporting cases including tori, hyperbolic manifolds and circle bundles over hyperbolic surfaces. Its centreless question is included in this formula and is not counted separately. The displayed scope omits the already understood closed oriented surfaces.
 

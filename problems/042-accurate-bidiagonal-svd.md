@@ -2,9 +2,9 @@
 
 **Area:** Numerical linear algebra and low-rank approximation
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -46,6 +46,16 @@ Dense SVD algorithms reduce their input to bidiagonal form. A reliably accurate 
 3. N. Amsel et al., [Linear Systems and Eigenvalue Problems: Open Questions from a Simons Workshop](https://arxiv.org/abs/2602.05394), 2026; Problem 3.8.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #161](https://github.com/MColbrook/AIM/pull/161). Selected bidiagonal triplets with fixed-format O(nk) work and gap-independent accuracy.
+
+[Proof or source](../research/solutions/042-selected-bidiagonal-directions/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/042-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Ordered values, both residual equations and both orthogonality estimates hold in the explicitly stated fixed-format floating-arithmetic model; precision costs are disclosed.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located
 

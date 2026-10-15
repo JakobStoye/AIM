@@ -2,9 +2,9 @@
 
 **Area:** Finsler geometry / anisotropic ray mechanics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -26,6 +26,16 @@ The boundary and propagation cost use the same anisotropy. The question tests wh
 2. M. Bialy and D. Tsodikovich, *Billiard tables with rotational symmetry* (2023), [IMRN 2023, 3970–4003](https://doi.org/10.1093/imrn/rnab366), Minkowski-billiard rigidity theorem; [manuscript](https://arxiv.org/abs/2106.06956). Proves the conclusion with an additional finite linear symmetry of order at least three.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #164](https://github.com/MColbrook/AIM/pull/164). Total integrability of the Minkowski billiard in its own norm ball forces an inner-product norm, without an extra symmetry assumption.
+
+[Proof or source](../research/solutions/252-self-ball-minkowski-integrability/paper/minkowski_integrability.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/252-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Total integrability of the Minkowski billiard in its own norm ball forces an inner-product norm, without an extra symmetry assumption.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

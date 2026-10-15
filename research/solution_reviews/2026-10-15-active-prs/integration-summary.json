@@ -1,0 +1,11 @@
+{
+  "pull_requests": 82,
+  "manuscripts": 81,
+  "source_comparisons": 38,
+  "targets": 119,
+  "statuses": {
+    "Solution claimed": 29,
+    "Partially resolved": 3,
+    "Solved": 87
+  }
+}

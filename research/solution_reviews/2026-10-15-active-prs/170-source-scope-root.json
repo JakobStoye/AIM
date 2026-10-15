@@ -1,0 +1,90 @@
+[
+  {
+    "pr": 170,
+    "id": 40,
+    "status": "Partially resolved",
+    "outcome": "Qualified randomized AMG construction; deterministic/unqualified target remains.",
+    "proof": "https://arxiv.org/pdf/1506.08204v2",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "A fixed input admits the reported high-probability symmetric non-Galerkin cycle with near-linear setup and linear application under the explicitly stated conventions.",
+    "remaining_target": "An unconditional guarantee in the original unstated probability convention is not established; in particular this is not a deterministic or all-random-seeds construction.",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 98,
+    "status": "Solution claimed",
+    "outcome": "Full molecular charge-bound claim; threshold bridge checked, complete screening proof awaiting independent review.",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "The source proof interfaces apply to a supplied large-sector ground-state eigenfunction at the global sector minimum, including equality of adjacent energies.",
+    "remaining_target": "Independent review of the complete external argument remains outstanding; the source claims the full target and no specific mathematical gap was established by this applicability audit.",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 110,
+    "status": "Solution claimed",
+    "outcome": "Steklov counterexample claim; product reduction checked, underlying nodal-growth theorem awaiting independent review.",
+    "proof": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "The fixed five-dimensional Laplace example yields a six-dimensional Steklov product with superlinear nodal volume.",
+    "remaining_target": "Independent review of the complete external argument remains outstanding; the source claims the full target and no specific mathematical gap was established by this applicability audit.",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 142,
+    "status": "Solved",
+    "outcome": "No irrational simple polygon with nonergodic full billiard flow, by the zero-frequency proof extension.",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "The invariant-function argument uses only finitely many flat cone tips, and adjacent irrational reflections force the position-independent angular function constant.",
+    "remaining_target": "",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 195,
+    "status": "Solution claimed",
+    "outcome": "Complete bosonic Laughlin gap claim awaiting independent argument and certificate review.",
+    "proof": "https://github.com/Shencongli/bosonic-laughlin-spectral-gap/blob/fda5da170a1a87c2a7a8e970254c7073c228a99a/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "An immutable AI-assisted candidate proof claims the all-particle, all-degree plane inequality needed by the original target.",
+    "remaining_target": "Independent review of the analytic reduction and every required exact/interval certificate remains outstanding.",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 216,
+    "status": "Solved",
+    "outcome": "A measurable-conductor counterexample to smooth multiplier invariance of the flux domain.",
+    "proof": "https://www.numdam.org/article/ASNSP_1963_3_17_3_189_0.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "The half-disk Meyers example has a smooth boundary multiplier whose harmonic extension has conormal flux outside L2.",
+    "remaining_target": "",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 241,
+    "status": "Solution claimed",
+    "outcome": "Two-profile counterexample claim; public dependency closure inspected, local Lean replay pending.",
+    "proof": "https://prove2.me/theorems/2f49ead8-433f-4b5e-9fc9-c44349429863",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "The public source displays the two critical profiles at kappa4 and a shooting/reflection construction, including the smooth induced field requirement.",
+    "remaining_target": "A frozen installable project with complete dependency pins, a successful local Lean replay and transitive axiom output remain unverified; all 19 public custom imports were retrieved and inspected, with no concrete assumption gap found.",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  },
+  {
+    "pr": 170,
+    "id": 342,
+    "status": "Solution claimed",
+    "outcome": "Nonadditivity claim with exact finite artifact replay; complete analytic reduction awaiting independent review.",
+    "proof": "https://arxiv.org/abs/2609.29539v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md",
+    "verified_progress": "The finite-power strict deficit yields an admissible pair of finite-dimensional states; both exact verifiers passed normally and optimized, and all six corruption controls rejected.",
+    "remaining_target": "Independent review of the complete external argument remains outstanding; the source claims the full target and no specific mathematical gap was established by this applicability audit.",
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed"
+  }
+]

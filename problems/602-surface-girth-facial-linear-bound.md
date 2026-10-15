@@ -2,9 +2,9 @@
 
 **Area:** Graph theory and topological graph embeddings
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -29,5 +29,15 @@ A bound linear in both parameters would relate topological complexity and local 
 1. M. Axenovich, L. Kießle, A. Sagdeev and M. Zhukovskii, [Faces in Girth-Saturated Graphs on Surfaces](https://doi.org/10.1007/s00454-026-00833-x), *Discrete & Computational Geometry* (2026), Theorem 2 and Section 6, Question 2. [arXiv:2410.13481](https://arxiv.org/abs/2410.13481).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #123](https://github.com/MColbrook/AIM/pull/123). A facial-cycle bound 100000 times genus times girth holds uniformly for both closed-surface types, including the stated noncellular embeddings.
+
+[Proof or source](../research/solutions/602-surface-girth-facial-linear-bound/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/602-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** A facial-cycle bound 100000 times genus times girth holds uniformly for both closed-surface types, including the stated noncellular embeddings.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The source gives the universal upper bound $`24(2g+1)\ell^2`$. Fixed-girth growth is known to be linear in genus for $`\ell\ge6`$, but the quadratic dependence on varying girth has not been reduced to linear uniformly. The planar leading-constant question concerns genus zero and is a separate target. Searches found no matching resolution or duplicate.

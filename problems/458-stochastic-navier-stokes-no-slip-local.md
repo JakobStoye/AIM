@@ -2,9 +2,9 @@
 
 **Area:** Stochastic fluid PDEs; solid boundaries
 
-**Status:** 🔵 OPEN
+**Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -39,6 +39,18 @@ Solid walls impose a physically important constraint on turbulent transport mode
 3. D. Goodair, *Anisotropic Inviscid Limit for the Navier-Stokes Equations with Transport Noise Between Two Plates* (2026 preprint). [Preprint](https://arxiv.org/abs/2603.13199).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #171](https://github.com/MColbrook/AIM/pull/171). Partial progress: conditional pathwise uniqueness and perturbative cases; full non-small-noise local theory has an unverified channel-calculus input.
+
+[Proof or source](../research/458/paper/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/458-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Known cases:** Zero-noise deterministic and sufficiently small-noise cases via isotropic additive theory and contraction; without added amplitude smallness, pathwise uniqueness among any existing solutions in the full asserted path class (Section 6.2); flat-model and localization calculations do not alone prove the arbitrary-domain existence target.
+
+**Remaining target:** Local adapted existence and continuous dependence in C(Besov 1/2_(4,4)) intersect L4(W1,4_0) on every bounded smooth three-dimensional domain throughout the stochastic-parabolicity range. Verify the corrected KKW compatible fractional right-inverse hypotheses for the periodic channel or give a valid direct channel-calculus input, then recheck the dependent estimates.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

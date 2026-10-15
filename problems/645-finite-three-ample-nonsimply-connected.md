@@ -1,8 +1,8 @@
 # 645. A finite three-ample complex with nontrivial fundamental group
 
 **Area:** Applied topology / simplicial complexes
-**Status:** 🟡 PARTIAL
-**Last checked:** 2026-09-24
+**Status:** ✅ SOLVED
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ Ampleness requires prescribed patterns of higher-order interactions to have loca
 2. J. A. Barmak, [Connectivity of ample, conic, and random simplicial complexes](https://doi.org/10.1093/imrn/rnac030), International Mathematics Research Notices **2023**, 6579–6597, Theorem 1.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #116](https://github.com/MColbrook/AIM/pull/116). Finite 32768-vertex three-ample simplicial complex with a simplicial retract onto a four-cycle.
+
+[Proof or source](../research/solutions/645-finite-three-ample-nonsimply-connected/paper/finite_three_ample.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/645-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Finite 32768-vertex three-ample simplicial complex with a simplicial retract onto a four-cycle.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** Infinite three-ample complexes that are not simply connected are known. Finite two-ample examples with nontrivial fundamental group are also known. Every four-ample complex is simply connected.
 

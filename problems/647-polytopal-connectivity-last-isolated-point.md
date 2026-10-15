@@ -1,8 +1,8 @@
 # 647. Connectivity when the last isolated point disappears in a polytope
 
 **Area:** Applied topology / stochastic geometry
-**Status:** 🟡 PARTIAL
-**Last checked:** 2026-09-24
+**Status:** ✅ SOLVED
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -33,6 +33,16 @@ For a wireless network or a graph built from sampled data, the statement would m
 2. M. D. Penrose and X. Yang, [Fluctuations of the connectivity threshold and largest nearest-neighbour link](https://doi.org/10.1214/25-AAP2210), Annals of Applied Probability **35** (2025), 3906–3941; [preprint](https://arxiv.org/abs/2406.00647), Theorem 1.1 and equation (1.5).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #121](https://github.com/MColbrook/AIM/pull/121). For every fixed full-dimensional convex polytope in every fixed dimension at least three, connectivity occurs exactly when the last isolated vertex disappears with high probability.
+
+[Proof or source](../research/solutions/647-polytopal-connectivity-last-isolated-point/paper/connectivity-polytope.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/647-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every fixed full-dimensional convex polytope in every fixed dimension at least three, connectivity occurs exactly when the last isolated vertex disappears with high probability.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The equality holds with probability tending to one for a cube. The later Penrose–Yang result proves it for convex polygons and for compact Euclidean domains with $`C^2`$ boundary. For every polytope in the question, the source already proves $`M_n/L_n\to1`$ almost surely.
 

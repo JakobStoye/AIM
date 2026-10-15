@@ -2,9 +2,9 @@
 
 **Area:** Discrete geometry and lattice-point enumeration
 
-**Status:** 🔵 OPEN
+**Status:** 🟠 SOLUTION CLAIMED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -29,6 +29,16 @@ Exact enumeration supplies benchmark collections for algorithms on rational poly
 3. J. Springer, [RationalPolygons.jl](https://github.com/justus-springer/RationalPolygons.jl), reference implementation of rational-polygon classification algorithms.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #122](https://github.com/MColbrook/AIM/pull/122). Claim: all-parameter half-integral collinear polygon formula via exact finite boundary-chain generating functions and Burnside, with an explicit Normaliz software dependency.
+
+[Proof or source](../research/solutions/571-half-integral-collinear-count/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/571-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Review boundary:** Complete the independent replay of all608 Normaliz rational series before the maintainer acceptance gate; no mathematical gap has been identified.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The 2026 published paper explicitly poses this formula and reports verification for $`3\le i\le20`$. Its classification algorithm and the accompanying finite datasets do not prove the identity for every $`i`$. The equivalence relation uses integral translations, and half-integrality means denominator dividing two, not denominator exactly two.
 

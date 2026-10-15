@@ -2,9 +2,9 @@
 
 **Area:** Heat propagation / Schrödinger semigroups
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -37,6 +37,16 @@ Heat kernels give the temperature response to a localized pulse and also imagina
 2. David Krejčiřík, [*Large-time behavior of the heat equation: subcriticality versus criticality*](https://nsa.fjfi.cvut.cz/problems/04_AIM_2015/2015-18/2015-18_AIM_Krejcirik_2.pdf), AIM workshop problem contribution (2015), Conjecture 2. Reaffirmation of the unresolved heat-kernel comparison.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #147](https://github.com/MColbrook/AIM/pull/147). One fixed pair of smooth bounded potentials violates the proposed unordered critical/subcritical heat-kernel comparison.
+
+[Proof or source](../research/solutions/217-critical-subcritical-heat-ratio/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/217-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** One fixed pair of smooth bounded potentials violates the proposed unordered critical/subcritical heat-kernel comparison.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

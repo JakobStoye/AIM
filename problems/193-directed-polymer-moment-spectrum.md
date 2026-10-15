@@ -2,9 +2,9 @@
 
 **Area:** Polymers in random media
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -27,6 +27,16 @@ In this random polymer model, partition-function moments describe fluctuations a
 - [Stefan Junk, *Local limit theorem for directed polymers beyond the L2-phase* (2023 preprint, revised 2025)](https://arxiv.org/abs/2307.05097), finite-support and moment-threshold progress discussed in the notes.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #143](https://github.com/MColbrook/AIM/pull/143). The Gaussian three-dimensional polymer moment threshold is a continuous strictly decreasing bijection onto [5/3,infinity).
+
+[Proof or source](../research/solutions/193-directed-polymer-moment-spectrum/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/193-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The Gaussian three-dimensional polymer moment threshold is a continuous strictly decreasing bijection onto [5/3,infinity).
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

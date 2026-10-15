@@ -149,8 +149,11 @@
     "title": "Can one-dimensional entropy-dissipating systems have two bounded solutions?",
     "area": "Continuum mechanics; admissibility of shock dynamics",
     "file": "problems/361-one-dimensional-convex-entropy-nonuniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative existence, claimed",
+    "proof": "https://arxiv.org/pdf/2609.09353v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md"
   },
   {
     "id": "362",
@@ -189,16 +192,22 @@
     "title": "Continuation of the cutoff Boltzmann flow from macroscopic bounds",
     "area": "Rarefied gases; nonlinear kinetic transport",
     "file": "problems/366-cutoff-boltzmann-continuation.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Counterexample to rapid-decay continuation in the explicitly stated broad class of jointly smooth solutions, using a positive inverse-sixth-power tail from Gaussian data.",
+    "proof": "research/solutions/366-cutoff-boltzmann-rapid-decay/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/366-review.md"
   },
   {
     "id": "367",
     "title": "A universal quantitative error bound for small-BV hyperbolic flows",
     "area": "Hyperbolic conservation laws; reliable simulation",
     "file": "problems/367-universal-hyperbolic-error-rate.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Counterexample to the proposed universal square-root logarithmic error bound, with one fixed compactly supported small-BV initial datum.",
+    "proof": "research/solutions/367-hyperbolic-error-counterexample/paper/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/367-review.md"
   },
   {
     "id": "369",
@@ -237,8 +246,11 @@
     "title": "The zero center-of-mass diffusion limit for kinetic FENE fluids",
     "area": "Polymer kinetics; singular diffusion limits",
     "file": "problems/376-fene-vanishing-center-of-mass-diffusion.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The conditional-density argument establishes a subsequential vanishing-center-of-mass-diffusion limit for the complete stated periodic three-dimensional FENE target.",
+    "proof": "research/solutions/376-fene-vanishing-center-of-mass-diffusion/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/376-review.md"
   },
   {
     "id": "378",
@@ -261,8 +273,11 @@
     "title": "Global smooth propagation for a laser envelope coupled to ionization",
     "area": "Dispersive PDEs and nonlinear optics",
     "file": "problems/441-ionization-laser-envelope-global-regularity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Counterexample to universal global regularity: finite-time gradient blowup for the actual coupled three-dimensional ionization system from smooth compactly supported optical data and zero nonnegative density, with one admissible positive photoionization coefficient.",
+    "proof": "research/solutions/441-ionization-blowup/paper/ionization_blowup.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/441-review.md"
   },
   {
     "id": "442",

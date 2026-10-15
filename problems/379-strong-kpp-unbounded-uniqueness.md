@@ -2,9 +2,9 @@
 
 **Area:** Reaction–diffusion; population equilibria
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -26,6 +26,16 @@ The strong KPP condition expresses a decreasing per-capita growth rate. Uniquene
 2. H. Berestycki and C. Graham, [*A Stable-Compact Method for Qualitative Properties of Semilinear Elliptic Equations*](https://doi.org/10.1007/s00205-026-02168-6), Archive for Rational Mechanics and Analysis 250 (2026), article 21, §8.1, Open Question 3.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #149](https://github.com/MColbrook/AIM/pull/149). Universal strong-KPP uniqueness fails on a uniformly smooth connected unbounded domain in dimension 21.
+
+[Proof or source](../research/solutions/379-uniform-kpp-multiplicity/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/379-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Universal strong-KPP uniqueness fails on a uniformly smooth connected unbounded domain in dimension 21.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

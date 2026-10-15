@@ -2,9 +2,9 @@
 
 **Area:** Nonlocal obstacle problems; anisotropic jump processes
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -45,6 +45,16 @@ Nonlocal obstacle equations describe optimal stopping for jump processes and equ
 3. X. Ros-Oton and M. Weidner, [*Optimal regularity for nonlocal elliptic equations and free boundary problems*](https://arxiv.org/abs/2403.07793), preprint (2024), equations (1.1)–(1.2) and Theorem 1.3.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #165](https://github.com/MColbrook/AIM/pull/165). The full support-independent global C^(1,s) obstacle estimate holds for the stated integrable angular-density class.
+
+[Proof or source](../research/solutions/485-general-stable-obstacle-optimal-regularity/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/485-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The full support-independent global C^(1,s) obstacle estimate holds for the stated integrable angular-density class.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

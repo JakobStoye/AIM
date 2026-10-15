@@ -2,7 +2,8 @@
 
 [Repository overview](../README.md) · [Open targets](../CATALOG.md) · [Solved and claimed solutions](../RESOLVED.md)
 
-- [Prior-resolution reports for 38 Open or Partial targets, 2026-10-16](literature_reports/2026-10-16-prior-resolutions.md)
+- [Prior-resolution reports for 38 Open or Partial targets, 2026-10-16](literature_reports/2026-10-15-prior-resolutions.md)
+- [Individual solution PR reviews, 15 October 2026](solution_reviews/2026-10-15-active-prs/README.md)
 - [Independent review of active solution PRs #17–#24, 2026-10-02](solution_reviews/2026-10-02-active-prs/README.md)
 - [Robin gap counterexample review, PR #16](solution_reviews/2026-10-02/021-review.md)
 - [Independent review of twelve solution pull requests, 2026-10-02](solution_reviews/2026-10-02/README.md)

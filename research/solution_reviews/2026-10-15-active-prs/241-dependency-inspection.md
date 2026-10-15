@@ -1,0 +1,11 @@
+# AIM 241: public dependency inspection
+
+Date: 2026-10-15. Reviewer: OpenAI Codex, independent AI inspection. Outcome: **Solution claimed**. No local Lean verification or human review is asserted.
+
+I followed the three custom imports of the [public second-profile construction](https://prove2.me/theorems/2f49ead8-433f-4b5e-9fc9-c44349429863) recursively and retrieved all 19 custom modules. Every non-Mathlib import resolves within the retrieved closure. The [snapshot ledger](241-dependency-inspection.json) records each public URL, source SHA256, imports and scan results; external source files are not copied into AIM.
+
+The [profile definitions](https://prove2.me/theorems/902a4987-18cf-4c21-8048-cac3a09168d4) lead to the exact ODE, endpoint, reflection and induced Cartesian smoothness requirements. The top-level file supplies the explicit twice-angle profile and reflection/pole regularity bridges. Its second-profile existence uses the [shooting family](https://prove2.me/theorems/8f02a151-69b5-438c-a46a-6ef8a15a1f04) and [endpoint bounds](https://prove2.me/theorems/16b57ba5-9e5d-4b55-9b69-8d6d32b6b581). Those imports contain proof-bearing declarations for existence, endpoint continuity and numerical soundness, rather than unproved assumptions. The bounds further import four enclosure-chain modules, eight check chunks, rational data and the checker core. The check chunks use kernel decision proofs, and the core states and proves the implication from successful rational checks to bounds for the actual ODE solution.
+
+The complete custom-source scan found no axiom, sorry, admit, opaque/constant, native-decision, unsafe or implementation-replacement declaration. The dependency structure and theorem interfaces were inspected; this scan is not a substitute for kernel elaboration and transitive axiom output. No concrete assumption gap was demonstrated.
+
+The website reports Lean v4.33.1 and the short Mathlib revision 0df444a. A frozen installable whole project, complete dependency lock, successful local replay and transitive axiom receipt were not obtained. The claim therefore remains **Solution claimed**, rather than Solved or Lean verified. Its claim covers the whole target; it should not be described as an established restricted result merely because independent verification remains pending.

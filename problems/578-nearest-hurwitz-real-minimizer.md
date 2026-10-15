@@ -2,9 +2,9 @@
 
 **Area:** Numerical linear algebra and matrix optimization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -43,7 +43,19 @@ Approximating an unstable model by a nearby matrix with nonpositive spectral abs
 
 ## Status review
 
-**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-578). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Negative
+
+[Proof or source](https://arxiv.org/pdf/2609.14828v1) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The source explicitly includes defective imaginary-axis eigenvalues, exactly as AIM578 requires. For m>=4 it gives A=[[-m^4,m²,0],[0,0,m²],[m^6,1,0]]. Its columns are orthogonal and its smallest singular value is m². Its determinant is positive, while every real3-by-3 matrix with spectrum in the closed left half-plane has nonpositive determinant. The segment to any real stable matrix therefore meets a singular matrix, forcing Frobenius distance at least m². Zeroing the(2,3) entry attains that bound, with characteristic polynomial z²(z+m^4).
+
+The complex competitor C=[[-m^4,m²+2mi,2mi−3],[0,0,m²],[m^6,0,0]] has characteristic polynomial(z−im³)²(z+m^4+2im³), so it is feasible in the closed half-plane, including its repeated imaginary eigenvalue. Direct expansion verifies that polynomial and ||A−C||_F²=8m²+10. For m=4,8m²+10=138<256=m^4, giving d_C(A)<16=d_R(A). This stronger direct Frobenius comparison suffices without the general unitarily invariant norm estimate. Thus the exact counterexample needed for the catalogue was independently checked, although the source's other matrix-nearness results were not recertified.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
+**Resolution-source report (2026-10-15):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-578). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
 
 ### Earlier status review (2026-09-24)
 

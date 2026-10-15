@@ -4,32 +4,32 @@
   "problem_id": "458",
   "target_repository": "https://github.com/MColbrook/AIM",
   "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
-  "claim": "Complete analytic solution claim awaiting independent mathematical review",
+  "claim": "Submitted complete claim retained as partial progress; the independent maintainer review identifies a missing corrected-theorem hypothesis.",
   "author": "Kaiwen Jin",
   "files": [
     {
       "path": "README.md",
-      "bytes": 2877,
-      "sha256": "a57e10871aa2cbfd301d787979b993296c65c03421f9d4c2659dc97d5fa8b8e1",
+      "bytes": 3460,
+      "sha256": "3bbcf464f431f9694411bf9a17e5540fa4f05bf24f61e50b2b5e3e08fe663783",
       "purpose": "Package entry point, rebuild and AI disclosure"
     },
     {
       "path": "TARGET_COMPARISON.md",
-      "bytes": 5870,
-      "sha256": "4ce89add4e11d0d871d0e522074be56bcf888d4833829a022b4de2995cad35d5",
+      "bytes": 6354,
+      "sha256": "b66267c31bdd08641856427cb854ca83929c162f42d32712372cf672c1128722",
       "purpose": "Original-target correspondence and imported analytic inputs"
     },
     {
       "path": "paper/paper.tex",
-      "bytes": 68791,
-      "sha256": "70c56f21973100afefe5e12afeee4564404f733406fbf45cdb64c69c8bd19920",
+      "bytes": 69872,
+      "sha256": "8fa0ec051f8b3efbf9613102fb83ba71010150976a7beb34be69fdb777ea5d92",
       "purpose": "Complete editable manuscript"
     },
     {
       "path": "paper/paper.pdf",
-      "bytes": 454341,
-      "sha256": "41ba61f03679e444abfae544f094d4a53fe0e40f53a06f9cf4ff71a214812e19",
-      "purpose": "Complete 20-page manuscript"
+      "bytes": 517958,
+      "sha256": "6e43c819732372300fee652de67f77c1bb59e37451c594456058676870fb83b6",
+      "purpose": "20-page submitted manuscript with maintainer partial-progress note and erratum reference"
     }
   ],
   "checksum_convention": "SHA256SUMS covers these four payloads and this manifest; it does not hash itself."

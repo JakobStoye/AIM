@@ -68,24 +68,33 @@
     "title": "A periodic nonsingular billiard trajectory in every triangle",
     "area": "Hamiltonian dynamics / ray transport",
     "file": "problems/250-periodic-triangular-billiard.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative",
+    "proof": "https://arxiv.org/pdf/2606.10102v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "251",
     "title": "Asymptotic density of reflected wavefronts in a disk",
     "area": "Geometric optics / long-time propagation",
     "file": "problems/251-disk-wavefront-density.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Affirmative",
+    "proof": "https://ahl.centre-mersenne.org/item/10.5802/ahl.42.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "252",
     "title": "Rigidity of a totally integrable Minkowski billiard in its own unit ball",
     "area": "Finsler geometry / anisotropic ray mechanics",
     "file": "problems/252-self-ball-minkowski-integrability.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Total integrability of the Minkowski billiard in its own norm ball forces an inner-product norm, without an extra symmetry assumption.",
+    "proof": "research/solutions/252-self-ball-minkowski-integrability/paper/minkowski_integrability.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/252-review.md"
   },
   {
     "id": "253",
@@ -207,8 +216,11 @@
     "title": "The Li–Li multiple-unicast conjecture",
     "area": "Applied geometry, control and information",
     "file": "problems/298-li-li-multiple-unicast.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative",
+    "proof": "https://arxiv.org/pdf/2610.10108v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "299",
@@ -307,8 +319,11 @@
     "title": "Villani’s convex-injectivity-domain conjecture",
     "area": "Optimal transport / Riemannian geometry",
     "file": "problems/394-villani-mtw-convex-injectivity-domains.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative convex injectivity domains under weak MTW",
+    "proof": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "395",
@@ -342,16 +357,22 @@
     "title": "Logarithmic convexity for two coupled subdiffusion orders",
     "area": "Fractional PDE systems / inverse problems",
     "file": "problems/402-mixed-order-fractional-logarithmic-convexity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The exact product-L2 logarithmic interpolation inequality holds for the two distinct Caputo orders and every initial pair.",
+    "proof": "research/solutions/402-mixed-order-fractional-logarithmic-convexity/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/402-review.md"
   },
   {
     "id": "403",
     "title": "Sharp exponential cost of fast boundary quantum control",
     "area": "PDE control / Schrödinger dynamics",
     "file": "problems/403-schrodinger-sharp-fast-control-exponent.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The norm control cost has liminf T log C_S(T,L) at least L^2/pi, strictly excluding the proposed L^2/4 coefficient.",
+    "proof": "research/solutions/403-schrodinger-control-lower-bound/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/403-review.md"
   },
   {
     "id": "409",
@@ -366,16 +387,22 @@
     "title": "Continuity of states driven by bounded admissible inputs",
     "area": "Infinite-dimensional control / evolution equations",
     "file": "problems/411-bounded-input-state-continuity.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Admissibility for all strongly measurable bounded inputs implies zero-class admissibility and norm-continuous convolution states on every closed finite interval.",
+    "proof": "research/solutions/411-bounded-input-state-continuity/paper/continuity.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/411-review.md"
   },
   {
     "id": "412",
     "title": "Sharp vanishing-viscosity control time for downstream transport",
     "area": "PDE control / advection–diffusion",
     "file": "problems/412-positive-transport-sharp-uniform-control-time.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative, claimed",
+    "proof": "https://arxiv.org/pdf/2609.35355v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md"
   },
   {
     "id": "415",

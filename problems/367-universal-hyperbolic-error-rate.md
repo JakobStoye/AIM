@@ -2,9 +2,9 @@
 
 **Area:** Hyperbolic conservation laws; reliable simulation
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -38,6 +38,16 @@ A universal bound would certify computed shock flows using measured conservation
 3. A. Bressan, F. Huang, Y. Wang and T. Yang, [*On the Convergence Rate of Vanishing Viscosity Approximations for Nonlinear Hyperbolic Systems*](https://doi.org/10.1137/120869249), SIAM Journal on Mathematical Analysis 44 (2012), 3537–3563, main convergence-rate theorem.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #133](https://github.com/MColbrook/AIM/pull/133). Counterexample to the proposed universal square-root logarithmic error bound, with one fixed compactly supported small-BV initial datum.
+
+[Proof or source](../research/solutions/367-hyperbolic-error-counterexample/paper/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/367-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Counterexample satisfies every stated strict-hyperbolicity, genuine-nonlinearity, convex-entropy, residual, support, variation and time-modulus hypothesis; the normalized error diverges.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

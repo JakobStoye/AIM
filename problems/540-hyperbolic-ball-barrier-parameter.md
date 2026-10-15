@@ -2,9 +2,9 @@
 
 **Area:** Numerical optimization on manifolds
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -34,6 +34,16 @@ The barrier parameter controls iteration bounds for interior-point methods on cu
 2. H. Hirai, H. Nieuwboer and M. Walter, [Interior-Point Methods on Manifolds: Theory and Applications](https://doi.org/10.1007/s10208-026-09756-8), Foundations of Computational Mathematics (2026), Definition 4.1 and Theorem 1.6; §1.6 describes geometric estimation applications.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #119](https://github.com/MColbrook/AIM/pull/119). The infimum of full-tensor barrier parameters has quadratic growth in the hyperbolic radius, without any symmetry assumption.
+
+[Proof or source](../research/solutions/540-hyperbolic-ball-barrier-parameter/paper/hyperbolic_ball_barriers.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/540-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The infimum of full-tensor barrier parameters has quadratic growth in the hyperbolic radius, without any symmetry assumption.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The known bounds leave the gap
 

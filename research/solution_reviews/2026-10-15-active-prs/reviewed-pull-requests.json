@@ -1,0 +1,658 @@
+[
+  {
+    "pr": 90,
+    "title": "577: proposed resolution — repeated GUE on three tensor legs",
+    "author": "yuiyuiui",
+    "reviewed_head": "d3d08ea6cb9b28c84245712fd29c50f5c091b370",
+    "reply": "https://github.com/MColbrook/AIM/pull/90#issuecomment-6202342688",
+    "merge_commit": "7d20a8d811c4987a9926927663341e66ed56ff5c"
+  },
+  {
+    "pr": 91,
+    "title": "501: proposed resolution — integral flat-norm decompositions in codimension one",
+    "author": "yuiyuiui",
+    "reviewed_head": "557794107a8a12577008cf5ffa010b6fccbca0d3",
+    "reply": "https://github.com/MColbrook/AIM/pull/91#issuecomment-6202345187",
+    "merge_commit": "c862aeeda0ad5678f3a189aa40bc0971918ae0c3"
+  },
+  {
+    "pr": 92,
+    "title": "504: proposed resolution of exponential excursion tails for planar Ising disks",
+    "author": "yuiyuiui",
+    "reviewed_head": "01f7a36c56ffb3d94bf103a68c387ef6ac9efe9b",
+    "reply": "https://github.com/MColbrook/AIM/pull/92#issuecomment-6202347193",
+    "merge_commit": "50b4d317064e489d12d91b96efbabefdbaba577e"
+  },
+  {
+    "pr": 93,
+    "title": "499: proposed counterexample — six-point Rips shadow injectivity",
+    "author": "yuiyuiui",
+    "reviewed_head": "9cd0516e31464c112e8d66a9c0bfd7e172e68f14",
+    "reply": "https://github.com/MColbrook/AIM/pull/93#issuecomment-6202349622",
+    "merge_commit": "2a6dabffc9aa933b78b27b5ebad4e54aec1c22cb"
+  },
+  {
+    "pr": 94,
+    "title": "AIM 500: four-dimensional counterexample to all-clump irreducibility",
+    "author": "yuiyuiui",
+    "reviewed_head": "a82eec0914141bb1e5bc5eb75f9abbf30e44bfec",
+    "reply": "https://github.com/MColbrook/AIM/pull/94#issuecomment-6202352554",
+    "merge_commit": "af9502f428364eaaed4dd6de86482a1962e6b959"
+  },
+  {
+    "pr": 95,
+    "title": "512: proposed resolution — first Rips transition of round spheres",
+    "author": "yuiyuiui",
+    "reviewed_head": "566560482b63bbfcaf289efdf231991f9b4c2a7c",
+    "reply": "https://github.com/MColbrook/AIM/pull/95#issuecomment-6202354569",
+    "merge_commit": "5283ee05e333119f43e54a79f94f3ac6f87b50eb"
+  },
+  {
+    "pr": 96,
+    "title": "AIM 513: oriented flat counterexample to the centre-rank formula",
+    "author": "yuiyuiui",
+    "reviewed_head": "4655a5f9b31788994fe60892844b8c3cec0f337b",
+    "reply": "https://github.com/MColbrook/AIM/pull/96#issuecomment-6202356631",
+    "merge_commit": "d2d7111cd64b43000e84263dbd58026eff26cf72"
+  },
+  {
+    "pr": 97,
+    "title": "514: proposed maximal topological complexity of aspherical connected sums",
+    "author": "yuiyuiui",
+    "reviewed_head": "5d53c3a78588eb1cb31362a337ab5b0e146eee91",
+    "reply": "https://github.com/MColbrook/AIM/pull/97#issuecomment-6202524300",
+    "merge_commit": "8de477cefbd063233347d86bcc9a6e863beb5803"
+  },
+  {
+    "pr": 98,
+    "title": "525: proposed counterexample to maximal TC weight from positive norm",
+    "author": "yuiyuiui",
+    "reviewed_head": "71a40d1b23893948a5e9e6f800130b198ee70f07",
+    "reply": "https://github.com/MColbrook/AIM/pull/98#issuecomment-6202358458",
+    "merge_commit": "f0473d3aba0517308b772c70bab7fdb935f7018e"
+  },
+  {
+    "pr": 99,
+    "title": "531: proposed integral counterexample at k=5",
+    "author": "yuiyuiui",
+    "reviewed_head": "e2dea2b4ec0c80368c680466fe1d7dded861212c",
+    "reply": "https://github.com/MColbrook/AIM/pull/99#issuecomment-6202360352",
+    "merge_commit": "5e556151aa26d79d47b8b1206875c1a4d7a9b9b4"
+  },
+  {
+    "pr": 100,
+    "title": "AIM 529: explicit Betti limit and refutation of a power-law tail",
+    "author": "yuiyuiui",
+    "reviewed_head": "0da42f3f8c186fa9b965b3e6c0745f3b12885086",
+    "reply": "https://github.com/MColbrook/AIM/pull/100#issuecomment-6202525931",
+    "merge_commit": "1a0e076dad63b4da7c5928a196065da18d46ccb7"
+  },
+  {
+    "pr": 101,
+    "title": "537: proposed affirmative resolution of persistence fiber Betti numbers",
+    "author": "yuiyuiui",
+    "reviewed_head": "ed0c8eff31e6a22c9bc5509c0413e9e513aeff8e",
+    "reply": "https://github.com/MColbrook/AIM/pull/101#issuecomment-6202527610",
+    "merge_commit": "15c0ee28e8da8d01669bbccc19f65df9c3b36e2e"
+  },
+  {
+    "pr": 102,
+    "title": "532: proposed resolution — Torus-grid Rips complexes at half the diameter",
+    "author": "yuiyuiui",
+    "reviewed_head": "cdebeeb97d00ca40e2250d85b557598789db7b1b",
+    "reply": "https://github.com/MColbrook/AIM/pull/102#issuecomment-6202529298",
+    "merge_commit": "df6eb481025bc9f81dab84eec8942ee98986e10e"
+  },
+  {
+    "pr": 103,
+    "title": "AIM 520: complete solution claim for coarse Hilbert embeddings",
+    "author": "yuiyuiui",
+    "reviewed_head": "de58527e481c71125a9a1868c56b5843b76826da",
+    "reply": "https://github.com/MColbrook/AIM/pull/103#issuecomment-6202362535",
+    "merge_commit": "cb2ad90595c62cfb0f569ecc92535cfb6ee9781b"
+  },
+  {
+    "pr": 104,
+    "title": "547: proposed resolution — Minimal persistence grids and homological Morse bounds",
+    "author": "yuiyuiui",
+    "reviewed_head": "78e2c3a174f566dcdb63a2c3579ffafb34e28a4c",
+    "reply": "https://github.com/MColbrook/AIM/pull/104#issuecomment-6202365378",
+    "merge_commit": "69fa8d6a904f0f28b994d9eaa3e570c9ab43b0c9"
+  },
+  {
+    "pr": 105,
+    "title": "565: proposed counterexample - square pyramid at its Macbeath point",
+    "author": "yuiyuiui",
+    "reviewed_head": "b5f09f361de0b7d745f3412dc392507fc4c30039",
+    "reply": "https://github.com/MColbrook/AIM/pull/105#issuecomment-6202367911",
+    "merge_commit": "de947307962641fbd104bfd331dfc490e6859e59"
+  },
+  {
+    "pr": 106,
+    "title": "AIM 593: proposed solution for rectangular segment grids",
+    "author": "yuiyuiui",
+    "reviewed_head": "f3f7506966f071d9591f0169e7c07f5a1df2a767",
+    "reply": "https://github.com/MColbrook/AIM/pull/106#issuecomment-6202530930",
+    "merge_commit": "4e7db6abdcc8fea599444494ef9bdcdfcd807da8"
+  },
+  {
+    "pr": 107,
+    "title": "610: proposed counterexample to the reflexive-polytope facet bound",
+    "author": "yuiyuiui",
+    "reviewed_head": "b8c005ee5480e2030ae189b2035d3eb9e24401a2",
+    "reply": "https://github.com/MColbrook/AIM/pull/107#issuecomment-6202469019",
+    "merge_commit": "de3662aa150566075466e6c7fb6e66f982e4a0a5"
+  },
+  {
+    "pr": 108,
+    "title": "Add proposed proof for 596: flat transversals for fat convex bodies",
+    "author": "yuiyuiui",
+    "reviewed_head": "b0f3f707f434785784adc3792bfd93a4c2a5597a",
+    "reply": "https://github.com/MColbrook/AIM/pull/108#issuecomment-6202532852",
+    "merge_commit": "4034cdb4aa2a07f4666beee8cd7dcf13b05c4e70"
+  },
+  {
+    "pr": 109,
+    "title": "630: proposed resolution — relative density under fixed-parameter extrapolation",
+    "author": "yuiyuiui",
+    "reviewed_head": "5301ae4e418e9268de0680487b4741ee9bbcca08",
+    "reply": "https://github.com/MColbrook/AIM/pull/109#issuecomment-6202470737",
+    "merge_commit": "b87f458cd4286e4447c65428c30b8d77103dbcf0"
+  },
+  {
+    "pr": 110,
+    "title": "628: proposed solution — odd Euler characteristic for flag-no-square four-manifolds",
+    "author": "yuiyuiui",
+    "reviewed_head": "d80c3a8d997fdead30bedef850ee5d7360974f39",
+    "reply": "https://github.com/MColbrook/AIM/pull/110#issuecomment-6202534513",
+    "merge_commit": "9901eadfc9865c61032ffda546d02ef59b4febe2"
+  },
+  {
+    "pr": 111,
+    "title": "629: proposed resolution — discreteness of fixed-parameter extrapolation sets",
+    "author": "yuiyuiui",
+    "reviewed_head": "c1f79e312f2b7bae2636469c506376a873100691",
+    "reply": "https://github.com/MColbrook/AIM/pull/111#issuecomment-6202472460",
+    "merge_commit": "d2df3bc1625e758136cc69aac46599f05c80f006"
+  },
+  {
+    "pr": 112,
+    "title": "640: proposed counterexample — Boolean polynomial obstruction to binary expansion",
+    "author": "yuiyuiui",
+    "reviewed_head": "3d9df8678f27469a74af9ca2d81ec5ec11157316",
+    "reply": "https://github.com/MColbrook/AIM/pull/112#issuecomment-6202474245",
+    "merge_commit": "d4df3ff9b61be18e262b68c89bbbfd05e1fc143a"
+  },
+  {
+    "pr": 113,
+    "title": "644: proposed resolution — topological complexity two for all sample sizes",
+    "author": "yuiyuiui",
+    "reviewed_head": "fbad49f5635de525a998198814613a1bbf8b91f5",
+    "reply": "https://github.com/MColbrook/AIM/pull/113#issuecomment-6202476922",
+    "merge_commit": "2be9325baac90b60a3848f9eb471337088fb089d"
+  },
+  {
+    "pr": 114,
+    "title": "635: proposed resolution — small mod-two area four-cycles",
+    "author": "yuiyuiui",
+    "reviewed_head": "062917a6f33965d876974e7d9df3e22ae6feec33",
+    "reply": "https://github.com/MColbrook/AIM/pull/114#issuecomment-6202536091",
+    "merge_commit": "1aafaecaa7e34075957e1187125597c9922d6490"
+  },
+  {
+    "pr": 115,
+    "title": "643: proposed counterexample to both low-degree upper-Laplacian assertions",
+    "author": "yuiyuiui",
+    "reviewed_head": "bdbc3d0176c1c4e59be4db5b3d58a02ae27300c5",
+    "reply": "https://github.com/MColbrook/AIM/pull/115#issuecomment-6202370531",
+    "merge_commit": "13bb2f40cdd37fb10c9ba1efd56d7ece674b3181"
+  },
+  {
+    "pr": 116,
+    "title": "645: proposed resolution — a finite three-ample complex with nontrivial fundamental group",
+    "author": "yuiyuiui",
+    "reviewed_head": "c70ec0a591029633fd15aa2568c3b71e9adbd3fe",
+    "reply": "https://github.com/MColbrook/AIM/pull/116#issuecomment-6202372620",
+    "merge_commit": "54e29c3990b1726fbb64a65cb0fc82974595adca"
+  },
+  {
+    "pr": 117,
+    "title": "650: proposed resolution — central limit theorem for the first path Betti number",
+    "author": "yuiyuiui",
+    "reviewed_head": "6dd971c850a3088134f2fccb747b26a1a027eef2",
+    "reply": "https://github.com/MColbrook/AIM/pull/117#issuecomment-6202375039",
+    "merge_commit": "44b4bc027681fa0d41532b6163a5706b378515d2"
+  },
+  {
+    "pr": 118,
+    "title": "648: proposed resolution of polyhedral isolation location",
+    "author": "yuiyuiui",
+    "reviewed_head": "fe73ab8e534dc819c44fd54cf355fe123805030c",
+    "reply": "https://github.com/MColbrook/AIM/pull/118#issuecomment-6202377241",
+    "merge_commit": "307f27016413cabd9f7816326389d2abb2d9e129"
+  },
+  {
+    "pr": 119,
+    "title": "Proposed resolution of Problem 540: quadratic barrier parameters",
+    "author": "yuiyuiui",
+    "reviewed_head": "de7478fb7a79bf2b815e447c7aa60e645a8f4630",
+    "reply": "https://github.com/MColbrook/AIM/pull/119#issuecomment-6202379246",
+    "merge_commit": "edb931f6b4e7f5e573b546d32e546038150d4a31"
+  },
+  {
+    "pr": 120,
+    "title": "[649] Solution claimed: rational path homology vanishes above exponent -2/3",
+    "author": "yuiyuiui",
+    "reviewed_head": "33832cdd99c080db769f5f069da150cd0ef3cd5d",
+    "reply": "https://github.com/MColbrook/AIM/pull/120#issuecomment-6202381443",
+    "merge_commit": "1b7cadd7b73b56873fa5c714c763198f743bd00f"
+  },
+  {
+    "pr": 121,
+    "title": "647: proposed resolution of polytopal connectivity hitting-time equality",
+    "author": "yuiyuiui",
+    "reviewed_head": "06fcc7689bee3a0d73076bcf3bf9643ac3b234d2",
+    "reply": "https://github.com/MColbrook/AIM/pull/121#issuecomment-6202383822",
+    "merge_commit": "8d5b791297a75dcc7a9f102d8dc48f205b3a1740"
+  },
+  {
+    "pr": 122,
+    "title": "571: computer-assisted complete count of half-integral polygons with collinear interior lattice points",
+    "author": "yuiyuiui",
+    "reviewed_head": "c6ec4842bef76b3ef16cf783628d5ea669396046",
+    "reply": "https://github.com/MColbrook/AIM/pull/122#issuecomment-6202751825",
+    "merge_commit": "815e17bba10d0328557f7eae8cb82ad4c2d93366"
+  },
+  {
+    "pr": 123,
+    "title": "602: proposed uniform linear bound for facial cycles on surfaces",
+    "author": "yuiyuiui",
+    "reviewed_head": "7cbd266c5b2d93272de8fa9450155ceba814a8f0",
+    "reply": "https://github.com/MColbrook/AIM/pull/123#issuecomment-6202385550",
+    "merge_commit": "24e5c141d6a0e294a262cddf52c7af9216f21b68"
+  },
+  {
+    "pr": 124,
+    "title": "627: a periodic Costas counterexample of order six",
+    "author": "yuiyuiui",
+    "reviewed_head": "dd18040eb5e89b0fd13c6a233839e40783332b9c",
+    "reply": "https://github.com/MColbrook/AIM/pull/124#issuecomment-6202387871",
+    "merge_commit": "193f033d3fdf16308a8ddf7d16f712c4ce5b65bb"
+  },
+  {
+    "pr": 125,
+    "title": "572: proposed complete count of Ehrhart functions of half-integral polygons",
+    "author": "yuiyuiui",
+    "reviewed_head": "905240cb576dd1e0562bf200eccd6085685471da",
+    "reply": "https://github.com/MColbrook/AIM/pull/125#issuecomment-6202754309",
+    "merge_commit": "58440e50ac352f9485e08d58ef18891b5f26f3ff"
+  },
+  {
+    "pr": 126,
+    "title": "162: proposed extreme solitary wave for the bidirectional Whitham system",
+    "author": "yuiyuiui",
+    "reviewed_head": "0537bbe23dca05b81c88df11e85b6c51a460e771",
+    "reply": "https://github.com/MColbrook/AIM/pull/126#issuecomment-6202610997",
+    "merge_commit": "58b697d7921e49a9a707c1c698f59d0c8fbfbf7e"
+  },
+  {
+    "pr": 127,
+    "title": "405: proposed half-power density rate for a quadratic kinetic mean-field game",
+    "author": "yuiyuiui",
+    "reviewed_head": "70f61fc9f49ac9ac53f07333308710e0984fc892",
+    "reply": "https://github.com/MColbrook/AIM/pull/127#issuecomment-6202613483",
+    "merge_commit": "b2ef599365da06b9de423782f9fdba33d7f9aaef"
+  },
+  {
+    "pr": 128,
+    "title": "400: proposed concentric-ball inequality for radiative insulation",
+    "author": "yuiyuiui",
+    "reviewed_head": "e9d45c98722999ecb5b4aeb19c2c4ba872631448",
+    "reply": "https://github.com/MColbrook/AIM/pull/128#issuecomment-6202615558",
+    "merge_commit": "31333e103d135d132397cabf93bd881afac016d7"
+  },
+  {
+    "pr": 129,
+    "title": "416: proposed global attraction of the positive catalytic equilibrium",
+    "author": "yuiyuiui",
+    "reviewed_head": "ab5d6f736be7486c9b57bf3ef27f0477bbfac3c5",
+    "reply": "https://github.com/MColbrook/AIM/pull/129#issuecomment-6202617614",
+    "merge_commit": "e9a2e7e1b6e21a4a1b9fdf85e584a6d6be502ceb"
+  },
+  {
+    "pr": 130,
+    "title": "396: proposed polynomial decay for KdV at length 14 pi",
+    "author": "yuiyuiui",
+    "reviewed_head": "0ca93304d829a56ae9970fde75c210f29f92e9f9",
+    "reply": "https://github.com/MColbrook/AIM/pull/130#issuecomment-6202756958",
+    "merge_commit": "719c31ef017baace1d896cf0dc92235f3563e7bd"
+  },
+  {
+    "pr": 131,
+    "title": "404: proposed uniform convergence for a local quadratic mean field game",
+    "author": "yuiyuiui",
+    "reviewed_head": "2e20884b440d5804c1f2de740ae219239c8d4b0e",
+    "reply": "https://github.com/MColbrook/AIM/pull/131#issuecomment-6202758994",
+    "merge_commit": "8d09f0b715628ffc830e45b42a77bd5df73ddc6a"
+  },
+  {
+    "pr": 132,
+    "title": "413: proposed quarter-Sobolev norm inflation for the defocusing Gabitov-Turitsyn equation",
+    "author": "yuiyuiui",
+    "reviewed_head": "44a397b2c3577679229767a914922db8c8ddf390",
+    "reply": "https://github.com/MColbrook/AIM/pull/132#issuecomment-6202390553",
+    "merge_commit": "050aa10c55f5c33c4e9bc40b44ac6a4d5e9a7be5"
+  },
+  {
+    "pr": 133,
+    "title": "367: proposed counterexample to the universal small-BV error bound",
+    "author": "yuiyuiui",
+    "reviewed_head": "92de46d2190e6af89c3ac751be6746b3b429b17f",
+    "reply": "https://github.com/MColbrook/AIM/pull/133#issuecomment-6202478725",
+    "merge_commit": "3b61bcb0842922e607f42633b66c98cd9ef3d3a3"
+  },
+  {
+    "pr": 134,
+    "title": "390: proposed local planar Monge-Ampere Hessian integrability",
+    "author": "yuiyuiui",
+    "reviewed_head": "a8adb802e6890282b62c5118ae84d8f54ffcde89",
+    "reply": "https://github.com/MColbrook/AIM/pull/134#issuecomment-6202537867",
+    "merge_commit": "bfefdb505cd23557abf23e62b2af09c3ba1488cb"
+  },
+  {
+    "pr": 135,
+    "title": "112: proposed resolution — large Steklov eigenvalues with prescribed embedded boundary",
+    "author": "yuiyuiui",
+    "reviewed_head": "2d843e8dc4c0ce3b341bbcf44a9d7fc36c744bfa",
+    "reply": "https://github.com/MColbrook/AIM/pull/135#issuecomment-6202760840",
+    "merge_commit": "ad3e3a96f799c433c8d56448eae08376ca4eaf0f"
+  },
+  {
+    "pr": 136,
+    "title": "423: proposed domain clarification for the printed Sobolev restriction",
+    "author": "yuiyuiui",
+    "reviewed_head": "fb98d423513524bc2a4443454e5401a80a55d4c9",
+    "reply": "https://github.com/MColbrook/AIM/pull/136#issuecomment-6202392961",
+    "merge_commit": "d7fdd5d5ac40608165150e1a6c5765f3ff2b34a2"
+  },
+  {
+    "pr": 137,
+    "title": "441: proposed counterexample to global smooth propagation with ionization",
+    "author": "yuiyuiui",
+    "reviewed_head": "2588b6e13e0d21cc0ab51545d89c79fa4d057f0a",
+    "reply": "https://github.com/MColbrook/AIM/pull/137#issuecomment-6202819239",
+    "merge_commit": "f5ee3fff7d62d1e0dbcba86530f85a75a97e0335"
+  },
+  {
+    "pr": 138,
+    "title": "376: proposed full kinetic FENE zero spatial diffusion limit",
+    "author": "yuiyuiui",
+    "reviewed_head": "3a7c9c8907582924bf038c24b6225b0685943bc2",
+    "reply": "https://github.com/MColbrook/AIM/pull/138#issuecomment-6202762868",
+    "merge_commit": "14d19dd1adab25a40198353399c92fbaef9c5366"
+  },
+  {
+    "pr": 139,
+    "title": "424: proposed real-spectrum theorem for separated spherical Robin operators",
+    "author": "yuiyuiui",
+    "reviewed_head": "2fe247eaa2e8a2b96f41343ee7138013a70e1e56",
+    "reply": "https://github.com/MColbrook/AIM/pull/139#issuecomment-6202480824",
+    "merge_commit": "a7cf039c64c9407fb33fb3aa6ed9e629e6aabdeb"
+  },
+  {
+    "pr": 140,
+    "title": "366: proposed counterexample to literal rapid-decay continuation",
+    "author": "yuiyuiui",
+    "reviewed_head": "42bc75eb7969fa727113d0fb216c8083ea36b39f",
+    "reply": "https://github.com/MColbrook/AIM/pull/140#issuecomment-6202539893",
+    "merge_commit": "5579a2bf0dc094dca9454540b4fc7f40c5bd9e47"
+  },
+  {
+    "pr": 141,
+    "title": "141: finite-jet controllability counterexample",
+    "author": "yuiyuiui",
+    "reviewed_head": "bc5fd6bac773c5e925e18853bfc4b647fe22a090",
+    "reply": "https://github.com/MColbrook/AIM/pull/141#issuecomment-6202482842",
+    "merge_commit": "cdc5917835ead761b76c768def01605cb3fb341a"
+  },
+  {
+    "pr": 142,
+    "title": "429: proposed sharp transmission Weyl remainder",
+    "author": "yuiyuiui",
+    "reviewed_head": "6cfcf05e1f41032113617cc16e174569d19ae9bb",
+    "reply": "https://github.com/MColbrook/AIM/pull/142#issuecomment-6202619535",
+    "merge_commit": "700c66d09b292d3defeea14d1e2f006a1b95aa24"
+  },
+  {
+    "pr": 143,
+    "title": "193: proposed solution of the Gaussian polymer moment spectrum",
+    "author": "yuiyuiui",
+    "reviewed_head": "a2832f5f06a368e44102573e64db48fc80cca2db",
+    "reply": "https://github.com/MColbrook/AIM/pull/143#issuecomment-6202541902",
+    "merge_commit": "fdbf1fbb9207b734196476059239e90d7389b27d"
+  },
+  {
+    "pr": 144,
+    "title": "185: proposed resolution — CO phase selection for a stirred catalytic surface model",
+    "author": "yuiyuiui",
+    "reviewed_head": "189bc466d46e119d7c7765bce1d41618746062fd",
+    "reply": "https://github.com/MColbrook/AIM/pull/144#issuecomment-6202544033",
+    "merge_commit": "d32f4621a1e55fc6ccb04c4e24126dd1ade16479"
+  },
+  {
+    "pr": 145,
+    "title": "328: proposed counterexample for Fitch reconstruction under a molecular clock",
+    "author": "yuiyuiui",
+    "reviewed_head": "54df545617bc9696104d2802bc3a91eb903445b2",
+    "reply": "https://github.com/MColbrook/AIM/pull/145#issuecomment-6202484605",
+    "merge_commit": "b4dbfb727ead3c853e2b39db5d46cf05098d93e2"
+  },
+  {
+    "pr": 146,
+    "title": "191: proposed resolution — strong disorder and critical-point shift for Gaussian pinning",
+    "author": "yuiyuiui",
+    "reviewed_head": "b2f9fc098cd461dc364b7b62f4760c6f1143072c",
+    "reply": "https://github.com/MColbrook/AIM/pull/146#issuecomment-6202623435",
+    "merge_commit": "e11cb5483bfd54191c16d4010e1d9f41d27438de"
+  },
+  {
+    "pr": 147,
+    "title": "217: proposed counterexample to critical–subcritical heat-kernel comparison",
+    "author": "yuiyuiui",
+    "reviewed_head": "96149f92d7f66bfb1772aec423a32f676e2dc1d1",
+    "reply": "https://github.com/MColbrook/AIM/pull/147#issuecomment-6202625417",
+    "merge_commit": "7a1e3a38ef20386ae4eb974e6e9cb1ea2a88d059"
+  },
+  {
+    "pr": 148,
+    "title": "383: proposed resolution — continuity at the onset of Flory gelation",
+    "author": "yuiyuiui",
+    "reviewed_head": "09b60bb381c35eb5567fb251c6cf6a33f13ba220",
+    "reply": "https://github.com/MColbrook/AIM/pull/148#issuecomment-6202486440",
+    "merge_commit": "8cb4208ac88c3fa14288a68088eadc4469087ab4"
+  },
+  {
+    "pr": 149,
+    "title": "379: proposed counterexample on a uniformly smooth unbounded KPP domain",
+    "author": "yuiyuiui",
+    "reviewed_head": "a9c98123bb0710a93ebaf1422f62b631e776189a",
+    "reply": "https://github.com/MColbrook/AIM/pull/149#issuecomment-6202628085",
+    "merge_commit": "94d6a8b820dbc291df515c761344fde69f817600"
+  },
+  {
+    "pr": 150,
+    "title": "463: proposed counterexample to uniform nonlocal Sobolev estimates",
+    "author": "yuiyuiui",
+    "reviewed_head": "3f046208c5834b548da08c6253c1508c25c90644",
+    "reply": "https://github.com/MColbrook/AIM/pull/150#issuecomment-6202630215",
+    "merge_commit": "c6620757870137a6fa89c1c4f572ad2154b75ba9"
+  },
+  {
+    "pr": 151,
+    "title": "380: proposed counterexample to critical KPP nonexistence",
+    "author": "yuiyuiui",
+    "reviewed_head": "0f1a72e90159ed4a58c53276e05ffd91632d2936",
+    "reply": "https://github.com/MColbrook/AIM/pull/151#issuecomment-6202632753",
+    "merge_commit": "027ee14db1c2491684f8f8e64b0ebbfcfc9f1fd3"
+  },
+  {
+    "pr": 152,
+    "title": "384: proposed counterexample to two-obstacle equilibrium uniqueness",
+    "author": "yuiyuiui",
+    "reviewed_head": "f42708c58003e4f7663f6f9edda17626921cd27f",
+    "reply": "https://github.com/MColbrook/AIM/pull/152#issuecomment-6202634853",
+    "merge_commit": "b7b0458c3dd3419ae690c096ff10c657a8a4f710"
+  },
+  {
+    "pr": 153,
+    "title": "467: proposed counterexample to fractional-pressure continuity",
+    "author": "yuiyuiui",
+    "reviewed_head": "e8620ac7479efe6ff3de2e8fe2b963325886f82d",
+    "reply": "https://github.com/MColbrook/AIM/pull/153#issuecomment-6202488830",
+    "merge_commit": "f9a9a18be7becf93b90e15c90353e0023348b200"
+  },
+  {
+    "pr": 154,
+    "title": "461: proposed counterexample — relaxed infinity fractional comparison",
+    "author": "yuiyuiui",
+    "reviewed_head": "70a827b3bf2a2a810f7f378d6945dcce7e84def3",
+    "reply": "https://github.com/MColbrook/AIM/pull/154#issuecomment-6202638272",
+    "merge_commit": "340da4b8f58f357646675f74dd66044a4db8f6a3"
+  },
+  {
+    "pr": 155,
+    "title": "469: proposed resolution — superlinear SKT localization",
+    "author": "yuiyuiui",
+    "reviewed_head": "13ab904c45cb6205f534546826d0b88208834692",
+    "reply": "https://github.com/MColbrook/AIM/pull/155#issuecomment-6202641580",
+    "merge_commit": "21ac0edeb504e7c3b216a1bfe49269b95d5872d2"
+  },
+  {
+    "pr": 156,
+    "title": "Proposed solution of AIM 460: singular stable cone uniqueness",
+    "author": "yuiyuiui",
+    "reviewed_head": "21242c912966a018dfa8f0f48f61f493b67f1cda",
+    "reply": "https://github.com/MColbrook/AIM/pull/156#issuecomment-6202644082",
+    "merge_commit": "f64029915556afa3237c5b655bd2bb745a06755c"
+  },
+  {
+    "pr": 157,
+    "title": "474: proposed existence proof for point-source fractional diffusion on manifolds",
+    "author": "yuiyuiui",
+    "reviewed_head": "8a377b721755a4909aa7608b893abf0cc9c03c41",
+    "reply": "https://github.com/MColbrook/AIM/pull/157#issuecomment-6202646085",
+    "merge_commit": "dae23affe1915f66f56319b7bfc22d64276ac555"
+  },
+  {
+    "pr": 158,
+    "title": "473: proposed resolution of fractional PME mass conservation",
+    "author": "yuiyuiui",
+    "reviewed_head": "60a2396440ccdeab2c3a0090c91d1164433845a5",
+    "reply": "https://github.com/MColbrook/AIM/pull/158#issuecomment-6202648402",
+    "merge_commit": "eb5d9000a51b6474733ee1367762927e41358907"
+  },
+  {
+    "pr": 159,
+    "title": "402: proposed logarithmic convexity for two subdiffusion orders",
+    "author": "yuiyuiui",
+    "reviewed_head": "404bb40f6a5f795b8c61ff2abc0b3914dd003e0b",
+    "reply": "https://github.com/MColbrook/AIM/pull/159#issuecomment-6202650352",
+    "merge_commit": "fb92bd2e9ee3ca864896522342ce1123f8df17f4"
+  },
+  {
+    "pr": 160,
+    "title": "Problem 403: a lower control-cost exponent excluding L^2/4",
+    "author": "yuiyuiui",
+    "reviewed_head": "1957fa687fa60c26c51fd16017b91f43c4e60e14",
+    "reply": "https://github.com/MColbrook/AIM/pull/160#issuecomment-6202490759",
+    "merge_commit": "75b7c0ca049f0638d85b8f770e00ebe68f1cf4f0"
+  },
+  {
+    "pr": 161,
+    "title": "042: proposed fixed-format selected bidiagonal SVD construction",
+    "author": "yuiyuiui",
+    "reviewed_head": "951b78861d0a47ad35322f10454e51614d7691dd",
+    "reply": "https://github.com/MColbrook/AIM/pull/161#issuecomment-6202652062",
+    "merge_commit": "0940c862dbceba04b3cb262aff963716f6f3e26c"
+  },
+  {
+    "pr": 162,
+    "title": "AIM 411: full continuity solution claim for bounded admissible inputs",
+    "author": "yuiyuiui",
+    "reviewed_head": "b9b2b7c64b7a18bc805acca39e40aca6c0ab53b9",
+    "reply": "https://github.com/MColbrook/AIM/pull/162#issuecomment-6202492683",
+    "merge_commit": "e82d66dc365d340886a4f3119f681b64628c7268"
+  },
+  {
+    "pr": 163,
+    "title": "482: proposed counterexample for a reversible cubic reaction-diffusion system",
+    "author": "yuiyuiui",
+    "reviewed_head": "9aabeaaf7407f10ca578391fa632de4f2b1d3c32",
+    "reply": "https://github.com/MColbrook/AIM/pull/163#issuecomment-6202653952",
+    "merge_commit": "d10f3ecd99907d2161e751be8fa38d6d240ecd4f"
+  },
+  {
+    "pr": 164,
+    "title": "252: proposed resolution of self-ball Minkowski integrability",
+    "author": "yuiyuiui",
+    "reviewed_head": "ec0a45a8a976049a4fdd6f52af3f618868f414ed",
+    "reply": "https://github.com/MColbrook/AIM/pull/164#issuecomment-6202655582",
+    "merge_commit": "4953219db18c496bba9d1f49b60f7defb8c8d79a"
+  },
+  {
+    "pr": 165,
+    "title": "485: proposed optimal obstacle regularity for integrable angular densities",
+    "author": "yuiyuiui",
+    "reviewed_head": "5c6c10c9a57fed12f0c6e703029d6c7c50e4c289",
+    "reply": "https://github.com/MColbrook/AIM/pull/165#issuecomment-6202657391",
+    "merge_commit": "49541b1c79447e94a89b882c060d0a8f41572d44"
+  },
+  {
+    "pr": 166,
+    "title": "AIM 455: deterministic Hölder exponent for smooth transport SPDEs",
+    "author": "yuiyuiui",
+    "reviewed_head": "cfac7195abf3194016de5c355177b472df8859f2",
+    "reply": "https://github.com/MColbrook/AIM/pull/166#issuecomment-6202659279",
+    "merge_commit": "a7e30500f877f454e6726c9799da02cddf62a768"
+  },
+  {
+    "pr": 167,
+    "title": "457: proposed resolution of transport-noise Navier-Stokes at negative-half smoothness",
+    "author": "yuiyuiui",
+    "reviewed_head": "b673e462dea5019dccd17d70a2f292501c6e6958",
+    "reply": "https://github.com/MColbrook/AIM/pull/167#issuecomment-6202661184",
+    "merge_commit": "d1db0b8b19d5273ed276815f0301694adad0c998"
+  },
+  {
+    "pr": 168,
+    "title": "Proposed resolution of Problem 478: critical stochastic SQG",
+    "author": "yuiyuiui",
+    "reviewed_head": "8b2504c4a03a1097ea45cec49d2bbc5ef057dce9",
+    "reply": "https://github.com/MColbrook/AIM/pull/168#issuecomment-6202663599",
+    "merge_commit": "c24be80e375946e2ab5cfdc5f89cb58ceca6da7d"
+  },
+  {
+    "pr": 169,
+    "title": "AIM 481: full-target finite propagation proof for fourth-order aggregation-diffusion",
+    "author": "yuiyuiui",
+    "reviewed_head": "b6b71783ccda5a22cefcc844c321ecfd85d89a74",
+    "reply": "https://github.com/MColbrook/AIM/pull/169#issuecomment-6202665336",
+    "merge_commit": "ee40f71ee6525a8b202a7473f8760dc9a2ea4baa"
+  },
+  {
+    "pr": 170,
+    "title": "Report prior-resolution evidence for 38 Open or Partial targets",
+    "author": "yuiyuiui",
+    "reviewed_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reply": "https://github.com/MColbrook/AIM/pull/170#issuecomment-6202957114",
+    "merge_commit": "5fdc724a45faf8e3420ad9cd31810f4cc87ffe01"
+  },
+  {
+    "pr": 171,
+    "title": "458: proposed resolution — local no-slip theory under stochastic parabolicity",
+    "author": "yuiyuiui",
+    "reviewed_head": "6c858215bd4128df0ddd0dbc457903e70d1825a8",
+    "reply": "https://github.com/MColbrook/AIM/pull/171#issuecomment-6202891896",
+    "merge_commit": "8bbc77302ea6e5397bef8af820907500e5c052af"
+  }
+]

@@ -2,9 +2,9 @@
 
 **Area:** Kinetic PDEs / mean-field games
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -36,6 +36,16 @@ Here agents control acceleration, and noise diffuses their velocities. The varia
 2. M. Griffin-Pickering and A. R. Mészáros, *A variational approach to first order kinetic mean field games with local couplings*, Communications in Partial Differential Equations 47 (2022), 1945–2022, equation (1.1), §3.2 and existence/uniqueness theorems. [DOI](https://doi.org/10.1080/03605302.2022.2101003); [arXiv:2112.03141](https://arxiv.org/abs/2112.03141).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #127](https://github.com/MColbrook/AIM/pull/127). A dimension-independent half-power vanishing-noise density rate.
+
+[Proof or source](../research/solutions/405-kinetic-mfg-vanishing-viscosity-rate/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/405-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The original weak minimizing densities satisfy the spacetime and terminal L2 estimates with exponent1/2 for every diffusivity in(0,1].
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

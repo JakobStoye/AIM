@@ -34,8 +34,11 @@
     "title": "The dimension-free Kannan–Lovász–Simonovits inequality",
     "area": "High-dimensional probability and sampling",
     "file": "problems/092-kls-poincare.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative dimension-free Poincare inequality",
+    "proof": "https://arxiv.org/pdf/2610.05474v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "306",
@@ -271,8 +274,11 @@
     "title": "Strong freeness for one random interaction on overlapping tensor legs",
     "area": "Random matrices and quantum many-body systems",
     "file": "problems/577-repeated-gue-strong-freeness.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Affirmative norm convergence for the full repeated-GUE three-leg model.",
+    "proof": "research/solutions/kaiwen-jin-577/paper/repeated_gue_three_legs.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/577-review.md"
   },
   {
     "id": "583",

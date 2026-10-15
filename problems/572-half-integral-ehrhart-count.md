@@ -2,9 +2,9 @@
 
 **Area:** Discrete geometry and Ehrhart theory
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -35,6 +35,16 @@ Ehrhart quasipolynomials describe lattice-point counts under dilation, a central
 3. M. Bohnert and J. Springer, [Generalizations of Scott's inequality and Pick's formula to rational polygons](https://arxiv.org/abs/2411.11187), arXiv:2411.11187 (2024), Section 3.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #125](https://github.com/MColbrook/AIM/pull/125). Exact cubic count of entire Ehrhart functions for every requested half-integral polygon interior count, including integral polygons and period collapse.
+
+[Proof or source](../research/solutions/572-half-integral-ehrhart-count/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/572-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Complete necessity/attainment/count argument checked; all21 rational certificates and15 exact fixed-source full-function-set comparisons independently replayed and passed, relative to published catalogue completeness.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The March 2026 version of record [1] states this conjecture with at least two boundary lattice points and reports computational verification through $`i=16`$. This published statement is the one used here. The earlier related preprint [3] prints a different boundary threshold in its conjecture; it is not being substituted for the published formulation.
 

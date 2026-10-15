@@ -2,9 +2,9 @@
 
 **Area:** Reaction–diffusion; populations in perforated habitats
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ Two absorbing obstacles form a simple habitat in which their diffusion boundary 
 2. H. Berestycki and C. Graham, [*The steady states of strong-KPP reactions in general domains*](https://arxiv.org/abs/2212.06611), Journal of the European Mathematical Society, published online (2025), §1, comparison with uniqueness under the stronger reaction hypothesis; DOI [10.4171/JEMS/1578](https://doi.org/10.4171/JEMS/1578).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #152](https://github.com/MColbrook/AIM/pull/152). Two disjoint disks admit two distinct bounded positive monostable Dirichlet equilibria for one admissible reaction.
+
+[Proof or source](../research/solutions/384-two-disk-monostable-counterexample/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/384-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Two disjoint disks admit two distinct bounded positive monostable Dirichlet equilibria for one admissible reaction.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

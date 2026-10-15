@@ -2,9 +2,9 @@
 
 **Area:** Dispersive PDEs / boundary stabilization
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ KdV models long shallow-water waves. At critical channel lengths the boundary fa
 2. H.-M. Nguyen, *Decay for the nonlinear KdV equations at critical lengths*, Journal of Differential Equations 295 (2021), 249–291, main decay theorems and discussion of the dimension of the undamped subspace. [DOI](https://doi.org/10.1016/j.jde.2021.05.057); [arXiv:2012.08792](https://arxiv.org/abs/2012.08792).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #130](https://github.com/MColbrook/AIM/pull/130). Uniform small-data L2 decay with exponent one half at the exact critical length fourteen pi, for every real energy-class datum in one common small ball.
+
+[Proof or source](../research/solutions/kdv-14pi-polynomial-decay/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/396-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Periodic stable quadratic response and invisible resonant center motion yield coercive whole-center observation, rough-data quartic energy loss and all-time reciprocal-energy decay.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

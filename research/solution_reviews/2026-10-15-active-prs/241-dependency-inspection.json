@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-15",
+  "reviewer": "OpenAI Codex, independent AI source inspection",
+  "kind": "Static public custom-dependency closure inspection; not Lean kernel verification",
+  "root": "https://prove2.me/theorems/2f49ead8-433f-4b5e-9fc9-c44349429863",
+  "root_status_on_site": "Definition",
+  "reported_lean": "v4.33.1",
+  "reported_mathlib": "0df444a (short revision only)",
+  "custom_module_count": 19,
+  "recursive_custom_imports_resolved": true,
+  "source_pattern_scan": {
+    "patterns": [
+      "axiom",
+      "sorry",
+      "admit",
+      "opaque",
+      "constant",
+      "native_decide",
+      "unsafe",
+      "implemented_by"
+    ],
+    "matches": 0,
+    "limitation": "A source token scan is not transitive kernel axiom output."
+  },
+  "local_elaboration": false,
+  "kernel_replay": false,
+  "transitive_axiom_output": false,
+  "frozen_installable_whole_project_obtained": false,
+  "modules": [
+    {
+      "url": "https://prove2.me/theorems/2f49ead8-433f-4b5e-9fc9-c44349429863",
+      "imports": [
+        "spherical_ferromagnet_shooting_defs",
+        "sf241_shoot_family",
+        "sf241_shoot_bounds"
+      ],
+      "id": "2f49ead8-433f-4b5e-9fc9-c44349429863",
+      "sha256": "3b09cea971aabf4a2bd5e794fc05e7581607fef43a7523c5b1ea201483ba9f91",
+      "lines": 710,
+      "flags": [],
+      "name": "sf241_second_profile"
+    },
+    {
+      "url": "https://prove2.me/theorems/902a4987-18cf-4c21-8048-cac3a09168d4",
+      "imports": [
+        "spherical_ferromagnet_profile_defs"
+      ],
+      "id": "902a4987-18cf-4c21-8048-cac3a09168d4",
+      "sha256": "cffbb6361f81d6e2979ff19a13a04ff5eee098e9abdedad8170ea6586ffba054",
+      "lines": 23,
+      "flags": [],
+      "name": "spherical_ferromagnet_shooting_defs"
+    },
+    {
+      "url": "https://prove2.me/theorems/8f02a151-69b5-438c-a46a-6ef8a15a1f04",
+      "imports": [
+        "spherical_ferromagnet_shooting_defs"
+      ],
+      "id": "8f02a151-69b5-438c-a46a-6ef8a15a1f04",
+      "sha256": "45f3c3a7d4ed75b88556f6532bd80e34dc93f7c4b4cb25ca2cdecb0147887af9",
+      "lines": 1682,
+      "flags": [],
+      "name": "sf241_shoot_family"
+    },
+    {
+      "url": "https://prove2.me/theorems/16b57ba5-9e5d-4b55-9b69-8d6d32b6b581",
+      "imports": [
+        "sf241_enclosure3_lo",
+        "sf241_enclosure3_hi",
+        "sf241_enclosure5_lo",
+        "sf241_enclosure5_hi"
+      ],
+      "id": "16b57ba5-9e5d-4b55-9b69-8d6d32b6b581",
+      "sha256": "2067bf56c69f2a30bf5f0e05bf9015fca4a77a6dc9fb9ddc29e99441691e44cf",
+      "lines": 92,
+      "flags": [],
+      "name": "sf241_shoot_bounds"
+    },
+    {
+      "url": "https://prove2.me/theorems/20bd7a70-a0a5-43bd-a4d4-396c2590e03c",
+      "imports": [],
+      "id": "20bd7a70-a0a5-43bd-a4d4-396c2590e03c",
+      "sha256": "129eb54b188ccf6a27c9083dc5f5388c458873f9f66e95da6b1dde6ae62d2808",
+      "lines": 44,
+      "flags": [],
+      "name": "spherical_ferromagnet_profile_defs"
+    },
+    {
+      "url": "https://prove2.me/theorems/81133560-746f-4104-8e4c-e7576e75b84c",
+      "imports": [
+        "sf241_check3_1",
+        "sf241_check3_2"
+      ],
+      "id": "81133560-746f-4104-8e4c-e7576e75b84c",
+      "sha256": "31e2499382ae6f82869da0ca9da7a1ddd90448250591a784f58603af4452a350",
+      "lines": 15,
+      "flags": [],
+      "name": "sf241_enclosure3_lo"
+    },
+    {
+      "url": "https://prove2.me/theorems/bd2ce6b7-a1c2-4734-95d0-69e470ad2df2",
+      "imports": [
+        "sf241_check3_3",
+        "sf241_check3_4"
+      ],
+      "id": "bd2ce6b7-a1c2-4734-95d0-69e470ad2df2",
+      "sha256": "e853d94f8f588980bc341fdb9b2b9299b5d52cb84a887ae57f127b1bafa0830b",
+      "lines": 15,
+      "flags": [],
+      "name": "sf241_enclosure3_hi"
+    },
+    {
+      "url": "https://prove2.me/theorems/a665ad3b-e50a-4025-8ae4-8d43febb2e44",
+      "imports": [
+        "sf241_check5_1",
+        "sf241_check5_2"
+      ],
+      "id": "a665ad3b-e50a-4025-8ae4-8d43febb2e44",
+      "sha256": "0c57806eeb565e86917e27deefb354b20f78b1fd6c8909a0a75630bc47dfeaef",
+      "lines": 15,
+      "flags": [],
+      "name": "sf241_enclosure5_lo"
+    },
+    {
+      "url": "https://prove2.me/theorems/31cb5e61-1b3a-4a9b-9d3f-e883cb5ab57f",
+      "imports": [
+        "sf241_check5_3",
+        "sf241_check5_4"
+      ],
+      "id": "31cb5e61-1b3a-4a9b-9d3f-e883cb5ab57f",
+      "sha256": "5ac7da19bef224324026df4fd3c1b7ac1840083b6a7e9d18e260fbb71c2f0ee1",
+      "lines": 15,
+      "flags": [],
+      "name": "sf241_enclosure5_hi"
+    },
+    {
+      "url": "https://prove2.me/theorems/c3dc1eb0-121d-4aae-9f1f-dd5f32799e48",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "c3dc1eb0-121d-4aae-9f1f-dd5f32799e48",
+      "sha256": "50f4897140db2e0f927c9d0054f967441ff14ead407de84871d1a1b45776c84f",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check3_1"
+    },
+    {
+      "url": "https://prove2.me/theorems/8f1cf52c-7011-46d8-9e7d-b0fabdefb9df",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "8f1cf52c-7011-46d8-9e7d-b0fabdefb9df",
+      "sha256": "3f40122c384206075399ad9544beb4946f895a8243a5479be813e212d598a956",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check3_2"
+    },
+    {
+      "url": "https://prove2.me/theorems/378f8a97-6a5c-437c-90c8-9a21f5098fae",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "378f8a97-6a5c-437c-90c8-9a21f5098fae",
+      "sha256": "e3dcc73b840ec80b6d5cbe2e7a3ba619d1a4acc6e1831c5adde9d4261600cc21",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check3_3"
+    },
+    {
+      "url": "https://prove2.me/theorems/dbdc8797-7808-412e-9027-cded4d947b34",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "dbdc8797-7808-412e-9027-cded4d947b34",
+      "sha256": "1eefdaea19a62bf96d56b38a6e31f5ae62a481867060696a516ecf254ea508a0",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check3_4"
+    },
+    {
+      "url": "https://prove2.me/theorems/f3e0d1e1-4b3f-4868-8a80-8093f658498d",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "f3e0d1e1-4b3f-4868-8a80-8093f658498d",
+      "sha256": "880cdb4abee2ce8d9369e4f7f0a7fe4544c0df2bf29bbe206d120b317075fe7a",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check5_1"
+    },
+    {
+      "url": "https://prove2.me/theorems/c77fdcef-0e3e-40df-ad7e-4a5abe452efa",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "c77fdcef-0e3e-40df-ad7e-4a5abe452efa",
+      "sha256": "cd5aea79ea75f5fd9e1b298052b7aec195c7ca424a52b8e0812acd324b314634",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check5_2"
+    },
+    {
+      "url": "https://prove2.me/theorems/af3d6770-1b85-439c-9a11-4e27a7f5cb88",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "af3d6770-1b85-439c-9a11-4e27a7f5cb88",
+      "sha256": "0a3a42f039a7f275ce131203cfde12a27971dd1a07b03b603ec3e1e773ce04cc",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check5_3"
+    },
+    {
+      "url": "https://prove2.me/theorems/674424d6-d797-4f1c-81bb-d9fd8a882d92",
+      "imports": [
+        "sf241_enclosure_data"
+      ],
+      "id": "674424d6-d797-4f1c-81bb-d9fd8a882d92",
+      "sha256": "9d8fa2f105d900e3dde634661fce16502baa5399ea43936fd98b8d2cd59a9efc",
+      "lines": 13,
+      "flags": [],
+      "name": "sf241_check5_4"
+    },
+    {
+      "url": "https://prove2.me/theorems/615aa6d7-2bea-4c49-9e33-89bdaec77136",
+      "imports": [
+        "sf241_enclosure_core"
+      ],
+      "id": "615aa6d7-2bea-4c49-9e33-89bdaec77136",
+      "sha256": "03ae5311f39db59ff94997fec814fc8e85f6f2b77e3378b00244c2e6d083d4ef",
+      "lines": 278,
+      "flags": [],
+      "name": "sf241_enclosure_data"
+    },
+    {
+      "url": "https://prove2.me/theorems/702658c8-1027-4429-8e37-09122f36cecd",
+      "imports": [
+        "spherical_ferromagnet_shooting_defs"
+      ],
+      "id": "702658c8-1027-4429-8e37-09122f36cecd",
+      "sha256": "8245acf22bbf825871c4951712e7b802823977ee62fdb1ec50e4c483423f86bc",
+      "lines": 1471,
+      "flags": [],
+      "name": "sf241_enclosure_core"
+    }
+  ]
+}

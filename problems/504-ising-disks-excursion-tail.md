@@ -2,9 +2,9 @@
 
 **Area:** Applied topology, stochastic geometry and rare-event sampling
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-23
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -37,6 +37,16 @@ The rate would quantify how rarely a topology-preserving shape sampler reaches a
 1. Y. Baryshnikov and E. Onaran, [Ising disks: topology preserving Glauber dynamics](https://doi.org/10.1007/s41468-026-00248-w), Journal of Applied and Computational Topology **10** (2026), article 16. Definitions 3.1–3.2 and 4.1–4.4, §6, Definitions 7.1–7.3, Lemma 7.10 and Conjecture 7.11; [author preprint](https://arxiv.org/abs/2410.22611).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #92](https://github.com/MColbrook/AIM/pull/92). The exact exponential excursion-height rate is kappa*beta throughout the specified strict subcritical interval.
+
+[Proof or source](../research/solutions/504-ising-disks-excursion-tail/paper/ising_disks_excursion.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/504-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The full limit along all integer thresholds and the equivalent eta_T limit for every fixed 0<beta<1/kappa.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 Theorem 6.5 proves planar ergodicity in this parameter range. Lemma 7.10 gives only the lower bound $`\liminf\eta_T^{1/T}\ge1/(\kappa\beta)`$, equivalently the corresponding upper bound on the excursion-tail exponential rate. Conjecture 7.11 asks for equality. The already proved Poisson limit for suitably normalized rare events does not supply this missing normalization asymptotic.
 

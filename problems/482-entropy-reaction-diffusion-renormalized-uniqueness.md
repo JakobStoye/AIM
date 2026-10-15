@@ -2,9 +2,9 @@
 
 **Area:** Reaction–diffusion PDEs; chemical kinetics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -46,6 +46,16 @@ General reaction networks already admit global renormalized concentration fields
 3. A. Agresti, M. Kniely and B. Q. Tang, *Global classical solutions by transport noise for reaction–diffusion systems with entropy dissipation* (2026 preprint), §1.1. [Preprint](https://arxiv.org/abs/2608.13332).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #163](https://github.com/MColbrook/AIM/pull/163). The unrestricted finite-entropy renormalized reaction–diffusion uniqueness assertion is false.
+
+[Proof or source](../research/solutions/entropy-cubic-nonuniqueness/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/482-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The unrestricted finite-entropy renormalized reaction–diffusion uniqueness assertion is false.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

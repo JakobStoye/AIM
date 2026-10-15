@@ -1,0 +1,734 @@
+{
+  "pr": 122,
+  "id": "571",
+  "pinned_head": "c6ec4842bef76b3ef16cf783628d5ea669396046",
+  "status": "Solution claimed",
+  "at": "2026-10-15T21:51:10.203208+00:00",
+  "reviewer": "Independent Codex AI review; no human or Lean certification.",
+  "target_unique_systems": 608,
+  "target_cell_members": 618,
+  "export_repository_path": "research/solutions/571-half-integral-collinear-count/numerical_case/exact_series.json",
+  "export_sha256": "bd22e0775a0475fe485349483dec748c0045fa3b4e2b0f066a716a3b031bdc21",
+  "checkpoints": [
+    {
+      "file": "571-replay.json",
+      "sha256": "dc2afcc363385c6c3a237023a497985c7a513f82080fdd9c8552588bb3bc28ee",
+      "reported_status": "IN_PROGRESS",
+      "record_count": 6,
+      "unique_inputs": 6,
+      "compute_options": [
+        "HilbertSeries",
+        "BigInt",
+        "NoGradingDenom"
+      ],
+      "new_DualMode_records": 0
+    },
+    {
+      "file": "571-parallel-replay.json",
+      "sha256": "1167391ea3992fccf645d6894b30aaa71339686ff2a43b36e83a55f76b3408af",
+      "reported_status": "IN_PROGRESS",
+      "record_count": 12,
+      "unique_inputs": 12,
+      "compute_options": null,
+      "new_DualMode_records": 8
+    }
+  ],
+  "raw_checkpoint_record_count": 18,
+  "unique_completed_systems": 12,
+  "unique_exact_rational_matches": 12,
+  "unique_exact_grading_matches": 12,
+  "unmatched_completed_systems": 0,
+  "remaining_systems_not_independently_replayed": 596,
+  "completed_cell_members": 12,
+  "completed_members_by_action": {
+    "identity": 12
+  },
+  "duplicate_checkpoint_records_removed": 6,
+  "deduplication_key": "input_sha256; each group is counted once even when seeded into the parallel checkpoint or separately recomputed.",
+  "serial_computations": 6,
+  "parallel_new_DualMode_computations": 8,
+  "computation_note": "The parallel checkpoint initially copied four serial records. It later recomputed two inputs that also completed serially. Neither copied rows nor repeated inputs increase unique coverage.",
+  "full_replay_completed": false,
+  "software_boundary": "Completed Normaliz HilbertSeries outputs were compared as entire rational functions and exact gradings. The unreplayed outputs, not the integer-only aggregate identity, are the outstanding independent verification step. No mathematical gap is inferred from this incomplete computation.",
+  "compute_options_serial": [
+    "HilbertSeries",
+    "BigInt",
+    "NoGradingDenom"
+  ],
+  "compute_options_parallel": [
+    "HilbertSeries",
+    "BigInt",
+    "NoGradingDenom",
+    "DualMode"
+  ],
+  "normaliz_threads_per_process": 1,
+  "process_stop": {
+    "at": "2026-10-15T21:49:39.816177+00:00",
+    "before": [
+      {
+        "pid": 309,
+        "present": true,
+        "argv": [
+          "python3",
+          "-B",
+          "numerical_case/replay.py",
+          "--all",
+          "--output",
+          "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/571-replay.json"
+        ],
+        "cwd": "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/pr-122/research/solutions/571-half-integral-collinear-count",
+        "ppid": 299,
+        "state": "R"
+      },
+      {
+        "pid": 806,
+        "present": true,
+        "argv": [
+          "python3",
+          "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/parallel_normaliz.py"
+        ],
+        "cwd": "/mnt/c/Users/MatthewColbrook/Documents/git_repos/AIM",
+        "ppid": 803,
+        "state": "S"
+      },
+      {
+        "pid": 807,
+        "present": true,
+        "argv": [
+          "python3",
+          "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/parallel_normaliz.py"
+        ],
+        "cwd": "/mnt/c/Users/MatthewColbrook/Documents/git_repos/AIM",
+        "ppid": 806,
+        "state": "R"
+      },
+      {
+        "pid": 808,
+        "present": true,
+        "argv": [
+          "python3",
+          "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/parallel_normaliz.py"
+        ],
+        "cwd": "/mnt/c/Users/MatthewColbrook/Documents/git_repos/AIM",
+        "ppid": 806,
+        "state": "R"
+      },
+      {
+        "pid": 809,
+        "present": true,
+        "argv": [
+          "python3",
+          "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/parallel_normaliz.py"
+        ],
+        "cwd": "/mnt/c/Users/MatthewColbrook/Documents/git_repos/AIM",
+        "ppid": 806,
+        "state": "R"
+      },
+      {
+        "pid": 810,
+        "present": true,
+        "argv": [
+          "python3",
+          "/mnt/c/Users/MatthewColbrook/.codex/visualizations/2026/10/01/01a0f88a-46a6-73c1-ae0f-23d167c70a94/active-pr-review-2026-10-15/parallel_normaliz.py"
+        ],
+        "cwd": "/mnt/c/Users/MatthewColbrook/Documents/git_repos/AIM",
+        "ppid": 806,
+        "state": "R"
+      }
+    ],
+    "after": [
+      {
+        "pid": 309,
+        "present": false
+      },
+      {
+        "pid": 806,
+        "present": false
+      },
+      {
+        "pid": 807,
+        "present": false
+      },
+      {
+        "pid": 808,
+        "present": false
+      },
+      {
+        "pid": 809,
+        "present": false
+      },
+      {
+        "pid": 810,
+        "present": false
+      }
+    ],
+    "active_replay_processes_remaining": 0,
+    "scope": "Only the exact verified original replay parent309, parallel parent806 and its four workers807–810 were signaled."
+  },
+  "completed_groups": [
+    {
+      "input_sha256": "18783bc9f19055b1fa05e09b5b4485b2ea12b18ac8435895d9ce370d341f8ee7",
+      "members": [
+        {
+          "action": "identity",
+          "index": 413
+        }
+      ],
+      "series": [
+        [
+          1246,
+          -742,
+          3174,
+          -2860,
+          1722,
+          -574,
+          82
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-replay.json",
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "1d33abc68542e9e41a36c11001ba522c7099057d765ae044bb2f2ae0e65ffe9f",
+      "members": [
+        {
+          "action": "identity",
+          "index": 378
+        }
+      ],
+      "series": [
+        [
+          9191,
+          -23169,
+          32782,
+          -25354,
+          10347,
+          -1749
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "2438849fc2a5546f4049617c36081e8dd23cf94365200356e165b67d097da17b",
+      "members": [
+        {
+          "action": "identity",
+          "index": 377
+        }
+      ],
+      "series": [
+        [
+          4290,
+          -7924,
+          11452,
+          -8688,
+          3506,
+          -588
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "2e4894a5ef0b823feec645dc5e199ae788d2108941fc1667a03140225cc899b5",
+      "members": [
+        {
+          "action": "identity",
+          "index": 381
+        }
+      ],
+      "series": [
+        [
+          2142,
+          -3948,
+          5700,
+          -4320,
+          1742,
+          -292
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-replay.json",
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "4a59e1a8c05652bb375f482066acda5db1d4eb96f3459cfe3b653d0104b6ce32",
+      "members": [
+        {
+          "action": "identity",
+          "index": 412
+        }
+      ],
+      "series": [
+        [
+          3409,
+          -6943,
+          13066,
+          -13166,
+          7973,
+          -2675,
+          384
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "5a22cfb82e64ab9611f60ba79d08700d5cd85a44d981af23878242b707be7483",
+      "members": [
+        {
+          "action": "identity",
+          "index": 415
+        }
+      ],
+      "series": [
+        [
+          2507,
+          -1561,
+          6512,
+          -5906,
+          3563,
+          -1189,
+          170
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "629a1b92cba8234b2719687904f7044ee50aa361bbfbc3e6cbdd605d55b660f0",
+      "members": [
+        {
+          "action": "identity",
+          "index": 385
+        }
+      ],
+      "series": [
+        [
+          1246,
+          -742,
+          3174,
+          -2860,
+          1722,
+          -574,
+          82
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-replay.json",
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "6e9cf092a61fc3e415f4d579aaa90066eaf3fd8df4a222d8e118abee034859b9",
+      "members": [
+        {
+          "action": "identity",
+          "index": 384
+        }
+      ],
+      "series": [
+        [
+          3409,
+          -6943,
+          13066,
+          -13166,
+          7973,
+          -2675,
+          384
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-replay.json",
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "9440834cc1425d5f2ce63c90b57b9643e9fccb0a14514d81f22ec8c117d8ac63",
+      "members": [
+        {
+          "action": "identity",
+          "index": 0
+        }
+      ],
+      "series": [
+        [
+          62,
+          -46
+        ],
+        [
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-replay.json",
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "b722d805e5e3a2ae06d52a7d967b43013190745207296ef6bc5781b095f8d7a7",
+      "members": [
+        {
+          "action": "identity",
+          "index": 418
+        }
+      ],
+      "series": [
+        [
+          1747,
+          -812,
+          6601,
+          -6990,
+          5685,
+          -2848,
+          815,
+          -102
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-replay.json",
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "bff3a64e432d5d4706018bd54cad86a0ecaf3a15886d779a824438c95078b8a5",
+      "members": [
+        {
+          "action": "identity",
+          "index": 399
+        }
+      ],
+      "series": [
+        [
+          4290,
+          -7924,
+          11452,
+          -8688,
+          3506,
+          -588
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-parallel-replay.json"
+      ]
+    },
+    {
+      "input_sha256": "c117a106735d48ef7dba045a7cd4edec804305629fb09fa7349ab11eac39cd46",
+      "members": [
+        {
+          "action": "identity",
+          "index": 337
+        }
+      ],
+      "series": [
+        [
+          1186,
+          -2114,
+          2210,
+          -1126,
+          228
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        4
+      ],
+      "grading_readback": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        1
+      ],
+      "exact_rational_agreement": true,
+      "exact_grading_agreement": true,
+      "checkpoint_sources": [
+        "571-parallel-replay.json"
+      ]
+    }
+  ]
+}

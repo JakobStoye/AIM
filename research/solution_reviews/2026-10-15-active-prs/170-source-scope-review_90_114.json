@@ -1,0 +1,377 @@
+[
+  {
+    "id": 175,
+    "scope": "Full target",
+    "answer": "Affirmative",
+    "evidence": "Public preprint; applicability audit, not independent whole-paper proof certification.",
+    "source": "https://arxiv.org/pdf/2603.03257v1",
+    "locators": "Corollary1.1, equation(1), footnote1, printed p.3; hypotheses p.1.",
+    "audit": "The source works with infinite connected locally finite vertex-transitive graphs and iid bond percolation. Its displayed equation(1) says simultaneously that every infinite cluster is transient, and Corollary1.1 supplies it for all p>p_c. An infinite finitely generated Cayley graph is countable, connected, locally finite and transitive. Countability makes existence of any infinite component the countable union of the origin-connection events, and transitivity makes the thresholds identical. The endpoint p=1 is the original transient graph. No critical-point conclusion is needed or inferred. The source explicitly says the prior conjecture was originally about Cayley graphs, so the broader transitive theorem has no missing hypothesis here.",
+    "corrections": [],
+    "review_level": "Exact theorem/hypothesis match; source main proof is an imported primary result.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "175"
+        ],
+        "url": "https://arxiv.org/pdf/2603.03257v1",
+        "file": "175-f6407e71",
+        "bytes": 760258,
+        "sha256": "0fddafc0d9958026c3b9725bfd9c91ad3d31e73dc7576f38ca1a29492743c735",
+        "pdf": true,
+        "pages": 22
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 214,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Public preprint; applicability audit, not independent whole-paper proof certification.",
+    "source": "https://arxiv.org/pdf/2609.15591v4",
+    "locators": "Theorem1.1 printed p.2; graph construction Section2; main proof Section4 and supporting lemmas Sections3,5–6.",
+    "audit": "Theorem1.1 asserts a finite connected simple3-regular graph F for which every ±1 signing has operator norm strictly larger than2sqrt2. Its signed adjacency is exactly the zero-diagonal real symmetric matrix in AIM214, so its norm is the maximum absolute eigenvalue. This is genuinely a two-sided obstruction; a largest-eigenvalue result alone would not suffice. The explicit construction uses disjoint rooted seed copies, connecting edges and leaf completion; it is stated to be cubic and simple. The source distinguishes its non-Ramanujan base from the still-open Ramanujan-base restriction, which AIM214 does not impose. One degree3 instance refutes the all-d assertion. The cited interfaces exist, but this report does not certify their complete spectral proof.",
+    "corrections": [],
+    "review_level": "Exact full-target counterexample claim; source proof imported.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "214"
+        ],
+        "url": "https://arxiv.org/pdf/2609.15591v4",
+        "file": "214-efdd3a7a",
+        "bytes": 504548,
+        "sha256": "a1d88ecde778c61af059f4d41ba94e31d3150cbfd782cef84c2ed77245b49430",
+        "pdf": true,
+        "pages": 19
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 250,
+    "scope": "Full target",
+    "answer": "Affirmative",
+    "evidence": "Public preprint; applicability audit, not independent whole-paper proof certification.",
+    "source": "https://arxiv.org/pdf/2606.10102v1",
+    "locators": "Theorem1.1 printed p.1; regular tangent phase space Section2; Lemma5.11 pp.17–19 and Corollary5.13/final proof p.19.",
+    "audit": "The versioned PDF states that every finite bounded polygon has a regular periodic billiard orbit, without rational-angle or genericity hypotheses. A nondegenerate triangle is such a polygon. Regularity excludes the cone points/vertices in the doubled surface phase space. A closed orbit has compact image in that regular space, so it stays a positive distance from the excluded vertices; in a fixed finite triangle this permits only finitely many transverse side-interior collisions in one period. Reflection at the double's seam is precisely the specular law, and periodicity includes unit velocity as well as position. The source's final proof combines divergence of cut-locus H1 in Lemma5.11 with the fixed topological bound in Corollary5.13. Those interfaces match the stated result; this audit does not independently validate every geometric cut-locus lemma. The PDF title-page dateJune10 and arXiv submissionJune8 should be treated as distinct dates, not a proof defect.",
+    "corrections": [],
+    "review_level": "Exact regular-orbit theorem match; full new source proof not certified.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "250"
+        ],
+        "url": "https://arxiv.org/pdf/2606.10102v1",
+        "file": "250-286982ca",
+        "bytes": 214068,
+        "sha256": "64ecebddeccfbda2d1e28f055909f00ba05fc706383e0b6032aa60489c44c226",
+        "pdf": true,
+        "pages": 20
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 251,
+    "scope": "Full target",
+    "answer": "Affirmative",
+    "evidence": "Published primary source plus an independently reconstructed applicability reduction.",
+    "source": "https://ahl.centre-mersenne.org/item/10.5802/ahl.42.pdf",
+    "locators": "Theorem3.3 printed pp.657–659; Proposition3.7 p.661; Theorem3.9 forward direction pp.662–663.",
+    "audit": "This requires an actual reduction: Theorem3.9 is not itself a disk-wavefront theorem. Fix source radius r>0 and use signed angular momentum/impact parameter b in J=[0,r/2], with a probability marginal having positive density there. A chord has length L(b)=2sqrt(1-b²), and the angular advance between collisions is2acos(b). In a suspension-torus trivialization the unit-speed frequencies are therefore (1/L(b),acos(b)/(pi L(b))). These are the frequencies in the report, and they must not be copied from the differently normalized displayed vector in Proposition3.7. Every nonzero integer combination is a nonconstant analytic function on a neighborhood of J: otherwise acos(b) would be an affine combination of sqrt(1-b²) and a constant, which differentiation excludes. Its derivative's zeros are isolated, so Theorem3.3 gives Keplerian shear with invariant sigma-algebra exactly the b-marginal.\n\nFor clarity, with torus coordinates u mod1 and theta mod2pi, the physical position is rotation(theta−2acos(b)u) times [(1−u)+u exp(2i acos(b))]. The seam at u=0,1 matches, so this is continuous on J×T². At fixed b its spatial image is the entire annulus b<=|x|<=1. Initial rays from P with the chosen b form a measurable Dirac-fibre measure with that fixed marginal; one orientation branch suffices, since |b|<=r/2 is physically available. The forward proof of Theorem3.9 convolves these Dirac fibres by small torus kernels. Torus translations preserve their Wasserstein distance, and shear applies to the smoothed densities; the already verified invariant sigma-algebra supplies the correct limit. Consequently the initial singular measure converges at every late real time to marginal×Haar. Since J contains arbitrarily small positive b, that limit pushes forward to a measure with full support on the closed disk. Every nonnegative continuous spatial bump around any point has positive limiting integral. A finite epsilon-cover then shows that every sufficiently late individual wavefront meets each covering ball, giving the required uniform spatial distance limit. Omitting b=0 as a null endpoint makes no difference. This proves the full target, with no central-source assertion or convergence rate.",
+    "corrections": [],
+    "review_level": "Proof-critical published shear interface and complete disk reduction reconstructed; suitable full-resolution evidence.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "251"
+        ],
+        "url": "https://ahl.centre-mersenne.org/item/10.5802/ahl.42.pdf",
+        "file": "251-95c8573a",
+        "bytes": 720430,
+        "sha256": "f37b558cd929b1397a318dd1ed70b7c7e7f7cffb38d3de66ce5e195a5b6fc3bc",
+        "pdf": true,
+        "pages": 28
+      }
+    ],
+    "status": "Solved",
+    "status_basis": "Published source plus complete independently reconstructed disk-wavefront applicability reduction."
+  },
+  {
+    "id": 298,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Public preprint with finite causal certificate; applicability audit, not independent replay of its full certificate.",
+    "source": "https://arxiv.org/pdf/2610.10108v1",
+    "locators": "Theorem1.1; Section4 printed pp.8 onward; deterministic certificate and AppendixB.",
+    "audit": "Section3's noncausal157/166-style certificate would not answer AIM298; the report correctly uses Section4 instead. Its actual graph has182 vertices and735 undirected physical edges, with157 independent F9 source messages. Section4 specifies a fixed vertex order and outgoing symbols depending only on local messages and earlier received symbols. Each physical edge carries one symbol in one direction in an execution, and every input tuple is decoded. Repeating b independent executions meets the hard shared edge budget b; the catalogue has no separate time horizon, so no further pipelining assumption is necessary. Source–sink distance at least5 gives total routing load at least785r for common rate r; total edge capacity735 forces r<=147/157<1. Zero-capacity edges may connect components without altering either achievable code or routing. This matches zero-error causal throughput and independence exactly. The report does not rerun every listed finite-field certificate entry, so its truth status remains a source proof claim, not receiving-repository computational certification.",
+    "corrections": [],
+    "review_level": "Causal finite-certificate model match; certificate not independently replayed.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "298"
+        ],
+        "url": "https://arxiv.org/pdf/2610.10108v1",
+        "file": "298-436019da",
+        "bytes": 423023,
+        "sha256": "108e12bb48649cb2a606b7b32c535623061817c02eab809e6ce339a6eadbdb42",
+        "pdf": true,
+        "pages": 19
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 325,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Public ECCC preprint; main counterfamily proof independently reconstructed.",
+    "source": "https://eccc.weizmann.ac.il/report/2026/242/download",
+    "locators": "Definition2.1/identity(2.1) p.2; construction(2.3)–(2.7) p.3; Lemma2.2 p.4; Theorem3.1 p.5.",
+    "audit": "The source explicitly allows offline signs for each physical column occurrence, fixes the order in advance and defines prefix discrepancy with one common sign assignment. Its stronger offset-robust property P_E(M,a) quantifies over arbitrary starting vectors and coefficients in E. Original columns alter coordinate-pair means only; detector columns alter pair differences only. The nested word lets a post hoc witness choose one child at each depth where a large mean is frozen. The final fixed detector list includes every possible row tuple, so the matching detector traces the original M-path with arbitrary offset. It forces a large tracker at a time when its ancestor mean is still large; max(|h+z|,|h−z|)=|h|+|z| doubles the guarantee. This is not an adaptive change to the submitted sequence. Starting M0=[1] and E={|c|>=1} gives P(M0,1/2); recurrence doubles a and column sparsity, and d_(k+1)=2d_k² yields d_k=2^(2^k−1). Scaling each column by1/sqrt(2^k) gives Euclidean norm1 and discrepancy at least2^(k/2−1), unbounded. With zero offset that positive witness cannot be the empty prefix. Thus the exact main countertheorem needed by AIM325 follows; no efficiency or ordinary terminal-sum claim is substituted.",
+    "corrections": [],
+    "review_level": "Complete self-contained proof of target counterfamily reconstructed; no formal verification claimed.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "325"
+        ],
+        "url": "https://eccc.weizmann.ac.il/report/2026/242/download",
+        "file": "325-f537e4b6",
+        "bytes": 880829,
+        "sha256": "5634f35f6ec2778148040ca96dde34210d8096b05c927715d36743ff9808621c",
+        "pdf": true,
+        "pages": 8
+      }
+    ],
+    "status": "Solved",
+    "status_basis": "Complete target counterfamily proof independently reconstructed, although the cited source is an unpublished ECCC preprint."
+  },
+  {
+    "id": 330,
+    "scope": "Full target",
+    "answer": "Affirmative",
+    "evidence": "Public preprint; applicability audit, not independent whole-paper proof certification.",
+    "source": "https://arxiv.org/pdf/2609.30421v1",
+    "locators": "Theorem1 p.2; model pp.2–3; online policy/survival comparison Sections4–5, proof p.12.",
+    "audit": "Theorem1 states an e-probability-competitive ordinal policy for arbitrary finite matroids in the unknown-matroid model, a stronger information restriction than the catalogue's fully known matroid. It irrevocably chooses a feasible independent set and promises each element of the greedy optimal basis inclusion probability at least1/e. A fixed label tie-breaker turns observed nonnegative weights into a total order without changing the optimal total weight. Summing those element probabilities gives expected weight at leastOPT/e. To convert observed uniform permutation to the continuous-time model, independently sample and sort |E| iid uniform internal times and feed the kth time only when the kth element arrives. This produces exactly the joint independent labeled arrival law and provides the source policy no future arrivals or weights. The algorithm can internally disregard its extra knowledge of the matroid. Loops and zero optimum cause no difficulty; no polynomial runtime condition is required by AIM330. Source policy construction and proof interfaces were checked for model scope, not recertified wholesale.",
+    "corrections": [],
+    "review_level": "Exact full-target guarantee/model reduction; primary policy proof imported.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "330"
+        ],
+        "url": "https://arxiv.org/pdf/2609.30421v1",
+        "file": "330-fb6b6cf3",
+        "bytes": 355843,
+        "sha256": "51d1ee2aaf4a12011b1bf18456a73e158e590d941933bd8c7f61c035de3c6ca9",
+        "pdf": true,
+        "pages": 18
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 338,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Public preprint; applicability audit, not independent whole-paper proof certification.",
+    "source": "https://arxiv.org/pdf/2610.12434v1",
+    "locators": "Section1.1 pp.2–3; Theorem1.5 p.4; rational polynomial source Section12, compactification/wrapper Sections13–15.",
+    "audit": "The source input is the finite rational coefficient list and degree/dimension code for an autonomous homogeneous polynomial field. Its GAS definition includes Lyapunov stability, forward completeness for every initial point and convergence to zero. Theorem1.5 states undecidability/many-one completeness in one fixed dimension and odd degree. Its polynomial-source and wrapper interfaces explicitly retain rational coefficients and fixed finite degree/dimension; no unencoded real oracle parameter is introduced. For a degree-d homogeneous field, if y starts at lambda*x, then x(t)=lambda^(-1)y(lambda^(1-d)t) solves the same field from x. Local asymptotic stability in the catalogue gives a complete attracting trajectory for a sufficiently small positive lambda. Rescaling gives a complete attracting trajectory from every x; the local stability clause is already the GAS stability clause. Conversely GAS trivially implies the catalogue's local conditions. Hence a total local decider would decide the undecidable homogeneous subclass. This is not a transfer from mere convergence, finite-time blow-up of one trajectory, or Lyapunov stability alone. No Lean replay or independent audit of the source's substantial arithmetic/dynamical construction is asserted.",
+    "corrections": [],
+    "review_level": "Exact effective subclass and local/global equivalence; source undecidability proof imported.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "338"
+        ],
+        "url": "https://arxiv.org/pdf/2610.12434v1",
+        "file": "338-15ba4648",
+        "bytes": 685085,
+        "sha256": "164b0365b3c310ba2afe07c6f6add6c1e90738f767af286412199e45167e2671",
+        "pdf": true,
+        "pages": 50
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 340,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Public preprint plus published deterministic reductions; applicability audit, not independent whole-paper algorithm certification.",
+    "source": "https://arxiv.org/pdf/2610.06783v1",
+    "supporting_source": "https://arxiv.org/pdf/2001.01289v2",
+    "locators": "Alman–Vassilevska Williams Theorem2 p.7 and Theorem22 pp.35–36; DGS definitions pp.5–6, Theorem2.3 and Lemmas3.3–3.4.",
+    "audit": "Theorem2 specifies deterministic algorithms on O(log n)-bit word RAM for polynomially bounded integers; Theorem22 covers each fixed universe exponent nu and gives a positive constant exponent saving. Thus the cubic universe in AIM340 is included, and all preprocessing belongs to an actual uniform algorithm. The source's generic zero-sum3SUM interface must be adapted to the catalogue's pairwise-distinct a+b=c, not identified by name alone. DGS defines its one-partite3LDT with distinct values and includes coefficient tuple(1,1,−1) as a nontrivial variant, with deterministic subquadratic equivalences over the same polynomial universe and the same word-RAM operations. A direct deterministic bit color-coding alternative uses O(log²n) ordered bit-pair partitions: every three distinct labels receive three different colors for some two separating bits, after choosing their role assignment. Restrict the three roles to those disjoint classes, map the third set to its negatives, and use the three-set zero-sum routine; DGS supplies the standard one/three-partite reductions without permitting repeated physical elements. All extra integer magnitudes remain polynomial and work/preprocessing is n polylog n plus polylog calls. This retains some fixed epsilon>0, although the quoted exponent1.9992 should not be advertised unchanged after every reduction. Determinism is stronger than the target's bounded-error expectation convention. No Lean claim in the source is locally replayed.",
+    "corrections": [
+      "When describing the final distinct-element variant, retain only 'a fixed positive exponent saving' unless the full composed exact exponent is recalculated; the report already states this correctly."
+    ],
+    "review_level": "Model, finite-universe, distinctness and preprocessing match; source fast algorithm imported.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "340"
+        ],
+        "url": "https://arxiv.org/pdf/2610.06783v1",
+        "file": "340-96f98bad",
+        "bytes": 916436,
+        "sha256": "d91a79c5dbf1fc662f0c5c1bb2b690ac3d83d9ef5bf872bde4cdaf7cc9e76005",
+        "pdf": true,
+        "pages": 76
+      },
+      {
+        "ids": [
+          "340"
+        ],
+        "url": "https://arxiv.org/pdf/2001.01289v2",
+        "file": "340-b6d15e47",
+        "bytes": 703000,
+        "sha256": "c9fa0c2653422fcfd3dd0df9a07e6ec2ee9e253143ebcf83e75e2cb2281e2e4d",
+        "pdf": true,
+        "pages": 28
+      }
+    ],
+    "status": "Solution claimed",
+    "status_basis": "Complete target claim and exact source-to-target interface checked; the unpublished main proof or finite certificate has not received an independent complete reconstruction/replay in this audit."
+  },
+  {
+    "id": 521,
+    "scope": "Full literal target; formulation caveat",
+    "answer": "Negative for the displayed region",
+    "evidence": "Published primary Ptolemy result plus a self-contained matching reduction; no claim to characterize the corrected region.",
+    "source": "https://arxiv.org/pdf/2103.04470v5",
+    "locators": "Definition5.13/Proposition5.14 pp.52–53; Proposition5.17 pp.53–54; Proposition5.24 opening formula and branchC proof p.59; Conjecture5.25 p.61.",
+    "audit": "For b(X)<d(X), each vertex has exactly one distance greater than b: its farthest distance is at least d>b and its second farthest is at most b. Symmetry makes these farthest-neighbor edges a perfect matching of the six vertices into three pairs. Choose any two pairs as four points. Their matching diagonals have lengths at least d and all four cross-pair side lengths are at most b. Euclidean Ptolemy gives d²<=2b². The literal proposed right-hand side includes(1,2): its second branch has4*1*(3−1)/(4−1)=8/3<=4. But4>2, so no six-point sample can realize this pair. This completely refutes the displayed equality.\n\nThe source's Proposition5.24 opening formula itself also omits a restriction that its proof then uses: branchC is defined with sqrt2<=b<=sqrt3. Thus this is not solely a transcription mistake newly introduced by the catalogue, but it may be a missing-domain typographical issue in the published proposed region. The submitted report correctly limits itself to the literal formula and does not purport to solve the corrected exclusion problem. The status text must preserve that distinction instead of saying that every natural corrected Gómez–Mémoli conjecture has been refuted.",
+    "corrections": [
+      "State prominently that the literal displayed region is refuted and the branchC proof uses the absent b>=sqrt2 condition; do not silently claim a corrected-region characterization."
+    ],
+    "review_level": "Complete elementary target refutation reconstructed using primary Ptolemy.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "521"
+        ],
+        "url": "https://arxiv.org/pdf/2103.04470v5",
+        "file": "521-50808a49",
+        "bytes": 26913563,
+        "sha256": "e93f439a6e35c703b71d87ee820449bba3862c386138d9bb2c1a94de6dc79dc9",
+        "pdf": true,
+        "pages": 92
+      }
+    ],
+    "status": "Solved",
+    "status_basis": "Complete elementary refutation of the literal displayed region independently reconstructed; corrected-region characterization is not claimed."
+  },
+  {
+    "id": 578,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Public preprint; its explicit3-by-3 counterexample proof independently reconstructed.",
+    "source": "https://arxiv.org/pdf/2609.14828v1",
+    "locators": "Section4/closed-half-plane definition and Theorem4.1 printed pp.13–14.",
+    "audit": "The source explicitly includes defective imaginary-axis eigenvalues, exactly as AIM578 requires. For m>=4 it gives A=[[-m^4,m²,0],[0,0,m²],[m^6,1,0]]. Its columns are orthogonal and its smallest singular value is m². Its determinant is positive, while every real3-by-3 matrix with spectrum in the closed left half-plane has nonpositive determinant. The segment to any real stable matrix therefore meets a singular matrix, forcing Frobenius distance at least m². Zeroing the(2,3) entry attains that bound, with characteristic polynomial z²(z+m^4).\n\nThe complex competitor C=[[-m^4,m²+2mi,2mi−3],[0,0,m²],[m^6,0,0]] has characteristic polynomial(z−im³)²(z+m^4+2im³), so it is feasible in the closed half-plane, including its repeated imaginary eigenvalue. Direct expansion verifies that polynomial and ||A−C||_F²=8m²+10. For m=4,8m²+10=138<256=m^4, giving d_C(A)<16=d_R(A). This stronger direct Frobenius comparison suffices without the general unitarily invariant norm estimate. Thus the exact counterexample needed for the catalogue was independently checked, although the source's other matrix-nearness results were not recertified.",
+    "corrections": [],
+    "review_level": "Complete explicit counterexample argument reconstructed; no formal verification claimed.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "578"
+        ],
+        "url": "https://arxiv.org/pdf/2609.14828v1",
+        "file": "578-eaa69082",
+        "bytes": 398921,
+        "sha256": "0414046a480e7d375d6750adb26a179db5546659898963c8fab916c05949d584",
+        "pdf": true,
+        "pages": 19
+      }
+    ],
+    "status": "Solved",
+    "status_basis": "Complete explicit real/complex matrix counterexample and distance comparison independently reconstructed."
+  },
+  {
+    "id": 619,
+    "scope": "Full target",
+    "answer": "Negative",
+    "evidence": "Published/author primary triangulation data plus a self-contained boundary-vertex obstruction and receiving-repository finite check.",
+    "source": "https://arxiv.org/pdf/math/0507592v1",
+    "supporting_source": "https://www3.math.tu-berlin.de/IfM/Nachrufe/Frank_Lutz/stellar/manifolds_lex/manifolds_lex_d2_n10_o1_g2.txt",
+    "locators": "Hougardy–Lutz–Zelke pp.1–2; first24-face author record; Clinch etal original definition and Conjecture1.3.",
+    "audit": "The author source explicitly supplies closed orientable genus-two triangulations on ten vertices. The first24-face dataset record was independently parsed. Every edge occurs in exactly two triangles, every vertex link is one connected cycle, the dual adjacency is connected, and consistent triangle orientations exist. It has10 vertices,36 edges and24 faces, hence Euler characteristic−2 and orientable genus2/Euler genus4. The finite-check receipt is619-source-example-check.json.\n\nA sphere with four holes whose removed-disk closures are disjoint has four disjoint boundary circles. In an embedding of a finite simple graph that contains this boundary, each such circle is a vertex cycle of length at least three, and the cycles have disjoint vertex sets. Thus any such triangulation needs at least12 vertices. No spanning subgraph of the ten-vertex graph can qualify, regardless of how that subgraph is embedded. The original Clinch etal source was checked directly: it really uses pairwise-disjoint closures, finite simple graphs and the same Euler-genus4/four-hole Conjecture1.3; the counterexample is not obtained by strengthening the catalogue's definition beyond that source. This disproves the stated unrestricted conjecture, without changing the positive sufficiently-large-facewidth theorem.",
+    "corrections": [],
+    "review_level": "Exact author data and full target obstruction independently verified.",
+    "pr": 170,
+    "pinned_head": "ea9829b04eabe0017d8a968261335a44a7cc30ed",
+    "reviewer": "OpenAI Codex: independent source applicability review; no human or locally replayed Lean certification.",
+    "downloaded_sources": [
+      {
+        "ids": [
+          "619"
+        ],
+        "url": "https://arxiv.org/pdf/math/0507592v1",
+        "file": "619-dc2e1384",
+        "bytes": 51743,
+        "sha256": "dca5e33bac60070bab5e4426c63e5a3cb52255fcfd2a87bd6e46d148307e68c4",
+        "pdf": true,
+        "pages": 3
+      },
+      {
+        "ids": [
+          "619"
+        ],
+        "url": "https://www3.math.tu-berlin.de/IfM/Nachrufe/Frank_Lutz/stellar/manifolds_lex/manifolds_lex_d2_n10_o1_g2.txt",
+        "file": "619-adb5747c",
+        "bytes": 206033,
+        "sha256": "66012aea7471a3250a46018391d5ca0a2d8ecb8ac8d929787a8a7ec3ab3e67f1",
+        "pdf": false
+      }
+    ],
+    "status": "Solved",
+    "status_basis": "Complete boundary-vertex obstruction independently reconstructed and author triangulation independently checked."
+  }
+]

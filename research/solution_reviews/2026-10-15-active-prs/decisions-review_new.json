@@ -1,0 +1,21 @@
+[
+  {
+    "pr": 171,
+    "id": "458",
+    "pinned_head": "6c858215bd4128df0ddd0dbc457903e70d1825a8",
+    "status": "Partially resolved",
+    "outcome": "Partial progress: conditional pathwise uniqueness and perturbative cases; full non-small-noise local theory has an unverified channel-calculus input.",
+    "proof": "research/458/paper/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/458-review.md",
+    "verified_progress": "Zero-noise deterministic and sufficiently small-noise cases via isotropic additive theory and contraction; without added amplitude smallness, pathwise uniqueness among any existing solutions in the full asserted path class (Section 6.2); flat-model and localization calculations do not alone prove the arbitrary-domain existence target.",
+    "remaining_target": "Local adapted existence and continuous dependence in C(Besov 1/2_(4,4)) intersect L4(W1,4_0) on every bounded smooth three-dimensional domain throughout the stochastic-parabolicity range. Verify the corrected KKW compatible fractional right-inverse hypotheses for the periodic channel or give a valid direct channel-calculus input, then recheck the dependent estimates.",
+    "required_corrections": [
+      "Record Partially resolved in problem page, metadata and generated lists, with nonempty Known cases and Remaining target.",
+      "Reply to PR171 naming source lines 677–725 / PDF pp.9–10 and the missing corrected-theorem hypotheses.",
+      "Add clearly attributed maintainer partial-progress note to README, TARGET_COMPARISON and manuscript front page; preserve original author proof claim as a claim.",
+      "Add P. Kunstmann and L. Weis, Math. Ann. 357 (2013), 801–804, DOI 10.1007/s00208-011-0768-7; corrected Theorem 1.3 p.802 and Stokes Lemma 2.2 p.803. Do not include Kalton as an erratum author.",
+      "Rebuild after editorial amendment and refresh manifests/checksums for the editorial amendment; original Git payload hashes were correct."
+    ],
+    "reply_summary": "Independent AI review found a substantive missing hypothesis: Section 3.3 applies the uncorrected KKW Theorem 8.2, while the 2013 Kunstmann–Weis erratum requires compatible right inverses on both fractional endpoint scales. Those estimates are not supplied. Retain as partial progress, including entire-class uniqueness for existing solutions and zero/small-noise cases; full non-small-noise local existence/dependence remains unproved by this submission."
+  }
+]

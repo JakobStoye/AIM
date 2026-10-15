@@ -176,8 +176,11 @@
     "title": "A nonlinear Weyl lemma at the minimal p-harmonic integrability threshold",
     "area": "Degenerate elliptic PDEs and nonlinear potential theory",
     "file": "problems/433-very-weak-p-harmonic-energy-regularity.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Negative example for every p>2 and d>=3",
+    "proof": "https://ems.press/content/serial-article-files/51447",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md"
   },
   {
     "id": "434",

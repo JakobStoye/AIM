@@ -1,5 +1,7 @@
 # Correspondence with AIM Problem 458
 
+**Maintainer note, 15 October 2026:** this table describes the submitted complete claim. The [independent AI review](../solution_reviews/2026-10-15-active-prs/458-review.md) found an unverified hypothesis in Section 3.3: the corrected KKW theorem also requires compatible fractional right-inverse estimates. The repository records **partial progress**, rather than accepting the full existence and continuous-dependence claim. The original requirement comparison is preserved below.
+
 Target: [458. Local no-slip Navier--Stokes theory under non-small transport noise](https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/458-stochastic-navier-stokes-no-slip-local.md), repository revision `a153f469ee0ea64e876b2ad97c79d252c19a3e22`.
 
 Submitted result: Theorem 1.1 of [the manuscript](paper/paper.pdf), with its complete proof in Sections 2--6. This is a complete solution claim for the specified finite smooth-coefficient target, awaiting independent review.

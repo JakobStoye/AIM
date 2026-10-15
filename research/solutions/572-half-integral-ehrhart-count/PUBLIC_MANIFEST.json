@@ -25,13 +25,13 @@
     {
       "path": "VERIFICATION_MANIFEST.sha256",
       "bytes": 2376,
-      "sha256": "5e279477765f7b4cc1f3aa54195883ae78bdecccc416e9e1aad0921ce8ff13b0",
+      "sha256": "d478a2e1eb18933702cdcd02500b60cc169ed0e071e024184fc26dc820617b95",
       "purpose": "Public documentation or exact content checksums"
     },
     {
       "path": "half-integral-ehrhart-verification.zip",
-      "bytes": 392739,
-      "sha256": "fe8e74da1bc3cdb11e1d67a204a0926cbd98ed91ab5679d6518cac53127decd4",
+      "bytes": 392988,
+      "sha256": "8a889e5c0481e60169dedf9100f66bad627a24670a864f21fcc6767be933a400",
       "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
     },
     {
@@ -156,8 +156,8 @@
     },
     {
       "path": "src/half_integral_ehrhart/top.py",
-      "bytes": 1161,
-      "sha256": "defbef8d7397218c4f162c1ef1369b466dd02a08f8ba9a9a51ab0aa5d4ebae1e",
+      "bytes": 1176,
+      "sha256": "e49cee050b63113f64f8d41b3eeb9bc022cb85b4c7afc2040c919536a2e083bd",
       "purpose": "Finished manuscript, exact verifier, required certificate or reproducibility input"
     },
     {

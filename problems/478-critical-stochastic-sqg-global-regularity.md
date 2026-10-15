@@ -2,9 +2,9 @@
 
 **Area:** Stochastic PDEs; geophysical fluid dynamics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -29,6 +29,16 @@ Critical SQG models surface temperature transport with borderline dissipative sm
 2. T. Liang and Y. Wang, *Sub-critical and critical stochastic quasi-geostrophic equations with infinite delay*, Discrete Contin. Dyn. Syst. B **26** (2021), 4697–4726, local pathwise theory at critical dissipation. [Article](https://doi.org/10.3934/dcdsb.2020309).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #168](https://github.com/MColbrook/AIM/pull/168). The critical stochastic SQG equation has the required pathwise unique global adapted H3 solution for the full specified nonlinear finite-noise class.
+
+[Proof or source](../research/solutions/478-critical-stochastic-sqg-global-regularity/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/478-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The critical stochastic SQG equation has the required pathwise unique global adapted H3 solution for the full specified nonlinear finite-noise class.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

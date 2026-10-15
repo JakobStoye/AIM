@@ -2,9 +2,9 @@
 
 **Area:** Stochastic fluid PDEs; rough initial velocity
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -38,6 +38,16 @@ This random-advection fluid model represents incompressible flow with spatially 
 2. A. Agresti, *On the absence of blow-up in the 3D Navier–Stokes equations with transport noise* (2026 preprint), local theory and noise-selection hypotheses. [Preprint](https://arxiv.org/abs/2607.15140).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #167](https://github.com/MColbrook/AIM/pull/167). Local well-posedness holds at the exact inhomogeneous B^(-1/2)_(6,4) endpoint for all prescribed transport families in AIM457.
+
+[Proof or source](../research/solutions/transport-noise-navier-stokes-negative-half-data/paper/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/457-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Local well-posedness holds at the exact inhomogeneous B^(-1/2)_(6,4) endpoint for all prescribed transport families in AIM457.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

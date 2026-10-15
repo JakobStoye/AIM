@@ -42,24 +42,33 @@
     "title": "Injectivity of the Rips shadow map on fundamental groups",
     "area": "Applied topology and geometric reconstruction",
     "file": "problems/499-rips-shadow-fundamental-group.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-23"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Six-point counterexample to injectivity of the Rips shadow map.",
+    "proof": "research/resolved/499-rips-shadow-fundamental-group/paper/rips_shadow_counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/499-review.md"
   },
   {
     "id": "500",
     "title": "Ergodicity of higher-dimensional Ising clumps",
     "area": "Applied topology and Markov-chain sampling",
     "file": "problems/500-higher-dimensional-ising-clumps.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-23"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A dimension-four counterexample refutes all-state irreducibility of the higher-dimensional clump dynamics.",
+    "proof": "research/solutions/500-higher-dimensional-ising-clumps/paper/cube_dynamics.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/500-review.md"
   },
   {
     "id": "501",
     "title": "Integral optimal flat-norm decompositions in codimension one",
     "area": "Applied topology, geometric measure theory and shape comparison",
     "file": "problems/501-integral-flat-norm-codimension-one.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-23"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "An integral optimum exists for every compactly supported integral codimension-one current, including noncycles.",
+    "proof": "research/solutions/501-integral-flat-norm-codimension-one/paper/integral_flat_norm.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/501-review.md"
   },
   {
     "id": "502",
@@ -82,8 +91,11 @@
     "title": "Exponential excursion tails for topology-preserving Ising disks",
     "area": "Applied topology, stochastic geometry and rare-event sampling",
     "file": "problems/504-ising-disks-excursion-tail.md",
-    "status": "Open",
-    "last_checked": "2026-09-23"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The exact exponential excursion-height rate is kappa*beta throughout the specified strict subcritical interval.",
+    "proof": "research/solutions/504-ising-disks-excursion-tail/paper/ising_disks_excursion.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/504-review.md"
   },
   {
     "id": "508",
@@ -122,40 +134,55 @@
     "title": "The first Rips homotopy transition for higher-dimensional spheres",
     "area": "Applied and computational topology",
     "file": "problems/512-spherical-rips-first-transition.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The proposed join is the homotopy type of the ordinary strict spherical Rips complex throughout a nonempty interval after the first transition.",
+    "proof": "research/solutions/512-kaiwen-jin-spherical-rips-first-transition/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/512-review.md"
   },
   {
     "id": "513",
     "title": "The centre-rank formula for aspherical motion planning",
     "area": "Applied topology and robot motion planning",
     "file": "problems/513-aspherical-motion-planning-center.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "An oriented flat five-manifold contradicts the universal centre-rank TC formula.",
+    "proof": "research/solutions/513-kaiwen-jin-flat-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/513-review.md"
   },
   {
     "id": "514",
     "title": "Maximal motion-planning complexity of aspherical connected sums",
     "area": "Applied topology and robot motion planning",
     "file": "problems/514-aspherical-connected-sum-complexity.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Every connected sum of two closed oriented aspherical n-manifolds has maximal unreduced TC=2n+1 for n>=3.",
+    "proof": "research/solutions/514-kaiwen-jin-aspherical-connected-sums/paper/aspherical-connected-sums.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/514-review.md"
   },
   {
     "id": "520",
     "title": "Coarse Hilbert embeddings of persistence diagrams",
     "area": "Applied topology and metric geometry",
     "file": "problems/520-persistence-diagram-coarse-embedding.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The unrestricted persistence-diagram space has no coarse embedding into Hilbert space for every p in the remaining interval[1,2].",
+    "proof": "research/solutions/520-kaiwen-jin-coarse-persistence-diagrams/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/520-review.md"
   },
   {
     "id": "521",
     "title": "Six-point persistence on the Euclidean two-sphere",
     "area": "Applied topology and geometric data analysis",
     "file": "problems/521-six-point-sphere-persistence.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Negative for the displayed region",
+    "proof": "https://arxiv.org/pdf/2103.04470v5",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "524",
@@ -170,8 +197,11 @@
     "title": "Maximal TC weight from positive homological norm",
     "area": "Applied topology and robot motion planning",
     "file": "problems/525-positive-norm-tc-weight.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A positive-norm surface product has no degree-four class of the proposed TC weight.",
+    "proof": "research/solutions/525-positive-norm-tc-weight/paper/counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/525-review.md"
   },
   {
     "id": "526",
@@ -186,24 +216,33 @@
     "title": "Limiting Betti-number distributions in preferential-attachment networks",
     "area": "Applied topology and random networks",
     "file": "problems/529-preferential-attachment-betti-limit.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The normalized high-dimensional Betti numbers converge to an explicitly described nondegenerate law with all positive moments, excluding the proposed power-law tail.",
+    "proof": "research/solutions/529-preferential-attachment-betti-limit/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/529-review.md"
   },
   {
     "id": "531",
     "title": "Homology at the second transition of torus-grid Rips complexes",
     "area": "Applied topology and persistent homology",
     "file": "problems/531-torus-grid-transition-homology.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "An exact integral chain certificate disproves the proposed all-k homology formula at k=5.",
+    "proof": "research/solutions/yuiyuiui-531-integral-counterexample/paper/torus_grid_counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/531-review.md"
   },
   {
     "id": "532",
     "title": "Homotopy type of torus-grid Rips complexes at half the diameter",
     "area": "Applied topology and persistent homology",
     "file": "problems/532-torus-grid-half-diameter-homotopy.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The closed Rips complex of the2k-by-2k torus grid at half its diameter has the full conjectured wedge homotopy type for every k>=3.",
+    "proof": "research/solutions/532-torus-grid-half-diameter-homotopy/paper/torus-grid-half-diameter.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/532-review.md"
   },
   {
     "id": "533",
@@ -229,8 +268,11 @@
     "title": "Betti numbers of a persistence fiber with no finite bars",
     "area": "Applied topology and inverse persistent homology",
     "file": "problems/537-persistence-fiber-betti-numbers.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The prescribed no-finite-bar persistence fibre has the same F2 homology as the underlying simplicial complex.",
+    "proof": "research/solutions/537-persistence-fiber-betti-numbers/paper/persistence_fiber.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/537-review.md"
   },
   {
     "id": "538",
@@ -288,8 +330,11 @@
     "title": "Minimal persistence grids versus homological Morse lower bounds",
     "area": "Applied topology and inverse persistent homology",
     "file": "problems/547-minimal-persistence-grid-morse-bound.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The proposed Morse quantity bounds the largest coordinate size of the canonical minimal persistence grid.",
+    "proof": "research/solutions/547-minimal-persistence-grid-morse-bound/paper/grid_morse_bound.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/547-review.md"
   },
   {
     "id": "558",
@@ -331,8 +376,11 @@
     "title": "Asymmetry at the Macbeath point of a convex body",
     "area": "Convex geometry and geometric approximation",
     "file": "problems/565-macbeath-center-asymmetry.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A square pyramid is a counterexample to the proposed Macbeath-center asymmetry inclusion.",
+    "proof": "research/solutions/565-macbeath-center-asymmetry/paper/macbeath_counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/565-review.md"
   },
   {
     "id": "566",
@@ -347,16 +395,22 @@
     "title": "Counting half-integral polygons with collinear interior lattice points",
     "area": "Discrete geometry and lattice-point enumeration",
     "file": "problems/571-half-integral-collinear-count.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: all-parameter half-integral collinear polygon formula via exact finite boundary-chain generating functions and Burnside, with an explicit Normaliz software dependency.",
+    "proof": "research/solutions/571-half-integral-collinear-count/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/571-review.md"
   },
   {
     "id": "572",
     "title": "Counting Ehrhart quasipolynomials of half-integral polygons",
     "area": "Discrete geometry and Ehrhart theory",
     "file": "problems/572-half-integral-ehrhart-count.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Exact cubic count of entire Ehrhart functions for every requested half-integral polygon interior count, including integral polygons and period collapse.",
+    "proof": "research/solutions/572-half-integral-ehrhart-count/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/572-review.md"
   },
   {
     "id": "573",
@@ -419,8 +473,11 @@
     "title": "A linear threshold for extracting a segment grid",
     "area": "Computational geometry and graph drawing",
     "file": "problems/593-red-blue-segment-grid.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Every arrangement in the question contains the required embedded rectangular grid; the proof also gives the stronger2k−1 sufficient threshold.",
+    "proof": "research/solutions/aim-593-segment-grids/paper/segment_grids.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/593-review.md"
   },
   {
     "id": "594",
@@ -443,8 +500,11 @@
     "title": "A bounded number of flat transversals for fat convex sets",
     "area": "Discrete geometry and geometric transversal theory",
     "file": "problems/596-fat-convex-transversal-pq.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The fractional flat-transversal theorem can be rounded to boundedly many actual flats for arbitrary concentric-fat convex bodies.",
+    "proof": "research/solutions/aim-596-fat-convex-transversals/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/596-review.md"
   },
   {
     "id": "600",
@@ -459,8 +519,11 @@
     "title": "Nill's facet bound for reflexive lattice polytopes",
     "area": "Discrete geometry and toric geometry",
     "file": "problems/610-reflexive-polytope-facet-bound.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "An explicit45-dimensional reflexive polytope violates the conjectured facet bound.",
+    "proof": "research/solutions/aim-610-reflexive-facet-counterexample/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/610-review.md"
   },
   {
     "id": "611",
@@ -507,8 +570,11 @@
     "title": "Spanning triangulated spheres with holes in surface triangulations",
     "area": "Topological graph theory and rigidity",
     "file": "problems/619-spanning-holed-sphere-triangulation.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Negative",
+    "proof": "https://arxiv.org/pdf/math/0507592v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "624",
@@ -531,32 +597,44 @@
     "title": "Odd Euler characteristic for flag-no-square four-manifolds",
     "area": "Combinatorial topology and geometric group theory",
     "file": "problems/628-odd-euler-flag-no-square.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "There exists a closed connected PL four-manifold with odd Euler characteristic and a finite flag-no-square triangulation.",
+    "proof": "research/solutions/628-odd-euler-flag-no-square/paper/odd_euler_flag_no_square.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/628-review.md"
   },
   {
     "id": "629",
     "title": "Characterizing discrete sets generated by fixed-parameter extrapolation",
     "area": "Discrete geometry and aperiodic order",
     "file": "problems/629-extrapolation-discreteness.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Discreteness of the finite extrapolation set is equivalent to the full strong-PV conjugate condition.",
+    "proof": "research/solutions/629-extrapolation-discreteness/paper/extrapolation_discreteness.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/629-review.md"
   },
   {
     "id": "630",
     "title": "Relative density of sets generated by fixed-parameter extrapolation",
     "area": "Discrete geometry and aperiodic order",
     "file": "problems/630-extrapolation-relative-density.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Every fixed extrapolation parameter outside[0,1] produces a relatively dense set in its full real or complex ambient space.",
+    "proof": "research/solutions/aim-630-extrapolation-relative-density/paper/relative_density.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/630-review.md"
   },
   {
     "id": "635",
     "title": "Small mod-two area cycles in drawings with bounded pairwise intersections",
     "area": "Topological graph theory and discrete geometry",
     "file": "problems/635-bounded-crossing-heilbronn.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Bounded pairwise intersections force a mod-two area four-cycle with area tending uniformly to zero.",
+    "proof": "research/solutions/635-bounded-crossing-heilbronn/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/635-review.md"
   },
   {
     "id": "638",
@@ -571,32 +649,44 @@
     "title": "Coboundary expansion of random balanced Cayley complexes",
     "area": "Applied topology / high-dimensional expansion",
     "file": "problems/640-random-balanced-cayley-expansion.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Elementary abelian2-groups deterministically refute the proposed uniform random coboundary-expansion assertion.",
+    "proof": "research/solutions/640-random-balanced-cayley-obstruction/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/640-review.md"
   },
   {
     "id": "643",
     "title": "Zero in the upper-Laplacian spectrum of low-degree simplicial complexes",
     "area": "Applied topology / spectral theory",
     "file": "problems/643-low-degree-simplicial-zero-spectrum.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Counterexample on a countable pure three-complex: maximum triangle degree three, coercive normalized upper Laplacian on the full weighted space, and trivial kernel.",
+    "proof": "research/solutions/643-low-degree-simplicial-zero-spectrum/paper/degree_three_counterexample.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/643-review.md"
   },
   {
     "id": "644",
     "title": "Topological complexity in the homogeneous medial regime for all sample sizes",
     "area": "Applied topology / random complexes",
     "file": "problems/644-medial-regime-topological-complexity.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The reduced topological complexity is2 with probability tending to one along all sample sizes in the homogeneous lower model.",
+    "proof": "research/solutions/644-medial-regime-topological-complexity/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/644-review.md"
   },
   {
     "id": "645",
     "title": "A finite three-ample complex with nontrivial fundamental group",
     "area": "Applied topology / simplicial complexes",
     "file": "problems/645-finite-three-ample-nonsimply-connected.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Finite 32768-vertex three-ample simplicial complex with a simplicial retract onto a four-cycle.",
+    "proof": "research/solutions/645-finite-three-ample-nonsimply-connected/paper/finite_three_ample.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/645-review.md"
   },
   {
     "id": "646",
@@ -611,31 +701,43 @@
     "title": "Connectivity when the last isolated point disappears in a polytope",
     "area": "Applied topology / stochastic geometry",
     "file": "problems/647-polytopal-connectivity-last-isolated-point.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "For every fixed full-dimensional convex polytope in every fixed dimension at least three, connectivity occurs exactly when the last isolated vertex disappears with high probability.",
+    "proof": "research/solutions/647-polytopal-connectivity-last-isolated-point/paper/connectivity-polytope.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/647-review.md"
   },
   {
     "id": "648",
     "title": "Location of the most isolated point in a random polyhedral sample",
     "area": "Applied topology / stochastic geometry",
     "file": "problems/648-polyhedral-most-isolated-point-location.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Both noncritical spatial limits for the actual most-isolated point, with the stated tie rule.",
+    "proof": "research/solutions/648-polyhedral-most-isolated-point-location/paper/polyhedral_isolation.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/648-review.md"
   },
   {
     "id": "649",
     "title": "Vanishing threshold for first path homology of a random digraph",
     "area": "Applied topology / random graphs",
     "file": "problems/649-random-digraph-path-homology-vanishing.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Rational nonregular first path homology vanishes with high probability throughout the requested exponent range above minus two-thirds.",
+    "proof": "research/solutions/649-random-digraph-path-homology-vanishing/paper/path_homology_vanishing.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/649-review.md"
   },
   {
     "id": "650",
     "title": "Central limit theorem for the first path Betti number",
     "area": "Applied topology / probability",
     "file": "problems/650-random-digraph-path-betti-central-limit.md",
-    "status": "Open",
-    "last_checked": "2026-09-24"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Rational nonregular first path Betti number CLT with true mean and variance for every requested density sequence, with variance asymptotic to the edge-count variance.",
+    "proof": "research/solutions/650-random-digraph-path-betti-central-limit/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/650-review.md"
   }
 ]

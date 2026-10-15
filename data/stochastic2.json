@@ -58,8 +58,11 @@
     "title": "Does supercritical percolation preserve transience?",
     "area": "Diffusion in diluted networks",
     "file": "problems/175-percolation-preserves-transience.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative",
+    "proof": "https://arxiv.org/pdf/2603.03257v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "176",
@@ -147,8 +150,11 @@
     "title": "Selection of the carbon-monoxide poisoning phase",
     "area": "Catalytic surface reactions",
     "file": "problems/185-catalytic-carbon-monoxide-poisoning.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The stirred catalytic model poisons to CO almost surely at every site for every admitted iid law with positive CO density.",
+    "proof": "research/solutions/185-catalytic-carbon-monoxide-poisoning/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/185-review.md"
   },
   {
     "id": "186",
@@ -195,8 +201,11 @@
     "title": "Strong disorder versus a shifted pinning threshold",
     "area": "Disordered polymers and adsorption",
     "file": "problems/191-pinning-strong-disorder-critical-shift.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "For the specified Gaussian pinning model, strong disorder implies a strictly positive quenched–annealed critical-point shift.",
+    "proof": "research/solutions/191-pinning-strong-disorder-critical-shift/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/191-review.md"
   },
   {
     "id": "192",
@@ -211,8 +220,11 @@
     "title": "A continuous strictly decreasing moment spectrum for Gaussian polymers",
     "area": "Polymers in random media",
     "file": "problems/193-directed-polymer-moment-spectrum.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The Gaussian three-dimensional polymer moment threshold is a continuous strictly decreasing bijection onto [5/3,infinity).",
+    "proof": "research/solutions/193-directed-polymer-moment-spectrum/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/193-review.md"
   },
   {
     "id": "296",
@@ -243,16 +255,22 @@
     "title": "Accuracy of parsimony reconstruction under a molecular clock",
     "area": "Mathematical phylogenetics and ancestral-state inference",
     "file": "problems/328-fitch-ultrametric-ancestral-accuracy.md",
-    "status": "Open",
-    "last_checked": "2026-09-18"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "An exact positive-edge ultrametric three-leaf example for the symmetric twenty-state model violates the proposed Fitch accuracy inequality.",
+    "proof": "research/solutions/fitch-ultrametric-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/328-review.md"
   },
   {
     "id": "348",
     "title": "Non-explosion of Brownian Fleming–Viot systems in arbitrary domains",
     "area": "Interacting particles and conditioned diffusion",
     "file": "problems/348-brownian-fleming-viot-nonexplosion.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative: finite-time Brownian branching explosion",
+    "proof": "https://arxiv.org/pdf/2610.18802v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "489",

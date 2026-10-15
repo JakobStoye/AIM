@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 ## Problem statement
 
 For each real $`c\ne0`$, let $`\Omega=\{(x,y)\in\mathbb R^2:y>0\}`$ and consider the Dirichlet realization
@@ -31,6 +31,18 @@ This operator arises in linear stability analysis of superconductivity with elec
 2. B. Helffer, [On spectral problems related to a time dependent model in superconductivity with electric current](https://doi.org/10.5802/jedp.56), *Journées Équations aux Dérivées Partielles* (2009), Exposé 3, 1–16, discussion of the Almog–Helffer–Pan magnetic models.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #136](https://github.com/MColbrook/AIM/pull/136). Verified domain clarification: the printed ordinary Sobolev restriction is nonclosed; the intended closed magnetic spectral problem is not settled.
+
+[Proof or source](../research/solutions/423-ordinary-sobolev-magnetic-airy-domain-clarification/paper/domain-correction.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/423-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Known cases:** Verified domain clarification: the printed ordinary Sobolev restriction is nonclosed; the intended closed magnetic spectral problem is not settled.
+
+**Remaining target:** Prove nonempty spectrum for every intermediate nonzero field strength for the natural closed magnetic Dirichlet realization.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** Nonempty spectrum is established for sufficiently small and sufficiently large nonzero field strengths.
 

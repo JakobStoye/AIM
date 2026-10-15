@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and geometric data analysis
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-10-16
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -41,7 +41,19 @@ Persistence sets combine the topological summaries of many small samples. Charac
 
 ## Status review
 
-**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-521). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+Reviewed 15 October 2026 against the original target in [PR #170](https://github.com/MColbrook/AIM/pull/170). Negative for the displayed region
+
+[Proof or source](https://arxiv.org/pdf/2103.04470v5) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For b(X)<d(X), each vertex has exactly one distance greater than b: its farthest distance is at least d>b and its second farthest is at most b. Symmetry makes these farthest-neighbor edges a perfect matching of the six vertices into three pairs. Choose any two pairs as four points. Their matching diagonals have lengths at least d and all four cross-pair side lengths are at most b. Euclidean Ptolemy gives d²<=2b². The literal proposed right-hand side includes(1,2): its second branch has4*1*(3−1)/(4−1)=8/3<=4. But4>2, so no six-point sample can realize this pair. This completely refutes the displayed equality.
+
+The source's Proposition5.24 opening formula itself also omits a restriction that its proof then uses: branchC is defined with sqrt2<=b<=sqrt3. Thus this is not solely a transcription mistake newly introduced by the catalogue, but it may be a missing-domain typographical issue in the published proposed region. The submitted report correctly limits itself to the literal formula and does not purport to solve the corrected exclusion problem. The status text must preserve that distinction instead of saying that every natural corrected Gómez–Mémoli conjecture has been refuted.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
+
+**Resolution-source report (2026-10-15):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-15-prior-resolutions.md#aim-521). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
 
 ### Earlier status review (2026-09-24)
 

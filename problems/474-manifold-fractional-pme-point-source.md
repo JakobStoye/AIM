@@ -2,9 +2,9 @@
 
 **Area:** Nonlocal PDEs; anomalous diffusion from a point source
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -41,6 +41,16 @@ A fundamental solution represents release of a concentrated amount of material a
 2. G. Grillo, *The Fractional Porous Medium Equation on noncompact Riemannian manifolds*, Oberwolfach Reports 14/2025, contribution on weak dual solutions and unresolved uniqueness/fundamental solutions. [Workshop report](https://ems.press/content/serial-article-files/51358?nt=1).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #157](https://github.com/MColbrook/AIM/pull/157). Every admitted complete manifold and positive point mass has a nonnegative distributional fractional porous-medium solution with the required positive-time continuity and initial trace.
+
+[Proof or source](../research/solutions/474-manifold-fractional-pme-point-source/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/474-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Every admitted complete manifold and positive point mass has a nonnegative distributional fractional porous-medium solution with the required positive-time continuity and initial trace.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

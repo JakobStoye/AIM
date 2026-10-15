@@ -2,9 +2,9 @@
 
 **Area:** Nonlinear elliptic PDEs / optimal transport
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ Hessian bounds control distortion and sensitivity of transport maps used in mesh
 2. G. De Philippis, A. Figalli and O. Savin, *A note on interior $`W^{2,1+ε}`$ estimates for the Monge–Ampère equation*, Mathematische Annalen 357 (2013), 11–22, Theorem 1.1. [DOI](https://doi.org/10.1007/s00208-012-0895-9); [preprint](https://arxiv.org/abs/1202.5566).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #134](https://github.com/MColbrook/AIM/pull/134). Local strong Hessian integrability at the requested exponent for the full planar Alexandrov class, implying the weak endpoint estimate.
+
+[Proof or source](../research/solutions/390-planar-monge-ampere-sharp-hessian-integrability/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/390-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Original-class coordinate/area identities and a local weighted scalar-projection defect estimate establish the endpoint for every parameter and compact interior set.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

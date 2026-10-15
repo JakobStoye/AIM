@@ -1,8 +1,8 @@
 # 644. Topological complexity in the homogeneous medial regime for all sample sizes
 
 **Area:** Applied topology / random complexes
-**Status:** 🟡 PARTIAL
-**Last checked:** 2026-09-24
+**Status:** ✅ SOLVED
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -41,6 +41,16 @@ Topological complexity counts the continuous local rules needed for motion plann
 2. J. A. Barmak and M. Farber, [Topology of medial regime random simplicial complexes](https://arxiv.org/abs/2608.07969), August 2026, Theorems 16 and 19 and §10, Question 2.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #113](https://github.com/MColbrook/AIM/pull/113). The reduced topological complexity is2 with probability tending to one along all sample sizes in the homogeneous lower model.
+
+[Proof or source](../research/solutions/644-medial-regime-topological-complexity/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/644-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every fixed p in(0,1), the complex is path connected and has reduced TC=2 asymptotically through all integers n, with a proved Euler-characteristic anti-concentration bound.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The 2026 preprint proves the upper bound $`\mathop{\mathrm{TC}}\nolimits(|X_n|)\le2`$ with probability tending to one along all $`n`$. It proves equality with probability tending to one when $`n`$ is restricted to a suitable subset of the positive integers having natural density one.
 

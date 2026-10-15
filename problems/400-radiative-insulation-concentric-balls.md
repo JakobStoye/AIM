@@ -2,9 +2,9 @@
 
 **Area:** Elliptic PDEs / nonlinear boundary laws
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -38,6 +38,16 @@ The boundary law represents Stefan–Boltzmann radiation into an environment at 
 2. F. Della Pietra, C. Nitsch and C. Trombetti, *An optimal insulation problem*, Mathematische Annalen 382 (2022), 745–759, §1 energy formulation and §5 open shape questions. [Full text](https://doi.org/10.1007/s00208-020-02058-6).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #128](https://github.com/MColbrook/AIM/pull/128). Concentric-ball optimality for the full radiative insulation law.
+
+[Proof or source](../research/solutions/400-radiative-insulation-concentric-balls/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/400-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The displayed inequality holds for every original dimension, parameter choice, measurable core and bounded Lipschitz outer set, including unused insulation.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

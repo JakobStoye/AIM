@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and robot motion planning
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -45,6 +45,16 @@ TC weight strengthens cohomological lower bounds for the number of continuous lo
 1. C. Neofytidis, [Topological complexity, asphericity and connected sums](https://doi.org/10.1007/s41468-025-00205-z), Journal of Applied and Computational Topology **9**, article 10 (2025), Definitions 2.1/2.4, Theorems 2.2/3.4 and Question 5.1(a), p.13. [arXiv:2212.08962v2](https://arxiv.org/abs/2212.08962v2).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #98](https://github.com/MColbrook/AIM/pull/98). A positive-norm surface product has no degree-four class of the proposed TC weight.
+
+[Proof or source](../research/solutions/525-positive-norm-tc-weight/paper/counterexample.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/525-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For M=Sigma2×Sigma2 the rational fundamental class has norm at least24, but every nonzero u in H4(M;Q) has weight(bar(u)) at most2<4.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The degree bound for sectional weight makes the requested inequality an equality. Theorem 3.4 of [1] proves weight at least two for every nonzero degree-at-least-two class on a negatively curved manifold; it does not establish the requested degree-$`k`$ bound for general $`M`$ and $`k`$.
 

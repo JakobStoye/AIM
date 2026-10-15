@@ -2,9 +2,9 @@
 
 **Area:** Discrete geometry and aperiodic order
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -30,6 +30,16 @@ The operation models point generation in quasicrystal constructions. A character
 2. S. Fenner, F. Green and S. Homer, [Extended manuscript](https://arxiv.org/abs/1212.2889).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #111](https://github.com/MColbrook/AIM/pull/111). Discreteness of the finite extrapolation set is equivalent to the full strong-PV conjugate condition.
+
+[Proof or source](../research/solutions/629-extrapolation-discreteness/paper/extrapolation_discreteness.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/629-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every complex parameter, Q_lambda is discrete exactly when lambda is a strong PV algebraic integer; the proof also gives pairwise separation at least1 in that case.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** Strong PV parameters give uniformly discrete sets. Discreteness also forces the parameter to be an algebraic integer.
 

@@ -2,9 +2,9 @@
 
 **Area:** Hamilton–Jacobi / Fokker–Planck PDE systems
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -38,6 +38,16 @@ The value function determines an agent’s optimal future cost. Uniform converge
 2. P. J. Graber and A. R. Mészáros, *Sobolev regularity for first order mean field games*, Annales de l’Institut Henri Poincaré C, Analyse non linéaire 35 (2018), 1557–1576, Theorem 1.2. [DOI](https://doi.org/10.1016/j.anihpc.2018.01.002).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #131](https://github.com/MColbrook/AIM/pull/131). Whole-family local uniform vanishing-viscosity convergence for the exact quadratic local MFG in dimensions one through three, with initial vacuum allowed.
+
+[Proof or source](../research/solutions/local-mfg-uniform-vanishing-viscosity/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/404-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Averaged finite-energy path perturbations give uniform continuity; exact-initial heat recovery, convex uniqueness and path calibration identify occupied values; homogeneous comparison identifies vacuum values.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

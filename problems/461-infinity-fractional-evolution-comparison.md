@@ -2,9 +2,9 @@
 
 **Area:** Nonlinear parabolic PDEs; stochastic games
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -33,6 +33,16 @@ Comparison would make the continuum evolution associated with a non-Brownian tug
 1. F. del Teso, J. Endal, E. R. Jakobsen and J. L. Vázquez, *Evolution driven by the infinity fractional Laplacian*, Calc. Var. PDE **62**, 136 (2023), viscosity definition, Theorem 2.6 and §§7, 9. [Article](https://doi.org/10.1007/s00526-023-02475-w); [preprint](https://arxiv.org/abs/2210.06414).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #154](https://github.com/MColbrook/AIM/pull/154). The specified relaxed infinity-fractional subsolution–supersolution comparison fails, even with identical smooth initial data.
+
+[Proof or source](../research/solutions/461-relaxed-infinity-fractional-comparison/paper.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/461-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The specified relaxed infinity-fractional subsolution–supersolution comparison fails, even with identical smooth initial data.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

@@ -2,9 +2,9 @@
 
 **Area:** Computational geometry and graph drawing
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -23,5 +23,15 @@ The proposed linear threshold would improve a geometric extraction step used to 
 1. R. Jain, M. Ricci, J. Rollin and A. Schulz, [On the geometric thickness of 2-degenerate graphs](https://jocg.org/index.php/jocg/article/view/5176), *Journal of Computational Geometry* **15**(2) (2024), 94–123, Section 3.1 and Section 4, Question 1. [arXiv:2302.14721](https://arxiv.org/abs/2302.14721).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #106](https://github.com/MColbrook/AIM/pull/106). Every arrangement in the question contains the required embedded rectangular grid; the proof also gives the stronger2k−1 sufficient threshold.
+
+[Proof or source](../research/solutions/aim-593-segment-grids/paper/segment_grids.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/593-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The original3k-by-3k properly crossing straight-segment target is proved for every k, with crossing orders, cyclic orders, endpoints and the unbounded face preserved.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The source proves an exponential sufficient size and explicitly asks whether $`3k`$ segments of each color suffice. It also gives arrangements with $`3k`$ segments of each color containing no grid of size $`k+1`$, which do not refute the displayed size-$`k`$ target. General intersection-graph grid statements use a weaker notion and do not resolve this embedding requirement. Current searches found no matching resolution or duplicate.

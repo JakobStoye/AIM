@@ -2,9 +2,9 @@
 
 **Area:** Transmission PDEs and wave scattering
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 ## Problem statement
 
 Let $`\Omega\subset\mathbb R^d`$, $`d\ge2`$, be bounded, connected, with $`C^\infty`$ boundary, and fix a constant $`n>1`$. A nonzero number $`z`$ is an interior transmission eigenvalue if nonzero $`(u,v)`$ solve
@@ -37,6 +37,16 @@ Transmission eigenvalues describe frequencies at which an inclusion can fail to 
 2. V. Petkov and G. Vodev, [Asymptotics of the number of the interior transmission eigenvalues](https://www.math.u-bordeaux.fr/~vpetkov/publications/p-v2.pdf), *Journal of Spectral Theory* **7** (2017), §1, Theorem 1.1 and discussion of the remainder.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #142](https://github.com/MColbrook/AIM/pull/142). The constant-index transmission count has the sharp O(r^(d-1)) Weyl remainder at every sufficiently large exact radius.
+
+[Proof or source](../research/solutions/429-transmission-eigenvalue-sharp-weyl-remainder/weyl_remainder.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/429-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The constant-index transmission count has the sharp O(r^(d-1)) Weyl remainder at every sufficiently large exact radius.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

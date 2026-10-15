@@ -1,2 +1,4 @@
 # Keep solution-package text bytes stable for published SHA-256 manifests.
 research/solutions/** text=auto eol=lf
+research/resolved/** text=auto eol=lf
+research/458/** text=auto eol=lf

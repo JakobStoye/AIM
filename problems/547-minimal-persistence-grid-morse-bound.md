@@ -2,9 +2,9 @@
 
 **Area:** Applied topology and inverse persistent homology
 
-**Status:** 🟡 PARTIAL
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -53,6 +53,16 @@ The question concerns information lost when filtrations are replaced by persiste
 1. H. A. Harrington, U. Tillmann and M. Torras-Pérez, [The fiber of multiparameter persistent homology for simplicial complexes](https://arxiv.org/abs/2608.04640v1), preprint, version 1, 5 August 2026. See Lemma 1.23, Definitions 1.28 and 2.9, Definition 5.7, Proposition 5.9, Lemma 5.10 and Remark 5.12, pp.42–44.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #104](https://github.com/MColbrook/AIM/pull/104). The proposed Morse quantity bounds the largest coordinate size of the canonical minimal persistence grid.
+
+[Proof or source](../research/solutions/547-minimal-persistence-grid-morse-bound/paper/grid_morse_bound.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/547-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every finite complex and the prescribed n-parameter persistence modules, L is at least max_j |G_j|, including dimension zero.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** Reference [1] records the inequality for one parameter. It proves that a filter injective in every coordinate has $`|G_j|=\mathcal L(\mathbf M)=m`$, using Lemmas 4.21 and 5.10. These are cases of the displayed target.
 

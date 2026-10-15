@@ -187,15 +187,15 @@ def load_entries(manifest):
             if not valid_id(row["id"]):
                 errors.append(f"{path.name}: invalid ID {row['id']}")
                 continue
-            if row["status"] not in (*OPEN_STATUSES, "Solved"):
-                errors.append(f"{row['id']}: invalid page status; use Open, Partially resolved or Solved")
-            if row["status"] == "Solved":
+            if row["status"] not in (*OPEN_STATUSES, "Solved", "Solution claimed"):
+                errors.append(f"{row['id']}: invalid page status; use Open, Partially resolved, Solved or Solution claimed")
+            if row["status"] in ("Solved", "Solution claimed"):
                 if not isinstance(row.get("outcome"), str) or not row["outcome"].strip():
-                    errors.append(f"{row['id']}: Solved requires an outcome")
+                    errors.append(f"{row['id']}: {row['status']} requires an outcome")
                 for field in ("proof", "review"):
                     value = row.get(field)
                     if not isinstance(value, str) or not value.strip():
-                        errors.append(f"{row['id']}: Solved requires a {field} link")
+                        errors.append(f"{row['id']}: {row['status']} requires a {field} link")
                     elif not re.fullmatch(r"https?://\S+", value):
                         evidence = (ROOT / value).resolve()
                         if Path(value).is_absolute() or ROOT not in evidence.parents or not evidence.is_file():
@@ -206,11 +206,11 @@ def load_entries(manifest):
 
 
 def presentation_records(entries, manifest):
-    """List resolutions separately while keeping their original pages and IDs."""
+    """List resolutions and claims separately, preserving original pages and IDs."""
     opened = [row for row in entries if row["status"] in OPEN_STATUSES]
     solved = [{**row, "record": row["file"],
-               "reason": "Resolution recorded on the problem page."}
-              for row in entries if row["status"] == "Solved"]
+               "reason": "Resolution or claim recorded on the problem page."}
+              for row in entries if row["status"] in ("Solved", "Solution claimed")]
     return opened, {**manifest, "retired": [*manifest["retired"], *solved]}
 
 
@@ -273,6 +273,7 @@ def render_readme(entries, manifest):
         "Contributions made with or without AI are welcome.", "",
         "**[AIM, explained](https://mathematics-explained.com/)** is our companion website for explanations of the problems, known results, proofs and applications in this collection. Papers and videos are welcome; you do not need to solve a problem to contribute. The aim is to improve human understanding, with credit to explanation authors and their sources.", "",
         "On 13 October 2026, we cross-referenced AIM with [OpenAI's mathematics collection](https://github.com/openai/math), linking complete results and partial progress while retaining the original problems. The [statement comparisons](research/solution_reviews/2026-10-13-openai-crosscheck/README.md) explain the scope. We welcome carefully checked, human-authored write-ups of the ideas, assumptions and applications for [AIM, explained](https://mathematics-explained.com/).", "",
+        "The [15 October PR reviews](research/solution_reviews/2026-10-15-active-prs/README.md) record individual proof audits, partial progress and claims still awaiting verification, together with further primary-source comparisons. All original problem pages and IDs are retained.", "",
         "If a problem here is resolved, we encourage you to improve the proof, explain its ideas, explore its applications, and publish your work. Cite the actual proof and its authors, and cite AIM where you use its curation or research. You are welcome to share your preprint and corrections with the repository so that others can find and build on your contribution.", "",
         summary + ". Counts reflect the statuses recorded in this collection.", "",
         f"**[Browse all {len(entries)} open targets →](CATALOG.md)** · **[Solved and claimed solutions →](RESOLVED.md)**", "",

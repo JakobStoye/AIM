@@ -36,8 +36,11 @@
     "title": "A universal bound on excess molecular charge",
     "area": "Many-electron quantum mechanics",
     "file": "problems/098-maximal-molecular-ionization.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: full molecular charge-bound claim; threshold bridge checked, complete screening proof awaiting independent review.",
+    "proof": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "099",
@@ -119,8 +122,11 @@
     "title": "Uniqueness of the critical catenoid",
     "area": "Capillary surfaces and spectral geometry",
     "file": "problems/108-critical-catenoid-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative uniqueness of the critical catenoid",
+    "proof": "https://arxiv.org/pdf/2609.13054v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "109",
@@ -135,24 +141,33 @@
     "title": "Linear growth of interior Steklov nodal volume",
     "area": "Boundary-driven wave patterns",
     "file": "problems/110-steklov-bulk-nodal-volume.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: steklov counterexample claim; product reduction checked, underlying nodal-growth theorem awaiting independent review.",
+    "proof": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "111",
     "title": "Unbounded first Steklov multiplicity with fixed boundary count",
     "area": "Boundary-mode degeneracy",
     "file": "problems/111-steklov-fixed-boundary-multiplicity.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative unbounded first Steklov multiplicity",
+    "proof": "https://zenodo.org/api/records/22949635/files/Prescribed_Steklov_Spectra_nifa.pdf/content",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "112",
     "title": "Arbitrarily large Steklov frequency with a prescribed embedded boundary",
     "area": "Geometric design of boundary-loaded media",
     "file": "problems/112-fixed-embedded-boundary-steklov.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The affirmative result covers every admissible prescribed embedded boundary, including curves and filling codimension one.",
+    "proof": "research/solutions/112-fixed-embedded-boundary-steklov/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/112-review.md"
   },
   {
     "id": "113",
@@ -216,23 +231,32 @@
     "area": "Magnetic spectral PDEs and superconductivity",
     "file": "problems/423-magnetic-airy-half-plane-spectrum.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-15",
+    "outcome": "Verified domain clarification: the printed ordinary Sobolev restriction is nonclosed; the intended closed magnetic spectral problem is not settled.",
+    "proof": "research/solutions/423-ordinary-sobolev-magnetic-airy-domain-clarification/paper/domain-correction.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/423-review.md"
   },
   {
     "id": "424",
     "title": "Reality of the spectrum for a spherical strip with PT-symmetric boundary conditions",
     "area": "Waveguides and nonselfadjoint boundary PDEs",
     "file": "problems/424-spherical-pt-robin-real-spectrum.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Purely real spectrum for every requested spherical strip width, real Robin parameter and integer mode.",
+    "proof": "research/solutions/424-spherical-pt-robin-real-spectrum/paper/spherical_robin_real_spectrum.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/424-review.md"
   },
   {
     "id": "425",
     "title": "Excess Floquet multiplicity for complex periodic Schrödinger equations",
     "area": "Periodic wave media and nonselfadjoint spectral theory",
     "file": "problems/425-complex-hill-excess-multiplicity.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Affirmative example",
+    "proof": "https://ems.press/content/serial-article-files/33923",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md"
   },
   {
     "id": "428",
@@ -247,8 +271,11 @@
     "title": "An optimal Weyl remainder for interior transmission eigenvalues",
     "area": "Transmission PDEs and wave scattering",
     "file": "problems/429-transmission-eigenvalue-sharp-weyl-remainder.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The constant-index transmission count has the sharp O(r^(d-1)) Weyl remainder at every sufficiently large exact radius.",
+    "proof": "research/solutions/429-transmission-eigenvalue-sharp-weyl-remainder/weyl_remainder.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/429-review.md"
   },
   {
     "id": "443",

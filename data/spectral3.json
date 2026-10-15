@@ -15,8 +15,11 @@
     "title": "The bosonic Laughlin contact-interaction gap",
     "area": "Fractional quantum Hall physics",
     "file": "problems/195-laughlin-gap.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: complete bosonic Laughlin gap claim awaiting independent argument and certificate review.",
+    "proof": "https://github.com/Shencongli/bosonic-laughlin-spectral-gap/blob/fda5da170a1a87c2a7a8e970254c7073c228a99a/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "196",
@@ -191,8 +194,11 @@
     "title": "Optimal spectral signings of regular graphs",
     "area": "Spectral graph theory / network design",
     "file": "problems/214-bilu-linial-signing.md",
-    "status": "Partially resolved",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative",
+    "proof": "https://arxiv.org/pdf/2609.15591v4",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "215",
@@ -207,16 +213,22 @@
     "title": "Boundary-flux commutators for rough conductors",
     "area": "Boundary operators / heterogeneous conduction",
     "file": "problems/216-rough-coefficient-boundary-commutator.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A measurable-conductor counterexample to smooth multiplier invariance of the flux domain.",
+    "proof": "https://www.numdam.org/article/ASNSP_1963_3_17_3_189_0.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "217",
     "title": "Does subcritical heat flow always decay faster?",
     "area": "Heat propagation / Schrödinger semigroups",
     "file": "problems/217-critical-subcritical-heat-ratio.md",
-    "status": "Open",
-    "last_checked": "2026-09-13"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "One fixed pair of smooth bounded potentials violates the proposed unordered critical/subcritical heat-kernel comparison.",
+    "proof": "research/solutions/217-critical-subcritical-heat-ratio/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/217-review.md"
   },
   {
     "id": "302",
@@ -239,8 +251,11 @@
     "title": "Additivity of entanglement of purification",
     "area": "Quantum information and correlation preparation",
     "file": "problems/342-entanglement-of-purification-additivity.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: nonadditivity claim with exact finite artifact replay; complete analytic reduction awaiting independent review.",
+    "proof": "https://arxiv.org/abs/2609.29539v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "421",

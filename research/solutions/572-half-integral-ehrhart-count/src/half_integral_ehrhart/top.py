@@ -1,6 +1,6 @@
 """Uniform exact realization of the width-two top Ehrhart signatures.
 
-Vertices are those of Q=2P. The universal argument is in width2_top_lemma.md;
+Vertices are those of Q=2P. The universal argument is in the manuscript's width-two section;
 finite exact checks are regression controls, not a substitute for that argument.
 """
 from .geometry import hull

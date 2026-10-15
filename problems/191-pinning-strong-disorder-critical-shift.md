@@ -2,9 +2,9 @@
 
 **Area:** Disordered polymers and adsorption
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -35,6 +35,16 @@ The question asks whether strong randomness at the annealed adsorption threshold
 - [Giambattista Giacomin, *Random Polymer Models* (Imperial College Press, 2007)](https://doi.org/10.1142/P504), monograph background for disordered renewal pinning.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #146](https://github.com/MColbrook/AIM/pull/146). For the specified Gaussian pinning model, strong disorder implies a strictly positive quenched–annealed critical-point shift.
+
+[Proof or source](../research/solutions/191-pinning-strong-disorder-critical-shift/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/191-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For the specified Gaussian pinning model, strong disorder implies a strictly positive quenched–annealed critical-point shift.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

@@ -2,9 +2,9 @@
 
 **Area:** Nonlocal dispersive PDEs / nonlinear optics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -33,6 +33,16 @@ Dispersion management leads to an averaged, nonlocal wave equation for optical p
 3. M.-R. Choi, Y. Hong and Y.-R. Lee, *Global existence versus finite time blowup dichotomy for the dispersion managed NLS*, Nonlinear Analysis 251 (2025), 113696, introduction and virial analysis. [DOI](https://doi.org/10.1016/j.na.2024.113696).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #132](https://github.com/MColbrook/AIM/pull/132). Schwartz Gaussian data give the exact requested homogeneous quarter-Sobolev norm inflation at nonzero arbitrarily short negative times.
+
+[Proof or source](../research/solutions/413-intercritical-dispersion-managed-norm-inflation/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/413-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Schwartz Gaussian data give the exact requested homogeneous quarter-Sobolev norm inflation at nonzero arbitrarily short negative times.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

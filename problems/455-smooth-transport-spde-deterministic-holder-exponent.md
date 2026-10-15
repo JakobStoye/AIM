@@ -2,9 +2,9 @@
 
 **Area:** Stochastic parabolic PDEs; quantitative regularity
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -40,6 +40,16 @@ For diffusion subject to random transport, a deterministic Hölder exponent woul
 1. A. Agresti, M. Sauerbrey and M. Veraar, *A stochastic flow approach to De Giorgi–Nash–Moser estimates for SPDEs with smooth transport noise* (2025 preprint, manuscript dated August 2026), Theorem 1.1, §1.2 and §4. [Full manuscript](https://arxiv.org/html/2511.12692v1).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #166](https://github.com/MColbrook/AIM/pull/166). The entire smooth-transport variational SPDE class has a deterministic positive parabolic Hölder exponent on each positive-time strip.
+
+[Proof or source](../research/solutions/455-smooth-transport-spde-deterministic-holder-exponent/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/455-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The entire smooth-transport variational SPDE class has a deterministic positive parabolic Hölder exponent on each positive-time strip.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

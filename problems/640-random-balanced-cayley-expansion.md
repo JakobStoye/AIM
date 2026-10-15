@@ -1,8 +1,8 @@
 # 640. Coboundary expansion of random balanced Cayley complexes
 
 **Area:** Applied topology / high-dimensional expansion
-**Status:** 🟡 PARTIAL
-**Last checked:** 2026-09-24
+**Status:** ✅ SOLVED
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -44,6 +44,16 @@ Coboundary expansion controls how many local consistency checks a binary cochain
 1. R. Meshulam, [Random balanced Cayley complexes](https://doi.org/10.1007/s41468-023-00137-6), Journal of Applied and Computational Topology **8** (2024), 1701–1721, Conjecture 8.1; §§1–2 and 8. [Author preprint](https://arxiv.org/abs/2211.02085).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #112](https://github.com/MColbrook/AIM/pull/112). Elementary abelian2-groups deterministically refute the proposed uniform random coboundary-expansion assertion.
+
+[Proof or source](../research/solutions/640-random-balanced-cayley-obstruction/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/640-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** For every fixed k>=2, all subsets A of the conjectured logarithmic size in sufficiently large binary vector groups have nonzero H^(k-1) over F2 and zero expansion.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known cases:** The source proves an analogous real-coefficient spectral-gap estimate at this logarithmic sampling scale. In dimension one, that estimate and the graph Cheeger inequality give the corresponding coboundary-expansion conclusion.
 

@@ -2,9 +2,9 @@
 
 **Area:** Reaction–diffusion; critical habitat thresholds
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ The equality balances low-density reproduction with diffusive loss exactly. Its 
 2. H. Berestycki and C. Graham, [*A Stable-Compact Method for Qualitative Properties of Semilinear Elliptic Equations*](https://doi.org/10.1007/s00205-026-02168-6), Archive for Rational Mechanics and Analysis 250 (2026), article 21, §7, comparison and uniqueness theory, and §8.1.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #151](https://github.com/MColbrook/AIM/pull/151). Critical Dirichlet spectral equality can coexist with a bounded positive strong-KPP equilibrium on a uniformly smooth unbounded domain.
+
+[Proof or source](../research/solutions/380-critical-kpp-counterexample/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/380-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Critical Dirichlet spectral equality can coexist with a bounded positive strong-KPP equilibrium on a uniformly smooth unbounded domain.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

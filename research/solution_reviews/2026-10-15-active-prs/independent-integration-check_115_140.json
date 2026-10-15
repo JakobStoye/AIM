@@ -1,0 +1,2615 @@
+{
+  "at": "2026-10-15T21:55:49.620649+00:00",
+  "reviewer": "Independent Codex integration check in a separate agent context.",
+  "baseline": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_count": 119,
+  "status_counts": {
+    "Solution claimed": 29,
+    "Partially resolved": 3,
+    "Solved": 87
+  },
+  "checked_targets": 119,
+  "scope_checks": {
+    "366_literal_rapid_decay_and_conservative_scope": true,
+    "521_literal_region_not_corrected_classification": true,
+    "042_fixed_format_precision_dependence": true,
+    "142_companion_and_no_stronger_weak_mixing_claim": true,
+    "142_companion_exists": true,
+    "571_replay_extent_receipt_exists": true
+  },
+  "issues": [],
+  "warnings": [
+    {
+      "id": "030",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-030",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "044",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-044",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "092",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-092",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "108",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-108",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "111",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-111",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "123",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-123",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "125",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-125",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "126",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-126",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "348",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-348",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "392",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-392",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "393",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-393",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "id": "394",
+      "issue": "metadata review",
+      "expected": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md#aim-394",
+      "actual": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md",
+      "severity": "Navigation only: same existing review file, fragment omitted in metadata."
+    },
+    {
+      "issue": "Main README still has pre-integration generated counts; root regeneration pending at time of this check."
+    },
+    {
+      "id": "040",
+      "issue": "Earlier review notes retain future-dated 2026-10-16 qualified-report label although actual campaign review is15October; latest status/date is correct."
+    }
+  ],
+  "results": [
+    {
+      "id": "030",
+      "file": "problems/030-sic-povms.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "bc98dc135c4ae9ab33b7421f147d75e89678a46153cfe401686e2c87598826d0",
+        "Application": "33d824e2859466c75a941698d2f4287e6073dc4999c4dfe9e82e14d217917f30",
+        "References": "2d5889b9a40fe1669a92f3bc3b289da10168772014e41a3f774322871e8e6c8f"
+      },
+      "current_section_sha256": {
+        "Problem statement": "bc98dc135c4ae9ab33b7421f147d75e89678a46153cfe401686e2c87598826d0",
+        "Application": "33d824e2859466c75a941698d2f4287e6073dc4999c4dfe9e82e14d217917f30",
+        "References": "2d5889b9a40fe1669a92f3bc3b289da10168772014e41a3f774322871e8e6c8f"
+      }
+    },
+    {
+      "id": "040",
+      "file": "problems/040-universal-algebraic-multigrid.md",
+      "status": "Partially resolved",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "4875515cc10dd02182875b08de12593bbdd55b5fd8208c9dc9bdd34e28cf1bb0",
+        "Application": "f467e3eb59d1ab0bfb840aff3c3ce14cc8b0ae4293c991f4a1d13f5b7882c741",
+        "References": "9c924ec58ca95ec0b4737ac524cf0df5fd165044ad3dadb753b2a69ef8ca4268"
+      },
+      "current_section_sha256": {
+        "Problem statement": "4875515cc10dd02182875b08de12593bbdd55b5fd8208c9dc9bdd34e28cf1bb0",
+        "Application": "f467e3eb59d1ab0bfb840aff3c3ce14cc8b0ae4293c991f4a1d13f5b7882c741",
+        "References": "9c924ec58ca95ec0b4737ac524cf0df5fd165044ad3dadb753b2a69ef8ca4268"
+      }
+    },
+    {
+      "id": "042",
+      "file": "problems/042-accurate-bidiagonal-svd.md",
+      "status": "Solved",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "da49c88ec97fd1f36b510f58ee34912ede64e607a9e57d3fa69b4010427ad422",
+        "Application": "6aa0a135758366628609bcb43281fd1beafd6b1c6297491422467eb0ce18890e",
+        "References": "29ffda40c5d999d84ac8db4ca666182305451262f6493f4e7fc283c563f38ade"
+      },
+      "current_section_sha256": {
+        "Problem statement": "da49c88ec97fd1f36b510f58ee34912ede64e607a9e57d3fa69b4010427ad422",
+        "Application": "6aa0a135758366628609bcb43281fd1beafd6b1c6297491422467eb0ce18890e",
+        "References": "29ffda40c5d999d84ac8db4ca666182305451262f6493f4e7fc283c563f38ade"
+      }
+    },
+    {
+      "id": "044",
+      "file": "problems/044-sparse-linear-solve-bit-complexity.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "ce33a6eea38437698c6c699dd9d6ef3923b575aa08d7445ff277cc917e6f0566",
+        "Application": "ba6c1abb5828eff113af418b305f868885d0571e9c36cf171a91ce7789de5fe1",
+        "References": "2289da3462b1ae85e0fd37453cc19ad8fb81f2992af3187aa6b6418850096f96"
+      },
+      "current_section_sha256": {
+        "Problem statement": "ce33a6eea38437698c6c699dd9d6ef3923b575aa08d7445ff277cc917e6f0566",
+        "Application": "ba6c1abb5828eff113af418b305f868885d0571e9c36cf171a91ce7789de5fe1",
+        "References": "2289da3462b1ae85e0fd37453cc19ad8fb81f2992af3187aa6b6418850096f96"
+      }
+    },
+    {
+      "id": "092",
+      "file": "problems/092-kls-poincare.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\probability-statistics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "4d4be8385812b9a2dd149e8eacc9416fa99a50b744581bc4fefeef00318a13c3",
+        "Application": "5e7e2182667abe301fd075f97b9e251779aa23c893eefa79483c4feeaafd9d4b",
+        "References": "f00728b4a1757eafd2335ed7bd27c05ecefe99d93cd1ec5fc9dfc5a889886356"
+      },
+      "current_section_sha256": {
+        "Problem statement": "4d4be8385812b9a2dd149e8eacc9416fa99a50b744581bc4fefeef00318a13c3",
+        "Application": "5e7e2182667abe301fd075f97b9e251779aa23c893eefa79483c4feeaafd9d4b",
+        "References": "f00728b4a1757eafd2335ed7bd27c05ecefe99d93cd1ec5fc9dfc5a889886356"
+      }
+    },
+    {
+      "id": "098",
+      "file": "problems/098-maximal-molecular-ionization.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "ca151f0bd89cc5443c5d833b8aa4f894472a29b87304f8ae9cfabd913230a251",
+        "Application": "d33bc9df73c739f7fd5e290fd6075209b578e1cd17d9b3c685fb761553509608",
+        "References": "3b9fa99996bdca96a85fecd2b0afc8ddf2eb12428276c44b36574469bb7e19b1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "ca151f0bd89cc5443c5d833b8aa4f894472a29b87304f8ae9cfabd913230a251",
+        "Application": "d33bc9df73c739f7fd5e290fd6075209b578e1cd17d9b3c685fb761553509608",
+        "References": "3b9fa99996bdca96a85fecd2b0afc8ddf2eb12428276c44b36574469bb7e19b1"
+      }
+    },
+    {
+      "id": "108",
+      "file": "problems/108-critical-catenoid-uniqueness.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "018355f7f1dad4aa420bacf9e818c0c0ac4544dfbe05c9cb32ccd876933d26b2",
+        "Application": "c1763788d5340d6d8e839e06110fb1830abf6e55ae39de4433971996c7c16a0c",
+        "References": "110be9057b5d997f89aa3a42a0ab28016f2f7104d8c75bdd858c968bb077aeef"
+      },
+      "current_section_sha256": {
+        "Problem statement": "018355f7f1dad4aa420bacf9e818c0c0ac4544dfbe05c9cb32ccd876933d26b2",
+        "Application": "c1763788d5340d6d8e839e06110fb1830abf6e55ae39de4433971996c7c16a0c",
+        "References": "110be9057b5d997f89aa3a42a0ab28016f2f7104d8c75bdd858c968bb077aeef"
+      }
+    },
+    {
+      "id": "110",
+      "file": "problems/110-steklov-bulk-nodal-volume.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "1aaa72f2ff7caf46cf29e11a163527b8747feeb5afbb07c0e3e0eb03567e52f6",
+        "Application": "cc80c8bb6ebe90b2a49205bf7b979111dfb437fd9ad668947fc983f4091de6c9",
+        "References": "9322e738bc56f8a4303364102195947055fb507fbc26d5d91c56dfb8ef98cd1c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "1aaa72f2ff7caf46cf29e11a163527b8747feeb5afbb07c0e3e0eb03567e52f6",
+        "Application": "cc80c8bb6ebe90b2a49205bf7b979111dfb437fd9ad668947fc983f4091de6c9",
+        "References": "9322e738bc56f8a4303364102195947055fb507fbc26d5d91c56dfb8ef98cd1c"
+      }
+    },
+    {
+      "id": "111",
+      "file": "problems/111-steklov-fixed-boundary-multiplicity.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "6fce5c13a9d2d807d6633fd94a328b4f8cfcd3db5ef529135abda47b5e48df79",
+        "Application": "ecc4c87fa96cbbad22f262ef49188ffd569c331f60b1118f5f254e00058f3cb9",
+        "References": "4bff5c09591a47255244fdef55ef424e7f74ae9db76b8b9180b2b0381395069a"
+      },
+      "current_section_sha256": {
+        "Problem statement": "6fce5c13a9d2d807d6633fd94a328b4f8cfcd3db5ef529135abda47b5e48df79",
+        "Application": "ecc4c87fa96cbbad22f262ef49188ffd569c331f60b1118f5f254e00058f3cb9",
+        "References": "4bff5c09591a47255244fdef55ef424e7f74ae9db76b8b9180b2b0381395069a"
+      }
+    },
+    {
+      "id": "112",
+      "file": "problems/112-fixed-embedded-boundary-steklov.md",
+      "status": "Solved",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "78f133382c8c86db10ab6e843318a7d4fbe7f388104a13feb9f5d3d2e6d5d472",
+        "Application": "64f9b1c36a8b88cf257b75de51c678999b6f3bdd07af03d1b90de20eaecabdab",
+        "References": "376df0777f988061366ad66d3c485ea928e2937cb9cd99ec0ea7df930f2c4517"
+      },
+      "current_section_sha256": {
+        "Problem statement": "78f133382c8c86db10ab6e843318a7d4fbe7f388104a13feb9f5d3d2e6d5d472",
+        "Application": "64f9b1c36a8b88cf257b75de51c678999b6f3bdd07af03d1b90de20eaecabdab",
+        "References": "376df0777f988061366ad66d3c485ea928e2937cb9cd99ec0ea7df930f2c4517"
+      }
+    },
+    {
+      "id": "123",
+      "file": "problems/123-sard-conjecture-endpoint-map.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "db02b1f0d40b819c2212ab06db0d16c92ca1f7c4fbc695e2c616e5d893f9071b",
+        "Application": "4208c884dffbf9c94e33ff5c492834d44fbddf5f0aa8dba798e453a2ab3c1129",
+        "References": "8d9cbd10e39cadccaa4e83fc705bcadae3d10fb5ce487137359464164d097304"
+      },
+      "current_section_sha256": {
+        "Problem statement": "db02b1f0d40b819c2212ab06db0d16c92ca1f7c4fbc695e2c616e5d893f9071b",
+        "Application": "4208c884dffbf9c94e33ff5c492834d44fbddf5f0aa8dba798e453a2ab3c1129",
+        "References": "8d9cbd10e39cadccaa4e83fc705bcadae3d10fb5ce487137359464164d097304"
+      }
+    },
+    {
+      "id": "125",
+      "file": "problems/125-equiregular-analytic-nonbranching.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "2641d85ed2817ff60ed5fdfe975364cc9f8040cecb87035009bc537e68c5fa55",
+        "Application": "8569228d5350504dd3a29e56dee79164adbb19cbc26053ea1fc67eb2ff6b6638",
+        "References": "b4b446c97fe19c1491ccbdf9c8081ff4aa11b3c121ae8afde45665ed009ee32b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "2641d85ed2817ff60ed5fdfe975364cc9f8040cecb87035009bc537e68c5fa55",
+        "Application": "8569228d5350504dd3a29e56dee79164adbb19cbc26053ea1fc67eb2ff6b6638",
+        "References": "b4b446c97fe19c1491ccbdf9c8081ff4aa11b3c121ae8afde45665ed009ee32b"
+      }
+    },
+    {
+      "id": "126",
+      "file": "problems/126-pansu-heisenberg-isoperimetry.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "14c8626803ed20b0a534e799e7300053682e172ee15772d88ce88014a83214b2",
+        "Application": "72b7055cb238e89784272120c72a775ef2fe18709d9c62ef5bf804c2003931ba",
+        "References": "7d48fbd18711105a559cbd225f4892a20f5d65bda694496d35a5cce26bd2e4a1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "14c8626803ed20b0a534e799e7300053682e172ee15772d88ce88014a83214b2",
+        "Application": "72b7055cb238e89784272120c72a775ef2fe18709d9c62ef5bf804c2003931ba",
+        "References": "7d48fbd18711105a559cbd225f4892a20f5d65bda694496d35a5cce26bd2e4a1"
+      }
+    },
+    {
+      "id": "141",
+      "file": "problems/141-finite-jet-small-time-control.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "6d1625ae2baf76b0ba27f187fbd43465aa23b6ec52cf989184aadec63e225bee",
+        "Application": "945a58621c841dc9588f43e2c8711e83e222daad80c8cc588831208de81f4754",
+        "References": "79fe492d0c161f0d552644e53ae11859779a0fc61d28925a1568177d99e777e2"
+      },
+      "current_section_sha256": {
+        "Problem statement": "6d1625ae2baf76b0ba27f187fbd43465aa23b6ec52cf989184aadec63e225bee",
+        "Application": "945a58621c841dc9588f43e2c8711e83e222daad80c8cc588831208de81f4754",
+        "References": "79fe492d0c161f0d552644e53ae11859779a0fc61d28925a1568177d99e777e2"
+      }
+    },
+    {
+      "id": "142",
+      "file": "problems/142-irrational-nonergodic-polygon.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "3d23e190514e262bcfbbb4554c0881687f573e8d5c9c01757695a0757e63284c",
+        "Application": "ea36faad1dfa47c94bc7a147785406802a00e57d8d841f0a7e1b916c12a8c253",
+        "References": "54158175dd125a1eae81d8d84e8c6bbd65fa1a265f1bc0daecd25e44930b3e3b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "3d23e190514e262bcfbbb4554c0881687f573e8d5c9c01757695a0757e63284c",
+        "Application": "ea36faad1dfa47c94bc7a147785406802a00e57d8d841f0a7e1b916c12a8c253",
+        "References": "54158175dd125a1eae81d8d84e8c6bbd65fa1a265f1bc0daecd25e44930b3e3b"
+      }
+    },
+    {
+      "id": "162",
+      "file": "problems/162-extreme-bidirectional-solitary-wave.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "d880eb08d0ac9f9f5f4a450d7af75253cb19595f71b48f2427ef81ef63ff939a",
+        "Application": "38baed9232bc108fad7998d19defd5a5eeee1503432cfcefc80c9fd944d90b76",
+        "References": "f580e5cceb5b97ab537d6d3ea3a2921a53f97d8def9de2d70ab0369f2bb80319"
+      },
+      "current_section_sha256": {
+        "Problem statement": "d880eb08d0ac9f9f5f4a450d7af75253cb19595f71b48f2427ef81ef63ff939a",
+        "Application": "38baed9232bc108fad7998d19defd5a5eeee1503432cfcefc80c9fd944d90b76",
+        "References": "f580e5cceb5b97ab537d6d3ea3a2921a53f97d8def9de2d70ab0369f2bb80319"
+      }
+    },
+    {
+      "id": "175",
+      "file": "problems/175-percolation-preserves-transience.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\stochastic2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "765ec096ac7acdbe252aac458fe8deafa9736a6c4967f674a9a9761e6432e91d",
+        "Application": "00279a1b89282ff5aeefd449771af23d27756e6c6683d0e4ec82cc216627fca1",
+        "References": "a8f15df77e6a784e527c0a127e5e2ca92fcd0bbc6eb80d20265b44a464c833c8"
+      },
+      "current_section_sha256": {
+        "Problem statement": "765ec096ac7acdbe252aac458fe8deafa9736a6c4967f674a9a9761e6432e91d",
+        "Application": "00279a1b89282ff5aeefd449771af23d27756e6c6683d0e4ec82cc216627fca1",
+        "References": "a8f15df77e6a784e527c0a127e5e2ca92fcd0bbc6eb80d20265b44a464c833c8"
+      }
+    },
+    {
+      "id": "185",
+      "file": "problems/185-catalytic-carbon-monoxide-poisoning.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "505b5901f32afbb8212de27c9b420ad878af79b002acacc71130d383090903fb",
+        "Application": "a4aba5c9fcddd1940642fb1dd8cb3db5fb661498152270e7f05a81206d63f05e",
+        "References": "ab7ffaec1839caa9ab4f7d5f0b5e28d98c8f0cc5ac09e8df4089c9354d955a78"
+      },
+      "current_section_sha256": {
+        "Problem statement": "505b5901f32afbb8212de27c9b420ad878af79b002acacc71130d383090903fb",
+        "Application": "a4aba5c9fcddd1940642fb1dd8cb3db5fb661498152270e7f05a81206d63f05e",
+        "References": "ab7ffaec1839caa9ab4f7d5f0b5e28d98c8f0cc5ac09e8df4089c9354d955a78"
+      }
+    },
+    {
+      "id": "191",
+      "file": "problems/191-pinning-strong-disorder-critical-shift.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "73dda084d434aaef045ebc5d630114bb029b05a6a7c189fad98cf7430a6de7ff",
+        "Application": "bbf14a24b3299e79bcd4efd7b8181421cff2238078d3a8443e5db30937eadaa7",
+        "References": "20fdfb50dea1d3cb86f8eb4ce70f7ebc21e90abdcad18503aa1f837cebff5606"
+      },
+      "current_section_sha256": {
+        "Problem statement": "73dda084d434aaef045ebc5d630114bb029b05a6a7c189fad98cf7430a6de7ff",
+        "Application": "bbf14a24b3299e79bcd4efd7b8181421cff2238078d3a8443e5db30937eadaa7",
+        "References": "20fdfb50dea1d3cb86f8eb4ce70f7ebc21e90abdcad18503aa1f837cebff5606"
+      }
+    },
+    {
+      "id": "193",
+      "file": "problems/193-directed-polymer-moment-spectrum.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "8e615ac0f0e41de68e552584004041299fa16c0c8dc93006e6fbd5d30d26b2aa",
+        "Application": "709988e4e0b89cb04c14dbed4ac6c4bc1341a005c0fe31e6c5046987bc62ad04",
+        "References": "1f8774790bbab582f35d90ad012c7dceb568a725bcf6794a13214999b4b50fed"
+      },
+      "current_section_sha256": {
+        "Problem statement": "8e615ac0f0e41de68e552584004041299fa16c0c8dc93006e6fbd5d30d26b2aa",
+        "Application": "709988e4e0b89cb04c14dbed4ac6c4bc1341a005c0fe31e6c5046987bc62ad04",
+        "References": "1f8774790bbab582f35d90ad012c7dceb568a725bcf6794a13214999b4b50fed"
+      }
+    },
+    {
+      "id": "195",
+      "file": "problems/195-laughlin-gap.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "c12009f866465707a921cb0c9e0f4faa97263ec07e09e65839a0e5a28e6ab713",
+        "Application": "95a8c177ee4a1b59b559abe9417d0060c08830c4748d03ddd59e63abfb146f87",
+        "References": "548b4e2ec52279738daeb5de8139b78f93d54247f18295993252178777749154"
+      },
+      "current_section_sha256": {
+        "Problem statement": "c12009f866465707a921cb0c9e0f4faa97263ec07e09e65839a0e5a28e6ab713",
+        "Application": "95a8c177ee4a1b59b559abe9417d0060c08830c4748d03ddd59e63abfb146f87",
+        "References": "548b4e2ec52279738daeb5de8139b78f93d54247f18295993252178777749154"
+      }
+    },
+    {
+      "id": "214",
+      "file": "problems/214-bilu-linial-signing.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "3902ffacd308d5da2425bd5e1eca1c0bc508bf6653d0bb3b3041f71d34e12f8a",
+        "Application": "a33bb922230b3dff7dbac3095b6a4794ac5a5e285e5f98fce7fd69f73988f49d",
+        "References": "09d250dfb5b00c16a55b3a61a723184943b1c9e1872acfb28ba3c125e2f4db53"
+      },
+      "current_section_sha256": {
+        "Problem statement": "3902ffacd308d5da2425bd5e1eca1c0bc508bf6653d0bb3b3041f71d34e12f8a",
+        "Application": "a33bb922230b3dff7dbac3095b6a4794ac5a5e285e5f98fce7fd69f73988f49d",
+        "References": "09d250dfb5b00c16a55b3a61a723184943b1c9e1872acfb28ba3c125e2f4db53"
+      }
+    },
+    {
+      "id": "216",
+      "file": "problems/216-rough-coefficient-boundary-commutator.md",
+      "status": "Solved",
+      "metadata_file": "data\\spectral3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "bd12e91b1b1ded68725d45c4e3f4d7deb583932203161666881d03ba4a5c802b",
+        "Application": "5e61ebe1b025e0c05a04b4509f2235ae9dfb367d2980d905daae6efc193e66a7",
+        "References": "cbdd0a27e09fe8d0c674e4f9f0fa64e1f99a98e5b1353717d71c57ac06af9b4b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "bd12e91b1b1ded68725d45c4e3f4d7deb583932203161666881d03ba4a5c802b",
+        "Application": "5e61ebe1b025e0c05a04b4509f2235ae9dfb367d2980d905daae6efc193e66a7",
+        "References": "cbdd0a27e09fe8d0c674e4f9f0fa64e1f99a98e5b1353717d71c57ac06af9b4b"
+      }
+    },
+    {
+      "id": "217",
+      "file": "problems/217-critical-subcritical-heat-ratio.md",
+      "status": "Solved",
+      "metadata_file": "data\\spectral3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "17538dfee3f3422c6502aaaf21b07a64b3246a554802cb5d4573f092409efaf0",
+        "Application": "616fe7e399c385a13ed8c53240eeb4b5b16d77a92799785018c3a19af3f61d49",
+        "References": "99ef8798380d022017802496ae2b7e5b96f8744d9c12bc750c1d1c6e979e5819"
+      },
+      "current_section_sha256": {
+        "Problem statement": "17538dfee3f3422c6502aaaf21b07a64b3246a554802cb5d4573f092409efaf0",
+        "Application": "616fe7e399c385a13ed8c53240eeb4b5b16d77a92799785018c3a19af3f61d49",
+        "References": "99ef8798380d022017802496ae2b7e5b96f8744d9c12bc750c1d1c6e979e5819"
+      }
+    },
+    {
+      "id": "241",
+      "file": "problems/241-spherical-ferromagnet-profile-uniqueness.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "bb77188b09816cb1c7cc185db6095cc5e77d0509013aba3cc246d95075f88d54",
+        "Application": "c56cc100db60744ad6e76a714db0b4cb05d550e08a738114159a273b1e81c6ff",
+        "References": "ffadc7a9bea03d88997db8b9dccc1e7e5ef568a5b33cdc50768828a6430c113d"
+      },
+      "current_section_sha256": {
+        "Problem statement": "bb77188b09816cb1c7cc185db6095cc5e77d0509013aba3cc246d95075f88d54",
+        "Application": "c56cc100db60744ad6e76a714db0b4cb05d550e08a738114159a273b1e81c6ff",
+        "References": "ffadc7a9bea03d88997db8b9dccc1e7e5ef568a5b33cdc50768828a6430c113d"
+      }
+    },
+    {
+      "id": "250",
+      "file": "problems/250-periodic-triangular-billiard.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "6aa8d0b1cfb00456aeae8fb36418e2975c614e7c4f52bf7f6acaa4a86c9bb777",
+        "Application": "0d67dcc0f6087b62543cafb0ae276089511fc278f5177e3fd2dc0f222a0ea3e3",
+        "References": "1d337ed0705368088e296b81f92ec6344c04586feee1da51fcfbd8d3a337f0c8"
+      },
+      "current_section_sha256": {
+        "Problem statement": "6aa8d0b1cfb00456aeae8fb36418e2975c614e7c4f52bf7f6acaa4a86c9bb777",
+        "Application": "0d67dcc0f6087b62543cafb0ae276089511fc278f5177e3fd2dc0f222a0ea3e3",
+        "References": "1d337ed0705368088e296b81f92ec6344c04586feee1da51fcfbd8d3a337f0c8"
+      }
+    },
+    {
+      "id": "251",
+      "file": "problems/251-disk-wavefront-density.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "9bfe45ab56f23c821ba151c45351bfe246b24b42e39cab506758ca413ad2a903",
+        "Application": "540b86ca3140f06f5e467ade7e550a29be422298572728af3df181fade5bcb7a",
+        "References": "59f11bfcfe307cc5f0c6142e4824310b99cfb353a675cf2004901525b7da7517"
+      },
+      "current_section_sha256": {
+        "Problem statement": "9bfe45ab56f23c821ba151c45351bfe246b24b42e39cab506758ca413ad2a903",
+        "Application": "540b86ca3140f06f5e467ade7e550a29be422298572728af3df181fade5bcb7a",
+        "References": "59f11bfcfe307cc5f0c6142e4824310b99cfb353a675cf2004901525b7da7517"
+      }
+    },
+    {
+      "id": "252",
+      "file": "problems/252-self-ball-minkowski-integrability.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "86e72d92c5508488dc5db6447f822a3ad9360eb552f33d996f0dd97b1251a165",
+        "Application": "da072a1db85c7521124a58625d1efd09b0ea8920fed97acf8df272a639d2ade0",
+        "References": "18ac238770dfd49b3788644bac6202c0db85e27715d954a846969c084ff83221"
+      },
+      "current_section_sha256": {
+        "Problem statement": "86e72d92c5508488dc5db6447f822a3ad9360eb552f33d996f0dd97b1251a165",
+        "Application": "da072a1db85c7521124a58625d1efd09b0ea8920fed97acf8df272a639d2ade0",
+        "References": "18ac238770dfd49b3788644bac6202c0db85e27715d954a846969c084ff83221"
+      }
+    },
+    {
+      "id": "298",
+      "file": "problems/298-li-li-multiple-unicast.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "4a9140826683d733c656726e021e978d6618f13f798acaac4d7944338c1edd3c",
+        "Application": "462ce0b30824b6b741a33373f13ce65843dc29f91d5df21babf6ce7fdce92ce7",
+        "References": "e98799fc206340efd91622d2b237ba9ce84966a84d3bdb4e3ac235102227e708"
+      },
+      "current_section_sha256": {
+        "Problem statement": "4a9140826683d733c656726e021e978d6618f13f798acaac4d7944338c1edd3c",
+        "Application": "462ce0b30824b6b741a33373f13ce65843dc29f91d5df21babf6ce7fdce92ce7",
+        "References": "e98799fc206340efd91622d2b237ba9ce84966a84d3bdb4e3ac235102227e708"
+      }
+    },
+    {
+      "id": "325",
+      "file": "problems/325-strong-komlos-prefix-discrepancy.md",
+      "status": "Solved",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "215764e73480086da0d7ee93228a294237667b979f9d1de0f2cff692e12176bf",
+        "Application": "20d093d72fcbca0306888cb7e0e48e55f9158efd241eb6e7aa9c0f7531e50f65",
+        "References": "7909eeca1a53db70b490a069d4c3514c4e86bfc8885f973be7842208798b8430"
+      },
+      "current_section_sha256": {
+        "Problem statement": "215764e73480086da0d7ee93228a294237667b979f9d1de0f2cff692e12176bf",
+        "Application": "20d093d72fcbca0306888cb7e0e48e55f9158efd241eb6e7aa9c0f7531e50f65",
+        "References": "7909eeca1a53db70b490a069d4c3514c4e86bfc8885f973be7842208798b8430"
+      }
+    },
+    {
+      "id": "328",
+      "file": "problems/328-fitch-ultrametric-ancestral-accuracy.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "93d0bfa213e453f1a8adf66b38a64a8d75624cc7ef22a01bc3bda359239e2461",
+        "Application": "151b6d6df07c0fa5de5cb4f9cceb184858f7a971c0edfa750474074a0180fcef",
+        "References": "1e33c349d06c4fe757c19d40a1487e88610152383534bc936de440bb0178a2b1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "93d0bfa213e453f1a8adf66b38a64a8d75624cc7ef22a01bc3bda359239e2461",
+        "Application": "151b6d6df07c0fa5de5cb4f9cceb184858f7a971c0edfa750474074a0180fcef",
+        "References": "1e33c349d06c4fe757c19d40a1487e88610152383534bc936de440bb0178a2b1"
+      }
+    },
+    {
+      "id": "330",
+      "file": "problems/330-sharp-matroid-secretary.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\stochastic3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "addddb98a3b8609f6b79a98c4f579bb5e9c6b142e11b0ada55efabae5c6174ba",
+        "Application": "ef8fc3142f1f0f33c16823284ed9479395ea38fa558098ff6863ec018851c944",
+        "References": "d046643f8bf487369f2d4dd199cd4ae2d46ef787ba1094d76dab8c3621c176dc"
+      },
+      "current_section_sha256": {
+        "Problem statement": "addddb98a3b8609f6b79a98c4f579bb5e9c6b142e11b0ada55efabae5c6174ba",
+        "Application": "ef8fc3142f1f0f33c16823284ed9479395ea38fa558098ff6863ec018851c944",
+        "References": "d046643f8bf487369f2d4dd199cd4ae2d46ef787ba1094d76dab8c3621c176dc"
+      }
+    },
+    {
+      "id": "338",
+      "file": "problems/338-polynomial-local-stability-decidability.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "926d123d42fdb16640f10823a43ce108b101332b10e38cea76f6feac40a7f8a0",
+        "Application": "68b696612a9fc5b91bb3e72454c41f56f074439675baba8c15a92583a4259d11",
+        "References": "38c626bb8fd4310deaff29545dcc8ea6d12e4cbcdf1603c429e40fd05c38b550"
+      },
+      "current_section_sha256": {
+        "Problem statement": "926d123d42fdb16640f10823a43ce108b101332b10e38cea76f6feac40a7f8a0",
+        "Application": "68b696612a9fc5b91bb3e72454c41f56f074439675baba8c15a92583a4259d11",
+        "References": "38c626bb8fd4310deaff29545dcc8ea6d12e4cbcdf1603c429e40fd05c38b550"
+      }
+    },
+    {
+      "id": "340",
+      "file": "problems/340-integer-three-sum-hardness.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "dad837af998716ca41b16908b128f26c31f0976e52c995030d4ec5e7b8086aa4",
+        "Application": "3afac1e51127475f83819b30380db7ed1b34f067e9e533bffefa57be5395898c",
+        "References": "79cc6b3e6421eae761769c799f9ede5752efe705c14dfb2d9dc58cbf9d1b092e"
+      },
+      "current_section_sha256": {
+        "Problem statement": "dad837af998716ca41b16908b128f26c31f0976e52c995030d4ec5e7b8086aa4",
+        "Application": "3afac1e51127475f83819b30380db7ed1b34f067e9e533bffefa57be5395898c",
+        "References": "79cc6b3e6421eae761769c799f9ede5752efe705c14dfb2d9dc58cbf9d1b092e"
+      }
+    },
+    {
+      "id": "342",
+      "file": "problems/342-entanglement-of-purification-additivity.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\spectral3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "a0fd3b338b6f38331cf925dd63a8bd078350cd267aa207f574292ae70919ad0d",
+        "Application": "fd2f318fa8fbf7dc90a61abb5f98041d2b8f15d95a14f6fc43166451e22f0e0e",
+        "References": "155212f86d2725e18cfda632dfcc4819afb0ecbdc5adfecbe5a6438528f7e879"
+      },
+      "current_section_sha256": {
+        "Problem statement": "a0fd3b338b6f38331cf925dd63a8bd078350cd267aa207f574292ae70919ad0d",
+        "Application": "fd2f318fa8fbf7dc90a61abb5f98041d2b8f15d95a14f6fc43166451e22f0e0e",
+        "References": "155212f86d2725e18cfda632dfcc4819afb0ecbdc5adfecbe5a6438528f7e879"
+      }
+    },
+    {
+      "id": "348",
+      "file": "problems/348-brownian-fleming-viot-nonexplosion.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\stochastic2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "b70ed19ff3e0a0c87ab4944ee5fdded4355baecaedd5f43f0feed3a47b49c89b",
+        "Application": "c634bd963a10dbc1711c0443a45af727e5b656727f9fbb59fa5e6a02148701cf",
+        "References": "5c6942eefd8e8cad2cfe776dddafb2635dbd5eab864300bcc24b7806d98d6c83"
+      },
+      "current_section_sha256": {
+        "Problem statement": "b70ed19ff3e0a0c87ab4944ee5fdded4355baecaedd5f43f0feed3a47b49c89b",
+        "Application": "c634bd963a10dbc1711c0443a45af727e5b656727f9fbb59fa5e6a02148701cf",
+        "References": "5c6942eefd8e8cad2cfe776dddafb2635dbd5eab864300bcc24b7806d98d6c83"
+      }
+    },
+    {
+      "id": "361",
+      "file": "problems/361-one-dimensional-convex-entropy-nonuniqueness.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\waves-fluids-kinetics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "63f38e2798cf9b4545c5543ba201a6bf563ed699065988620fbc62602c84c526",
+        "Application": "7512621fa43250cfd5bbf72d6a20d21766a6e45c099d04a015d8505648c88458",
+        "References": "fada890b1af4f231bd71486d9adb8a006d1ad8a21d0f6dbde81ce2fa53e4b92e"
+      },
+      "current_section_sha256": {
+        "Problem statement": "63f38e2798cf9b4545c5543ba201a6bf563ed699065988620fbc62602c84c526",
+        "Application": "7512621fa43250cfd5bbf72d6a20d21766a6e45c099d04a015d8505648c88458",
+        "References": "fada890b1af4f231bd71486d9adb8a006d1ad8a21d0f6dbde81ce2fa53e4b92e"
+      }
+    },
+    {
+      "id": "366",
+      "file": "problems/366-cutoff-boltzmann-continuation.md",
+      "status": "Solved",
+      "metadata_file": "data\\waves-fluids-kinetics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "d662512b31de3fd696a149b4667139bc43199767a5a91c78524a65a6b03993e1",
+        "Application": "0e8a8cdfafbf2955add2622dae110590cd0ea99e3c4997fcc12349edf0eed63f",
+        "References": "3db97c1f64ccc4340b3835fcac91d8df6ff518e9a3958fb09f1afd04f1a173fc"
+      },
+      "current_section_sha256": {
+        "Problem statement": "d662512b31de3fd696a149b4667139bc43199767a5a91c78524a65a6b03993e1",
+        "Application": "0e8a8cdfafbf2955add2622dae110590cd0ea99e3c4997fcc12349edf0eed63f",
+        "References": "3db97c1f64ccc4340b3835fcac91d8df6ff518e9a3958fb09f1afd04f1a173fc"
+      }
+    },
+    {
+      "id": "367",
+      "file": "problems/367-universal-hyperbolic-error-rate.md",
+      "status": "Solved",
+      "metadata_file": "data\\waves-fluids-kinetics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "6c0c9f64a0c8083991f882557632bd7ee9cd92f162b1b9081c547aad4a39e4de",
+        "Application": "419f4442c0f108515d356efb4d4292516ab9a1b7a2f3ebb7cc4fbd65808fe854",
+        "References": "642edacb58243cfbacf12d5d2ab7ccc94f9a0fd426060f1ad59680dba01b1613"
+      },
+      "current_section_sha256": {
+        "Problem statement": "6c0c9f64a0c8083991f882557632bd7ee9cd92f162b1b9081c547aad4a39e4de",
+        "Application": "419f4442c0f108515d356efb4d4292516ab9a1b7a2f3ebb7cc4fbd65808fe854",
+        "References": "642edacb58243cfbacf12d5d2ab7ccc94f9a0fd426060f1ad59680dba01b1613"
+      }
+    },
+    {
+      "id": "376",
+      "file": "problems/376-fene-vanishing-center-of-mass-diffusion.md",
+      "status": "Solved",
+      "metadata_file": "data\\waves-fluids-kinetics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "21917e16ef19dde8fa753344fc083a5d4983c99c09087d386286eb3bd33036c6",
+        "Application": "ebec5fdac07d5f3214405e37a2e8a875d34d54ceee09081eb70642209b474c58",
+        "References": "73dae48ddd561d396960cac596803be69cbfd550a215ae6a2989a9272a7d03d4"
+      },
+      "current_section_sha256": {
+        "Problem statement": "21917e16ef19dde8fa753344fc083a5d4983c99c09087d386286eb3bd33036c6",
+        "Application": "ebec5fdac07d5f3214405e37a2e8a875d34d54ceee09081eb70642209b474c58",
+        "References": "73dae48ddd561d396960cac596803be69cbfd550a215ae6a2989a9272a7d03d4"
+      }
+    },
+    {
+      "id": "379",
+      "file": "problems/379-strong-kpp-unbounded-uniqueness.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "7a5a1d8d05198d562a9bde0af1dfb5a1e5d2048c516704777fc29751d5df3083",
+        "Application": "834a68121da4c0ddabde94f2260f52e96aed16f8f90956eec898e9ba46e3738c",
+        "References": "ceca2a2cf4e595890862edf4eb8a668dbe9a3d3232b66834e86774a68bac5ce1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "7a5a1d8d05198d562a9bde0af1dfb5a1e5d2048c516704777fc29751d5df3083",
+        "Application": "834a68121da4c0ddabde94f2260f52e96aed16f8f90956eec898e9ba46e3738c",
+        "References": "ceca2a2cf4e595890862edf4eb8a668dbe9a3d3232b66834e86774a68bac5ce1"
+      }
+    },
+    {
+      "id": "380",
+      "file": "problems/380-strong-kpp-critical-extinction.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "72c9c5214239edbfea86750d19e0386b998b816f7902e7e8412ed71196c8158d",
+        "Application": "101c71d6ce62a6c43609fe9b942b77f0f680f83566f9927a2624b3369e2f8b65",
+        "References": "8c6420f3cdd73b542c5bb7dab6615c974a9689fd246dedef58f1ffff4a4c7c2f"
+      },
+      "current_section_sha256": {
+        "Problem statement": "72c9c5214239edbfea86750d19e0386b998b816f7902e7e8412ed71196c8158d",
+        "Application": "101c71d6ce62a6c43609fe9b942b77f0f680f83566f9927a2624b3369e2f8b65",
+        "References": "8c6420f3cdd73b542c5bb7dab6615c974a9689fd246dedef58f1ffff4a4c7c2f"
+      }
+    },
+    {
+      "id": "383",
+      "file": "problems/383-flory-gelation-mass-continuity.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "dc4095111672b11d1a0c6520437b9ea2c4a66c9c89f0e0e1e3c447dca539f68c",
+        "Application": "cd8875bf9bc635eea9390b8a778bfeaecf089765744ba0b0a7de1976ca749e96",
+        "References": "6436a0c179987b47c496b20f7a6cdf6754f3f60dc535add034cd5b9aafd60519"
+      },
+      "current_section_sha256": {
+        "Problem statement": "dc4095111672b11d1a0c6520437b9ea2c4a66c9c89f0e0e1e3c447dca539f68c",
+        "Application": "cd8875bf9bc635eea9390b8a778bfeaecf089765744ba0b0a7de1976ca749e96",
+        "References": "6436a0c179987b47c496b20f7a6cdf6754f3f60dc535add034cd5b9aafd60519"
+      }
+    },
+    {
+      "id": "384",
+      "file": "problems/384-reaction-two-obstacle-uniqueness.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "7b10c1bb933c0ce92c74da06516104cd11b754f34b3296778605fa5f75b85d6b",
+        "Application": "0b87ecdc124cd9b3a422677bd9582ef8123e0351141271c7d9eb22f49b961827",
+        "References": "c53af69b09683711076c81b90a1c493d875f4de0a438dba3f1ce11668f04ae7b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "7b10c1bb933c0ce92c74da06516104cd11b754f34b3296778605fa5f75b85d6b",
+        "Application": "0b87ecdc124cd9b3a422677bd9582ef8123e0351141271c7d9eb22f49b961827",
+        "References": "c53af69b09683711076c81b90a1c493d875f4de0a438dba3f1ce11668f04ae7b"
+      }
+    },
+    {
+      "id": "390",
+      "file": "problems/390-planar-monge-ampere-sharp-hessian-integrability.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "81ab090cd09dbbe0f3d755fb88311e66e317cb2478ead3e3cc47242f77c11c86",
+        "Application": "a23b2775bf7bfac5aec64a15490ca1bf7b55ee20f22974128bdd9641b66baa4f",
+        "References": "907233606830c746954af8cffe76664da2b600a3ed2cd345c9af0f4c554ed070"
+      },
+      "current_section_sha256": {
+        "Problem statement": "81ab090cd09dbbe0f3d755fb88311e66e317cb2478ead3e3cc47242f77c11c86",
+        "Application": "a23b2775bf7bfac5aec64a15490ca1bf7b55ee20f22974128bdd9641b66baa4f",
+        "References": "907233606830c746954af8cffe76664da2b600a3ed2cd345c9af0f4c554ed070"
+      }
+    },
+    {
+      "id": "392",
+      "file": "problems/392-polyhedral-transport-singular-interface.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "45a0cfc4d021857a1df412e63a4e15418ef8a8f80c7ec706fdc5f1605ddc5a67",
+        "Application": "06fee09ce86c2ea74b1fa7f28df37783af4aabc0b3002598f027500edb39968b",
+        "References": "42642ff8fe5c3f40a457df9241f5433506c7b17a9a1727dc07f3d1a9a35f8c9f"
+      },
+      "current_section_sha256": {
+        "Problem statement": "45a0cfc4d021857a1df412e63a4e15418ef8a8f80c7ec706fdc5f1605ddc5a67",
+        "Application": "06fee09ce86c2ea74b1fa7f28df37783af4aabc0b3002598f027500edb39968b",
+        "References": "42642ff8fe5c3f40a457df9241f5433506c7b17a9a1727dc07f3d1a9a35f8c9f"
+      }
+    },
+    {
+      "id": "393",
+      "file": "problems/393-polyhedral-partial-transport-free-boundary.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "b02441f77e1e570a4873ac8d6e4a94b7b1c3fc79d392005590b0107187a524bd",
+        "Application": "9078a1c22660169ad57275ce4b0d4344bcd4475a265f9da6463f4fe33953b1b5",
+        "References": "1af9cb66aaef147ce41515856e9baf017c01f380dd448c407c5c90da2ef88129"
+      },
+      "current_section_sha256": {
+        "Problem statement": "b02441f77e1e570a4873ac8d6e4a94b7b1c3fc79d392005590b0107187a524bd",
+        "Application": "9078a1c22660169ad57275ce4b0d4344bcd4475a265f9da6463f4fe33953b1b5",
+        "References": "1af9cb66aaef147ce41515856e9baf017c01f380dd448c407c5c90da2ef88129"
+      }
+    },
+    {
+      "id": "394",
+      "file": "problems/394-villani-mtw-convex-injectivity-domains.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "231f063e8edea8f47baf42051f2983fc460d2ac76571a6af3f5926a5e511c0cf",
+        "Application": "7e0f9b391e10515b6f089e4bed90ebd78ecef0ce468627a2dd163e54fe7eead6",
+        "References": "ad8fc65e540251b9c14e9d8d34c7561d46f4cce8b06d68509732e3835d35ea10"
+      },
+      "current_section_sha256": {
+        "Problem statement": "231f063e8edea8f47baf42051f2983fc460d2ac76571a6af3f5926a5e511c0cf",
+        "Application": "7e0f9b391e10515b6f089e4bed90ebd78ecef0ce468627a2dd163e54fe7eead6",
+        "References": "ad8fc65e540251b9c14e9d8d34c7561d46f4cce8b06d68509732e3835d35ea10"
+      }
+    },
+    {
+      "id": "396",
+      "file": "problems/396-critical-kdv-odd-mode-polynomial-decay.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "935e8e698aa52474726e6c0d1878c6d96b2cf2bed878005e58faefe5114a9ca4",
+        "Application": "3c458c99c6a2c68578774f304dbc24fa6887cb8f5573428329f7d0e00487a80d",
+        "References": "22bacf3ee05063d513ea5ee049faad2e448c9199e6730b909cd3addc82c7deb5"
+      },
+      "current_section_sha256": {
+        "Problem statement": "935e8e698aa52474726e6c0d1878c6d96b2cf2bed878005e58faefe5114a9ca4",
+        "Application": "3c458c99c6a2c68578774f304dbc24fa6887cb8f5573428329f7d0e00487a80d",
+        "References": "22bacf3ee05063d513ea5ee049faad2e448c9199e6730b909cd3addc82c7deb5"
+      }
+    },
+    {
+      "id": "400",
+      "file": "problems/400-radiative-insulation-concentric-balls.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "8b43e95ab18943f65eab8ebf67923ee764159b825cd1f49696d34972fad36c87",
+        "Application": "5141a48d1943acecd1f0bda63ee6db4aa55b164eca3fd67fce895971b9abb88c",
+        "References": "5ea39543d336799c39a483312367e81be14b269cb33ff025e3ea3d7accea291b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "8b43e95ab18943f65eab8ebf67923ee764159b825cd1f49696d34972fad36c87",
+        "Application": "5141a48d1943acecd1f0bda63ee6db4aa55b164eca3fd67fce895971b9abb88c",
+        "References": "5ea39543d336799c39a483312367e81be14b269cb33ff025e3ea3d7accea291b"
+      }
+    },
+    {
+      "id": "402",
+      "file": "problems/402-mixed-order-fractional-logarithmic-convexity.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "a36481c52724c855bbac98fa6825b074d60a55067f8e381e517dfef2655bde14",
+        "Application": "3815ec0dec6a8608f82ba0ded86bb36004bfaea4ede781e0a0f89deb3df29b55",
+        "References": "b4c0af40d3e477c931283a424411f02b021a872dd7c4c16372f0ddc502cf160f"
+      },
+      "current_section_sha256": {
+        "Problem statement": "a36481c52724c855bbac98fa6825b074d60a55067f8e381e517dfef2655bde14",
+        "Application": "3815ec0dec6a8608f82ba0ded86bb36004bfaea4ede781e0a0f89deb3df29b55",
+        "References": "b4c0af40d3e477c931283a424411f02b021a872dd7c4c16372f0ddc502cf160f"
+      }
+    },
+    {
+      "id": "403",
+      "file": "problems/403-schrodinger-sharp-fast-control-exponent.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "2b1ddcf5f1b95864c40169280adb450fb61679355d7715a437662a6a5522b81d",
+        "Application": "655259f79eaa230291f28382227f9ca5dcb145d84014f37176af9a257bc1db3f",
+        "References": "fe7a372ad6d7606f02ae6d15193a72bd656ad4dbc74667655618a51bc5593d53"
+      },
+      "current_section_sha256": {
+        "Problem statement": "2b1ddcf5f1b95864c40169280adb450fb61679355d7715a437662a6a5522b81d",
+        "Application": "655259f79eaa230291f28382227f9ca5dcb145d84014f37176af9a257bc1db3f",
+        "References": "fe7a372ad6d7606f02ae6d15193a72bd656ad4dbc74667655618a51bc5593d53"
+      }
+    },
+    {
+      "id": "404",
+      "file": "problems/404-local-mfg-uniform-vanishing-viscosity.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "0b075da67b8482d27e03b8fcb95a763bc290aadfd3f5ea065fadc4c63b2ef6ca",
+        "Application": "4d05c769796ebe7159106a3cd80a8f1001d8d42efea8731a89b212ef984a4eeb",
+        "References": "ebe4ff74e7a9acbcbe05b7f1b95f9a773bf033ad9089352897a0942f2ab48dc2"
+      },
+      "current_section_sha256": {
+        "Problem statement": "0b075da67b8482d27e03b8fcb95a763bc290aadfd3f5ea065fadc4c63b2ef6ca",
+        "Application": "4d05c769796ebe7159106a3cd80a8f1001d8d42efea8731a89b212ef984a4eeb",
+        "References": "ebe4ff74e7a9acbcbe05b7f1b95f9a773bf033ad9089352897a0942f2ab48dc2"
+      }
+    },
+    {
+      "id": "405",
+      "file": "problems/405-kinetic-mfg-vanishing-viscosity-rate.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "ac2b414f050adae10a26a942be1fccc57539e08d3d9c31a8b9d14387f7af1389",
+        "Application": "6186e1c7e855439fc10a4ed6e6aba37219ab172481f03010d1afac003b88320d",
+        "References": "e8e2b962ca61c5c0f3c612ba873985071ed635596b0c01bd5e252aa534185592"
+      },
+      "current_section_sha256": {
+        "Problem statement": "ac2b414f050adae10a26a942be1fccc57539e08d3d9c31a8b9d14387f7af1389",
+        "Application": "6186e1c7e855439fc10a4ed6e6aba37219ab172481f03010d1afac003b88320d",
+        "References": "e8e2b962ca61c5c0f3c612ba873985071ed635596b0c01bd5e252aa534185592"
+      }
+    },
+    {
+      "id": "411",
+      "file": "problems/411-bounded-input-state-continuity.md",
+      "status": "Solved",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "712af0997d3679b91d5a03fbd6021b119068e99e0b8740d6bea3ae206e68a601",
+        "Application": "8a900320452d29a61bd2137a8f0413f6c6f3887169a2b195a01c29bebc4ca326",
+        "References": "12f972dcc3dbb561c9fd03597b9cdab1f4b8bbc7f53646f362f1f9490d80f6a1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "712af0997d3679b91d5a03fbd6021b119068e99e0b8740d6bea3ae206e68a601",
+        "Application": "8a900320452d29a61bd2137a8f0413f6c6f3887169a2b195a01c29bebc4ca326",
+        "References": "12f972dcc3dbb561c9fd03597b9cdab1f4b8bbc7f53646f362f1f9490d80f6a1"
+      }
+    },
+    {
+      "id": "412",
+      "file": "problems/412-positive-transport-sharp-uniform-control-time.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\inverse3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "5b3db301df07c208b2039978d420dc47f84428c044895c4e3ef3ae9d654f4821",
+        "Application": "d0742022c8affc6d0436136bbdb43dc88b7df557b51353761ae15f4fb383fe38",
+        "References": "f1cee1359af5e13af7970666d48e6286edd240fac4fbf8c3de69d33f1dd0a3da"
+      },
+      "current_section_sha256": {
+        "Problem statement": "5b3db301df07c208b2039978d420dc47f84428c044895c4e3ef3ae9d654f4821",
+        "Application": "d0742022c8affc6d0436136bbdb43dc88b7df557b51353761ae15f4fb383fe38",
+        "References": "f1cee1359af5e13af7970666d48e6286edd240fac4fbf8c3de69d33f1dd0a3da"
+      }
+    },
+    {
+      "id": "413",
+      "file": "problems/413-intercritical-dispersion-managed-norm-inflation.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "9b627f9d434561df1db257d8a74568d981bd75189d3108bc674aef79ea717f93",
+        "Application": "9dfdd2c1c98c5a39a76c8acb69a6927cfa86050718425dc2c3c81c19e0c281e9",
+        "References": "3028d9afc812aa6a346cc9888899f7fffc4f0e3063e967b74286653942816136"
+      },
+      "current_section_sha256": {
+        "Problem statement": "9b627f9d434561df1db257d8a74568d981bd75189d3108bc674aef79ea717f93",
+        "Application": "9dfdd2c1c98c5a39a76c8acb69a6927cfa86050718425dc2c3c81c19e0c281e9",
+        "References": "3028d9afc812aa6a346cc9888899f7fffc4f0e3063e967b74286653942816136"
+      }
+    },
+    {
+      "id": "416",
+      "file": "problems/416-catalytic-reaction-diffusion-positive-attractor.md",
+      "status": "Solved",
+      "metadata_file": "data\\continuum2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "749dc036c7f900f5feda0c43f2c79a893243967f425a9f9455fbf40521d4b70f",
+        "Application": "2d48090484aae243096f93bd6492c41c7e677e12bc75134506a176eebbd84299",
+        "References": "dda3d6f90e0965232244cb05fb6cf28a4960dbf69113622da53564f19f4632b8"
+      },
+      "current_section_sha256": {
+        "Problem statement": "749dc036c7f900f5feda0c43f2c79a893243967f425a9f9455fbf40521d4b70f",
+        "Application": "2d48090484aae243096f93bd6492c41c7e677e12bc75134506a176eebbd84299",
+        "References": "dda3d6f90e0965232244cb05fb6cf28a4960dbf69113622da53564f19f4632b8"
+      }
+    },
+    {
+      "id": "423",
+      "file": "problems/423-magnetic-airy-half-plane-spectrum.md",
+      "status": "Partially resolved",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "4b13013be0fe2a08cfb7566c4c8b7a2a6425fed17a079804283b402f29aa605f",
+        "Application": "103b23a4320dae1b76e00c74c83f7b7634bb3bf703c0c17117e7aa8becd27f6a",
+        "References": "f93a733191a792ebb943a065b805d08b100179743f641b62232a4a3551ffc7ac"
+      },
+      "current_section_sha256": {
+        "Problem statement": "4b13013be0fe2a08cfb7566c4c8b7a2a6425fed17a079804283b402f29aa605f",
+        "Application": "103b23a4320dae1b76e00c74c83f7b7634bb3bf703c0c17117e7aa8becd27f6a",
+        "References": "f93a733191a792ebb943a065b805d08b100179743f641b62232a4a3551ffc7ac"
+      }
+    },
+    {
+      "id": "424",
+      "file": "problems/424-spherical-pt-robin-real-spectrum.md",
+      "status": "Solved",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "e9d7f6c996d27d7798f88a93a8b0276af012ea4392d3959459b181503d3d396c",
+        "Application": "9c21a9e5e71f5094a5765e8b769cd028d60f40ead0c4a67074a2eb75fcf2f53b",
+        "References": "62db9b97dffe941c7cbe4b5ddbc63874caa537e8f108e11886b81ae436750d7c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "e9d7f6c996d27d7798f88a93a8b0276af012ea4392d3959459b181503d3d396c",
+        "Application": "9c21a9e5e71f5094a5765e8b769cd028d60f40ead0c4a67074a2eb75fcf2f53b",
+        "References": "62db9b97dffe941c7cbe4b5ddbc63874caa537e8f108e11886b81ae436750d7c"
+      }
+    },
+    {
+      "id": "425",
+      "file": "problems/425-complex-hill-excess-multiplicity.md",
+      "status": "Solved",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "890fac50a82cdcd3fd2a1765b4c50b4b03f82de1f49c757c79092e180654d6bf",
+        "Application": "77199e069916803b8dd6776610446417b3adcde1bae0a40787845bb0d8c272cf",
+        "References": "f82cbcac42c1bfd4b5d476a13bd3717538335a4b03a69379818592370ec756fa"
+      },
+      "current_section_sha256": {
+        "Problem statement": "890fac50a82cdcd3fd2a1765b4c50b4b03f82de1f49c757c79092e180654d6bf",
+        "Application": "77199e069916803b8dd6776610446417b3adcde1bae0a40787845bb0d8c272cf",
+        "References": "f82cbcac42c1bfd4b5d476a13bd3717538335a4b03a69379818592370ec756fa"
+      }
+    },
+    {
+      "id": "429",
+      "file": "problems/429-transmission-eigenvalue-sharp-weyl-remainder.md",
+      "status": "Solved",
+      "metadata_file": "data\\spectral2.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "073f4fb840ae77dfe346e243073dfc35ffce530606eafa1ca9e44e82de97390b",
+        "Application": "1239f10ca497517b0bcc4d1f31f3e124ad0dbd5279b1fe5a7a0b859bc97a2394",
+        "References": "7ceeac47d0021090c1f3af9b53457157509850aedf21b35d4201b11cb630f204"
+      },
+      "current_section_sha256": {
+        "Problem statement": "073f4fb840ae77dfe346e243073dfc35ffce530606eafa1ca9e44e82de97390b",
+        "Application": "1239f10ca497517b0bcc4d1f31f3e124ad0dbd5279b1fe5a7a0b859bc97a2394",
+        "References": "7ceeac47d0021090c1f3af9b53457157509850aedf21b35d4201b11cb630f204"
+      }
+    },
+    {
+      "id": "433",
+      "file": "problems/433-very-weak-p-harmonic-energy-regularity.md",
+      "status": "Solved",
+      "metadata_file": "data\\pdes-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "059c8b170a6a179630bca3f0f15a667aab8329187b0cd9db7f6ae7f20df1fb9b",
+        "Application": "0aa75312b07b06abcc37620d3a245a5e5434a5d66af15a1dfafea422e12b046d",
+        "References": "491b4e8185e6cace0db3a577d4799ab4cdec615890f07765506705f408237a4b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "059c8b170a6a179630bca3f0f15a667aab8329187b0cd9db7f6ae7f20df1fb9b",
+        "Application": "0aa75312b07b06abcc37620d3a245a5e5434a5d66af15a1dfafea422e12b046d",
+        "References": "491b4e8185e6cace0db3a577d4799ab4cdec615890f07765506705f408237a4b"
+      }
+    },
+    {
+      "id": "441",
+      "file": "problems/441-ionization-laser-envelope-global-regularity.md",
+      "status": "Solved",
+      "metadata_file": "data\\waves-fluids-kinetics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "06f4a313fcbef99e81ecee71c998b29fb533083d12be4c4600493e1dd9853236",
+        "Application": "ed27e10df70411beef75a2dd01ad661877ee6c1d2af8724b3503345bc57cf251",
+        "References": "83bed9f3937f2b98ff47b921df085663e7c36958f7f0a38a93f766cc4f7acd11"
+      },
+      "current_section_sha256": {
+        "Problem statement": "06f4a313fcbef99e81ecee71c998b29fb533083d12be4c4600493e1dd9853236",
+        "Application": "ed27e10df70411beef75a2dd01ad661877ee6c1d2af8724b3503345bc57cf251",
+        "References": "83bed9f3937f2b98ff47b921df085663e7c36958f7f0a38a93f766cc4f7acd11"
+      }
+    },
+    {
+      "id": "446",
+      "file": "problems/446-beurling-ahlfors-sharp-norm.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\operators.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "f4e3050c02f0538acbace977b4987b3a6e2a51c42451925257bd3bb63680cc67",
+        "Application": "1a3329754cec47bcbaec11a1e8ae8c20c7156e2b1130a013abc72d28266a43c3",
+        "References": "2f12e5e8b4640eb2f30695b90e75ea7111d186ffedb02e5d7b9f9fe38d6a090b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "f4e3050c02f0538acbace977b4987b3a6e2a51c42451925257bd3bb63680cc67",
+        "Application": "1a3329754cec47bcbaec11a1e8ae8c20c7156e2b1130a013abc72d28266a43c3",
+        "References": "2f12e5e8b4640eb2f30695b90e75ea7111d186ffedb02e5d7b9f9fe38d6a090b"
+      }
+    },
+    {
+      "id": "455",
+      "file": "problems/455-smooth-transport-spde-deterministic-holder-exponent.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "1510c239425e3d38bc0202cec7b8f2726c213e028115fe5fff0ff1b19b208d16",
+        "Application": "e0a82603c7b2c47f7df7eab30395270d4a3918d2014f44fd1192b78b691189f3",
+        "References": "153d780c092f86385b4649ec4d35432b39dc49a73dae7360d3407b7ae00a1a06"
+      },
+      "current_section_sha256": {
+        "Problem statement": "1510c239425e3d38bc0202cec7b8f2726c213e028115fe5fff0ff1b19b208d16",
+        "Application": "e0a82603c7b2c47f7df7eab30395270d4a3918d2014f44fd1192b78b691189f3",
+        "References": "153d780c092f86385b4649ec4d35432b39dc49a73dae7360d3407b7ae00a1a06"
+      }
+    },
+    {
+      "id": "457",
+      "file": "problems/457-stochastic-navier-stokes-negative-half-critical-data.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "13f1fc36d8202ce9ad7e4935c3676fb55ad9d8482dd00d946ee9014f73fd0d11",
+        "Application": "11c4564d517abfd59376ec064a6cad964e76d4e55ea0d361718ba28b82167186",
+        "References": "10274fbab9de9c9e43df10b4b7993bf1f7bd98e634d7912ec3e8f8566d7b3c9a"
+      },
+      "current_section_sha256": {
+        "Problem statement": "13f1fc36d8202ce9ad7e4935c3676fb55ad9d8482dd00d946ee9014f73fd0d11",
+        "Application": "11c4564d517abfd59376ec064a6cad964e76d4e55ea0d361718ba28b82167186",
+        "References": "10274fbab9de9c9e43df10b4b7993bf1f7bd98e634d7912ec3e8f8566d7b3c9a"
+      }
+    },
+    {
+      "id": "458",
+      "file": "problems/458-stochastic-navier-stokes-no-slip-local.md",
+      "status": "Partially resolved",
+      "metadata_file": "data\\stochastic3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "5c885833b2d96a5b3c96a83742ce049cbff9493243ed43648bc7d52f3804e5ad",
+        "Application": "ef8850b12cce58aebe74b1faaec13b7509463112ba717da7af2e47a04744ee39",
+        "References": "e88f3e04cf875b7088331af86541e9ee49772b372d341b70b99e4beec8dc75d7"
+      },
+      "current_section_sha256": {
+        "Problem statement": "5c885833b2d96a5b3c96a83742ce049cbff9493243ed43648bc7d52f3804e5ad",
+        "Application": "ef8850b12cce58aebe74b1faaec13b7509463112ba717da7af2e47a04744ee39",
+        "References": "e88f3e04cf875b7088331af86541e9ee49772b372d341b70b99e4beec8dc75d7"
+      }
+    },
+    {
+      "id": "460",
+      "file": "problems/460-singular-stable-cone-positive-solution-uniqueness.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "6b4a8fbb8dd75cee4d1d5db993a35a64cc351aaae769ad03cabc09e924f046ce",
+        "Application": "c131130b551b829c1de7d1d70c4172e2f2996db3d3b4a0d15f12162c8defcf94",
+        "References": "ecb9d17c679cf086d924ce92fd20036d9f29689878854da6bbedf493a584a585"
+      },
+      "current_section_sha256": {
+        "Problem statement": "6b4a8fbb8dd75cee4d1d5db993a35a64cc351aaae769ad03cabc09e924f046ce",
+        "Application": "c131130b551b829c1de7d1d70c4172e2f2996db3d3b4a0d15f12162c8defcf94",
+        "References": "ecb9d17c679cf086d924ce92fd20036d9f29689878854da6bbedf493a584a585"
+      }
+    },
+    {
+      "id": "461",
+      "file": "problems/461-infinity-fractional-evolution-comparison.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "8dd85becf75422428145883dceb7ce4fbc4fad71186802ac5cfa38e2a4e5216b",
+        "Application": "16bef442bb276e8902ee84a45b2a128f0162963c6aa4f6f9958e331e46fbeba9",
+        "References": "a26cdd671eb63f0350246cb791ded06f3aa2a363618c3527f76659580c5ec7c3"
+      },
+      "current_section_sha256": {
+        "Problem statement": "8dd85becf75422428145883dceb7ce4fbc4fad71186802ac5cfa38e2a4e5216b",
+        "Application": "16bef442bb276e8902ee84a45b2a128f0162963c6aa4f6f9958e331e46fbeba9",
+        "References": "a26cdd671eb63f0350246cb791ded06f3aa2a363618c3527f76659580c5ec7c3"
+      }
+    },
+    {
+      "id": "462",
+      "file": "problems/462-nonlocal-pucci-finite-integrability-abp.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "387ec649e36d7e0010b3c779083eb0db8594cddaf135772770b8237a65f4dd68",
+        "Application": "1ff84644fcd0462677c285d1d9e54b5018e0c83efd4ede1715bcfd6a74d5fa44",
+        "References": "da35aa8677daaa55acc8be1720970b11b5d0aab6e9730cbbdbbfc0c5bc81f70e"
+      },
+      "current_section_sha256": {
+        "Problem statement": "387ec649e36d7e0010b3c779083eb0db8594cddaf135772770b8237a65f4dd68",
+        "Application": "1ff84644fcd0462677c285d1d9e54b5018e0c83efd4ede1715bcfd6a74d5fa44",
+        "References": "da35aa8677daaa55acc8be1720970b11b5d0aab6e9730cbbdbbfc0c5bc81f70e"
+      }
+    },
+    {
+      "id": "463",
+      "file": "problems/463-concave-nonlocal-calderon-zygmund.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "5effaf3fae9117dabed1af686755c3568d6e55d2c543a7dc6d7fed75f595d634",
+        "Application": "7f7919fcaeb22199a721cd94c4936324a3ac21aaab8ead0023a04c0dc60ee9c7",
+        "References": "614382a52398d9454ce8affbdbf257be73c2af1a99e23eb84017415728f7ffa0"
+      },
+      "current_section_sha256": {
+        "Problem statement": "5effaf3fae9117dabed1af686755c3568d6e55d2c543a7dc6d7fed75f595d634",
+        "Application": "7f7919fcaeb22199a721cd94c4936324a3ac21aaab8ead0023a04c0dc60ee9c7",
+        "References": "614382a52398d9454ce8affbdbf257be73c2af1a99e23eb84017415728f7ffa0"
+      }
+    },
+    {
+      "id": "467",
+      "file": "problems/467-fractional-pressure-superquadratic-continuity.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "c209da5e491620fc51b8d83bc937d2b0754d2754726860cd7ea6caefeb1b25ad",
+        "Application": "73490a153ce30e8483496f28fed7aa7650a03a89e56ea824564b1c668cbe9b94",
+        "References": "4a9cda76c43d640a9e8aa1a4141b1fcc023e441b597e37513c3dc9e94729bf77"
+      },
+      "current_section_sha256": {
+        "Problem statement": "c209da5e491620fc51b8d83bc937d2b0754d2754726860cd7ea6caefeb1b25ad",
+        "Application": "73490a153ce30e8483496f28fed7aa7650a03a89e56ea824564b1c668cbe9b94",
+        "References": "4a9cda76c43d640a9e8aa1a4141b1fcc023e441b597e37513c3dc9e94729bf77"
+      }
+    },
+    {
+      "id": "469",
+      "file": "problems/469-superlinear-skt-nonlocal-to-local-limit.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "d788c37a10117bf208215bd5d1155aabce7d95ddd13766320d6973f1767ffab5",
+        "Application": "173950570753678f8cfc4ae4286a48807552b2337aad2c59526df2fd5e4c1a4e",
+        "References": "dbf738e1ef6b06f18e138d6e84a1eb8d2c03cf7a72d988ae514ea7f3d62b8b62"
+      },
+      "current_section_sha256": {
+        "Problem statement": "d788c37a10117bf208215bd5d1155aabce7d95ddd13766320d6973f1767ffab5",
+        "Application": "173950570753678f8cfc4ae4286a48807552b2337aad2c59526df2fd5e4c1a4e",
+        "References": "dbf738e1ef6b06f18e138d6e84a1eb8d2c03cf7a72d988ae514ea7f3d62b8b62"
+      }
+    },
+    {
+      "id": "473",
+      "file": "problems/473-manifold-fractional-pme-mass-conservation.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "3318c8ce391a6e6c6458abcb1148a217617e896280f31298e4a337516955d94f",
+        "Application": "688e339e6a2ac96f98489de2559a12569e1ff2899b6a188ee40c8773dd24a45f",
+        "References": "390d50432384c152b3493d879b65287137ed53948d7ebdc0e2361d0719a0101c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "3318c8ce391a6e6c6458abcb1148a217617e896280f31298e4a337516955d94f",
+        "Application": "688e339e6a2ac96f98489de2559a12569e1ff2899b6a188ee40c8773dd24a45f",
+        "References": "390d50432384c152b3493d879b65287137ed53948d7ebdc0e2361d0719a0101c"
+      }
+    },
+    {
+      "id": "474",
+      "file": "problems/474-manifold-fractional-pme-point-source.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "eaaa505337ed6318ccfb903dee8058fbe0be34676be4198c5356faeb36e86627",
+        "Application": "735c08280fbadd63d26e293e183c57c0ac06fe0cabf259c4b4f0fcc73b2b20ae",
+        "References": "390d50432384c152b3493d879b65287137ed53948d7ebdc0e2361d0719a0101c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "eaaa505337ed6318ccfb903dee8058fbe0be34676be4198c5356faeb36e86627",
+        "Application": "735c08280fbadd63d26e293e183c57c0ac06fe0cabf259c4b4f0fcc73b2b20ae",
+        "References": "390d50432384c152b3493d879b65287137ed53948d7ebdc0e2361d0719a0101c"
+      }
+    },
+    {
+      "id": "478",
+      "file": "problems/478-critical-stochastic-sqg-global-regularity.md",
+      "status": "Solved",
+      "metadata_file": "data\\stochastic3.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "85a6c3d6d697ddfb75438cf03a53cd5f6dd5e5cee7e7f7105044fca5265ac74a",
+        "Application": "cb7e504b32d0e4e8f5078a786cd4289b3395c67532f9e8d83b52265a523a146d",
+        "References": "1297084816c2bb2298aa20c4feac849d46acacc14cc17c1927b025331f5c585c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "85a6c3d6d697ddfb75438cf03a53cd5f6dd5e5cee7e7f7105044fca5265ac74a",
+        "Application": "cb7e504b32d0e4e8f5078a786cd4289b3395c67532f9e8d83b52265a523a146d",
+        "References": "1297084816c2bb2298aa20c4feac849d46acacc14cc17c1927b025331f5c585c"
+      }
+    },
+    {
+      "id": "481",
+      "file": "problems/481-fourth-order-aggregation-finite-propagation.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "7667a93e83a026e1c5a3a48bd519efceadfeffc9666c8df4527fc1beaba74bf9",
+        "Application": "9c985c8a1f094d68ee5a6c29af5312993e47030acb87449531e4557ff2897e14",
+        "References": "f6199a445108d7ae3efb986fc71dc0a4343906753f321597705b316ba84265e3"
+      },
+      "current_section_sha256": {
+        "Problem statement": "7667a93e83a026e1c5a3a48bd519efceadfeffc9666c8df4527fc1beaba74bf9",
+        "Application": "9c985c8a1f094d68ee5a6c29af5312993e47030acb87449531e4557ff2897e14",
+        "References": "f6199a445108d7ae3efb986fc71dc0a4343906753f321597705b316ba84265e3"
+      }
+    },
+    {
+      "id": "482",
+      "file": "problems/482-entropy-reaction-diffusion-renormalized-uniqueness.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "8b63adc4574dd6e76a28ee2328699b76f4fb2af6015f14564860e592db03672f",
+        "Application": "103d8e507b716aad3667f9a86170fbfad8dabc5acdf10a1e1c7a65c7c9a2d220",
+        "References": "0464dfb44bd948d7e0b10a446a96abe895d27944eba10380f51881310a56c0e9"
+      },
+      "current_section_sha256": {
+        "Problem statement": "8b63adc4574dd6e76a28ee2328699b76f4fb2af6015f14564860e592db03672f",
+        "Application": "103d8e507b716aad3667f9a86170fbfad8dabc5acdf10a1e1c7a65c7c9a2d220",
+        "References": "0464dfb44bd948d7e0b10a446a96abe895d27944eba10380f51881310a56c0e9"
+      }
+    },
+    {
+      "id": "485",
+      "file": "problems/485-general-stable-obstacle-optimal-regularity.md",
+      "status": "Solved",
+      "metadata_file": "data\\diffusion-materials.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "f538cc8943424d8c4ca42e39df8204f7fb89d501a6a5f6be11a1b696121cfb4b",
+        "Application": "4711080df5e8f8ce63c269d974cebba5322d6dcedc064eb918f6cfc4c07508fa",
+        "References": "61637e874c518c78fd12965db080a60cdd6800f96fb55b0c921c2338aeec8be6"
+      },
+      "current_section_sha256": {
+        "Problem statement": "f538cc8943424d8c4ca42e39df8204f7fb89d501a6a5f6be11a1b696121cfb4b",
+        "Application": "4711080df5e8f8ce63c269d974cebba5322d6dcedc064eb918f6cfc4c07508fa",
+        "References": "61637e874c518c78fd12965db080a60cdd6800f96fb55b0c921c2338aeec8be6"
+      }
+    },
+    {
+      "id": "499",
+      "file": "problems/499-rips-shadow-fundamental-group.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "aeda35fb6e610f9ea7d5b90722e7078a49bfdfb071dbe9877307d683dcdf2628",
+        "Application": "cdb1ced946f7444016a1c982dd2358878acf6cf79e6167bf3e7d499db90ac8ec",
+        "References": "aaa8bde9d1d633b759caeb70d6d33c4d8f6a94faa468d03730451eef2d46a83c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "aeda35fb6e610f9ea7d5b90722e7078a49bfdfb071dbe9877307d683dcdf2628",
+        "Application": "cdb1ced946f7444016a1c982dd2358878acf6cf79e6167bf3e7d499db90ac8ec",
+        "References": "aaa8bde9d1d633b759caeb70d6d33c4d8f6a94faa468d03730451eef2d46a83c"
+      }
+    },
+    {
+      "id": "500",
+      "file": "problems/500-higher-dimensional-ising-clumps.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "692d1e6e9f9e70f118f74f6fa8799824ba7bfb2ce939fbf2254258c1f81ad7a4",
+        "Application": "7634a58aac20dabe84c9b1db881cbbbaa5e48c4897e3eb1af8edaea91202ac74",
+        "References": "31899cb1617b87e8b4f629a9205d6a162586a474842d70c4d93287c5126f61d6"
+      },
+      "current_section_sha256": {
+        "Problem statement": "692d1e6e9f9e70f118f74f6fa8799824ba7bfb2ce939fbf2254258c1f81ad7a4",
+        "Application": "7634a58aac20dabe84c9b1db881cbbbaa5e48c4897e3eb1af8edaea91202ac74",
+        "References": "31899cb1617b87e8b4f629a9205d6a162586a474842d70c4d93287c5126f61d6"
+      }
+    },
+    {
+      "id": "501",
+      "file": "problems/501-integral-flat-norm-codimension-one.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "3a5e7f4117b518164adfcdede70dbf20c6c1a9f658eb149db889eb8f9e16ade5",
+        "Application": "f87045770b8c17c28ff97360052f771a24851f68ef80bac0e667443207ff9a94",
+        "References": "3b726ab612d8c67447e298f8808c3406113ccc2ddc7582e11af53d86615104b7"
+      },
+      "current_section_sha256": {
+        "Problem statement": "3a5e7f4117b518164adfcdede70dbf20c6c1a9f658eb149db889eb8f9e16ade5",
+        "Application": "f87045770b8c17c28ff97360052f771a24851f68ef80bac0e667443207ff9a94",
+        "References": "3b726ab612d8c67447e298f8808c3406113ccc2ddc7582e11af53d86615104b7"
+      }
+    },
+    {
+      "id": "504",
+      "file": "problems/504-ising-disks-excursion-tail.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "e5a162d866e351df1188bfda238519efdc081cd51523a9669f6f9f77b344731e",
+        "Application": "56e1a7592d99e4c5af1fc8d7e7452acf8d77dabe9cd8be2e325c5b91ef159fd9",
+        "References": "ae88c355859cc7e3645dea22d62f59d961bf7acbdf1852ba34824552e38d5e88"
+      },
+      "current_section_sha256": {
+        "Problem statement": "e5a162d866e351df1188bfda238519efdc081cd51523a9669f6f9f77b344731e",
+        "Application": "56e1a7592d99e4c5af1fc8d7e7452acf8d77dabe9cd8be2e325c5b91ef159fd9",
+        "References": "ae88c355859cc7e3645dea22d62f59d961bf7acbdf1852ba34824552e38d5e88"
+      }
+    },
+    {
+      "id": "512",
+      "file": "problems/512-spherical-rips-first-transition.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "369c3c8fadf2a77da0326c302c3527474564db4dbb5b23acfc8e32483a69dc82",
+        "Application": "c6d52373edbfa10de358dfa2eb64586201d07ac8b19e844ea961f09fe9838435",
+        "References": "ddc0bc008619cb970c3f4cf5e0aa4c51655295b233cd843116ce39b77fc80c45"
+      },
+      "current_section_sha256": {
+        "Problem statement": "369c3c8fadf2a77da0326c302c3527474564db4dbb5b23acfc8e32483a69dc82",
+        "Application": "c6d52373edbfa10de358dfa2eb64586201d07ac8b19e844ea961f09fe9838435",
+        "References": "ddc0bc008619cb970c3f4cf5e0aa4c51655295b233cd843116ce39b77fc80c45"
+      }
+    },
+    {
+      "id": "513",
+      "file": "problems/513-aspherical-motion-planning-center.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "eeb81441f85edf5c2f2c73588b2d8fa4c6654e92e98d32b7f69ebb467d0988ff",
+        "Application": "addfa8651d9d34f973a223bf9da140d271ade1a4bdfe04e0e5540ab3abe55980",
+        "References": "5ce77bb477e41c396a13ae72939ff6d09a1dcf2a62b797dae8865f45462a4426"
+      },
+      "current_section_sha256": {
+        "Problem statement": "eeb81441f85edf5c2f2c73588b2d8fa4c6654e92e98d32b7f69ebb467d0988ff",
+        "Application": "addfa8651d9d34f973a223bf9da140d271ade1a4bdfe04e0e5540ab3abe55980",
+        "References": "5ce77bb477e41c396a13ae72939ff6d09a1dcf2a62b797dae8865f45462a4426"
+      }
+    },
+    {
+      "id": "514",
+      "file": "problems/514-aspherical-connected-sum-complexity.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "aec694df89273446b9faf611de61fbc23c993bb16def67277d4ff59def2135a3",
+        "Application": "4457f6b7cb508b22c4440b76be97c04ff08fdfec6d8dd9f95a48d98fe3b9574d",
+        "References": "d8e14d8c15b5534d29ad70e208ead5bdc4d5920ec953aea300ce8eaabcb9cd96"
+      },
+      "current_section_sha256": {
+        "Problem statement": "aec694df89273446b9faf611de61fbc23c993bb16def67277d4ff59def2135a3",
+        "Application": "4457f6b7cb508b22c4440b76be97c04ff08fdfec6d8dd9f95a48d98fe3b9574d",
+        "References": "d8e14d8c15b5534d29ad70e208ead5bdc4d5920ec953aea300ce8eaabcb9cd96"
+      }
+    },
+    {
+      "id": "520",
+      "file": "problems/520-persistence-diagram-coarse-embedding.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "abcf5b4d4441db16c7b77003fd4073464f14e2c3ac4b28c092be3031aa0dc5d2",
+        "Application": "a72a15600ee5148ff61753efd4f16327be4b7adeab978b884c6bcbaffa21976e",
+        "References": "c396b0b7d018c776a18af5cc1abad85d80a2346d8c0b7fecc398f20c3851efef"
+      },
+      "current_section_sha256": {
+        "Problem statement": "abcf5b4d4441db16c7b77003fd4073464f14e2c3ac4b28c092be3031aa0dc5d2",
+        "Application": "a72a15600ee5148ff61753efd4f16327be4b7adeab978b884c6bcbaffa21976e",
+        "References": "c396b0b7d018c776a18af5cc1abad85d80a2346d8c0b7fecc398f20c3851efef"
+      }
+    },
+    {
+      "id": "521",
+      "file": "problems/521-six-point-sphere-persistence.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "e00bdc6d6e46edc7b400727018126b57b9b5bf477e1d74d00c1e77b350993368",
+        "Application": "ad3aaa5d1eb9c02865d6a2eb7b148071c8d13047345a3df1a31c87c9ec32bdbd",
+        "References": "6528ed26ae59b841ce56b1b15451fafa84c3e3f89991a292d48a4f5b9ae96d45"
+      },
+      "current_section_sha256": {
+        "Problem statement": "e00bdc6d6e46edc7b400727018126b57b9b5bf477e1d74d00c1e77b350993368",
+        "Application": "ad3aaa5d1eb9c02865d6a2eb7b148071c8d13047345a3df1a31c87c9ec32bdbd",
+        "References": "6528ed26ae59b841ce56b1b15451fafa84c3e3f89991a292d48a4f5b9ae96d45"
+      }
+    },
+    {
+      "id": "525",
+      "file": "problems/525-positive-norm-tc-weight.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "f41111f5cdd3d7e80f935c814247d4c51743789855cdbee54717b22f06eb1d13",
+        "Application": "319d4f209d63dd01078cc913e1f6e45135765e5d6bb5f68a1d726f77e51f2a56",
+        "References": "03a7d4a1168d6814a0696029f32b2b10582618853328ad8de75e5f6a8a41c329"
+      },
+      "current_section_sha256": {
+        "Problem statement": "f41111f5cdd3d7e80f935c814247d4c51743789855cdbee54717b22f06eb1d13",
+        "Application": "319d4f209d63dd01078cc913e1f6e45135765e5d6bb5f68a1d726f77e51f2a56",
+        "References": "03a7d4a1168d6814a0696029f32b2b10582618853328ad8de75e5f6a8a41c329"
+      }
+    },
+    {
+      "id": "529",
+      "file": "problems/529-preferential-attachment-betti-limit.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "7cc1ac3262d1b2d1291d1406e929a2f20c1bc4ceb8028bb4ff70fb4246d46f5b",
+        "Application": "78eb7f3d5cf5d8136ab7b51e09ad51517b522d64b76ffa80523d42f18b8b5ed3",
+        "References": "5bb4477122bc2db07ef69345f75a0e9b343f237eec0860ad944934a1af20b5c1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "7cc1ac3262d1b2d1291d1406e929a2f20c1bc4ceb8028bb4ff70fb4246d46f5b",
+        "Application": "78eb7f3d5cf5d8136ab7b51e09ad51517b522d64b76ffa80523d42f18b8b5ed3",
+        "References": "5bb4477122bc2db07ef69345f75a0e9b343f237eec0860ad944934a1af20b5c1"
+      }
+    },
+    {
+      "id": "531",
+      "file": "problems/531-torus-grid-transition-homology.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "43b39ea56d149bce96bd254cf2986afe505462c50d6232c08c89a7dbe1789a61",
+        "Application": "6708034935bd7c487196e279dbbd54e66b2a4a633a2ca7e5a4146c6d11fde01b",
+        "References": "224c2c57e94ea8ea98c9291b81ea4b13191d38cbc7bf708246942277713f1b83"
+      },
+      "current_section_sha256": {
+        "Problem statement": "43b39ea56d149bce96bd254cf2986afe505462c50d6232c08c89a7dbe1789a61",
+        "Application": "6708034935bd7c487196e279dbbd54e66b2a4a633a2ca7e5a4146c6d11fde01b",
+        "References": "224c2c57e94ea8ea98c9291b81ea4b13191d38cbc7bf708246942277713f1b83"
+      }
+    },
+    {
+      "id": "532",
+      "file": "problems/532-torus-grid-half-diameter-homotopy.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "1737544bfe0df5dbf4e7be659e3fb9466b46af122b7afa142932a5e769de8033",
+        "Application": "e6582dcbce2a2c10459756ba7471513423664a9ed73d73dbc664328a7ee8ab23",
+        "References": "4ed2c0827042734423f97099e1479f231fc02ff4fa7db93035865b09498854f9"
+      },
+      "current_section_sha256": {
+        "Problem statement": "1737544bfe0df5dbf4e7be659e3fb9466b46af122b7afa142932a5e769de8033",
+        "Application": "e6582dcbce2a2c10459756ba7471513423664a9ed73d73dbc664328a7ee8ab23",
+        "References": "4ed2c0827042734423f97099e1479f231fc02ff4fa7db93035865b09498854f9"
+      }
+    },
+    {
+      "id": "537",
+      "file": "problems/537-persistence-fiber-betti-numbers.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "b738a4fbc0a435cfd7f29321b9453c094ffdd9b551091e592191d594654713b6",
+        "Application": "1257e52215b138398412a3d2f6ad0babbb7944a8056e2c683f637be1992a6488",
+        "References": "4d22f8e858e2db172f744a3ccc78690b7176103f99f6f34c7ce73635fd7e6073"
+      },
+      "current_section_sha256": {
+        "Problem statement": "b738a4fbc0a435cfd7f29321b9453c094ffdd9b551091e592191d594654713b6",
+        "Application": "1257e52215b138398412a3d2f6ad0babbb7944a8056e2c683f637be1992a6488",
+        "References": "4d22f8e858e2db172f744a3ccc78690b7176103f99f6f34c7ce73635fd7e6073"
+      }
+    },
+    {
+      "id": "540",
+      "file": "problems/540-hyperbolic-ball-barrier-parameter.md",
+      "status": "Solved",
+      "metadata_file": "data\\optimization-information.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "263a6bd3e9ca3cc507cd4d55c6c6ea3a9cc1e0cd61c2594f9d8b5a113f855d85",
+        "Application": "f34220a1be74051f0c17c0c1488c91f226d49157898f87097df50954533b9f0a",
+        "References": "158f702cba51958a090f6fc046372e8d46bf38a4bd5e5ecd26317a0d676f4f09"
+      },
+      "current_section_sha256": {
+        "Problem statement": "263a6bd3e9ca3cc507cd4d55c6c6ea3a9cc1e0cd61c2594f9d8b5a113f855d85",
+        "Application": "f34220a1be74051f0c17c0c1488c91f226d49157898f87097df50954533b9f0a",
+        "References": "158f702cba51958a090f6fc046372e8d46bf38a4bd5e5ecd26317a0d676f4f09"
+      }
+    },
+    {
+      "id": "547",
+      "file": "problems/547-minimal-persistence-grid-morse-bound.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "22d600942cff7bad3513c820b22fb37e9729817d96e3c13aed4f75800068e61b",
+        "Application": "6578421f99af5e0c110277f7d9adf1b81c5171fa8eabe3fc6508c459dceb935b",
+        "References": "daae3269b4648d872a9008aa4c6c126e45b39db7ea00e0185e0ff05e1b944eff"
+      },
+      "current_section_sha256": {
+        "Problem statement": "22d600942cff7bad3513c820b22fb37e9729817d96e3c13aed4f75800068e61b",
+        "Application": "6578421f99af5e0c110277f7d9adf1b81c5171fa8eabe3fc6508c459dceb935b",
+        "References": "daae3269b4648d872a9008aa4c6c126e45b39db7ea00e0185e0ff05e1b944eff"
+      }
+    },
+    {
+      "id": "565",
+      "file": "problems/565-macbeath-center-asymmetry.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "38e8f39c259fe4d73e5ffaf0e89de8e04ba2520da4f913a06c003349e232b669",
+        "Application": "513108a75d3352cb9975cdf20d47da25f57f2d89301625c078f7c5ad0a1443de",
+        "References": "c21ae4fb2a3b838af9dbda33b580178f2b468ed8fab36a698b409f2cbb849997"
+      },
+      "current_section_sha256": {
+        "Problem statement": "38e8f39c259fe4d73e5ffaf0e89de8e04ba2520da4f913a06c003349e232b669",
+        "Application": "513108a75d3352cb9975cdf20d47da25f57f2d89301625c078f7c5ad0a1443de",
+        "References": "c21ae4fb2a3b838af9dbda33b580178f2b468ed8fab36a698b409f2cbb849997"
+      }
+    },
+    {
+      "id": "571",
+      "file": "problems/571-half-integral-collinear-count.md",
+      "status": "Solution claimed",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "317274c05ce6a112b423194154b06e5ad6d807f8d8d95cf0e759c2fa5259698f",
+        "Application": "f37689976e073bdeaa8f95a744796458115dc4fda3bd0a359f7adf26741e8371",
+        "References": "d00469d906717c8b938f13f7162dc65a279bc6cac5dc96c6660f012ce1e4d7f8"
+      },
+      "current_section_sha256": {
+        "Problem statement": "317274c05ce6a112b423194154b06e5ad6d807f8d8d95cf0e759c2fa5259698f",
+        "Application": "f37689976e073bdeaa8f95a744796458115dc4fda3bd0a359f7adf26741e8371",
+        "References": "d00469d906717c8b938f13f7162dc65a279bc6cac5dc96c6660f012ce1e4d7f8"
+      }
+    },
+    {
+      "id": "572",
+      "file": "problems/572-half-integral-ehrhart-count.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "6ed740a36d56ccfd05a3582597ca5b552d5995cfd1985f8730ed3e7a7d7ecd8f",
+        "Application": "b5d96dc06072404fcc8e490ca4615e9ba83e1b569c05c724ab4b74ad1691ab63",
+        "References": "9d4d062233ec5b45ea8d7fc9da22885590799f2043cdd2ea05d8a2c32c3874d2"
+      },
+      "current_section_sha256": {
+        "Problem statement": "6ed740a36d56ccfd05a3582597ca5b552d5995cfd1985f8730ed3e7a7d7ecd8f",
+        "Application": "b5d96dc06072404fcc8e490ca4615e9ba83e1b569c05c724ab4b74ad1691ab63",
+        "References": "9d4d062233ec5b45ea8d7fc9da22885590799f2043cdd2ea05d8a2c32c3874d2"
+      }
+    },
+    {
+      "id": "577",
+      "file": "problems/577-repeated-gue-strong-freeness.md",
+      "status": "Solved",
+      "metadata_file": "data\\probability-statistics.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "038d8b75e39671494dff14bcc305d041905c42c83501abd986259a0af4c88930",
+        "Application": "cb5a0a468534c330731c4f068e3405fff7192af1da8be0104c5b8062045a0507",
+        "References": "8301b9f68adba1cbd232fd79546f02a08abc72d09726dd2b9d78b90324176ee5"
+      },
+      "current_section_sha256": {
+        "Problem statement": "038d8b75e39671494dff14bcc305d041905c42c83501abd986259a0af4c88930",
+        "Application": "cb5a0a468534c330731c4f068e3405fff7192af1da8be0104c5b8062045a0507",
+        "References": "8301b9f68adba1cbd232fd79546f02a08abc72d09726dd2b9d78b90324176ee5"
+      }
+    },
+    {
+      "id": "578",
+      "file": "problems/578-nearest-hurwitz-real-minimizer.md",
+      "status": "Solved",
+      "metadata_file": "data\\numerical-analysis.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "4dd25caa6d700abe7067e914d9d5a82cdffbd3ed37febc46c48cd48085880d76",
+        "Application": "4133b72f691bc3b7b765c67dc380587e53f837f5d5cbb5f214a0c01c76f6dcfc",
+        "References": "de5ccb80d6e3b5aa8a1519198d2835f4e13e3bf6f2bdf5cd98496e9917aeab84"
+      },
+      "current_section_sha256": {
+        "Problem statement": "4dd25caa6d700abe7067e914d9d5a82cdffbd3ed37febc46c48cd48085880d76",
+        "Application": "4133b72f691bc3b7b765c67dc380587e53f837f5d5cbb5f214a0c01c76f6dcfc",
+        "References": "de5ccb80d6e3b5aa8a1519198d2835f4e13e3bf6f2bdf5cd98496e9917aeab84"
+      }
+    },
+    {
+      "id": "593",
+      "file": "problems/593-red-blue-segment-grid.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "b8ae47d5e958004e6679300dded639777bd77bc73d0fc8354527925c91129a0b",
+        "Application": "cac8ad517d38f2a1babe9bade59aaeb97cc55c13f5280ad4718f6174dd221a0c",
+        "References": "f43a9cb4f466e2c36bfd19d67965b962629c5da88b1cf619ed36894475427416"
+      },
+      "current_section_sha256": {
+        "Problem statement": "b8ae47d5e958004e6679300dded639777bd77bc73d0fc8354527925c91129a0b",
+        "Application": "cac8ad517d38f2a1babe9bade59aaeb97cc55c13f5280ad4718f6174dd221a0c",
+        "References": "f43a9cb4f466e2c36bfd19d67965b962629c5da88b1cf619ed36894475427416"
+      }
+    },
+    {
+      "id": "596",
+      "file": "problems/596-fat-convex-transversal-pq.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "65dcf8a102806b53e2787fc0527f0e913319a5c15343904c3d64f24fd2202bb0",
+        "Application": "30f56e2cd256c7b569f44e7434325c0594f2c05d42512e00909f9fb6fce6ea2f",
+        "References": "21e47f7143e8b59d08772880126e1813095bba440484911ae266df30c2b62ec1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "65dcf8a102806b53e2787fc0527f0e913319a5c15343904c3d64f24fd2202bb0",
+        "Application": "30f56e2cd256c7b569f44e7434325c0594f2c05d42512e00909f9fb6fce6ea2f",
+        "References": "21e47f7143e8b59d08772880126e1813095bba440484911ae266df30c2b62ec1"
+      }
+    },
+    {
+      "id": "602",
+      "file": "problems/602-surface-girth-facial-linear-bound.md",
+      "status": "Solved",
+      "metadata_file": "data\\optimization-information.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "5871a7e1c1f9f6d8707c4bc97c1dcabf6257e2edddb07d9a345cd21c5effd9d6",
+        "Application": "bb27430cfad0ea9a84880f1194a9d8941ee8eec0207a239271cad6dbbbda8d0c",
+        "References": "8f24b1789d0a5b701ff80b8d01dfcdc89369e690e0d63807b126e4d264c4bc90"
+      },
+      "current_section_sha256": {
+        "Problem statement": "5871a7e1c1f9f6d8707c4bc97c1dcabf6257e2edddb07d9a345cd21c5effd9d6",
+        "Application": "bb27430cfad0ea9a84880f1194a9d8941ee8eec0207a239271cad6dbbbda8d0c",
+        "References": "8f24b1789d0a5b701ff80b8d01dfcdc89369e690e0d63807b126e4d264c4bc90"
+      }
+    },
+    {
+      "id": "610",
+      "file": "problems/610-reflexive-polytope-facet-bound.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "66177de57e94dac0af74f9de0ca09d737eff80ef5ee6ec95031e674ffc4745bf",
+        "Application": "bc735c91533a66de7d4eb87e67f1fa7a2a7cf288cb8123b74b4ea75577b3a131",
+        "References": "c7e11b7eb7f4a1a21a1603ca59c79612e7e6920d38acaa6ecfbc934552be5020"
+      },
+      "current_section_sha256": {
+        "Problem statement": "66177de57e94dac0af74f9de0ca09d737eff80ef5ee6ec95031e674ffc4745bf",
+        "Application": "bc735c91533a66de7d4eb87e67f1fa7a2a7cf288cb8123b74b4ea75577b3a131",
+        "References": "c7e11b7eb7f4a1a21a1603ca59c79612e7e6920d38acaa6ecfbc934552be5020"
+      }
+    },
+    {
+      "id": "619",
+      "file": "problems/619-spanning-holed-sphere-triangulation.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "9876029028ac2c0adbe11abb515ac6ee3378a9d47ddb155ca90e8baee1cfac4e",
+        "Application": "15b4c31e9d1c2e89cbb1fec65d16db107096d6bd63b7b2ad1acbc54742d5d5dc",
+        "References": "7a5dc2ef00bb0f11f784a854bf2b8630e791c7d94cb21c95841c921cdbd1734c"
+      },
+      "current_section_sha256": {
+        "Problem statement": "9876029028ac2c0adbe11abb515ac6ee3378a9d47ddb155ca90e8baee1cfac4e",
+        "Application": "15b4c31e9d1c2e89cbb1fec65d16db107096d6bd63b7b2ad1acbc54742d5d5dc",
+        "References": "7a5dc2ef00bb0f11f784a854bf2b8630e791c7d94cb21c95841c921cdbd1734c"
+      }
+    },
+    {
+      "id": "627",
+      "file": "problems/627-periodic-costas.md",
+      "status": "Solved",
+      "metadata_file": "data\\optimization-information.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "48d89bb9dcdd5c3165ff9c66f29db3eb10ea7f5588a246705a06ce8838039d92",
+        "Application": "7f1f82e560205e898ee3ff714c80701c242c580f8f8f2602b3790072b4f01088",
+        "References": "e36bcabbcd535159f058d0731ae0472e3c886cca60c27764e965ecd92c493e28"
+      },
+      "current_section_sha256": {
+        "Problem statement": "48d89bb9dcdd5c3165ff9c66f29db3eb10ea7f5588a246705a06ce8838039d92",
+        "Application": "7f1f82e560205e898ee3ff714c80701c242c580f8f8f2602b3790072b4f01088",
+        "References": "e36bcabbcd535159f058d0731ae0472e3c886cca60c27764e965ecd92c493e28"
+      }
+    },
+    {
+      "id": "628",
+      "file": "problems/628-odd-euler-flag-no-square.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "c5b24ac2e7f60b188149273aeca9e013d9c5fd2912b75ae20f47b8716864fd30",
+        "Application": "a45656bb3ee75c79e884eb7a3d8ef0e9b803f78f9c7147a5e0318ace212c2ace",
+        "References": "bae5f04028f0731c7af6db5c71394a69b721d2bd3d402776c612a577a1ae2d0e"
+      },
+      "current_section_sha256": {
+        "Problem statement": "c5b24ac2e7f60b188149273aeca9e013d9c5fd2912b75ae20f47b8716864fd30",
+        "Application": "a45656bb3ee75c79e884eb7a3d8ef0e9b803f78f9c7147a5e0318ace212c2ace",
+        "References": "bae5f04028f0731c7af6db5c71394a69b721d2bd3d402776c612a577a1ae2d0e"
+      }
+    },
+    {
+      "id": "629",
+      "file": "problems/629-extrapolation-discreteness.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "14d60059a3bab442bee2943951714a76e872decaae92e3dfd44dec3861b1dd10",
+        "Application": "b438753e44f2cf28f8f81fa23a09833fa55c75aa055afcaa9e4cff259ef30039",
+        "References": "1870847ab2c20d99d29d5509c0d3db9c401857bc5d285038c025ab7484880065"
+      },
+      "current_section_sha256": {
+        "Problem statement": "14d60059a3bab442bee2943951714a76e872decaae92e3dfd44dec3861b1dd10",
+        "Application": "b438753e44f2cf28f8f81fa23a09833fa55c75aa055afcaa9e4cff259ef30039",
+        "References": "1870847ab2c20d99d29d5509c0d3db9c401857bc5d285038c025ab7484880065"
+      }
+    },
+    {
+      "id": "630",
+      "file": "problems/630-extrapolation-relative-density.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "53a6a6c9f9a1fe84384fd973a682d8626c41123b3ff0859ae54ea8cab7d640de",
+        "Application": "c28b2512069ff9b8dd0c823ebfb08419ceb026d791f98a3260bd2ad4489954d5",
+        "References": "a589f81e816d2143c8faec51b67954d56e2c2488b359ef2cbf97f0a0e8fc9dca"
+      },
+      "current_section_sha256": {
+        "Problem statement": "53a6a6c9f9a1fe84384fd973a682d8626c41123b3ff0859ae54ea8cab7d640de",
+        "Application": "c28b2512069ff9b8dd0c823ebfb08419ceb026d791f98a3260bd2ad4489954d5",
+        "References": "a589f81e816d2143c8faec51b67954d56e2c2488b359ef2cbf97f0a0e8fc9dca"
+      }
+    },
+    {
+      "id": "635",
+      "file": "problems/635-bounded-crossing-heilbronn.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "3869c3b007ef97c2f60436658ae0ddf2039d6474bfba35cdeebb20ae589c3261",
+        "Application": "e8ec5428bb28c92c6aa8cb1aa58e2b91c582047337d613ffa03e91c0e1f8317c",
+        "References": "1d4b6655e54e481ed0aa81c23e5af8948b495ccf92113bad1a5e9eb799b379dd"
+      },
+      "current_section_sha256": {
+        "Problem statement": "3869c3b007ef97c2f60436658ae0ddf2039d6474bfba35cdeebb20ae589c3261",
+        "Application": "e8ec5428bb28c92c6aa8cb1aa58e2b91c582047337d613ffa03e91c0e1f8317c",
+        "References": "1d4b6655e54e481ed0aa81c23e5af8948b495ccf92113bad1a5e9eb799b379dd"
+      }
+    },
+    {
+      "id": "640",
+      "file": "problems/640-random-balanced-cayley-expansion.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "fce410c5910c6aa51628a3c66952214ecc9494492064e67b814a36e401b72d47",
+        "Application": "ff194e0151ab67408dc02652450565d941082e041d409cc0082c418b45b8748b",
+        "References": "ca01f3cccff2dd1c7f3a5742b46f25a731acf91347cbdbac21b9d406ada06169"
+      },
+      "current_section_sha256": {
+        "Problem statement": "fce410c5910c6aa51628a3c66952214ecc9494492064e67b814a36e401b72d47",
+        "Application": "ff194e0151ab67408dc02652450565d941082e041d409cc0082c418b45b8748b",
+        "References": "ca01f3cccff2dd1c7f3a5742b46f25a731acf91347cbdbac21b9d406ada06169"
+      }
+    },
+    {
+      "id": "643",
+      "file": "problems/643-low-degree-simplicial-zero-spectrum.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "ece911071b926395fbbb1c8e0e0ae872fa06626a9243ddb780e687ed360a5713",
+        "Application": "e3e589123ce370cc097df04998b1e9445b7e6af465df07ef2d409268663929b8",
+        "References": "9f69d2571c266562c868d7b4c823d8b51351a4343ea5fd0329c972981b0b229b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "ece911071b926395fbbb1c8e0e0ae872fa06626a9243ddb780e687ed360a5713",
+        "Application": "e3e589123ce370cc097df04998b1e9445b7e6af465df07ef2d409268663929b8",
+        "References": "9f69d2571c266562c868d7b4c823d8b51351a4343ea5fd0329c972981b0b229b"
+      }
+    },
+    {
+      "id": "644",
+      "file": "problems/644-medial-regime-topological-complexity.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "01565a0cea846f59278e4cad958fda70bca76b1a4a03ff5d32b5612ca5eb0b4d",
+        "Application": "91ee1bd94dbf283ffc90abd21d69bf6b6b22ced05a246e9e0a797e9fa728fe51",
+        "References": "d26b3493c46f84c9c74c7b18b05f7acd82b2cef7abb465ba0b99fe29feaa9798"
+      },
+      "current_section_sha256": {
+        "Problem statement": "01565a0cea846f59278e4cad958fda70bca76b1a4a03ff5d32b5612ca5eb0b4d",
+        "Application": "91ee1bd94dbf283ffc90abd21d69bf6b6b22ced05a246e9e0a797e9fa728fe51",
+        "References": "d26b3493c46f84c9c74c7b18b05f7acd82b2cef7abb465ba0b99fe29feaa9798"
+      }
+    },
+    {
+      "id": "645",
+      "file": "problems/645-finite-three-ample-nonsimply-connected.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "ab5a6b2efe83549b450ec65353b18295ad9d5bb9e3dc682f5575906bf61ff617",
+        "Application": "99299f8a92f8b0479508417ea7fc27aa8c7282d741f82e59a5e3d247ff8026c3",
+        "References": "bda91a5be0f993308c4b336e3a1ab2fd69d8a917afdd46776c8bcafa4357c8da"
+      },
+      "current_section_sha256": {
+        "Problem statement": "ab5a6b2efe83549b450ec65353b18295ad9d5bb9e3dc682f5575906bf61ff617",
+        "Application": "99299f8a92f8b0479508417ea7fc27aa8c7282d741f82e59a5e3d247ff8026c3",
+        "References": "bda91a5be0f993308c4b336e3a1ab2fd69d8a917afdd46776c8bcafa4357c8da"
+      }
+    },
+    {
+      "id": "647",
+      "file": "problems/647-polytopal-connectivity-last-isolated-point.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "0de1dd09e4b51f5889dd023f8ea8a16b667188b605b747ee752290ed782e7fdf",
+        "Application": "33edeaf000782dd07b2ec63124eb7dbb1d8a33fa9ab2591ee94bae0b6e4f5f2a",
+        "References": "ccac856a252189fabca86ca7d29ed02507dd2d0538924944390b561fa1cd6187"
+      },
+      "current_section_sha256": {
+        "Problem statement": "0de1dd09e4b51f5889dd023f8ea8a16b667188b605b747ee752290ed782e7fdf",
+        "Application": "33edeaf000782dd07b2ec63124eb7dbb1d8a33fa9ab2591ee94bae0b6e4f5f2a",
+        "References": "ccac856a252189fabca86ca7d29ed02507dd2d0538924944390b561fa1cd6187"
+      }
+    },
+    {
+      "id": "648",
+      "file": "problems/648-polyhedral-most-isolated-point-location.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "8ccfeb462e2dbd5a719e1de8d726f25381fe1a97dddc4ee7cd77e803a13f2284",
+        "Application": "9958e24c972f3426b59d4e03275b90364664aa651fd92fc4edf53cf352bef0e5",
+        "References": "4d0f44cbf74ffed319aae0a3f83635d67d5cdca29e266950669778486e2496d1"
+      },
+      "current_section_sha256": {
+        "Problem statement": "8ccfeb462e2dbd5a719e1de8d726f25381fe1a97dddc4ee7cd77e803a13f2284",
+        "Application": "9958e24c972f3426b59d4e03275b90364664aa651fd92fc4edf53cf352bef0e5",
+        "References": "4d0f44cbf74ffed319aae0a3f83635d67d5cdca29e266950669778486e2496d1"
+      }
+    },
+    {
+      "id": "649",
+      "file": "problems/649-random-digraph-path-homology-vanishing.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "44dc2e77b815d629a597188973c620e826fda056f2cab2dd1ab9dad0bc78c0e4",
+        "Application": "70a411a757268bc2ccea7f5e2f5f08ca3c96ac7f87dc07dcd5d3d523714ed775",
+        "References": "e84027f35b7dc6395c28cc46b2f49bd3486dbf7d40b642e51a02f21d3d346b2b"
+      },
+      "current_section_sha256": {
+        "Problem statement": "44dc2e77b815d629a597188973c620e826fda056f2cab2dd1ab9dad0bc78c0e4",
+        "Application": "70a411a757268bc2ccea7f5e2f5f08ca3c96ac7f87dc07dcd5d3d523714ed775",
+        "References": "e84027f35b7dc6395c28cc46b2f49bd3486dbf7d40b642e51a02f21d3d346b2b"
+      }
+    },
+    {
+      "id": "650",
+      "file": "problems/650-random-digraph-path-betti-central-limit.md",
+      "status": "Solved",
+      "metadata_file": "data\\geometry-topology.json",
+      "preserved_sections": {
+        "Problem statement": true,
+        "Application": true,
+        "References": true
+      },
+      "baseline_section_sha256": {
+        "Problem statement": "dda5e2ee208726831cca953a316b66665ac8fb2b3c116848454ea3bd60aface9",
+        "Application": "c8e298139fbcdf54e44c00c80a4725ecb72a0cc99a21dcc39564b1346f83af5d",
+        "References": "5993806e133bec3bf7b9e572720e551bb7ac9563b4ff98680b6a54af754b9991"
+      },
+      "current_section_sha256": {
+        "Problem statement": "dda5e2ee208726831cca953a316b66665ac8fb2b3c116848454ea3bd60aface9",
+        "Application": "c8e298139fbcdf54e44c00c80a4725ecb72a0cc99a21dcc39564b1346f83af5d",
+        "References": "5993806e133bec3bf7b9e572720e551bb7ac9563b4ff98680b6a54af754b9991"
+      }
+    }
+  ]
+}

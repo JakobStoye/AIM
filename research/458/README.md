@@ -1,12 +1,14 @@
 # Local no-slip Navier--Stokes equations under stochastic parabolicity
 
+**Maintainer review, 15 October 2026: partial progress.** Section 3.3 invokes the original KKW comparison theorem without the compatible fractional right-inverse estimates required by the 2013 Kunstmann--Weis erratum. The full local existence and continuous-dependence claim is therefore not established by this submission. The [independent AI review](../solution_reviews/2026-10-15-active-prs/458-review.md) records the precise gap, verified uniqueness for existing solutions, and the zero/small-noise cases. The original argument below is retained as a proposed proof.
+
 Kaiwen Jin, 16 October 2026.
 
 This package submits a complete analytic solution claim for [AIM Problem 458](https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/458-stochastic-navier-stokes-no-slip-local.md), fixed target revision `a153f469ee0ea64e876b2ad97c79d252c19a3e22`. It awaits independent mathematical review.
 
 Theorem 1.1 treats every bounded smooth three-dimensional domain, every positive viscosity, and every finite smooth solenoidal boundary-tangent noise family satisfying the stated stochastic parabolicity condition. It asserts an adapted local solution with an almost surely positive lifetime, continuity in the requested Besov space, the requested time-integrated no-slip Sobolev regularity, uniqueness throughout that path class, and continuous dependence in probability after common stopping. No additional noise-amplitude smallness or interior rank restriction is imposed.
 
-- [Complete manuscript, PDF](paper/paper.pdf) (20 pages).
+- [Submitted manuscript with maintainer note, PDF](paper/paper.pdf).
 - [Editable LaTeX source](paper/paper.tex).
 - [Requirement-by-requirement comparison](TARGET_COMPARISON.md).
 - [Content manifest](PUBLIC_MANIFEST.json) and [checksums](SHA256SUMS).

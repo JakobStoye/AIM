@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-15",
+  "linux": [
+    {
+      "check": "generate",
+      "exit_code": 0,
+      "log_sha256": "2ba188f899c40913cb25f4e5abb491c550bb4e0917b2671787d9484c834fa417",
+      "summary": "Wrote README.md, CATALOG.md, RESOLVED.md with 425 open targets and 240 retained entries.\n"
+    },
+    {
+      "check": "catalogue",
+      "exit_code": 0,
+      "log_sha256": "a1d96cfdeac03f6737dede9e8524f36f1edbe036404d5ed0a7b0d19bb28c34c0",
+      "summary": "Validated 651 unique problems, metadata, required sections, math delimiters, local links, and freshness of README.md, CATALOG.md, RESOLVED.md.\n"
+    },
+    {
+      "check": "full_tests",
+      "exit_code": 0,
+      "log_sha256": "302dab40ce93bad595d21904bab184c9c8f3aa7091a64e83c29c6039c7329f8f",
+      "summary": "...........................................................\n----------------------------------------------------------------------\nRan 59 tests in 156.759s\n\nOK\n"
+    }
+  ],
+  "windows": {
+    "catalogue_generate_exit_code": 0,
+    "focused_tests": 12,
+    "test_classes": [
+      "ResolutionPresentationTests",
+      "MathFormattingTests",
+      "NumberAllocationTests"
+    ],
+    "exit_code": 0
+  },
+  "notes": "Complete suite ran on an isolated staged Git snapshot. Subsequent changes were verification receipts, whitespace and explicit pending-review prose; final staged-tree catalogue validation is repeated before commit."
+}

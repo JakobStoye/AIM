@@ -1,0 +1,17 @@
+# AIM 185: independent audit of PR #144
+
+Date: 2026-10-15. Reviewer: independent OpenAI Codex AI context; no human or Lean verification is claimed.
+
+Pinned submission: [189bc466d46e119d7c7765bce1d41618746062fd](https://github.com/MColbrook/AIM/pull/144), compared with the original a153f469ee0ea64e876b2ad97c79d252c19a3e22 target and current problem page.
+
+**Decision:** Solved. The stirred catalytic model poisons to CO almost surely at every site for every admitted iid law with positive CO density.
+
+**Scope:** The entire manuscript, bibliography, package README, target comparison, AI disclosure and ancillary build/manifest material were read. The analytic proof was independently reconstructed; submission-internal AI reviews were not treated as evidence of correctness. Every submitted PDF page was visually inspected in the maintainer-rendered contact sheets. No clipping, missing mathematics, unreadable glyphs or broken cross-reference was found. Package hash and independent rebuild results are recorded separately by the maintainer.
+
+The rates, unordered-edge convention, translation invariant iid initial law and all positive finite parameters match AIM185. The conclusion is sitewise eventual fixation, which implies the requested finite-set limit; it is stronger than convergence of a one-site density.
+
+The density balances in Section 2 were recomputed. Oxygen adsorption contributes at most q times the vacancy density, reactions remove the same amount of each species, and exchanges cancel in the mean. Thus the signed density has derivative at least (p-q) times vacancy density. Its bounded range makes the time integral of vacancies finite. The CO balance makes the integrated reaction rate finite. Counting every clock that can change an origin state then bounds its expected total number of changes, including stirring: a mixed edge is controlled by vacancy terms or by its reaction intensity. Finite expectation gives almost-sure finite changes without assuming independence of neighboring states at positive times.
+
+On a countable probability-one event, every positive-rate clock rings arbitrarily late and every site fixes. An eventual vacancy or unlike neighboring colors would be changed by a later clock, so every site has the same eventual color. The marked product construction is translation ergodic: the explicit finite-cylinder approximation and disjoint translation prove the zero-one law used here. An all-oxygen limit would send the signed mean to -1, contradicting its nondecrease from 2a_1+a_0-1>-1. Hence the eventual color is CO. This is the necessary color-selection step, rather than merely exclusion of coexistence.
+
+Appendix A constructs the infinite-volume process by backward dependency paths, whose probabilities sum with the factorial time-simplex bound. Its adapted clock-counting identity follows by deterministic dyadic approximation, so the expected count calculation has a valid compensator justification. The Durrett–Swindle reference is correctly historical; the mathematical fixation and selection argument is supplied here. The cited [Durrett notes](https://sites.math.duke.edu/~rtd/PASTA/PASTA0902.pdf) identify the original problem, but that historical PDF was unavailable through the browsing cache in this audit. No theorem from that inaccessible item is required for the reconstructed proof. Probability-space and Poisson facts are standard and explicitly implemented in the appendix.

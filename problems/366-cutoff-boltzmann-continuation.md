@@ -2,9 +2,9 @@
 
 **Area:** Rarefied gases; nonlinear kinetic transport
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -32,6 +32,16 @@ The criterion would distinguish breakdown caused by concentration of observable 
 2. R. T. Glassey, [*The Cauchy Problem in Kinetic Theory*](https://doi.org/10.1137/1.9781611971477), SIAM (1996), §§1.2–1.5, pp. 5–14, and Chapter 3, §§3.6–3.14 (hard-sphere collision operator and perturbative Cauchy theory).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #140](https://github.com/MColbrook/AIM/pull/140). Counterexample to rapid-decay continuation in the explicitly stated broad class of jointly smooth solutions, using a positive inverse-sixth-power tail from Gaussian data.
+
+[Proof or source](../research/solutions/366-cutoff-boltzmann-rapid-decay/paper/main.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/366-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The homogeneous nonnegative pointwise-smooth solution satisfies all original initial-Schwartz and uniform mass/energy/entropy hypotheses but cannot have a rapidly decaying endpoint extension. It already continues smoothly in a polynomially weighted class.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

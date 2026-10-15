@@ -192,8 +192,11 @@
     "title": "A real nearest matrix with spectrum in the closed left half-plane",
     "area": "Numerical linear algebra and matrix optimization",
     "file": "problems/578-nearest-hurwitz-real-minimizer.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Negative",
+    "proof": "https://arxiv.org/pdf/2609.14828v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_90_114.md"
   },
   {
     "id": "581",

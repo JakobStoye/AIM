@@ -154,8 +154,11 @@
     "title": "An extreme solitary wave for the bidirectional Whitham system",
     "area": "Nonlinear water-wave models",
     "file": "problems/162-extreme-bidirectional-solitary-wave.md",
-    "status": "Open",
-    "last_checked": "2026-09-08"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "An extreme solitary wave exists for the exact bidirectional Whitham model.",
+    "proof": "research/solutions/162-extreme-bidirectional-solitary-wave/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/162-review.md"
   },
   {
     "id": "163",
@@ -237,8 +240,11 @@
     "title": "Sharp weak integrability of planar Monge–Ampère Hessians",
     "area": "Nonlinear elliptic PDEs / optimal transport",
     "file": "problems/390-planar-monge-ampere-sharp-hessian-integrability.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Local strong Hessian integrability at the requested exponent for the full planar Alexandrov class, implying the weak endpoint estimate.",
+    "proof": "research/solutions/390-planar-monge-ampere-sharp-hessian-integrability/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/390-review.md"
   },
   {
     "id": "391",
@@ -256,24 +262,33 @@
     "title": "Regularity of transport interfaces for nonconvex polyhedral targets",
     "area": "Monge–Ampère PDEs / optimal transport",
     "file": "problems/392-polyhedral-transport-singular-interface.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative codimension-two transport-interface regularity",
+    "proof": "https://arxiv.org/pdf/2610.18756v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "393",
     "title": "Singular-set dimension of polyhedral partial-transport free boundaries",
     "area": "Free-boundary PDEs / optimal transport",
     "file": "problems/393-polyhedral-partial-transport-free-boundary.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: affirmative codimension-two partial-transport regularity",
+    "proof": "https://arxiv.org/pdf/2610.18756v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-scope-review_141_169.md"
   },
   {
     "id": "396",
     "title": "Polynomial decay for KdV with three critical linear modes",
     "area": "Dispersive PDEs / boundary stabilization",
     "file": "problems/396-critical-kdv-odd-mode-polynomial-decay.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Uniform small-data L2 decay with exponent one half at the exact critical length fourteen pi, for every real energy-class datum in one common small ball.",
+    "proof": "research/solutions/kdv-14pi-polynomial-decay/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/396-review.md"
   },
   {
     "id": "399",
@@ -288,8 +303,11 @@
     "title": "Concentric-ball optimality for thermal insulation with radiative heat transfer",
     "area": "Elliptic PDEs / nonlinear boundary laws",
     "file": "problems/400-radiative-insulation-concentric-balls.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Concentric-ball optimality for the full radiative insulation law.",
+    "proof": "research/solutions/400-radiative-insulation-concentric-balls/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/400-review.md"
   },
   {
     "id": "401",
@@ -307,16 +325,22 @@
     "title": "Uniform convergence of value functions in local mean-field games",
     "area": "Hamilton–Jacobi / Fokker–Planck PDE systems",
     "file": "problems/404-local-mfg-uniform-vanishing-viscosity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Whole-family local uniform vanishing-viscosity convergence for the exact quadratic local MFG in dimensions one through three, with initial vacuum allowed.",
+    "proof": "research/solutions/local-mfg-uniform-vanishing-viscosity/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/404-review.md"
   },
   {
     "id": "405",
     "title": "An algebraic vanishing-noise rate for kinetic mean-field games",
     "area": "Kinetic PDEs / mean-field games",
     "file": "problems/405-kinetic-mfg-vanishing-viscosity-rate.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "A dimension-independent half-power vanishing-noise density rate.",
+    "proof": "research/solutions/405-kinetic-mfg-vanishing-viscosity-rate/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/405-review.md"
   },
   {
     "id": "406",
@@ -355,8 +379,11 @@
     "title": "Intercritical norm inflation for the dispersion-managed Schrödinger equation",
     "area": "Nonlocal dispersive PDEs / nonlinear optics",
     "file": "problems/413-intercritical-dispersion-managed-norm-inflation.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Schwartz Gaussian data give the exact requested homogeneous quarter-Sobolev norm inflation at nonzero arbitrarily short negative times.",
+    "proof": "research/solutions/413-intercritical-dispersion-managed-norm-inflation/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/413-review.md"
   },
   {
     "id": "414",
@@ -371,8 +398,11 @@
     "title": "Positive equilibrium attraction for an irreversible catalytic reaction",
     "area": "Reaction–diffusion PDEs / chemical kinetics",
     "file": "problems/416-catalytic-reaction-diffusion-positive-attractor.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Uniform attraction to the positive equilibrium for every dimension, positive diffusivity triple and strictly positive compatible datum in the full stated mass range.",
+    "proof": "research/solutions/416-catalytic-reaction-diffusion-positive-attractor/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/416-review.md"
   },
   {
     "id": "418",

@@ -1,0 +1,54 @@
+[
+  {
+    "pr": 126,
+    "id": 162,
+    "pinned_head": "0537bbe23dca05b81c88df11e85b6c51a460e771",
+    "status": "Solved",
+    "outcome": "An extreme solitary wave exists for the exact bidirectional Whitham model.",
+    "proof": "research/solutions/162-extreme-bidirectional-solitary-wave/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/162-review.md",
+    "verified_progress": "The full prescribed positive, symmetric, monotone, zero-tail critical-crest traveling profile exists.",
+    "remaining_target": "",
+    "required_corrections": [],
+    "reply_summary": "Independent Codex AI review reconstructed the complete argument and checked the full target, all supplied content, primary references and every PDF page. An extreme solitary wave exists for the exact bidirectional Whitham model. Scope and validation limits are recorded above; no human or Lean verification is claimed."
+  },
+  {
+    "pr": 127,
+    "id": 405,
+    "pinned_head": "70f61fc9f49ac9ac53f07333308710e0984fc892",
+    "status": "Solved",
+    "outcome": "A dimension-independent half-power vanishing-noise density rate.",
+    "proof": "research/solutions/405-kinetic-mfg-vanishing-viscosity-rate/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/405-review.md",
+    "verified_progress": "The original weak minimizing densities satisfy the spacetime and terminal L2 estimates with exponent1/2 for every diffusivity in(0,1].",
+    "remaining_target": "",
+    "required_corrections": [],
+    "reply_summary": "Independent Codex AI review reconstructed the complete argument and checked the full target, all supplied content, primary references and every PDF page. A dimension-independent half-power vanishing-noise density rate. Scope and validation limits are recorded above; no human or Lean verification is claimed."
+  },
+  {
+    "pr": 128,
+    "id": 400,
+    "pinned_head": "e9d45c98722999ecb5b4aeb19c2c4ba872631448",
+    "status": "Solved",
+    "outcome": "Concentric-ball optimality for the full radiative insulation law.",
+    "proof": "research/solutions/400-radiative-insulation-concentric-balls/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/400-review.md",
+    "verified_progress": "The displayed inequality holds for every original dimension, parameter choice, measurable core and bounded Lipschitz outer set, including unused insulation.",
+    "remaining_target": "",
+    "required_corrections": [],
+    "reply_summary": "Independent Codex AI review reconstructed the complete argument and checked the full target, all supplied content, primary references and every PDF page. Concentric-ball optimality for the full radiative insulation law. Scope and validation limits are recorded above; no human or Lean verification is claimed."
+  },
+  {
+    "pr": 161,
+    "id": 42,
+    "pinned_head": "951b78861d0a47ad35322f10454e51614d7691dd",
+    "status": "Solved",
+    "outcome": "Selected bidiagonal triplets with fixed-format O(nk) work and gap-independent accuracy.",
+    "proof": "research/solutions/042-selected-bidiagonal-directions/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/042-review.md",
+    "verified_progress": "Ordered values, both residual equations and both orthogonality estimates hold in the explicitly stated fixed-format floating-arithmetic model; precision costs are disclosed.",
+    "remaining_target": "",
+    "required_corrections": [],
+    "reply_summary": "Independent Codex AI review reconstructed the complete argument and checked the full target, all supplied content, primary references and every PDF page. Selected bidiagonal triplets with fixed-format O(nk) work and gap-independent accuracy. Scope and validation limits are recorded above; no human or Lean verification is claimed."
+  }
+]

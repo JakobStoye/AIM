@@ -127,8 +127,11 @@
     "title": "Uniqueness of a hemispheric saddle profile on a magnetic sphere",
     "area": "Curved-film micromagnetics",
     "file": "problems/241-spherical-ferromagnet-profile-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: two-profile counterexample claim; public dependency closure inspected, local Lean replay pending.",
+    "proof": "https://prove2.me/theorems/2f49ead8-433f-4b5e-9fc9-c44349429863",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-root.md"
   },
   {
     "id": "304",
@@ -218,16 +221,22 @@
     "title": "Uniqueness of strong-KPP equilibria on general unbounded domains",
     "area": "Reaction–diffusion; population equilibria",
     "file": "problems/379-strong-kpp-unbounded-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Universal strong-KPP uniqueness fails on a uniformly smooth connected unbounded domain in dimension 21.",
+    "proof": "research/solutions/379-uniform-kpp-multiplicity/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/379-review.md"
   },
   {
     "id": "380",
     "title": "Extinction at the critical Dirichlet eigenvalue for strong-KPP reactions",
     "area": "Reaction–diffusion; critical habitat thresholds",
     "file": "problems/380-strong-kpp-critical-extinction.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Critical Dirichlet spectral equality can coexist with a bounded positive strong-KPP equilibrium on a uniformly smooth unbounded domain.",
+    "proof": "research/solutions/380-critical-kpp-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/380-review.md"
   },
   {
     "id": "381",
@@ -242,16 +251,22 @@
     "title": "Continuity of finite-cluster mass at the onset of Flory gelation",
     "area": "Coagulation equations; sol–gel phase transitions",
     "file": "problems/383-flory-gelation-mass-continuity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Finite-cluster mass is continuous and equals one at every finite positive onset of Flory gelation in the stated kernel class.",
+    "proof": "research/solutions/383-flory-gelation-mass-continuity/paper/flory_onset.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/383-review.md"
   },
   {
     "id": "384",
     "title": "Uniqueness of positive reaction–diffusion equilibria outside two obstacles",
     "area": "Reaction–diffusion; populations in perforated habitats",
     "file": "problems/384-reaction-two-obstacle-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Two disjoint disks admit two distinct bounded positive monostable Dirichlet equilibria for one admissible reaction.",
+    "proof": "research/solutions/384-two-disk-monostable-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/384-review.md"
   },
   {
     "id": "452",
@@ -274,32 +289,44 @@
     "title": "Uniqueness of positive harmonic profiles for singular stable operators in cones",
     "area": "Nonlocal elliptic PDEs; free-boundary blow-up profiles",
     "file": "problems/460-singular-stable-cone-positive-solution-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Positive integrable-growth harmonic profiles outside every admitted convex cone are proportional, including singular spectral measures.",
+    "proof": "research/solutions/460-singular-stable-cone-positive-solution-uniqueness/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/460-review.md"
   },
   {
     "id": "461",
     "title": "Comparison for viscosity solutions of infinity-fractional diffusion",
     "area": "Nonlinear parabolic PDEs; stochastic games",
     "file": "problems/461-infinity-fractional-evolution-comparison.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The specified relaxed infinity-fractional subsolution–supersolution comparison fails, even with identical smooth initial data.",
+    "proof": "research/solutions/461-relaxed-infinity-fractional-comparison/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/461-review.md"
   },
   {
     "id": "462",
     "title": "A finite-integrability ABP estimate for general nonlocal Pucci operators",
     "area": "Fully nonlinear nonlocal PDEs; maximum principles",
     "file": "problems/462-nonlocal-pucci-finite-integrability-abp.md",
-    "status": "Open",
-    "last_checked": "2026-10-16"
+    "status": "Solution claimed",
+    "last_checked": "2026-10-15",
+    "outcome": "Claim: negative for every strict ellipticity pair, claimed",
+    "proof": "https://arxiv.org/pdf/2610.16162v1",
+    "review": "research/solution_reviews/2026-10-15-active-prs/170-source-scope-review_115_140.md"
   },
   {
     "id": "463",
     "title": "Calderón–Zygmund estimates for general concave nonlocal equations",
     "area": "Fully nonlinear nonlocal PDEs; integrable forcing",
     "file": "problems/463-concave-nonlocal-calderon-zygmund.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The proposed kernel-uniform full-order Sobolev estimate fails at every finite sufficiently large p for strict ellipticity pairs.",
+    "proof": "research/solutions/463-concave-nonlocal-sobolev-counterexample/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/463-review.md"
   },
   {
     "id": "464",
@@ -330,8 +357,11 @@
     "title": "Continuity for degenerate fractional-pressure porous-medium flow",
     "area": "Nonlocal PDEs; degenerate diffusion regularity",
     "file": "problems/467-fractional-pressure-superquadratic-continuity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "For 1/2<s<1 and m>2 an existing bounded energy weak solution cannot have the requested global jointly continuous representative.",
+    "proof": "research/solutions/467-fractional-pressure-continuity-counterexample/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/467-review.md"
   },
   {
     "id": "468",
@@ -346,8 +376,11 @@
     "title": "The local limit of superlinear multispecies nonlocal diffusion",
     "area": "Cross-diffusion PDEs; population dispersal",
     "file": "problems/469-superlinear-skt-nonlocal-to-local-limit.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The regional superlinear SKT strong solutions converge along one global subsequence to a genuine no-flux local weak solution for every fixed s>1.",
+    "proof": "research/solutions/superlinear-skt-localization/paper/localization.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/469-review.md"
   },
   {
     "id": "470",
@@ -378,16 +411,22 @@
     "title": "Mass conservation for fractional porous-medium flow on noncompact manifolds",
     "area": "Nonlocal PDEs; conservation of diffusing mass",
     "file": "problems/473-manifold-fractional-pme-mass-conservation.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Every weak dual solution in the stated spatial-L1 class conserves its initial mass at every finite time.",
+    "proof": "research/solutions/473-manifold-fractional-pme-mass-conservation/paper/mass_conservation.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/473-review.md"
   },
   {
     "id": "474",
     "title": "Point-source solutions of fractional porous-medium diffusion on manifolds",
     "area": "Nonlocal PDEs; anomalous diffusion from a point source",
     "file": "problems/474-manifold-fractional-pme-point-source.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Every admitted complete manifold and positive point mass has a nonnegative distributional fractional porous-medium solution with the required positive-time continuity and initial trace.",
+    "proof": "research/solutions/474-manifold-fractional-pme-point-source/paper/manuscript.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/474-review.md"
   },
   {
     "id": "475",
@@ -426,16 +465,22 @@
     "title": "Finite propagation in fourth-order aggregation–diffusion",
     "area": "Degenerate parabolic PDEs; moving tissue boundaries",
     "file": "problems/481-fourth-order-aggregation-finite-propagation.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "Every stated compactly supported H1 probability datum admits one global fourth-order weak curve with bounded support on each finite horizon.",
+    "proof": "research/solutions/481-fourth-order-aggregation-finite-propagation/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/481-review.md"
   },
   {
     "id": "482",
     "title": "Unconditional uniqueness for entropy-dissipating reaction–diffusion",
     "area": "Reaction–diffusion PDEs; chemical kinetics",
     "file": "problems/482-entropy-reaction-diffusion-renormalized-uniqueness.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The unrestricted finite-entropy renormalized reaction–diffusion uniqueness assertion is false.",
+    "proof": "research/solutions/entropy-cubic-nonuniqueness/paper.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/482-review.md"
   },
   {
     "id": "483",
@@ -458,7 +503,10 @@
     "title": "Optimal obstacle regularity for stable jump kernels with only angular integrability",
     "area": "Nonlocal obstacle problems; anisotropic jump processes",
     "file": "problems/485-general-stable-obstacle-optimal-regularity.md",
-    "status": "Open",
-    "last_checked": "2026-09-22"
+    "status": "Solved",
+    "last_checked": "2026-10-15",
+    "outcome": "The full support-independent global C^(1,s) obstacle estimate holds for the stated integrable angular-density class.",
+    "proof": "research/solutions/485-general-stable-obstacle-optimal-regularity/paper/main.pdf",
+    "review": "research/solution_reviews/2026-10-15-active-prs/485-review.md"
   }
 ]

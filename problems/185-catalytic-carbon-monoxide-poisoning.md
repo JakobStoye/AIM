@@ -2,9 +2,9 @@
 
 **Area:** Catalytic surface reactions
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -26,6 +26,16 @@ A surface poisoned by CO can no longer oxidize the pollutant. The statement asks
 - [Rick Durrett and Glen Swindle, *Coexistence results for catalysts* (1994)](https://doi.org/10.1007/BF01192836), model and poisoning estimates.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #144](https://github.com/MColbrook/AIM/pull/144). The stirred catalytic model poisons to CO almost surely at every site for every admitted iid law with positive CO density.
+
+[Proof or source](../research/solutions/185-catalytic-carbon-monoxide-poisoning/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/185-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** The stirred catalytic model poisons to CO almost surely at every site for every admitted iid law with positive CO density.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

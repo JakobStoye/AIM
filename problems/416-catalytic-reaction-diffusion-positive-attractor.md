@@ -2,9 +2,9 @@
 
 **Area:** Reaction–diffusion PDEs / chemical kinetics
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -36,6 +36,16 @@ A catalyst can become depleted at a boundary equilibrium even when a positive ch
 2. K. Fellner, J. Morgan and B. Q. Tang, *Uniform-in-time bounds for quadratic reaction-diffusion systems with mass dissipation in higher dimensions*, Discrete and Continuous Dynamical Systems, Series S 14 (2021), 635–651, main boundedness theorem. [DOI](https://doi.org/10.3934/dcdss.2020334).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #129](https://github.com/MColbrook/AIM/pull/129). Uniform attraction to the positive equilibrium for every dimension, positive diffusivity triple and strictly positive compatible datum in the full stated mass range.
+
+[Proof or source](../research/solutions/416-catalytic-reaction-diffusion-positive-attractor/paper/manuscript.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/416-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Quadratic dissipation and forced-heat compactness remove spatial oscillations; a logistic equation with vanishing relative error proves catalyst persistence and identifies all limiting concentrations.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Literature check:** Open in cited literature; no later resolution located.
 

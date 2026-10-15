@@ -1,8 +1,8 @@
 # 648. Location of the most isolated point in a random polyhedral sample
 
 **Area:** Applied topology / stochastic geometry
-**Status:** 🔵 OPEN
-**Last checked:** 2026-09-24
+**Status:** ✅ SOLVED
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -36,5 +36,15 @@ The result would locate the sample points most vulnerable to isolation in geomet
 1. M. D. Penrose, X. Yang and F. Higgs, [Largest nearest-neighbour link and connectivity threshold in a polytopal random sample](https://doi.org/10.1007/s41468-023-00154-5), Journal of Applied and Computational Topology **8** (2024), 1723–1750, Introduction, p. 1724, and Corollary 2.3. [Preprint](https://arxiv.org/abs/2301.02506).
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #118](https://github.com/MColbrook/AIM/pull/118). Both noncritical spatial limits for the actual most-isolated point, with the stated tie rule.
+
+[Proof or source](../research/solutions/648-polyhedral-most-isolated-point-location/paper/polyhedral_isolation.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/648-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Both noncritical spatial limits for the actual most-isolated point, with the stated tie rule.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 The source explicitly proposes both spatial limits. Its strong law determines the leading size of the largest nearest-neighbour distance and identifies the dihedral-angle transition, but does not establish the proposed distribution of its location. Later connectivity results for smooth domains and polygons do not resolve this three-dimensional polyhedral statement. Current searches found no matching solution or announcement.

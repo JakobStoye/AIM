@@ -1,0 +1,19 @@
+# AIM 457: independent audit of PR #167
+
+Date: 2026-10-15. Reviewer: independent OpenAI Codex AI context; no human or Lean verification is claimed.
+
+Pinned submission: [b673e462dea5019dccd17d70a2f292501c6e6958](https://github.com/MColbrook/AIM/pull/167), compared with the original a153f469ee0ea64e876b2ad97c79d252c19a3e22 target and current problem page.
+
+**Decision:** Solved. Local well-posedness holds at the exact inhomogeneous B^(-1/2)_(6,4) endpoint for all prescribed transport families in AIM457.
+
+**Scope:** The entire manuscript, bibliography, package README, target comparison, AI disclosure and ancillary build/manifest material were read. The analytic proof was independently reconstructed; submission-internal AI reviews were not treated as evidence of correctness. Every submitted PDF page was visually inspected in the maintainer-rendered contact sheets. No clipping, missing mathematics, unreadable glyphs or broken cross-reference was found. Package hash and independent rebuild results are recorded separately by the maintainer.
+
+The theorem retains the whole-space projected Itô derivative noise, the finite compactly supported smooth solenoidal fields, strict stochastic parabolicity and every deterministic solenoidal datum in the usual inhomogeneous endpoint space. Both mild convolutions use the heat semigroup. Its uniqueness class has only almost-sure L4_tL6_x and continuous Besov norms, with no added probability-moment requirement.
+
+The deterministic bilinear heat estimate follows from the t^(-3/4) L3-to-L6 divergence kernel and one-dimensional Hardy–Littlewood–Sobolev at L2-to-L4. Its continuous endpoint trace is a separate dyadic square-function estimate, including the low-frequency block. The initial heat trajectory is in L4L6 and continuous in Besov even when the datum is not in L6. The projected variable transport B is bounded L6-to-H^(-1,6); no invalid commutation through the coefficient occurs.
+
+The published linear stochastic Stokes theorem is applied with time p=4, space q=6, weight zero and spatial shift delta=-1, giving X0=H^(-2,6), X1=L6, noise half-space H^(-1,6), and trace B^(-1/2)_(6,4). This linear theorem permits that shift although the source nonlinear critical theorem excludes the endpoint. A causal inverse of I-K is constructed through the full derivative-noise linear equation, not a smallness assumption on K. For stopping, only the forcing is extended by zero; the solution is not stopped inside an invalid anticipating kernel.
+
+The cumulative-past L4L6 cutoff has the global L2L3 Lipschitz bound proved in Lemma 3.1. A contraction on the whole probability-process space works for arbitrary data; stopping when the accumulated norm reaches the chosen radius gives a positive lifetime on which the original equation holds. For arbitrary competing solutions, bounded-norm random slabs make the difference probability-integrable and allow the stopped causal inverse estimate to absorb the deterministic bilinear term. Countable slab iteration proves uniqueness on the entire common lifetime without a random restart theorem. Truncated solution stability yields convergence in probability in both requested norms on common intervals, and the half-threshold argument proves those intervals do not collapse.
+
+The actual [Agresti–Veraar 2024 primary article](https://doi.org/10.1007/s00220-023-04867-7), Assumption 3.1, Theorem 3.2 and Remark 3.3, was checked. It allows every real spatial shift. Smooth compact fields satisfy its coefficient Sobolev conditions; the whole-space extension allows constant viscosity background and transport tending to zero. Its exact parabolicity matches the target. [The 2025 survey](https://arxiv.org/html/2501.18561v2), Definitions 3.7–3.8 and Proposition 3.11, supplies the localized maximal-regularity interface. The rest of the nonlinear endpoint, trace and stopping proof is supplied here; no excluded source nonlinear theorem is asserted at q=6.

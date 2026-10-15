@@ -1,0 +1,62 @@
+[
+  {
+    "file": "AV.pdf",
+    "url": "https://repository.tudelft.nl/file/File_783e6459-5d3b-4957-bcd3-64da5b8d9025",
+    "bytes": 2652440,
+    "sha256": "a66ffa2c1d88f2b46d563a3e4d3963bbc0f8623492e7e1837b4ae089008ad091"
+  },
+  {
+    "file": "BG.pdf",
+    "url": "https://arxiv.org/pdf/2511.19091v1",
+    "bytes": 2686881,
+    "sha256": "fab3402c4464fcd4e2bc211ad1918971a3326b4590ba1a430737570ccf34c060"
+  },
+  {
+    "file": "CM.pdf",
+    "url": "https://costabel.perso.math.cnrs.fr/publis/PoiBogdeRhv2.pdf",
+    "bytes": 261608,
+    "sha256": "fa3be1a2b9947c69edecf0ac30309848cd11c8f03069a56043d1a01a3751a2c4"
+  },
+  {
+    "file": "DK.pdf",
+    "url": "https://arxiv.org/pdf/1703.08327v1",
+    "bytes": 292204,
+    "sha256": "25597438fcefdf4886bd074b4eb3a218da5f903e2e06ada234fc01301f511342"
+  },
+  {
+    "file": "GW.pdf",
+    "url": "https://people.math.sc.edu/girardi/papers/22.pdf",
+    "bytes": 274031,
+    "sha256": "f9c3d0bb701da0b64cd43daaba9fdc1b4c21cd024c45b99f7cbc8d4bc528967f"
+  },
+  {
+    "file": "KKW.pdf",
+    "url": "https://kaltonmemorial.missouri.edu/assets/docs/ma2006.pdf",
+    "bytes": 446665,
+    "sha256": "a8322c4ef84bc422360d797623a84425a2b316beefbc06cc976859416562a543"
+  },
+  {
+    "file": "KKW-erratum.pdf",
+    "url": "https://kaltonmemorial.missouri.edu/assets/docs/ma2006a.pdf",
+    "bytes": 144511,
+    "sha256": "3879c0772769b6c2fac7af7bb8949dcd4a40a61d7cf0f73fc18dd902c45337a6"
+  },
+  {
+    "file": "PW.pdf",
+    "url": "https://arxiv.org/pdf/1703.08714v1",
+    "bytes": 312694,
+    "sha256": "56f5be2e8f2a0b6d7a9495a9be4eb3f6cf41c0adc506c9695228b23cd41339fa"
+  },
+  {
+    "file": "GoodairNavier.pdf",
+    "url": "https://arxiv.org/pdf/2308.04290v2",
+    "bytes": 603793,
+    "sha256": "86c27d8acfeb72413681ee0f7a3d428758eae9e368b678dcd4c0542cd3417b52"
+  },
+  {
+    "file": "GoodairPlates.pdf",
+    "url": "https://arxiv.org/pdf/2603.13199v2",
+    "bytes": 479530,
+    "sha256": "d198680133a2ba6aa786161be3fcc7835c325cc808314a09ca69eb347fb69994"
+  }
+]

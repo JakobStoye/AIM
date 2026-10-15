@@ -2,9 +2,9 @@
 
 **Area:** Random matrices and quantum many-body systems
 
-**Status:** 🔵 OPEN
+**Status:** ✅ SOLVED
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-15
 
 ## Problem statement
 
@@ -34,6 +34,16 @@ Nearest-neighbor quantum Hamiltonians can use one local interaction repeatedly a
 2. C.-F. Chen, J. Garza-Vargas and R. van Handel, [A new approach to strong convergence II: The classical ensembles](https://arxiv.org/html/2412.00593v3), revised 6 June 2026. Section 9.4, Theorem 9.8.
 
 ## Status review
+
+Reviewed 15 October 2026 against the original target in [PR #90](https://github.com/MColbrook/AIM/pull/90). Affirmative norm convergence for the full repeated-GUE three-leg model.
+
+[Proof or source](../research/solutions/kaiwen-jin-577/paper/repeated_gue_three_legs.pdf) · [Independent AI review](../research/solution_reviews/2026-10-15-active-prs/577-review.md). The linked review records the exact scope and verification limits; this is not human peer review or Lean verification.
+
+**Scope:** Every fixed complex noncommutative polynomial has the prescribed free-pair operator-norm limit in probability.
+
+### Earlier review notes
+
+The following historical notes are retained; the current decision and review date are given above.
 
 **Known comparison:** The corresponding model with independent local GUE matrices has strong convergence results. The general tensor theorem in [2] allows arbitrary overlap patterns and resolves the independent-matrix tensor questions from [1]. Its construction expressly requires independent local matrices.
 
