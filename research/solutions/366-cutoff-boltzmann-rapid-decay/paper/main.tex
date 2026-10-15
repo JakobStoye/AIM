@@ -1,0 +1,895 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Sph}{\mathbb S}
+\newcommand{\la}[1]{\langle #1\rangle}
+\newcommand{\calL}{\mathcal L}
+\newcommand{\dd}{\,d}
+\newcommand{\norm}[2]{\lVert #1\rVert_{#2}}
+\DeclareMathOperator{\supp}{supp}
+\title{Loss of rapid velocity decay in a broad smooth class\\
+for the cutoff Boltzmann equation}
+\author{Kaiwen Jin\\
+\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\hypersetup{
+ pdftitle={Loss of rapid velocity decay in a broad smooth class for the cutoff Boltzmann equation},
+ pdfauthor={Kaiwen Jin}}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct a spatially homogeneous, radial, nonnegative smooth solution of
+the full-sphere hard-sphere Boltzmann equation whose initial value is a
+Gaussian but whose velocity tail is a positive multiple of \(r^{-6}\) at
+every positive time. Mass is one, and energy and entropy have uniform finite
+upper bounds on a short time interval. This gives a negative answer to a
+literal rapid-decay continuation statement when smoothness means joint
+pointwise smoothness and no energy admissibility or positive-time Schwartz
+condition is part of the solution class. The solution itself continues
+smoothly in the critical weighted class: the example concerns loss of rapid
+velocity decay and does not establish local derivative blowup or resolve
+conservative continuation. The proof separates an explicit radial linear
+part from a nonlinear remainder with one extra power of decay, and proves
+nonnegativity by a compact-maximum argument. No novelty claim is made.
+\end{abstract}
+
+\section{Statement and interpretation}\label{sec:statement}
+
+Consider
+\begin{equation}\label{eq:boltzmann}
+ \partial_t f+v\cdot\nabla_xf=Q(f,f),\qquad
+ Q(F,F)(v)=\int_{\R^3}\int_{\Sph^2}|v-v_*|
+ [F(v')F(v_*')-F(v)F(v_*)]\dd\sigma\dd v_*,
+\end{equation}
+where
+\[
+ v'=\frac{v+v_*}{2}+\frac{|v-v_*|}{2}\sigma,\qquad
+ v_*'=\frac{v+v_*}{2}-\frac{|v-v_*|}{2}\sigma.
+\]
+The sphere has its usual surface measure of total area \(4\pi\);
+\(\T^3=\R^3/\mathbb Z^3\). All collision factors in
+\eqref{eq:boltzmann} have the same \(t,x\).
+
+The formulation of AIM problem 366 asks whether a nonnegative smooth
+solution on \([0,T)\times\T^3\times\R^3\), initially rapidly decreasing
+together with all derivatives, extends beyond \(T\) with the same rapid
+velocity decay if, uniformly in \(t,x\),
+\begin{equation}\label{eq:macroscopic}
+ m_0\leq\int_{\R^3}f\dd v\leq M_0,\qquad
+ \int_{\R^3}|v|^2f\dd v\leq E_0,\qquad
+ \int_{\R^3}f\log f\dd v\leq H_0.
+\end{equation}
+Here \(m_0,M_0,E_0>0\), \(H_0\in\R\), and \(0\log0=0\).
+We address the literal reading in which smoothness is joint pointwise
+\(C^\infty\) regularity. In particular, no energy inequality or locally
+uniform positive-time Schwartz membership is assumed. The distinction
+between these solution classes is essential to the conclusion.
+
+For the time regularity assertion, let \(X_6\) be the space of continuous
+radial profiles \(F:[0,\infty)\to\R\) with
+\[
+ \norm{F}{6}=\sup_{r\geq0}(1+r^2)^3|F(r)|<\infty.
+\]
+A homogeneous radial function is identified with its profile in this space.
+
+\begin{theorem}\label{thm:construction}
+There exist \(\varepsilon>0\), \(t_*>0\), and a nonnegative spatially
+homogeneous radial solution \(f\) of \eqref{eq:boltzmann}, jointly
+\(C^\infty\) on \([0,t_*]\times\T^3\times\R^3\), such that
+\begin{gather}
+ f(0,x,v)=\pi^{-3/2}e^{-|v|^2},\qquad
+ \int_{\R^3}f(t,x,v)\dd v=1,\label{eq:datum-mass}\\
+ \sup_{t,x}\int_{\R^3}|v|^2f(t,x,v)\dd v<\infty,\qquad
+ \sup_{t,x}\int_{\R^3}f(t,x,v)\log f(t,x,v)\dd v<\infty,\label{eq:bounds}\\
+ \lim_{r\to\infty}r^6f(t,x,r\omega)
+       =4\varepsilon e^{-1/t^2}>0
+ \quad(0<t\leq t_*,\ x\in\T^3,\ \omega\in\Sph^2).\label{eq:main-tail}
+\end{gather}
+All spatial and velocity derivatives of the initial datum are Schwartz.
+The solution is \(C^\infty\) in time with values in \(X_6\).
+\end{theorem}
+
+Smoothness at a closed time endpoint means smooth one-sided traces.
+The final \(t_*\) will lie strictly inside the interval on which the
+solution is constructed. Thus the example already has a smooth
+continuation in \(X_6\). For every \(0<T<t_*\), its restriction to
+\([0,T)\) satisfies \eqref{eq:macroscopic}, but its endpoint at \(T\)
+cannot be rapidly decreasing. No conclusion about blowup of local
+derivatives, or about the conservative or energy-admissible continuation
+problem, follows from this example.
+
+The cutoff regularity question is discussed in
+Silvestre's survey \cite[Section 8.5]{silvestre}. The formulation used
+here is the explicit hard-sphere statement of AIM problem 366.\footnote{We
+use this \href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/366-cutoff-boltzmann-continuation.md}{archived version of the problem statement}.
+The accompanying target comparison records its correspondence with the
+note. Its interpretation, rather than a
+claim to resolve every conventional formulation of conditional
+regularity, is the point of the example.}
+We use the account in Basile et al. \cite[Sections 1 and 7]{basile}
+for the energy-increasing weak-solution precedent and its attribution
+to Lu and Wennberg \cite{lu-wennberg}. Basile et al. also give a weak
+construction. Our reference to Lu--Wennberg follows that account; their
+full theorem statements remain unverified here. The account provides
+context for contributions from arbitrarily large velocities. We do not
+use a kinetic existence theorem from these works, and make no novelty
+or priority claim.
+
+The proof uses the leading radial operator
+\[
+ C_0F(r)=\frac4r\int_r^\infty sF(s)\dd s-rF(r).
+\]
+Its \(r^{-6}\) tail is critical: the two displayed terms cancel on that
+power. After a cutoff and a mass correction, the difference between the
+nonlinear collision operator and this leading part decays one power
+faster. We prescribe a flat positive tail, solve for a faster-decaying
+correction, and finally prove nonnegativity. Sections
+\ref{sec:radial}--\ref{sec:positive} give these steps.
+
+\section{Radial identities and leading terms}\label{sec:radial}
+
+Write \(r=|v|\), \(e=r^2\), \(F(r)=F(v)\), and
+\(G(e)=F(\sqrt e)\). We allow signed radial profiles until positivity has
+been proved. Define
+\[
+ m(F)=4\pi\int_0^\infty r^2F(r)\dd r,\qquad
+ \nu_F(v)=4\pi\int_{\R^3}|v-w|F(w)\dd w,
+\]
+and let \(Q^+(F_1,F_2)\) denote the gain integral with post-collision
+factors \(F_1(v')F_2(v_*')\). It is a symmetric bilinear map whenever the integral is
+absolute; symmetry follows by replacing \(\sigma\) with \(-\sigma\).
+Then \(Q(F,F)=Q^+(F,F)-\nu_FF\).
+
+For \(s>0\), put \(g_s(r)=\la r^{-s}\), where
+\(\la r=(1+r^2)^{1/2}\), and set
+\[
+ X_s=\{F\in C([0,\infty)):\norm{F}{s}
+       :=\sup_{r\geq0}\la r^s|F(r)|<\infty\}.
+\]
+Let \(X_s^0\) be the closed subspace on which
+\(\la r^sF(r)\to0\). Multiplication by \(\la r^s\) identifies \(X_s\)
+isometrically with the bounded continuous functions, so these spaces are
+Banach spaces. Compactly supported continuous profiles are dense in
+\(X_s^0\). Fix throughout
+\begin{equation}\label{eq:p}
+ p=\frac{13}{2},\qquad 6<p<7,\qquad
+ M(r)=\pi^{-3/2}e^{-r^2}.
+\end{equation}
+The Gaussian has mass one and satisfies \(Q(M,M)=0\) by conservation of
+the sum of the two squared speeds in a single collision. This identity
+does not assert an energy balance for a time-dependent solution.
+For \(j=0,1,2\),
+\[
+ \int_{\R^3}|v|^j|F(v)|\dd v
+ \leq4\pi\norm{F}{6}\int_0^\infty r^{j+2}(1+r^2)^{-3}\dd r<\infty.
+\]
+Thus mass and the first two absolute moments are bounded on \(X_6\).
+So are \(F\mapsto\int G(e)\dd e\) and
+\(F\mapsto\int eG(e)\dd e\).
+
+\subsection*{The exact collision formulas}
+For \(e>0\), define the tail and local integrals
+\begin{align*}
+ A_e&=\int_e^\infty G(s)\dd s,&
+ B_e&=\int_0^e\sqrt s\,G(s)\dd s,\\
+ D_e&=\int_e^\infty sG(s)\dd s,&
+ E_e&=\int_0^e s^{3/2}G(s)\dd s,\\
+ C_e&=\int_0^e\dd s\int_{e-s}^e\dd t\,
+        \sqrt{s+t-e}\,G(s)G(t).
+\end{align*}
+For every radial \(F\in X_6\),
+\begin{align}
+ \frac{Q^+(F,F)(r)}{8\pi^2}
+   &=A_e^2+\frac{2B_eA_e}{r}+\frac{C_e}{r},\label{eq:gain}\\
+ \frac{\nu_F(r)}{8\pi^2}
+   &=rB_e+\frac{E_e}{3r}+D_e+\frac e3A_e.\label{eq:loss}
+\end{align}
+Here and below the formulas at \(r=0\) mean their continuous limits.
+
+To check the normalization, the unsplit radial formula is
+\begin{equation}\label{eq:min}
+ \frac{Q(F,F)(r)}{8\pi^2}
+ =\frac1r\int_0^\infty\dd e_*\int_0^{e+e_*}\dd e_1\,
+ \min(\sqrt e,\sqrt{e_*},\sqrt{e_1},\sqrt{e_2})
+ [G(e_1)G(e_2)-G(e)G(e_*)],
+\end{equation}
+where \(e_2=e+e_*-e_1\).
+Indeed, for \(s=|v_*|\), let \(z\) be the cosine between \(v\) and
+\(v_*\), \(U=|v+v_*|\), and \(d=|v-v_*|\).
+If \(\theta\) is the angle between \(v+v_*\) and \(\sigma\), then
+\[
+ e_1=\frac{r^2+s^2+Ud\cos\theta}{2}.
+\]
+Thus \(e_1\) is uniform on an interval of length \(Ud\).
+The two azimuthal integrations
+give \(8\pi^2\,\dd z\,\dd e_1/(Ud)\). Multiplication by the hard-sphere
+factor \(d\) and use of \(\dd z=U\,\dd U/(rs)\) leave
+\(8\pi^2\,\dd U\,\dd e_1/(rs)\). For fixed output speeds the allowed
+\(U\)-interval is
+\[
+ [|r-s|,r+s]\cap
+ [|\sqrt{e_1}-\sqrt{e_2}|,\sqrt{e_1}+\sqrt{e_2}],
+\]
+of length \(2\min(r,s,\sqrt{e_1},\sqrt{e_2})\).
+Finally \(s\,\dd s=\dd e_*/2\) gives \eqref{eq:min}.
+
+For the gain, change variables from \((e_*,e_1)\) to
+\((\xi,\zeta)=(e_1,e_2)\). The Jacobian is one,
+\(e_*=\xi+\zeta-e\), and the domain is
+\(\xi,\zeta\geq0\), \(\xi+\zeta\geq e\).
+When both output energies exceed \(e\), the minimum kernel is \(\sqrt e=r\);
+after division by \(r\) this region contributes \(A_e^2\).
+If \(\xi\leq e\leq\zeta\), the minimum is \(\sqrt\xi\), and the
+contribution is \(B_eA_e/r\). The exchanged region contributes the
+same amount. In the remaining triangle
+\(\xi,\zeta\leq e\), \(\xi+\zeta\geq e\), the minimum is
+\(\sqrt{\xi+\zeta-e}\), giving \(C_e/r\).
+These three contributions prove \eqref{eq:gain}.
+
+For the loss, direct integration of the same kernel gives
+\[
+ \int_0^{e+e_*}
+ \min(\sqrt e,\sqrt{e_*},\sqrt y,\sqrt{e+e_*-y})\dd y
+ =\sqrt{\min(e,e_*)}
+   \left[\max(e,e_*)+\frac{\min(e,e_*)}{3}\right].
+\]
+Indeed, split \(y\) at \(\min(e,e_*)\) and \(\max(e,e_*)\).
+The two end integrals give \(4\min(e,e_*)^{3/2}/3\); the middle one
+is \(\sqrt{\min(e,e_*)}\,|e-e_*|\).
+After division by \(r\), the regions \(e_*\leq e\) and \(e_*\geq e\)
+give respectively \(rB_e+E_e/(3r)\) and \(D_e+eA_e/3\).
+This proves \eqref{eq:loss}.
+All coordinate changes can first be made for nonnegative profiles.
+The estimates below give finite majorants for the \(g_6\) envelope,
+and hence justify the signed formulas by absolute integration.
+
+There is no singularity at zero. Directly in the original operator,
+\[
+ Q^+(F,F)(0)=8\pi^2\left(\int_0^\infty G(s)\dd s\right)^2,\qquad
+ \nu_F(0)=8\pi^2\int_0^\infty sG(s)\dd s.
+\]
+For later smoothness arguments, the local terms have the useful forms
+\begin{align}
+ \frac{B_e}{r}
+   &=e\int_0^1\sqrt b\,G(eb)\dd b,&
+ rB_e&=e^2\int_0^1\sqrt b\,G(eb)\dd b,\nonumber\\
+ \frac{E_e}{3r}
+   &=\frac{e^2}{3}\int_0^1b^{3/2}G(eb)\dd b,&
+ \frac{C_e}{r}
+   &=e^2\int_0^1\dd b\int_{1-b}^1\dd d\,
+       \sqrt{b+d-1}\,G(eb)G(ed).\label{eq:origin}
+\end{align}
+They vanish to the stated orders at zero.
+
+\subsection*{The mass correction and the faster remainder}
+Choose a fixed smooth \(0\leq\chi\leq1\), zero on \([0,4]\) and one on
+\([8,\infty)\). For example, with \(\eta(u)=e^{-1/u}\) for \(u>0\) and
+zero otherwise, take
+\(\chi(r)=\eta(r-4)/[\eta(r-4)+\eta(8-r)]\).
+Recall that \(M\) is the unit-mass Gaussian in \eqref{eq:p}.
+For \(r>0\), the leading expression is
+\[
+ C_0F(r)=\frac4r\int_r^\infty sF(s)\dd s-rF(r).
+\]
+Define
+\begin{equation}\label{eq:cold}
+ C_{\rm raw}F=\chi C_0F,\qquad
+ \ell(F)=m(C_{\rm raw}F),\qquad
+ CF=C_{\rm raw}F-\ell(F)M,\qquad \calL F=4\pi CF.
+\end{equation}
+The raw expression is zero near zero. For \(s>4\), \(\ell\) is bounded
+on \(X_s\): the loss mass is controlled by
+\(\int_4^\infty r^3|F(r)|\dd r\), and Tonelli gives the same bound for
+the gain mass. In particular \(m(CF)=0\). The expression \(\calL F\)
+is defined pointwise on \(X_s\); it need not belong to \(X_s\).
+
+\begin{lemma}\label{lem:remainder}
+The map
+\[
+ R(F)=Q(F,F)-4\pi m(F)CF
+\]
+is a continuous quadratic map \(X_6\to X_7\), with
+\begin{align}
+ \norm{R(F)}{7}&\leq C\norm{F}{6}^2,\nonumber\\
+ \norm{R(F)-R(\widetilde F)}{7}
+ &\leq C(\norm{F}{6}+\norm{\widetilde F}{6})
+                \norm{F-\widetilde F}{6}.\label{eq:R}
+\end{align}
+It has zero mass. Since \(p<7\), its values belong to \(X_p^0\).
+On the affine space \(m(F)=1\),
+\begin{equation}\label{eq:split}
+ Q(F,F)=\calL F+R(F).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put \(B_\infty=\int_0^\infty\sqrt s\,G(s)\dd s=m(F)/(2\pi)\).
+For \(r\geq8\), subtraction of the uncorrected leading radial part from
+\eqref{eq:gain}--\eqref{eq:loss}, after division by \(8\pi^2\), leaves
+\begin{equation}\label{eq:remainder}
+ A_e^2-\frac{2(B_\infty-B_e)A_e}{r}+\frac{C_e}{r}
+ +F(r)\left[r(B_\infty-B_e)-\frac{E_e}{3r}-D_e-\frac e3A_e\right].
+\end{equation}
+For \(N=\norm{F}{6}\) and \(e\geq1\), elementary integration gives
+\[
+ |A_e|\leq CNe^{-2},\quad
+ |B_\infty-B_e|\leq CNe^{-3/2},\quad
+ |D_e|\leq CNe^{-1},\quad |E_e|\leq CN.
+\]
+In \(C_e\), if \(s\leq e/2\), then \(t\geq e/2\), and
+\[
+ \int_{e-s}^e\sqrt{s+t-e}\dd t=\frac23s^{3/2}.
+\]
+The two regions with one small input therefore contribute at most
+\(CN^2e^{-7/2}\) to \(|C_e|/r\). With both inputs above \(e/2\), their
+product is \(O(N^2e^{-6})\), and the integral divided by \(r\) contributes
+\(O(N^2e^{-4})\). Hence \eqref{eq:remainder} is \(O(N^2r^{-7})\).
+On bounded \(r\), \eqref{eq:origin} and the tail integrals give a
+uniform \(CN^2\) bound. These estimates also establish the absolute
+pointwise collision bounds used above. The mass correction contributes
+only a Gaussian times a bounded quadratic scalar.
+
+For radial profiles \(F_1,F_2\in X_6\), the symmetric polarization is
+\[
+ B_R(F_1,F_2)=\frac{R(F_1+F_2)-R(F_1-F_2)}4.
+\]
+Apply the diagonal bound to \(\lambda F_1\pm\lambda^{-1}F_2\), with
+\(\lambda^2=\norm{F_2}{6}/\norm{F_1}{6}\) when both norms are nonzero.
+It gives \(\norm{B_R(F_1,F_2)}{7}\leq
+2C\norm{F_1}{6}\norm{F_2}{6}\); zero arguments are immediate.
+Now \(R(F)-R(\widetilde F)=B_R(F-\widetilde F,F+\widetilde F)\)
+proves \eqref{eq:R} and the smooth polynomial mapping properties.
+
+For mass cancellation only the unweighted collision integral is needed.
+Write \(V=(v+v_*)/2\), \(v-v_*=dk\), \(k\in\Sph^2\). The joint measure
+including the collision factor is
+\(\dd V\,d^3\dd d\,\dd k\,\dd\sigma\). Swapping \(k,\sigma\)
+interchanges the pre- and post-collision velocities and preserves this
+measure. The absolute loss integral is bounded by
+\[
+ 4\pi\iint (|v|+|v_*|)|F(v)F(v_*)|\dd v\dd v_*<\infty;
+\]
+the gain has the same bound by this angular swap. Fubini now proves
+\(m(Q(F,F))=0\). Together with \(m(CF)=0\), this proves \(m(R(F))=0\).
+No energy-weighted collision interchange has been used.
+\end{proof}
+
+\section{The linear evolution and a flat tail}\label{sec:linear}
+
+\subsection*{The evolution on the faster-decaying space}
+We construct the correction evolution in \(X_p^0\) by limits of
+compactly supported profiles. The critical \(r^{-6}\) tail is absent
+from this space and will be prescribed separately.
+
+\begin{lemma}\label{lem:semigroup}
+There is a strongly continuous semigroup \(S(t)\) on \(X_p^0\) preserving
+mass, with \(\norm{S(t)}{X_p^0\to X_p^0}\leq e^{bt}\) for a fixed \(b\).
+If \(L\) is its generator, then
+\(Lu(r)=\calL u(r)\) for \(u\in D(L)\), and \(M\in D(L)\).
+\end{lemma}
+\begin{proof}
+Start with \(4\pi C_{\rm raw}\). On profiles supported in \([0,R]\),
+its gain and loss are bounded operators, and the positive
+variation-of-constants series defines the evolution. The gain uses only
+larger radii, so zero extension is consistent as \(R\) increases. A
+profile vanishing at \(R\) continues to vanish there.
+Recall that \(p=13/2\). Where \(\chi>0\), \(r>4\), and
+\begin{equation}\label{eq:row}
+ \frac{(4/r)\int_r^\infty s g_p(s)\dd s}{r g_p(r)}
+ =\frac4{p-2}(1+r^{-2})\leq\frac{17}{18}<1.
+\end{equation}
+At \(\chi=0\) both gain and loss terms vanish. Thus \(Ag_p\), for
+\(A=\norm{F}{p}\), is a stationary supersolution bounding both signs of
+the supported solution. Positivity of the bounded integral series
+proves contractivity uniformly in \(R\). Density gives a positive
+contraction semigroup \(U(t)\) on \(X_p^0\). Strong continuity and the
+semigroup identity follow first on supported profiles and then by density.
+
+The perturbation \(B=-4\pi\ell(\cdot)M\) is bounded on \(X_p^0\).
+Set
+\[
+ S_0(t)=U(t),\qquad
+ S_{j+1}(t)F=\int_0^t U(t-s)B S_j(s)F\dd s.
+\]
+These are vector-valued integrals for each fixed \(F\), with continuous
+integrands. Their operator norms are bounded by
+\(\norm{B}{}^jt^j/j!\). The sum is strongly continuous and satisfies
+\(\norm{S(t)}{}\leq e^{\norm{B}{}t}\).
+Uniqueness for the integral equation follows by iterating its norm
+inequality; it also gives the semigroup identity. This construction
+does not require operator-norm measurability of \(U(t)\).
+
+For supported data,
+\[
+ m(U(t)F)=m(F)+4\pi\int_0^t\ell(U(s)F)\dd s.
+\]
+Boundedness of \(m,\ell\) extends this identity by density. In the
+perturbed integral equation, the scalar mass derivative is
+\(4\pi\ell(S(t)F)+m(BS(t)F)=0\). Thus \(S(t)\) preserves mass;
+positivity of \(S(t)\) is not asserted.
+
+At each fixed \(r\), evaluation of \(C_{\rm raw}F(r)\) is bounded in
+the \(X_p\) norm. Passing from supported profiles to the integrated
+equation gives the pointwise integrated identity for \(S\).
+Taking the generator quotient gives \(Lu(r)=\calL u(r)\) on \(D(L)\).
+Finally, smooth compact cutoffs \(M_j\) of the Gaussian satisfy
+\(M_j\to M\) and \(C_{\rm raw}M_j\to C_{\rm raw}M\) in \(X_p^0\).
+Pass to the limit in the integrated raw equation and divide by time;
+the bounded perturbation then yields \(M\in D(L)\).
+\end{proof}
+
+\subsection*{The prescribed tail}
+Let \(c=4\pi\), choose \(0<\varepsilon\leq1\), and define the flat function
+\[
+ a(t)=\begin{cases}\varepsilon e^{-1/t^2},&t>0,\\0,&t\leq0.\end{cases}
+\]
+For \(r>0\) and \(t\geq0\), set
+\begin{equation}\label{eq:entrance}
+ h(t,r)=\frac{c^5}{6r}\int_0^t a(s)(t-s)^4e^{-cr(t-s)}\dd s,\quad
+ \widetilde H=\chi h,\quad
+ \mu=m(\widetilde H),\quad H=\widetilde H-\mu M.
+\end{equation}
+Thus \(m(H)=0\) and \(\widetilde H\geq0\).
+
+\begin{lemma}\label{lem:tail}
+The map \(H\) is \(C^\infty\) in time into \(X_6\), with all time jets
+zero at \(t=0\). For sufficiently small bounded times,
+\begin{equation}\label{eq:Hbounds}
+ \norm{H(t)}{6}\leq Ca(t),\qquad
+ 0\leq\mu(t)\leq Ct^3a(t),\qquad
+ \lim_{r\to\infty}r^6H(t,r)=4a(t).
+\end{equation}
+The defect
+\begin{equation}\label{eq:J}
+ J=H_t-\calL H
+\end{equation}
+is \(C^\infty\) in time into \(X_p^0\), has zero mass and flat initial
+jets, and satisfies \(\norm{J(t)}{p}\leq Ca(t)\).
+Here \(\calL H\) is the pointwise expression; no assertion that
+\(H\in X_p^0\) or \(H\in D(L)\) is made.
+\end{lemma}
+\begin{proof}
+For \(k(u,r)=c^5u^4e^{-cru}/(6r)\),
+\[
+ \int_r^\infty s k(u,s)\dd s=\frac{c^4}{6}u^3e^{-cru},
+ \qquad \partial_u k=cC_0k.
+\]
+Integration by parts in \(h=\int_0^\infty a(t-u)k(u,r)\dd u\)
+therefore gives \(h_t=cC_0h\); the boundary at \(u=0\) vanishes.
+After \(z=cru\),
+\begin{equation}\label{eq:tail-integral}
+ r^6h(t,r)=\frac16\int_0^\infty z^4e^{-z}a(t-z/(cr))\dd z
+       \longrightarrow4a(t),
+\end{equation}
+by dominated convergence and \(\int_0^\infty z^4e^{-z}\dd z=24\).
+
+For \(r\geq4\), the norm of this positive kernel as a map from bounded
+scalar time functions to \(X_6\) is at most \(4(17/16)^3\).
+Apply that bound to the uniform scalar difference-quotient remainders
+of \(a\). It proves every \(X_6\)-valued time derivative and its flat
+initial trace. This uses the supremum of the integrated kernel, not
+the generally nonintegrable integral of its supremum.
+Since \(a\) is increasing, it also gives the first bound in
+\eqref{eq:Hbounds}. Integrating the positive kernel for mass and using
+\(\int_0^\infty r e^{-cru}\dd r=(cu)^{-2}\) gives the bound on \(\mu\).
+The Gaussian correction has no effect on the limit.
+
+The expression
+\[
+ \widetilde H_t-cC_{\rm raw}\widetilde H
+       =c\chi[C_0h-C_0(\chi h)]
+\]
+is supported in \(4\leq r\leq8\). All other terms in \(J\) are scalar
+multiples of \(M\) or \(C_{\rm raw}M\), both rapidly decreasing.
+Their coefficients are smooth by the kernel bound and bounded moment
+functionals. For the amplitude bound, use \(h_t=cC_0h\) to obtain
+\[
+ |\mu'(t)|\leq C\int_4^\infty r^3h(t,r)\dd r\leq Ca(t).
+\]
+The same bound controls the compactly supported commutator term, \(\mu\), and
+\(\ell(H)\). In particular no bound on \(a'/a\) is needed.
+All these expressions are flat, lie in \(X_p^0\), and have zero mass
+because \(m(H)=m(\calL H)=0\).
+\end{proof}
+
+\section{A smooth signed solution}\label{sec:signed}
+
+Seek a mass-one profile in the form
+\[
+ F=M+H+w,\qquad w(0)=0,\qquad m(w)=0,\qquad w(t)\in X_p^0.
+\]
+Since \(Q(M,M)=0\), Lemma~\ref{lem:remainder} gives
+\(R(M)=-\calL M=-LM\). Consequently the equation for the correction is
+\begin{equation}\label{eq:w}
+ w_t=Lw+\Phi(t,w),\qquad
+ \Phi(t,z)=R(M+H(t)+z)-R(M)-J(t).
+\end{equation}
+Its mild form is
+\begin{equation}\label{eq:mild}
+ w(t)=\int_0^tS(t-s)\Phi(s,w(s))\dd s.
+\end{equation}
+All constants below are uniform for \(0<\varepsilon\leq1\) on a fixed
+sufficiently short interval; they may depend on \(p,\chi,M\).
+
+\begin{proposition}\label{prop:signed}
+There is an interval \([0,\tau]\) on which \eqref{eq:mild} has a
+mass-zero solution, with
+\begin{equation}\label{eq:wbound}
+ \norm{w(t)}{p}\leq C\int_0^t a(s)\dd s\leq Ct a(t).
+\end{equation}
+For every \(t_*<\tau\), the solution is \(C^\infty\) in time into
+\(X_p^0\) on \([0,t_*]\), all initial time jets vanish, and
+\(w(t)\in D(L)\). The profile \(F=M+H+w\) has mass one and satisfies
+\(F_t=Q(F,F)\) pointwise.
+\end{proposition}
+\begin{proof}
+In a fixed closed ball of \(C([0,\tau];X_p^0)\), the right side of
+\eqref{eq:mild} has Lipschitz constant at most \(e^{b\tau}C\tau\).
+For small \(\tau\) it is a contraction mapping the ball into itself.
+The mass-zero constraint defines a closed subspace and is preserved by
+both the semigroup and the forcing. The Banach fixed point theorem
+therefore applies. The same estimates give
+\[
+ \norm{w(t)}{p}\leq C\int_0^ta(s)\dd s
+                     +C\int_0^t\norm{w(s)}{p}\dd s.
+\]
+Gronwall, or iteration of this inequality and the factorial remainder,
+proves \eqref{eq:wbound}.
+
+We give the time regularity argument because the generator is
+unbounded. The map \(\Phi\) is smooth into \(X_p^0\), quadratic in \(z\),
+and every pure time derivative of \(\Phi(t,0)\) is zero at zero.
+For \(h>0\), the semigroup property gives, for \(0\leq t\leq\tau-h\),
+\begin{equation}\label{eq:difference}
+ \frac{w(t+h)-w(t)}h
+ =S(t)\frac{w(h)}h+
+ \int_0^tS(t-s)
+ \frac{\Phi(s+h,w(s+h))-\Phi(s,w(s))}h\dd s.
+\end{equation}
+The first term tends uniformly to zero by \eqref{eq:wbound}.
+Taylor's formula for \(\Phi\) and the Lipschitz integral estimate
+first bound these quotients and then show that they converge uniformly
+on each strictly smaller time interval to the unique solution
+\[
+ y(t)=\int_0^tS(t-s)
+ [\partial_t\Phi(s,w(s))+D_z\Phi(s,w(s))y(s)]\dd s.
+\]
+For clarity, the Taylor remainder tends uniformly to zero because the
+quotients are uniformly bounded and the derivatives of the polynomial
+map \(\Phi\) are uniformly continuous on the range under consideration.
+Subtracting the equation for \(y\) from \eqref{eq:difference} and
+iterating the integral inequality proves convergence without extraction.
+Left derivatives agree at positive times. Hence \(w\) is \(C^1\),
+\(w'(0)=0\), and \(w'\) satisfies the differentiated mild equation.
+
+Repeat the argument for the differentiated system. At each order the
+highest derivative enters linearly through \(D_z\Phi\); the other terms
+use previously obtained derivatives. Every initial compatibility value
+is zero because all earlier jets and all pure time jets of
+\(\Phi(t,0)\) vanish. This proves all time derivatives, on the same
+strictly interior interval, with flat initial traces.
+
+Finally \eqref{eq:mild} implies
+\[
+ \frac{S(h)w(t)-w(t)}h
+ =\frac{w(t+h)-w(t)}h
+  -\frac1h\int_t^{t+h}S(t+h-s)\Phi(s,w(s))\dd s.
+\]
+The right side tends in \(X_p^0\) to \(w'(t)-\Phi(t,w(t))\).
+This is exactly the generator-domain condition. Every forward quotient
+is taken below \(\tau\); in particular it is valid at the final
+displayed endpoint \(t_*<\tau\).
+Using \(Lw=\calL w\), the definition of \(J\), and
+\eqref{eq:split} gives \(F_t=Q(F,F)\) at each finite \(r\), including
+zero by the continuous formulas. The mass is one by construction.
+\end{proof}
+
+\begin{proposition}\label{prop:smooth}
+For every \(t_*<\tau\), the profile \(F(t,v)\) is jointly
+\(C^\infty\) on \([0,t_*]\times\R^3\), including the velocity origin.
+\end{proposition}
+\begin{proof}
+We already have \(F\in C^\infty_tX_6\). Recall the energy coordinate
+\(e=|v|^2\) and its profile \(G(t,e)=F(t,\sqrt e)\). Therefore
+\[
+ A(t)=\int_0^\infty G(t,e)\dd e,\qquad
+ D(t)=\int_0^\infty eG(t,e)\dd e
+\]
+are smooth scalar functions, since the two functionals are bounded on
+\(X_6\). This argument uses no higher energy moments.
+Fix \(E<\infty\). In \eqref{eq:gain}--\eqref{eq:loss}, replace
+\[
+ A_e=A(t)-\int_0^eG(t,s)\dd s,\qquad
+ D_e=D(t)-\int_0^e sG(t,s)\dd s
+\]
+and use \eqref{eq:origin}. The equation on \([0,E]\) is now an ODE
+on \(C([0,E])\) with the known smooth coefficients \(A,D\).
+Its vector field \(\mathcal V_E(t,G)\) is locally Lipschitz on every
+Banach space \(C^k([0,E])\) with its usual norm.
+The kernels in \eqref{eq:origin} have fixed compact integration domains
+and are integrable; differentiating \(G(eb)\) only introduces factors
+\(b\in[0,1]\). The same holds for the other local integrals.
+
+For \(k\geq1\), differentiation also gives the tame bound
+\begin{equation}\label{eq:tame}
+ \norm{\mathcal V_E(t,G)}{C^k}
+ \leq C_{k,E}\bigl(|A|,|D|,\norm{G}{C^{k-1}}\bigr)
+                     (1+\norm{G}{C^k})
+\end{equation}
+on bounded lower-norm sets. A derivative of order \(k\) in any product
+is multiplied by an undifferentiated bounded factor; all other terms
+involve orders at most \(k-1\). Polynomial factors in \(e\) are bounded
+on the fixed interval.
+
+Starting from \(G(0,e)=\pi^{-3/2}e^{-e}\), the local contraction in
+\(C^k\) constructs a \(C^k\)-valued solution. Uniqueness in \(C^0\)
+identifies it with the profile already obtained. Inductively,
+\eqref{eq:tame} and Gronwall bound its \(C^k\) norm throughout the
+existing time interval. This prevents earlier termination: the vector
+field is bounded in \(C^k\), so a solution approaching a putative
+termination time has a \(C^k\) limit and the local contraction restarts
+it. Thus every \(k\) holds on the same interval.
+The ODE, with its smooth coefficients, then gives all mixed time and
+energy derivatives.
+
+Finally \(F(t,v)=G(t,|v|^2)\) is smooth at \(v=0\) as well.
+For a one-sided \(C^1\) energy profile,
+\(\partial_{v_i}G(|v|^2)=2v_iG'(|v|^2)\), including at zero since
+\([G(h^2)-G(0)]/h=O(h)\). Apply this identity successively to all energy
+derivatives and use the polynomial product rule. No extension to
+negative energies is required.
+\end{proof}
+
+\section{Positivity and the rapid-decay consequence}\label{sec:positive}
+
+Positivity of the semigroup \(S(t)\) was not established in
+Lemma~\ref{lem:semigroup}. We prove nonnegativity for the nonlinear
+solution itself.
+Shorten \(t_*<\tau\) whenever required below. With \(\mu\leq1/2\), the
+baseline
+\[
+ P=M+H=(1-\mu)M+\widetilde H
+\]
+is nonnegative. For \(n=F_-=\max(-F,0)\) and
+\(N(t)=\norm{n(t)}{p}\), \eqref{eq:wbound} gives
+\begin{equation}\label{eq:n}
+ 0\leq n\leq|w|,\qquad N(t)\leq Ct a(t).
+\end{equation}
+
+\subsection*{Finite support of the negative part}
+There are fixed \(K_0,k_0>0\) such that
+\begin{equation}\label{eq:lower-tail}
+ \widetilde H(t,r)\geq k_0a(t)r^{-6}
+       \quad\text{when }r\geq K_0t^{-3}.
+\end{equation}
+To see this, restrict \(u=t-s\) in \eqref{eq:entrance} to
+\([1/(cr),2/(cr)]\). For \(u\leq t/2\),
+\[
+ \log\frac{a(t-u)}{a(t)}
+   =-\frac{2tu-u^2}{t^2(t-u)^2}\geq-\frac{8u}{t^3}.
+\]
+For \(r\geq K_0t^{-3}\) the restricted interval lies below \(t/2\),
+and the cutoff equals one after a fixed shortening of time.
+The change \(z=cru\) bounds \(r^6h/a(t)\) below by
+\[
+ \frac{e^{-16/(cK_0)}}6\int_1^2 z^4e^{-z}\dd z>0.
+\]
+On the same region the ratio of \(|w|\) to the lower bound
+\eqref{eq:lower-tail} is at most
+\[
+ Ct r^{6-p}\leq C K_0^{6-p}t^{1+3(p-6)}\longrightarrow0.
+\]
+Hence \(F>0\) for \(r\geq R(t):=K_0t^{-3}\).
+The negative part has compact support at every positive time, with one
+common compact support on any compact positive-time interval.
+Its weighted norm is continuous there, and tends to zero at zero by
+\eqref{eq:n}. The full profile \(F\) is not claimed to have finite
+\(X_p\) norm.
+
+\subsection*{A strict mixed gain estimate}
+Recall the Gaussian loss frequency
+\[
+ \nu_M(v)=4\pi\int_{\R^3}|v-w|M(w)\dd w.
+\]
+It is radial, so we also write \(\nu_M(r)\) for \(|v|=r\).
+For every fixed \(\alpha\) with \(4/(p-2)<\alpha<1\), there is a
+constant \(C_M\) such that every nonnegative radial \(n\leq Ng_p\)
+satisfies
+\begin{equation}\label{eq:mixed}
+ \la r^p\,2Q^+(M,n)(r)
+       \leq \alpha\nu_M(r)N+C_MN.
+\end{equation}
+To verify it, polarize \eqref{eq:gain}. The local mass integral of
+the Maxwellian and the tail integral of \(n\) are
+\[
+ B_M(r)=\int_0^{r^2}\sqrt s\,G_M(s)\dd s,\qquad
+ A_n(r)=\int_{r^2}^\infty G_n(s)\dd s.
+\]
+The principal term is \(8\pi^2(2/r)B_M(r)A_n(r)\), and
+\[
+ A_n(r)\leq\frac{2N}{p-2}(1+r^2)^{1-p/2}.
+\]
+After weighting and division by \(\nu_M(r)N\), its upper limit at
+infinity is \(4/(p-2)\), since
+\(\nu_M(r)/(8\pi^2r)\to B_M(\infty)\).
+Every term containing the Maxwellian tail \(A_M\) decays exponentially
+after polynomial weighting. In the mixed \(C\) term, split the
+Maxwellian energy at \(e/2\). Below \(e/2\), the other input is at least
+\(e/2\), giving, before division by \(r\), a bound
+\[
+ CN(1+e)^{-p/2}\int_0^\infty s^{3/2}G_M(s)\dd s.
+\]
+The weighted term is therefore \(O(N/r)\). Above \(e/2\), the
+Maxwellian is exponentially small and all remaining integrals are
+polynomially bounded. On bounded radii the formulas at zero give a
+uniform \(C_MN\) bound. This proves \eqref{eq:mixed}.
+
+We also need the elementary envelope bound
+\begin{equation}\label{eq:bounded-gain}
+ \norm{Q^+(B,n)}{\infty}\leq C\norm{B}{6}N
+       \quad(B\geq0,\ 0\leq n\leq Ng_p).
+\end{equation}
+Indeed \(g_p\leq g_6\), so positivity of the gain bounds its left
+side pointwise by
+\(\norm{B}{6}NQ^+(g_6,g_6)\).
+The three terms of \eqref{eq:gain} for this envelope are respectively
+\(O(e^{-4}),O(e^{-5/2}),O(e^{-7/2})\) for \(e\geq1\); at zero use
+\eqref{eq:origin}. Thus the envelope gain is bounded.
+
+\subsection*{The compact maximum argument}
+At a point where \(F<0\), expand \(F=F_+-n\) in the symmetric gain.
+The nonnegative diagonal terms can be discarded to give
+\begin{equation}\label{eq:negative-equation}
+ n_t\leq2Q^+(F_+,n)-\nu_F n.
+\end{equation}
+Moreover \(F_+\leq M+\widetilde H+|w|\), and
+\[
+ \nu_F\geq(1-\mu)\nu_M-\nu_{|w|}
+          \geq(1-\delta)\nu_M
+\]
+for any fixed small \(\delta>0\), after shortening time.
+Here \(\nu_M\geq c_0\la v\), whereas
+\(\nu_{|w|}\leq C\norm{w}{p}\la v\).
+Fix \(\alpha=17/18\), \(\delta=1/36\). Since \(p=13/2\),
+\(4/(p-2)=8/9<\alpha\) and \(1-\delta-\alpha=1/36>0\).
+
+When \(N(t)>0\), its maximum is attained at a negative point with
+\(r\leq R(t)\). Apply \eqref{eq:mixed} to the Maxwellian contribution
+in \eqref{eq:negative-equation}. For the other gain terms,
+\eqref{eq:bounded-gain} and
+\(\norm{\widetilde H+|w|}{6}\leq Ca(t)\) give, after weighting on
+this compact interval, at most \(Ca(t)t^{-3p}N(t)\).
+Discarding the strictly negative remaining frequency term yields
+\begin{equation}\label{eq:Dini}
+ D^+N(t)\leq [C_M+Ca(t)t^{-3p}]N(t),
+ \qquad D^+N(t)=\limsup_{h\downarrow0}\frac{N(t+h)-N(t)}h.
+\end{equation}
+This use of the derivative of a maximum is local: on a compact
+positive-time interval all maximizing points lie in a common compact
+radius interval. A maximizing sequence at \(t+h\) has a subsequence
+converging to a maximizer at \(t\), and uniform integration of the
+continuous time derivative bounds the upper Dini derivative by the
+largest derivative at such maximizers.
+If \(N(t)=0\), then \(F\geq0\); at every zero of \(F\), its equation
+gives \(F_t=Q^+(F,F)\geq0\). The right derivative of the negative part
+there is zero, as it is at strictly positive points. Thus
+\eqref{eq:Dini} holds also in the zero-norm case.
+
+The coefficient in \eqref{eq:Dini} is integrable at zero, since the
+flat function \(a(t)t^{-3p}\) tends to zero faster than any fixed
+power. For \(0<\eta<t\), the scalar Dini comparison gives
+\[
+ N(t)\leq N(\eta)
+ \exp\left(\int_\eta^t[C_M+Ca(s)s^{-3p}]\dd s\right).
+\]
+For completeness, this comparison follows by multiplying \(N\) by
+the integrating factor. A continuous function with nonpositive upper
+right Dini derivative is nonincreasing: otherwise subtract a small
+positive linear function and take a minimum before an interval's right
+endpoint to contradict the strictly negative Dini derivative.
+Now \eqref{eq:n} implies \(N(\eta)\to0\), while the exponential remains
+bounded. Thus \(N=0\) and \(F\geq0\).
+
+\subsection*{The macroscopic bounds and the endpoint}
+All the preceding reductions select a single positive
+\(t_*<\tau\). Set \(f(t,x,v)=F(t,|v|)\).
+Propositions~\ref{prop:signed} and \ref{prop:smooth}, and positivity,
+give the claimed smooth nonnegative solution on this interval.
+Its datum is \(M\). Every velocity derivative of \(M\) is a polynomial
+times that Gaussian, and every spatial derivative is zero.
+The time jets of \(H+w\) vanish at zero as well.
+
+There is a fixed \(K\geq1\) with
+\[
+ 0\leq F(t,r)\leq K(1+r^2)^{-3}\qquad(0\leq t\leq t_*).
+\]
+The mass is one, and the energy is at most
+\[
+ E_0=4\pi K\int_0^\infty r^4(1+r^2)^{-3}\dd r<\infty.
+\]
+The positive entropy is bounded by \(\log K\int F=\log K\).
+To check that the entropy integral is well defined, for \(b>0,z\geq0\)
+use
+\[
+ -z\log z\leq b(1+|v|^2)z+e^{-1-b(1+|v|^2)}.
+\]
+The scalar inequality follows by maximizing \(-z\log z-cz\) with
+\(c=b(1+|v|^2)\). Its Gaussian remainder is integrable, so the negative
+entropy part is uniformly finite as well. No entropy dissipation law
+is required.
+
+Finally the Gaussian and \(w\in X_p^0\), \(p>6\), have zero \(r^6\)
+tail. Equations \eqref{eq:Hbounds} and \eqref{eq:tail-integral} give
+\eqref{eq:main-tail}. This proves Theorem~\ref{thm:construction}.
+
+\begin{corollary}\label{cor:literal}
+For the full-sphere hard-sphere equation \eqref{eq:boltzmann} on
+\(\T^3\times\R^3\), joint pointwise smoothness, initially Schwartz
+data with Schwartz derivatives, and the uniform local bounds
+\eqref{eq:macroscopic} do not imply an extension with rapid velocity
+decay at the endpoint. More precisely, for any \(0<T<t_*\), the
+restriction of the solution in Theorem~\ref{thm:construction} to
+\([0,T)\) satisfies these hypotheses with \(m_0=M_0=1\) and finite
+\(E_0,H_0\), but every continuous extension to \(T\) has
+\[
+ \lim_{r\to\infty}r^6f(T,x,r\omega)
+       =4\varepsilon e^{-1/T^2}>0.
+\]
+\end{corollary}
+\begin{proof}
+At each finite velocity an extension must have the existing smooth
+endpoint value, so its value at \(T\) is precisely the constructed
+profile. That profile has the displayed tail and cannot be rapidly
+decreasing.
+\end{proof}
+
+Here \(t_*,\varepsilon\) are those of Theorem~\ref{thm:construction},
+\(T\) is any strictly interior positive time, \(r\) is velocity radius,
+\(\omega\in\Sph^2\) is a unit direction, and \(x\in\T^3\).
+The solution already extends smoothly in \(X_6\) across \(T\).
+Thus the failed conclusion is rapid velocity decay. The example does
+not resolve the continuation question in a conservative,
+energy-admissible, or positive-time Schwartz solution class.
+
+\paragraph{AI disclosure.}
+OpenAI Codex was used for proof development, calculation checks, and
+drafting. The mathematical claims and the limitations of their scope
+are stated in the text. One fresh-context AI reader and one fresh-context
+AI referee provided feedback on a preceding draft; the Codex writing
+assistant then revised it once.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{silvestre}
+L. Silvestre, \emph{Regularity estimates and open problems in kinetic
+equations}, arXiv:2204.06401v1 (2022).
+\href{https://arxiv.org/abs/2204.06401v1}{arXiv:2204.06401v1}.
+
+\bibitem{lu-wennberg}
+X. Lu and B. Wennberg, \emph{Solutions with increasing energy for the
+spatially homogeneous Boltzmann equation},
+Nonlinear Analysis: Real World Applications \textbf{3} (2002), no.~2,
+243--258.
+\href{https://doi.org/10.1016/S1468-1218(01)00026-8}
+{doi:10.1016/S1468-1218(01)00026-8}.
+
+\bibitem{basile}
+G. Basile, D. Benedetto, L. Bertini, and E. Caglioti,
+\emph{Asymptotic probability of energy increasing solutions to the
+homogeneous Boltzmann equation}, arXiv:2202.07311v2 (2022).
+\href{https://arxiv.org/abs/2202.07311v2}{arXiv:2202.07311v2}.
+\end{thebibliography}
+\end{document}
