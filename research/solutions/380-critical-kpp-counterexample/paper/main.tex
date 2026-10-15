@@ -1,0 +1,303 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\,\mathrm d}
+\title{A positive equilibrium at the critical Dirichlet eigenvalue}
+\author{Kaiwen Jin\\[2pt]\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct a connected unbounded uniformly smooth domain in
+$\R^{21}$ whose bottom Dirichlet eigenvalue is $1$, but on which
+$-\Delta u=u-u^2$ has a bounded positive solution with zero boundary values.
+Thus equality between the spectral threshold and the derivative of a
+strict KPP reaction at zero does not force extinction on all uniformly
+smooth domains. The domain is a slight widening of a slab of width $\pi$.
+Horizontal Hardy energy controls the transverse spectral deficit, while
+an explicit positive subsolution survives the quadratic reaction loss.
+\end{abstract}
+
+\section{The critical existence question}
+Consider the Dirichlet equilibrium equation
+\begin{equation}\label{eq:problem}
+ -\Delta u=f(u)\quad\text{in }\Om,\qquad u=0\quad\text{on }\partial\Om,
+\end{equation}
+where $\Om\subset\R^d$ is connected and unbounded. We use the spectral
+normalization
+\begin{equation}\label{eq:rayleigh}
+ \lambda_1(\Om)=\inf_{0\ne\phi\in C_c^\infty(\Om)}
+ \frac{\int_\Om|\nabla\phi|^2}{\int_\Om\phi^2}.
+\end{equation}
+For a reaction satisfying $f(0)=f(1)=0$, $f'(0)>0$, positivity on $(0,1)$,
+negativity above $1$, and strict decrease of $f(s)/s$ on $(0,1]$, the
+critical case is $\lambda_1(\Om)=f'(0)$. In the population interpretation,
+this balances linear growth against diffusive loss.
+
+Berestycki and Graham prove existence when $\lambda_1(\Om)<f'(0)$ and
+nonexistence when $\lambda_1(\Om)>f'(0)$, as well as critical nonexistence
+on bounded or periodic domains \cite[Theorem~1.5]{BG}. Their
+Conjecture~1.7 asks for critical nonexistence in general domains. Uniform
+boundary regularity is part of that setting: the boundary graph charts
+have a common radius and uniformly bounded $C^{2,\gamma}$ norms.
+
+Rossi and Tough establish dimension-dependent critical behavior under
+quantitative conditions on the nonlinear loss \cite{RT}. Their
+inverse-square potential construction involves the Hardy constant
+\cite[Theorem~4.1]{RT}. They also obtain nonuniqueness for the homogeneous
+logistic equation on locally, but not uniformly, analytic domains
+\cite[Remark~4.2(e) and Section~7]{RT}. We give an explicit critical
+existence example with uniform boundary regularity and a homogeneous reaction.
+
+Write $(x,z)\in\R^{20}\times\R$, and define
+\begin{equation}\label{eq:domain}
+ t(x)=1000+|x|^2,\qquad b(x)=\frac{50}{t(x)},\qquad
+ h(x)=\arccos(-b(x)),\qquad
+ \Om=\{(x,z):|z|<h(x)\}.
+\end{equation}
+To make the global regularity of the reaction explicit, take
+\begin{equation}\label{eq:reaction}
+ f(s)=\begin{cases}
+ s-s^2,&0\le s\le1,\\
+ s^{-1}-1,&s\ge1.
+ \end{cases}
+\end{equation}
+The two branches agree in value and first derivative at $1$; the function
+and its derivative are bounded, and its derivative is globally Lipschitz.
+It satisfies all the reaction conditions above.
+
+\begin{theorem}\label{thm:main}
+For every fixed $0<\gamma\le1$, the domain $\Om$ in \eqref{eq:domain} is
+connected, unbounded and uniformly $C^{2,\gamma}$, and the reaction
+\eqref{eq:reaction} belongs to $C^{1,\gamma}([0,\infty))$. Moreover,
+\[
+ \lambda_1(\Om)=f'(0)=1,
+\]
+and \eqref{eq:problem} admits a solution
+$U\in C^2(\Om)\cap C(\overline\Om)$ with $0<U\le1$.
+\end{theorem}
+
+Here $\lambda_1$ is precisely the compact-test infimum
+\eqref{eq:rayleigh}, and the boundary condition holds at every point of
+$\partial\Om$. Since $U\le1$, it solves the classical logistic equation.
+This single example answers the general critical nonexistence question in
+the negative. The dimension and constants are convenient choices; no optimal
+dimension is asserted.
+
+The domain contains the critical slab of width $\pi$, but is wider by an
+amount of order $|x|^{-2}$. The horizontal Hardy inequality pays for the
+resulting decrease of the vertical eigenvalue. A cosine with a small
+positive offset then supplies a nonlinear subsolution. Section~2 proves
+the spectral equality, and Section~3 constructs the equilibrium and recovers
+its boundary values. All functions and test spaces are real.
+
+\section{Geometry and spectrum}
+\begin{lemma}\label{lem:spectrum}
+The domain in \eqref{eq:domain} is connected, unbounded and uniformly
+$C^{2,\gamma}$ for $0<\gamma\le1$, and $\lambda_1(\Om)=1$.
+\end{lemma}
+\begin{proof}
+The function $b$ has bounded derivatives of every order and takes values in
+$(0,1/20]$. The same is true of the positive-order derivatives of $h$.
+Also $h>\pi/2$ and
+\[
+ |\nabla h|\le2|\nabla b|\le\frac{200}{t^{3/2}}<\frac1{10}.
+\]
+Thus the two global graphs $z=\pm h(x)$ are uniformly separated and have
+uniformly bounded $C^{2,\gamma}$ norms on fixed-radius charts. For example,
+charts of horizontal radius $1/4$ have height variation less than $1/40$;
+the other graph is more than $3$ away vertically. The midplane gives
+connectedness, and $\Om$ contains
+$S=\R^{20}\times(-\pi/2,\pi/2)$.
+
+We first bound the transverse spectral deficit. For $0\le b\le1/20$, set
+$\theta=2\arcsin(b)/\pi$. Since
+$\arcsin(b)\le6b/5$ and $\pi>3$,
+\begin{equation}\label{eq:deficit}
+ 1-\left(\frac{\pi}{2\arccos(-b)}\right)^2
+ =1-(1+\theta)^{-2}\le2\theta\le\frac85 b.
+\end{equation}
+The derivative bound $2/\sqrt3<6/5$ on $[0,1/2]$ proves the arcsine
+estimate used here.
+
+For $\psi\in C_c^\infty(\R^{20})$, expanding a square gives
+\begin{equation}\label{eq:hardy}
+ 0\le\int_{\R^{20}}\left|\nabla\psi+9\frac{x}{|x|^2}\psi\right|^2
+ =\int_{\R^{20}}|\nabla\psi|^2
+   -81\int_{\R^{20}}\frac{\psi^2}{|x|^2}.
+\end{equation}
+Indeed, $\operatorname{div}(x/|x|^2)=18/|x|^2$. Integrating first outside
+a ball of radius $\varepsilon$ justifies the computation at the origin:
+the extra boundary term is $O(\varepsilon^{18})$ and tends to zero.
+
+Let $\phi\in C_c^\infty(\Om)$ and extend it by zero to $\R^{21}$. Its
+extension remains smooth. Apply \eqref{eq:hardy} to each horizontal slice,
+and the interval Dirichlet inequality to each vertical slice. For clarity,
+the latter follows by writing $p(z)=\cos(\pi z/(2H))$ on $(-H,H)$ and using
+\[
+ \int_{-H}^H\left(|g'|^2-\frac{\pi^2}{4H^2}g^2\right)
+ =\int_{-H}^H p^2\left|(g/p)'\right|^2\ge0
+ \qquad(g\in C_c^\infty(-H,H)).
+\]
+With $r=|x|$, Fubini and \eqref{eq:deficit} therefore give
+\begin{equation}\label{eq:lower-spectrum}
+ \int_\Om|\nabla\phi|^2
+ \ge\int_\Om\left(1-\frac{80}{1000+r^2}+\frac{81}{r^2}\right)\phi^2
+ \ge\int_\Om\phi^2.
+\end{equation}
+The weighted term is integrable near $r=0$ in twenty dimensions. This
+proves $\lambda_1(\Om)\ge1$.
+
+For the reverse bound, choose $p_\varepsilon\in C_c^\infty(-\pi/2,\pi/2)$
+converging to $\cos z$ in $H^1$. Such functions are obtained by cutting off
+within distance $2\varepsilon$ of the endpoints; there $\cos z=O(\varepsilon)$,
+so the derivative error tends to zero in $L^2$. For any nonzero
+$\eta\in C_c^\infty(\R^{20})$, the product
+$\eta(x/L)p_\varepsilon(z)$ is a compact test in $S\subset\Om$ and has
+Rayleigh quotient
+\[
+ L^{-2}\frac{\int|\nabla\eta|^2}{\int\eta^2}
+ +\frac{\int|p_\varepsilon'|^2}{\int p_\varepsilon^2}.
+\]
+Letting $L\to\infty$ and then $\varepsilon\to0$ proves the upper bound.
+\end{proof}
+
+\section{A positive equilibrium}
+\begin{lemma}\label{lem:subsolution}
+The smooth function
+\begin{equation}\label{eq:subsolution}
+ v(x,z)=\frac{\cos z}{t(x)}+\frac{50}{t(x)^2}
+\end{equation}
+is positive in $\Om$, vanishes on $\partial\Om$, is bounded by $21/20000$,
+and satisfies $-\Delta v<v-v^2$ in $\Om$.
+\end{lemma}
+\begin{proof}
+Positivity and the boundary values follow from
+$\cos h(x)=-50/t(x)$ and $h<\pi$. With $r=|x|$ and $t=1000+r^2$,
+direct differentiation yields
+\[
+ \Delta_x(t^{-1})=-40t^{-2}+8r^2t^{-3},\qquad
+ \Delta_x(50t^{-2})=-4000t^{-3}+1200r^2t^{-4}.
+\]
+The first coefficient is negative and at least $-40t^{-2}$.
+The vertical cosine term cancels in $\Delta v+v$, so
+\[
+ \Delta v+v
+ =\Delta_x(t^{-1})\cos z+\Delta_x(50t^{-2})+50t^{-2}
+ \ge\frac{10}{t^2}-\frac{4000}{t^3}\ge\frac6{t^2}.
+\]
+On the other hand, $0<v\le(21/20)t^{-1}$ and
+$v^2\le441/(400t^2)<6/t^2$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The reaction properties follow from \eqref{eq:reaction}, and
+Lemma~\ref{lem:spectrum} proves the geometric and spectral claims.
+It remains to construct a classical Dirichlet solution above the function
+$v$ of Lemma~\ref{lem:subsolution}.
+
+Fix $R>1$ and put $D_R=\Om\cap\{|x|<R\}$. This is a bounded Lipschitz
+domain: the map $(x,y)\mapsto(x,h(x)y)$ sends
+$B_R^{20}\times(-1,1)$ smoothly onto it, including its transverse corners.
+Set $w_0=v$ and define $w_{k+1}$ by
+\begin{equation}\label{eq:iteration}
+ (-\Delta+1)w_{k+1}=G(w_k)\quad\text{in }D_R,\qquad
+ w_{k+1}-v\in H^1_0(D_R),\qquad G(s)=2s-s^2.
+\end{equation}
+All boundary data here are weak traces. After subtracting $v$, the bilinear
+form $\int_{D_R}(\nabla a\cdot\nabla c+ac)$ is the full $H^1_0$ inner
+product. Lax--Milgram therefore defines every iterate whose right side is
+in $L^2$ \cite[Theorem~4.20]{HunterPDE}. Weak comparison is obtained by
+testing a difference with its positive part, which has zero trace when
+the boundary difference is nonpositive; the Sobolev and trace facts used
+here hold on bounded Lipschitz domains \cite[Section~1.1]{FRRO}.
+Since $G$ is nondecreasing on $[0,1]$, $v$ is a subsolution, and $1$ is a
+supersolution, induction gives
+\begin{equation}\label{eq:monotone}
+ v\le w_k\le w_{k+1}\le1.
+\end{equation}
+
+The limit in this iteration preserves the nonlinear equation. If $w(F)$
+denotes the affine Dirichlet solution with right side $F$, testing the
+difference of two equations gives
+\[
+ \|w(F)-w(F')\|_{H^1(D_R)}\le\|F-F'\|_{L^2(D_R)}.
+\]
+The monotone limit $U_R$ in \eqref{eq:monotone} satisfies
+$G(w_k)\to G(U_R)$ in $L^2(D_R)$ by dominated convergence. The displayed
+stability estimate then identifies $U_R$ with $w(G(U_R))$ in $H^1$.
+Thus $U_R-v\in H^1_0(D_R)$ and
+$-\Delta U_R=U_R-U_R^2$ weakly.
+
+On each fixed interior ball the right side is bounded by $1/4$ in absolute
+value. Interior regularity first gives uniform $C^{1,1/2}$ bounds and then,
+by polynomial composition and Schauder estimates, uniform $C^{2,1/2}$
+bounds on smaller balls \cite[Proposition~2.18 and Corollary~2.16]{FRRO}.
+Taking $R\to\infty$ along a diagonal subsequence gives a limit
+$U\in C^2(\Om)$ solving the equation, with $v\le U\le1$.
+
+To retain the zero boundary values, write
+$q(x,z)=\cos z+b(x)$ and work in the two collars $0<q<1/4$. There define
+\[
+ W(x,z)=\frac{1-e^{-4q(x,z)}}{1-e^{-1}}.
+\]
+Since $|\cos z|=|q-b|\le1/4$ and $\Delta_x b<0$,
+\[
+ |\nabla q|^2\ge\frac{15}{16},\qquad \Delta q\le1,
+ \qquad
+ -\Delta W
+ =\frac{4e^{-4q}}{1-e^{-1}}
+   \left(4|\nabla q|^2-\Delta q\right)
+ \ge\frac{11}{e-1}>\frac14.
+\]
+The function of $q$ defining $W$ is concave, equals $0$ at $q=0$ and $1$
+at $q=1/4$, and hence $W\ge4q$ throughout the collar. On the boundary of
+$D_R\cap\{0<q<1/4\}$ the traces satisfy $U_R\le W$: both are zero at
+$q=0$, $U_R\le1=W$ at $q=1/4$, and the artificial side $r=R$ has trace
+$v=q/t\le W$. Each collar component is bounded Lipschitz, so weak
+comparison with $-\Delta U_R\le1/4<-\Delta W$ gives $U_R\le W$ there.
+This bound is independent of $R$. Passing to the limit yields
+$0<U\le W$ near the original boundary. As $q\to0$, also $W\to0$,
+which proves that $U$ extends continuously by zero to every point of
+$\partial\Om$. Finally, $U\le1$ means $f(U)=U-U^2$, as required.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex was used to develop and check the construction and to prepare
+the exposition. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{BG}
+H.~Berestycki and C.~Graham,
+\emph{The steady states of strong-KPP reactions in general domains},
+arXiv:2212.06611v1 (2022),
+\url{https://arxiv.org/abs/2212.06611v1}.
+
+\bibitem{RT}
+L.~Rossi and O.~Tough,
+\emph{Sharp dimension threshold for unique FKPP steady states and BBM recurrence},
+arXiv:2610.17121v1 (2026),
+\url{https://arxiv.org/abs/2610.17121v1}.
+
+\bibitem{FRRO}
+X.~Fern\'andez-Real and X.~Ros-Oton,
+\emph{Regularity Theory for Elliptic PDE},
+arXiv:2301.01564v1 (2023),
+\url{https://arxiv.org/abs/2301.01564v1}.
+
+\bibitem{HunterPDE}
+J.~K.~Hunter,
+\emph{Notes on Partial Differential Equations},
+University of California, Davis, lecture notes,
+\url{https://math.ucdavis.edu/~hunter/pdes/pde_notes.pdf},
+accessed October 15, 2026.
+\end{thebibliography}
+\end{document}
