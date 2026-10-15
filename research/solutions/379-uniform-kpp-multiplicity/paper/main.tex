@@ -1,0 +1,367 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Om}{\Omega}
+\newcommand{\F}{\mathcal F}
+\title{Two positive Fisher--KPP equilibria on a uniformly smooth unbounded domain}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct a connected unbounded domain in $\R^{21}$ with uniformly
+$C^{2,1/2}$ boundary on which the Dirichlet Fisher--KPP equation has two
+distinct bounded positive equilibria. The boundary consists of two smooth
+global graphs whose separation tends to the critical slab width.
+A corrected transverse mode gives a slowly decaying subsolution, while a
+compact enlargement of the domain permits a second equilibrium with a
+faster upper bound. The example gives a negative answer to the unrestricted
+strong-KPP uniqueness question. No optimal dimension is asserted.
+\end{abstract}
+
+\section{The uniqueness question}
+
+Positive stationary populations with diffusion and density-dependent growth
+are described by
+\begin{equation}\label{eq:problem}
+ -\Delta u=f(u)\quad\hbox{in }\Om,\qquad u=0\quad\hbox{on }\partial\Om.
+\end{equation}
+Here $\Om$ is the habitat and the boundary is absorbing. A decreasing
+per-capita growth rate, meaning that $s\mapsto f(s)/s$ is strictly decreasing
+on $(0,1]$, is called the strong-KPP condition here. It gives uniqueness of a positive
+equilibrium on smooth bounded domains. On unbounded domains, positive
+solutions may approach zero at infinity, and a global comparison between
+two solutions is harder to obtain.
+
+Berestycki and Graham proved uniqueness on general uniformly smooth domains
+under a nondegeneracy condition on the principal limit spectrum
+\cite[Theorem~1.1]{BGKPP}, and asked whether the condition could be removed
+\cite[Conjecture~1.3]{BGKPP}. Their later paper retains the general question
+\cite[Section~8.1, Open Question~3]{BGSC}. Recently, Rossi and Tough proved uniqueness for the quadratic Fisher--KPP
+reaction through dimension 6, and constructed homogeneous counterexamples
+on locally analytic domains in every dimension at least 7
+\cite[Theorems~1.5, 1.8 and 7.1]{RT}. Their homogeneous construction uses
+spherical obstacles with radii tending to zero. The example below instead
+has two global boundary graphs with uniform derivative bounds.
+
+To keep both the reaction and its derivative bounded on $[0,\infty)$
+while retaining the logistic reaction on $[0,1]$, set
+\begin{equation}\label{eq:reaction}
+ f(s)=\begin{cases}s-s^2,&0\leq s\leq1,\\s^{-1}-1,&s\geq1.\end{cases}
+\end{equation}
+This function is bounded with bounded Lipschitz derivative. In particular,
+$f\in C^{1,1/2}([0,\infty))$, $f(0)=f(1)=0$, $f'(0)=1$, $f>0$ on $(0,1)$,
+$f<0$ on $(1,\infty)$, and $f(s)/s=1-s$ strictly decreases on $(0,1]$.
+
+\begin{theorem}\label{thm:main}
+There is a connected unbounded domain $\Om\subset\R^{21}$ with uniformly
+$C^{2,1/2}$ boundary for which \eqref{eq:problem}, with \eqref{eq:reaction},
+has two distinct solutions $U,T\in C^{2,1/2}_{\mathrm{loc}}(\overline\Om)$
+satisfying $0<U,T\leq1$ in $\Om$.
+The same functions solve $-\Delta u=u-u^2$ with zero Dirichlet data.
+\end{theorem}
+
+The Dirichlet condition is the admissible value $\beta=0$ of
+$\beta\partial_nu+(1-\beta)u=0$. Thus one example in Theorem~\ref{thm:main}
+refutes the universal uniqueness assertion for all allowed dimensions,
+domains, reactions and boundary parameters. It makes no classification
+claim for other dimensions or for Robin boundary conditions.
+
+The domain is a strip whose width approaches the critical value $\pi$ with
+an inverse-square excess, together with a compact central enlargement.
+We first construct an equilibrium bounded below by a multiple of
+$|x|^{-2}$. The enlargement also supports a compact positive subsolution.
+An exterior supersolution of order $|x|^{-4}$ can be joined to the first
+equilibrium and used to construct the second one. The different bounds at
+infinity separate the two equilibria.
+
+\section{Comparison functions on an unbounded strip}
+
+We use the polynomial residual
+$\F(v)=\Delta v+v-v^2$. A continuous, locally $H^1$ function is a subsolution
+if $\F(v)\geq0$ in distributions, and a supersolution if $\F(v)\leq0$.
+All subsolutions and supersolutions used to construct equilibria lie in
+$[0,1]$, where the reaction in \eqref{eq:reaction} agrees with the polynomial.
+The following existence fact records how the boundary at infinity is treated.
+
+\begin{lemma}\label{lem:existence}
+Let $\ell:\R^{20}\to(0,\infty)$ be smooth, bounded above and below by positive
+constants, with bounded derivatives, and put
+$D=\{(x,y):|y|<\ell(x)\}$.
+Suppose $a,c$ are continuous and locally $H^1$ up to $\partial D$,
+$0\leq a\leq c\leq1$, $\F(a)\geq0$, $\F(c)\leq0$, and $a=0$ on $\partial D$.
+Then there is a classical solution $u$ of
+$\Delta u+u-u^2=0$ on $D$, with $a\leq u\leq c$ and $u=0$ on $\partial D$.
+It is locally $C^{2,1/2}$ up to the boundary. If $a\not\equiv0$, then $u>0$.
+\end{lemma}
+
+\begin{proof}
+Let $D_n=D\cap\{|x|<n\}$. This is a bounded Lipschitz domain: its end face
+meets the two graph faces transversely. Prescribe the boundary extension $a$,
+so that the trace is zero on the true boundary and $a$ on the end face.
+Set $u_0=a$ and solve
+\begin{equation}\label{eq:iteration}
+ (-\Delta+1)u_{j+1}=G(u_j),\qquad G(t)=2t-t^2,
+ \qquad u_{j+1}-a\in H^1_0(D_n).
+\end{equation}
+The weak linear Dirichlet theorem \cite[Theorem~8.9]{GT} applies with
+constant principal coefficients and zero-order coefficient $-1$ after
+reversing signs. Testing a difference with its positive part proves the
+comparison principle for $-\Delta+1$. Since $G$ increases on $[0,1]$,
+the subsolution and supersolution inequalities give
+$a=u_0\leq u_1\leq\cdots\leq c$.
+
+For fixed $n$, let $v$ be the almost everywhere monotone limit.
+The bounded functions $G(u_j)$ converge to $G(v)$ in $L^2(D_n)$.
+Let $u_*$ solve the linear problem with this limiting right hand side and
+the same boundary extension. The energy identity for the difference gives
+\[
+ \|u_{j+1}-u_*\|_{H^1(D_n)}
+ \leq\|G(u_j)-G(v)\|_{L^2(D_n)}\longrightarrow0.
+\]
+Comparison with $a,c$ identifies $u_*=v$ and gives a weak semilinear solution
+$u_n$ between the two functions.
+
+On every fixed interior patch, or fixed true-boundary patch away from the
+end face, $0\leq u_n\leq1$ and
+$\Delta u_n=-u_n+u_n^2$ has bounded right hand side.
+Local weak boundary regularity \cite[Corollary~8.36]{GT}, with zero boundary
+data and constant coefficients, gives uniform local $C^{1,1/2}$ bounds.
+The right hand side is therefore uniformly $C^{0,1/2}$ on smaller patches.
+Theorem~8.9 also gives local $H^2$ regularity; Theorem~9.19, with $k=1$,
+then gives interior $C^{2,1/2}$ regularity. Lemma~6.18 and the local estimates
+of Corollaries~6.3 and~6.7 in \cite{GT} give uniform $C^{2,1/2}$ bounds on
+smaller true-boundary and interior patches. All these constants concern fixed
+patches; the distant end face does not enter them.
+
+A diagonal subsequence converges locally in $C^2$, including compact portions
+of the true boundary. Its limit satisfies the equation, ordering and zero
+boundary condition. If $a$ is nonzero, the limit is nonzero. Since
+$\Delta u=-u(1-u)\leq0$, the strong minimum principle on the connected domain
+gives $u>0$. No global energy norm or prescribed decay at infinity is used.
+\end{proof}
+
+Two elementary facts will also be useful. If a smooth subsolution $v$ vanishes
+on the boundary of a subdomain $E$ and $\partial_n v\leq0$, then its zero
+extension $\widetilde v$ is a weak subsolution. Indeed, for every nonnegative
+compactly supported smooth test function $\zeta$,
+\begin{equation}\label{eq:extension}
+ \int\bigl(\widetilde v\Delta\zeta+
+              (\widetilde v-\widetilde v^2)\zeta\bigr)
+ =\int_E\F(v)\zeta-\int_{\partial E}\partial_n v\,\zeta\geq0.
+\end{equation}
+The formula holds face by face for a cube. The extensions are locally $H^1$
+because their traces agree with zero.
+
+The minimum of two smooth supersolutions is a weak supersolution. To see
+this without a monotonicity assumption on the reaction, approximate the
+minimum of $v,w$ by
+$m_\varepsilon=(v+w-\sqrt{(v-w)^2+\varepsilon^2})/2$.
+Differentiation gives
+$\Delta m_\varepsilon\leq\theta_\varepsilon\Delta v+
+(1-\theta_\varepsilon)\Delta w$, where $0\leq\theta_\varepsilon\leq1$.
+Thus $\F(m_\varepsilon)$ is bounded above by
+\[
+ (m_\varepsilon-m_\varepsilon^2)
+ -\theta_\varepsilon(v-v^2)-(1-\theta_\varepsilon)(w-w^2).
+\]
+This tends to zero pointwise and is bounded on every compact set, including
+where $v=w$. Testing and passing to the limit proves the assertion.
+The minimum is locally $H^1$ by the weak chain rule
+\cite[Section~7.4 and pp.~153--154]{GT}.
+
+\section{Two different rates of decay}
+
+Write $x\in\R^{20}$, $y\in\R$, and fix
+\begin{equation}\label{eq:geometry}
+ R=10^6,\quad b=20000,\quad q=R^2+|x|^2,\quad
+ k=1-\frac{24}{q},\quad \ell_0=\frac{\pi}{2k},\quad
+ \phi(x,y)=\cos(k(x)y).
+\end{equation}
+Let $\Om_0=\{(x,y):|y|<\ell_0(x)\}$. Then $q\geq10^{12}$,
+$1/2\leq k<1$, $|y|<\pi$ and $0<\phi\leq1$ in $\Om_0$.
+The transverse mode $\phi$ vanishes on its boundary. We need to retain the
+derivatives of this mode in $x$, since their signs matter near the boundary.
+
+\begin{lemma}\label{lem:barriers}
+On $\Om_0$, the functions
+\[
+ S=q^{-1}\bigl(\phi+bq^{-2}\phi^2\bigr),\qquad
+ V_B=Bq^{-2}\phi\quad(B>0)
+\]
+satisfy $0<S\leq1$, $\F(S)\geq0$ and $\F(V_B)\leq0$.
+They vanish on $\partial\Om_0$, and $\partial_nS<0$ there.
+\end{lemma}
+
+\begin{proof}
+For a positive amplitude $H=H(x)$, direct differentiation gives
+\begin{align}\label{eq:residual}
+ \frac{\F(H\phi)}{H}
+ &=\phi\left(\frac{\Delta_xH}{H}+1-k^2-y^2|\nabla k|^2-H\phi\right)\notag\\
+ &\quad-y\sin(ky)\left(\Delta_xk+2\nabla\log H\cdot\nabla k\right).
+\end{align}
+For $H=Aq^{-p/2}$ and $r=|x|$,
+\begin{align}\label{eq:derivatives}
+ \frac{\Delta_xH}{H}&=-\frac{20p}{q}+\frac{p(p+2)r^2}{q^2},\notag\\
+ \nabla k&=\frac{48x}{q^2},\qquad
+ \Delta_xk=\frac{960}{q^2}-\frac{192r^2}{q^3},\notag\\
+ \Delta_xk+2\nabla\log H\cdot\nabla k
+ &=\frac{960}{q^2}-\frac{96(p+2)r^2}{q^3}.
+\end{align}
+For $p=4$, the first linear coefficient in \eqref{eq:residual} is at most
+$(-56+48)/q=-8/q$, while the last bracket is at least $384/q^2$.
+Both $\phi$ and $y\sin(ky)$ are nonnegative. The other terms have nonpositive
+sign, proving $\F(V_B)\leq0$ for every amplitude $B>0$.
+
+For the slow subsolution put $h=q^{-1}$ and $\delta=bq^{-2}$.
+The last bracket in \eqref{eq:residual} lies between $576/q^2$ and $960/q^2$.
+Using $\pi<4$ and $|\nabla k|^2\leq2304q^{-3}$ gives
+\begin{equation}\label{eq:uncorrected}
+ \F(h\phi)\geq h\phi\left(\frac7q-\frac{576}{q^2}-\frac{36864}{q^3}\right)
+                   -\frac{3840h}{q^2}
+ \geq\frac{6h\phi}{q}-\frac{3840h}{q^2}.
+\end{equation}
+The negative term need not contain $\phi$, which is why the squared mode is
+added. With $g=\delta h=bq^{-3}$, its exact contribution is
+\begin{equation}\label{eq:correction}
+ \F(S)=\F(h\phi)+g\bigl[2k^2+(1-4k^2)\phi^2\bigr]+E,
+ \quad E=\Delta_x(g\phi^2)-2\delta h^2\phi^3-\delta^2h^2\phi^4.
+\end{equation}
+To bound the remainder uniformly, \eqref{eq:derivatives} gives
+\[
+ |\nabla_x\phi|\leq192q^{-3/2},\quad
+ |\Delta_x\phi|\leq40704q^{-2},\quad
+ |\nabla_x(\phi^2)|\leq384q^{-3/2},\quad
+ |\Delta_x(\phi^2)|\leq155136q^{-2}.
+\]
+Also $|\nabla g|\leq6bq^{-7/2}$ and $|\Delta_xg|\leq168bq^{-4}$.
+The product rule and the two nonlinear terms in \eqref{eq:correction} yield
+\begin{equation}\label{eq:error}
+ |E|\leq(159914b+b^2)q^{-4}<4\cdot10^9\frac{h}{q^3}.
+\end{equation}
+For $\phi\leq1/4$, the square bracket in \eqref{eq:correction} is at least
+$5/16$, and hence
+\[
+ \F(S)\geq\left(6250-3840-\frac{4\cdot10^9}{q}\right)\frac{h}{q^2}>0.
+\]
+For $\phi\geq1/4$ the bracket is at least $-3$, giving
+\[
+ \F(S)\geq\left(\frac32-\frac{63840}{q}-\frac{4\cdot10^9}{q^2}\right)
+                 \frac hq>0.
+\]
+Both inequalities hold for all $q\geq10^{12}$.
+Finally $S\leq q^{-1}(1+bq^{-2})<1$. On the boundary its normal derivative
+is $h\partial_n\phi=-h|\nabla\phi|<0$, since
+$|\partial_y\phi|=k$ there.
+\end{proof}
+
+\section{A compact enlargement and two equilibria}
+
+Choose a smooth radial cutoff $0\leq\chi\leq1$ which is 1 for $r\leq2000$
+and 0 for $r\geq4000$, and set
+\begin{equation}\label{eq:domain}
+ \ell(x)=\ell_0(x)+2000\chi(x),\qquad
+ \Om=\{(x,y):|y|<\ell(x)\}.
+\end{equation}
+For example, if $\eta(t)=e^{-1/t}$ for $t>0$ and $\eta(t)=0$ otherwise, one
+can take
+$\chi=\eta(4000^2-r^2)/[\eta(4000^2-r^2)+\eta(r^2-2000^2)]$.
+Its denominator is positive. The two boundary graphs have bounded derivatives
+through order 3 and have separation at least $\pi$. They therefore admit
+common-radius $C^{2,1/2}$ charts with uniformly bounded norms. The domain is
+connected through its central plane $y=0$, is unbounded, and agrees with
+$\Om_0$ for $r\geq4000$.
+
+Extend $S$ by zero from $\Om_0$ into $\Om$. By
+\eqref{eq:extension} and Lemma~\ref{lem:barriers}, it is a weak subsolution.
+It lies below the constant supersolution 1. Lemma~\ref{lem:existence} gives
+an equilibrium $U$ on $\Om$ with
+\begin{equation}\label{eq:slow}
+ 0<U\leq1,\qquad U(x,0)\geq q^{-1}.
+\end{equation}
+
+We next construct a supersolution whose exterior bound is faster.
+On the compact collar
+$4500\leq r\leq5500$, $|y|\leq\ell_0(x)$, let
+$M=\sup|\partial_yU|<\infty$.
+For $d=\ell_0(x)-|y|$, integration from the nearest endpoint gives $U\leq Md$.
+On the other hand,
+\[
+ \phi=\sin(kd)\geq\frac{2kd}{\pi}\geq\frac d\pi.
+\]
+The finite choice
+$B=1+\pi M(R^2+5500^2)^2$ consequently gives $V_B\geq U$ on this collar.
+Define
+\begin{equation}\label{eq:patched}
+ W=\begin{cases}U,&r\leq5000,\\ \min(U,V_B),&r>5000.\end{cases}
+\end{equation}
+It equals $U$ on a neighborhood of $r=5000$. The minimum property proved
+above and Lemma~\ref{lem:barriers} show that $W$ is a weak supersolution on
+the whole of $\Om$. Moreover $0<W\leq1$, it vanishes on the true boundary,
+and
+\begin{equation}\label{eq:fast}
+ W\leq Bq^{-2}\phi\qquad(r>5000).
+\end{equation}
+
+To obtain a positive solution below $W$, consider the cube $Q=(-100,100)^{21}$.
+Its closure lies strictly inside $\Om$: on it $r<2000$ and $|y|\leq100$,
+whereas $\ell\geq2000+\pi/2$.
+The function
+\[
+ \psi(z)=\prod_{i=1}^{21}\cos(\pi z_i/200)\quad(z\in Q)
+\]
+satisfies $0<\psi\leq1$, zero boundary data and
+$-\Delta\psi=\lambda_Q\psi$, with $\lambda_Q=21\pi^2/40000<1$.
+Its outward derivative is nonpositive on every face.
+Let $m_Q=\min_{\overline Q}W>0$ and
+$\varepsilon=\min((1-\lambda_Q)/2,m_Q/2)>0$.
+The zero extension of $\varepsilon\psi$ lies below $W$, and in $Q$
+\[
+ \F(\varepsilon\psi)=\varepsilon\psi
+                   \bigl[(1-\lambda_Q)-\varepsilon\psi\bigr]\geq0.
+\]
+Formula~\eqref{eq:extension}, applied to the faces, proves its global weak
+subsolution inequality. Lemma~\ref{lem:existence} now gives a positive
+equilibrium $T$ with $\varepsilon\psi\leq T\leq W\leq1$ and zero Dirichlet data.
+For $r>5000$ and $q>B$, \eqref{eq:slow} and \eqref{eq:fast} give
+\[
+ U(x,0)\geq q^{-1}>Bq^{-2}\geq T(x,0).
+\]
+Such points exist because $B$ is fixed and finite. The two equilibria are
+therefore distinct. Their values are in $[0,1]$, so they solve both the
+polynomial Fisher--KPP equation and \eqref{eq:problem} with the global
+reaction \eqref{eq:reaction}. This proves Theorem~\ref{thm:main}.
+
+\paragraph{AI use.}
+OpenAI Codex assisted with the mathematical development, source checking and
+preparation of the manuscript. Two further fresh Codex contexts supplied
+reader and referee feedback on an earlier draft, followed by an author
+revision. These were AI reviews; independent mathematical review is requested.
+The author is responsible for the contents.
+
+\begin{thebibliography}{9}
+\bibitem{BGKPP} H. Berestycki and C. Graham,
+\emph{The steady states of strong-KPP reactions in general domains},
+arXiv:2212.06611 (2022), \url{https://arxiv.org/abs/2212.06611};
+Journal of the European Mathematical Society, published online 2025,
+\href{https://doi.org/10.4171/JEMS/1578}{doi:10.4171/JEMS/1578}.
+\bibitem{BGSC} H. Berestycki and C. Graham,
+\emph{A Stable-Compact Method for Qualitative Properties of Semilinear Elliptic Equations},
+Archive for Rational Mechanics and Analysis \textbf{250} (2026), article 21,
+\href{https://doi.org/10.1007/s00205-026-02168-6}{doi:10.1007/s00205-026-02168-6}.
+\bibitem{RT} L. Rossi and O. Tough,
+\emph{Sharp dimension threshold for unique FKPP steady states and BBM recurrence},
+arXiv:2610.17121v1 (2026), \url{https://arxiv.org/abs/2610.17121v1}.
+\bibitem{GT} D. Gilbarg and N. S. Trudinger,
+\emph{Elliptic Partial Differential Equations of Second Order},
+Classics in Mathematics, Springer, 2001,
+\href{https://doi.org/10.1007/978-3-642-61798-0}{doi:10.1007/978-3-642-61798-0}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,38 @@
+{
+  "version": "2026-10-15-final",
+  "problem_id": "379",
+  "evidence_type": "analytic counterexample claim",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Submission context",
+      "sha256": "ccbddbbb0086f3fe3586b361dec345a70e871dd20382f717812f3aa8bc464e72",
+      "bytes": 2919
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Submission context",
+      "sha256": "6b6547734a52f49a567cd46a0c313a85a932a52d9ba2c5065fbdd3e615b238a5",
+      "bytes": 3349
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete manuscript",
+      "sha256": "a910e432d3b558aa4291aae0e8191df81138ccab5188c3d330bfbc181493a724",
+      "bytes": 346419
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Editable manuscript source",
+      "sha256": "c64a6ce0573d770afd4f6c76f492d83d6dd1fe95976c3668a36ccea910f189bd",
+      "bytes": 17018
+    }
+  ],
+  "manifest_excludes": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "checksum_file_excludes": [
+    "SHA256SUMS"
+  ]
+}
