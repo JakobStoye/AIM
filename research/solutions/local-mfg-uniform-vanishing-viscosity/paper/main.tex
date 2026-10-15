@@ -1,0 +1,924 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\T}{\mathbb T}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Uniform vanishing-viscosity convergence\\
+for a local quadratic mean field game}
+\author{Kaiwen Jin\\[2mm]
+\small\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove uniform vanishing-viscosity convergence for the local mean field
+game system with quadratic Hamiltonian and linear density coupling on a
+flat torus in dimensions one, two and three. For every smooth nonnegative
+probability initial density, smooth fixed terminal cost and positive
+time horizon, the entire family of value functions converges uniformly
+on each interior time slab to a single continuous function.
+Initial vacuum is allowed. Averaging finite-energy perturbations of
+optimal trajectories turns a density-gradient estimate into a modulus
+of continuity independent of viscosity. A convex variational limit and
+path calibration then identify the occupied-region value, while
+homogeneous Hamilton--Jacobi comparison determines its vacuum extension.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Mean field games with local coupling describe a population whose individual
+running cost depends on the density at the current position. In the
+quadratic case, a backward Hamilton--Jacobi equation for the value function
+is coupled to a forward Fokker--Planck equation for the population density.
+Positive viscosity represents diffusion in the individual trajectories.
+For smooth periodic data, classical solutions at each positive viscosity
+are available \cite[Theorem~4.1]{CLLP}. The question here concerns their
+deterministic limit, rather than their existence at fixed viscosity.
+
+Weak formulations of first-order mean field games with local coupling
+can be obtained from convex variational problems \cite{Cardaliaguet}.
+Spatial Sobolev estimates for such variational systems are developed in
+\cite{GraberMeszaros}. These methods control the density and value
+gradient, but uniform convergence of values also requires control of
+their behavior where the density is small. Tang and Zhang
+\cite[Section~7, problem~2(a)]{TangZhang} ask whether the value
+functions converge locally uniformly as viscosity vanishes. Their
+local-coupling convergence estimates include density-weighted value
+bounds, which do not alone control values in vacuum.
+
+We treat the quadratic Hamiltonian with linear local coupling and a
+fixed terminal cost. Let \(\T^d=\mathbb R^d/\mathbb Z^d\), with volume
+one. For smooth data \(m_0,g\) and \(\nu>0\), consider
+\begin{equation}\label{eq:mfg}
+\begin{aligned}
+ -\partial_tu_\nu-\nu\Delta u_\nu+\tfrac12|Du_\nu|^2&=m_\nu,\\
+ \partial_tm_\nu-\nu\Delta m_\nu-\operatorname{div}(m_\nu Du_\nu)&=0
+                &&\text{in }(0,T)\times\T^d,
+\end{aligned}
+\end{equation}
+with
+\begin{equation}\label{eq:data}
+ m_\nu(0)=m_0,\qquad u_\nu(T)=g .
+\end{equation}
+The initial density may vanish. Uniform convergence is therefore a
+statement about values on the whole torus, including regions that
+density-weighted estimates may not see.
+
+\begin{theorem}\label{thm:main}
+Let \(d\in\{1,2,3\}\), \(T>0\),
+\(m_0\in C^\infty(\T^d;[0,\infty))\) with \(\int_{\T^d}m_0=1\),
+and \(g\in C^\infty(\T^d;\mathbb R)\).
+Let \((u_\nu,m_\nu)\) be the classical solutions of
+\eqref{eq:mfg}--\eqref{eq:data}. There is a function
+\(u\in C((0,T)\times\T^d)\) such that, for every \(0<\tau<T/2\),
+\begin{equation}\label{eq:main-limit}
+ \|u_\nu-u\|_{L^\infty([\tau,T-\tau]\times\T^d)}
+       \longrightarrow0\qquad\text{as }\nu\downarrow0 .
+\end{equation}
+The limit is the same for the entire family of viscosities.
+\end{theorem}
+
+Thus the uniform-convergence question has an affirmative answer for this
+quadratic, linear-coupling specialization in dimensions at most three,
+without a positive lower bound on the initial density or a restriction on
+the time horizon. The theorem does not address general Hamiltonians,
+other couplings or higher dimensions. We do not obtain a convergence rate.
+
+The first difficulty is to obtain continuity estimates without a uniform
+pointwise bound on the density. A differentiated identity bounds its
+spatial gradient in terms of the value bound. Averaging finite-energy
+paths that spread from a point closes this estimate. To compare two
+nearby starting positions, we perturb an optimal trajectory by an
+independent family of shifts which return to the original trajectory
+after a short time. The averaged running cost is controlled by the
+density's space-time norm, and the kinetic increment gives a modulus
+of continuity independent of viscosity.
+
+The second difficulty is that occupied-region information does not
+immediately determine a value in vacuum. A heat-semigroup recovery
+sequence preserves the initial density exactly and identifies a common
+first-order density and flux. Their finite-action path law calibrates
+every continuous value limit on the occupied region. On an open region
+where two limits differ, the common density must be zero; there
+homogeneous Hamilton--Jacobi comparison proves that the limits coincide.
+This uses the variational and calibration ideas of
+\cite{Cardaliaguet}, with the required specialization proved below.
+
+Section~\ref{sec:estimates} gives the uniform estimates and compactness.
+Section~\ref{sec:limit} identifies the density limit and proves
+calibration. Section~\ref{sec:vacuum} completes the value comparison.
+All spatial integrations use the normalized torus measure; \(D\) and
+\(\Delta\) act only in space, and \(\operatorname{dist}\) denotes the
+shortest-lift torus distance.
+\section{Uniform estimates}\label{sec:estimates}
+
+
+For clarity, the fixed-viscosity classical theory cited above applies in
+the present normalization. Set \(s=\nu t\),
+\(U(s,x)=u_\nu(s/\nu,x)/\nu\) and \(n(s,x)=m_\nu(s/\nu,x)\).
+The equations have unit diffusivity, Hamiltonian \(|DU|^2/2\),
+coupling \(n/\nu^2\), horizon \(\nu T\), terminal value \(g/\nu\),
+and initial density \(m_0\). The coupling is smooth and bounded below
+on nonnegative densities, so \cite[Theorem~4.1 and its regularity
+conclusion]{CLLP} applies. Smooth data permit the differentiations and
+endpoint integrations used below. This is only qualitative regularity
+for each fixed \(\nu\).
+
+Throughout the proof \(0<\nu\le1\), \(Q=(0,T)\times\T^d\), and \(D\)
+denotes the spatial gradient. Constants may depend on \(d,T,m_0,g\), and
+constants denoted \(C_\tau\) may also depend on \(\tau\). They never depend
+on \(\nu\). Mass conservation and positivity give
+\[
+ m_\nu\ge0,\qquad \int_{\T^d}m_\nu(t,x)\,dx=1 .
+\]
+These facts follow by integrating the forward equation and testing its
+negative part. The resulting inequality
+\(\frac d{dt}\|m_\nu^-\|_2^2\le C_\nu\|m_\nu^-\|_2^2\), with zero
+initial value, gives the latter assertion.
+
+\subsection{Control verification and the density estimate}
+
+We first record the control formula used to compare values at nearby points.
+Let \(B\) be a standard \(d\)-dimensional Brownian motion. An admissible
+control is an adapted measurable process \(a\) with
+\(\mathbb E\int_t^T|a_s|^2\,ds<\infty\). Positions are projected onto the
+torus from
+\[
+ X_s=x+\int_t^s a_r\,dr+\sqrt{2\nu}(B_s-B_t).
+\]
+It\^o's formula, with the periodic lift of \(u_\nu\), gives
+\begin{equation}\label{eq:verification}
+ \mathbb E\left[g(X_T)+\int_t^T
+       \left(\tfrac12|a_s|^2+m_\nu(s,X_s)\right)ds\right]
+ =u_\nu(t,x)+\tfrac12\mathbb E\int_t^T
+       |a_s+Du_\nu(s,X_s)|^2ds .
+\end{equation}
+The martingale has zero expectation because the test gradient is bounded
+for fixed \(\nu\); all drift terms are integrable by Cauchy--Schwarz.
+The coefficient \(\sqrt{2\nu}\) gives precisely the term \(\nu\Delta u_\nu\).
+See, for example, \cite[Theorem~3.7.1]{Lawler} for this version of
+It\^o's formula.
+
+The smooth feedback \(a_s=-Du_\nu(s,X_s)\) is admissible and realizes
+equality. Its process can be constructed by Picard iteration of the
+integral equation for \(X-\sqrt{2\nu}B\), successively on short time
+intervals. Thus \(u_\nu\) is the infimum of the left side of
+\eqref{eq:verification}. Applying the same calculation on \([t,s]\),
+with terminal function \(u_\nu(s,\cdot)\), gives
+\begin{equation}\label{eq:interval}
+ u_\nu(t,x)=\inf_a\mathbb E\left[
+ u_\nu(s,X_s)+\int_t^s
+ \left(\tfrac12|a_r|^2+m_\nu(r,X_r)\right)dr\right].
+\end{equation}
+An independent auxiliary random variable merely averages admissible costs
+and therefore also supplies an upper bound for these infima.
+
+Set \(g_*=\min g\) and
+\(M_\nu=\max_{[0,T]\times\T^d}(u_\nu-g_*)\).
+Nonnegative running costs imply \(u_\nu\ge g_*\). Every optimal trajectory
+starting at any \((t,x)\) satisfies
+\begin{equation}\label{eq:optimal-energy}
+ \mathbb E\int_t^T|a_s|^2ds\le2M_\nu .
+\end{equation}
+
+The density gradient can be bounded in terms of this value bound.
+For \(u_i=\partial_i u_\nu\), \(m_i=\partial_i m_\nu\), differentiating
+the equations gives
+\[
+ u_{i,t}=-\nu\Delta u_i+Du_\nu\cdot Du_i-m_i,\qquad
+ m_{i,t}=\nu\Delta m_i+
+ \operatorname{div}(m_iDu_\nu+m_\nu Du_i).
+\]
+Consequently, periodic integration by parts yields
+\[
+ \frac d{dt}\int_{\T^d}m_i u_i
+   =-\int_{\T^d}m_i^2-\int_{\T^d}m_\nu|Du_i|^2 .
+\]
+The diffusion terms cancel, as do the two terms containing
+\(m_iDu_\nu\cdot Du_i\). Sum in \(i\) and integrate in time:
+\begin{equation}\label{eq:derivative-energy}
+ \int_Q\bigl(|Dm_\nu|^2+m_\nu|D^2u_\nu|^2\bigr)
+ =-\int_{\T^d}\Delta m_0\,u_\nu(0)
+       +\int_{\T^d}m_\nu(T)\Delta g
+ \le \|\Delta m_0\|_1 M_\nu+\|\Delta g\|_\infty .
+\end{equation}
+Here \(\int\Delta m_0=0\) removes the constant \(g_*\). No division by
+the density is involved.
+
+For later use, the mass-one Gagliardo--Nirenberg estimate on the torus is
+\begin{equation}\label{eq:gn}
+ \int_{\T^d}m^{p_d}\le C_d(1+\|Dm\|_2^2),
+ \qquad m\ge0,\quad\int_{\T^d}m=1,\quad
+ p_d=\frac{2(d+1)}d .
+\end{equation}
+To see the additive term explicitly, multiply the periodic extension by
+a fixed smooth compact cutoff and apply the Euclidean inequality
+of \cite[Lecture~II, (2.2)--(2.3), pp.~125--126]{Nirenberg}.
+Writing \(Y=\|m\|_{p_d}\), \(D_0=\|Dm\|_2\),
+\(\theta=d/(d+1)\), one obtains
+\(Y\le C(D_0+\|m\|_2)^\theta\).
+Interpolation with mass one gives
+\(\|m\|_2\le Y^{(d+1)/(d+2)}\).
+Absorbing \(CY^{d/(d+2)}\) therefore gives
+\(Y\le C(1+D_0^\theta)\); since \(\theta p_d=2\), this proves
+\eqref{eq:gn}. The exceptional Euclidean condition in dimension two
+requires \(\theta<1\), which holds. The additive constant is necessary
+even for \(m=1\).
+
+Since \(p_d\ge8/3\) in the dimensions under consideration,
+\eqref{eq:derivative-energy} and \eqref{eq:gn} give, with \(p=8/3\),
+\begin{equation}\label{eq:mp-before}
+ \|m_\nu\|_{L^p(Q)}\le C(1+M_\nu)^{1/p}.
+\end{equation}
+We close this estimate by averaging paths that spread from their initial
+point. Choose
+\[
+ \beta=\frac9{17},\qquad c_T=\min(1,T^{-\beta}).
+\]
+The conditions needed are \(\beta>1/2\) for finite kinetic energy and
+\(d\beta<p-1\) for integrability of the running cost. They both hold
+for \(d\le3\). If \(h=T-t\), take \(z\) uniform in the Euclidean unit
+ball, independent of \(B\), and use
+\[
+ a_{t+r}=c_T\beta r^{\beta-1}z,\qquad
+ X_{t+r}=x+c_Tr^\beta z+\sqrt{2\nu}B_r,\quad 0<r<h.
+\]
+Its kinetic cost is at most \(C_T h^{2\beta-1}\).
+For \(F\ge0\), the ball average satisfies
+\begin{equation}\label{eq:ball}
+ \mathbb E_z F(Y+\vartheta z)
+   \le C_d\vartheta^{-d/p}\|F\|_{L^p(\T^d)},\qquad
+           0<\vartheta\le1 .
+\end{equation}
+Indeed, its periodic density is bounded by \(C_d\vartheta^{-d}\),
+with support volume at most \(C_d\vartheta^d\); the overlap of periodic
+lifts is bounded. H\"older's inequality gives \eqref{eq:ball}.
+Conditioning on the Brownian position and then applying H\"older in time,
+\begin{align}
+ \mathbb E\int_0^h m_\nu(t+r,X_{t+r})dr
+ &\le C_T
+   \left(\int_0^h r^{-d\beta/(p-1)}dr\right)^{1/p'}
+       \|m_\nu\|_{L^p(Q)} \notag\\
+ &\le C_T h^{a_d}\|m_\nu\|_{L^p(Q)},\qquad
+       a_d=1-\frac{d\beta+1}{p}>0 .\label{eq:spread-cost}
+\end{align}
+The worst value is \(a_3=1/34\).
+The control formula, bounded terminal cost and \eqref{eq:mp-before}
+now imply
+\[
+ M_\nu\le A+B(1+M_\nu)^{3/8}
+\]
+for fixed \(A,B\). Since \(3/8<1\), this bounds \(M_\nu\) uniformly.
+We have proved
+\begin{equation}\label{eq:uniform-bounds}
+ \|u_\nu\|_\infty+\|m_\nu\|_{L^{8/3}(Q)}
+ +\|Dm_\nu\|_{L^2(Q)}
+ +\|\sqrt{m_\nu}D^2u_\nu\|_{L^2(Q)}\le C .
+\end{equation}
+Integrating the Hamilton--Jacobi equation also gives
+\begin{equation}\label{eq:Du}
+ \tfrac12\int_Q|Du_\nu|^2
+      =T+\int_{\T^d}g-\int_{\T^d}u_\nu(0)\le C .
+\end{equation}
+
+\subsection{Spatial and temporal continuity}
+
+The averaging argument can be arranged to return to an optimal trajectory
+after a short time. This permits comparison of nearby initial positions
+without changing the later cost.
+
+\begin{proposition}\label{prop:modulus}
+Let \(\alpha=1/34\). For every \(0<\tau<T\),
+\begin{equation}\label{eq:modulus}
+ |u_\nu(t,x)-u_\nu(s,y)|
+ \le C_\tau\bigl(\operatorname{dist}(x,y)^\alpha
+                         +|t-s|^{\alpha/2}\bigr),
+ \quad t,s\in[0,T-\tau],\quad x,y\in\T^d .
+\end{equation}
+Moreover \(u_\nu(t,\cdot)\to g\) uniformly as \(t\uparrow T\),
+uniformly in \(0<\nu\le1\).
+\end{proposition}
+
+\begin{proof}
+First fix \(t\le T-\tau\). Put \(r=\operatorname{dist}(x,y)\) and
+let \(q\) be a shortest lift of \(y-x\).
+For \(0<r<\min(\tau/2,1/2)\), set \(h=r\), and let
+\(\widehat X_\ell,\widehat a_\ell\) be an optimal process from \((t,x)\).
+Write \(X_s=\widehat X_{t+s}\) and \(a_s=\widehat a_{t+s}\) for
+elapsed time \(0\le s\le T-t\). Recall \(\beta=9/17\).
+For an independent unit-ball parameter \(z\), define on \([0,h]\)
+\[
+ \vartheta_h(s)=h^\beta\left[\frac{s}{h}\left(1-\frac{s}{h}\right)\right]^\beta,
+ \qquad
+ X_s^z=X_s+(1-s/h)q+\vartheta_h(s)z .
+\]
+The new trajectory starts at \(y\), uses the same Brownian noise, and
+equals \(X_h\) at time \(h\). Its adapted control is
+\[
+ a_s^z=a_s+b_s^z,\qquad b_s^z=-q/h+\vartheta'_h(s)z.
+\]
+After \(h\), use the original process and control. This is an admissible
+control for each fixed \(z\): the added term is deterministic and
+square-integrable. In fact,
+\begin{equation}\label{eq:tube-energy}
+ \int_0^h|b_s^z|^2ds
+       \le C\left(\frac{r^2}{h}+h^{2\beta-1}\right).
+\end{equation}
+The derivative of \([v(1-v)]^\beta\) has squared endpoint power
+\(2\beta-2=-16/17>-1\), which proves this estimate.
+
+Since \(X_s\) is independent of \(z\), \eqref{eq:ball} applies to its
+shifted position. The time integral now has two endpoints:
+\[
+ \int_0^h\vartheta_h(s)^{-d/(p-1)}ds
+ =h^{1-d\beta/(p-1)}
+   \int_0^1[v(1-v)]^{-d\beta/(p-1)}dv .
+\]
+It is finite because \(d\beta/(p-1)\le81/85<1\). With
+\(p=8/3\) and \(a_d=1-(d\beta+1)/p\ge1/34\), this gives
+\[
+ \mathbb E\int_0^h m_\nu(t+s,X_s^z)ds
+           \le C h^{a_d}\|m_\nu\|_{L^p(Q)} .
+\]
+All costs after \(h\) agree exactly. Subtract the original optimal
+cost from the averaged competitor cost. Discard the original
+nonnegative running cost, and bound the kinetic increment
+\(a_s\cdot b_s^z+|b_s^z|^2/2\) by Cauchy--Schwarz,
+\eqref{eq:optimal-energy}, \eqref{eq:uniform-bounds} and
+\eqref{eq:tube-energy}. The result is
+\[
+ u_\nu(t,y)-u_\nu(t,x)
+ \le C\left(\frac r{\sqrt h}+h^{\beta-1/2}
+             +\frac{r^2}{h}+h^{2\beta-1}+h^{a_d}\right).
+\]
+With \(h=r\), every exponent is at least \(1/34\).
+Swap \(x,y\), and use the uniform value bound for larger \(r\), to obtain
+\begin{equation}\label{eq:space-modulus}
+ |u_\nu(t,x)-u_\nu(t,y)|
+       \le C_\tau\operatorname{dist}(x,y)^\alpha .
+\end{equation}
+The cost estimate concerns an averaged family of trajectories, rather
+than a trace of an \(L^p\) function on a single curve.
+
+For time continuity let \(0\le t<s\le T-\tau\), \(h=s-t\le1\).
+In \eqref{eq:interval}, use the spreading control from
+\eqref{eq:spread-cost}, restricted to this time interval.
+Its kinetic and running costs are bounded by
+\(C(h^{2\beta-1}+h^{a_d})\). The endpoint increment in
+\eqref{eq:space-modulus} is bounded by
+\[
+ C_\tau\mathbb E\operatorname{dist}(X_s,x)^\alpha
+ \le C_\tau(h^{\alpha\beta}+h^{\alpha/2})
+ \le C_\tau h^{\alpha/2}.
+\]
+Here \(\nu\le1\) and the Brownian second moment were used.
+This bounds \(u_\nu(t,x)-u_\nu(s,x)\) from above.
+For the lower bound discard the nonnegative running cost in
+\eqref{eq:interval}. If \(A=\mathbb E\int_t^s|a_r|^2dr\),
+\[
+ \mathbb E\operatorname{dist}(X_s,x)^\alpha
+       \le C(hA)^{\alpha/2}+C(\nu h)^{\alpha/2}.
+\]
+Minimizing \(A/2-C_\tau h^{\alpha/2}A^{\alpha/2}\) over \(A\ge0\)
+gives a lower bound \(-C_\tau h^{\alpha/(2-\alpha)}\).
+Since \(\alpha/(2-\alpha)>\alpha/2\), the lower time increment
+has the same modulus. Large time increments follow from the value
+bound. Together with \eqref{eq:space-modulus}, this proves
+\eqref{eq:modulus}.
+
+Finally put \(h=T-t\le1\). The spreading control and the Lipschitz
+continuity of \(g\) give
+\begin{equation}\label{eq:terminal}
+ g(x)-C(h+h^{1/2})\le u_\nu(t,x)
+       \le g(x)+C(h^{2\beta-1}+h^{a_d}+h^{1/2}).
+\end{equation}
+The lower bound follows from the same energy minimization with the
+Lipschitz exponent one. This proves the terminal assertion.
+\end{proof}
+
+Arzel\`a--Ascoli and a diagonal extraction on \([0,T-1/n]\times\T^d\)
+now yield a locally uniform value limit for every vanishing sequence
+of viscosities. In fact, \eqref{eq:terminal} makes the terminal strip
+uniformly close to \(g\), so the extracted subsequence converges
+uniformly on the whole closed cylinder. We will use its time-zero
+trace when identifying the limit.
+
+\section{The density limit and calibration}\label{sec:limit}
+
+Compactness alone does not determine the value in vacuum. We first identify
+the common density and flux by a convex minimization problem. A path
+representation of that pair will then determine every value limit on the
+occupied region.
+
+\subsection{The convex action}
+
+For \(\lambda\ge0\), let \(\mathcal K_\lambda\) consist of
+narrowly continuous probability curves
+\(\rho:[0,T]\to\mathcal P(\T^d)\), with a space-time density
+\(\rho\in L^2(Q)\), and measurable fluxes \(k\) of finite kinetic action,
+satisfying
+\[
+ \rho_t-\lambda\Delta\rho+\operatorname{div}k=0,\qquad \rho(0)=m_0 .
+\]
+Narrow continuity means continuity of the integral against each continuous
+spatial test. The equation includes endpoint traces: for every smooth
+\(\psi\) on the closed cylinder,
+\begin{equation}\label{eq:weak-ce}
+ \langle\psi(T),\rho(T)\rangle-\int_{\T^d}\psi(0)m_0
+ =\int_Q \rho(\psi_t+\lambda\Delta\psi)+k\cdot D\psi .
+\end{equation}
+The density is specified at almost every time; the narrow curve supplies
+the remaining time marginals. Define
+\begin{equation}\label{eq:action}
+ J_\lambda(\rho,k)=
+ \int_Q\left(\frac{|k|^2}{2\rho}+\frac{\rho^2}{2}\right)
+                    +\int_{\T^d}g\,d\rho(T),\qquad
+ I_\lambda=\inf_{\mathcal K_\lambda}J_\lambda .
+\end{equation}
+The kinetic integrand is zero at \((\rho,k)=(0,0)\) and infinite at
+\(\rho=0,k\ne0\). In particular, a finite-action flux vanishes in vacuum.
+The terminal pairing allows a measure, rather than requiring a density at
+every time.
+
+\begin{lemma}\label{lem:primal}
+Set \(j_\nu=-m_\nu Du_\nu\). Then \((m_\nu,j_\nu)\) minimizes
+\(J_\nu\) and
+\begin{equation}\label{eq:dual-value}
+ I_\nu=\int_{\T^d}m_0u_\nu(0)-\frac12\int_Qm_\nu^2.
+\end{equation}
+Its density-square and kinetic integrals are bounded independently of
+\(\nu\), and \(j_\nu\) is bounded in \(L^{4/3}(Q)\).
+\end{lemma}
+
+\begin{proof}
+Test \eqref{eq:weak-ce} with \(u_\nu\), substitute
+\(u_{\nu,t}+\nu\Delta u_\nu=|Du_\nu|^2/2-m_\nu\), and complete
+two squares. For every finite-action competitor,
+\begin{align}
+ J_\nu(\rho,k)
+ &=\int_{\T^d}m_0u_\nu(0)-\frac12\int_Qm_\nu^2
+       +\frac12\int_Q(\rho-m_\nu)^2 \notag\\
+ &\hspace{12mm}
+       +\frac12\int_Q\frac{|k+\rho Du_\nu|^2}{\rho}.
+       \label{eq:squares}
+\end{align}
+At vacuum the last term uses the same perspective convention.
+The smooth test has bounded derivatives for fixed viscosity, so the weak
+identity is legitimate for these competitors. Equation \eqref{eq:squares}
+proves minimization and \eqref{eq:dual-value}.
+
+Let \(P_s=e^{s\Delta}\) be the torus heat semigroup, \(P_0=\mathrm{id}\).
+Its periodic Gaussian kernel is positive, symmetric and of mass one.
+It commutes with spatial derivatives, preserves mass, and approximates
+the identity uniformly on continuous functions. These properties follow
+by summing the Euclidean Gaussian over \(\mathbb Z^d\); its derivative
+series converge uniformly on compact positive-time intervals.
+The competitor \((P_{\nu t}m_0,0)\) bounds
+\[
+ I_\nu\le \frac T2\|m_0\|_2^2+\max g .
+\]
+The terminal term in any admissible action is at least \(\min g\),
+so the two nonnegative integral terms are bounded separately.
+H\"older's inequality gives
+\begin{equation}\label{eq:flux}
+ \int_Q|j_\nu|^{4/3}
+ \le\left(\int_Q\frac{|j_\nu|^2}{m_\nu}\right)^{2/3}
+       \left(\int_Qm_\nu^2\right)^{1/3},
+\end{equation}
+which proves the flux bound.
+\end{proof}
+
+\begin{proposition}\label{prop:density}
+There is a unique minimizer \((m,j)\) of \(J_0\) over \(\mathcal K_0\).
+As \(\nu\downarrow0\),
+\[
+ I_\nu\longrightarrow I_0,\qquad
+ m_\nu\longrightarrow m\quad\hbox{strongly in }L^2(Q).
+\]
+Along extracted subsequences the probability curves converge narrowly,
+uniformly in time, to \(m(t)\), and \(j_\nu\rightharpoonup j\) in
+\(L^{4/3}(Q)\).
+\end{proposition}
+
+\begin{proof}
+For every smooth spatial test \(\varphi\), the continuity equation and
+Cauchy--Schwarz give
+\begin{equation}\label{eq:narrow-mod}
+ |\langle\varphi,m_\nu(t)-m_\nu(s)\rangle|
+ \le \nu|t-s|\|\Delta\varphi\|_\infty
+ +\|D\varphi\|_\infty\sqrt{|t-s|}
+              \left(\int_Q\frac{|j_\nu|^2}{m_\nu}\right)^{1/2}.
+\end{equation}
+The space of probability measures on the compact torus is compact for narrow
+convergence. Diagonal extraction against a countable dense family of
+spatial tests therefore yields a continuous limiting probability curve,
+with convergence uniform in time. Extract also weak limits in \(L^2\)
+for the densities and \(L^{4/3}\) for the fluxes. One may obtain these
+by diagonalizing bounded pairings against a countable dense family of
+dual tests, then using \(L^p\) duality
+\cite[Theorem~6.15, p.~190]{Folland}. Time integration identifies the weak
+density with the narrow curve at almost every time.
+Passing to \eqref{eq:weak-ce} proves
+\((m,j)\in\mathcal K_0\) once lower semicontinuity gives finite action.
+The diffusion term tends to zero since \(\nu m_\nu\to0\) in \(L^2\);
+the initial marginal remains exactly \(m_0\).
+
+Both nonnegative action terms are weakly lower semicontinuous. For the
+kinetic term this follows from
+\[
+ \frac{|k|^2}{2\rho}
+       =\sup_b\left(k\cdot b-\frac{\rho|b|^2}{2}\right).
+\]
+The integral equals the supremum over smooth bounded fields. To check
+this without a positivity assumption, take \(b_N\) in the direction
+of \(k\), of magnitude \(\min(|k|/\rho,N)\) where \(\rho>0\),
+and magnitude \(N\) where \(\rho=0,k\ne0\).
+Its nonnegative dual integrand increases to the perspective, including
+the infinite vacuum case. Smooth convolution approximates \(b_N\)
+in \(L^1\) and along a subsequence almost everywhere, keeping the
+bound \(N\). Dominated convergence applies with
+\(N|k|+N^2\rho/2\), and monotone convergence lets \(N\to\infty\).
+Each smooth dual pairing is weakly continuous, proving the assertion.
+The same argument with \(c_N=\min(\rho,N)\) and
+\(\rho^2/2=\sup_c(\rho c-c^2/2)\) applies to the density square.
+The convolution approximation is the usual approximate-identity
+property \cite[Theorem~8.14, pp.~242--243]{Folland}; periodic functions are localized
+by a compact cutoff, and time extensions are zero. Thus
+\begin{equation}\label{eq:liminf}
+ J_0(m,j)\le\liminf_{\nu\downarrow0}I_\nu
+\end{equation}
+along the chosen subsequence, with the terminal term converging narrowly.
+
+For the opposite inequality, take any finite-action
+\((\rho,k)\in\mathcal K_0\) and set
+\begin{equation}\label{eq:recovery}
+ \rho_\nu(t)=P_{\nu t}\rho(t),\qquad
+ k_\nu(t)=P_{\nu t}k(t).
+\end{equation}
+Use \(P_{\nu t}\psi(t)\) as the test in the zero-diffusion equation.
+Since
+\(\partial_t(P_{\nu t}\psi)=P_{\nu t}(\psi_t+\nu\Delta\psi)\),
+self-adjointness and commutation with \(D\) give
+\eqref{eq:weak-ce} for \((\rho_\nu,k_\nu)\) with diffusivity \(\nu\).
+At time zero \(P_0=\mathrm{id}\), so \(\rho_\nu(0)=m_0\) exactly.
+For the positive probability kernel, weighted Cauchy--Schwarz gives
+\[
+ |P_s k|^2\le P_s\rho\,P_s(|k|^2/\rho),\qquad
+ (P_s\rho)^2\le P_s(\rho^2).
+\]
+Integration proves that neither integral action term increases.
+Moreover
+\(\int g\,d\rho_\nu(T)=\int P_{\nu T}g\,d\rho(T)\to\int g\,d\rho(T)\).
+Consequently
+\[
+ \limsup_{\nu\downarrow0}I_\nu\le I_0 .
+\]
+The set \(\mathcal K_0\) is nonempty, since \((m_0,0)\) is admissible.
+Together with \eqref{eq:liminf}, this proves attainment and convergence
+of the minima.
+
+If two minimizers had different densities, the density-square term
+at their midpoint would decrease the average action by
+\(\frac18\int(\rho-\widetilde\rho)^2\), while the kinetic perspective
+is convex. Thus the densities coincide. At a common density the
+kinetic midpoint defect is
+\(\frac18\int|k-\widetilde k|^2/\rho\), and both fluxes are zero
+in vacuum. This proves uniqueness. Equality of the space-time densities
+also identifies their narrow curves at all times by continuity.
+Finally, convergence of total action and separate lower semicontinuity
+force convergence of the density-square integrals. Weak convergence
+and this norm convergence imply strong \(L^2\) convergence. Every
+vanishing sequence has the same conclusion, so the density convergence
+and convergence of the minima hold for the entire family.
+\end{proof}
+
+Let \(u\) be any uniform accumulation point on the closed cylinder supplied
+by Proposition~\ref{prop:modulus}. Passing in \eqref{eq:dual-value} gives
+\begin{equation}\label{eq:limit-dual}
+ \int_{\T^d}m_0u(0)=I_0+\frac12\int_Qm^2 .
+\end{equation}
+The gradient estimate \eqref{eq:Du} identifies \(Du\in L^2(Q)\) as the
+weak limit of a further subsequence of gradients. Convex lower
+semicontinuity against nonnegative tests in the Hamilton--Jacobi equation
+then gives
+\begin{equation}\label{eq:subdist}
+ -u_t+\tfrac12|Du|^2\le m \quad\hbox{in distributions on }Q .
+\end{equation}
+The term \(\nu\Delta u_\nu\) tends to zero distributionally, and
+the terminal trace is \(u(T)=g\). Both \eqref{eq:limit-dual} and
+\eqref{eq:subdist} hold for every value accumulation point with the same
+pair \((m,j)\).
+
+\subsection{A common family of calibrated paths}
+
+We use a path representation of the finite-action continuity equation.
+Its construction and the subsequent calibration are the quadratic
+specializations of the path arguments in \cite[Section~4.3]{Cardaliaguet}.
+We give the details needed here, without invoking that paper's general
+MFG existence or uniqueness theorem.
+
+\begin{lemma}\label{lem:paths}
+There is a probability law \(\eta\) on
+\(\Gamma=C([0,T];\T^d)\), with the uniform metric, such that
+\begin{equation}\label{eq:path-law}
+ (e_t)_\#\eta=m(t)\quad(0\le t\le T),\qquad
+ \int_\Gamma\int_0^T|\dot\gamma|^2\,ds\,d\eta(\gamma)
+           \le\int_Q\frac{|j|^2}{m}.
+\end{equation}
+Here \(e_t(\gamma)=\gamma(t)\). The law is concentrated on absolutely
+continuous paths with square-integrable velocities, using local
+Euclidean lifts on the torus.
+\end{lemma}
+
+\begin{proof}
+For \(\delta>0\), smooth only in space with the torus heat semigroup
+\(P_\delta=e^{\delta\Delta}\):
+\(m^\delta=P_\delta m\), \(j^\delta=P_\delta j\).
+The positive heat kernel and mass one give
+\(m^\delta(t,x)\ge\kappa_\delta>0\).
+All spatial derivatives of \(m^\delta\) are uniformly bounded in time,
+and those of \(j^\delta(t)\) are bounded by
+\(C_\delta\|j(t)\|_1\). Thus
+\(b^\delta=j^\delta/m^\delta\) has integrable-in-time supremum
+and spatial Lipschitz bounds.
+Its integral equation has a unique flow, by Picard iteration on finitely
+many intervals where the integrated Lipschitz bound is below \(1/2\).
+Reversing time supplies the inverse flow.
+
+The flow transports \(m^\delta(0)\) to \(m^\delta(t)\). Indeed,
+\(\partial_tm^\delta=-\operatorname{div}j^\delta\) has an
+integrable-in-time smooth-spatial right side. A smooth terminal test
+composed with the backward flow satisfies
+\(\zeta_t+b^\delta\cdot D\zeta=0\); differentiating
+\(\int\zeta m^\delta\) gives zero. The same identity along the flow
+identifies every terminal test integral of the push-forward.
+The required time derivatives are absolutely continuous, so the product
+rule follows by integration of their \(L^1\) derivatives.
+
+Let \(\eta^\delta\) be the law of these flow paths, with initial
+distribution \(m^\delta(0)\). Weighted Cauchy--Schwarz for the heat
+kernel yields
+\[
+ \int_\Gamma\int_0^T|\dot\gamma|^2ds\,d\eta^\delta
+ =\int_Q\frac{|j^\delta|^2}{m^\delta}
+ \le\int_Q\frac{|j|^2}{m}.
+\]
+The path energy, infinite outside the finite-energy paths, is lower
+semicontinuous and has compact sublevels. One convenient expression is
+\[
+ \mathcal E(\gamma)=
+ \sup_{0=t_0<\cdots<t_n=T}
+ \sum_i\frac{\operatorname{dist}(\gamma(t_i),\gamma(t_{i-1}))^2}
+                    {t_i-t_{i-1}} .
+\]
+For an absolutely continuous path, Cauchy--Schwarz bounds this expression
+by its energy. Conversely, polygonal interpolants on vanishing-mesh
+partitions have bounded \(L^2\) velocity whenever the displayed supremum
+is finite. On local torus charts, weak extraction of these velocities
+and uniform convergence of the interpolants give an absolutely continuous
+limit lift. Interval averages of its velocity converge in \(L^2\),
+so the supremum equals its energy. This also proves lower
+semicontinuity, since each partition expression is continuous.
+Its sublevels have modulus
+\(\operatorname{dist}(\gamma(t),\gamma(s))\le\sqrt{R|t-s|}\)
+at energy \(R\), and are compact by Arzel\`a--Ascoli.
+
+Markov's inequality therefore makes the laws tight.
+The path space is complete and separable, so Prokhorov compactness
+and the lower-semicontinuity inequality for integrals give a narrow
+limit \(\eta\) with the asserted energy bound; see
+\cite[Appendix~C, Theorems~C.9 and C.12, p.~430 of the author manuscript]{AGZ}.
+The evaluation maps are continuous and \(P_\delta m(t)\to m(t)\)
+narrowly for every time. They give all the marginals in
+\eqref{eq:path-law}.
+\end{proof}
+
+\begin{proposition}\label{prop:calibration}
+Every value accumulation point \(u\) satisfies, on one \(\eta\)-full set,
+\begin{equation}\label{eq:calibrated}
+ u(t,\gamma(t))=g(\gamma(T))+
+ \int_t^T\left(\tfrac12|\dot\gamma(s)|^2+
+                          m(s,\gamma(s))\right)ds,\qquad 0\le t\le T.
+\end{equation}
+In particular, any two value accumulation points \(u,v\) agree
+\(m(t)\)-almost everywhere at every time, and agree almost everywhere
+on the occupied region \(\{m>0\}\subset Q\).
+\end{proposition}
+
+\begin{proof}
+Convolve \eqref{eq:subdist} with a positive smooth unit-mass
+space-time kernel. Denote the resulting functions by \(u_\epsilon\),
+\(m_\epsilon\); these differ from the spatial heat regularizations
+used in Lemma~\ref{lem:paths}. Convexity gives
+\[
+ -u_{\epsilon,t}+\tfrac12|Du_\epsilon|^2\le m_\epsilon
+\]
+on each compact interior time interval for small \(\epsilon\).
+Along an absolutely continuous finite-energy path the chain rule and
+completion of a square give
+\[
+ -\frac d{ds}u_\epsilon(s,\gamma(s))
+ \le m_\epsilon-\tfrac12|Du_\epsilon|^2
+                      -Du_\epsilon\cdot\dot\gamma
+ \le m_\epsilon+\tfrac12|\dot\gamma|^2 .
+\]
+The endpoints pass by local uniform convergence of \(u_\epsilon\).
+The running cost passes for almost every path because
+\begin{align}
+ \int_\Gamma\int_0^T
+ |m_\epsilon(s,\gamma(s))-m(s,\gamma(s))|\,ds\,d\eta
+ &=\int_Qm|m_\epsilon-m| \notag\\
+ &\le\|m\|_2\|m_\epsilon-m\|_2\longrightarrow0 .
+ \label{eq:family-trace}
+\end{align}
+Here the time extension of \(m\) is zero; periodic spatial convolution
+is justified by localization of the extension. Restrict the smooth
+inequality to interior intervals before taking the limit.
+A subsequence gives convergence of the absolute path integrals almost
+surely. Pass first for rational endpoints, then for all endpoints by
+continuity and integrability of the path cost, finally including
+zero and \(T\) by the value traces. This gives, on one full set,
+\begin{equation}\label{eq:path-ineq}
+ u(a,\gamma(a))\le u(b,\gamma(b))+
+ \int_a^b\left(\tfrac12|\dot\gamma|^2+m(s,\gamma(s))\right)ds
+ \quad(0\le a<b\le T).
+\end{equation}
+The cost is integrable: its expectation is at most
+\(\frac12\int |j|^2/m+\int m^2\).
+A Borel representative of \(m\) may be chosen arbitrarily; the
+occupation identity in \eqref{eq:family-trace} makes changes on
+space-time null sets irrelevant to almost every path-time.
+
+For \(a=0,b=T\), the expected right side of \eqref{eq:path-ineq}
+is at most
+\[
+ \frac12\int_Q\frac{|j|^2}{m}+\int_Qm^2+\int g\,dm(T)
+ =I_0+\frac12\int_Qm^2
+ =\int_{\T^d}m_0u(0),
+\]
+by \eqref{eq:limit-dual}. The inequality supplies the reverse bound,
+so its nonnegative pathwise gap has zero mean and vanishes almost surely.
+Split that zero gap at \(t\). Both partial gaps are nonnegative and
+therefore vanish, proving \eqref{eq:calibrated} for every \(t\)
+on the same full set.
+
+Every other accumulation point satisfies the identical formula for
+the same \(m,j,\eta\). Intersect the two full sets and push forward
+by \(e_t\) to get equality \(m(t)\)-almost everywhere.
+For almost every time this marginal has density \(m(t,x)\);
+Fubini then gives \(\int_Q m|u-v|=0\), proving the last assertion.
+\end{proof}
+
+\section{Uniqueness of the value limit}\label{sec:vacuum}
+
+The equality on the occupied region leaves only vacuum to consider.
+Every accumulation point is a viscosity supersolution of the homogeneous
+equation
+\begin{equation}\label{eq:super}
+ -u_t+\tfrac12|Du|^2\ge0 .
+\end{equation}
+For completeness, if a smooth test \(\phi\) touches \(u\) from below
+at an interior point, make the touch strict and take nearby interior
+minimizers of \(u_\nu-\phi\). There
+\(u_{\nu,t}=\phi_t\), \(Du_\nu=D\phi\) and
+\(\Delta u_\nu\ge\Delta\phi\). Hence
+\[
+ -\phi_t-\nu\Delta\phi+\tfrac12|D\phi|^2\ge m_\nu\ge0 .
+\]
+Uniform convergence permits passage to the touching point, proving
+\eqref{eq:super}. A fourth-power local perturbation removes the
+strict-touch restriction. No pointwise limiting density is used.
+
+Let \(u,v\) be two accumulation points and set
+\(O=\{(t,x)\in Q:u(t,x)>v(t,x)\}\).
+Proposition~\ref{prop:calibration} gives \(m=0\) almost everywhere in \(O\).
+Equation \eqref{eq:subdist} therefore makes \(u\) a distributional
+subsolution of the homogeneous Hamilton--Jacobi equation there.
+It is also a viscosity subsolution. Indeed, on compact subsets of \(O\),
+positive convolution and convexity give smooth subsolutions converging
+uniformly to \(u\). Interior maxima against a smooth upper test pass
+the subsolution inequality to the limit. The gradient \(Du\in L^2\)
+justifies this convolution.
+
+We show directly that \(O\) is empty. This is the homogeneous comparison
+used for the vacuum extension in \cite[proof of Theorem~4.2]{Cardaliaguet}.
+Suppose \(u(t_0,x_0)>v(t_0,x_0)\). Choose \(0<a<t_0\) and small
+\(\varepsilon>0\) so that
+\[
+ w(t,x)=u(t,x)-\frac{\varepsilon}{t-a}
+\]
+still exceeds \(v\) at \((t_0,x_0)\).
+On \(O\cap\{t>a\}\) it is a strict viscosity subsolution:
+\[
+ -w_t+\tfrac12|Dw|^2\le-\frac{\varepsilon}{(t-a)^2}.
+\]
+The positive maximum of \(w-v\) stays away from \(a\), where \(w\)
+tends below \(v\), from \(T\), where \(u=v=g\), and from the
+interior boundary of \(O\), where \(u=v\).
+On a compact time interval containing this maximum, maximize
+\[
+ w(t,x)-v(s,y)
+ -\frac{\operatorname{dist}(x,y)^2+|t-s|^2}{2\delta}.
+\]
+Boundedness and uniform continuity force the separation to zero as
+\(\delta\downarrow0\), while the limiting difference remains positive.
+The time coordinates are therefore interior, and the \(w\)-test point
+is in \(O\). For small \(\delta\), the shortest lift is unique and the
+penalty is smooth there. The upper test for \(w\) and lower test for
+\(v\) have the same derivatives
+\[
+ q=(t-s)/\delta,\qquad p=(x-y)/\delta
+\]
+in these lifts. They would give simultaneously
+\[
+ -q+\tfrac12|p|^2\le-\frac{\varepsilon}{(t-a)^2}<0,
+ \qquad -q+\tfrac12|p|^2\ge0 ,
+\]
+a contradiction. The gradients need not be bounded: the Hamiltonian
+is independent of time and position and cancels exactly.
+No initial value condition for the first-order value function is
+required. Thus \(u\le v\); interchanging them proves equality.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Every vanishing sequence has a uniformly convergent subsequence on
+compact interior slabs, and its limit is continuous by
+Proposition~\ref{prop:modulus}. The argument above identifies every
+accumulation point with the same function \(u\). If convergence failed
+on a fixed slab, a sequence with uniform error bounded below by a
+positive number would admit a subsequence converging to that same \(u\),
+a contradiction. The single function obtained this way works for every
+\(0<\tau<T/2\), which proves the entire-family assertion.
+\end{proof}
+
+\section*{AI use}
+AI tools were used in developing the argument, drafting and revising the
+exposition, checking references and validating the document. Two additional
+AI contexts reviewed a frozen draft for reader comprehension and mathematical
+objections. The manuscript is submitted for independent mathematical review.
+
+\begin{thebibliography}{99}
+
+\bibitem{AGZ}
+G.~W.~Anderson, A.~Guionnet and O.~Zeitouni,
+\emph{An Introduction to Random Matrices},
+Cambridge Studies in Advanced Mathematics~118,
+Cambridge University Press, 2009.
+\href{https://doi.org/10.1017/CBO9780511801334}{doi:10.1017/CBO9780511801334}.
+An author manuscript containing Appendix~C is available at
+\url{https://staff.math.su.se/shapiro/UIUC/RandomMatrices.pdf};
+the Appendix~C locators refer to this manuscript.
+
+\bibitem{Cardaliaguet}
+P.~Cardaliaguet,
+\emph{Weak solutions for first order mean field games with local coupling},
+arXiv:1305.7015v1, 2013.
+\url{https://arxiv.org/abs/1305.7015v1}.
+
+\bibitem{CLLP}
+P.~Cardaliaguet, J.-M.~Lasry, P.-L.~Lions and A.~Porretta,
+Long time average of mean field games,
+\emph{Networks and Heterogeneous Media} \textbf{7} (2012), no.~2, 279--301.
+\href{https://doi.org/10.3934/nhm.2012.7.279}{doi:10.3934/nhm.2012.7.279}.
+
+\bibitem{Folland}
+G.~B.~Folland,
+\emph{Real Analysis: Modern Techniques and Their Applications},
+second edition, John Wiley \& Sons, Inc., 1999.
+
+\bibitem{GraberMeszaros}
+P.~Jameson Graber and Alp\'ar R.~M\'esz\'aros,
+Sobolev regularity for first order mean field games,
+\emph{Annales de l'Institut Henri Poincar\'e C, Analyse non lin\'eaire}
+\textbf{35} (2018), no.~6, 1557--1576.
+\href{https://doi.org/10.1016/j.anihpc.2018.01.002}{doi:10.1016/j.anihpc.2018.01.002}.
+
+\bibitem{Lawler}
+G.~F.~Lawler,
+\emph{Stochastic Calculus: An Introduction with Applications},
+author manuscript, revised 15 February 2023.
+\url{https://www.math.uchicago.edu/~lawler/finbook.pdf}.
+
+\bibitem{Nirenberg}
+L.~Nirenberg,
+On elliptic partial differential equations,
+\emph{Annali della Scuola Normale Superiore di Pisa, Classe di Scienze},
+series~3, \textbf{13} (1959), no.~2, 115--162.
+\url{https://www.numdam.org/item/ASNSP_1959_3_13_2_115_0/}.
+
+\bibitem{TangZhang}
+W.~Tang and Y.~P.~Zhang,
+The convergence rate of vanishing viscosity approximations for mean field games,
+\emph{SIAM Journal on Mathematical Analysis} \textbf{57} (2025),
+no.~3, 3217--3254.
+\href{https://doi.org/10.1137/24M1640008}{doi:10.1137/24M1640008}.
+
+\end{thebibliography}
+\end{document}
