@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "package": "Quadratic barrier parameters for hyperbolic balls",
+  "package_version": "2026-10-14-v2",
+  "problem_id": 540,
+  "original_statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "original_statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/540-hyperbolic-ball-barrier-parameter.md",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "claim": "For R>1: (R-1)^2/256 <= theta_*(R) <= 1+2R^2 under the full arbitrary-triple definition; sharp order R^2.",
+  "status": "Complete analytic solution claim offered for independent mathematical review.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "09fb64d749c72de63fb385a218f171c23ef7836e147b5aae28593173855f8c32",
+      "bytes": 2149
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "904a64257c0f7f33dd99f6412608372f6c5f9e2fb4fc94d3acc2855f0e176477",
+      "bytes": 2749
+    },
+    {
+      "path": "paper/hyperbolic_ball_barriers.tex",
+      "sha256": "57dd94a87fd6fcca25ea8f3850c784dbf18e277acfb0198041d16b4701ff85de",
+      "bytes": 11966
+    },
+    {
+      "path": "paper/hyperbolic_ball_barriers.pdf",
+      "sha256": "4db3a2a2d380e620e903468a202173424d20ed18f28ec5f2624abd78de15fbfd",
+      "bytes": 274705
+    }
+  ]
+}

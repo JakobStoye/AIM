@@ -1,0 +1,325 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Quadratic barrier parameters for hyperbolic balls},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\R}{\mathbb R}
+\newcommand{\SC}{\nabla^3}
+\title{Quadratic barrier parameters for hyperbolic balls}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+For geodesic balls of radius \(R\) in the hyperbolic plane of curvature
+\(-1\), we prove that the least parameter of a self-concordant barrier is
+of order \(R^2\). Self-concordance is required for arbitrary triples of
+tangent vectors. The lower bound holds for every barrier, without a
+symmetry assumption: at a maximum on a geodesic circle, curvature forces
+a fixed positive radial Hessian. A scalar convexity argument turns this
+local constraint into a quadratic lower bound. The known quadratic
+construction is therefore optimal in order, and an \(O(\sqrt R)\)
+parameter is impossible for this definition.
+\end{abstract}
+
+\section{The parameter of a hyperbolic ball}
+
+Self-concordant barriers extend interior-point methods to geodesically
+convex optimization on manifolds. Their barrier parameter enters the
+iteration bounds, so its dependence on the size of the domain is a basic
+question. For hyperbolic balls, constructions with a quadratic dependence
+on the radius are known \cite{Hirai,HNW}. Criscitiello, Nieuwboer and Walter
+proved a lower bound of order \(\sqrt R\), and asked whether it is sharp
+\cite[Corollary~1.4 and the following paragraph]{CNW}. Their lower bound
+also applies to the weaker notion of self-concordance along geodesics.
+Here we determine the order for the full mixed-derivative definition.
+
+Let \(\HH^2\) have curvature \(-1\), fix \(o\in\HH^2\), and write
+\[
+ D_R=\{x\in\HH^2:d(o,x)<R\}.
+\]
+All derivatives use the Levi-Civita connection. For \(F\in C^3(D_R)\),
+put \(H=\nabla^2F\) and
+\[
+ T(u,v,w)=(\nabla_uH)(v,w).
+\]
+For \(\theta\geq0\), a \(\theta\)-barrier means that \(H\) is positive
+definite, the epigraph of \(F\) is closed in \(\HH^2\times\R\), and, at
+every \(x\in D_R\) and for all \(u,v,w\in T_x\HH^2\),
+\begin{align}
+ |T(u,v,w)|&\leq2\sqrt{H(u,u)H(v,v)H(w,w)},\label{eq:SC}\\
+ |dF(v)|^2&\leq\theta H(v,v).\label{eq:gradient}
+\end{align}
+This is the full definition in \cite[Definition~1.1 and Definition~4.1]{HNW}
+and \cite[Section~2.3]{CNW}. Define
+\[
+ \theta_*(R)=\inf\{\theta\geq0:
+       \text{there is a \(\theta\)-barrier on \(D_R\)}\}.
+\]
+The infimum allows a different function for each \(R\).
+
+\begin{theorem}\label{thm:main}
+For every \(R>1\),
+\[
+ \frac{(R-1)^2}{256}\leq\theta_*(R)\leq1+2R^2.
+\]
+In particular, for every \(R\geq2\),
+\[
+ \frac{R^2}{1024}\leq\theta_*(R)\leq\frac94R^2.
+\]
+Thus \(\theta_*(R)\) has order \(R^2\) as \(R\to\infty\), with absolute
+comparison constants, and is not \(O(\sqrt R)\).
+\end{theorem}
+
+The upper bound is a specialization of the construction in
+\cite[Theorem~1.6]{HNW}. The new lower bound uses the asymmetry of the
+third covariant derivative. At a circle maximum, the tangential Hessian
+is controlled by the outward derivative; curvature then forces a
+positive radial second derivative. Taking maxima over circles preserves
+enough scalar convexity to compare this growth with
+\eqref{eq:gradient}. No averaging or rotational symmetry of \(F\) is
+used. The argument does not give the same lower bound when
+\eqref{eq:SC} is assumed only for \(u=v=w\); the corresponding weaker
+question remains separate.
+
+\section{The lower bound}
+
+For \(r=d(o,x)>0\), use geodesic polar coordinates. The metric and
+orthonormal radial and tangential vectors are
+\[
+ g=dr^2+\sinh^2r\,d\phi^2,\qquad
+ e_r=\partial_r,\qquad e_t=\frac1{\sinh r}\partial_\phi.
+\]
+In this frame, \(\nabla_{e_t}e_t=-\coth(r)e_r\). We use the curvature
+convention
+\[
+ {\cal R}(U,V)W=\nabla_U\nabla_VW-\nabla_V\nabla_UW-\nabla_{[U,V]}W.
+\]
+Commuting the two covariant derivatives of the covector \(dF\), and using
+torsion-freeness, gives
+\begin{equation}
+ T(u,v,w)-T(v,u,w)=-dF({\cal R}(u,v)w).\label{eq:commutator}
+\end{equation}
+The minus sign is the curvature action on a covector. Since the curvature
+is \(-1\), \({\cal R}(e_r,e_t)e_t=-e_r\).
+
+\begin{lemma}\label{lem:circle}
+Suppose \(H>0\) and \eqref{eq:SC} holds. At every maximum of \(F\) on a
+circle of radius \(r\in(0,R)\),
+\[
+ F_{rr}\geq\frac{\tanh^2r}{16}.
+\]
+\end{lemma}
+
+\begin{proof}
+At such a point let \(p=F_r\), \(a=H(e_r,e_r)\), and \(b=H(e_t,e_t)\).
+The second derivative in the angular variable is nonpositive. Therefore
+\begin{equation}
+ 0<b=\frac{F_{\phi\phi}}{\sinh^2r}+p\coth r\leq p\coth r,
+ \label{eq:tangential}
+\end{equation}
+which proves \(p>0\). By \eqref{eq:commutator} and the two mixed instances
+of \eqref{eq:SC},
+\[
+ p=|T(e_r,e_t,e_t)-T(e_t,e_r,e_t)|
+   \leq4\sqrt a\,b
+   \leq4\sqrt a\,p\coth r.
+\]
+Dividing by \(p>0\) proves the assertion, since \(a=F_{rr}\).
+\end{proof}
+
+\begin{proposition}\label{prop:lower}
+Every \(\theta\)-barrier on \(D_R\), with \(R>1\), satisfies
+\(\theta\geq(R-1)^2/256\).
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+ m(r)=\max_{\phi}F(r,\phi),\qquad 0\leq r<R.
+\]
+Each maximum exists because the circle is compact. On every compact
+radial interval inside the ball, the derivatives of the radial
+restrictions are bounded uniformly in the direction. The mean value
+theorem gives the same Lipschitz bound for their maximum.
+
+Extend \(m\) to \((-R,R)\) as the maximum of
+\(F(\exp_o(r\xi))\) over unit vectors \(\xi\in T_o\HH^2\). Each restriction
+is convex, so the maximum is convex. It is even, since replacing \(r\)
+by \(-r\) replaces \(\xi\) by \(-\xi\). It follows that \(m\) is
+nondecreasing for \(r\geq0\).
+
+We claim that
+\begin{equation}
+ h(r)=m(r)-\frac{r^2}{128}
+       \quad\hbox{is convex on }[1,R).\label{eq:strong}
+\end{equation}
+Indeed, if chord convexity fails on some \([s,t]\subset[1,R)\), let
+\(L\) be the affine function interpolating \(h(s)\) and \(h(t)\).
+The function
+\[
+ F(r,\phi)-\frac{r^2}{128}-L(r)
+\]
+has a positive maximum on the compact annulus \([s,t]\times S^1\).
+Its maximum on either endpoint circle is zero, so a maximizing point
+\((r_0,\phi_0)\) has \(s<r_0<t\). Its angle also maximizes
+\(F(r_0,\cdot)\). The radial second derivative test gives
+\(F_{rr}(r_0,\phi_0)\leq1/64\), whereas Lemma~\ref{lem:circle} gives
+\[
+ F_{rr}(r_0,\phi_0)\geq\frac{\tanh^2r_0}{16}>
+ \frac1{64}.
+\]
+Here \(r_0\geq1\) and \(\tanh1>1/2\). This proves \eqref{eq:strong},
+including when the maximizing angle changes or \(m\) is not
+differentiable.
+
+Finite locally Lipschitz convex functions have finite right derivatives,
+which are nondecreasing. Applying this to \(h\), and using
+\(m'_+(1)\geq0\), yields
+\begin{equation}
+ m'_+(r)\geq\frac{r-1}{64},\qquad 1<r<R.\label{eq:lower-slope}
+\end{equation}
+
+For the opposing estimate, first note that \(\theta>0\): otherwise
+\eqref{eq:gradient} makes \(dF\) vanish everywhere, contradicting \(H>0\).
+For any unit \(\xi\in T_o\HH^2\), put
+\(f(t)=F(\exp_o(t\xi))\), \(-R<t<R\). Along this geodesic,
+\[
+ f''(t)>0,\qquad f'(t)^2\leq\theta f''(t).
+\]
+If \(f'(s)>0\), then \(f'(t)>0\) for \(s<t<R\), and
+\[
+ \left(\frac1{f'}\right)'=-\frac{f''}{(f')^2}\leq-\frac1\theta.
+\]
+Comparison on \([s,t]\), with \(t<R\), gives
+\[
+ 0<\frac1{f'(t)}
+   \leq\frac1{f'(s)}-\frac{t-s}{\theta}.
+\]
+Letting \(t\uparrow R\) proves \(f'(s)\leq\theta/(R-s)\). The same
+inequality holds if \(f'(s)\leq0\). Thus, for every direction and
+\(0\leq s<t<R\),
+\[
+ f(t)-f(s)\leq\theta\log\frac{R-s}{R-t}.
+\]
+This follows, for example, by differentiating
+\(f(t)+\theta\log(R-t)\), whose derivative is nonpositive. Taking
+maxima over all directions gives the identical increment bound for
+\(m\), and therefore
+\begin{equation}
+ m'_+(s)\leq\frac{\theta}{R-s},\qquad 0\leq s<R.\label{eq:upper-slope}
+\end{equation}
+No interchange between differentiation and a maximum is needed.
+
+Combining \eqref{eq:lower-slope} and \eqref{eq:upper-slope} at
+\(s=(R+1)/2\) gives
+\[
+ \theta\geq\frac{(s-1)(R-s)}{64}=\frac{(R-1)^2}{256}.
+\]
+\end{proof}
+
+\section{The upper bound}
+
+We include the specialization of the known construction to check every
+clause of the barrier definition.
+
+\begin{proposition}\label{prop:upper}
+For every \(R>0\), the function
+\[
+ F_R(x)=-\log\bigl(R^2-d(o,x)^2\bigr)+d(o,x)^2
+\]
+is a \((1+2R^2)\)-barrier on \(D_R\).
+\end{proposition}
+
+\begin{proof}
+Put \(q(x)=d(o,x)^2\), \(Q=\nabla^2q\).
+In the source convention, \(\alpha\)-self-concordance replaces the
+coefficient \(2\) in \eqref{eq:SC} by \(2/\sqrt\alpha\).
+By \cite[Theorem~5.16(i)]{HNW}, \(q\) is \(8\)-self-concordant on
+curvature \(-1\) hyperbolic space, hence also \(1\)-self-concordant.
+This assertion uses the full tensor definition. To make the repeated-slot
+form of the source estimate explicit, fix the first vector and regard the
+last two slots as a symmetric bilinear form \(A\). If
+\(|A(z,z)|\leq KQ(z,z)\) for all \(z\), polarization gives, for \(a>0\),
+\[
+ |A(v,w)|\leq\frac K2\bigl(a^2Q(v,v)+a^{-2}Q(w,w)\bigr).
+\]
+For nonzero \(v,w\), choosing
+\(a^2=\sqrt{Q(w,w)/Q(v,v)}\) gives
+\(|A(v,w)|\leq K\sqrt{Q(v,v)Q(w,w)}\); zero vectors are immediate.
+Thus no constant is lost in obtaining arbitrary triples.
+
+The epigraph construction \cite[Theorem~1.6]{HNW}, applied with
+\(\alpha=1\), states that
+\[
+ B(x,S)=-\log(S-q(x))+q(x),\qquad S>q(x),
+\]
+on \(\HH^2\times\R\) is strongly \(1\)-self-concordant and satisfies
+\[
+ |dB(V)|^2\leq(1+2q(x))(\nabla^2B)(V,V)
+\]
+for every product tangent vector \(V\). Restrict to \(S=R^2\).
+The product connection obeys
+\[
+ \nabla^{\HH^2\times\R}_{(u,0)}(v,0)=(\nabla^{\HH^2}_uv,0),
+\]
+so both covariant derivatives in the definition pull back exactly.
+The restriction is \(F_R\), and \(q<R^2\) gives
+\eqref{eq:gradient} with \(\theta=1+2R^2\).
+
+Squared distance is smooth also at \(o\). With \(\delta=R^2-q>0\),
+\[
+ \nabla^2F_R=(1+\delta^{-1})Q+\delta^{-2}dq\otimes dq.
+\]
+The eigenvalues of \(Q\) are \(2\) and \(2r\coth r\) for \(r>0\),
+and \(Q=2g\) at \(o\); hence this Hessian is positive definite.
+Finally \(F_R\to+\infty\) as \(r\uparrow R\).
+If an epigraph sequence converges to a finite point of
+\(\HH^2\times\R\), this divergence excludes a limit on \(r=R\);
+an interior limit lies in the epigraph by continuity. Thus the epigraph
+is closed in the ambient space.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:lower} applies to every admissible barrier, so its
+lower bound survives the infimum defining \(\theta_*(R)\).
+Proposition~\ref{prop:upper} supplies the upper bound.
+For \(R\geq2\), use \(R-1\geq R/2\) and \(1\leq R^2/4\).
+The resulting positive quadratic lower bound also excludes
+\(\theta_*(R)=O(\sqrt R)\).
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex assisted in developing and checking the argument and in
+preparing this manuscript.
+
+\begin{thebibliography}{9}
+\bibitem{CNW}
+C. Criscitiello, H. Nieuwboer and M. Walter,
+\emph{Negative curvature obstructs the existence of good barriers for
+interior-point methods},
+arXiv:2604.07319v1 (2026).
+\href{https://arxiv.org/abs/2604.07319v1}{arXiv:2604.07319v1}.
+
+\bibitem{HNW}
+H. Hirai, H. Nieuwboer and M. Walter,
+\emph{Interior-Point Methods on Manifolds: Theory and Applications},
+Foundations of Computational Mathematics (2026).
+\href{https://doi.org/10.1007/s10208-026-09756-8}{doi:10.1007/s10208-026-09756-8}.
+Also \href{https://arxiv.org/abs/2303.04771v2}{arXiv:2303.04771v2} (2023).
+
+\bibitem{Hirai}
+H. Hirai,
+\emph{On a manifold formulation of self-concordant functions},
+arXiv:2212.10981v2 (2023).
+\href{https://arxiv.org/abs/2212.10981v2}{arXiv:2212.10981v2}.
+\end{thebibliography}
+\end{document}
