@@ -1,0 +1,38 @@
+{
+  "package": "superlinear-skt-localization",
+  "problem_id": 469,
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence": "complete analytic solution claim; independent mathematical review requested",
+  "files": [
+    {
+      "path": "BUILD.md",
+      "bytes": 863,
+      "sha256": "021e9f97ce5093ed7c11a520c424639d32fe1ef949658422baa1b7e959919ccc",
+      "purpose": "Complete manuscript or public target/build documentation"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2390,
+      "sha256": "f6f4b0afc43001e8fa5cdb10d9be85af67d97167f8ee874db93199d228ebbb9b",
+      "purpose": "Complete manuscript or public target/build documentation"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 3046,
+      "sha256": "7bd5c673dd1135e62862280b433e42d34018021ffa7ef58b981361d98626d926",
+      "purpose": "Complete manuscript or public target/build documentation"
+    },
+    {
+      "path": "paper/localization.pdf",
+      "bytes": 358692,
+      "sha256": "5bfd5ddc6811bd0b1ebe63f55bdcff47ea7758ee46dbdd55a2c14fe0a3de665f",
+      "purpose": "Complete manuscript or public target/build documentation"
+    },
+    {
+      "path": "paper/localization.tex",
+      "bytes": 30754,
+      "sha256": "6a80782c8df4056ba9075c1771e5b376ee9c1c0a8c676ca888fe480fa57f2e65",
+      "purpose": "Complete manuscript or public target/build documentation"
+    }
+  ]
+}

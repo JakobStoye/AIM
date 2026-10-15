@@ -1,0 +1,656 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=29mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Om}{\Omega}
+\newcommand{\De}{D_\eps}
+\newcommand{\qe}{q_\eps}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\av}[1]{\overline{#1}}
+\DeclareMathOperator{\supp}{supp}
+\title{The nonlocal-to-local limit for superlinear SKT cross-diffusion}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove convergence from regional nonlocal diffusion to the local
+Shigesada--Kawasaki--Teramoto system with superlinear transition rates.
+For any number of species and any fixed exponent greater than one, the given
+nonnegative strong nonlocal solutions admit a subsequence converging strongly
+in space-time on every finite time interval, under the symmetric coefficient
+and strict diagonal-dominance assumptions of the source problem.
+The limit satisfies the local equation with its original initial data and
+homogeneous Neumann pressure flux. Both nonlinear pressures and reactions
+converge strongly in $L^1$.
+A power entropy gives compactness of the densities. A supplementary
+regularized logarithmic entropy controls weighted square-root differences,
+which yield an integrable pressure gradient and permit first-order testing
+up to the boundary.
+\end{abstract}
+
+\section{Introduction and main result}\label{sec:intro}
+
+Cross-diffusion describes populations whose dispersal depends on the densities
+of other species. In a regional nonlocal model, individuals jump between points
+of a bounded habitat, and the jump intensity depends on the population at the
+departure and arrival points. When the jump length tends to zero, one expects
+a local diffusion equation with no flux through the boundary. Establishing this
+limit requires estimates uniform in the jump length; the strong bounds for an
+individual nonlocal equation do not suffice.
+
+For two species with linear transition rates, Galiano and Velasco
+\cite[Theorem 1]{GV} proved such a localization result. Hirvonen, J\"ungel and
+Pollino \cite[Theorems 1 and 2]{HJP} proved global existence and uniqueness of
+strong solutions, together with entropy estimates, for a multispecies model
+with superlinear transition rates. The
+localization question for those rates is stated in \cite[Section 1.1]{HJP}
+and in AIM problem 469 \cite{AIM}. Existence theorems for local nonlinear
+cross-diffusion systems, such as \cite[Theorem 2]{CDJ}, do not identify limits
+of the prescribed regional jump solutions. Moreover, density compactness alone
+does not identify a pressure gradient or the first-order weak boundary
+condition; the distinction from second-order testing is relevant here
+\cite[Remark 16]{CDJ}.
+
+We prove the localization result with all dimensions, species and exponents
+in the source problem. The coefficient, kernel and initial-data hypotheses
+below are exactly those of that problem. In addition to strong density
+convergence, we obtain an integrable weak gradient of the actual nonlinear
+pressure. This gives the homogeneous Neumann condition with unrestricted
+boundary values of the test function.
+
+\subsection{The equations and assumptions}
+
+Let $d\geq1$, let $\Om\subset\R^d$ be a nonempty smooth bounded connected
+domain, let $n\geq2$, and fix $s>1$. For $u=(u_1,\ldots,u_n)\geq0$, set
+\begin{equation}\label{eq:PR}
+ P_i(u)=u_i\left(a_{i0}+\sum_{j=1}^n a_{ij}u_j^s\right),
+ \qquad R_i(u)=u_i\left(b_{i0}-\sum_{j=1}^n b_{ij}u_j\right).
+\end{equation}
+Assume $a_{i0}>0$, $b_{i0},b_{ij}\geq0$, and
+$a_{ij}=a_{ji}\geq0$, with
+\begin{equation}\label{eq:dominance}
+ a_{ii}>C(s)\sum_{j\ne i}a_{ij},\qquad
+ C(s)=\begin{cases}
+ \displaystyle\frac{s^2}{2(s+1)(s-1)},&1<s<2,\\[4pt]
+ \displaystyle\frac{4(s-1)^2+1}{4(s+1)(s-1)},&s\geq2.
+ \end{cases}
+\end{equation}
+Let $J\in C_c^\infty(\R^d)$ be nonnegative, radial, and positive near zero,
+with normalization
+\[
+ \frac12\int_{\R^d}J(z)z_1^2\dd z=1.
+\]
+Thus, by radiality,
+\begin{equation}\label{eq:moment}
+ \int_{\R^d}J(z)z_kz_l\dd z=2\delta_{kl},\qquad
+ M_2:=\int_{\R^d}J(z)|z|^2\dd z=2d.
+\end{equation}
+Write $J_\eps(h)=\eps^{-d}J(h/\eps)$ and fix
+$0\leq u_i^0\in L^\infty(\Om)\cap BV(\Om)$.
+We consider the given global nonnegative strong solutions of
+\begin{equation}\label{eq:nonlocal}
+ \partial_tu_i^\eps(t,x)=\eps^{-2}\int_\Om J_\eps(x-y)
+ \bigl[P_i(u^\eps(t,y))-P_i(u^\eps(t,x))\bigr]\dd y
+ +R_i(u^\eps(t,x)),\quad u_i^\eps(0)=u_i^0.
+\end{equation}
+The strong sense is that, on each finite interval, the solution belongs to
+$W^{1,\infty}(0,T;L^\infty(\Om))$ and
+$C([0,T];L^\infty(\Om)\cap BV(\Om))$, and satisfies
+\eqref{eq:nonlocal} almost everywhere. This is the strong-solution setting
+of \cite[Theorem 1]{HJP}. No bound in these spaces uniform in $\eps$ is assumed.
+
+\begin{theorem}\label{thm:main}
+Under these assumptions, every sequence $\eps\to0$ has one subsequence and a
+global nonnegative limit $u$ such that, for every $T<\infty$, writing
+$Q_T=(0,T)\times\Om$ and
+\[
+ r=\frac{4s}{3s+1}>1,\qquad r'=\frac{4s}{s-1},
+\]
+we have
+\begin{gather}
+ u_i^\eps\longrightarrow u_i\quad\hbox{strongly in }L^p(Q_T)
+       \quad(1\leq p<2s),\label{eq:conv}\\
+ P_i(u^\eps)\longrightarrow P_i(u),\quad
+ R_i(u^\eps)\longrightarrow R_i(u)\quad\hbox{strongly in }L^1(Q_T),
+ \label{eq:productconv}\\
+ \begin{aligned}
+ u_i&\in L^\infty(0,T;L^s(\Om))\cap L^{2s}(Q_T)
+                \cap C_w([0,T];L^s(\Om)),\\
+ u_i^s,\sqrt{u_i}&\in L^2(0,T;H^1(\Om)),\qquad
+ P_i(u)\in L^r(0,T;W^{1,r}(\Om)),\\
+ R_i(u)&\in L^s(Q_T),\qquad
+ \partial_tu_i\in L^r(0,T;(W^{1,r'}(\Om))').
+ \end{aligned}\label{eq:regularity}
+\end{gather}
+Here $C_w$ denotes continuity for the weak $L^s$ topology. The limit has
+$u_i(0)=u_i^0$ weakly in $L^s(\Om)$ and, for every
+$\phi\in C^1([0,T]\times\overline\Om)$ with $\phi(T)=0$,
+\begin{equation}\label{eq:weak}
+ -\int_{Q_T}u_i\partial_t\phi-\int_\Om u_i^0\phi(0)
+ +\int_{Q_T}\nabla P_i(u)\cdot\nabla\phi
+ =\int_{Q_T}R_i(u)\phi.
+\end{equation}
+No restriction is imposed on the boundary values of $\phi$.
+\end{theorem}
+
+Equation \eqref{eq:weak} is the first-order weak formulation of
+$\partial_tu_i=\Delta P_i(u)+R_i(u)$ with homogeneous Neumann pressure flux.
+It does not assert a classical normal trace. The subsequence is chosen once
+for all finite horizons. We do not prove uniqueness of the local weak solution,
+a convergence rate, convergence of the whole family, or the endpoint $s=1$.
+
+The proof has two complementary entropy estimates. The power entropy controls
+differences of $u_i^s$ and yields higher integrability. To estimate differences
+of the products $u_i u_j^s$ in the pressure, we also need information near
+vacuum. A regularized logarithmic entropy supplies the corresponding weighted
+square-root differences. Their combination gives a pressure difference
+quotient in $L^r$, with $r>1$. A nonlinear compactness argument then gives
+strong convergence, and the pressure quotient identifies the weak gradient
+and allows testing through the boundary. Section~\ref{sec:entropy} establishes
+the estimates; Section~\ref{sec:limit} proves compactness and the limit passage.
+
+\section{Uniform entropy estimates}\label{sec:entropy}
+
+All constants below may depend on the fixed domain, coefficients, $n,s,J,u^0$
+and $T$, but never on $\eps$ or on a removed regularization parameter.
+For a spatial function $w$, define the regional quadratic form
+\begin{equation}\label{eq:D}
+ \De(w)=\iint_{\Om^2}\eps^{-d-2}J((x-y)/\eps)
+                    |w(y)-w(x)|^2\dd x\dd y.
+\end{equation}
+Its form domain is $L^2(\Om)$, and we set $\De(w)=+\infty$ outside that
+space. Every fixed-$\eps$ solution slice used below is bounded, so its powers
+are in this form domain. No uniform $L^2$ bound is implicit in the definition.
+
+\subsection{Power entropy and spatial integrability}
+
+Set $S_i=\sum_{j\ne i}a_{ij}$ and $k_i=(s+1)a_{ii}-(s-1)S_i$.
+Since $(s+1)C(s)>s-1$, condition \eqref{eq:dominance} implies $k_i>0$.
+For $1<s<2$ this follows from $s^2>2(s-1)^2$; for $s\geq2$ the difference
+between $C(s)$ and $(s-1)/(s+1)$ is $1/[4(s+1)(s-1)]$.
+
+\begin{lemma}\label{lem:power}
+For nonnegative vectors $X,Y$, one has
+\begin{align}
+ \sum_i(X_i^{s-1}-Y_i^{s-1})(P_i(X)-P_i(Y))
+ &\geq\frac{4(s-1)}{s^2}\sum_i a_{i0}|X_i^{s/2}-Y_i^{s/2}|^2\notag\\
+ &\quad+\frac{s-1}{s^2}\sum_i k_i|X_i^s-Y_i^s|^2.\label{eq:coercivity}
+\end{align}
+Consequently the solutions satisfy
+\begin{equation}\label{eq:powerbound}
+ \sup_{0\leq t\leq T}\sum_i\norm{u_i^\eps(t)}_s^s
+       +\sum_i\int_0^T\De((u_i^\eps)^s)\dd t\leq C_T.
+\end{equation}
+\end{lemma}
+\begin{proof}
+First take positive vectors. In the variables $v_i=u_i^{s-1}$, write
+$F(v)=P(u)$. Direct differentiation gives
+\[
+ \partial_iF_i=\frac{a_{i0}u_i^{2-s}+(s+1)a_{ii}u_i^2
+             +\sum_{j\ne i}a_{ij}u_i^{2-s}u_j^s}{s-1},\qquad
+ \partial_jF_i=\frac{s}{s-1}a_{ij}u_iu_j\quad(i\ne j).
+\]
+This matrix is symmetric. With $z_i=u_i\xi_i$, its off-diagonal pair is
+bounded using
+\[
+ a_{ij}\bigl[(u_j/u_i)^s z_i^2+(u_i/u_j)^s z_j^2+2sz_iz_j\bigr]
+       \geq-(s-1)a_{ij}(z_i^2+z_j^2).
+\]
+Indeed, the first two terms are at least $2|z_iz_j|$, and the only adverse
+case is $z_iz_j<0$. Hence
+\begin{equation}\label{eq:Jacobian}
+ \xi^TDF(v)\xi\geq\frac1{s-1}
+          \sum_i(a_{i0}u_i^{2-s}+k_i u_i^2)\xi_i^2.
+\end{equation}
+Integrate along the straight segment from $Y^{s-1}$ to $X^{s-1}$, and put
+$U_i(\theta)=((1-\theta)Y_i^{s-1}+\theta X_i^{s-1})^{1/(s-1)}$.
+Differentiating $U_i^s$ and $U_i^{s/2}$ and applying Cauchy--Schwarz gives
+\[
+ (X_i^{s-1}-Y_i^{s-1})^2\int_0^1U_i^2\dd\theta
+        \geq\frac{(s-1)^2}{s^2}|X_i^s-Y_i^s|^2,
+\]
+\[
+ (X_i^{s-1}-Y_i^{s-1})^2\int_0^1U_i^{2-s}\dd\theta
+        \geq\frac{4(s-1)^2}{s^2}|X_i^{s/2}-Y_i^{s/2}|^2.
+\]
+Together with \eqref{eq:Jacobian} these prove \eqref{eq:coercivity}.
+Continuity extends that inequality to nonnegative endpoints. Thus no
+fractional power is differentiated at vacuum.
+
+Use $h_s(t)=(t^s-st+s-1)/(s-1)\geq0$ as entropy, and let
+$E(t)=\sum_i\int_\Om h_s(u_i^\eps(t))$. Symmetry of the kernel gives
+\begin{equation}\label{eq:entropy}
+ E'(t)+\frac2s\sum_i a_{i0}\De((u_i^\eps)^{s/2})
+      +\frac1{2s}\sum_i k_i\De((u_i^\eps)^s)
+       \leq C(1+E(t)).
+\end{equation}
+For the reaction bound, if $u_i\geq1$, the competition term multiplied by
+$h_s'(u_i)$ is nonpositive, and the growth term is bounded by $C(1+u_i^s)$.
+If $u_i<1$, the positive competition contribution is bounded by
+$C\sum_j u_j\leq C(1+\sum_j u_j^s)$. Finally
+$u_i^s\leq C(1+h_s(u_i))$.
+
+The chain rule is legitimate for every fixed $\eps$: the solution is a
+bounded Lipschitz time curve into $L^\infty$, and the entropy is $C^1$ on
+its nonnegative range. At zero use the $C^1$ extension
+$(|t|^s-st+s-1)/(s-1)$. The derivative of $U\mapsto\int h_s(U)$ is
+$V\mapsto\int h_s'(U)V$; the remainder is bounded by
+$|\Om|\norm{V}_\infty$ times the modulus of continuity of $h_s'$ on the
+fixed bounded range. Thus the usual absolutely continuous scalar chain rule
+applies. All fixed-$\eps$ pair integrals are finite before symmetrization.
+Multiplication of the differential inequality by $e^{-Ct}$ bounds $E$;
+integration of \eqref{eq:entropy} then proves \eqref{eq:powerbound}.
+\end{proof}
+
+We use the following precise spatial consequence of Ponce's results. It
+restores the mean before asserting a uniform norm bound.
+
+\begin{lemma}\label{lem:Ponce}
+For sufficiently small $\eps$ and every $w\in L^2(\Om)$,
+\begin{equation}\label{eq:Poincare}
+ \norm{w-\av w}_2^2\leq C\De(w),\qquad
+ \av w=|\Om|^{-1}\int_\Om w.
+\end{equation}
+If $\eps_k\to0$ and both $\norm{w_k}_2$ and $D_{\eps_k}(w_k)$ are bounded,
+then a subsequence converges strongly in $L^2(\Om)$.
+\end{lemma}
+\begin{proof}
+Recall the second moment $M_2=\int J(z)|z|^2\dd z=2d$ and set
+$\rho_\eps(h)=|h|^2J_\eps(h)/(M_2\eps^2)$.
+These are nonnegative radial probability kernels concentrating at zero, and
+\[
+ \iint_{\Om^2}\frac{|w(y)-w(x)|^2}{|x-y|^2}\rho_\eps(x-y)\dd x\dd y
+                 =\frac1{M_2}\De(w).
+\]
+For $d\geq2$, \eqref{eq:Poincare} and the compactness assertion are
+\cite[Theorems 1.1--1.2]{Ponce}, at $p=2$.
+Their hypotheses are a bounded Lipschitz domain, radial probability kernels
+concentrating at zero, and the displayed bounded norm and energy.
+The eventual Poincar\'e constant can be chosen uniformly for the present
+family: otherwise choose a violating sequence $\eps_k\to0$ and apply
+Theorem 1.1 to that very sequence with its fixed constant.
+
+For $d=1$, connectedness makes $\Om$ an interval. Choose $R,j_0>0$ with
+$J\geq j_0$ on $[-R,R]$. If $R\eps/2\leq |h|\leq R\eps$ and
+$1/2\leq\theta\leq1$, then
+\[
+ \rho_\eps(\theta h)\geq\frac{j_0R^2}{16M_2\eps}.
+\]
+The annulus has length $R\eps$, so
+$\int\inf_{1/2\leq\theta\leq1}\rho_\eps(\theta h)\dd h
+\geq j_0R^3/(16M_2)>0$.
+This verifies condition (8) of \cite[Theorem 1.3]{Ponce}; the kernels here
+are smooth, so its Lebesgue-point representative causes no ambiguity.
+That theorem extends both assertions to $(0,1)$. For
+$\Om=(a,a+L)$, use $W(x)=w(a+Lx)$ and
+$\widetilde\rho(h)=L\rho_\eps(Lh)$. The original weighted energy is
+$L^{-1}$ times the energy on $(0,1)$, and the original squared oscillation
+is $L$ times that on $(0,1)$. Only the fixed factor $L^2$ changes the
+Poincar\'e constant. Compactness transfers by the same rescaling.
+\end{proof}
+
+Apply \eqref{eq:Poincare} to $w=(u_i^\eps)^s$. Its mean is bounded by
+\eqref{eq:powerbound}. Thus, for all sufficiently small $\eps$,
+\begin{equation}\label{eq:L2s}
+ \sum_i\norm{u_i^\eps}_{L^{2s}(Q_T)}^{2s}\leq C_T.
+\end{equation}
+In particular $P_i(u^\eps)$ is bounded in $L^{2s/(s+1)}(Q_T)$ and
+$R_i(u^\eps)$ in $L^s(Q_T)$. Both exponents exceed one.
+
+\subsection{A logarithmic estimate at vacuum}
+
+To control the pressure gradient, the power estimate must be supplemented by
+differences of $\sqrt{u_i^\eps}$ with weights from the other species.
+For time-dependent $w$, define
+\[
+ \qe w(t,x,z)=\mathbf1_\Om(x+\eps z)
+              \frac{w(t,x+\eps z)-w(t,x)}{\eps},\qquad
+ \dd\mu=\dd t\dd x\,J(z)\dd z.
+\]
+The quotient is zero when the translated point leaves $\Om$; it uses no
+outside value of $w$. The measure $\mu$ on
+$(0,T)\times\Om\times\R^d$ is finite and independent of $\eps$, and
+$\norm{\qe w}_{L^2(\mu)}^2=\int_0^T\De(w(t))\dd t$.
+
+\begin{lemma}\label{lem:log}
+The solutions satisfy
+\begin{align}
+ \sum_i\int_0^T\De(\sqrt{u_i^\eps})\dd t
+ +\sum_{i,j}a_{ij}\int
+ &\min\{(u_j^\eps(t,x))^s,(u_j^\eps(t,x+\eps z))^s\}\notag\\[-2pt]
+ &\hspace{8mm}\cdot|\qe\sqrt{u_i^\eps}|^2\dd\mu\leq C_T.
+ \label{eq:logbound}
+\end{align}
+The minimum in this formula is needed only on admitted pairs.
+\end{lemma}
+\begin{proof}
+For $a,b,c,d\geq0$ and $\delta>0$, put
+$L_\delta=\log(a+\delta)-\log(b+\delta)$. Then
+\begin{equation}\label{eq:logproduct}
+ L_\delta(ac-bd)\geq\min(c,d)L_\delta(a-b)-|a-b||c-d|.
+\end{equation}
+Indeed, assume $a\geq b$ by interchanging endpoints. If $c\geq d$, write
+$ac-bd=d(a-b)+a(c-d)$. If $c<d$, write
+$ac-bd=c(a-b)-b(d-c)$ and use
+$b\log((a+\delta)/(b+\delta))\leq a-b$.
+When $c=a^s,d=b^s$, the negative term in \eqref{eq:logproduct} can be omitted.
+Also, Cauchy--Schwarz on the integral of $(t+\delta)^{-1/2}$ gives
+\begin{equation}\label{eq:sqrtlog}
+ (a-b)L_\delta\geq4|\sqrt{a+\delta}-\sqrt{b+\delta}|^2.
+\end{equation}
+For any $M>0$ and $0<\delta\leq M$,
+\begin{equation}\label{eq:lowhigh}
+ |a-b|^2\leq8M|\sqrt{a+\delta}-\sqrt{b+\delta}|^2
+                     +M^{-2(s-1)}|a^s-b^s|^2.
+\end{equation}
+If $\max(a,b)\leq M$, use the square-root factorization. Otherwise, with
+$a=\max(a,b)>M$, one has
+$(a^s-b^s)/(a-b)\geq a^{s-1}\geq M^{s-1}$.
+
+Let $A=\max_i\sum_{j\ne i}a_{ij}$ and $a_* =\min_i a_{i0}>0$.
+For vectors $X,Y$, write $\Delta$ for the difference of their endpoint
+values. Summing \eqref{eq:logproduct}--\eqref{eq:sqrtlog}, using symmetry,
+and applying Young's inequality to the off-diagonal errors yields
+\begin{align*}
+ \sum_i\Delta\log(X_i+\delta)\Delta P_i
+ \geq{}&4a_*\sum_i|\Delta\sqrt{X_i+\delta}|^2\\
+ &+4\sum_{i,j}a_{ij}\min(X_j^s,Y_j^s)|\Delta\sqrt{X_i+\delta}|^2
+       -\frac A2\sum_i\bigl(|\Delta X_i|^2+|\Delta X_i^s|^2\bigr).
+\end{align*}
+For $A>0$ fix $M\leq\min(1,a_*/(2A))$ once and for all. Inserting
+\eqref{eq:lowhigh} costs at most $4AM\leq2a_*$ of the first coefficient.
+Consequently, for $0<\delta\leq M$,
+\begin{align}
+ \sum_i\Delta\log(X_i+\delta)\Delta P_i
+ \geq{}&2a_*\sum_i|\Delta\sqrt{X_i+\delta}|^2\notag\\
+ &+4\sum_{i,j}a_{ij}\min(X_j^s,Y_j^s)|\Delta\sqrt{X_i+\delta}|^2
+        -C\sum_i|\Delta X_i^s|^2,\label{eq:logcoercive}
+\end{align}
+where $C=(A/2)(1+M^{-2(s-1)})$. If $A=0$, take $M=1,C=0$.
+
+Test the fixed-$\eps$ equations with $\log(u_i^\eps+\delta)$, the derivative
+of $B_\delta(t)=(t+\delta)\log(t+\delta)-(t+\delta)+1\geq0$.
+The chain rule follows as in Lemma~\ref{lem:power}, using a $C^1$ extension
+to $t>-\delta/2$ at fixed $\delta$. Uniformly for $\delta\leq1$,
+\begin{equation}\label{eq:logreaction}
+ \sum_iR_i(u)\log(u_i+\delta)\leq C(1+\sum_i u_i^s).
+\end{equation}
+For $u_i+\delta\geq1$ discard competition and use
+$u_i\log(u_i+1)\leq C_s(1+u_i^s)$. In the other case discard growth and
+use $u_i|\log(u_i+\delta)|\leq1/e$, leaving a bound by $C\sum_j u_j$.
+The initial $B_\delta$ integral is uniformly bounded. Integrate the entropy
+identity, whose diffusion factor is $1/2$, and apply
+\eqref{eq:logcoercive}, \eqref{eq:logreaction} and \eqref{eq:powerbound}.
+The negative power dissipation has already been bounded. All remaining
+dissipation terms are nonnegative. Fatou's lemma as $\delta\downarrow0$
+at fixed $\eps$ proves \eqref{eq:logbound}. No positive density floor or
+test with an unregularized logarithm at zero is used.
+\end{proof}
+
+\section{Compactness and the local equation}\label{sec:limit}
+
+\subsection{Pressure differences and time derivatives}
+
+\begin{lemma}\label{lem:pressure}
+For $r=4s/(3s+1)$ and $r'=4s/(s-1)$,
+\begin{equation}\label{eq:qpressure}
+ \norm{\qe P_i(u^\eps)}_{L^r(\mu)}\leq C_T,\qquad
+ \norm{\partial_tu_i^\eps}_{L^r(0,T;(W^{1,r'}(\Om))')}\leq C_T.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $a,b,c,d\geq0$,
+\begin{equation}\label{eq:productdiff}
+ |ac-bd|\leq\min(c,d)|a-b|+\max(a,b)|c-d|.
+\end{equation}
+For the product $u_i^\eps(u_j^\eps)^s$, take $a,b$ to be its $i$-species
+endpoint values and $c,d$ the $s$th powers of its $j$-species values.
+The first term divided by $\eps$ factors, on admitted pairs, as
+\[
+ \bigl[\sqrt{\min(c,d)}(\sqrt a+\sqrt b)\bigr]
+       \bigl[\sqrt{\min(c,d)}\,|\qe\sqrt{u_i^\eps}|\bigr].
+\]
+For $a_{ij}>0$, the second bracket is bounded in $L^2(\mu)$ by
+\eqref{eq:logbound}. The first is bounded in $L^{4s/(s+1)}(\mu)$:
+its two factors are in $L^4$ and $L^{4s}$ by \eqref{eq:L2s}.
+Endpoint evaluations preserve these norms, by translation of $x$ and the
+finite mass of $J$. H\"older's inequality gives their product in $L^r$,
+since $1/r=1/2+(s+1)/(4s)$.
+The second term of \eqref{eq:productdiff}, divided by $\eps$, is bounded
+in $L^{2s/(s+1)}$ by the $L^{2s}$ norm of the endpoint maximum and the
+$L^2$ norm of $\qe(u_j^\eps)^s$. The linear pressure term is bounded
+in $L^{4s/(2s+1)}$ by factoring its difference through the square root.
+Both exponents exceed $r$, and $\mu$ is finite. Terms with $a_{ij}=0$
+require no weighted estimate. This proves the first bound.
+
+For $\psi\in W^{1,r'}(\Om)$ the extension theorem on a smooth domain
+\cite[Theorem 9.7]{Brezis} and integration along segments give
+\begin{equation}\label{eq:testbound}
+ \norm{\qe\psi}_{L^{r'}(\Om\times J(z)\dd z)}
+                  \leq C\norm{\psi}_{W^{1,r'}(\Om)}.
+\end{equation}
+Indeed, for an extension $E\psi$ the quotient equals the integral of
+$z\cdot\nabla E\psi(x+\theta\eps z)$ over $0\leq\theta\leq1$ on
+admitted pairs. Translation and bounded kernel support give the estimate.
+Regional symmetry gives
+\begin{equation}\label{eq:bilinear}
+ \langle\partial_tu_i^\eps,\psi\rangle
+ =-\frac12\int_{\Om\times\R^d}J(z)\qe P_i(u^\eps)\qe\psi\dd x\dd z
+                       +\int_\Om R_i(u^\eps)\psi.
+\end{equation}
+Use \eqref{eq:testbound}, the first bound of \eqref{eq:qpressure}, and
+the reaction bound in $L^s(Q_T)$. Since $r<s$ and $r'>s'$, the reaction
+functional is bounded in the required dual space and time exponent.
+\end{proof}
+
+\subsection{Nonlinear space-time compactness}
+
+Fix the negative space $Y=(H_0^m(\Om))'$ with
+$m=\lceil d/2\rceil+3$. Sobolev embedding gives
+$H_0^m(\Om)\hookrightarrow W^{1,r'}(\Om)\cap L^\infty(\Om)$
+\cite[Corollaries 9.13 and 9.15]{Brezis}. Thus $L^1(\Om)$ embeds
+continuously and injectively in $Y$; injectivity follows by testing against
+$C_c^\infty(\Om)$. Lemma~\ref{lem:pressure} bounds the time derivative in
+$L^1(0,T;Y)$.
+
+\begin{lemma}\label{lem:compact}
+For each $T<\infty$, the family along any vanishing sequence of $\eps$
+is relatively compact in $L^1(Q_T)^n$.
+\end{lemma}
+\begin{proof}
+Consider one species. Choose $C_0$ bounding its spatial $L^s$ norm at all
+times by \eqref{eq:powerbound}. If $\eps_k\to0$, $a_k\geq0$,
+$\norm{a_k}_s\leq C_0$, and $D_{\eps_k}(a_k^s)\leq M$, then
+Lemma~\ref{lem:Ponce} and the bounded mean imply compactness of $a_k^s$
+in $L^2$. The roots are compact in $L^{2s}$, since
+$|a-b|^s\leq|a^s-b^s|$ for nonnegative $a,b$. In particular they are
+compact in $L^1$.
+
+It follows that, for every $\eta>0$, there are $\eps_\eta>0$ and
+$C_\eta<\infty$ such that, for $\eps<\eps_\eta$ and
+$\norm{a}_s,\norm{b}_s\leq C_0$,
+\begin{equation}\label{eq:Ehrling}
+ \norm{a-b}_1\leq\eta\bigl[1+\De(a^s)+\De(b^s)\bigr]
+                                      +C_\eta\norm{a-b}_Y.
+\end{equation}
+Here $a,b\geq0$, and infinite energies make the assertion vacuous.
+Otherwise, failure would supply $\eps_k<1/k$ violating the estimate with
+$C_\eta=k$. The left side has a fixed upper bound, so both energies are
+bounded and $\norm{a_k-b_k}_Y\to0$. By the compactness just proved,
+subsequences converge in $L^1$. Injectivity of $L^1\hookrightarrow Y$
+makes their limits equal. This contradicts the strict lower bound $\eta$
+for their $L^1$ distance.
+
+Apply \eqref{eq:Ehrling} to $u_i^\eps(t+h),u_i^\eps(t)$ and integrate.
+The integrated $Y$ time shift is at most
+$h\norm{\partial_tu_i^\eps}_{L^1(0,T;Y)}$, so
+\begin{equation}\label{eq:timeshift}
+ \limsup_{\eps\to0}\int_0^{T-h}
+       \norm{u_i^\eps(t+h)-u_i^\eps(t)}_1\dd t
+           \leq\eta(T+2C_T)+C_\eta C_T h.
+\end{equation}
+First send $h\to0$, then $\eta\to0$.
+
+For spatial translations, extend each density by zero outside $\Om$.
+On slices with $\De((u_i^\eps)^s)\leq M$, the spatial compactness above
+gives an asymptotically uniform $L^1$ translation modulus. To see this,
+a failure would give $\eps_k\to0$, shifts $h_k\to0$ and such slices
+converging in $L^1$ but with a nonvanishing translation defect. This
+contradicts translation continuity of the fixed zero-extended limit.
+The complementary times have measure at most $C_T/M$ by
+\eqref{eq:powerbound}. Their translation contribution is at most
+$2\sup_t\norm{u_i^\eps(t)}_1 C_T/M$. Send the spatial shift to zero
+on the good slices, then $M\to\infty$.
+
+After zero extension in time, the endpoint strips contribute at most $C_T h$.
+All extensions have common bounded support in $\R^{d+1}$. For any fixed
+vanishing sequence, finitely many early members have the ordinary translation
+continuity of a single $L^1$ function. Combining them with the eventual
+estimates and the triangle inequality gives uniform space-time translation
+continuity. The Fr\'echet--Kolmogorov theorem
+\cite[Theorem 4.26 and Lemma 4.3]{Brezis} proves the assertion.
+\end{proof}
+
+After extraction, $u_i^\eps\to u_i$ strongly in $L^1(Q_T)$ and almost
+everywhere. Fatou's lemma and \eqref{eq:L2s}, followed by interpolation,
+give \eqref{eq:conv}. For $p=s+1<2s$ the elementary estimate
+\[
+ |a^s-b^s|\leq s|a-b|(a+b)^{s-1}\quad(a,b\geq0)
+\]
+gives strong convergence of $(u_j^\eps)^s$ in $L^{p/s}$.
+Splitting the product difference and using H\"older with $p$ and $p/s$
+then gives convergence of $u_i^\eps(u_j^\eps)^s$ in $L^1$.
+Strong $L^2$ convergence similarly passes all quadratic reaction products.
+This proves \eqref{eq:productconv}, without a weak-product argument.
+Nonnegativity and the $L^\infty_tL^s_x$ and $L^{2s}$ bounds pass to the limit.
+
+\subsection{The pressure gradient, boundary condition and initial trace}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+We first work on a fixed finite horizon. Recall the regional quotient and its
+fixed measure:
+\[
+ \qe w=\mathbf1_\Om(x+\eps z)
+       \frac{w(t,x+\eps z)-w(t,x)}{\eps},\qquad
+ \dd\mu=\dd t\dd x\,J(z)\dd z.
+\]
+By \eqref{eq:qpressure} and reflexivity, a further subsequence satisfies
+$\qe P_i(u^\eps)\rightharpoonup G_i$ in $L^r(\mu)$, where $r>1$.
+Take $\eta\in C_c^\infty((0,T)\times\Om)$ and a bounded measurable
+function $\zeta(z)$ on $\supp J$. Translating the first term of the
+quotient, for small enough $\eps$ relative to the distance of $\supp\eta$
+from the boundary, gives in the limit
+\begin{equation}\label{eq:G}
+ \int G_i\eta\zeta\dd\mu
+       =-\int P_i(u)\,z\cdot\nabla_x\eta\,\zeta\dd\mu.
+\end{equation}
+Here \eqref{eq:productconv} pairs with the uniformly convergent smooth test
+difference quotient. We have not applied a difference operator to a bare
+$L^1$ limit.
+Define $V_{ik}(t,x)=\frac12\int J(z)z_kG_i(t,x,z)\dd z$.
+H\"older's inequality and compact kernel support give $V_{ik}\in L^r(Q_T)$.
+Use $\zeta(z)=z_k$ in \eqref{eq:G} and \eqref{eq:moment}; then
+$V_{ik}=\partial_kP_i(u)$ in distributions. The pressure itself belongs
+to $L^r$ by its $L^{2s/(s+1)}$ bound. Hence
+$P_i(u)\in L^r(0,T;W^{1,r}(\Om))$.
+Returning to all product tests in \eqref{eq:G}, distributional separation
+and Fubini give
+\begin{equation}\label{eq:qid}
+ G_i(t,x,z)=z\cdot\nabla P_i(u)(t,x)\quad\mu\text{-almost everywhere}.
+\end{equation}
+The identical argument at exponent two, using the power and square-root
+difference bounds, proves $u_i^s,\sqrt{u_i}\in L^2(0,T;H^1(\Om))$.
+Their $L^2$ norms follow from \eqref{eq:L2s} and the mass bound, respectively.
+
+Now let $\phi\in C^1([0,T]\times\overline\Om)$, $\phi(T)=0$.
+Extend the spatial test by the bounded $W^{1,\infty}$ extension theorem.
+Its Lipschitz representative bounds $|\qe\phi|$ by $C|z|$. At every
+interior point $x$, for small enough $\eps$, the quotient uses only the
+original $C^1$ function. The regional indicator tends to one almost
+everywhere. Dominated convergence therefore gives
+\[
+ \qe\phi\longrightarrow z\cdot\nabla\phi
+             \quad\hbox{strongly in }L^{r'}(\mu).
+\]
+Integrate \eqref{eq:bilinear} in time and use
+\eqref{eq:productconv} and \eqref{eq:qid}. The diffusion pairing tends to
+\[
+ \frac12\int J(z)(z\cdot\nabla P_i(u))(z\cdot\nabla\phi)\dd z
+                         =\nabla P_i(u)\cdot\nabla\phi.
+\]
+The initial term remains exactly $\int_\Om u_i^0\phi(0)$.
+This proves \eqref{eq:weak} for arbitrary boundary values of $\phi$.
+Its absence of a boundary contribution is precisely the weak homogeneous
+Neumann pressure condition.
+
+For completeness we identify the time representative, including at zero.
+Put $V=W^{1,r'}(\Om)$ and define
+\[
+ F_i(t)(\psi)=-\int_\Om\nabla P_i(u)\cdot\nabla\psi
+                         +\int_\Om R_i(u)\psi.
+\]
+Its $V'$ norm is bounded by an $L^r(0,T)$ function. Smooth functions up to
+the boundary are dense in $V$: extend to $\R^d$, mollify, use translation
+continuity for the function and its weak derivatives, then restrict to $\Om$.
+This uses the extension theorem and translation lemma already cited, and
+does not assert density of interior compact tests in the full boundary space.
+Thus \eqref{eq:weak} shows that $u_i$ agrees almost everywhere with
+\[
+ U_i(t)=u_i^0+\int_0^tF_i(\tau)\dd\tau\quad\hbox{in }V'.
+\]
+This representative is continuous in $V'$. At an exceptional time,
+approach by ordinary times, use the uniform $L^s$ bound and reflexivity to
+obtain a weak $L^s$ limit. Continuity in $V'$ identifies it uniquely with
+$U_i(t)$, so the bound holds at every time. Pairings with arbitrary
+$L^{s'}$ tests are uniform limits of continuous pairings with smooth tests,
+by their density in $L^{s'}$ and the uniform $L^s$ bound.
+Therefore $u_i\in C_w([0,T];L^s)$, $u_i(0)=u_i^0$ weakly in $L^s$,
+and its time derivative has the asserted $L^r(0,T;V')$ bound.
+
+Finally, start with any vanishing sequence and perform nested extractions
+on $T=1,2,3,\ldots$. The diagonal subsequence converges on every finite
+horizon. Its strong $L^1$ limits agree on overlaps, defining one global
+$u$. All estimates and weak identities restrict to any finite $T$.
+This proves the theorem.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{AIM} AIM open-problem catalogue, Problem 469,
+\emph{The local limit of superlinear multispecies nonlocal diffusion}, revision
+\texttt{a153f469ee0ea64e876b2ad97c79d252c19a3e22}.
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/469-superlinear-skt-nonlocal-to-local-limit.md}{Original problem statement}.
+\bibitem{Brezis} H. Brezis, \emph{Functional Analysis, Sobolev Spaces and
+Partial Differential Equations}, Springer, 2011.
+\href{https://doi.org/10.1007/978-0-387-70914-7}{doi:10.1007/978-0-387-70914-7}.
+\bibitem{CDJ} X. Chen, E. S. Daus and A. J\"ungel,
+Global existence analysis of cross-diffusion population systems for multiple
+species, \emph{Arch. Ration. Mech. Anal.} \textbf{227} (2018), 715--747.
+\href{https://doi.org/10.1007/s00205-017-1172-6}{doi:10.1007/s00205-017-1172-6}.
+\bibitem{GV} G. Galiano and J. Velasco, Convergence of solutions of a
+rescaled evolution nonlocal cross-diffusion problem to its local diffusion
+counterpart, \emph{Rev. R. Acad. Cienc. Exactas F\'is. Nat. Ser. A Mat.
+RACSAM} \textbf{116} (2022), article 93.
+\href{https://doi.org/10.1007/s13398-022-01231-7}{doi:10.1007/s13398-022-01231-7}.
+\bibitem{HJP} P. Hirvonen, A. J\"ungel and A. Pollino,
+Superlinear nonlocal diffusion systems for multispecies populations:
+well-posedness and discrete chain rules,
+\href{https://arxiv.org/abs/2609.09921v1}{arXiv:2609.09921v1}, 2026.
+\bibitem{Ponce} A. C. Ponce, An estimate in the spirit of Poincar\'e's
+inequality, \emph{J. Eur. Math. Soc.} \textbf{6} (2004), 1--15.
+\href{https://doi.org/10.4171/JEMS/1}{doi:10.4171/JEMS/1}.
+\end{thebibliography}
+
+\section*{AI-use disclosure}
+The mathematical argument and manuscript were developed with assistance from
+OpenAI Codex, including AI-assisted proof checks and manuscript reviews.
+These checks do not constitute independent human review or formal verification.
+No numerical computation is a premise of the result.
+\end{document}
