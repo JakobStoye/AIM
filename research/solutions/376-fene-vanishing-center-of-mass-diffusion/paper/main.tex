@@ -1,0 +1,1292 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=29mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Vanishing center-of-mass diffusion for the three-dimensional FENE dumbbell model},pdfauthor={Kaiwen Jin},pdfsubject={Kinetic FENE fluids and the zero spatial diffusion limit}}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\T}{\mathbb T^3}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Ent}{\operatorname{Ent}_M}
+\newcommand{\grad}{\nabla}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Hone}{\mathcal H_1}
+\newcommand{\Htwo}{\mathcal H_2}
+\newcommand{\Dq}{\mathcal D_q}
+\newcommand{\Dy}{\mathcal D_y}
+\newcommand{\weak}{\rightharpoonup}
+\newcommand{\pair}[1]{\langle #1\rangle}
+\allowdisplaybreaks[2]
+\title{Vanishing center-of-mass diffusion for the three-dimensional FENE dumbbell model}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the zero center-of-mass diffusion limit for the full kinetic FENE
+dumbbell model on the three-dimensional torus. For every solvent viscosity
+$\nu>0$, FENE exponent $k>2$, smooth divergence-free initial velocity, and
+smooth normalized initial density with bounded positive Maxwellian quotient,
+we select global positive-diffusion weak solutions converging to a global
+weak solution of the identical nondiffusive system. Velocity converges strongly
+in $L^2$ and polymer density and stress converge strongly in $L^1$ on finite
+time intervals. All transport and configuration fluxes have their original
+constitutive forms in the limit. The proof conditions on a spatial Brownian
+motion common to every polymer configuration. Nonlinear configuration
+entropies are transformed before expectation, giving only a linear spatial
+diffusion term. Conditional stress cutoffs, a transported limiting normalizer,
+and a joint covariance estimate then propagate a zero entropy defect without
+assuming strong convergence of the velocity gradient.
+\end{abstract}
+
+\section*{Introduction}
+In a kinetic dumbbell model, the fluid transports a probability distribution
+of polymer configurations, and the corresponding elastic stress feeds back
+into the fluid momentum equation. Finitely extensible nonlinear elasticity
+confines the configuration to a ball by a potential singular at its boundary.
+Center-of-mass diffusion describes translational Brownian motion of the
+polymer molecules. Removing this term should preserve both the distribution
+and its coupling to the full velocity gradient. For weak solutions at large
+data, this requires a compactness assertion beyond separate existence for the
+diffusive and nondiffusive equations.
+
+Barrett and S\"uli \cite{BS} established large-data weak existence with positive
+center-of-mass diffusion. Masmoudi \cite{Masmoudi} established weak existence
+without that diffusion by propagating a transformed-density defect and using
+stress-driven Stokes dissipation. The distinction between those existence
+results and passage from one model to the other is explicitly described in
+\cite[Section~1]{DS}. The result below addresses that passage for the full
+noncorotational model on $\T\times B_1$, with arbitrary prescribed data in
+the stated smooth bounded-positive class. No smallness condition is imposed.
+
+The elementary estimates already give strong velocity compactness and identify
+the singular stress using a configuration boundary tail. They do not identify
+the product of a weakly convergent velocity gradient with a weakly convergent
+configuration moment. The nondiffusive entropy-defect argument provides a
+way to close this correlation, but applying its nonlinear entropy quotients
+directly to a spatially diffusive density creates spatial Hessian terms whose
+sign is unavailable.
+
+We instead represent each positive-diffusion density by conditioning on one
+spatial Brownian motion shared by all labels and configurations. Given this
+motion, each spatial characteristic carries an ordinary configuration
+Fokker--Planck equation. Its entropy and logarithmic moments can be computed
+before expectation. The expected transformed equation then has just a linear
+spatial Laplacian, which disappears against fixed tests as its coefficient
+tends to zero. A fixed-velocity comparison identifies this representation with
+the chosen coupled density.
+
+The remaining argument keeps this conditional structure when removing entropy
+cutoffs. Radial positivity preserves the monotone stress squares, and the
+deterministic velocity gradient gives a common direction to the cutoff drags.
+These facts identify the stress-work covariance through a local Stokes energy
+comparison. A joint law of the gradient, conditional square root, and
+configuration derivative retains the positive Fisher moments. An explicit
+two-state inequality supplies their averaged coercivity. Finally, a normalizer
+transported by the limiting fluid makes the entropy defect bounded and gives a
+characteristic Gronwall inequality. This is an extension of the defect method
+in \cite{Masmoudi}; the conditional construction and its averaged cutoff and
+coercivity arguments are proved here rather than attributed to that work.
+
+Section~\ref{sec:theorem} states the precise result. Sections~\ref{sec:prelim}
+and \ref{sec:lift} provide the uniform estimates and identify the conditional
+representation. Sections~\ref{sec:envelope}--\ref{sec:law} establish the common
+normalizer, stress-work identity, and configuration coercivity. The normalized
+defect closes in Section~\ref{sec:defect}, and Section~\ref{sec:final} passes
+the original system and its initial-time entropy inequality to the limit.
+\section{The system and the compactness theorem}\label{sec:theorem}
+Let $B=B_1(0)\subset\R^3$ and let $\T$ have its usual periodic measure. Fix
+$\nu>0$ and $k>2$, and set
+\begin{equation}\label{eq:weight}
+ U(q)=-k\log(1-|q|^2),\qquad
+ M(q)=Z^{-1}(1-|q|^2)^k,\qquad Z=\int_B(1-|q|^2)^k\dd q.
+\end{equation}
+We consider the full velocity-gradient FENE system
+\begin{align}
+ \partial_tu+u\cdot\grad_xu-\nu\Delta_xu+\grad_xp
+   &=\Div_x\tau(\psi),\qquad\Div_xu=0,\label{eq:NS}\\
+ \tau(\psi)&=\int_B K(q)\psi\dd q,\qquad
+ K(q)=q\otimes\grad_qU(q).\label{eq:stress}
+\end{align}
+\begin{equation}\label{eq:FP}
+\begin{aligned}
+ \partial_t\psi+u\cdot\grad_x\psi
+   &=\varepsilon\Delta_x\psi\\
+   &\quad+\Div_q\{M\grad_q(\psi/M)-(\grad_xu)q\psi\}.
+\end{aligned}
+\end{equation}
+The configuration flux has zero normal component at $\partial B$. Its weak
+meaning is the variational form of \eqref{eq:FP} for smooth tests on the closed
+ball, with no configuration boundary term. Thus no value of $\psi/M$ on the
+sphere is prescribed. We use $(\grad_xu)_{ij}=\partial_{x_j}u_i$; radial symmetry
+makes $K$ symmetric.
+
+Write $L^p_M=L^p(B,M\dd q)$ and
+$H^1_M=\{h:\int_BM(h^2+|\grad_qh|^2)<\infty\}$. For a normalized density define
+\begin{equation}\label{eq:energy}
+\begin{aligned}
+ \Ent(\psi)&=\int_{\T\times B}\psi\log(\psi/M),\qquad
+ \mathcal E(u,\psi)=\tfrac12\|u\|_2^2+\Ent(\psi),\\
+ I_q(\psi)&=\int_{\T\times B}M|\grad_q\sqrt{\psi/M}|^2.
+\end{aligned}
+\end{equation}
+The spatial Fisher information $I_x$ is defined by replacing $\grad_q$ by
+$\grad_x$. The usual initial-time energy inequality is
+\begin{equation}\label{eq:entropy}
+ \mathcal E(u(t),\psi(t))+\nu\int_0^t\|\grad_xu\|_2^2\dd s
+ +4\int_0^t I_q(\psi)\dd s+4\varepsilon\int_0^t I_x(\psi)\dd s
+ \leq \mathcal E(u_0,\psi_0).
+\end{equation}
+All assertions about this inequality at a positive time are understood for
+almost every time, with the usual weakly continuous representatives.
+
+\begin{theorem}\label{thm:main}
+Let $u_0$ be a smooth divergence-free periodic velocity, and let
+$\psi_0=Mg_0$, where $g_0$ is smooth on $\T\times B$, bounded above and below
+by positive constants, and $\int_BMg_0(x,q)\dd q=1$ for every $x$.
+For every $\nu>0$ and $k>2$ one can select global normalized nonnegative
+finite-entropy weak solutions $(u_\varepsilon,\psi_\varepsilon)$ of
+\eqref{eq:NS}--\eqref{eq:FP}, for $\varepsilon>0$, and a sequence
+$\varepsilon_j\downarrow0$ such that, on every finite interval $(0,T)$,
+\begin{align}
+ u_{\varepsilon_j}&\longrightarrow u
+       &&\text{strongly in }L^2((0,T)\times\T),\label{eq:uconv}\\
+ \psi_{\varepsilon_j}&\longrightarrow\psi
+       &&\text{strongly in }L^1((0,T)\times\T\times B),\label{eq:psiconv}\\
+ \tau(\psi_{\varepsilon_j})&\longrightarrow\tau(\psi)
+       &&\text{strongly in }L^1((0,T)\times\T).\label{eq:tauconv}
+\end{align}
+The pair $(u,\psi)$ is a global weak solution of the same full system with
+$\varepsilon=0$. Its spatial transport, configuration drag, and configuration
+diffusion fluxes are, respectively, $u\psi$, $(\grad_xu)q\psi$, and
+$M\grad_q(\psi/M)$, and the corresponding positive-diffusion fluxes converge
+to them in distributions. The zero configuration-flux condition and the
+prescribed initial data are retained. The limiting pair satisfies
+\eqref{eq:entropy} with $\varepsilon=0$ and
+\[
+ u\in L^\infty_{\mathrm{loc}}([0,\infty);L^2(\T))
+       \cap L^2_{\mathrm{loc}}([0,\infty);H^1(\T)),\qquad
+ \psi\in C_{\mathrm{weak}}([0,\infty);L^1(\T\times B)).
+\]
+The density has a strong $L^1$ initial trace. No smallness assumption or strong
+convergence assumption on the full velocity gradient is imposed.
+\end{theorem}
+
+Only smoothness in the open configuration ball is required of $g_0$; its
+derivatives need not extend to $\partial B$. If a chosen positive-diffusion
+family has the energy inequality starting at almost every positive time, that
+additional inequality passes to the limit. We do not include this additional
+selection property in the unconditional assertion of Theorem~\ref{thm:main}.
+
+\section{Estimates before the configuration-drag limit}\label{sec:prelim}
+The fixed-positive-diffusion construction and several configuration estimates
+will be used below. We spell out their spatial domain and coefficient choices,
+since existence at $\varepsilon=0$ alone does not give the limit in this paper.
+
+\subsection{Positive diffusion and periodic geometry}\label{subsec:existence}
+Barrett and S\"uli \cite[Theorem~6.1]{BS} construct weak solutions at fixed
+$\varepsilon>0$ by entropy truncation and time discretization. In their
+one-spring notation take the scalar potential
+$V(z)=-k\log(1-2z)$, $0\leq z<1/2$, so that
+$V'(z)=2k/(1-2z)$. With $d(q)=1-|q|$, the Maxwellian is comparable to $d^k$ and
+$k\leq dV'\leq2k$. Their potential assumptions therefore hold with exponent
+$k>2$. Choose configuration diffusion coefficient one and stress coefficient
+one. Their isotropic stress subtraction is $\Id$ for number density one; its
+spatial divergence is zero.
+
+The spatial boundary condition in \cite{BS} is not periodic. Here is the
+adaptation of that fixed-$\varepsilon$ construction. Replace its velocity
+space by the closure of mean-zero solenoidal trigonometric polynomials and its
+density space by $H^1(\T\times B,M)$. The velocity projectors preserve
+solenoidality, periodic integration by parts cancels transport, and mean-zero
+Poincar\'e replaces the zero-boundary Poincar\'e inequality. The spatial compact
+embeddings follow from periodic charts; the configuration form domain and its
+compact embedding are unchanged. The finite-cutoff variational existence,
+positivity, and mass tests use precisely these properties. Terms that vanished
+on the spatial boundary now cancel between opposite faces. The configuration
+tests and the potential inequalities remain the same.
+
+For completeness, use the cutoff entropy with second derivative
+$1/\min(s,L)$. Its configuration-drag term cancels the full Kramers stress
+work. At zero body force no forcing estimate consumes viscous dissipation.
+When $L>\|g_0\|_\infty$, the initial cutoff entropy equals the true initial
+entropy. The coupled approximation thus retains \eqref{eq:entropy} with its
+displayed constants. At fixed $\varepsilon$, the compactness and cutoff
+passages in \cite{BS} use the same weighted configuration and spatial compact
+embeddings on these periodic spaces. Strong $L^1$ density convergence gives
+strong $L^2$ convergence of bounded configuration moments by normalization;
+these moments pair with the weak $L^2$ velocity gradients. The Hardy estimate
+below removes stress collars. Lower semicontinuity gives \eqref{eq:entropy}.
+Globally extended approximations and nested extraction on integer intervals
+give a global solution. For a nonzero initial mean $c$, translate $x$ by $ct$
+and add $c$ to the mean-zero velocity. Both equations are preserved, and the
+constant mean kinetic energy cancels from \eqref{eq:entropy}. This is a
+periodic adaptation of a fixed-positive-diffusion construction, not an imported
+vanishing-diffusion assertion.
+
+\subsection{Configuration boundary control and velocity compactness}
+We use the quadratic Hardy estimate and the weighted Sobolev gain from
+\cite[Lemma~3.2(ii), Proposition~3.7]{Masmoudi}:
+\begin{align}
+ \int_B\frac{Mh^2}{d^2}&\leq C_k\int_BM(|\grad_qh|^2+h^2),\label{eq:Hardy}\\
+ \|h\|_{L^{p_*}_M}&\leq C_k\|h\|_{H^1_M}
+       \quad\text{for some }p_*>2.\label{eq:Sobolev}
+\end{align}
+The first holds for $k>1$. Fix a finite interval and put
+$f_\varepsilon=\sqrt{\psi_\varepsilon/M}$ and
+$i_\varepsilon(t,x)=\int_BM|\grad_qf_\varepsilon|^2$.
+Normalization and \eqref{eq:Hardy} imply
+\begin{equation}\label{eq:tails}
+ \int_B\frac{\psi_\varepsilon}{d^2}\leq C(1+i_\varepsilon),\qquad
+ \int_{d<r}\frac{\psi_\varepsilon}{d}\leq Cr(1+i_\varepsilon).
+\end{equation}
+Integration by parts, justified by these collars, gives
+\begin{equation}\label{eq:tauFisher}
+ \tau(\psi_\varepsilon)=\Id+
+ 2\int_BM q\otimes(f_\varepsilon\grad_qf_\varepsilon),\qquad
+ |\tau(\psi_\varepsilon)-\Id|\leq2\sqrt{i_\varepsilon}.
+\end{equation}
+In particular the stress is bounded in $L^2_{t,x}$. The equilibrium term
+$\Id$ in this formula is essential.
+
+The energy inequality and momentum equation bound
+$\partial_tu_\varepsilon$ in $L^{4/3}_tH^{-1}_x$, after solenoidal projection.
+Indeed the three-dimensional energy interpolation controls $u\otimes u$,
+and viscosity and stress use their $L^2$ bounds. Project onto finitely many
+periodic Laplace modes. Every coefficient has bounded $L^{4/3}$ time
+derivative and is uniformly H\"older continuous with exponent $1/4$.
+A finite-dimensional subsequence converges uniformly in time. The integrated
+squared tail beyond spatial frequency $L$ is at most $C/L^2$ by the gradient
+bound and Bessel's inequality. A diagonal in $L$ proves strong $L^2_{t,x}$
+compactness. We henceforth write
+\begin{equation}\label{eq:weakstart}
+ \varepsilon_n\downarrow0,\quad u_n\to u\text{ in }L^2_{t,x},\quad
+ A_n:=\grad_xu_n\weak A:=\grad_xu\text{ in }L^2_{t,x},\quad
+ \psi_n\weak\psi\text{ in }L^1_{t,x,q}.
+\end{equation}
+The last extraction follows from entropy uniform integrability on the finite
+domain. Normalization passes by bounded $(t,x)$ tests. Since $|K|\leq C/d$,
+\eqref{eq:tails} identifies the weak stress by bounded kernel truncation.
+
+The spatial transport already passes: for bounded smooth $\phi$,
+\[
+ \left|\int(u_n-u)\psi_n\phi\right|\leq
+ \|\phi\|_\infty\|u_n-u\|_{L^1_{t,x}}.
+\]
+In the term containing $u(\psi_n-\psi)$, truncate $u$, use weak $L^1$
+convergence, then remove the truncation using unit configuration mass.
+Similarly $\varepsilon_n\Delta_x\psi_n$ tends to zero against fixed tests at
+order $\varepsilon_n$. What remains is the product of $A_n$ with bounded
+configuration moments of $\psi_n$. Neither factor is yet strongly compact.
+
+\section{Conditioning on the common spatial Brownian motion}\label{sec:lift}
+The nonlinear quantities used to remove the remaining correlation will be
+applied to a conditional density. Throughout this section the velocity $v$ is
+prescribed, deterministic, divergence-free, and belongs to $L^2_tH^1_x$;
+$A=\grad_xv$ and $\varepsilon>0$ are fixed.
+
+\subsection{The fibre equation and its measurable flow representation}
+Let $W$ be one standard three-dimensional Brownian motion, common to every
+spatial label and every configuration. Put $Z=\sqrt{2\varepsilon}W$ and let
+$Y$ be the regular Lagrangian flow of $v(t,y+Z(t))$. Then $X=Y+Z$ satisfies
+\begin{equation}\label{eq:SDE}
+ \dd X=v(t,X)\dd t+\sqrt{2\varepsilon}\dd W,
+ \qquad X(0,b)=b.
+\end{equation}
+The flow preserves volume for almost every path. The deterministic Sobolev
+flow facts needed here, including stability and the characteristic meaning of
+bounded transport inequalities with $L^1$ source, are
+\cite[Appendix~A]{Masmoudi}. Translation preserves all their spatial Sobolev
+bounds. Smooth approximation gives the adapted version of this flow. The
+related scalar stochastic representation on the torus is described in
+\cite[Section~3.3]{BCC}; the configuration fibres below are an additional
+part of the present construction.
+
+For any trace-free matrix history $\mathsf B\in L^2(0,T)$, the weighted variational
+problem is
+\begin{equation}\label{eq:fibre}
+ \pair{\partial_tr,h}+\int_BM\grad_qr\cdot\grad_qh
+   =\int_BM\mathsf B(t)qr\cdot\grad_qh,
+ \qquad r(0)=r_0\in L^2_M.
+\end{equation}
+A dense Galerkin basis of the form domain, including constants, gives
+\begin{equation}\label{eq:fibreenergy}
+ \tfrac12\frac{\dd}{\dd t}\|r\|_{L^2_M}^2
+ +\tfrac12\|\grad_qr\|_{L^2_M}^2
+ \leq\tfrac12|\mathsf B|^2\|r\|_{L^2_M}^2.
+\end{equation}
+Weak extraction yields
+$r\in L^\infty_tL^2_M\cap L^2_tH^1_M$ and
+$\partial_tr\in L^2_t(H^1_M)'$. Testing with the negative part proves
+positivity; the constant test conserves mass. The same estimate for a
+difference proves uniqueness and time regularization gives a continuous
+$L^2_M$ representative. Galerkin measurability and uniqueness give measurable,
+progressive solutions for measurable progressive histories.
+
+Use $\mathsf B(t)=A(t,X(t,b))$ and $r_0=g_0(b,\cdot)$. Volume preservation and Fubini
+give $\mathsf B\in L^2_t$ on almost every label and path. Define
+\begin{equation}\label{eq:rho}
+ \rho^\omega(t,x,q)=M(q)r^\omega(t,X_t^{-1}(x),q).
+\end{equation}
+Each density has unit configuration mass. Its labelwise $L^2_M$ bound may
+grow exponentially with the individual history; we do not claim a global
+$L^2$ bound in the labels or paths. The uniform global estimates below use
+entropy instead. It\^o's formula against a smooth test of $X$, with the fibre
+equation, shows that $\E\rho$ solves the prescribed-velocity version of
+\eqref{eq:FP}.
+
+\subsection{Conditional entropy and logarithmic moments}\label{subsec:log}
+Applying the configuration entropy calculation to \eqref{eq:fibre}, then
+integrating the labels, gives for almost every path
+\begin{equation}\label{eq:conditionalentropy}
+ \Ent(\rho^\omega(t))+2\int_0^t I_q(\rho^\omega)\dd s
+ \leq\Ent(\psi_0)+C\int_0^t\int_\T|A|^2.
+\end{equation}
+The constant is deterministic: volume preservation makes the last integral
+the same on every path. In deriving this estimate use \eqref{eq:tauFisher}
+and absorb $2|A|\sqrt{i_q}$ into Fisher dissipation. No conditional fluid
+equation is used.
+
+Fix $a=e^4$ and introduce, for each conditional profile,
+\begin{equation}\label{eq:transforms}
+\begin{aligned}
+ s=\rho/M+a,\quad f=\sqrt s,\quad
+ G&=\Theta(s)=\sqrt{s\log s},\\
+ \Hone&=\int_BMs\log s,\\
+ \Htwo&=\left(\int_BMs[(\log s)^2-2\log s+2]\right)^{1/2}.
+\end{aligned}
+\end{equation}
+The shift keeps all scalar derivatives in a fixed positive range. Along a
+label $\Htwo$ is absolutely continuous with derivative
+\begin{equation}\label{eq:H2source}
+ F=-\frac4{\Htwo}\int_BM\log s|\grad_qf|^2
+ +\frac1{\Htwo}\int_BM(\mathsf B:K)
+       \left[s\log s-s-\frac a2\log^2s\right].
+\end{equation}
+Indeed the derivative of $s[(\log s)^2-2\log s+2]$ is $\log^2s$ and its
+second derivative is $2\log s/s$. Integration by parts gives
+\eqref{eq:H2source}. The unshifted drag part is alternatively
+$2\Htwo^{-1}\int M\mathsf Bqf\log s\grad_qf$. Since
+$\Hone\leq C\Htwo$, it is bounded by
+$C|\mathsf B|(\int M\log s|\grad f|^2/\Htwo)^{1/2}$.
+The shifted part is bounded by $C|\mathsf B|/\Htwo$, since
+\[
+ \int_B\frac{M\log^2s}{d}\leq
+ \left(\int_B\frac M{d^2}\right)^{1/2}
+ \left(\int_BM\log^4s\right)^{1/2}\leq C_{k,a}.
+\]
+Here $\int_BMs=a+1$, $k>1$, and $\log^4s\leq C_as$.
+The gradient of $G$ is
+$(\sqrt{\log s}+1/\sqrt{\log s})\grad f$, whose square is comparable to
+$\log s|\grad f|^2$. Young's inequality, the positive lower bound on
+$\Htwo$, and \eqref{eq:H2source} now give
+\begin{equation}\label{eq:logbounds}
+ \sup_t\int_\T\Htwo^\omega+
+ \int_0^T\int_\T\frac{\int_BM|\grad_qG^\omega|^2}{\Htwo^\omega}
+ +\int_0^T\int_\T|F^\omega|\leq C.
+\end{equation}
+All these calculations follow first from convex truncations with derivative
+$\log^2(\min(s,R))$ and then from monotone convergence and Fatou. Thus they
+hold in the fibre class without boundary regularity of the initial datum.
+
+Interpolating \eqref{eq:Sobolev} with the fixed $L^2_M$ mass of $f$ gives a
+full time-space-configuration exponent $r_0=4-4/p_*>2$ for $f$.
+Every slightly smaller exponent above two also controls $G$.
+Moreover $\Htwo^2\leq C\int_BM f^{2+\zeta}$ for sufficiently small
+$\zeta>0$, so $\Htwo$ is bounded in $L^2_{t,x}$, uniformly in the path.
+The moments $\Hone,\Htwo$ and $G^2$ are uniformly integrable on the joint
+probability-time-space domain. These are integrability estimates, not spatial
+compactness assertions.
+
+\subsection{Identification with the coupled density}\label{subsec:identification}
+We next justify that this conditional construction represents the actual
+positive-diffusion coupled solution, rather than another solution of its
+prescribed-velocity equation.
+
+\begin{lemma}\label{lem:unique}
+Fix $\varepsilon>0$, $k>1$, and a divergence-free $v\in L^2_tH^1_x$.
+Two normalized nonnegative solutions of its linear Fokker--Planck equation
+coincide if both have finite configuration and $\varepsilon$-weighted spatial
+Fisher information and the same strong $L^1$ initial trace.
+\end{lemma}
+\begin{proof}
+For densities $p_i$, put $b=(v,Aq-\grad U)$ and
+$D_\varepsilon=\operatorname{diag}(\varepsilon\Id,\Id)$.
+Hardy and normalization give
+\[
+ \sqrt{p_i}\in L^2_tH^1_{x,q},\qquad
+ \int |b|^2p_i\leq C\left(\int|v|^2+\int|A|^2+
+                              \int p_i/d^2\right)<\infty.
+\]
+For $\delta>0$, set $s_i=p_i+\delta M$ and
+\[
+ J(s_1,s_2)=\frac{(s_1-s_2)^2}{s_1+s_2},\qquad
+ z=\frac{s_1-s_2}{s_1+s_2}.
+\]
+The function $J$ is nonnegative, convex, one-homogeneous and at most
+$s_1+s_2$. Its derivatives are $J_1=2z-z^2$, $J_2=-2z-z^2$, hence
+$|J_i|\leq3$, and
+\begin{equation}\label{eq:JHess}
+ D^2J=\frac{2w\otimes w}{s_1+s_2},\qquad w=(1-z,-1-z),\qquad
+ \sum_i s_i|\partial_\alpha J_i|^2\leq
+ 2\,D^2J[\partial_\alpha s,\partial_\alpha s].
+\end{equation}
+The common conservative drift cancels by homogeneity. Both shifted equations
+have source $\delta\Div_q(AqM)=-\delta M A:K$, whose contribution is at most
+$C\delta\int|A|$.
+
+Here are the required weak chain-rule details. First cut off configurations
+at distance $r$ from the boundary and mollify in $(x,q)$ at radius $h<r/4$.
+Rewriting the mollified equation with the original $b$ creates flux error
+\[
+ R_{i,h}(\xi)=\int[b(y)-b(\xi)]s_i(y)\eta_h(\xi-y)\dd y,\qquad
+ \frac{|R_{i,h}|^2}{s_{i,h}}
+ \leq\int|b(y)-b(\xi)|^2s_i(y)\eta_h(\xi-y)\dd y.
+\]
+Its integral on the fixed interior tends to zero: the $v$ term uses $L^2$
+translation continuity and configuration mass $1+\delta$; for $Aq$ split
+$(A(y_x)-A(x))y_q+A(x)(y_q-q)$ and use the same continuity and an
+$O(h^2\int|A|^2)$ term. The field $\grad U$ is Lipschitz on that interior.
+No spatial derivative of $A$ is taken. By \eqref{eq:JHess} the entropy error
+is bounded by half the diffusion dissipation plus
+$C/\min(\varepsilon,1)\sum_i|R_{i,h}|^2/s_{i,h}$.
+The divergence error against the fixed cutoff vanishes as well.
+Let $h\to0$ at fixed $r,\delta,\varepsilon$; retain the nonnegative
+dissipation by lower semicontinuity. Bounded $J_i$, the $L^1$ diffusion
+fluxes, and the bound on $\int|b|^2p_i$ justify the remaining passages by
+drift truncation and time regularization.
+
+Choose the configuration cutoff with derivative at most $C/d$ on
+$d<2r$. The diffusion collar is bounded by
+\[
+ C\sum_i\left(\int_{d<2r}s_i/d^2\right)^{1/2}
+             \left(\int_{d<2r}|\grad_q\sqrt{s_i}|^2\right)^{1/2}\to0.
+\]
+The confining collar is bounded by $C\int_{d<2r}\sum_i s_i/d^2\to0$;
+the matrix-drift collar by
+$C\sum_i(\int|A|^2s_i)^{1/2}(\int_{d<2r}s_i/d^2)^{1/2}\to0$.
+All these integrals include time and space. Thus the common initial trace gives
+\[
+ \int J(p_1+\delta M,p_2+\delta M)(t)
+       \leq C\delta\int_0^t\int_\T|A|.
+\]
+Dominated convergence as $\delta\to0$ yields $p_1=p_2$.
+\end{proof}
+
+To obtain the Fisher assumptions for $\E\rho$, approximate $v$ strongly in
+$L^2_tH^1_x$ by smooth divergence-free $v_m$. For fixed $m$, $A_m$ is bounded;
+\eqref{eq:fibreenergy}, volume preservation and Jensen put the averaged
+$g_m=\E\rho_m/M$ in $L^\infty_tL^2_{x,q,M}$ with its configuration form bound.
+Mollify its weak equation only in $x$. The $v_m$ and $A_m$ commutators tend
+to zero in $L^2$, since their spatial derivatives are bounded and $g_m$ is
+$L^2$. Testing by the spatially mollified $g_m$ gives the $\varepsilon$
+spatial form bound. Removing this mollification and then the convex entropy
+regularization gives
+\begin{equation}\label{eq:averageFisher}
+ \Ent(\E\rho_m(t))+2\int_0^t I_q(\E\rho_m)
+ +4\varepsilon\int_0^t I_x(\E\rho_m)
+ \leq\Ent(\psi_0)+C\int_0^t\int_\T|A_m|^2.
+\end{equation}
+Its constant is independent of $m$; no uniqueness assertion has yet been used.
+The original bounded initial density is retained by the fibre $L^2$ energy
+estimate when removing smooth initial approximations.
+
+The flows $X_m$ converge in measure. Their pulled-back gradients converge
+strongly in $L^2$, since
+\[
+ A_m(X_m)-A(X)=(A_m-A)(X_m)+A(X_m)-A(X);
+\]
+volume preservation controls the first term and bounded continuous
+approximation of $A$ controls the second. The homogeneous entropy comparison
+above, now with two matrix histories, absorbs their difference into the
+configuration dissipation and gives on each fibre
+\[
+ \int_B J(Mr_m,Mr_\ell)(t)\dd q
+ \leq C\int_0^t|A_m(X_m)-A_\ell(X_\ell)|^2\dd s.
+\]
+Its label integral and Cauchy--Schwarz imply strong $L^1$ convergence of the
+fibre densities. Returning by the converging inverse flows identifies their
+Eulerian limit. Lower semicontinuity in \eqref{eq:averageFisher} gives both
+Fisher bounds for $\E\rho$. These also give its strong initial trace, either
+by entropy or by comparison with the zero-matrix configuration semigroup.
+
+The coupled solution has the same trace. In fact $\log g_0$ is bounded, weak
+continuity and \eqref{eq:entropy} give
+$\limsup_{t\downarrow0}\Ent(\psi(t))\leq\Ent(\psi_0)$, and hence
+\[
+ \operatorname{Ent}(\psi(t)\mid\psi_0)
+   =\Ent(\psi(t))-\int\psi(t)\log g_0\longrightarrow0.
+\]
+Pinsker's inequality gives strong $L^1$ convergence. Lemma~\ref{lem:unique}
+now proves $\psi_\varepsilon=\E\rho^\omega$. In particular the conditioning
+has not changed the deterministic stress feedback in the fluid equation.
+
+\subsection{Nonlinear transforms before expectation}\label{subsec:Ito}
+If a fibre functional $B(t,b)$ has finite variation with source $S_B$, test
+its Eulerian push-forward against $\phi(t,X(t,b))$. It\^o's product formula
+has no quadratic covariation with $B$. Its sole correction is
+$\varepsilon\int B\Delta_x\phi(t,X)\dd b$; its martingale coefficient is
+$\sqrt{2\varepsilon}\int B\grad_x\phi(t,X)\dd b$.
+For bounded functionals this coefficient is bounded. For $\Hone,\Htwo$
+their deterministic global pathwise mass bounds make it square-integrable.
+Fubini and expectation therefore give
+\begin{equation}\label{eq:expectation}
+ (\partial_t+v\cdot\grad_x)\E B
+       =\varepsilon\Delta_x\E B+\E S_B.
+\end{equation}
+For $G$ first keep a fixed smooth configuration test and use the fibre
+variational equation. Smooth fibre and spatial-flow approximations justify
+the same identity; their fluxes and sources pass by the preceding estimates.
+There is no spatial derivative of the conditional density in this argument.
+
+For $\vartheta_\kappa(z)=z/(1+\kappa z)$ apply \eqref{eq:expectation} to
+\begin{equation}\label{eq:quotient}
+ B_{\delta,\kappa}=\frac{\vartheta_\kappa(\Hone)}{1+\delta\Htwo},\qquad
+ W_{\delta,\kappa}=(1+\delta\Htwo)(1+\kappa\Hone)^2.
+\end{equation}
+The stress-work term is $A:\E[\tau(Ms)/W_{\delta,\kappa}]$, and the
+configuration Fisher term has precisely the same conditional weight.
+The denominator derivative is bounded in $L^1$ by $C\delta/\kappa$, using
+\eqref{eq:logbounds}. Thus $\delta$ will be removed before $\kappa$.
+The bound $B_{\delta,\kappa}\leq1/\kappa$ ensures that its spatial Laplacian
+vanishes against fixed tests when $\varepsilon\to0$.
+This identity concerns $\E B(\rho)$, not $B(\E\rho)$.
+Applying the latter nonlinear functional directly to the spatially diffusive
+density would introduce spatial Hessian terms with no required sign.
+
+\section{A transported envelope for the limiting conditional moments}\label{sec:envelope}
+Return to the coupled family in \eqref{eq:weakstart} and its conditional
+representation. Along each random characteristic define
+\begin{equation}\label{eq:Q}
+ Q_n^\omega(t,X_n(t,b))=\mathcal H_{2,0}(b)+
+                \int_0^t|F_n^\omega(s,X_n(s,b))|\dd s.
+\end{equation}
+It dominates $\mathcal H_{2,n}^\omega$, and its spatial mass is bounded by the same
+deterministic constant on every path. For $\beta_L(z)=Lz/(L+z)$,
+$q_{n,L}=\E\beta_L(Q_n^\omega)$ satisfies
+\begin{equation}\label{eq:boundedQ}
+ (\partial_t+u_n\cdot\grad_x)q_{n,L}
+ =\varepsilon_n\Delta_xq_{n,L}
+   +\E[\beta_L'(Q_n^\omega)|F_n^\omega|]\geq
+      \varepsilon_n\Delta_xq_{n,L}.
+\end{equation}
+At fixed $L$ it is bounded, so strong velocity convergence passes its
+transport and the small Laplacian vanishes. The limit $q_L$ is nondecreasing
+along the regular Lagrangian flow of $u$. Its increasing supremum $Q$ is
+finite almost everywhere by its common mass bound. Put
+$R=\mathrm{w}\!\lim\E\mathcal H_{2,n}^\omega$. The $L^2$ bound on $\mathcal H_{2,n}^\omega$
+and $\Htwo-\beta_L(\Htwo)\leq\Htwo^2/L$ show that $R\leq Q$.
+
+On $[0,T_0]$ choose a later time $T_1>T_0$ at which $Q(T_1)$ has finite
+mass, and transport $1+Q(T_1)$ backward by the limiting flow. This defines
+\begin{equation}\label{eq:N}
+ N\geq1,\qquad R\leq N,
+ \qquad N(t,X(t,b))=N(0,b)<\infty\quad\text{a.e.}
+\end{equation}
+For this possibly unbounded $N$, transport means characteristic constancy
+and transport of its bounded Borel functions. No raw product $uN$ is used.
+The normalizer is introduced after the zero-diffusion limit; its later-time
+definition is never an anticipating stochastic test.
+
+Let $y=\mathrm{w}\!\lim\E G_n^\omega$. Weighted Cauchy--Schwarz yields
+\[
+ \frac{\int_BM|\grad_q\E G_n^\omega|^2}{\E\mathcal H_{2,n}^\omega}
+ \leq\E\frac{\int_BM|\grad_qG_n^\omega|^2}{\mathcal H_{2,n}^\omega}.
+\]
+Convexity of $z\mapsto z\sqrt{\log z^2}$ on the shifted range and the $L^2$
+triangle inequality also give
+$\|\E G_n^\omega\sqrt{\log(\E G_n^\omega)^2}\|_{L^2_M}
+ \leq C\E\mathcal H_{2,n}^\omega$.
+Convex lower semicontinuity, \eqref{eq:logbounds}, and $R\leq N$ imply
+\begin{equation}\label{eq:yenergy}
+ \int_0^{T_0}\int_\T\frac{\Dy}{N}\leq C,
+ \qquad \Dy=\int_BM|\grad_qy|^2,\qquad
+ h:=y/N^2\in L^\infty_{t,x}L^2_M\cap L^2_{t,x}H^1_M.
+\end{equation}
+These are the energy bounds needed later for deterministic configuration
+renormalization. Only bounded envelope truncations have entered a spatial
+transport limit.
+
+\section{Conditional cutoffs and the stress-work defect}\label{sec:work}
+The stress-work identity must use the same conditional cutoffs as the entropy
+equation. For $c=(\delta,\kappa)$, define
+\begin{equation}\label{eq:cutstress}
+ T_{n,c}=\E\frac{\tau(Ms_n^\omega)}{W_{n,c}^\omega},\qquad
+ z_{n,c}=A_n\E\frac{s_n^\omega}{W_{n,c}^\omega},\qquad
+ W_{n,c}^\omega=(1+\delta\mathcal H_{2,n}^\omega)(1+\kappa\mathcal H_{1,n}^\omega)^2.
+\end{equation}
+The raw shifted stress is $\tau_n^a=\tau(\psi_n)+a\Id$.
+All cutoff removals below first take $n\to\infty$ at fixed $c$, then
+$\delta\downarrow0$, and then $\kappa\downarrow0$.
+
+\subsection{Integrable stress squares and a common drag direction}\label{subsec:cutbounds}
+For a conditional profile let
+$S=\int_BMs/d$, $J_q=\int_BMs\log s/d$ and
+$D_G=\int_BM|\grad_qG|^2$. Applying \eqref{eq:Hardy} to $G$ gives
+\[
+ J_q^2\leq C\Hone(D_G+\Hone).
+\]
+Jensen's inequality for the finite measure $M\dd q/d$ gives
+$S^2\log^2(2+S)\leq C(1+J_q^2)$. Since $\Hone\leq C\Htwo$,
+\begin{align}
+ \left|\frac{\tau(Ms)}{W_c}\right|^2
+ \log^2\left(2+\left|\frac{\tau(Ms)}{W_c}\right|\right)
+ &\leq C_\delta(1+D_G/\Htwo),\label{eq:stressOrlicz}\\
+ \int_B\frac M d\,\Phi(|A|s/W_c)
+ &\leq C_\delta(1+|A|^2+D_G/\Htwo),\qquad
+ \Phi(z)=z\log(1+z).\label{eq:dragOrlicz}
+\end{align}
+For the second inequality one also uses
+$bc\log(2+b)\leq C[b^2+c^2\log^2(2+c)+1]$ for $b,c\geq0$.
+The right sides have uniformly bounded integrals by \eqref{eq:logbounds}.
+The superlinear factors on the left therefore give uniform integrability.
+Jensen transfers it to $|T_{n,c}|^2$ in $(t,x)$ and to $z_{n,c}$ in
+$M\dd q\dd x\dd t/d$.
+
+The conditional raw stress is bounded in joint $L^2$. The cutoff factors
+approach one in measure uniformly in $n$ by the $L^1$ moment bounds.
+Consequently
+\begin{equation}\label{eq:Lpcut}
+ \sup_n\|T_{n,c}-\tau_n^a\|_{L^p_{t,x}}\longrightarrow0
+       \qquad(1<p<2).
+\end{equation}
+The radial matrix $K$ is positive semidefinite. The $T_{n,c}$ increase in the
+Loewner order when their scalar cutoffs are removed, and their squared
+Frobenius norms increase as well, since
+$|S+D|^2-|S|^2=2\tr(SD)+|D|^2\geq0$ for positive semidefinite $S,D$.
+At fixed $(t,x,q)$, all $z_{n,c}$ have the common matrix direction $A_n$ and
+nonnegative ordered scalar magnitudes. Thus for two ordered cutoffs
+\begin{equation}\label{eq:polar}
+ |z_{n,c}-z_{n,c'}|=|z_{n,c}|-|z_{n,c'}|
+ \quad\text{when }W_{n,c}\leq W_{n,c'}.
+\end{equation}
+Expectation has preserved both monotonicities needed here.
+
+For clarity, this identifies a weighted limit of the raw drag, not merely a
+cutoff-dependent product. The raw $A_ns_n$ are uniformly integrable in the
+unweighted $M$ measure: the superlinear function
+$\Phi_{1/2}(z)=z\sqrt{\log(1+z)}$ obeys
+\[
+ \Phi_{1/2}(|A|s)\leq Cs(1+|A|^2+\log s).
+\]
+Normalization makes its right side integrable after averaging. Also, by
+\eqref{eq:Hardy},
+\[
+ \int M|A_n|\E s_n/d\leq C\int(1+|A_n|^2+\E I_q(\rho_n)).
+\]
+At fixed cutoffs extract weighted weak
+$L^1$ limits $z_c$ and $g_c$ of $z_{n,c}$ and $|z_{n,c}|$.
+Equation~\eqref{eq:polar} implies
+$|z_c-z_{c'}|\leq g_c-g_{c'}$. The increasing $g_c$ have bounded weighted
+mass, so $z_c$ are Cauchy in weighted $L^1$. Their limit coincides with the
+raw weak product by the unweighted uniform integrability. Denote
+\begin{equation}\label{eq:beta}
+ \beta=\mathrm{w}\!\lim(A_n\psi_n)-A\psi.
+\end{equation}
+The work covariance is therefore exactly $\int_BK:\beta$, with no second
+product selected by removing the cutoffs.
+
+\subsection{Periodic linear estimates and the compact convective part}\label{subsec:periodicStokes}
+Split $u_n=v_n+w_n$. Here $v_n$ has zero initial data and solves the periodic
+solenoidal Stokes equation with force $\Div_x\tau(\psi_n)$; $w_n$ has initial
+data $u_0$ and force $-u_n\cdot\grad_xu_n$. Let $v_{n,c}$ be the analogous
+zero-initial Stokes solution forced by $\Div_x T_{n,c}$.
+We need the linear $L^p$ gradient estimate for stress forcing and the
+second-derivative estimate for vector forcing, $1<p<2$, used in
+\cite[Section~5.4]{Masmoudi}. We record why their spatially periodic versions
+hold.
+
+The causal kernels in both estimates have the form $D_x^2\mathbb P G_\nu$,
+where $G_\nu$ is the heat kernel and $\mathbb P$ is the solenoidal projector.
+They are sums of second Gaussian derivatives and fourth derivatives of the
+Newton-potential convolution with a Gaussian. For $0<t<T$ and sufficiently
+large $|x|$ their absolute values are at most $C_{\nu,T}|x|^{-5}$.
+To see this, differentiate the Newton kernel four times and split its
+convolution at $|y|=|x|/2$; the remaining Gaussian tail has faster decay.
+Thus the space-time tails of these kernels are integrable and tend to zero
+outside large spatial balls.
+
+Cut a smooth periodic forcing, extended to $\R^3$, off to a cube $Q_L$.
+On its interior at distance $\sqrt L$ from the boundary, the whole-space and
+periodic convolutions differ by at most the forcing supremum times the kernel
+tail. Apply the whole-space $L^p$ estimate, divide its $p$th-power bound by the
+number of periodic cells, and let $L\to\infty$. The interior fraction tends
+to one and the error tends to zero. Density extends the resulting periodic
+bound to all $L^p$ forcings. This transfers a linear estimate only; it does not
+transfer a nonlinear existence theorem between domains.
+
+The convective force belongs to $L^{5/4}_{t,x}$ by the fluid energy bounds.
+The transferred estimate gives $w_n\in L^{5/4}_tW^{2,5/4}_x$.
+Its mean-zero pressure is $-(-\Delta)^{-1}\Div(-u_n\cdot\grad u_n)$;
+the periodic $|x|^{-2}$ kernel is integrable, giving an $L^{5/4}$ bound.
+Hence $\partial_tw_n$ is bounded in $L^{5/4}_tW^{-1,5/4}_x$.
+Spatial smoothing and finite-dimensional time compactness give compactness
+of $\grad w_n$ in $L^{5/4}_{t,x}$; interpolation with its $L^2$ bound gives
+\begin{equation}\label{eq:wcompact}
+ \grad w_n\longrightarrow\grad w\quad\text{in }L^p_{t,x},\qquad p<2.
+\end{equation}
+The fixed initial-data Stokes part is common to all $n$. From
+\eqref{eq:Lpcut} and the stress-to-gradient estimate,
+$\grad v_{n,c}-\grad v_n\to0$ in $L^p$, uniformly in $n$, as $c$ is removed.
+
+\subsection{Local Stokes work and retained oscillation}\label{subsec:localwork}
+At fixed $c$, write $T_c=\mathrm{w}\!\lim T_{n,c}$ and
+$G_c=\mathrm{w}\!\lim|T_{n,c}|^2$. By \eqref{eq:stressOrlicz}, $G_c$ is
+$L^1$. The $G_c$ increase and have bounded masses, so $G_c\uparrow G$ in
+$L^1$ for a finite $G$. The needed tail comparison concerns these weak
+limits. It does not assert uniform integrability of the raw stress squares.
+Indeed use the monotone caps $\min(|T_{n,c}|^2,L^2)$. Their weak limits
+increase both with $L$ and with cutoff removal; the two suprema commute and
+equal $G$. Given $\zeta>0$, choose $c_0,L_0$ so that the gap from $G$ to the
+doubly capped weak limit has $L^1$ norm less than $\zeta$. For every smaller
+$c$, the weak limiting energy in $|T_{n,c}|>2L_0$ is at most
+$4\zeta/3$, since
+\[
+ b^2\mathbf1_{b>2L}\leq\tfrac43\{b^2-\min(b^2,L^2)\}.
+\]
+
+Pair a bounded capped stress with the $L^p$-small difference of the cut and
+uncut Stokes gradients, then remove the cap with this tail comparison and
+the uniform $L^2$ gradient bounds. It follows that the weak work limits
+$T_{n,c}:\grad v_{n,c}$ and $T_{n,c}:\grad v_n$ have the same $L^1$ limit
+as $c$ is removed. Equation~\eqref{eq:wcompact} and fixed-$c$ uniform
+integrability also give
+$\mathrm{w}\!\lim(T_{n,c}:\grad w_n)=T_c:\grad w$.
+
+On the other hand $0\leq T_c\leq\tau(\psi)+a\Id$ in the Loewner order,
+and \eqref{eq:Lpcut} gives $T_c\to\tau(\psi)+a\Id$ in $L^p$, $p<2$.
+Domination by this $L^2$ stress gives strong $L^2$ convergence, hence strong
+$L^2$ convergence of the limiting cutoff Stokes gradients.
+
+For fixed $c$, test the Stokes equation by its velocity times a smooth
+space-time cutoff. Its energy-class velocity is strongly continuous in
+$L^2$; pressure and force fluxes pass by strong velocity and weak
+pressure/stress convergence. Comparing the local energy identities gives
+\begin{equation}\label{eq:localenergy}
+ \mathrm{w}\!\lim(T_{n,c}:\grad v_{n,c})
+       =T_c:\grad v_c-\nu\mu_c,
+ \qquad
+ \mu_c=\mathrm{w}\!\lim|\grad v_{n,c}|^2-|\grad v_c|^2\geq0.
+\end{equation}
+Remove the cutoffs by the preceding capped-work comparison and the
+common-direction argument of \eqref{eq:polar}. The total work limit is
+$A:(\tau(\psi)+a\Id)+\int_BK:\beta$ by \eqref{eq:beta}.
+Subtract the compact $w$ work from \eqref{eq:localenergy}. We obtain
+\begin{equation}\label{eq:mu}
+ \nu\mu=-\int_BK:\beta,\qquad \mu\geq0,\qquad \mu\in L^1_{t,x}.
+\end{equation}
+The last assertion follows because the resulting work terms are $L^1$
+functions. The isotropic shift contracts to zero with the trace-free $A$.
+This is the local-energy comparison of \cite[Proposition~5.4]{Masmoudi},
+with the conditional PSD, cap, and common-direction properties verified above.
+
+We will also use its oscillation consequence. If $\Pi$ is the velocity-gradient
+marginal of the joint law constructed below, then
+\begin{equation}\label{eq:PiVar}
+ \pair{|\Pi-A|^2}\leq\mu.
+\end{equation}
+Here is a bounded-moment way to check this consequence. For a centered gradient
+matrix use $P_R(H)=\min(|H|^2,R)$, whose Lipschitz constant is at most
+$2\sqrt R$. The $L^p$-small cut-gradient difference makes their $P_R$ moments
+coincide in the cutoff limit. The cut-gradient square defect bounds its
+centered $P_R$ moment. Remove the cutoff first, then let $R\to\infty$.
+The compact $\grad w_n$ adds no oscillation. This proves
+\eqref{eq:PiVar}; it does not identify $\mu$ with the entire viscous
+dissipation defect of $u_n$.
+
+\section{Joint conditional fluctuations and configuration coercivity}\label{sec:law}
+We now compare the weak limit of the conditional entropy with the square of
+its weakly limiting square root. Define
+\begin{equation}\label{eq:defect}
+ f=\mathrm{w}\!\lim\E f_n^\omega,\quad
+ y=\mathrm{w}\!\lim\E G_n^\omega,\quad
+ \theta=\mathrm{w}\!\lim\E\mathcal H_{1,n}^\omega,\quad
+ \eta=\theta-\int_BMy^2\geq0.
+\end{equation}
+In particular $\eta\leq CN$ by \eqref{eq:N} and $\Hone\leq C\Htwo$.
+To retain correlations with $A_n$, construct at each $(t,x,q)$ the joint law
+of $(A_n,f_n^\omega,\grad_qf_n^\omega)$ before averaging the conditional
+variable. One can do this without a Young-measure theorem on Brownian path
+space: extract weak-star limits of
+$\E\Phi(A_n,f_n^\omega,\grad_qf_n^\omega)$ for a countable dense set of
+compactly supported continuous state tests. Positivity gives a positive
+functional on the finite-dimensional state space. Riesz representation gives
+a measure; the moment bounds give tightness and total mass one. Denote its
+state by $(\Pi,\lambda,\Lambda)$ and its expectation by brackets.
+The $\Pi$ marginal is independent of $q$, is trace-free, has mean $A$, and
+satisfies \eqref{eq:PiVar}.
+
+The higher moment of $f_n$ and the $L^2$ gradient bound make $\lambda\Lambda$
+uniformly integrable. They likewise absorb the logarithmic multiplier in
+the gradient of $G$. Consequently, with $b=\sqrt{\log\lambda^2}$,
+\begin{align}
+ f&=\pair\lambda,&\grad_qf&=\pair\Lambda,&
+ y&=\pair{\lambda b},&\grad_qy&=\pair{(b+b^{-1})\Lambda},\label{eq:lawmoments}\\
+ \overline s&:=\pair{\lambda^2}=\psi/M+a.
+ \nonumber
+\end{align}
+The square-root variance $V_f=\pair{\lambda^2}-f^2$ obeys
+\begin{equation}\label{eq:variancegrad}
+ \grad_qV_f=2\pair{(\lambda-f)(\Lambda-\grad_qf)},\qquad
+ |\grad_q\sqrt{V_f}|^2\leq\pair{|\Lambda-\grad_qf|^2}.
+\end{equation}
+Since $\lambda\mapsto\lambda\sqrt{\log\lambda^2}$ has derivative bounded
+below on $\lambda\geq\sqrt a$, the two-copy variance formula gives
+$\int_BMV_f\leq C\eta$.
+
+\subsection{Retaining positive Fisher moments}\label{subsec:retention}
+At each fixed conditional entropy cutoff, the positive measures
+$\E[|\grad_qf_n^\omega|^2/W_{n,c}^\omega]$ have weak limits. They increase
+when the cutoffs are removed and have bounded total masses. Let $m$ be the
+increasing limit of their absolutely continuous densities. For a bounded
+state moment $\min(|\Lambda|^2,L^2)$, the cutoff loss is at most
+\[
+ L^2\E(1-1/W_{n,c})
+ \leq L^2\E\min(\delta\mathcal H_{2,n}+2\kappa\mathcal H_{1,n},1),
+\]
+whose total integral tends to zero as $c$ is removed. Weak passage of this
+bounded moment, then removal of $c$ and $L\to\infty$, gives
+\begin{equation}\label{eq:mretain}
+ m\geq\pair{|\Lambda|^2}\quad\text{a.e.},\qquad
+ \varpi:=\int_BM(m-|\grad_qf|^2)\geq0.
+\end{equation}
+This is a density inequality: for an increasing sequence of finite positive
+measures, the absolutely continuous part of the limit is the increasing limit
+of their absolutely continuous parts, since all their singular parts are
+supported on a countable union of null sets.
+
+The positive transformed source is
+$-\Theta''(s_n)|\grad_qs_n|^2$. Its coefficient in the $f_n$ variables is
+$(b+b^{-3})/\lambda$, bounded and continuous on $\lambda\geq\sqrt a$.
+The same bounded-state argument implies that its absolutely continuous limit
+$V$ satisfies
+\begin{equation}\label{eq:Vretain}
+ V\geq\pair{(b+b^{-3})|\Lambda|^2/\lambda}.
+\end{equation}
+The singular positive part remains favorable in a supersolution inequality;
+we will discard it before using a rough spatial normalizer.
+From \eqref{eq:variancegrad}, \eqref{eq:mretain}, and Hardy,
+\begin{equation}\label{eq:varianceHardy}
+ \int_B\frac{MV_f}{d}\leq C\sqrt\eta\sqrt{\varpi+\eta}.
+\end{equation}
+
+\subsection{An all-state two-copy inequality}\label{subsec:matrix}
+The following algebra ensures that averaging has not destroyed configuration
+coercivity. Take two independent states $(\lambda,\Lambda)$,
+$(\lambda',\Lambda')$ of the same law, and put
+$b=\sqrt{\log\lambda^2}$, $c=\sqrt{\log(\lambda')^2}$, $r=\lambda'/\lambda$.
+Set
+\[
+ B_1=2+rc(b+b^{-3}),\quad
+ B_2=2+r^{-1}b(c+c^{-3}),\quad
+ B_3=(b+b^{-1})(c+c^{-1}).
+\]
+The matrix with diagonal $B_1-1,B_2-1$ and off-diagonal $-(B_3-1)$ is
+positive semidefinite. Its diagonal entries are positive, and direct expansion
+of its determinant gives
+\begin{align*}
+ &bc[r+r^{-1}+2-2b/c-2c/b]+2[b/c+c/b-2]\\
+ &\hspace{12mm}+(bc)^{-1}
+       [rc^2/b^2+r^{-1}b^2/c^2+2-2b/c-2c/b].
+\end{align*}
+By symmetry take $r\geq1$, $h=\log r$, and
+$z=\tfrac12\log(c^2/b^2)$. Since $b^2\geq4$ and $c^2-b^2=2h$,
+$0\leq z\leq h/2$. The first bracket is
+$2\cosh h+2-4\cosh z\geq0$, the middle bracket is nonnegative, and the
+last is $2\cosh(h+2z)+2-4\cosh z\geq0$.
+It follows, for every pair of admissible states, that
+\begin{equation}\label{eq:pairmatrix}
+ B_1|\Lambda|^2+B_2|\Lambda'|^2-2B_3\Lambda\cdot\Lambda'
+       \geq|\Lambda-\Lambda'|^2.
+\end{equation}
+Take the expectation over the two independent copies. The mixed terms factor,
+using $y=\pair{\lambda b}$ and
+$\grad_qy=\pair{(b+b^{-1})\Lambda}$, to give the pointwise inequality
+\begin{equation}\label{eq:pairaverage}
+\begin{aligned}
+ 4\pair{|\Lambda|^2}
+ +2y\pair{(b+b^{-3})|\Lambda|^2/\lambda}
+ -2|\grad_qy|^2
+ \geq 2\bigl(\pair{|\Lambda|^2}-|\grad_qf|^2\bigr).
+\end{aligned}
+\end{equation}
+Replace the two positive moments on the left by $m$ and $V$ using
+\eqref{eq:mretain}--\eqref{eq:Vretain}. After subtracting
+$2(m-|\grad_qf|^2)$ from the new left side, the retained Fisher excess leaves
+at least $2(m-\pair{|\Lambda|^2})\geq0$. Integration against $M$ gives
+\begin{equation}\label{eq:Fishercoercive}
+ 4\int_BMm+2\int_BMyV-2\Dy\geq2\varpi.
+\end{equation}
+The joint-law gradient variance contributes at least twice its mass.
+The excess $m-\pair{|\Lambda|^2}$ contributes four times its mass, so
+retained concentration has the favorable sign without being assumed zero.
+
+\subsection{Covariances and configuration boundary integrability}\label{subsec:covariances}
+Use $s=\lambda^2$ within law brackets and put
+\begin{equation}\label{eq:Gammas}
+ L=\pair{s\Theta'(s)},\quad P=\pair{\Theta'(s)},\quad
+ \Gamma=\pair{\Pi G}-Ay,\quad
+ \Gamma'=\pair{\Pi s\Theta'(s)}-AL.
+\end{equation}
+Cauchy--Schwarz and \eqref{eq:PiVar} give
+\begin{equation}\label{eq:basiccov}
+ |\Gamma|^2\leq\mu\Var(G),\qquad
+ |\Gamma'-\Gamma|^2\leq\tfrac14\mu\Var(G).
+\end{equation}
+For the second bound note that $s\Theta'(s)-G$, as a function of $G$, has
+derivative of absolute value at most $1/2$. Since
+$\int_BM\Var(G)=\eta\leq CN$, these imply, before any renormalization,
+\begin{equation}\label{eq:normalizedcov}
+ \int_BM|\Gamma/N^2|^2+
+ \int_BM|\Gamma'/N^2|^2\leq C\mu/N^3.
+\end{equation}
+Thus the normalized covariance fluxes belong to $L^2(M)$ and, by
+Cauchy--Schwarz with $M/d^2$, to $L^1(M/d)$. The mean-gradient flux
+$Aqh$ is $L^2(M)$ by the uniform $q$ norm in \eqref{eq:yenergy}.
+
+For signed scalar sources a direct profile estimate uses exactly $k>2$.
+Choose $2/3<\alpha<k/(k+1)$. Then $G^{4/3}\leq C_{a,\alpha}s^\alpha$ and
+\begin{equation}\label{eq:profile}
+ \int_B\frac M dG^{4/3}
+ \leq C\left(\int_BMs\right)^\alpha
+          \left(\int_BM d^{-1/(1-\alpha)}\right)^{1-\alpha}
+ \leq C_{k,a}.
+\end{equation}
+Hence $A_nG_n$, $A_ns_n\Theta'(s_n)$, and the lower shifted composites
+are bounded in the mixed space
+\[
+ L^2_{t,x}\bigl(L^{4/3}(B,M\dd q/d)\bigr),
+\]
+including the conditional variable. Their signed limits have no concentration
+in that measure.
+For the conditional diffusion collar, Cauchy--Schwarz gives
+\[
+ \int_{t,x,d<r}\frac M d|\grad_qG_n|
+ \leq\left(\int\frac{M|\grad_qG_n|^2}{\mathcal H_{2,n}}\right)^{1/2}
+       \left(\int_{t,x}\mathcal H_{2,n}\int_{d<r}\frac M{d^2}\right)^{1/2}\to0.
+\]
+The transformed-drag collar is at most
+$C\|A_n\|_{L^1_{t,x}}(\int_{d<r}M/d)^{1/4}\to0$ by \eqref{eq:profile}.
+Both vanish uniformly. The normalized limiting fluxes have the same boundary
+property by \eqref{eq:yenergy} and \eqref{eq:normalizedcov}. Consequently
+the transformed variational inequalities hold for tests meeting the closed
+configuration ball, not only for interior tests.
+
+\section{The normalized entropy-defect inequality}\label{sec:defect}
+We next justify the limiting transport and configuration operations before
+estimating their four resulting terms. This order matters because the raw
+entropy moment $\theta$ need not have spatial integrability above exponent two.
+
+\subsection{The lower transformed inequality}\label{subsec:lower}
+The averaged $G$ equation has just the linear spatial diffusion term in
+\eqref{eq:expectation}. At the limit its positive configuration source is a
+measure. Discard its singular positive part, retaining the density $V$ of
+\eqref{eq:Vretain}. Write $D_t=\partial_t+u\cdot\grad_x$ and
+$\mathcal L_Mh=M^{-1}\Div_q(M\grad_qh)$. The resulting inequality is
+\begin{equation}\label{eq:ylower}
+ D_ty\geq\mathcal L_My
+ -\frac1M\Div_q\bigl(M\pair{\Pi G}q\bigr)
+ +K:\pair{\Pi[(s-a)\Theta'(s)-G]}+V.
+\end{equation}
+Here $s=\lambda^2$, $G=\Theta(s)=\lambda\sqrt{\log\lambda^2}$ inside the
+brackets, $\pair{\Pi G}=Ay+\Gamma$, and
+$\pair{\Pi s\Theta'(s)}=AL+\Gamma'$.
+For a single fibre with its trace-free matrix history $\mathsf B(t)$, the
+chain rule giving these signs is
+\[
+ \partial_tG=\mathcal L_MG
+ -\frac1M\Div_q(M\mathsf BqG)
+ +(\mathsf B:K)[(s-a)\Theta'(s)-G]
+ -\Theta''(s)|\grad_qs|^2.
+\]
+Use \eqref{eq:expectation} before taking the joint-law limit; the last source
+is positive and has retained density $V$. The configuration boundary inequality
+and lower initial trace $y(0)\geq\Theta(g_0+a)$ are inherited in the
+variational sense. Thus \eqref{eq:ylower} does not impose a pointwise boundary
+value or assert equality of a residual measure.
+Its scalar pairings with fixed nonnegative smooth configuration tests have
+$L^r_{t,x}$ regularity for some $r>2$. To interpret these along the limiting
+spatial flow, mollify in $x$. The Sobolev transport commutator tends to zero
+in $L^1$, since $\grad u\in L^2$ and the scalar pairing has exponent above
+two. Apply an increasing bounded scalar truncation, use the bounded mild
+transport inequality of \cite[Proposition~A.5]{Masmoudi}, then remove the
+truncation by dominated convergence for the signed $L^1$ source and monotone
+convergence for the positive residual. A countable dense family of
+nonnegative configuration tests and the flux integrability give a common
+full-measure set of labels on which the whole configuration inequality holds.
+
+Along each such label $N$ is a fixed finite scalar. Division gives
+\begin{equation}\label{eq:hnormalized}
+\begin{aligned}
+ D_th\geq{}&\mathcal L_Mh
+ -\frac1M\Div_q\bigl(M(Ah+\Gamma/N^2)q\bigr)\\
+ &+\frac1{N^2}K:\pair{\Pi[(s-a)\Theta'(s)-G]}+\frac V{N^2}.
+\end{aligned}
+\end{equation}
+This is the labelwise variational inequality for $h=y/N^2$.
+By \eqref{eq:yenergy}, \eqref{eq:normalizedcov}, and
+\eqref{eq:profile}, $h=y/N^2$ belongs to
+$L^\infty_tL^2_M\cap L^2_tH^1_M$, its force flux is both $L^2(M)$ and
+$L^1(M/d)$, and its signed scalar source and $V/N^2$ are $L^1(M)$.
+The boundary inequality and initial trace are inherited from the conditional
+variational identities. These are the hypotheses of
+\cite[Proposition~B.6]{Masmoudi}, now for a deterministic configuration
+supersolution on a label. In its ordinary-divergence notation, rewrite the
+weighted force divergence as ordinary divergence plus the $\grad U$ term;
+the $L^1(M/d)$ flux bound controls that additional signed source. We use the
+convex supersolution statement of B.6 here, with its lower initial and boundary
+inequalities, and do not invoke an equality-class continuity assertion.
+
+Apply smooth convex approximations to the square with bounded nonnegative
+derivative. Their flux cross products are integrable by the normalized
+$L^2$ bounds. For the signed sources note that $L\leq Cy$ and $P$ is bounded.
+Quadratic Hardy and \eqref{eq:basiccov} bound their products with $y/N^4$ by
+\begin{equation}\label{eq:squareproducts}
+ C\left[\frac{1+|A|^2}{N^3}+\frac{\Dy}{N^4}+\frac\mu{N^3}\right].
+\end{equation}
+These are integrable by \eqref{eq:yenergy}. Remove the derivative cap by
+dominated convergence for signed terms and monotone convergence for $yV$.
+No fourth configuration moment of $h$ has been used. Because the singular
+positive measure was discarded first, no undefined representative of $N^{-2}$
+has been multiplied into such a measure.
+
+\subsection{The upper entropy inequality}\label{subsec:upper}
+Keep the bounded quotients \eqref{eq:quotient} until after normalization.
+At each fixed $\delta,\kappa$, their limiting equation gives an upper
+transport inequality for a bounded scalar, with $L^1$ signed work and a
+nonpositive Fisher residual. Discard only the singular negative part of that
+residual, apply the bounded mild transport inequality, and multiply along the
+characteristic by its fixed scalar $N(0,b)^{-4}$. Only then let
+$\delta\downarrow0$ and $\kappa\downarrow0$.
+
+The limiting quotient fields converge strongly in $L^1$ to $\theta$ in this
+cutoff limit: their difference from the prelimit $\mathcal H_{1,n}$ is uniformly
+small by joint uniform integrability. The signed work sources converge strongly
+in weighted $L^1$ by \eqref{eq:polar} and the cutoff identification following
+it. The shifted signed terms have a uniform exponent above one by
+\eqref{eq:profile}. The denominator error is $O(\delta/\kappa)$.
+The retained absolutely continuous Fisher densities increase to $m$, so
+monotone convergence remains valid after multiplication by $N^{-4}$.
+The initial quotients converge to $\mathcal H_{1,0}/N(0,b)^4$.
+This proves the required upper inequality for $\theta/N^4$ without a spatial
+commutator for raw $\theta$ or a raw product $u\theta$.
+Its complete source expression, along the characteristic, is
+\begin{equation}\label{eq:thetaupper}
+\begin{aligned}
+ D_t(\theta/N^4)\leq\frac1{N^4}\biggl[
+ &-4\int_BMm+A:\tau(M\overline s)-\nu\mu\\
+ &-a\int_BMK:\pair{\Pi(\log s+1)}\biggr].
+\end{aligned}
+\end{equation}
+The raw conditional entropy source is
+$-4\int M|\grad_qf_n|^2+A_n:\tau(Ms_n)
+ -a\int M(A_n:K)\log s_n$.
+The work term becomes the displayed mean work minus $\nu\mu$ by
+\eqref{eq:mu}. Adding $1$ inside the last logarithmic bracket changes its
+integral by zero, since $\int_BMK=\Id$ and $\tr A=0$.
+Equation~\eqref{eq:thetaupper} is obtained only after the bounded-quotient
+normalization and ordered cutoff limits above.
+
+\subsection{The four terms and their signs}\label{subsec:four}
+Subtract the lower squared-transform inequality from the upper entropy
+inequality. Put
+\begin{equation}\label{eq:e}
+ e=\frac\eta{N^4}=\frac\theta{N^4}-\int_BMh^2,\qquad
+ C_1=\pair{\lambda^2}-y\pair{\lambda/\sqrt{\log\lambda^2}}.
+\end{equation}
+The square passage from \eqref{eq:hnormalized} gives the complementary balance
+\begin{equation}\label{eq:hsquare}
+\begin{aligned}
+ D_t\int_BMh^2\geq\frac1{N^4}\biggl[
+ &-2\Dy+2\int_BM(\pair{\Pi G}q)\cdot\grad_qy\\
+ &+2\int_BMyK:\pair{\Pi[(s-a)\Theta'(s)-G]}
+   +2\int_BMyV\biggr].
+\end{aligned}
+\end{equation}
+For the mean flux, weighted integration by parts and $\tr A=0$ give
+$2\int_BM(Ayq)\cdot\grad_qy=\int_BM(A:K)y^2$.
+Also $2L=y+\pair{\lambda/\sqrt{\log\lambda^2}}$, so
+$\overline s-2yL+y^2=C_1$.
+Insert $\pair{\Pi G}=Ay+\Gamma$ and
+$\pair{\Pi s\Theta'(s)}=AL+\Gamma'$ in \eqref{eq:hsquare}, and subtract it
+from \eqref{eq:thetaupper}. The mean, Fisher, shifted, and covariance terms
+are, respectively,
+\begin{equation}\label{eq:fouridentity}
+ (\partial_t+u\cdot\grad_x)e\leq
+       -\frac{\mathcal B_1+\mathcal B_2+\mathcal B_3+\mathcal B_4}{N^4},
+\end{equation}
+where, with $s=\lambda^2$ inside brackets,
+\begin{align}
+ \mathcal B_1&=\nu\mu-A:\tau(MC_1),\label{eq:B1}\\
+ \mathcal B_2&=4\int_BMm+2\int_BMyV-2\Dy,\label{eq:B2}\\
+ \mathcal B_3&=a\int_BMK:
+       \pair{\Pi(\log s+1)-2y\Pi\Theta'(s)},\label{eq:B3}\\
+ \mathcal B_4&=2\int_BM\{(\Gamma q)\cdot\grad_qy
+                               +(\Gamma'-\Gamma):K\,y\}.\label{eq:B4}
+\end{align}
+In \eqref{eq:B1}, $\tau(MC_1)=\int_BKMC_1$.
+The unnormalized expressions in \eqref{eq:B1}--\eqref{eq:B4} specify the
+integrands in the normalized weak identity \eqref{eq:fouridentity}; no raw
+transport equation for an unbounded $\eta$ is asserted.
+The stress covariance is \eqref{eq:mu}; the remaining terms are precisely the
+mean stress mismatch, configuration chain-rule dissipation, shift, and
+gradient-density covariance when the two equations are subtracted.
+
+Both maps $\lambda\mapsto\lambda\sqrt{\log\lambda^2}$ and
+$\lambda\mapsto\lambda/\sqrt{\log\lambda^2}$ are increasing on the shifted
+range. Their covariance gives $0\leq C_1\leq V_f$ by Cauchy--Schwarz.
+Thus \eqref{eq:varianceHardy} and Young's inequality imply
+\begin{equation}\label{eq:B12bounds}
+ \mathcal B_1\geq\nu\mu-\tfrac18\varpi-C(1+|A|^2)\eta,
+ \qquad \mathcal B_2\geq2\varpi.
+\end{equation}
+The second assertion is \eqref{eq:Fishercoercive}.
+
+For the shift, use $\log s+1=2\Theta'(s)G$ and split $\Pi=A+(\Pi-A)$.
+The fluctuating part is at most $C\sqrt{\mu\eta}$ because $\Theta'$ is
+bounded on $s\geq a$ and $\int M/d^2<\infty$. The mean-gradient part is
+bounded by $C|A|\int MV_f/d$. The scalar estimate behind this bound is
+\begin{equation}\label{eq:shiftpair}
+ |[\Theta'(\lambda^2)-\Theta'((\lambda')^2)]
+   [\lambda\sqrt{\log\lambda^2}-\lambda'\sqrt{\log(\lambda')^2}]|
+       \leq C_a|\lambda-\lambda'|^2.
+\end{equation}
+For $\lambda'/\lambda\leq2$ it follows by the displayed scalar derivatives.
+For a larger ratio use
+$\Theta'(\lambda^2)\leq C\sqrt{\log\lambda^2}/\lambda$ and
+$|\lambda'-\lambda|\geq\lambda'/2$; the remaining factor is bounded by
+$C\log(\lambda^2)/\lambda^2$. Symmetry covers the reversed ratio.
+Therefore
+\begin{equation}\label{eq:B3bound}
+ |\mathcal B_3|\leq\tfrac\nu8\mu+\tfrac18\varpi
+                                     +C(1+|A|^2)\eta.
+\end{equation}
+Finally \eqref{eq:basiccov}, Cauchy--Schwarz in $q$, and Hardy for $y$ give
+\begin{equation}\label{eq:B4bound}
+ |\mathcal B_4|\leq\tfrac\nu8\mu+C\eta(\Dy+N).
+\end{equation}
+All constants may depend on $\nu,k,a,T$ and the datum, with no smallness
+condition on these data and no positive lower bound on $\nu$ beyond $\nu>0$.
+
+\subsection{Characteristic closure}\label{subsec:Gronwall}
+Combining \eqref{eq:fouridentity}--\eqref{eq:B4bound} and dropping the
+remaining favorable terms gives
+\begin{equation}\label{eq:Gronwall}
+ (\partial_t+u\cdot\grad_x)e
+ \leq C(1+|A|^2+N+\Dy)e,
+ \qquad 0\leq e\leq C/N^3.
+\end{equation}
+The right side is globally $L^1$: use $N\geq1$, $A\in L^2$, and
+$\Dy/N\in L^1$. Along almost every limiting characteristic, $N$ is a
+finite constant, $\int|A|^2<\infty$, and $\int\Dy/N<\infty$ by volume
+preservation. The coefficient of $e$ is therefore integrable in time on that
+characteristic. The upper entropy and lower transform initial traces give
+$e(0)\leq0$, hence $e(0)=0$. Applying the bounded mild transport inequality
+and the ordinary characteristic Gronwall inequality yields
+\begin{equation}\label{eq:eta0}
+ \eta=0\quad\text{on every finite interval.}
+\end{equation}
+This closes the conditional density fluctuation without any strong-gradient
+premise.
+
+\section{Strong density convergence and the original weak system}\label{sec:final}
+The definition of $\eta$, its vanishing, and uniform integrability of the
+conditional $G_n^2$ give
+\begin{equation}\label{eq:strongG}
+ \int_0^T\int_\T\int_BM\E|G_n^\omega-y|^2\longrightarrow0.
+\end{equation}
+On $s,t\geq a$ the inverse transform satisfies
+$|s-t|\leq C(1+\Theta(s)+\Theta(t))|\Theta(s)-\Theta(t)|$.
+Cauchy--Schwarz thus turns \eqref{eq:strongG} into strong $L^1$ convergence
+of the conditional densities to $M(\Theta^{-1}(y)-a)$.
+Their averages converge strongly to the same density, which must be the weak
+limit $\psi$. In particular every bounded kinetic test moment converges
+strongly in $L^2_{t,x}$: its difference is bounded by a constant times the
+conditional total variation, itself at most two, and tends to zero in $L^1$.
+Pairing with $A_n\weak A$ in $L^2$ proves convergence of the exact
+configuration drag.
+
+Strong density convergence identifies stress truncations strongly; the uniform
+collars \eqref{eq:tails} then give \eqref{eq:tauconv}.
+Spatial transport passes as in Section~\ref{sec:prelim}.
+Moreover
+\[
+ \int M|\sqrt{\psi_n/M}-\sqrt{\psi/M}|^2\leq\int|\psi_n-\psi|\to0.
+\]
+The configuration gradients of these square roots are weakly $L^2(M)$, so
+their products identify the full diffusion flux
+\[
+ 2M\sqrt{\psi_n/M}\,\grad_q\sqrt{\psi_n/M}
+       \longrightarrow M\grad_q(\psi/M)
+\]
+against bounded smooth tests up to the closed ball. The zero-flux variational
+identity therefore passes with its original boundary meaning. The spatial
+diffusion term vanishes at order $\varepsilon_n$ by normalization.
+
+Fluid convection passes by strong $L^2$ velocity convergence, viscosity by
+weak $H^1$ convergence, and forcing by strong stress convergence. Recover
+periodic pressure from the limiting divergence equation. The common initial
+terms pass in the time-integrated weak equations. Smooth test pairings are
+continuous in time by the flux bounds. Entropy uniform integrability extends
+this to weak $L^1$ density continuity: approximate a bounded measurable test
+by bounded smooth functions outside a set of arbitrarily small measure, then
+use the common uniform integrability on that set. The velocity energy class
+gives its weak $L^2$ time representative. Bounded $\log g_0$ and the initial
+entropy inequality yield the strong initial density trace by the relative
+entropy argument in Section~\ref{subsec:identification}.
+
+Take an almost-everywhere-time subsequence of the strong convergences and use
+convex lower semicontinuity of entropy, viscosity, and configuration Fisher
+dissipation in \eqref{eq:entropy}. Drop its nonnegative spatial Fisher term.
+This gives the usual limiting initial-time inequality. If the positive family
+was selected to have almost-everywhere time-shifted inequalities, the higher
+conditional density moment makes the entropy densities uniformly integrable,
+and those inequalities pass too; that optional selection is not needed above.
+Finally use nested subsequences on integer time intervals and diagonalize.
+They define one global pair and one decreasing $\varepsilon_j\to0$ with all
+the conclusions of Theorem~\ref{thm:main}. The fluid viscosity, FENE potential,
+full velocity-gradient drag, and zero configuration-flux condition have
+retained their original values and meanings throughout the limit.
+
+\paragraph{AI use and materials.}
+OpenAI Codex assisted with the argument, source checks, and mathematical
+exposition. Separate fresh Codex contexts supplied an AI reader trace and an
+AI referee report on the preceding draft; this revision responds to those
+reports. Independent expert review is requested. The manuscript contains the
+complete submitted analytic argument and uses no proof-critical numerical
+computation. Its editable \LaTeX\ source accompanies the submission.
+
+\begin{thebibliography}{9}
+\bibitem{BS} J. W. Barrett and E. S\"uli,
+\emph{Existence and equilibration of global weak solutions to finitely
+extensible nonlinear bead-spring chain models for dilute polymers},
+arXiv:1004.1432v2 (2011).
+\href{https://arxiv.org/abs/1004.1432v2}{arXiv:1004.1432v2}.
+\bibitem{Masmoudi} N. Masmoudi,
+\emph{Global existence of weak solutions to the FENE dumbbell model of
+polymeric flows}, Invent. Math. \textbf{191} (2013), 427--500.
+\href{https://arxiv.org/abs/1004.4015}{arXiv:1004.4015}.
+The configuration estimates and appendix proposition locators used here refer
+to the revised \href{https://math.nyu.edu/~masmoudi/Fene-global.pdf}{author manuscript}.
+\bibitem{BCC} P. Bonicatto, G. Ciampa, and G. Crippa,
+\emph{On the advection-diffusion equation with rough coefficients:
+weak solutions and vanishing viscosity}, arXiv:2107.03659.
+\href{https://arxiv.org/abs/2107.03659}{arXiv:2107.03659}.
+\bibitem{DS} T. D\k{e}biec and E. S\"uli,
+\emph{On a class of generalised solutions to the kinetic Hookean dumbbell
+model for incompressible dilute polymeric fluids: existence and macroscopic
+closure}, Arch. Ration. Mech. Anal. \textbf{249} (2025), article 43.
+\href{https://doi.org/10.1007/s00205-025-02115-x}{doi:10.1007/s00205-025-02115-x}.
+\end{thebibliography}
+\end{document}
