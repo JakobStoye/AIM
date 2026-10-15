@@ -1,0 +1,365 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Lop}{\mathcal L}
+\newcommand{\norm}[1]{\lVert#1\rVert_\infty}
+\title{Failure of comparison for a relaxed infinity fractional evolution}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider the infinity fractional evolution in dimension $n\ge2$, with
+$1/2<s<1$. At a zero spatial test gradient, the viscosity subsolution condition
+uses the supremum of symmetric directional integrals, and the supersolution
+condition uses their infimum. For this convention, comparison fails even for
+radial subsolutions and supersolutions with the same compactly
+supported initial data, attained uniformly. The construction uses two thin
+annuli: a line tangent to the inner annulus collects substantially more mass
+than a radial line. This permits a locally flat subsolution to rise faster
+than a radial solution of the one-dimensional fractional heat equation.
+\end{abstract}
+
+\section{The comparison question}
+
+Comparison for an evolution equation requires ordered initial data to keep
+subsolutions below supersolutions. For a direction selected by the gradient,
+its formulation at critical points matters. We consider the following precise
+choice. Fix $n\ge2$, $1/2<s<1$, $C_s>0$ and $T>0$, and write $p=2s$.
+For a unit vector $e$, define
+\begin{equation}\label{eq:direction}
+ D_e^s H(x)=C_s\int_0^\infty
+ \frac{H(x+ze)+H(x-ze)-2H(x)}{z^{1+p}}\,dz.
+\end{equation}
+The integral is absolutely convergent for bounded $C^2$ functions with bounded
+Hessian. The equation on $\R^n\times(0,T)$ is
+$u_t=\Delta_\infty^s u$, with the direction $e=\nabla u/|\nabla u|$ where
+$\nabla u\ne0$.
+
+A viscosity subsolution is tested from above by a local smooth function
+$\phi$; at the contact time, replace $\phi$ outside the spatial contact
+neighborhood by the tested function. Denote this patch by $\widetilde\phi$.
+The required inequalities at contact are
+\begin{equation}\label{eq:weak}
+ \phi_t\le
+ \begin{cases}
+ D_{\nabla\phi/|\nabla\phi|}^s\widetilde\phi,&\nabla\phi\ne0,\\
+ \displaystyle\sup_{|e|=1}D_e^s\widetilde\phi,&\nabla\phi=0.
+ \end{cases}
+\end{equation}
+For a supersolution use lower tests, reverse the inequality and use the
+infimum at zero gradient. Suprema and infima are pointwise over all unit
+directions. Initial data are bounded and uniformly continuous, and their
+attainment is in the uniform norm on $\R^n$.
+
+The infinity fractional Laplacian arose from nonlocal tug-of-war games in
+Bjorland, Caffarelli and Figalli~\cite{BCF}. Their Section~2.3 distinguishes
+weak symmetric directional conditions from the stronger zero-gradient
+operator in their Definition~1.1, and discusses failure of elliptic comparison
+for the weak conditions. For the evolution, del Teso, Endal, Jakobsen and
+V\'azquez~\cite{DEJV} construct viscosity solutions; their Definition~4.3 and
+Remark~4.4 use the relaxed envelopes in \eqref{eq:weak}. Their Theorem~2.6
+compares constructed viscosity solutions with classical subsolutions and
+supersolutions, while Section~9 leaves general comparison and uniqueness
+open. The theorem below concerns exactly \eqref{eq:weak} with local patches.
+It does not address the stronger zero-gradient definition or comparison
+within a separately selected class of game limits.
+
+\begin{theorem}\label{thm:main}
+For every integer $n\ge2$, every $s\in(1/2,1)$, every $C_s>0$ and every
+$T>0$, there are bounded functions $U,V$ on $\R^n\times[0,T]$, with
+continuous bounded spatial derivatives through order two and continuous
+bounded time derivative, such that $U$ is a viscosity subsolution and $V$ is
+a viscosity supersolution in the convention \eqref{eq:weak}. They have the
+same initial data $F\in C_c^\infty(\R^n)$, attained uniformly, but
+$U(x_*,t_*)>V(x_*,t_*)$ for some $x_*\in\R^n$ and $0<t_*<T$.
+In fact $V$ satisfies both viscosity inequalities. The functions are radial;
+no monotonicity in the radius is imposed.
+\end{theorem}
+
+Thus the unrestricted subsolution--supersolution comparison implication is
+false. The result does not construct two distinct full solutions. Its
+mechanism is geometric: thin annuli have small mass along a radial line,
+whereas a nearly tangent line stays close to one annulus for a much longer
+segment. The supremum in \eqref{eq:weak} can use that segment on an open
+region where the subsolution is spatially flat. Section~2 gives the estimates;
+Section~3 constructs the global pair and verifies the actual local tests.
+All constants below may depend on the fixed parameters. We use Lebesgue
+measure, and $\norm{D^2H}$ denotes the uniform Euclidean operator norm.
+
+\section{Two thin annuli}
+
+For a real profile on the line set
+\[
+ \Lop h(r)=C_s\int_0^\infty
+ \frac{h(r+z)+h(r-z)-2h(r)}{z^{1+p}}\,dz.
+\]
+Fix
+\[
+ \varepsilon=10^{-12},\qquad c_0=e^{-4/3},\qquad
+ \psi(y)=\begin{cases}e^{-1/(1-y^2)},&|y|<1,\\0,&|y|\ge1,\end{cases}
+\]
+and define
+\begin{equation}\label{eq:profiles}
+ G(r)=\psi\bigl((|r|-1)/\varepsilon\bigr)
+      +\psi\bigl((|r|-3)/\varepsilon\bigr),\qquad
+ F(x)=G(|x|),\qquad b=\Lop G.
+\end{equation}
+The bump is smooth and flat at its support endpoints, $0\le\psi\le1$, and
+$\psi\ge c_0$ on $[-1/2,1/2]$. Both $G$ and $F$ vanish near the origin
+and are compactly supported smooth functions. Put
+\[
+ I=(1+\varepsilon,3-\varepsilon),\qquad
+ a=\frac{C_s c_0\sqrt\varepsilon}{64}.
+\]
+Here $\varepsilon$ is a fixed part of the example, chosen small enough to
+separate the radial and tangent estimates.
+
+\begin{lemma}\label{lem:annuli}
+The function $b$ is even and smooth, with every derivative bounded. Moreover,
+\begin{equation}\label{eq:radialbounds}
+ 0<b(2)<a,\qquad b(1+\varepsilon)>2a,\qquad b(3-\varepsilon)>2a.
+\end{equation}
+For every $x$ with $|x|\in I$ there is a unit direction $e$ such that
+\begin{equation}\label{eq:tangentbound}
+ D_e^sF(x)\ge2a.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For any bounded $C^2$ function $H$ with bounded Hessian, its symmetric
+second difference is bounded by $\norm{D^2H}z^2$ and by $4\norm H$.
+Splitting the jump integral at $z=1$ gives
+\begin{equation}\label{eq:universalbound}
+ |D_e^sH(x)|\le C_s\left(\frac{\norm{D^2H}}{2-p}
+                         +\frac{4\norm H}{p}\right).
+\end{equation}
+Applying the same bounds to every derivative of $G$ justifies differentiation
+under the integral by dominated convergence, and gives the stated properties
+of $b$. For $r\in\overline I$, evenness and $G(r)=0$ yield
+\begin{equation}\label{eq:bkernel}
+ b(r)=C_s\int_0^\infty G(\rho)
+ \left(|r-\rho|^{-1-p}+(r+\rho)^{-1-p}\right)d\rho.
+\end{equation}
+This remains finite at the endpoints by the preceding second-difference
+bound. At $r=2$, the kernel on either bump is less than
+$(4/3)^3+(4/11)^2<3$. Each bump has mass at most $2\varepsilon$, so
+\[
+ 0<b(2)<12C_s\varepsilon<a.
+\]
+The final inequality follows from $768\sqrt\varepsilon<c_0$; for example,
+$c_0>1/9>768\cdot10^{-6}$.
+At the left endpoint restrict \eqref{eq:bkernel} to
+$\rho\in[1,1+\varepsilon/2]$, and at the right endpoint to
+$\rho\in[3-\varepsilon/2,3]$. There $G\ge c_0$, the relevant distance is
+at most $\varepsilon$, and the interval length is $\varepsilon/2$. Hence
+\[
+ b(1+\varepsilon),\ b(3-\varepsilon)
+ \ge \frac{C_s c_0}{2\varepsilon^p}>2a.
+\]
+
+To prove \eqref{eq:tangentbound}, write $r=|x|\in I$ and choose a unit
+vector $\omega$ perpendicular to $x$, possible since $n\ge2$. Set
+\[
+ e=\sqrt{1-r^{-2}}\,\frac{x}{r}+r^{-1}\omega,
+ \qquad z_0=\sqrt{r^2-1}.
+\]
+Then $|e|=1$, $x\cdot e=z_0$, and
+\[
+ |x-ze|^2=1+(z-z_0)^2.
+\]
+For $|z-z_0|\le\sqrt\varepsilon$, this radius belongs to
+$[1,1+\varepsilon/2]$, so $F(x-ze)\ge c_0$. Also
+$z_0>\sqrt\varepsilon$ and $z_0+\sqrt\varepsilon<4$.
+Since $F(x)=0$ and $F\ge0$, integrating over this positive jump interval gives
+\[
+ D_e^sF(x)\ge 2C_s c_0\sqrt\varepsilon\,4^{-1-p}
+ \ge\frac{C_s c_0\sqrt\varepsilon}{32}=2a.
+\]
+\end{proof}
+
+\section{A global subsolution and a radial supersolution}
+
+We first raise the low values of $b$ to a constant while leaving its large
+values available to control the radial inequality. Choose a smooth
+$\eta:\R\to[0,1]$ equal to $1$ on $(-\infty,0]$ and $0$ on $[1,\infty)$.
+For instance, with $h(z)=e^{-1/z}$ for $z>0$ and $h(z)=0$ otherwise, take
+$\eta(z)=h(1-z)/(h(z)+h(1-z))$. For $r\ge0$ set
+\begin{equation}\label{eq:cutoff}
+ \chi(r)=\begin{cases}\eta((b(r)-a)/a),&r\in I,\\0,&r\notin I,
+ \end{cases}
+ \qquad q(r)=b(r)+\chi(r)(a-b(r)),
+\end{equation}
+and extend $q$ evenly. By \eqref{eq:radialbounds}, $\chi$ is zero in collars
+of both endpoints of $I$. Thus $q$ is smooth, bounded, and has bounded
+derivatives of every order. Its strict upward modification has a useful form:
+\begin{equation}\label{eq:flat}
+ q(r)>b(r)\quad\Longrightarrow\quad
+ |r|\in I,\quad G=0\ \hbox{and}\ q=a
+ \ \hbox{on a neighborhood of }r.
+\end{equation}
+Indeed $q>b$ implies $b<a$, and then $\eta((b-a)/a)=1$ locally. Elsewhere
+$q\le b$. In particular $q(2)=a$.
+
+Set $Q(x)=q(|x|)$. To include the origin, note that an even $C_b^2$ profile
+has $q'(0)=0$ and
+\[
+ \frac{q'(r)}r=\int_0^1q''(\theta r)\,d\theta\longrightarrow q''(0).
+\]
+The radial Hessian has eigenvalues $q''(r)$ and $q'(r)/r$, so it extends
+continuously at zero as $q''(0)\operatorname{Id}$. Consequently $Q\in C_b^2$.
+Define
+\begin{equation}\label{eq:BM}
+ B=C_s\left(\frac{\norm{D^2Q}}{2-p}+\frac{4\norm Q}{p}\right),
+ \qquad M=B+1.
+\end{equation}
+Equation~\eqref{eq:universalbound} gives $|D_e^sQ|\le B$ in every direction.
+
+\begin{lemma}\label{lem:sub}
+The function $U(x,t)=F(x)+tQ(x)-Mt^2$ satisfies the pointwise subsolution
+inequalities in \eqref{eq:weak} at every $x$ and every $t\ge0$.
+\end{lemma}
+\begin{proof}
+If $x\ne0$, put $r=|x|$ and $e_r=x/r$. A nonzero gradient of $U$ is
+parallel to $e_r$. For an even profile, $|x\pm ze_r|=|r\pm z|$ gives
+\begin{equation}\label{eq:radialU}
+ D_{e_r}^sU(x,t)=b(r)+t\Lop q(r)\ge b(r)-Bt.
+\end{equation}
+At the origin the same identity holds in every direction. Where $q\le b$,
+\[
+ U_t=q-2Mt\le b-Bt\le D_{e_r}^sU.
+\]
+This is the selected inequality at nonzero gradient, since $D_{-e_r}^s=D_{e_r}^s$.
+At zero gradient its supremum is at least this radial value.
+Where $q>b$, \eqref{eq:flat} makes $U$ locally spatially constant.
+The tangent direction of Lemma~\ref{lem:annuli} gives
+\[
+ \sup_{|e|=1}D_e^sU\ge2a-Bt\ge a-2Mt=U_t.
+\]
+These two cases include every interface and the entire unbounded exterior.
+\end{proof}
+
+The supersolution comes from a linear evolution on the line, then a radial
+lift. This lift will be used in the relaxed sense; radial monotonicity is
+unnecessary for its radial directional identity.
+
+\begin{lemma}\label{lem:heat}
+There is a real even bounded function $w(r,t)$ on $\R\times[0,\infty)$,
+with bounded continuous derivatives of every finite spatial and time order,
+that satisfies $w_t=\Lop w$, $w(r,0)=G(r)$, and
+$\sup_r|w(r,t)-G(r)|\to0$ as $t\downarrow0$.
+For $V(x,t)=w(|x|,t)$, both pointwise relaxed inequalities hold.
+\end{lemma}
+\begin{proof}
+With the convention $\widehat G(\xi)=\int_\R e^{-ir\xi}G(r)\,dr$, put
+\begin{equation}\label{eq:heat}
+ \kappa=2C_s\int_0^\infty\frac{1-\cos z}{z^{1+p}}\,dz,\qquad
+ w(r,t)=\frac1{2\pi}\int_\R
+ e^{ir\xi-\kappa t|\xi|^p}\widehat G(\xi)\,d\xi.
+\end{equation}
+The constant $\kappa$ is positive and finite, since $0<p<2$.
+Integration by parts in the transform of the compactly supported smooth $G$
+shows that $\int_\R(1+|\xi|)^k|\widehat G(\xi)|\,d\xi<\infty$ for every
+$k\ge0$. Thus all differentiations in \eqref{eq:heat} have integrable
+majorants independent of $r$ and $t\ge0$. Time derivatives at zero are right
+derivatives. Fourier inversion for Schwartz functions, with the displayed
+normalization, gives $w(r,0)=G(r)$; see, for example,~\cite[Section~3,
+equation~(11)]{Tao}. The cited formula uses frequency $\eta$ with exponential $e^{-2\pi i r\eta}$;
+the change $\xi=2\pi\eta$ gives the factor $1/(2\pi)$ in \eqref{eq:heat}.
+Since $G$ is real and even, so is $w$.
+Moreover
+\[
+ \sup_r|w(r,t)-G(r)|\le\frac1{2\pi}\int_\R
+ |e^{-\kappa t|\xi|^p}-1|\,|\widehat G(\xi)|\,d\xi\longrightarrow0
+\]
+by dominated convergence.
+
+For each frequency, the absolute value of the symmetric exponential
+difference is $2(1-\cos(z\xi))$. Its jump integral equals
+$(\kappa/C_s)|\xi|^p$, with value zero at $\xi=0$.
+The double absolute integral is therefore bounded by
+$(\kappa/C_s)\int_\R|\xi|^p|\widehat G(\xi)|\,d\xi<\infty$.
+Fubini's theorem, followed by $z|\xi|$ substitution, gives
+\[
+ \Lop w(r,t)=-\frac1{2\pi}\int_\R
+ e^{ir\xi-\kappa t|\xi|^p}\kappa|\xi|^p\widehat G(\xi)\,d\xi=w_t(r,t).
+\]
+This also proves $w_t(r,0)=b(r)$. The Fourier formula is consistent with the
+one-dimensional fractional heat representation in~\cite[Section~5]{DEJV};
+no monotonicity hypothesis from its Lemma~5.1 is used here.
+
+Evenness and the preceding radial Hessian argument give bounded continuous
+spatial derivatives through order two for $V$, including at zero. The
+Fourier majorants make these derivatives and $V_t$ jointly continuous.
+For $x\ne0$ its radial directional integral is
+\[
+ D_{e_r}^sV(x,t)=\Lop w(|x|,t)=V_t(x,t).
+\]
+At a nonzero gradient this is the selected direction, up to sign. At a zero
+gradient the radial value lies between the infimum and supremum over all
+directions. At the origin every directional value equals $V_t$. This proves
+both pointwise inequalities, even at noncentral critical radii.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Use the $U$ and $V$ constructed above, restricted to $[0,T]$. They have the
+claimed regularity and boundedness on this finite cylinder.
+We first pass from the pointwise inequalities to every actual viscosity test.
+At an upper contact with either constructed function, a local test has the same
+spatial gradient and time derivative at contact. On that time slice its patch
+is everywhere greater than or equal to the tested function and agrees at the
+center. Hence its directional integral is greater than or equal to the
+function's integral in every direction. The selected-direction inequality,
+or its supremum at zero gradient, follows. A lower patch reverses every
+directional inequality, giving the supersolution condition with the infimum.
+The integrals converge absolutely by local $C^2$ control near contact and a
+bounded tail. Lemmas~\ref{lem:sub} and~\ref{lem:heat} therefore give precisely
+the subsolution and supersolution properties required in the theorem.
+
+Their common initial profile is $F\in C_c^\infty$, hence bounded and uniformly
+continuous. The trace for $V$ is uniform by Lemma~\ref{lem:heat}; for $U$ use
+$\sup_x|U(x,t)-F(x)|\le t\norm Q+Mt^2$.
+Finally set $x_*=2e_1$, where $e_1$ is the first coordinate vector, and
+$\delta=a-b(2)>0$. The Fourier formula gives the finite bound
+\[
+ |w_{tt}(r,t)|\le K_2:=\frac1{2\pi}\int_\R
+ \kappa^2|\xi|^{2p}|\widehat G(\xi)|\,d\xi.
+\]
+Since $G(2)=0$ and $q(2)=a$, Taylor's formula in time yields
+\[
+ U(x_*,t)-V(x_*,t)\ge\delta t-(M+K_2/2)t^2.
+\]
+Choose
+\[
+ t_*=\min\{T/2,\delta/[2(M+K_2/2)]\},\qquad 0<t_*<T.
+\]
+Then $U(x_*,t_*)-V(x_*,t_*)\ge\delta t_*/2>0$, as required.
+\end{proof}
+
+\paragraph{AI use.}
+AI tools assisted with the mathematical construction, proof development,
+source checking, and manuscript preparation. The manuscript is submitted for
+independent mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{BCF}
+C.~Bjorland, L.~Caffarelli and A.~Figalli,
+\emph{Non-Local Tug-of-War and the Infinity Fractional Laplacian},
+arXiv:1011.1966v2 (2011),
+\url{https://arxiv.org/abs/1011.1966v2}.
+\bibitem{DEJV}
+F.~del Teso, J.~Endal, E.~R.~Jakobsen and J.~L.~V\'azquez,
+\emph{Evolution Driven by the Infinity Fractional Laplacian},
+arXiv:2210.06414v1 (2022),
+\url{https://arxiv.org/abs/2210.06414v1}.
+\bibitem{Tao}
+T.~Tao, \emph{245C, Notes 2: The Fourier transform},
+6 April 2009, Section~3, equation~(11),
+\url{https://terrytao.wordpress.com/2009/04/06/the-fourier-transform/}.
+\end{thebibliography}
+\end{document}
