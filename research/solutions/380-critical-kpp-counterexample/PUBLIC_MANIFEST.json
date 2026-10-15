@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "title": "A positive equilibrium at the critical Dirichlet eigenvalue",
+  "problem_id": "380",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/380-strong-kpp-critical-extinction.md",
+  "contribution": "Analytical counterexample claim",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, review disclosure, limitations and standalone PDF build instructions",
+      "bytes": 2578,
+      "sha256": "31d3fad9a21554c92f38577ea124e83b6d6a8ba4d26dd0251255b44611faaac6"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target premise and conclusion map to the complete manuscript",
+      "bytes": 2989,
+      "sha256": "fcb82b25754e93b48426036e4ffa8d0fb2abe44890b59c946ca22615af4366c8"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete four-page manuscript",
+      "bytes": 314438,
+      "sha256": "e9e173b63bd2733c20dc69ce296b3f34aef4c24cf96a7e482b1ee98803c1fa46"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Standalone editable manuscript source",
+      "bytes": 12758,
+      "sha256": "b349ea6cea3ee517030defd59e12ef58644061c15cc84710ce95001cd27fe1a4"
+    }
+  ],
+  "manifest_scope": "Four payload files; SHA256SUMS also covers this manifest; neither checksum metadata file hashes itself",
+  "numerical_or_formal_evidence": false
+}
