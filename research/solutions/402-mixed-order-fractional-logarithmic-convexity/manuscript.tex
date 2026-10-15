@@ -1,0 +1,430 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=29mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Id}{I}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\DeclareMathOperator{\Imat}{Im}
+\DeclareMathOperator{\sigmamin}{\sigma_{min}}
+\title{Logarithmic convexity for a coupled system\\with two subdiffusion orders}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove a logarithmic convexity estimate for a pair of coupled Caputo
+subdiffusion equations with different time orders. For every bounded smooth
+domain, every $0<\alpha_1<\alpha_2<1$, and every final time $T>0$, the product
+$L^2$ norm at time $t$ is bounded by a constant times the geometric
+interpolation of the initial and final norms, with exponent $t/T$.
+The estimate holds for arbitrary $L^2$ initial pairs and includes domains
+with growing low-frequency modes. This gives an affirmative answer to the
+Dirichlet norm-interpolation question for the system posed by Chorfi.
+The proof uses a positive matrix integral representation to establish
+finite-time invertibility and uniform bounds for all large spatial
+frequencies.
+\end{abstract}
+
+\section{The problem and the main result}\label{sec:main}
+Subdiffusion equations describe evolution with a memory term in place of an
+ordinary time derivative. Their backward problem asks whether an earlier
+state can be recovered from a later observation. A logarithmic convexity
+estimate bounds an intermediate state by a geometric interpolation of the
+initial and final norms; in particular, it implies backward uniqueness.
+For a single Caputo order, Chorfi, Maniar and Yamamoto
+\cite[Theorem 1.1]{CMY} proved such an estimate for self-adjoint evolution
+equations. Coupled systems with a common time order admit a spectral treatment
+of their forward and backward problems \cite{FLL}. Mixed-order coupled
+systems also have a well-developed mild-solution theory \cite{LHL}, but that
+existence theory does not itself give interpolation between the endpoint
+norms.
+
+The distinction between a common order and two different orders is essential
+for the proof: a rotation that diagonalizes the reaction matrix mixes the two
+time derivatives. Chorfi \cite[Section 5, problem 1]{Chorfi} asks whether
+logarithmic convexity extends to the particular mixed-order system
+\begin{equation}\label{eq:PDE}
+ \begin{aligned}
+ D_t^{\alpha_1}u_1&=\Delta u_1+u_1+u_2,\\
+ D_t^{\alpha_2}u_2&=\Delta u_2+u_1+u_2.
+ \end{aligned}
+\end{equation}
+We consider homogeneous Dirichlet conditions on a bounded smooth domain
+$\Omega\subset\R^n$, with arbitrary initial pair
+$U_0\in H:=L^2(\Omega;\C^2)$ and $U=(u_1,u_2)$.
+The norm is
+$\norm U^2=\norm{u_1}_{L^2(\Omega)}^2+\norm{u_2}_{L^2(\Omega)}^2$.
+For an absolutely continuous scalar function, the Caputo convention is
+\[
+ D_t^\alpha h(t)=\frac1{\Gamma(1-\alpha)}
+       \int_0^t(t-s)^{-\alpha}h'(s)\,ds.
+\]
+For $L^2$ initial data, we use the continuous $H$ representative of the
+componentwise mild solution, equivalently the fractional diffusion Duhamel
+formulation in \cite[Definition 1]{LHL}. The real case follows by restriction.
+
+\begin{theorem}\label{thm:main}
+Let $\Omega\subset\R^n$ be any bounded smooth domain,
+$0<\alpha_1<\alpha_2<1$, and $T>0$.
+There is a constant $C=C(\Omega,\alpha_1,\alpha_2,T)>0$ such that every
+homogeneous Dirichlet mild solution of \eqref{eq:PDE} with
+$U(0)=U_0\in H$ satisfies
+\begin{equation}\label{eq:main}
+ \norm{U(t)}\le C\norm{U_0}^{1-t/T}\norm{U(T)}^{t/T},
+ \qquad 0<t<T.
+\end{equation}
+The constant is independent of the initial pair and of the intermediate
+time. In particular, $U(T)=0$ implies $U_0=0$.
+\end{theorem}
+This is the product-$L^2$ Dirichlet formulation of the question, including all
+initial pairs and the exact interpolation exponent $t/T$; it is also the
+formulation of AIM Problem~402.\footnote{The frozen problem statement is
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/402-mixed-order-fractional-logarithmic-convexity.md}{AIM Problem 402 at revision \texttt{a153f469ee0e}}.}
+No sign condition or additional initial regularity is required.
+
+We keep the Dirichlet spatial eigenbasis and treat each pair of coefficients
+as a two-dimensional system. A positive matrix integral representation of its
+resolvent proves that the terminal map is invertible, including the finitely
+many modes that may grow. For large spatial eigenvalues, the same
+representation gives an upper smoothing bound and a matching lower bound for
+the smallest singular value at the final time. These bounds reduce
+\eqref{eq:main} to scalar interpolation and H\"older's inequality.
+The constant is not asserted to be sharp or equal to one. The argument uses
+the common Laplacian and the symmetric constant coupling in \eqref{eq:PDE};
+it does not treat general spatially varying coupling.
+
+The modal representation and invertibility are proved in Section
+\ref{sec:modal}. Section \ref{sec:uniform} establishes the uniform estimates
+and proves the theorem. In the proof we write $a=\alpha_1$ and
+$b=\alpha_2$. Matrix norms and vector lengths are Euclidean; inequalities
+between real symmetric matrices refer to their quadratic forms.
+
+
+\section{The modal resolvent and finite-time invertibility}\label{sec:modal}
+Let $0<a<b<1$ be fixed. A Dirichlet eigenvalue $\lambda>0$ gives the
+two-dimensional system
+\begin{equation}\label{eq:mode}
+ D_t^a y_1=-qy_1+y_2,\qquad
+ D_t^b y_2=y_1-qy_2,\qquad q=\lambda-1>-1.
+\end{equation}
+Denote its fundamental matrix by $F_q(t)$, with $F_q(0)=\Id$, and put
+\[
+ A_q=\begin{pmatrix}q&-1\\-1&q\end{pmatrix},\qquad
+ D(z)=\diag(z^a,z^b),\qquad R_q(z)=(D(z)+A_q)^{-1}.
+\]
+All complex powers use the branch $\arg z\in(-\pi,\pi)$.
+The integral form of \eqref{eq:mode} is
+$y_i(t)=y_i(0)-I^{\alpha_i}(A_qy)_i(t)$, where
+$\alpha_1=a$, $\alpha_2=b$ and
+\[
+ I^\gamma f(t)=\frac1{\Gamma(\gamma)}
+       \int_0^t(t-s)^{\gamma-1}f(s)\,ds.
+\]
+It has a unique continuous solution of exponential order. Indeed, in the
+component maximum norm weighted by $e^{-\omega t}$, $\omega\ge1$, its
+Volterra operator has norm at most $(|q|+1)\omega^{-a}$.
+For large $\omega$, the Neumann series converges. Local uniqueness also
+follows by iteration, since on $[0,T]$ the row kernels are bounded by
+$C_Tt^{a-1}$ and their $m$th convolution integrals are bounded by
+$(C_Tt^a)^m/\Gamma(1+ma)$. Taking Laplace transforms gives
+\begin{equation}\label{eq:Fhat}
+ \widehat F_q(z)=\frac1zR_q(z)D(z)
+               =\frac1z(\Id-R_q(z)A_q)
+\end{equation}
+for positive real $z$ sufficiently large. In particular, the different
+initial factors $z^{a-1}$ and $z^{b-1}$ have been retained.
+
+The following positive matrix density will distinguish invertibility from
+mere positivity of the entries of a solution.
+For $r>0$, define
+\begin{align*}
+ M_q(r)&=A_q+\diag(r^ae^{i\pi a},r^be^{i\pi b}),\\
+ B(r)&=\diag(r^a\sin\pi a,r^b\sin\pi b),\\
+ W_q(r)&=-\frac1\pi\Imat R_q(-r+i0)
+       =\frac1\pi M_q(r)^{-*}B(r)M_q(r)^{-1}.
+\end{align*}
+Here $X^*$ denotes conjugate transpose and $\Imat X=(X-X^*)/(2i)$.
+The inverse identity $\Imat(M^{-1})=-M^{-*}(\Imat M)M^{-1}$ proves the
+last equality. Since $B(r)>0$, the density $W_q(r)$ is strictly positive
+definite. It is real symmetric: $R_q(z)$ is complex symmetric, so its
+Hermitian imaginary part is its entrywise imaginary part.
+
+\begin{lemma}\label{lem:representation}
+For every $q>-1$, the modal resolvent has the representation
+\begin{equation}\label{eq:cut}
+ R_q(z)=\int_0^\infty\frac{W_q(r)}{z+r}\,dr
+       +\begin{cases}K_q/(z-\rho_q),&-1<q<1,\\0,&q\ge1.
+         \end{cases}
+\end{equation}
+In the first case, $\rho_q>0$ is the unique positive pole and $K_q$ is a
+positive semidefinite matrix of rank one. The integral is absolutely
+convergent away from the cut and the pole.
+\end{lemma}
+
+\begin{proof}
+If $\Im z>0$, then $\Imat D(z)>0$. Thus $D(z)+A_q$ has no kernel;
+the lower half-plane follows by conjugation. On the positive real axis
+$D(s)+A_q$ increases strictly in the positive definite ordering. Its
+eigenvalues start at $q-1,q+1$ and tend to positive infinity. It therefore
+has one zero, and only one, when $-1<q<1$, and none when $q\ge1$.
+At the zero $\rho_q$, let $v_q$ be a real unit kernel vector. The other
+eigenvalue is positive, and
+\[
+ K_q=\mathop{\rm Res}_{z=\rho_q}R_q(z)
+     =\frac{v_qv_q^T}{v_q^TD'(\rho_q)v_q}.
+\]
+The denominator is positive, so this is a simple pole with the stated
+residue.
+
+Apply the Cauchy formula entrywise to a keyhole contour about the negative
+real axis, retaining this pole when present. For fixed $q$,
+$R_q(z)=O(|z|^{-a})$ at infinity, uniformly in the argument, by factoring
+out $D(z)$. It is bounded at zero if $q\ne1$, since $q=-1$ is excluded.
+At $q=1$ its explicit inverse is
+\begin{equation}\label{eq:critical-resolvent}
+ R_1(z)=\frac1{z^{a+b}+z^a+z^b}
+        \begin{pmatrix}z^b+1&1\\1&z^a+1\end{pmatrix}
+        =O(|z|^{-a})\quad(z\to0).
+\end{equation}
+The small and large contour integrals consequently vanish. The jump
+between the two banks of the cut is $-2\pi iW_q(r)$, giving
+\eqref{eq:cut} with the displayed residue sign.
+At infinity $W_q(r)=O(r^{-a})$; at zero it is $O(r^a)$ if $q\ne1$ and
+$O(r^{-a})$ if $q=1$. These bounds also prove the asserted absolute
+convergence. No bound uniform in $q$ is needed in this lemma.
+\end{proof}
+
+Define the time kernel and its integral by
+\begin{equation}\label{eq:time-kernel}
+ Q_q(t)=\int_0^\infty e^{-rt}W_q(r)\,dr
+       +\begin{cases}e^{\rho_qt}K_q,&q<1,\\0,&q\ge1,
+        \end{cases}
+ \qquad G_q(t)=\int_0^tQ_q(s)\,ds.
+\end{equation}
+The kernel is strictly positive definite. Its singularity at zero is at
+most $C_qt^{a-1}$, so it is locally integrable. Absolute Fubini and
+\eqref{eq:cut} identify its Laplace transform with $R_q$ to the right of
+the pole. Equation \eqref{eq:Fhat} and uniqueness of the Laplace transform
+therefore yield
+\begin{equation}\label{eq:F-time}
+ F_q(t)=\Id-G_q(t)A_q.
+\end{equation}
+
+\begin{proposition}\label{prop:invertibility}
+The matrix $F_q(t)$ is invertible for every $q>-1$ and every finite
+$t\ge0$.
+\end{proposition}
+
+\begin{proof}
+Suppose first that $q\ne1$. The endpoint bounds in Lemma
+\ref{lem:representation} ensure convergence of
+\[
+ P_q(t)=\int_0^\infty e^{-rt}\frac{W_q(r)}r\,dr>0
+ \qquad(t\ge0).
+\]
+For $q<1$, evaluating \eqref{eq:cut} at zero and integrating
+\eqref{eq:time-kernel} give, respectively,
+\[
+ \begin{aligned}
+ A_q^{-1}&=P_q(0)-K_q/\rho_q,\\
+ G_q(t)&=P_q(0)-P_q(t)+(e^{\rho_qt}-1)K_q/\rho_q.
+ \end{aligned}
+\]
+For $q>1$, the same identities hold with the pole terms omitted.
+Their constant terms cancel in \eqref{eq:F-time}, giving the real symmetric
+matrix
+\begin{equation}\label{eq:H}
+ H_q(t):=F_q(t)A_q^{-1}
+ =P_q(t)-\begin{cases}e^{\rho_qt}K_q/\rho_q,&q<1,\\0,&q>1.
+            \end{cases}
+\end{equation}
+For $q>1$, both $H_q(t)$ and $A_q$ are positive definite, and the result
+follows. For $-1<q<1$, the matrix $A_q^{-1}$ has one eigenvalue of each
+sign. Since $H_q(t)=A_q^{-1}-G_q(t)$, its negative direction remains
+strictly negative. A nonzero vector in $\ker K_q$ has strictly positive
+quadratic form under $H_q(t)$, by \eqref{eq:H}. Hence $H_q(t)$ has one
+eigenvalue of each sign and is nonsingular.
+
+For $q=1$, put $w=(1,-1)^T$, so $A_1=ww^T$. From
+\eqref{eq:critical-resolvent},
+\[
+ w^TR_1(s)w=\frac{s^a+s^b}{s^{a+b}+s^a+s^b}\longrightarrow1
+       \qquad(s\downarrow0).
+\]
+Writing $k(r)=w^TW_1(r)w>0$, the representation \eqref{eq:cut} and
+monotone convergence imply $\int_0^\infty k(r)/r\,dr=1$.
+The rank-one determinant formula in \eqref{eq:F-time} now gives
+\[
+ \det F_1(t)=1-w^TG_1(t)w
+           =\int_0^\infty e^{-rt}\frac{k(r)}r\,dr>0.
+\]
+This also covers a domain having the critical Dirichlet eigenvalue
+$\lambda=2$. At $t=0$, invertibility is immediate from $F_q(0)=\Id$.
+\end{proof}
+
+\section{Uniform estimates and the interpolation inequality}\label{sec:uniform}
+Invertibility of each fixed mode alone is insufficient for the desired
+estimate. We next control all large eigenvalues with the same constants.
+Throughout this section, $T>0$ remains fixed.
+
+\begin{lemma}\label{lem:uniform}
+There are $M=M(a,b,T)>0$ and $d=d(a,b,T)>0$ such that, for every $q\ge2$,
+\begin{equation}\label{eq:uniform}
+ \norm{F_q(t)}\le\frac{M}{1+qt^b}\quad(0<t\le T),\qquad
+ \abs{F_q(T)v}\ge\frac{d}{\sqrt3q}\abs v\quad(v\in\C^2).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The eigenvalues of $A_q$ are $q-1,q+1$, so its condition number is at most
+three. The positive integral in \eqref{eq:H} gives
+\[
+ S_q(t):=A_q^{1/2}H_q(t)A_q^{1/2}
+       =A_q^{1/2}F_q(t)A_q^{-1/2}.
+\]
+This is positive definite, decreases in the ordering of symmetric matrices,
+and satisfies $S_q(0)=\Id$. For $s>0$, set
+$E=A_q^{-1/2}D(s)A_q^{-1/2}>0$. Equation \eqref{eq:Fhat} yields
+\[
+ \widehat S_q(s)=\frac1s\bigl(\Id-(\Id+E)^{-1}\bigr)
+ =\frac1sE(\Id+E)^{-1}
+ \le\frac{\max(s^a,s^b)}{(q-1)s}\Id.
+\]
+On the other hand, monotonicity gives
+\[
+ \widehat S_q(1/t)\ge\int_0^te^{-s/t}S_q(t)\,ds
+                 =t(1-e^{-1})S_q(t).
+\]
+Since also $S_q(t)\le\Id$, returning through the similarity gives
+\begin{equation}\label{eq:upper-intermediate}
+ \norm{F_q(t)}\le\sqrt3\min\left(1,
+   \frac{\max(t^{-a},t^{-b})}{(1-e^{-1})(q-1)}\right).
+\end{equation}
+Let $L_T=\max(1,T^{b-a})$. For $0<t\le T$ we have
+$\max(t^{-a},t^{-b})\le L_Tt^{-b}$, and $q-1\ge q/2$.
+Using $\min(1,c/x)\le(1+c)/(1+x)$ for $c,x>0$ in
+\eqref{eq:upper-intermediate} proves the first estimate, for example with
+$M=\sqrt3(1+2L_T/(1-e^{-1}))$.
+
+For the lower estimate, recall the positive density
+\[
+ W_q(r)=\frac1\pi M_q(r)^{-*}B(r)M_q(r)^{-1}.
+\]
+Here the factors are
+\[
+ \begin{aligned}
+ M_q(r)&=A_q+\operatorname{diag}(r^ae^{i\pi a},r^be^{i\pi b}),\\
+ B(r)&=\operatorname{diag}(r^a\sin\pi a,r^b\sin\pi b).
+ \end{aligned}
+\]
+Set $\eta=\min(\sin\pi a,\sin\pi b)>0$ and $L=1+2^b$. For $1\le r\le2$,
+$B(r)\ge\eta\Id$ and $\norm{M_q(r)}\le q+L$. Therefore
+\[
+ W_q(r)\ge\frac{\eta}{\pi(q+L)^2}\Id.
+\]
+Restricting the positive integral for $H_q(T)$ to this interval gives
+\[
+ S_q(T)\ge\frac{\eta e^{-2T}(q-1)}{2\pi(q+L)^2}\Id
+         \ge\frac dq\Id,\qquad
+ d=\frac{\eta e^{-2T}}{4\pi(1+L/2)^2}.
+\]
+Here $q-1\ge q/2$ and $q+L\le q(1+L/2)$ were used.
+Since $F_q(T)=A_q^{-1/2}S_q(T)A_q^{1/2}$, its smallest singular value is
+at least $(d/q)\sqrt{(q-1)/(q+1)}\ge d/(\sqrt3q)$.
+\end{proof}
+
+We now deduce the modal interpolation estimate. Put $\theta=t/T$ and
+\[
+ h_q=(1+qT^b)^{-1},\qquad m=\min(1,dT^b/\sqrt3)>0.
+\]
+Lemma \ref{lem:uniform} implies $|F_q(T)v|\ge mh_q|v|$ for $q\ge2$.
+The function $-\log(1+qt^b)$ is convex on $[0,T]$ and vanishes at zero.
+Consequently,
+\[
+ (1+qt^b)^{-1}\le h_q^\theta,
+\]
+and the same lemma gives
+\begin{equation}\label{eq:modal-interpolation}
+ |F_q(t)v|\le \frac Mm|v|^{1-\theta}|F_q(T)v|^\theta
+ \qquad(q\ge2,\ 0<t<T).
+\end{equation}
+The zero vector is included directly. No simultaneous diagonalization of
+the two time derivatives is used.
+
+\begin{proof}[Proof of Theorem \ref{thm:main}]
+Let $(\lambda_j,\phi_j)$ be an orthonormal Dirichlet eigensystem of
+$-\Delta$, and set $q_j=\lambda_j-1$ and
+$v_j=((u_1(0),\phi_j),(u_2(0),\phi_j))^T$.
+Projection of the componentwise mild equations gives
+\eqref{eq:mode} in its fractional integral form. Thus its uniqueness gives
+\begin{equation}\label{eq:series}
+ U(t)=\sum_{j=1}^\infty\phi_jF_{q_j}(t)v_j.
+\end{equation}
+This uses only a bounded spectral coefficient functional on the mild
+integrals. It does not apply $\Delta$ to $U_0$. Equivalently one can start
+with the mild formulation in \cite[Definition 1 and Theorem 1]{LHL} and
+project it. Lemma \ref{lem:uniform} and the finitely many lower modes give
+a uniform operator bound on $[0,T]$; hence the series converges in product
+$L^2$ and is continuous there, including at $t=0$, by dominated convergence.
+
+There are only finitely many indices with $q_j<2$. If there are any, define
+\[
+ M_0=\max_{q_j<2}\max_{0\le s\le T}\norm{F_{q_j}(s)},\qquad
+ m_0=\min_{q_j<2}\sigmamin(F_{q_j}(T)).
+\]
+Continuity and Proposition \ref{prop:invertibility} give $M_0<\infty$
+and $m_0>0$. These modes satisfy \eqref{eq:modal-interpolation} with
+constant $M_0/\min(1,m_0)$, since $m_0^\theta\ge\min(1,m_0)$.
+Let $C$ be the larger of this constant and $M/m$, omitting the first
+constant if the low-frequency set is empty. Then $C$ depends only on
+$\Omega,a,b,T$, and Parseval and H\"older give
+\begin{align*}
+ \norm{U(t)}^2
+ &\le C^2\sum_j |v_j|^{2(1-\theta)}|F_{q_j}(T)v_j|^{2\theta}\\
+ &\le C^2\left(\sum_j|v_j|^2\right)^{1-\theta}
+          \left(\sum_j|F_{q_j}(T)v_j|^2\right)^\theta\\
+ &=C^2\norm{U_0}^{2(1-\theta)}\norm{U(T)}^{2\theta}.
+\end{align*}
+Taking square roots proves the result for every $U_0$ and $0<t<T$.
+If $U(T)=0$, Proposition \ref{prop:invertibility} shows that every $v_j=0$,
+so the same conclusion holds without a division by zero.
+\end{proof}
+
+\section*{AI assistance}
+OpenAI Codex assisted with the literature search, development and checking
+of the proof, and preparation of this manuscript. This assistance does not
+replace independent mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{Chorfi}
+S.-E. Chorfi, \emph{Logarithmic convexity of evolution equations and application
+to inverse problems}, arXiv:2506.19954v1 (2025),
+\href{https://arxiv.org/abs/2506.19954v1}{arXiv:2506.19954v1}.
+
+\bibitem{CMY}
+S. E. Chorfi, L. Maniar and M. Yamamoto, \emph{The backward problem for
+time fractional evolution equations}, arXiv:2211.16493v1 (2022),
+\href{https://arxiv.org/abs/2211.16493v1}{arXiv:2211.16493v1}.
+
+\bibitem{LHL}
+Z. Li, X. Huang and Y. Liu, \emph{Initial-boundary value problems for coupled
+systems of time-fractional diffusion equations}, Fractional Calculus and
+Applied Analysis \textbf{26} (2023), 533--566,
+\href{https://doi.org/10.1007/s13540-023-00149-0}{doi:10.1007/s13540-023-00149-0}.
+
+\bibitem{FLL}
+D. Feng, Y. Liu and S. Lu, \emph{Forward and backward problems for coupled
+subdiffusion systems}, arXiv:2407.00588v2 (2025),
+\href{https://arxiv.org/abs/2407.00588v2}{arXiv:2407.00588v2}.
+\end{thebibliography}
+\end{document}
