@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "title": "CO phase selection for a stirred catalytic surface model",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "contribution": "analytic solution claim",
+  "problem_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/185-catalytic-carbon-monoxide-poisoning.md",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, file links, build instructions and AI-use disclosure.",
+      "bytes": 1857,
+      "sha256": "498265d5a4c249faa426a86151a8263d7bc3c9e4b1a0a3d404e180505143bf18"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence between the original public problem and the finished manuscript.",
+      "bytes": 2543,
+      "sha256": "e4c50614edbaab31e9c86e0907844e5af23dc8c01a6ce9262fccd83de04a66c5"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Complete editable LaTeX manuscript.",
+      "bytes": 14848,
+      "sha256": "0d4f9c346d910093da1270de0e613de74dee838d784bd1aef98908303a1ce008"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Complete compiled manuscript.",
+      "bytes": 299470,
+      "sha256": "e9b37157e4711fc6c508938652dc74a4025e5c8888f57ab477537a09c951429c"
+    }
+  ],
+  "integrity_records": "This manifest covers the four content files. CHECKSUMS.txt additionally hashes this manifest; neither integrity record hashes itself."
+}
