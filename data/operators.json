@@ -156,7 +156,7 @@
     "area": "Numerical PDE solvers and preconditioning",
     "file": "problems/040-universal-algebraic-multigrid.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "041",

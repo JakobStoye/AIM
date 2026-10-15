@@ -1,4 +1,4 @@
-# Prior-resolution reports for 37 Open or Partial catalogue targets
+# Prior-resolution reports for 38 Open or Partial catalogue targets
 
 **Evidence review date:** 2026-10-16
 
@@ -8,7 +8,7 @@
 
 ## Scope and review status
 
-A review of 85 previously identified prior-resolution records found 48 already marked Solved at this snapshot. The other 37 were still Open (28) or Partial (9). This report collects those 37 source reports in one place, with a link from each affected problem page.
+The initial review of 85 previously identified prior-resolution records found 48 already marked Solved at this snapshot. The other 37 were still Open (28) or Partial (9). A subsequent source comparison added AIM040 under the explicit randomized-setup and non-Galerkin conventions stated in its entry. The combined report therefore covers 38 targets (29 Open and 9 Partial), with a link from each affected problem page. The historical 85-record screening count refers to the initial review, not a new screening of the additional case.
 
 Each entry identifies a public proof or counterexample, its relevant theorem or proof location, and the correspondence with the full catalogue target. Applicability comparisons reuse readings of theorem statements and the named proof interfaces made on 12–15 October 2026; the target snapshot and public source availability were checked again for this report. These readings do not constitute a new independent audit of every argument or imported dependency.
 
@@ -19,6 +19,7 @@ The source evidence varies: recent preprints, an explicitly labeled candidate pr
 | ID | Target | Current badge | Reported direction |
 | --- | --- | --- | --- |
 | [030](#aim-030) | [SIC measurements in every finite dimension](../../problems/030-sic-povms.md) | 🔵 OPEN | Reported affirmative full-target resolution |
+| [040](#aim-040) | [Uniformly effective algebraic multigrid for diagonally dominant systems](../../problems/040-universal-algebraic-multigrid.md) | 🔵 OPEN | Qualified affirmative public-source composition with randomized setup and non-Galerkin coarse matrices |
 | [044](#aim-044) | [Quadratic-scale bit complexity for well-conditioned sparse systems](../../problems/044-sparse-linear-solve-bit-complexity.md) | 🔵 OPEN | Affirmative prior-result attribution |
 | [092](#aim-092) | [The dimension-free Kannan–Lovász–Simonovits inequality](../../problems/092-kls-poincare.md) | 🟡 PARTIAL | Claimed affirmative dimension-free Poincaré bound |
 | [098](#aim-098) | [A universal bound on excess molecular charge](../../problems/098-maximal-molecular-ionization.md) | 🟡 PARTIAL | Reported full eigenstate application, including threshold states |
@@ -77,6 +78,47 @@ The source evidence varies: recent preprints, an explicitly labeled candidate pr
 **Supporting source:** [Danylo Radchenko and Campbell Wheeler, Real quadratic fields and finite quantum dilogarithms I, arXiv:2609.21892v2 (2026-09-29); Theorem 7, Section 4.4 pp.20–21; Remark 7 p.22](https://arxiv.org/html/2609.21892v2).
 
 **Supporting source:** [Marcus Appleby, Steven T. Flammia and Gene S. Kopp, A constructive approach to Zauner’s conjecture via the Stark conjectures, arXiv:2501.03970v2 (2025-03-17); Theorem 1.46 and Section 5.6 pp.87–88](https://arxiv.org/pdf/2501.03970v2).
+
+<a id="aim-040"></a>
+
+## 040 — Uniformly effective algebraic multigrid for diagonally dominant systems
+
+**Target:** [Exact statement at the reviewed revision](https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/040-universal-algebraic-multigrid.md). Current catalogue badge: 🔵 OPEN.
+
+**Reported answer:** A qualified affirmative corollary of public source algorithms, allowing high-probability randomized setup and non-Galerkin coarse matrices in exact randomized real arithmetic. These conventions are part of this report's interpretation; the original problem does not explicitly state a probability convention. This is not a deterministic or all-random-seeds resolution.
+
+**Primary sources and locations:**
+
+- [Yin Tat Lee, Richard Peng and Daniel A. Spielman, Sparsified Cholesky Solvers for SDD Linear Systems, arXiv:1506.08204v2](https://arxiv.org/pdf/1506.08204v2): Definition 5.7, Figure 2, Lemma 5.8 and Theorem 5.10 (printed pp.12–14); Section 8 and Theorem 8.13 (pp.24–32); Theorem 9.2 and Remark 9.3 (pp.34–35). These provide the fixed symmetric chain action and approximate-Schur construction with a strongly diagonally dominant fine block.
+- [Arun Jambulapati, Victor Reis and Kevin Tian, Linear-Sized Sparsifiers via Near-Linear Time Discrepancy Theory, arXiv:2305.08434v1](https://arxiv.org/pdf/2305.08434v1): Theorem 1 (p.3), the high-probability convention (p.7), and the graph specialization (pp.20–21). For an $`N`$-vertex, $`e`$-edge weighted graph and $`0<\eta<1`$, this gives $`O(N\eta^{-2})`$ stored edges and $`\widetilde O(e\eta^{-7/2})`$ construction work, with any fixed polynomial failure exponent.
+- [Noah Amsel et al., Linear Systems and Eigenvalue Problems: Open Questions from a Simons Workshop, arXiv:2602.05394v3](https://arxiv.org/pdf/2602.05394v3): Definitions 2.1–2.2, Problem 2.3 and its surrounding AMG discussion (pp.8–9). **This source still presents the problem as open.** The interpretation below is submitted for review of that apparent conflict; no agreement by the workshop authors or catalogue maintainers is claimed.
+
+**Source-to-target correspondence:** Retain every matrix assumption in the catalogue, including weak chained diagonal dominance, the fixed integer $`c`$, and its entry bounds and quantization. Represent the matrix $`M`$ as a grounded weighted graph Laplacian. Schur minimization with the ground retained and congruence transfer spectral inequalities back to $`M`$.
+
+At level $`i\ge0`$, choose a fixed strongly dominant fine block containing a constant fraction of variables. Write $`n_i`$ for the remaining dimension; $`n_i\le\rho^i n`$ for some absolute $`0<\rho<1`$. Set $`\eta_i=\gamma/((i+1)(i+2))`$, with a sufficiently small absolute $`\gamma>0`$. Apply the cited approximate-Schur construction and then the graph sparsifier, dividing the error allowance between them. The next matrix has $`m_{i+1}=O(n_{i+1}\eta_i^{-2})`$ stored nonzeros, and the accumulated spectral error is bounded because $`\sum_i\eta_i<\infty`$.
+
+Remark 9.3's simplified $`\eta^{-2}`$ work notation cannot simply be substituted for the later sparsifier's $`\eta^{-7/2}`$ cost. After this tolerance substitution, the Section 8 multiplier is bounded by $`G_i=\exp(O(\log^2(i+2)))`$. The construction sum converges because, for every fixed $`p`$,
+
+```math
+\sum_{i\ge0}\rho^i(i+2)^pG_i<\infty.
+```
+
+Here the geometric decay dominates the stated subexponential multiplier and the extra tolerance powers. Charging the original input once gives near-linear setup. The chain action instead costs $`\sum_i m_iO(\log(i+2))=O(m)`$, where $`m=\mathop{\mathrm{nnz}}\nolimits M`$.
+
+An explicit symmetric pre/coarse/post cycle uses the source's fixed fine polynomial inverse $`J_i`$, satisfying $`0\prec J_i\preceq(A_i)_{FF}^{-1}`$, on level matrix $`A_i`$. Put $`R_i=\mathop{\mathrm{diag}}(J_i,0)`$, let $`E_i`$ inject the coarse coordinates, and set $`P_i=(I-R_iA_i)E_i`$; restriction is $`P_i^T`$ and the coarse operator is the constructed approximate Schur matrix. One recursive coarse call with identical pre- and post-smoothing has action
+
+```math
+V_i=(2R_i-R_iA_iR_i)+P_iV_{i+1}P_i^T,
+\qquad R_i\preceq2R_i-R_iA_iR_i\preceq2R_i.
+```
+
+Unrolling with the same interpolation products compares the entire cycle $`V`$ with the source chain action $`W`$ as $`W\preceq V\preceq2W`$. Thus the factor two applies once to the whole hierarchy. Setup fixes one symmetric linear action for all right-hand sides simultaneously.
+
+For probability relative to the original dimension $`n`$, stop at a bottom block of size $`O(n^{1/3})`$ and factor it exactly. Earlier calls have dimension bounded below by a constant multiple of $`n^{1/3}`$; choose their permitted fixed failure exponent large enough and union over $`O(\log n)`$ conditional calls. Bottom setup costs $`O(n)`$ and action $`O(n^{2/3})`$. Finitely many small dimensions use direct factorization.
+
+**Evidence and interpretation limits:** This AI-prepared source comparison reuses readings of the named theorem and proof interfaces and the elementary translations above. It is not an independent audit of all source proofs, a finite-precision implementation guarantee, a new mathematical discovery, or upstream acceptance. The deterministic interpretation remains unresolved by this report. Maintainers must assess whether the disclosed probability and non-Galerkin conventions match their intended target; the original statement and Open badge are preserved.
+
+**Qualified result for review:** For each fixed input satisfying all of AIM040's assumptions and each fixed $`s>0`$, the source composition under the stated conventions gives, with probability at least $`1-n^{-s}`$, setup work $`\widetilde O(m)`$ and one fixed symmetric AMG action $`V`$ with $`O(m)`$ work and $`aM^{-1}\preceq V\preceq bM^{-1}`$. Here $`n`$ is the matrix dimension, $`m=\mathop{\mathrm{nnz}}\nolimits M`$, and $`a,b>0`$ are absolute constants; work constants may depend on the fixed entry-bound parameter $`c`$ and failure exponent $`s`$. The probability is per fixed input, with one successful setup valid for every right-hand side, and does not assert one random tape valid for all matrices.
 
 <a id="aim-044"></a>
 
