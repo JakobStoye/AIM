@@ -1,0 +1,310 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\F}{\mathbb F_2}
+\newcommand{\A}{\mathcal A}
+\newcommand{\PH}{\operatorname{PH}}
+\newcommand{\ind}{\mathbf 1}
+\title{The homology of a persistence fiber without finite bars}
+\author{Kaiwen Jin\\[2pt]\small\texttt{yui.ui.siki@gmail.com}}
+\date{14 October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+For a finite connected simplicial complex, consider all simplex-wise filters
+whose ordinary persistent homology has one infinite degree-zero bar born at
+time~1 and all positive-degree bars born at time~2, with no finite bars.
+We prove that this fiber has the same homology over $\F$ as the original
+complex. The fiber has a deformation retract homeomorphic to the order
+complex of nonempty acyclic subcomplexes of the original complex.
+Comparing that poset with the face poset gives the homology
+isomorphism and proves the corresponding Betti-number conjecture of
+Leygonie and Henselman-Petrusek in the connected setting.
+\end{abstract}
+
+\section{The fiber}
+
+A persistence barcode records the homology of a filtration and the maps
+between its stages. Different filters can have the same barcode, so the
+topology of a barcode fiber describes ambiguity left by this summary.
+Leygonie and Henselman-Petrusek \cite{LH} compute such fibers on cell
+complexes. Their Conjecture~1, in the preceding connected setting, predicts
+that a particular fiber without finite bars has the Betti numbers of the
+underlying simplicial complex. Polyhedral descriptions and dimension bounds
+for multiparameter fibers are given in \cite[Theorem~5.3 and
+Proposition~5.9]{HTT}. Here the absence of finite bars permits a direct
+homological comparison.
+
+Let $K$ be a finite connected simplicial complex. Throughout, homology has
+coefficients in $\F$ and is ordinary and unreduced unless a tilde is present.
+We identify a simplicial complex with its geometric realization when writing
+its homology. Simplicial and singular homology agree, including for pairs
+\cite[Theorem~2.27 and p.~153]{Hatcher}.
+Write $\beta_q(K)=\dim_{\F}H_q(K;\F)$.
+Let $D_K$ contain one infinite bar born at~1 in degree zero and
+$\beta_q(K)$ infinite bars born at~2 in degree $q\geq1$, with no finite bars.
+If all positive-degree Betti numbers vanish set $m=1$, and otherwise set
+$m=2$. Put $I=[1,m+1]$.
+
+A filter assigns a value $f(\sigma)\in I$ to every nonempty simplex
+$\sigma\in K$, with $f(\tau)\leq f(\sigma)$ whenever $\tau$ is a face of
+$\sigma$. Its sublevel complex is
+\[
+ K_t(f)=\{\sigma\in K:f(\sigma)\leq t\}.
+\]
+Let $\PH(f)$ be the graded barcode of this filtration, and give
+\[
+ F_K=\{f:\PH(f)=D_K\}
+\]
+the topology inherited from $I^{|K|}$, where $|K|$ here denotes the number of
+nonempty simplices.
+
+\begin{theorem}\label{thm:main}
+For every finite connected simplicial complex $K$ and every integer $q\geq0$,
+\[
+ H_q(F_K;\F)\cong H_q(K;\F).
+\]
+In particular, $\dim_{\F}H_q(F_K;\F)=\beta_q(K)$.
+\end{theorem}
+
+The filters in this theorem assign values to all simplices. The proof uses
+their whole sublevel complexes. Its homological comparison uses acyclic
+subcomplexes, which need not be contractible; it does not assert a homotopy
+equivalence between $F_K$ and $K$.
+
+Assume for now that $K$ is nonempty. Call a subcomplex \emph{acyclic} if it
+is nonempty and its reduced homology over $\F$ vanishes in every degree.
+The barcode $D_K$ implies that $K_t(f)$ is acyclic for $1\leq t<2$ and that
+every inclusion $K_t(f)\hookrightarrow K$ induces homology isomorphisms for
+$t\geq2$. In degree zero these isomorphisms agree with augmentation: the
+class of every vertex maps to $1\in\F$.
+
+\begin{lemma}\label{lem:truncate}
+The subspace
+\[
+ G_K=\{f\in F_K:f(\sigma)\leq2\text{ for all }\sigma\in K\}
+\]
+is a strong deformation retract of $F_K$.
+\end{lemma}
+
+\begin{proof}
+For $0\leq s\leq1$ define
+\[
+ h_s(x)=
+ \begin{cases}
+ x,&x\leq2,\\
+ 2+(1-s)(x-2),&x\geq2,
+ \end{cases}
+ \qquad R_s(f)=h_s\circ f.
+\]
+This is jointly continuous and nondecreasing in $x$, so $R_s(f)$ is a
+filter. It fixes all values at most~2. For $s<1$, the function $h_s$ is
+strictly increasing and fixes~1 and~2. It only reindexes stages after~2,
+whose homology maps to $K$ are already isomorphisms; after its largest value,
+the sublevel is $K$. Thus it preserves the entire persistence module up to
+isomorphism. At $s=1$, the sublevels below~2 are unchanged and the sublevel
+at and after~2 is $K$, so the same barcode is obtained. Finally $R_0$ is the
+identity, $R_1(f)=\min(f,2)$, and every $R_s$ fixes $G_K$. If $m=1$, all
+values are already at most~2 and this deformation is the identity.
+\end{proof}
+
+A filter $g:K\to[1,2]$ belongs to $G_K$ precisely when
+\begin{equation}\label{eq:criterion}
+ \min_{\sigma\in K}g(\sigma)=1,
+ \qquad K_t(g)\text{ is acyclic for every }1\leq t<2.
+\end{equation}
+Indeed, necessity follows from the barcode. Conversely, the degree-zero
+module is constant and one-dimensional from~1 onward, since inclusions
+between connected nonempty complexes preserve its augmentation generator.
+Positive-degree homology is zero before~2 and equals that of $K$ from~2
+onward, because $K_2(g)=K$. This gives exactly $D_K$, also when $m=1$.
+
+\section{Chains of acyclic subcomplexes}
+
+Let $\A(K)$ be the finite poset of nonempty acyclic subcomplexes of $K$,
+ordered by inclusion. For a finite poset $P$, write $\Delta P$ for the
+simplicial complex whose nonempty simplices are the nonempty chains in $P$.
+We write $|\Delta P|$ for its geometric realization.
+
+\begin{proposition}\label{prop:chains}
+There is a homeomorphism $|\Delta\A(K)|\to G_K$, affine on every simplex,
+given in barycentric coordinates by
+\begin{equation}\label{eq:phi}
+ \Phi(\lambda)(\sigma)
+ =2-\sum_{A\in\A(K)}\lambda_A\ind_{\{\sigma\in A\}}.
+\end{equation}
+Here $\lambda_A\geq0$, $\sum_A\lambda_A=1$, and the positive support is a
+chain of subcomplexes.
+\end{proposition}
+
+\begin{proof}
+The formula is continuous and gives values in $[1,2]$. If $\tau$ is a face
+of $\sigma$, every subcomplex containing $\sigma$ contains $\tau$, so the
+value on $\tau$ is at most the value on $\sigma$.
+
+Write the positive support as $A_1\subsetneq\cdots\subsetneq A_r$, with
+coefficients $\lambda_i>0$. Every simplex in $A_1$ has value~1. A simplex
+whose first membership is in $A_j$ has value
+$2-\sum_{i=j}^r\lambda_i$, and a simplex outside $A_r$ has value~2.
+The distinct sublevels below~2 are therefore exactly $A_1,\ldots,A_r$.
+They are acyclic, so \eqref{eq:criterion} puts $\Phi(\lambda)$ in $G_K$.
+
+For the inverse, list the distinct values of $g\in G_K$ less than~2 as
+$1=a_1<\cdots<a_r<2$, and put $a_{r+1}=2$. Define
+\begin{equation}\label{eq:inverse}
+ A_i=K_{a_i}(g),\qquad \lambda_i=a_{i+1}-a_i
+ \quad(1\leq i\leq r).
+\end{equation}
+These are nonempty acyclic subcomplexes forming a strict chain, and their
+positive coefficients sum to~1. If $g(\sigma)=a_j$, its memberships are
+exactly those with $i\geq j$, and
+\[
+ 2-\sum_{i=j}^r(a_{i+1}-a_i)=a_j.
+\]
+A simplex of value~2 belongs to none of these sublevels. Hence
+\eqref{eq:inverse} recovers $g$ through \eqref{eq:phi}, and uniquely recovers
+the positive support and its coefficients. In particular, zero coefficients
+on faces of the order complex create no ambiguity. If $\max g<2$, then
+$A_r=K$, which is allowed when $K$ is acyclic; if $\max g=2$, its final
+sublevel at~2 is omitted from the list.
+
+Thus $\Phi$ is a continuous bijection from a compact finite simplicial
+realization to the Hausdorff subspace $G_K$ of Euclidean space, and is a
+homeomorphism \cite[Theorem~26.6]{Munkres}.
+\end{proof}
+
+\section{The homology comparison}
+
+The needed comparison is the acyclic case of homological poset fiber
+theorems; see \cite[author manuscript, Section~4]{BWW}. We give its finite-poset proof to make
+explicit why acyclicity suffices.
+
+\begin{lemma}\label{lem:poset}
+Let $u:S\to P$ be an order-preserving map of finite nonempty posets. If
+\[
+ \Delta\{x\in S:u(x)\leq p\}
+\]
+is nonempty and acyclic over $\F$ for every $p\in P$, then $|\Delta u|$
+induces homology isomorphisms in every degree.
+\end{lemma}
+
+\begin{proof}
+Form a poset $M$ on the disjoint union $S\sqcup P$, retaining the two
+internal orders and declaring $x\leq p$ for $x\in S$, $p\in P$ precisely
+when $u(x)\leq p$. There are no relations from $P$ to $S$. The map
+$\rho:M\to P$ equal to $u$ on $S$ and to the identity on $P$ is
+order-preserving. For the inclusion $i:P\to M$ we have $\rho i=\mathrm{id}_P$
+and $\mathrm{id}_M\leq i\rho$ pointwise.
+
+Comparable order maps induce homotopic realization maps. To see this for
+maps $a\leq b$, triangulate the prism on a chain $x_0<\cdots<x_n$ by the
+simplices with bottom vertices $x_0,\ldots,x_j$ and top vertices
+$x_j,\ldots,x_n$. Their images
+$a(x_0),\ldots,a(x_j),b(x_j),\ldots,b(x_n)$ are weak chains; affine extension
+on these simplices gives compatible maps on all prism faces. It follows
+that $|\Delta M|$ is homotopy equivalent to $|\Delta P|$.
+
+Start with $\Delta S$ and adjoin the elements of $P$ in reverse linear
+extension order. When $p$ is added, all elements of $P$ strictly above it
+are present and all those strictly below it are absent. Its link is
+\begin{equation}\label{eq:link}
+ L_p*\Delta(P_{>p}),\qquad
+ L_p=\Delta\{x\in S:u(x)\leq p\}.
+\end{equation}
+Indeed these are exactly its lower and upper elements in the current poset,
+and every such lower element is below every such upper element.
+
+The join of a nonempty acyclic finite complex $L$ with any finite complex
+$U$ is acyclic. We include the convention that the complex with only the
+empty simplex is the identity for join. Using augmented chains, with the
+empty simplex in degree $-1$, we have
+\[
+ \widetilde C_n(L*U;\F)
+ =\bigoplus_{\ell+k=n-1}\widetilde C_\ell(L;\F)\otimes
+                  \widetilde C_k(U;\F).
+\]
+The differential is $d_L\otimes1+1\otimes d_U$ after this degree shift.
+The exact finite vector-space complex $\widetilde C_*(L;\F)$ admits a
+contraction $h$: choose complements to its boundary subspaces and invert
+the differential from each complement onto the preceding boundary space.
+Then $d_Lh+hd_L=1$. On the join chains, $H=h\otimes1$ satisfies
+\[
+ dH+Hd=(d_Lh+hd_L)\otimes1+2h\otimes d_U=1,
+\]
+since the coefficients have characteristic two. This proves the assertion,
+including when the upper poset in \eqref{eq:link} is empty.
+
+Adding $p$ attaches the cone on its link. The new relative chains are the
+augmented chains of that link shifted up one degree: deleting $p$ gives
+a face in the old complex, and the remaining boundary is the link's
+augmented boundary. Their homology is zero, so the long exact sequence of
+the pair makes each attachment a homology isomorphism
+\cite[Theorem~2.16 and pp.~117--118, 153]{Hatcher}. Thus
+$\Delta S\hookrightarrow\Delta M$ induces homology isomorphisms.
+Composing with $\rho$ proves the claim for $u$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For nonempty $K$, let $S(K)$ be its face poset of nonempty simplices, and
+define $u:S(K)\to\A(K)$ by sending $\sigma$ to the subcomplex of $\sigma$
+and all its faces. This subcomplex is a simplex, hence acyclic, and $u$ is
+order-preserving. For $A\in\A(K)$, the condition $u(\sigma)\subseteq A$
+is equivalent to $\sigma\in A$. The lower fiber in Lemma~\ref{lem:poset}
+is therefore the face poset of $A$. Its order complex is the barycentric
+subdivision of $A$, so it is nonempty and acyclic.
+
+Lemma~\ref{lem:poset} and the barycentric subdivision of $K$ now give
+\[
+ H_q(|\Delta\A(K)|;\F)\cong H_q(K;\F)
+ \qquad(q\geq0).
+\]
+Proposition~\ref{prop:chains} identifies the space on the left with $G_K$,
+and Lemma~\ref{lem:truncate} replaces $G_K$ by $F_K$ without changing its
+homology. This proves the asserted isomorphism for every $q\geq0$.
+
+If the convention for connected complexes permits an empty complex, its
+unique filter has empty barcode and the prescribed fiber is empty. Ordinary
+homology of both empty spaces is zero in every nonnegative degree, so the
+same conclusion holds in that case.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex was used to develop the argument, check the proof and references,
+and prepare this note. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{BWW}
+A.~Bj\"orner, M.~L.~Wachs and V.~Welker,
+\emph{Poset fiber theorems},
+Transactions of the American Mathematical Society \textbf{357} (2005),
+1877--1899. \url{https://doi.org/10.1090/S0002-9947-04-03496-8}.
+Author manuscript: \url{https://www.mathematik.uni-marburg.de/~welker/preprints/fiber.pdf}.
+
+\bibitem{HTT}
+H.~A.~Harrington, U.~Tillmann and M.~Torras-P\'erez,
+\emph{The fiber of multiparameter persistent homology for simplicial complexes},
+arXiv:2608.04640v1 (2026). \url{https://arxiv.org/abs/2608.04640v1}.
+
+\bibitem{Hatcher}
+A.~Hatcher, \emph{Algebraic Topology},
+Cambridge University Press, 2002.
+
+\bibitem{LH}
+J.~Leygonie and G.~Henselman-Petrusek,
+\emph{Algorithmic reconstruction of the fiber of persistent homology on cell complexes},
+Journal of Applied and Computational Topology \textbf{8} (2024), 2015--2049.
+\url{https://doi.org/10.1007/s41468-024-00165-w}.
+
+\bibitem{Munkres}
+J.~R.~Munkres, \emph{Topology}, second edition,
+Prentice Hall, 2000.
+\end{thebibliography}
+\end{document}
