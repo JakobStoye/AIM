@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\Res}{\mathcal R}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{A counterexample to a universal error bound\\for small-BV conservation laws}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a negative answer to a proposed universal error estimate for approximate small-BV hyperbolic flows. For a smooth strictly hyperbolic two-component system with both fields genuinely nonlinear and a uniformly strictly convex entropy, we construct one fixed initial datum and approximations satisfying the prescribed conservation and entropy residual bounds on every time strip. Their $L^1$ error divided by $\sqrt\varepsilon\,|\log\varepsilon|$ is unbounded. The construction pairs opposite entropy defects in translating Burgers pulses and places countably many disjoint pulse families in a fixed interval.
+\end{abstract}
+
+\section{The estimate}
+
+An error bound expressed through conservation residuals, entropy residuals and total variation could certify shock computations without reference to a particular numerical scheme. Bressan and Guerra prove uniqueness of small-BV entropy weak solutions and derive qualitative convergence for a class of residual-based approximations \cite[Theorem~1.1 and Corollary~4.1]{BG}. Bressan's survey asks for a quantitative universal convergence rate and discusses the scale $\sqrt\varepsilon\,|\log\varepsilon|$ \cite[Section~7, Open Problem~3]{B}. We consider the precise estimate in Problem~367 of the AIM problem collection \cite{AIM}.
+
+Let $U\subset\R^N$ be an open neighborhood of zero and let $f\in C^4(U;\R^N)$ be strictly hyperbolic near zero, with every characteristic field genuinely nonlinear. Assume that $(\eta,q)$ is a uniformly strictly convex entropy pair with $Dq=D\eta Df$. Let $S_tu_0$ denote the standard small-total-variation entropy solution of
+\[
+ u_t+f(u)_x=0\qquad\text{on }\R.
+\]
+State norms are Euclidean and $L^1$ norms use spatial Lebesgue measure. For a scalar test $\phi\in C_c^1(\R^2)$ and a profile $w$, define
+\begin{equation}\label{eq:residual}
+\begin{split}
+ \Res^w_{g,h}(s,t;\phi)={}&\int g(w(s,x))\phi(s,x)\,dx
+ -\int g(w(t,x))\phi(t,x)\,dx\\
+ &+\int_s^t\!\int\bigl[g(w(r,x))\phi_t(r,x)
+                  +h(w(r,x))\phi_x(r,x)\bigr]\,dx\,dr.
+\end{split}
+\end{equation}
+We take $\norm{\phi}_{W^{1,\infty}}$ to be the maximum of the sup norms of $\phi,\phi_t,\phi_x$. The construction also satisfies the residual inequalities for the usual sum norm.
+
+For fixed $T,R,M>0$ and small $\delta>0$, the approximations in question are supported in $[-R,R]$, have $\sup_t\TV u(t)\le\delta$, satisfy
+\[
+ \norm{u(0)-u_0}_1\le\varepsilon,\qquad
+ \norm{u(t)-u(s)}_1\le M|t-s|+\varepsilon,
+\]
+and, for every $0\le s<t\le T$, obey
+\begin{equation}\label{eq:assumptions}
+\begin{split}
+ \bigl|\Res^u_{\mathrm{id},f}(s,t;\phi)\bigr|
+ &\le\varepsilon(t-s+\varepsilon)\norm{\phi}_{W^{1,\infty}},\\
+ \Res^u_{\eta,q}(s,t;\phi)
+ &\ge-\varepsilon(t-s+\varepsilon)\norm{\phi}_{W^{1,\infty}}
+ \qquad(\phi\ge0).
+\end{split}
+\end{equation}
+Here the first inequality holds for arbitrary signed scalar tests and the residual there is vector-valued. The proposed conclusion is
+\begin{equation}\label{eq:proposed}
+ \sup_{0\le t\le T}\norm{u(t)-S_tu_0}_1
+ \le C(f,\eta,U,\delta,T,R,M)\sqrt\varepsilon\,|\log\varepsilon|.
+\end{equation}
+
+Our fixed system is
+\begin{equation}\label{eq:system}
+\begin{gathered}
+ U=(-1,1)^2,\qquad
+ f(z_1,z_2)=\left(\frac{z_1^2}{2},\,2z_2+\frac{z_2^2}{2}\right),\\
+ \eta(z_1,z_2)=\frac{z_1^2+z_2^2}{2},\qquad
+ q(z_1,z_2)=\frac{z_1^3}{3}+z_2^2+\frac{z_2^3}{3}.
+\end{gathered}
+\end{equation}
+The eigenvalues of $Df$ are $z_1<1<2+z_2$ on $U$. Their derivatives in the coordinate eigenvector directions are both one. Thus the system is strictly hyperbolic and both fields are genuinely nonlinear. Also $D^2\eta=I$ and $Dq=D\eta Df$.
+
+\begin{theorem}\label{thm:main}
+For the system \eqref{eq:system}, take $T=R=M=1$. For every sufficiently small fixed $\delta>0$, there exist a fixed $0<\kappa<\min\{1,\delta\}/4$, one fixed compactly supported small-BV initial datum $u_0$, and flows $u^{(n)}\in C([0,1];L^1(\R;U))$, $n\ge1$, with the following properties. Every flow is supported in $[-1,1]$ and satisfies
+\[
+ \sup_{0\le t\le1}\TV u^{(n)}(t)<\delta,\qquad
+ u^{(n)}(0)=u_0,\qquad
+ \norm{u^{(n)}(t)-u^{(n)}(s)}_1\le|t-s|.
+\]
+With
+\begin{equation}\label{eq:epsilon}
+ \varepsilon_n=\frac{\kappa^4}{12}\,2^{-14n}\in(0,e^{-1}),
+\end{equation}
+the residual conditions \eqref{eq:assumptions} hold for every permitted test and every $0\le s<t\le1$. Nevertheless,
+\begin{equation}\label{eq:error}
+ \norm{u^{(n)}(t)-S_tu_0}_1
+ =\frac{\kappa^2t}{4}\,2^{-6n}\qquad(0\le t\le1),
+\end{equation}
+and the ratio of its time supremum to $\sqrt{\varepsilon_n}|\log\varepsilon_n|$ tends to infinity.
+\end{theorem}
+
+The same initial datum is used for every $n$, so allowing the constant in \eqref{eq:proposed} to depend additionally on $u_0$ would not give this rate. The obstruction comes from the signed entropy residual: the upward and downward jumps of a translating pulse have opposite entropy defects. Lipschitz tests see their difference with an extra factor equal to the pulse width. Its distance from the entropy rarefaction has a different size.
+
+\section{A Burgers pulse}
+
+All constructed states have second component zero. We first work with the scalar Burgers flux and its quadratic entropy,
+\[
+ f_1(w)=w^2/2,\qquad \eta_1(w)=w^2/2,\qquad q_1(w)=w^3/3.
+\]
+For $0<a<1$ and $x_0\in\R$, let
+\begin{equation}\label{eq:pulse}
+ P_{a,x_0}(t,x)
+ =a\ind_{[x_0+at/2,\,x_0+a+at/2)}(x),\qquad 0\le t\le1.
+\end{equation}
+The entropy solution with the same initial datum is, for $t>0$,
+\begin{equation}\label{eq:fan}
+ V_{a,x_0}(t,x)=
+ \begin{cases}
+ 0,&x\le x_0,\\
+ (x-x_0)/t,&x_0<x<x_0+at,\\
+ a,&x_0+at\le x<x_0+a+at/2,\\
+ 0,&x\ge x_0+a+at/2,
+ \end{cases}
+\end{equation}
+with $V_{a,x_0}(0)=a\ind_{[x_0,x_0+a)}$ in $L^1$. The fan does not reach the right shock on $[0,1]$: their separation is $a-at/2\ge a/2$.
+
+\begin{lemma}\label{lem:pulse}
+Both profiles are exact weak solutions of Burgers' equation. They have mass $a^2$, total variation $2a$, and support in $[x_0,x_0+3a/2]$ for every $t\in[0,1]$. For every $0\le s<t\le1$,
+\begin{equation}\label{eq:time}
+ \norm{P_{a,x_0}(t)-P_{a,x_0}(s)}_1,
+ \ \norm{V_{a,x_0}(t)-V_{a,x_0}(s)}_1
+ \le a^2(t-s).
+\end{equation}
+Their conservation residuals vanish, and their entropy residuals are
+\begin{align}
+ \Res^{P_{a,x_0}}_{\eta_1,q_1}(s,t;\phi)
+ &=\frac{a^3}{12}\int_s^t
+  [\phi(r,x_0+a+ar/2)-\phi(r,x_0+ar/2)]\,dr,
+ \label{eq:dipole}\\
+ \Res^{V_{a,x_0}}_{\eta_1,q_1}(s,t;\phi)
+ &=\frac{a^3}{12}\int_s^t\phi(r,x_0+a+ar/2)\,dr.
+ \label{eq:good-entropy}
+\end{align}
+In particular, for $\phi\ge0$,
+\begin{equation}\label{eq:pulse-bound}
+ \Res^{P_{a,x_0}}_{\eta_1,q_1}(s,t;\phi)
+ \ge-\frac{a^4}{12}(t-s)\norm{\phi_x}_\infty,
+ \qquad
+ \Res^{V_{a,x_0}}_{\eta_1,q_1}(s,t;\phi)\ge0.
+\end{equation}
+Finally,
+\begin{equation}\label{eq:unit-error}
+ \norm{P_{a,x_0}(t)-V_{a,x_0}(t)}_1=\frac{a^2t}{4}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $c=a/2$. Both jumps of $P$ have Rankine--Hugoniot speed $c$, since $ca=a^2/2$. Within the fan of $V$, writing $z=(x-x_0)/t$ gives $z_t=-z/t$ and $z_x=1/t$, so $z_t+zz_x=0$. The fan is continuous at its edges, and the right shock has speed $c$.
+
+For clarity, the sign in the entropy residual can be obtained by differentiating a moving-interval integral. Write the density and its flux as $g$ and $h_{\rm flux}$. If $l(r),h(r)$ both have speed $c$, then
+\[
+ \frac{d}{dr}\int_{l(r)}^{h(r)}g(a)\phi(r,x)\,dx
+ =\int_{l(r)}^{h(r)}g(a)\phi_t(r,x)\,dx
+ +cg(a)[\phi(r,h(r))-\phi(r,l(r))].
+\]
+After integration in time, the residual for that rectangle is
+\[
+ [h_{\rm flux}(a)-cg(a)]\int_s^t
+ [\phi(r,h(r))-\phi(r,l(r))]\,dr.
+\]
+The coefficient is zero for conservation and is $a^3/3-a^3/4=a^3/12$ for entropy. This proves \eqref{eq:dipole}. Applying the same calculation to the smooth fan and plateau in $V$, their common boundary terms cancel. The fan satisfies $(z^2/2)_t+(z^3/3)_x=0$; the right shock gives \eqref{eq:good-entropy}. The two endpoints in \eqref{eq:dipole} are distance $a$ apart, which proves \eqref{eq:pulse-bound}.
+
+The mass of $V$ is
+\[
+ \int_0^{at}\frac{y}{t}\,dy
+ +a\left(a-\frac{at}{2}\right)=a^2,
+\]
+and the variation of each profile is $2a$. The time estimate for $P$ follows by translating an interval by $a(t-s)/2$. For $V$, the values on its old support decrease, while the newly covered right interval has height $a$ and length $a(t-s)/2$. Conservation of its mass makes the loss and gain equal, so its $L^1$ time difference is $a^2(t-s)$. This includes $s=0$ and proves the strong initial trace. The positive-time residual identities therefore extend to $s=0$: the endpoint integrals converge in $L^1$, and the omitted time integrals on $[0,s]$ tend to zero by the bounded amplitude and conserved mass.
+
+The profiles agree outside the fan interval. Its two error triangles give, for $t>0$,
+\[
+ \int_0^{at/2}\frac{y}{t}\,dy
+ +\int_{at/2}^{at}\left(a-\frac{y}{t}\right)\,dy
+ =\frac{a^2t}{4}.
+\]
+At $t=0$ both sides of \eqref{eq:unit-error} are zero.
+\end{proof}
+
+\section{A fixed initial datum}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $\mathcal D$ be the standard small-BV semigroup domain. It contains all sufficiently small-total-variation profiles near zero \cite[p.~1]{BG}. Choose $d_{\mathcal D}>0$ below this threshold and fix
+\[
+ 0<\kappa<\tfrac14\min\{1,\delta,d_{\mathcal D}\}.
+\]
+For $k\ge1$, set
+\begin{equation}\label{eq:blocks}
+ a_k=\kappa16^{-k},\qquad m_k=4^k,\qquad
+ b_k=3\sum_{\ell<k}m_\ell a_\ell,\qquad
+ x_{k,j}=b_k+3ja_k\quad(0\le j<m_k).
+\end{equation}
+The cells $[x_{k,j},x_{k,j}+3a_k]$ have disjoint interiors and total length
+\[
+ 3\sum_{k\ge1}m_ka_k
+ =3\kappa\sum_{k\ge1}4^{-k}=\kappa.
+\]
+They lie in $[0,\kappa]$. Lemma~\ref{lem:pulse} keeps each pulse within the first half of its cell for all $0\le t\le1$.
+
+Define the fixed datum and a candidate entropy solution by
+\begin{equation}\label{eq:fixed-data}
+ w_0=\sum_{k\ge1}\sum_{j=0}^{m_k-1}
+          a_k\ind_{[x_{k,j},\,x_{k,j}+a_k)},\qquad
+ v(t)=\sum_{k\ge1}\sum_{j=0}^{m_k-1}V_{a_k,x_{k,j}}(t).
+\end{equation}
+For each $n$, replace only the $n$th block by translating rectangles:
+\begin{equation}\label{eq:approximation}
+ w^{(n)}(t)=
+ \sum_{k\ne n}\sum_{j=0}^{m_k-1}V_{a_k,x_{k,j}}(t)
+ +\sum_{j=0}^{m_n-1}P_{a_n,x_{n,j}}(t),
+ \qquad u^{(n)}=(w^{(n)},0).
+\end{equation}
+Set $u_0=(w_0,0)$. These definitions place every block in the initial datum once; the index $n$ changes only its subsequent evolution.
+
+We justify the infinite sums and their weak identities. For $w=v$ or $w=w^{(n)}$, let $w_K$ retain only blocks $k\le K$. Nonnegativity and the pulse mass give the uniform tail
+\begin{equation}\label{eq:tail}
+ \norm{w(t)-w_K(t)}_1
+ =\sum_{k>K}m_ka_k^2
+ =\frac{\kappa^2}{63}64^{-K}=:\tau_K,
+ \qquad 0\le t\le1.
+\end{equation}
+Thus the sums are measurable $L^1$ profiles, supported in $[0,\kappa]$, and take values between zero and $a_1$. Each finite truncation has variation at most $2\sum_km_ka_k=2\kappa/3$. Passing to the pointwise limit in the increment sum for any finite spatial partition proves the same bound for the full profile. The heights tend to zero at the sole accumulation point $\kappa$, where we set the value to zero. Summing \eqref{eq:time} for the truncations and then using \eqref{eq:tail} gives
+\begin{equation}\label{eq:global-time}
+ \norm{w(t)-w(s)}_1\le\frac{\kappa^2}{63}|t-s|.
+\end{equation}
+In particular all initial traces equal $w_0$ in $L^1$, and all slices lie in $\mathcal D$ after adding the zero second component.
+
+For a finite truncation, at most one pulse is nonzero at each point. Since $\mathrm{id},f,\eta,q$ vanish at zero, each of these maps applied to the sum equals the sum of its values on the pulses. The finite residuals therefore add. To pass to the infinite sum, let $L_H$ be a Lipschitz constant of $H$ on the fixed compact state range $\{(z,0):0\le z\le a_1\}$. Equation~\eqref{eq:tail} gives
+\[
+ \norm{H((w(t),0))-H((w_K(t),0))}_1\le L_H\tau_K.
+\]
+Hence, on every strip, the difference of full and truncated residuals for $g,h$ is bounded by
+\begin{equation}\label{eq:residual-limit}
+ \tau_K\left[2L_g\norm{\phi}_\infty
+ +(t-s)\bigl(L_g\norm{\phi_t}_\infty
+             +L_h\norm{\phi_x}_\infty\bigr)\right]\longrightarrow0.
+\end{equation}
+This accounts for both endpoint and spacetime integrals, including at the accumulation point.
+
+It follows from Lemma~\ref{lem:pulse} and \eqref{eq:residual-limit} that $(v,0)$ is an exact entropy weak solution. The uniqueness theorem of Bressan--Guerra \cite[Theorem~1.1]{BG} states that, for a strictly hyperbolic system with genuinely nonlinear or linearly degenerate fields and a strictly convex entropy, every $L^1$-continuous exact entropy weak solution taking values in $\mathcal D$ coincides with its semigroup trajectory. All these hypotheses have been verified here: \eqref{eq:system} supplies the system conditions, \eqref{eq:global-time} supplies continuity, and the variation bound and choice of $\kappa$ give membership in $\mathcal D$. Therefore
+\begin{equation}\label{eq:identification}
+ S_tu_0=(v(t),0)\qquad(0\le t\le1).
+\end{equation}
+
+Every $u^{(n)}$ has zero vector conservation residual. For its entropy residual, take a finite truncation with $K\ge n$. All blocks except $n$ have nonnegative residual for $\phi\ge0$, and \eqref{eq:pulse-bound} bounds the exceptional block. Passing to the limit in \eqref{eq:residual-limit} gives, for every $0\le s<t\le1$,
+\[
+ \Res^{u^{(n)}}_{\eta,q}(s,t;\phi)
+ \ge-\frac{m_na_n^4}{12}(t-s)\norm{\phi_x}_\infty
+ =-\varepsilon_n(t-s)\norm{\phi_x}_\infty.
+\]
+Here $\varepsilon_n=m_na_n^4/12=(\kappa^4/12)2^{-14n}$, as in \eqref{eq:epsilon}. Since $\norm{\phi_x}_\infty\le\norm{\phi}_{W^{1,\infty}}$ and $t-s\le t-s+\varepsilon_n$, this gives \eqref{eq:assumptions}. The support, variation, time modulus and exact initial agreement were proved above, with every parameter fixed.
+
+Only the finite block $n$ differs from \eqref{eq:identification}. Its cells are disjoint, so \eqref{eq:unit-error} gives
+\[
+ \norm{u^{(n)}(t)-S_tu_0}_1
+ =\frac{m_na_n^2t}{4}
+ =\frac{\kappa^2t}{4}2^{-6n}.
+\]
+The sequence \eqref{eq:epsilon} lies in $(0,e^{-1})$ and decreases to zero. At $t=1$ the normalized error is exactly
+\begin{equation}\label{eq:divergence}
+ \frac{\norm{u^{(n)}(1)-S_1u_0}_1}
+      {\sqrt{\varepsilon_n}|\log\varepsilon_n|}
+ =\frac{\sqrt{12}}4\,
+   \frac{2^n}{14n\log2+\log(12/\kappa^4)}\longrightarrow\infty.
+\end{equation}
+All objects allowed in the constant in \eqref{eq:proposed}, and even $u_0$, are fixed. Thus no finite such constant exists.
+\end{proof}
+
+\paragraph{AI-use declaration.}
+OpenAI Codex was used in developing the construction and proof and preparing this manuscript. Two further Codex contexts reviewed an earlier draft for readability and mathematical objections, followed by revision with Codex assistance. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{B}
+A.~Bressan,
+\emph{One Dimensional Hyperbolic Conservation Laws: Past and Future},
+arXiv:2310.16707v1 (2023),
+\href{https://arxiv.org/abs/2310.16707v1}{fixed arXiv version}.
+
+\bibitem{BG}
+A.~Bressan and G.~Guerra,
+\emph{Unique Solutions to Hyperbolic Conservation Laws with a Strictly Convex Entropy},
+arXiv:2305.10737v1 (2023),
+\href{https://arxiv.org/abs/2305.10737v1}{fixed arXiv version}.
+
+\bibitem{AIM}
+AIM problem collection,
+\emph{367. A universal quantitative error bound for small-BV hyperbolic flows},
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/367-universal-hyperbolic-error-rate.md}{fixed repository statement}.
+\end{thebibliography}
+\end{document}
