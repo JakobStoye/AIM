@@ -1,0 +1,352 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Z}{\mathbb Z}
+\title{CO phase selection for a stirred catalytic surface model}
+\author{Kaiwen Jin\\[3pt]
+  \small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{15 October 2026}
+\hypersetup{
+  pdftitle={CO phase selection for a stirred catalytic surface model},
+  pdfauthor={Kaiwen Jin}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consider a catalytic surface model on \(\Z^2\) with CO adsorption,
+diatomic oxygen adsorption, finite-rate reaction and finite-rate stirring.
+If the CO arrival rate \(p\) exceeds the oxygen parameter \(q\), we prove
+that every site is eventually occupied by CO almost surely, from every
+iid initial law with positive CO density. This gives CO poisoning on
+every finite set. The density estimate of Durrett and Swindle controls
+the total time spent vacant. An additional reaction count then controls
+all state changes, including stirring. Spatial independence of the
+initial states and driving clocks determines the limiting phase.
+\end{abstract}
+
+\section{The model and the result}
+
+In the catalytic oxidation model of Durrett and Swindle \cite{DS}, a
+surface site is vacant, occupied by a CO molecule, or occupied by an
+oxygen atom. Neighboring CO and oxygen react and leave two vacant sites.
+The two configurations consisting entirely of CO or entirely of oxygen
+are absorbing; either one stops the oxidation reaction.
+
+Write \(\eta_t(x)\in\{0,1,2\}\), \(x\in\Z^2\), for the state at time \(t\),
+with 0 vacant, 1 CO and 2 oxygen. Sites \(x,y\) are neighbors if
+\(|x-y|_1=1\). The transition rates are
+\[
+\begin{array}{c|c|c}
+\text{location}&\text{update}&\text{rate}\\ \hline
+\text{site}&0\longrightarrow1&p\\
+\text{unordered neighboring pair}&(0,0)\longrightarrow(2,2)&q/4\\
+\text{unordered neighboring pair}&(1,2),(2,1)\longrightarrow(0,0)&r/4\\
+\text{unordered neighboring pair}&(a,b)\longrightarrow(b,a)&\gamma .
+\end{array}
+\]
+In the last row \(a,b\in\{0,1,2\}\); exchanging equal states has no effect.
+All rates below are finite and satisfy
+\[
+ p>q>0,\qquad r>0,\qquad \gamma>0.
+\]
+Each update has its own independent Poisson clock. The initial states are
+independent of these clocks. Reaction is at a finite rate, rather than
+instantaneous.
+
+Durrett and Swindle \cite[Theorem~1 and its proof, pp.~490--492]{DS}
+showed that the vacant-site and neighboring mixed-species probabilities
+vanish when \(p>q\), under translation-invariant initial laws. Thus every
+fixed finite box becomes monochromatic with probability tending to one.
+Selecting the CO phase requires a further argument. It is posed in
+\cite[Section~5.4, Open Problem~5.4.6]{IPS} for more general initial
+configurations. Here we prove selection for iid initial laws of positive
+CO density.
+
+\begin{theorem}\label{thm:selection}
+For the process above, let the initial states be iid with
+\(\Prob(\eta_0(0)=1)>0\). Almost surely, for every \(x\in\Z^2\),
+\(\eta_t(x)=1\) for all sufficiently large \(t\). Consequently, for every
+finite \(K\subset\Z^2\),
+\begin{equation}\label{eq:target}
+ \lim_{t\to\infty}
+ \Prob\bigl(\eta_t(x)=1\text{ for every }x\in K\bigr)=1.
+\end{equation}
+\end{theorem}
+
+The time after which a site stays in state 1 may depend on the site.
+The theorem does not assert that the whole infinite lattice is absorbed
+at one finite time. Its conclusion holds for each fixed admissible
+parameter choice, without a uniform convergence rate.
+
+The proof retains the signed-density estimate from \cite{DS} and uses
+the CO balance once more to bound the total number of reactions.
+These two bounds control the expected number of each kind of state change.
+Once all sites fix, connectedness leaves only the two constant configurations, and
+the iid driving data make the choice of color deterministic. The
+signed density then excludes oxygen.
+
+\section{There are finitely many state changes}
+
+We use the graphical process driven by the independent clocks described
+above. It is a measurable, nonanticipating function of the initial states
+and clocks and commutes with spatial translations. If \(C\) is any
+driving clock of rate \(c\), \(F\subset\Z^2\) is finite and \(h\) is a
+bounded function of the states in \(F\), then
+\begin{equation}\label{eq:counts}
+ \E\sum_{s\in C\cap(0,T]}h(\eta_{s-}|_F)
+       =c\int_0^T \E h(\eta_t|_F)\,dt .
+\end{equation}
+Appendix~\ref{sec:clocks} gives the construction and a direct proof of
+this counting identity. It applies both to state increments and to the
+indicator that a clock ring changes a given site.
+
+Let \(a_i=\Prob(\eta_0(0)=i)\) and
+\(u_i(t)=\Prob(\eta_t(0)=i)\), \(i=0,1,2\). To count oxygen additions
+and CO losses at the origin, put
+\begin{align*}
+ O(t)&=\frac q4\sum_{y\sim0}
+       \Prob(\eta_t(0)=0,\eta_t(y)=0),\\
+ R(t)&=\frac r4\sum_{y\sim0}
+       \Prob(\eta_t(0)=1,\eta_t(y)=2).
+\end{align*}
+Every sum here has four terms. Translation invariance, with \(y\) replaced
+by \(-y\), gives
+\begin{equation}\label{eq:orientations}
+ \sum_{y\sim0}\Prob(\eta_t(0)=2,\eta_t(y)=1)
+ =\sum_{y\sim0}\Prob(\eta_t(0)=1,\eta_t(y)=2).
+\end{equation}
+Stirring contributes zero to a one-site density, since its contribution
+for state \(i\) is
+\(\gamma\sum_{y\sim0}[u_i(t)-u_i(t)]\).
+Each effective oxygen ring on an incident edge adds one oxygen atom at
+the origin. Applying \eqref{eq:counts} to the state indicators therefore
+gives the exact balances
+\begin{align}
+ u_1(T)-a_1&=\int_0^T[p u_0(t)-R(t)]\,dt,\label{eq:CO}\\
+ u_2(T)-a_2&=\int_0^T[O(t)-R(t)]\,dt.\label{eq:O}
+\end{align}
+No independence of neighboring states at positive times is used.
+
+Set \(m(t)=u_1(t)-u_2(t)\). Since \(O(t)\le q u_0(t)\), subtraction yields
+\begin{equation}\label{eq:drift}
+ m(T)-m(0)
+   =\int_0^T[p u_0(t)-O(t)]\,dt
+   \ge(p-q)\int_0^T u_0(t)\,dt\ge0.
+\end{equation}
+This is the density argument in \cite{DS}. The bound \(m(T)\le1\) implies
+\begin{equation}\label{eq:I}
+ I:=\int_0^\infty u_0(t)\,dt
+        \le\frac{1-m(0)}{p-q}<\infty.
+\end{equation}
+The CO balance \eqref{eq:CO} also gives
+\begin{equation}\label{eq:J}
+ J:=\int_0^\infty R(t)\,dt
+      \le a_1+pI<\infty,
+\end{equation}
+because \(u_1(T)\ge0\). These limits use monotone convergence of
+nonnegative integrals.
+
+\begin{lemma}\label{lem:finite}
+Under the hypotheses of Theorem~\ref{thm:selection}, almost surely every
+site changes state only finitely many times.
+\end{lemma}
+
+\begin{proof}
+Let \(N_0(T)\) count state changes at the origin up to time \(T\).
+The expected numbers due to CO arrivals, oxygen arrivals and reactions
+are, respectively,
+\[
+ p\int_0^T u_0(t)\,dt\le pI,\qquad
+ \int_0^T O(t)\,dt\le qI,\qquad
+ 2\int_0^T R(t)\,dt\le2J.
+\]
+The factor 2 in the reaction count comes from the two possible colors
+at the origin in \eqref{eq:orientations}.
+
+For stirring let
+\(D_y(t)=\Prob(\eta_t(0)\ne\eta_t(y))\).
+An unequal pair either contains a vacancy or consists of a CO and
+an oxygen atom, so
+\[
+ D_y(t)\le2u_0(t)
+       +\Prob(\eta_t(0)=1,\eta_t(y)=2)
+       +\Prob(\eta_t(0)=2,\eta_t(y)=1).
+\]
+Thus \eqref{eq:orientations} bounds the expected number of effective
+exchanges at the origin by
+\[
+ \gamma\int_0^T\sum_{y\sim0}D_y(t)\,dt
+        \le8\gamma I+\frac{8\gamma}{r}J.
+\]
+Every change has been counted. Letting \(T\) increase to infinity,
+\begin{equation}\label{eq:allchanges}
+ \E N_0(\infty)
+   \le(p+q+8\gamma)I+(2+8\gamma/r)J<\infty.
+\end{equation}
+Hence \(N_0(\infty)\) is finite almost surely. Translation invariance
+gives the same conclusion at each site; the countable union of the
+exceptional null events still has probability zero.
+\end{proof}
+
+\section{Selection of the limiting color}
+
+\begin{lemma}\label{lem:color}
+Almost surely the eventual states of all sites are the same and belong
+to \(\{1,2\}\).
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:finite}, every site has an eventual state.
+Simultaneously for all the countably many positive-rate clocks, their
+ring times are unbounded almost surely. Indeed, for a rate-\(c\) clock
+the probability of no ring after an integer \(n\) is
+\(\lim_{M\to\infty}e^{-c(M-n)}=0\).
+
+An eventual vacancy at a site would be changed by a later CO ring.
+Two neighboring eventual states 1 and 2 would be changed by a reaction
+ring after both sites had fixed. Neither is possible. Connectedness of
+\(\Z^2\) now makes the eventual configuration constant. These are
+sample-path arguments and require no stopping-time property of the
+last-change times.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:selection}]
+Let \(e_1,e_2\) be the coordinate unit vectors. At each \(x\), group its
+initial state and site clock with all three clocks on each of
+\(\{x,x+e_1\}\) and \(\{x,x+e_2\}\). Denote the resulting mark by \(Y_x\).
+Every unordered edge is assigned once, so the marks
+\((Y_x)_{x\in\Z^2}\) are iid. Each mark includes its entire future clock
+histories.
+
+The event \(A\) that the eventual configuration is all 1 is measurable
+in this marked field: eventual states are limits of the measurable
+integer-time states. It is invariant under all spatial translations,
+since the graphical construction commutes with them.
+We recall the elementary zero-one argument for this situation.
+For any \(\epsilon>0\), choose an event \(B\) depending on finitely many
+spatial marks with \(\Prob(A\mathbin{\triangle} B)<\epsilon\).
+Such approximations hold for every event in a product sigma field:
+the class of approximable events contains the finite-coordinate events
+and is closed under complements and countable unions, the latter by
+first taking a finite prefix with arbitrarily small probability error.
+This also covers completed null events.
+
+Choose a spatial translate \(\theta_zB\) whose coordinates are disjoint
+from those of \(B\). The two events are independent, while
+\(\theta_zA=A\). Consequently,
+\[
+ |\Prob(A)-\Prob(B)^2|\le2\epsilon,\qquad
+ |\Prob(A)^2-\Prob(B)^2|\le2\epsilon.
+\]
+It follows that \(\Prob(A)(1-\Prob(A))\le4\epsilon\).
+Letting \(\epsilon\) decrease to zero shows that \(\Prob(A)\) is 0 or 1.
+Together with Lemma~\ref{lem:color}, this says that the limiting color
+is deterministic.
+
+If that color were 2, bounded convergence would give \(m(t)\to-1\).
+But \eqref{eq:drift} gives \(m(t)\ge m(0)\) for every \(t\), and
+\[
+ m(0)=a_1-a_2=2a_1+a_0-1>-1.
+\]
+This contradiction proves that every site is eventually in state 1.
+For finite nonempty \(K\), the maximum of its finitely many site
+fixation times is almost surely finite. Its all-CO indicator therefore
+tends to 1; bounded convergence gives \eqref{eq:target}. For empty \(K\)
+the probability is identically 1. The bounded-convergence statements
+apply along every real sequence tending to infinity and hence give
+the full continuous-time limits.
+\end{proof}
+
+\appendix
+\section{Graphical construction and the counting identity}\label{sec:clocks}
+
+For completeness, we justify the two clock facts used in the proof.
+The independent initial states and the exponential interarrival
+variables of the countably many clocks can be constructed on a
+countable product of real spaces. Their finite product laws are
+consistent, so the countable extension theorem applies
+\cite[Section~2.1.4, Theorem~2.1.21]{PTE}.
+The exponential construction gives the required independent Poisson
+histories \cite[Section~3.7]{PTE}.
+
+Put \(\lambda=q/4+r/4+\gamma\), the total edge-clock rate.
+For a fixed nearest-neighbor path of \(n\) steps and a fixed time
+horizon \(T\), the expected number of its backward, strictly
+time-ordered edge-ring sequences is
+\(\lambda^nT^n/n!\).
+This includes paths that repeat an edge. To verify the formula, first
+count rings in distinct ordered dyadic time bins. Independent counts
+in disjoint bins give the product of their means. Refinement increases
+these counts to all strictly ordered tuples, so monotone convergence
+gives the ordered time simplex of volume \(T^n/n!\).
+There are \(4^n\) spatial paths from a site. Therefore
+\[
+ \Prob(\text{a backward edge-ring path of \(n\) steps before \(T\)})
+       \le\frac{(4\lambda T)^n}{n!}\longrightarrow0.
+\]
+
+To determine a state, trace the most recent incident mark backwards
+and, at an edge mark, inspect the two predecessor endpoint states.
+The dependency tree branches at most twice. An infinite branch must
+make infinitely many spatial steps, because each site has only finitely
+many incident marks before \(T\). The preceding bound excludes such a
+branch. A finitely branching infinite tree would contain an infinite
+branch, so the dependency tree is finite almost surely.
+Its leaves are initial states, and its updates uniquely determine the
+state in question. Intersect over sites and integer horizons.
+The resulting paths are right-continuous with left limits, their
+changes occur only at incident marks, and they are measurable and
+nonanticipating. The construction commutes with lattice translations.
+No infinite-volume independence of the evolved states is required.
+
+To prove \eqref{eq:counts}, partition \([0,T]\) dyadically and on
+\((t_k,t_{k+1}]\) replace \(h(\eta_{t-}|_F)\) by
+\(h(\eta_{t_k}|_F)\). This coefficient is measurable at time \(t_k\);
+the future increment of the clock is independent of all past data and
+has mean \(c(t_{k+1}-t_k)\). Thus the identity holds for each step
+approximation. There are only finitely many marks incident to \(F\)
+before \(T\), and almost surely none at a dyadic endpoint. The
+approximations therefore converge to the left-state value at every
+ring of \(C\) and at almost every time. If \(|h|\le M\), their clock
+sums are bounded by \(M C(0,T]\), of expectation \(McT\), and their time
+integrands are bounded by \(M\). Dominated convergence proves
+\eqref{eq:counts}, for signed \(h\) as well. Values at fixed deterministic
+times agree almost surely with their left limits.
+
+\section*{AI use}
+OpenAI Codex was used to develop and check the argument and to draft this
+note. These checks are AI based; independent mathematical review is
+requested.
+
+\begin{thebibliography}{9}
+
+\bibitem{DS}
+R. Durrett and G. Swindle,
+\emph{Coexistence results for catalysts},
+Probability Theory and Related Fields \textbf{98} (1994), 489--515.
+\href{https://doi.org/10.1007/BF01192836}{doi:10.1007/BF01192836}.
+
+\bibitem{IPS}
+R. Durrett,
+\emph{Interacting Particle Systems: Ideas, Techniques, Applications},
+manuscript, version PASTA0902, Section~5.4,
+\url{https://sites.math.duke.edu/~rtd/PASTA/PASTA0902.pdf}
+(accessed 15 October 2026).
+
+\bibitem{PTE}
+R. Durrett,
+\emph{Probability: Theory and Examples},
+fifth-edition manuscript, version 5, 11 January 2019,
+\url{https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf}.
+
+\end{thebibliography}
+\end{document}
