@@ -1,0 +1,621 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,d\mu}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\intM}{\int_M}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Vol}{Vol}
+\title{Mass conservation for fractional porous-medium flow\\
+on noncompact Riemannian manifolds}
+\author{Kaiwen Jin\\ \small\texttt{yui.ui.siki@gmail.com}}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove mass conservation for the spectral fractional porous-medium
+equation on complete noncompact Riemannian manifolds with Ricci curvature
+bounded below and a Euclidean-dimensional Faber--Krahn inequality.
+The result holds for every nonnegative weak dual solution that is
+spatially integrable at each finite time, for arbitrary nonnegative
+integrable initial data, all exponents \(m>1\), and all fractional
+orders \(0<s<1\). Thus the prescribed weak solution class cannot lose
+mass at spatial infinity. The proof first obtains a mass upper bound
+from positivity of the integrated Green potential. A positive energy
+identity after heat regularization then yields global integrability
+of the nonlinear power on every strictly positive time interval.
+A conservative linear resolvent converts this integrability into
+mass equality at every finite time.
+\end{abstract}
+
+\section{Introduction}
+
+Let \(M\) be a complete connected noncompact Riemannian manifold.
+We consider the fractional porous-medium equation
+\begin{equation}\label{eq:pme}
+ \partial_tu+(-\Delta_M)^s(u^m)=0,\qquad m>1,\quad 0<s<1,
+\end{equation}
+where the fractional power is defined spectrally.
+For a nonnegative density, preservation of its integral expresses
+the absence of mass loss at spatial infinity. On a noncompact
+manifold this conclusion requires an argument even when the
+underlying linear diffusion preserves mass: the weak formulation
+permits only compactly supported tests, and the nonlinear power
+need not initially be globally integrable.
+
+Berchio, Bonforte, Grillo and Muratori developed a weak dual solution
+theory for \eqref{eq:pme} under a Ricci lower bound and a uniform
+Faber--Krahn inequality \cite{BBGM}. Their formulation evolves the
+Green potential of \(u\), and accommodates a weighted \(L^1\)
+continuity condition. Their existence and smoothing results provide
+solutions obtained through nonlinear semigroup constructions and
+monotone approximation. Conservation of mass is listed among the
+open questions in Section~7 of that work. An estimate established
+for the constructed solutions cannot simply be assigned to every
+solution satisfying the weak dual identity.
+
+For manifolds with nonnegative Ricci curvature and a finite fractional
+Green kernel, von Criegern, Grillo and Monticelli
+\cite[Corollary~8.6]{CGM} prove mass conservation for weak dual
+solutions obtained by monotone approximation from solutions associated
+with bounded integrable data. The present theorem treats any spatially
+integrable weak dual solution in the stated class and allows a general
+Ricci lower bound.
+
+Here we prove the following assertion. Suppose \(M\) has dimension
+\(N\ge2\), its Ricci curvature is bounded below, and its first
+Dirichlet eigenvalue obeys
+\[
+ \lambda_1(D)\ge c\,\Vol(D)^{-2/N},\qquad c>0,
+\]
+for every relatively compact smooth domain \(D\).
+Then every nonnegative weak dual solution of \eqref{eq:pme}, with
+nonnegative initial data in \(L^1(M)\) and with \(u(t)\in L^1(M)\)
+at each finite time, satisfies
+\[
+ \intM u(t)\dd=\intM u(0)\dd\qquad\text{for every }t>0.
+\]
+The exact weighted solution definition and the full statement are
+given in Section~\ref{sec:setting}. In particular the conclusion
+concerns all solutions in that class; it does not require identifying
+them with a particular construction.
+
+The dual evolution says that the Green potential decreases by the
+time integral of \(u^m\). That time integral is initially controlled
+only locally. We first show that a nonnegative Green potential of
+an integrable signed function forces its integral to be nonnegative.
+The proof uses integrable upper-level truncations of the potential
+and a conservative linear resolvent. This gives a mass upper bound
+for the given weak dual solution.
+
+The remaining issue is global integrability of \(u^m\).
+Heat regularization makes the potential energy finite, even when the
+initial unregularized energy is infinite. Symmetry of the Green kernel
+gives an exact identity involving only nonnegative terms and endpoint
+values. Summing it over time partitions yields a dissipation
+inequality without differentiating the solution or assuming energy
+regularity. A Green-potential estimate and interpolation make the
+energy bound uniform at positive times. Once \(u^m\) is globally
+integrable on positive time intervals, the same resolvent argument
+gives equality of endpoint masses.
+
+The result addresses conservation in the stated spatially integrable
+class; it does not assert uniqueness in the larger weighted solution
+space. Section~\ref{sec:setting} records the linear estimates and
+normalization. Section~\ref{sec:order} proves the potential-order
+argument, and Section~\ref{sec:energy} proves the energy estimate and
+mass conservation. All integrals use Riemannian volume \(\mu\).
+Operator powers are spectral, and \(C\) denotes a positive constant
+depending on the fixed geometric and equation parameters; its value
+may change between formulas.
+
+\section{Setting and linear estimates}\label{sec:setting}
+
+Throughout, \(M\) has dimension \(N\ge2\) and satisfies
+\begin{equation}\label{eq:geometry}
+ \Ric\ge-(N-1)k\,g,\qquad k\ge0,\qquad
+ \lambda_1(D)\ge c\,\mu(D)^{-2/N},\quad c>0,
+\end{equation}
+on every relatively compact smooth domain \(D\).
+The first eigenvalue is understood variationally, as the infimum of
+\(\int|\nabla\phi|^2/\int|\phi|^2\) over nonzero
+\(\phi\in C_c^\infty(D)\).
+
+The same inequality holds on every relatively compact open set
+\(\Omega\). Indeed, for each \(\phi\in C_c^\infty(\Omega)\)
+choose a smooth compactly supported function in \(\Omega\) equal
+to one near \(\operatorname{supp}\phi\). A regular superlevel set
+between zero and one is a relatively compact smooth domain containing
+this support; its existence follows from Sard's theorem
+\cite[Theorem~7.2]{Sard}. If it is disconnected, apply
+\eqref{eq:geometry} to its components. Since each component has
+volume at most \(\mu(\Omega)\), summing their Rayleigh inequalities
+and taking the infimum over \(\phi\) gives the assertion with the
+same \(c\) and \(N\). Thus the Faber--Krahn condition in
+\cite[Assumption~2.1]{BBGM} follows from \eqref{eq:geometry}.
+
+Write \(A=-\Delta_M\) for its nonnegative self-adjoint Friedrichs
+realization, \(P_t=e^{-tA}\), and \(L=A^s\).
+The heat kernel is symmetric, nonnegative, and satisfies
+\begin{equation}\label{eq:gaussian}
+ p_t(x,y)\le Ct^{-N/2}\exp[-d(x,y)^2/(Ct)],\qquad t>0;
+\end{equation}
+see \cite[(2.3)]{BBGM}. The heat flow is sub-Markov and contracts
+\(L^1\) and \(L^\infty\). Define the normalized Green kernel and
+its positive integral operator by
+\begin{equation}\label{eq:green}
+ G_s(x,y)=\frac1{\Gamma(s)}\int_0^\infty
+ p_t(x,y)t^{s-1}\,dt,\qquad
+ Gf(x)=\intM G_s(x,y)f(y)\dd(y).
+\end{equation}
+For nonnegative inputs the integral is initially allowed to be
+infinite. Notice that \(N>2s\) in the entire parameter range.
+
+For \(x_0\in M\), put
+\[
+ \norm{f}_{1,x_0,G_s}
+ =\int_{B_1(x_0)}|f|\dd+
+ \int_{M\setminus B_1(x_0)}|f(x)|G_s(x,x_0)\dd(x).
+\]
+\begin{definition}\label{def:wds}
+A nonnegative measurable function \(u\) is a weak dual solution
+with initial datum \(u_0\ge0\) if, for every \(T>0\) and \(x_0\in M\),
+\[
+ u\in C([0,T];L^1_{x_0,G_s}),\qquad
+ u^m\in L^1((0,T);L^1_{\mathrm{loc}}(M)),\qquad u(0)=u_0,
+\]
+and
+\begin{equation}\label{eq:wds}
+ \int_0^T\!\intM
+ \bigl[Gu\,\partial_t\psi-u^m\psi\bigr]\dd\,dt=0
+\end{equation}
+for every smooth \(\psi\) compactly supported in \((0,T)\times M\).
+\end{definition}
+This is the potential formulation of \cite[Definition~2.1]{BBGM},
+with the normalized kernel \eqref{eq:green} and with only the compact
+smooth tests needed here.
+
+\begin{theorem}\label{thm:main}
+Assume \eqref{eq:geometry}, \(m>1\), and \(0<s<1\).
+Let \(u_0\ge0\) belong to \(L^1(M)\), and let \(u\) be any
+nonnegative weak dual solution in Definition~\ref{def:wds}.
+If \(u(t)\in L^1(M)\) for every finite \(t>0\), then
+\[
+ \intM u(t)\dd=\intM u_0\dd
+ \qquad\text{for every finite }t>0 .
+\]
+\end{theorem}
+
+We use two linear potential estimates from \cite{BBGM}. First, for
+each fixed ball \(B_\sigma(x_0)\),
+\begin{equation}\label{eq:weighted}
+ \norm{Gf}_{L^1(B_\sigma(x_0))}
+ \le C_{\sigma,x_0}\norm{f}_{1,x_0,G_s};
+\end{equation}
+this is the estimate in Remark~2.1, using Lemma~3.2 there.
+It implies continuity of \(Gu\) in \(L^1_{\mathrm{loc}}\).
+Second, Lemma~5.2 gives, for \(1<p<N/(2s)\),
+\begin{equation}\label{eq:hls}
+ \norm{Gf}_{pN/(N-2sp)}\le C_p\norm{f}_p .
+\end{equation}
+All source locators here refer to arXiv version~2 of \cite{BBGM}.
+Its displayed heat potential (2.6) omits \(1/\Gamma(s)\).
+If that printed kernel is denoted by \(\widehat G_s\), then
+\(\widehat G_s=\Gamma(s)G_s\). The source weighted norm and the
+one above are equivalent, with comparison factors
+\(\min\{1,\Gamma(s)^{-1}\}\) and
+\(\max\{1,\Gamma(s)^{-1}\}\). Dividing the potential estimates
+by \(\Gamma(s)\) gives \eqref{eq:weighted}--\eqref{eq:hls}.
+We justify the exact spectral representation separately.
+
+\begin{lemma}\label{lem:linear}
+The heat semigroup \(P_t\) and the fractional semigroup \(S_r=e^{-rL}\)
+preserve integrals on \(L^1(M)\). For nonnegative \(f\in L^1(M)\),
+\begin{equation}\label{eq:potential}
+ Gf=\int_0^\infty S_rf\,dr
+\end{equation}
+almost everywhere. If \(p_w=N/(N-2s)\), then
+\begin{equation}\label{eq:weak}
+ \mu\{G|f|>\lambda\}\le
+ C(\norm{f}_1/\lambda)^{p_w},\qquad \lambda>0,
+\end{equation}
+and, for every \(\varepsilon>0\),
+\begin{equation}\label{eq:heatpotential}
+ \norm{P_\varepsilon G|f|}_\infty
+ \le C\varepsilon^{s-N/2}\norm{f}_1,\qquad
+ P_\varepsilon Gf=GP_\varepsilon f\quad(f\ge0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Bianchi--Setti's cutoffs \cite[Corollary~2.3]{BS}, with their curvature
+exponent zero, give \(0\le\chi_R\le1\) in \(C_c^\infty(M)\),
+equal to one on \(B_R(o)\), and
+\(\norm{A\chi_R}_\infty\le C/R\), \(R\ge1\).
+Their curvature constant may be chosen with \(\kappa^2\ge k\);
+their support parameter is fixed independently of \(R\).
+Spectral calculus gives
+\[
+ P_t\chi_R-\chi_R=-\int_0^tP_\rho A\chi_R\,d\rho .
+\]
+For bounded compact \(f\), symmetry and contraction therefore imply
+\[
+ |\langle P_tf-f,\chi_R\rangle|
+ \le t\norm{f}_1\norm{A\chi_R}_\infty\longrightarrow0 .
+\]
+Dominated convergence gives \(\int P_tf=\int f\).
+Density and contraction extend this to all \(L^1\) inputs.
+In particular \(P_t1=1\) in the kernel sense.
+The subordination formula for \(0<s<1\) is
+\[
+ S_rf=\int_0^\infty P_\rho f\,d\nu_r(\rho),\qquad
+ \int_0^\infty e^{-\lambda\rho}d\nu_r(\rho)=e^{-r\lambda^s};
+\]
+see the linear semigroup discussion in
+\cite[proof of Proposition~5.1]{BBGM}.
+The measures \(\nu_r\) have total mass one, by letting
+\(\lambda\downarrow0\). Tonelli now proves conservation for \(S_r\).
+
+For \(\lambda>0\), the two scalar integrals
+\[
+ \frac1{\Gamma(s)}\int_0^\infty e^{-t\lambda}t^{s-1}\,dt
+ =\lambda^{-s}=\int_0^\infty e^{-r\lambda^s}\,dr
+\]
+agree. Spectral calculus \cite[Section~3.1]{Teschl} applies first
+to quadratic pairings with bounded compact inputs \(h\).
+These pairings are finite: splitting the heat integral at one gives
+\[
+ \norm{G|h|}_\infty\le
+ \frac1{\Gamma(s)}
+ \left(\frac{\norm{h}_\infty}{s}
+       +\frac{C\norm{h}_1}{N/2-s}\right).
+\]
+There is no \(L^2\) zero mode, since \eqref{eq:gaussian} and symmetry
+give \(\norm{P_th}_\infty\le Ct^{-N/4}\norm{h}_2\).
+An invariant \(L^2\) function is therefore zero.
+Polarization identifies mixed compact pairings. Increasing bounded
+compact truncations of a nonnegative \(L^1\) input and applying
+Tonelli gives \eqref{eq:potential}.
+
+To prove \eqref{eq:weak}, split \eqref{eq:green} at a time \(T>0\).
+The short part has \(L^1\) norm at most \(CT^s\norm{f}_1\),
+and the long part has \(L^\infty\) norm at most
+\(CT^{s-N/2}\norm{f}_1\). For \(f\ne0\) choose \(T\) so that
+the latter bound is \(\lambda/2\), and use Chebyshev's inequality
+on the short part. This gives the exponent \(p_w\) in \eqref{eq:weak}.
+The zero input is immediate. In particular these potentials are finite
+almost everywhere.
+Finally, Tonelli and the heat composition law give commutation and
+\[
+ \norm{P_\varepsilon G|f|}_\infty
+ \le C\norm{f}_1\int_0^\infty
+       (\varepsilon+t)^{-N/2}t^{s-1}\,dt
+ \le C'\varepsilon^{s-N/2}\norm{f}_1 .
+\]
+The last integral is finite because \(0<s<N/2\).
+\end{proof}
+
+\section{Potential order and endpoint evolution}\label{sec:order}
+
+We first extract information about mass from an ordered potential.
+The potential itself need not be integrable.
+
+\begin{lemma}\label{lem:order}
+Let \(h\in L^1(M)\) be real and suppose \(W=Gh\ge0\) almost
+everywhere. Then \(\intM h\dd\ge0\).
+If in addition \(W\in L^1(M)\), then \(\intM h\dd=0\).
+\end{lemma}
+\begin{proof}
+Fix \(\alpha>0\) and define the positive resolvent and its
+Markov normalization by
+\[
+ R_\alpha=\int_0^\infty e^{-\alpha r}S_r\,dr,\qquad
+ T_\alpha=\alpha R_\alpha .
+\]
+Lemma~\ref{lem:linear} implies
+\begin{equation}\label{eq:markov}
+ T_\alpha1=1,\qquad
+ \intM R_\alpha f\dd=\alpha^{-1}\intM f\dd,\qquad
+ \intM T_\alpha f\dd=\intM f\dd\quad(f\in L^1).
+\end{equation}
+The extension to nonnegative measurable functions is by monotone
+kernel integration.
+For \(f\ge0\) in \(L^1\), \eqref{eq:potential} and Tonelli yield
+\[
+ T_\alpha Gf
+ =\int_0^\infty(1-e^{-\alpha v})S_vf\,dv
+ =Gf-R_\alpha f.
+\]
+The coefficient follows by setting \(v=r+t\) and integrating
+\(\alpha e^{-\alpha r}\) over \(0<r<v\).
+All these potentials are finite almost everywhere by
+\eqref{eq:weak}. Applying the identity to the positive and
+negative parts of \(h\), dominated by \(G|h|\), gives
+\begin{equation}\label{eq:resolvent}
+ W-T_\alpha W=R_\alpha h=:g\in L^1(M).
+\end{equation}
+
+Since \(0\le W\le G|h|\), estimate \eqref{eq:weak} and \(p_w>1\)
+show that for each \(\ell>0\),
+\[
+ \intM(W-\ell)_+\dd
+ =\int_\ell^\infty\mu\{W>\lambda\}\,d\lambda<\infty.
+\]
+Positivity and \(T_\alpha1=1\), applied to
+\(W\le(W-\ell)_++\ell\), imply
+\[
+ (T_\alpha W-\ell)_+\le T_\alpha(W-\ell)_+ .
+\]
+Both truncated functions are integrable, so \eqref{eq:markov} gives
+\[
+ \intM\bigl[(W-\ell)_+-(T_\alpha W-\ell)_+\bigr]\dd\ge0.
+\]
+The absolute value of the integrand is bounded by \(|g|\).
+Letting \(\ell\downarrow0\) in dominated convergence gives
+\(\int g\ge0\), hence \(\int h=\alpha\int g\ge0\).
+If \(W\in L^1\), direct integration of \eqref{eq:resolvent}
+and \eqref{eq:markov} gives \(\int g=0\).
+\end{proof}
+
+\begin{proposition}\label{prop:massbound}
+Every solution in Theorem~\ref{thm:main} satisfies, for all
+\(0\le a<b<\infty\),
+\begin{equation}\label{eq:endpoint}
+ Gu(a)-Gu(b)=W_{a,b}:=\int_a^b u(t)^m\,dt\ge0
+ \quad\hbox{in }L^1_{\mathrm{loc}}(M)
+\end{equation}
+and
+\begin{equation}\label{eq:massbound}
+ \norm{u(b)}_1\le\norm{u(a)}_1\le M_0:=\norm{u_0}_1 .
+\end{equation}
+Moreover \(u(t)\to u_0\) strongly in \(L^1(M)\) as \(t\downarrow0\).
+\end{proposition}
+\begin{proof}
+The defining weighted continuity implies local \(L^1\) continuity
+of \(u\), by covering compact sets with finitely many unit balls.
+Estimate \eqref{eq:weighted} gives the same continuity for \(Gu\).
+Using product tests in \eqref{eq:wds} shows that
+\(\partial_tGu=-u^m\) distributionally.
+For each compact smooth spatial test, the right side is integrable
+up to \(0\) and \(T\). Its indefinite integral is continuous;
+subtracting it leaves a continuous scalar function with zero
+distributional derivative, hence a constant. Equality against all
+spatial tests gives \eqref{eq:endpoint} for every endpoint, including
+zero. In particular no time representative is discarded.
+
+Lemma~\ref{lem:order} applies to \(h=u(a)-u(b)\) and
+\eqref{eq:endpoint}, and proves \eqref{eq:massbound}.
+For initial strong continuity, fix \(\delta>0\) and a compact \(K\)
+with \(\int_{M\setminus K}u_0\dd<\delta\).
+For small \(t>0\), local convergence gives
+\(\int_K|u(t)-u_0|\dd<\delta\), while
+\[
+ \int_{M\setminus K}u(t)\dd
+ \le M_0-\int_Ku(t)\dd
+ \le\int_{M\setminus K}u_0\dd+\delta<2\delta .
+\]
+It follows that \(\norm{u(t)-u_0}_1<4\delta\).
+\end{proof}
+
+\section{Energy and conservation}\label{sec:energy}
+
+If \(M_0=0\), Proposition~\ref{prop:massbound} already proves
+Theorem~\ref{thm:main}. Hence assume \(M_0>0\).
+We regularize with the ordinary heat semigroup, which commutes
+with the spectral Green operator.
+
+\begin{proposition}\label{prop:energy}
+For \(\varepsilon>0\), define
+\[
+ f_\varepsilon(t)=P_\varepsilon u(t),\qquad
+ V_\varepsilon(t)=Gf_\varepsilon(t)=P_\varepsilon Gu(t),
+ \qquad E_\varepsilon(t)=\intM f_\varepsilon(t)V_\varepsilon(t)\dd .
+\]
+These energies are finite, and for every \(0\le a<b<\infty\),
+\begin{equation}\label{eq:dissipation}
+ E_\varepsilon(b)+2\int_a^b\!\intM f_\varepsilon^{m+1}\dd\,dt
+ \le E_\varepsilon(a).
+\end{equation}
+For every \(t>0\) they also satisfy
+\begin{equation}\label{eq:energybound}
+ E_\varepsilon(t)\le
+ C M_0^{\,\frac{N(m-1)+2s(m+1)}{N(m-1)+2s}}\,
+ t^{-\frac{N-2s}{N(m-1)+2s}},
+\end{equation}
+where \(C\) is independent of \(\varepsilon\).
+\end{proposition}
+\begin{proof}
+By \eqref{eq:heatpotential} and \eqref{eq:massbound},
+\begin{equation}\label{eq:finite}
+ 0\le V_\varepsilon(t)\le C\varepsilon^{s-N/2}M_0,\qquad
+ E_\varepsilon(t)\le C\varepsilon^{s-N/2}M_0^2 .
+\end{equation}
+Applying the positive heat kernel to \eqref{eq:endpoint} gives
+\begin{equation}\label{eq:smoothevolution}
+ V_\varepsilon(a)-V_\varepsilon(b)
+ =\int_a^bP_\varepsilon(u(t)^m)\,dt\ge0.
+\end{equation}
+This positive integral is bounded by \(V_\varepsilon(a)\);
+global integrability of \(u^m\) has not been used.
+
+The mixed terms
+\(\int f_\varepsilon(a)V_\varepsilon(b)\) and
+\(\int f_\varepsilon(b)V_\varepsilon(a)\) are finite by
+\eqref{eq:finite} and the mass bound. They are equal by
+symmetry of \(G_s\). Expanding the product and canceling them,
+then using positive Tonelli in \eqref{eq:smoothevolution}, gives
+\begin{align}
+ E_\varepsilon(a)-E_\varepsilon(b)
+ &=\intM(V_\varepsilon(a)-V_\varepsilon(b))
+       (f_\varepsilon(a)+f_\varepsilon(b))\dd \notag\\
+ &=\int_a^b\!\intM P_\varepsilon(u(t)^m)
+       (f_\varepsilon(a)+f_\varepsilon(b))\dd\,dt .       \label{eq:positiveenergy}
+\end{align}
+In particular \(E_\varepsilon\) is nonincreasing.
+
+For fixed \(\varepsilon,x\), the function
+\(t\mapsto f_\varepsilon(t,x)\) is continuous.
+On a fixed ball this follows from local \(L^1\) continuity
+and boundedness of \(p_\varepsilon(x,\cdot)\).
+The contribution of its complement is uniformly small, since
+\eqref{eq:gaussian} bounds it by
+\(2CM_0\varepsilon^{-N/2}e^{-R^2/(C\varepsilon)}\) outside
+\(B_R(x)\).
+Sum \eqref{eq:positiveenergy} over partitions of \([a,b]\)
+whose mesh tends to zero. The endpoint multipliers converge
+pointwise to \(2f_\varepsilon(t,x)\); all integrands are
+nonnegative. Fatou gives
+\[
+ E_\varepsilon(b)+2\int_a^b\!\intM
+ P_\varepsilon(u^m)f_\varepsilon\dd\,dt\le E_\varepsilon(a).
+\]
+Conservativeness makes the heat kernel a probability measure, so
+Hölder gives \(P_\varepsilon(u^m)\ge(P_\varepsilon u)^m\),
+also for unbounded inputs by monotone truncation.
+If \(f_\varepsilon(t,x)=0\), then \(u(t)=0\) almost everywhere
+for that kernel measure, so \(P_\varepsilon(u(t)^m)(x)=0\)
+as well. Thus the product is unambiguous and
+\eqref{eq:dissipation} follows.
+
+Set \(q=2N/(N+2s)\) and \(q'=2N/(N-2s)\).
+These exponents are conjugate and \(1<q<N/(2s)\).
+Since \(f_\varepsilon\in L^1\cap L^\infty\), the estimate
+\eqref{eq:hls} and Hölder give
+\[
+ E_\varepsilon\le C\norm{f_\varepsilon}_q^2
+ \le C M_0^\gamma
+       \left(\intM f_\varepsilon^{m+1}\dd\right)^\beta ,
+\]
+where
+\[
+ \eta=\frac{(m+1)(N-2s)}{2Nm},\qquad
+ \beta=\frac{2\eta}{m+1}=\frac{N-2s}{Nm}\in(0,1),
+ \qquad\gamma=2(1-\eta)>0 .
+\]
+Indeed \(1/q=1-\eta+\eta/(m+1)\), which is the
+\(L^1\)--\(L^{m+1}\) interpolation identity.
+Consequently \eqref{eq:dissipation} implies
+\begin{equation}\label{eq:scalar}
+ E_\varepsilon(b)+k_0\int_a^bE_\varepsilon(t)^r\,dt
+ \le E_\varepsilon(a),\qquad
+ r=1/\beta>1,\quad
+ k_0=2C^{-1/\beta}M_0^{-\gamma/\beta}.
+\end{equation}
+
+Here a scalar comparison can be proved without an absolute
+continuity assumption. For any finite nonnegative nonincreasing
+\(E\) satisfying \eqref{eq:scalar}, monotonicity gives
+\(k_0(b-a)E(b)^r\le E(a)\).
+If \(E(t)>0\), iterate this inequality on
+\([t/2^{j+1},t/2^j]\) to obtain
+\[
+ \log E(t)\le r^{-n}\log E(0)
+ +\sum_{j=0}^{n-1}r^{-(j+1)}
+       [(j+1)\log2-\log(k_0t)].
+\]
+Letting \(n\to\infty\) gives
+\[
+ E(t)\le2^{r/(r-1)^2}(k_0t)^{-1/(r-1)}.
+\]
+If \(E(t)=0\), or \(E(0)=0\), the same bound is immediate.
+Apply it separately for each \(\varepsilon\), using
+\eqref{eq:finite}. Since
+\[
+ \frac1{r-1}=\frac{N-2s}{N(m-1)+2s},\qquad
+ \frac{\gamma}{1-\beta}
+ =\frac{N(m-1)+2s(m+1)}{N(m-1)+2s},
+\]
+we obtain \eqref{eq:energybound}, uniformly in \(\varepsilon\).
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix any \(0<a<b<\infty\). Proposition~\ref{prop:energy} bounds
+\(\int_a^b\intM f_\varepsilon^{m+1}\dd\,dt\) uniformly
+in \(\varepsilon\). The heat semigroup is strongly continuous
+on \(L^1(M)\). One may see this directly from its \(L^2\)
+continuity on bounded compact inputs, local \(L^1\) convergence,
+and conservativeness, using the compact tightness argument in
+Proposition~\ref{prop:massbound}; density and contraction give
+the general case.
+Thus, for each \(t\), \(P_\varepsilon u(t)\to u(t)\) in \(L^1\).
+The difference has norm at most \(2M_0\), so dominated convergence
+in time yields convergence in \(L^1((a,b)\times M)\).
+Take a subsequence with summable errors to obtain almost everywhere
+convergence. Fatou and the uniform dissipation bound imply
+\[
+ \int_a^b\!\intM u^{m+1}\dd\,dt<\infty .
+\]
+Hölder in time and space, applied to
+\(u^m=u^{1/m}(u^{m+1})^{(m-1)/m}\), now gives
+\[
+ \int_a^b\!\intM u^m\dd\,dt
+ \le[(b-a)M_0]^{1/m}
+ \left(\int_a^b\!\intM u^{m+1}\dd\,dt\right)^{(m-1)/m}
+ <\infty .
+\]
+In particular the potential difference \(W_{a,b}\) in
+\eqref{eq:endpoint} belongs to \(L^1(M)\).
+The equality assertion of Lemma~\ref{lem:order}, with
+\(h=u(a)-u(b)\), gives
+\(\intM u(a)\dd=\intM u(b)\dd\).
+All strictly positive-time masses therefore coincide.
+Finally let \(a\downarrow0\), using the strong initial
+\(L^1\) continuity in Proposition~\ref{prop:massbound}.
+Their common value is \(\intM u_0\dd\).
+Since \eqref{eq:endpoint} holds at every endpoint, this
+proves the claimed equality for every finite \(t>0\).
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used to develop and check the arguments and to draft
+and revise the text, including internal reviews in fresh AI contexts.
+No machine-checked formalization or independent human verification
+is claimed.
+
+\begin{thebibliography}{9}
+\bibitem{BBGM}
+E. Berchio, M. Bonforte, G. Grillo and M. Muratori,
+\emph{The fractional porous medium equation on noncompact
+Riemannian manifolds}, Math. Ann. \textbf{389} (2024), 3603--3651.
+\href{https://doi.org/10.1007/s00208-023-02731-6}{doi:10.1007/s00208-023-02731-6}.
+Source version used for numbered locators:
+\href{https://arxiv.org/abs/2109.10732v2}{arXiv:2109.10732v2} (2023).
+
+\bibitem{CGM}
+D.-E. von Criegern, G. Grillo and D. D. Monticelli,
+\emph{Fractional porous medium equation on manifolds with nonnegative
+Ricci curvature: existence of solutions and smoothing effects via
+potential methods},
+\href{https://arxiv.org/abs/2609.12954v1}{arXiv:2609.12954v1} (2026).
+
+\bibitem{BS}
+D. Bianchi and A. G. Setti,
+\emph{Laplacian cut-offs, porous and fast diffusion on manifolds
+and other applications},
+\href{https://arxiv.org/abs/1607.06008v1}{arXiv:1607.06008v1} (2016).
+
+\bibitem{Sard}
+A. Sard,
+\emph{The measure of the critical values of differentiable maps},
+Bull. Amer. Math. Soc. \textbf{48} (1942), 883--890.
+\href{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/sard.pdf}{Original article}.
+
+\bibitem{Teschl}
+G. Teschl,
+\emph{Mathematical Methods in Quantum Mechanics:
+With Applications to Schr\"odinger Operators},
+Graduate Studies in Mathematics \textbf{99},
+American Mathematical Society, 2009.
+\href{https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf}{Author-hosted 2009 edition}.
+\end{thebibliography}
+\end{document}
