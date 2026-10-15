@@ -16,7 +16,7 @@
     "area": "Fractional quantum Hall physics",
     "file": "problems/195-laughlin-gap.md",
     "status": "Open",
-    "last_checked": "2026-09-13"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "196",
@@ -192,7 +192,7 @@
     "area": "Spectral graph theory / network design",
     "file": "problems/214-bilu-linial-signing.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-13"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "215",
@@ -208,7 +208,7 @@
     "area": "Boundary operators / heterogeneous conduction",
     "file": "problems/216-rough-coefficient-boundary-commutator.md",
     "status": "Open",
-    "last_checked": "2026-09-13"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "217",
@@ -240,7 +240,7 @@
     "area": "Quantum information and correlation preparation",
     "file": "problems/342-entanglement-of-purification-additivity.md",
     "status": "Open",
-    "last_checked": "2026-09-19"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "421",

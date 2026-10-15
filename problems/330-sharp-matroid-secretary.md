@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-18
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -44,6 +44,10 @@ The remaining general question is foundational. Recent claims cover linear matro
 7. Kristóf Bérczi, Shaddin Dughmi, Vasilis Livanos, José A. Soto and Victor Verdugo, *The Strong Secretary Conjecture is True for Linear Matroids*, [arXiv:2609.20797v1](https://arxiv.org/html/2609.20797v1), September 17, 2026, preprint. Theorem 1; §4, Corollaries 1–2 and the concluding scope discussion.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-330). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-18)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

@@ -37,7 +37,7 @@
     "area": "Nonholonomic control / sub-Riemannian geometry",
     "file": "problems/123-sard-conjecture-endpoint-map.md",
     "status": "Partially resolved",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "124",
@@ -53,7 +53,7 @@
     "area": "Nonholonomic geometry / optimal transport",
     "file": "problems/125-equiregular-analytic-nonbranching.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "126",
@@ -61,7 +61,7 @@
     "area": "Sub-Riemannian geometric optimization",
     "file": "problems/126-pansu-heisenberg-isoperimetry.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "127",
@@ -198,7 +198,7 @@
     "area": "Billiard dynamics / transport and ergodicity",
     "file": "problems/142-irrational-nonergodic-polygon.md",
     "status": "Partially resolved",
-    "last_checked": "2026-10-13"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "143",
@@ -238,7 +238,7 @@
     "area": "Nonlinear control and algorithmic verification",
     "file": "problems/338-polynomial-local-stability-decidability.md",
     "status": "Open",
-    "last_checked": "2026-09-18"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "491",

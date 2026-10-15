@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -42,6 +42,10 @@ Approximating an unstable model by a nearby matrix with nonpositive spectral abs
 2. [Authors' accompanying code](https://github.com/fph/nearest-omega-stable).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-578). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-24)
 
 The source provides numerical evidence and proves that a real minimizer gives a stationary point of the complex Schur-form optimization problem (Theorem 7.2). Stationarity does not prove global minimality over complex matrices. Taking the real part of a complex feasible matrix also need not preserve feasibility.
 

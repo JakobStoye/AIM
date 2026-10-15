@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-24
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -40,6 +40,10 @@ Persistence sets combine the topological summaries of many small samples. Charac
 2. The authors’ [persistence-curv-sets implementation](https://github.com/ndag/persistence-curv-sets).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-521). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-24)
 
 Proposition 5.24 realizes every pair in the displayed proposed region. The unresolved direction excludes additional pairs from arbitrary six-point configurations; numerical samples support it but do not prove it. This is a finite-sample chordal question, distinct from the full-sphere Vietoris–Rips transition in problem 522.
 

@@ -971,18 +971,18 @@ Adding a batch does not revalidate earlier entries. Counts below include only cu
 
 | Publication batch | Open targets | Entry review dates |
 | --- | ---: | --- |
-| Original collection | 67 | 2026-09-08–2026-10-13 |
-| Second collection | 88 | 2026-09-08–2026-10-13 |
-| Third collection | 83 | 2026-09-13 |
-| September 2026 expansion — batch 1 | 9 | 2026-09-17 |
+| Original collection | 67 | 2026-09-08–2026-10-16 |
+| Second collection | 88 | 2026-09-08–2026-10-16 |
+| Third collection | 83 | 2026-09-13–2026-10-16 |
+| September 2026 expansion — batch 1 | 9 | 2026-09-17–2026-10-16 |
 | September 2026 expansion — batch 2 | 8 | 2026-09-17 |
 | September 2026 expansion — batch 3 | 10 | 2026-09-17 |
-| September 2026 expansion — batch 4 | 8 | 2026-09-18 |
-| September 2026 expansion — batch 5 | 10 | 2026-09-18–2026-10-13 |
-| September 2026 expansion — batch 6 | 9 | 2026-09-19–2026-10-13 |
-| September 22 expansion — PDE emphasis | 118 | 2026-09-22 |
+| September 2026 expansion — batch 4 | 8 | 2026-09-18–2026-10-16 |
+| September 2026 expansion — batch 5 | 10 | 2026-09-18–2026-10-16 |
+| September 2026 expansion — batch 6 | 9 | 2026-09-19–2026-10-16 |
+| September 22 expansion — PDE emphasis | 118 | 2026-09-22–2026-10-16 |
 | September 2026 expansion — remaining accepted drafts | 6 | 2026-09-23–2026-10-13 |
-| Systematic expansion across numerical PDEs, statistics, uncertainty and topology | 125 | 2026-09-23–2026-10-13 |
+| Systematic expansion across numerical PDEs, statistics, uncertainty and topology | 125 | 2026-09-23–2026-10-16 |
 
 ## Maintaining the collection
 

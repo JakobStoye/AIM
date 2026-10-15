@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -39,6 +39,10 @@ The operator maps an imposed boundary potential to outward current. The estimate
 3. Steve Hofmann and Guoming Zhang, [*L² estimates for commutators of the Dirichlet-to-Neumann Map associated to elliptic operators with complex-valued bounded measurable coefficients on the upper half-space*](https://arxiv.org/abs/2102.06835), *Journal of Mathematical Analysis and Applications* 504 (2021), 125408, main theorem. Rough-coefficient result with additional half-space structure.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-216). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-13)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

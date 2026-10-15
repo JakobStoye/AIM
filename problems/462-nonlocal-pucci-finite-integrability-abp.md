@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -41,6 +41,10 @@ Such a maximum principle would control a value function for a jump-process contr
 3. S. Kitano, *$`W^{\sigma,p}`$ a priori estimates for fully nonlinear integro-differential equations* (2022), the restricted matrix-kernel setting. [Preprint](https://arxiv.org/abs/2207.06728).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-462). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

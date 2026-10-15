@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -22,6 +22,10 @@ Branching allows optimal motions to share an initial trajectory and then split. 
 2. E. Le Donne, N. Paddeu and A. Socionovo, *Metabelian distributions and sub-Riemannian geodesics* (2026), [Advances in Calculus of Variations](https://doi.org/10.1515/acv-2025-0104), Theorem 1.1 and structural definitions. Supplies a regularity result in a restricted analytic setting, rather than a general nonbranching theorem.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-125). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

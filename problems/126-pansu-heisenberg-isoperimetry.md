@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -35,6 +35,10 @@ The Heisenberg geometry is a basic model of constrained motion. A sharp perimete
 2. R. L. Frank and B. Helffer, *On Courant and Pleijel theorems for sub-Riemannian Laplacians* (2025), [Journal de l'École polytechnique — Mathématiques 12](https://doi.org/10.5802/jep.307), §11.4. Retains Pansu's conjecture and reviews conditional results; its vector-field normalization differs by a central-coordinate scaling.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-126). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

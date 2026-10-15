@@ -64,7 +64,7 @@
     "area": "Quantum measurement and frame theory",
     "file": "problems/030-sic-povms.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "031",
@@ -191,7 +191,7 @@
     "area": "Sparse numerical linear algebra",
     "file": "problems/044-sparse-linear-solve-bit-complexity.md",
     "status": "Open",
-    "last_checked": "2026-09-08"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "045",
@@ -234,7 +234,7 @@
     "area": "Discrepancy, cumulative allocation and integer optimization",
     "file": "problems/325-strong-komlos-prefix-discrepancy.md",
     "status": "Open",
-    "last_checked": "2026-09-18"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "327",
@@ -250,7 +250,7 @@
     "area": "Exact algorithms and computational complexity",
     "file": "problems/340-integer-three-sum-hardness.md",
     "status": "Open",
-    "last_checked": "2026-09-19"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "426",
@@ -277,7 +277,7 @@
     "area": "Planar elliptic PDEs and singular integral operators",
     "file": "problems/446-beurling-ahlfors-sharp-norm.md",
     "status": "Open",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "447",

@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 ## Problem statement
 
 For $`f\in C_c^\infty(\mathbb C;\mathbb C)`$, with planar Lebesgue measure $`dA`$, define
@@ -31,6 +31,10 @@ The operator converts the antiholomorphic derivative of a planar potential into 
 2. R. Bañuelos, [Cotlar martingale transforms and related singular integrals](https://arxiv.org/abs/2604.09365), preprint (2026), §6.1, equation (6.1), and §6.4.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-446). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

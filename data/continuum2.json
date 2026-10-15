@@ -257,7 +257,7 @@
     "area": "Monge–Ampère PDEs / optimal transport",
     "file": "problems/392-polyhedral-transport-singular-interface.md",
     "status": "Open",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "393",
@@ -265,7 +265,7 @@
     "area": "Free-boundary PDEs / optimal transport",
     "file": "problems/393-polyhedral-partial-transport-free-boundary.md",
     "status": "Open",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-16"
   },
   {
     "id": "396",

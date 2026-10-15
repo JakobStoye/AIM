@@ -4,7 +4,7 @@
 
 **Status:** 🟡 PARTIAL
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -23,6 +23,10 @@ The question asks whether every triangular optical or mechanical cavity supports
 3. A. Katok et al., *Problems on invariant measures and related topics*, [AIM workshop problem collection](https://aimath.org/WWN/measrigid/measrigid.pdf), §7, Question 46. States the unresolved obtuse-triangle case and contrasts rational polygons.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-250). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-13)
 
 **Known cases:** Periodic nonsingular trajectories are known for rational-angle triangles; acute triangles also have the classical orthic orbit.
 

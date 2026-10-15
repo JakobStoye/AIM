@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-22
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -32,6 +32,10 @@ Injectivity-domain convexity is a geometric prerequisite for continuous transpor
 2. G. Khan and J. Zhang, *When Optimal Transport Meets Information Geometry*, preprint (2022), Conjecture 3. [arXiv:2206.14791](https://arxiv.org/abs/2206.14791).
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-394). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-22)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

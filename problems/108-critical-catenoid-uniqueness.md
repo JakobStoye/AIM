@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-08
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -27,6 +27,10 @@ This class models zero-mean-curvature capillary films attached at a right angle 
 3. D. Ko and G. Shao, [Free boundary minimal annuli in convex balls](https://arxiv.org/abs/2608.14679), preprint (2026), abstract and main results: recent annulus existence and min–max characterization.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-108). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-08)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

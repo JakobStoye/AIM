@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -26,6 +26,10 @@ The statement would quantify eventual spatial coverage by an impulsive point sou
 2. B. Albach et al., *Open problems in billiards and quantitative symplectic geometry* (2026), [arXiv:2602.12896](https://arxiv.org/abs/2602.12896), S. Tabachnikov's section, “Density of reflected wave fronts”. Identifies the circular-table case as unresolved.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-251). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-13)
 
 **Literature check:** Open in cited literature; no later resolution located.
 

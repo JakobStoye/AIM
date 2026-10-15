@@ -4,7 +4,7 @@
 
 **Status:** 🔵 OPEN
 
-**Last checked:** 2026-09-13
+**Last checked:** 2026-10-16
 
 ## Problem statement
 
@@ -38,6 +38,10 @@ The gap protects a correlated quantum Hall fluid against low-energy perturbation
 2. N. Rougerie and J. Yngvason, [Quantum Hall phases of cold Bose gases](https://arxiv.org/abs/2209.14215), Encyclopedia of Condensed Matter Physics, second edition (2024), discussion of the yrast curve and spectral-gap conjecture: physical interpretation and later assessment.
 
 ## Status review
+
+**Resolution-source report (2026-10-16):** [Primary proof, full-target comparison and evidence limits](../research/literature_reports/2026-10-16-prior-resolutions.md#aim-195). This AI-prepared report identifies a later resolution source or a direct application of an existing proof for maintainer review under the catalogue evidence policy.
+
+### Earlier status review (2026-09-13)
 
 **Literature check:** Open in cited literature; no later resolution located.
 
