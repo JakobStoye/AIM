@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "problem_id": 193,
+  "title": "Moment exponents for Gaussian directed polymers in three dimensions",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "status": "Proposed solution submitted for independent mathematical review",
+  "target": {
+    "repository": "MColbrook/AIM",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "path": "problems/193-directed-polymer-moment-spectrum.md"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "4481a44718644c73ff30c6ec8b26be537ea60dd5c26354b39c23686bf1952e87",
+      "bytes": 1996
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "sha256": "b4c1097d7d00f05dc3baa22a5ba46e4a0a229a290770c4160c8f51e69206bd54",
+      "bytes": 3531
+    },
+    {
+      "path": "paper.pdf",
+      "sha256": "c66f6c81dfe34cc519ff17bfc83b179d616c95fef8d57c0e19ed15c4eead500a",
+      "bytes": 384460
+    },
+    {
+      "path": "paper.tex",
+      "sha256": "5d7887c4b38da97843c0edc3476aae9797a753e87b55f495e438dc1f8be5e196",
+      "bytes": 26387
+    }
+  ],
+  "manifest_rule": "The manifest describes the other four package files."
+}

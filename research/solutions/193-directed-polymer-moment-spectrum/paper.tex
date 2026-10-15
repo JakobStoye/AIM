@@ -1,0 +1,582 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Moment exponents for Gaussian directed polymers in three dimensions},pdfauthor={Kaiwen Jin}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\ps}{p^*}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\title{Moment exponents for Gaussian directed polymers in three dimensions}
+\author{Kaiwen Jin}
+\email{yui.ui.siki@gmail.com}
+\date{October 15, 2026}
+\keywords{Directed polymers, Gaussian disorder, moment exponent, weak disorder}
+\begin{document}
+\begin{abstract}
+For the directed polymer based on simple random walk in $\Z^3$ with iid
+standard Gaussian disorder, let $p^*(\beta)$ be the supremum of the orders for
+which the normalized partition function has moments bounded uniformly in the
+polymer length. We prove that $\beta\mapsto p^*(\beta)$ is a continuous strictly
+decreasing bijection from $(0,\beta_c]$ onto $[5/3,\infty)$, where $\beta_c$
+is the weak-disorder critical point. The main step is local stability of every
+strictly subcritical moment above order two under an increase of $\beta$.
+A concave power of a terminal polymer moment has a one-step deficit proportional
+to the endpoint overlap; Gaussian differentiation bounds the perturbation by
+the same overlap. This yields a moment bound for all lengths. Gaussian
+hypercontractivity and the established critical and one-sided continuity
+results then give the full statement.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+A directed polymer in a random environment weights random-walk trajectories
+according to the disorder they encounter. Its normalized partition function
+is a positive mean-one martingale. The weak-disorder phase is characterized by
+a positive martingale limit, but its fluctuations need not have a bounded
+second moment. The threshold for higher moments gives a finer description of
+this phase; see \cite[Section~3.3.2]{Berger} for the moment-spectrum question
+and its relation to the hierarchy of $L^p$ critical points.
+
+We consider simple random walk $S=(S_n)_{n\ge0}$ from zero on $\Z^3$, with
+each of its six nearest-neighbor steps having probability $1/6$. Let
+$(\omega_{n,x})_{n\ge1,x\in\Z^3}$ be iid standard real Gaussians independent
+of the walk. For inverse temperature $\beta>0$, define
+\begin{equation}\label{eq:partition}
+ W_N^\beta=E_0\exp\!\left\{\sum_{n=1}^N
+ (\beta\omega_{n,S_n}-\beta^2/2)\right\},\qquad N\ge0,
+\end{equation}
+where $E_0$ denotes walk expectation and $\E$ denotes disorder expectation.
+We set $W_0^\beta=1$ and write $W_\infty^\beta$ for the almost sure martingale
+limit. The moment exponent and the weak-disorder critical point are
+\begin{align}
+ \ps(\beta)&=\sup\{u\ge1:\sup_{N\ge0}\E[(W_N^\beta)^u]<\infty\},
+ \label{eq:pstar}\\
+ \beta_c&=\sup\{\beta>0:\Pp(W_\infty^\beta>0)=1\}.
+ \label{eq:betac}
+\end{align}
+All moment orders are real. The supremum in \eqref{eq:pstar} does not assert
+boundedness of the moment at its endpoint.
+
+Several ingredients of the spectrum are known for much more general
+disorder. Weak disorder holds below the critical point and also at criticality
+for the simple walk in dimension at least three; in dimension three the
+critical exponent is $5/3$ \cite[Theorem~2.1 and Corollary~2.5]{Critical}.
+Junk and Lacoin prove left continuity wherever weak disorder holds
+\cite[Corollary~2.11(i)]{Tail}. Junk proves right continuity when
+$5/3<\ps(\beta)\le2$ \cite[Theorem~1.2(i)]{Junk}. The strict-monotonicity
+statement in part (ii) of that theorem assumes finite-support disorder and
+therefore does not apply to the Gaussian law. Gaussian hypercontractivity
+provides a direct comparison between different inverse temperatures, as we
+recall in Section~\ref{sec:comparison}. To obtain continuity of the whole
+Gaussian spectrum we prove upward stability of moment bounds in the range
+$\ps(\beta)>2$.
+
+\begin{theorem}\label{thm:main}
+For the Gaussian model \eqref{eq:partition}, $0<\beta_c<\infty$, and
+\[
+ (0,\beta_c]\ni\beta\longmapsto\ps(\beta)\in[5/3,\infty)
+\]
+is a continuous strictly decreasing bijection. Continuity at $\beta_c$ is
+from the left.
+\end{theorem}
+
+This proves the Gaussian three-dimensional instance of the continuity and
+strict-monotonicity conjecture stated in \cite[Conjecture~3.32]{Berger}.
+It describes every finite real value of the moment exponent on the original
+weak-disorder interval. It does not settle boundedness at the threshold
+moment order.
+
+The stability argument uses the limiting partition functions started at
+different sites in a common future environment. Their joint law gives a
+harmonic identity for the terminal $p$ moment of any initial probability
+vector. Taking its power $s/p<1$ creates a concavity deficit. Positive
+association and a Gaussian change of measure bound that deficit from below
+by a constant times the squared $\ell^2$ norm of the predicted endpoint law.
+The derivative with respect to the disorder variance has the same factor.
+A small upward change of variance is therefore absorbed uniformly, even for
+very spread-out endpoint laws. Iterating the resulting inequality gives the
+$s$ moment bound for every polymer length. The strict gaps
+$2<s<p<q<\ps(\beta)$ provide both the differentiability and the density
+integrability needed in this argument.
+
+Section~\ref{sec:comparison} records the precise existing continuity results
+and proves the Gaussian comparison. Section~\ref{sec:stability} establishes
+local moment stability and completes the proof of Theorem~\ref{thm:main}.
+Throughout, expectations without a walk subscript refer to the disorder;
+additional subscripts indicate which independent variables are averaged.
+\section{Gaussian comparison and continuity facts}\label{sec:comparison}
+
+Write $W_N^{\beta,x}$ for the partition function started at $x$, and put
+$W_0^{\beta,x}=1$. With respect to the disorder filtration
+$\mathcal F_N=\sigma(\omega_{n,x}:n\le N)$, these are positive mean-one
+martingales. Indeed, averaging the fresh disorder slice gives one. For every
+real $u\ge1$, Jensen's inequality over the walk paths gives
+\begin{equation}\label{eq:finite-moments}
+ \E[(W_N^{\beta,x})^u]\le \exp\{N(u^2-u)\beta^2/2\}.
+\end{equation}
+The nonnegative martingale convergence theorem therefore defines
+$W_\infty^{\beta,x}$ almost surely; see, for example,
+\cite[Theorem~4.2.12]{Durrett}. We will repeatedly use the elementary consequence
+of the definition of $\ps$: every $1\le u<\ps(\beta)$ is a uniformly bounded
+moment order. To see this, choose a bounded order $v>u$ and apply H\"older's
+inequality. No assertion at $u=\ps(\beta)$ is needed.
+
+There is a positive weak-disorder interval and a parameter $\beta_\ell>0$ at
+which the martingale is bounded in $L^2$ \cite[Theorem~A]{Junk}. In particular,
+$\beta_c>0$. The opposite bound is elementary in the Gaussian case. For
+$0<\theta<1$, summing the $6^N$ path contributions and using subadditivity yields
+\[
+ \E[(W_N^\beta)^\theta]
+ \le \exp\{N(1-\theta)(\log6-\theta\beta^2/2)\}.
+\]
+If $\beta^2>2\log6$, choose $\theta<1$ with $\theta\beta^2/2>\log6$.
+Fatou's lemma then gives $W_\infty^\beta=0$ almost surely. Thus
+\begin{equation}\label{eq:critical-finite}
+ 0<\beta_c\le\sqrt{2\log6}<\infty.
+\end{equation}
+Similarly, for every $u>1$, the pointwise inequality
+$(\sum_i a_i)^u\ge\sum_i a_i^u$ gives
+\begin{equation}\label{eq:diagonal}
+ \E[(W_N^\beta)^u]
+ \ge \exp\{N(u-1)(u\beta^2/2-\log6)\}.
+\end{equation}
+Hence $\ps(\beta)$ is finite for every $\beta>0$; if $\ps(\beta)>1$, it is at
+most $2\log6/\beta^2$.
+
+Let $\beta_2=\sup\{\beta>0:\sup_N\E[(W_N^\beta)^2]<\infty\}$ denote
+the $L^2$ critical point. We use the following established results, with their
+original disorder assumptions specialized to standard Gaussians:
+\begin{enumerate}
+\item Weak disorder holds for $0<\beta\le\beta_c$, and
+\begin{equation}\label{eq:critical-value}
+ \ps(\beta_c)=\frac53.
+\end{equation}
+The phase intervals are stated in \cite[Theorem~A]{Junk}. Weak disorder at
+criticality follows from \cite[Theorem~2.1 and the discussion after
+Remark~2.2]{Critical}; its simple-walk discussion includes the strict inequality
+$\beta_c>\beta_2$ in dimension three. The value in
+\eqref{eq:critical-value} is \cite[Corollary~2.5]{Critical}.
+\item At every parameter where weak disorder holds,
+\begin{equation}\label{eq:left-continuity}
+ \lim_{b\uparrow\beta}\ps(b)=\ps(\beta)
+\end{equation}
+by \cite[Corollary~2.11(i)]{Tail}.
+\item If $5/3<\ps(\beta)\le2$, then $\ps$ is right continuous at $\beta$
+by \cite[Theorem~1.2(i)]{Junk}.
+\end{enumerate}
+The Gaussian law has all real exponential moments, so the unbounded-disorder
+results cited here apply. In \cite{Tail}, the threshold is written as the
+infimum of the orders whose uniform moments are infinite. This is the same
+number as \eqref{eq:pstar}: H\"older makes the bounded orders a downward interval,
+and \eqref{eq:diagonal} supplies finite orders outside it. Neither convention
+determines whether its endpoint belongs to that interval.
+
+Gaussian hypercontractivity supplies a quantitative comparison between
+temperatures. For a function of a finite standard Gaussian vector, define
+\[
+ T_\rho f(z)=\E_G f(\rho z+\sqrt{1-\rho^2}\,G),\qquad 0\le\rho\le1,
+\]
+where $G$ is an independent standard Gaussian vector of the same dimension.
+Nelson's inequality states
+\begin{equation}\label{eq:hypercontractivity}
+ \|T_\rho f\|_v\le\|f\|_u,
+ \qquad 1<u\le v<\infty,\quad
+ \rho\le\sqrt{\frac{u-1}{v-1}}.
+\end{equation}
+See \cite[Theorem~1.1 in the author-generated copy]{Kemp}. In Ornstein--Uhlenbeck time $a$, this is the
+semigroup with $\rho=e^{-a}$; the Mehler formula and the corresponding exponent
+$v=1+(u-1)e^{2a}$ are given in \cite[Lemma~1.8 and Theorem~2.1]{ChafaiLehec}.
+The constant is independent of the dimension.
+
+\begin{proposition}\label{prop:comparison}
+For $0<b<\beta$ with $\ps(\beta)>1$,
+\begin{equation}\label{eq:threshold-comparison}
+ \ps(b)\ge1+\frac{\beta^2}{b^2}\bigl(\ps(\beta)-1\bigr).
+\end{equation}
+Consequently, $\ps$ is strictly decreasing on $(0,\beta_c]$ and
+$\lim_{b\downarrow0}\ps(b)=\infty$.
+\end{proposition}
+
+\begin{proof}
+For fixed $N$, only finitely many disorder coordinates enter $W_N^\beta$.
+Every path uses $N$ distinct coordinates, since their time indices differ.
+Integrating the added Gaussian vector in $T_\rho$ therefore gives
+\begin{equation}\label{eq:mehler-polymer}
+ T_\rho W_N^\beta=W_N^{\rho\beta}.
+\end{equation}
+More explicitly, the integration contributes
+$\exp\{N\beta^2(1-\rho^2)/2\}$, changing the compensator from
+$N\beta^2/2$ to $N(\rho\beta)^2/2$ in each path term. The path sum is finite.
+Jensen's inequality for $T_\rho$, followed by Gaussian invariance, first shows
+that $\ps$ is nonincreasing.
+
+Now take $1<u<\ps(\beta)$ and set $\rho=b/\beta$,
+$v=1+(\beta/b)^2(u-1)$. Equations \eqref{eq:hypercontractivity} and
+\eqref{eq:mehler-polymer} transfer the uniform $u$ moment at $\beta$ to a
+uniform $v$ moment at $b$. Letting $u\uparrow\ps(\beta)$ proves
+\eqref{eq:threshold-comparison}. This passes to a supremum of admissible
+orders, rather than asserting a bounded moment at that supremum.
+
+Monotonicity and \eqref{eq:critical-value} give
+$\ps(\beta)\ge5/3$ for $\beta\le\beta_c$. Since $\beta^2/b^2>1$,
+\eqref{eq:threshold-comparison} is then strictly larger than $\ps(\beta)$.
+Finally, the actually bounded second moment at $\beta_\ell$ and
+\eqref{eq:hypercontractivity} give
+$\ps(b)\ge1+\beta_\ell^2/b^2$ for $0<b<\beta_\ell$.
+\end{proof}
+
+\section{Stability of moments above two}\label{sec:stability}
+
+The remaining step is an upward perturbation of the inverse temperature.
+The moment loss in the statement below leaves room for strict concavity and
+an integrable change of measure.
+
+\begin{proposition}\label{prop:stability}
+Let $\beta_0>0$ and $2<s<\ps(\beta_0)$. There are $\varepsilon>0$ and
+$C<\infty$ such that
+\begin{equation}\label{eq:stability}
+ \sup_{\beta\in[\beta_0,\beta_0+\varepsilon]}
+ \sup_{N\ge0}\E[(W_N^\beta)^s]\le C.
+\end{equation}
+\end{proposition}
+
+\subsection{The common terminal field}
+Fix real exponents
+\begin{equation}\label{eq:exponents}
+ 2<s<p<q<\ps(\beta_0),\qquad a=\frac{s}{p}\in(0,1),\qquad r=\frac qp>1.
+\end{equation}
+For $j\ge0$ and $x\in\Z^3$, let $W_N^{(j),x}$ denote the
+$\beta_0$ partition function using disorder times $j+1,\ldots,j+N$ and
+started at $x$. These martingales are uniformly bounded in $L^q$, and hence
+converge almost surely and in $L^q$ \cite[Theorem~4.4.6]{Durrett}.
+Write their limits as $X_x^{(j)}$. On a common probability-one set for the
+countable family $(j,x)$, the six-term recursion passes to the limit:
+\begin{equation}\label{eq:terminal-recursion}
+ X_x^{(j)}=\sum_y K(x,y)\eta_{j+1,y}^{\beta_0}X_y^{(j+1)},
+ \qquad \eta_{n,y}^{\beta}=e^{\beta\omega_{n,y}-\beta^2/2},
+\end{equation}
+where $K(x,y)=1/6$ for nearest neighbors and zero otherwise.
+The whole field $X^{(j+1)}$ is independent of the first $j+1$ disorder
+slices and has the same joint law as $X^{(0)}$. Its coordinates have mean one.
+Put
+\[
+ C_p=\E[(X_0^{(0)})^p],\qquad C_q=\E[(X_0^{(0)})^q].
+\]
+These finite marginal moments are unchanged by spatial translation.
+
+We also need positive association. For bounded increasing functions $f,g$
+of one random variable $U$, with $U'$ an independent copy,
+\[
+ \operatorname{Cov}(f(U),g(U))
+ =\tfrac12\E[(f(U)-f(U'))(g(U)-g(U'))]\ge0.
+\]
+Conditioning on one coordinate and using induction proves the same inequality
+for increasing functions of finitely many independent coordinates. For a
+countable product, condition bounded $f,g$ on the first $m$ coordinates.
+Their conditional averages are increasing on the finite product and converge
+almost surely to $f,g$ by the increasing-sigma-field convergence theorem
+\cite[Theorem~4.6.8]{Durrett}. Bounded convergence passes the covariance
+inequality to the limit. Truncation and monotone convergence extend it to
+nonnegative functions with finite product expectation.
+
+Each $X_x^{(j)}$ may be represented by the extended nonnegative liminf of its
+finite partition functions. This is increasing in every future disorder
+coordinate and agrees almost surely with the $L^q$ limit. Thus the joint
+terminal field is associated. This construction uses its common future;
+its spatial coordinates are not replaced by independent copies.
+
+Let $\mu$ be any finitely supported probability vector on $\Z^3$. To measure
+its terminal moment, define, using a copy $X$ of the whole field $X^{(0)}$,
+\begin{equation}\label{eq:h-H}
+ h(\mu)=\E_X\Big(\sum_x\mu_xX_x\Big)^p,
+ \qquad H(\mu)=h(\mu)^a.
+\end{equation}
+Jensen and mean one give the support-independent bounds
+\begin{equation}\label{eq:terminal-bounds}
+ 1\le h(\mu)\le C_p,\qquad 1\le H(\mu)\le C_p^a,
+ \qquad \E_X\Big(\sum_x\mu_xX_x\Big)^q\le C_q.
+\end{equation}
+On any fixed finite-support simplex, $h$ and $H$ are continuous by dominated
+convergence: the $p$th power of the sum of the terminal coordinates in that
+fixed support is an integrable dominator.
+In particular they are measurable at the finite endpoint distributions used
+below.
+
+Predict the next endpoint law by $\alpha=\mu K$ and write
+\begin{equation}\label{eq:overlap}
+ I=\sum_x\alpha_x^2>0,\qquad t_0=\beta_0^2.
+\end{equation}
+The positive support $J=\{x:\alpha_x>0\}$ is finite. For independent standard
+Gaussians $(g_x)_{x\in J}$, independent of $X$, put
+\begin{equation}\label{eq:one-step}
+ \eta_x(t)=e^{\sqrt t\,g_x-t/2},\qquad
+ A_t=\sum_x\alpha_x\eta_x(t),\qquad
+ \nu_t(x)=\frac{\alpha_x\eta_x(t)}{A_t}.
+\end{equation}
+Here $t$ is the variance parameter $\beta^2$, not the semigroup time used in
+Section~\ref{sec:comparison}.
+For a positive vector $b=(b_x)_{x\in J}$ set
+\begin{equation}\label{eq:L-F}
+ Z_b=\sum_xb_xX_x,\qquad B=\sum_xb_x,\qquad
+ L(b)=\E_X Z_b^p,\qquad F(b)=L(b)^a.
+\end{equation}
+The joint recursion \eqref{eq:terminal-recursion} and homogeneity imply
+\begin{align}
+ \E_g L(\alpha\eta(t_0))&=h(\mu),\label{eq:harmonic}\\
+ \E_{g,X}\Big(\sum_x\alpha_x\eta_x(t_0)X_x\Big)^q&\le C_q,\label{eq:q-harmonic}\\
+ F(\alpha\eta(t))&=A_t^sH(\nu_t).\label{eq:homogeneity}
+\end{align}
+Indeed, the sum in the first two lines has the law of
+$\sum_x\mu_xX_x^{(0)}$. This is where retaining the joint terminal field
+matters.
+
+\subsection{Gaussian differentiation}
+We first control the variation of $\E_gF(\alpha\eta(t))$ with $t$.
+For positive $b$, Jensen gives $B^p\le L(b)\le C_p B^p$.
+Differentiation under the $X$ expectation gives
+\[
+ L_x=p\E_X[X_xZ_b^{p-1}],\qquad
+ L_{xx}=p(p-1)\E_X[X_x^2Z_b^{p-2}].
+\]
+On compact subsets of the positive orthant, the integrand and these
+derivatives are bounded by an integrable multiple of
+$(\sum_{x\in J}X_x)^p$. Thus the differentiations are valid also for
+noninteger $p>2$. H\"older gives
+\[
+ \E_X[X_xZ_b^{p-1}]\le C_p B^{p-1},\qquad
+ \E_X[X_x^2Z_b^{p-2}]\le C_p B^{p-2},
+\]
+and Cauchy--Schwarz gives
+$L_x^2\le p^2L\E_X[X_x^2Z_b^{p-2}]$.
+Since $a<1$,
+\begin{equation}\label{eq:Fxx}
+ F_{xx}=aL^{a-1}L_{xx}-a(1-a)L^{a-2}L_x^2
+ \le s(p-1)C_p B^{s-2}.
+\end{equation}
+The same estimates also give
+\begin{equation}\label{eq:absolute-derivatives}
+ |F_x|\le s C_p B^{s-1},\qquad
+ |F_{xx}|\le\{s(p-1)+a(1-a)p^2\}C_p B^{s-2}.
+\end{equation}
+Both $p-2$ and $s-2$ are positive.
+
+Finite-dimensional Gaussian integration by parts now yields
+\begin{equation}\label{eq:variance-derivative}
+ \frac d{dt}\E_gF(\alpha\eta(t))
+ =\frac12\E_g\sum_x(\alpha_x\eta_x(t))^2F_{xx}(\alpha\eta(t)).
+\end{equation}
+For completeness, differentiating before integration by parts gives
+$\sum_x b_xF_x(g_x/(2\sqrt t)-1/2)$, with $b=\alpha\eta(t)$.
+The identity $\E_g(g_x f)=\E_g(\partial_{g_x}f)$ replaces
+$g_xb_xF_x$ by $\sqrt t(b_xF_x+b_x^2F_{xx})$; the terms $b_xF_x$
+cancel. On a compact interval of positive $t$, \eqref{eq:absolute-derivatives}
+bounds the relevant functions and derivatives by finite Gaussian exponentials
+with polynomial factors in $g$. These are integrable and dominate the
+difference quotients. They also make the boundary terms vanish against the
+Gaussian density. Dominated convergence and Fubini justify the derivative and
+integration by parts for each finite $J$.
+
+By H\"older with exponents $s/2$ and $s/(s-2)$,
+\[
+ \E_g[\eta_x(t)^2 A_t^{s-2}]
+ \le (\E\eta_x(t)^s)^{2/s}(\E A_t^s)^{(s-2)/s}
+ \le e^{s(s-1)t/2}.
+\]
+The last inequality follows from Jensen over the probability vector $\alpha$.
+Consequently, \eqref{eq:Fxx}--\eqref{eq:variance-derivative} give
+\begin{equation}\label{eq:perturbation-derivative}
+ \frac d{dt}\E_gF(\alpha\eta(t))
+ \le \frac{s(p-1)C_p}{2}e^{s(s-1)t/2} I.
+\end{equation}
+This bound has the same overlap $I$ as the concavity estimate proved next.
+
+\subsection{A uniform concavity estimate}
+Recall $H(\mu)=h(\mu)^a$ and $F(b)=L(b)^a$.
+We show that $H(\mu)$ exceeds $\E_gF(\alpha\eta(t_0))$ by a fixed
+positive multiple of $I$, uniformly over all finite supports.
+Set
+\[
+ Y=L(\alpha\eta(t_0)),\qquad D=\frac{Y}{h(\mu)}.
+\]
+By \eqref{eq:harmonic}, $D$ is a positive density of mean one. Since $r=q/p>1$,
+conditional Jensen and \eqref{eq:q-harmonic} give
+\begin{equation}\label{eq:density-moment}
+ \E_gD^r\le\E_gY^r
+ \le\E_{g,X}\Big(\sum_x\alpha_x\eta_x(t_0)X_x\Big)^q\le C_q.
+\end{equation}
+The scalar variable
+\[
+ G_\alpha=I^{-1/2}\sum_x\alpha_xg_x
+\]
+is standard normal for every $\alpha$. Let $r'=r/(r-1)$ and define
+\begin{equation}\label{eq:M}
+ M=C_q^{1/r}(\E|G|^{2r'})^{1/r'},\qquad G\sim N(0,1).
+\end{equation}
+H\"older gives $\E_g[D G_\alpha^2]\le M$, with no dependence on $J$.
+
+Association of the terminal field and Jensen, using $p-1>1$, imply
+\begin{equation}\label{eq:association-lower}
+ \E_X[X_xZ_b^{p-1}]
+ \ge \E_XX_x\,\E_XZ_b^{p-1}\ge B^{p-1}.
+\end{equation}
+The product is integrable by the $p$-moment estimates above. Differentiating
+$Y$ and integrating by parts in $g_x$ therefore give
+\begin{align*}
+ \E_g[G_\alpha Y]
+ &=\frac{p\beta_0}{\sqrt I}\sum_x\alpha_x^2
+   \E_g\!\left[\eta_x(t_0)\E_X(X_x Z_{\alpha\eta(t_0)}^{p-1})\right]\\
+ &\ge p\beta_0\sqrt I.
+\end{align*}
+For the last inequality, \eqref{eq:association-lower} bounds the inner terminal
+expectation by $A_{t_0}^{p-1}$. Association in the fresh Gaussian slice and
+Jensen then yield
+$\E_g[\eta_x(t_0)A_{t_0}^{p-1}]\ge\E_g\eta_x(t_0)\,\E_gA_{t_0}^{p-1}\ge1$.
+The growth estimates used in \eqref{eq:variance-derivative} also justify this
+integration by parts. Since $h(\mu)\le C_p$, we obtain
+\begin{equation}\label{eq:shift}
+ \E_g[D G_\alpha]\ge\frac{p\beta_0}{C_p}\sqrt I.
+\end{equation}
+
+The original Gaussian mean of $G_\alpha$ is zero. Thus
+\[
+ \E_g[D G_\alpha]
+ =\E_g[(\sqrt D-1)G_\alpha(\sqrt D+1)].
+\]
+Cauchy--Schwarz, $(\sqrt D+1)^2\le2(D+1)$, and \eqref{eq:M} imply
+\begin{equation}\label{eq:hellinger}
+ \E_g(\sqrt D-1)^2
+ \ge\frac{p^2\beta_0^2}{2C_p^2(1+M)}I.
+\end{equation}
+Only the $r$ moment of $D$ is used; it need not have a second moment.
+
+For $0<a<1$ and $z\ge0$,
+\begin{equation}\label{eq:scalar-concavity}
+ 1-a+az-z^a\ge\min(a,1-a)(\sqrt z-1)^2.
+\end{equation}
+If $a\le1/2$, apply the tangent-line inequality to $u^{2a}$ at $u=1$.
+If $a\ge1/2$, use the first case with $1-a$ and $1/z$, and multiply by $z$;
+the value at zero follows by continuity. Integrate
+\eqref{eq:scalar-concavity} at $D$ and use $\E_gD=1$.
+By \eqref{eq:harmonic}, $Y=h(\mu)D$, while $h(\mu)^a\ge1$.
+Together with \eqref{eq:hellinger}, this gives
+\begin{equation}\label{eq:deficit}
+ H(\mu)-\E_gF(\alpha\eta(t_0))\ge cI,\qquad
+ c=\frac{\min(a,1-a)p^2\beta_0^2}{2C_p^2(1+M)}>0.
+\end{equation}
+
+\subsection{Perturbation and all-length iteration}
+Keep $\beta_0,s,p,q$ and the resulting $H$ fixed. Define
+\[
+ Q=\frac{s(p-1)C_p}{2}e^{s(s-1)(t_0+1)/2},\qquad
+ \tau=\min\{1,c/(2Q)\}>0.
+\]
+Integrating \eqref{eq:perturbation-derivative} and using
+\eqref{eq:homogeneity} and \eqref{eq:deficit}, for every
+$t\in[t_0,t_0+\tau]$ we get
+\begin{equation}\label{eq:lyapunov-step}
+ \E_g[A_t^sH(\nu_t)]
+ \le H(\mu)-cI+Q(t-t_0)I\le H(\mu).
+\end{equation}
+The constants $c,Q,\tau$ are independent of $\mu$ and its support.
+Both the loss and the perturbation contain exactly $I=\sum_x\alpha_x^2$,
+so no lower bound on this overlap is required.
+
+Fix $\beta$ with $\beta^2\in[t_0,t_0+\tau]$, and let
+\[
+ u_n(x)=E_0\!\left[\prod_{j=1}^n\eta_{j,S_j}^\beta;\ S_n=x\right],
+ \qquad \mu_n(x)=\frac{u_n(x)}{W_n^\beta}.
+\]
+These are the actual endpoint weights and endpoint law at the perturbed
+parameter. We have $\mu_0=\delta_0$, $\alpha=\mu_n K$, and, conditionally on
+$\mathcal F_n$, the new slice is independent Gaussian. The ratio
+$W_{n+1}^\beta/W_n^\beta$ is $A_{\beta^2}$ and the next endpoint law is
+$\nu_{\beta^2}$. Equation~\eqref{eq:lyapunov-step} therefore says that
+\[
+ (W_n^\beta)^sH(\mu_n),\qquad n\ge0,
+\]
+is a nonnegative supermartingale. Every term is integrable by
+\eqref{eq:finite-moments} and \eqref{eq:terminal-bounds}. Taking expectations
+and using $H\ge1$ yields
+\begin{equation}\label{eq:all-N}
+ \sup_{\beta^2\in[t_0,t_0+\tau]}\sup_{N\ge0}
+ \E[(W_N^\beta)^s]\le H(\delta_0)=C_p^a.
+\end{equation}
+Taking $\varepsilon=\sqrt{\beta_0^2+\tau}-\beta_0$ proves
+Proposition~\ref{prop:stability}.
+
+\subsection{Proof of the moment-spectrum theorem}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Proposition~\ref{prop:comparison}, $\ps$ is finite and strictly decreasing
+on $(0,\beta_c]$, with limit infinity at zero and value $5/3$ at $\beta_c$.
+It remains to prove continuity. At every interior point with $\ps(\beta)>2$,
+Proposition~\ref{prop:stability} applies to every real $s\in(2,\ps(\beta))$.
+Thus the right limit of the nonincreasing function $\ps$ is at least each such
+$s$, and hence equals $\ps(\beta)$. At an interior point with $\ps(\beta)\le2$,
+strict decrease and \eqref{eq:critical-value} give $\ps(\beta)>5/3$;
+\cite[Theorem~1.2(i)]{Junk} supplies right continuity, including the case
+$\ps(\beta)=2$.
+
+Weak disorder holds at every $\beta\in(0,\beta_c]$, so
+\eqref{eq:left-continuity} supplies left continuity throughout this domain,
+including the critical endpoint. The resulting continuous strictly decreasing
+function takes every finite value above $5/3$ by the intermediate value theorem:
+for such a value choose a sufficiently small positive $b$ with $\ps(b)$ above
+it and use the interval $[b,\beta_c]$. Strict decrease makes the preimage unique.
+The value $5/3$ is attained only at $\beta_c$.
+\end{proof}
+
+\section*{AI assistance}
+OpenAI Codex was used extensively in developing the argument, checking sources
+and drafting the text. It also supplied internal reader and referee feedback.
+Independent mathematical review is requested.
+
+\begin{thebibliography}{7}
+\bibitem{Berger}
+Q.~Berger, \emph{Random polymers in random environment: an introduction to
+disordered systems}, lecture notes, April 16, 2026.
+\url{https://www.math.univ-paris13.fr/~quentin.berger/documents/Disordered-Polymers.pdf}.
+
+\bibitem{ChafaiLehec}
+D.~Chafa\"i and J.~Lehec, \emph{Logarithmic Sobolev Inequalities Essentials},
+lecture notes, Winter 2023 revision.
+\url{https://djalil.chafai.net/docs/M2/chafai-lehec-m2-lsie-lecture-notes.pdf}.
+
+\bibitem{Durrett}
+R.~Durrett, \emph{Probability: Theory and Examples}, online version 5,
+January 11, 2019.
+\url{https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf}.
+
+\bibitem{Junk}
+S.~Junk, \emph{Local limit theorem for directed polymers beyond the
+$L^2$-phase}, arXiv:2307.05097v3.
+\url{https://arxiv.org/html/2307.05097v3}.
+
+\bibitem{Tail}
+S.~Junk and H.~Lacoin, \emph{The tail distribution of the partition function
+for directed polymers in the weak disorder phase}, arXiv:2405.04335v3.
+\url{https://arxiv.org/html/2405.04335v3}.
+
+\bibitem{Critical}
+S.~Junk and H.~Lacoin, \emph{Coincidence of critical points for directed
+polymers for general environments and random walks}, arXiv:2502.04113v2.
+\url{https://arxiv.org/html/2502.04113v2}.
+
+\bibitem{Kemp}
+T.~Kemp, \emph{Hypercontractivity in non-commutative holomorphic spaces},
+Communications in Mathematical Physics \textbf{259} (2005), 615--637.
+\href{https://doi.org/10.1007/s00220-005-1379-5}{doi:10.1007/s00220-005-1379-5}.
+Author-generated copy, November~5, 2005:
+\url{https://mathweb.ucsd.edu/~tkemp/K-CMP-2005.pdf}.
+\end{thebibliography}
+\end{document}
