@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\wt}{\operatorname{wgt}_{\mathrm{TC}}}
+\newcommand{\genus}{\operatorname{genus}}
+\title{A positive-norm counterexample to a TC-weight question}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $S$ be the closed oriented surface of genus two. The aspherical
+four-manifold $M=S\times S$ has a rational fundamental class of positive
+homological $\ell^1$ seminorm, but every nonzero $u\in H^4(M;\Q)$ satisfies
+$\wt(1\times u-u\times1)\le2$. This gives a negative answer to
+Neofytidis's question asking whether a positive-norm degree-$k$ class on a
+closed oriented aspherical manifold forces the existence of a nonzero
+degree-$k$ class with TC weight at least $k$.
+\end{abstract}
+
+We use the unreduced convention for genus: $\genus(p)$ is the least number
+of open sets covering the base of $p$ on which continuous local sections
+exist. Let
+\[
+ e_M:C([0,1],M)\longrightarrow M\times M,
+ \qquad e_M(\gamma)=(\gamma(0),\gamma(1)),
+\]
+where the path space has the compact-open topology. For a nonzero class
+$v\in H^*(M\times M;\Q)$ its TC weight is
+\begin{equation}\label{eq:weight}
+ \wt(v)=\sup\bigl\{r\in\mathbb Z_{\ge0}:
+ F^*v=0\ \text{for every }F:Y\to M\times M
+ \text{ with }\genus(F^*e_M)\le r\bigr\}.
+\end{equation}
+Here $Y$ ranges over all topological spaces and $F$ is continuous. This is
+the sectional-weight convention of Farber--Grant
+\cite[Definition 29]{FG}, as used in \cite[Definition 2.4]{N}.
+For $u\in H^k(M;\Q)$ write
+$\bar u=\operatorname{pr}_2^*u-\operatorname{pr}_1^*u
+=1\times u-u\times1$.
+
+For $\alpha\in H_k(M;\Q)$, the rational homological seminorm is
+\[
+ \|\alpha\|_{1,\Q}
+ =\inf\left\{\sum_{j=1}^m|a_j|:
+ \sum_{j=1}^m a_j\sigma_j\text{ is a rational singular cycle
+ representing }\alpha\right\}.
+\]
+Neofytidis asks whether, for every closed connected oriented aspherical
+$n$-manifold $M$ and $2\le k\le n$, the existence of an
+$\alpha\in H_k(M;\Q)$ with $\|\alpha\|_{1,\Q}>0$ implies the
+existence of a nonzero $u\in H^k(M;\Q)$ with $\wt(\bar u)\ge k$
+\cite[Question 5.1(a)]{N}. The following example refutes that implication.
+
+\begin{theorem}\label{thm:main}
+Let $S$ be the closed oriented surface of genus two and let $M=S\times S$,
+with its product orientation. Then $M$ is a closed connected oriented
+aspherical four-manifold and
+\[
+ \|[M]_\Q\|_{1,\Q}\ge24>0.
+\]
+For every nonzero $u\in H^4(M;\Q)$,
+\[
+ \wt(\bar u)\le2<4.
+\]
+In particular, the assertion in the question fails for $n=k=4$ and
+$\alpha=[M]_\Q$.
+\end{theorem}
+
+The weight bound comes from keeping the first surface coordinate fixed
+while moving the second to one base point. We first give the required
+open cover and its local sections explicitly.
+
+\begin{lemma}\label{lem:sections}
+Fix $b\in S$, put $h(x,y)=(x,b)$, and define
+$F:M\to M\times M$ by $F(z)=(z,h(z))$. Then
+$\genus(F^*e_M)\le3$.
+\end{lemma}
+
+\begin{proof}
+Choose a finite simplicial triangulation $K$ of the surface. In its
+barycentric subdivision, a vertex $b_\tau$ corresponds to a nonempty
+simplex $\tau$ of $K$. Color $b_\tau$ by $\dim\tau\in\{0,1,2\}$ and put
+\[
+ U_i=\bigcup_{\dim\tau=i}\operatorname{st}^{\circ}(b_\tau),
+ \qquad i=0,1,2.
+\]
+The open star of a vertex is the set where its barycentric coordinate
+is positive. The sets $U_i$ are open and cover $S$. Distinct vertices of
+the same color do not belong to one simplex of the subdivision, because
+each such simplex corresponds to a strictly increasing chain of
+simplices of $K$. Their open stars are therefore disjoint.
+
+Each open star contracts to its vertex by the straight-line homotopy
+within simplices containing that vertex. Append a fixed path from that
+vertex to $b$. Since the stars of a fixed color are disjoint open sets,
+these homotopies together give a continuous map
+\[
+ H_i:U_i\times[0,1]\longrightarrow S,
+ \qquad H_i(y,0)=y,\quad H_i(y,1)=b.
+\]
+The three sets $V_i=S\times U_i$ cover $M$. On $V_i$ the path
+\[
+ \gamma_i(x,y)(t)=(x,H_i(y,t))
+\]
+has endpoints $(x,y)$ and $(x,b)$. The adjoint
+$V_i\times[0,1]\to M$ is continuous, and hence
+$\gamma_i:V_i\to C([0,1],M)$ is continuous in the compact-open topology.
+Indeed, for a compact $C\subset[0,1]$ and an open $O\subset M$, if
+$\gamma_i(z_0)(C)\subset O$, continuity of the adjoint gives product
+neighborhoods of $(z_0,t)$ mapped into $O$ for each $t\in C$. A finite
+subcover of $C$ and the intersection of the corresponding neighborhoods
+of $z_0$ show that $\gamma_i^{-1}[C,O]$ is open.
+Thus $z\mapsto(z,\gamma_i(z))$ is a continuous section of $F^*e_M$ on
+$V_i$, proving the bound.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The surface $S$ has a contractible universal cover, and the product of
+two such covers is a contractible universal cover of $M$; see
+\cite[Examples 1B.2, 1B.5 and 1B.14]{H}. Thus $M$ is aspherical.
+The other manifold properties follow from the corresponding properties
+of the oriented surface.
+
+Bucher-Karlsson's surface-product formula
+\cite[Corollary 3]{B} gives the real simplicial volume
+\[
+ \|[M]_\R\|_{1,\R}=24(2-1)(2-1)=24.
+\]
+Every rational singular cycle representing $[M]_\Q$ represents
+$[M]_\R$ after coefficient extension and has the same $\ell^1$ chain
+norm. Each such norm is therefore at least $24$, so their infimum
+satisfies $\|[M]_\Q\|_{1,\Q}\ge24$. No equality between the two
+coefficient-field seminorms is needed.
+
+Use the maps $h$ and $F$ of Lemma~\ref{lem:sections}. The map $h$ factors
+as $M\xrightarrow{q}S\xrightarrow{j}M$, where $q(x,y)=x$ and
+$j(x)=(x,b)$. Since $S$ is a two-dimensional CW complex,
+$H^4(S;\Q)=0$ \cite[Theorem 3.5]{H}, and hence
+$h^*u=q^*j^*u=0$ for every $u\in H^4(M;\Q)$. Consequently
+\begin{equation}\label{eq:pullback}
+ F^*\bar u=h^*u-\operatorname{id}_M^*u=-u.
+\end{equation}
+For every nonzero $u$, this same map $F$ has nonzero pullback and
+$\genus(F^*e_M)\le3$. The vanishing property in
+\eqref{eq:weight} therefore fails for every integer $r\ge3$, giving
+$\wt(\bar u)\le2$. Equation~\eqref{eq:pullback} also shows that
+$\bar u\ne0$. Nonzero degree-four classes exist, since Poincar\'e
+duality gives $H^4(M;\Q)\cong H_0(M;\Q)\cong\Q$
+\cite[Theorem 3.30]{H}. Thus no choice of a nonzero class can satisfy
+the requested weight bound.
+\end{proof}
+
+The local-section argument is a concrete instance of existing genus
+machinery. For maps $f,g$ with the same domain and codomain,
+$D(f,g)\le d$ means that $d+1$ open sets cover their domain and the
+restrictions of $f,g$ are homotopic on each set, where $d$ is a
+nonnegative integer. Mac\'ias-Virg\'os and Mosquera-Lois prove
+\cite[Theorem 2.8]{D} that, for the pair $(\operatorname{id}_M,h)$,
+\[
+ \genus(F^*e_M)=D(\operatorname{id}_M,h)+1.
+\]
+Write $c_b:S\to S$ for the constant map at $b$, so that
+$h=\operatorname{id}_S\times c_b$. Their product inequality
+\cite[Theorem 3.19]{D} applies because $M=S\times S$ is normal and gives
+\[
+ D(\operatorname{id}_M,h)
+ \le D(\operatorname{id}_S,\operatorname{id}_S)
+       +D(\operatorname{id}_S,c_b)\le0+2.
+\]
+The last bound follows from the three open surface sets in the proof of
+Lemma~\ref{lem:sections}, on which the identity is homotopic to $c_b$.
+Thus the normalized distance bound gives the unreduced genus bound
+three used above. Here the
+surface-product volume formula and the degree-four pullback
+\eqref{eq:pullback} connect this genus bound to the positive-norm
+question. The weight estimate concerns the difference $\bar u$. For comparison,
+the unreduced topological complexity is $\mathrm{TC}(M)=\genus(e_M)$;
+for this surface product it equals $9$ \cite[Example 5.7]{N}.
+
+\paragraph{AI use.}
+OpenAI Codex was used to develop the argument, check cited source passages,
+prepare the text, and conduct automated manuscript reviews. These reviews
+do not constitute independent mathematical peer review.
+
+\begin{thebibliography}{9}
+\bibitem{B}
+M.~Bucher-Karlsson,
+The simplicial volume of closed manifolds covered by
+$\mathbb H^2\times\mathbb H^2$,
+\emph{Journal of Topology} \textbf{1} (2008), 584--602.
+\href{https://doi.org/10.1112/jtopol/jtn012}{doi:10.1112/jtopol/jtn012}.
+\href{https://arxiv.org/abs/math/0703587v2}{arXiv:math/0703587v2}.
+
+\bibitem{FG}
+M.~Farber and M.~Grant,
+Symmetric motion planning,
+\emph{Contemporary Mathematics} \textbf{438} (2007), 85--104.
+\href{https://arxiv.org/abs/math/0610857}{arXiv:math/0610857}.
+
+\bibitem{H}
+A.~Hatcher,
+\emph{Algebraic Topology}, Cambridge University Press.
+The cited electronic text is marked copyright 2002:
+\href{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/hatchat.pdf}{consulted electronic version}.
+
+\bibitem{D}
+E.~Mac\'ias-Virg\'os and D.~Mosquera-Lois,
+Homotopic distance between maps,
+\emph{Mathematical Proceedings of the Cambridge Philosophical Society}
+\textbf{172} (2022), 73--93.
+\href{https://arxiv.org/abs/1810.12591v3}{arXiv:1810.12591v3}.
+
+\bibitem{N}
+C.~Neofytidis,
+Topological complexity, asphericity and connected sums,
+\emph{Journal of Applied and Computational Topology} \textbf{9} (2025),
+article 10.
+\href{https://doi.org/10.1007/s41468-025-00205-z}{doi:10.1007/s41468-025-00205-z}.
+The question and numbered locators cited here refer to
+\href{https://arxiv.org/abs/2212.08962v2}{arXiv:2212.08962v2}.
+\end{thebibliography}
+\end{document}
