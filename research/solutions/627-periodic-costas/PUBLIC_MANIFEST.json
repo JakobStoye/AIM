@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "title": "A four-dimensional periodic Costas array of order six",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "problem_id": "627",
+  "target_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/627-periodic-costas.md",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "Explicit order-six counterexample with a self-contained analytic proof for every translated window",
+  "mathematical_review": "Independent mathematical review requested; no human or formal verification claimed",
+  "public_files": [
+    "README.md",
+    "TARGET_COMPARISON.md",
+    "paper/main.tex",
+    "paper/main.pdf",
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "payload_files": [
+    {
+      "path": "README.md",
+      "bytes": 1879,
+      "sha256": "2c0a7483f80382076ac505678db20124c6f2c3d59b602f84df45e4807afd6432"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2258,
+      "sha256": "c072a2e2e84556300048eba97b15c7bf194f7a69277743a49a598a67bc64de7c"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 7373,
+      "sha256": "04eab6e634fd3369a63d21bd95d5edc3518e0956517393a8cc9c94653d340dfd"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 269087,
+      "sha256": "940774e055c6e0482631e0676103eb3ce8c56ba3ac83580ea78ed2abcbd22d4d"
+    }
+  ],
+  "checksums": "SHA256SUMS covers the four payload files and this manifest; the checksum file does not hash itself"
+}
