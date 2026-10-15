@@ -1,0 +1,572 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{
+  pdftitle={Counting half-integral polygons with collinear interior lattice points},
+  pdfauthor={Kaiwen Jin},
+  pdfsubject={Computer-assisted exact enumeration of half-integral polygons}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\title{Counting half-integral polygons with collinear interior lattice points}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 14, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We count convex half-integral polygons with a prescribed number of collinear
+interior lattice points, up to affine unimodular equivalence. For every
+$i\geq3$, the count is the degree-seven polynomial conjectured by Bohnert and
+Springer. The proof is computer-assisted: their strip theorem reduces the
+polygons to two boundary chains on five integer rows, and a unique integer
+shear normalization gives finitely many integer linear systems.
+Complete rational generating functions for these systems, together with the
+fixed classes of the remaining reflections, give the formula by Burnside's
+lemma. Integral polygons are included, and translations are integral.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+A half-integral polygon is a two-dimensional convex polygon in $\R^2$ whose
+vertices lie in $\tfrac12\Z^2$. This includes lattice polygons.
+We identify $P$ and $P'$ when
+\[
+ P'=UP+t,\qquad U\in\GL_2(\Z),\quad t\in\Z^2.
+\]
+For an integer $i\geq3$, let $N(i)$ denote the number of these equivalence
+classes having exactly $i$ interior points of $\Z^2$, all on one line.
+Prescribing the denominator and the interior lattice points gives a concrete
+classification problem for rational polygons. In the collinear case, the
+line of interior points also supplies coordinates suited to counting.
+
+Bohnert and Springer \cite{BS} classify rational polygons with small
+denominator and few interior lattice points. Their Proposition~3.5 puts a
+$k$-rational polygon with collinear interior lattice points in
+$\R\times[-1,1]$ when the number of those points exceeds $k$.
+Here $k$-rational means that multiplication by $k$ makes every vertex
+integral; the denominator need not be exactly $k$.
+Their Classification~3.6 records the half-integral counts for
+$3\leq i\leq20$, and their Conjecture~3.7 gives the polynomial below.
+We give a computer-assisted proof over the whole stated range.
+
+\begin{theorem}\label{thm:main}
+For every integer $i\geq3$,
+\begin{equation}\label{eq:main}
+\begin{split}
+ N(i)=\frac{i+1}{1260}\bigl(&512i^6+12928i^5+137740i^4+685145i^3\\
+                         &+1582743i^2+1665222i+710640\bigr).
+\end{split}
+\end{equation}
+Here $N(i)$ counts two-dimensional convex polygons with vertices in
+$\tfrac12\Z^2$, including integral polygons, with exactly $i$ collinear
+interior points of $\Z^2$, modulo $\GL_2(\Z)$ and translations in $\Z^2$.
+\end{theorem}
+
+The strip theorem leaves only five possible vertex rows after doubling.
+It does not by itself remove the infinitely many integer shears.
+Normalizing one boundary slope removes those shears uniquely and leaves
+finitely many coordinate choices at each $i$.
+The remaining equivalences form a four-element group. Its stabilizers matter,
+so counting normalized polygons and simply dividing by four would be
+incorrect. We instead compute the generating functions of the four fixed
+sets. Each is a finite sum of integer-point generating functions, with the
+number of interior points retained as an unbounded variable.
+
+The rational-series calculation uses Normaliz through PyNormaliz
+\cite{BIS,Normaliz,PyNormaliz}. The proof therefore relies on trusted exact
+software for a finite collection of complete generating functions.
+The geometric correspondence, the fixed-point equations and the final
+coefficient identity are given below. The accompanying computational
+supplement contains the exact systems, complete rational outputs and
+reproduction commands.
+
+Section~\ref{sec:chains} gives the boundary description and shear
+normalization. Section~\ref{sec:group} determines the remaining equivalences
+and fixed sets. Section~\ref{sec:series} performs the generating-function
+count and recovers~\eqref{eq:main}. Throughout, lattice points mean points of
+$\Z^2$; only integer translations of the original polygon are allowed.
+
+\section{Normalized boundary chains}\label{sec:chains}
+
+\subsection{The interior row and the doubled polygon}
+
+We use the following published result with its original parameter range.
+
+\begin{proposition}[Bohnert--Springer, Proposition 3.5]\label{prop:strip}
+A two-dimensional convex $k$-rational polygon with collinear interior
+lattice points and more than $k$ such points is affinely unimodularly
+equivalent to a polygon contained in $\R\times[-1,1]$.
+\end{proposition}
+
+For its proof see \cite[pp.~1248--1249]{BS}.
+Apply Proposition~\ref{prop:strip} with $k=2$.
+The only integer horizontal row strictly inside the strip is $y=0$.
+The interior lattice points on that row are consecutive: convexity puts every
+point between the first and last in the interior. After an integer horizontal
+translation, they are
+\[
+ (j,0),\qquad 1\leq j\leq i.
+\]
+Set $n=i+1\geq4$ and $Q=2P$. Then $Q$ has integral vertices and its interior
+points of the even lattice $2\Z^2$ are exactly
+\begin{equation}\label{eq:interior-row}
+ (2j,0),\qquad 1\leq j\leq n-1.
+\end{equation}
+The lowest and highest vertex heights of $Q$ are $-a$ and $b$, with
+$a,b\in\{1,2\}$, since the interior row lies strictly between them.
+
+Write the horizontal sections as
+\begin{equation}\label{eq:section}
+ Q\cap(\R\times\{y\})=[f(y),\,2n-g(y)]\times\{y\},
+ \qquad -a\leq y\leq b.
+\end{equation}
+The left boundary coordinate $f$ and the right boundary distance $g$ are
+convex piecewise affine functions. Their breakpoints have integer heights
+and integer values. Each boundary's height set contains $-a,b$ and any
+subset of the intermediate integer heights. A height is included in this
+set precisely when the boundary has a strict change of slope there.
+The left and right height sets can differ. At an extreme height the
+horizontal face may have length zero.
+
+\subsection{Exact integer conditions}
+
+The row condition~\eqref{eq:interior-row} is equivalent to
+\begin{equation}\label{eq:intercepts}
+ 0\leq f(0)<2,\qquad 0\leq g(0)<2.
+\end{equation}
+Indeed, the interior row section must contain $2,4,\ldots,2n-2$ strictly and
+must not contain $0$ or $2n$ strictly.
+For three successive boundary heights $u<v<w$, write the boundary values
+as $x_u,x_v,x_w$. Strict slope increase is equivalent to the integer
+inequality
+\begin{equation}\label{eq:convex}
+ (w-v)x_u-(w-u)x_v+(v-u)x_w\geq1.
+\end{equation}
+For the unique consecutive heights $u\leq0<v$ containing the right side of
+zero, put $d=v-u$. Linear interpolation gives
+\[
+ x(0)=\frac{v x_u-u x_v}{d}.
+\]
+Thus the corresponding intercept condition is
+\begin{equation}\label{eq:integer-intercept}
+ 0\leq v x_u-u x_v\leq2d-1.
+\end{equation}
+This applies separately to each boundary, with its own central edge.
+The boundaries do not cross if and only if
+\begin{equation}\label{eq:width-endpoints}
+ f(-a)+g(-a)\leq2n,\qquad f(b)+g(b)\leq2n.
+\end{equation}
+To see sufficiency, $f+g$ is convex, hence is no larger than the larger of its
+endpoint values.
+
+\begin{lemma}\label{lem:encoding}
+For fixed $n\geq4$, conditions~\eqref{eq:convex},
+\eqref{eq:integer-intercept} and~\eqref{eq:width-endpoints}, with integer
+boundary values and the stated height sets, describe exactly the normalized
+polygons $Q$ satisfying~\eqref{eq:interior-row}. The description is unique.
+\end{lemma}
+
+\begin{proof}
+For admitted chain data let
+\[
+ K=\{(x,y):-a\leq y\leq b,\ f(y)\leq x\leq2n-g(y)\}.
+\]
+This is convex, being the intersection of the epigraph of $f$ with the
+hypograph of $2n-g$ and the height strip.
+Its width $w(y)=2n-f(y)-g(y)$ is nonnegative by
+\eqref{eq:width-endpoints} and is concave. At zero,
+$w(0)>2n-4\geq4$.
+Interpolating between zero and either endpoint shows that $w$ is positive
+at every nonendpoint height. Hence $K$ is two-dimensional.
+Its vertices are the strict side breakpoints and the endpoints of the
+extreme faces, all integral. A point extreme face contributes one vertex,
+although the point belongs to both chains.
+
+Condition~\eqref{eq:intercepts} gives exactly the interior even-lattice
+points in~\eqref{eq:interior-row}. The only other possible even rows are
+$y=-2,2$, and each is absent or is an extreme boundary row.
+Thus $K/2$ is an admissible half-integral polygon.
+Conversely, every normalized polygon has these boundaries and satisfies
+the conditions. Strict slope increase excludes redundant collinear
+vertices, so its height sets and coordinates are recoverable uniquely.
+This also retains corners at height zero and zero-length extreme faces.
+\end{proof}
+
+\subsection{Removing integer shears}
+
+An integer shear is
+\[
+ S_s(x,y)=(x+s y,y),\qquad s\in\Z.
+\]
+It sends $(f,g)$ to $(f+s y,g-s y)$.
+We choose the unique representative with
+\begin{equation}\label{eq:gauge}
+ 0\leq f'_+(0)<1.
+\end{equation}
+Adding an integer to the right derivative puts it in this half-open
+interval in exactly one way.
+If $(u,v)$ is the left central edge, condition~\eqref{eq:gauge} says
+\[
+ 0\leq x_v-x_u\leq d-1,\qquad d=v-u.
+\]
+For $\delta=x_v-x_u$ the reference values satisfy
+\begin{equation}\label{eq:gauge-pairs}
+ \delta\in\{0,\ldots,d-1\},\qquad
+ 0\leq d x_u-u\delta<2d,\qquad x_v=x_u+\delta.
+\end{equation}
+For each $\delta$, the half-open interval for $x_u$ has length two and
+contains exactly two integers. There are therefore $2d$ reference pairs.
+Also
+$x_u=f(0)+(u/d)\delta\in(-2,2)$, so the pairs can be found by checking
+$x_u=-2,-1,0,1,2$ and retaining exactly~\eqref{eq:gauge-pairs}.
+
+\begin{lemma}\label{lem:finite}
+For every $n\geq4$ there are finitely many normalized chain data satisfying
+\eqref{eq:gauge}. The integer shear action on the polygons is free.
+\end{lemma}
+
+\begin{proof}
+The right derivative of a convex piecewise affine function is a supporting
+slope at zero, even when zero is a corner. Consequently
+\[
+ f(y)\geq f(0)+f'_+(0)y\geq-2.
+\]
+The endpoint widths give $g(-a),g(b)\leq2n+2$.
+Convexity gives the same upper bound throughout.
+For $y<0$, interpolation of $g$ between $y$ and $b$ yields
+\[
+ g(y)\geq \frac{b-y}{b}g(0)+\frac{y}{b}g(b)\geq-4n-4.
+\]
+For $y>0$, interpolation between $-a$ and $y$ gives
+\[
+ g(y)\geq \frac{a+y}{a}g(0)-\frac{y}{a}g(-a)\geq-4n-4.
+\]
+The endpoint widths now bound the endpoint values of $f$ above by
+$6n+4$, and convexity gives this upper bound throughout.
+All boundary coordinates thus lie in bounded intervals depending
+linearly on $n$. There are finitely many height sets, so the integer
+fiber at $n$ is finite. The same estimates bound the real fibers.
+
+If $S_sQ=Q$ with $s\ne0$, choose a point of $Q$ at nonzero height.
+Its iterated shear images have unbounded horizontal coordinates, contrary
+to boundedness of $Q$. Hence no nonzero shear fixes $Q$.
+\end{proof}
+
+\section{Equivalences and fixed classes}\label{sec:group}
+
+\subsection{The residual four-element group}
+
+An equivalence between two normalized original polygons must preserve the
+set $\{(j,0):1\leq j\leq n-1\}$.
+This set determines its line, so the linear part of the equivalence has the
+form
+\[
+ \begin{pmatrix}\varepsilon&s\\0&\eta\end{pmatrix},
+ \qquad \varepsilon,\eta\in\{1,-1\},\quad s\in\Z.
+\]
+Preserving the first and last interior points forces the translation to be
+$(0,0)$ if $\varepsilon=1$ and $(n,0)$ if $\varepsilon=-1$.
+In doubled coordinates the latter translation is $(2n,0)$.
+Thus all normalized equivalences are generated by the shears and
+\begin{equation}\label{eq:reflections}
+ h(x,y)=(2n-x,y),\qquad v(x,y)=(x,-y).
+\end{equation}
+Both $h$ and $v$ conjugate $S_s$ to $S_{-s}$, and $hv$ commutes with all
+shears. Quotienting by the normal shear subgroup leaves the Klein four group
+$G=\{e,h,v,hv\}$.
+
+Let $X_n$ be the finite set of shear classes at $n$, represented by
+\eqref{eq:gauge}. The original polygon classes are exactly the $G$-orbits
+in $X_n$. Every action preserves $n$, including the affine map $h$.
+
+\subsection{Fixed shear classes}
+
+If a shear class is fixed by $\sigma\in G$, then
+$\sigma Q=S_mQ$ for an integer $m$.
+By freeness in Lemma~\ref{lem:finite}, this integer is unique.
+Comparing the two boundary functions gives the following conditions.
+
+For $h$, the left and right height sets must agree and
+\begin{equation}\label{eq:h-fixed}
+ g(y)=f(y)+m y.
+\end{equation}
+Indeed, $hQ$ has left coordinate $g(y)$, whereas $S_mQ$ has left
+coordinate $f(y)+m y$; the right-coordinate equality is the same equation.
+
+For $v$, one must have $a=b$, each height set invariant under negation, and
+\begin{equation}\label{eq:v-fixed}
+ f(-y)=f(y)+m y,\qquad g(-y)=g(y)-m y.
+\end{equation}
+The equality $vQ=S_mQ$ compares sections at $y$ and $-y$.
+These equations need only be imposed at the paired vertex heights:
+both sides are affine on the same intervening intervals.
+
+For $hv$, one must have $a=b$ and the right height set equal to the negative
+of the left one. If $hvQ=S_mQ$, applying $hv$ twice and using commutation
+with shears gives $Q=S_{2m}Q$. Freeness forces $m=0$.
+The remaining condition is
+\begin{equation}\label{eq:hv-fixed}
+ g(-y)=f(y).
+\end{equation}
+Conversely, these respective conditions give $hQ=S_mQ$, $vQ=S_mQ$,
+or $hvQ=Q$, and hence a fixed shear class.
+We impose them on the representatives with the unique left slope
+normalization; they do not require the
+polygon itself to be fixed before taking the shear quotient.
+
+For each $\sigma\in G$ define the formal generating function
+\[
+ F_\sigma(z)=\sum_{n\geq4}|\Fix_{X_n}(\sigma)|z^n.
+\]
+These coefficients are finite by Lemma~\ref{lem:finite}.
+Burnside's formula gives
+\begin{equation}\label{eq:burnside}
+ C(z):=\sum_{n\geq4}N(n-1)z^n
+       =\frac{F_e(z)+F_h(z)+F_v(z)+F_{hv}(z)}4.
+\end{equation}
+For completeness, count pairs $(\sigma,x)$ with $\sigma x=x$.
+An orbit with stabilizer size $s$ has $4/s$ elements and contributes
+$(4/s)s=4$ pairs. Dividing the total by four counts the orbits, including
+those with nontrivial stabilizers.
+
+\section{Exact generating functions and the count}\label{sec:series}
+
+\subsection{The finite systems}
+
+The boundary description gives explicit integer linear systems with $n$
+as an unbounded integer variable. For $e$, enumerate $(a,b)\in\{1,2\}^2$,
+both height subsets containing the endpoints, and every left reference pair
+in~\eqref{eq:gauge-pairs}. Fix those two left values; keep the other side
+coordinates and $n$ as variables. Impose $n\geq4$, all strict slope
+inequalities~\eqref{eq:convex}, both intercept
+inequalities~\eqref{eq:integer-intercept}, and the endpoint
+widths~\eqref{eq:width-endpoints}.
+
+For $h$, require equal height sets and substitute~\eqref{eq:h-fixed},
+keeping its integer $m$ as a variable.
+For $v$, require $a=b$ and the two symmetric height sets, and add
+\eqref{eq:v-fixed} as integer equations.
+For $hv$, require $a=b$, reflect the left height set for the right one,
+and substitute~\eqref{eq:hv-fixed}.
+All cases retain the same left reference-pair rule and all boundary
+conditions. The integer $m$, when present, is unique and bounded at each
+$n$ by the boundary coordinates at a nonzero height.
+
+These loops give the disjoint cells in Table~\ref{tab:cells}.
+Disjointness follows from the unique height sets, reference pair and
+shear representative. In a fixed set it also uses uniqueness of $m$.
+Every integer point of a cell gives one of the appropriate fixed classes,
+and every fixed class belongs to exactly one cell.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{crrrr}
+\toprule
+$(a,b)$ & $e$ & $h$ & $v$ & $hv$\\
+\midrule
+$(1,1)$ & 12 & 6 & 12 & 6\\
+$(1,2)$ & 64 & 16 & 0 & 0\\
+$(2,1)$ & 56 & 14 & 0 & 0\\
+$(2,2)$ & 288 & 36 & 72 & 36\\
+\midrule
+Total & 420 & 72 & 84 & 42\\
+\bottomrule
+\end{tabular}
+\caption{Number of integer linear systems in each fixed-class count.
+These are input cells, not numbers of polygons. Empty cells contribute zero.}
+\label{tab:cells}
+\end{table}
+
+The supplement's \texttt{src/chain\_models.py} implements precisely these
+loops. A row $[a_1,\ldots,a_r,c]$ encodes
+$\sum_j a_j x_j+c\geq0$ or $=0$, with every $x_j\in\Z$.
+The grading is the unit vector selecting the original $n$ coordinate.
+No coordinate-sign or parity restriction is added.
+There are 618 cell members but 608 literally distinct complete matrix and
+grading inputs. Equal complete inputs share a computed rational function;
+every original cell retains its multiplicity in the sum.
+
+\subsection{The all-parameter series calculation}
+
+For a cell with inequalities $A x+c\geq0$ and equations $B x+d=0$,
+homogenization replaces the constants by $c\lambda,d\lambda$ and adds
+$\lambda\geq0$. Its integer points at $\lambda=1$ are exactly the original
+integer solutions. The $n$ grading extends by zero on the homogenizing
+coordinate. The real degree fibers are bounded by the estimates in
+Lemma~\ref{lem:finite}; the fixed-class equations do not change this
+finiteness. Thus the inhomogeneous integer-point series is well defined.
+
+Normaliz computes these rational series by exact rational-cone enumeration
+\cite[Section~5.3]{BIS}. A disjoint semi-open simplicial decomposition and the
+integer points in each fundamental domain give monomials divided by the
+products of $1-z^{d_j}$ belonging to the generating rays.
+Extracting the $\lambda=1$ slice gives the inhomogeneous series.
+The integer-lattice, row and grading conventions used here are described in
+\cite[Sections~2.1, 2.9, 4.1.18--4.1.19, 4.5.1 and 4.12--4.13]{Normaliz}.
+In particular, the explicit inequalities prevent the default positive
+orthant convention from restricting signed coordinates, and equations are
+intersected with the full integer lattice. Cells in proper affine subspaces
+and empty cells are included.
+
+The calculation uses PyNormaliz 2.24 and the collective request
+\[
+ \texttt{Compute(HilbertSeries, BigInt, NoGradingDenom)}.
+\]
+Each returned grading is checked to be the original $n$ unit vector, with
+homogenizing zero and denominator one.
+\texttt{NoGradingDenom} preserves this grading, including affine lattices
+with nontrivial period. The result is a complete rational function over all
+$n\geq4$; no coefficient cutoff is used in its computation.
+
+\begin{lemma}[Computer-assisted rational-series calculation]\label{lem:series}
+Summing the complete integer-point series of the cells in
+Table~\ref{tab:cells}, with all original multiplicities, gives
+\begin{align}
+ F_e(z)&=\frac{z^4}{(1-z)^8}
+ \bigl(669807-3348976z+7783173z^2-10577048z^3 \notag\\
+ &\hspace{38mm}+8928985z^4-4635736z^5+1361923z^6-173936z^7\bigr),
+ \label{eq:Fe}\\
+ F_h(z)&=\frac{z^4(2349-7519z+9303z^2-5255z^3+1138z^4)}
+                    {(1-z)^5},\label{eq:Fh}\\
+ F_v(z)&=\frac{z^4(2069-6465z+7915z^2-4447z^3+960z^4)}
+                    {(1-z)^5},\label{eq:Fv}\\
+ F_{hv}(z)&=\frac{z^4(335-806z+669z^2-190z^3)}
+                    {(1-z)^4}.\label{eq:Fhv}
+\end{align}
+\end{lemma}
+
+\begin{proof}[Computational verification]
+The supplement records the exact input, whole rational output and original
+grading for each of the 608 distinct systems, and the assignment of all
+618 cell members to those systems.
+All systems were computed in ordinary \texttt{BigInt} mode.
+An integer-only driver sums the functions with their cell multiplicities:
+the returned denominator degrees are one or two, so
+$1-z^2=(1-z)(1+z)$ gives a common denominator using integer polynomial
+multiplication and addition.
+The four rational differences from~\eqref{eq:Fe}--\eqref{eq:Fhv} are zero.
+The driver checks full numerator identities rather than a finite number of
+power-series coefficients.
+\end{proof}
+
+This lemma is the proof's software-dependent step. The supplement pins the
+actual wheel and native-library bytes.
+According to \cite[Section~5.3 and Appendix~E.2.10]{Normaliz},
+\texttt{BigInt} avoids the initial 64-bit main computation.
+It does not enlarge bounded degree types, and ordinary LLL arithmetic remains
+part of the implementation. The computation completed normally; its observed
+output degrees do not bound every intermediate operation.
+The manual version is 3.11.1, while the exact minor version of the compiled
+Normaliz library in the wheel is not exposed and is not inferred from it.
+The calculation relies on this trusted software and runtime; an independent
+counting implementation or a separately checked simplicial-decomposition
+certificate is not supplied.
+
+\subsection{Recovering all coefficients}
+
+Combining Lemma~\ref{lem:series} with~\eqref{eq:burnside} gives
+\begin{equation}\label{eq:C}
+ C(z)=\frac{z^4 P_*(z)}{(1-z)^8},
+\end{equation}
+where the numerator polynomial is
+\begin{equation}\label{eq:numerator}
+\begin{split}
+ P_*(z)={}&168640-844590z+1965375z^2-2673454z^3\\
+          &+2258540z^4-1173244z^5+344837z^6-44056z^7.
+\end{split}
+\end{equation}
+This is an identity of rational functions, hence of their formal
+expansions at zero.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Write $c_k$ for the coefficient of $z^k$ in~\eqref{eq:numerator}.
+The formal geometric-series identity gives
+\[
+ (1-z)^{-8}=\sum_{r\geq0}\binom{r+7}{7}z^r.
+\]
+Since the degree variable is $n=i+1$, extracting $z^{i+1}$
+in~\eqref{eq:C} yields
+\begin{equation}\label{eq:binomial-count}
+ N(i)=\sum_{k=0}^7 c_k\binom{i+4-k}{7},\qquad i\geq3.
+\end{equation}
+If a shifted exponent is negative, its coefficient is zero and the
+corresponding binomial upper argument is in $\{0,\ldots,6\}$.
+The polynomial product defining that binomial also vanishes.
+The smallest upper argument is $i-3\geq0$, so this formula includes every
+endpoint case in the stated range.
+
+Multiplying~\eqref{eq:binomial-count} by $7!=5040$ and expanding gives the
+integer polynomial identity
+\begin{equation}\label{eq:polynomial-identity}
+\begin{split}
+ \sum_{k=0}^7 c_k\prod_{j=0}^6(i+4-k-j)
+ =4(i+1)\bigl(&512i^6+12928i^5+137740i^4+685145i^3\\
+             &+1582743i^2+1665222i+710640\bigr).
+\end{split}
+\end{equation}
+Both sides have ascending coefficients
+\[
+ (2842560,\ 9503448,\ 12991860,\ 9071552,\
+   3291540,\ 602672,\ 53760,\ 2048).
+\]
+Dividing by 5040 proves~\eqref{eq:main}, since $5040=4\cdot1260$.
+The degree-seven identity follows from the complete rational series;
+finite classification data are not used to infer it.
+\end{proof}
+
+\paragraph{Computational materials.}
+The accompanying versioned supplement contains the chain generator,
+the complete compact matrix/series data, an integer-only aggregation
+verifier, a Normaliz replay driver, finite integer-geometry controls and
+environment information. Its README distinguishes verification of the
+stored algebra from recomputation of the software-dependent series.
+The full replay is optional for using the supplied data and is required
+to reproduce that series calculation from the inputs.
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used to develop the boundary encoding, implement and run the
+exact computations, check the argument and prepare the manuscript.
+Any accompanying manuscript review identifies its AI reviewer and the
+reviewed version. AI review and successful software tests do not constitute
+independent human mathematical certification.
+
+\begin{thebibliography}{9}
+\bibitem{BS}
+M.~Bohnert and J.~Springer,
+\emph{Classifying rational polygons with small denominator and few interior
+lattice points}, Discrete \& Computational Geometry \textbf{76} (2026),
+1238--1265.
+\href{https://doi.org/10.1007/s00454-026-00822-0}{doi:10.1007/s00454-026-00822-0}.
+
+\bibitem{BIS}
+W.~Bruns, B.~Ichim and C.~S\"oger,
+\emph{The power of pyramid decomposition in Normaliz},
+Journal of Symbolic Computation \textbf{74} (2016), 513--536.
+\href{https://doi.org/10.1016/j.jsc.2015.09.003}{doi:10.1016/j.jsc.2015.09.003}.
+The algorithm description used here is Section~5.3 of
+\href{https://arxiv.org/abs/1206.1916v4}{arXiv:1206.1916v4}.
+
+\bibitem{Normaliz}
+W.~Bruns and M.~Horn,
+\emph{Normaliz 3.11.1}, documentation.
+\url{https://github.com/Normaliz/Normaliz/blob/v3.11.1/doc/Normaliz.pdf}.
+
+\bibitem{PyNormaliz}
+\emph{PyNormaliz}, version 2.24.
+\url{https://github.com/Normaliz/PyNormaliz/tree/v2.24}.
+\end{thebibliography}
+\end{document}
