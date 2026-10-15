@@ -1,0 +1,645 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\R}{\mathbb R}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{informal}{Main result}
+\title{Two positive equilibria outside two disks\\for a monostable reaction}
+\author{Kaiwen Jin\thanks{Email: \href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}.}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct a positive monostable reaction and two disjoint disks for which
+an exterior reaction--diffusion equation with zero Dirichlet boundary data
+has two distinct bounded positive equilibria. This gives a negative answer
+to the universal two-obstacle uniqueness question posed by Berestycki and
+Graham. One equilibrium lies above a positive profile on the infinite strip
+between the disks. A second is obtained by energy minimization on bounded
+exhaustions; positive transverse energy bounds its mass in a long narrow
+part of the gap. The two mass bounds are incompatible. The reaction and
+finite disk geometry are explicit, and both equilibria are classical on
+the full exterior domain.
+\end{abstract}
+\section{Introduction}
+
+Consider bounded positive equilibria of a reaction--diffusion equation
+outside absorbing obstacles:
+\begin{equation}\label{eq:problem}
+ -\Delta u=f(u)\quad\text{in }\Omega,\qquad
+ u=0\quad\text{on }\partial\Omega.
+\end{equation}
+Here the unknown \(u\) is a population density and \(\Omega\) is its habitat.
+We assume a positive monostable reaction, in the following precise sense:
+\begin{equation}\label{eq:positive-reaction}
+\begin{gathered}
+ f\in C^{1,\gamma}([0,\infty)),\quad 0<\gamma<1,\qquad f(0)=f(1)=0,\\
+ f'(0)>0,\quad f'(1)<0,\qquad
+ f>0\text{ on }(0,1),\quad f<0\text{ on }(1,\infty).
+\end{gathered}
+\end{equation}
+There is no assumption that the per-capita growth rate \(f(s)/s\)
+decreases. Thus the reaction class is broader than the strong-KPP class
+studied in \cite{BGKPP}.
+
+Geometry has a substantial effect on uniqueness in this class.
+Berestycki and Graham prove uniqueness outside a compact strongly
+star-shaped obstacle, in particular a single ball
+\cite[Theorem~1.1]{BG}.
+They also explain that two sufficiently separated balls have a unique
+positive bounded equilibrium \cite[Section~8.5]{BG}.
+Their Open Question~7(ii) asks whether uniqueness holds for the complement
+of two balls without restrictions on their radii or separation.
+Two nearby balls have no common star center, so the dilation comparison
+for a single obstacle does not directly apply. Nonuniqueness for other
+domain geometries, including domains with attached pockets and infinite
+strips, is already known \cite[Sections~5--6]{BG}. The issue here is the
+complement of exactly two balls.
+
+We give a negative answer to the universal uniqueness question.
+\begin{informal}
+There is one reaction satisfying \eqref{eq:positive-reaction} for every
+\(0<\gamma<1\), and two equal disjoint disks in \(\R^2\), for which
+\eqref{eq:problem} has at least two distinct bounded positive solutions
+in \(C^2(\Omega)\cap C(\overline\Omega)\).
+\end{informal}
+The reaction, disks and solutions' separating bounds are specified in
+Theorem~\ref{thm:main}. One admissible example in dimension two suffices
+to refute the assertion quantified over all dimensions, reactions and
+disjoint ball pairs. Both solutions are defined on the full exterior
+domain and vanish on both complete boundary circles.
+
+The construction uses two features of a pair of large disks with a fixed
+small gap. An infinite straight strip fits between them. A positive
+one-dimensional profile on this strip, extended by zero, is a subsolution
+and produces one equilibrium. At the same time, a long central part of
+the actual gap has uniformly bounded width. We choose the reaction so
+that the transverse energy is positive for every nonzero profile in this
+region. For an equilibrium obtained by energy minimization on expanding
+bounded domains, suppressing the population in the middle of the gap
+costs energy only in two fixed-length end collars. Its total squared
+mass in the gap is therefore bounded independently of the gap's length.
+The equilibrium above the strip profile violates this bound when that
+length is chosen large.
+
+Section~\ref{sec:reaction} constructs the reaction and proves the
+transverse estimate. Section~\ref{sec:geometry} fixes the disks and the
+strip profile, and Section~\ref{sec:solutions} constructs and separates
+the equilibria. Appendix~\ref{app:limits} gives the regularity, physical
+boundary and exhaustion details.
+All functions are real valued, integrals are Lebesgue integrals, and
+\(H^1_0\) denotes the usual zero-trace Sobolev space.
+
+\section{The reaction and a one-dimensional estimate}\label{sec:reaction}
+
+We first choose a reaction for which a narrow interval has positive energy
+for every nonzero profile, although a positive profile can still be a
+subsolution. This distinction will produce the two equilibria.
+
+Put
+\[
+ \theta=\frac14,\qquad h=\frac{13}{50},\qquad \varepsilon=\frac1{100},
+ \qquad H(t)=3t^2-2t^3\quad(0\le t\le1),
+\]
+and define, for \(0\le s\le1\),
+\[
+ g(s)=
+ \begin{cases}
+  0,&0\le s\le\theta,\\
+  H(100s-25),&\theta<s<h,\\
+  1,&h\le s\le3/4,\\
+  H(4(1-s)),&3/4<s\le1.
+ \end{cases}
+\]
+Our reaction is
+\begin{equation}\label{eq:reaction}
+ f(s)=
+ \begin{cases}
+  g(s)+\varepsilon s(1-s),&0\le s\le1,\\
+  -\varepsilon(1-e^{-(s-1)}),&s>1.
+ \end{cases}
+\end{equation}
+The values and first derivatives match at every joining point, since
+\(H(0)=0\), \(H(1)=1\), and \(H'(0)=H'(1)=0\).
+Moreover, \(f\) and \(f'\) are bounded and \(f'\) is globally Lipschitz.
+Consequently \(f\in C^{1,\gamma}([0,\infty))\) for every \(0<\gamma<1\).
+It satisfies all the conditions in \eqref{eq:positive-reaction}, with
+\(f'(0)=\varepsilon\) and \(f'(1)=-\varepsilon\).
+
+Let \(F(s)=\int_0^s f(t)\,dt\). The estimates needed below are
+\begin{equation}\label{eq:primitive}
+ 0\le f(s)\le2,\qquad F(s)\ge0,\qquad
+ F(s)\le(s-\theta)_++\frac{\varepsilon}{2}s^2
+ \quad(0\le s\le1).
+\end{equation}
+Indeed, \(0\le g(s)\le\mathbf1_{\{s>\theta\}}\) and
+\(s(1-s)\le s\) on this interval.
+
+\begin{lemma}\label{lem:interval}
+Let \(\theta,\mu,\ell>0\) satisfy
+\(\mu\ell^2\le16\theta/3\).
+Then every nonnegative \(v\in H^1_0(-\ell,\ell)\) satisfies
+\begin{equation}\label{eq:interval}
+ \frac12\int_{-\ell}^{\ell}|v'|^2
+ -\mu\int_{-\ell}^{\ell}(v-\theta)_+\ge0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use the absolutely continuous representative of \(v\). If
+\(E=\{v>\theta\}\) is empty, there is nothing to prove. Otherwise write
+\(m=|E|\), so \(0<m<2\ell\). On a component interval \(I\) of \(E\),
+the function \(z=v-\theta\) belongs to \(H^1_0(I)\).
+For \(I=(a,b)\), set \(p(x)=\mu(x-a)(b-x)/2\), so \(-p''=\mu\) and its endpoint values are zero.
+Completing the square gives
+\[
+ \int_I\left(\frac12|z'|^2-\mu z\right)
+ =\frac12\int_I|z'-p'|^2-\frac12\int_I|p'|^2
+ \ge-\frac{\mu^2|I|^3}{24}.
+\]
+Summing over the component intervals, and using
+\(\sum_I|I|^3\le m^3\), bounds their total contribution below by
+\(-\mu^2m^3/24\).
+
+The two outer intervals, from \(-\ell\) to \(\inf E\) and from
+\(\sup E\) to \(\ell\), have positive lengths \(L_-\) and \(L_+\).
+Their endpoint values are respectively \(0,\theta\) and \(\theta,0\).
+By Cauchy--Schwarz their gradient energy is at least
+\[
+ \frac{\theta^2}{2}\left(\frac1{L_-}+\frac1{L_+}\right)
+ \ge\frac{2\theta^2}{L_-+L_+}
+ \ge\frac{2\theta^2}{2\ell-m}.
+\]
+All remaining gradient terms are nonnegative. Thus the left-hand side of
+\eqref{eq:interval} is at least
+\[
+ \frac{2\theta^2}{2\ell-m}-\frac{\mu^2m^3}{24}.
+\]
+This is nonnegative: the maximum of \(m^3(L-m)\) on \([0,L]\) is
+\(27L^4/256\), attained at \(m=3L/4\), and the hypothesis with
+\(L=2\ell\) is exactly the required inequality.
+The argument also covers countably many components, since the integrals
+of both \(|v'|^2\) and \((v-\theta)_+\) are finite.
+\end{proof}
+
+The following consequence will control the population in the gap. Its
+width bound is fixed now so that the same estimate applies to every
+horizontal section of the region constructed in Section~\ref{sec:geometry}.
+
+\begin{corollary}\label{cor:coercive}
+For the reaction \eqref{eq:reaction}, let \(\ell_1=9/8\).
+If \(0<\ell\le\ell_1\) and \(v\in H^1_0(-\ell,\ell)\) takes values in
+\([0,1]\), then
+\begin{equation}\label{eq:coercive}
+ \int_{-\ell}^{\ell}\left(\frac12|v'|^2-F(v)\right)
+ \ge\frac1{40}\int_{-\ell}^{\ell}v^2.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Apply Lemma~\ref{lem:interval} with \(\mu=26/25\) and
+\(\theta=1/4\). Its hypothesis holds because
+\(\mu\ell_1^2=1053/800<4/3\).
+Together with \eqref{eq:primitive}, this gives
+\[
+ \int\left(\frac12|v'|^2-F(v)\right)
+ \ge\frac1{52}\int|v'|^2-\frac1{200}\int v^2.
+\]
+The interval Poincar\'e constant is \(\pi^2/(4\ell^2)\).
+For example, for compactly supported smooth \(v\), write
+\(v=\varphi z\) with \(\varphi(x)=\cos(\pi x/(2\ell))\), and integrate
+by parts to obtain
+\[
+ \int|v'|^2-\frac{\pi^2}{4\ell^2}\int v^2
+ =\int\varphi^2|z'|^2\ge0.
+\]
+Density gives the same inequality on \(H^1_0\). Since
+\(\pi^2/(4\ell^2)\ge16/9\), we conclude that
+\[
+ \int\left(\frac12|v'|^2-F(v)\right)
+ \ge\left(\frac4{117}-\frac1{200}\right)\int v^2
+ =\frac{683}{23400}\int v^2
+ \ge\frac1{40}\int v^2.
+\]
+\end{proof}
+
+\section{Two disks and a strip subsolution}\label{sec:geometry}
+
+Take
+\begin{equation}\label{eq:constants}
+ \ell_0=\frac{11}{10},\qquad T=20000,\qquad
+ R=40(T+2)^2=16\,003\,200\,160.
+\end{equation}
+Let
+\begin{equation}\label{eq:domain}
+ c_\pm=\bigl(\pm(R+\ell_0),0\bigr),\qquad
+ \Omega=\R^2\setminus
+ \bigl(\overline{B_R(c_+)}\cup\overline{B_R(c_-)}\bigr).
+\end{equation}
+The disks are disjoint and the distance between them is \(2\ell_0=11/5\).
+The large radius makes a long part of their gap narrow enough for
+Corollary~\ref{cor:coercive}. More precisely, set
+\[
+ k(y)=\ell_0+R-\sqrt{R^2-y^2}\quad(|y|<R),\qquad
+ D=\{(x,y):|y|<T,\ |x|<k(y)\}.
+\]
+The lateral sides of \(D\) are portions of the two physical circles.
+For \(|y|\le T+2\),
+\begin{equation}\label{eq:width}
+ \ell_0\le k(y)
+ =\ell_0+\frac{y^2}{R+\sqrt{R^2-y^2}}
+ \le\ell_0+\frac{y^2}{R}\le\ell_1.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+For the reaction \(f\) in \eqref{eq:reaction} and the two-disk exterior
+domain \(\Omega\) in \eqref{eq:domain}, problem \eqref{eq:problem} has
+two distinct solutions \(u,U\in C^2(\Omega)\cap C(\overline\Omega)\).
+Both satisfy \(0<u,U<1\) throughout \(\Omega\), and
+\begin{equation}\label{eq:separation}
+ \int_Du^2\,dx\,dy\le4500,\qquad
+ \int_DU^2\,dx\,dy>5000.
+\end{equation}
+\end{theorem}
+
+All parameters in this theorem are finite and fixed. In particular,
+the theorem is an example in dimension two with strictly separated
+obstacles; it does not use a limiting domain of parallel walls.
+The particular numerical values are chosen for convenient estimates,
+without optimizing the radii or gap.
+
+To construct \(U\), we use the entire strip
+\(\{|x|<\ell_0\}\), which lies inside \(\Omega\). Recall that
+\(h=13/50\) and \(f(s)\ge1\) for \(h\le s\le3/4\). Put
+\[
+ q=\frac{11+\sqrt{17}}{20},\qquad
+ A=h+\frac{q^2}{2}=\frac{173+11\sqrt{17}}{400},
+\]
+and define
+\begin{equation}\label{eq:w}
+ w(x)=
+ \begin{cases}
+  A-x^2/2,&|x|\le q,\\
+  q(\ell_0-|x|),&q<|x|<\ell_0,\\
+  0,&|x|\ge\ell_0.
+ \end{cases}
+\end{equation}
+Since \(q(\ell_0-q)=h\), both \(w\) and \(w'\) agree at
+\(x=\pm q\). On \(|x|<q\), we have \(h\le w\le A<3/4\),
+so \(f(w)\ge1=-w''\). On the linear pieces \(-w''=0\le f(w)\).
+At each of \(x=\pm\ell_0\), the derivative jumps upward by \(q\);
+therefore \(-w''\) has a negative Dirac mass there. It follows that
+\begin{equation}\label{eq:subsolution}
+ W(x,y):=w(x),\qquad -\Delta W\le f(W)
+\end{equation}
+in the sense of distributions on the whole plane, and hence on
+\(\Omega\). On both physical circles \(W=0\), because their points
+have \(|x|\ge\ell_0\).
+
+We will also use the strict estimate
+\begin{equation}\label{eq:strip-mass}
+ \int_{-\ell_0}^{\ell_0}w(x)^2\,dx>\frac18.
+\end{equation}
+Indeed, \(q>3/4\) and \(A>217/400\), so
+\(w(x)\ge A-1/32>1/2\) when \(|x|\le1/4\).
+
+\section{Construction of the two equilibria}\label{sec:solutions}
+
+We work first on bounded domains
+\[
+ \Omega_n=B_n(0)\cap\Omega,\qquad
+ n\in\mathbb N,\quad n>2R+\ell_0+2,
+\]
+with boundary values zero on the two disks and one on the outer circle.
+These data have the \(H^1\) extension
+\(b(z)=\min\{1,\operatorname{dist}(z,\Omega^c)\}\).
+Only the outer radius \(n\) will tend to infinity. The reaction,
+the obstacles and the region \(D\) stay fixed.
+
+We use the following bounded-domain Sobolev facts: bounded \(H^1\)
+sequences on a bounded Lipschitz domain admit weak \(H^1\) and strong
+\(L^2\) subsequences; traces are continuous; and zero-trace functions
+are approximable in \(H^1\) by smooth compactly supported functions.
+These facts, the truncation rules and Poincar\'e's inequality are
+recalled in \cite[Section~1.1]{FRRO}.
+The interior regularity and the preservation of the physical boundary
+values in our exhaustion are detailed in Appendix~\ref{app:limits}.
+
+\subsection{An equilibrium above the strip profile}
+
+The functions \(W\) and \(1\) are an ordered subsolution and
+supersolution on every \(\Omega_n\), compatible with the prescribed
+boundary values. Here is the bounded-domain construction. Choose
+\(K\ge\max\{1,\operatorname{Lip}_{[0,1]}f\}\), set \(v_0=W\), and solve
+\[
+ (-\Delta+K)v_{j+1}=f(v_j)+Kv_j
+\]
+with the fixed boundary values. The linear Dirichlet problem is solved
+by minimizing
+\[
+ \frac12\int_{\Omega_n}(|\nabla v|^2+Kv^2)
+ -\int_{\Omega_n}(f(v_j)+Kv_j)v
+\]
+in \(b+H^1_0(\Omega_n)\). This quadratic is coercive and strictly convex. Its comparison principle follows by testing a
+weak supersolution against its negative part.
+Since \(s\mapsto f(s)+Ks\) is nondecreasing on \([0,1]\), comparison
+gives
+\[
+ W\le v_j\le v_{j+1}\le1.
+\]
+The right-hand sides are uniformly bounded. Testing the linear equations
+against \(v_j-b\) and using Poincar\'e's inequality bounds \(v_j\) in
+\(H^1(\Omega_n)\). Weak compactness, strong \(L^2\) convergence and
+bounded convergence then give a weak solution \(U_n\) with
+\(W\le U_n\le1\). It is classical in the interior.
+
+Lemma~\ref{lem:limits} yields a subsequential exterior limit \(U\)
+with the complete zero boundary values and \(U\ge W\).
+As \(W\not\equiv0\), Lemma~\ref{lem:strict} gives \(0<U<1\).
+
+\subsection{A minimizing exhaustion}
+
+For this construction only, extend \(f\) oddly to the negative half-line
+and let \(F\) denote its primitive on \(\R\).
+The extension is \(C^1\), bounded, and has bounded derivative.
+Its primitive is even, globally Lipschitz, and maximized at
+\(\pm1\).
+On \(\Omega_n\) minimize
+\[
+ J_n(v)=\int_{\Omega_n}
+ \left(\frac12|\nabla v|^2-F(v)\right)\,dx\,dy
+ \quad\text{over }b+H^1_0(\Omega_n).
+\]
+The direct method applies. Since \(F\) is bounded above,
+a minimizing sequence has bounded gradients; Poincar\'e's inequality
+then bounds it in \(H^1\).
+For a strongly \(L^2\)-convergent subsequence, the potential integrals
+converge by
+\[
+ \left|\int_{\Omega_n}F(v_j)-F(v)\right|
+ \le\operatorname{Lip}(F)|\Omega_n|^{1/2}
+       \|v_j-v\|_{L^2(\Omega_n)}.
+\]
+The gradient energy is weakly lower semicontinuous and the trace is
+preserved, so a global minimizer exists.
+
+Replacing it by \(\min\{1,|v|\}\) preserves the boundary data and cannot
+increase the energy: the gradient decreases and the value of \(F\)
+increases. We may therefore choose a minimizer \(u_n\) with
+\(0\le u_n\le1\). It is still a minimizer in the \emph{unrestricted}
+affine class. Thus
+\[
+ -\Delta u_n=f(u_n)
+\]
+weakly, and its second variation gives
+\begin{equation}\label{eq:stable}
+ \int_{\Omega_n}\bigl(|\nabla\phi|^2-f'(u_n)\phi^2\bigr)\,dx\,dy
+ \ge0\qquad(\phi\in C_c^\infty(\Omega_n)).
+\end{equation}
+The differentiations are justified by the boundedness of \(f\) and
+\(f'\). Interior regularity makes \(u_n\) classical.
+We next obtain a bound in the long gap that is uniform in \(n\).
+
+\subsection{An energy bound in the gap}
+
+Let \(\eta(y)\) be zero for \(|y|\le T-1\), one for \(|y|\ge T\),
+and linear in each of the two intervening unit intervals.
+Then \(|\eta'|\le1\). Inside \(D\), replace \(u_n\) by \(\eta u_n\),
+leaving it unchanged elsewhere. This is a legal variation:
+\((\eta-1)u_n\) has zero trace on the lateral physical boundary,
+and on the horizontal cuts \(y=\pm T\) because \(\eta=1\).
+Its zero extension belongs to \(H^1_0(\Omega_n)\).
+Minimality and \eqref{eq:primitive} imply
+\begin{equation}\label{eq:remove}
+ J_D(u_n)\le J_D(\eta u_n)
+ \le\int_C(|\nabla u_n|^2+1)\,dx\,dy,
+ \qquad C=\{(x,y)\in D:T-1<|y|<T\}.
+\end{equation}
+Here \(J_D\) denotes the same energy restricted to \(D\).
+For the last inequality we used \(F(\eta u_n)\ge0\) and
+\(\tfrac12|\eta\nabla u_n+u_n\eta'e_y|^2
+ \le|\nabla u_n|^2+1\).
+
+To bound the gradient in these collars, take a Lipschitz function
+\(\chi(y)\) equal to one for \(T-1\le|y|\le T\), zero outside
+\(T-2<|y|<T+1\), and linear on the remaining two ramps at each end.
+It satisfies \(|\chi'|\le1\).
+Use \(\chi^2u_n\) as a test on the central channel
+\(\{|y|<T+2,\ |x|<k(y)\}\), and extend it by zero.
+It has zero trace on the physical sides and near the horizontal ends,
+so it belongs to \(H^1_0(\Omega_n)\).
+The weak equation and Young's inequality give
+\begin{align}
+ \int\chi^2|\nabla u_n|^2
+ &\le2\int\chi^2 f(u_n)u_n
+       +4\int u_n^2|\chi'|^2 \notag\\
+ &\le8\cdot\frac{27}{2}=108. \label{eq:caccioppoli}
+\end{align}
+In fact, the support has total \(y\)-length \(6\) and width at most
+\(2\ell_1=9/4\), hence area at most \(27/2\); also \(f(u_n)u_n\le2\).
+The area of \(C\) is at most \(9/2\). From \eqref{eq:remove},
+\begin{equation}\label{eq:neck-energy}
+ J_D(u_n)\le108+\frac92=\frac{225}{2}.
+\end{equation}
+
+For almost every \(y\in(-T,T)\), the horizontal section of \(u_n\)
+belongs to \(H^1_0(-k(y),k(y))\): its \(x\)-derivative is square
+integrable by Fubini, and its endpoint values on the physical circles
+are zero by Lemma~\ref{lem:limits}.
+Applying Corollary~\ref{cor:coercive} on each such section and retaining
+the nonnegative \(y\)-gradient contribution, we obtain
+\[
+ J_D(u_n)\ge\frac1{40}\int_Du_n^2\,dx\,dy.
+\]
+Consequently
+\begin{equation}\label{eq:low-mass}
+ \int_Du_n^2\,dx\,dy\le4500.
+\end{equation}
+
+\subsection{Proof of Theorem~\ref{thm:main}}
+
+By Lemma~\ref{lem:limits}, a subsequence of \(u_n\) converges locally
+in \(C^2(\Omega)\) to a solution \(u\) with the complete zero boundary
+values. The stability inequalities \eqref{eq:stable} and
+Lemma~\ref{lem:nonzero} exclude the zero limit.
+Lemma~\ref{lem:strict} therefore gives \(0<u<1\).
+Since \(D\) has finite area and \(0\le u_n\le1\), dominated convergence
+in \eqref{eq:low-mass} yields
+\[
+ \int_Du^2\,dx\,dy\le4500.
+\]
+On the other hand, \(U\ge W\), and every horizontal section of \(D\)
+contains \((-\ell_0,\ell_0)\). By \eqref{eq:strip-mass},
+\[
+ \int_DU^2\,dx\,dy
+ \ge2T\int_{-\ell_0}^{\ell_0}w(x)^2\,dx
+ >\frac{T}{4}=5000.
+\]
+Thus \(u\ne U\), and both are solutions of the same exterior problem
+in the required class. This proves the theorem.
+
+\appendix
+\section{Regularity, physical boundary values and exterior limits}
+\label{app:limits}
+
+We give the analytic details used in the bounded-domain constructions.
+They also make explicit why the limiting functions solve the problem on
+the whole exterior, including both complete physical boundaries.
+
+\begin{lemma}\label{lem:limits}
+For the fixed reaction \eqref{eq:reaction} and fixed domain
+\eqref{eq:domain}, let \(v_n\in H^1(\Omega_n)\) solve
+\(-\Delta v_n=f(v_n)\), take values in \([0,1]\), and have zero trace
+on the two inner circles.
+There is a subsequence converging in \(C^2_{\mathrm{loc}}(\Omega)\)
+to a solution \(v\in C^2(\Omega)\cap C(\overline\Omega)\), with
+\(0\le v\le1\) and zero values on both full circles.
+\end{lemma}
+
+\begin{proof}
+We first justify the interior estimates for initially weak solutions.
+On a fixed ball \(B_{2r}\Subset\Omega\), write
+\[
+ P(z)=\frac1{2\pi}\int_{B_{2r}}
+       \log\frac1{|z-\zeta|}\,f(v_n(\zeta))\,d\zeta.
+\]
+The logarithmic kernel and its first derivative are locally integrable
+in two dimensions. Thus \(P\) and \(\nabla P\) are uniformly bounded
+on fixed bounded sets, and
+\(-\Delta P=\mathbf1_{B_{2r}}f(v_n)\) distributionally.
+The coefficient \(1/(2\pi)\) follows from the flux identity
+\(-\int_{\partial B_\rho}\partial_\nu((2\pi)^{-1}
+\log(1/|z|))=1\).
+After a compact smooth cutoff, Morrey's inequality at \(p=4\)
+gives a uniform \(C^{0,1/2}\) bound for \(P\).
+The remainder \(v_n-P\) is weakly harmonic and bounded, hence smooth
+with uniform interior derivative bounds.
+Here we use \cite[Theorem~1.5 and Corollary~1.12]{FRRO}.
+
+It follows that \(v_n\), and then \(f(v_n)\), have uniform local
+\(C^{0,1/2}\) bounds. Mollify on a smaller ball by a nonnegative
+smooth kernel of integral one. The smooth mollifications satisfy the
+Poisson equation with uniformly \(C^{0,1/2}\) right-hand sides.
+The interior Schauder estimate
+\[
+ \|a\|_{C^{2,\alpha}(B_{1/2})}
+ \le C_\alpha\bigl(\|a\|_{L^\infty(B_1)}
+                    +\|\Delta a\|_{C^{0,\alpha}(B_1)}\bigr),
+ \qquad 0<\alpha<1,
+\]
+for smooth \(a\), is \cite[Theorem~2.12]{FRRO}.
+Translate and rescale it to the fixed balls, with \(\alpha=1/2\).
+Letting the mollification scale tend to zero proves uniform local
+\(C^{2,1/2}\) bounds for \(v_n\).
+Compactness on fixed balls and a countable diagonal selection now give
+a locally \(C^2\)-convergent subsequence, whose limit solves the
+same equation.
+
+For the boundary, choose \(\delta=1/2\). The annulus
+\(R<|z-c_\pm|<R+\delta\) lies in \(\Omega\), since the gap between
+the two disks is \(11/5>\delta\).
+It lies in every \(\Omega_n\) considered here.
+On this annulus set
+\[
+ B(r)=-\frac{r^2-R^2}{2}+C_R\log(r/R),\qquad
+ C_R=\frac{1+((R+\delta)^2-R^2)/2}{\log((R+\delta)/R)}.
+\]
+Then \(-\Delta B=2\), \(B(R)=0\) and \(B(R+\delta)=1\).
+The weak maximum principle gives \(B\ge0\).
+Since
+\(-\Delta(B-v_n)=2-f(v_n)\ge0\) and the boundary traces of
+\(B-v_n\) are nonnegative, the same principle gives \(0\le v_n\le B\).
+This is precisely the weak comparison in
+\cite[Proposition~1.13]{FRRO}.
+The bound is uniform in \(n\), and \(B(r)\to0\) as \(r\downarrow R\).
+It therefore gives the continuous zero value of the limit at every
+point of both circles.
+\end{proof}
+
+\begin{lemma}\label{lem:nonzero}
+If, in addition, the functions \(v_n\) in Lemma~\ref{lem:limits}
+satisfy
+\[
+ \int_{\Omega_n}(|\nabla\phi|^2-f'(v_n)\phi^2)\ge0
+ \qquad(\phi\in C_c^\infty(\Omega_n)),
+\]
+then their exterior limit is not identically zero.
+\end{lemma}
+
+\begin{proof}
+For each fixed compactly supported test \(\phi\), pass to the limit in
+this inequality. If \(v\equiv0\), then \(f'(0)=\varepsilon>0\) would give
+\[
+ \int_\Omega|\nabla\phi|^2\ge
+ \varepsilon\int_\Omega\phi^2
+ \qquad(\phi\in C_c^\infty(\Omega)).
+\]
+Fix a nonzero smooth function \(\psi\) supported in the unit ball.
+For each \(S>0\), the ball centered at \((0,4R+4S)\) with radius
+\(S\) lies in the fixed exterior domain. The translated dilation of
+\(\psi\) into this ball has Rayleigh quotient
+\[
+ S^{-2}\frac{\int|\nabla\psi|^2}{\int\psi^2}.
+\]
+Taking \(S\) large contradicts the preceding inequality, since
+\(\varepsilon>0\).
+\end{proof}
+
+\begin{lemma}\label{lem:strict}
+Every nonzero solution \(v\) furnished by Lemma~\ref{lem:limits}
+satisfies \(0<v<1\) in \(\Omega\).
+\end{lemma}
+
+\begin{proof}
+Since \(-\Delta v=f(v)\ge0\), the strong minimum principle gives
+\(v>0\). In this setting the principle follows directly from spherical
+means: for a nonnegative superharmonic \(C^2\) function, the spherical
+average about a point with value zero is at most zero; hence the function
+vanishes on a ball, and then on its connected domain.
+
+For the upper bound put \(z=1-v\ge0\), and take
+\(L\ge\max\{1,\operatorname{Lip}_{[0,1]}f\}\).
+Then \(\Delta z=f(v)\le Lz\).
+On
+\(\Omega\times(-\pi/(2\sqrt L),\pi/(2\sqrt L))\), the function
+\(z(x,y)\cos(\sqrt L\,t)\) is nonnegative and superharmonic.
+An interior zero would make it identically zero by the same
+minimum principle, so \(v\equiv1\).
+This contradicts its continuous zero values on the physical boundary.
+\end{proof}
+
+\section*{AI assistance}
+OpenAI Codex was used in the mathematical development, source checking
+and drafting of this manuscript.
+
+\begin{thebibliography}{9}
+\bibitem{BG}
+H.~Berestycki and C.~Graham,
+\emph{A Stable-Compact Method for Qualitative Properties of Semilinear
+Elliptic Equations},
+Archive for Rational Mechanics and Analysis \textbf{250} (2026), article~21.
+\url{https://doi.org/10.1007/s00205-026-02168-6}.
+
+\bibitem{BGKPP}
+H.~Berestycki and C.~Graham,
+\emph{The steady states of strong-KPP reactions in general domains},
+arXiv:2212.06611 (2022).
+\url{https://arxiv.org/abs/2212.06611}.
+
+\bibitem{FRRO}
+X.~Fern\'andez-Real and X.~Ros-Oton,
+\emph{Regularity Theory for Elliptic PDE},
+author-hosted version, preface dated Z\"urich 2020.
+\url{https://user.math.uzh.ch/ros-oton/Llibre-ellipticPDE.pdf}.
+The theorem and page locators used here refer to this version.
+Published by EMS Press, 2022, DOI
+\url{https://doi.org/10.4171/ZLAM/28}.
+\end{thebibliography}
+
+\end{document}

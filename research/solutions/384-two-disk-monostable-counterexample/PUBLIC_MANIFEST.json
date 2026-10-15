@@ -1,0 +1,33 @@
+{
+  "title": "Two positive equilibria outside two disks for a monostable reaction",
+  "author": "Kaiwen Jin",
+  "contribution": "Proposed analytic counterexample to AIM problem 384",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Entry point, build instructions, claim scope and factual AI involvement",
+      "bytes": 2983,
+      "sha256": "e0b1bb7fdd4fe4210ac242dad39f74e9e2933c96385f78ac9ef09c351f9161d3"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original-requirement to manuscript comparison",
+      "bytes": 2960,
+      "sha256": "387ad4bd2f39c2ddfd12eb708de9d0b106db67f06c628b1d27490cf7763c777c"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Standalone editable mathematical manuscript",
+      "bytes": 25270,
+      "sha256": "4517cb1186e253626105f3b7593e1d0062cc0b613cbbc6adfc44064eb77fbb03"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Final eight-page complete mathematical manuscript",
+      "bytes": 360957,
+      "sha256": "34a7c105ab23dad48b43f134df64dabc20474852e371b58c090865271c4f5945"
+    }
+  ],
+  "manifest_policy": "The manifest excludes itself and SHA256SUMS; SHA256SUMS also covers this manifest."
+}
