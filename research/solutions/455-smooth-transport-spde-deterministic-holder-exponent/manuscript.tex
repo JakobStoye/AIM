@@ -1,0 +1,489 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\T}{\mathbb T}
+\newcommand{\R}{\mathbb R}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\esssup}{\operatorname*{ess\,sup}}
+\newcommand{\osc}{\operatorname*{ess\,osc}}
+\newcommand{\dd}{\,\mathrm d}
+\title{A deterministic H\"older exponent for parabolic SPDEs\protect\\with smooth transport noise}
+\author{Kaiwen Jin\thanks{Contact: \texttt{yui.ui.siki@gmail.com}.}}
+\date{October 15, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider scalar divergence-form parabolic It\^o equations on the torus,
+with bounded measurable diffusion and progressively measurable transport
+coefficients that are smooth in space with deterministic derivative bounds.
+Under stochastic parabolicity, we prove that every variational solution with
+deterministic smooth initial data has a positive deterministic parabolic
+H\"older exponent on each compact positive-time strip. The H\"older norm may
+remain random and unbounded. The stochastic-flow transformation of Agresti,
+Sauerbrey and Veraar removes the noise, but its global ellipticity ratio can
+depend on the realization. We normalize the continuous inverse flow derivative
+by a constant affine map near each spacetime point. This gives uniform local
+energy-class constants on possibly random neighborhoods. Compactness preserves
+the common exponent, and composition with the inverse flow gives the assertion
+in the original coordinates.
+\end{abstract}
+
+\section{Introduction and main result}
+
+For a scalar deterministic divergence-form parabolic equation, bounded
+measurable coefficients and a fixed ellipticity ratio give a common positive
+H\"older exponent. Smooth transport noise permits a stochastic change of
+coordinates that removes the noise, but the resulting global ellipticity ratio
+need not have a deterministic bound. Agresti, Sauerbrey and Veraar
+\cite[Theorem 1.1 and Section 1.2]{ASV} obtain pathwise H\"older regularity and
+ask whether its exponent can be chosen independently of the realization.
+Their Proposition 4.2 exhibits unbounded transformed ellipticity ratios;
+Proposition 4.3 gives uniform exponents under additional structure. The
+distortion of the transformed coefficients leaves open the regularity of the
+original solution.
+
+Here we answer the deterministic-exponent question for the full smooth-noise
+class in AIM Problem 455. A large but finite coordinate distortion changes
+the H\"older constant, whereas a fixed affine change of coordinates preserves
+the exponent. At each point we use the inverse flow derivative itself for this
+affine change. Its continuity gives a neighborhood on which the normalized
+diffusion has deterministic bounds. The neighborhood can shrink with the
+sample, which is harmless when only the exponent must be deterministic.
+The stochastic flow and distributional It\^o--Wentzell formula are taken from
+\cite{ASV}. The deterministic regularity input is the parabolic De Giorgi
+class theorem of Liao \cite{Liao}; we verify its energy inequalities for the
+nonsymmetric coefficients and bounded drift that occur here.
+
+Write $\T^d=\R^d/\mathbb Z^d$, with its induced spatial distance
+$\operatorname{dist}$. All function spaces below are real. Matrix norms are
+operator norms; other fixed matrix norms change only dimension constants.
+The space $H^{-1}(\T^d)$ is the dual of $H^1(\T^d)$ with respect
+to the $L^2$ pairing. On a filtered probability space, let $(W^k)_{k\ge1}$
+be independent standard Brownian motions. Consider the scalar It\^o equation
+\begin{equation}\label{eq:spde}
+ \dd u=\diver(a\nabla u)\dd t
+       +\sum_{k\ge1}(b_k\cdot\nabla u)\dd W^k_t,
+ \qquad u(0)=u_0.
+\end{equation}
+The matrix $a$ and the vector fields $b=(b_k)_{k\ge1}$ are progressively
+measurable in $(t,\omega)$ and measurable in space. We assume deterministic
+constants $M<\infty$ and $\nu>0$ such that, almost everywhere,
+\begin{align}
+ |a|+\Big(\sum_k|b_k|^2\Big)^{1/2}&\le M,\label{eq:bound}\\
+ \eta^\top\Big(a-\tfrac12\sum_k b_k\otimes b_k\Big)\eta
+       &\ge\nu|\eta|^2\qquad(\eta\in\R^d).\label{eq:parabolicity}
+\end{align}
+For every integer $j\ge1$, $b$ is spatially $C^j$ as an
+$\ell^2(\R^d)$-valued map and
+\begin{equation}\label{eq:smooth}
+ \sup_{t,\omega}\|b(t,\omega,\cdot)\|_{C^j(\T^d;\ell^2(\R^d))}
+ \le M_j<\infty
+\end{equation}
+for fixed deterministic $M_j$. No symmetry of $a$ is required.
+
+We use the variational solution
+$u\in C([0,T];L^2)\cap L^2(0,T;H^1)$, almost surely. Thus, for every
+smooth spatial test $\varphi$, its $L^2$ pairing satisfies
+\[
+ (u(t),\varphi)=(u_0,\varphi)
+ -\int_0^t(a\nabla u,\nabla\varphi)\dd s
+ +\sum_k\int_0^t(b_k\cdot\nabla u,\varphi)\dd W^k_s.
+\]
+The stochastic integrals are It\^o integrals. A representative below agrees
+with this $L^2$-valued process at every time. For $0<\theta<1$,
+$C^{\theta/2,\theta}([\tau,T]\times\T^d)$ denotes the bounded continuous
+functions whose increments are bounded by a constant times
+$|t-s|^{\theta/2}+\operatorname{dist}(x,y)^\theta$.
+
+\begin{theorem}\label{thm:main}
+Let $d\ge2$, $T>0$, and let \eqref{eq:bound}--\eqref{eq:smooth} hold.
+For every deterministic $u_0\in C^\infty(\T^d)$, the variational solution of
+\eqref{eq:spde} has, for every $0<\tau<T$, a representative satisfying
+\[
+ \PP\bigl(u\in C^{\gamma/2,\gamma}([\tau,T]\times\T^d)\bigr)=1
+\]
+for a deterministic $\gamma\in(0,1)$ depending only on $d,\nu,M$.
+In particular it has the dependence allowed in AIM Problem 455.
+The H\"older norm need not be deterministically bounded. The vector fields
+may be noncommuting, time-random, and countably infinite in number.
+\end{theorem}
+
+The bounds $M_j$ ensure the required regularity of the stochastic flow.
+They affect the random neighborhoods and constants in the proof, but not our
+choice of exponent. We do not assert moment bounds for the H\"older norm.
+We first prove the deterministic normalization lemma, then apply the
+stochastic change of coordinates and return to \eqref{eq:spde}.
+
+\section{A local deterministic normalization}
+
+\subsection{Bounded drift at unit scale}
+For $R>0$ write $K_R=(-R,R)^d$ and $Q_R=(-R^2,0)\times K_R$.
+
+\begin{lemma}\label{lem:unit}
+Suppose $w\in C_tL^2_{\mathrm{loc}}\cap L^2_tH^1_{\mathrm{loc}}$ is a
+scalar weak solution on $Q_2$ of
+\begin{equation}\label{eq:unit}
+ w_t=\diver(H\nabla w)+f\cdot\nabla w.
+\end{equation}
+Assume $|H|\le\Lambda$, $\xi^\top H\xi\ge\lambda|\xi|^2$ and
+$|f|\le1$ almost everywhere, where $\lambda>0$ and $\Lambda<\infty$.
+There is $\alpha=\alpha(d,\lambda,\Lambda)\in(0,1)$ such that $w$ has a
+$C^{\alpha/2,\alpha}$ representative on $Q_1$. If $w$ has a continuous
+$L^2$ trace at time zero and its energy bounds hold to that time, this
+representative extends with the same exponent to the upper face of $Q_1$.
+Neither $H$ nor $f$ needs to be differentiable, and $H$ need not be symmetric.
+\end{lemma}
+
+\begin{proof}
+We check the energy-class hypotheses of \cite[Section 1.1]{Liao}.
+Fix a level $k\in\R$ and either truncation $z=(w-k)_+$ or $z=(w-k)_-$.
+For a nonnegative spatial cutoff $\zeta$, use the signed test
+$z\zeta^2$ or $-z\zeta^2$, respectively. Coercivity and the full matrix
+norm bound give
+\begin{align*}
+ \frac12\frac{\dd}{\dd t}\int z^2\zeta^2
+ +\lambda\int|\nabla z|^2\zeta^2
+ &\le2\Lambda\int |\nabla z|\zeta|\nabla\zeta|z
+       +\int |f||\nabla z|z\zeta^2\\
+ &\le\frac\lambda2\int|\nabla z|^2\zeta^2
+       +\frac{4\Lambda^2}{\lambda}\int z^2|\nabla\zeta|^2
+       +\frac1\lambda\int z^2\zeta^2.
+\end{align*}
+For a time-dependent cutoff, add $\int z^2|\zeta\zeta_t|$ on the right.
+All spatial integrals here are over the support of $\zeta$.
+These tests are legitimate at the stated weak regularity: apply time
+Steklov averaging and smooth Lipschitz approximations to the signed
+truncations, integrate on a compact time interval, and pass to the limits.
+The averaged gradients and fluxes converge in $L^2$, their products in
+$L^1$, and the truncations converge in $H^1$ by the Sobolev chain rule.
+Time continuity gives the endpoint $L^2$ terms. No derivative falls on
+$H$ or $f$.
+
+For a translated cube $K_R(x)$, choose $\zeta=1$ on $K_\rho(x)$,
+supported in $K_R(x)$, with $|\nabla\zeta|\le C_d/(R-\rho)$.
+All cubes lie in $K_2$, so $R-\rho\le2$ and the last volume term is
+absorbed into a constant times $(R-\rho)^{-2}\int z^2$.
+With a time cutoff between $s-h$ and $s-\vartheta$, we obtain
+\begin{align}\label{eq:DG1}
+ &\esssup_{s-\vartheta<t<s}\int_{K_\rho(x)}z^2
+  +\int_{s-\vartheta}^s\int_{K_\rho(x)}|\nabla z|^2\dd t\nonumber\\
+ &\qquad\le\Gamma\bigl((R-\rho)^{-2}+(h-\vartheta)^{-1}\bigr)
+       \int_{s-h}^s\int_{K_R(x)}z^2\dd t,
+\end{align}
+where $0<\vartheta<h$ and $\Gamma=\Gamma(d,\lambda,\Lambda)$.
+Without a time cutoff, dropping the nonnegative gradient term gives
+\begin{equation}\label{eq:DG2}
+ \esssup_{s-h<t<s}\int_{K_\rho(x)}z^2
+ \le\int_{K_R(x)}z(s-h)^2
+  +\frac{\Gamma}{(R-\rho)^2}
+       \int_{s-h}^s\int_{K_R(x)}z^2\dd t.
+\end{equation}
+The initial integral has coefficient exactly one. These inequalities hold
+for every admissible nested cylinder, every level, and both signs. Together
+with local time continuity, they put $w$ in Liao's class
+$\mathfrak B_2(Q_2,\Gamma)$, as defined in
+\cite[equations (1.1)--(1.2)]{Liao}.
+
+By \cite[Theorems 2.1 and 5.1]{Liao}, $w$ is locally bounded and
+\[
+ \osc_{Q_\rho(z_0)}w
+ \le C\,\osc_{Q_R(z_0)}w\,(\rho/R)^\alpha,
+ \qquad 0<\rho<R,
+\]
+with $C$ and $\alpha\in(0,1)$ depending only on $d,2,\Gamma$.
+Here $Q_R(z_0)$ is the backward cylinder of radius $R$ with top center
+$z_0$. Fixed small outer cylinders about points of $Q_1$ have a spatial
+and lower-time buffer in $Q_2$. The local boundedness estimate gives a
+common finite oscillation bound on these cylinders. For two nearby points,
+use a backward cylinder at the later time with radius larger than their
+spatial separation and the square root of their time separation.
+Oscillation decay gives the parabolic $\alpha$ estimate; boundedness
+handles separated points.
+
+For the upper face, first take cylinders with top time $-\varepsilon$.
+The outer buffers and the energy bound can be kept fixed as
+$\varepsilon\downarrow0$, so the H\"older constants remain bounded.
+The representative extends continuously to time zero. Its $L^2$ limit
+equals the prescribed trace, by strong $L^2$ continuity. This proves the
+last assertion using only backward cylinders.
+\end{proof}
+
+\subsection{A continuous matrix field}
+
+\begin{lemma}\label{lem:frame}
+Let $K:[0,T]\times\T^d\to\mathrm{GL}(d,\R)$ be continuous, and let
+$S_0,c$ be bounded measurable coefficients such that
+\[
+ |S_0|\le\Lambda_0,\qquad
+ \xi^\top S_0\xi\ge\nu|\xi|^2.
+\]
+Suppose $v\in C([0,T];L^2)\cap L^2(0,T;H^1)$ solves
+\begin{equation}\label{eq:frame}
+ v_t=\diver(A\nabla v)+c\cdot\nabla v,
+ \qquad A=KS_0K^\top.
+\end{equation}
+Then, for every $0<\tau<T$, $v$ has a representative in
+$C^{\alpha/2,\alpha}([\tau,T]\times\T^d)$ for one
+$\alpha=\alpha(d,\nu,\Lambda_0)\in(0,1)$.
+Bounds on $K,K^{-1}$ and $c$ affect the H\"older constant, but not
+this exponent.
+\end{lemma}
+
+\begin{proof}
+Fix $z_0=(t_0,x_0)$ with $t_0>0$ and set $L=K(z_0)$.
+This is a constant invertible matrix. On a sufficiently small neighborhood
+$U$ of $z_0$, continuity gives
+\[
+ P=L^{-1}K,\qquad |P-I|\le\tfrac12.
+\]
+Consequently
+\begin{equation}\label{eq:normalized}
+ \xi^\top PS_0P^\top\xi\ge\tfrac\nu4|\xi|^2,
+ \qquad |PS_0P^\top|\le\tfrac94\Lambda_0\le4\Lambda_0.
+\end{equation}
+Choose $r>0$ so small that the affine cylinder
+\[
+ t=t_b+r^2s,\qquad x=x_0+rLy,\qquad (s,y)\in Q_2,
+\]
+lies in $U$, lies in a torus coordinate chart, has lower time strictly
+positive, and satisfies $r|L^{-1}|\|c\|_\infty\le1$.
+If $t_0<T$, take $t_b>t_0$ with
+$0<t_b-t_0<\min\{r^2/2,(T-t_0)/2\}$; if $t_0=T$, take $t_b=T$.
+Shrinking $r$ makes all these requirements compatible.
+
+For $W(s,y)=v(t_b+r^2s,x_0+rLy)$, the weak equation becomes
+\begin{equation}\label{eq:affine}
+ W_s=\diver_y(H\nabla_yW)+f\cdot\nabla_yW,
+ \qquad H=L^{-1}AL^{-\top}=PS_0P^\top,
+ \quad f=rL^{-1}c,
+\end{equation}
+where coefficients on the right are evaluated at $(t_b+r^2s,x_0+rLy)$.
+The constant spatial Jacobian cancels in the weak formulation; the time
+factor $r^2$ cancels the two spatial derivative factors and leaves one
+factor $r$ on the drift. By \eqref{eq:normalized}, Lemma~\ref{lem:unit}
+applies with $\lambda=\nu/4$ and $\Lambda=4\Lambda_0$.
+These parameters do not involve $L,r,c$ or the point $z_0$.
+Returning by the fixed affine map changes the H\"older constant and
+preserves the exponent. At $t_0=T$ we use the upper-trace part of that lemma.
+
+We have obtained the same exponent on a relative neighborhood of every
+point of $[\tau,T]\times\T^d$. Local continuous representatives agree on
+overlaps, since they agree almost everywhere with the energy solution.
+Time continuity identifies each time slice in $L^2$, including the upper
+trace, and spatial continuity then identifies it everywhere.
+A finite subcover has a positive Lebesgue number $\ell$ for the parabolic
+metric. Pairs at distance below $\ell$ are controlled in a common chart
+by the maximum of finitely many H\"older constants. For separated pairs,
+use $2\|v\|_\infty\ell^{-\alpha}$. Thus the global norm is finite.
+Only this norm, the charts and $\ell$ depend on the particular coefficients.
+\end{proof}
+
+\section{Stochastic change of coordinates and proof of the theorem}
+
+\subsection{The flow and the transformed equation}
+
+Put
+\begin{equation}\label{eq:BS}
+ B=\sum_kb_k\otimes b_k,\qquad S=a-\tfrac12B,
+ \qquad\Lambda_0=M+\tfrac12M^2.
+\end{equation}
+Then $|S|\le\Lambda_0$ and $\eta^\top S\eta\ge\nu|\eta|^2$.
+Define the vector fields
+\begin{equation}\label{eq:muq}
+ \mu^i=\tfrac12\sum_{k,j}b_k^j\partial_jb_k^i,
+ \qquad q^i=\tfrac12\sum_k(\diver b_k)b_k^i.
+\end{equation}
+The product rule and Cauchy--Schwarz in $k$ bound their derivatives of
+every finite spatial order by finite combinations of $M$ and the $M_j$.
+The sums are continuous bilinear contractions of spatially smooth
+$\ell^2$-valued maps, and are progressively measurable.
+
+Lift the periodic coefficients to $\R^d$ and solve the It\^o flow equation
+\begin{equation}\label{eq:flow}
+ \dd\Phi_t(x)=\mu(t,\Phi_t(x))\dd t
+             -\sum_k b_k(t,\Phi_t(x))\dd W^k_t,
+ \qquad\Phi_0(x)=x.
+\end{equation}
+We use this It\^o equation directly, so no time regularity or
+Stratonovich conversion of the random coefficient $b$ is needed.
+The periodic lifts satisfy global spatial Lipschitz and growth bounds.
+Their higher spatial derivative bounds verify Assumption 2.5 of
+\cite{ASV} with $k=2$ and spatial H\"older parameter one: bounded
+third derivatives make second derivatives Lipschitz. For $\mu$,
+derivatives of $b$ through order four suffice.
+Theorems 2.3 and 2.6 of \cite{ASV} give a $C^2$ diffeomorphism flow
+with jointly continuous spatial derivatives. Its inverse
+$\Psi_t=\Phi_t^{-1}$ is spatially Lipschitz and temporally
+$1/4$-H\"older on compact sets by \cite[Proposition 2.8]{ASV}.
+Remarks 2.4 and 2.7 there explicitly allow countably many Brownian motions
+and random coefficients merely measurable in time.
+
+These assertions hold on one probability-one event. Periodicity and
+pathwise uniqueness give $\Phi_t(x+m)=\Phi_t(x)+m$ for integer $m$.
+One may first impose these identities for rational $x$ and integer $m$
+at all times, then extend by continuity. The flow therefore descends to
+the torus. Define
+\begin{equation}\label{eq:FKJ}
+ F=D\Phi,\qquad K=F^{-1},\qquad J=\det F.
+\end{equation}
+The determinant is continuous and nonzero, and $J_0=1$, so $J>0$.
+Compactness of $[0,T]\times\T^d$ gives finite pathwise bounds for
+$F,K,J,J^{-1}$ and $\nabla\log J$. In particular $K$ is a continuous
+invertible matrix field. All these bounds may depend on the realization.
+
+Set $v(t,x)=u(t,\Phi_t(x))$ in the $L^2$ sense. The spatial chain rule
+and change of variables give
+\begin{align*}
+ \|v(t)\|_2^2
+ &\le\|\det D\Psi_t\|_\infty\|u(t)\|_2^2,\\
+ \|\nabla v(t)\|_2^2
+ &\le\|D\Phi_t\|_\infty^2\|\det D\Psi_t\|_\infty
+       \|\nabla u(t)\|_2^2.
+\end{align*}
+Thus $v\in L^2_tH^1$. It is also continuous in $L^2$. Indeed, split
+$u(t)\circ\Phi_t-u(s)\circ\Phi_s$ into the pullback of $u(t)-u(s)$
+and the change of pullback of the fixed function $u(s)$. The first
+term tends to zero by the uniform pathwise pullback bound. For the
+second, approximate $u(s)$ in $L^2$ by smooth functions and use uniform
+continuity of $\Phi$ and the same bound. This includes both time endpoints.
+
+We apply \cite[Proposition 2.14]{ASV}, the distributional It\^o--Wentzell
+formula. Its drift hypothesis is satisfied because
+$\diver(a\nabla u)\in L^2_tH^{-1}_{\mathrm{loc}}\subset
+L^1_tH^{-1}_{\mathrm{loc}}$, and its noise hypothesis follows from
+\[
+ \sum_k|b_k\cdot\nabla u|^2\le M^2|\nabla u|^2.
+\]
+The torus identity lifts to $\R^d$ by periodizing compactly supported
+test functions. The formula holds almost surely as an identity of
+continuous $H^{-1}_{\mathrm{loc}}$-valued processes, at all times.
+With flow coefficients $\mu,-b$, its stochastic integrand is
+$(b_k\cdot\nabla u)\circ\Phi-((b_k\cdot\nabla u)\circ\Phi)=0$.
+Before spatial pullback, its remaining drift is
+\begin{equation}\label{eq:cancellation}
+ \diver(a\nabla u)+\mu\cdot\nabla u
+ -\sum_k b_k\cdot\nabla(b_k\cdot\nabla u)
+ +\tfrac12B:D^2u
+ =\diver(S\nabla u)+q\cdot\nabla u.
+\end{equation}
+For the signs and factors, put $C=2\mu$. Distributionally,
+\[
+ \sum_kb_k\cdot\nabla(b_k\cdot\nabla u)=B:D^2u+C\cdot\nabla u,
+ \qquad
+ \diver(B\nabla u)=B:D^2u+(C+2q)\cdot\nabla u.
+\]
+Substitution proves \eqref{eq:cancellation}. Every differentiated
+coefficient in this calculation is a spatially smooth contraction of
+$b$; no derivative of $a$ or pointwise Hessian of $u$ is used.
+
+For an $L^2$ vector flux $h$, the distributional change of variables is
+\begin{equation}\label{eq:piola}
+ (\diver h)\circ\Phi
+   =J^{-1}\diver\bigl(JK(h\circ\Phi)\bigr).
+\end{equation}
+To see the Jacobian factor, the distribution on the left pairs a test
+$\varphi$ with $\diver h$ against
+$(\varphi/J)\circ\Psi$. At $y=\Phi(x)$ its gradient is
+$K(x)^\top\nabla_x(\varphi/J)(x)$. Changing variables proves
+\eqref{eq:piola}, first for smooth $h$ and then for $L^2$ fluxes by
+density. Since $(\nabla u)\circ\Phi=K^\top\nabla v$, write
+\begin{equation}\label{eq:Ac}
+ S_0=S\circ\Phi,\quad q_0=q\circ\Phi,\qquad
+ A=KS_0K^\top,\qquad
+ c=A^\top\nabla\log J+Kq_0.
+\end{equation}
+Equations \eqref{eq:cancellation} and \eqref{eq:piola} yield
+\begin{equation}\label{eq:transformed}
+ v_t=J^{-1}\diver(JA\nabla v)+(Kq_0)\cdot\nabla v
+     =\diver(A\nabla v)+c\cdot\nabla v.
+\end{equation}
+The transpose on $A$ in \eqref{eq:Ac} is needed when $a$ is nonsymmetric.
+All factors in $c$ are bounded pathwise. Smooth diffeomorphisms preserve
+spatial null sets; Fubini's theorem therefore preserves the bounds on
+$S_0$ almost everywhere in spacetime. This is an integrated
+$H^{-1}$ identity as well as a distributional equation. We have taken
+no time derivative of $J,K$ or $b$.
+
+\subsection{Return to the original coordinates}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+On the common probability-one event above, the transformed equation
+\eqref{eq:transformed} satisfies every hypothesis of Lemma~\ref{lem:frame}.
+It follows that $v\in C^{\alpha/2,\alpha}([\tau,T]\times\T^d)$ with
+one deterministic
+\[
+ \alpha=\alpha(d,\nu/4,4\Lambda_0)\in(0,1),
+ \qquad \Lambda_0=M+\tfrac12M^2,
+\]
+where $\alpha(d,\lambda,\Lambda)$ is the choice in Lemma~\ref{lem:unit}.
+The inverse-flow estimate gives, with a finite random constant,
+\[
+ \operatorname{dist}(\Psi_t(x),\Psi_s(y))
+ \le C_\omega\bigl(\operatorname{dist}(x,y)+|t-s|^{1/4}\bigr).
+\]
+Since $u(t,x)=v(t,\Psi_t(x))$ in $L^2$ at every time, its continuous
+representative satisfies
+\begin{align*}
+ |u(t,x)-u(s,y)|
+ &\le C_\omega\bigl(|t-s|^{\alpha/2}
+       +\operatorname{dist}(x,y)^\alpha+|t-s|^{\alpha/4}\bigr)\\
+ &\le C'_\omega\bigl(|t-s|^{\alpha/4}
+       +\operatorname{dist}(x,y)^{\alpha/2}\bigr)
+\end{align*}
+on the compact strip. Thus $\gamma=\alpha/2$ proves the assertion.
+The terminal value is the actual $L^2$ trace, by the upper-trace argument
+in Lemma~\ref{lem:unit} and the continuity of the pullbacks.
+
+The representative and the membership event can be chosen measurably.
+Apply a fixed sequence of periodic spatial mollifiers to the original
+$L^2$-valued process. On each regular path these mollifications converge
+uniformly on a compact strip to its unique continuous representative.
+Values at rational spacetime points and countable limits and suprema
+then determine its H\"older norm and the event that this norm is finite.
+No measurable choice of the random affine charts is needed.
+The same pathwise argument works on every positive-time strip; a
+countable exhaustion by rational lower times gives simultaneous interior
+regularity if desired.
+\end{proof}
+
+In the conclusion, $\gamma=\alpha/2$ is fixed by $d,\nu,M$, and
+$C^{\gamma/2,\gamma}$ means temporal exponent $\alpha/4$ and spatial
+exponent $\alpha/2$. The assumptions are precisely
+\eqref{eq:bound}--\eqref{eq:smooth} and the variational interpretation of
+\eqref{eq:spde}. The local radii, covering constants and H\"older norm
+may depend on the realization; the exponent does not. The argument uses
+neither commutation of the transport fields nor volume preservation.
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with the literature search, proof development,
+manuscript preparation and separate-context automated reviews.
+These automated reviews are not independent human peer review or formal
+verification. Responsibility for the submitted mathematical claims rests
+with the author.
+
+\begin{thebibliography}{9}
+\bibitem{ASV}
+Antonio Agresti, Max Sauerbrey and Mark Veraar,
+\emph{A stochastic flow approach to De Giorgi--Nash--Moser estimates for
+SPDEs with smooth transport noise}, arXiv:2511.12692v1 (2025),
+\url{https://arxiv.org/pdf/2511.12692v1}.
+The theorem and equation locators here refer to the PDF dated November 18,
+2025: distributional composition (2.33) and It\^o--Wentzell formula (2.34).
+The HTML manuscript dated August 24, 2026 numbers these formulas
+(2.37) and (2.38).
+
+\bibitem{Liao}
+Naian Liao, \emph{Remarks on parabolic De Giorgi classes},
+Annali di Matematica Pura ed Applicata \textbf{200} (2021), 2361--2384.
+\href{https://doi.org/10.1007/s10231-021-01084-8}{doi:10.1007/s10231-021-01084-8}.
+\end{thebibliography}
+\end{document}

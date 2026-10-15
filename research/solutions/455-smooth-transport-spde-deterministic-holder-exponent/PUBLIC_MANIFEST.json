@@ -1,0 +1,24 @@
+{
+  "problem_id": 455,
+  "claim": "Complete analytic affirmative solution claim",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": {
+    "README.md": {
+      "bytes": 2364,
+      "sha256": "3ba521fa6d583fd5ea89d64d1cab7f03cb84ad5257524893e392887202b43589"
+    },
+    "TARGET_COMPARISON.md": {
+      "bytes": 4254,
+      "sha256": "3b16c949a1c88f7bdbd21e14c72b18e4fe5497acb96df1fc6218dfea5f2f3555"
+    },
+    "manuscript.pdf": {
+      "bytes": 362387,
+      "sha256": "557049d18a0a64c1b4b47c1fe8985b4f00ac44862c4bb12230f51672dd1befc8"
+    },
+    "manuscript.tex": {
+      "bytes": 22628,
+      "sha256": "205fb514fed61b8cd4a63d9be4e11fa9ef276dbaaef957b80981a6eed81e0433"
+    }
+  },
+  "self_hash_policy": "PUBLIC_MANIFEST.json and SHA256SUMS are excluded from this manifest. SHA256SUMS additionally covers this manifest and excludes itself."
+}
