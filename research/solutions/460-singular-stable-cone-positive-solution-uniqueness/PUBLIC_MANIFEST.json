@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "problem_id": "460",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_statement_sha256": "2410b88a510d9b7c6a5a11e2b86204441caa1ab03697a137f7bfd07a7e8c1f4e",
+  "claim": "Proposed complete analytic solution; independent mathematical review requested",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public entry and reproduction instructions",
+      "bytes": 1924,
+      "sha256": "8ba11a903795c7d9c771e9a0dc8393b4f310b61a5cd7535846e34db607bdff06"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Complete original-target comparison and source roles",
+      "bytes": 2799,
+      "sha256": "a34ab3ebe544c4d19f165891268391d46db2609f5892ed30d9bf7cdbc400f26e"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Self-contained editable analytic manuscript",
+      "bytes": 33824,
+      "sha256": "945f86ac5262c2181c0fe973f1a538cee8c547fbe4b01248510241503574e0ee"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Compiled ten-page manuscript",
+      "bytes": 282731,
+      "sha256": "ef872ebe993112f83d5bdb51e7690e17bbe6cbd27ff6c0bd9a8e7cb84121c5e4"
+    }
+  ]
+}
