@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "title": "A sharp Weyl remainder for constant-index transmission eigenvalues",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "status": "Solution claim for independent mathematical review",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/429-transmission-eigenvalue-sharp-weyl-remainder.md",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package scope, build instructions, contact and AI-use/review limits",
+      "sha256": "31e9c90fc3843d235e23ac7c394161bd27410f1b4c98ac77944b076caa11f8f1",
+      "bytes": 1894
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full-target comparison with the immutable public AIM429 statement",
+      "sha256": "e88b728fa3ee523383289eabea69498a2eebe373c651fde8886933926ef1f0ad",
+      "bytes": 2501
+    },
+    {
+      "path": "weyl_remainder.tex",
+      "purpose": "Standalone editable manuscript source",
+      "sha256": "a65db2482442b88c670a12c9c2bcd2c16ec15fc3c80f1709bbd9fe0f2e6029de",
+      "bytes": 45212
+    },
+    {
+      "path": "weyl_remainder.pdf",
+      "purpose": "Complete 13-page manuscript including proof, exact references and AI-use disclosure",
+      "sha256": "460c74de10ad78ea4968dccaf72650fb9a02a0febfa7da2d1f5aee8a7988cab0",
+      "bytes": 488520
+    }
+  ],
+  "integrity_files": {
+    "PUBLIC_MANIFEST.json": "This manifest; its hash is included in SHA256SUMS",
+    "SHA256SUMS": "SHA-256 of all payload files and PUBLIC_MANIFEST.json; no self hash"
+  },
+  "detailed_AI_report": "none submitted",
+  "formal_or_independent_human_verification_claimed": false
+}
