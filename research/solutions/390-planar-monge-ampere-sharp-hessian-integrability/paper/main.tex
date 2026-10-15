@@ -1,0 +1,808 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Local Hessian integrability for planar Monge--Ampere inequalities},pdfauthor={Kaiwen Jin},pdfsubject={Planar Alexandrov solutions and local Hessian integrability}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\numberwithin{equation}{section}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\D}{\mathbb D}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Local Hessian integrability for planar Monge--Amp\`ere inequalities}
+\author{Kaiwen Jin\\[2pt]\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(0<\lambda<1\) and let \(u\) be a convex Alexandrov solution on a bounded
+convex planar domain, with Monge--Amp\`ere density between \(\lambda\) and
+\(\lambda^{-1}\). We prove that its full distributional Hessian belongs locally
+to strong \(L^{p_\lambda}\), where
+\(p_\lambda=(1+\lambda^2)/(1-\lambda^2)\). This implies the corresponding weak
+endpoint estimate posed in the Monge--Amp\`ere regularity literature.
+The proof uses a change of variables with a Lipschitz inverse and a local
+weighted scalar Lipschitz projection. An energy estimate on the set where
+the projection differs from the original map controls the cutoff error
+and yields the required negative moment.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The Monge--Amp\`ere equation controls the determinant of a convex potential's
+Hessian. Even when that determinant is bounded above and below, its two
+eigenvalues can be very different. Estimates on the whole Hessian therefore
+contain information about anisotropy that the determinant alone does not
+display. This distinction is important in the regularity of convex potentials
+and their gradient maps; the connection with optimal transportation is
+described in the survey of De Philippis and Figalli~\cite{DPF}.
+
+For strictly convex Alexandrov solutions with two-sided density bounds,
+De Philippis, Figalli and Savin~\cite[Theorem~1.1]{DFS} proved local
+\(W^{2,1+\varepsilon}\) regularity for some positive \(\varepsilon\) depending
+on the density bounds and dimension. In the plane, strict convexity follows
+from the positive lower bound. The local Hessian is thus a matrix field, but
+the quantitative dependence of its integrability exponent remains a separate
+question. De Philippis and Figalli~\cite[\S5.2(2)]{DPF} formulate the weak
+endpoint exponent
+\[
+p_\lambda=\frac{1+\lambda^2}{1-\lambda^2},
+\qquad 0<\lambda<1,
+\]
+under the bounds \(\lambda\le\det D^2u\le\lambda^{-1}\).
+We establish the following strong local estimate at this exponent.
+
+\begin{theorem}\label{thm:main}
+Let \(0<\lambda<1\), let \(\Omega\subset\R^2\) be a bounded open convex domain,
+and let \(u:\Omega\to\R\) be finite and convex. Suppose that its Alexandrov
+Monge--Amp\`ere measure satisfies
+\begin{equation}\label{eq:MA}
+\lambda|E|\le\mu_u(E)=|\partial u(E)|\le\lambda^{-1}|E|
+\quad\text{for every Borel }E\subset\Omega.
+\end{equation}
+Then the full distributional Hessian is a measurable matrix field \(H\), and
+for every \(\Omega'\Subset\Omega\),
+\begin{equation}\label{eq:mainstrong}
+\int_{\Omega'}(1+|H|)^{p_\lambda}\,dx<\infty,
+\qquad p_\lambda=\frac{1+\lambda^2}{1-\lambda^2}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:mainweak}
+\sup_{t>0}t^{p_\lambda}
+|\{x\in\Omega':|H(x)|>t\}|<\infty.
+\end{equation}
+\end{theorem}
+
+Here \(\partial u(x)\) is the convex subgradient, \(\partial u(E)\) is the union
+of those subgradients over \(E\), and \(|E|\) denotes planar Lebesgue measure.
+The matrix norm is the operator norm. The conclusion concerns the entire
+distributional Hessian, including the assertion that no singular Hessian
+measure remains. Constants may depend on the fixed solution, \(\lambda\),
+and the compact interior set. Chebyshev's inequality gives
+\eqref{eq:mainweak} from \eqref{eq:mainstrong}.
+
+We use the separating function and scalar projection ideas of Agazzi
+et al.~\cite[Lemmas~3--4]{Agazzi}. The local argument here is weighted.
+The periodic quasiconvexity theorem in that paper is not invoked on a local
+domain. The cone and reflection-map calculations follow the geometry
+developed by De Philippis, Guerra and Tione~\cite[Lemmas~6.3 and~6.9]{DPGT};
+we give the transformations directly for the original Alexandrov class.
+
+The change of variables \(y=x+Du(x)\) turns the Hessian into the derivative
+of a 1-Lipschitz map. Large Hessian eigenvalues correspond to a small distance
+of that derivative from a circle of rotations. The inverse of each rotated
+difference is quasiconformal, which gives a quantitative distance deficit
+for the Lipschitz map on fixed interior disks. A scalar Lipschitz projection then has a uniformly small
+error. Its constraint is saturated wherever that error is nonzero, and the
+resulting energy estimate controls the distance on precisely that set.
+A sufficiently high power of a smooth cutoff gives an integrable error when
+the separating inequality is integrated over its scale.
+
+Section~\ref{sec:coordinates} establishes the exact measure transformation
+and the derivative cone. Section~\ref{sec:projection} proves the local weighted
+estimate. Section~\ref{sec:moments} integrates it and returns to the Hessian.
+Throughout, vector norms are Euclidean and matrix norms are operator norms.
+We identify \(\R^2\) with \(\C\), and \(C\) denotes a finite local constant
+independent of the small projection scale and the integration cutoff.
+
+\section{Coordinates for Alexandrov solutions}\label{sec:coordinates}
+
+We first justify the change of variables without assuming a smooth solution.
+The Radon--Nikodym theorem~\cite[Theorem~2]{TaoRN} and
+\eqref{eq:MA} give
+\begin{equation}\label{eq:density}
+\mu_u=f\,dx,\qquad \lambda\le f\le\lambda^{-1}\quad\text{a.e.}
+\end{equation}
+Planar strict convexity and local \(C^{1,\alpha}\) regularity follow from
+the results recorded in~\cite[p.~18 and Theorem~2.14]{DPF}.
+The normalized \(W^{2,1+\varepsilon}\) theorem~\cite[Theorem~1.1]{DFS}
+applies locally as follows. At \(x_0\), subtract the supporting affine
+function \(\ell\) and choose a small compact section
+\(S=\{u-\ell<h\}\Subset\Omega\).
+The potential \(w=u-\ell-h\) is zero on its boundary and has minimum \(-h\)
+at \(x_0\). John normalization
+\cite[Lemma~2.15]{DPF} gives an affine map \(A(x)=Lx+c\), \(\det L>0\),
+with \(B_1\subset A(S)\subset B_2\). In dimension two,
+\((\det L)w\circ A^{-1}\) has the same density bounds: its subgradient area
+and its domain area both acquire the factor \(\det L\).
+The minimum point belongs to the half-height set in the theorem of
+\cite{DFS}. Pulling back the resulting weak derivatives gives
+\[
+u\in C^1_{\rm loc}(\Omega)\cap W^{2,1}_{\rm loc}(\Omega).
+\]
+Write \(H=D^2u\) for this full weak matrix field. It is symmetric and
+positive semidefinite almost everywhere by convexity.
+
+\begin{proposition}\label{prop:measure}
+Set
+\[
+\psi(x)=u(x)+\tfrac12|x|^2,\qquad
+Y(x)=x+Du(x),\qquad U=Y(\Omega).
+\]
+Then \(Y:\Omega\to U\) is a homeomorphism onto an open set, with
+1-Lipschitz inverse \(F\). Both maps send null sets to null sets. Moreover,
+\begin{equation}\label{eq:transport}
+\det H=f,\qquad
+\rho=1+\tr H+\det H,\qquad
+|Y(E)|=\int_E\rho\,dx
+\end{equation}
+for every Borel \(E\subset\Omega\). Almost everywhere in \(U\),
+\begin{equation}\label{eq:inverse}
+DF(y)=(I+H(F(y)))^{-1}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Convex mollification on compact subdomains and continuity of
+Monge--Amp\`ere measures~\cite[Proposition~2.4]{DPF} give, for fixed \(t\ge0\),
+\begin{equation}\label{eq:mixed}
+\mu_{u+t|x|^2/2}=\mu_u+t\Delta u+t^2\,dx.
+\end{equation}
+Indeed the smooth identity is
+\(\det(D^2u_j+tI)=\det D^2u_j+t\Delta u_j+t^2\).
+The two convex measures converge weakly on compact tests, and the
+Laplacians converge distributionally. This proves \eqref{eq:mixed}.
+Consequently, with
+\(\rho_0=1+\tr H+f\), we have \(\mu_\psi=\rho_0\,dx\).
+
+Monotonicity of \(Du\) gives
+\[
+(Y(x)-Y(z))\cdot(x-z)\ge |x-z|^2.
+\]
+Thus \(Y\) is injective and \(F\) is 1-Lipschitz. To see that \(U\) is open,
+take \(\overline B_a(x_0)\subset\Omega\).
+On its sphere, strong convexity gives
+\[
+\psi(x)-y\cdot x-\psi(x_0)+y\cdot x_0
+\ge a^2/2-|y-Y(x_0)|a.
+\]
+For \(|y-Y(x_0)|<a/2\), the minimum on this ball is interior,
+so \(D\psi=y\) somewhere in the ball. This also proves continuity of the
+inverse on the image. Since \(\psi\in C^1\), its subgradient is \(Y\), and
+\begin{equation}\label{eq:transport0}
+|Y(E)|=\int_E\rho_0\,dx.
+\end{equation}
+Hence \(Y\) sends null sets to null sets. The Lipschitz map \(F\) does too,
+by the area formula~\cite[\S2, Theorem~1]{Jerrard}.
+
+The convex Legendre supremum
+\(\psi^*(y)=\sup_{x\in\Omega}(x\cdot y-\psi(x))\) is finite:
+\(\Omega\) is bounded and \(\psi\) has an affine lower bound.
+For \(y\in U\), its unique maximizer is \(F(y)\). The inequalities
+\[
+F(y)\cdot h\le \psi^*(y+h)-\psi^*(y)\le F(y+h)\cdot h
+\]
+show that \(D\psi^*=F\) on \(U\), since the remainder is at most \(|h|^2\).
+Thus \(G=DF\), defined almost everywhere by Rademacher's theorem
+\cite[Theorem~2.2.4]{Tao}, is symmetric and positive semidefinite.
+Let \(B\) consist of its singular-derivative set and the null set where
+the derivative does not exist. The area formula gives \(|F(B)|=0\);
+\eqref{eq:transport0} then gives \(|B|=|Y(F(B))|=0\).
+Therefore \(G\) is nonsingular almost everywhere.
+
+At such a point \(y\), the expansion
+\(F(y+h)-F(y)=Gh+o(|h|)\) implies a lower bound \(c|h|\).
+Continuity of the inverse converts this expansion into differentiability
+of \(Y\) at \(F(y)\), with derivative \(G^{-1}\).
+The exceptional set has null image under \(F\). The ordinary derivative
+of this continuous \(W^{1,1}_{\rm loc}\) map agrees almost everywhere
+with its weak derivative \(I+H\).
+One can verify this on almost every coordinate line: Fubini gives the
+one-dimensional weak derivative, its integral is an absolutely continuous
+representative, continuity identifies that representative, and Lebesgue
+differentiation identifies its ordinary derivative. These integration
+and differentiation statements are given in~\cite[Theorems~1.6.11--12
+and~1.7.21]{Tao}. The null-image property of \(Y\) now gives
+\eqref{eq:inverse} in image coordinates.
+
+Applying the area formula to \(F\) on \(Y(E)\), and using the weighted form
+of \eqref{eq:transport0}, yields
+\[
+|E|=\int_{Y(E)}\det G\,dy
+=\int_E\frac{\rho_0}{\det(I+H)}\,dx.
+\]
+Equality on every Borel set implies
+\(\rho_0=\det(I+H)=1+\tr H+\det H\), so \(\det H=f\).
+This proves \eqref{eq:transport}.
+To apply the globally stated area formula, each component of \(F\) may be
+extended to \(\R^2\) by the infimum Lipschitz extension. Its general
+multiplicity formula is then restricted to sets in \(U\), where \(F\)
+is injective. The extension need not be injective outside \(U\).
+\end{proof}
+
+Define
+\begin{equation}\label{eq:Wv}
+W(y)=y-2F(y),\qquad
+v(y)=A_0W(y),\qquad A_0=\operatorname{diag}(1,-1).
+\end{equation}
+For \(x,z\in\Omega\), monotonicity gives
+\[
+|W(Y(x))-W(Y(z))|^2
+=|Y(x)-Y(z)|^2-4(Du(x)-Du(z))\cdot(x-z)
+\le |Y(x)-Y(z)|^2.
+\]
+Thus \(W\) and \(v\) are 1-Lipschitz. Their derivatives satisfy
+\begin{equation}\label{eq:cayley}
+DW(Y(x))=(H-I)(H+I)^{-1}.
+\end{equation}
+
+For a real matrix \(M\), write its complex action as
+\(Mz=a_+(M)z+a_-(M)\bar z\). Its operator norm and determinant are
+\[
+|M|=|a_+(M)|+|a_-(M)|,\qquad
+\det M=|a_+(M)|^2-|a_-(M)|^2.
+\]
+Since \(DW\) is symmetric, the derivative at almost every \(y\in U\) acts by
+\begin{equation}\label{eq:complex}
+Dv(y)\xi=b(y)\xi+a(y)\bar\xi\quad(\xi\in\C),\qquad
+b=b_1-ib_2,\quad a\in\R.
+\end{equation}
+We suppress the base point in the coefficient functions below. Put
+\begin{equation}\label{eq:Kd}
+K=\lambda^{-1},\qquad k=\frac{K-1}{K+1},\qquad d=1-|b|.
+\end{equation}
+
+\begin{proposition}\label{prop:cone}
+Almost everywhere in \(U\),
+\begin{equation}\label{eq:cone}
+0<d\le1,\qquad |a|\le kd,\qquad
+|Dv|\le1-(1-k)d.
+\end{equation}
+If \(h_1\ge h_2>0\) are the eigenvalues of \(H\), then
+\begin{equation}\label{eq:compare}
+\frac{2}{(1+k)(1+h_1)}\le d(Y(x))
+\le\frac{2K}{1+h_1},
+\qquad 1+h_1\le\rho\le C_K(1+h_1).
+\end{equation}
+For every rotation \(Q\in\SO(2)\), the map
+\(g_Q(y)=v(y)-Qy\) is a \(K\)-quasiconformal homeomorphism onto its image.
+\end{proposition}
+
+\begin{proof}
+The eigenvalues of \(DW\) are \((h_i-1)/(h_i+1)\in(-1,1)\);
+therefore \(|b|+|a|<1\). The inverse Cayley formula gives
+\[
+\det H=\frac{(1+a)^2-|b|^2}{(1-a)^2-|b|^2}.
+\]
+The determinant band is equivalent to
+\(2|a|\le k(1+a^2-|b|^2)\). Hence
+\[
+|a|\le\frac{k(1-|b|)(1+|b|)}{2-k|a|}
+\le k(1-|b|),
+\]
+where the last inequality follows from \(|b|+k|a|\le1\).
+This proves \eqref{eq:cone}.
+The matrix computation is the operator-norm cone calculation in
+\cite[Lemma~6.3]{DPGT}.
+
+The operator distance of \(DW\) from symmetric orthogonal reflections is
+\[
+d+|a|=\max\left\{\frac{2}{1+h_1},\frac{2h_2}{1+h_2}\right\}.
+\]
+To check the formula, a reflection has eigenvalues \(1,-1\).
+Its two eigendirections give lower bounds \(1-\alpha_1\) and
+\(1+\alpha_2\), where \(\alpha_1\ge\alpha_2\) are the eigenvalues of \(DW\);
+aligning these directions with those of \(DW\) attains their maximum.
+Equivalently, left multiplication by \(A_0\) turns this distance into
+\(\min_{|Q|=1}(|b-Q|+|a|)=d+|a|\).
+Since \(h_2=f/h_1\),
+\[
+\frac{h_2(1+h_1)}{1+h_2}
+=\frac{f(1+h_1)}{h_1+f}\le\max\{f,1\}\le K.
+\]
+Together with \(d\le d+|a|\le(1+k)d\), this proves the distance
+comparison in \eqref{eq:compare}. The density comparison follows from
+\(\rho=1+h_1+h_2+f\), \(h_2\le h_1\), and \(f\le K\).
+
+The complex coefficients of \(Dg_Q\) are \(b-Q,a\), and
+\(|a|\le kd\le k|b-Q|\).
+Thus \(|Dg_Q|^2\le K\det Dg_Q\), with positive determinant.
+To establish homeomorphism, set \(S=A_0Q\), a symmetric reflection.
+Choose orthonormal \(e,e^\perp\) with \(Se=e\), \(Se^\perp=-e^\perp\).
+In original coordinates,
+\[
+W(Y(x))-SY(x)
+=-2(x\cdot e)e+2(Du(x)\cdot e^\perp)e^\perp.
+\]
+Equal outputs fix \(x\cdot e\). On that line, \(Du\cdot e^\perp\)
+is strictly increasing by differentiable strict convexity, so the inputs
+coincide. The map is also open: in a small rectangle about any point,
+the derivative values at the upper and lower ends of its central vertical
+segment strictly surround the central value. Continuity preserves a
+smaller such interval for all nearby horizontal coordinates, and
+the intermediate value theorem fills an open output rectangle.
+This proves homeomorphism after composition with \(F\) and \(A_0\).
+It is the \(C^1\) fiber argument underlying~\cite[Lemma~6.9]{DPGT}.
+The analytic quasiconformal convention
+\cite[\S2.1]{DPGT} is precisely
+\(|Dg_Q|^2\le K\det Dg_Q\) for a \(W^{1,2}_{\rm loc}\) homeomorphism,
+so its \(K\) agrees with \eqref{eq:Kd}.
+\end{proof}
+
+\section{A local weighted projection estimate}\label{sec:projection}
+
+\subsection{A distance deficit on interior disks}
+
+Fix concentric disks
+\(\overline B_r(y_0)\subset B_R(y_0)\Subset U\), with \(0<r<R\).
+All constants in this section may depend on these disks and the fixed map.
+
+\begin{lemma}\label{lem:short}
+There is \(c>0\) such that, for all \(y,z\in\overline B_r(y_0)\),
+\begin{equation}\label{eq:short}
+|v(y)-v(z)|\le |y-z|-c|y-z|^K.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Joint continuity, compactness of \(\SO(2)\), and the injectivity from
+Proposition~\ref{prop:cone} give
+\[
+\ell=\min_{\substack{Q\in\SO(2),\,y\in\overline B_r\\z\in\partial B_R}}
+|g_Q(y)-g_Q(z)|>0.
+\]
+The image \(V_Q=g_Q(B_R)\) is bounded and simply connected, and
+\(\partial V_Q=g_Q(\partial B_R)\). These facts follow by pulling loops
+back into the disk and using the homeomorphism on its compact closure.
+Choose a Riemann map \(\chi_Q:V_Q\to\D\) with
+\(\chi_Q(g_Q(y_0))=0\), using~\cite[p.~1]{SiuR}.
+The disk self-homeomorphism
+\(T_Q(z)=\chi_Q(g_Q(y_0+Rz))\) and its inverse are
+\(K\)-quasiconformal and fix zero. Inversion and conformal composition
+preserve \(K\); see~\cite[Theorem~4.16 and the following paragraph]{Calegari}.
+Mori's theorem~\cite[Theorem~1.1]{Mori}, in its planar normalized form,
+states
+\[
+|T_Q^{-1}(\xi)-T_Q^{-1}(\xi')|
+\le16|\xi-\xi'|^{1/K}.
+\]
+
+The set \(g_Q(\overline B_r)\) is at boundary distance at least \(\ell\)
+in \(V_Q\). If two such image points have distance \(\sigma<\ell/2\),
+their connecting segment is inside \(V_Q\), at distance at least
+\(\ell/2\) from its boundary. Cauchy's derivative formula
+\cite[p.~5]{SiuC}, on circles of radius \(\ell/4\), gives
+\(|\chi_Q'|\le4/\ell\) along this segment. Mori therefore gives
+\[
+|y-z|\le16R(4\sigma/\ell)^{1/K}.
+\]
+If \(\sigma\ge\ell/2\), use \(|y-z|\le2r\).
+Thus, uniformly in \(Q\),
+\begin{equation}\label{eq:inverseholder}
+|y-z|\le C|g_Q(y)-g_Q(z)|^{1/K}.
+\end{equation}
+For a pair with \(v(y)\ne v(z)\), choose \(Q\) taking the direction of
+\(y-z\) to that of \(v(y)-v(z)\).
+Because \(v\) is 1-Lipschitz, its image difference under \(g_Q\) then has
+length \(|y-z|-|v(y)-v(z)|\). Raising \eqref{eq:inverseholder} to
+power \(K\) proves \eqref{eq:short}.
+When the vector difference vanishes, decrease \(c\) to at most
+\((2r)^{1-K}\); the same inequality holds.
+\end{proof}
+
+\subsection{The scalar projection}
+
+Let \(f_1=v_1\). Choose \(\zeta\in C_c^\infty(B_r)\), \(0\le\zeta\le1\),
+equal to one on \(B_{r/2}\). Fix an integer \(m>K+1\) and set
+\(\eta=\zeta^m\). The high power will be used to control \(D\eta\).
+For \(0<\epsilon<1/2\), put \(s=1-\epsilon\).
+Choose a scalar \(s\)-Lipschitz minimizer \(w\) of
+\[
+\int_{B_r}\eta(f_1-w)^2,
+\]
+and set \(h=f_1-w\). The construction adapts the projection in
+\cite[Lemma~4]{Agazzi} to this local weight.
+
+\begin{lemma}\label{lem:projection}
+The minimizer can be chosen so that
+\begin{equation}\label{eq:residual}
+\|h\|_\infty\le C\epsilon^{K/(K-1)}.
+\end{equation}
+On \(E=\{h\ne0\}\cap\{\eta>0\}\), \(|Dw|=s\) almost everywhere.
+On \(\{h=0\}\), \(Dh=0\) almost everywhere. In addition,
+\begin{equation}\label{eq:translation}
+\int\eta Dw\cdot Dh\ge-\int hD\eta\cdot Dw.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Existence follows from compactness of bounded equi-Lipschitz scalar
+functions on the closed disk. The positive mass of \(\eta\) and a bounded
+objective bound one value of a minimizing sequence, and the Lipschitz
+constraint bounds all its values. A uniformly convergent subsequence has
+an admissible limit with the limiting objective.
+The variational inequality is
+\begin{equation}\label{eq:VI}
+\int\eta h(\xi-w)\le0
+\quad\text{for every scalar \(s\)-Lipschitz competitor \(\xi\).}
+\end{equation}
+
+Define the two \(s\)-Lipschitz envelopes
+\[
+f_s^-(y)=\inf_{z\in\overline B_r}(f_1(z)+s|y-z|),
+\qquad
+f_s^+(y)=\sup_{z\in\overline B_r}(f_1(z)-s|y-z|).
+\]
+They satisfy \(f_s^-\le f_1\le f_s^+\).
+By Lemma~\ref{lem:short}, either deviation from \(f_1\) is bounded by
+\(\sup_{t\ge0}(\epsilon t-ct^K)\le C\epsilon^{K/(K-1)}\).
+Clipping a minimizer between these envelopes preserves its Lipschitz
+constraint and does not increase its squared distance from \(f_1\).
+This proves \eqref{eq:residual}.
+
+At a differentiability point where \(h>0\), \(\eta>0\), and \(|Dw|<s\),
+a small cone \(w(y_1)+t-s|y-y_1|\) lies below \(w\) on a sufficiently
+small surrounding sphere and above it at the center.
+Replace \(w\) by its maximum with that cone inside the sphere.
+The functions agree at the boundary; splitting line segments there
+shows that the modification remains \(s\)-Lipschitz on the original disk.
+It increases \(w\) on an open subset where \(\eta h>0\), contradicting
+\eqref{eq:VI}. The minimum with an upward cone handles \(h<0\).
+This proves saturation almost everywhere. The zero-set assertion follows
+at its density and differentiability points: a nonzero derivative would
+produce a conical sector of nonzero values, contradicting density one.
+
+Extend \(w\) to \(\R^2\) with the same Lipschitz bound.
+Both translations \(w(\cdot+te_i)\) and \(w(\cdot-te_i)\), restricted
+to the disk, are competitors in \eqref{eq:VI}.
+With \(A=\eta h\), extended by zero, their summed inequality is
+\[
+\begin{aligned}
+0&\ge\int A(y)\bigl(w(y+te_i)+w(y-te_i)-2w(y)\bigr)\,dy\\
+&=-\int\bigl(A(y+te_i)-A(y)\bigr)
+          \bigl(w(y+te_i)-w(y)\bigr)\,dy.
+\end{aligned}
+\]
+Divide by \(t^2\). The first differences converge almost everywhere to
+the respective first derivatives, and are bounded on a fixed compact set.
+Dominated convergence gives \(\int\partial_iA\,\partial_iw\ge0\).
+Summing over \(i\) proves \eqref{eq:translation}.
+Only first differences were used; compact support controls the translations
+without a boundary term.
+\end{proof}
+
+\subsection{The separating inequality and energy estimate}
+
+For a real matrix \(M\), define
+\begin{equation}\label{eq:Ls}
+L_s(M)=
+\begin{cases}
+\det M,& |M|\le s,\\
+2s|a_+(M)|-s^2,& |M|>s,
+\end{cases}
+\qquad D_\epsilon(M)=L_{1-\epsilon}(M)-\det M.
+\end{equation}
+Here \(a_+(M)\) is the coefficient of \(z\) in
+\(Mz=a_+(M)z+a_-(M)\bar z\).
+This is the rescaled separating function of~\cite[Lemma~3]{Agazzi}.
+We record the pointwise calculation that will be used.
+
+\begin{lemma}\label{lem:calibration}
+If \(M_1,M_2\) are the rows of \(M\), then
+\[
+L_s(M)\ge \det(z,M_2)+z\cdot(M_1-z)
+\]
+whenever \(|z|=s\), or whenever \(z=M_1\) and \(|M_1|\le s\).
+\end{lemma}
+
+\begin{proof}
+Let \(J=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)\).
+For \(|z|=s\), the supremum of the right side is
+\(s|M_1-JM_2|-s^2=2s|a_+(M)|-s^2\).
+Write \(\alpha=|a_+(M)|\), \(\tau=|a_-(M)|\).
+When \(|M|\le s\), the difference between \(\det M\) and this supremum is
+\((s-\alpha)^2-\tau^2\ge0\), because \(s\ge\alpha+\tau\).
+When \(|M|>s\), the definition already equals the supremum.
+For \(z=M_1\), the right side is \(\det M\).
+If \(|M|>s\) but \(|M_1|\le s\), then
+\(|\alpha-\tau|\le|M_1|\le s<\alpha+\tau\);
+hence \((s-\alpha)^2-\tau^2\le0\), so \(L_s(M)\ge\det M\)
+also in this case.
+\end{proof}
+
+\begin{proposition}\label{prop:defect}
+For the fixed disks and cutoff above, let
+\[
+\gamma=\frac1{K-1}-\frac1m,\qquad
+\beta=\frac2{K^2-1}.
+\]
+Then \(\gamma>\beta\), and for all \(0<\epsilon<1/2\),
+\begin{equation}\label{eq:defect}
+\int\eta D_\epsilon(Dv)\,dy\ge-C\epsilon^{2+\gamma}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:projection}, \(Dw\) has length \(s\) on \(E\),
+and equals \(Df_1\) where \(h=0\). Lemma~\ref{lem:calibration} therefore gives
+\[
+D_\epsilon(Dv)\ge-\det(Dh,Dv_2)+Dw\cdot Dh
+\quad\text{on }\{\eta>0\}.
+\]
+The real-antilinear form \eqref{eq:complex} gives the rows
+\[
+Df_1=(b_1+a,b_2),\qquad Dv_2=(-b_2,b_1-a).
+\]
+Thus \(B=-JDv_2=Df_1-2ae_1\) is distributionally divergence free.
+Testing against \(\eta h\) and using \eqref{eq:translation},
+\begin{equation}
+\begin{aligned}
+\int\eta D_\epsilon(Dv)
+&\ge \int hD\eta\cdot(Df_1-Dw)-2\int ha\,\partial_1\eta\\
+&=-\frac12\int h^2\Delta\eta-2\int ha\,\partial_1\eta.
+\end{aligned}
+\label{eq:cancel}
+\end{equation}
+These integrations by parts use compactly supported Lipschitz tests and
+bounded first derivatives. Smooth approximation of the tests justifies
+them in the weak sense.
+
+To estimate the last term, use saturation on its actual nonzero set.
+The identity \(Df_1=Dw+Dh\) gives
+\[
+2\int\eta Dw\cdot Dh+\int\eta|Dh|^2
+=\int_E\eta(|Df_1|^2-s^2).
+\]
+From \eqref{eq:cone}, \(|Df_1|\le1-(1-k)d\), while \(s^2\ge1-2\epsilon\).
+Since \((1-t)^2\le1-t\) for \(0\le t\le1\),
+\[
+|Df_1|^2-s^2\le2\epsilon-(1-k)d.
+\]
+Combining this with \eqref{eq:translation} and \eqref{eq:residual} yields
+\begin{equation}\label{eq:energy}
+(1-k)\int_E\eta d+\int\eta|Dh|^2
+\le2\epsilon\int_E\eta+2\|h\|_\infty\int|D\eta|
+\le C\epsilon.
+\end{equation}
+
+The chosen power of the cutoff satisfies
+\(|D\eta|\le C\eta^{1-1/m}\).
+H\"older's inequality and \(d\le1\) now give
+\[
+\int_Ed|D\eta|
+\le C\left(\int_E\eta d\right)^{1-1/m}
+       \left(\int_Ed\right)^{1/m}
+\le C\epsilon^{1-1/m}.
+\]
+Since \(|a|\le kd\) and \(\|h\|_\infty\le C\epsilon^{1+1/(K-1)}\),
+the two terms in \eqref{eq:cancel} satisfy
+\[
+\left|\int ha\,\partial_1\eta\right|
+\le C\epsilon^{2+1/(K-1)-1/m},
+\qquad
+\left|\int h^2\Delta\eta\right|
+\le C\epsilon^{2+2/(K-1)}.
+\]
+This proves \eqref{eq:defect}. Finally,
+\[
+\gamma-\beta=\frac1{K+1}-\frac1m>0,
+\]
+by the choice \(m>K+1\).
+\end{proof}
+
+\section{Negative moments and Hessian integrability}\label{sec:moments}
+
+We integrate \eqref{eq:defect} over its scale. The sign of that integral
+must be controlled uniformly for every positive lower cutoff.
+
+\begin{lemma}\label{lem:scalar}
+Let \(0<d\le1\), \(0\le A\le kd\), and define
+\[
+P_\epsilon=
+\begin{cases}
+0,&\epsilon\le d-A,\\
+A^2-(d-\epsilon)^2,&\epsilon>d-A.
+\end{cases}
+\]
+For every \(0<q<(1-k)/k\), there are constants \(c_q>0,C_q<\infty\),
+depending only on \(q,k\), such that
+\begin{equation}\label{eq:scalar}
+\int_{h_0}^{1/2}P_\epsilon\,\epsilon^{-q-3}\,d\epsilon
+\le C_q-c_q\max\{d,h_0\}^{-q},
+\qquad 0<h_0<1/2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put \(b_0=A/d\in[0,k]\). Direct integration of the three monomials gives
+\[
+\begin{aligned}
+I_0&=\int_{d-A}^{\infty}
+[A^2-(d-\epsilon)^2]\epsilon^{-q-3}\,d\epsilon\\
+&=\frac{2((q+1)b_0-1)}{q(q+1)(q+2)}
+(1-b_0)^{-q-1}d^{-q}
+\le-c_0d^{-q},
+\end{aligned}
+\]
+where \(c_0=2(1-(q+1)k)/(q(q+1)(q+2))>0\).
+All denominators are positive, since \(d-A\ge(1-k)d>0\).
+If \(h_0\le d-A\), the continued integral from \(h_0\) equals \(I_0\).
+If \(d-A<h_0\le d+A\), the removed part is nonnegative, so the remainder
+is at most \(I_0\). In either case it is bounded above by
+\(-c_0\max\{d,h_0\}^{-q}\).
+
+If \(h_0>d+A\), the remaining integrand is negative.
+For \(\epsilon\ge4h_0\), using \(A,d\le h_0\), we have
+\[
+A^2-(d-\epsilon)^2\le-\epsilon^2/2.
+\]
+Its tail is at most \(-(4h_0)^{-q}/(2q)\).
+Finally, the absolute integral of the continued expression from \(1/2\)
+to infinity is bounded uniformly in \(d,A\le1\), because
+\(|A^2-(d-\epsilon)^2|\le C(1+\epsilon^2)\) and \(q>0\).
+Removing that tail proves \eqref{eq:scalar}.
+This continuation is only a scalar polynomial calculation.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For the map \(v\) from Section~\ref{sec:coordinates}, the definition
+\eqref{eq:Ls} gives, with \(A=|a|\),
+\[
+D_\epsilon(Dv)=0\quad(\epsilon\le d-A),\qquad
+D_\epsilon(Dv)=A^2-(d-\epsilon)^2\quad(\epsilon>d-A).
+\]
+Take \(q=\beta=2/(K^2-1)\). Then
+\[
+0<q<\frac{1-k}{k}=\frac2{K-1},\qquad \gamma>q.
+\]
+By Proposition~\ref{prop:defect},
+\[
+\int_{h_0}^{1/2}
+\left(\int\eta D_\epsilon(Dv)\,dy\right)\epsilon^{-q-3}\,d\epsilon
+\ge-C\int_0^{1/2}\epsilon^{\gamma-q-1}\,d\epsilon>- \infty,
+\]
+uniformly in \(h_0>0\).
+At each positive cutoff, the integrand is absolutely integrable on the
+product of \(\supp\eta\) and \([h_0,1/2]\).
+Fubini's theorem, in its absolute-integrability form
+\cite[Theorem~1.7.21 and Corollary~1.7.23]{Tao}, and
+Lemma~\ref{lem:scalar} therefore imply a uniform bound on
+\(\int\eta\max\{d,h_0\}^{-\beta}\,dy\).
+As \(h_0\downarrow0\), these nonnegative functions increase.
+Monotone convergence~\cite[Theorem~1.4.44]{Tao} gives
+\begin{equation}\label{eq:moment}
+\int_{B_{r/2}}d^{-\beta}\,dy<\infty.
+\end{equation}
+No measurable choice of the projections as \(\epsilon\) varies is required:
+the integrated expression is the explicit \(D_\epsilon(Dv)\).
+
+For \(\Omega'\Subset\Omega\), the set \(Y(\overline{\Omega'})\) is compact
+in \(U\). Finitely many inner disks of the kind above cover it, so
+\(\int_{Y(\Omega')}d^{-\beta}\,dy<\infty\).
+The weighted inverse area formula
+\cite[\S2, Theorem~2]{Jerrard}, Proposition~\ref{prop:measure},
+and \eqref{eq:compare} give
+\[
+\begin{aligned}
+\int_{\Omega'}(1+|H|)^{1+\beta}\,dx
+&=\int_{Y(\Omega')}
+\frac{(1+h_1(F(y)))^{1+\beta}}{\rho(F(y))}\,dy\\
+&\le C_K\int_{Y(\Omega')}d(y)^{-\beta}\,dy<\infty.
+\end{aligned}
+\]
+Indeed \(\rho\ge1+h_1\) and \(d\le2K/(1+h_1)\).
+Since \(1+\beta=(1+\lambda^2)/(1-\lambda^2)\), this is
+\eqref{eq:mainstrong}. Finally,
+\(t^{p_\lambda}\mathbf1_{\{|H|>t\}}\le|H|^{p_\lambda}\)
+for every \(t>0\), proving \eqref{eq:mainweak}.
+\end{proof}
+
+\section*{AI-use statement}
+OpenAI Codex was used with substantial involvement in developing the argument,
+checking source applications, and preparing the exposition.
+An AI reader and an AI referee, each in a fresh context, reviewed the same
+initial anonymous manuscript. Their reports concern that snapshot; one author
+revision followed with AI assistance.
+Independent mathematical review is requested.
+
+\begingroup
+\small
+\raggedright
+\begin{thebibliography}{11}
+\bibitem{Agazzi}
+A.~Agazzi, K.~Astala, R.~Ba\~nuelos, G.~Bruno, G.~Cassese,
+D.~Faraco, A.~Guerra, M.~Hormozi, B.~Kirchheim, A.~Koski,
+V.~Kova\v{c}, J.~Kristensen, F.~Pasqualotto, I.~Prause,
+E.~Saksman, V.~\v{S}ver\'ak, L.~Sz\'ekelyhidi, R.~Tione,
+A.~Volberg and H.~Yang,
+\emph{Sharp Higher Integrability Theory, Part I:
+The \(L^p\)-norm of the Beurling--Ahlfors transform},
+arXiv:2609.28311v2 (2026).
+\url{https://arxiv.org/abs/2609.28311v2}.
+
+\bibitem{Calegari}
+D.~Calegari, \emph{Chapter 2: Hyperbolic Geometry},
+author's manuscript, \S4.2, Definitions~4.13 and~4.15, Remark~4.14,
+and Theorem~4.16.
+\url{https://math.uchicago.edu/~dannyc/books/3manifolds/3_manifolds_chapter_2.pdf}.
+
+\bibitem{DPF}
+G.~De Philippis and A.~Figalli,
+\emph{The Monge--Amp\`ere equation and its link to optimal transportation},
+Bulletin of the American Mathematical Society \textbf{51} (2014), 527--580.
+\url{https://doi.org/10.1090/S0273-0979-2014-01459-4}.
+Page and theorem locators refer to the preprint arXiv:1310.6167v1,
+\url{https://arxiv.org/abs/1310.6167v1}.
+
+\bibitem{DFS}
+G.~De Philippis, A.~Figalli and O.~Savin,
+\emph{A note on interior \(W^{2,1+\varepsilon}\) estimates for the
+Monge--Amp\`ere equation},
+Mathematische Annalen \textbf{357} (2013), 11--22.
+\url{https://doi.org/10.1007/s00208-012-0895-9};
+preprint version \url{https://arxiv.org/abs/1202.5566v3}.
+
+\bibitem{DPGT}
+G.~De Philippis, A.~Guerra and R.~Tione,
+\emph{Unique continuation for differential inclusions},
+Annales de l'Institut Henri Poincar\'e C \textbf{43} (2026), 127--154.
+\url{https://doi.org/10.4171/AIHPC/146}.
+
+\bibitem{Mori}
+R.~Fehlmann and M.~Vuorinen,
+\emph{Mori's theorem for \(n\)-dimensional quasiconformal mappings},
+Annales Academiae Scientiarum Fennicae, Series A I Mathematica
+\textbf{13} (1988), 111--124.
+\url{https://doi.org/10.5186/aasfm.1988.1304}.
+
+\bibitem{Jerrard}
+R.~L.~Jerrard, \emph{Area and coarea},
+MAT1501 lecture notes, University of Toronto (2013), \S2, Theorems~1--2.
+\url{https://www.math.toronto.edu/rjerrard/1501/notes/week5-6.pdf}.
+
+\bibitem{SiuR}
+Y.-T.~Siu, \emph{Riemann Mapping Theorem},
+Math 113 lecture notes, Harvard University (2024).
+\url{https://people.math.harvard.edu/~siu/math113/15_riemann_mapping_theorem.pdf}.
+
+\bibitem{SiuC}
+Y.-T.~Siu, \emph{Cauchy's Integral Formula and Power and Laurent Series Expansion},
+Math 113 lecture notes, Harvard University (2024).
+\url{https://people.math.harvard.edu/~siu/math113/5_cauchy_integral_formula_power_and_laurent_series_expansion.pdf}.
+
+\bibitem{Tao}
+T.~Tao, \emph{An Introduction to Measure Theory},
+Graduate Studies in Mathematics \textbf{126},
+American Mathematical Society (2011).
+The cited theorem and corollary numbers refer to the linked preliminary
+version made available by the author (2012):
+\url{https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-126-tao5-measure-book.pdf}.
+
+\bibitem{TaoRN}
+T.~Tao, \emph{245B, notes 1: Signed measures and the
+Radon--Nikodym--Lebesgue theorem}, author's lecture notes (4 January 2009).
+\url{https://terrytao.wordpress.com/2009/01/04/245b-notes-1-signed-measures-and-the-radon-nikodym-lebesgue-theorem/}.
+\end{thebibliography}
+\endgroup
+\end{document}

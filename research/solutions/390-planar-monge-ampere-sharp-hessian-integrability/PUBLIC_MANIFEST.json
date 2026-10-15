@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "title": "Local Hessian integrability for planar Monge–Ampère inequalities",
+  "problem_id": "390",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/390-planar-monge-ampere-sharp-hessian-integrability.md",
+  "contribution": "Proposed complete analytic solution claim for mathematical review",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Overview, scope, materials, AI-use statement and reproduction instructions",
+      "bytes": 2445,
+      "sha256": "2c1798e8b69a43a5f8368a65f68de02ded750852dfad52241cc55dd4e1df24ad"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target assumptions, quantifiers, conclusion and manuscript locations",
+      "bytes": 2628,
+      "sha256": "5a0edf25575966ed98252faab472bc3a7fdf8cf18609511b36bc965905310073"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Self-contained editable manuscript source",
+      "bytes": 31876,
+      "sha256": "290fa521049bdb9bfa30d40d4c115107b8069b69f95598e0b30f5a079e7ce75c"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete manuscript built from the included source",
+      "bytes": 387403,
+      "sha256": "a6c959d9e81033f835671ba22141b9a3c9467a036c50a2c4ea2cfbc21e7fa337"
+    }
+  ]
+}
