@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "title": "Topological complexity two in the homogeneous lower model",
+  "problem_id": "644",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "proposed complete analytic resolution",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Scope, materials, attribution, AI assistance and rebuild instructions",
+      "bytes": 1827,
+      "sha256": "d8044b64461b68d56b251c4a153a764bd019ec29a2abe82fba6d3c4f6d6c3de4"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original target mapped to the complete manuscript and cited public dependencies",
+      "bytes": 3135,
+      "sha256": "06e80b74a9d3bcf1b4996aba75871ece9545e6dac297e96df30b5d75344b494a"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable English mathematical manuscript",
+      "bytes": 14305,
+      "sha256": "3b83dae6246bf3ae2feb80d35e63e690f61ba8efdae6e4c3273820e63705ef49"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete five-page rendered mathematical manuscript",
+      "bytes": 282768,
+      "sha256": "6d5f07a14c6abedb3d0890316cee8aa5bdd9521917f01d5ca576326774b68fe0"
+    }
+  ]
+}
