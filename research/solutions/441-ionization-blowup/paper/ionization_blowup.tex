@@ -1,0 +1,1170 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\eps}{\epsilon}
+\newcommand{\dH}{\dot H}
+\newcommand{\Lam}[1]{\Lambda_{#1}}
+\newcommand{\Pc}{P_c}
+\newcommand{\Pt}[1]{\widetilde P_{#1}}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Lip}{Lip}
+\title{Finite-time blowup for a Schr\"odinger envelope coupled to ionization}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct a finite-time singularity for a three-dimensional focusing
+Schr\"odinger envelope coupled to an ionization density. For one strictly
+positive ionization coefficient, with cubic absorption and no avalanche
+term, a nonzero compactly supported smooth optical datum and zero initial
+density produce a smooth solution whose gradient norm tends to infinity
+at a finite time. The density remains nonnegative. Thus global smooth
+propagation for all admissible coefficients and Schwartz data is false.
+The construction continues a scalar self-similar profile to positive
+ionization, then solves the optical and density perturbations together.
+A fixed scalar linear theory and compactly supported finite-dimensional
+corrections allow the singular solution to start from compact smooth data.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+Ionization modifies a focusing nonlinear Schr\"odinger envelope through
+both absorption and a density-dependent defocusing term. Such terms arise
+in models of laser filamentation; their derivation and the question of
+global regularization are discussed by Dumas, Lannes and
+Szeftel~\cite[Section 4.1.2, equation (54) and Open Problem 3]{DLS}.
+We consider the following precise system on $\R^3$, with spatial
+coordinate $x=(x_1,x_2,z)$:
+\begin{equation}\label{eq:original}
+ \begin{split}
+ i(\partial_t+c_g\partial_z)u+\eps\Delta u
+          +\eps(|u|^2-\rho)u
+   &=-i\eps c\bigl(\alpha_4|u|^{2K-2}u+\alpha_5\rho u\bigr),\\
+ \partial_t\rho&=\eps\alpha_4|u|^{2K}
+                       +\eps\alpha_5\rho|u|^2.
+ \end{split}
+\end{equation}
+Here $u$ is complex, $\rho$ is real, the Laplacian is elliptic in all
+three spatial coordinates, and
+\[
+ \eps,c,c_g,\alpha_4>0,\qquad \alpha_5\ge0,
+ \qquad K\in\mathbb Z,\quad K\ge2.
+\]
+The universal global-propagation question asks whether every Schwartz
+pair $(u_0,\rho_0)$ with $\rho_0\ge0$ has a solution in
+$C([0,\infty);H^m\times H^m)$ for every integer $m\ge3$.
+This is the formulation recorded as AIM Problem~441.\footnote{The
+precise problem statement is available at
+\href{https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/441-ionization-laser-envelope-global-regularity.md}{the immutable AIM 441 statement}.}
+The theorem below gives an admissible counterexample.
+
+For the scalar focusing cubic NLS in three dimensions, Donninger and
+Sch\"orkhuber~\cite{DS} construct a self-similar blowup profile by a
+computer-assisted proof with exact fraction arithmetic. That profile
+has finite energy but a spatial tail of order $r^{-1}$, hence is not in
+$L^2$. Li~\cite{Li} develops linear dispersive estimates and finite
+codimensional stability theory for a class of mass-supercritical
+self-similar NLS profiles. We use the quantitative profile inverse from
+the former work and the fixed-profile linear estimates and compactly
+supported correction modes from the latter. Neither result directly
+treats the ionization coupling in~\eqref{eq:original}.
+
+\begin{theorem}\label{thm:main}
+There exist $\delta>0$, a nonzero $u_0\in C_c^\infty(\R^3;\C)$, and
+$T\in(0,\infty)$ such that, for
+\[
+ \eps=c=c_g=1,\qquad \alpha_4=\delta,\qquad K=2,
+ \qquad \alpha_5=0,\qquad \rho_0=0,
+\]
+the original smooth solution of~\eqref{eq:original} exists on $[0,T)$,
+belongs to $C_{\rm loc}([0,T);H^m(\R^3;\C)\times H^m(\R^3;\R))$
+for every integer $m\ge3$, has $\rho(t,x)\ge0$, and satisfies
+\[
+ \lim_{t\uparrow T}\norm{\nabla u(t)}_{L^2(\R^3)}=\infty.
+\]
+In particular it has no global continuation in $C_t(H^3\times H^3)$.
+\end{theorem}
+
+One strictly positive coefficient and one Schwartz datum suffice to
+negate the universal assertion. The theorem selects a finite member of
+a sequence of small positive coefficients; it gives neither an explicit
+full Cauchy threshold nor failure for every coefficient. It also makes
+no open-set stability claim.
+
+There are two obstacles to transferring the scalar construction. First,
+the density is of the same similarity order as $|u|^2$, so it must be
+included in the stationary profile. Its radial equation determines a
+nonlocal integral of the fourth power of the optical profile. We bound
+this added forcing in the exact spaces of the scalar inverse and preserve
+the opposite signs of its real obstruction. A compactness argument then
+selects one scalar limiting profile before any spectral constants are
+chosen.
+
+Second, a compact cutoff of the profile must be compatible with the
+unstable finite coordinates, and the evolving density cannot be replaced
+by its stationary value. We use modified projections whose finite ranges
+consist of compactly supported smooth functions to make the optical datum
+compact, and solve the
+two perturbation equations jointly. Moving with the optical envelope
+introduces a translation in the density equation; its characteristic
+propagator retains that term exactly. A mixed space-time estimate controls
+the quartic density source, and weighting the density perturbation by
+the inverse square root of the ionization coefficient makes the feedback
+contractive. The resulting solution approaches a nonzero profile in a
+shrinking spatial scale, forcing its gradient norm to diverge.
+
+Section~\ref{sec:profiles} constructs the profiles and verifies the
+hypotheses of the scalar linear theory. Section~\ref{sec:estimates}
+establishes the linear, product and transport estimates.
+Section~\ref{sec:construction} constructs the compact-data solution and
+identifies it with the smooth physical Cauchy solution.
+Appendix~\ref{app:arithmetic} describes the finite exact calculation.
+We write $\mathcal Ff(\xi)=(2\pi)^{-3/2}\int e^{-ix\cdot\xi}f(x)\,dx$.
+For $0<s<3/2$, $\dH^s$ has norm
+$\norm{|\xi|^s\mathcal Ff}_2$ and its canonical realization in
+$L^{6/(3-2s)}$; $H^s$ uses the inhomogeneous Fourier weight.
+All intersection norms are sums, and all spatial norms use Lebesgue
+measure on $\R^3$.
+
+\section{Profiles with positive ionization}\label{sec:profiles}
+
+We construct profiles for the parameter choice in Theorem~\ref{thm:main}.
+For a function of the similarity variable $y\in\R^3$, write
+$\Lam a f=af+y\cdot\nabla f$.
+The stationary equations to be solved first are
+\begin{equation}\label{eq:stationary}
+ \Delta Q-Q+i\beta\Lam1 Q+(1+i\delta)|Q|^2Q-RQ=0,
+ \qquad \beta\Lam2 R=\delta|Q|^4.
+\end{equation}
+The density profile is determined by the optical profile. For a radial
+$Q(y)=q(|y|)$, its regular solution is
+\begin{equation}\label{eq:density-profile}
+ R(r)=\frac{\delta}{\beta r^2}\int_0^r s|q(s)|^4\,ds.
+\end{equation}
+This identity makes the added coupling small when $\delta$ is small, while
+keeping $\delta$ strictly positive.
+
+\subsection{The quantitative scalar construction}\label{subsec:scalar-construction}
+
+We use the concrete scalar construction of Donninger and
+Sch\"orkhuber~\cite{DS}, with precisely the parameter and polynomial used
+there. Set
+\[
+ \beta_* =\frac{772201763088846}{841768781900003},\qquad
+ J=[-10^{-10},10^{-10}],\qquad r_*=1.2\cdot10^{-6},
+ \qquad \beta=\beta_*+\theta\quad(\theta\in J).
+\]
+The radial change of variables is
+\begin{equation}\label{eq:compactification}
+ r=\frac{1+y}{1-y},\qquad
+ q(r)=(1+r)^{-1-i/\beta}F(y),\qquad -1<y<1.
+\end{equation}
+In this subsection $y$ is the scalar compactified radial coordinate.
+The source spaces, denoted here by $X_p,Y_p$, have norms
+\[
+ \norm f_{X_p}=\norm f_\infty+
+       \sup_{-1<y<1}(1-y^2)|f'(y)|,
+ \qquad
+ \norm g_{Y_p}=\sup_{-1<y<1}(1+y)(1-y)^2|g(y)|.
+\]
+Functions in $X_p$ are continuous on $[-1,1]$, are $C^1$ in its interior,
+and have continuously extended weighted derivative. The space $Y_p$ is
+the source forcing space, which permits the fundamental-matrix join at
+$y=0$. Continuous forcings with continuous weighted endpoint limits belong
+to it.
+
+Here is the precise part of the scalar construction that we need. In the
+notation of~\cite{DS}, its $a_*,a$ become $\beta_*,\theta$. If
+$P_*(y)=\sum_{n=0}^{50}c_nT_n(y)$ is the rational polynomial in its
+Appendix~A, put
+\begin{equation}\label{eq:fstar}
+ f_{*,\theta}(y)=P_*(y)-P_*(1)
+       +\frac{2i\beta}{1-i\beta}P_*'(1).
+\end{equation}
+There are a real-linear map $J_\theta:Y_p\to X_p$, a real functional
+$\psi_\theta:Y_p\to\R$, an approximate differential operator
+$\mathcal L_{\theta}$ induced by the source's chosen fundamental matrix,
+and a nonlinear map $G_\theta$ with
+\begin{equation}\label{eq:source-cancellation}
+ G_\theta(f)=\mathcal L_{\theta}f-\mathcal R_\beta(f_{*,\theta}+f).
+\end{equation}
+Here $\mathcal R_\beta$ is the compactified residual of the scalar
+equation obtained from~\eqref{eq:stationary} with $\delta=R=0$.
+The second derivatives cancel in~\eqref{eq:source-cancellation}, so this
+identity is meaningful for $f\in X_p$ before $C^2$ regularity is known.
+The inverse property is the following: if
+$f=J_\theta g$ and $\psi_\theta g=0$, then
+$\mathcal L_{\theta}f=g$ away from the artificial join, and the source construction
+gives $C^1$ matching across it. The scalar obstruction is exactly the term
+removed in defining the regularized inverse.
+
+The maps are strongly continuous in $\theta$ on fixed inputs. On the
+closed $X_p$ ball of radius $r_*$, the quantitative estimates are
+\begin{align}
+ \norm{J_\theta}_{Y_p\to X_p}&\le232,
+ &\norm{\psi_\theta}_{Y_p\to\R}&\le13,\label{eq:source-inverse}\\
+ \norm{G_\theta(f)}_{Y_p}
+ &\le5\cdot10^{-6}\norm f+10\norm f^2+3\norm f^3+5\cdot10^{-9},
+ \label{eq:source-nonlinear}\\
+ \norm{G_\theta(f)-G_\theta(g)}_{Y_p}
+ &\le\bigl[5\cdot10^{-6}+10(\norm f+\norm g)
+       +3(\norm f^2+\norm g^2)\bigr]\norm{f-g}.
+ \label{eq:source-lipschitz}
+\end{align}
+Unsubscripted correction norms here are $X_p$ norms. At
+$\theta_-=-10^{-10}$ and $\theta_+=10^{-10}$, respectively,
+\begin{equation}\label{eq:source-signs}
+ \psi_{\theta_-}\mathcal R_{\beta_*+\theta_-}(f_{*,\theta_-})
+ \ge4\cdot10^{-10},\qquad
+ \psi_{\theta_+}\mathcal R_{\beta_*+\theta_+}(f_{*,\theta_+})
+ \le-4\cdot10^{-10}.
+\end{equation}
+These are results for the scalar operator, rather than a coupled profile
+theorem. The inverse and continuity statements are Definition~3.1 and
+Lemmas~3.27, 3.29, 3.35, 3.37--3.39 of~\cite{DS}; the bounds are
+Lemma~7.5, Proposition~7.6, Lemma~10.1 and Proposition~10.2. The strict
+signs are Corollary~9.23. We use the weaker residual allowance displayed
+in Proposition~10.2; Proposition~6.4 gives $4\cdot10^{-9}$.
+
+\subsection{Adding the density and absorption terms}
+
+For $F=f_{*,\theta}+f$, define $q$ by~\eqref{eq:compactification} and
+$R_F$ by~\eqref{eq:density-profile}. Since $dy/dr=(1-y)^2/2$,
+the additional compactified residual is exactly
+\begin{equation}\label{eq:added-residual}
+ P_{\delta,\theta}(F)
+   =\frac{i\delta F|F|^2}{(1-y)^2}
+       -\frac{4R_F(r(y))F}{(1-y)^4}.
+\end{equation}
+Indeed, dividing the additional physical terms by
+$(1+r)^{-1-i/\beta}(dy/dr)^2$ gives this formula.
+If $M\ge\norm F_\infty$ and $\beta_{\min}=\beta_*-10^{-10}>9/10$,
+then
+\begin{align}
+ 0\le R_F(r)&\le\frac{2\delta M^4}{\beta(1+r)^2},\label{eq:R-bound}\\
+ \norm{P_{\delta,\theta}(F)}_{Y_p}
+   &\le\delta(2M^3+4M^5/\beta_{\min}),\label{eq:P-bound}\\
+ \norm{P_{\delta,\theta}(F)-P_{\delta,\theta}(G)}_{Y_p}
+   &\le\delta(6M^2+20M^4/\beta_{\min})\norm{F-G}_{X_p}.
+   \label{eq:P-difference}
+\end{align}
+To see the density bound, put $I(r)=\int_0^r s(1+s)^{-4}\,ds$.
+For $r\le1$, $I(r)\le r^2/2$; for $r\ge1$, $I(r)\le1/6$.
+Thus $(1+r)^2r^{-2}I(r)\le2$. Multiplication by the $Y_p$ weight
+in~\eqref{eq:added-residual} gives~\eqref{eq:P-bound}; for the density
+term the remaining factor is $4(1+y)/(1-y)^2=2r(1+r)$.
+Factoring the cubic and fourth-power differences gives
+\eqref{eq:P-difference}.
+At $r=0$ the weighted density term tends to zero. At infinity the integral
+$\int_0^r s|q(s)|^4\,ds$ converges absolutely, so the weighted forcing has
+a finite endpoint limit. Thus the added residual belongs to $Y_p$.
+
+The finite rational inequalities proved in Appendix~\ref{app:arithmetic}
+give, throughout the correction ball,
+\begin{equation}\label{eq:profile-envelopes}
+ \norm F_\infty<50,\qquad \Rea F(-1)<-1,
+ \qquad |f_{*,\theta}(1)|>1/10.
+\end{equation}
+For $0<\delta\le10^{-23}$, equations~\eqref{eq:P-bound} and
+\eqref{eq:P-difference} therefore give the convenient bounds
+$p=10^{-13}$ and $l_P=10^{-6}$ for the forcing and its Lipschitz constant.
+Define
+\[
+ T_{\delta,\theta}f
+  =J_\theta\bigl[G_\theta(f)
+       -P_{\delta,\theta}(f_{*,\theta}+f)\bigr].
+\]
+The self-map bound is
+\[
+ 232(5\cdot10^{-6}r_*+10r_*^2+3r_*^3+5\cdot10^{-9}+p)<r_*.
+\]
+Its Lipschitz constant is at most
+\begin{equation}\label{eq:profile-contraction}
+ 232(5\cdot10^{-6}+20r_*+6r_*^2+l_P)<1/100.
+\end{equation}
+The contraction theorem gives a unique $f_\theta^\delta$ in this ball,
+continuous in $\theta$ and $\delta$, including $\delta=0$.
+Here strong continuity of $J_\theta$ on fixed inputs suffices: subtract
+the two fixed-point equations and absorb their common contraction constant.
+
+For $\delta=0$, equations~\eqref{eq:source-nonlinear}--\eqref{eq:source-signs}
+show that $\psi_\theta G_\theta(f_\theta^0)$ has negative and positive
+endpoint signs, with margin
+\[
+ m_0=4\cdot10^{-10}
+       -13(5\cdot10^{-6}r_*+10r_*^2+3r_*^3)>10^{-10}.
+\]
+Moreover, $\norm{f_\theta^\delta-f_\theta^0}_{X_p}<235p$.
+Consequently the continuous obstruction
+\[
+ \Psi_\delta(\theta)=\psi_\theta\bigl[G_\theta(f_\theta^\delta)
+       -P_{\delta,\theta}(f_{*,\theta}+f_\theta^\delta)\bigr]
+\]
+changes at either endpoint by at most
+\[
+ 13\left[1+
+ \frac{232(5\cdot10^{-6}+20r_*+6r_*^2)}{1-1/100}\right]p<10^{-11}.
+\]
+Its signs persist. The intermediate value theorem gives a root
+$\theta_\delta\in J$ for each such positive $\delta$.
+
+At the root the regularization term vanishes. The inverse property and
+\eqref{eq:source-cancellation} imply
+$\mathcal R_\beta(F)+P_{\delta,\theta}(F)=0$ on the two sides of the join.
+The correction is $C^1$ there. After cancellation of the artificial
+coefficients, its physical second-order ODE has continuous forcing across
+the join, and hence gives a $C^2$ solution. We obtain
+\begin{equation}\label{eq:radial-profile}
+ q''+(2/r+i\beta r)q'+(i\beta-1)q
+          +(1+i\delta)|q|^2q-R_Fq=0.
+\end{equation}
+This establishes the coupled profile by the scalar inverse and a new
+forcing estimate; no differentiability of the selected parameter root is
+needed.
+
+\subsection{Regularity and a fixed scalar limit}\label{subsec:profile-limit}
+
+The source norm implies uniformly
+$|q(r)|\le C(1+r)^{-1}$ and $|q'(r)|\le C/[r(1+r)]$.
+At the origin put
+$A(q,R)=-(i\beta-1)q-(1+i\delta)|q|^2q+Rq$.
+Integrating~\eqref{eq:radial-profile} gives
+\begin{align}
+ q'(r)&=r\int_0^1\tau^2 e^{i\beta r^2(\tau^2-1)/2}
+            A(q(r\tau),R(r\tau))\,d\tau,\label{eq:origin-q}\\
+ R(x)&=\frac{\delta}{\beta}\int_0^1\tau|Q(\tau x)|^4\,d\tau.
+ \label{eq:origin-R}
+\end{align}
+The possible integration constant in
+$(r^2e^{i\beta r^2/2}q')'=r^2e^{i\beta r^2/2}A$ vanishes because
+$q'=O(r^{-1})$. In Cartesian coordinates~\eqref{eq:origin-q} says
+that $\nabla Q(x)$ is $x$ times its continuous integral. It first gives
+$Q\in C^1$ and $q'=O(r)$ at zero. If $Q,R$ are $C^k$ locally, these
+compact-parameter formulas give $Q\in C^{k+1}$ and then $R\in C^{k+1}$.
+Differentiation is uniform on compact products. Induction proves smoothness
+across the origin, with uniform bounds at each fixed local derivative order.
+At infinity, differentiating~\eqref{eq:density-profile} twice gives
+\begin{equation}\label{eq:R-tail}
+ R=O(\delta r^{-2}),\quad R'=O(\delta r^{-3}),\quad
+ R''=O(\delta r^{-4}),\qquad
+ \norm R_{H^2}+\norm R_\infty\le C\delta.
+\end{equation}
+
+Choose $\delta_j\downarrow0$ and one root $\theta_j$ for each.
+After a subsequence $\theta_j\to\theta_0$. Uniform contraction continuity
+gives convergence in $X_p$ to $f_{\theta_0}^0$, and the limiting obstruction
+is zero. Let $\beta_0=\beta_*+\theta_0$ and let $Q_0$ be this scalar
+profile. The two endpoint bounds~\eqref{eq:profile-envelopes} make it
+nontrivial and give a nonzero coefficient at infinity.
+
+We fix $\beta_0$ for the remainder of the proof. Rescale the positive
+profiles, initially denoted $q_j,R_j^{\rm old}$, by
+\[
+ d_j=(\beta_0/\beta_j)^{1/2},\qquad
+ Q_j(y)=d_jq_j(d_j|y|),\qquad
+ R_j(y)=d_j^2R_j^{\rm old}(d_j|y|),\qquad \omega_j=d_j^2.
+\]
+Their equations become
+\begin{equation}\label{eq:rescaled-profiles}
+ \Delta Q_j-\omega_jQ_j+i\beta_0\Lam1 Q_j
+ +(1+i\delta_j)|Q_j|^2Q_j-R_jQ_j=0,
+ \qquad \beta_0\Lam2 R_j=\delta_j|Q_j|^4.
+\end{equation}
+For the first equation every residual term acquires $d_j^3$.
+For the second,
+$\beta_0\Lam2 R_j=\beta_jd_j^4(\Lam2 R_j^{\rm old})(d_jy)$;
+the fourth power on the right acquires the same factor.
+We have $\omega_j\to1$ and~\eqref{eq:R-tail} with $\delta=\delta_j$.
+Local convergence of profiles and first derivatives, followed by splitting
+off their uniform tails, gives
+\begin{equation}\label{eq:coefficient-convergence}
+ \begin{split}
+ &\norm{|Q_j|^2-|Q_0|^2}_\infty+
+ \norm{|Q_j|^2-|Q_0|^2}_3+
+ \norm{\nabla(|Q_j|^2-|Q_0|^2)}_3\longrightarrow0,\\
+ &\norm{Q_j^2-Q_0^2}_\infty+
+ \norm{Q_j^2-Q_0^2}_3+
+ \norm{\nabla(Q_j^2-Q_0^2)}_3\longrightarrow0.
+ \end{split}
+\end{equation}
+The tail powers are $r^{-2}$ and $r^{-3}$, both cubically integrable in
+three dimensions. Uniformly, $Q_j\in L^p$ for every $p>3$ and
+$\nabla Q_j\in L^2\cap L^3\cap L^\infty$.
+
+\subsection{The scalar profile hypotheses for the linear estimates}
+\label{subsec:scalar-tail}
+
+Li's linear theory~\cite{Li} requires a smooth nowhere-zero scalar
+profile, nonzero limiting modulus of $rQ_0$, and symbol bounds for its
+derivatives. We verify these properties for the particular fixed limit.
+Write $Q_0(x)=q(|x|)$, $\beta=\beta_0$,
+$\kappa=1+i/\beta$ and $g=r^\kappa q$. Endpoint continuity gives
+$g\to g_\infty\ne0$, while the first derivative bound gives $g'=O(r^{-1})$.
+The scalar equation becomes
+\[
+ g''+Dg'=-r^{-2}B(g),\qquad
+ D=i\beta r-\frac{2i}{\beta r},\qquad
+ B(g)=\kappa(\kappa-1)g+|g|^2g.
+\]
+For $\mathfrak m=e^{i\beta r^2/2}r^{-2i/\beta}$ we have
+$\mathfrak m'/\mathfrak m=D$ and $|\mathfrak m|=1$. Since
+$(\mathfrak m g')'$ is absolutely integrable and $g'\to0$,
+\begin{equation}\label{eq:tail-integral}
+ g'(r)=\mathfrak m(r)^{-1}\int_r^\infty
+                  \mathfrak m(s)s^{-2}B(g(s))\,ds.
+\end{equation}
+For large $r$, $|D|\ge cr$. Put $f=r^{-2}B(g)$; initially
+$f=O(r^{-2})$, $f'=O(r^{-3})$. Integration by parts using
+$\mathfrak m'=D\mathfrak m$ gives $g'=O(r^{-3})$.
+The equation then gives $g''=O(r^{-2})$, and hence $f''=O(r^{-4})$.
+A second integration by parts of the remainder gives
+\[
+ g'=-f/D+O(r^{-5}),\qquad g''=O(r^{-4}),\qquad
+ g-g_\infty=O(r^{-2}).
+\]
+The boundary terms vanish, since $f/D=O(r^{-3})$ and its next
+derivative is $O(r^{-4})$.
+
+To obtain all derivative orders without differentiating an uncontrolled
+remainder, let $S_m^1(R)$ be the complete weighted $C^1$ space with norm
+\[
+ \norm f_{S_m^1}=\sup_{r\ge R}
+            (r^m|f(r)|+r^{m+1}|f'(r)|),\qquad m>0.
+\]
+The integral operator
+\[
+ \mathcal V f=-\int_r^\infty\mathfrak m(t)^{-1}
+                 \int_t^\infty\mathfrak m(s)f(s)\,ds\,dt
+\]
+is defined with the inner oscillatory integral first. Integration by parts
+bounds that integral by $C_mr^{-m-1}\norm f_{S_m^1}$; the outer integral
+is absolutely convergent. Thus $\mathcal V$ is bounded on $S_m^1$ and
+$(\mathcal V f)''+D(\mathcal V f)'=-f$.
+For a bounded real-linear coefficient $A(r)$ with $A'=O(r^{-1})$,
+\begin{equation}\label{eq:volterra-small}
+ \norm{\mathcal V(r^{-2}Af)}_{S_m^1}
+             \le C_m R^{-2}\norm f_{S_m^1}.
+\end{equation}
+Completeness follows by uniform convergence of weighted values and
+derivatives and the fundamental theorem of calculus on compact intervals.
+
+For each integer $N$, choose
+$G_N=g_\infty+\sum_{\ell=1}^Nc_\ell r^{-2\ell}$ to cancel the residual
+$G_N''+DG_N'+r^{-2}B(G_N)$ through order $r^{-2N}$.
+At the new order the coefficient of $c_\ell$ is $-2\ell i\beta\ne0$.
+The residual lies in $S_{2N+2}^1$. The remainder equation is
+\[
+ h=\mathcal V\{r^{-2}[B(G_N+h)-B(G_N)]
+                  +G_N''+DG_N'+r^{-2}B(G_N)\}.
+\]
+By~\eqref{eq:volterra-small} it is a contraction in a ball of
+$S_{2N+2}^1$ for sufficiently large $R$. The actual remainder $g-G_N$
+already lies in $S_2^1$. The difference $v$ between it and the constructed
+remainder solves $v=\mathcal V(r^{-2}Av)$ on $S_2^1$.
+Here $A$ is the real derivative of the polynomial $B$ averaged along the
+segment between the two solutions. Their bounded values and derivatives
+give bounded $A,rA'$. Enlarging $R$ in~\eqref{eq:volterra-small} forces
+$v=0$. Therefore $g-G_N\in S_{2N+2}^1$ for every $N$.
+Differentiation of its smooth ODE gives, for $k\ge2$,
+$h^{(k)}=O(r^{-2N-4+k})$. For any specified derivative order choose $N$
+sufficiently large and differentiate $q=r^{-\kappa}(G_N+h)$. This proves
+\begin{equation}\label{eq:all-tail}
+ |q^{(k)}(r)|\le C_k r^{-1-k}\quad(r\ge1, k\ge0).
+\end{equation}
+The oscillatory homogeneous branch is excluded already by $g'\to0$.
+
+Finally let $n=|q|^2$ and $W=\Ima(q'\bar q)$. The imaginary part of the
+radial equation, integrated from zero, is
+\[
+ r^2W(r)=-\frac{\beta}{2}r^3n(r)
+                +\frac{\beta}{2}\int_0^r s^2n(s)\,ds.
+\]
+A positive-radius zero would make the nonnegative integral vanish, which
+contradicts the nonzero origin value in~\eqref{eq:profile-envelopes}.
+Thus $q$ never vanishes and $\lim r|q(r)|=|g_\infty|>0$.
+Together with smoothness and~\eqref{eq:all-tail}, this verifies
+conditions (1.5)--(1.8) of~\cite{Li} for $d=p=3$ and $s_c=1/2$,
+including the higher-derivative condition as printed there. Here $d$ is
+the spatial dimension, $p$ is the exponent in $|u|^{p-1}u$, and
+$s_c=d/2-2/(p-1)$.
+
+\section{Estimates in similarity variables}\label{sec:estimates}
+
+\subsection{A Green operator for one fixed scalar profile}
+
+From now on $y\in\R^3$ is the similarity variable. All homogeneous
+Sobolev spaces use the canonical realization given by Sobolev embedding;
+intersection norms are sums. For the single fixed profile $Q_0,\beta_0$
+from Section~\ref{sec:profiles}, let $\delta_1>0$ be the spectral gap
+in Li's decomposition~\cite[Lemma 6.3]{Li}. Choose
+\begin{equation}\label{eq:sigma-nu}
+ \frac12<\sigma<\min\left(0.51,\frac12+\delta_1\right),
+ \quad X=\dH^\sigma\cap\dH^1,\quad
+ \mu=\beta_0(\sigma-1/2),\quad
+ 0<\nu<\min(\mu,\beta_0/2).
+\end{equation}
+All these choices precede the final choice of $j$.
+The real-linear scalar operator is
+\[
+ L_0e=\Delta e-e+i\beta_0\Lam1 e+2|Q_0|^2e+Q_0^2\bar e.
+\]
+For conjugate pairs its matrix is
+\begin{equation}\label{eq:H0}
+ H_0=
+ \begin{pmatrix}\Delta_{\beta_0}-1&0\\0&-\Delta_{-\beta_0}+1\end{pmatrix}
+ -\frac{i\beta_0}{2}
+ +\begin{pmatrix}2|Q_0|^2&Q_0^2\\-\bar Q_0^2&-2|Q_0|^2\end{pmatrix},
+ \qquad \Delta_b=\Delta+ib(3/2+y\cdot\nabla).
+\end{equation}
+This is Li's operator (1.22)--(1.23) at $d=p=3$.
+Its unbounded generator and flow are those in that theory.
+Pair spaces have component-sum norms. The involution
+$\mathcal J(z_1,z_2)=(\bar z_2,\bar z_1)$ has fixed pairs
+$\iota e=(e,\bar e)$, of norm $2\norm e_X$.
+
+We state the linear facts used below. Li's Lemmas~6.3, 7.1 and 7.2 give
+original spectral projections $P_c,P_s,P_u$ and compactly modified
+projections $\Pt c,\Pt s,\Pt u$, commuting with $\mathcal J$, such that
+\begin{align}
+ \Pt\alpha P_\alpha&=\Pt\alpha,&
+ P_\alpha\Pt\alpha&=P_\alpha\quad(\alpha=s,u),\label{eq:finite-projections}\\
+ \Pt cP_c&=P_c,&P_c\Pt c&=\Pt c.
+ \label{eq:central-projections}
+\end{align}
+The modified finite projections are bounded on $X$ with finite-dimensional
+ranges in $C_c^\infty$. Also $\Pt c=I-\Pt s-\Pt u$ is bounded on $X$,
+and $\Ran\Pt c=\Ran P_c$.
+When a projection acts on a scalar, it means its first component after
+application to $\iota e$; commutation with $\mathcal J$ makes this a
+real projection. The fixed factor two is absorbed in constants.
+For $z\in X\cap\Ran P_c$ the homogeneous estimate is
+\begin{equation}\label{eq:essential-flow}
+ \norm{e^{isH_0}z}_{C([k,k+1];X)}
+ +\norm{\nabla e^{isH_0}z}_{L^3([k,k+1];L^{18/5})}
+ \le C e^{-\mu k}\norm z_X,
+ \qquad k\in\mathbb Z_{\ge0}.
+\end{equation}
+Indeed, (6.2) of~\cite{Li} allows $18/5$ when $\sigma<0.51$;
+$(3,18/5)$ is Schr\"odinger admissible, and the exponential weight in
+its Lemma~7.2 gives~\eqref{eq:essential-flow} on each unit interval.
+Time translation gives the same estimate for a later initial time.
+
+Define the solution and forcing norms
+\begin{align}
+ \norm e_{\mathcal S_\nu}
+ &=\sup_{k\ge0}e^{\nu k}
+   \left(\norm e_{C([k,k+1];X)}+
+          \norm{\nabla e}_{L^3([k,k+1];L^{18/5})}\right),
+ \label{eq:S-norm}\\
+ \norm F_{\mathcal F_\nu}
+ &=\sup_{k\ge0}e^{\nu k}\norm F_{L^1([k,k+1];X)}.
+ \label{eq:F-norm}
+\end{align}
+The central-stable initial space is $(I-\Pt u)X$.
+
+\begin{lemma}\label{lem:green}
+There is a bounded real-linear solution operator $\mathcal B$ for
+$ie_s+L_0e=F$, with prescribed central-stable initial component
+$e_{cs,0}\in(I-\Pt u)X$, such that
+\begin{equation}\label{eq:green-bound}
+ \norm{\mathcal B(e_{cs,0},F)}_{\mathcal S_\nu}
+       \le C_B(\norm{e_{cs,0}}_X+\norm F_{\mathcal F_\nu}).
+\end{equation}
+Its remaining initial component lies in $\Ran\Pt u\subset C_c^\infty$.
+All constants and projections depend on $Q_0,\beta_0,\sigma,\nu$, not on $j$.
+\end{lemma}
+
+\begin{proof}
+Choose real bases $(\widetilde\varphi_{\alpha,\ell})_\ell$ of the
+$\mathcal J$-fixed parts of $\Ran\Pt\alpha$ for $\alpha=s,u$.
+The finite coordinate vectors $z_\alpha$ reconstruct the pair-valued modes
+\[
+ \widetilde Z_\alpha(s)=\sum_\ell(z_\alpha(s))_\ell
+                   \widetilde\varphi_{\alpha,\ell},\qquad \alpha=s,u.
+\]
+The central component is $Z_c=\Pt c\iota e$.
+In Li's modified coordinate equations (7.14), the finite coordinates obey
+$z_\alpha'+A_\alpha z_\alpha=f_\alpha$.
+Here $A_\alpha$ realizes $-i\Pt\alpha H_0P_\alpha$ in real finite
+coordinates, and $f_\alpha$ realizes $-i\Pt\alpha(F,-\bar F)$.
+The stable eigenvalues have real part at least $\beta_0\delta_1>\mu$,
+whereas the unstable eigenvalues have real part at most zero. Use the
+forward solution for the stable equation and
+\[
+ z_u(s)=-\int_s^\infty e^{A_u(\tau-s)}f_u(\tau)\,d\tau
+\]
+for the unstable one. On a Jordan block the exponential is an exponential
+times a polynomial. The stable forward kernel is bounded by
+$Ce^{-\gamma_sd}$ for some $\gamma_s>\mu$; the backward unstable kernel
+grows at most polynomially. Their convolutions with $e^{-\nu k}$ obey
+the required weighted bounds.
+
+The central forcing is $\Pt c(F,-\bar F)$ together with
+$-\Pt cH_0(\widetilde Z_s+\widetilde Z_u)$. Every finite modified basis
+vector is compact and smooth, so its image under $H_0$ and then $\Pt c$
+belongs to $X$. Thus this additional forcing is controlled by the finite
+coordinates. Apply~\eqref{eq:essential-flow} to each forcing impulse,
+use Minkowski's inequality, and sum
+\begin{equation}\label{eq:exponential-sum}
+ \sum_{\ell=0}^k e^{-\mu(k-\ell-1)_+}e^{-\nu\ell}
+                   \le C_{\mu,\nu}e^{-\nu k}.
+\end{equation}
+An impulse inside the observation interval uses the unweighted homogeneous
+estimate on the remaining subinterval. Its norm is bounded by that
+interval's $L^1X$ forcing norm. The finite-coordinate sums are treated
+with the same geometric sum, or a convergent polynomial-exponential sum
+in the backward direction. This proves~\eqref{eq:green-bound}.
+
+The scalar real structure and signs are consistent: direct calculation
+gives $\mathcal JH_0\mathcal J=-H_0$, so $e^{isH_0}$ commutes with
+$\mathcal J$. The pair forcing $(F,-\bar F)$ is anti-invariant, and
+its generator forcing $-i(F,-\bar F)$ is invariant. The modified
+projections preserve this fixed real subspace. The construction therefore
+returns an actual scalar $e$ and its conjugate.
+\end{proof}
+
+The forcing norm in~\eqref{eq:F-norm} permits a small constant multiple
+of $e$, since each interval has length one. This will accommodate the
+frequency change $\omega_j-1$ without requiring an $L^2$ bound for the
+similarity perturbation.
+
+\subsection{Products at the quartic density nonlinearity}
+
+For $I=[k,k+1]$ abbreviate
+\[
+ a_I(e)=\norm e_{C(I;X)}+
+               \norm{\nabla e}_{L^3(I;L^{18/5})}.
+\]
+Sobolev embedding and interpolation give $X\hookrightarrow L^4\cap L^6$.
+We also need an estimate combining the derivative Strichartz norm and
+$L^6$. Averaging a smooth $f$ on a radius-$R$ ball and integrating its
+gradient along segments gives
+\[
+ |f(x)|\le C R^{-1/2}\norm f_6+
+       C\int_{|x-z|<R}|x-z|^{-2}|\nabla f(z)|\,dz
+ \le C\bigl(R^{-1/2}\norm f_6+R^{1/6}\norm{\nabla f}_{18/5}\bigr).
+\]
+The kernel belongs locally to $L^{18/13}$, since $36/13<3$.
+Balancing $R=(\norm f_6/\norm{\nabla f}_{18/5})^{3/2}$ gives
+\begin{equation}\label{eq:mixed-GN}
+ \norm f_\infty\le C\norm{\nabla f}_{18/5}^{3/4}\norm f_6^{1/4}.
+\end{equation}
+The zero cases follow by a limit. Mollification and an almost-everywhere
+subsequential limit in $L^6$ extend the estimate to its stated norm class.
+Interpolation also gives
+$\norm{\nabla e}_3\le\norm{\nabla e}_2^{1/4}
+\norm{\nabla e}_{18/5}^{3/4}$.
+Raising to the fourth power and integrating in time yields
+\begin{equation}\label{eq:unit-mixed}
+ \norm e_{L^4(I;L^\infty)}+
+ \norm{\nabla e}_{L^4(I;L^3)}+
+ \norm e_{C(I;L^4\cap L^6)}\le C a_I(e).
+\end{equation}
+
+Recall from the end of Section~\ref{subsec:profile-limit} that $Q_j$
+is uniformly bounded, belongs uniformly to $L^p$ for each fixed $p>3$,
+and has gradient uniformly in $L^2\cap L^3\cap L^\infty$. Set
+\[
+ S_j(e)=|Q_j+e|^4-|Q_j|^4,\qquad
+ N_j(e)=(1+i\delta_j)(2Q_j|e|^2+\bar Q_je^2+|e|^2e).
+\]
+Writing $a=a_I(e)$ and $b=\norm h_{C(I;H^1)}$, we have
+\begin{align}
+ \norm{S_j(e)}_{L^1(I;H^1)}&\le C(a+a^2+a^3+a^4),\label{eq:quartic}\\
+ \norm{N_j(e)}_{L^1(I;H^1)}&\le C(a^2+a^3),\label{eq:cubic}\\
+ \norm{h(Q_j+e)}_{L^1(I;H^1)}&\le Cb(1+a).
+ \label{eq:density-product}
+\end{align}
+Here and below these constants are uniform for all sufficiently large $j$.
+For clarity, expand
+$|Q+e|^2=|Q|^2+2\Rea(Q\bar e)+|e|^2$ and square.
+The linear term of $S_j$ is in $L^2$ by $Q_j^3\in L^3$ and $e\in L^6$.
+Its derivative uses $Q_j^3\nabla e$ and $Q_j^2\nabla Q_j\,e$.
+The quadratic undifferentiated terms use $e\in L^4$, and their derivatives
+use $\norm e_\infty\norm{\nabla e}_2$.
+The cubic terms use $\norm e_6^3$ and
+$\norm e_\infty^2\norm{\nabla e}_2$.
+At degree four,
+\[
+ \norm{e^4}_2\le\norm e_6^3\norm e_\infty,
+ \qquad
+ \norm{\nabla(e^4)}_2\le4\norm e_\infty^3\norm{\nabla e}_2.
+\]
+Derivatives on profile factors are controlled by their uniform bounds.
+Time H\"older and~\eqref{eq:unit-mixed} prove~\eqref{eq:quartic}; the
+quadratic and cubic terms also prove~\eqref{eq:cubic}. For the density
+product use the bounded profile and
+\[
+ \norm{he}_2\le\norm h_3\norm e_6,\quad
+ \norm{h\nabla e}_2\le\norm h_6\norm{\nabla e}_3,\quad
+ \norm{e\nabla h}_2\le\norm e_\infty\norm{\nabla h}_2.
+\]
+These $H^1$ forcings belong to $X$, because $0<\sigma<1$.
+
+The estimates also hold for differences. Factoring a difference of
+products as a sum with one difference factor, before and after one
+derivative, gives
+\begin{align}
+ \norm{S_j(e_1)-S_j(e_2)}_{L^1H^1}
+  &\le C(1+a_1+a_2)^3 a_I(e_1-e_2),\label{eq:quartic-difference}\\
+ \norm{N_j(e_1)-N_j(e_2)}_{L^1X}
+  &\le C\bigl(a_1+a_2+(a_1+a_2)^2\bigr)a_I(e_1-e_2),
+  \label{eq:cubic-difference}\\
+ \norm{h_1(Q_j+e_1)-h_2(Q_j+e_2)}_{L^1X}
+  &\le C\bigl[\norm{h_1-h_2}_{CH^1}(1+a_1)
+                  +\norm{h_2}_{CH^1}a_I(e_1-e_2)\bigr].
+  \label{eq:density-difference}
+\end{align}
+The omitted time interval in these three norms is $I$, and $a_i=a_I(e_i)$.
+Finally, for a coefficient $V$,
+\begin{equation}\label{eq:multiplier}
+ \norm{Ve}_{H^1}
+ \le C(\norm V_3+\norm V_\infty+\norm{\nabla V}_3)\norm e_X.
+\end{equation}
+Equations~\eqref{eq:coefficient-convergence}, \eqref{eq:R-tail} and
+\eqref{eq:multiplier} make the profile-potential changes small from $X$
+to $H^1$. The constant multiplier $\omega_j-1$ is instead small on $X$
+itself. This distinction is useful because $Q_j$ and the initial cutoff
+correction need not be in $L^2$ separately.
+
+\subsection{The density propagator in the optical frame}
+
+Let $e_z=(0,0,1)$ and introduce the optical frame
+$X_{\rm ph}=x-te_z$,
+$\widehat u(t,X_{\rm ph})=u(t,X_{\rm ph}+te_z)$, with the same convention
+for $\widehat\rho$. The specialized original equations become
+\[
+ i\widehat u_t+\Delta\widehat u
+       +(1+i\delta_j)|\widehat u|^2\widehat u
+       -\widehat\rho\widehat u=0,
+ \qquad
+ \widehat\rho_t=\delta_j|\widehat u|^4+\partial_z\widehat\rho.
+\]
+For $0<\lambda_0\le1$ define
+\begin{equation}\label{eq:similarity}
+ \lambda(s)=\lambda_0e^{-\beta_0s},\quad
+ t(s)=\frac{\lambda_0^2}{2\beta_0}(1-e^{-2\beta_0s}),\quad
+ y=X_{\rm ph}/\lambda(s),\quad T=\frac{\lambda_0^2}{2\beta_0}.
+\end{equation}
+Since $dt/ds=\lambda^2$, the ansatz
+\begin{equation}\label{eq:ansatz}
+ \widehat u=\lambda^{-1}e^{i\omega_js}(Q_j+e),\qquad
+ \widehat\rho=\lambda^{-2}(R_j+h)
+\end{equation}
+and~\eqref{eq:rescaled-profiles} give the exact density equation
+\begin{equation}\label{eq:h-equation}
+ h_s+\beta_0\Lam2 h-\lambda(s)\partial_zh
+     =\delta_j S_j(e)+\lambda(s)\partial_zR_j,
+ \qquad h(0)=-R_j.
+\end{equation}
+Thus the optical translation does not disappear from the density equation.
+On compact intervals before $T$, the coordinate change is a smooth
+diffeomorphism with nonzero Jacobian; the calculation also holds
+distributionally by pulling back test functions.
+
+Solving the characteristic equation $y'=\beta_0y-\lambda(s)e_z$ gives,
+for $s\ge\tau$ and $d=s-\tau$,
+\begin{equation}\label{eq:density-flow}
+ (\mathcal T(s,\tau)f)(y)=e^{-2\beta_0d}
+  f\left(e^{-\beta_0d}y+
+       \frac{\lambda(\tau)}{2\beta_0}(1-e^{-2\beta_0d})e_z\right).
+\end{equation}
+Change of variables gives
+\begin{equation}\label{eq:density-decay}
+ \norm{\mathcal Tf}_2=e^{-\beta_0d/2}\norm f_2,
+ \qquad
+ \norm{\nabla\mathcal Tf}_2=e^{-3\beta_0d/2}\norm{\nabla f}_2.
+\end{equation}
+The propagator is strongly continuous on $H^1$, first on Schwartz
+functions and then by density and these norm bounds.
+Let $\mathcal Y_\nu$ be the real space $C([0,\infty);H^1)$ with norm
+$\norm h_{\mathcal Y_\nu}=\sup_{s\ge0}e^{\nu s}\norm{h(s)}_{H^1}$.
+Denote the integral solution of~\eqref{eq:h-equation} by $\Phi_\rho(e)$.
+Equations~\eqref{eq:quartic}, \eqref{eq:density-decay} and
+$\nu<\beta_0/2$ imply
+\begin{align}
+ \norm{\Phi_\rho(e)}_{\mathcal Y_\nu}
+ &\le C\delta_j(1+\lambda_0+E+E^2+E^3+E^4),\label{eq:rho-map}\\
+ \norm{\Phi_\rho(e_1)-\Phi_\rho(e_2)}_{\mathcal Y_\nu}
+ &\le C\delta_j(1+E_1+E_2)^3\norm{e_1-e_2}_{\mathcal S_\nu},
+ \label{eq:rho-map-difference}
+\end{align}
+where $E=\norm e_{\mathcal S_\nu}$ and $E_i=\norm{e_i}_{\mathcal S_\nu}$.
+For example the background forcing is bounded in $H^1$ by
+$C\delta_j\lambda_0e^{-\beta_0s}$, since
+$\norm{\partial_zR_j}_{H^1}\le C\delta_j$.
+The other terms are summed interval by interval using
+\eqref{eq:exponential-sum} with density decay rate $\beta_0/2$ in place
+of $\mu$. The map preserves real-valued $h$.
+\section{A singular solution from compact smooth data}\label{sec:construction}
+
+\subsection{Solving the coupled perturbation equations}
+
+With the profiles and spaces now fixed, put
+\[
+ L_je=\Delta e-\omega_je+i\beta_0\Lam1 e
+ +(2|Q_j|^2-R_j)e+Q_j^2\bar e
+       +i\delta_j(2|Q_j|^2e+Q_j^2\bar e).
+\]
+Subtracting~\eqref{eq:rescaled-profiles} from the optical equation in
+\eqref{eq:ansatz} gives
+\begin{equation}\label{eq:e-equation}
+ ie_s+L_0e=-(L_j-L_0)e-N_j(e)+h(Q_j+e)=:F_j(e,h).
+\end{equation}
+For a prescribed small $e_{cs,0}\in(I-\Pt u)X$, define
+$\Phi_u(e,h)=\mathcal B(e_{cs,0},F_j(e,h))$.
+We use the product norm
+\[
+ \norm{(e,h)}_{\mathcal Z_j}
+       =\norm e_{\mathcal S_\nu}
+                    +\delta_j^{-1/2}\norm h_{\mathcal Y_\nu}.
+\]
+These are complete spaces. In particular a locally uniform $X$ limit
+and an $L^3L^{18/5}$ limit of its gradients agree as distributions;
+the conjugate-paired real optical subspace is closed.
+The density weight makes both directions of the feedback small.
+Writing $E=\norm e_{\mathcal S_\nu}$ and
+$H=\delta_j^{-1/2}\norm h_{\mathcal Y_\nu}$, the preceding estimates give
+some $\eta_j\to0$ such that
+\begin{align}
+ \norm{\Phi_u(e,h)}_{\mathcal S_\nu}
+ &\le C\bigl[\norm{e_{cs,0}}_X+\eta_jE+E^2+E^3
+                         +\sqrt{\delta_j}H(1+E)\bigr],\label{eq:joint-u}\\
+ \delta_j^{-1/2}\norm{\Phi_\rho(e)}_{\mathcal Y_\nu}
+ &\le C\sqrt{\delta_j}(1+\lambda_0+E+E^2+E^3+E^4).
+ \label{eq:joint-rho}
+\end{align}
+On interval $[k,k+1]$, $a_I(e)\le Ee^{-\nu k}$ and
+$\norm h_{CH^1}\le\sqrt{\delta_j}He^{-\nu k}$.
+Multiplying the forcing estimate by $e^{\nu k}$ gives the displayed
+polynomials, including the linear feedback term. The frequency part
+$(\omega_j-1)e$ is estimated directly in $X$.
+
+On a ball of radius $r<1$ in $\mathcal Z_j$, the difference estimates
+give Lipschitz constant at most
+\[
+ C\bigl[\eta_j+r+r^2+\sqrt{\delta_j}(1+r)^3\bigr].
+\]
+First choose $r$ small and then $j$ sufficiently large to make this less
+than $1/2$. Fix a sufficiently small $\lambda_0>0$ and choose
+$\norm{e_{cs,0}}_X$ small. Increasing $j$ if needed makes the constant
+terms in~\eqref{eq:joint-u}--\eqref{eq:joint-rho} sum to at most $r/2$.
+The map $(\Phi_u,\Phi_\rho)$ is therefore a contraction of the closed ball.
+It has a fixed point satisfying both exact equations, with
+\begin{equation}\label{eq:decay-perturbation}
+ \norm{e(s)}_X+\norm{h(s)}_{H^1}\longrightarrow0
+                       \qquad(s\to\infty).
+\end{equation}
+The spectral constants and projections in this argument belong to the one
+fixed scalar profile. Only the bounded coefficient differences in
+\eqref{eq:coefficient-convergence} are perturbed.
+
+\subsection{Choosing compact initial data}
+
+Let $\chi\in C_c^\infty(\R^3)$ equal one on a ball, and
+$\chi_L(y)=\chi(y/L)$. For the selected $j$, the tail
+$w_L=(\chi_L-1)Q_j$ tends to zero in $X$.
+To verify this in the homogeneous norm, partition the tail into dyadic
+annuli of radii $R\ge L$. Each annular term $f_R$ obeys
+\[
+ \norm{f_R}_2\le C R^{1/2},\qquad
+ \norm{\nabla f_R}_2\le C R^{-1/2},\qquad
+ \norm{f_R}_{\dH^\sigma}
+ \le\norm{f_R}_2^{1-\sigma}\norm{\nabla f_R}_2^\sigma
+ \le C R^{1/2-\sigma}.
+\]
+The two geometric series converge and tend to zero as $L\to\infty$,
+because $\sigma>1/2$. Local finiteness identifies their sum with the
+actual tail as a distribution.
+
+Choose the central-stable datum
+$e_{cs,0}=(I-\Pt u)w_L$. It is small for large $L$.
+Lemma~\ref{lem:green} supplies an initial correction
+$v_u\in\Ran\Pt u\subset C_c^\infty$, so
+\begin{equation}\label{eq:compact-perturbed}
+ Q_j+e(0)=\chi_LQ_j+v_u-\Pt u w_L\in C_c^\infty.
+\end{equation}
+The resulting physical data are
+\begin{equation}\label{eq:physical-data}
+ u_0(x)=\lambda_0^{-1}[Q_j+e(0)](x/\lambda_0),\qquad
+ \rho_0(x)=\lambda_0^{-2}[R_j+h(0)](x/\lambda_0)=0.
+\end{equation}
+The optical datum is compact and smooth, despite the nonintegrable
+mass tail of the profile before cancellation.
+
+\subsection{Identification with the physical Cauchy solution}
+\label{subsec:local-theory}
+
+For completeness we give the local theory used to identify the constructed
+solution. The physical equations at the selected parameters are
+\begin{equation}\label{eq:special-system}
+ i(\partial_t+\partial_z)u+\Delta u
+       =-(1+i\delta_j)|u|^2u+\rho u,
+ \qquad \rho_t=\delta_j|u|^4.
+\end{equation}
+The free optical group is
+$S(t)f(x)=(e^{it\Delta}f)(x-te_z)$.
+Its spatial norms equal those of the free Schr\"odinger group.
+The free retarded Strichartz estimates~\cite[Theorem 2.3]{Tao}, with
+derivatives, control
+\[
+ A_I(u)=\norm u_{C(I;H^1)}+
+             \norm{\nabla u}_{L^3(I;L^{18/5})}
+\]
+from $H^1$ data and forcings in $L^{4/3}W^{1,3/2}+L^2W^{1,6/5}$.
+The pairs $(4,3)$ and $(2,6)$ are admissible in dimension three.
+The source normalization $\Delta/2$ changes to $\Delta$ by $t\mapsto2t$,
+which changes the time norms only by fixed factors.
+Estimate~\eqref{eq:mixed-GN} gives
+$\norm u_{L^4(I;L^\infty)}\le C A_I(u)$.
+
+For $|I|\le1$, H\"older and the product rule give
+\begin{align}
+ \norm{|u|^4}_{L^1H^1}
+ &\le |I|^{3/4}\norm u_{CL^6}^3\norm u_{L^4L^\infty}
+       +4|I|^{1/4}\norm u_{L^4L^\infty}^3\norm{\nabla u}_{CL^2},
+       \label{eq:physical-quartic}\\
+ \norm{\rho u}_{L^{4/3}W^{1,3/2}}
+ &\le C|I|^{3/4}\norm\rho_{CH^1}\norm u_{CH^1},
+       \label{eq:physical-potential}\\
+ \norm{|u|^2u}_{L^2W^{1,6/5}}
+ &\le C|I|^{1/2}\norm u_{CH^1}^3.
+       \label{eq:physical-cubic}
+\end{align}
+All time norms here are on $I$. For the derivative in
+\eqref{eq:physical-potential}, use
+$\nabla\rho\in L^2,u\in L^6$ and
+$\rho\in L^6,\nabla u\in L^2$; the undifferentiated product uses
+$\rho\in L^2,u\in L^6$.
+For the cubic derivative use two $L^6$ factors and one $L^2$ derivative;
+for the undifferentiated term use two $L^6$ factors and one $L^2$ factor.
+The quartic bounds are the same degree-four estimates as above.
+
+Differences are estimated by factoring products. In particular, a
+differentiated quartic difference is bounded by terms of the form
+\[
+ (|u|+|v|)^3|\nabla(u-v)|
+ \quad\hbox{and}\quad
+ (|u|+|v|)^2|u-v|(|\nabla u|+|\nabla v|).
+\]
+Three $L^4_tL^\infty_x$ factors and one $C_tL^2_x$ derivative give
+$|I|^{1/4}$. The undifferentiated difference uses three $C_tL^6_x$
+factors and one $L^4_tL^\infty_x$ difference, giving $|I|^{3/4}$.
+Thus the optical Duhamel map and
+$\rho=\rho_0+\delta_j\int|u|^4$ contract on a sufficiently short interval
+in the class $A_I\times C(I;H^1)$, for each fixed $H^1$ datum.
+This proves local existence and uniqueness in that class.
+
+The reconstruction~\eqref{eq:ansatz} initially gives
+$u\in C_{\rm loc}([0,T);X)$,
+$\rho\in C_{\rm loc}([0,T);H^1)$ and the local gradient Strichartz
+bound. On a compact physical interval the similarity time interval is
+compact and all scale factors are bounded above and below.
+In particular
+\[
+ \norm{\lambda^{-1}f(\cdot/\lambda)}_{\dH^a}
+       =\lambda^{1/2-a}\norm f_{\dH^a}\quad(a=\sigma,1),
+\]
+whereas the density $L^2$ and $\dH^1$ factors are
+$\lambda^{-1/2}$ and $\lambda^{-3/2}$.
+Translations, phases and dilations are strongly continuous on these
+spaces, as follows first on Schwartz functions and then by completion.
+The background gradient belongs to $L^{18/5}$ by its uniform decay.
+The exact coordinate calculation proves~\eqref{eq:special-system}
+distributionally for this reconstruction.
+
+To recover the missing mass norm, observe that $u\in CL^6$ and
+$\rho\in CL^3$ on compact intervals, so the optical forcing belongs to
+$CL^2$:
+\[
+ \norm{|u|^2u}_2=\norm u_6^3,
+ \qquad \norm{\rho u}_2\le\norm\rho_3\norm u_6.
+\]
+Since~\eqref{eq:physical-data} belongs to $L^2$, its physical Duhamel
+formula is in $CL^2$. It equals the reconstructed distributional solution:
+their difference solves the free equation with zero forcing and zero
+initial trace; spatial Fourier transformation and the Schr\"odinger
+integrating factor, together with the transport translation, make it zero.
+Consequently $u\in CH^1$ on every compact interval before $T$, and the
+local uniqueness just proved applies.
+
+The original density is therefore
+\begin{equation}\label{eq:physical-positivity}
+ \rho(t,x)=\delta_j\int_0^t |u(\tau,x)|^4\,d\tau\ge0
+\end{equation}
+almost everywhere. To identify the $H^1$ integral with this scalar
+integral, use~\eqref{eq:physical-quartic} and spatial H\"older on bounded
+boxes: the absolute spacetime integral is finite there. Fubini--Tonelli
+then applies. Positivity concerns the actual density even though $h$ can
+have either sign.
+
+\subsection{Smooth persistence and divergence}
+
+For each integer $m\ge3$, $H^m$ embeds into $L^\infty$ and is a product
+algebra. The physical Duhamel and density integral maps are locally
+Lipschitz on $C(I;H^m\times H^m)$, with a lifespan bounded below in
+terms of the initial norms. These solutions agree with the preceding
+$H^1$ solution by uniqueness.
+On every $[0,T']$ with $T'<T$, the construction gives
+$u\in L^4_tL^\infty_x$. Equation~\eqref{eq:physical-positivity} implies
+\[
+ \sup_{t\le T'}\norm{\rho(t)}_\infty
+       \le\delta_j\int_0^{T'}\norm{u(t)}_\infty^4\,dt<\infty.
+\]
+The tame Sobolev product estimate~\cite[Appendix A, Lemma A.8]{Tao}
+applied to~\eqref{eq:special-system} yields, for
+$Y_m=\norm u_{H^m}+\norm\rho_{H^m}$,
+\begin{equation}\label{eq:persistence}
+ Y_m(t)\le Y_m(0)+C_{m,\delta_j}\int_0^t
+ \bigl[1+\norm u_\infty^2+\norm u_\infty^3+\norm\rho_\infty\bigr]
+                    Y_m(\tau)\,d\tau.
+\end{equation}
+The optical potential contributes
+$\norm\rho_\infty\norm u_{H^m}+
+\norm u_\infty\norm\rho_{H^m}$, the cubic contributes
+$C\norm u_\infty^2\norm u_{H^m}$, and the quartic density source
+contributes $C\norm u_\infty^3\norm u_{H^m}$.
+The bound follows directly from the Duhamel norm inequality and does
+not differentiate a norm through the unbounded Laplacian.
+Its coefficient is integrable on $[0,T']$. The integral Gronwall
+inequality gives a uniform $H^m$ bound there.
+If a smooth lifespan ended at $S<T$, the constructed solution would
+supply the same integrable coefficient beyond $S$. The uniform norm
+bound and the norm-dependent local lifespan would extend it, a
+contradiction. Thus every fixed $m$ persists on $[0,T)$; uniqueness
+identifies all these solutions. Density nonnegativity is now pointwise.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Select the finite $j$, the scale $\lambda_0$ and the cutoff $L$ as above.
+The data~\eqref{eq:physical-data} are Schwartz, with $\rho_0=0$.
+We have obtained the original smooth solution on $[0,T)$, with all the
+claimed Sobolev regularity and nonnegative density.
+The norm $\norm{\nabla Q_j}_2$ is positive: a zero gradient would make
+$Q_j$ constant, contrary to its nonzero value and decay.
+By~\eqref{eq:decay-perturbation},
+\[
+ \norm{\nabla(Q_j+e(s))}_2\longrightarrow\norm{\nabla Q_j}_2>0.
+\]
+Undoing the dilation, phase and translation gives
+\begin{equation}\label{eq:blowup}
+ \norm{\nabla u(t(s))}_2
+       =\lambda(s)^{-1/2}\norm{\nabla(Q_j+e(s))}_2
+       \longrightarrow\infty,\qquad t(s)\uparrow T<\infty.
+\end{equation}
+The datum $u_0$ cannot vanish: uniqueness would then give the zero
+optical solution, contradicting~\eqref{eq:decay-perturbation} and
+$Q_j\ne0$.
+The chosen coefficient is the strictly positive $\delta_j$, rather than
+its zero limit. Also $\eps=c=c_g=1$, $K=2$, and $\alpha_5=0$ are
+admissible in the original system. The Laplacian has all three elliptic
+spatial directions, and the density translation was retained exactly.
+A global $C_t(H^3\times H^3)$ solution would coincide with this one
+before $T$ and have bounded gradient norm near $T$, contradicting
+\eqref{eq:blowup}. This proves the asserted counterexample.
+\end{proof}
+
+\appendix
+\section{Finite exact coefficient inequalities}\label{app:arithmetic}
+
+Only a small additional arithmetic calculation is needed beyond the
+quantitative scalar theorems in~\cite{DS}. Recall the constants from
+Section~\ref{subsec:scalar-construction}:
+\[
+ \beta_*=\frac{772201763088846}{841768781900003},\qquad
+ r_*=1.2\cdot10^{-6},\qquad
+ \beta_{\min}=\beta_*-10^{-10},\qquad
+ \beta\in[\beta_{\min},\beta_*+10^{-10}].
+\]
+For its published polynomial
+$P_* =\sum_{n=0}^{50}c_nT_n$, set
+\[
+ U=\sum c_n,\qquad V=\sum(-1)^nc_n,\qquad W=\sum n^2c_n,
+ \qquad |z|_1=|\Rea z|+|\Ima z|,
+ \qquad \phi(\beta)=\frac{2i\beta}{1-i\beta}.
+\]
+The identities $T_n(1)=1$, $T_n(-1)=(-1)^n$ and $T_n'(1)=n^2$
+follow from the Chebyshev recurrence and its derivative.
+Also $|T_n(y)|\le1$ on $[-1,1]$, and
+$|\phi|\le2$, $|\phi'|\le2$ for positive real $\beta$.
+Consequently~\eqref{eq:profile-envelopes} follows from the three exact
+rational comparisons
+\begin{align}
+ 2\sum_{n=0}^{50}|c_n|_1+2\sum_{n=0}^{50}n^2|c_n|_1+r_*&<50,
+ \label{eq:finite-envelope}\\
+ \Rea[V-U+\phi(\beta_*)W]+2\cdot10^{-10}|W|_1+r_*&<-1,
+ \label{eq:finite-origin}\\
+ \frac{4\beta_{\min}^2}{1+\beta_{\min}^2}|W|^2&>\frac1{100}.
+ \label{eq:finite-tail}
+\end{align}
+The last bound uses that $\beta^2/(1+\beta^2)$ increases for $\beta>0$.
+In particular $|F(1)|>1/10-r_*>0$.
+
+The companion package supplies the 51 complex rational coefficients from
+Appendix~A of the pinned version of~\cite{DS}, and the standalone script
+\texttt{code/check\_constants.py}. Its arithmetic uses Python's exact
+\texttt{Fraction} type. It checks~\eqref{eq:finite-envelope}--\eqref{eq:finite-tail},
+the self-map inequality,~\eqref{eq:profile-contraction}, the two obstruction
+margins and the positive-$\delta$ bounds in~\eqref{eq:P-bound}--\eqref{eq:P-difference}.
+The endpoint sums are checked independently by constructing the
+Chebyshev polynomials in the monomial basis. Input hashes and a replay
+command are in the supplement's \texttt{code/README.md}. No floating-point comparison,
+spatial discretization or PDE simulation is involved.
+This finite calculation does not reproduce the full computer-assisted
+inverse and residual proof of~\cite{DS}; those published theorems remain
+external dependencies. The bound $10^{-23}$ used for the profile
+perturbation is not a numerical threshold for the full Cauchy
+construction, which also requires the qualitative choices after
+\eqref{eq:joint-rho}.
+
+\section*{AI use}
+AI assistance was used for mathematical exploration, preparation of the
+proof and manuscript, exact-arithmetic code, and internal proof checking.
+Two further AI reviews in fresh contexts, a reader simulation and a
+referee simulation, examined the same anonymized draft. They shared the
+working environment. These activities do not constitute independent
+human verification or formal proof certification. The argument uses the published scalar
+computer-assisted construction of Donninger and Sch\"orkhuber and the
+linear estimates of Li as cited above.
+
+\begin{thebibliography}{9}
+\bibitem{DLS}
+\'E. Dumas, D. Lannes and J. Szeftel,
+\emph{Variants of the Focusing NLS Equation: Derivation, Justification,
+and Open Problems Related to Filamentation},
+in \emph{Laser Filamentation}, CRM Series in Mathematical Physics,
+Springer, 2016, pp.~19--75.
+\href{https://doi.org/10.1007/978-3-319-23084-9_2}{doi:10.1007/978-3-319-23084-9\_2}.
+\bibitem{DS}
+R. Donninger and B. Sch\"orkhuber,
+\emph{Self-Similar Blowup for the Cubic Schr\"odinger Equation},
+arXiv:2406.16597v3, 9 December 2025.
+\url{https://arxiv.org/abs/2406.16597v3}.
+\bibitem{Li}
+Z. Li,
+\emph{On Stability of Self-Similar Blowup for Mass Supercritical NLS},
+arXiv:2304.02078v2, 27 December 2024.
+\url{https://arxiv.org/abs/2304.02078v2}.
+\bibitem{Tao}
+T. Tao,
+\emph{Nonlinear dispersive equations: local and global analysis},
+author-hosted text.
+\url{https://www.math.ucla.edu/~tao/preprints/chapter.pdf}.
+\end{thebibliography}
+\end{document}

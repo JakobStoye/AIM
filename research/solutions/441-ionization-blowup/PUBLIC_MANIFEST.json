@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "title": "Finite-time blowup for a Schrödinger envelope coupled to ionization",
+  "problem_id": "441",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "target_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/441-ionization-laser-envelope-global-regularity.md",
+  "evidence": "Analytic counterexample with a finite exact-rational calculation and cited external mathematical dependencies",
+  "files": [
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI assistance and review disclosure with explicit limits",
+      "bytes": 1313,
+      "sha256": "99d3379381823964ebfb6fa6e4363f4e334bfc70774f1daf746c9047cfb413d4"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Overview, exact existential claim, public dependency credit and build/replay commands",
+      "bytes": 2394,
+      "sha256": "6a860e89d5387312ae910aeaa38fbb7972f98867bf6872ff1327580a5424c3a3"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Comparison of the immutable AIM 441 target with the finished note",
+      "bytes": 2298,
+      "sha256": "beab301552d41f3eddabdaa3b20e346e755c5c612a83f605c3f01de15e2030de"
+    },
+    {
+      "path": "code/README.md",
+      "purpose": "Exact input provenance, hashes, replay instructions and finite scope",
+      "bytes": 2121,
+      "sha256": "d7433cd6adfc9043da2adccbfcc06be16f61aa77e55da66b84fef94099bf9d7f"
+    },
+    {
+      "path": "code/check_constants.py",
+      "purpose": "Standalone exact-rational finite coefficient and margin verifier",
+      "bytes": 6743,
+      "sha256": "fb0ab972b985dc5259ad3dd2c15fd02dd95c4e86b18ba8a4445c18029e478348"
+    },
+    {
+      "path": "code/data/Im_Pstar.dat",
+      "purpose": "Published rational imaginary Chebyshev coefficients from arXiv:2406.16597v3",
+      "bytes": 1331,
+      "sha256": "de553121fc460e50f7a7246fd262f0bcb0c77ebbbdc5057521eaf56e31a3879c"
+    },
+    {
+      "path": "code/data/Re_Pstar.dat",
+      "purpose": "Published rational real Chebyshev coefficients from arXiv:2406.16597v3",
+      "bytes": 1335,
+      "sha256": "a020445a9830aebbceebdda17f6771e33d0a3a714ab11d89aa00959e09b4970b"
+    },
+    {
+      "path": "paper/ionization_blowup.pdf",
+      "purpose": "Complete rendered mathematical note",
+      "bytes": 423327,
+      "sha256": "6158415c282bee69a16b9c591763f8e583dbc78c7766fce861382db91d1ed972"
+    },
+    {
+      "path": "paper/ionization_blowup.tex",
+      "purpose": "Complete editable standalone mathematical note",
+      "bytes": 51351,
+      "sha256": "0fdd1dafe1dd9088fa32f6b85c32c4ce5da47ad6120ed795cd34721e75fd2b9c"
+    },
+    {
+      "path": "verification/exact_constants.json",
+      "purpose": "Actual exact-rational replay output under Python 3.13.3",
+      "bytes": 12952,
+      "sha256": "7cc5e334ac06e86d06f3547c70f9670cb29e553c9ec8a5c4803ff8a80fab1883"
+    }
+  ],
+  "hash_convention": "This manifest describes the ten payload files. SHA256SUMS also binds this manifest and excludes itself."
+}
