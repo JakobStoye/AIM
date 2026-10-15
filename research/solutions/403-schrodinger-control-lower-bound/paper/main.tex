@@ -1,0 +1,261 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\title{A lower bound for the small-time cost of boundary control of the one-dimensional Schr\"odinger equation}
+\author{Kaiwen Jin\\\normalsize\href{mailto:yui.ui.siki@gmail.com}{\texttt{yui.ui.siki@gmail.com}}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider the one-dimensional Schr\"odinger equation on an interval of
+length $L$, driven by an $L^2$ Dirichlet control at one endpoint, with initial
+data measured in $H^{-1}$. We prove that its null-control norm cost satisfies
+$C_S(T,L)\ge c_L T^{7/2}\exp(L^2/(\pi T))$ for all sufficiently small $T$.
+Thus $\liminf_{T\downarrow0}T\log C_S(T,L)\ge L^2/\pi$, excluding the proposed
+coefficient $L^2/4$. The proof uses one sine initial state: its exact control
+moments prescribe the zeros of an entire function, and Jensen's formula turns
+those zeros into the lower bound.
+\end{abstract}
+
+\section{Introduction and main result}\label{sec:intro}
+Boundary controllability asks how strongly a system must be driven at its
+boundary to reach a prescribed final state. For a Schr\"odinger equation on a
+segment, the small-time question concerns the growth of the required control
+norm as the available time tends to zero. It is closely related to the
+quantitative moment problem and entire-function methods developed for this
+setting; see Miller~\cite[Section 4]{Miller2003}.
+
+Fix $L>0$. We consider complex-valued transposition solutions of
+\begin{equation}\label{eq:pde}
+ \begin{cases}
+ i y_t+y_{xx}=0,&(t,x)\in(0,T)\times(0,L),\\
+ y(t,0)=h(t),\quad y(t,L)=0,&0<t<T,\\
+ y(0,\cdot)=y_0\in H^{-1}(0,L),&
+ \end{cases}
+\end{equation}
+where $h\in L^2(0,T;\mathbb C)$. We use $H^{-1}$ as the continuous anti-dual
+of $H_0^1$, with a fixed standard Sobolev norm independent of $T$.
+The proof applies both to the derivative norm on $H_0^1$ and to its usual
+full Sobolev norm. Define the norm control cost by
+\begin{equation}\label{eq:cost}
+ C_S(T,L)=\sup_{\|y_0\|_{H^{-1}}=1}\,
+ \inf\bigl\{\|h\|_{L^2(0,T)}:\ y(0)=y_0,\ y(T)=0
+ \text{ in }\eqref{eq:pde}\bigr\}.
+\end{equation}
+The infimum of an empty set and $\log(+\infty)$ are understood in the extended
+sense. In particular, $C_S$ is a norm cost, rather than its square.
+
+The lower coefficient $L^2/4$ appears in
+Lissy~\cite[Theorem 1.2, equation (8)]{Lissy2015}.
+For precisely the norm-cost setting~\eqref{eq:pde}--\eqref{eq:cost},
+Lissy~\cite[Sections 3.1--3.2]{Lissy2025} conjectures
+\begin{equation}\label{eq:question}
+ \lim_{T\downarrow0}T\log C_S(T,L)=\frac{L^2}{4}.
+\end{equation}
+The same work gives the upper bound
+$\limsup_{T\downarrow0}T\log C_S(T,L)\le 27^{1/4}L^2/4$
+\cite[Theorem 3.1]{Lissy2025}. Here we prove a strict improvement of the lower
+coefficient, which rules out~\eqref{eq:question}.
+
+\begin{theorem}\label{thm:main}
+For every fixed $L>0$, there is a constant $c_L>0$, independent of $T$, such
+that
+\begin{equation}\label{eq:main-bound}
+ C_S(T,L)\ge c_L T^{7/2}\exp\!\left(\frac{L^2}{\pi T}\right),
+ \qquad 0<T\le\frac{L^2}{2\pi}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:liminf}
+ \liminf_{T\downarrow0}T\log C_S(T,L)
+ \ge\frac{L^2}{\pi}>\frac{L^2}{4}.
+\end{equation}
+\end{theorem}
+
+The constant $c_L$ may depend on the fixed interval and Sobolev norm. The
+statement covers the full unit sphere in~\eqref{eq:cost}; a single unit sine
+state supplies its lower bound. It does not determine the sharp coefficient
+or establish that the limit exists.
+
+The argument uses only necessary control moments. After shifting the first
+spectral frequency to zero, a centered transform of each control takes the
+value one at the origin and vanishes at all remaining quadratic spectral
+gaps. Its growth on a circle is bounded by the control norm and the time
+support. Jensen's formula compares these two facts. An exact factorial product
+then gives the exponential lower bound. Sections~\ref{sec:moments}
+and~\ref{sec:jensen} derive the moments and the zero estimate;
+Section~\ref{sec:bound} chooses the radius and completes the proof.
+
+\section{Necessary moments for one unit initial state}\label{sec:moments}
+We use the pairing linear in the state and conjugate-linear in the test
+function. For a transposition solution and a smooth homogeneous Dirichlet
+adjoint solution $z$, the endpoint identity is
+\begin{equation}\label{eq:tp}
+ \langle y(T),z(T)\rangle-\langle y_0,z(0)\rangle
+ =i\int_0^T h(t)\overline{z_x(t,0)}\,dt.
+\end{equation}
+Here the adjoint solves $iz_t+z_{xx}=0$ backwards from its terminal datum.
+For smooth states, differentiating $\int_0^L y\overline z\,dx$ gives
+$i[y_x\overline z-y\overline{z_x}]_0^L
+=i h\overline{z_x(t,0)}$.
+Identity~\eqref{eq:tp} is its transposed form; it requires no spatial trace
+of a rough state.
+
+Let
+\begin{equation}\label{eq:spectrum}
+ \phi_n(x)=\sqrt{\frac2L}\sin\frac{n\pi x}{L},\qquad
+ \lambda_n=\frac{n^2\pi^2}{L^2},\qquad
+ b_n=\phi_n'(0)=\sqrt{\frac2L}\frac{n\pi}{L}.
+\end{equation}
+These functions are orthonormal in $L^2(0,L)$ and satisfy
+$-\phi_n''=\lambda_n\phi_n$ with zero endpoint values. Set
+\begin{equation}\label{eq:witness}
+ a_L=\|\phi_1\|_{H^{-1}}^{-1},\qquad
+ y_0=a_L\phi_1,\qquad d_L=\frac{a_L}{b_1}>0.
+\end{equation}
+The norm in this definition is finite and nonzero: a smooth sine defines a
+continuous functional on $H_0^1$, and its pairing with itself is one.
+Thus $y_0$ has exactly unit $H^{-1}$ norm. These quantities depend on $L$
+and the fixed Sobolev norm, but not on $T$.
+
+For every control taking this state to zero, test~\eqref{eq:tp} with
+$z(t,x)=e^{-i\lambda_n(t-T)}\phi_n(x)$. Since
+$z(0)=e^{i\lambda_nT}\phi_n$, we obtain
+\[
+ -a_L\delta_{n1}e^{-i\lambda_nT}
+ =i b_n e^{-i\lambda_nT}\int_0^T h(t)e^{i\lambda_n t}\,dt.
+\]
+Consequently every such control satisfies
+\begin{equation}\label{eq:moments}
+ \int_0^T h(t)e^{i\lambda_n t}\,dt=i d_L\delta_{n1},\qquad n\ge1.
+\end{equation}
+Only smooth single-mode tests have been used. In particular, this necessary
+condition does not involve an infinite expansion of the controlled state.
+
+\section{The entire transform and its zeros}\label{sec:jensen}
+Normalize the nonzero moment and center the time interval by defining
+\begin{equation}\label{eq:transform}
+ v(t)=\frac{h(t)e^{i\lambda_1t}}{i d_L},\qquad
+ F(z)=\int_0^T v(t)e^{iz(t-T/2)}\,dt,\qquad z\in\mathbb C.
+\end{equation}
+Cauchy--Schwarz gives $\|v\|_1\le\sqrt T\,\|v\|_2
+=\sqrt T\,\|h\|_2/d_L$. The transform is entire. Indeed, on $|z|\le A$,
+its exponential series can be integrated term by term, with remainder at
+most
+\[
+ \|v\|_1\sum_{k>K}\frac{(AT/2)^k}{k!}\longrightarrow0.
+\]
+The resulting power series has infinite radius of convergence. Also,
+\begin{equation}\label{eq:growth}
+ |F(z)|\le K_T e^{(T/2)|\operatorname{Im}z|},\qquad
+ K_T=\frac{\sqrt T\,\|h\|_2}{d_L}.
+\end{equation}
+The factor $T/2$ is the reason for centering the interval.
+
+The moments~\eqref{eq:moments} imply
+\begin{equation}\label{eq:zeros}
+ F(0)=1,\qquad F(\mu_n)=0\quad(n\ge2),\qquad
+ \mu_n=\lambda_n-\lambda_1=\frac{\pi^2}{L^2}(n^2-1).
+\end{equation}
+Thus $F$ is nonzero and has distinct positive prescribed zeros. It may have
+other zeros, which only strengthen the estimate below.
+
+Let $r>0$ be a radius with no zero on its circle. Jensen's formula at zero,
+with zeros $z_j$ counted according to multiplicity, reads
+\[
+ \sum_{|z_j|<r}\log\frac r{|z_j|}
+ =\frac1{2\pi}\int_0^{2\pi}\log|F(re^{i\theta})|\,d\theta,
+\]
+because $F(0)=1$. The sum is finite, since zeros of a nonzero entire function
+are isolated. Each summand is nonnegative. Taking only the prescribed zeros
+and applying~\eqref{eq:growth}, we find
+\[
+ \sum_{\mu_n<r}\log\frac r{\mu_n}
+ \le\log K_T+\frac{Tr}{\pi},
+\]
+where $\int_0^{2\pi}|\sin\theta|\,d\theta=4$ fixes the constant.
+For any $R>\mu_N$, with an integer $N\ge2$, it follows that
+\begin{equation}\label{eq:jensen}
+ \log K_T\ge\sum_{n=2}^{N}\log\frac R{\mu_n}-\frac{TR}{\pi}.
+\end{equation}
+To include radii whose circles contain additional zeros, choose zero-free
+radii increasing to $R$, all larger than $\mu_N$. Such radii exist because
+the zero set is countable. Pass to the limit only in the selected finite
+sum. This proves~\eqref{eq:jensen} at every required $R$.
+
+\section{The lower bound}\label{sec:bound}
+Choose $R=\pi^2N^2/L^2$, so $\mu_N<R$. The prescribed-zero contribution is
+\begin{align}
+ S_N:=\sum_{n=2}^{N}\log\frac R{\mu_n}
+ &=2(N-1)\log N-\log\frac{(N-1)!(N+1)!}{2}.\label{eq:product}
+\end{align}
+Here we used $\prod_{n=2}^{N}(n^2-1)=(N-1)!(N+1)!/2$.
+Since $\log$ is increasing,
+\[
+ \log N!\le\int_1^N\log x\,dx+\log N
+ =N\log N-N+1+\log N.
+\]
+Together with $(N-1)!(N+1)!=(N!)^2(1+1/N)$, this gives, for every $N\ge2$,
+\begin{equation}\label{eq:sum-bound}
+ S_N\ge2N-4\log N-2+\log2-\log(1+1/N)
+ \ge2N-4\log N-2.
+\end{equation}
+Substituting into~\eqref{eq:jensen} and recalling~\eqref{eq:growth}, we obtain
+\begin{equation}\label{eq:integer-bound}
+ \|h\|_2\ge\frac{d_L}{\sqrt T}\,N^{-4}e^{-2}
+ \exp\!\left(2N-\frac{\pi T}{L^2}N^2\right),\qquad N\ge2.
+\end{equation}
+This holds for every admissible control of the fixed unit state and every
+integer $N\ge2$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For $0<T\le L^2/(2\pi)$, set
+$X=L^2/(\pi T)\ge2$, $N=\lfloor X\rfloor$ and $a=1/X\le1/2$.
+Completing the square gives
+\[
+ 2N-aN^2=X-a(N-X)^2\ge X-\tfrac12,
+ \qquad N^{-4}\ge X^{-4}=\left(\frac{\pi T}{L^2}\right)^4.
+\]
+Therefore~\eqref{eq:integer-bound} implies
+\begin{equation}\label{eq:control-bound}
+ \|h\|_2\ge c_L T^{7/2}e^{L^2/(\pi T)},\qquad
+ c_L=d_L\pi^4L^{-8}e^{-5/2}>0.
+\end{equation}
+The constant is independent of $T$ and of the control. Taking the infimum
+over all controls for the unit state~\eqref{eq:witness}, and then the
+supremum over the whole unit sphere, proves~\eqref{eq:main-bound}.
+Taking the logarithm, multiplying by $T$, and using $T\log T\to0$ proves
+\eqref{eq:liminf}. The strict inequality follows from $\pi<4$.
+\end{proof}
+
+\paragraph{AI-use statement.}
+OpenAI Codex was used for literature searches, proof development, calculation
+checks, and drafting this manuscript. The author is responsible for its
+mathematical claims.
+
+\begin{thebibliography}{9}
+\bibitem{Miller2003}
+Luc Miller,
+\emph{How violent are fast controls for Schr\"odinger and plate vibrations?},
+arXiv:math/0309040v3, 2003.
+\url{https://arxiv.org/abs/math/0309040v3}.
+
+\bibitem{Lissy2015}
+Pierre Lissy,
+\emph{Explicit lower bounds for the cost of fast controls for some 1-D
+parabolic or dispersive equations, and a new lower bound concerning the
+uniform controllability of the 1-D transport-diffusion equation},
+author manuscript, 8 June 2015.
+\url{https://cermics.gitlab.enpc.fr/lissy/Publi/chal.pdf}.
+
+\bibitem{Lissy2025}
+Pierre Lissy,
+\emph{Effective multipliers for weights whose log are H\"older continuous.
+Application to the cost of fast boundary controls for the 1D Schr\"odinger
+equation}, arXiv:2502.04859v1, 2025.
+\url{https://arxiv.org/abs/2502.04859v1}.
+\end{thebibliography}
+\end{document}

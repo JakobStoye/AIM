@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "problem_id": "403",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic theorem, negative answer",
+  "files": [
+    {
+      "path": ".gitignore",
+      "purpose": "Ignore local LaTeX build output",
+      "bytes": 51,
+      "sha256": "d9ba69815691f3bc47aab03e9aa7ca804c61d055f1bd31a2e780dceec7c64fb4"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, build and AI disclosure",
+      "bytes": 2198,
+      "sha256": "0764bcbf1577b1c42bb64d42773afc942caf081bb585cb5e9af5743c3a217cce"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original-target comparison",
+      "bytes": 1906,
+      "sha256": "32e755146488ad3e4093932947507cef02293f73edf06b2bf6739d4c2c1731b1"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Editable self-contained manuscript",
+      "bytes": 11057,
+      "sha256": "c12b007866908ea66d72a4e422fdd6be11722ca549be6ed7c8e0b7c41d96c260"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Four-page manuscript",
+      "bytes": 317784,
+      "sha256": "048a03d117f29b03e596c1e8242726921a9347df9ef6aac8b88a4bda5a306ea2"
+    }
+  ],
+  "hash_coverage": "SHA256SUMS additionally covers this manifest; a hash file does not hash itself."
+}

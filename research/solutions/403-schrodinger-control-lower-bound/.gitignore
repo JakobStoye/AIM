@@ -1,0 +1,6 @@
+paper/build/
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.fls
