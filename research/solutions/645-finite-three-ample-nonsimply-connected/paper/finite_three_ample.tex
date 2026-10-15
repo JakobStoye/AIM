@@ -1,0 +1,209 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A finite three-ample complex with a nontrivial fundamental group},pdfauthor={Kaiwen Jin},pdfsubject={Finite simplicial complexes and ampleness}}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Lk}{\operatorname{Lk}}
+\newcommand{\Prob}{\mathbb{P}}
+
+\title{A finite three-ample complex with a nontrivial fundamental group}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{14 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct a finite three-ample simplicial complex on $32{,}768$ vertices
+which retracts simplicially onto a four-cycle. Thus the prescribed extension
+of every subcomplex on at most three vertices is compatible with a
+nontrivial fundamental group in a finite complex. The construction fixes a
+four-cycle and chooses the remaining permitted faces probabilistically. A
+finite union bound proves that all extension requests can be met at once.
+\end{abstract}
+
+\section{The finite existence question}
+
+For a simplicial complex $X$ and a set $U$ of its vertices, let $X[U]$ be
+the induced subcomplex. A nonempty complex is \emph{$r$-ample} if, for every
+$U\subseteq V(X)$ with $|U|\leq r$ and every simplicial subcomplex
+$A\subseteq X[U]$, there is a vertex $v\in V(X)\setminus U$ such that
+\begin{equation}\label{eq:ample}
+    \Lk_X(v)\cap X[U]=A.
+\end{equation}
+The subcomplex $A$ may be empty and need not be induced. We regard complexes
+as families of nonempty simplices, so an empty subcomplex has no simplices;
+one may equivalently adjoin the formal empty face consistently.
+
+Ampleness requires every prescribed local pattern, including missing higher
+faces, to admit an extension. Four-ampleness implies simple connectivity
+\cite[Proposition~6.1]{Farber}, whereas Barmak constructed an infinite
+three-ample complex which is not
+simply connected \cite[Theorem~1]{Barmak}. Farber asks whether a finite
+example exists \cite[Example~2.5]{Farber}. We answer this finite existence
+question.
+
+\begin{theorem}\label{thm:main}
+There is a finite three-ample simplicial complex $X$ with $32{,}768$ vertices
+and dimension at most three which admits a simplicial retraction onto a
+four-cycle. In particular, $\pi_1(|X|)$ contains a subgroup isomorphic to
+$\mathbb{Z}$.
+\end{theorem}
+
+The four-cycle occurs in \cite[Example~6]{Barmak}. We replace each of its
+vertices by a large set of vertices and form an ambient complex whose
+simplices project onto vertices or edges of the cycle. We then choose a
+random subcomplex while retaining a fixed copy of the cycle. The projection
+onto the cycle is therefore available in every outcome.
+Any three labels omit a fourth label, leaving a whole set of vertices which
+can realize the required local extension. The stated number of vertices is
+a convenient choice for the probability estimate; no minimum-size claim is
+made.
+
+\section{Construction and proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $C$ be the four-cycle with vertex set $\mathbb{Z}/4\mathbb{Z}$ and
+edges $\{i,i+1\}$, where indices are read modulo four. Put $m=8192$ and
+\[
+ V=(\mathbb{Z}/4\mathbb{Z})\times\{0,\ldots,m-1\},\qquad N=4m.
+\]
+Write $p(i,j)=i$ and $s(i)=(i,0)$. A nonempty set $\tau\subseteq V$ is
+\emph{permitted} if $|\tau|\leq4$ and $p(\tau)$ is a simplex of $C$;
+thus its distinct labels form a singleton or an adjacent pair. These sets
+form a simplicial complex $B$ of dimension at most three. The four edges
+$\{s(i),s(i+1)\}$ form a subcomplex $S$ isomorphic to $C$.
+
+For each permitted $\tau$ with $2\leq|\tau|\leq4$, choose a mark
+$b_\tau\in\{0,1\}$. Set the four marks on the edges of $S$ equal to one
+and choose every other mark independently, with probabilities $1/2$ for
+each value. Include all vertices in $X$, and include a permitted simplex
+$\tau$ of size at least two precisely when
+\begin{equation}\label{eq:marks}
+ b_\rho=1\quad\text{for every }\rho\subseteq\tau\text{ with }|\rho|\geq2.
+\end{equation}
+This rule is closed under taking faces, so $X$ is a finite subcomplex of
+$B$ with all $N$ vertices. It contains $S$ in every outcome. Both $p:X\to C$
+and $s:C\to X$ are simplicial, and $p\circ s=\operatorname{id}_C$.
+
+We now show that some outcome is three-ample. Fix $U\subseteq V$ with
+$1\leq|U|\leq3$. Choose a label $q\notin p(U)$, and put $t=q+2$.
+Then $p(U)\subseteq\{t-1,t,t+1\}$. Every face $\sigma$ of $X[U]$ has
+one label or an adjacent pair of labels in this set; the only such pairs
+are $\{t-1,t\}$ and $\{t,t+1\}$. It follows that
+$p(\sigma)\cup\{t\}$ is a simplex of $C$.
+Consequently $\{v\}\cup\sigma$ is permitted whenever $p(v)=t$ and
+$v\notin U$.
+
+Let $W$ consist of the vertices with label $t$ outside $U$ and outside the
+four designated vertices $s(i)$. There are at least $m-4$ such vertices.
+Condition on $X[U]=K$, where $K$ has positive probability, and fix any
+subcomplex $A\subseteq K$. For $v\in W$, prescribe
+\begin{equation}\label{eq:event}
+ b_{\{v\}\cup\sigma}=
+ \begin{cases}
+ 1,&\sigma\in A,\\
+ 0,&\sigma\in K\setminus A,
+ \end{cases}
+ \qquad \sigma\in K.
+\end{equation}
+Call this event $E_v$. There are $f(K)$ prescribed marks, where $f(K)$
+is the number of nonempty simplices of $K$, and $f(K)\leq7$.
+
+The event $X[U]=K$ depends only on the marks of faces contained in $U$.
+Every mark in \eqref{eq:event} contains the vertex $v\notin U$ and is
+unfixed, since $v$ is not a designated vertex. For different vertices
+$v,w\in W$, these mark sets are disjoint: a set indexing a prescribed
+mark has exactly one vertex outside $U$, namely its own candidate vertex.
+Thus, after conditioning on $X[U]=K$, all prescribed marks remain fair
+and the events $E_v$ are mutually independent. This can also be seen by
+counting completions of any assignment of the marks inside $U$: prescribing
+$d$ additional coordinates leaves a proportion $2^{-d}$ of the completions.
+In particular,
+\begin{equation}\label{eq:one-witness}
+ \Prob(E_v\mid X[U]=K)=2^{-f(K)}\geq\frac1{128}.
+\end{equation}
+
+On $E_v$, the restricted link is exactly $A$. Indeed, if $\sigma\in A$,
+all its nonempty faces belong to $A$. All marked faces of
+$\{v\}\cup\sigma$ not containing $v$ already have mark one, because
+$\sigma\in K$. Those containing $v$ have mark one by \eqref{eq:event},
+so \eqref{eq:marks} includes $\{v\}\cup\sigma$ in $X$. If
+$\sigma\in K\setminus A$, its own cone mark is zero, and this cone face
+is excluded. This proves \eqref{eq:ample}, including empty $A$ and
+subcomplexes with omitted edges or triangles.
+
+Set $r=127/128$. Conditional independence and \eqref{eq:one-witness} give
+\[
+ \Prob(A\text{ has no outside witness}\mid X[U]=K)
+ \leq r^{|W|}\leq r^{m-4}.
+\]
+There are at most $2^{f(K)}\leq128$ subcomplexes of the fixed $K$.
+Taking their union first, and then averaging over the possible induced
+complexes $K$, shows that the probability of any failed request for this
+$U$ is at most $128r^{m-4}$. For $U=\varnothing$, the sole request is
+automatic since $V$ is nonempty. A union bound over every $U$ of size
+at most three therefore yields
+\begin{equation}\label{eq:failure}
+ \Prob(X\text{ is not three-ample})
+ \leq128\sum_{k=0}^3\binom Nk\,r^{m-4}
+ \leq512N^3r^{m-4}.
+\end{equation}
+Here $\binom Nk\leq N^k\leq N^3$ for $0\leq k\leq3$.
+The binomial theorem gives
+\[
+ r^{-128}=\left(1+\frac1{127}\right)^{128}
+ \geq1+\frac{128}{127}>2,
+ \qquad r^{128}<\frac12.
+\]
+Since $m-4=8188>128\cdot63$ and $N=2^{15}$, the last bound in
+\eqref{eq:failure} is strictly less than
+\[
+ 2^{54}(r^{128})^{63}<2^{54}2^{-63}=2^{-9}<1.
+\]
+The probability space is finite. Hence it has an outcome $X$ satisfying
+every extension request at once.
+
+This $X$ is path connected: any two vertices have a common neighbor by
+using the subcomplex consisting of those two vertices in \eqref{eq:ample},
+and each point of a simplex can be joined to one of its vertices inside
+that simplex. The fixed maps $s$ and $p$ still satisfy $p\circ s=
+\operatorname{id}_C$. Since $|C|$ is a circle, functoriality of fundamental
+groups, with basepoints $0$ and $s(0)$, gives
+\[
+ p_*\circ s_*=\operatorname{id}_{\pi_1(|C|)},\qquad
+ \pi_1(|C|)\cong\mathbb{Z}
+\]
+\cite[Theorem~1.7 and p.~34]{Hatcher}. Thus $s_*$ is injective, proving
+the fundamental-group assertion.
+\end{proof}
+
+\section*{AI use}
+OpenAI Codex assisted in developing the argument, checking references and
+preparing this manuscript. Independent mathematical review is requested.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{Barmak}
+J.~A. Barmak, \emph{Connectivity of ample, conic, and random simplicial
+complexes}, arXiv:2103.03952v1 (2021).
+\url{https://arxiv.org/abs/2103.03952v1}.
+Published in International Mathematics Research Notices \textbf{2023},
+no.~8, 6579--6597.
+\href{https://doi.org/10.1093/imrn/rnac030}{doi:10.1093/imrn/rnac030}.
+
+\bibitem{Farber}
+M. Farber, \emph{Large simplicial complexes: universality, randomness, and
+ampleness}, Journal of Applied and Computational Topology \textbf{8}
+(2024), 1551--1574.
+\href{https://doi.org/10.1007/s41468-023-00134-9}{doi:10.1007/s41468-023-00134-9}.
+
+\bibitem{Hatcher}
+A. Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002.
+\url{https://pi.math.cornell.edu/~hatcher/AT/AT.pdf}.
+\end{thebibliography}
+
+\end{document}

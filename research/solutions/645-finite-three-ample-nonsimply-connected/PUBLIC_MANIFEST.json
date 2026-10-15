@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "package": "finite-three-ample-nonsimply-connected",
+  "problem_id": "645",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "Analytic finite probabilistic existence construction",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package entry, exact result and scope, manuscript links, build and AI disclosure.",
+      "bytes": 1836,
+      "sha256": "575162f99e2f44f582ed8eb7704974206c052fa571a3cca0a1db28232e8f2a84"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original-target correspondence using the final manuscript and public target.",
+      "bytes": 2684,
+      "sha256": "dbabfe2bab2e7e5f5eb4aac24acd64e8191ff3c0c59b048405dc1bafc45938b4"
+    },
+    {
+      "path": "paper/finite_three_ample.tex",
+      "purpose": "Standalone editable mathematical manuscript.",
+      "bytes": 9336,
+      "sha256": "dd8da46e97687dc0bb73958caf3d5d52563c63b5149059932e997ffefcc9a3ee"
+    },
+    {
+      "path": "paper/finite_three_ample.pdf",
+      "purpose": "Three-page compiled mathematical manuscript.",
+      "bytes": 272822,
+      "sha256": "b22bb1d2bd77bd55384ec37751dd8d91875e85d68e48ccd2dddb94581be7c36a"
+    }
+  ],
+  "manifest_note": "This manifest lists the four substantive payload files. SHA256SUMS also binds this manifest; the checksum file does not hash itself."
+}
