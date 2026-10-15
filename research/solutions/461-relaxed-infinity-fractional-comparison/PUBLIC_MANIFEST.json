@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "problem_id": "461",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "analytic counterexample to specified subsolution-supersolution comparison",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, build and factual AI-use/review disclosure",
+      "sha256": "9c0402c338f2d9c7554d90a6b7c6c95d80512dd3426e73d325e7a892b7437ee8",
+      "bytes": 2283
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original-clause correspondence from the finished manuscript",
+      "sha256": "0015e88910aa9ba521aaf1cd50ce56eee5c1eaae3645d092a0e754b6c7006a39",
+      "bytes": 3240
+    },
+    {
+      "path": "paper.tex",
+      "purpose": "Editable self-contained final manuscript",
+      "sha256": "1acd2b700b75ea6b3fc054b4be0acb3095f13c900633d6795253da146401bf56",
+      "bytes": 16182
+    },
+    {
+      "path": "paper.pdf",
+      "purpose": "Six-page final manuscript",
+      "sha256": "251d34c66fcfe1e80fd38270a99e9618735e7f800eef2f84321b232c41fcc1c2",
+      "bytes": 296145
+    }
+  ],
+  "manifest_exclusions": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "exclusion_reason": "Avoid circular self-hashes; SHA256SUMS covers this manifest."
+}
