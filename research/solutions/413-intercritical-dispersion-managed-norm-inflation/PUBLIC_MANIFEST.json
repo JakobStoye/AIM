@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Public problem/result summary, manuscript links, build entry point and factual AI-use/review disclosure",
+      "sha256": "8a220b95a584566ef9eba7629bf252de58dc2a5da2f67455324e65e81dc51eaf"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the complete immutable AIM 413 target",
+      "sha256": "e5a2e8ec1a8a6fe2f8668e88e5c18ade7e38fb0c3c0acd3b716dae9edbec035d"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Editable standalone final mathematical note",
+      "sha256": "b01bd1c1ae86f1dbe9ed9bbd7e98d7c0142182120d8f1563b7f73e99ce6a9111"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Seven-page final compiled mathematical note",
+      "sha256": "f4f2db482eedd98424d61ad8b5ba13557cc3959e55eeb92ebf736297dc3185bb"
+    }
+  ],
+  "integrity": "SHA256SUMS covers the listed payloads and this manifest; the checksum file omits itself."
+}
