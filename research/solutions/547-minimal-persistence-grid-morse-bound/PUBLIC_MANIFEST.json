@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "problem_id": "547",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package entry and reproduction",
+      "sha256": "9ae83e9db123dfc8021ee596d9400bf371b19f11481f72500e57c8da6afa2ff4"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full target-to-manuscript comparison",
+      "sha256": "a99a8461057d09d78da74a63df5fe0a54a21e6660491763a6df5967eb45b35ce"
+    },
+    {
+      "path": "paper/grid_morse_bound.pdf",
+      "purpose": "Complete analytic manuscript",
+      "sha256": "7d639542eb1db26025d4a70c54648484e9bf93b86099de4f93fc0d285dc47c65"
+    },
+    {
+      "path": "paper/grid_morse_bound.tex",
+      "purpose": "Editable manuscript source",
+      "sha256": "5298741ec049ef54fd4842dc7733d6d29cbc57dc51b6232ff7478ca261d902fb"
+    }
+  ]
+}
