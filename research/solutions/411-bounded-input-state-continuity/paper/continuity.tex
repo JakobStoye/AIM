@@ -1,0 +1,332 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Continuity of states for bounded admissible inputs},
+  pdfauthor={Kaiwen Jin},pdfsubject={AIM 411: bounded admissible inputs}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Lin}{\mathcal L}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\ess}{\operatorname*{ess\,sup}}
+\title{Continuity of states for bounded admissible inputs}
+\author{Kaiwen Jin\\ \small\texttt{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let \(A\) generate a strongly continuous semigroup on an arbitrary Banach
+space \(X\), and let \(B\) be a bounded operator from an arbitrary Banach
+input space into the extrapolation space \(X_{-1}\).
+We prove that \(L^\infty\)-admissibility for all strongly measurable inputs
+implies that the finite-time control operator norms tend to zero with the
+time horizon. Consequently every state driven by a bounded strongly
+measurable input is continuous in the norm of \(X\), including at time zero.
+The argument applies the scalar Grothendieck property to a separate
+multiplier operator for each fixed input. A resolvent construction gives
+this operator a separable range in \(X\); the Orlicz--Pettis theorem and a
+disjoint-interval construction then give the uniform small-time estimate.
+\end{abstract}
+
+\section{The continuity question}
+
+For an unbounded control operator, admissibility puts each convolution
+state in the original state space, although the integral is initially
+defined in an extrapolation space. It does not directly give continuity
+of the state in the stronger norm. Weiss posed the bounded-input
+continuity question in \cite[Problem~2.4]{Weiss}.
+Preu{\ss}ler and Schwenninger obtained positive answers under several
+geometric assumptions on the state and input spaces
+\cite[Corollary~4.10 and the discussion following Corollary~4.11]{PS}.
+We prove the unrestricted Banach-space assertion for the extrapolation
+control-operator formulation.
+
+Let \(X,U\) be Banach spaces over the same field, either \(\R\) or \(\C\).
+Let \(A:D(A)\subset X\to X\) generate a \(C_0\)-semigroup \(S\).
+Fix a resolvent point \(\lambda\) and form the completion \(X_{-1}\) of
+\(X\) in the norm
+\[
+ \|x\|_{-1}=\|(\lambda-A)^{-1}x\|_X .
+\]
+Write \(J:X\to X_{-1}\) for the continuous injective canonical map and
+\(S_{-1}\) for the compatible \(C_0\)-semigroup on \(X_{-1}\).
+The resolvent extends to a bounded map
+\(R_{-1}:X_{-1}\to X\). Its restriction to \(X\) is
+\(R=(\lambda-A)^{-1}:X\to D(A)\), and
+\[
+ R_{-1}S_{-1}(t)=S(t)R_{-1}.
+\]
+These are the usual extrapolation constructions; see
+\cite[Definition~3.1, Proposition~3.3 and Remark~3.4]{Weiss}.
+We identify \(X\) with \(J(X)\) in convolution formulas.
+
+Throughout, \(L^\infty(0,T;U)\) consists of equivalence classes of
+\emph{strongly measurable}, essentially bounded functions, with the
+essential supremum norm. All measures are completed Lebesgue measures,
+and all integrals are Bochner integrals, initially in \(X_{-1}\).
+For \(B\in\Lin(U,X_{-1})\), assume that for every \(T>0\) there is
+\(K_T<\infty\) such that
+\begin{equation}\label{eq:admissibility}
+ \Phi_Tu:=\int_0^T S_{-1}(T-s)Bu(s)\,ds\in X,\qquad
+ \|\Phi_Tu\|_X\le K_T\|u\|_\infty
+ \quad(u\in L^\infty(0,T;U)).
+\end{equation}
+Time reversal gives the bounded operator
+\begin{equation}\label{eq:reversed}
+ F_hv=\int_0^h S_{-1}(r)Bv(r)\,dr,\qquad
+ \kappa(h)=\|F_h\|_{\Lin(L^\infty(0,h;U),X)} .
+\end{equation}
+Thus \(F_h\) and \(\Phi_h\) have the same norm. Zero extension in the
+reversed-time formula gives \(\kappa(h)\le\kappa(T)\) for \(0<h\le T\).
+
+\begin{theorem}\label{thm:main}
+Under \eqref{eq:admissibility}, with no further assumptions on \(X\) or
+\(U\), one has
+\begin{equation}\label{eq:zero}
+ \lim_{h\downarrow0}\kappa(h)=0.
+\end{equation}
+For every \(T>0\) and \(u\in L^\infty(0,T;U)\), the function
+\[
+ x_u(0)=0,\qquad
+ x_u(t)=\int_0^t S_{-1}(t-s)Bu(s)\,ds\quad(0<t\le T)
+\]
+belongs to \(C([0,T];X)\).
+\end{theorem}
+
+The norm \(\kappa(h)\) in \eqref{eq:zero} is taken over the entire strongly
+measurable input unit ball. Its decay is stronger than continuity for one
+fixed input and is called zero-class admissibility.
+To obtain it, we first fix an input \(w\) and vary only a scalar multiplier
+of \(w\). The resulting operator has separable range even when neither
+\(X\) nor \(U\) is separable. This allows the scalar \(L^\infty\)
+Grothendieck theorem to be used without assuming a Grothendieck property
+for vector-valued \(L^\infty\).
+
+\section{A vector measure for each fixed input}
+
+We use two Banach-space results. Every bounded operator from scalar
+\(L^\infty(0,T)\) into a separable Banach space is weakly compact:
+scalar \(L^\infty\) is Grothendieck, and the asserted mapping property is
+one of the characterizations of that property
+\cite[Theorem~3.1.1 and Proposition~4.1.5]{GK}.
+The Orlicz--Pettis theorem says that a series in a Banach space whose
+every subseries converges weakly has every subseries convergent in norm
+\cite[Chapter~IV, p.~24]{Diestel}.
+Here weak convergence always uses the full continuous dual.
+
+These statements can be used over either scalar field. In particular,
+for a real Banach space \(E\) use its complexification with norm
+\[
+ \|x+iy\|_{E_\C}
+   =\sup_{\theta\in\R}\|\cos\theta\,x-\sin\theta\,y\|_E .
+\]
+A bounded real operator \(Q:L^\infty(0,T;\R)\to E\) extends boundedly
+to complex scalar \(L^\infty\) with values in \(E_\C\).
+Separability is preserved, and restriction followed by the real-part
+projection transfers weak compactness back to \(Q\).
+The same embedding transfers the Orlicz--Pettis statement to real
+spaces: each complex functional restricts to real and imaginary
+continuous real functionals.
+
+\begin{lemma}\label{lem:range}
+Fix \(T>0\) and \(w\in L^\infty(0,T;U)\). The scalar multiplier operator
+\[
+ Q_w:L^\infty(0,T)\to X,\qquad Q_wf=F_T(fw),
+\]
+has its range in a closed separable subspace of \(X\) and is weakly compact.
+\end{lemma}
+
+\begin{proof}
+Admissibility gives
+\(\|Q_wf\|_X\le K_T\|w\|_\infty\|f\|_\infty\).
+Strong measurability gives a separable closed subspace \(U_0\subset U\)
+containing the values of a representative of \(w\) outside a null set.
+Indeed, take the closed span of the finite ranges of simple functions
+converging to \(w\) almost everywhere. Change \(w\) on that null set if
+necessary. Put \(C=R_{-1}B\in\Lin(U,X)\) and
+\[
+ E=\overline{\operatorname{span}}^{\,X}
+       \{S(t)Ca:t\ge0,\ a\in U_0\}.
+\]
+This subspace is separable: rational times, a countable dense subset of
+\(U_0\), and rational scalar coefficients give a dense countable set.
+The density follows from strong continuity and the local operator bounds
+of a \(C_0\)-semigroup. The semigroup law also shows that \(E\) is
+\(S\)-invariant.
+
+For \(x=Q_wf\in X\), bounded resolvent commutation with the integral gives
+\begin{equation}\label{eq:resolvent}
+ Rx=\int_0^T S(r)Cw(r)f(r)\,dr\in E .
+\end{equation}
+For a simple input the kernel is a finite combination of continuous
+semigroup orbits. Simple approximants to the input, together with local
+semigroup bounds, give strong measurability of the integrand.
+The bounded input also gives an integrable constant bound on its norm.
+Since the integrand is \(E\)-valued, its integral is in the closed subspace
+\(E\). The same argument applies to the subsequent kernels.
+Let \(y=Rx\). Then \(y\in D(A)\cap E\). Invariance implies
+\((S(h)y-y)/h\in E\) for \(h>0\). Taking its \(X\)-norm limit gives
+\(Ay\in E\), hence \(x=\lambda y-Ay\in E\).
+Thus \(Q_w\) is bounded with values in the separable Banach space \(E\).
+The scalar Grothendieck result makes it weakly compact into \(E\), and
+the inclusion \(E\to X\) preserves weak compactness.
+\end{proof}
+
+\begin{lemma}\label{lem:measure}
+For fixed \(T,w\) as in Lemma~\ref{lem:range}, the set function
+\[
+ m_w(D)=Q_w\mathbf1_D
+       =\int_D S_{-1}(r)Bw(r)\,dr\in X
+ \qquad(D\subset(0,T)\text{ measurable})
+\]
+is countably additive in the norm of \(X\).
+Consequently, for any disjoint measurable \(D_n\),
+\begin{equation}\label{eq:measure-limits}
+ \|m_w(D_n)\|_X\longrightarrow0,\qquad
+ \|m_w((0,\delta))\|_X\longrightarrow0\quad(\delta\downarrow0).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Linearity gives finite additivity. Put
+\(g(r)=S_{-1}(r)Bw(r)\in L^1(0,T;X_{-1})\).
+For disjoint \(D_n\) and any subset \(I\subset\N\), let
+\[
+ z_N=\sum_{\substack{n\in I\\n\le N}}m_w(D_n),\qquad
+ D_I=\bigcup_{n\in I}D_n .
+\]
+Each \(z_N\) is \(Q_w\) of an indicator of norm at most one.
+By Lemma~\ref{lem:range}, all these vectors lie in a fixed weakly
+compact subset \(K\) of \(X\). Dominated convergence in \(X_{-1}\) gives
+\begin{equation}\label{eq:injected}
+ Jz_N\longrightarrow\int_{D_I}g(r)\,dr
+             =Jm_w(D_I)\quad\text{in }X_{-1}.
+\end{equation}
+If a subnet of \(z_N\) converges weakly in \(X\), weak continuity of \(J\)
+and \eqref{eq:injected} identify its limit with \(m_w(D_I)\), since
+\(J\) is injective. Compactness now gives weak convergence of the whole
+sequence to that vector. Otherwise a weak neighborhood of \(m_w(D_I)\)
+would exclude infinitely many terms; those terms would have a cluster
+point in the closed complement within \(K\), contradicting this
+identification.
+
+This holds for every \(I\), so every subseries of
+\(\sum_n m_w(D_n)\) converges weakly in \(X\).
+Orlicz--Pettis gives norm convergence. Applying \(J\) and
+\eqref{eq:injected} identifies the norm sum with \(m_w(D_I)\).
+This proves norm countable additivity, and the first limit in
+\eqref{eq:measure-limits} follows.
+For the second, take any decreasing \(\delta_k\downarrow0\).
+The intervals \((\delta_{k+1},\delta_k]\) partition
+\((0,\delta_1]\), so \(m_w((0,\delta_k])\) are tails of a norm-convergent
+series and tend to zero. Null endpoints have measure zero because their
+injected integrals vanish and \(J\) is injective.
+If the unrestricted \(\delta\)-limit failed, a decreasing violating
+sequence would contradict the conclusion just proved.
+\end{proof}
+
+\section{The small-time estimate and continuity}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose that \(\kappa(h)\) fails to tend to zero.
+By the definition of operator norm there is \(\varepsilon>0\) such that
+arbitrarily small \(h>0\) admit \(v\in L^\infty(0,h;U)\) with
+\(\|v\|_\infty\le1\) and \(\|F_hv\|_X\ge\varepsilon\).
+No attainment of the operator norm is needed.
+Choose such \(h_1<1,v_1\).
+Lemma~\ref{lem:measure}, applied to this one input on \((0,h_1)\),
+gives \(0<\delta_1<h_1\) such that
+\[
+ \left\|\int_0^{\delta_1}S_{-1}(r)Bv_1(r)\,dr\right\|_X
+       <\frac{\varepsilon}{2}.
+\]
+Inductively choose \(h_{n+1}<\delta_n/2\) with a corresponding \(v_{n+1}\),
+and then \(0<\delta_{n+1}<h_{n+1}\) with the same small-tail estimate.
+The intervals \(I_n=(\delta_n,h_n)\) are disjoint, and
+\begin{equation}\label{eq:lower}
+ y_n=\int_{I_n}S_{-1}(r)Bv_n(r)\,dr\in X,\qquad
+ \|y_n\|_X\ge\frac{\varepsilon}{2}.
+\end{equation}
+Define \(w:(0,1)\to U\) to equal \(v_n\) on \(I_n\) and zero elsewhere.
+Each input has essentially separable range; the closed span of their
+countable union is separable. The finite pasted functions converge
+pointwise to \(w\), so \(w\) is strongly measurable, for example by
+the Pettis measurability theorem \cite[Chapter~IV, p.~25]{Diestel}.
+A countable union of null exceptional sets suffices to arrange
+\(\|w\|_\infty\le1\).
+The original admissibility hypothesis applies to this single input and
+every input \(fw\) with scalar \(f\in L^\infty(0,1)\).
+Lemma~\ref{lem:measure} at horizon \(1\) therefore gives
+\(m_w(I_n)=y_n\to0\) in \(X\), contradicting \eqref{eq:lower}.
+This proves \eqref{eq:zero}.
+
+Fix now \(T>0\), \(u\in L^\infty(0,T;U)\), and
+\(M=\|u\|_\infty\). Admissibility puts every \(x_u(t)\) in \(X\), and
+\[
+ \|x_u(t)\|_X\le\kappa(t)M\longrightarrow0\quad(t\downarrow0).
+\]
+For \(t_0\in(0,T]\), choose \(0<d<t_0\) and set \(a=t_0-d\).
+Splitting the convolution at \(a\), using the semigroup law and the
+compatibility with \(X\), gives for \(a<t\le T\)
+\[
+ x_u(t)=S(t-a)x_u(a)
+            +F_{t-a}\bigl(r\mapsto u(t-r)\bigr).
+\]
+For \(|t-t_0|<d/2\) with \(t\in[0,T]\), monotonicity of \(\kappa\) gives
+\begin{equation}\label{eq:continuity}
+ \|x_u(t)-x_u(t_0)\|_X
+ \le \|[S(t-a)-S(t_0-a)]x_u(a)\|_X+2\kappa(2d)M .
+\end{equation}
+Given a positive tolerance, first choose \(d\) to make the second term
+small. With \(d,a\) and \(x_u(a)\) now fixed, strong continuity of the
+single semigroup orbit makes the first term small as \(t\to t_0\).
+This proves both sides of the limit at interior times and the relative
+left limit at \(T\). Together with the limit at zero, it proves
+\(x_u\in C([0,T];X)\).
+\end{proof}
+
+\begin{remark}
+The separable subspace in Lemma~\ref{lem:range} may depend on \(w\);
+no common separable subspace is required for all inputs.
+Weak compactness is used only for \(Q_w\), with no such assertion for
+\(F_T:L^\infty(0,T;U)\to X\).
+The theorem concerns the Bochner convolution with the given \(B\).
+Input maps not assumed to have this representation are outside its statement.
+\end{remark}
+
+\begin{thebibliography}{9}
+\bibitem{Diestel}
+J.~Diestel, \emph{Sequences and Series in Banach Spaces},
+Graduate Texts in Mathematics, vol.~92, Springer-Verlag, New York, 1984.
+\href{https://doi.org/10.1007/978-1-4612-5200-9}{doi:10.1007/978-1-4612-5200-9}.
+
+\bibitem{GK}
+M.~Gonz{\'a}lez and T.~Kania,
+\emph{Grothendieck spaces: the landscape and perspectives},
+arXiv:2102.03838v3, 2021.
+\url{https://arxiv.org/abs/2102.03838v3}.
+
+\bibitem{PS}
+P.~Preu{\ss}ler and F.~L.~Schwenninger,
+\emph{Implications of structured continuous maximal regularity},
+arXiv:2605.12121v1, 2026.
+\url{https://arxiv.org/abs/2605.12121v1}.
+
+\bibitem{Weiss}
+G.~Weiss, \emph{Admissibility of Unbounded Control Operators},
+SIAM Journal on Control and Optimization \textbf{27} (1989), 527--545.
+\href{https://doi.org/10.1137/0327028}{doi:10.1137/0327028}.
+\end{thebibliography}
+
+\paragraph{AI-use disclosure.}
+OpenAI Codex was used to develop the argument, check mathematical and
+bibliographic details, and prepare this text. An initial draft was examined
+by separate AI reader and referee reviewers before the final revision.
+These checks do not constitute human peer review or formal proof verification.
+\end{document}
