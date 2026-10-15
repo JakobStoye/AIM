@@ -1,0 +1,33 @@
+{
+  "format": 1,
+  "problem_id": "474",
+  "statement_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "Complete analytic existence claim, awaiting independent mathematical review",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, attribution, AI-use disclosure and build instructions",
+      "bytes": 2494,
+      "sha256": "ce2f0269e801984b8305d8c22f7fbd0f0716f7e3e45c2843278b3a7544d7090c"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Original requirement to manuscript comparison",
+      "bytes": 4449,
+      "sha256": "3eef1927d4468eed2ca8412e97bfa199d9c8c81227f8d7c331d87bdd4b588568"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Complete editable standalone manuscript",
+      "bytes": 22587,
+      "sha256": "3d7374ad4c4eb09eb2219f314eca0aa8e1543fda8075a601c2e0d93221dccb71"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Seven-page complete manuscript",
+      "bytes": 328403,
+      "sha256": "43d0f524ab742cc1d62b31fec335ea4f644c28dbab35ee2ef7afbbb7625ba4b0"
+    }
+  ],
+  "manifest_scope": "Content files above; this manifest and SHA256SUMS are checksum metadata and do not self-hash."
+}
