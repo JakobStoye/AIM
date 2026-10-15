@@ -1,0 +1,594 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[margin=28mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Sph}{\mathbb S^{n-1}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\osc}{\operatorname{osc}}
+\newcommand{\dd}{\,d}
+\newcommand{\M}{\mathcal M_{s}(\lambda,\Lambda)}
+\title{Optimal regularity for stable obstacle problems\\with integrable angular densities}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove a global $C^{1,s}$ estimate for the finite-energy obstacle problem of a symmetric stable operator whose angular density is only integrable. The constant depends on the order, dimension, angular mass bound, and quadratic nondegeneracy bound, without stronger angular integrability or positivity in every direction. The classification step uses the convex primitive: a derivative associated with a boundary ray of a convex contact cone has an upper bound of order $t$, whereas a spectral-measure Hopf lemma gives a lower bound of order $t^s$. We establish the compactness needed when angular densities concentrate, classify convex global solutions, and combine a normalized profile approximation with the density-kernel flatness estimate of Ros-Oton and Weidner. The endpoint obstacle estimate is stated for angular densities; the auxiliary classification allows general finite spectral measures.
+\end{abstract}
+\section{Introduction}\label{sec:intro}
+
+The obstacle problem minimizes an energy subject to a lower constraint. For a stable nonlocal energy, the contact between the minimizer and the obstacle is coupled to jumps in every direction charged by the angular intensity. An angular density may be integrable while concentrating near a small collection of directions. Uniform regularity under such concentration requires estimates that use total mass and nondegeneracy rather than a stronger angular norm.
+
+Let $n\ge2$, $0<s<1$, and let $a\in L^1(\Sph)$ be even and nonnegative. Assume
+\begin{equation}\label{eq:angular}
+ \int_{\Sph}a(\theta)\dd\theta\le\Lambda,
+ \qquad \inf_{e\in\Sph}\int_{\Sph}\abs{e\cdot\theta}^2a(\theta)\dd\theta\ge\lambda>0.
+\end{equation}
+Set $K(y)=a(y/\abs y)\abs y^{-n-2s}$ and
+\begin{equation}\label{eq:energy}
+ \mathcal E_a(w)=\frac14\int_{\R^n}\int_{\R^n}
+ \abs{w(x)-w(x+y)}^2K(y)\dd y\dd x.
+\end{equation}
+For a nonnegative $\phi\in C_c^\infty(\R^n)$, let $u$ be a minimizer of \eqref{eq:energy} over
+\begin{equation}\label{eq:admissible}
+ \left\{w\in L^{2n/(n-2s)}(\R^n):
+       \mathcal E_a(w)<\infty,\quad w\ge\phi\ \hbox{a.e.}\right\}.
+\end{equation}
+We prove an a priori regularity estimate for a minimizer in this prescribed finite-energy class. The associated positive operator is $Lw=\operatorname{p.v.}\int(w(x)-w(x+y))K(y)\dd y$.
+
+\begin{theorem}\label{thm:main}
+For every $n\ge2$, $0<s<1$ and $0<\lambda\le\Lambda$, there exists $C=C(n,s,\lambda,\Lambda)$ such that, for every density satisfying \eqref{eq:angular} and every nonnegative $\phi\in C_c^\infty(\R^n)$, every minimizer $u$ in \eqref{eq:admissible} satisfies
+\begin{equation}\label{eq:main}
+ \norm u_{C^{1,s}(\R^n)}\le C\norm\phi_{C^3(\R^n)}.
+\end{equation}
+Here
+\[
+ \norm u_{C^{1,s}(\R^n)}
+ =\norm u_\infty+\norm{\nabla u}_\infty+
+   \sup_{x\ne y}\frac{\abs{\nabla u(x)-\nabla u(y)}}{\abs{x-y}^s}.
+\]
+The $C^3$ norm contains the supremum norms of all derivatives through order three. The constant is independent of the support radius of $\phi$ and of any angular $L^p$ norm with $p>1$.
+\end{theorem}
+
+Ros-Oton and Weidner \cite[Theorem 1.3]{ROW} prove optimal obstacle regularity for singular stable density kernels under an additional angular $L^p$ assumption with $p>n/(2s)$. The paragraph following their theorem leaves the merely integrable angular case open. The broader question for general stable operators also appears in \cite[Section 4.6.2, Open Question 4.3]{FRO}. A classification of convex global solutions is central to the passage from almost convex obstacle solutions to half-space profiles. The flatness result \cite[Proposition 5.8]{ROW}, however, is already available for the density class \eqref{eq:angular}. Thus the extra angular integrability can be avoided if one obtains the required classification and uniform profile approximation from mass and nondegeneracy alone.
+
+The classification argument here uses the primitive of a harmonic derivative. Suppose a nonnegative convex function $U$ vanishes on a full-dimensional convex cone $\Sigma$, and its derivatives are harmonic outside $\Sigma$. For a nonzero boundary direction $z\in\partial\Sigma$, convexity along rays makes $v=\partial_{-z}U$ nonnegative on the whole space. If it is nonzero, the strong maximum principle makes it positive outside the cone. At a ball tangent to the cone at $z$, the Hopf lemma of Grube \cite{GrubeHopf} then gives $v(z+t\nu)\ge ct^s$. The convex secant inequality instead bounds this derivative by $U(t\nu)\le Ct$. Since $s<1$, the derivative must vanish. Repeating this for every boundary direction forces the cone to be a half-space. The one-dimensional uniqueness theorem of Grube and Ros-Oton \cite{GRO} then identifies the profile.
+
+To turn this qualitative argument into a uniform estimate, angular densities must be allowed to converge to spectral measures. We give a measure-uniform contact estimate and local $C^{1,\tau}$ compactness for the structured functions used in the proof. We also remove empty-interior limiting cones by a direct thin-strip estimate. In the final normalization, the gradient supremum is one on $B_1$ and at most $R^s$ on every larger ball. These two relations force the limiting profile's free-boundary hyperplane to pass through the origin; no persistence of a free-boundary point under arbitrary local convergence is presumed.
+
+The auxiliary classification holds for finite even spectral measures satisfying the same moment bounds. Theorem~\ref{thm:main} concerns the density class, since its last step uses \cite[Proposition 5.8]{ROW} in that class. It does not assert the endpoint obstacle estimate for every singular spectral measure in the broader question of \cite{FRO}.
+
+Section~\ref{sec:operators} fixes the linear estimates, compactness, and weak spectral closure. Section~\ref{sec:classification} proves the global classification and normalized approximation. Section~\ref{sec:obstacle} derives the variational bounds, proves separation from contact, and controls every gradient pair to obtain \eqref{eq:main}. Appendix~\ref{app:compactness} supplies the measure-uniform contact argument. Constants denoted by $C$ may change from line to line; their additional dependencies are stated when they occur. Balls are Euclidean balls centered at zero unless a center is specified.
+\section{Stable operators and local compactness}\label{sec:operators}
+
+Fix $n\ge2$, $s\in(0,1)$ and $0<\lambda\le\Lambda$. We use a class of measures that is closed under weak convergence. A finite nonnegative even Borel measure $\mu$ on $\Sph$ belongs to $\M$ when
+\begin{equation}\label{eq:ellipticity}
+ \mu(\Sph)\le\Lambda,
+ \qquad \int_{\Sph}\abs{e\cdot\theta}^{2}\dd\mu(\theta)\ge\lambda
+ \quad(e\in\Sph).
+\end{equation}
+The associated positive stable operator is
+\begin{equation}\label{eq:operator}
+ L_\mu w(x)=\frac12\int_{\Sph}\int_0^\infty
+ \bigl(2w(x)-w(x+r\theta)-w(x-r\theta)\bigr)
+ \frac{\dd r}{r^{1+2s}}\dd\mu(\theta).
+\end{equation}
+Write $\nu_\mu$ for the L\'evy measure with polar coordinates
+$\dd\nu_\mu(y)=r^{-1-2s}\dd r\dd\mu(\theta)$. In the density case $\dd\mu=a(\theta)\dd\theta$, this is $K(y)\dd y$, where $K(y)=a(y/\abs y)\abs y^{-n-2s}$. Evenness makes \eqref{eq:operator} equal to the principal value of $\int(w(x)-w(x+y))\dd\nu_\mu(y)$. We use this sign throughout.
+
+For $0\le\gamma<2s$, put
+\[
+ \norm{w}_{L^\infty_\gamma}
+ =\mathop{\rm ess\,sup}_{x\in\R^n}\frac{\abs{w(x)}}{1+\abs{x}^{\gamma}},
+ \qquad D_hw(x)=\frac{w(x+h)-w(x)}{\abs h}\quad(h\ne0).
+\]
+A distributional equation $L_\mu w=f$ in an open set $D$ means
+$\int wL_\mu\eta=\int f\eta$ for all $\eta\in C_c^\infty(D)$; inequalities use nonnegative tests. The subcritical growth bound makes these pairings absolutely convergent. Hessian inequalities are distributional inequalities of symmetric matrices. Gradient suprema are essential suprema until a continuous gradient has been obtained.
+
+The constants below are uniform over \eqref{eq:ellipticity}. Indeed, the annular mass and the truncated directional second moment are
+\begin{align*}
+ \nu_\mu(B_{2r}\setminus B_r)
+ &\le\frac{\Lambda(1-2^{-2s})}{2s}r^{-2s},\\
+ \int_{B_r}\abs{e\cdot y}^{2}\dd\nu_\mu(y)
+ &\ge\frac{\lambda}{2-2s}r^{2-2s}.
+\end{align*}
+Thus these operators belong to the general elliptic L\'evy class of \cite[Definitions 2.1.18 and 2.1.21]{FRO}, with constants determined by $s,\lambda,\Lambda$. We record the linear results in the forms used here.
+
+\begin{proposition}[Linear estimates]\label{prop:linear}
+Let $\mu\in\M$.
+\begin{enumerate}
+\item If $0\le\gamma<2s$, $0<\sigma<\min\{2s,1\}$, and $L_\mu w=f$ in $B_1$, then, with $C=C(n,s,\lambda,\Lambda,\gamma,\sigma)$,
+\begin{equation}\label{eq:interior}
+ \norm{w}_{C^\sigma(B_{1/2})}
+ \le C\bigl(\norm{w}_{L^\infty_\gamma}+\norm f_{L^\infty(B_1)}\bigr).
+\end{equation}
+\item A globally nonnegative continuous function, with subcritical weighted supremum growth, that is harmonic in a connected open set is either zero throughout that set or positive throughout it.
+\item A whole-space harmonic function of growth $C(1+\abs{x}^{\gamma})$, $\gamma<2s$, is affine. It is constant if also $\gamma<1$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+For the first assertion use \cite[Theorem 2.4.3]{FRO}. Choose a finite $p>n/(2s)$ with
+$\sigma<2s-n/p<\min\{2s,1\}$, and lower the resulting H\"older exponent on $B_{1/2}$. This avoids the integer exponent when $2s=1$. The second assertion follows from \cite[Theorem 2.4.15(b)]{FRO}, first on balls compactly contained in the open set and then along chains of overlapping balls. The hypotheses of that theorem include nonnegativity on the whole exterior of each ball, which holds here. The last assertion is \cite[Corollary 2.4.14]{FRO}.
+\end{proof}
+
+We also use the distributional maximum principle on bounded domains from \cite[Lemma 2.3.5]{FRO}. Its application below is to globally continuous functions with subcritical growth and nonnegative exterior values.
+
+\begin{proposition}[Hopf bound in a ball]\label{prop:hopf}
+Let $D=B_\rho(z+\rho\nu)$, where $\abs\nu=1$. Suppose that $w$ is continuous, nonnegative on $\R^n$, has growth below $2s$, and satisfies $L_\mu w\ge0$ in $D$. If $w$ is positive in $D$ and $w(z)=0$, then there are $c,t_0>0$ such that
+\begin{equation}\label{eq:hopf}
+ w(z+t\nu)\ge ct^s\qquad(0<t<t_0).
+\end{equation}
+The constant $c$ may depend on $w$ and $D$.
+\end{proposition}
+This is \cite[Proposition 1.7(3), Proposition 6.7]{GrubeHopf}. The source permits finite nondegenerate spectral measures. Its interior $2s$-$C^{1,\mathrm{dini}}$ condition holds for a ball for every $s\in(0,1)$. Since $\abs{e\cdot\theta}^{2s}\ge\abs{e\cdot\theta}^2$, \eqref{eq:ellipticity} implies the required nondegeneracy. The source normalization is obtained by replacing its spectral measure by $\mu/[2(1-s)]$. Only a homogeneous supersolution inequality is used, so this positive normalization introduces no restriction.
+
+The following compactness estimate will allow angular densities to concentrate into spectral measures. Its proof is included in Appendix~\ref{app:compactness}. It follows the contact-improvement argument of \cite[Proposition 3.8 and Lemma 3.9]{ROW}, with the measure and tail estimates made explicit.
+
+\begin{lemma}[Structured local compactness]\label{lem:compactness}
+Let $0<\beta<\min\{2s,1\}$ and $K<\infty$. Suppose $U\ge0$ is locally Lipschitz, $U(0)=0$, and
+\begin{align}\label{eq:structured}
+ D^2U&\ge-KI,&
+ \abs{\nabla U(x)}&\le K(1+\abs{x}^{\beta}),\\
+ L_\mu D_hU&\ge-K\quad\hbox{in }\{U>0\},&
+ \abs{L_\mu\nabla U}&\le K\quad\hbox{in }\{U>0\}.\notag
+\end{align}
+The difference inequality is required for $0<\abs h\le1$; the last bound is distributional and componentwise. There is $\tau\in(0,\beta)$, depending only on $n,s,\lambda,\Lambda,\beta$, such that $U\in C^{1,\tau}_{\rm loc}(\R^n)$. On each fixed ball its norm is bounded in terms of these parameters, $K$, and the ball. Its gradient vanishes on $\{U=0\}$.
+\end{lemma}
+
+Both parts of \eqref{eq:structured} involving $L_\mu$ are used: the one-sided difference inequality controls the contact points, and the derivative equation supplies interior regularity. We will apply the lemma to obstacle solutions with a bounded forcing gradient and to convex limits of those solutions.
+
+\begin{lemma}[Weak spectral closure]\label{lem:closure}
+Every sequence in $\M$ has a weakly convergent subsequence with limit in $\M$. Suppose in addition that $V_j\to V$ locally uniformly and
+$\abs{V_j(x)}\le C(1+\abs{x}^{\gamma})$ for some $\gamma<2s$. Then $L_{\mu_j}V_j\to L_\mu V$ distributionally along that subsequence. The assertion also holds for distributional inequalities on open sets on which the inequalities eventually hold locally.
+\end{lemma}
+\begin{proof}
+For compactness, divide by $\Lambda$ and add the missing mass at an isolated point outside the sphere. The resulting probabilities are supported in a fixed compact set. Apply the compactness theorem for tight probabilities \cite[Theorem 2.2.35]{FRO}, then restrict the limit to the sphere and multiply by $\Lambda$. Evenness and every directional moment in \eqref{eq:ellipticity} pass to the limit against continuous functions.
+
+For $\eta\in C_c^\infty(\R^n)$, radial integration in \eqref{eq:operator} produces a continuous function of $\theta$, locally uniformly in $x$. The local second-difference bound and the bounded tail imply $L_{\mu_j}\eta\to L_\mu\eta$ locally uniformly. If $R$ is large compared with the support of $\eta$, Fubini and the change of variables $z=x\pm r\theta$ give
+\begin{equation}\label{eq:testtail}
+ \int_{\abs{x}>R}\abs{V_j(x)}\abs{L_{\mu_j}\eta(x)}\dd x
+ \le C_\eta\int_{R/2}^\infty r^{\gamma-1-2s}\dd r
+ \le C_\eta R^{\gamma-2s}.
+\end{equation}
+Here $z$ remains in the fixed support of $\eta$ and $\abs{z\mp r\theta}^{\gamma}\le Cr^\gamma$. The same estimate holds for the limit. Local convergence and \eqref{eq:testtail} prove convergence of the pairings. The inequalities follow by nonnegative tests. The uses of Fubini and dominated convergence have the displayed absolute bounds; see also \cite[Theorems 1.4.49 and 1.7.21]{TaoMeasure}.
+\end{proof}
+
+\begin{remark}\label{rem:primitive}
+The convex functions below can grow like $\abs{x}^{1+s+\alpha}$, where $0<\alpha<\min\{s,1-s\}$; this may exceed the order $2s$. We impose equations only on their gradients and fixed differences, whose growth is below $2s$. No distributional passage is made with such a primitive as the argument of $L_\mu$.
+\end{remark}
+
+\section{Convex global solutions}\label{sec:classification}
+
+We first classify convex solutions whose contact set is a cone. The point of retaining the convex primitive is that it gives an upper bound incompatible with a Hopf lower bound for a derivative along a boundary ray.
+
+\begin{proposition}[Cone rigidity]\label{prop:cone}
+Suppose $U\ge0$ is convex and $C^1$, and its zero set is a proper closed convex cone $\Sigma$ with nonempty interior. Assume
+\[
+ L_\mu\nabla U=0\quad\hbox{in }\Sigma^c,
+ \qquad \abs{\nabla U(x)}\le C(1+\abs{x}^{\gamma}),\quad\gamma<2s.
+\]
+If $U$ is nonzero, then for some $e\in\Sph$ and $\kappa>0$,
+\begin{equation}\label{eq:profile}
+ \Sigma=\{x\cdot e\le0\},\qquad U(x)=\kappa(x\cdot e)_+^{1+s}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The complement of $\Sigma$ is connected. Indeed, if
+$\Sigma^\circledast=\{p:p\cdot z\le0\text{ for all }z\in\Sigma\}$ is its polar cone, convex separation gives
+\[
+ \Sigma^c=\bigcup_{p\in\Sigma^\circledast\setminus\{0\}}\{x:p\cdot x>0\}.
+\]
+For any $z_0\in\operatorname{int}\Sigma$, every nonzero such $p$ satisfies $p\cdot z_0<0$. All the open half-spaces in this union contain $-z_0$, so their union is path connected.
+
+Fix $z\in\partial\Sigma\setminus\{0\}$ and let $v=\partial_{-z}U$, where the direction $-z$ need not be a unit vector. The supporting inequality for $U$, evaluated at $rz\in\Sigma$ and divided by $r\to\infty$, implies
+$\nabla U(x)\cdot z\le0$ at every $x$. Thus $v\ge0$ globally, $v=0$ on $\Sigma$, and $L_\mu v=0$ on $\Sigma^c$. If $v$ is nonzero, Proposition~\ref{prop:linear} gives $v>0$ throughout $\Sigma^c$.
+
+Choose an outward unit supporting normal $\nu$ at $z$. The ball
+$B_\rho(z+\rho\nu)$ lies in $\Sigma^c$ and is tangent at $z$. Proposition~\ref{prop:hopf} gives
+\begin{equation}\label{eq:contradictorylower}
+ v(z+t\nu)\ge ct^s\quad(0<t<t_0).
+\end{equation}
+On the other hand, the convex secant inequality in direction $-z$ gives
+\begin{equation}\label{eq:convexupper}
+ 0\le v(z+t\nu)
+ \le U(t\nu)-U(z+t\nu)
+ \le U(t\nu)\le Mt.
+\end{equation}
+The last bound uses $U(0)=0$ and a local Lipschitz constant near zero. Since $s<1$, \eqref{eq:contradictorylower} and \eqref{eq:convexupper} are incompatible for small $t$. Therefore $\partial_zU=0$ for every boundary direction $z$.
+
+If these directions span $\R^n$, $U$ is constant and hence zero. Otherwise $\partial\Sigma$ is contained in a hyperplane $H$ through zero. Each component of $\R^n\setminus H$ is disjoint from the boundary of $\Sigma$ and so is either inside or outside $\Sigma$. An interior point shows that at least one is inside; both cannot be inside because $\Sigma$ is proper and closed. Consequently $\Sigma$ is a half-space. Invariance in its boundary directions gives $U(x)=g(x\cdot e)$.
+
+The derivative $g'$ is continuous, zero on the negative half-line, and harmonic on the positive half-line for a positive multiple of the one-dimensional stable operator. It retains growth below $2s$. The half-line uniqueness theorem \cite[Theorem 1.1]{GRO}, together with the stable barrier identity \cite[Lemma 2.6.2]{FRO}, implies $g'(t)=c(t_+)^s$. Integrating and using $g(0)=0$ proves \eqref{eq:profile}.
+\end{proof}
+
+The Hopf constant in this proof is qualitative. No uniform estimate over cones is required. Uniform profile approximation will follow from compactness after the qualitative classification.
+
+\begin{lemma}[Removal of a hyperplane]\label{lem:removal}
+Let $H$ be a hyperplane through zero. Suppose $w$ is locally Lipschitz, has growth $C(1+\abs{x}^{\gamma})$ with $\gamma<2s$, and $L_\mu w\ge0$ on $\R^n\setminus H$. Then the inequality holds on $\R^n$.
+\end{lemma}
+\begin{proof}
+Write $H=\{x\cdot\nu=0\}$ and choose $\chi\in C_c^\infty((-2,2))$ with $0\le\chi\le1$ and $\chi=1$ on $[-1,1]$. For $\eta\in C_c^\infty(\R^n)$ put
+$\eta_\rho(x)=\eta(x)\chi((x\cdot\nu)/\rho)$. We show
+\begin{equation}\label{eq:strip}
+ \ip{L_\mu w}{\eta_\rho}
+ =\frac12\iint (w(x)-w(x+y))
+ (\eta_\rho(x)-\eta_\rho(x+y))\dd x\dd\nu_\mu(y)\longrightarrow0.
+\end{equation}
+For $r=\abs y<\rho$, the union of the two supports has volume at most $C\rho$, the test difference is at most $Cr/\rho$, and the function difference is at most $Cr$ on the relevant compact set. The absolute contribution is bounded by
+$C\int_0^\rho r^{1-2s}\dd r=C\rho^{2-2s}$. For $\rho<r<1$, the translated strip supports still have total volume at most $C\rho$, giving
+$C\rho\int_\rho^1r^{-2s}\dd r$, which tends to zero. For $r>1$, at least one of $x$ and $x+y$ lies in $\supp(\eta_\rho)$; the growth bound gives
+$C\rho\int_1^\infty(1+r^\gamma)r^{-1-2s}\dd r\to0$.
+These estimates also prove absolute convergence and the bilinear identity in \eqref{eq:strip} by symmetric truncation. They use only the total angular mass and include atoms tangent to $H$.
+
+For $\eta\ge0$, the test $\eta-\eta_\rho$ is nonnegative and supported away from $H$. Thus $\ip{L_\mu w}{\eta-\eta_\rho}\ge0$. Letting $\rho\downarrow0$ in \eqref{eq:strip} proves the assertion.
+\end{proof}
+
+\begin{theorem}[Classification of convex solutions]\label{thm:classification}
+Fix $0<\alpha<\min\{s,1-s\}$. Suppose $U\ge0$ is convex and locally Lipschitz, $0\in\partial\{U>0\}$, and
+\begin{equation}\label{eq:classhyp}
+ L_\mu\nabla U=0,\qquad L_\mu D_hU\ge0
+ \quad\hbox{in }\{U>0\}\quad(h\ne0),\qquad
+ \norm{\nabla U}_{L^\infty(B_R)}\le CR^{s+\alpha}\quad(R\ge1).
+\end{equation}
+Then $U$ is a half-space profile \eqref{eq:profile}.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:compactness}, with $\beta=s+\alpha<\min\{2s,1\}$, makes $U$ locally $C^{1,\tau}$. Let $Z=\{U=0\}$ and $M(R)=\norm{\nabla U}_{L^\infty(B_R)}$. The free-boundary hypothesis excludes the zero solution. Choose
+$\alpha'\in(\alpha,\min\{s,1-s\})$. The function $M(t)t^{-s-\alpha'}$ tends to zero as $t\to\infty$. Taking near maximizers over $t\ge j$ gives radii $R_j\to\infty$ with $M(R_j)>0$ and
+\begin{equation}\label{eq:blowdownbound}
+ M(R_jR)\le2R^{s+\alpha'}M(R_j)\quad(R\ge1).
+\end{equation}
+Set $U_j(x)=U(R_jx)/(R_jM(R_j))$. Their gradients have supremum one on $B_1$ and satisfy \eqref{eq:blowdownbound} on larger balls. Their equations have zero right-hand side and they remain convex. Lemma~\ref{lem:compactness} and a diagonal subsequence give convergence in $C^1_{\rm loc}$ to a nonnegative convex function $U_\infty$ with gradient supremum one on $B_1$. For this last equality use convergence on a ball strictly larger than $B_1$.
+
+The closed convex sets $R^{-1}Z$ decrease as $R$ increases because $0\in Z$. Their intersection
+\[
+ \Sigma=\bigcap_{R\ge1}R^{-1}Z
+\]
+is a closed convex cone. It lies in $Z$, and $U_\infty=0$ on $\Sigma$. Every compact subset of $\Sigma^c$ is eventually disjoint from $R_j^{-1}Z$. Lemma~\ref{lem:closure}, applied only to gradients and fixed differences, therefore gives
+\begin{equation}\label{eq:limitcone}
+ L_\mu\nabla U_\infty=0,\qquad L_\mu D_hU_\infty\ge0
+ \quad\hbox{in }\Sigma^c.
+\end{equation}
+Their growth exponent is $s+\alpha'<\min\{2s,1\}$. Positivity of $U_\infty$ on $\Sigma^c$ is not assumed in passing these equations.
+
+If $\Sigma$ has empty interior, it is contained in a hyperplane $H$. For fixed $h$, the function $D_hU_\infty$ is locally Lipschitz and is a supersolution off $H$. Lemma~\ref{lem:removal} extends this inequality to the whole space. Apply the same conclusion with $-h$ and use
+\[
+ D_{-h}U_\infty(x+h)=-D_hU_\infty(x)
+\]
+to obtain the reverse inequality. Thus every fixed difference is harmonic on the whole space. Its growth exponent is less than both $2s$ and one, so Proposition~\ref{prop:linear} makes it constant. Hence $U_\infty$ is affine. Nonnegativity makes it constant, contradicting its gradient normalization.
+
+Suppose instead that $\Sigma$ has nonempty interior. Choose $-e\in\operatorname{int}\Sigma$. Recall its polar cone $\Sigma^\circledast=\{p:p\cdot z\le0\text{ for every }z\in\Sigma\}$. The supporting inequality against rays in $\Sigma$ gives $\nabla U_\infty\in\Sigma^\circledast$. The interior choice implies
+\[
+ \abs{\nabla U_\infty}\le C_\Sigma\partial_eU_\infty,
+ \qquad \partial_eU_\infty\ge0.
+\]
+This derivative is nonzero by normalization, zero on $\Sigma$, and harmonic on $\Sigma^c$. The connectedness argument in Proposition~\ref{prop:cone} and the strong maximum principle make it positive throughout $\Sigma^c$. Since a differentiable nonnegative function has zero gradient at a zero, the zero set of $U_\infty$ is exactly $\Sigma$. Proposition~\ref{prop:cone} now shows that $\Sigma$ is a half-space.
+
+Finally $\Sigma\subset Z$ and zero is a boundary point of $Z$. A closed convex set containing this half-space and any point strictly beyond it would contain zero in its interior. Therefore $Z=\Sigma$. Proposition~\ref{prop:cone}, applied to $U$ itself, completes the proof.
+\end{proof}
+
+We next give the normalized approximation statement that will be needed at the endpoint. The normalization at every radius also fixes the location of the limiting half-space.
+
+\begin{lemma}[Normalized profile approximation]\label{lem:approximation}
+For every $R_0>1$ and $\varepsilon_0>0$ there is $\eta>0$, depending only on $n,s,\lambda,\Lambda,R_0,\varepsilon_0$, with the following property. Let $w\ge0$ be bounded and globally Lipschitz, $w(0)=0$, and suppose, distributionally,
+\begin{equation}\label{eq:obstacle}
+ L_\mu w\ge f\quad\hbox{on }\R^n,
+ \qquad L_\mu w=f\quad\hbox{on }\{w>0\},
+\end{equation}
+where $f$ is Lipschitz. Assume
+\begin{equation}\label{eq:normalization}
+ D^2w\ge-\eta I,\quad \norm{\nabla f}_\infty\le\eta,\quad
+ \norm{\nabla w}_{L^\infty(B_1)}=1,\quad
+ \norm{\nabla w}_{L^\infty(B_R)}\le R^s\quad(R\ge1).
+\end{equation}
+Then for some $e\in\Sph$,
+\begin{equation}\label{eq:approximation}
+ \norm{w-\frac1{1+s}(x\cdot e)_+^{1+s}}_{C^{0,1}(B_{R_0})}
+ \le\varepsilon_0.
+\end{equation}
+No uniform bound on $\norm w_\infty$ is required.
+\end{lemma}
+\begin{proof}
+Suppose the assertion fails along a sequence with $\eta_j\downarrow0$. Equation \eqref{eq:obstacle} implies
+$L_{\mu_j}D_hw_j\ge D_hf_j$ on $\{w_j>0\}$: the shifted supersolution inequality holds everywhere and the unshifted equation holds there. Also $L_{\mu_j}\nabla w_j=\nabla f_j$ in that open set. Lemmas~\ref{lem:compactness} and \ref{lem:closure}, with $\beta=s$, give a subsequence converging in $C^1_{\rm loc}$ to a nonnegative convex $U$ with $U(0)=0$ and
+\begin{equation}\label{eq:limitnormalization}
+ \norm{\nabla U}_{L^\infty(B_1)}=1,\qquad
+ \norm{\nabla U}_{L^\infty(B_R)}\le R^s\quad(R\ge1).
+\end{equation}
+The limit operator has a measure in $\M$. On $\{U>0\}$, the equations and the difference inequalities pass to the limit with growth exponent $s<2s$.
+
+The zero set of $U$ is nonempty and proper. Choose any actual boundary point $z$ of that set. The translated function $U(\cdot+z)$ satisfies Theorem~\ref{thm:classification} for $\alpha=\min\{s,1-s\}/4$: its gradient growth is at most $C_zR^s\le C_zR^{s+\alpha}$. Thus
+$U(x)=\kappa(x\cdot e-b)_+^{1+s}$ with $\kappa>0$ and $b=z\cdot e$. Since $U(0)=0$, $b\ge0$. Put $A=(1+s)\kappa$. The gradient supremum on $B_R$ is $A(R-b)_+^s$, so \eqref{eq:limitnormalization} implies
+\[
+ b<1,\qquad A(1-b)^s=1,\qquad A\le1.
+\]
+The last inequality follows by dividing the large-radius bound by $R^s$ and letting $R\to\infty$. These relations force $b=0$ and $A=1$. The $C^1$ convergence on a ball larger than $B_{R_0}$ now contradicts failure of \eqref{eq:approximation}.
+
+The temporary translation is used only to identify one limit. Its constant $C_z$ does not enter the uniform choice of $\eta$.
+\end{proof}
+
+\section{The obstacle minimizer and the endpoint estimate}\label{sec:obstacle}
+
+We now return to the even nonnegative angular densities satisfying \eqref{eq:angular}. Set
+\[
+ K(y)=a(y/\abs y)\abs y^{-n-2s},\qquad p_*=\frac{2n}{n-2s},
+\]
+and write
+\[
+ B(w,z)=\frac12\iint(w(x)-w(x+y))(z(x)-z(x+y))K(y)\dd y\dd x,
+ \qquad \mathcal E_a(w)=\frac12 B(w,w).
+\]
+The homogeneous energy class consists of functions in $L^{p_*}(\R^n)$ with finite energy. In particular, a nonzero constant is not an admissible representative. Let $u$ be a minimizer above $\phi$ in this class. Its variational inequality is
+\begin{equation}\label{eq:vi}
+ B(u,z-u)\ge0\quad\hbox{for every admissible }z.
+\end{equation}
+
+\begin{lemma}[Comparison and obstacle equation]\label{lem:minimizer}
+For a nonnegative $\phi\in C_c^\infty(\R^n)$, the minimizer has a representative with
+\begin{equation}\label{eq:elementarybounds}
+ 0\le u\le\norm\phi_\infty,\qquad
+ \Lip(u)\le\norm{\nabla\phi}_\infty,\qquad
+ D^2u\ge-\norm{D^2\phi}_\infty I.
+\end{equation}
+The function $v=u-\phi$ is bounded and globally Lipschitz, satisfies
+\begin{equation}\label{eq:vproblem}
+ v\ge0,\qquad L v\ge f\ \hbox{on }\R^n,\qquad
+ L v=f\ \hbox{on }\{v>0\},\qquad f=-L\phi,
+\end{equation}
+and
+\begin{equation}\label{eq:forcing}
+ D^2v\ge-2\norm\phi_{C^3}I,
+ \qquad \norm{\nabla f}_\infty\le C(n,s)\Lambda\norm\phi_{C^3}.
+\end{equation}
+Moreover $v$ is locally $C^{1,\tau}$ for a uniform $\tau>0$, and $\nabla v=0$ on its contact set.
+\end{lemma}
+\begin{proof}
+Clipping $u$ at $\norm\phi_\infty$ preserves admissibility and does not increase energy. Uniqueness gives the first bound in \eqref{eq:elementarybounds}. Nonnegative variations in \eqref{eq:vi} give the supersolution property. Variations of both signs supported where $u>\phi$ give $Lu=0$ there, once the continuous representative below is obtained.
+
+We justify the translated comparisons directly in the homogeneous class. If $q=(u-z)_+$ has finite energy and lies in $L^{p_*}$, and $z\ge\phi$ is one of the supersolutions used below, then $u-q$ is admissible. Thus $B(u,q)\le0$, whereas $B(z,q)\ge0$. The scalar truncation inequality gives
+\begin{equation}\label{eq:truncation}
+ 0\ge B(u-z,q)\ge B(q,q),
+\end{equation}
+so $q=0$.
+
+Here all such tests are $q=T(g)$ with $g$ a finite linear combination of translates of $u$ and $T(t)=(t-c)_+$ for $c\ge0$. Since $T$ is a contraction and $T(0)=0$, its increments have finite energy and $0\le q\le\abs g$ ensures $q\in L^{p_*}$. A constant added to $z$ disappears from its increments. Its supersolution testing is obtained from \eqref{eq:vi} by translating the nonnegative test $q$, so no extension from compact tests to an unproved class is needed.
+
+For completeness, any zero-energy function in $L^{p_*}$ vanishes. Almost every L\'evy displacement is a period in $L^{p_*}$. Its set of periods is closed by continuity of translations and therefore contains the support of the L\'evy measure, hence the full rays in the spectral support directions. The moment lower bound supplies $n$ linearly independent such directions. All translations are consequently periods. Mollification gives a smooth translation-invariant function, which is constant; its $L^{p_*}$ representative makes the constant zero. Letting the mollification scale tend to zero proves the claim. Translation and mollification continuity follow by compact approximation in $L^{p_*}$; the relevant integration and almost-everywhere differentiation facts may be found in \cite{TaoMeasure}. This also gives uniqueness of a minimizer: the quadratic energy identity applied to the midpoint of two minimizers forces their difference to have zero energy, and that difference belongs to $L^{p_*}$.
+
+Take $z=u(\cdot+h)+\norm{\nabla\phi}_\infty\abs h$ and then reverse $h$. These functions lie above $\phi$, so comparison proves the Lipschitz bound, initially almost everywhere. It supplies a globally Lipschitz representative. Next take
+\[
+ z=\frac{u(\cdot+h)+u(\cdot-h)}2
+   +\frac12\norm{D^2\phi}_\infty\abs h^2.
+\]
+Comparison gives the centered second-difference lower bound in \eqref{eq:elementarybounds}, hence its distributional Hessian version. With the continuous representative, the local variations described above are admissible on every compact subset of $\{u>\phi\}$. This proves \eqref{eq:vproblem} and its semiconvexity bound.
+
+To estimate $\nabla f$, split the symmetric radial formula for $L\nabla\phi$ at radius one. For small radii the second difference of $\nabla\phi$ is bounded by $\norm{D^3\phi}_\infty r^2$; for large radii it is bounded by $4\norm{\nabla\phi}_\infty$. The integrals $\int_0^1r^{1-2s}\dd r$ and $\int_1^\infty r^{-1-2s}\dd r$ prove \eqref{eq:forcing}, independently of the support radius.
+
+On $\{v>0\}$, the global inequality and local equality in \eqref{eq:vproblem} imply $LD_hv\ge D_hf\ge-\norm{\nabla f}_\infty$, even if $x+h$ is a contact point. Differentiating the local distributional equation gives $L\nabla v=\nabla f$ there. At any contact point, Lemma~\ref{lem:compactness} applies after translation and multiplication by a fixed constant; bounded global gradients provide its growth bound for any fixed $0<\beta<\min\{2s,1\}$. It yields continuous gradients vanishing on the contact set. Interior regularity supplies the assertion away from that set.
+\end{proof}
+
+The last imported nonlinear estimate is used only for density kernels. We state exactly the part needed here.
+
+\begin{proposition}[Flatness estimate for densities]\label{prop:flatness}
+Fix $\alpha\in(0,\min\{s,1-s\})$ and $\kappa_0>0$. There are $\varepsilon>0$ and $R_0>1$, depending only on $n,s,\lambda,\Lambda,\alpha,\kappa_0$, with the following property. Let $w$ be globally Lipschitz, nonnegative, and satisfy the distributional obstacle equation with forcing $f$ in $B_{R_0}$ for a density kernel satisfying \eqref{eq:ellipticity}. Suppose
+\begin{gather*}
+ 0\in\partial\{w>0\},\qquad D^2w\ge-\varepsilon I\text{ in }B_{R_0},
+ \qquad\norm{\nabla f}_{L^\infty(B_{R_0})}\le\varepsilon,\\
+ \norm{\nabla w}_{L^\infty(B_R)}\le R^{s+\alpha}\quad(R\ge R_0),\qquad
+ \norm{w-\kappa(x\cdot e)_+^{1+s}}_{C^{0,1}(B_{R_0})}\le\varepsilon
+\end{gather*}
+for some $e\in\Sph$ and $\kappa\ge\kappa_0$. Then
+$\norm{\nabla w}_{C^s(B_{1/2})}\le C$ with the same parameter dependence.
+\end{proposition}
+This is the gradient conclusion of \cite[Proposition 5.8]{ROW}. Its kernel assumptions are the angular mass and nondegeneracy bounds, without an angular $L^p$ premise. We do not use an extension of this result to singular spectral measures.
+
+\begin{proposition}[Endpoint separation from contact]\label{prop:separation}
+Let $v=u-\phi$ be as in Lemma~\ref{lem:minimizer}, and $F=\{v=0\}$. Then
+\begin{equation}\label{eq:separation}
+ \abs{\nabla v(x)}\le C\norm\phi_{C^3}\abs{x-z}^s
+ \quad(x\in\R^n,\ z\in F).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The zero-obstacle case is immediate. By homogeneity assume $\norm\phi_{C^3}\le1$. Fix
+$\alpha=\min\{s,1-s\}/4$ and $\kappa_0=1/4$, and let $\varepsilon,R_0$ be given by Proposition~\ref{prop:flatness}. Choose the tolerance $\varepsilon_0\le\min\{\varepsilon,1/4\}$ and then $\eta$ from Lemma~\ref{lem:approximation}. Multiply $v$ by a fixed sufficiently small constant $c_*$ to obtain $w=c_*v$ with global Lipschitz constant less than one, semiconvexity defect at most $\min\{\eta,\varepsilon\}$, and forcing gradient at most the same number. All choices depend only on the permitted parameters.
+
+If $F=\R^n$ there is nothing to prove. Translate a free-boundary point to zero and put $M(r)=\norm{\nabla w}_{L^\infty(B_r)}$. If $M(r)\le r^s$ at every radius, the estimate follows there. Otherwise set
+\begin{equation}\label{eq:lastradius}
+ r_1=\sup\{r>0:M(r)>r^s\}.
+\end{equation}
+The small global Lipschitz bound gives $0<r_1<1$. Since the gradient is continuous, $M$ is continuous at positive radii. Hence $M(r_1)=r_1^s$ and $M(r)\le r^s$ for every $r\ge r_1$.
+
+The rescaling
+\[
+ \widetilde w(x)=r_1^{-1-s}w(r_1x)
+\]
+has gradient supremum one on $B_1$ and at most $R^s$ on every $B_R$, $R\ge1$. The semiconvexity defect is multiplied by $r_1^{1-s}$, and the forcing gradient by $r_1^s$. These remain small. Lemma~\ref{lem:approximation} gives approximation by the profile with coefficient $1/(1+s)>1/2>\kappa_0$. The rescaled function still has an actual free-boundary point at zero, is globally Lipschitz, and has the original density kernel. Its gradient growth is at most $R^{s+\alpha}$ for $R\ge R_0$. Every hypothesis of Proposition~\ref{prop:flatness} is therefore satisfied, and
+\[
+ [\nabla\widetilde w]_{C^s(B_{1/2})}\le C.
+\]
+Its gradient is zero at zero. Scaling back proves $M(r)\le Cr^s$ for $r<r_1/2$. For $r_1/2\le r\le r_1$, monotonicity gives $M(r)\le r_1^s\le2^sr^s$. For larger $r$ use \eqref{eq:lastradius}. Undoing $c_*$ proves \eqref{eq:separation} at every free-boundary point.
+
+For an exterior point $x$, a nearest point of the closed contact set lies on its boundary. It is no farther from $x$ than any given $z\in F$. This extends the estimate to interior contact points as well; on $F$, $\nabla v=0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Continue with $\norm\phi_{C^3}\le1$. The contact set $F$ is nonempty. Otherwise $u$ would be bounded and harmonic on $\R^n$, hence constant by Proposition~\ref{prop:linear}; membership in $L^{p_*}$ makes that constant zero, contradicting $u>\phi\ge0$.
+
+Let $x\notin F$, $d=\dist(x,F)$, and first suppose $d\le1$. Choose $z\in F$ with $\abs{x-z}=d$ and set
+\[
+ V(X)=d^{-s}\nabla v(x+dX).
+\]
+By \eqref{eq:separation}, $\abs{V(X)}\le C(1+\abs X)^s$ globally. In $B_1$ its equation is
+$LV(X)=d^s\nabla f(x+dX)$, with uniformly bounded right-hand side. Fix $\sigma\in(s,\min\{2s,1\})$. Proposition~\ref{prop:linear} yields a uniform $C^\sigma(B_{1/2})$ bound and hence a uniform $C^s$ bound. Scaling back gives
+\[
+ \abs{\nabla v(x)-\nabla v(y)}\le C\abs{x-y}^s
+ \quad\hbox{if }\abs{x-y}\le d/2.
+\]
+If instead $h=\abs{x-y}>d/2$, then $d<2h$ and $\dist(y,F)\le d+h<3h$. Applying \eqref{eq:separation} at nearest contact points bounds both gradients by $Ch^s$. This includes $y\in F$.
+
+When $d>1$, the fixed ball $B_1(x)$ lies in $\{v>0\}$. Its gradient equation, the global gradient bound from Lemma~\ref{lem:minimizer}, and \eqref{eq:interior} give the same estimate for $\abs{x-y}\le1/2$. For larger distances use the global gradient supremum. Finally, if $x\in F$, apply \eqref{eq:separation} directly with $z=x$; both gradients vanish when both points are in $F$. These cases cover every pair and prove $[\nabla v]_{C^s(\R^n)}\le C$.
+
+For $\phi$, its bounded Hessian controls pairs at distance at most one and its bounded gradient controls the other pairs. Thus $[\nabla\phi]_{C^s}\le C\norm\phi_{C^3}$. Adding it back to $v$ and using \eqref{eq:elementarybounds} proves the full norm estimate. Homogeneity removes the normalization of $\phi$.
+\end{proof}
+
+\appendix
+\section{Contact improvement and the compactness estimate}\label{app:compactness}
+
+This appendix proves Lemma~\ref{lem:compactness} for spectral measures. Recall that its nonnegative locally Lipschitz function $U$, with $U(0)=0$, has $D^2U\ge-KI$, gradient growth $K(1+\abs{x}^\beta)$ for $0<\beta<\min\{2s,1\}$, a one-sided bound $LD_hU\ge-K$ in $\{U>0\}$, and a componentwise derivative bound $\abs{L\nabla U}\le K$ there. The goal is local $C^{1,\tau}$ regularity for some $\tau\in(0,\beta)$, uniformly in the spectral measure. The maximum argument follows \cite[Lemma 3.9]{ROW}; we give the directional mass, touching, rescaling, cutoff, and interior estimates needed for this class.
+
+Put $\nu_*=(\lambda/(2\Lambda))^{1/2}$. For any $e\in\Sph$, the contribution of $\{\abs{\theta\cdot e}\le\nu_*\}$ to the quadratic moment is at most $\lambda/2$. The complementary moment is therefore at least $\lambda/2$. Its integrand is at most one, and evenness divides its mass between two caps. Hence
+\begin{equation}\label{eq:cap}
+ \mu\{\theta:\theta\cdot e>\nu_*\}\ge\lambda/4.
+\end{equation}
+The L\'evy mass of this cap at radii $R<r<2R$ is at least $c(s)\lambda R^{-2s}$.
+
+We first explain the touching principle used in the maximum argument. Let $Lv\le b$ distributionally near $x_0$, with $v$ globally continuous and of subcritical growth. If a smooth upper test is patched to $v$ away from a neighborhood of $x_0$ and touches at $x_0$, its operator there is at most $b$. Otherwise continuity of the smooth local part and dominated convergence for the distant part would give $L\Phi-b\ge c>0$ in a smaller ball. The continuous function $q=\Phi-v$ is nonnegative and zero at $x_0$, with $Lq\ge c$ there. Choose a nonnegative smooth bump $\zeta$ compactly supported in that ball and positive at $x_0$. The second-difference formula bounds $L\zeta$. For sufficiently small $t>0$, $L(q-t\zeta)\ge0$ in the ball and $q-t\zeta\ge0$ outside it. The distributional maximum principle \cite[Lemma 2.3.5]{FRO} contradicts $q(x_0)=0$. The subcritical bound ensures all the patched tails are defined.
+
+\begin{lemma}[Improvement at contact]\label{lem:contactimprove}
+There are $0<\tau<\min\{2s,1\}$ and $\delta>0$, depending only on $n,s,\lambda,\Lambda$, such that the following holds. Let $W\ge0$ be globally Lipschitz with some finite Lipschitz constant, $W(0)=0$, and
+\begin{gather}\label{eq:improvehyp}
+ D^2W\ge-\delta I\quad\hbox{in }B_{1/\delta},\qquad
+ LD_hW\ge-\delta\quad\hbox{in }\{W>0\}\cap B_2\quad(0<\abs h\le1/4),\\
+ \norm{\nabla W}_{L^\infty(B_R)}\le R^\tau\quad(R\ge1).\notag
+\end{gather}
+Then
+\begin{equation}\label{eq:contactimprove}
+ \norm{\nabla W}_{L^\infty(B_r)}\le2r^\tau\quad(0<r<1).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Suppose \eqref{eq:contactimprove} fails. Write $M(r)=\norm{\nabla W}_{L^\infty(B_r)}$ and $\Theta(r)=\sup_{t\ge r}t^{-\tau}M(t)$. The global Lipschitz assumption makes this finite at positive radii. It is at most one for $r\ge1$ and exceeds two at some radius below one. A near maximizer supplies $r'\in(0,1)$ with $\Theta(r')>1$ such that
+\[
+ \overline W(x)=\frac{W(r'x)}{\Theta(r')r'^{1+\tau}}
+\]
+has gradient supremum at least $1-\epsilon$ on $B_1$ and at most $R^\tau$ on every $B_R$, $R\ge1$. Here $\epsilon>0$ will be chosen from the fixed parameters below. The semiconvexity defect is multiplied by $r'^{1-\tau}/\Theta(r')$, and the normalized difference scales as
+\begin{equation}\label{eq:differencescaling}
+ LD_h\overline W(x)
+ =\frac{r'^{2s-\tau}}{\Theta(r')}(LD_{r'h}W)(r'x).
+\end{equation}
+Both defects do not increase if $\tau<\min\{2s,1\}$. The Hessian bound continues to hold on $B_{1/\delta}$.
+
+Choose $\eta\in C_c^2(B_{3/2})$, $0\le\eta\le1$, equal to one on $B_1$. Almost-everywhere differentiability and a sufficiently small difference quotient in a direction opposite to a gradient near its essential supremum give $h$, $0<\abs h\le1/4$, such that $v=-D_h\overline W$ has supremum at least $1-2\epsilon$ on $B_1$. On $B_2$, $v\le(2+1/4)^\tau$. Choose $\tau$ sufficiently small that this is less than $1+\epsilon$. The maximum of $v+4\epsilon\eta$ over $\overline B_2$ is attained at $x_0\in B_{3/2}$ and is at least $1+\epsilon$. Consequently
+\[
+ v(x_0)\ge1-C\epsilon,
+ \qquad \overline W(x_0)>0.
+\]
+The latter follows because $-D_h\overline W\le0$ at a zero of the nonnegative function $\overline W$. To specify the upper test, put $m=\max_{\overline B_2}(v+4\epsilon\eta)$, fix $\rho=1/8$, and choose a smooth $\zeta$ equal to one on $B_\rho(x_0)$ and zero outside $B_{2\rho}(x_0)\subset B_2$, with $0\le\zeta\le1$. Set
+\[
+ \Phi(y)=v(y)+\zeta(y)\bigl(m-4\epsilon\eta(y)-v(y)\bigr).
+\]
+Maximality gives $\Phi\ge v$ globally, with equality at $x_0$. The function is smooth near $x_0$, continuous globally, and equals $v$ outside $B_{2\rho}(x_0)$. The touching principle therefore gives $L\Phi(x_0)\le\delta$.
+
+We obtain a fixed deficit for $v$ in a distant cap. Fix $R>10$ sufficiently large, depending only on $\nu_*$, that $x=x_0+r\theta$ has $x/\abs x\cdot h/\abs h\ge\nu_*/2$ whenever $R<r<2R$ and $\theta\cdot h/\abs h>\nu_*$. The final choice of $\delta$ will satisfy $3R+2<1/\delta$, so the following ray estimates are all inside the ball of semiconvexity. For $x=r\xi$ with $r<3R$, semiconvexity tested against zero and $\overline W\ge0$ give, almost everywhere,
+\[
+ \partial_\xi\overline W(r\xi)\ge-\delta r/2.
+\]
+Integrating this lower bound along a ray and then comparing a displacement $h$ to its projection $(\xi\cdot h)\xi$ shows that, if $\xi\cdot h/\abs h\ge\nu_*/2$ and $x$ is at distance comparable with $R$,
+\begin{equation}\label{eq:capdeficit}
+ v(x)\le(3R+1)^\tau\sqrt{1-\nu_*^2/4}+C\delta R.
+\end{equation}
+Indeed the transverse displacement is at most $\abs h\sqrt{1-\nu_*^2/4}$, while the Lipschitz constant on the containing ball is at most $(3R+1)^\tau$. The ray displacement contributes at most $C\delta R\abs h$ before division by $\abs h$.
+
+Choose $\tau,\delta$ sufficiently small that the right-hand side of \eqref{eq:capdeficit} is at most $1-c\nu_*^2$. Taking $\epsilon$ small as well, \eqref{eq:cap} gives a positive contribution at least
+\begin{equation}\label{eq:positiveannulus}
+ c\lambda\nu_*^2R^{-2s}
+\end{equation}
+to the operator of the upper test at $x_0$.
+
+Split the jump radii into $r<\rho$, $\rho\le r<1$, and $r\ge1$. On the first region, $\Phi=m-4\epsilon\eta$, so symmetric second differences bound the negative contribution by $C\Lambda\epsilon$. On the fixed intermediate region, the transition part of $\Phi$ is a convex combination of $v$ and $m-4\epsilon\eta$. Their bounds and the gradient growth bound the negative contribution by $C\Lambda(4^\tau-1+C\epsilon)$, since $\rho$ is fixed. On the tail, $\Phi=v$, and $v(x_0)\ge1-C\epsilon$ gives the bound
+\begin{equation}\label{eq:negativetail}
+ C\Lambda\int_1^\infty\bigl((r+3)^\tau-1+C\epsilon\bigr)
+ r^{-1-2s}\dd r.
+\end{equation}
+Both the intermediate and tail bounds tend to zero as $\tau,\epsilon\to0$, with an integrable tail dominator obtained by keeping $\tau<s$. Since the annular cap has $r>R>2\rho$, the patch leaves $v$ there and \eqref{eq:positiveannulus} is retained.
+
+The choices can be made in order: fix $\nu_*$ and $R$, hence a positive annular bound; take $\epsilon$ small; then take $\tau$ small enough for the maximum, deficit, and tail bounds; finally take $\delta$ small, also satisfying the containing-ball restriction. The negative contributions are then less than half \eqref{eq:positiveannulus}, and $\delta$ is less than the resulting positive lower bound. This contradicts the touching inequality $L\Phi(x_0)\le\delta$ and proves \eqref{eq:contactimprove}. All angular integrations used only \eqref{eq:cap} and the mass bound.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:compactness}]
+Here $U,K,\beta$ are as in \eqref{eq:structured}: $D^2U\ge-KI$, $\abs{\nabla U(x)}\le K(1+\abs{x}^\beta)$, and the two operator bounds hold on $\{U>0\}$. Decrease the exponent in the preceding construction, if necessary, so that $\tau<\beta$. Choose a nonnegative smooth cutoff $\chi_R$, equal to one on $B_{R/2}$ and zero off $B_R$, with $\abs{D^j\chi_R}\le C_jR^{-j}$, and fix $R>16$. Since $U(0)=0$,
+$\abs{U(x)}\le CK(1+\abs{x}^{1+\beta})$. For $V=\chi_RU$, product differentiation gives
+\begin{equation}\label{eq:cutoffbounds}
+ \norm{\nabla V}_\infty\le CK(1+R^\beta),
+ \qquad D^2V\ge-[K+CK(1+R^{\beta-1})]I.
+\end{equation}
+In the Hessian product, $\chi_RD^2U$ preserves the positive part; the other terms use only the stated bounds on $U,\nabla U$.
+
+Put $F=(1-\chi_R)U$. For $x\in B_2$ and $0<\abs h\le1/4$, both $F$ and $D_hF$ vanish near $x$. Integration of $\nabla F$ along a segment gives $\abs{D_hF(y)}\le CK(1+\abs y^\beta)$. Hence
+\begin{equation}\label{eq:cutofftail}
+ \abs{LD_hF(x)}\le CK\Lambda\int_{R/4}^\infty
+ (1+r^\beta)r^{-1-2s}\dd r\le C(K,R,\beta).
+\end{equation}
+It follows that $LD_hV\ge-C(K,R,\beta)$ in $\{V>0\}\cap B_2$.
+
+Divide $V$ by a fixed sufficiently large constant $A$, depending on the parameters, $K$, and the fixed $R$. Equations \eqref{eq:cutoffbounds}--\eqref{eq:cutofftail} make its global Lipschitz constant at most one and both defects at most $\delta$. It then satisfies every hypothesis of Lemma~\ref{lem:contactimprove}, including the growth bound for $R'\ge1$. Since $V=U$ near zero, the conclusion is
+\begin{equation}\label{eq:contacttau}
+ \norm{\nabla U}_{L^\infty(B_r)}\le Cr^\tau\quad(0<r<1/2).
+\end{equation}
+Translating the cutoff gives the same estimate at every contact point in a fixed compact ball; the original weighted bound changes only by a factor depending on that ball.
+
+Inside $\{U>0\}$, \eqref{eq:interior} applied to the distributional derivative equation gives continuous gradients, with a fixed H\"older exponent larger than $\tau$. Estimate \eqref{eq:contacttau} makes them tend to zero at contact points. Integration along segments for the locally Lipschitz function then identifies its derivative at contact as zero.
+
+To obtain a uniform H\"older modulus on a fixed ball $B_L$, choose $x_0\in B_L\cap\{U>0\}$ with $d=\dist(x_0,\{U=0\})<1/8$ and a nearest contact point $z$. Define the centered rescaling
+\[
+ G_d(X)=d^{-\tau}\nabla U(x_0+dX).
+\]
+If $d(1+\abs X)\le1/4$, then $\abs{x_0+dX-z}\le d(1+\abs X)$ and \eqref{eq:contacttau} gives $\abs{G_d(X)}\le C_L(1+\abs X)^\tau$. In the complementary region $\abs X\ge c/d$, the original gradient bound gives
+\[
+ \abs{G_d(X)}\le C_L\bigl(d^{-\tau}+d^{\beta-\tau}\abs X^\beta\bigr)
+ \le C_Ld^{\beta-\tau}\abs X^\beta\le C_L\abs X^\beta.
+\]
+Thus $\norm{G_d}_{L^\infty_\beta}\le C_L$ since $\tau<\beta<2s$. Its equation in $B_1$ has source bounded by $Kd^{2s-\tau}$, which does not increase. Equation \eqref{eq:interior}, with a fixed exponent larger than $\tau$, controls pairs separated by at most $d/2$. For a pair farther apart but still sufficiently close, \eqref{eq:contacttau} bounds both gradients by $C_L\abs{x-y}^{\tau}$; larger pair distances use the compact-ball gradient bound. Points a fixed distance from contact use \eqref{eq:interior} on fixed balls. These cases prove the uniform local $C^{1,\tau}$ bound.
+
+Finally, these bounds imply $C^1_{\rm loc}$ sequential compactness whenever the displayed parameters are uniform. One can take convergence on a countable dense set, use the uniform H\"older modulus on each ball, and then take a diagonal subsequence. Integration along segments identifies the limit gradient. This also justifies the compactness used in Section~\ref{sec:classification}.
+\end{proof}
+
+\section*{AI-use statement}
+AI assistance was used for literature retrieval, mathematical exploration, preparation and checking of the natural-language argument, and manuscript drafting. Two additional AI contexts reviewed the same frozen draft for reader comprehension and mathematical objections, followed by one author revision. These were internal AI reviews. The theorem depends on the arguments presented here and the cited external results. No numerical experiment or formal proof assistant is used. This manuscript is submitted for independent mathematical review.
+
+\begin{thebibliography}{9}
+\bibitem{FRO}
+X.~Fern\'andez-Real and X.~Ros-Oton,
+\emph{Integro-Differential Elliptic Equations}, author draft,
+\href{https://arxiv.org/abs/2411.12455v1}{arXiv:2411.12455v1}, 2024.
+
+\bibitem{GrubeHopf}
+F.~Grube,
+\emph{Boundary regularity and Hopf lemma for nondegenerate stable operators},
+\href{https://arxiv.org/abs/2410.00829v1}{arXiv:2410.00829v1}, 2024.
+
+\bibitem{GRO}
+F.~Grube and X.~Ros-Oton,
+\emph{Boundary regularity for general elliptic operators of order $2s$},
+\href{https://arxiv.org/abs/2605.18711v1}{arXiv:2605.18711v1}, 2026.
+
+\bibitem{ROW}
+X.~Ros-Oton and M.~Weidner,
+\emph{Obstacle problems for nonlocal operators with singular kernels},
+Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) \textbf{27} (2026), 535--588.
+\href{https://doi.org/10.2422/2036-2145.202309_010}{doi:10.2422/2036-2145.202309\_010}.
+The proposition and theorem numbering cited here is that of
+\href{https://arxiv.org/abs/2308.01695v1}{arXiv:2308.01695v1}, 2023.
+
+\bibitem{TaoMeasure}
+T.~Tao,
+\emph{An Introduction to Measure Theory}, Graduate Studies in Mathematics 126,
+American Mathematical Society, 2011.
+\href{https://terrytao.wordpress.com/books/an-introduction-to-measure-theory/}{Author's preliminary edition}.
+\end{thebibliography}
+\end{document}
