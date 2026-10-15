@@ -1,0 +1,1028 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\intr}{\operatorname{int}}
+\newcommand{\width}{\operatorname{width}}
+\newcommand{\Ehr}{\mathcal E}
+\title{Counting Ehrhart functions of half-integral polygons}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Fix an integer \(i\ge2\). We count the distinct Ehrhart functions of convex
+half-integral polygons with exactly \(i\) interior lattice points and at least
+two boundary lattice points. The number is
+\((9i^3+72i^2+175i+106)/2\), as proposed by Bohnert and Springer.
+We describe the complete set of functions by their area and their boundary
+counts before and after doubling. Convex section estimates isolate two
+exceptional families, and explicit polygons realize every remaining
+signature. The proof uses the published complete computational classification
+for \(2\le i\le16\), five published minimum-width bounds, and a finite list of
+exact rational inequality certificates. Integral polygons and period collapse
+are included, and no restriction is imposed on the arrangement of the
+interior lattice points.
+\end{abstract}
+
+\section{Introduction}
+For a rational polygon \(P\), its Ehrhart function records the lattice points
+in every integer dilate:
+\[
+ L_P(t)=\#(tP\cap\Z^2),\qquad t\in\Z_{\ge0}.
+\]
+For lattice polygons, Pick's formula determines this polynomial from the
+interior and boundary counts. Scott's inequality bounds the possible boundary
+counts when the interior count is fixed \cite{Scott}. Thus counting the
+functions is much simpler than classifying the polygons themselves.
+
+For half-integral polygons, meaning polygons whose vertices lie in
+\(\frac12\Z^2\), there are two polynomial constituents. The boundary count of
+the doubled polygon supplies an additional parameter. Bohnert's coefficient
+formula makes these parameters explicit \cite[Proposition 2.1]{Collapse}.
+Bohnert and Springer established sharp boundary and area bounds
+\cite[Theorems 1.1 and 1.4]{Inequalities}; these bounds constrain the
+coefficients but do not determine which intermediate values of the doubled
+boundary count occur. Their published classification enumerates all functions
+through \(i=16\) and proposes a cubic formula for the number with at least
+two boundary lattice points \cite[Conjecture 6.8]{Classification}.
+
+We prove that formula.
+\begin{theorem}\label{thm:count}
+For every integer \(i\ge2\), the number of distinct functions \(L_P\) among
+all two-dimensional convex polygons \(P\) with vertices in
+\(\frac12\Z^2\), exactly \(i\) interior \(\Z^2\) points and at least two
+boundary \(\Z^2\) points is
+\[
+ \Ehr(i)=\frac{9i^3+72i^2+175i+106}{2}.
+\]
+\end{theorem}
+Here half-integral includes integral polygons. Distinctness means equality
+of the entire function on \(\Z_{\ge0}\), so a function with period collapse
+is counted only once. The class is exactly that in the published conjecture;
+in particular, the interior points need not be collinear.
+
+There are two geometric obstructions to a direct count from the marginal
+area bounds. First, a polygon can have an integer hull which is a segment.
+A thin family then has a smaller doubling interior count and must be treated
+separately. Second, the upper bound coupling area and doubled boundary count
+has a width-two equality family. We identify both families. Outside them,
+section estimates give a finite set of inequalities. Uniform constructions
+then show that those inequalities describe all signatures, rather than only
+necessary restrictions.
+
+The proof retains explicit computational inputs. Small interior counts use
+the complete published classification, and a near-area estimate uses five
+minimum-width maxima from the same maximal-polygon catalogue. The wide
+section inequality is proved by rational linear combinations for finitely
+many width indices and by an analytic bound for the remaining indices.
+The all-parameter constructions and the count itself are proved
+symbolically. These roles are distinguished in Section~\ref{sec:computation}.
+
+We first give the signature classification, then prove its necessary bounds
+and realize every signature. The final count is in Section~\ref{sec:count}.
+Throughout, area is Euclidean area, lattice points without a qualifier belong
+to \(\Z^2\), and all polygons are convex and two-dimensional.
+
+\section{Signatures and the classification}\label{sec:signatures}
+Write
+\[
+ i=i(P),\quad b=b(P),\quad Q=2P,\quad
+ A=8\area(P)=2\area(Q),\quad B=b(Q).
+\]
+Thus \(A,B\) are integers. Bohnert's coefficient formula
+\cite[Proposition 2.1]{Collapse} gives
+\begin{equation}\label{eq:coeff}
+ L_P(t)=
+ \begin{cases}
+ \dfrac A8t^2+\dfrac b2t+i+\dfrac b2-\dfrac A8,&t\ \text{odd},\\[2mm]
+ \dfrac A8t^2+\dfrac B4t+1,&t\ \text{even}.
+ \end{cases}
+\end{equation}
+The even formula includes \(t=0\). At fixed \(i\), different triples
+\((A,b,B)\) give different functions: the even constituent determines \(A,B\)
+and the odd linear coefficient determines \(b\).
+Period collapse occurs precisely when
+\begin{equation}\label{eq:collapse}
+ B=2b,\qquad A=8i+4b-8.
+\end{equation}
+
+Define three sets of integer triples. For the \emph{body}, let
+\(2\le b\le3i+6\), put
+\[
+ q(b)=
+ \begin{cases}8,&b\le3i+4,\\7,&b=3i+5,\\6,&b=3i+6,\end{cases}
+\]
+and require
+\begin{align}
+ 6i+4b-6&\le A\le12i+2b+q(b),\label{eq:bodyA}\\
+ A&\equiv B\pmod2,\label{eq:parity}\\
+ 2b+(A\bmod2)+2\delta&\le B
+ \le\min\{A-6i-2b+6,\ 3i+b+6,\ 12i+4b+10-A\}.\label{eq:bodyB}
+\end{align}
+Here \(\delta=1\) if \(A=12i+2b+8\) and \(b\ne2i+4\), or if
+\(b=2,A=12i+10\); otherwise \(\delta=0\).
+The \emph{top} is
+\begin{equation}\label{eq:topset}
+ (A,b,B)=(12i+2b+8-d,\ b,\ 2b+4+d),\quad
+ d\in\{0,1,2\},\quad b\ge2,\quad b+2d\le2i+2.
+\end{equation}
+The \emph{line} is
+\begin{equation}\label{eq:lineset}
+ (A,b,B)=(A,2,A-4i),\qquad 4i+4\le A\le8i+8.
+\end{equation}
+Let \(C_i\) be their union.
+\begin{theorem}\label{thm:signatures}
+For every \(i\ge2\), the signatures \((A,b,B)\) of the polygons in
+Theorem~\ref{thm:count} are exactly \(C_i\).
+\end{theorem}
+We prove necessity for \(i\ge17\) in the next two sections. For
+\(2\le i\le16\) we use the complete published classification as specified in
+Section~\ref{sec:computation}. Section~\ref{sec:witnesses} proves attainment
+for all \(i\ge2\).
+
+We use the following published marginal bounds. For a nonintegral
+half-integral polygon with \(i\ge2\),
+\begin{equation}\label{eq:marginal}
+ b\le3i+6,\qquad A\le12i+2b+q(b)
+\end{equation}
+by \cite[Theorems 1.1 and 1.4]{Inequalities}. At \(b\ge3\), its
+Proposition 3.3 also gives
+\begin{equation}\label{eq:maxlower}
+ B\ge2b+2\quad\text{if }A=12i+2b+8,\ b\ne2i+4.
+\end{equation}
+Only this necessary assertion is used from that proposition.
+For integral polygons, Pick and Scott instead give
+\(A=8i+4b-8,\ B=2b,\ b\le2i+6\); these satisfy the marginal bounds
+and cannot reach the exceptional maximum area in \eqref{eq:maxlower}.
+In general \(B\ge2b\): between successive original boundary points is a
+nonoriginal half-grid boundary point. Pick on \(Q\) gives
+\begin{equation}\label{eq:pickQ}
+ A=2i(Q)+B-2,\qquad L_P(2)=\frac{A+B+2}{2},
+\end{equation}
+and hence \eqref{eq:parity}.
+
+\section{Doubling and convex sections}\label{sec:bounds}
+\subsection{The lower doubling bound}
+\begin{lemma}\label{lem:lower}
+Either \(i(Q)\ge3i+b-2\), or the signature belongs to \eqref{eq:lineset}.
+\end{lemma}
+\begin{proof}
+Let \(S=P\cap\Z^2\), \(K=\conv(S)\). If \(K\) is two-dimensional,
+triangulate it with every point of \(S\) as a vertex. All edges are primitive.
+Writing \(h=i(K)\), the number of edges is
+\[
+ E=2i+2b+h-3.
+\]
+This follows from the fan triangulation formula
+\(E=3\#S-b(K)-3\), since \(b(K)=i+b-h\); successive insertions preserve it.
+
+Discard boundary edges whose two endpoints are boundary points of \(P\).
+All other edge interiors lie in \(\intr(P)\). Their primitive midpoints are
+nonintegral and distinct, so they yield distinct interior points of \(Q\),
+in addition to the \(i\) doubled original interior points.
+If \(s\) edges were discarded, \(i(Q)\ge i+E-s\).
+For \(h\ge1\), the cyclic boundary has at most \(b\) discarded edges.
+For \(h=0\), it contains both original interior and boundary types, so a
+boundary-type run of length \(r\) contributes only \(r-1\) discarded edges;
+thus \(s\le b-1\). Both give the required bound.
+
+If \(K\) is a segment, an integer affine unimodular transformation puts its
+line at \(y=0\). Since \(P\) has interior points on that line, it extends
+on both sides. All its original boundary points are the two intersection
+endpoints. Thus \(b=2\) and we may take them as \((0,0),(R,0)\), \(R=i+1\).
+A vertex of height \(H\ge3/2\) would give at \(y=1\) a triangle section of
+length \(R(1-1/H)\ge1\), containing an off-line original point.
+The reflected argument excludes heights at most \(-3/2\).
+
+If a vertex has height \(1\), its horizontal coordinate \(x\) is a
+nonintegral half-integer. Its doubled triangle contains \(R\) interior
+fine points on \(y=1\), while the middle row contains \(2R-1\), so
+\(i(Q)\ge3R-1=3i+2\). The same holds at height \(-1\).
+Otherwise all vertices have heights in \(\{-1/2,0,1/2\}\).
+Only the middle fine row is interior and \(i(Q)=2i+1\).
+The two triangles over the middle base give \(A\ge4R\).
+If \(\ell_-,\ell_+\) are the original end-section lengths, concavity gives
+\(\ell_-+\ell_+\le2R\), and
+\(\area(P)=(\ell_-+2R+\ell_+)/4\le R\).
+Pick now gives \(B=A-4i\), proving the line alternative.
+\end{proof}
+Outside that line, \eqref{eq:pickQ} gives
+\(B\le A-6i-2b+6\); with \(B\ge2b\), this also gives the lower
+area bound in \eqref{eq:bodyA}.
+
+\subsection{Minimizing sections and the boundary cap}
+Minimum lattice width is the minimum of
+\(\max_P\langle u,x\rangle-\min_P\langle u,x\rangle\) over nonzero
+primitive integer covectors \(u\). It is attained: an inscribed ball of
+radius \(r>0\) gives width at least \(2r|u|\), so only finitely many
+integer directions can improve a fixed direction.
+An integer unimodular map puts a minimizer on a coordinate axis.
+
+Bohnert's section estimate \cite[Lemma 2.12]{AreaBounds} implies, in that
+coordinate, that a section of a convex body of width \(w\) has length at least
+\(\min\{w/2,\text{distance from the nearer projection end}\}\).
+This follows from either of his two bounds relative to the longest section.
+It is preserved by doubling.
+
+Index the fine columns of \(Q\) by \(0,\ldots,W\). An E end has even
+original fine horizontal coordinate; an O end has odd coordinate.
+This is only an indexing convention. Original points still have even fine
+vertical coordinate, and lie on the parity of columns prescribed by E/O.
+Write \(u,v\) for the upper/lower ordinates, \(\ell=u-v\).
+For one concave chain \(f=u\) or \(f=-v\), let \(\beta_j\) indicate an
+integer ordinate and \(c_j\) an even integer ordinate on a coarse column.
+On an interior coarse column,
+\[
+ i_j=\left\lceil u_j/2\right\rceil+
+       \left\lceil-v_j/2\right\rceil-1,\qquad \ell_j\le2i_j+2.
+\]
+
+\begin{lemma}\label{lem:boundarycap}
+For \(i\ge13\), a signature outside the line family satisfies \(B-b\le3i+6\).
+\end{lemma}
+\begin{proof}
+Write \(N=B-b\). The two narrow nonthin widths are \(W=3,4\).
+For \(W=3\), reflect to pattern EO, with coarse interior column 2.
+Put \(M=\lceil f_2/2\rceil\). Concavity and the integer end ordinates give
+\[
+ \lceil f_0/2\rceil+f_3+\beta_1+\beta_2-c_2\le3M+1.
+\]
+Indeed \((f_0+2f_3)/3\le f_2\) gives the first two terms at most \(3M\).
+The indicator correction is at most 1 unless \(f_1,f_2\) are integers
+and \(f_2=2M-1\). In that case, writing \(f_0=2a+p\), \(p=0,1\),
+concavity gives \(f_1\ge a+M\) and \(f_3\le3M-a-2\), improving
+the first bound to \(3M-1\).
+Adding both chains and the extra point at the O end gives \(N\le3i+6\).
+
+For \(W=4\), pattern EE gives
+\[
+ \lceil f_0/2\rceil+\lceil f_4/2\rceil+
+ \beta_1+\beta_2+\beta_3-c_2\le2\lceil f_2/2\rceil+3.
+\]
+The end terms are at most \(f_2+1\). The indicator sum is at most 2,
+unless all three are 1 and \(f_2\) is odd; then \(f_2+1=2\lceil f_2/2\rceil\).
+Adding the chains gives \(N\le2i+8\le3i+6\).
+For OO, concavity gives \(f_0+f_4\le f_1+f_3\), and
+\(\beta_j-c_j\le2\lceil f_j/2\rceil-f_j\) on columns 1,3.
+With \(\beta_2\le1\), adding the chains and the two O end points gives
+the same \(N\le2i+8\).
+
+For the wider cases, let \(n\) be the number of interior coarse columns.
+Their lengths sum to at most \(2i+2n\). End-chord concavity and at most
+two fine boundary points per interior fine column give
+\[
+\begin{array}{c|c|c}
+\text{pattern}&W&\text{upper bound for }N\\ \hline
+\mathrm{EE}&2n+2&2i/n+4n+6\\
+\mathrm{OO}&2n&4i/n+4n+4\\
+\mathrm{EO}&2n+1&(4n+2)i/[n(n+1)]+4n+6-2/(n+1).
+\end{array}
+\]
+For EE/OO the coarse columns are symmetric, and their average length
+dominates the average end length. An E end has at most \(\ell/2+1\)
+nonoriginal points, an O end at most \(\ell+1\).
+For EO, the coarse columns \(2,4,\ldots,2n\) instead give
+\[
+ \sum\ell_j\ge\frac{n^2}{2n+1}\ell_0+
+                  \frac{n(n+1)}{2n+1}\ell_W.
+\]
+Multiplying by \((2n+1)/(n(n+1))\) bounds \(\ell_0/2+\ell_W\),
+since \(n/(n+1)\ge1/2\).
+
+For \(2\le n\le8\), all three bounds are at most \(3i+6\) when \(i\ge13\).
+For \(n\ge9\), the minimizing section bound, in original units, gives
+\[
+ i\ge\sum_{j=1}^n(\min\{j,n+1-j\}-1)
+   =\lfloor(n-1)^2/4\rfloor\ge(n^2-2n)/4.
+\]
+Substitution reduces the three comparisons to
+\(3n^2-24n+4\ge0\), \(3n^2-26n+16\ge0\), and
+\(3n^3-23n^2-16n+12\ge0\). Each is positive at 9 and increasing thereafter.
+Widths below 3 have no coarse interior column or are the thin line case.
+\end{proof}
+
+\subsection{A joint bound at larger widths}
+\begin{lemma}\label{lem:joint}
+If \(i\ge17\) and the minimum lattice width of \(P\) exceeds 2, then
+\(L_P(2)\le6i+2b+6\), equivalently \(A+B\le12i+4b+10\).
+\end{lemma}
+\begin{proof}
+Use the minimizing fine projection and E/O convention just introduced.
+Its patterns and coarse columns are
+\[
+\begin{array}{c|c|c|c}
+ &W&\text{interior coarse columns}&\text{coarse ends}\\ \hline
+\mathrm{EE}&2n+2&2,4,\ldots,2n&0,W\\
+\mathrm{EO}&2n+1&2,4,\ldots,2n&0\\
+\mathrm{OO}&2n&1,3,\ldots,2n-1&\text{none}.
+\end{array}
+\]
+Here \(n\ge2\), and in the wide OO case \(n\ge3\).
+Let \(p_j\) count all closed fine points on column \(j\), and let
+\(i_j,b_j\) be its original interior and boundary counts on coarse columns.
+Then \(\sum p_j=L_P(2)\), \(\sum i_j=i\), \(\sum b_j=b\).
+All variables are nonnegative. Convexity and interval counting give
+\begin{align}
+ \ell_{j-1}-2\ell_j+\ell_{j+1}&\le0,\qquad \ell_j\ge\min\{W/2,j,W-j\},\label{eq:sectionLP}\\
+ p_j&\le\ell_j+1 \qquad\text{on all columns},\nonumber\\
+ \ell_j&\le2i_j+2,\quad 2i_j\le\ell_j+2 \qquad\text{on interior coarse columns},\nonumber\\
+ p_j&\le2i_j+b_j+1,\quad b_j\le2
+ \qquad\text{on interior coarse columns},\label{eq:coarseLP}\\
+ \ell_j&\le2b_j,\quad p_j\le2b_j+1
+ \qquad\text{on coarse ends}.\label{eq:endLP}
+\end{align}
+For the closed coarse bound, between two odd fine points is an even point
+strictly inside the section, so there are at most \(i_j+1\) odd points.
+At an end, the interval has integer endpoints; its even points give the
+two end bounds even when it is a single odd vertex.
+
+For \(2\le n\le8\), relax these conditions to nonnegative real variables and
+add \(\sum i_j\ge17\). Write the displayed constraints as \(Mx\le r\), with
+objective \(c x=\sum p_j-6\sum i_j-2\sum b_j\).
+The companion file \texttt{dual\_weights.json} contains rational vectors
+\(\lambda\ge0\) with
+\[
+ M^{\mathsf T}\lambda\ge c^{\mathsf T},\qquad
+ r^{\mathsf T}\lambda=\gamma\le6.
+\]
+Their exact values are checked by the supplied rational verifier. The bounds are
+\begin{center}
+\begin{tabular}{c r r r}
+\toprule
+\(n\)&EE&EO&OO\\ \midrule
+2&\(-4\)&\(-5\)&\(-6\)\\
+3&\(-17/3\)&\(-20/3\)&\(-23/3\)\\
+4&\(-9/2\)&\(-11/2\)&\(-13/2\)\\
+5&\(-11/5\)&\(-16/5\)&\(-21/5\)\\
+6&\(2/3\)&\(-1/3\)&\(-4/3\)\\
+7&\(7/3\)&\(8/3\)&\(5/3\)\\
+8&\(9/2\)&\(94/21\)&\(7/2\)\\ \bottomrule
+\end{tabular}
+\end{center}
+For every feasible \(x\ge0\),
+\(cx\le\lambda^{\mathsf T}Mx\le\lambda^{\mathsf T}r\).
+Thus these certificates prove the bound for all \(i\ge17\) at the indicated
+indices. No floating optimization result is required. The extra OO
+\(n=2\) certificate is not needed for the wide case.
+
+For \(n\ge9\), let \(I_j\) count strict fine points on a coarse interior
+column; interval parity gives \(I_j\le2i_j+1\).
+Take the hull of the integer endpoints on columns \(j-1,j+1\).
+For a two-dimensional integer trapezoid of width 2, Pick gives
+\[
+ p_{j-1}+p_{j+1}=p_j(T)+I_j(T)+2\le p_j+I_j+2.
+\]
+This is the row identity of \cite[Lemma 6.5]{HHK}.
+If the hull is a segment, its two end sections are single points, so the
+inequality holds directly. The minimum-section bound ensures all adjacent
+sections contain fine points.
+
+Summing these inequalities and subtracting the twice-counted intervening
+noncoarse columns gives
+\[
+ L_P(2)-6i-2b\le
+ \begin{cases}
+ 5n+2-S_{\mathrm{EE}},&\mathrm{EE},\\
+ 5n+1-S_{\mathrm{EO}},&\mathrm{EO},\\
+ 5n-S_{\mathrm{OO}},&\mathrm{OO}.
+ \end{cases}
+\]
+Here the first two \(S\)'s sum \(p_j\) over \(j=3,5,\ldots,2n-1\);
+the third sums over \(j=2,4,\ldots,2n-2\).
+Indeed each coarse interior contributes
+\(2p_j+I_j+2\le6i_j+2b_j+5\), and each coarse end contributes one
+additional constant.
+Since \(p_j\ge\min\{j,W-j\}\), pairing columns gives
+\[
+ S_{\mathrm{EE}}\ge\frac{n^2+2n-3}{2},\quad
+ S_{\mathrm{EO}}\ge\frac{n^2+n-2}{2},\quad
+ S_{\mathrm{OO}}\ge\frac{n^2-1}{2}.
+\]
+The exact EE sum is \(n^2/2+n-1\) for even \(n\), the stated value for odd
+\(n\); the EO sum is exact and the OO sum is \(\lfloor n^2/2\rfloor\).
+The resulting excess bounds are
+\[
+ \frac{-n^2+8n+7}{2},\quad
+ \frac{-n^2+9n+4}{2},\quad
+ \frac{-n^2+10n+1}{2}.
+\]
+At \(n=9\) these are \(-1,2,5\), and their successive differences are
+\((7-2n)/2,(8-2n)/2,(9-2n)/2\), all negative thereafter.
+This closes the tail and the proof.
+\end{proof}
+
+\section{Narrow widths and the exceptional area correction}\label{sec:narrow}
+Width below 1 has no original interior line. At width 1 the admissible case
+is the line family. At width \(3/2\), write the doubled projection as
+\([-2,1]\). There is one coarse interior row 0. The end and middle bounds
+\[
+ p_{-2}\le2b_{-2}+1,\quad p_0\le2i+b_0+1,\quad I_0\le2i+1,
+ \quad p_{-1}+p_1\le p_0+I_0+2
+\]
+give \(L_P(2)\le6i+2b+6\). Width 2 can exceed this by one.
+
+\subsection{The width-two equality family}
+\begin{lemma}\label{lem:top}
+At minimum width 2, the EE pattern satisfies \(L_P(2)\le6i+2b+7\).
+Its equality signatures are exactly \eqref{eq:topset}, and all are realized
+for every \(i\ge2\). The OO pattern satisfies
+\[
+ L_P(2)-6i-2b\le12-i-b.
+\]
+For \(i\ge17\), all excess-seven signatures therefore belong to
+\eqref{eq:topset}.
+\end{lemma}
+\begin{proof}
+In the EE pattern index the projection of \(Q\) by \(0,\ldots,4\).
+All original interior points are on column 2. Interval parity and the row
+hull inequality give
+\[
+ L_P(2)\le(2b_0+1)+(2b_4+1)+2(2i+b_2+1)+(2i+1)+2
+       =6i+2b+7.
+\]
+Equality forces both ordinates at each end to be odd integers.
+Translate vertically so the middle original interior points have fine
+ordinates \(2,4,\ldots,2i\). Equality in the strict fine count then forces
+\[
+ 0\le v_2<1,\qquad 2i+1<u_2\le2i+2.
+\]
+Put \(c_L=1\) if \(v_2=0\), otherwise 0, and \(c_U=1\) if
+\(u_2=2i+2\), otherwise 0. Then \(b_2=c_L+c_U\).
+Writing \(L_j=\lceil v_j\rceil,U_j=\lfloor u_j\rfloor\) for \(j=1,3\),
+equality in the row hull bound is equivalent to
+\begin{equation}\label{eq:topends}
+ L_1+L_3=1-c_L,\qquad U_1+U_3=4i+3+c_U.
+\end{equation}
+The hull has half-integer middle endpoints, and equality forces its strict
+and closed middle counts to equal those of \(Q\); these are the only
+possible endpoint sums. Conversely these conditions give
+\(p_1+p_3=4i+b_2+4\), hence equality.
+
+Let \(\beta_U,\beta_L\) count integer upper/lower ordinates on columns 1,3,
+and put \(\beta=\beta_U+\beta_L\).
+If \(c_U=1\), concavity and \eqref{eq:topends} force both upper ordinates
+to be integer. If \(c_U=0\) and neither were integer, the upper chain
+would have no vertex on columns 1,2,3, so it would join its two odd end
+ordinates by one edge, making \(u_2\) integral, a contradiction.
+Thus \(\beta_U\ge1+c_U\), and likewise \(\beta_L\ge1+c_L\).
+Consequently
+\[
+ d=\beta-b_2-2\in\{0,1,2\},\qquad
+ B=2b+2+\beta-b_2=2b+4+d.
+\]
+Pick with the equality value of \(L_P(2)\) gives
+\(A=12i+2b+8-d\).
+
+For the boundary range, let \(g_U=1\) if \(\beta_U=2\), otherwise 0,
+and define \(g_L\) similarly. Concavity and odd end rounding give
+\[
+ u_0+u_4\le4i+2+2c_U-2g_U,\qquad
+ v_0+v_4\ge2-2c_L+2g_L.
+\]
+To see the improvement when \(g_U=1\), concavity gives
+\(u_0\le(3U_1-U_3)/2\), \(u_4\le(3U_3-U_1)/2\).
+Rounding down to odd integers loses 2 in total if \(U_1+U_3=4i+4\),
+and 3 if the sum is \(4i+3\). The lower-chain rounding is the reverse.
+It follows that \(b\le2i+2b_2-g_U-g_L\).
+Since \(g_U+g_L\ge\beta-2\),
+\[
+ b+2d\le2i+2\beta-g_U-g_L-4\le2i+\beta-2\le2i+2.
+\]
+
+For attainment, choose parameters as follows:
+\[
+\begin{array}{c|cc|cc}
+d&c_L&c_U&\text{left capacity}&\text{right capacity}\\ \hline
+0&1&1&i&i\\
+1&1&0&i-1&i\\
+2&0&0&i-1&i-1 .
+\end{array}
+\]
+Set \(s=2-d\), \(b_0=\min\{\text{left capacity},b-s\}\),
+\(b_4=b-s-b_0\). The range in \eqref{eq:topset} ensures the capacities.
+Take the lower chain
+\[
+ (0,1),(1,0),(3,1-c_L),(4,v_4)
+\]
+and upper chain
+\[
+ (0,1+2b_0),(1,U_1),(3,2i+2),(4,v_4+2b_4),
+\]
+where \(v_4=1\) for \(d\le1\), \(v_4=3\) for \(d=2\), and
+\(U_1=2i+2\) for \(d=0\), \(U_1=2i+1\) otherwise.
+Their slopes have the required monotonicity by the capacity bounds.
+Repeated endpoints are omitted. The original counts are \(i,b\), the
+conditions \eqref{eq:topends} hold, and \(\beta=4\), giving the desired
+\(A,B\). The inner rectangle for \(d=0,1\) has height at least \(2i+1\).
+For \(d=2\), the inner parallelogram has width
+\(|2a+c|+(2i+1)|c|\) in direction \((a,c)\).
+Any direction with \(c\ne0\) therefore has fine width at least 5, whereas
+the horizontal direction has width 4. Thus the minimum original width is 2.
+
+For OO, the original columns are 1,3. Row pairing gives
+\[
+ L_P(2)\le2p_1+I_1+2p_3+I_3+4-p_2
+        \le6i+2b+10-p_2.
+\]
+The coarse points in a section span length at least
+\(2(i_j+b_j-1)\), including the empty case as a vacuous lower bound.
+Concavity gives \(\ell_2\ge i+b-2\), whence \(p_2\ge i+b-2\).
+This proves the OO bound. For smaller \(i\), its only pairs with possible
+excess above 6 are \((2,2),(2,3),(3,2)\), included in the complete finite
+source comparison of Section~\ref{sec:computation}.
+\end{proof}
+
+\subsection{The correction at \texorpdfstring{\(b=2,B=4\)}{b=2, B=4}}
+\begin{lemma}\label{lem:neararea}
+If \(i\ge17\) and a minimizing original projection has at least two interior
+integral rows, then \(A<12i+2b+6\).
+\end{lemma}
+\begin{proof}
+Let these rows be \(1,\ldots,n\), \(n\ge2\), and put
+\(\ell_y=\operatorname{length}(P\cap\{y=\text{constant}\})\).
+The half-row bands centered at \(j=1,\ldots,n\) have normalized area at most
+\(8\ell_j\le8(i_j+1)\). The two exterior half-bands have total area at most
+\(2(b_0+b_{n+1}+\ell_{1/2}+\ell_{n+1/2})\).
+Concavity gives
+\(\ell_{1/2}+\ell_{n+1/2}\le\ell_k+\ell_{n-k+1}\).
+Among the \(\lfloor n/2\rfloor\) disjoint pairs, one has interior count
+at most \(i/\lfloor n/2\rfloor\). Hence
+\begin{equation}\label{eq:neararea}
+ A\le8i+8n+2b+\frac{2i}{\lfloor n/2\rfloor}+4.
+\end{equation}
+For \(n=2\) this is strictly below \(12i+2b+6\) when \(i\ge8\).
+For \(n\ge3\), it suffices that
+\[
+ i>f(n)=\frac{4n^2-5n+1}{2n-4}.
+\]
+At \(n=3,\ldots,7\), the values are
+\(11,45/4,38/3,115/8,81/5\), all below 17.
+At \(n=8,9,10\) they are \(217/12,20,351/16\).
+The only remaining \(i\ge17\) are therefore among 17,\ldots,21.
+The complete maximal-polygon classification gives the global minimum-width
+maxima \(7,15/2,8,15/2,8\) at those five \(i\), respectively
+\cite[proof of Theorem 1.4, pp.\ 9--10]{Inequalities}.
+They exclude the required \(n=8,9,10\).
+Their catalogue scope is explained in Section~\ref{sec:computation}.
+
+For \(n\ge11\), the earlier section sum gives \(i\ge(n^2-2n)/4>f(n)\):
+the latter strict comparison is equivalent to
+\(n^3-12n^2+14n-2>0\), which is 31 at 11 and has increment
+\(3n^2-21n+3>0\) thereafter.
+\end{proof}
+
+\begin{lemma}\label{lem:B4}
+If \(i\ge17,b=2,B=4\), then \(A\le12i+8\).
+\end{lemma}
+\begin{proof}
+With at least two minimizing interior original rows,
+Lemma~\ref{lem:neararea} and even \(A\) give the result.
+Width 1 is the line case and gives \(A=4i+4\).
+The remaining one-row patterns are EE of fine height 4 and EO of fine height 3.
+Integral polygons cannot have \(b=2\).
+
+For EE put the fine end rows at \(-2,2\), and let \(c=0,1,2\) be the
+original boundary count on row 0. If \(H_-,H_+\) are the fine end lengths,
+the budget of four fine boundary points gives \(H_-+H_+\le2-c\).
+In original units, trapezoid integration and concavity give
+\[
+ A\le12\ell_0+2(\ell_{-1}+\ell_1).
+\]
+The original middle endpoints have fractional parts in
+\(\{0,1/6,1/4,1/3,1/2,2/3,3/4,5/6\}\), by interpolating between fine
+vertex rows \(-2,-1,1,2\). Thus \(\ell_0\le i+2/3+c/6\).
+Equality in the area concavity step makes both chains affine across the
+fine rows \(-1,0,1\).
+
+If \(c=0,H_-+H_+\le1\), the bound is \(12i+9\), and evenness gives
+\(12i+8\). If the sum is 2, all four fine points lie on the ends;
+there is no interior-row vertex and \(A=8\).
+If \(c=2\), both ends are points and the two other fine boundary points
+are the original middle endpoints. No odd-row vertex remains, so
+\(A=4(2i+2)=8i+8\).
+If \(c=1,H_-+H_+=1\), again no odd-row vertex remains.
+The opposite middle endpoint is a nonintegral fine half-integer;
+the middle fine length is at most \(2i+3/2\), giving \(A\le8i+8\).
+
+For \(c=1,H_-+H_+=0\), an additional middle fine boundary point must be
+odd, giving \(A\le12i+6\). Otherwise exactly one fine boundary point
+is on an odd row, and the general bound is \(12i+10\).
+Equality would make the chain through the original middle point affine:
+if it is integer on one odd row, it is integer on the other, requiring
+two fine boundary points there. If neither is integer, it has no vertex
+there or at the middle under this affineness condition. Its end points
+have opposite fine horizontal parity, so their middle average is
+nonintegral, contradicting the original middle point. Equality is impossible,
+and evenness again gives \(A\le12i+8\).
+
+For EO put the fine ends at \(-2,1\), let \(c\) be the middle original
+boundary count and \(H\) the lower fine end length. The lower original
+count is \(2-c\), and \(H\le2-c\).
+If \(c=0\), then \(H=2\), all fine boundary is at the ends, and \(A=6\).
+If \(c=2\), \(H=0\), the lower end is odd, the upper is a point, and
+no vertex remains at row \(-1\); thus \(A=3(2i+2)\).
+For \(c=1,H=1\), the same absence of an odd-row vertex gives
+\(A=2+3H_0\le6i+7\), where \(H_0\le2i+5/3\) is the fine middle length.
+For \(c=1,H=0\), a two-point upper end gives \(A=3H_0+1\le6i+6\).
+If instead the upper end is a point and both middle endpoints are fine,
+the nonoriginal one is odd, giving \(A=3H_0\le6i+3\).
+
+The last EO case has four fine points: an original lower point \(E\),
+an original middle point \(V\), an upper point \(T\) and a point \(W\)
+on row \(-1\). An integer shear and translation put \(E=(0,-2),V=(0,0)\).
+Reflect horizontally so \(T=(a,1)\), \(a>0\).
+Convexity gives \(W=(c',-1)\), \(-a\le c'\le0\).
+The middle fine interval is \([0,2a/3]\). The edge \(ET\) is primitive,
+so \(3\nmid a\) and \(i=\lceil a/3\rceil-1\), whence
+\(a=3i+1\) or \(3i+2\). Shoelace gives
+\(A=2(a-c')\le4a\le12i+8\), finishing every case.
+\end{proof}
+
+For \(i\ge17\), the marginal bounds, Lemma~\ref{lem:lower},
+Lemma~\ref{lem:boundarycap}, Lemma~\ref{lem:joint} and the narrow-width
+analysis put every signature in the body, top or line.
+The generic maximum-area correction is \eqref{eq:maxlower}.
+At \(b=2\), Lemma~\ref{lem:B4} excludes \(B=4\) at the two even areas
+\(12i+10,12i+12\), giving precisely the two corrections in \eqref{eq:bodyB}.
+This proves necessity in Theorem~\ref{thm:signatures} for \(i\ge17\).
+
+\section{Uniform witnesses}\label{sec:witnesses}
+Every polygon in this section is \(P=Q/2\), where \(Q\) is the hull of
+the listed integer points. Collinear or repeated outline points are removed.
+For successive collinear primitive-direction subedges of lengths \(p,q\),
+their boundary gcds add to \(p+q\); hence merging them does not alter the
+boundary computations. A listed original boundary point need not remain
+an extreme vertex. These conventions include all parameter endpoints.
+
+\subsection{The line family}
+For \(4i+4\le A\le8i+8\), set \(n=A-4i-4\),
+\(r=\lfloor n/2\rfloor,s=\lceil n/2\rceil\), and take
+\[
+ Q=\conv\{(0,-1),(s,-1),(2i+2,0),(r,1),(0,1)\}.
+\]
+Since \(0\le r,s\le2i+2\), this is convex and two-dimensional.
+The original middle section is \([0,i+1]\); its endpoints are the two
+boundary points, with \(i\) interior points. Integration gives
+\(A=r+s+4i+4\), and \(i(Q)=2i+1\) gives \(B=A-4i\) by Pick.
+This realizes the entire line family. Its members are distinct by area.
+
+\subsection{Body coordinates and the two outer layers}
+For a body triple put
+\[
+ m=3i-b+6,\quad e=A\bmod2,\quad
+ j=\frac{A-6i-4b+6-e}{2},\quad k=\frac{B-2b-e}{2}.
+\]
+Its conditions become
+\begin{equation}\label{eq:bodycoords}
+ j,k\ge0,\quad k\le j,\quad 2k+e\le m,\quad j+k+e\le m+2.
+\end{equation}
+For \(m\ge2\), the area bound gives \(j\le m+1\) at \(e=0\) and
+\(j\le m\) at \(e=1\). It excludes
+\((e,j,k)=(0,m+1,0)\) except at \(b=2i+4\), and also excludes
+\((0,m,0)\) at \(b=2\). At \(m=0\) only \(j=k=e=0\) occurs;
+at \(m=1\), \(k=0\) and \(j,e\in\{0,1\}\).
+We first realize the layers \(j+k+e=m+2,m+1\).
+
+If \(j+k+e=m+2\), then \(k\ge1\). Put \(f=2k+e-2\) and take
+\begin{equation}\label{eq:outer2}
+ Q=\conv\{(0,1),(f,1),(4i+4-f,-1),(2b-3,-2),(1,-2),(0,-1)\}.
+\end{equation}
+Here \(0\le f\le m-2\).
+Right-chain convexity requires \(2b-3\le6i+6-2f\), which follows
+strictly from this bound. The left chain is convex as well.
+The original bottom has \(b-2\) boundary points; the middle fine
+section is \([0,2i+2]\), giving \(i\) interior and two original boundary
+points. On fine rows \(-2,-1,0,1\), the closed counts are
+\[
+ 2b-3,\quad4i+5-f,\quad2i+3,\quad f+1.
+\]
+Thus \(L_P(2)=6i+2b+6\), \(B=2b+f+2=2b+2k+e\), and
+\[
+ A=2L_P(2)-B-2=12i+2b+10-2k-e
+   =6i+4b-6+2j+e.
+\]
+
+On \(j+k+e=m+1\), first suppose \(b\ge3\), \(2k+e\ge1\).
+With \(f=2k+e-1\), take
+\begin{equation}\label{eq:outer1}
+ Q=\conv\{(0,1),(f,1),(4i+4-f,-1),(2b-5,-2),(0,-2)\}.
+\end{equation}
+Its mixed-parity bottom has \(b-2\) original boundary points, the middle
+has \(i\) interior and two boundary points, and right convexity follows
+from \(f\le m-1\). The four fine row counts are
+\(2b-4,4i+5-f,2i+3,f+1\). Hence \(L_P(2)=6i+2b+5\),
+\(B=2b+f+1\), and Pick gives the target \(A\).
+
+For \(b=2,k\ge1,2k+e\le m-1\), put \(f=2k+e-2\) and take
+\[
+ Q=\conv\{(0,1),(f,1),(4i+3-f,-1),(1,-2),(0,-2)\}.
+\]
+The bottom contains one original boundary point and the middle fine
+section is \([0,(4i+3)/2]\), with \(i\) original interior points and
+one original boundary point. The condition \(f\le3i+1\) gives convexity.
+The fine counts \(2,4i+4-f,2i+2,f+1\) give
+\(L_P(2)=6i+9,\ B=f+6=4+2k+e\), and the required area.
+
+At \(b=2,2k+e=m\), necessarily \(j=k+1\); use
+\begin{equation}\label{eq:b2cap}
+ Q=\conv\{(0,1),(3i,1),(3,-2),(1,-2),(0,-1)\}.
+\end{equation}
+Its middle fine section is \([0,2i+1]\), and the original bottom point
+is \((2,-2)\) in fine coordinates. Thus the counts are \(i,b=2\).
+The edge gcds are \(3i,3,2,1,2\), so \(B=3i+8\);
+shoelace gives \(A=9i+8\), exactly the desired signature.
+
+For \(e=k=0\), the first outer layer is allowed only at \(b=2i+4\).
+The triangle
+\[
+ Q=\conv\{(-1,-2),(4i+3,-2),(1,2)\}
+\]
+has \(i\) original interior points, \(b=2i+4\), \(B=4i+8\),
+\(A=16i+16\). It supplies that exception.
+The remaining first-layer case \(b=2,e=1,k=0\) is covered by the
+high-difference construction below.
+
+\subsection{The bulk}
+It remains to cover \(j+k+e\le m\).
+For \(b\ge3\), if \(e=0\) or \(e=1,j\ge k+1\), take
+\[
+ Q=\conv\{(0,1),(2k,1),(2i+2,0),
+          (i+b-2+j-k,-1),(2b-6+e,-2),(0,-2)\}.
+\]
+The right-middle cross products are \(j+k-m\) and \(e-2(j-k)\),
+both nonpositive; the other corners have the required sign.
+The original middle section is \([0,i+1]\), and the bottom contains
+\(b-2\) original boundary points.
+Edge gcds give \(B=2b+2k+e\); shoelace gives
+\(A=6i+4b-6+2j+e\).
+For \(e=1,j=k\), instead take
+\[
+ Q=\conv\{(0,1),(2k+1,1),(2i+2,0),(2b-6,-2),(0,-2)\}.
+\]
+Its right convexity condition is \(2k+1\le m\), and the original counts
+are unchanged. Here \(B=2b+2k+1\), \(A=6i+4b-5+2k\).
+These formulas include the allowed \(m=0,1\) cases.
+
+For \(b=2,j-k\ge2,2k+e\ge1\), use
+\begin{equation}\label{eq:highdiff}
+ Q=\conv\{(0,1),(2k+e-1,1),(2i+2,0),
+          (i+j-k,-1),(1,-2),(0,0)\}.
+\end{equation}
+It is convex whenever \(j+k+e\le m+1\) and \(3-2(j-k)\le0\),
+covering both its bulk uses and the remaining first-layer case.
+The fine middle endpoints are \(0,2i+2\); the odd bottom vertex
+has no original point. Thus the original counts are \(i,2\).
+Gcds and shoelace give \(B=4+2k+e\), \(A=6i+2+2j+e\).
+
+For \(b=2,e=k=0\), the exclusions give \(0\le j\le3i+3\).
+Put \(h=3i+1,H=0\) at \(j=0\), and \(h=3i+2,H=j-1\) at \(j\ge1\).
+Take
+\begin{equation}\label{eq:B4witness}
+ Q=\conv\{(0,0),(1,H),(2,0),(3,-h)\}.
+\end{equation}
+The condition \(H\le h\) gives convexity, including the collinear endpoint.
+The upper original triangle lies between \(x=0,1\), with apex at \(x=1/2\),
+so it has no original interior point.
+On original row \(y=-r\), the lower triangle has endpoints
+\(3r/h,1+r/h\). Its only possible original interior coordinate is \(x=1\),
+which is inside exactly for \(0<r<h/3\). Hence its count is
+\(\lceil h/3\rceil-1=i\).
+The two original boundary points are the base endpoints. Every nonbase
+outline subedge is primitive, since \(\gcd(3,h)=1\), giving \(B=4\);
+when \(H=0\), the base has fine length 2 and gives the same count.
+The area is \(A=2(h+H)=6i+2+2j\).
+At \(H=h\), the fine point \((2,0)\), corresponding to an original lattice
+point, lies on a merged edge rather than remaining a vertex. Its boundary
+status is unchanged.
+In particular, this body family includes \(A=8i,B=4\), satisfying
+\eqref{eq:collapse}.
+
+Finally let \(b=2,\delta=j-k\in\{0,1\}\), \(t=2k+e\le3i+4\).
+If \(t\le3i+1+\delta\), put \(D=6i+2+2\delta-2t\) and take
+\[
+ Q=\conv\{(0,0),(0,1),(t,1),(D,-2)\}.
+\]
+Here \(D\) is even and nonnegative, giving convexity.
+Its original middle interval is
+\([0,i+(1+\delta)/3]\), so it has \(i\) interior points and one
+boundary point there, and the bottom supplies the other boundary point.
+The right edge is primitive because \(D-t\) is 2 or 1 modulo 3.
+Thus \(B=t+4\), and \(A=3t+D=6i+2+t+2\delta\).
+
+For \(\delta=0,t=3i+4\), use
+\[
+ Q=\conv\{(0,1),(3i-2,1),(7,-2),(3,-2)\}.
+\]
+Its fine middle interval is \([1,2i+1]\); the bottom odd-ended interval
+has two original points. The edge gcds give \(B=3i+8\), and
+\(A=9i+6\).
+For \(t=3i+3\), replace the upper-left corner by \((1,1),(1,0)\).
+For \(t=3i+2\), also replace the upper-right corner by
+\((3i-3,1),(2i+1,0)\).
+Each removed primitive triangle has normalized area 1; replacing its two
+primitive old edges by one reduces \(B\) by 1 as well.
+All removed and new fine points are nonoriginal, so \(i,b\) do not change.
+The top segment stays nonempty at \(i=2\).
+
+For \(\delta=1,t=3i+4\), use \eqref{eq:b2cap}.
+For \(t=3i+3\), shave its upper-right primitive corner, replacing
+\((3i,1)\) by \((3i-1,1),(2i+1,0)\).
+Again \(A,B\) both decrease by 1 without changing \(i,b\).
+Together these families exhaust \eqref{eq:bodycoords}.
+Thus every body signature is realized for every \(i\ge2\).
+The top witnesses were already constructed in Lemma~\ref{lem:top}.
+
+\section{Computational inputs and reproduction}\label{sec:computation}
+The complete finite input is the published classification
+\cite[Classification 6.7 and the following enumeration]{Classification},
+with the released dataset \cite{Dataset}. Its convention is \(k\)-rational,
+meaning \(kP\) is integral, so \(k=2\) includes integral polygons.
+Affine equivalence uses integer translations and unimodular matrices; these
+preserve \(L_P(t)\) for every integer \(t\).
+
+We explain the completeness and count parameters used here.
+Every positive-\(i\) half-integral polygon is contained in a same-\(i\)
+2-maximal polygon. Indeed the minimizing section estimate gives, for every positive \(i\),
+\[
+ i\ge\lfloor(n-1)^2/4\rfloor\ge(n^2-2n)/4
+\]
+when there are \(n\) interior integral columns. Since \(w\le n+1\), this
+implies \(w\le2+\sqrt{4i+1}\). Some integral section has length at most
+\(i+1\). A chord to a longest section, at distance at least \(1/2\) from
+the projection end, gives \(\ell_{\max}\le2w(i+1)\).
+Thus \(\area(P)\le2w^2(i+1)\), a bound depending only on \(i\).
+The integer normalized area increases under proper half-integral containment,
+so a same-\(i\) enlargement chain terminates.
+Successively deleting a fine vertex outside a target subpolygon reaches
+every subpolygon; along a same-\(i\) chain no interior count is lost.
+This is the shaving principle in \cite[Proposition 2.9, Algorithm 1 and
+Remark 2.14]{Classification}.
+
+The maximal catalogue combines strip polygons with Fine interiors.
+For an integral polytope \(K\), its Fine interior is
+\[
+ F(K)=\{x:\langle x,u\rangle\ge\min_{y\in K}\langle y,u\rangle+1
+               \text{ for every }u\in\Z^{\dim K}\setminus\{0\}\}.
+\]
+Its integer points are exactly the interior integer points of \(K\).
+For a half-integral polygon \(P_0\), the lattice pyramid with base
+\(2P_0\) at height \(-1\) and apex \((0,0,1)\) has middle section \(P_0\).
+Its interior integer points lie at height 0 and number \(i(P_0)\).
+Positive interior count forces every lattice width to be at least 2, and the
+height direction has width 2. Its Fine interior lies in the middle plane.
+Consequently its Fine polygon has exactly \(i(P_0)\) total original lattice
+points, including its own boundary.
+
+The source results \cite[Propositions 6.4 and 6.5]{Classification} and
+\cite[Theorems 2.5, 3.2 and 4.1; Remark 3.16]{Fine} put the
+one-dimensional Fine case in the strip branch and reconstruct the
+two-dimensional case from the complete Fine catalogue through 40 total points.
+Hence the maximal catalogue through 40 interior points covers all arrangements,
+not only collinear ones. The same-\(i\) containment argument and monotonicity
+of minimum width justify the five width maxima used in
+Lemma~\ref{lem:neararea}.
+
+For \(i=2,\ldots,16\), version 1.0.0 of the dataset provides the full function
+files \texttt{ehrhart\_iN.h5}; its separate collinear polygon files are not
+used. Each normalized coefficient matrix is stored as an integer
+\(3\times2\) array
+\[
+ \begin{pmatrix}A&A\\4b&2B\\8i+4b-A&8\end{pmatrix}.
+\]
+The decoder verifies all entries, the area group, parity and uniqueness,
+then filters only \(b\ge2\). The resulting exact sets \(S_i\) have empty
+symmetric difference with \(C_i\) at every one of these fifteen \(i\).
+For reference, their cardinalities are
+\[
+\begin{array}{c|rrrrrrrr}
+i&2&3&4&5&6&7&8&9\\ \hline
+|S_i|&408&761&1267&1953&2846&3973&5361&7037\\
+\end{array}
+\]
+\[
+\begin{array}{c|rrrrrrr}
+i&10&11&12&13&14&15&16\\ \hline
+|S_i|&9028&11361&14063&17161&20682&24653&29101 .
+\end{array}
+\]
+The certificate is equality of the full sets, not just these counts.
+Combined with the published completeness assertion this proves finite
+necessity. With the analytic necessity for \(i\ge17\) and the constructions
+in Section~\ref{sec:witnesses}, it completes Theorem~\ref{thm:signatures}.
+
+The companion Python source includes the exact section model and its 21
+rational dual weights, a verifier using integer and rational arithmetic,
+the source-file checksum manifest and coefficient-set comparator, and the
+line/body/top constructors. Polygon counts use integer half-plane
+intersection, shoelace area and edge gcds; small cases are also checked by
+independent bounding-box enumeration. Data retrieval is pinned to version 1.0.0
+and its official checksums. Exact source-set and inequality verification can
+be reproduced without rerunning the polygon classification.
+The companion archive \texttt{half-integral-ehrhart-verification.zip}
+includes a root \texttt{README.md} with fixed-input retrieval,
+full-comparison commands and pinned optional HDF5 dependencies.
+From the archive root, run
+\verb|python3 numerical_case/verify.py --output dual.json|
+for the certificate-only check.
+
+The published catalogue computations are cited external inputs and have not
+been independently reconstructed here. Floating linear optimization was used
+only to discover rational weights; the retained rational inequalities suffice
+for their verification. Finite polygon tests check the implementation, whereas
+the parameter arguments in the preceding sections establish universal
+attainment.
+
+\section{The exact count}\label{sec:count}
+For a body triple recall \(m=3i-b+6\) and the coordinates
+\eqref{eq:bodycoords}. As \(b\) runs from 2 to \(3i+6\), \(m\) runs from
+\(N=3i+4\) to 0. Temporarily remove the generic maximum-area point
+\((e,j,k)=(0,m+1,0)\). For \(m\ge2\), at \(e=0,k=0\) there are \(m+1\)
+choices, and at \(e=0,k\ge1\) there are \(m+3-2k\), for
+\(1\le k\le\lfloor m/2\rfloor\).
+At \(e=1,k=0\) there are \(m+1\) choices, and at \(e=1,k\ge1\) there
+are \(m+2-2k\), for \(1\le k\le\lfloor(m-1)/2\rfloor\).
+Summing gives \(m(m+7)/2\) for both parities.
+The \(m=1\) count is 4 and \(m=0\) count is 1.
+Reinstating the exceptional point at \(b=2i+4\) adds one, while the
+additional \(b=2,j=m,k=0,e=0\) exclusion removes one. Therefore
+\[
+ \#\text{body}
+ =1+\sum_{m=1}^{N}\frac{m(m+7)}2
+ =1+\frac{N(N+1)(N+11)}6
+ =\frac92i^3+36i^2+\frac{155}{2}i+51.
+\]
+The top count is
+\((2i+1)+(2i-1)+(2i-3)=6i-3\), and the line count is \(4i+5\).
+These sets are disjoint: the body has \(A+B\le12i+4b+10\),
+the top has \(A+B=12i+4b+12\), and their respective \(A-B\) values
+are at least \(6i+2b-6>4i\) and \(12i+4-2d>4i\),
+whereas the line has \(A-B=4i\).
+
+\begin{proof}[Proof of Theorem~\ref{thm:count}]
+Theorem~\ref{thm:signatures} identifies the attained signatures with \(C_i\).
+The constituent formula \eqref{eq:coeff} identifies signatures with entire
+functions at fixed \(i\). Adding the three disjoint counts gives
+\[
+ \Ehr(i)=\frac92i^3+36i^2+\frac{175}{2}i+53
+        =\frac{9i^3+72i^2+175i+106}{2}.
+\]
+All parameter ranges include \(i=2\), integral polygons and period collapse.
+\end{proof}
+
+\paragraph{AI-use disclosure.}
+OpenAI Codex assisted with proof development, exact verification code and
+manuscript drafting. The cited computational classifications remain external
+dependencies. The mathematical arguments and accompanying verification inputs
+are supplied for independent checking.
+
+\begin{thebibliography}{9}
+\bibitem{Scott}
+P.~R. Scott, \emph{On convex lattice polygons},
+Bulletin of the Australian Mathematical Society \textbf{15} (1976), 395--399.
+\href{https://doi.org/10.1017/S0004972700022826}{doi:10.1017/S0004972700022826}.
+\bibitem{Collapse}
+M. Bohnert, \emph{Quasi-period collapse in half-integral polygons},
+arXiv:2405.13404v2, 2 July 2025.
+\href{https://arxiv.org/abs/2405.13404v2}{arXiv:2405.13404v2}.
+\bibitem{Inequalities}
+M. Bohnert and J. Springer,
+\emph{Generalizations of Scott's inequality and Pick's formula to rational polygons},
+arXiv:2411.11187v1, 17 November 2024.
+\href{https://arxiv.org/abs/2411.11187v1}{arXiv:2411.11187v1}.
+\bibitem{Classification}
+M. Bohnert and J. Springer,
+\emph{Classifying Rational Polygons with Small Denominator and Few Interior Lattice Points},
+Discrete \& Computational Geometry \textbf{76} (2026), 1238--1265.
+\href{https://doi.org/10.1007/s00454-026-00822-0}{doi:10.1007/s00454-026-00822-0}.
+\bibitem{AreaBounds}
+M. Bohnert,
+\emph{Area bounds for planar convex bodies containing a fixed number of interior integral points},
+arXiv:2305.11485v2, 2 July 2025.
+\href{https://arxiv.org/abs/2305.11485v2}{arXiv:2305.11485v2}.
+\bibitem{Fine}
+M. Bohnert, \emph{Lattice 3-polytopes of lattice width 2 and corresponding toric hypersurfaces},
+arXiv:2412.17545v2, 3 July 2025.
+\href{https://arxiv.org/abs/2412.17545v2}{arXiv:2412.17545v2}.
+\bibitem{HHK}
+G. Hamm, J. Hofscheier and A. Kasprzyk,
+\emph{Classification and Ehrhart theory of denominator 2 polygons},
+arXiv:2411.19183v1, 28 November 2024.
+\href{https://arxiv.org/abs/2411.19183v1}{arXiv:2411.19183v1}.
+\bibitem{Dataset}
+J. Springer and M. Bohnert,
+\emph{Half-integral polygons with few interior lattice points},
+dataset, version 1.0.0, 14 October 2024.
+\href{https://doi.org/10.5281/zenodo.13928298}{doi:10.5281/zenodo.13928298}.
+\end{thebibliography}
+\end{document}

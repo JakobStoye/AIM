@@ -1,0 +1,130 @@
+{
+  "source": "Springer and Bohnert, Half-integral polygons with few interior lattice points",
+  "doi": "10.5281/zenodo.13928298",
+  "version": "1.0.0",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "files": [
+    {
+      "i": 2,
+      "filename": "ehrhart_i2.h5",
+      "bytes": 172845,
+      "sha256": "2a16aca4ca428c06d5ada64960ac7a3b5e65c6df8225dc853be8396adc06d472",
+      "md5": "99d4f886b4e7830555e1f92979ac916f",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i2.h5?download=1"
+    },
+    {
+      "i": 3,
+      "filename": "ehrhart_i3.h5",
+      "bytes": 223780,
+      "sha256": "124a9a83defdf4172b55a7cc03a0ea20a589aa8c219e73eb0bc5d456021e7739",
+      "md5": "f4ee75428b780e24c8bc9f0d2f241df3",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i3.h5?download=1"
+    },
+    {
+      "i": 4,
+      "filename": "ehrhart_i4.h5",
+      "bytes": 276100,
+      "sha256": "70f53436145176edbb8f26e9cdb9cb1aa87c7b9996027cf27bf36f9f3b31935e",
+      "md5": "91a7835f882aac4a2ec621ee8973742c",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i4.h5?download=1"
+    },
+    {
+      "i": 5,
+      "filename": "ehrhart_i5.h5",
+      "bytes": 328438,
+      "sha256": "b6cf9c24dc18c7a32a49c8f9b6326ae95ea72101d65ed8969d76a3672cff99ed",
+      "md5": "6eb6b86694302d6cf3dafb033a81f70c",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i5.h5?download=1"
+    },
+    {
+      "i": 6,
+      "filename": "ehrhart_i6.h5",
+      "bytes": 383228,
+      "sha256": "b0fa1b0728eab08a0183e43d9d2d89f6d0b4e95e30f42638bcbee43b88746b37",
+      "md5": "dba0b702a763d5734dadd4852c664b4d",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i6.h5?download=1"
+    },
+    {
+      "i": 7,
+      "filename": "ehrhart_i7.h5",
+      "bytes": 438692,
+      "sha256": "392f5e8254e9fe9a606b1218fc1941ebc62357c8ae08d87380085d91a62922ca",
+      "md5": "6c71130e25e64e04d8660fcf76e942a5",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i7.h5?download=1"
+    },
+    {
+      "i": 8,
+      "filename": "ehrhart_i8.h5",
+      "bytes": 497357,
+      "sha256": "4ef227fbd1018bc798f3c2a4c69f64006913242b714b040cf5b14a3f64481c67",
+      "md5": "bd0fb26b6c50885a894875197a5fd202",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i8.h5?download=1"
+    },
+    {
+      "i": 9,
+      "filename": "ehrhart_i9.h5",
+      "bytes": 557976,
+      "sha256": "7ef000487adbe73936ced0e7323ddd23f8a7049e779550f1ab39f00c06691b9a",
+      "md5": "db84d99cf5e73f74ba3d16442cd812bb",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i9.h5?download=1"
+    },
+    {
+      "i": 10,
+      "filename": "ehrhart_i10.h5",
+      "bytes": 620228,
+      "sha256": "b3df23dafe6f7fbf024fe38d50ae72ee4c36048fbf43efaca043bf9955f2c128",
+      "md5": "1cc32741f4a3f5cb3932d50bff07f57e",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i10.h5?download=1"
+    },
+    {
+      "i": 11,
+      "filename": "ehrhart_i11.h5",
+      "bytes": 683964,
+      "sha256": "5fe6c797833acfd216428565304010e8240d0184983d1e6d273a4c2bd6e90ab7",
+      "md5": "84b8bedb8f840a1c98785c5445f19ff2",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i11.h5?download=1"
+    },
+    {
+      "i": 12,
+      "filename": "ehrhart_i12.h5",
+      "bytes": 751492,
+      "sha256": "1a1cab29215124e09e07ea5580ddb61247d0b963777a51c65f060d1164a286f1",
+      "md5": "54b858cc48f27de62a4e8606cdefae69",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i12.h5?download=1"
+    },
+    {
+      "i": 13,
+      "filename": "ehrhart_i13.h5",
+      "bytes": 821964,
+      "sha256": "0c379e7657e4fe71a8289f518229cc704992dc702b5ecf60b80da0d7e763f327",
+      "md5": "4c0be652419f3bd43c946464871f5ccf",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i13.h5?download=1"
+    },
+    {
+      "i": 14,
+      "filename": "ehrhart_i14.h5",
+      "bytes": 895414,
+      "sha256": "b09627af2bfd50bb4689dc0d9db5b9525f18883a4cf6b91b0d493ad7f53b1637",
+      "md5": "a933c233ef65bce9134597a7c8e56e12",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i14.h5?download=1"
+    },
+    {
+      "i": 15,
+      "filename": "ehrhart_i15.h5",
+      "bytes": 973732,
+      "sha256": "6b5b540dceb969ee620179dfb4583c9fd922a94a2f6d64f294b083a640253793",
+      "md5": "d5c34a827d9c6f048373827513ca8e5a",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i15.h5?download=1"
+    },
+    {
+      "i": 16,
+      "filename": "ehrhart_i16.h5",
+      "bytes": 1054049,
+      "sha256": "9fbb11a50aa803b7a9b571b941748bb8da36968bebe376c05882fc3cb54bd70e",
+      "md5": "3027d9f0eebf0e98061b0dde9c08214a",
+      "url": "https://zenodo.org/records/13928298/files/ehrhart_i16.h5?download=1"
+    }
+  ]
+}

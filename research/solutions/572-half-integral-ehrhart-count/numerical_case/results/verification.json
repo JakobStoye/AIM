@@ -1,0 +1,257 @@
+{
+  "dual": {
+    "status": "EXACT_RATIONAL_INEQUALITIES_VERIFIED",
+    "cases": [
+      {
+        "pattern": "EE",
+        "n": 2,
+        "bound": "-4"
+      },
+      {
+        "pattern": "EE",
+        "n": 3,
+        "bound": "-17/3"
+      },
+      {
+        "pattern": "EE",
+        "n": 4,
+        "bound": "-9/2"
+      },
+      {
+        "pattern": "EE",
+        "n": 5,
+        "bound": "-11/5"
+      },
+      {
+        "pattern": "EE",
+        "n": 6,
+        "bound": "2/3"
+      },
+      {
+        "pattern": "EE",
+        "n": 7,
+        "bound": "7/3"
+      },
+      {
+        "pattern": "EE",
+        "n": 8,
+        "bound": "9/2"
+      },
+      {
+        "pattern": "EO",
+        "n": 2,
+        "bound": "-5"
+      },
+      {
+        "pattern": "EO",
+        "n": 3,
+        "bound": "-20/3"
+      },
+      {
+        "pattern": "EO",
+        "n": 4,
+        "bound": "-11/2"
+      },
+      {
+        "pattern": "EO",
+        "n": 5,
+        "bound": "-16/5"
+      },
+      {
+        "pattern": "EO",
+        "n": 6,
+        "bound": "-1/3"
+      },
+      {
+        "pattern": "EO",
+        "n": 7,
+        "bound": "8/3"
+      },
+      {
+        "pattern": "EO",
+        "n": 8,
+        "bound": "94/21"
+      },
+      {
+        "pattern": "OO",
+        "n": 2,
+        "bound": "-6"
+      },
+      {
+        "pattern": "OO",
+        "n": 3,
+        "bound": "-23/3"
+      },
+      {
+        "pattern": "OO",
+        "n": 4,
+        "bound": "-13/2"
+      },
+      {
+        "pattern": "OO",
+        "n": 5,
+        "bound": "-21/5"
+      },
+      {
+        "pattern": "OO",
+        "n": 6,
+        "bound": "-4/3"
+      },
+      {
+        "pattern": "OO",
+        "n": 7,
+        "bound": "5/3"
+      },
+      {
+        "pattern": "OO",
+        "n": 8,
+        "bound": "7/2"
+      }
+    ]
+  },
+  "source_sets": {
+    "status": "EXACT_FIXED_SOURCE_SET_EQUALITY_VERIFIED",
+    "version": "1.0.0",
+    "cases": [
+      {
+        "i": 2,
+        "full_functions": 586,
+        "b_ge_2": 408,
+        "C_i": 408,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "2a16aca4ca428c06d5ada64960ac7a3b5e65c6df8225dc853be8396adc06d472"
+      },
+      {
+        "i": 3,
+        "full_functions": 1060,
+        "b_ge_2": 761,
+        "C_i": 761,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "124a9a83defdf4172b55a7cc03a0ea20a589aa8c219e73eb0bc5d456021e7739"
+      },
+      {
+        "i": 4,
+        "full_functions": 1701,
+        "b_ge_2": 1267,
+        "C_i": 1267,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "70f53436145176edbb8f26e9cdb9cb1aa87c7b9996027cf27bf36f9f3b31935e"
+      },
+      {
+        "i": 5,
+        "full_functions": 2525,
+        "b_ge_2": 1953,
+        "C_i": 1953,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "b6cf9c24dc18c7a32a49c8f9b6326ae95ea72101d65ed8969d76a3672cff99ed"
+      },
+      {
+        "i": 6,
+        "full_functions": 3577,
+        "b_ge_2": 2846,
+        "C_i": 2846,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "b0fa1b0728eab08a0183e43d9d2d89f6d0b4e95e30f42638bcbee43b88746b37"
+      },
+      {
+        "i": 7,
+        "full_functions": 4875,
+        "b_ge_2": 3973,
+        "C_i": 3973,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "392f5e8254e9fe9a606b1218fc1941ebc62357c8ae08d87380085d91a62922ca"
+      },
+      {
+        "i": 8,
+        "full_functions": 6459,
+        "b_ge_2": 5361,
+        "C_i": 5361,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "4ef227fbd1018bc798f3c2a4c69f64006913242b714b040cf5b14a3f64481c67"
+      },
+      {
+        "i": 9,
+        "full_functions": 8343,
+        "b_ge_2": 7037,
+        "C_i": 7037,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "7ef000487adbe73936ced0e7323ddd23f8a7049e779550f1ab39f00c06691b9a"
+      },
+      {
+        "i": 10,
+        "full_functions": 10565,
+        "b_ge_2": 9028,
+        "C_i": 9028,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "b3df23dafe6f7fbf024fe38d50ae72ee4c36048fbf43efaca043bf9955f2c128"
+      },
+      {
+        "i": 11,
+        "full_functions": 13138,
+        "b_ge_2": 11361,
+        "C_i": 11361,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "5fe6c797833acfd216428565304010e8240d0184983d1e6d273a4c2bd6e90ab7"
+      },
+      {
+        "i": 12,
+        "full_functions": 16111,
+        "b_ge_2": 14063,
+        "C_i": 14063,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "1a1cab29215124e09e07ea5580ddb61247d0b963777a51c65f060d1164a286f1"
+      },
+      {
+        "i": 13,
+        "full_functions": 19488,
+        "b_ge_2": 17161,
+        "C_i": 17161,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "0c379e7657e4fe71a8289f518229cc704992dc702b5ecf60b80da0d7e763f327"
+      },
+      {
+        "i": 14,
+        "full_functions": 23307,
+        "b_ge_2": 20682,
+        "C_i": 20682,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "b09627af2bfd50bb4689dc0d9db5b9525f18883a4cf6b91b0d493ad7f53b1637"
+      },
+      {
+        "i": 15,
+        "full_functions": 27596,
+        "b_ge_2": 24653,
+        "C_i": 24653,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "6b5b540dceb969ee620179dfb4583c9fd922a94a2f6d64f294b083a640253793"
+      },
+      {
+        "i": 16,
+        "full_functions": 32381,
+        "b_ge_2": 29101,
+        "C_i": 29101,
+        "missing": 0,
+        "extra": 0,
+        "input_sha256": "9fbb11a50aa803b7a9b571b941748bb8da36968bebe376c05882fc3cb54bd70e"
+      }
+    ],
+    "trust": "Relative to the cited published catalogue completeness; no independent polygon classification"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "integer_arithmetic": "Python integers and fractions.Fraction",
+  "assertions_disabled": false
+}

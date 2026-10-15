@@ -1,0 +1,11 @@
+/rigorous_proof/
+/submission/private/
+/handoffs/
+/.analysis-venv/
+/.venv/
+__pycache__/
+*.pyc
+/numerical_case/raw/
+/paper/build/
+/paper/rendered/
+/paper/review/
