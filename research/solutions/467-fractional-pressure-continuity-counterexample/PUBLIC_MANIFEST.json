@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "problem_id": "467",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, materials, reproduction and factual AI-use disclosure",
+      "bytes": 2921,
+      "sha256": "e8eddd6da1b513e719e9fa167abbd9eb69ea7e7b645299f2fc9db1e6342500e9"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause comparison with the immutable original target",
+      "bytes": 3615,
+      "sha256": "76df7d96be95bcdf152344d6010c81e0115c2ebab2fdffc95693b080bfd4990f"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Self-contained editable manuscript source",
+      "bytes": 18848,
+      "sha256": "13a01b021873ee7cc2fc6bec7656abd229d1103aaeb816ee7304ec288240f657"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Complete rendered manuscript",
+      "bytes": 352716,
+      "sha256": "50595a3c80a3f30c3ba1ccd2b89abf5e71de5f9a7150eb3df128439cb6967857"
+    }
+  ],
+  "integrity_note": "This manifest covers the four substantive files. SHA256SUMS covers those files and this manifest; SHA256SUMS excludes itself."
+}

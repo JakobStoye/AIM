@@ -1,0 +1,321 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Is}{I_s}
+
+\title{Failure of joint continuity for porous medium flow\\with fractional potential pressure}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consider $u_t=\nabla\cdot(u^{m-1}\nabla(-\Delta)^{-s}u)$ on $\R^N$. For $N\ge2$, $m>2$ and $1/2<s<1$, we prove that a global bounded energy weak solution with nonzero compactly supported bounded integrable data cannot have a jointly continuous representative at all positive times. The pressure gradient is bounded, and the transport velocity vanishes with the density. A weak moving-halfspace estimate shows that joint continuity would confine the support to a fixed bounded set after any positive time. A Fourier support estimate then gives a positive lower bound for the $L^2$ dissipation, contradicting its finite time integral. Existing global weak solutions supply a counterexample in the full energy class, for example when $N=2$, $m=3$, $s=3/4$ and $u_0=\mathbf1_{B_1}$.
+\end{abstract}
+
+
+\section{The equation and the continuity question}
+Consider the nonlocal pressure equation
+\begin{equation}\label{eq:pde}
+ \partial_tu=\nabla\cdot\bigl(u^{m-1}\nabla p\bigr),
+ \qquad p=(-\Delta)^{-s}u
+ \quad\text{in }\R^N\times(0,\infty).
+\end{equation}
+The density $u$ is nonnegative. The pressure averages the density over space, while the factor $u^{m-1}$ makes the flux degenerate at vacuum. Throughout,
+\[
+ N\ge2,\qquad m>2,\qquad \tfrac12<s<1.
+\]
+We use the unitary Fourier transform
+\[
+ \widehat f(\xi)=(2\pi)^{-N/2}\int_{\R^N}e^{-ix\cdot\xi}f(x)\dd x,
+ \qquad \widehat{I_\beta f}(\xi)=|\xi|^{-\beta}\widehat f(\xi).
+\]
+Thus $p=I_{2s}u$. Write $M=\int_{\R^N}u_0>0$ and $H=\|u_0\|_\infty$.
+
+\begin{definition}\label{def:class}
+Let $u_0\ge0$ be nonzero, bounded, integrable and compactly supported. A bounded energy weak solution is a nonnegative distributional solution of \eqref{eq:pde}, with locally integrable flux, such that
+\[
+ u\in C([0,\infty);L^1(\R^N)_{\mathrm{weak}}),\qquad
+ u(0)=u_0,\qquad \int_{\R^N}u(t)=M,\qquad
+ \|u(t)\|_\infty\le H,
+\]
+and, for every $t>0$,
+\begin{equation}\label{eq:pressure-energy}
+ \frac12\|I_su(t)\|_2^2+
+ \int_0^t\!\int_{\R^N}u^{m-1}|\nabla I_{2s}u|^2\dd x\dd r
+ \le\frac12\|I_su_0\|_2^2.
+\end{equation}
+It also satisfies, for every $q>1$ and $t>0$,
+\begin{equation}\label{eq:lq}
+ \|u(t)\|_q^q+
+ \frac{4q(q-1)}{(m+q-1)^2}
+ \int_0^t\bigl\|(-\Delta)^{(1-s)/2}
+ u(r)^{(m+q-1)/2}\bigr\|_2^2\dd r
+ \le\|u_0\|_q^q.
+\end{equation}
+Here weak $L^1$ continuity means continuity of the pairing with every $g\in L^\infty(\R^N)$.
+\end{definition}
+
+Global weak solutions with these energy estimates are constructed by Stan, del Teso and V\'azquez \cite[Definition 2.1 and Theorem 2.2]{STVexist}; their survey gives the global statement and the extension of the estimates to the initial time for bounded integrable data \cite[Theorem 5.1 and Remark 4]{STVsurvey}. The time representatives needed in Definition~\ref{def:class} are described in Appendix~\ref{app:traces}.
+For $m=2$, Caffarelli, Soria and V\'azquez establish H\"older regularity for the energy solutions they consider, in particular when $1/2<s<1$ \cite[Theorem 1.2]{CSV}. The survey \cite[Section 7]{STVsurvey} asks about continuity beyond $m=2$.
+
+\begin{theorem}\label{thm:main}
+Let $N\ge2$, $m>2$ and $1/2<s<1$. For every nonzero, nonnegative, compactly supported $u_0\in L^1(\R^N)\cap L^\infty(\R^N)$, no global solution in Definition~\ref{def:class} has a representative continuous on $\R^N\times(0,\infty)$.
+\end{theorem}
+
+The pressure gradient is bounded in this range of $s$. In conservative form the equation has velocity $-u^{m-2}\nabla p$, which tends to zero with $u$. Joint continuity would then prevent the support from expanding after any positive time. On the other hand, positive mass confined to a bounded set gives a positive lower bound for the dissipation in \eqref{eq:lq}. The accumulated dissipation cannot remain finite for all time.
+
+\begin{corollary}\label{cor:witness}
+For $N=2$, $m=3$, $s=3/4$ and $u_0=\mathbf1_{B_1(0)}$, there exists a global bounded energy weak solution with no representative continuous on $\R^2\times(0,\infty)$.
+\end{corollary}
+
+This gives a negative answer to the universal continuity question over $0<s<1$. The argument does not address $0<s\le1/2$, nor does it identify the location or type of a discontinuity.
+
+\section{Transport of the support}
+Put
+\[
+ a=m-2>0,\qquad F=-u^{m-1}\nabla I_{2s}u.
+\]
+Then \eqref{eq:pde} is $\partial_tu+\nabla\cdot F=0$. We first record the weak transport estimate that will replace any assumption about a smooth free boundary.
+
+\begin{lemma}\label{lem:halfspace}
+Let $w\ge0$ and $G$ satisfy $\partial_tw+\nabla\cdot G=0$ on a slab $[t_0,t_1]$. Assume $w,G\in L^1(\R^N\times(t_0,t_1))$, $\int w(t)\le M$ at every time, and that pairings with compactly supported smooth spatial tests are continuous and give the endpoint traces in the weak equation. Let $e$ be a unit vector, $L\in\R$ and $c\ge0$. If
+\[
+ w(t_0)=0\text{ a.e. on }\{x\cdot e>L\},\qquad
+ G\cdot e\le cw\text{ a.e. on }\{x\cdot e>L\}\times(t_0,t_1),
+\]
+then, for every $t\in[t_0,t_1]$,
+\[
+ w(t)=0\quad\text{a.e. on }\{x\cdot e>L+c(t-t_0)\}.
+\]
+\end{lemma}
+
+\begin{proof}
+Choose a bounded, smooth, nondecreasing function $\theta$ which vanishes on $(-\infty,0]$, is positive on $(0,\infty)$, and has bounded derivative. One may take $\theta(z)=e^{-1/z}$ for $z>0$. Set
+\[
+ \phi(x,t)=\theta\bigl(x\cdot e-L-c(t-t_0)\bigr).
+\]
+Let $0\le\chi_R\le1$ be a smooth cutoff, equal to one on $B_R$, zero outside $B_{2R}$, with $|\nabla\chi_R|\le C/R$. Testing the weak equation with $\chi_R\phi$ and using smooth time cutoffs gives an identity between the prescribed endpoints. The term containing $\nabla\chi_R$ is bounded in absolute value by
+\[
+ \frac{C}{R}\int_{t_0}^t\!\int_{\R^N}|G|\dd x\dd r\longrightarrow0.
+\]
+Dominated convergence in the other terms and the vanishing initial term give
+\begin{equation}\label{eq:halfspace-test}
+ \int_{\R^N}\phi(x,t)w(x,t)\dd x
+ =\int_{t_0}^t\!\int_{\R^N}
+ \theta'\bigl(x\cdot e-L-c(r-t_0)\bigr)
+ (G\cdot e-cw)\dd x\dd r\le0.
+\end{equation}
+Indeed, wherever $\theta'$ is nonzero, $x\cdot e>L+c(r-t_0)\ge L$. The left side is nonnegative and $\phi$ is positive on the asserted exterior halfspace, proving the claim.
+\end{proof}
+
+\begin{lemma}\label{lem:gradient}
+There is a finite constant $B=B(N,s,H,M)$ such that every $0\le w\le H$ with $\int w\le M$ satisfies
+\begin{equation}\label{eq:gradient}
+ \|\nabla I_{2s}w\|_\infty
+ \le C_{N,s}\left(\frac{H}{2s-1}+M\right)=:B.
+\end{equation}
+In particular, the conservative flux of a solution in Definition~\ref{def:class} satisfies
+\begin{equation}\label{eq:flux}
+ |F|\le Bu^{1+a}\le Vu,\qquad V=BH^a,
+ \qquad F\in L^1(\R^N\times(0,T))\quad(T<\infty).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $N>2s$, the Riesz potential $I_{2s}$ is convolution with
+\[
+ k_s(z)=\frac{\Gamma(N/2-s)}{4^s\pi^{N/2}\Gamma(s)}|z|^{2s-N}.
+\]
+Its distributional gradient is the locally integrable function $\nabla k_s$, with
+$|\nabla k_s(z)|\le C_{N,s}|z|^{-N-1+2s}$. To check the distributional derivative, integrate by parts outside $B_\varepsilon$; the inner boundary term is $O(\varepsilon^{2s-1})$ and tends to zero. Splitting the absolutely convergent convolution at $|z|=1$ yields
+\[
+ |(\nabla k_s*w)(x)|
+ \le C_{N,s}\left(H\int_0^1\rho^{2s-2}\dd\rho+M\right).
+\]
+This proves \eqref{eq:gradient}; distributional convolution identifies it with $\nabla I_{2s}w$. The remaining assertions follow from $u\le H$ and $\int u=M$, since $\int_0^T\!\int|F|\le VMT$.
+\end{proof}
+
+Choose $R_0>0$ with $\supp u_0\subset[-R_0,R_0]^N$. Applying Lemma~\ref{lem:halfspace} with $c=V$ in the $2N$ signed coordinate directions gives
+\begin{equation}\label{eq:finite-propagation}
+ \supp u(t)\subset[-R_0-Vt,R_0+Vt]^N\qquad(t\ge0).
+\end{equation}
+Here supports are essential supports of the time slices. For a continuous slice they agree with the closure of its positive set.
+
+\begin{proposition}\label{prop:confinement}
+If a global solution in Definition~\ref{def:class} has a jointly continuous representative, then, for each $\tau>0$, there is a fixed bounded box $Q_\tau$ containing its support at every $t\ge\tau$.
+\end{proposition}
+
+\begin{proof}
+Denote the continuous representative by $U$. Continuity and the almost everywhere bounds give $0\le U\le H$ everywhere. For each $\psi\in C_c^\infty(\R^N)$, the pairings with $U$ and with the stipulated time slices of $u$ are both continuous in $t$ and agree almost everywhere. They therefore agree at every $t>0$, so $U(t)=u(t)$ almost everywhere in space. We may use $U$ as the representative below.
+
+Fix $0<\tau<T$. By \eqref{eq:finite-propagation}, all supports on this slab lie in a common compact box. Uniform continuity there, and vanishing outside that box, imply that for every $\varepsilon>0$ there is $\delta>0$ such that
+\begin{equation}\label{eq:uniform-time}
+ |U(x,t)-U(x,t')|\le\varepsilon
+ \quad\text{for all }x\in\R^N,\ t,t'\in[\tau,T],\ |t-t'|\le\delta.
+\end{equation}
+For a signed coordinate direction $e$ let
+\[
+ R_e(t)=\sup\{x\cdot e:U(x,t)>0\}.
+\]
+This is a finite real number, since the mass is positive. Spatial continuity implies $U(x,t)=0$ whenever $x\cdot e\ge R_e(t)$: a positive value on the bounding plane would give positive values beyond it.
+
+If $t_0\in[\tau,T]$, then \eqref{eq:uniform-time} gives $U(x,t)\le\varepsilon$ throughout the entire region $x\cdot e>R_e(t_0)$ whenever $t_0\le t\le\min(t_0+\delta,T)$. Thus \eqref{eq:flux} implies there
+\[
+ F\cdot e\le B\varepsilon^a U.
+\]
+Lemma~\ref{lem:halfspace}, with $c=B\varepsilon^a$, yields
+\[
+ R_e(t)\le R_e(t_0)+B\varepsilon^a(t-t_0)
+ \qquad(0\le t-t_0\le\delta).
+\]
+Partition $[\tau,T]$ into finitely many intervals of length at most $\delta$ and sum these inequalities. We obtain
+\[
+ R_e(T)\le R_e(\tau)+B\varepsilon^a(T-\tau).
+\]
+Letting $\varepsilon\downarrow0$, using $a>0$, gives $R_e(T)\le R_e(\tau)$. The argument applies for each fixed finite $T$; it does not require a modulus uniform as $T\to\infty$. Consequently every later support lies in
+\[
+ Q_\tau=\bigcap_{e\in\{\pm e_1,\ldots,\pm e_N\}}
+ \{x:x\cdot e\le R_e(\tau)\},
+\]
+where $e_1,\ldots,e_N$ are the coordinate unit vectors.
+\end{proof}
+
+\section{Dissipation in a bounded set}
+We give a Fourier proof of the support estimate used in the contradiction. It requires no boundary condition on a bounded domain.
+
+\begin{lemma}\label{lem:coercivity}
+Let $r>0$ and let $E\subset\R^N$ have finite positive volume $W$. If $f\in L^2(\R^N)$ is supported in $E$, then
+\begin{equation}\label{eq:coercivity}
+ \|(-\Delta)^{r/2}f\|_2^2\ge\lambda_{r,W}\|f\|_2^2,
+ \qquad
+ \lambda_{r,W}=\frac12\left(\frac{(2\pi)^N}{2\omega_NW}\right)^{2r/N},
+\end{equation}
+where $\omega_N=|B_1(0)|$; the left side may be infinite.
+\end{lemma}
+
+\begin{proof}
+Cauchy--Schwarz gives $\|f\|_1\le W^{1/2}\|f\|_2$, hence
+\[
+ |\widehat f(\xi)|\le(2\pi)^{-N/2}W^{1/2}\|f\|_2.
+\]
+Set $\rho=((2\pi)^N/(2\omega_NW))^{1/N}$. Then
+\[
+ \int_{|\xi|\le\rho}|\widehat f(\xi)|^2\dd\xi
+ \le(2\pi)^{-N}W\omega_N\rho^N\|f\|_2^2
+ =\tfrac12\|f\|_2^2.
+\]
+Plancherel gives at least half the squared norm outside this ball. Multiplying by $|\xi|^{2r}\ge\rho^{2r}$ there proves \eqref{eq:coercivity}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose a jointly continuous representative exists. Fix $\tau>0$ and choose $R>0$ with $Q_\tau\subset B_R$. For almost every $t\ge\tau$, the $q=2$ inequality in \eqref{eq:lq} makes the seminorm of
+\[
+ f_t=u(t)^{(m+1)/2},\qquad r=1-s>0,
+\]
+finite. Moreover $f_t\in L^2$, since $\int u^{m+1}\le H^mM$, and $f_t$ is supported in $B_R$. H\"older's inequality gives
+\[
+ M\le\left(\int_{B_R}u(t)^{m+1}\right)^{1/(m+1)}|B_R|^{m/(m+1)}.
+\]
+Lemma~\ref{lem:coercivity} therefore implies
+\begin{equation}\label{eq:positive-dissipation}
+ \bigl\|(-\Delta)^{(1-s)/2}u(t)^{(m+1)/2}\bigr\|_2^2
+ \ge\lambda_{1-s,|B_R|}\frac{M^{m+1}}{|B_R|^m}=:d>0
+\end{equation}
+for almost every $t\ge\tau$. All quantities defining $d$ are fixed. But \eqref{eq:lq} with $q=2$ gives, for every $T>\tau$,
+\[
+ \frac8{(m+1)^2}\int_\tau^T
+ \bigl\|(-\Delta)^{(1-s)/2}u(t)^{(m+1)/2}\bigr\|_2^2\dd t
+ \le\|u_0\|_2^2.
+\]
+The left side is at least $8d(T-\tau)/(m+1)^2$, a contradiction as $T\to\infty$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:witness}]
+The prescribed datum has $M=\omega_2$ and $H=1$. Its initial pressure energy is finite. More generally, for every bounded integrable datum in the stated range,
+\begin{align*}
+ \|I_su_0\|_2^2
+ &=\int_{\R^N}|\xi|^{-2s}|\widehat u_0(\xi)|^2\dd\xi\\
+ &\le(2\pi)^{-N}M^2\frac{N\omega_N}{N-2s}+\|u_0\|_2^2<\infty.
+\end{align*}
+For $|\xi|\le1$ use $|\widehat u_0|\le(2\pi)^{-N/2}M$; for $|\xi|>1$ use Plancherel. The denominator is positive because $N>2s$.
+The global existence result \cite[Theorem 5.1 and Remark 4]{STVsurvey}, together with Appendix~\ref{app:traces}, supplies a solution in Definition~\ref{def:class}. Theorem~\ref{thm:main} applies to that same solution.
+\end{proof}
+
+\appendix
+\section{Time slices of the constructed solution}\label{app:traces}
+For completeness we verify that the global solution furnished by the cited existence theorem can be given the weak $L^1$ time continuity and every-time inequalities required in Definition~\ref{def:class}. Only the range $N\ge2$, $m>2$, $1/2<s<1$ and compactly supported bounded data is needed here.
+
+Start with the global solution of \cite[Theorem 5.1 and Remark 4]{STVsurvey}, initially at almost every time. Its bounds give $\|u(t)\|_2\le\sqrt{HM}$. Lemma~\ref{lem:gradient} gives a globally integrable conservative flux on finite slabs, and for every $\psi\in C_c^\infty(\R^N)$ the weak equation yields
+\begin{equation}\label{eq:trace-pairing}
+ \frac{\mathrm d}{\mathrm dt}\int_{\R^N}u(t)\psi
+ =\int_{\R^N}F(t)\cdot\nabla\psi,
+ \qquad \left|\int F(t)\cdot\nabla\psi\right|
+ \le VM\|\nabla\psi\|_\infty.
+\end{equation}
+Each pairing thus has an absolutely continuous representative $A_\psi(t)$, including $A_\psi(0)=\int u_0\psi$.
+
+Fix a countable family of smooth compact tests whose rational span is dense in $L^2$. Choose a common full-measure set of ordinary times for their pairings and the bounds on $u$. At any prescribed $t\ge0$, choose ordinary times $t_j\to t$. A weakly convergent subsequence in $L^2$ has a limit $w$ with
+$\int w\psi=A_\psi(t)$ for the countable test span. The bound
+\[
+ |A_\psi(t)-A_\varphi(t)|\le\sqrt{HM}\|\psi-\varphi\|_2
+\]
+holds at every time by scalar continuity. Density extends the identities to all smooth compact tests, which determine $w$ uniquely. Positivity and the bound $w\le H$ pass to the weak limit by testing on finite-measure sets. Testing with increasing nonnegative compact cutoffs gives $\int w\le M$. Define $u(t)=w$. This choice is independent of the sequence, agrees with the original solution at almost every time, and equals $u_0$ at $t=0$. Approximation of $L^2$ tests also proves weak $L^2$ time continuity.
+
+At this stage compact smooth pairings provide the endpoint traces, without yet assuming weak $L^1$ continuity. The endpoint weak identity for a smooth compact space-time test follows from \eqref{eq:trace-pairing}, by approximation with finite sums of time and space tests. Lemma~\ref{lem:halfspace} and the bound $|F|\le Vu$ therefore apply to these slices. They prove \eqref{eq:finite-propagation} at every time.
+
+On $[0,T]$, all slices are consequently supported in a fixed compact box $K$. A smooth test equal to one on $K$ proves mass conservation at every time by continuity from ordinary times. Given $g\in L^\infty(\R^N)$, approximate $g\mathbf1_K$ in $L^1$ by smooth compact functions $\psi_j$. Uniformly for $t\in[0,T]$,
+\[
+ \left|\int_{\R^N}u(t)(g-\psi_j)\right|
+ \le H\|g\mathbf1_K-\psi_j\|_{L^1(K)}\longrightarrow0.
+\]
+Each smooth pairing is continuous, so the pairing with $g$ is continuous. The required weak $L^1$ time continuity and initial trace follow.
+
+Finally, the source inequalities extend to every endpoint. If ordinary times $t_j\to t$, weak $L^1$ continuity and the dual formula for the $L^q$ norm give
+\[
+ \|u(t)\|_q\le\liminf_j\|u(t_j)\|_q\qquad(q>1).
+\]
+It suffices in that dual formula to use bounded compactly supported $L^{q'}$ tests. For pressure energy, any weak $L^2$ subsequential limit $h$ of $I_su(t_j)$ is identified by
+\[
+ \int_{\R^N}h\psi
+ =\lim_j\int_{\R^N}u(t_j)I_s\psi
+ =\int_{\R^N}u(t)I_s\psi
+ \qquad(\psi\in C_c^\infty).
+\]
+Here $I_s\psi$ is bounded and belongs to $L^2$, since $N>2s$ and $\widehat\psi$ decays rapidly at infinity. Thus $h=I_su(t)$ distributionally, and weak lower semicontinuity gives the pressure norm inequality. The cumulative dissipation in each source estimate is continuous in its upper endpoint, because its nonnegative integrand is integrable on finite time intervals. Passing to ordinary times proves \eqref{eq:pressure-energy} and \eqref{eq:lq} at every $t$. This applies separately for each $q>1$ to the single representative already constructed. Altering null sets of time changes neither the distributional equation nor the space-time dissipation. Hence the constructed global solution satisfies every clause of Definition~\ref{def:class}.
+
+\paragraph{Use of AI.}
+OpenAI Codex developed the argument, checked sources, and prepared this manuscript. Two fresh Codex contexts separately performed a reader pass and a referee review of the draft. The subsequent revision corrected a citation locator. Independent human mathematical review is requested.
+
+\begin{thebibliography}{9}
+\bibitem{CSV}
+L.~Caffarelli, F.~Soria and J.~L.~V\'azquez,
+\emph{Regularity of solutions of the fractional porous medium flow},
+J. Eur. Math. Soc. \textbf{15} (2013), 1701--1746.
+\href{https://doi.org/10.4171/JEMS/401}{doi:10.4171/JEMS/401}.
+
+\bibitem{STVexist}
+D.~Stan, F.~del Teso and J.~L.~V\'azquez,
+\emph{Existence of weak solutions for a general porous medium equation with nonlocal pressure},
+\href{https://arxiv.org/abs/1609.05139v3}{arXiv:1609.05139v3} (2019).
+
+\bibitem{STVsurvey}
+D.~Stan, F.~del Teso and J.~L.~V\'azquez,
+\emph{Porous medium equation with nonlocal pressure},
+\href{https://arxiv.org/abs/1801.04244v1}{arXiv:1801.04244v1} (2018).
+\end{thebibliography}
+\end{document}
