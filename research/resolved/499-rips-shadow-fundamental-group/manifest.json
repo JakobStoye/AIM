@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "problem_id": "499",
+  "target_revision": "1b7c7fd251c1643bb41f0e3cef38704bcef410fd",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3171,
+      "sha256": "5143ee5db027bf50d2393853fd39821e9cffca2900c20361f7a39c04ec3bfcc7"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "bytes": 2741,
+      "sha256": "9dbc61540dc610977d8be837c3223a2c8af207dbd3c07cf103f4a2cf14f6bfe5"
+    },
+    {
+      "path": "paper/rips_shadow_counterexample.pdf",
+      "bytes": 173132,
+      "sha256": "65b040ce0341a9af9cb2a054c691937fe1293744f3efe864dc3bcc66d14d0ce8"
+    },
+    {
+      "path": "paper/rips_shadow_counterexample.tex",
+      "bytes": 7716,
+      "sha256": "3a31512a5f0ee202908d4dbb91bf842eb12404b139ba4a4142c1f1d3ae36c679"
+    },
+    {
+      "path": "src/exact_geometry.py",
+      "bytes": 3160,
+      "sha256": "1a6f7081d0f35ebd84bba7edd03a99d8d8cbb2f8ac15e868da7e708a458ecac8"
+    },
+    {
+      "path": "test/test_exact_geometry.py",
+      "bytes": 1795,
+      "sha256": "5d852d1a6998335be22923706fbee0f8f313f2752b9ab512f0749f81c3bc04b3"
+    }
+  ],
+  "manifest_self_hash_excluded": true
+}
