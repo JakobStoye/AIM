@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "problem_id": "610",
+  "contribution": "analytic counterexample",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "statement_url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/610-reflexive-polytope-facet-bound.md",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Mathematical summary, reproduction and factual AI-use/review disclosure",
+      "sha256": "7eec0bd169e069deb95aaf228dffc09d379d0a9f61b34befce55d6cab3e1fee0",
+      "bytes": 3184
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Full original target matched to the final manuscript",
+      "sha256": "377f33eda7ea15cc3480221366b9c691f30a9cb4d9765370c184ba8e74a8f502",
+      "bytes": 2696
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Self-contained editable mathematical manuscript",
+      "sha256": "5b487d3a02d7a9280d0ef97372d08a18c4264ac3f61acdca9b957ad268bbb89a",
+      "bytes": 12720
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Complete four-page mathematical manuscript",
+      "sha256": "b8201cb5bb100e23bcb3e5a3e6cffbde251503079e34be4f4d7fb32338cd3c53",
+      "bytes": 265908
+    }
+  ],
+  "integrity_files": {
+    "PUBLIC_MANIFEST.json": "Covered by SHA256SUMS; its own hash is excluded here to avoid self-reference",
+    "SHA256SUMS": "Covers the four listed files and PUBLIC_MANIFEST.json; excludes itself"
+  },
+  "detailed_ai_review": "none",
+  "external_code_or_certificates": []
+}
