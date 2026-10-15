@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "title": "Large Steklov eigenvalues with a prescribed embedded boundary",
+  "problem_id": "112",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "evidence_type": "analytic theorem claim",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Result, scope, attribution, materials and factual AI-use/review disclosure",
+      "bytes": 2267,
+      "sha256": "affb8b72183d93ddefe5f8f0d7a5d5bb76d98af751f9c8beb92c0204cef9b992"
+    },
+    {
+      "path": "BUILD.md",
+      "purpose": "Self-contained LaTeX reproduction and integrity instructions",
+      "bytes": 1293,
+      "sha256": "fc3b27a5312b8a3a2ec68b5eecb0918c966c925a39b9235218ce599679a1b894"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Correspondence between the public problem and the finished manuscript",
+      "bytes": 5277,
+      "sha256": "ccf882483f8bb8c000cd321a3b89fc8e96c297abb2ca8bfeede9c3b511cd6766"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "purpose": "Editable complete analytic manuscript and bibliography",
+      "bytes": 26343,
+      "sha256": "8109dc7465f83ca284f3d644fe37dc1d3b21891c9844972d62f0f8a4f805b265"
+    },
+    {
+      "path": "paper/manuscript.pdf",
+      "purpose": "Eight-page complete analytic manuscript",
+      "bytes": 315850,
+      "sha256": "9db48f617550400ed7dbe217388476d3c8bb062938eba92e11264ea780460748"
+    }
+  ]
+}
