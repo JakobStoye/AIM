@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "problem_id": "424",
+  "target_revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+  "contribution": "Proposed complete analytic solution of the exact separated-operator question",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "detailed_ai_review": "none",
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Package purpose, materials, build and attribution",
+      "sha256": "08fde40609be0e0b81b52e1d0f07a199c9c28d0ecf68b66938838e7756a6b4be"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Clause-by-clause mapping of the original problem to the submitted theorem",
+      "sha256": "92341db0925098a76c050ee744d9724d1961408c7e0b5082738fa4358bbd094f"
+    },
+    {
+      "path": "paper/spherical_robin_real_spectrum.tex",
+      "purpose": "Standalone final manuscript LaTeX source",
+      "sha256": "2f2fc992935cc9b5caaa93df1f3714d2be6a95c0c9e8422b78fb4751a7e971d2"
+    },
+    {
+      "path": "paper/spherical_robin_real_spectrum.pdf",
+      "purpose": "Complete final nine-page analytic manuscript",
+      "sha256": "de849d96490236ee78a4255c62bf2e2b2c5a5c7e557e1d5e8aa8d7a101164976"
+    }
+  ]
+}

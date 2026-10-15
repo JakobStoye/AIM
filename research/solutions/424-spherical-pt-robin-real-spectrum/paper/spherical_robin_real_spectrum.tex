@@ -1,0 +1,643 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Real spectra for the separated spherical Robin operators},pdfauthor={Kaiwen Jin}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\Impart}{Im}
+\DeclareMathOperator{\Repart}{Re}
+\title{Real spectra for the separated spherical Robin operators}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{October 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that the separated spherical-strip operators with PT-symmetric
+Robin conditions have real spectrum for every half-width $0<a<\pi/2$,
+every real boundary parameter and every integer Fourier mode.
+The proof establishes strict interlacing between the associated real
+Robin and Dirichlet spectra at every index. A positive Laplace
+representation of the Fourier coefficients of $\sec^2x$ gives the
+comparison for nonzero integer modes, while a first-order factorization
+treats the zero mode. Canonical products then give a strict half-plane
+sign for the characteristic ratio and a bounded inverse at every
+nonreal spectral parameter.
+\end{abstract}
+
+\section{Introduction}
+
+Separation of variables in the Laplace--Beltrami problem on a tubular
+neighborhood of the sphere's equator leads to regular one-dimensional
+operators with complex Robin conditions \cite{S,KS}. The real parts of
+the boundary coefficients depend on the strip width. Siegl's question
+is whether their spectra remain real at every boundary strength.
+
+More precisely, for $0<a<\pi/2$, $\alpha\in\R$ and $m\in\mathbb Z$,
+put
+\[
+ \beta=\tfrac12\tan a,\qquad
+ V_m(x)=\frac{8m^2-3-\cos(2x)}{8\cos^2x}
+       =(m^2-\tfrac14)\sec^2x-\tfrac14.
+\]
+On complex $L^2(-a,a)$ with Lebesgue measure, consider
+\begin{equation}\label{eq:operator}
+ H_{a,\alpha,m}u=-u''+V_mu
+\end{equation}
+with domain
+\begin{equation}\label{eq:domain}
+ \Dom(H_{a,\alpha,m})=
+ \left\{u\in H^2(-a,a):
+ \begin{aligned}
+ u'(a)+(i\alpha+\beta)u(a)&=0,\\
+ u'(-a)+(i\alpha-\beta)u(-a)&=0
+ \end{aligned}\right\}.
+\end{equation}
+Both derivatives are coordinate derivatives in $x$.
+These are exactly the operators in \cite[equation (2)]{S} and
+\cite[\S4.4.2, equations (4.32)--(4.33)]{KS}.
+Their PT symmetry is commutation with the antilinear map
+$u(x)\mapsto\overline{u(-x)}$.
+
+Krej\v{c}i\v{r}\'{i}k and Siegl proved reality for the comparison obtained
+by dropping $V_m$, since $\beta>0$ \cite[Proposition 4.3]{KS}.
+They also proved that, for each fixed separated problem, every
+eigenvalue with sufficiently large real part is real
+\cite[Proposition 4.4]{KS}. Their perturbation argument leaves a finite
+part of the spectrum undecided. Reality of that remaining part was
+conjectured in \cite[Remark 4.6]{KS} and posed explicitly in \cite{S}.
+The following gives an affirmative answer for the exact separated
+operators.
+
+\begin{theorem}\label{thm:main}
+For every $0<a<\pi/2$, $\alpha\in\R$ and $m\in\mathbb Z$, the operator
+\eqref{eq:operator} with domain \eqref{eq:domain} is densely defined
+and closed, and
+\[
+ \sigma(H_{a,\alpha,m})\subset\R.
+\]
+\end{theorem}
+
+The proof uses the spectra of two real auxiliary problems. Let $r_n$
+and $d_n$ be the real Robin and Dirichlet eigenvalues for the same
+potential, indexed from zero. We establish
+\[
+ r_n<d_n<r_{n+1}\qquad(n\geq0).
+\]
+The second inequality needs more than the ordinary comparison of form
+domains. The Fourier coefficients of $\sec^2x$ admit a positive Laplace
+representation, which compares the sine and cosine energies on their
+full $H^1$ form domains. This proves the required inequality for
+$|m|\geq1$. For $m=0$, the real Robin operator factors as $A^*A$,
+and its Dirichlet partner is the operator at $m=1$.
+
+The complex boundary determinant is expressed through a meromorphic
+ratio whose zeros are $r_n$ and whose poles are $d_n$.
+The strict interlacing, together with a positive normalization below
+both spectra, forces this ratio to have negative imaginary part in the
+upper half-plane. The boundary equation would require it to be real,
+so it cannot vanish at a nonreal parameter. Solving the inhomogeneous
+ODE then proves the assertion for the entire spectrum.
+All estimates are for a fixed separated realization; no parameter-uniform
+resolvent bound is used.
+
+Section~\ref{sec:interlace} proves the self-adjoint comparisons, and
+Section~\ref{sec:resolvent} derives the characteristic ratio and the
+resolvent. We use complex Sobolev spaces and
+$\langle u,v\rangle=\int u\overline v$, linear in the first entry.
+The norm $\norm{\cdot}_2$ is taken on the interval under discussion.
+
+
+\section{The auxiliary self-adjoint spectra}\label{sec:interlace}
+
+Fix $0<a<\pi/2$ and put $\beta=\tfrac12\tan a$ throughout.
+The real Robin realization of $-\partial_x^2+V_m$ has boundary
+conditions $u'(a)+\beta u(a)=0$ and $u'(-a)-\beta u(-a)=0$.
+Write its eigenvalues as $r_n(m)$, $n\geq0$, in increasing order.
+Write $d_n(m)$ for the eigenvalues of the Dirichlet realization of the
+same differential expression. All these operators act in complex $L^2$.
+When $m$ is fixed we suppress it in the notation.
+
+\subsection{Forms and parity}
+
+Set $W(x)=\tfrac12\tan x$. Integration by parts gives
+\begin{equation}\label{eq:form-positive}
+ \int_{-a}^a\bigl(|u'|^2+V_m|u|^2\bigr)\,dx
+ +\beta\bigl(|u(a)|^2+|u(-a)|^2\bigr)
+ =\norm{u'+Wu}_2^2+m^2\int_{-a}^a\sec^2x\,|u|^2\,dx.
+\end{equation}
+The Robin form has domain $H^1(-a,a)$; its restriction to
+$H^1_0(-a,a)$ is the Dirichlet form. Their form norms, after adding
+$\norm{u}_2^2$, are equivalent to the $H^1$ norm, since $W$ and $V_m$
+are bounded on the fixed interval. In particular, both forms are closed
+and nonnegative.
+
+The associated operators have the asserted $H^2$ domains. Indeed, testing
+the form identity against compactly supported functions gives
+$-u''+V_mu\in L^2$, hence $u\in H^2$. Integration by parts against all
+form-domain functions then gives exactly the free-endpoint Robin
+conditions, with the opposite derivative sign at the left endpoint.
+Conversely those $H^2$ functions satisfy the form identity. These are
+regular real separated Sturm--Liouville problems: the endpoints are
+finite and the potential is real and smooth on the closed interval.
+They are self-adjoint and have discrete spectra with complete
+orthonormal eigenbases; see \cite[Theorems 2.13, 9.6 and 9.10]{T}.
+We shall use the form-domain min-max formula
+\begin{equation}\label{eq:minmax}
+ \lambda_k=\inf_{\substack{F\subset\Dom(q)\\\dim F=k+1}}
+       \ \sup_{\substack{u\in F\\\norm{u}_2=1}}q[u],\qquad k\geq0,
+\end{equation}
+which follows from that eigenbasis and the form version of
+\cite[Theorem 4.10]{T}. Formula \eqref{eq:form-positive} also proves
+$r_n,d_n\geq0$.
+
+On $(0,a)$ let
+\[
+ q_R[u]=\int_0^a\bigl(|u'|^2+V_m|u|^2\bigr)\,dx+\beta|u(a)|^2.
+\]
+Its domain is $H^1(0,a)$ in the even sector, and
+$\{u\in H^1(0,a):u(0)=0\}$ in the odd sector. Denote the corresponding
+eigenvalues by $R_{e,k}$ and $R_{o,k}$. Denote by $D_{e,k}$ the
+Neumann-at-zero, Dirichlet-at-$a$ eigenvalues, and by $D_{o,k}$ the
+eigenvalues with Dirichlet conditions at both ends. Write
+\[
+ q_D[u]=\int_0^a\bigl(|u'|^2+V_m|u|^2\bigr)\,dx
+\]
+for these Dirichlet forms. Their domains are
+$\{u\in H^1(0,a):u(a)=0\}$ in the even sector and $H^1_0(0,a)$ in the
+odd sector. They are the restrictions of $q_R$ obtained by imposing
+$u(a)=0$. There is no
+boundary contribution at zero, where $W(0)=0$, so the half-interval
+version of \eqref{eq:form-positive} proves these forms nonnegative too.
+
+\begin{lemma}\label{lem:endpoints}
+For every integer $m$,
+\[
+ R_{e,k}<D_{e,k},\qquad R_{o,k}<D_{o,k},\qquad k\geq0,
+\]
+and the full-interval spectra have the parity indexing
+\begin{equation}\label{eq:parity}
+ r_{2k}=R_{e,k},\quad r_{2k+1}=R_{o,k},\qquad
+ d_{2k}=D_{e,k},\quad d_{2k+1}=D_{o,k}.
+\end{equation}
+In particular $r_n<d_n$ for every $n\geq0$.
+\end{lemma}
+
+\begin{proof}
+A Dirichlet condition at one endpoint is a codimension-one restriction
+of the form domain. Formula \eqref{eq:minmax} gives
+$\lambda_k\leq\widetilde\lambda_k\leq\lambda_{k+1}$ for the original
+and restricted problems. Their spectra cannot meet. For a fixed
+condition at the other endpoint, the solution space at a given spectral
+parameter is one-dimensional. A common eigenvalue would therefore give
+one nonzero solution with both its value and derivative zero at the
+changed endpoint, contradicting uniqueness of the scalar initial-value
+problem. This also proves simplicity of each separated eigenvalue.
+Thus both inequalities are strict. The coefficients extend smoothly
+past the endpoints, so uniqueness applies there as well.
+
+Changing the condition at $a$ proves the first two assertions. Changing
+it at zero gives
+$R_{e,k}<R_{o,k}<R_{e,k+1}$, and likewise
+$D_{e,k}<D_{o,k}<D_{e,k+1}$. Even and odd extension, normalized by
+$1/\sqrt2$, identify these half-interval problems with the parity
+subspaces of the full-interval operators. At zero their $H^2$ domains
+match through $u'(0)=0$ and $u(0)=0$, respectively. This proves
+\eqref{eq:parity}.
+\end{proof}
+
+\subsection{A positive Fourier kernel}
+
+The extra comparisons $D_{e,k}<R_{o,k}$ and $D_{o,k}<R_{e,k+1}$ will
+come from a property specific to $\sec^2x$. Put $\omega=\pi/a$.
+
+\begin{lemma}\label{lem:kernel}
+For every integer $\ell\geq1$,
+\begin{equation}\label{eq:kernel}
+ I_\ell:=\int_0^a\sec^2x\cos(\ell\omega x)\,dx
+ =(-1)^\ell\int_0^\infty\mu_a(y)e^{-\ell\omega y}\,dy,
+\end{equation}
+where the positive integrable function $\mu_a$ is
+\begin{equation}\label{eq:mu}
+ \mu_a(y)=\Impart\sec^2(a+iy)
+ =\frac{2\cos a\sin a\cosh y\sinh y}
+ {\bigl(\cos^2a\cosh^2y+\sin^2a\sinh^2y\bigr)^2}>0
+ \quad(y>0).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The function $f(z)=\sec^2z$ is holomorphic in $|\Repart z|<\pi/2$.
+Integrate $f(z)e^{i\ell\omega z}$ around the rectangle with vertices
+$-a,a,a+iY,-a+iY$. The top integral tends to zero as $Y\to\infty$,
+since $f(x+iY)=O(e^{-2Y})$ uniformly for $|x|\leq a$.
+On the vertical sides $e^{i\ell\omega(\pm a+iy)}=(-1)^\ell
+e^{-\ell\omega y}$ and $f(-a+iy)=\overline{f(a+iy)}$.
+The limiting contour identity is
+\[
+ 0=2I_\ell+i(-1)^\ell\int_0^\infty
+       \bigl(f(a+iy)-f(-a+iy)\bigr)e^{-\ell\omega y}\,dy
+   =2I_\ell-2(-1)^\ell\int_0^\infty\mu_a(y)e^{-\ell\omega y}\,dy.
+\]
+Direct computation gives \eqref{eq:mu}. It is $O(y)$ at zero and
+$O(e^{-2y})$ at infinity, for fixed $a$, so all limiting integrals
+converge absolutely.
+\end{proof}
+
+\subsection{The nonzero modes}
+
+\begin{proposition}\label{prop:positive-modes}
+If $|m|\geq1$, then
+\begin{equation}\label{eq:strong-interlace}
+ r_n(m)<d_n(m)<r_{n+1}(m)\qquad(n\geq0).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write $\eta=m^2-\tfrac14>0$. First use the normalized half-integer
+systems
+\[
+ c_n(x)=\sqrt{2/a}\cos((n+\tfrac12)\omega x),\qquad
+ s_n(x)=\sqrt{2/a}\sin((n+\tfrac12)\omega x),\qquad n\geq0.
+\]
+Their coefficient map $u_c=\sum b_nc_n\mapsto u_s=\sum b_ns_n$ is
+$L^2$-unitary from the form domain $\{u\in H^1:u(a)=0\}$ onto
+$\{u\in H^1:u(0)=0\}$ and preserves $\norm{u'}_2^2$.
+Here and below these spaces are on $(0,a)$. To see the full-domain
+assertion, the four sine and cosine systems used in this proof are
+complete by even or odd reflection of the ordinary exponential basis;
+see \cite[Theorem 1.3 and Example (1.23)]{T}. For the half-integer
+systems, reflect to $(0,2a)$ antisymmetrically for cosines and
+symmetrically for sines, retaining the odd frequencies. Integration by
+parts gives
+\[
+ \norm{u'}_2^2=\sum_{n\geq0}((n+\tfrac12)\omega)^2|b_n|^2
+\]
+on the stated respective domains. Conversely, finiteness of this
+weighted sum gives $H^1$ convergence of the partial sums and the stated
+endpoint trace. Thus no derivative condition has been added to a form
+domain.
+
+The constant term in $V_m=\eta\sec^2x-\tfrac14$ cancels under the map.
+Product-to-sum and \eqref{eq:kernel} give
+\begin{align}\label{eq:half-transplant}
+ q_R[u_s]-q_D[u_c]
+ &=\frac{2\eta}{a}\int_0^\infty\mu_a(y)
+       \left|\sum_{n\geq0}(-1)^n b_ne^{-(n+1/2)\omega y}\right|^2\,dy
+ \notag\\[-2pt]
+ &\hspace{1cm}+\frac{2\beta}{a}
+       \left|\sum_{n\geq0}(-1)^n b_n\right|^2>0\qquad(u_c\ne0).
+\end{align}
+For finite sums the potential matrix difference is
+$-(2\eta/a)I_{n+j+1}$, in the notation of Lemma~\ref{lem:kernel},
+which proves the equality and its sign. For the full form domains,
+Cauchy--Schwarz and the weighted coefficient bound give
+$\sum|b_n|<\infty$. The endpoint sums are therefore the actual traces;
+the Laplace sums converge uniformly after extracting
+$e^{-\omega y/2}$. Since $\mu_a$ is integrable, the integral passes to
+the limit, while the remaining terms converge in $H^1$.
+For strictness, the power series
+$\sum(-1)^nb_nt^n$ is nonzero and analytic for $|t|<1$.
+It cannot vanish on an interval of $t=e^{-\omega y}\in(0,1)$.
+Together with $\mu_a>0$ and $\eta>0$ this makes the integral positive.
+
+Apply \eqref{eq:half-transplant} on the span of the first $k+1$ odd
+Robin eigenfunctions, mapped to cosines. The continuous positive form
+difference has a positive minimum on its finite-dimensional unit sphere.
+Formula \eqref{eq:minmax} then gives
+\begin{equation}\label{eq:first-cross}
+ D_{e,k}<R_{o,k}\qquad(k\geq0).
+\end{equation}
+This minimum need not be uniform in $k$.
+
+For the other comparison use the integer systems
+$\sqrt{2/a}\cos(n\omega x)$ and $\sqrt{2/a}\sin(n\omega x)$,
+$n\geq1$. Their coefficient map sends the mean-zero subspace of
+$H^1(0,a)$ onto $H^1_0(0,a)$. It is unitary in $L^2$ and preserves the
+derivative norm. Integration by parts proves the weighted coefficient
+identity just as above; for the sine system the constant coefficient of
+$u'$ is zero because $u(a)-u(0)=0$. Now
+\begin{align}\label{eq:integer-transplant}
+ q_R[u_c]-q_D[u_s]
+ &=\frac{2\eta}{a}\int_0^\infty\mu_a(y)
+       \left|\sum_{n\geq1}(-1)^n b_ne^{-n\omega y}\right|^2\,dy
+ \notag\\[-2pt]
+ &\hspace{1cm}+\frac{2\beta}{a}
+       \left|\sum_{n\geq1}(-1)^n b_n\right|^2>0\qquad(u_c\ne0).
+\end{align}
+Here the potential difference is $(2\eta/a)I_{n+j}$.
+The same summability and power-series argument proves the equality and
+strictness on the entire domains.
+
+Intersect the first $k+2$ even Robin eigenspace with the mean-zero
+subspace. The intersection has dimension at least $k+1$. On any
+$(k+1)$-dimensional subspace of it, the difference in
+\eqref{eq:integer-transplant} has a positive unit-sphere minimum
+$\delta$. The sine image is an admissible Dirichlet subspace, so
+\[
+ D_{o,k}\leq R_{e,k+1}-\delta<R_{e,k+1}.
+\]
+Together with \eqref{eq:first-cross} and Lemma~\ref{lem:endpoints},
+this gives \eqref{eq:strong-interlace} at every index.
+\end{proof}
+
+\subsection{The zero mode}
+
+The coefficient $m^2-\tfrac14$ is negative at $m=0$.
+A first-order factorization gives the comparison in this case.
+
+\begin{proposition}\label{prop:zero-mode}
+Formula \eqref{eq:strong-interlace} also holds for $m=0$.
+\end{proposition}
+
+\begin{proof}
+On $L^2(-a,a)$ define
+\[
+ A=\partial_x+W,\qquad\Dom(A)=H^1(-a,a),\qquad W=\tfrac12\tan x.
+\]
+This operator is densely defined and closed: convergence of $u_j$ and
+$Au_j$ in $L^2$ implies convergence of $u_j'=Au_j-Wu_j$, hence the
+weak-derivative identity for their limit. Integration by parts gives
+\[
+ A^*=-\partial_x+W,\qquad\Dom(A^*)=H^1_0(-a,a).
+\]
+Indeed, testing an adjoint vector against compactly supported functions
+first puts it in $H^1$; the arbitrary two traces of a vector in
+$\Dom(A)$ then force its traces to vanish. These conditions also suffice.
+Since $W,W'$ are bounded, the product domains are exactly
+\begin{align*}
+ \Dom(A^*A)&=\{u\in H^2(-a,a):(Au)(-a)=(Au)(a)=0\},\\
+ \Dom(AA^*)&=H^2(-a,a)\cap H^1_0(-a,a).
+\end{align*}
+For example, $u\in H^1$ and $Au\in H^1_0$ imply
+$u'=Au-Wu\in H^1$; the converse follows directly. The second product
+imposes no extra derivative trace.
+
+The differential expressions are
+\[
+ A^*A=-\partial_x^2-\tfrac14\sec^2x-\tfrac14,\qquad
+ AA^*=-\partial_x^2+\tfrac34\sec^2x-\tfrac14.
+\]
+Thus $A^*A$ is the real Robin operator at $m=0$, and $AA^*$ is the
+Dirichlet operator at $m=1$. The kernel of $A$ is exactly
+$\operatorname{span}\{\sqrt{\cos x}\}$, whereas $AA^*\geq\tfrac12$.
+For $\lambda>0$ the eigenspaces correspond through $u\mapsto Au$,
+with inverse $v\mapsto A^*v/\lambda$. The domain transfer is explicit:
+if $A^*Au=\lambda u$, then $Au\in\Dom(A^*)$ and
+$A^*(Au)=\lambda u\in\Dom(A)$, so $Au\in\Dom(AA^*)$.
+The converse follows from $AA^*v=\lambda v$ and
+$\lambda v\in\Dom(A^*)$. Exactly one zero eigenvalue is omitted,
+therefore
+\[
+ r_{n+1}(0)=d_n(1)\qquad(n\geq0).
+\]
+The two Dirichlet forms at $m=0,1$ have the same domain and differ by
+$\int\sec^2x\,|u|^2\,dx\geq\norm{u}_2^2$. Hence
+\[
+ d_n(0)+1\leq d_n(1)=r_{n+1}(0).
+\]
+Lemma~\ref{lem:endpoints}, which has no positivity assumption on
+$m^2-\tfrac14$, supplies $r_n(0)<d_n(0)$. This proves the assertion.
+\end{proof}
+
+\section{The characteristic ratio and the resolvent}\label{sec:resolvent}
+
+Fix $a$ and $m$ again. The result of Section~\ref{sec:interlace} is the
+strict ordering $0\leq r_n<d_n<r_{n+1}$ for all $n\geq0$.
+We now use this ordering to control the complex Robin boundary equations.
+Let $c(x,z)$ and $s(x,z)$ solve $-v''+V_mv=zv$ with initial data
+\[
+ c(0,z)=1,\quad c'(0,z)=0,\qquad s(0,z)=0,\quad s'(0,z)=1.
+\]
+Define their right Robin traces and the two products by
+\[
+ \begin{gathered}
+ C(z)=c'(a,z)+\beta c(a,z),\qquad
+ S(z)=s'(a,z)+\beta s(a,z),\\
+ F_R(z)=C(z)S(z),\qquad F_D(z)=c(a,z)s(a,z).
+ \end{gathered}
+\]
+
+\subsection{Entire functions and their zeros}
+
+\begin{lemma}\label{lem:products}
+The functions $F_R$ and $F_D$ are entire of order at most $1/2$.
+Their zeros are exactly the simple zeros $r_n$ and $d_n$, respectively,
+with no common zero. The meromorphic ratio
+\[
+ M(z)=\frac{F_R(z)}{F_D(z)}
+\]
+satisfies $M(-1)>0$.
+\end{lemma}
+
+\begin{proof}
+The initial-value problem is based at the interior point zero.
+Its solutions and their derivatives are entire in $z$; see
+\cite[Theorem 9.1]{T}. To record their growth, choose $k^2=z$ with
+$|k|\geq1$ and use the Volterra equation
+\[
+ c(x,z)=\cos(kx)+\int_0^x\frac{\sin(k(x-t))}{k}V_m(t)c(t,z)\,dt,
+ \qquad 0\leq x\leq a.
+\]
+Multiplication by $e^{-|\Impart k|x}$ and iteration give
+\[
+ e^{-|\Impart k|x}|c(x,z)|\leq\exp(a\norm{V_m}_\infty/|k|).
+\] The analogous equation for $s$
+has free term $\sin(kx)/k$. Differentiation in $x$ introduces at most
+one additional factor $1+|k|$. Consequently the four boundary functions,
+and their products, are bounded by
+$K(1+|z|)^K\exp(K\sqrt{|z|})$, for a constant depending on $a,m$.
+Near zero the free sine quotient is defined by its entire power series.
+This proves the order bound without choosing a global square-root branch.
+
+A zero of $c(a,z)$ or $s(a,z)$ is exactly an eigenvalue of the
+corresponding real half-interval Dirichlet problem; a zero of $C$ or $S$
+is a half-interval Robin eigenvalue. Thus all zeros are real and the
+lists are complete. The identity $cs'-c's=1$ prevents simultaneous
+zeros of $c(a,\cdot),s(a,\cdot)$ and of $C,S$.
+To verify analytic simplicity, let $f=c$ or $s$ and let a dot denote
+$\partial_z$. Differentiating the equation gives, at a real $z$,
+\[
+ f(a)\dot f'(a)-f'(a)\dot f(a)=-\int_0^a f(x)^2\,dx.
+\]
+The initial contribution is zero. At a Dirichlet zero this says
+$f'(a)\dot f(a)=\int f^2>0$; at a Robin zero it says
+$f(a)\dot{(f'+\beta f)}(a)=-\int f^2<0$.
+The other factor in each identity is nonzero by uniqueness.
+These facts and \eqref{eq:parity} identify the simple zero lists of
+$F_R,F_D$. The strict interlacing excludes cancellation between them.
+
+At $z=-1$ neither Dirichlet trace vanishes. For $f=c(\cdot,-1)$ or
+$s(\cdot,-1)$, integration of the equation on $(0,a)$ yields
+\[
+ (f'(a)+\beta f(a))f(a)=q_R[f]+\norm{f}_2^2>0.
+\]
+The term at zero vanishes in both cases. Nonnegativity of the half form
+therefore gives
+\[
+ \frac{C(-1)}{c(a,-1)}>0,\qquad \frac{S(-1)}{s(a,-1)}>0.
+\]
+\end{proof}
+
+\subsection{The half-plane sign}
+
+\begin{lemma}\label{lem:half-plane}
+For the ratio in Lemma~\ref{lem:products},
+\begin{equation}\label{eq:half-plane}
+ \Impart M(z)<0\quad(\Impart z>0),\qquad
+ \Impart M(z)>0\quad(\Impart z<0).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Hadamard factorization for order below one
+\cite[Theorem 5.15, p.~57]{M}, applied after shifting the origin to
+$z=-1$, gives
+\begin{equation}\label{eq:canonical}
+ M(z)=M(-1)\,
+ \frac{\displaystyle\prod_{n=0}^\infty\frac{r_n-z}{r_n+1}}
+      {\displaystyle\prod_{n=0}^\infty\frac{d_n-z}{d_n+1}}.
+\end{equation}
+The products converge locally uniformly, and there is no nonconstant
+exponential factor. The shift is convenient because all $r_n,d_n$ are
+nonnegative. In particular, when $m=0$ the zero $r_0=0$ remains as the
+factor $-z$; no factor is divided by $r_0$.
+
+Truncate with $K+1$ numerator zeros and $K$ denominator zeros:
+\[
+ b_K=M(-1)\frac{\prod_{j=0}^{K-1}(d_j+1)}
+                      {\prod_{j=0}^{K}(r_j+1)}>0,\qquad
+ M_K(z)=-b_K\frac{\prod_{j=0}^{K}(z-r_j)}
+                       {\prod_{j=0}^{K-1}(z-d_j)},\qquad K\geq1.
+\]
+This retains the normalization $M_K(-1)=M(-1)$ and converges locally
+uniformly to $M$ away from the real poles. Interlacing gives positive
+residues
+\[
+ \rho_{K,j}=-b_K
+ \frac{\prod_{i=0}^{K}(d_j-r_i)}
+      {\prod_{0\leq i<K,\ i\ne j}(d_j-d_i)}>0,
+ \qquad 0\leq j<K.
+\]
+Indeed the numerator has $K-j$ negative factors and the denominator
+$K-1-j$. Polynomial division now gives a real $a_K$ such that
+\[
+ M_K(z)=a_K-b_Kz+\sum_{j=0}^{K-1}\frac{\rho_{K,j}}{z-d_j}.
+\]
+Thus
+\[
+ \Impart M_K(z)=-\Impart z\left(b_K+
+       \sum_{j=0}^{K-1}\frac{\rho_{K,j}}{|z-d_j|^2}\right)<0
+ \qquad(\Impart z>0).
+\]
+The locally uniform limit has $\Impart M\leq0$ in the upper half-plane.
+It is nonconstant there: otherwise the entire function
+$F_R-c_0F_D$ would vanish identically for some constant $c_0$,
+contradicting $F_R(d_0)\ne0$. The identity theorem and open mapping
+theorem \cite[Theorems 3.44 and 4.24]{M} therefore make the sign strict.
+Finally $M(\overline z)=\overline{M(z)}$ gives the lower-half-plane sign.
+\end{proof}
+
+\subsection{The complex boundary equations}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix also $\alpha\in\R$ and take $z\notin\R$.
+Evenness of $V_m$ gives $c(-x,z)=c(x,z)$ and $s(-x,z)=-s(x,z)$.
+For a homogeneous solution $u=b_ec+b_os$, the two coordinate Robin
+conditions are therefore
+\begin{equation}\label{eq:matrix}
+ \begin{pmatrix}
+ C+i\alpha c&S+i\alpha s\\
+ -C+i\alpha c&S-i\alpha s
+ \end{pmatrix}
+ \binom{b_e}{b_o}=0,
+\end{equation}
+where $c,s$ without arguments are evaluated at $(a,z)$.
+The determinant is
+\begin{equation}\label{eq:det}
+ 2\bigl(CS+\alpha^2cs\bigr).
+\end{equation}
+For nonreal $z$ the factors $c(a,z),s(a,z)$ do not vanish, since their
+auxiliary Dirichlet problems are self-adjoint. A zero of
+\eqref{eq:det} would consequently require $M(z)=-\alpha^2\in\R$,
+contrary to Lemma~\ref{lem:half-plane}.
+
+To obtain the whole-spectrum assertion, let $g\in L^2(-a,a)$ and set
+\[
+ p(x)=-\int_0^x\bigl[s(x,z)c(t,z)-c(x,z)s(t,z)\bigr]g(t)\,dt.
+\]
+The integral is oriented when $x<0$. Its kernel vanishes on the diagonal
+and its $x$ derivative is one there. Hence
+$p''=(V_m-z)p-g$, and boundedness of the fundamental solutions and
+their derivatives on the fixed interval gives
+\[
+ \norm{p}_{H^2(-a,a)}\leq C_{a,m,z}\norm{g}_2.
+\]
+In particular its endpoint values and derivatives satisfy the same type
+of bound. Add $b_ec+b_os$ and solve the matrix in \eqref{eq:matrix}
+with right side equal to minus the two Robin traces of $p$.
+Its nonzero determinant bounds both constants by a multiple of
+$\norm{g}_2$. This constructs a unique $u$ in the exact domain
+\eqref{eq:domain} such that
+\begin{equation}\label{eq:inverse}
+ (H_{a,\alpha,m}-z)u=g,\qquad
+ \norm{u}_{H^2(-a,a)}\leq C_{a,\alpha,m,z}\norm{g}_2.
+\end{equation}
+Uniqueness follows from the homogeneous matrix equation. No uniformity
+in the parameters is required.
+
+The domain is dense because it contains $C_c^\infty(-a,a)$.
+For completeness it also defines a closed operator. Fix one nonreal
+$z$ and write $R_z$ for the inverse just constructed. If $u_j\to u$
+and $H_{a,\alpha,m}u_j\to h$ in $L^2$, then
+\[
+ u_j=R_z(H_{a,\alpha,m}u_j-zu_j)
+       \longrightarrow R_z(h-zu)\quad\hbox{in }H^2.
+\]
+The $L^2$ limit is $u$, and the endpoint traces are continuous in $H^2$.
+Thus $u$ belongs to \eqref{eq:domain} and $H_{a,\alpha,m}u=h$.
+It follows from \eqref{eq:inverse}, for every $z\notin\R$, that
+$z$ lies in the resolvent set. Therefore
+$\sigma(H_{a,\alpha,m})\subset\R$ for every $0<a<\pi/2$,
+$\alpha\in\R$ and $m\in\mathbb Z$, as asserted.
+\end{proof}
+
+\paragraph{AI assistance.}
+OpenAI Codex was used in the mathematical exploration, drafting, source
+checking and revision of this manuscript. The reader and referee checks
+used during preparation were AI-based. Independent mathematical review
+is requested.
+
+\begin{thebibliography}{9}
+\bibitem{S}
+P.~Siegl, \emph{PT-symmetric Laplace--Beltrami operator in the strip on a
+sphere}, ESF nonselfadjoint spectral theory problem 2010-10, equation~(2),
+\url{https://nsa.fjfi.cvut.cz/problems/01_ESF_2010/2010-10/2010-10_ESF_Siegl.pdf}.
+
+\bibitem{KS}
+D.~Krej\v{c}i\v{r}\'{i}k and P.~Siegl,
+\emph{PT-symmetric models in curved manifolds},
+arXiv:1001.2988v1 (2010),
+\url{https://arxiv.org/abs/1001.2988v1}.
+
+\bibitem{T}
+G.~Teschl, \emph{Mathematical Methods in Quantum Mechanics: With
+Applications to Schr\"odinger Operators}, Graduate Studies in Mathematics
+\textbf{99}, American Mathematical Society, 2009.
+Author-posted version dated February~12, 2009,
+\url{https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf}.
+
+\bibitem{M}
+J.~Murphy, \emph{Introduction to Complex Analysis}, lecture notes for
+Math~5351, \url{https://pages.uoregon.edu/jamu/Math5351-lecture-notes.pdf},
+accessed October~15, 2026.
+\end{thebibliography}
+\end{document}
