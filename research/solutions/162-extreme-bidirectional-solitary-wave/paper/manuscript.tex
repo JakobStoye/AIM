@@ -1,0 +1,800 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[margin=29mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\K}{\mathcal K}
+\newcommand{\F}{\mathcal F}
+\newcommand{\cg}{c_\gamma}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{An extreme solitary wave for the bidirectional Whitham system}
+\author{Kaiwen Jin\\\small\texttt{yui.ui.siki@gmail.com}}
+\date{15 October 2026}
+\hypersetup{pdftitle={An extreme solitary wave for the bidirectional Whitham system},pdfauthor={Kaiwen Jin}}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct an extreme solitary wave for the bidirectional Whitham
+system. Its velocity profile is positive, even, continuous, smooth away
+from its crest and strictly decreasing to zero on the positive half-line.
+The crest reaches the first critical value of the cubic traveling-wave
+equation. The construction starts with positive highest periodic waves
+of arbitrarily large period. A common modulus of continuity and a fixed
+drop from the critical height keep their limit nonconstant. A balance
+identity using the kernel's first absolute moment then excludes every
+positive limiting pedestal, without assuming an integrable profile.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The bidirectional Whitham system is the nonlocal dispersive model
+\begin{equation}\label{eq:system}
+ \partial_t\eta+\partial_x(K*v+\eta v)=0,\qquad
+ \partial_tv+\partial_x\left(\eta+\frac12v^2\right)=0,
+\end{equation}
+where $\eta$ is the surface elevation, $v$ is the velocity and the
+convolution kernel on $\R$ has symbol
+\begin{equation}\label{eq:symbol-intro}
+ \widehat K(\xi)=\frac{\tanh\xi}{\xi},\qquad \widehat K(0)=1.
+\end{equation}
+It combines the finite-depth gravity-wave dispersion relation with a
+quadratic shallow-water nonlinearity; see \cite{EJC,NW}. We study the
+largest crest allowed by its scalar traveling-wave equation.
+
+For profiles moving at speed $c$ and tending to zero at infinity,
+integration of \eqref{eq:system} gives $\eta=cv-v^2/2$ and
+\begin{equation}\label{eq:profile-intro}
+ K*v=c^2v-\frac{3c}{2}v^2+\frac12v^3.
+\end{equation}
+The derivative of the cubic first vanishes at
+$v=c(1-1/\sqrt3)$. At this height the smooth inversion used for smaller
+waves degenerates. The existence question is therefore whether a
+localized wave can attain this crest while retaining positive, monotone
+tails.
+
+Small solitary waves for this system are supplied by the variational
+construction of Nilsson and Wang \cite[Theorem 3.1]{NW}. Highest periodic
+waves were constructed by Ehrnstr\"om, Johnson and Claassen \cite{EJC};
+their Appendix B discusses positive highest periodic waves at the fixed
+period of that paper. Ehrnstr\"om, M{\ae}hlen and Varholm
+\cite[Section 4.2]{EMV} determine precise crest behavior for extreme
+solutions and explicitly leave existence of a highest solitary wave
+open in Remark 4.8. A periodic highest wave alone does not answer that
+question: as its period grows, it might approach a constant, or retain
+a positive value at infinity.
+
+The following result supplies a solitary profile at the critical crest.
+\begin{theorem}\label{thm:main}
+There exist
+\[
+ 1<c<\sqrt{3(\sqrt3-1)}
+\]
+and an even continuous function $v:\R\to(0,\infty)$, smooth on
+$\R\setminus\{0\}$, such that $v$ is strictly decreasing on
+$(0,\infty)$, $\lim_{|x|\to\infty}v(x)=0$, and
+\[
+ K*v=c^2v-\frac{3c}{2}v^2+\frac12v^3
+ \quad\hbox{on }\R,\qquad
+ v(0)=c\left(1-\frac1{\sqrt3}\right).
+\]
+The surface profile $\eta=cv-v^2/2$ satisfies $\eta(0)=c^2/3$.
+The pair $(\eta(x-ct),v(x-ct))$ solves \eqref{eq:system} in
+distributions, and classically away from the moving crest.
+\end{theorem}
+
+The theorem gives an affirmative answer to the existence question in
+\cite[Remark 4.8]{EMV}, for the exact symbol and conservative system
+\eqref{eq:system}. It is an existence result for one limiting speed;
+uniqueness, stability and a family indexed by all speeds are separate
+questions.
+
+We obtain the profile as a limit of highest positive periodic waves.
+Periodic-to-solitary constructions are available for the unidirectional
+Whitham equation; Ehrnstr\"om, Nik and Walker \cite{ENW} give a direct
+construction of a full family. That equation has a different multiplier
+and a quadratic profile nonlinearity, and its treatment of nonzero tails
+uses a Galilean transformation. Here the cubic retains the speed in
+several coefficients. We instead integrate the convolution defect over
+expanding symmetric intervals. The first absolute moment of $K$ makes
+this defect tend to zero for any bounded profile with equal tails. Strict
+concavity of the cubic contradicts that balance if the limiting tail is
+positive.
+
+Two estimates allow the period to grow. A kernel-translation estimate
+gives one modulus of continuity for all heights up to the critical value,
+and a differentiated equation for smooth periodic waves gives a drop from
+that height on a fixed interval. Taking highest limits preserves the drop
+without differentiating at a crest. We also construct the positive
+periodic branch for every sufficiently large period, using the corrected
+analytic continuation theorem of \cite{CSV}; this step is needed beyond
+the fixed-period positive-wave discussion in \cite{EJC}.
+
+Section~\ref{sec:estimates} gives the kernel facts and the uniform
+estimates. Section~\ref{sec:periodic} constructs the positive highest
+periodic waves, and Section~\ref{sec:solitary} passes to the real line and
+proves the theorem. Throughout,
+$\widehat f(\xi)=\int_\R e^{-ix\xi}f(x)\dd x$, with inverse factor
+$1/(2\pi)$, and convolution uses Lebesgue measure.
+
+\section{The kernel and estimates uniform in the period}\label{sec:estimates}
+
+Write
+\begin{equation}\label{eq:constants}
+ a=1-\frac1{\sqrt3},\qquad \gamma(c)=ac,\qquad
+ F_c(t)=c^2t-\frac{3c}{2}t^2+\frac12t^3,
+ \qquad \cg=\sqrt{3(\sqrt3-1)}.
+\end{equation}
+The first positive critical point of the cubic is $\gamma(c)$. In fact,
+\begin{equation}\label{eq:cubic-derivatives}
+ F_c'(t)=\frac32(\gamma(c)-t)
+       \left(\gamma(c)-t+\frac{2c}{\sqrt3}\right),\qquad
+ F_c''(t)=3(t-c).
+\end{equation}
+Thus $F_c$ is strictly increasing and strictly concave on
+$[0,\gamma(c)]$ when $c>0$. A profile with maximum $\gamma(c)$ will be
+called highest. Smooth profiles lying strictly below this value will be
+called subcritical; this refers to their height, rather than their speed.
+
+The normalized kernel is
+\begin{equation}\label{eq:kernel}
+ K(x)=\frac1\pi\log\coth\frac{\pi|x|}{4},\qquad x\ne0.
+\end{equation}
+This is the formula in \cite[Section 4.2]{EMV} for the symbol used here.
+It fixes the scalar in the convolution. The qualitative kernel results of
+\cite[Lemma 2.2]{EJC} also apply. In particular, $K$ is even, positive and
+integrable, with mass one, and
+\begin{equation}\label{eq:kernel-derivative}
+ K'(x)=-\frac1{2\sinh(\pi x/2)},\qquad x>0.
+\end{equation}
+The logarithmic singularity is integrable. All derivatives decay
+exponentially away from zero, and
+$\int_\R |x|K(x)\dd x<\infty$.
+
+For a physical period $P>0$, set $k=2\pi/P$ and
+\begin{equation}\label{eq:periodic-kernel}
+ K_P(x)=\sum_{j\in\mathbb Z}K(x+jP).
+\end{equation}
+The sum converges in $L^1$ on a period and has mass one. Its differentiated
+sums converge uniformly on compact sets avoiding $P\mathbb Z$. It is
+strictly decreasing and strictly convex on $(0,P/2)$. One way to see the
+strict signs for every $P$ is to use
+\[
+ K(x)=\frac2\pi\sum_{j=0}^\infty
+       \frac{e^{-(2j+1)\pi|x|/2}}{2j+1}.
+\]
+Each periodized exponential is a positive multiple of
+$e^{-\mu x}+e^{-\mu(P-x)}$ on $0<x<P$, and has the stated signs on the
+half-period.
+
+On writing $\theta=kx$, convolution becomes the even $2\pi$-periodic
+Fourier multiplier
+\begin{equation}\label{eq:multiplier}
+ \K_k\cos(n\theta)=m(kn)\cos(n\theta),\qquad
+ m(\xi)=\frac{\tanh\xi}{\xi},\quad m(0)=1.
+\end{equation}
+For each fixed $k>0$, this symbol has order $-1$. The periodic multiplier
+theorem \cite[Proposition 2.7]{EJC} therefore gives
+$\K_k:C^s\to C^{s+1}$ at positive noninteger exponents, understood via
+the equivalent H\"older--Zygmund spaces. We use the Banach space
+\[
+ X=C^{1/4}_{\mathrm{even}}(\T),\qquad
+ \norm{u}_{C^\alpha}=\norm{u}_\infty+
+ \sup_{x\ne y}\frac{|u(x)-u(y)|}{d_\T(x,y)^\alpha}.
+\]
+Consequently $\K_k:X\to X$ is compact. These mapping bounds may depend
+on $P$.
+
+We first record a strict comparison that also applies to continuous
+highest profiles.
+\begin{lemma}\label{lem:strict-comparison}
+If a continuous, even, nonconstant $P$-periodic function $u$ is
+nonincreasing on $[0,P/2]$, then $K_P*u$ is strictly decreasing on
+$(0,P/2)$. In particular, a solution of $K_P*u=F_c(u)$ taking values in
+$[0,\gamma(c)]$ is strictly decreasing there.
+\end{lemma}
+\begin{proof}
+Subtract $\min u$ and write the resulting nonnegative function as the
+integral of its superlevel indicators. For every level strictly between
+its minimum and maximum, the superlevel set is a centered interval of
+radius $r\in(0,P/2)$, up to endpoints. For such an interval,
+\[
+ \frac{\dd}{\dd x}\bigl(K_P*\mathbf1_{[-r,r]}\bigr)(x)
+       =K_P(x+r)-K_P(x-r)<0
+\]
+for almost every $x\in(0,P/2)$. Indeed the circle distance of $x+r$ is
+strictly larger than $|x-r|$, also when $x+r>P/2$.
+The interval convolution is locally absolutely continuous, since $K_P$ is
+integrable. It is therefore strictly decreasing on every subinterval.
+Tonelli's theorem and integration over the nonempty interval of levels
+preserve strict decrease. The last assertion follows from the strict
+increase of $F_c$ on its stated range.
+\end{proof}
+
+\begin{lemma}[A common modulus of continuity]\label{lem:modulus}
+Let $1\le c\le\cg$ and let $v$ be a bounded solution of
+$K*v=F_c(v)$ on $\R$, with $0\le v\le\gamma(c)$. Periodic solutions
+are allowed. With $M=a\cg$, one has
+\begin{equation}\label{eq:modulus}
+ |v(x+h)-v(x)|^2\le\frac{2M}{\sqrt3}
+            \norm{K(\cdot+h)-K}_{L^1(\R)}.
+\end{equation}
+These profiles have a common $C^\beta(\R)$ bound for every fixed
+$0<\beta<1/2$.
+\end{lemma}
+\begin{proof}
+For $0\le s<t\le\gamma(c)$, \eqref{eq:cubic-derivatives} gives
+\[
+ F_c(t)-F_c(s)\ge\sqrt3c\int_s^t(\gamma(c)-z)\dd z
+              \ge\frac{\sqrt3}{2}(t-s)^2.
+\]
+The last integral, at fixed $t-s$, is smallest when $t=\gamma(c)$.
+The equation and $\norm{v}_\infty\le M$ now imply
+\eqref{eq:modulus}. Evenness and decrease of $K$ imply, for $h>0$,
+\begin{equation}\label{eq:translation-norm}
+ \norm{K(\cdot+h)-K}_1=4\int_0^{h/2}K(t)\dd t
+                  \le C h(1+|\log h|),\qquad 0<h\le\tfrac12.
+\end{equation}
+The positive and negative parts change sign at $-h/2$, which gives the
+equality. The estimate follows from \eqref{eq:kernel}; the case $h<0$
+follows by translation. Combining these bounds proves the claim.
+\end{proof}
+
+The estimate requires no crest equality. For each fixed period it gives a
+bounded subset of $C^{3/8}$, hence precompactness in $X=C^{1/4}_{\rm even}$.
+The latter embedding follows from uniform convergence and the interpolation
+estimate
+$[f]_{C^\alpha}\le2\norm{f}_\infty d^{-\alpha}
+ +[f]_{C^\beta}d^{\beta-\alpha}$, for $\beta>\alpha$.
+
+\begin{lemma}[Speed and small constant states]\label{lem:speed}
+A nonconstant positive periodic solution with $v<\gamma(c)$ and $c>0$
+has $1<c<\cg$. At $c=1$, the only nonnegative continuous periodic solution
+with $0\le v\le\gamma(1)$ is zero. At $c=\cg$, the nonnegative continuous
+periodic solutions with $0\le v\le\gamma(\cg)$ are the constants zero and
+$\gamma(\cg)$.
+
+For each fixed $P$, all solutions sufficiently near $(v,c)=(0,1)$ in
+$X\times\R$ are constant. At every $c_*>1$, zero has a neighborhood
+containing no nonconstant solutions.
+\end{lemma}
+\begin{proof}
+Integrating over a period gives $\int(F_c(v)-v)=0$. On
+$0<t\le\gamma(c)$ the factor
+\[
+ \frac{F_c(t)-t}{t}=c^2-1-\frac{3c}{2}t+\frac12t^2
+\]
+is strictly negative for $0<c\le1$. For $c\ge\cg$ it is nonnegative,
+because it decreases up to $\gamma(c)$ and
+\begin{equation}\label{eq:upper-speed}
+ \frac{F_c(\gamma(c))}{\gamma(c)}=\frac{c^2(1+\sqrt3)}6\ge1.
+\end{equation}
+At $c=\cg$ equality occurs only at $t=\gamma(c)$ or, before division,
+at $t=0$. Continuity gives the constant alternatives.
+
+For the assertion near $(0,1)$, write $v=s+h$, where $s$ is its mean and
+$h$ has mean zero. Project $\K_kv-F_c(v)=0$ onto mean-zero functions.
+The derivative in $h$ at $(s,h,c)=(0,0,1)$ is $\K_k-I$. Its kernel on
+that subspace is zero, since $m(kn)<1$ for all $n\ne0$. As a compact
+perturbation of $-I$, it is Fredholm of index zero and is invertible.
+The analytic implicit-function theorem, for example
+\cite[Lemma 3R]{FNSS}, gives $h=0$ as the unique small solution of the
+projected equation for each nearby $(s,c)$. The full equation is thus the
+scalar constant equation. Its nearby roots are zero and
+\begin{equation}\label{eq:constant-branch}
+ b(c)=\frac{3c-\sqrt{c^2+8}}2.
+\end{equation}
+At zero and $c_*>1$, the full derivative is $\K_k-c_*^2I$.
+Convolution has norm at most one for the full H\"older norm, so the
+Neumann series gives its inverse. The same implicit-function argument
+proves the last assertion. All neighborhoods here may depend on $P$.
+\end{proof}
+
+\begin{lemma}[Strict nodal signs]\label{lem:nodal}
+A smooth, even, nonconstant periodic solution with $0<v<\gamma(c)$
+that is nonincreasing on $[0,P/2]$ satisfies
+\[
+ v'(x)<0\quad(0<x<P/2),\qquad v''(0)<0,
+ \qquad v''(P/2)>0.
+\]
+This property is open relative to the subcritical solution set in
+$X\times\R$.
+\end{lemma}
+\begin{proof}
+The reflected derivative identity is
+\begin{equation}\label{eq:reflected-derivative}
+ F_c'(v(x))v'(x)=\int_0^{P/2}
+       [K_P(x-y)-K_P(x+y)]v'(y)\dd y.
+\end{equation}
+The bracket is positive inside the half-period. Since $v'\le0$ and is
+negative on some interval, the right side is strictly negative. At the
+endpoints, differentiation and one integration by parts give
+\[
+ F_c'(v(0))v''(0)=-2\int_0^{P/2}K_P'(y)v'(y)\dd y<0,
+\]
+and
+\[
+ F_c'(v(P/2))v''(P/2)
+       =2\int_0^{P/2}K_P'(P/2-y)v'(y)\dd y>0.
+\]
+The integrals converge because $v'$ vanishes linearly at the endpoints,
+whereas $K_P'$ has at most an inverse-distance singularity. This is the
+nodal argument of \cite[Theorem 4.2]{EJC}, with physical period $P$.
+
+Near any subcritical solution there is a positive gap from $\gamma(c)$.
+The identity $v=F_c^{-1}(\K_kv)$ and the one-derivative gain improve
+convergence of solutions in $X$ to convergence in $C^2$. Interior derivative
+signs and the endpoint second-derivative signs are then preserved.
+\end{proof}
+
+The next estimate prevents the highest waves from becoming flat when the
+period grows.
+\begin{proposition}[A uniform drop from the critical height]\label{prop:drop}
+There are $r_0>0$ and $D_0>0$, independent of $P\ge4$, such that every
+smooth nonconstant solution as in Lemma~\ref{lem:nodal}, with
+$1<c<\cg$, satisfies
+\begin{equation}\label{eq:drop}
+ \gamma(c)-v(r)\ge D_0r,\qquad 0<r\le r_0.
+\end{equation}
+The estimate is inherited by its uniform limits.
+\end{proposition}
+\begin{proof}
+The image terms in $K_P'(t)-K'(t)$ are uniformly bounded for $P\ge4$
+and $0<t\le1/2$, by exponential decay. Since $-K'(t)\sim1/(\pi t)$,
+we can choose $r_0$ with $2r_0<1/2$ so that
+\begin{equation}\label{eq:periodic-derivative-bound}
+ -K_P'(2r)\ge\frac1{4\pi r},\qquad 0<r\le r_0,\quad P\ge4.
+\end{equation}
+On the negative half-period the profile is strictly increasing. For
+$x,y\in[-r,-r/2]$, convexity of $K_P$ gives
+\[
+ K_P(x-y)-K_P(x+y)
+   =\int_{|x-y|}^{|x+y|}(-K_P'(t))\dd t
+   \ge r[-K_P'(2r)].
+\]
+The improper nonnegative integral has the same interpretation if the lower
+endpoint is zero. Reflecting \eqref{eq:reflected-derivative} to this
+half-period, restricting its positive integral to $[-r,-r/2]$, and using
+the decrease of $F_c'$ yield
+\[
+ F_c'(v(-r))v'(x)\ge r[-K_P'(2r)]
+                   [v(-r/2)-v(-r)],\qquad -r<x<-r/2.
+\]
+Integrating in $x$ and cancelling the strictly positive profile increment
+gives $F_c'(v(-r))\ge r/(8\pi)$. Put $d=\gamma(c)-v(-r)$. From
+\eqref{eq:cubic-derivatives},
+\[
+ F_c'(v(-r))=\sqrt3c\,d+\frac32d^2
+       \le B d,\qquad B=\cg\left(\sqrt3+\frac{3a}{2}\right).
+\]
+Thus \eqref{eq:drop} holds with $D_0=1/(8\pi B)$. Only smooth
+subcritical profiles have been differentiated. The final inequality
+passes to uniform limits directly.
+\end{proof}
+
+\section{Positive highest periodic waves}\label{sec:periodic}
+
+The positive constant branch \eqref{eq:constant-branch} satisfies
+$0<b(c)<\gamma(c)$ for $1<c<\cg$. We construct a nonconstant branch
+from it, keeping the physical period fixed throughout this section.
+
+\begin{lemma}[Local bifurcation from the positive constant]\label{lem:local}
+For every sufficiently large $P$, there is a unique $c_b\in(1,\cg)$
+such that a local analytic branch of even solutions bifurcates from
+$(b(c_b),c_b)$ in the first cosine mode. Its positive-amplitude arm has
+positive profiles with the nodal signs of Lemma~\ref{lem:nodal}. The
+speed is nonconstant, and the profile linearization is invertible at
+nearby nonzero points of this branch.
+\end{lemma}
+\begin{proof}
+Set $v=b(c)+w$ and $\Lambda(c)=F_c'(b(c))$. With
+$s(c)=\sqrt{c^2/4+2}$, direct calculation gives
+\begin{equation}\label{eq:Lambda}
+ \Lambda(c)=\frac{c^2}{4}+3-\frac32c s(c),\qquad
+ \Lambda'(c)=\frac c2-\frac32\left(s(c)+\frac{c^2}{4s(c)}\right)<0.
+\end{equation}
+It decreases from $1$ to $0$ on $[1,\cg]$. Since $0<m(k)<1$, there
+is exactly one $c_b$ with $\Lambda(c_b)=m(k)$. At that point
+$\K_k-\Lambda(c_b)I$ has even kernel spanned by $\cos\theta$.
+It is Fredholm of index zero, and its range is precisely the functions
+with zero first cosine coefficient. The nonzero derivative in
+\eqref{eq:Lambda} gives transversality. The analytic simple-bifurcation
+theorem in \cite[Remark 3]{CSV} gives a local curve containing all nearby
+nonconstant solutions. Parametrize it by its first cosine coefficient
+$\tau$. Half-period translation changes $\tau$ to $-\tau$, so local
+uniqueness makes the speed even in $\tau$.
+
+Let $A(c)=3(b(c)-c)/2$. The equation for $w$ is
+\begin{equation}\label{eq:w-equation}
+ (\K_k-\Lambda(c))w=A(c)w^2+\frac12w^3.
+\end{equation}
+Analyticity gives expansions, for this fixed $P$,
+\[
+ w=\tau\cos\theta+\tau^2(w_0+w_2\cos2\theta)+O(\tau^3),
+ \qquad c=c_b+C_2\tau^2+O(\tau^4).
+\]
+All coefficients on the next line are evaluated at $c_b$:
+\begin{equation}\label{eq:bifurcation-coefficients}
+ \begin{split}
+ w_0&=\frac{A}{2(1-m(k))},\qquad
+ w_2=\frac{A}{2(m(2k)-m(k))},\\
+ -\Lambda'C_2&=A^2\left(\frac1{1-m(k)}
+              +\frac1{2(m(2k)-m(k))}\right)+\frac38.
+ \end{split}
+\end{equation}
+The constant and second modes at order two give $w_0,w_2$; the first mode
+at order three gives $-\Lambda'C_2=2Aw_0+Aw_2+3/8$.
+As $k\downarrow0$,
+\[
+ 1-m(k)=\frac{k^2}{3}+O(k^4),\qquad
+ m(k)-m(2k)=k^2+O(k^4),\qquad
+ A\longrightarrow-\frac32,\quad \Lambda'\longrightarrow-2.
+\]
+Consequently
+\begin{equation}\label{eq:C2-limit}
+ k^2C_2\longrightarrow\frac{45}{16}>0.
+\end{equation}
+For sufficiently large $P$ this coefficient is nonzero. The local
+Lyapunov--Schmidt equation has the form
+$G(c,\tau)=\tau(\ell(c-c_b)+q\tau^2+\cdots)$, with
+$\ell\ne0$ and $q\ne0$. At its nonzero solutions, differentiation in
+$\tau$ with $c$ fixed gives $G_\tau=2q\tau^2+o(\tau^2)$.
+This is the profile Schur complement, so the full profile linearization
+is invertible there.
+
+The local curve and its expansion can also be constructed in $C^{2+1/4}$;
+the same simple kernel and transversality apply, and uniqueness in $X$
+identifies the curves. The leading term $b(c)+\tau\cos\theta$ therefore
+gives positivity and the strict nodal pattern for $\tau>0$ small.
+\end{proof}
+
+We use the corrected analytic global-bifurcation theorem of
+Constantin, Strauss and Varvaruca \cite[Theorem 4, Remarks 3--4]{CSV}.
+For a real analytic map $\F:\mathcal O\subset\R\times X\to X$, its
+hypotheses are: the full trivial line lies in $\mathcal O$; one point on
+it has simple kernel and cokernel with transverse parameter crossing;
+the profile derivative is Fredholm of index zero at every solution; and
+$\mathcal O$ is exhausted by bounded closed sets whose solution subsets
+are compact. The distinguished analytic continuation of the local branch
+then either eventually leaves every set of that exhaustion or is a
+periodic curve. At each branch point, its incoming distinguished analytic
+arc has a uniquely selected outgoing arc for which the joined curve admits
+a local uniformizing real-analytic parameter
+\cite[Remark~3 and Figure~2, preprint pp.~14--15]{CSV}.
+This parameter is one-to-one on a sufficiently small interval around the
+join. At regular points the corresponding continuation is the unique
+implicit-function graph. These are local properties of the selected arc.
+We use compact-exhaustion escape,
+rather than the stronger norm/boundary disjunction corrected in that paper.
+
+\begin{proposition}[Global continuation and monotonicity]\label{prop:global}
+For every sufficiently large fixed $P$, the positive local arm in
+Lemma~\ref{lem:local} extends to a distinguished global curve of positive
+smooth subcritical profiles. All of its positive-side profiles are
+nonconstant and strictly decreasing on $(0,P/2)$. The curve leaves every
+compact exhaustion set of the positive subcritical solution domain.
+\end{proposition}
+\begin{proof}
+To place the whole positive constant branch on the trivial line, use the
+analytic speed parametrization
+\[
+ c(\lambda)=1+(\cg-1)\frac{e^\lambda}{1+e^\lambda},\qquad\lambda\in\R,
+\]
+and define
+\[
+ \F(\lambda,w)=\K_kw-
+  \bigl[F_{c(\lambda)}(b(c(\lambda))+w)-F_{c(\lambda)}(b(c(\lambda)))\bigr]
+\]
+on the open set
+\[
+ \mathcal O=\{(\lambda,w)\in\R\times X:
+     \min v>0,\ \max v<\gamma(c(\lambda)),\quad v=b(c(\lambda))+w\}.
+\]
+The whole $w=0$ line belongs to this set. The local crossing is simple
+and transverse by Lemma~\ref{lem:local}, since $c'(\lambda)>0$.
+At every solution the profile derivative is $\K_k-F_c'(v)$.
+Multiplication by $F_c'(v)>0$ is invertible on $X$, whereas $\K_k$ is
+compact. The derivative is therefore Fredholm of index zero.
+
+For integer $j\ge1$, take the closed subsets of $\mathcal O$ given by
+\[
+ |\lambda|,\norm{w}_X\le j,\qquad
+ \min v\ge1/j,\qquad \gamma(c)-\max v\ge1/j.
+\]
+They exhaust $\mathcal O$. On each of them, the inverse cubic has
+uniformly bounded derivatives on the relevant range. The equation and
+the one-derivative gain give a uniform $C^{1+1/4}$ bound for its
+solutions. Their solution subsets are compact in $X$ and closed. This
+verifies all hypotheses of the continuation theorem.
+
+It remains to keep the chosen arm in the monotone cone. The cone of even
+nonincreasing functions is closed in $X$. At any nonconstant solution in
+the cone, Lemma~\ref{lem:nodal} makes the strict nodal property open
+relative to the solution curve. Its first loss at a finite parameter
+could therefore occur only at a constant. In $\mathcal O$ the only
+constant solution is $b(c)$.
+
+At such a contact the profile derivative must be singular, or the
+implicit-function theorem would allow only the constant branch nearby.
+Its kernel is $\cos(n\theta)$ for exactly one $n\ge1$. The transverse
+local bifurcation theorem applies there too. For $n\ge2$, neither sign of
+the leading cosine is monotone on $[0,\pi]$, which excludes such a
+contact. For $n=1$, strict decrease of $\Lambda$ identifies the contact
+with the original bifurcation point.
+
+For completeness, the remaining same-arm return is excluded as follows.
+Suppose the first return is at a parameter $T>0$. Arrival along the
+negative local arm violates monotonicity already before $T$. Arrival
+along the positive local arm identifies its analytic germ with the
+outgoing arm near zero, with reversed orientation. Match these two
+copies by an order-reversing local parameter map $s\mapsto h(s)$.
+The distinguished arc continuation in \cite[Figure 2]{CSV} extends this
+match through each regular point and each intervening branch point.
+At a regular point this follows from uniqueness of the implicit-function
+graph; at a branch point it follows from the unique selection of the
+outgoing arc just stated.
+Continue while $0<s<h(s)<T$. The left parameter increases and the right
+one decreases. If continuation stopped at two distinct interior limits,
+the local uniformizing charts at those limits and their transition map
+would extend the match.
+Thus they meet at some $s_*=h(s_*)$. The two sides at that point would
+then describe the identical germ, contrary to local uniformizing
+injectivity. This rules out the return. The nearby regular points
+needed for the distinguished arc construction are supplied by
+\eqref{eq:C2-limit} and the Schur complement in Lemma~\ref{lem:local}.
+
+Hence the entire positive side remains nonconstant and monotone. A
+periodic continuation would return to its initial constant point, and is
+also excluded. The remaining global alternative is escape from every
+compact exhaustion set.
+\end{proof}
+
+\begin{proposition}[Highest waves for large periods]\label{prop:highest}
+For every sufficiently large $P$, there are $c_P\in(1,\cg)$ and a
+positive, even, continuous $P$-periodic solution $v_P$ with
+\[
+ K*v_P=F_{c_P}(v_P),\qquad v_P(0)=\gamma(c_P).
+\]
+It is strictly decreasing on $(0,P/2)$, smooth off $P\mathbb Z$, and
+satisfies \eqref{eq:drop} and the common modulus
+\eqref{eq:modulus}.
+\end{proposition}
+\begin{proof}
+Fix $P$ and follow the positive side of Proposition~\ref{prop:global}.
+Lemma~\ref{lem:modulus} makes all its profiles bounded in $C^{3/8}$
+and precompact in $X$. Its speeds stay away from $1$: otherwise an
+$X$-convergent subsequence has limiting speed $1$, its limiting profile
+is zero by Lemma~\ref{lem:speed}, and the constant-only neighborhood
+there excludes the nonconstant sequence. Its speeds also stay away from
+$\cg$. At that endpoint the limit must be zero or $\gamma(\cg)$.
+Local invertibility at zero excludes the first, and the fixed positive
+drop \eqref{eq:drop} excludes the second.
+
+The minima stay uniformly positive along this fixed-period curve. Indeed,
+a limiting zero minimum at an interior limiting speed would give a
+nonnegative solution vanishing at one point. Positivity of $K_P$ then
+forces the limit to be identically zero; local invertibility at that
+speed again excludes it.
+
+If the crest gap also stayed uniformly positive, the whole positive
+curve would lie in one of the exhaustion sets used above. This
+contradicts Proposition~\ref{prop:global}. There is therefore a sequence
+whose crest gaps tend to zero. Take an $X$-convergent subsequence, also
+convergent in speed. Its limit solves the equation and has crest
+$\gamma(c_P)$. Estimate \eqref{eq:drop} makes it nonconstant. A zero
+would force the limit to vanish identically by positivity of convolution,
+so it is positive. It is strictly decreasing by
+Lemma~\ref{lem:strict-comparison}. Wherever it is below its crest, the
+localized inverse-cubic smoothing of \cite[Lemma 4.1]{EJC}, with kernel
+$K_P$, makes it smooth. Strict decrease places these points precisely
+off $P\mathbb Z$. Both uniform estimates pass to the limit.
+\end{proof}
+
+\section{The solitary limit}\label{sec:solitary}
+
+Choose $P_n\to\infty$ and the highest profiles from
+Proposition~\ref{prop:highest}. We keep the physical spatial coordinate
+$x$, so the uniform modulus does not change with $n$.
+
+\begin{lemma}\label{lem:limit}
+After passage to a subsequence, $c_{P_n}\to c\in[1,\cg]$ and
+$v_{P_n}\to v$ locally uniformly on $\R$. The limit is even,
+continuous, nonnegative and nonincreasing on $(0,\infty)$, and
+\begin{equation}\label{eq:limit-profile}
+ K*v=F_c(v),\qquad v(0)=\gamma(c),\qquad
+ \gamma(c)-v(r)\ge D_0r\quad(0<r\le r_0).
+\end{equation}
+In particular, it is nonzero and nonconstant. Its limits at both
+infinities agree with a number $b\ge0$ satisfying $F_c(b)=b$.
+\end{lemma}
+\begin{proof}
+The suprema are bounded by $M$ and the modulus in
+Lemma~\ref{lem:modulus} is common. Compact-interval selection and a
+diagonal subsequence give the stated local uniform convergence; the
+speed can be selected first from its compact interval. Evenness and
+monotonicity pass to the limit on every compact set. The crest and drop
+also pass directly.
+
+For fixed $x$, split the convolution into $|y|\le R$ and $|y|>R$.
+On the first part $v_{P_n}(x-y)$ converges uniformly; the complementary
+error is bounded by $2M\int_{|y|>R}K(y)\dd y$. Taking $n\to\infty$
+and then $R\to\infty$ proves the pointwise equation. The decreasing
+bounded positive-half-line profile has a finite limit $b$, also the
+negative tail by evenness. Dominated convergence in
+$K*v(x)=\int K(y)v(x-y)\dd y$ as $x\to\infty$ yields
+$F_c(b)=b$. No global uniform convergence is needed.
+\end{proof}
+
+We next show that the tails are zero. The following balance only requires
+equal bounded tails, rather than an integrable profile.
+\begin{lemma}[First-moment balance]\label{lem:balance}
+If $f$ is bounded and has the same finite limit at both infinities, then
+\begin{equation}\label{eq:balance}
+ \lim_{R\to\infty}\int_{-R}^R(K*f-f)(x)\dd x=0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For each fixed $R$, the absolute double integral for $K*f$ is at most
+$2R\norm{f}_\infty\norm{K}_1$. Fubini's theorem and the mass-one
+identity give
+\[
+ \int_{-R}^R(K*f-f)(x)\dd x=\int_\R K(y)A_R(y)\dd y,
+ \quad
+ A_R(y)=\int_{-R-y}^{R-y}f(x)\dd x-\int_{-R}^Rf(x)\dd x.
+\]
+For fixed $y$, its two boundary integrals tend to equal and opposite
+limits, so $A_R(y)\to0$. For all $R,y$,
+$|A_R(y)|\le2\norm{f}_\infty|y|$. The finite first absolute moment
+of $K$ supplies an integrable majorant, proving \eqref{eq:balance}.
+\end{proof}
+
+\begin{lemma}\label{lem:zero-tail}
+The limit in Lemma~\ref{lem:limit} has $1<c<\cg$ and $b=0$.
+\end{lemma}
+\begin{proof}
+If $c=1$, the equation gives
+\[
+ K*v-v=-\frac12v^2(3-v)\le0.
+\]
+It is strictly negative on a nonempty open interval, since
+$v(0)=a>0$ and $v\le a<3$. Its integrals over expanding symmetric
+intervals cannot tend to zero, contrary to Lemma~\ref{lem:balance}.
+If $c=\cg$, then $F_c(\gamma(c))=\gamma(c)$. At $x=0$, however,
+the positive mass-one average $K*v$ is strictly smaller than
+$\gamma(c)$, because $v$ is a nonconstant continuous function bounded
+above by $\gamma(c)$. Thus the speed is interior.
+
+Suppose $b>0$. The drop in \eqref{eq:limit-profile} gives
+$b<\gamma(c)$. Since $F_c(b)=b$,
+\[
+ F_c'(b)=1-\frac32cb+b^2<1.
+\]
+Put $w=v-b\ge0$. It is nonzero, bounded and has zero tails. Strict
+concavity of $F_c$ on $[b,\gamma(c)]$ gives
+\[
+ K*w=F_c(b+w)-F_c(b)<F_c'(b)w<w
+\]
+wherever $w>0$, with equality in the first difference when $w=0$.
+Hence $K*w-w$ is nonpositive everywhere and strictly negative on an
+open interval. Lemma~\ref{lem:balance} applied to $w$ is again a
+contradiction. This proves $b=0$.
+\end{proof}
+
+\begin{lemma}\label{lem:strict-smooth}
+The limiting profile is strictly positive on $\R$, strictly decreasing
+on $(0,\infty)$, and smooth on $\R\setminus\{0\}$.
+\end{lemma}
+\begin{proof}
+A zero of $v$ would give $K*v>0$ at that point, because $K$ is positive
+and $v$ is nonnegative and nonzero. This contradicts $F_c(0)=0$.
+
+For each level $0<t<v(0)$, the superlevel set of $v$ is a centered
+interval of finite positive radius $r(t)$, up to endpoints. Its finiteness
+uses the zero tail. For every $r>0$, the function
+$K*\mathbf1_{[-r,r]}$ is locally absolutely continuous and has derivative
+\[
+ K(x+r)-K(x-r)<0
+\]
+for almost every $x>0$. The logarithmic singularity at $x=r$ is
+integrable. Each such interval convolution is strictly decreasing.
+Integrating over levels by Tonelli's theorem shows that $K*v$ is strictly
+decreasing. Strict increase of $F_c$ on $[0,\gamma(c)]$ then gives
+strict decrease of $v$. In particular $v(x)<\gamma(c)$ for $x\ne0$.
+
+For smoothness, convolution gains one Sobolev derivative:
+$K:H^s(\R)\to H^{s+1}(\R)$, since
+$\sqrt{1+\xi^2}\,m(\xi)$ is bounded. On a compact
+interval away from zero, localize $v$ with a smooth cutoff equal to one
+on a slightly larger interval. The localized part is initially in $L^2$,
+so its convolution is in $H^1$. The complementary convolution is smooth
+on the smaller interval, since its kernel argument stays away from zero
+and every off-origin derivative is integrable at infinity against bounded
+$v$. On that interval $F_c'(v)$ has a positive lower bound. Its smooth
+scalar inverse, extended off the local range with bounded derivatives,
+therefore gives $v\in H^1$ locally by the weak chain rule.
+
+Repeat with nested cutoffs. If $v$ is locally in $H^j$, convolution gains
+one derivative. Composition with the smooth local inverse preserves this
+integer regularity: in one dimension the lower derivatives in each
+chain-rule term are bounded by the local $H^1$ embedding, while at most
+one highest derivative is only in $L^2$. Smooth approximation and the
+weak product and chain rules justify the calculation. Iteration and
+Sobolev embedding yield smoothness off zero.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Lemmas~\ref{lem:limit}, \ref{lem:zero-tail} and
+\ref{lem:strict-smooth} give all assertions about $c$ and $v$.
+Set $\eta=cv-v^2/2$. Expanding the cubic equation yields the exact
+identities
+\begin{equation}\label{eq:integrated-system}
+ K*v+\eta v=c\eta,\qquad \eta+\frac12v^2=cv.
+\end{equation}
+For any locally integrable profile $f$, the change of variables $z=x-ct$
+in a smooth compactly supported space-time test integral gives
+$\partial_t f(x-ct)=-c\partial_x f(x-ct)$ in distributions.
+Convolution by $K$ commutes with translation since $K\in L^1$ and $v$
+is bounded. Applying distributional derivatives to
+\eqref{eq:integrated-system} therefore gives both equations of
+\eqref{eq:system}. Smoothness makes them classical off the moving crest.
+Finally $a-a^2/2=1/3$, so $\eta(0)=c^2/3$.
+\end{proof}
+
+\paragraph{AI-use disclosure.}
+This work was prepared with extensive assistance from OpenAI Codex,
+including mathematical exploration, proof drafting, source inspection and
+manuscript preparation. Two additional AI contexts from the same provider
+supplied a reader report and a referee report on an anonymous draft; these
+reports informed a single revision. Responsibility for the mathematical claims and
+references rests with the named author.
+
+\begin{thebibliography}{9}
+\bibitem{CSV}
+A.~Constantin, W.~Strauss and E.~Varvaruca,
+\emph{Global bifurcation of steady gravity water waves with critical layers},
+Acta Math. \textbf{217} (2016), 195--262.
+\href{https://doi.org/10.1007/s11511-017-0144-x}{doi:10.1007/s11511-017-0144-x}.
+The continuation statement cited here is Theorem~4 and Remarks~3--4 in
+\href{https://api.newton.ac.uk/website/v0/events/preprints/NI14051}{preprint NI14051}.
+
+\bibitem{EJC}
+M.~Ehrnstr\"om, M.~A.~Johnson and K.~M.~Claassen,
+\emph{Existence of a highest wave in a fully dispersive two-way shallow
+water model}, Arch. Ration. Mech. Anal. \textbf{231} (2019), 1635--1673.
+\href{https://doi.org/10.1007/s00205-018-1306-5}{doi:10.1007/s00205-018-1306-5}.
+Numbering refers to \href{https://arxiv.org/abs/1610.02603v2}{arXiv:1610.02603v2}.
+
+\bibitem{EMV}
+M.~Ehrnstr\"om, O.~I.~H.~M{\ae}hlen and K.~Varholm,
+\emph{On the precise cusped behaviour of extreme solutions to Whitham-type
+equations}, Ann. Inst. H. Poincar\'e C Anal. Non Lin\'eaire
+\textbf{42} (2025), 125--162.
+\href{https://doi.org/10.4171/AIHPC/104}{doi:10.4171/AIHPC/104}.
+
+\bibitem{ENW}
+M.~Ehrnstr\"om, K.~Nik and C.~Walker,
+\emph{A direct construction of a full family of Whitham solitary waves},
+\href{https://arxiv.org/abs/2204.03274v1}{arXiv:2204.03274v1} (2022).
+
+\bibitem{FNSS}
+S.~Fu\v c\'ik, J.~Ne\v cas, J.~Sou\v cek and V.~Sou\v cek,
+\emph{Upper bound for the number of eigenvalues for nonlinear operators},
+Ann. Scuola Norm. Sup. Pisa Cl. Sci. (3) \textbf{27} (1973), 53--71.
+\href{https://www.numdam.org/item/ASNSP_1973_3_27_1_53_0/}{Primary archive}.
+
+\bibitem{NW}
+D.~Nilsson and Y.~Wang,
+\emph{Solitary wave solutions to a class of Whitham--Boussinesq systems},
+Z. Angew. Math. Phys. \textbf{70} (2019), article 70.
+\href{https://arxiv.org/abs/1810.03405v2}{arXiv:1810.03405v2}.
+\end{thebibliography}
+\end{document}
