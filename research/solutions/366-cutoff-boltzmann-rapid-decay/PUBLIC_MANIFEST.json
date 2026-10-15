@@ -1,0 +1,51 @@
+{
+  "format_version": 1,
+  "title": "Loss of rapid velocity decay in a broad smooth class for the cutoff Boltzmann equation",
+  "author": "Kaiwen Jin",
+  "contact": "yui.ui.siki@gmail.com",
+  "version_date": "2026-10-15",
+  "claim_status": "Proposed counterexample to the literal rapid-decay conclusion; independent review requested",
+  "problem": {
+    "id": "366",
+    "revision": "a153f469ee0ea64e876b2ad97c79d252c19a3e22",
+    "url": "https://github.com/MColbrook/AIM/blob/a153f469ee0ea64e876b2ad97c79d252c19a3e22/problems/366-cutoff-boltzmann-continuation.md"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "purpose": "Entry point, precise scope, materials and standalone build instructions",
+      "bytes": 1764,
+      "sha256": "c1af129f806fccf682415b0c32a6298fd3c4c69b0bf4214c04bad71f2863c843"
+    },
+    {
+      "path": "TARGET_COMPARISON.md",
+      "purpose": "Requirement-by-requirement comparison with the immutable public problem",
+      "bytes": 3096,
+      "sha256": "d63b02a525dc09b813d4cc682be6932ba1c027d1070ad477e7f92e4ebf86617e"
+    },
+    {
+      "path": "AI_USE.md",
+      "purpose": "Factual AI use/review scope and request for independent mathematical review",
+      "bytes": 975,
+      "sha256": "38c7cd3ba745ca6810ac70c3c065d777a1ef858b4b75e11983c1fcfca500bf14"
+    },
+    {
+      "path": "paper/main.tex",
+      "purpose": "Complete editable standalone manuscript and inline bibliography",
+      "bytes": 37571,
+      "sha256": "987ed49d8a1929fa0f38306315cad78e56558bf0f4eee0260e17c10ecd73f371"
+    },
+    {
+      "path": "paper/main.pdf",
+      "purpose": "Final twelve-page manuscript built from the supplied LaTeX source",
+      "bytes": 383837,
+      "sha256": "974583caf63cd2aadd62c5ee441add27b62aca0d0cac91ebb1843bee29161815"
+    }
+  ],
+  "package_metadata_files": [
+    "PUBLIC_MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "hash_convention": "This manifest hashes the five content files. SHA256SUMS hashes those files and this manifest; it excludes itself to avoid self-reference.",
+  "scope_limit": "Immediate loss of rapid velocity decay; the solution continues smoothly in X6. No derivative-blowup, conservative/energy-admissible/positive-time-Schwartz or novelty claim."
+}
