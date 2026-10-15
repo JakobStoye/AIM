@@ -1,0 +1,481 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Cl}{\mathcal C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\bd}{\partial}
+\newcommand{\intr}{\operatorname{int}}
+\newcommand{\Ht}{\widetilde H}
+\title{Reducible cube dynamics on regular contractible sets in four dimensions}
+\author{Kaiwen Jin\\\small\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}
+\date{13 October 2026}
+\hypersetup{pdftitle={Reducible cube dynamics on regular contractible sets in four dimensions},
+ pdfauthor={Kaiwen Jin},pdfsubject={AIM Problem 500: dimension-four counterexample},
+ pdfkeywords={cubical sets, topology-preserving dynamics, contractible four-manifolds}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider the topology-preserving cube dynamics in the higher-dimensional
+extension of the Ising-disk model. The states are all finite regular
+contractible unions of lattice cubes containing a fixed cube. A removal must
+admit a strong deformation retraction that keeps the removed cube inside
+itself, and additions are the inverse moves. In four dimensions, every state
+is a piecewise-linear manifold with boundary, and every permitted move
+preserves the homeomorphism type of that boundary. A contractible
+four-manifold with nontrivial boundary fundamental group, embedded by
+Lickorish in the four-sphere, can be realized exactly as such a lattice-cube
+union by a hypersurface cubulation theorem. It therefore cannot communicate
+with the state consisting of the fixed cube alone. This gives a negative
+answer to the proposed universal higher-dimensional extension. The obstruction holds
+for every choice of positive transition rates; the separate three-dimensional
+question is not settled here.
+\end{abstract}
+
+\section{The model and the obstruction}
+
+Baryshnikov and Onaran proved irreducibility and small-parameter ergodicity
+for their planar Ising-disk dynamics and asked for a higher-dimensional
+extension \cite[Theorem~6.5 and Conjecture~6.9]{BO}. We use the precise
+all-state formulation of AIM Problem~500\footnote{The frozen problem statement
+is \href{https://github.com/MColbrook/AIM/blob/1b7c7fd251c1643bb41f0e3cef38704bcef410fd/problems/500-higher-dimensional-ising-clumps.md}{AIM Problem~500 at revision \texttt{1b7c7fd}}.}
+and retain its local retraction requirement.
+
+For $d\geq2$ and $z\in\Z^d$, write
+\[
+ Q_z=z+[-1/2,1/2]^d.
+\]
+A finite collection $C$ of these cubes is a \emph{clump} if its union
+$|C|$ is contractible and regular. Regularity means that every
+$x\in|C|$ is either an interior point, in the ambient Euclidean space, or
+\begin{equation}\label{eq:regular}
+ (B_\varepsilon(x)\cap|C|)\setminus\{x\}
+ \quad\text{is contractible for every sufficiently small }\varepsilon>0.
+\end{equation}
+The state space $\Cl_d$ consists of all clumps containing $Q_0$.
+If $Q\in C\setminus\{Q_0\}$, its removal is permitted when
+$D=C\setminus\{Q\}$ is a clump and there is a strong deformation
+retraction $H:|C|\times[0,1]\longrightarrow|C|$ onto $|D|$ such that
+\begin{equation}\label{eq:supported}
+ H(Q\times[0,1])\subseteq Q.
+\end{equation}
+Thus $H$ fixes $|D|$ at every time. Addition is the inverse of a permitted
+removal. Every permitted addition has rate $p_\uparrow\in(0,1]$, and every
+permitted removal has rate $p_\downarrow\in(0,1]$.
+
+\begin{theorem}\label{thm:main}
+For the dynamics above in dimension $d=4$, a permitted move preserves the
+homeomorphism type of the boundary of the cube union. There exists
+$C_*\in\Cl_4$ such that
+\[
+ \pi_1(\bd|C_*|)\neq1.
+\]
+Consequently, $C_*$ and $\{Q_0\}$ belong to different components of the
+move graph. For every $p_\uparrow,p_\downarrow\in(0,1]$, the continuous-time
+chain is not irreducible on all of $\Cl_4$.
+\end{theorem}
+
+Here $\bd$ denotes ambient boundary and $\pi_1$ the fundamental group.
+All boundaries in the theorem are connected compact three-manifolds, so
+their fundamental groups have an unambiguous isomorphism type. The move
+graph has the states as vertices and an edge for each permitted
+addition--removal pair. Its components use finite paths, with no restriction
+to a fixed bounding box.
+
+The theorem refutes the assertion quantified over every $d\geq2$. It does
+not contradict the planar result, and it leaves the $d=3$ case open. The
+construction is an existence argument: no explicit finite list of cube
+coordinates or numerical certificate is needed or claimed.
+
+\section{Regular cube unions in four dimensions}
+
+We use integral homology throughout. A nonempty space is called
+\emph{acyclic} when all its reduced integral homology groups vanish.
+The piecewise-linear (PL) structure on a cube union comes from a compatible
+triangulation of its cubes and faces.
+
+\subsection{Finite links and embedded low-dimensional manifolds}
+
+The local links below are finite polyhedra with compatible triangulations.
+For subcomplexes $A,B$ of a finite complex $X=A\cup B$, the usual reduced
+Mayer--Vietoris sequence applies, including when $A$ and $B$ are closed.
+For clarity, this follows directly from its open-cover form
+\cite[pp.~149--151]{Hatcher}. In the barycentric subdivision, let $U_A$
+be the set where the total coordinate weight on vertices representing
+faces in $A$ is positive, and define $U_B$ similarly. No simplex contains
+both an $A$-only vertex and a $B$-only vertex: its vertices represent a
+nested chain of faces, and membership in a subcomplex is downward closed.
+The sets $U_A,U_B$ form an open cover and retract onto $A,B$ by deleting
+the other weights and renormalizing. In $U_A\cap U_B$ the weight on common
+vertices is positive; the same operation retracts the intersection onto
+$A\cap B$. This gives the claimed sequence. Applied to the two cones
+of a suspension, it also gives
+\begin{equation}\label{eq:suspension}
+ \Ht_{j+1}(\Sigma L;\Z)\cong\Ht_j(L;\Z).
+\end{equation}
+We use this degree shift for iterated suspensions.
+
+\begin{lemma}\label{lem:lowball}
+Let $n=2$ or $3$. If a compact connected acyclic PL $n$-manifold $K$ with
+boundary is PL embedded in $S^n$, then $K$ is a PL $n$-ball.
+\end{lemma}
+
+\begin{proof}
+The codimension-zero embedding makes $K$ orientable. Its boundary is
+nonempty, since a closed connected orientable $n$-manifold has nonzero top
+homology. The universal coefficient theorem
+\cite[Theorem~3.2, p.~195]{Hatcher} and acyclicity give
+$H^0(K;\Z)=\Z$ and $H^j(K;\Z)=0$ for $j>0$. Poincar\'e--Lefschetz
+duality \cite[Theorem~3.43, p.~254]{Hatcher} therefore gives
+\[
+ H_i(K,\bd K;\Z)=
+ \begin{cases}\Z,&i=n,\\0,&i\neq n.\end{cases}
+\]
+The exact sequence of the pair shows that $\bd K$ is connected and has
+the integral homology of $S^{n-1}$. If $n=2$, this boundary is a polygonal
+circle. If $n=3$, it is a closed connected orientable PL surface with
+$H_1(\bd K;\Z)=0$, hence a PL two-sphere.
+
+One can verify the last surface assertion without any three-manifold
+classification. In a triangulated orientable closed surface, a spanning
+tree of the one-skeleton has a disk neighborhood. Contracting the tree
+replaces that neighborhood by a disk with the same boundary and leaves
+the PL surface type unchanged. The dual graph of the remaining edges is
+connected: removing the interior of the tree neighborhood leaves a
+connected surface. Merging faces across a dual spanning tree gives a
+cell presentation with one vertex, one face and $e$ edges. Before its
+remaining side identifications, the face is a disk, formed by adding
+triangles along one edge at a time. Each remaining edge occurs once in
+each direction in the oriented face boundary. Both cellular boundary maps
+vanish, so $H_1=\Z^e$ \cite[Theorem~2.35, pp.~138--139]{Hatcher}.
+Thus $H_1=0$ forces $e=0$, giving a disk with its boundary collapsed to
+a point, which is a PL two-sphere.
+
+The PL Schoenflies theorem in dimensions two and three now shows that
+each closure of a component of $S^n\setminus\bd K$ is a PL $n$-ball
+\cite[pp.~47--49]{RS}; see also the explicit PL formulation in
+\cite[pp.~1--2]{Hatcher3}. The interior of $K$ is one whole complementary
+component: it is connected and is both open and closed relative to that
+component, since its only frontier is $\bd K$. Hence $K$ is its ball closure.
+\end{proof}
+
+\begin{proposition}\label{prop:manifold}
+Every finite regular union of four-dimensional lattice cubes is a compact
+PL four-manifold with boundary. If the union is also contractible, its
+boundary is a connected integral homology three-sphere.
+\end{proposition}
+
+\begin{proof}
+Let $x$ lie in the relative interior of a $k$-dimensional lattice face,
+and put $r=4-k$. For $k<4$, a neighborhood of $x$ in the union is a product
+of $\R^k$ with a union of coordinate orthants in $\R^r$. Its normal
+link $L$ is a nonempty pure $(r-1)$-dimensional subcomplex of the boundary
+of the $r$-dimensional cross-polytope. If all orthants occur, $x$ is
+interior and $L=S^{r-1}$. Otherwise, $x$ is a boundary point, and its
+full local link is
+\[
+ S^{k-1}*L=\Sigma^kL,
+\]
+with $k=0$ interpreted as $L$ itself. Small punctured ball intersections
+retract onto this link. Regularity and \eqref{eq:suspension} imply that
+$L$ is acyclic.
+
+We check the normal links in increasing order of $r$. For $r=1$, a proper
+nonempty link is a point. For $r=2$, an acyclic subcomplex of a polygonal
+circle is an interval. For $r=3$, each vertex link in $L$ is the $r=2$
+normal link at a nearby lattice-face point, hence an interval or a circle.
+Thus $L$ is a compact PL surface with boundary embedded in $S^2$.
+Lemma~\ref{lem:lowball} makes it a disk. For $r=4$, the vertex links are
+the $r=3$ links just considered, hence disks or two-spheres. Consequently,
+$L$ is a compact PL three-manifold with boundary in $S^3$, and
+Lemma~\ref{lem:lowball} makes it a three-ball. At nearby points, a full
+normal link is a sphere and a proper one is treated by regularity; these
+are exactly the two possibilities in the induction.
+
+Every boundary normal link is therefore a PL ball, and every interior
+normal link a sphere. The local product-cone description yields the PL
+manifold charts. Compatible triangulation also covers points inside the
+subdivided cells. Points in cube interiors are already ordinary interior
+points. Finally, for a contractible union, duality and the pair exact
+sequence, as in Lemma~\ref{lem:lowball} with $n=4$, give the stated
+boundary homology. This last step asserts nothing about the boundary
+fundamental group.
+\end{proof}
+
+\section{A move replaces a boundary ball by a boundary ball}
+
+First we show why a permitted cube attachment has no isolated lower-dimensional
+attachment faces. Both states must be regular for this argument.
+
+\begin{lemma}\label{lem:pure}
+Let $D$ and $C=D\cup\{Q\}$ be finite regular cube collections in
+$\R^d$, where $Q\notin D$. Suppose there is a strong deformation
+retraction of $|C|$ onto $|D|$ satisfying \eqref{eq:supported}. Then
+\[
+ A=Q\cap|D|
+\]
+is nonempty, contractible, and a union of full $(d-1)$-facets of $Q$.
+\end{lemma}
+
+\begin{proof}
+Restrict the homotopy to $Q$. Its final image lies in $Q\cap|D|$, and
+it fixes this intersection at all times. This is a strong deformation
+retraction of $Q$ onto $A$, proving nonemptiness and contractibility.
+Because lattice cubes meet in full faces, $A$ is a union of faces of $Q$.
+
+Suppose $F$ is a maximal face of this union with dimension $k<d-1$, and
+choose $x$ in its relative interior. In a sufficiently small ball about
+$x$, the intersection $Q\cap|D|$ is exactly $F$. The point is not interior
+to $|D|$, which misses the interior of $Q$. It is not interior to $|C|$
+either: filling a neighborhood would require the cube across each facet
+of $Q$ containing $F$ to belong to $D$, contrary to maximality of $F$.
+
+Intersect the local cones at $x$ with a small sphere. Their links satisfy
+\[
+ L_C=L_Q\cup L_D,\qquad L_Q\cap L_D=S^{k-1}.
+\]
+The links $L_Q$ and $L_D$ are contractible; regularity would also make
+$L_C$ contractible. If $k\geq1$, the finite-subcomplex Mayer--Vietoris
+sequence established above gives
+\[
+ \Ht_k(L_C;\Z)\cong\Ht_{k-1}(S^{k-1};\Z)=\Z,
+\]
+a contradiction. If $k=0$, the intersection is empty and the two nonempty
+links make $L_C$ disconnected. Thus every maximal attachment face is a facet.
+\end{proof}
+
+\begin{lemma}\label{lem:facets}
+A nonempty union of facets of a four-cube is a compact PL three-manifold
+with boundary, possibly disconnected.
+\end{lemma}
+
+\begin{proof}
+At a point on $r\geq2$ incident facets of the cube, the normal link in
+its boundary is the boundary of an $(r-1)$-simplex. The normal link in
+the selected facet union is the corresponding union of simplex facets.
+A full selection is a sphere; any proper nonempty selection is a ball.
+To see the latter assertion by induction, choose a vertex opposite an
+unselected facet. Every selected facet contains this vertex, so the union
+is its cone on a union of facets of the opposite simplex. The base is
+either that simplex's whole boundary or a proper nonempty union; by
+induction it is a sphere or a ball, and its cone is a ball. The initial
+case is one selected endpoint of an interval. At $r=1$, the point is in
+the interior of a selected cube facet and has an ordinary $\R^3$ chart.
+These links prove the assertion at all face dimensions.
+\end{proof}
+
+\begin{proposition}\label{prop:boundary}
+If two four-dimensional clumps differ by a permitted move, their
+boundaries are homeomorphic.
+\end{proposition}
+
+\begin{proof}
+Write the two states as $D$ and $C=D\cup\{Q\}$.
+Proposition~\ref{prop:manifold} makes both unions compact PL four-manifolds.
+By Lemma~\ref{lem:pure}, $A=Q\cap|D|$ is a contractible union of facets.
+Lemma~\ref{lem:facets} and Lemma~\ref{lem:lowball}, applied in
+$\bd Q\cong S^3$, show that $A$ is a three-ball. It is proper in
+$\bd Q$, since a three-sphere is not contractible. Its boundary is a PL
+two-sphere, and PL Schoenflies shows that
+\[
+ B=\overline{\bd Q\setminus A}
+\]
+is the complementary three-ball, with $A\cap B=\bd A=\bd B$.
+
+The set $A$ lies in $\bd|D|$, since $|D|$ contains no interior point of
+$Q$. Let $A^\circ$ be the intrinsic interior of the three-ball $A$.
+Invariance of domain in local three-dimensional charts makes $A^\circ$
+open in $\bd|D|$ \cite[Theorem~2B.3, p.~172]{Hatcher}.
+The PL two-sphere $\bd A$ is locally flat there: its local links are
+polygonal circles in the two-sphere links of the three-manifold.
+The boundary after the attachment is therefore
+\begin{equation}\label{eq:replacement}
+ \bd|C|=(\bd|D|\setminus A^\circ)\cup B.
+\end{equation}
+Here is a pointwise check of the formula. At a point of $A^\circ$, the
+boundary patches of $|D|$ and $Q$ agree locally. Their manifold interiors
+occupy the opposite sides, so this point becomes interior to $|C|$.
+This uses the openness of the common patch and the manifold charts, not
+just the list of incident selected facets. At a point of $\bd A$, at
+least one incident facet of $Q$ is unselected. The neighboring cube
+across that facet is absent from $D$, leaving an open complementary
+sector arbitrarily close to the point; it remains on the boundary of
+$|C|$. Outside $A$, the boundaries of the two pieces are unchanged.
+This proves \eqref{eq:replacement}.
+
+There is a homeomorphism $f:A\longrightarrow B$ equal to the identity
+on their common boundary. Indeed, identify each with a standard
+three-ball and extend the resulting boundary homeomorphism radially
+by Alexander's trick. On $\bd|D|$, use $f$ on $A$ and the identity on
+$\bd|D|\setminus A^\circ$. The maps agree on $\bd A$, and
+\eqref{eq:replacement} shows that the result is a continuous bijection
+onto $\bd|C|$. Compactness makes it a homeomorphism. The argument applies
+to a removal in reverse and is independent of the choice of pinned cube.
+\end{proof}
+
+\section{Realizing a contractible manifold with nontrivial boundary}
+
+We now construct an admissible state with a boundary different from that of
+a cube. The external input is an embedded contractible four-manifold,
+followed by a theorem that cubulates its boundary. The passage from that
+boundary to an exact union of whole cubes is included below.
+
+\begin{lemma}\label{lem:realization}
+There exists a clump $C_*\in\Cl_4$ with
+$\pi_1(\bd|C_*|)\neq1$.
+\end{lemma}
+
+\begin{proof}
+Lickorish's Theorem~1 \cite[pp.~284--286]{Lickorish} constructs a compact
+contractible four-manifold with smooth or PL embeddings in $S^4$. Its
+proof explicitly establishes that the manifold's boundary fundamental
+group is nontrivial (p.~286). Choose a smooth embedding and denote its
+image by $W$. Removing a point outside $W$ identifies the complement of
+that point in $S^4$ with $\R^4$. The image $W\subset\R^4$ remains
+compact and contractible, and
+\[
+ \pi_1(\bd W)\neq1.
+\]
+Its boundary $M=\bd W$ is a smooth compact closed three-dimensional
+hypersurface. The outward normal trivializes its normal bundle, and a
+small closed normal interval supplies a tubular neighborhood.
+
+Apply Boege--Hinojosa--Verjovsky's hypersurface cubulation theorem
+\cite[Theorem~2.8 in the author preprint, version~2]{BHV} with $n=2$.
+For a sufficiently fine subdivision of the canonical cubulation of
+$\R^{n+2}$, that theorem makes the union of cubes meeting a smooth
+compact closed $M^{n+1}$ a bicollar, and gives an ambient isotopy carrying
+$M$ onto either boundary component. The component is a union of whole
+$(n+1)$-faces of the fine cubulation. Let $\varphi$ be the final ambient
+homeomorphism and set $W'=\varphi(W)$. Then $W'$ is compact and
+contractible, its boundary is a finite union of three-faces of a grid of
+mesh $1/m$ for an integer $m$, and its boundary fundamental group is
+nontrivial. Because this is an ambient image of the whole $W$, it is
+also a locally flat codimension-zero topological manifold with boundary.
+
+Every open four-cell of the fine grid is connected and disjoint from
+$\bd W'$, so it lies entirely inside or entirely outside $W'$. Take
+the closures of all cells whose interiors lie inside. There are finitely
+many by compactness, and their union is exactly $W'$. One inclusion
+follows from closedness of $W'$. For the other, $W'$ is the closure of
+its interior, and interior points off the grid skeleton are dense there;
+they belong to the selected cells. A finite union of their closures is
+closed and hence contains every point of $W'$.
+
+We must check the Euclidean-ball condition \eqref{eq:regular}, rather
+than only the existence of manifold neighborhoods. A finite polyhedron
+is locally conical at each point, so for a boundary point $x\in W'$,
+all sufficiently small punctured ball intersections have the same
+conical link. Fix one such radius $\varepsilon$. Choose an open manifold
+half-ball neighborhood $U$ of $x$ inside $B_\varepsilon(x)\cap W'$, and
+then $\delta>0$ so small that $B_\delta(x)\cap W'\subset U$.
+The punctured inclusion
+\[
+ i:(B_\delta(x)\cap W')\setminus\{x\}
+ \longrightarrow (B_\varepsilon(x)\cap W')\setminus\{x\}
+\]
+is a homotopy equivalence by radial scaling in the local cone.
+It factors through $U\setminus\{x\}$, which is contractible because
+$x$ is the boundary center of a manifold half-ball. Thus $i$ is
+null-homotopic. Composing with a homotopy inverse shows that the identity
+on the smaller punctured intersection is null-homotopic, so both
+punctured intersections are contractible. The argument works for every
+sufficiently small $\varepsilon$. Interior points need no such check.
+
+Finally, dilate by $m$ to obtain unit cubes with centers in
+$(\Z+1/2)^4$, translate by $(-1/2,-1/2,-1/2,-1/2)$, and then translate
+the center of any chosen cube to zero by an integer vector. These
+similarities preserve contractibility, the boundary group, and
+\eqref{eq:regular} by scaling Euclidean balls. The resulting finite
+collection $C_*$ has precisely the required lattice centers and contains
+$Q_0$. It is the desired clump.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:boundary} proves boundary preservation under every
+permitted move. The boundary of the single cube $Q_0$ is $S^3$ and has
+trivial fundamental group; Lemma~\ref{lem:realization} gives $C_*$ with
+nontrivial boundary fundamental group. A finite path cannot join them.
+
+All permitted rates are positive, so the jump process uses exactly the
+same move graph. A size-$N$ state has at most $(3^4-1)N$ candidate
+additions, since a new cube must meet an existing one, and at most $N-1$
+removals. The rates are at most one, so the exit rate is finite.
+Every finite jump history from $\{Q_0\}$ stays in its component.
+For the minimal jump process, explosion can kill a path but cannot
+introduce a transition into the component containing $C_*$. In
+particular, a nonexplosive chain of the kind requested by the problem
+cannot be irreducible on the complete state space.
+\end{proof}
+
+\begin{remark}\label{rem:law}
+For $\beta=p_\uparrow/p_\downarrow>0$, suppose
+\[
+ Z_4(\beta)=\sum_{C\in\Cl_4}\beta^{\#C}<\infty,
+ \qquad \Pi_\beta(C)=Z_4(\beta)^{-1}\beta^{\#C}.
+\]
+Here $\#C$ is the number of cubes in $C$. The all-state measure
+$\Pi_\beta$ gives $C_*$ positive mass. Starting from $\{Q_0\}$, the
+nonexplosive chain has probability zero of occupying $C_*$ at every
+finite time. Its law therefore cannot converge to $\Pi_\beta$; its
+total variation distance is at least $\Pi_\beta(C_*)$.
+This conditional observation does not assert failure of normalization,
+nonexplosion, or stationarity of the all-state measure. It shows that
+none of those properties can repair the required all-state irreducibility
+and convergence by choosing a smaller positive $\beta$.
+\end{remark}
+
+\paragraph{AI assistance.}
+OpenAI Codex assisted with literature retrieval, development and checking
+of the argument, and preparation of the manuscript. The result is
+presented as a natural-language proof using the cited sources; independent
+mathematical review is invited.
+
+\clearpage
+\begin{thebibliography}{9}
+
+\bibitem{BO}
+Y.~Baryshnikov and E.~Onaran,
+\emph{Ising disks: topology preserving Glauber dynamics},
+Journal of Applied and Computational Topology \textbf{10} (2026), article~16.
+\href{https://doi.org/10.1007/s41468-026-00248-w}{doi:10.1007/s41468-026-00248-w}.
+
+\bibitem{BHV}
+M.~Boege, G.~Hinojosa and A.~Verjovsky,
+\emph{Any smooth knot $S^n\hookrightarrow\R^{n+2}$ is isotopic to a cubic knot
+contained in the canonical scaffolding of $\R^{n+2}$},
+Revista Matem\'atica Complutense \textbf{24} (2011), 1--13.
+\href{https://doi.org/10.1007/s13163-010-0037-4}{doi:10.1007/s13163-010-0037-4}.
+Author preprint \href{https://arxiv.org/abs/0905.4053v2}{arXiv:0905.4053v2}
+(2009).
+
+\bibitem{Hatcher}
+A.~Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002.
+\href{https://math.uchicago.edu/~farb/algtop2023/Hatcher.pdf}{Author's text (teaching mirror)}.
+
+\bibitem{Hatcher3}
+A.~Hatcher, \emph{Notes on Basic 3-Manifold Topology}, online notes.
+\href{https://sschleimer.warwick.ac.uk/Teach/2021_3MFDS/References/2007notes_on_basic_three-manifold_topology.pdf}{Author's text (teaching mirror)}.
+
+\bibitem{Lickorish}
+W.~B.~R.~Lickorish,
+\emph{Knotted contractible 4-manifolds in $S^4$},
+Pacific Journal of Mathematics \textbf{208} (2003), 283--290.
+\href{https://msp.org/pjm/2003/208-2/pjm-v208-n2-p06-s.pdf}{Publisher's text}.
+
+\bibitem{RS}
+C.~P.~Rourke and B.~J.~Sanderson,
+\emph{Introduction to Piecewise-Linear Topology}, Springer-Verlag, 1972.
+
+\end{thebibliography}
+\end{document}
