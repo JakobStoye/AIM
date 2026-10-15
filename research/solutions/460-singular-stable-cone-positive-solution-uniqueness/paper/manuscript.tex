@@ -1,0 +1,738 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Bcal}{\mathcal B}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\begin{document}
+
+\title{Uniqueness of positive harmonic profiles outside convex cones\newline
+for general stable operators}
+\author{Kaiwen Jin\thanks{\href{mailto:yui.ui.siki@gmail.com}{yui.ui.siki@gmail.com}}}
+\date{October 15, 2026}
+\maketitle
+
+\begin{abstract}
+We prove uniqueness, up to a positive factor, of positive harmonic functions
+outside a proper closed convex cone with nonempty interior for every
+nondegenerate symmetric stable operator. The spectral measure may be singular
+or supported on finitely many directions. Each profile is assumed continuous,
+zero on the cone, and of polynomial growth strictly below the operator's
+order. The proof controls the entire growth norm by one interior value.
+This follows by normalizing at a maximizing scale and using a lower barrier
+whose exponent is smaller than the chosen growth weight. A comparison of
+the resulting normalized profiles then yields proportionality.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+Positive harmonic functions that vanish on a cone are natural objects in
+the study of nonlocal elliptic equations and their blow-up limits. For
+symmetric stable operators, their behavior reflects both the cone geometry
+and the directions in which jumps are allowed. A finite spectral measure
+describes those directions, and it can be concentrated on a few of them.
+The associated interior and boundary regularity theory was developed by
+Ros-Oton and Serra \cite{RS}. Their half-space Liouville theorem
+\cite[Theorem 4.1]{RS} classifies weak solutions of sub-\(2s\) polynomial
+growth in a half-space.
+
+For more general cones, proportionality of positive profiles follows from
+boundary Harnack inequalities in the pointwise elliptic setting; see
+\cite[Proposition 4.4.5]{FR}. Such an approach does not apply to all stable
+operators, since even interior Harnack inequalities can fail for singular
+spectral measures. A related uniqueness question is stated in
+\cite[Open question 4.4, p.~302]{FR}. Ros-Oton and Weidner
+\cite[Theorem 4.6 and Corollary 4.7]{RW} establish comparison of positive
+cone profiles under an angular \(L^r\) condition, \(r>n/(2s)\), and
+directional monotonicity assumptions. Their argument controls nonlocal tails
+before comparing functions near the cone.
+
+Here we establish proportionality for all nondegenerate finite spectral
+measures, including atomic ones, for profiles with an explicit growth
+exponent below the order of the operator. The geometric assumption is that
+the closed convex cone is proper and has nonempty interior. These conditions
+specify the version of the uniqueness problem proved below; no conclusion
+about other growth classes or cones with empty interior is asserted.
+
+Let \(n\ge2\), \(0<s<1\), and let \(\mu\) be a finite even nonnegative
+Borel measure on \(S^{n-1}\) such that, for some \(\lambda,\Lambda>0\),
+\begin{equation}\label{eq:ellipticity}
+ \mu(S^{n-1})\le\Lambda,\qquad
+ \inf_{|e|=1}\int_{S^{n-1}}|e\cdot\theta|^{2s}\,\mu(d\theta)
+       \ge\lambda.
+\end{equation}
+The second condition excludes measures supported in a hyperplane. Define
+the positive operator
+\begin{equation}\label{eq:operator}
+ Lu(x)=\frac12\int_{S^{n-1}}\int_0^\infty
+ \bigl(2u(x)-u(x+r\theta)-u(x-r\theta)\bigr)
+ \frac{dr}{r^{1+2s}}\,\mu(d\theta).
+\end{equation}
+For continuous solutions the equation is understood in the viscosity sense.
+The growth condition in the following theorem makes its tails integrable.
+
+\begin{theorem}\label{thm:main}
+Let \(L\) satisfy \eqref{eq:ellipticity}--\eqref{eq:operator}, and let
+\(\Sigma\subsetneq\R^n\) be a closed convex cone with nonempty interior.
+Suppose \(w_1,w_2\in C(\R^n)\) are zero on \(\Sigma\), strictly positive
+on \(\R^n\setminus\Sigma\), and satisfy
+\[
+ Lw_i=0\quad\hbox{in }\R^n\setminus\Sigma
+\]
+in the viscosity sense. If, for each \(i=1,2\), there are finite \(C_i\)
+and \(\beta_i<2s\) with
+\[
+ |w_i(x)|\le C_i(1+|x|)^{\beta_i}\qquad(x\in\R^n),
+\]
+then \(w_1=cw_2\) on \(\R^n\) for some \(c>0\).
+\end{theorem}
+
+The functions need not be homogeneous or monotone. The constants used in
+the proof concern a fixed operator and cone; uniformity over all such
+operators and cones is unnecessary for the proportionality conclusion.
+
+The difficulty is to obtain comparison constants independent of a profile's
+initial tail bound. Write \(\alpha=2s\). A ball barrier has some exponent
+\(q<\alpha\), and one can choose a growth weight \(p\) above \(q\) and
+both actual profile exponents, while retaining \(p<\alpha\).
+Normalize a profile at a scale maximizing its weighted supremum. A compactness
+argument and supporting balls then give a distance lower bound for that
+normalized function. Evaluation at a fixed interior point recovers the
+factor \(R^{q-p}\le1\), and hence controls the whole growth norm by that
+single value. This controls tails along every direction charged by \(\mu\).
+
+The required compactness includes the cone boundary. We obtain uniform
+boundary smallness from the stopped stable process: starting points that
+approach the cone have expected exit times tending to zero. With the growth
+bound in hand, an annular comparison in the spirit of \cite{RW} works using
+positive spectral mass in outward directions. Scaling makes the comparison
+global, and an extremal nonnegative difference proves uniqueness.
+
+Section~\ref{sec:analytic} establishes the solution-concept and stopping
+facts. Section~\ref{sec:growth} proves boundary compactness and growth
+control, and Section~\ref{sec:rigidity} proves proportionality.
+Throughout, \(B_R=B_R(0)\) is an open Euclidean ball, suprema are pointwise,
+and the generator of the associated stable process is \(-L\).
+
+\section{Analytic facts and stopped harmonic functions}\label{sec:analytic}
+
+Fix the operator and cone in Theorem~\ref{thm:main}, and put
+\(\alpha=2s\) and \(D=\R^n\setminus\Sigma\).
+For \(0\le p<\alpha\), let
+\[
+ \Bcal_p=\left\{u:\sup_{x\in\R^n}
+          \frac{|u(x)|}{(1+|x|)^p}<\infty\right\},
+ \qquad \|u\|_{\Bcal_p}=
+          \sup_x\frac{|u(x)|}{(1+|x|)^p}.
+\]
+The weight is equivalent to \(1+|x|^p\), the convention in
+\cite{FR}. A distributional equation \(Lu=f\) means
+\(\int uL\varphi=\int f\varphi\) for every
+\(\varphi\in C_c^\infty\) supported in the domain. Viscosity inequalities
+use a local \(C^2\) touching test, patched to the original function outside
+the touching ball. Upper tests give \(L\le f\), and lower tests give
+\(L\ge f\).
+
+The symmetric Levy measure associated with our normalization is
+\begin{equation}\label{eq:levy-measure}
+ \nu(dz)=r^{-1-\alpha}\,dr\,\mu(d\theta),\qquad z=r\theta,\quad r>0.
+\end{equation}
+This formula denotes a pushforward measure and permits atoms in \(\mu\).
+For a smooth function with growth below \(\alpha\),
+\begin{equation}\label{eq:compensated}
+ Lu(x)=\int\left(u(x)-u(x+z)
+       +\mathbf1_{|z|<1}\nabla u(x)\cdot z\right)\nu(dz).
+\end{equation}
+Symmetry cancels the odd term and gives exactly \eqref{eq:operator}.
+
+Here are the general-measure analytic results we use. Their applicability
+can be checked directly. Write \(M_\mu=\mu(S^{n-1})\), and set
+\(\delta=(\lambda/(2\Lambda))^{1/\alpha}\).
+For every unit \(e\), the contribution of \(|e\cdot\theta|<\delta\)
+to its \(\alpha\)-moment is at most \(\lambda/2\). Consequently
+\begin{equation}\label{eq:angular-cap}
+ \mu\{|e\cdot\theta|\ge\delta\}\ge\lambda/2,
+ \qquad \int|e\cdot\theta|^2\,\mu(d\theta)
+                  \ge\delta^2\lambda/2.
+\end{equation}
+Radial integration gives
+\begin{align}
+ r^\alpha\nu(B_{2r}\setminus B_r)
+       &=\frac{M_\mu}{\alpha}(1-2^{-\alpha}),\label{eq:class-upper}\\
+ r^{\alpha-2}\int_{B_r}|e\cdot z|^2\nu(dz)
+       &\ge\frac{\delta^2\lambda}{2(2-\alpha)}.\label{eq:class-lower}
+\end{align}
+Thus \(L\) belongs to the general stable class of
+\cite[Definitions 2.1.18 and 2.1.21]{FR}. The class constants may differ
+from \(\lambda,\Lambda\), which causes no difficulty for a fixed operator.
+In particular, that source permits the measure in \eqref{eq:levy-measure}.
+
+\begin{lemma}[General stable analytic results]\label{lem:inputs}
+For the fixed operator \(L\), the following statements hold.
+\begin{enumerate}
+\item If a continuous \(u\in\Bcal_p\) is distributionally harmonic in a ball, its
+convolutions with smooth compactly supported mollifiers are smooth and
+strongly harmonic in smaller balls. Interior \(C^s\) estimates there are
+controlled by \(\|u\|_{\Bcal_p}\).
+\item On a ball, continuous exterior data in \(\Bcal_p\) have a unique
+continuous distributionally harmonic extension in the same growth class.
+\item On a bounded connected domain, a globally nonnegative continuous
+distributionally harmonic function in \(\Bcal_p\) is either positive
+throughout that domain or identically zero there.
+\item There are \(q\in(s,\alpha)\) and \(\eta\in(0,1)\) such that
+\begin{equation}\label{eq:ball-barrier}
+ \phi(x)=(1-|x|^2)_+^q,\qquad
+ L\phi\le-1\quad\hbox{in }B_1\setminus\overline B_{1-\eta}.
+\end{equation}
+\end{enumerate}
+\end{lemma}
+
+The respective sources are \cite[Lemma 2.2.30 and Theorem 2.4.3]{FR},
+\cite[Theorem 2.6.12]{FR}, \cite[Theorem 2.4.15(b)]{FR}, and
+\cite[Lemma B.1.4]{FR}. For the interior estimate choose the source's
+Lebesgue exponent \(2n/\alpha\); the resulting Holder exponent is
+\(\alpha-\alpha/2=s\in(0,1)\). This also covers \(s=1/2\).
+The Dirichlet existence result is used only on smooth balls with continuous
+data; no regularity of the cone boundary is needed for that use.
+
+We will also use stability of the distributional equation under local
+uniform convergence with one common \(\Bcal_p\) bound. To see the relevant
+tail estimate for a test \(\varphi\in C_c^\infty\), take \(R\) larger
+than twice its support radius. A jump from \(|x|>R\) into that support has
+length at least \(R/2\). Changing the order of absolutely integrable
+integrals gives
+\begin{equation}\label{eq:test-tail}
+ \int_{|x|>R}(1+|x|)^p|L\varphi(x)|\,dx
+ \le C_\varphi\int_{R/2}^\infty(1+r)^p r^{-1-\alpha}\,dr
+ \longrightarrow0.
+\end{equation}
+On bounded sets \(L\varphi\) is bounded by its local second derivatives
+and the finite tail mass. This proves both that the distributional pairing
+is defined and that the stated stability holds for this fixed \(L\).
+
+\begin{lemma}[Comparison and solution concepts]\label{lem:comparison}
+Let \(\Omega\) be bounded and open. Suppose \(a,b\in C(\R^n)\cap\Bcal_p\),
+\(La\le0\le Lb\) in \(\Omega\) in the viscosity sense, and
+\(a\le b\) on \(\Omega^c\). Then \(a\le b\) on \(\R^n\).
+Moreover, a continuous function of growth below \(\alpha\) is viscosity
+harmonic in an open set if and only if it is distributionally harmonic there.
+\end{lemma}
+
+\begin{proof}
+Choose \(0\le\psi\le1\) smooth and compactly supported, with \(\psi=1\)
+on a ball containing \(\overline\Omega\). Every jump contribution to
+\(L\psi\) in \(\Omega\) is nonnegative, and sufficiently long jumps give
+\(L\psi\ge c>0\) there. For a large radial cutoff \(\chi_R\), equal
+to one on \(B_R\) and zero outside \(B_{2R}\), the separated tails give
+\[
+ L(\chi_Ra)\le e_R,\qquad L(\chi_Rb)\ge-e_R,
+ \qquad e_R\le C R^{p-\alpha}\longrightarrow0.
+\]
+These are viscosity inequalities: near a test point the functions are
+unchanged, and the changed tail is bounded by
+\(C\int_R^\infty(1+r)^p r^{-1-\alpha}\,dr\).
+Fix \(t>0\), take \(2e_R<tc\), and put
+\(A=\chi_Ra\), \(B=\chi_Rb+t\psi\).
+They are ordered outside \(\Omega\), and
+\(LA\le e_R<tc-e_R\le LB\).
+
+If \(\sup(A-B)>0\), maximize
+\(A(x)-B(y)-|x-y|^2/(2\varepsilon)\) globally. Compact support gives
+maximizers, and exterior order and continuity place both in \(\Omega\)
+for sufficiently small \(\varepsilon\). At these points,
+\[
+ A(x)-A(x+z)-B(y)+B(y+z)\ge0\qquad(z\in\R^n).
+\]
+Use the quadratic upper test for \(A\) and lower test for \(B\).
+Their gradients coincide. Far jumps have nonnegative operator difference;
+for jumps of length less than \(r\), the difference is bounded below by
+\[
+ -\varepsilon^{-1}\int_{|z|<r}|z|^2\nu(dz)
+ =-\frac{M_\mu}{\varepsilon(2-\alpha)}r^{2-\alpha}.
+\]
+Let \(r\downarrow0\) at fixed \(\varepsilon\). This contradicts the
+strict negative upper bound \(2e_R-tc\) for the same operator difference.
+Thus \(A\le B\). On \(\Omega\), the cutoff is one, and \(t\downarrow0\)
+proves comparison.
+
+For a continuous distributional solution, the harmonic mollifications in
+Lemma~\ref{lem:inputs}(1) converge locally uniformly with a common
+sub-\(\alpha\) growth bound. The viscosity tests pass to the limit:
+the patched test controls small jumps, local uniform convergence controls
+bounded jumps, and polynomial domination controls the tail.
+Thus this solution is viscosity harmonic. Conversely, solve the
+distributional Dirichlet problem on a ball compactly contained in the given
+open set, using the viscosity solution as exterior data. By the preceding
+argument the extension is viscosity harmonic. Comparison in both directions
+identifies it with the original function. This proves the converse locally
+on every such ball, and hence on the open set.
+\end{proof}
+
+In particular, linear combinations of our harmonic functions are harmonic.
+Multiplication by a smooth cutoff equal to one near the tested domain changes
+the equation only by its explicit tail integral. Addition of a smooth
+function changes the right-hand side by its classical \(L\)-image.
+
+To control boundary values uniformly over profiles, we use the symmetric
+stable process \(X\) with Levy triplet \((0,0,\nu)\), started at zero.
+Existence, the generator on \(C_c^\infty\), the jump decomposition, and the
+strong Markov property are given in
+\cite[Results 7.5, 6.8, 9.7--9.12, and 4.12]{S}.
+Our sign is \(\mathcal A=-L\). Indeed its characteristic exponent is
+\[
+ \Psi(\xi)=\int(1-\cos(\xi\cdot z))\nu(dz)
+ =c_\alpha\int|\xi\cdot\theta|^\alpha\mu(d\theta),
+ \quad c_\alpha=\int_0^\infty(1-\cos r)r^{-1-\alpha}\,dr\in(0,\infty).
+\]
+It follows that \(X_t\) has the law \(t^{1/\alpha}X_1\).
+Its semigroup is Feller: for \(f\in C_0(\R^n)\), dominated convergence
+shows that \(\E f(x+X_t)\) is continuous and vanishes at infinity, while
+uniform continuity gives
+\(\|P_tf-f\|_\infty\le\E\omega_f(|X_t|)\to0\).
+Thus Dynkin's formula \cite[Lemma 12.2]{S} applies to compact smooth tests
+and finite-mean stopping times.
+
+\begin{lemma}[Stopped representation]\label{lem:stopped}
+Let \(\Omega\subset D\) be bounded and open, and let
+\(u\in C(\R^n)\cap\Bcal_b\), \(0\le b<\alpha\), be harmonic in \(D\).
+For \(x\in\Omega\) and
+\(\tau_\Omega^x=\inf\{t>0:x+X_t\notin\Omega\}\),
+\begin{equation}\label{eq:stopped}
+ u(x)=\E u(x+X_{\tau_\Omega^x}).
+\end{equation}
+The stopped positions in the proof have a uniformly bounded moment of every
+fixed order strictly between \(b\) and \(\alpha\).
+\end{lemma}
+
+\begin{proof}
+We give the stopping and integrability details because the spectral measure
+can be singular. The filtration is the usual completed right-continuous
+natural filtration. If stopping times \(\sigma_j\uparrow\sigma<\infty\) almost surely,
+the strong Markov property implies, for \(a,\varepsilon,M>0\),
+\begin{align*}
+ &\Prb(|X_\sigma-X_{\sigma_j}|>a,\ \sigma\le M)\\
+ &\quad\le\Prb(\sigma-\sigma_j>\varepsilon,\ \sigma\le M)
+       +\Prb\left(\sup_{0\le t\le\varepsilon}|X_t|>a\right).
+\end{align*}
+Let \(j\to\infty\), then \(\varepsilon\downarrow0\), then \(M\to\infty\).
+This proves convergence in probability. Cadlag paths already give a left
+limit on paths where the sequence strictly announces \(\sigma\), so that
+limit equals \(X_\sigma\) almost surely. Where the times eventually equal
+\(\sigma\), convergence is immediate. We have proved the required
+quasi-left continuity.
+
+For completeness, exits from our bounded open sets are stopping times and
+their positions belong to the complement. If \(\Omega\subset B_A\), put
+\(F=\Omega^c\) and
+\(\sigma_m=\inf\{t>0:\dist(x+X_t,F)<1/m\}\), starting with large \(m\).
+Hitting this open neighborhood is a stopping time by rational approximation
+and right continuity. Its position has distance at most \(1/m\) from \(F\).
+Every \(\sigma_m\) is bounded by \(T_{2A}\), the first jump longer than
+\(2A\): a path still in \(B_A\) cannot remain there after such a jump.
+This time is exponential, of rate \(M_\mu(2A)^{-\alpha}/\alpha>0\).
+The increasing limit \(\sigma\) is finite; quasi-left continuity gives
+\(x+X_\sigma\in F\). Since \(\sigma_m\le\tau_\Omega^x\le\sigma\),
+the limit is the exit time, with the asserted properties.
+
+Choose \(p'\in(b,\alpha)\) and a nonnegative smooth
+\(G\asymp(1+|y|)^{p'}\). For compact smooth cutoffs
+\(G_N=\chi_NG\), \(0\le\chi_N\le1\), \(\chi_N=1\) on \(B_N\),
+the generators \(\mathcal A G_N\) are uniformly bounded on \(B_A\), for \(N>4A\).
+Small jumps are bounded by local second derivatives times \(|z|^2\);
+large jumps by \(C(1+|z|)^{p'}\), which is integrable against the tail
+of \(\nu\). Dynkin and Fatou therefore give, for every stopping time
+\(\sigma\le\tau_\Omega^x\) and finite horizon \(T\),
+\begin{equation}\label{eq:exit-moment}
+ \E G(x+X_{\sigma\wedge T})
+       \le G(x)+C\E T_{2A}<\infty.
+\end{equation}
+The same estimate holds for exits from inner subsets of \(\Omega\).
+
+Exhaust \(\Omega\) by
+\(\Omega_j=\{y\in\Omega:\dist(y,\Omega^c)>1/j\}\), and write
+\(\tau_j\) for their exits. Mollify \(u\) at a scale below the distance
+of \(\overline\Omega_j\) from \(D^c\). The mollification is smooth and
+harmonic on \(\Omega_j\). Apply Dynkin first to its compact smooth cutoffs
+and \(\tau_j\wedge T\). The cutoff generator error tends uniformly to
+zero, with bound \(C N^{b-\alpha}\).
+The moment estimate permits removal of the cutoff and the mollifier.
+If \(b=0\), the function values are bounded. If \(b>0\), put
+\(r=p'/b>1\); then
+\[
+ \sup_{j,T}\E|u(x+X_{\tau_j\wedge T})|^r<\infty,
+ \qquad
+ \E(|Y|\mathbf1_{|Y|>H})\le H^{1-r}\E|Y|^r.
+\]
+This proves uniform integrability, including for the mollifications.
+Consequently \(T\to\infty\) gives
+\(u(x)=\E u(x+X_{\tau_j})\).
+
+Finally \(\tau_j\uparrow\tau_\Omega^x\). Otherwise the limiting position,
+given by quasi-left continuity, would be interior to \(\Omega\), whereas
+each exited inner position has distance at most \(1/j\) from \(\Omega^c\).
+Stopped positions converge almost surely; continuity of \(u\) and the
+same uniform integrability give \eqref{eq:stopped}.
+\end{proof}
+
+\section{Boundary compactness and growth control}\label{sec:growth}
+
+The operator and cone stay fixed throughout this section. Constants may
+depend on them, on a chosen \(p<\alpha\), and on the indicated compact sets.
+They will be uniform over the functions in each stated family.
+
+\begin{proposition}[Uniform boundary smallness]\label{prop:boundary}
+Fix \(0<p<\alpha\) and \(K<\infty\). Consider all nonnegative continuous
+functions, zero on \(\Sigma\), harmonic in \(D\), and bounded by
+\begin{equation}\label{eq:controlled}
+ u(x)\le K(1+|x|)^p.
+\end{equation}
+For every \(0<A<\infty\), these functions tend uniformly to zero as points
+of \(D\cap\overline B_A\) approach \(\Sigma\).
+\end{proposition}
+
+\begin{proof}
+We first show that \(X_1\) has full support. The support of \(\mu\) spans
+\(\R^n\) by directional nondegeneracy. Choose independent support
+directions \(\theta_1,\ldots,\theta_n\). Write the center of any prescribed
+ball as \(\sum b_j\theta_j\). For nonzero coefficients, small disjoint
+angular and radial neighborhoods of \(b_j\theta_j\) have positive
+\(\nu\)-mass; use evenness if \(b_j<0\). Requiring one jump in each bin
+and no other jump longer than \(\varepsilon\) has positive probability.
+Choose the bins so their sum lies in half the prescribed ball, and then
+take \(\varepsilon\) below their radial supports. The remaining independent
+symmetric small-jump martingale has
+\[
+ \E|X_1^{\le\varepsilon}|^2
+ =\int_{|z|\le\varepsilon}|z|^2\nu(dz)
+ =\frac{M_\mu}{2-\alpha}\varepsilon^{2-\alpha}\longrightarrow0.
+\]
+Chebyshev's inequality gives positive probability that this remaining part
+lies in the other half-ball. The jump assertions follow from
+\cite[Theorems 9.7, 9.9, 9.12 and Corollary 9.11]{S}.
+Symmetry makes the intermediate compensating drift zero. This proves full
+support, including for atomic spectral measures.
+
+Since \(\operatorname{int}\Sigma\) is nonempty and invariant under positive
+dilations, scaling gives
+\[
+ \Prb(X_t\in\operatorname{int}\Sigma)
+       =\Prb(X_1\in\operatorname{int}\Sigma)=p_0>0\quad(t>0).
+\]
+The event of visits to this open cone at arbitrarily small positive times
+therefore has probability at least \(p_0\). It is a germ event, and has
+probability one. Indeed a germ event is independent of the increments after
+every \(\varepsilon>0\). As \(\varepsilon\downarrow0\), right continuity
+shows independence from every finite collection of path values, hence from
+the whole path sigma algebra and from itself.
+
+Let \(\Omega=D\cap B_{2A+2}\), and couple all starting points by the same
+process. If \(x_k\in D\cap\overline B_A\) tends to \(y\in\Sigma\), then
+\begin{equation}\label{eq:exit-small}
+ \tau_\Omega^{x_k}\longrightarrow0\quad\hbox{almost surely},
+ \qquad \E\tau_\Omega^{x_k}\longrightarrow0.
+\end{equation}
+To prove the first assertion, use any of the arbitrarily early times with
+\(X_t\in\operatorname{int}\Sigma\). Convexity of the cone gives
+\(y+\operatorname{int}\Sigma\subset\operatorname{int}\Sigma\), so
+\(x_k+X_t\in\Sigma\) for all sufficiently large \(k\). The second
+assertion follows by domination with the same \(T_{4A+4}\).
+
+Choose a smooth nonnegative \(F_A\), zero on \(B_A\), dominating
+\(K(1+|x|)^p\) outside \(B_{2A+2}\), with this polynomial growth.
+Its generator is bounded on \(B_{2A+2}\). At exit, \(u=0\) on \(\Sigma\)
+and \(u\le F_A\) outside the ball. Lemma~\ref{lem:stopped} gives
+\begin{equation}\label{eq:boundary-modulus}
+ 0\le u(x)\le\E F_A(x+X_{\tau_\Omega^x})
+       \le C_A\E\tau_\Omega^x,\qquad x\in D\cap B_A.
+\end{equation}
+For the last inequality apply Dynkin to nonnegative compact cutoffs of
+\(F_A\), whose generators have one common bound on the stopped ball,
+and then use Fatou. Equations \eqref{eq:exit-small}--\eqref{eq:boundary-modulus}
+and compactness of \(\Sigma\cap\overline B_A\) prove the assertion.
+\end{proof}
+
+\begin{lemma}[Compactness and positivity]\label{lem:compact}
+The family in Proposition~\ref{prop:boundary} is precompact for local uniform
+convergence on \(\R^n\). A subfamily normalized by \(\sup_{B_1}u=1\), or
+by \(u(x_*)=1\) at a fixed \(x_*\in D\), has a common positive lower bound
+on every compact subset of \(D\).
+\end{lemma}
+
+\begin{proof}
+Interior Holder estimates from Lemma~\ref{lem:inputs}, together with the
+uniform smallness near \(\Sigma\), give equicontinuity on every closed ball.
+Arzela--Ascoli and a diagonal extraction yield local uniform compactness.
+The common growth bound and \eqref{eq:test-tail} preserve distributional
+harmonicity. Limits are nonnegative, continuous, and zero on \(\Sigma\).
+
+The set \(D\) is path connected. Choose \(e\in\operatorname{int}\Sigma\).
+For \(x\notin\Sigma\), the ray \(x-te\), \(t\ge0\), stays outside
+\(\Sigma\), since otherwise adding \(te\in\Sigma\) would put \(x\) in
+\(\Sigma\). There is a nonzero functional \(\ell\ge0\) on \(\Sigma\):
+project any point outside the cone onto it and take the negative outward
+normal. Since \(e\) is interior, \(\ell(e)>0\). For two given points,
+their translates by a sufficiently large common \(-te\) lie in the
+half-space \(\{\ell<0\}\). Join them there and along their rays.
+
+A nonzero nonnegative limit is consequently positive throughout \(D\),
+by the strong maximum principle in Lemma~\ref{lem:inputs}(3), applied on
+bounded connected neighborhoods of such paths. Both stated normalizations
+pass to local uniform limits and exclude the zero function. If a compact
+lower bound failed, a convergent sequence of points on that compact set
+and a locally uniformly convergent sequence of profiles would give a
+nonzero limit with an interior zero, a contradiction.
+\end{proof}
+
+We next turn the controlled polynomial bound into one independent of the
+profile's initial growth constant. Let \(q,\eta\) be as in
+\eqref{eq:ball-barrier}.
+
+\begin{lemma}[Distance lower bound]\label{lem:distance}
+Fix \(0<p<\alpha\). Every nonnegative continuous function, zero on \(\Sigma\)
+and harmonic in \(D\), with
+\begin{equation}\label{eq:unit-family}
+ \sup_{B_1}v=1,\qquad v(x)\le\max(1,|x|^p),
+\end{equation}
+satisfies
+\begin{equation}\label{eq:distance-lower}
+ v(x)\ge a\,\dist(x,\Sigma)^q\quad(x\in D\cap B_1),
+\end{equation}
+for some \(a>0\) independent of \(v\).
+\end{lemma}
+
+\begin{proof}
+Lemma~\ref{lem:compact} gives a common positive lower bound on
+\(K_\eta=\{z\in\overline B_3:\dist(z,\Sigma)\ge\eta\}\).
+For \(x\in D\cap B_1\), let \(y\) be its nearest point on \(\Sigma\),
+\(d=|x-y|\), and \(\zeta=(x-y)/d\). Convex projection gives
+\((x-y)\cdot(z-y)\le0\) for \(z\in\Sigma\).
+Taking \(z=0,2y\) yields \((x-y)\cdot y=0\). In particular
+\(|y|\le1\), \(0<d\le1\), and
+\(\Sigma\subset\{z:\zeta\cdot z\le0\}\).
+Thus \(B_1(y+\zeta)\subset D\), and its inner ball of radius
+\(1-\eta\) lies in \(K_\eta\).
+
+A sufficiently small fixed multiple \(a\phi(\,\cdot-y-\zeta)\) is below
+\(v\) on that inner ball and outside the unit ball. Comparison on the
+outer collar, using \eqref{eq:ball-barrier}, makes the same order hold
+everywhere. Evaluation at \(x\) gives
+\[
+ v(x)\ge a(1-|x-y-\zeta|^2)^q
+        =a(2d-d^2)^q\ge a d^q.
+\]
+\end{proof}
+
+For a nonnegative function define its polynomial growth norm by
+\begin{equation}\label{eq:growth-norm}
+ \|u\|_{p,*}=\sup_{R\ge1}R^{-p}U_u(R),
+ \qquad U_u(R)=\sup_{B_R}u.
+\end{equation}
+This measures the whole tail, including the directions charged by \(\mu\).
+
+\begin{proposition}[Growth controlled by one value]\label{prop:growth}
+Fix \(q<p<\alpha\) and \(x_*\in D\cap B_{1/2}\).
+For every positive continuous harmonic profile in \(D\), zero on \(\Sigma\),
+whose actual polynomial growth exponent is strictly below \(p\),
+\begin{equation}\label{eq:growth-control}
+ \|u\|_{p,*}\le C u(x_*).
+\end{equation}
+The constant is independent of the profile and its initial growth constant.
+\end{proposition}
+
+\begin{proof}
+Write \(U=U_u\). Continuity makes \(U(R)\) continuous, and the strict
+growth margin makes \(U(R)/R^p\to0\). Its positive supremum is therefore
+attained at some \(R_0\ge1\). The function
+\[
+ v(x)=\frac{u(R_0x)}{U(R_0)}
+\]
+satisfies \eqref{eq:unit-family}: the maximizing property gives its bound
+for \(|x|\ge1\), while \(U(R_0)\) gives the bound inside the unit ball.
+The stable scaling identity
+\(L(u(R\,\cdot))(x)=R^\alpha(Lu)(Rx)\) and the cone property preserve
+harmonicity and the zero set.
+
+Apply Lemma~\ref{lem:distance} at \(x_*/R_0\). Since the cone distance
+scales linearly,
+\[
+ u(x_*)\ge aU(R_0)R_0^{-q}\dist(x_*,\Sigma)^q.
+\]
+Consequently
+\[
+ \|u\|_{p,*}=\frac{U(R_0)}{R_0^p}
+ \le a^{-1}\dist(x_*,\Sigma)^{-q}R_0^{q-p}u(x_*)
+ \le C u(x_*),
+\]
+because \(p>q\) and \(R_0\ge1\).
+\end{proof}
+
+\section{Comparison and proportionality}\label{sec:rigidity}
+
+Let \(\beta_1,\beta_2\) be the growth exponents of the original profiles
+\(w_1,w_2\) in Theorem~\ref{thm:main}. Choose once and for all
+\begin{equation}\label{eq:p-choice}
+ \max(q,\beta_1,\beta_2)<p<\alpha,
+ \qquad x_*\in D\cap B_{1/2}.
+\end{equation}
+All profiles considered below have actual growth exponent below this same
+\(p\). Normalize two of them by \(u(x_*)=v(x_*)=1\).
+Proposition~\ref{prop:growth} and Lemma~\ref{lem:compact} give
+\begin{equation}\label{eq:normalized-growth}
+ u(x)+v(x)\le C(1+|x|)^p,
+ \qquad \inf_K v\ge c_K>0\quad(K\Subset D),
+\end{equation}
+with constants uniform over such normalized profiles.
+
+The next comparison uses a bump outside the ball of interest. Its forcing
+comes from an angular cap of positive measure.
+
+\begin{lemma}[Annular forcing]\label{lem:annulus}
+There is \(\eta_0\in C_c^\infty(D)\), \(0\le\eta_0\le1\), supported
+in an annulus about radius \(3/4\), outside \(B_{2/3}\), such that
+\begin{equation}\label{eq:annular-forcing}
+ L\eta_0\le-c_0<0\quad\hbox{in }D\cap B_{2/3}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \(z\in D\cap B_{2/3}\), let \(\zeta\) be the outward unit normal
+from its projection onto \(\Sigma\). The projection identities in the
+proof of Lemma~\ref{lem:distance} give
+\(\Sigma\subset\{\zeta\cdot x\le0\}\) and
+\(\zeta\cdot z=\dist(z,\Sigma)>0\).
+By \eqref{eq:angular-cap} and evenness,
+\[
+ \mu\{\theta:\zeta\cdot\theta\ge\delta\}\ge m,
+ \qquad \delta=(\lambda/(2\Lambda))^{1/\alpha},\quad m=\lambda/4.
+\]
+Choose \(2/3<a_-<a_+<4/5\), both near \(3/4\). Every ray
+\(z+r\theta\) with \(\zeta\cdot\theta\ge\delta\) crosses this radial
+band over an interval with
+\[
+ a_--2/3\le r\le a_++2/3,\qquad r_+-r_-\ge a_+-a_-.
+\]
+The length bound follows from the 1-Lipschitz property of the radial norm.
+Throughout the crossing,
+\(\dist(z+r\theta,\Sigma)\ge\zeta\cdot(z+r\theta)\ge r\delta\).
+Take \(0<\rho<\delta(a_--2/3)\), and choose a smooth bump equal to one
+on the compact set
+\(\{a_-\le|x|\le a_+,\ \dist(x,\Sigma)\ge\rho\}\),
+supported in a slightly wider annulus outside \(B_{2/3}\) and in
+\(\{\dist(x,\Sigma)>\rho/2\}\).
+At every \(z\) in the tested ball its value is zero, and hence
+\[
+ -L\eta_0(z)=\int\eta_0(z+h)\nu(dh)
+ \ge m(a_+-a_-)(a_++2/3)^{-1-\alpha}>0.
+\]
+\end{proof}
+
+\begin{proposition}[Comparison of normalized profiles]\label{prop:local}
+For the fixed \(p,x_*\) in \eqref{eq:p-choice}, there is \(C_1\ge1\)
+such that every normalized pair as above satisfies
+\begin{equation}\label{eq:local-comparison}
+ C_1^{-1}u\le v\le C_1u\quad\hbox{on }B_{1/2}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Take smooth cutoffs \(0\le\chi,\xi\le1\), with \(\chi=1\) on
+\(B_{3/4}\), \(\chi=0\) outside \(B_{4/5}\), \(\xi=1\) on
+\(B_{1/2}\), and \(\xi=0\) outside \(B_{2/3}\). Set
+\[
+ f=\chi u+A(\xi-1)+B\eta_0.
+\]
+In \(D\cap B_{2/3}\), the cutoff identity in the viscosity sense gives
+\[
+ L(\chi u)(z)=\int(1-\chi(z+h))u(z+h)\nu(dh)\le C.
+\]
+The uniform bound follows from \eqref{eq:normalized-growth}, the positive
+separation of \(B_{2/3}\) from the support of \(1-\chi\), and
+\(p<\alpha\). Also \(|L\xi|\le C\).
+First take \(A>\sup_{B_1}u\), then choose \(B\) large enough that
+\eqref{eq:annular-forcing} gives \(Lf\le-1\) in the tested domain.
+Both constants can be chosen uniformly over the normalized family.
+
+For \(|z|\ge2/3\), \(\chi u-A\le0\), so \(f\le B\eta_0\).
+On \(\supp\eta_0\Subset D\), \eqref{eq:normalized-growth} supplies a
+common positive lower bound for \(v\). Thus \(f\le C_1v\) outside the
+tested ball. On \(\Sigma\), \(f\le0=C_1v\).
+Lemma~\ref{lem:comparison} on \(D\cap B_{2/3}\) gives \(f\le C_1v\)
+everywhere. In \(B_{1/2}\), \(f=u\). Interchanging \(u,v\) proves the claim.
+\end{proof}
+
+This comparison concerns entire cone profiles with controlled polynomial
+growth. The control at infinity in Proposition~\ref{prop:growth} is what
+makes its constant uniform over normalized profiles.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For any two positive profiles \(u,v\) and \(R\ge1\), apply
+Proposition~\ref{prop:local} to
+\[
+ u_R(x)=\frac{u(Rx)}{u(Rx_*)},\qquad
+ v_R(x)=\frac{v(Rx)}{v(Rx_*)}.
+\]
+These remain in the same class. Evaluation at \(x_*/R\) bounds
+\(u(Rx_*)/v(Rx_*)\) between \(C_1^{-1}\) and \(C_1\) times
+\(u(x_*)/v(x_*)\). For any fixed \(x\in D\), choose \(R>2|x|\) and
+evaluate once more at \(x/R\). We obtain the global comparison
+\begin{equation}\label{eq:global-comparison}
+ C_1^{-2}\frac{u(x_*)}{v(x_*)}
+ \le\frac{u(x)}{v(x)}
+ \le C_1^2\frac{u(x_*)}{v(x_*)}\qquad(x\in D).
+\end{equation}
+
+Let \(\kappa=\inf_D u/v>0\), and put \(h=u-\kappa v\).
+By Lemma~\ref{lem:comparison}, \(h\) is harmonic in \(D\).
+It is continuous, nonnegative, zero on \(\Sigma\), and has growth exponent
+at most \(\max(\beta_1,\beta_2)<p\). If it is nonzero, the strong maximum
+principle and connectedness proved in Lemma~\ref{lem:compact} make it
+positive throughout \(D\). Apply \eqref{eq:global-comparison} to \(h,v\).
+This forces \(\inf_D h/v>0\), contradicting
+\(\inf_D h/v=\inf_D(u/v-\kappa)=0\). Hence \(h=0\), and
+\(u=\kappa v\) everywhere. The choices in \eqref{eq:p-choice} are always
+possible because each original exponent is strictly less than \(\alpha\).
+They impose no further condition on the theorem.
+\end{proof}
+
+\paragraph{AI use.}
+OpenAI Codex was used to develop the argument, check cited source statements,
+draft the manuscript, and perform internal mathematical and editorial review.
+The manuscript is submitted for independent mathematical scrutiny.
+
+\begin{thebibliography}{9}
+\bibitem{FR}
+X. Fernandez-Real and X. Ros-Oton,
+\emph{Integro-Differential Elliptic Equations},
+manuscript, arXiv:2411.12455v1, 2024.
+\href{https://arxiv.org/abs/2411.12455v1}{arxiv.org/abs/2411.12455v1}.
+
+\bibitem{RS}
+X. Ros-Oton and J. Serra,
+\emph{Regularity theory for general stable operators},
+arXiv:1412.3892v1, 2014.
+\href{https://arxiv.org/abs/1412.3892v1}{arxiv.org/abs/1412.3892v1}.
+
+\bibitem{RW}
+X. Ros-Oton and M. Weidner,
+\emph{Obstacle problems for nonlocal operators with singular kernels},
+arXiv:2308.01695v1, 2023.
+\href{https://arxiv.org/abs/2308.01695v1}{arxiv.org/abs/2308.01695v1}.
+
+\bibitem{S}
+R. L. Schilling,
+\emph{An Introduction to L\'evy and Feller Processes:
+Advanced Courses in Mathematics -- CRM Barcelona 2014},
+arXiv:1603.00251v2, 2016.
+\href{https://arxiv.org/abs/1603.00251v2}{arxiv.org/abs/1603.00251v2}.
+\end{thebibliography}
+\end{document}
